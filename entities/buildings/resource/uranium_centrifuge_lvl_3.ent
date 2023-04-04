@@ -1,0 +1,126 @@
+EntityBlueprint
+{
+	name  "buildings/resources/uranium_centrifuge_lvl_3"
+
+	base_blueprint "buildings/resources/uranium_centrifuge_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"uranium_centrifuge_lvl_3"
+		bp   				"buildings/resources/uranium_centrifuge_lvl_3"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/uranium_centrifuge"
+		description			"gui/hud/building_description/uranium_centrifuge"
+		menu_icon			"gui/hud/building_icons/uranium_centrifuge_lvl3"
+		require 			"headquarters"
+		order				"4"
+		//upgrade				"buildings/resources/uranium_centrifuge_lvl_4"
+		buildable			"0"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 180
+				building_cost
+				{
+					carbonium 	"2000"
+					steel 		"1400"
+					palladium	"200"		
+				}
+			}	
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"2000"
+					steel 		"1400"
+					palladium	"200"
+				}
+			}			
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"225"
+			}
+			GameplayResource
+			{
+				resource 			"uranium_ore"
+				value			 	"4"
+			}			
+		}
+		out
+		{
+			GameplayResource
+			{
+				resource 			"uranium"
+				value			 	"4"
+			}
+			
+		}		
+		priority 4
+	}
+
+	HealthDesc
+	{
+		max_health 					"1150"
+		health 						"1150"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"				
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3_simple"
+					bone "att_level"
+				}
+			}
+		}		
+	}		
+}
+

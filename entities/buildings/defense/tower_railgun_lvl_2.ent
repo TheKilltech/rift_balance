@@ -1,0 +1,201 @@
+EntityBlueprint
+{
+	name  "buildings/defense/tower_railgun_lvl_2"
+
+	base_blueprint 			buildings/defense/tower_railgun
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"tower_railgun_lvl_2"
+		bp   				"buildings/defense/tower_railgun_lvl_2"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_railgun"
+		description			"gui/hud/building_description/tower_railgun"
+		menu_icon			"gui/hud/building_icons/tower_railgun_lvl2"
+		require 			"headquarters"
+		order				"11"
+		type				"tower"
+		overrides			"tower,wall"
+		upgrade				"buildings/defense/tower_railgun_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 2.5
+				building_cost
+				{
+					carbonium 	"300"
+					steel 		"150"
+					cobalt		"100"
+				}
+			}		
+		}		
+	}
+
+	ResourceConverterDesc // must be here for AI
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"75"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
+	}
+
+	HealthDesc
+	{
+		max_health 					"750"
+		health 						"750"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+  {
+    mesh "meshes/buildings/defense/tower_railgun_lvl_2.mesh"
+    material "buildings/defense/tower_railgun_lvl_2"
+  }
+
+	SkeletonDesc
+  {
+    name "meshes/buildings/defense/tower_railgun_lvl_2"
+  }
+
+	WeaponItemDesc
+	{
+	}
+
+	TurretDesc
+	{
+		target "ground_unit"
+		target_ignore "invisible"
+		speed "300"
+		find_type "farthest"
+		aim_volume "SphericalAimVolume"
+		{
+			range_min "0"
+			range_max "35"
+			aiming_range "40"
+		}
+
+		aiming_cooldown "1"
+		aiming_target_time "2"
+		aiming_idle_angle "20"
+		pitch "be_barrel"
+		yaw "be_turret"
+		check_target_visibility "1"
+		fog_of_war_filtering "1"
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+				//recoil_bone  "recoil"
+				//recoil_time   "0.45"
+				//recoil_offset   "1.6"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.80"
+			emissive_factor "120"
+			submesh_idx "1"
+		}
+
+		ammo_blueprint 				"buildings/defense/tower_railgun_projectile_lvl2"
+
+		muzzle_flash_effect 		"effects/weapons_energy/tower_railgun_fire"
+
+		burst_column_spacing 		"0"
+		burst_rate 					"0"
+		burst_column_angle 			"0"
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/defense/tower_railgun_projectile_lvl2"
+
+	MeshDesc
+	{
+		mesh "meshes/projectiles/tower_railgun_projectile.mesh"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/projectiles/tower_railgun_projectile"
+	}
+
+	AnimationDesc
+	{
+		animations
+		{
+			Anim
+			{
+				animName "idle"
+				animTime "0.0"
+			}
+		}
+	}
+
+	LifeTimeDesc
+	{
+		time "1.0"
+	}
+
+	InstantAmmoComponent
+	{
+		range 					"33"
+		max_hits 				"32"
+
+		width 					"3"
+		height 					"3"
+
+		on_enemy_hit_effect 	"effects/weapons_energy/railgun_hit"
+		on_world_hit_effect 	"effects/weapons_energy/railgun_hit"
+		on_resisted_hit_effect 	"effects/weapons_generic/projectile_hit_resisted"
+
+		collision_3d 			"destructible|ground_unit|hitbox|shield"
+		collision_block 		"world"
+	}
+}
