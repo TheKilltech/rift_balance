@@ -1,7 +1,7 @@
 GameplayResourceDef
 {
-	id				"ammo_mech_low_caliber_lvl2"
-	localization_id "Low caliber advanced" //"resource_name/ammo_mech_low_caliber_lvl2"
+	id				"ammo_mech_low_caliber_lvl3"
+	localization_id "Low caliber supreme" //"resource_name/ammo_mech_low_caliber_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo"
@@ -9,13 +9,13 @@ GameplayResourceDef
 	bigger_icon		"gui/hud/resource_icons/ammo_mech_low_caliber_icon_bigger"
 	base_storage	"80"
 	hud_visible 	"build_menu"
-	order			"30"
+	order			"35"
 }
 
 GameplayResourceDef
 {
-	id				"ammo_mech_high_caliber_lvl2"
-	localization_id "High caliber advanced" //"resource_name/ammo_mech_high_caliber_lvl2"
+	id				"ammo_mech_high_caliber_lvl3"
+	localization_id "High caliber supreme" //"resource_name/ammo_mech_high_caliber_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo"
@@ -23,13 +23,13 @@ GameplayResourceDef
 	bigger_icon		"gui/hud/resource_icons/ammo_mech_high_caliber_icon_bigger"
 	base_storage	"30"
 	hud_visible 	"build_menu"
-	order			"31"
+	order			"36"
 }
 
 GameplayResourceDef
 {
-	id				"ammo_mech_liquid_lvl2"
-	localization_id "Liquid advanced" //"resource_name/ammo_mech_liquid_lvl2"
+	id				"ammo_mech_liquid_lvl3"
+	localization_id "Liquid supreme" //"resource_name/ammo_mech_liquid_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo"
@@ -37,13 +37,13 @@ GameplayResourceDef
 	bigger_icon		"gui/hud/resource_icons/ammo_mech_liquid_icon_bigger"
 	base_storage	"250"
 	hud_visible 	"build_menu"
-	order			"32"
+	order			"37"
 }
 
 GameplayResourceDef
 {
-	id				"ammo_mech_explosive_lvl2"
-	localization_id "Explosive advanced" //"resource_name/ammo_mech_explosive_lvl2"
+	id				"ammo_mech_explosive_lvl3"
+	localization_id "Explosive supreme" //"resource_name/ammo_mech_explosive_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo"
@@ -51,13 +51,13 @@ GameplayResourceDef
 	bigger_icon		"gui/hud/resource_icons/ammo_mech_explosive_icon_bigger"
 	base_storage	"3"
 	hud_visible 	"build_menu"
-	order			"33"
+	order			"38"
 }
 
 GameplayResourceDef
 {
-	id				"ammo_mech_energy_cell_lvl2"
-	localization_id "Energy cell advanced" //"resource_name/ammo_mech_energy_lvl2"
+	id				"ammo_mech_energy_cell_lvl3"
+	localization_id "Energy cell supreme" //"resource_name/ammo_mech_energy_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo"
@@ -65,5 +65,5 @@ GameplayResourceDef
 	bigger_icon		"gui/hud/resource_icons/ammo_mech_energy_icon_bigger"
 	base_storage	"20"
 	hud_visible 	"build_menu"
-	order			"34"
+	order			"39"
 }
