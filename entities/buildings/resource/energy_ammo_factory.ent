@@ -1,6 +1,6 @@
 EntityBlueprint
 {
-	name "buildings/main/energy_ammo_factory"
+	name "buildings/resource/energy_ammo_factory"
 
 	IdDesc
 	{
@@ -10,14 +10,15 @@ EntityBlueprint
 	BuildingDesc
 	{
 		name 				  "energy_ammo_factory"
-		bp   				  "buildings/main/energy_ammo_factory"
+		bp   				  "buildings/resource/energy_ammo_factory"
 		category 			  "resources"
 		//type				  "pipe"
 		localization_id		  "gui/hud/building_name/energy_ammo_factory"
 		description			  "gui/hud/building_description/energy_ammo_factory"
+		description			  "gui/hud/building_description"
 		menu_icon			  "gui/hud/building_icons/cryo_station"
 		require 			  "headquarters"
-		//upgrade			  "buildings/main/energy_ammo_factory_lvl_2"
+		//upgrade			  "buildings/resource/energy_ammo_factory_lvl_2"
 		order				  "20"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
@@ -49,13 +50,13 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"ammo_mech_energy_cell"
-				value	"15"
+				value	"0.2"
 			}
 			
 			GameplayResource
 			{
 				resource 			"rhodonite"
-				value	"1"
+				value	"0.1"
 			}
 		}
 		
@@ -64,7 +65,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"ammo_mech_energy_cell_lvl2"
-				value				"15"
+				value				"0.2"
 			}					
 		}	
 		priority 5		
