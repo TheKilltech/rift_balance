@@ -1,25 +1,22 @@
 EntityBlueprint
 {
-	name "buildings/resource/energy_ammo_factory"
+	name "buildings/resource/ammo_factory_energy_lvl_2"
 
 	IdDesc
 	{
-		name "energy_ammo_factory"
+		name "ammo_factory_energy_lvl_2"
 	}
 
 	BuildingDesc
 	{
-		name 				  "energy_ammo_factory"
-		bp   				  "buildings/resource/energy_ammo_factory"
+		name 				  "ammo_factory_energy_lvl_2"
+		bp   				  "buildings/resource/ammo_factory_energy_lvl_2"
 		category 			  "resources"
-		//type				  "pipe"
-		localization_id		  "Mech advanced energy ammunition factory"//"gui/hud/building_name/energy_ammo_factory"
-		description			  "Ammunition factory for advanced and better mech energy weapons"//"gui/hud/building_description/energy_ammo_factory"
-		description			  "gui/hud/building_description"
+		localization_id		  "Mech advanced energy ammunition factory"//"gui/hud/building_name/ammo_factory_energy_lvl_2"
+		description			  "Ammunition factory for advanced and better mech energy weapons"//"gui/hud/building_description/ammo_factory_energy_lvl_2"
 		menu_icon			  "gui/hud/building_icons/cryo_station"
 		require 			  "headquarters"
-		//upgrade			  "buildings/resource/energy_ammo_factory_lvl_2"
-		order				  "30"
+		order				  "32"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -30,7 +27,7 @@ EntityBlueprint
 				building_time 25
 				building_cost
 				{
-					carbonium 	"100"
+					carbonium 	"1500"
 					steel 		"500"
 				}
 			}
@@ -80,9 +77,7 @@ EntityBlueprint
 			range				float:"26.0"
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
-			
-			display_radius_blueprint string:"effects/decals/range_circle_shield"
-			display_radius_group	 string:"cryo_station"			
+			building_time		float:"10"		
 		}
 	}
 
@@ -114,11 +109,6 @@ EntityBlueprint
 		}
 	}
 	
-	ResistanceComponent
-	{
-		magma		"0"
-	}		
-
 	MeshDesc
 	{
 		mesh 		"meshes/buildings/main/cryo_station.mesh"
@@ -224,7 +214,7 @@ EntityBlueprint
 
 	FogOfWarRevealerComponentDesc
 	{
-		radius "20"
+		radius "5"
 	}
 
 	HealthBarDesc

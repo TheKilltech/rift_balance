@@ -8955,7 +8955,7 @@ Research
 
 						ResearchAward
 						{
-							blueprint "buildings/resource/energy_ammo_factory"
+							blueprint "buildings/resource/ammo_factory_energy_lvl_2"
 							is_visible "1"
 						}
 					}
@@ -11528,7 +11528,8 @@ Research
 					icon "gui/menu/research/icons/orbital_laser"
 				}
 				
-				ResearchNode
+				// Temp tech - just needed to unlock in old save
+				ResearchNode 
 				{
 					research_flags
 					requirement_tooltip
@@ -11556,7 +11557,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resource/energy_ammo_factory"
+							blueprint "buildings/resource/ammo_factory_lowcaliber_lvl_2"
 							is_visible "1"
 						}
 
