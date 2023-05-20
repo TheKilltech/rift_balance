@@ -125,16 +125,9 @@ EntityBlueprint
 		name "meshes/buildings/main/cryo_station"
 	}
 
-	AnimationDesc
+	AnimationGraphDesc
 	{
-		animations
-		{
-			Anim
-			{
-				animName "working"
-				animTime "0.0"
-			}
-		}
+		animation_graph_name "building_working"
 	}
 
 	PhysicsDesc
