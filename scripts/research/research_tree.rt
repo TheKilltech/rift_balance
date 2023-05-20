@@ -7083,6 +7083,12 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/resource_handling_hazenite"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_small_caliber_advanced"
@@ -7106,6 +7112,12 @@ Research
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/ammo_factory_lowcaliber_lvl_2"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "items/weapons/small_machinegun_advanced_item"
@@ -7263,6 +7275,12 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/resource_handling_tanzanite"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_explosive_advanced"
@@ -7286,6 +7304,12 @@ Research
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/ammo_factory_explosive_lvl_2"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "items/weapons/floating_mines_advanced_item"
@@ -7483,6 +7507,12 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/resource_handling_ferdonite"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_liquid_advanced"
@@ -7506,6 +7536,12 @@ Research
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/ammo_factory_liquid_lvl_2"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "items/weapons/flamer_advanced_item"
@@ -8918,6 +8954,12 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/resource_handling_rhodonite"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_energy_advanced"
@@ -8943,6 +8985,12 @@ Research
 					{
 						ResearchAward
 						{
+							blueprint "buildings/resources/ammo_factory_energy_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "items/weapons/blaster_advanced_item"
 							is_visible "1"
 						}
@@ -8953,11 +9001,6 @@ Research
 							is_visible "1"
 						}
 
-						ResearchAward
-						{
-							blueprint "buildings/resource/ammo_factory_energy_lvl_2"
-							is_visible "1"
-						}
 					}
 
 					icon "gui/menu/research/icons/mech_weapons_energy"
@@ -9819,6 +9862,12 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/resource_handling_hazenite"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_high_caliber_advanced"
@@ -9842,6 +9891,12 @@ Research
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/ammo_factory_highcaliber_lvl_2"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "items/weapons/burst_rifle_advanced_item"
@@ -11527,9 +11582,8 @@ Research
 
 					icon "gui/menu/research/icons/orbital_laser"
 				}
-				
-				// Temp tech - just needed to unlock in old save
-				ResearchNode 
+
+				ResearchNode
 				{
 					research_flags
 					requirement_tooltip
@@ -11545,7 +11599,7 @@ Research
 						}
 
 					}
-					
+
 					research_scripts
 					position
 					{
@@ -11557,26 +11611,27 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/ammo_factory_lowcaliber_lvl_2"
+							blueprint "buildings/resources/ammo_factory_energy_lvl_2"
 							is_visible "1"
 						}
-						
+
 						ResearchAward
 						{
 							blueprint "buildings/resources/ammo_factory_highcaliber_lvl_2"
 							is_visible "1"
 						}
-						
+
 						ResearchAward
 						{
-							blueprint "buildings/resources/ammo_factory_energy_lvl_2"
+							blueprint "buildings/resources/ammo_factory_lowcaliber_lvl_2"
 							is_visible "1"
 						}
+
 					}
 
 					icon "gui/menu/research/icons/tools"
 				}
-				
+
 				ResearchNode
 				{
 					research_flags
@@ -11593,11 +11648,11 @@ Research
 						}
 
 					}
-					
+
 					research_scripts
 					position
 					{
-						x "-02.000"
+						x "-2.000"
 						y "-378.000"
 					}
 
@@ -11605,38 +11660,38 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/ammo_factory_lowcaliber_lvl_2"
-							is_visible "1"
-						}
-						
-						ResearchAward
-						{
-							blueprint "buildings/resources/ammo_factory_highcaliber_lvl_2"
-							is_visible "1"
-						}
-						
-						ResearchAward
-						{
 							blueprint "buildings/resources/ammo_factory_energy_lvl_2"
 							is_visible "1"
 						}
-						
+
 						ResearchAward
 						{
 							blueprint "buildings/resources/ammo_factory_explosive_lvl_2"
 							is_visible "1"
 						}
-						
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/ammo_factory_highcaliber_lvl_2"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "buildings/resources/ammo_factory_liquid_lvl_2"
 							is_visible "1"
 						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/ammo_factory_lowcaliber_lvl_2"
+							is_visible "1"
+						}
+
 					}
 
 					icon "gui/menu/research/icons/tools"
 				}
-
 
 			}
 
@@ -17772,7 +17827,7 @@ Research
 	}
 
 	type
-	editor "5326"
-	version "66"
+	editor "5395"
+	version "67"
 }
 
