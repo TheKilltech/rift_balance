@@ -16,7 +16,7 @@ EntityBlueprint
 		description			  "Ammunition factory for advanced and better mech energy weapons"//"gui/hud/building_description/ammo_factory_energy_lvl_2"
 		menu_icon			  "gui/hud/building_icons/cryo_station"
 		require 			  "headquarters"
-		order				  "32"
+		order				  "33"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -41,7 +41,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value	"150"
+				value	"500"
 			}
 			
 			GameplayResource
