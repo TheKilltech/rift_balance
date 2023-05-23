@@ -9,7 +9,7 @@ EntityBlueprint
 		category 			"resources"
 		type				"pipe"
 		localization_id		"Mech supreme low caliber ammunition factory"//"gui/hud/building_name/ammo_factory_lowcaliber_lvl_3"
-		description			"Ammunition factory for supreme mech low caliber weapons"//"gui/hud/building_description/ammo_factory_lowcaliber_lvl_3"
+		description			"Ammunition factory for extreme mech low caliber weapons"//"gui/hud/building_description/ammo_factory_lowcaliber_lvl_3"
 		menu_icon			"gui/hud/building_icons/bio_composter"
 		require 			"headquarters"		
 		order				"40"
@@ -21,12 +21,12 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 10
+				building_time 180
 				building_cost
 				{
 					carbonium 	"3000"
 					steel 		"8000"
-					//titanium	"2500"		
+					titanium	"2500"		
 				}
 			}		
 		}
@@ -49,11 +49,11 @@ EntityBlueprint
 				value				"0.8"
 			}
 			
-			//GameplayResource
-			//{
-			//	resource 			"titanium"
-			//	value				"0.2"
-			//}								
+			GameplayResource
+			{
+				resource 			"titanium"
+				value				"0.2"
+			}								
 
 			GameplayResource
 			{
