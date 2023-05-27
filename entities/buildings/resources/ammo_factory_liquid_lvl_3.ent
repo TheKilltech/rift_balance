@@ -1,21 +1,21 @@
 EntityBlueprint
 {
-	name  "buildings/resources/ammo_factory_explosive_lvl_3"
+	name  "buildings/resources/ammo_factory_liquid_lvl_3"
 
 	BuildingDesc
 	{
-		name 				"ammo_factory_explosive_lvl_3"
-		bp   				"buildings/resources/ammo_factory_explosive_lvl_3"
+		name 				"ammo_factory_liquid_lvl_3"
+		bp   				"buildings/resources/ammo_factory_liquid_lvl_3"
 		category 			"resources"
-		localization_id		"Mech top end explosive ammunition factory"//"gui/hud/building_name/ammo_factory_explosive_lvl_3"
-		description			"Ammunition factory for top end mech explosives weapons"//"gui/hud/building_description/ammo_factory_explosive_lvl_3"
-		menu_icon			"gui/hud/building_icons/flora_cultivator"
 		type				"pipe"
-		require 			"headquarters"
-		order				"44"	
+		localization_id		"Mech top end liquid ammunition factory"//"gui/hud/building_name/ammo_factory_liquid_lvl_3"
+		description			"Ammunition factory for top end mech low caliber weapons"//"gui/hud/building_description/ammo_factory_liquid_lvl_3"
+		menu_icon			"gui/hud/building_icons/bio_composter"
+		require 			"headquarters"		
+		order				"45"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
-
+		
 		costs
 		{
 			BuildingCostInfo
@@ -25,11 +25,12 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"8000"
-					steel 		"2000"
-					uranium     "2500"
+					steel 		"1000"
+					palladium	"2500"		
 				}
 			}		
 		}
+
 	}
 
 	ResourceConverterDesc
@@ -38,29 +39,28 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 	"flammable_gas"
-				value 		"5"
-				attachment	"att_in_1"
-			}
-						
-			GameplayResource
-			{
-				resource 	"energy"
-				value 		"800"
+				resource 			"energy"
+				value				"250"
 			}
 			
 			GameplayResource
 			{
-				resource 	"ammo_mech_explosive_lvl2"
-				value		"0.1"
+				resource 			"ammo_mech_liquid_lvl2"
+				value				"2.5"
 			}
 			
 			GameplayResource
 			{
-				resource 	"uranium"
-				value		"0.3"
-			}		
-						
+				resource 			"palladium"
+				value				"0.1"
+			}								
+
+			GameplayResource
+			{
+				resource 			"supercoolant"
+				value 				"1"
+				attachment			"att_in_1"
+			}
 		}
 		
 		out
@@ -68,21 +68,21 @@ EntityBlueprint
 
 			GameplayResource
 			{
-				resource 	"ammo_mech_explosive_lvl3"
-				value		"0.1"
+				resource 			"ammo_mech_liquid_lvl3"
+				value				"2.5"
 			}		
 		}
-		priority 6
+		priority 6			
 	}
-
+	
 	LuaDesc
 	{
-		script "lua/buildings/resources/flora_cultivator.lua"
+		script "lua/buildings/building.lua"
 		
 		database
 		{
 			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell 	string:"sell_big"
+			cone_effect_sell	string:"sell_big"
 		}
 	}
 
@@ -152,8 +152,8 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/flora_cultivator.mesh"
-		material "buildings/resources/flora_cultivator"
+		mesh 		"meshes/buildings/resources/bio_composter.mesh"
+		material 	"buildings/resources/bio_composter"
 	}
 
 	TypeDesc
@@ -163,7 +163,7 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/flora_cultivator"
+		name "meshes/buildings/resources/bio_composter"
 	}
 
 	AnimationGraphDesc
@@ -182,17 +182,26 @@ EntityBlueprint
 				physics_material 	"default"
 				Shapes
 				{
-					PhysicsSphereShape
+					PhysicsCapsuleShape
 					{
 						r "2.45"
-	
-						position 
+						half_height "2"
+
+						position
 						{
 							x "0.0"
-							y "1.0"
+							y "2"
 							z "0.0"
 						}
-					}
+
+						orientation
+						{
+							w "0.7"
+							x "0.0"
+							z "0.7"
+							y "0.0"
+						}
+					}	
 				}
 			}
 		}
@@ -211,7 +220,7 @@ EntityBlueprint
 		{
 			PhysicsMeshShape
 			{
-				mesh "meshes/buildings/resources/steel_factory_g1.nxs"
+				mesh "meshes/buildings/resources/liquid_material_storage_g1.nxs"
 			}	
 		}
 	}
@@ -231,7 +240,7 @@ EntityBlueprint
 			x "3"
 			y "3"
 		}
-
+					
 		visibility			"always"
 	}
 
@@ -251,7 +260,7 @@ EntityBlueprint
 		explosion_max_power 	"2000"
 		explosion_min_power 	"1000"	
 	}
-	
+
 	DestroyDesc
 	{
 		
@@ -376,6 +385,25 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"								
 					bone "att_in_arrow"
+				}
+			}
+		}		
+//////////////////////////////// MISC /////////////////////////////////////////		
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_filtering_sludge"								
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/bio_composter_working"
+					delay "0.5"
 				}
 			}
 		}			

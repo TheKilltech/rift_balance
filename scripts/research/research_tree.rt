@@ -7172,6 +7172,12 @@ Research
 					{
 						ResearchAward
 						{
+							blueprint "buildings/resources/ammo_factory_explosive_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "items/weapons/floating_mines_extreme_item"
 							is_visible "1"
 						}
@@ -7188,12 +7194,6 @@ Research
 							is_visible "1"
 						}
 						
-						ResearchAward
-						{
-							blueprint "buildings/resources/ammo_factory_explosive_lvl_3"
-							is_visible "1"
-						}
-
 					}
 
 					icon "gui/menu/research/icons/mech_weapons_explosive"
@@ -7431,13 +7431,18 @@ Research
 					}
 
 					research_awards
-					{
+					{						
+						ResearchAward
+						{
+							blueprint "buildings/resources/ammo_factory_liquid_lvl_3"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "items/weapons/flamer_extreme_item"
 							is_visible "1"
 						}
-
 					}
 
 					icon "gui/menu/research/icons/mech_weapons_liquid"
@@ -7600,6 +7605,13 @@ Research
 
 					research_awards
 					{
+						
+						ResearchAward
+						{
+							blueprint "buildings/resources/ammo_factory_energy_lvl_3"
+							is_visible "1"
+						}
+						
 						ResearchAward
 						{
 							blueprint "items/weapons/blaster_extreme_item"
@@ -7756,6 +7768,13 @@ Research
 
 					research_awards
 					{
+						
+						ResearchAward
+						{
+							blueprint "buildings/resources/ammo_factory_highcaliber_lvl_3"
+							is_visible "1"
+						}
+						
 						ResearchAward
 						{
 							blueprint "items/weapons/burst_rifle_extreme_item"
@@ -7771,12 +7790,6 @@ Research
 						ResearchAward
 						{
 							blueprint "items/weapons/sniper_rifle_extreme_item"
-							is_visible "1"
-						}
-						
-						ResearchAward
-						{
-							blueprint "buildings/resources/ammo_factory_highcaliber_lvl_3"
 							is_visible "1"
 						}
 
@@ -8704,16 +8717,16 @@ Research
 					}
 
 					research_awards
-					{
+					{						
 						ResearchAward
 						{
-							blueprint "items/weapons/small_machinegun_extreme_item"
+							blueprint "buildings/resources/ammo_factory_lowcaliber_lvl_3"
 							is_visible "1"
 						}
 						
 						ResearchAward
 						{
-							blueprint "buildings/resources/ammo_factory_lowcaliber_lvl_3"
+							blueprint "items/weapons/small_machinegun_extreme_item"
 							is_visible "1"
 						}
 
@@ -11717,6 +11730,12 @@ Research
 							blueprint "buildings/resources/ammo_factory_liquid_lvl_2"
 							is_visible "1"
 						}
+						
+						ResearchAward
+						{
+							blueprint "buildings/resources/ammo_factory_liquid_lvl_3"
+							is_visible "1"
+						}
 
 						ResearchAward
 						{
@@ -11727,6 +11746,12 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/resources/ammo_factory_lowcaliber_lvl_3"
+							is_visible "1"
+						}
+						
+						ResearchAward
+						{
+							blueprint "buildings/resources/supercoolant_refinery"
 							is_visible "1"
 						}
 

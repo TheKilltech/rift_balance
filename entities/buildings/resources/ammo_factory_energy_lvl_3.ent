@@ -8,8 +8,8 @@ EntityBlueprint
 		bp   				"buildings/resources/ammo_factory_energy_lvl_3"
 		category 			"resources"
 		type				"pipe"
-		localization_id		"Mech supreme energy ammunition factory"//"gui/hud/building_name/ammo_factory_energy_lvl_3"
-		description			"Ammunition factory for supreme mech energy weapons"//"gui/hud/building_description/ammo_factory_energy_lvl_3"
+		localization_id		"Mech top end energy ammunition factory"//"gui/hud/building_name/ammo_factory_energy_lvl_3"
+		description			"Ammunition factory for top end mech energy weapons"//"gui/hud/building_description/ammo_factory_energy_lvl_3"
 		menu_icon			"gui/hud/building_icons/rift_magnetic_stabilizer"
 		require 			"headquarters"
 		order				"43"
@@ -22,7 +22,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 120
+				building_time 180
 				building_cost
 				{
 					carbonium 	"3500"
@@ -82,11 +82,6 @@ EntityBlueprint
 		{
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
-			radius				float:"35"
-			range				float:"35"
-			
-			display_radius_blueprint string:"effects/decals/range_circle_repair"
-			display_radius_group	 string:"magnetic_stabilizer"			
 		}
 	}
 
@@ -247,7 +242,7 @@ EntityBlueprint
 
 	FogOfWarRevealerComponentDesc
 	{
-		radius "16"
+		radius "10"
 	}
 
 	HealthBarDesc
