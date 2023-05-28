@@ -1,10 +1,9 @@
 
-
 items/weapons/atom_bomb_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "area"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -27,7 +26,7 @@ items/weapons/atom_bomb_advanced_item
 
 			WeaponStatDef
 			{
-				max_value "0.350"
+				max_value "3.200"
 				min_value "0.300"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
@@ -175,7 +174,7 @@ items/weapons/atom_bomb_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl3"
 		damage_type "area"
 		rarity "EXTREME"
 		stat_def_vec
@@ -198,8 +197,8 @@ items/weapons/atom_bomb_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "0.450"
-				min_value "0.400"
+				max_value "0.400"
+				min_value "0.340"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
@@ -491,7 +490,7 @@ items/weapons/atom_bomb_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "area"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -514,8 +513,8 @@ items/weapons/atom_bomb_superior_item
 
 			WeaponStatDef
 			{
-				max_value "0.400"
-				min_value "0.350"
+				max_value "0.340"
+				min_value "0.320"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
@@ -1400,7 +1399,7 @@ items/weapons/burst_rifle_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_high_caliber"
+		ammo_storage "ammo_mech_high_caliber_lvl2"
 		damage_type "physical"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -1594,7 +1593,7 @@ items/weapons/burst_rifle_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_high_caliber"
+		ammo_storage "ammo_mech_high_caliber_lvl3"
 		damage_type "physical"
 		rarity "EXTREME"
 		stat_def_vec
@@ -1950,7 +1949,7 @@ items/weapons/burst_rifle_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_high_caliber"
+		ammo_storage "ammo_mech_high_caliber_lvl2"
 		damage_type "physical"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -2145,7 +2144,7 @@ items/weapons/corrosive_gun_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_liquid"
+		ammo_storage "ammo_mech_liquid_lvl2"
 		damage_type "acid"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -2340,7 +2339,7 @@ items/weapons/corrosive_gun_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_liquid"
+		ammo_storage "ammo_mech_liquid_lvl3"
 		damage_type "acid"
 		rarity "EXTREME"
 		stat_def_vec
@@ -2698,7 +2697,7 @@ items/weapons/corrosive_gun_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_liquid"
+		ammo_storage "ammo_mech_liquid_lvl2"
 		damage_type "acid"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -2894,7 +2893,7 @@ items/weapons/cryogenic_atomizer_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_liquid"
+		ammo_storage "ammo_mech_liquid_lvl2"
 		damage_type "cryo"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -2974,7 +2973,7 @@ items/weapons/cryogenic_atomizer_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_liquid"
+		ammo_storage "ammo_mech_liquid_lvl3"
 		damage_type "cryo"
 		rarity "EXTREME"
 		stat_def_vec
@@ -3125,7 +3124,7 @@ items/weapons/cryogenic_atomizer_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_liquid"
+		ammo_storage "ammo_mech_liquid_lvl2"
 		damage_type "cryo"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -3206,7 +3205,7 @@ items/weapons/flamer_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_liquid"
+		ammo_storage "ammo_mech_liquid_lvl2"
 		damage_type "fire"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -3282,83 +3281,11 @@ items/weapons/flamer_advanced_item
 
 }
 
-items/weapons/flamer_demo_item
-{
-	WeaponItemDesc
-	{
-		ammo_storage "ammo_mech_liquid"
-		damage_type "fire"
-		rarity "SUPERIOR"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
-				max_value "30.000"
-				min_value "30.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
-				max_value "6.000"
-				min_value "6.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
-				default_value "90.000"
-				max_value "90.000"
-				min_value "90.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
-				max_value "16.000"
-				min_value "14.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "BEAM_RANGE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX"
-				stat_type "BEAM_WIDTH"
-			}
-
-		}
-
-	}
-
-}
-
 items/weapons/flamer_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_liquid"
+		ammo_storage "ammo_mech_liquid_lvl3"
 		damage_type "fire"
 		rarity "EXTREME"
 		stat_def_vec
@@ -3509,7 +3436,7 @@ items/weapons/flamer_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_liquid"
+		ammo_storage "ammo_mech_liquid_lvl2"
 		damage_type "fire"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -3590,7 +3517,7 @@ items/weapons/floating_mines_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "area"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -3613,7 +3540,7 @@ items/weapons/floating_mines_advanced_item
 
 			WeaponStatDef
 			{
-				max_value "1.800"
+				max_value "1.700"
 				min_value "1.600"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
@@ -3735,7 +3662,7 @@ items/weapons/floating_mines_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl3"
 		damage_type "area"
 		rarity "EXTREME"
 		stat_def_vec
@@ -3758,8 +3685,8 @@ items/weapons/floating_mines_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "2.200"
-				min_value "2.000"
+				max_value "2.000"
+				min_value "1.800"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
@@ -4007,7 +3934,7 @@ items/weapons/floating_mines_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "area"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -4030,8 +3957,8 @@ items/weapons/floating_mines_superior_item
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "1.800"
+				max_value "1.800"
+				min_value "1.700"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
@@ -4153,7 +4080,7 @@ items/weapons/grenade_launcher_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "area"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -4176,7 +4103,7 @@ items/weapons/grenade_launcher_advanced_item
 
 			WeaponStatDef
 			{
-				max_value "1.200"
+				max_value "1.100"
 				min_value "1.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
@@ -4340,7 +4267,7 @@ items/weapons/grenade_launcher_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl3"
 		damage_type "area"
 		rarity "EXTREME"
 		stat_def_vec
@@ -4363,8 +4290,8 @@ items/weapons/grenade_launcher_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.350"
+				max_value "1.300"
+				min_value "1.250"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
@@ -4682,7 +4609,7 @@ items/weapons/grenade_launcher_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "area"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -4705,8 +4632,8 @@ items/weapons/grenade_launcher_superior_item
 
 			WeaponStatDef
 			{
-				max_value "1.400"
-				min_value "1.200"
+				max_value "1.200"
+				min_value "1.100"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
@@ -4870,7 +4797,7 @@ items/weapons/heavy_plasma_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -5057,7 +4984,7 @@ items/weapons/heavy_plasma_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl3"
 		damage_type "energy"
 		rarity "EXTREME"
 		stat_def_vec
@@ -5407,7 +5334,7 @@ items/weapons/heavy_plasma_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -5595,7 +5522,7 @@ items/weapons/laser_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -5707,7 +5634,7 @@ items/weapons/laser_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl3"
 		damage_type "energy"
 		rarity "EXTREME"
 		stat_def_vec
@@ -5913,7 +5840,7 @@ items/weapons/laser_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -6026,7 +5953,7 @@ items/weapons/lightning_gun_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -6127,7 +6054,7 @@ items/weapons/lightning_gun_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl3"
 		damage_type "energy"
 		rarity "EXTREME"
 		stat_def_vec
@@ -6323,7 +6250,7 @@ items/weapons/lightning_gun_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -6425,7 +6352,7 @@ items/weapons/minigun_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_low_caliber"
+		ammo_storage "ammo_mech_low_caliber_lvl2"
 		damage_type "physical"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -6604,7 +6531,7 @@ items/weapons/minigun_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_low_caliber"
+		ammo_storage "ammo_mech_low_caliber_lvl3"
 		damage_type "physical"
 		rarity "EXTREME"
 		stat_def_vec
@@ -6930,7 +6857,7 @@ items/weapons/minigun_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_low_caliber"
+		ammo_storage "ammo_mech_low_caliber_lvl2"
 		damage_type "physical"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -7859,7 +7786,7 @@ items/weapons/railgun_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -8031,7 +7958,7 @@ items/weapons/railgun_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl3"
 		damage_type "energy"
 		rarity "EXTREME"
 		stat_def_vec
@@ -8351,7 +8278,7 @@ items/weapons/railgun_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -8524,7 +8451,7 @@ items/weapons/rocket_launcher_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "area"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -8547,7 +8474,7 @@ items/weapons/rocket_launcher_advanced_item
 
 			WeaponStatDef
 			{
-				max_value "1.500"
+				max_value "1.450"
 				min_value "1.300"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
@@ -8711,7 +8638,7 @@ items/weapons/rocket_launcher_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl3"
 		damage_type "area"
 		rarity "EXTREME"
 		stat_def_vec
@@ -8735,7 +8662,7 @@ items/weapons/rocket_launcher_extreme_item
 			WeaponStatDef
 			{
 				max_value "1.700"
-				min_value "1.500"
+				min_value "1.600"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
@@ -9055,7 +8982,7 @@ items/weapons/rocket_launcher_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "area"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -9243,7 +9170,7 @@ items/weapons/shotgun_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_high_caliber"
+		ammo_storage "ammo_mech_high_caliber_lvl2"
 		damage_type "physical"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -9421,7 +9348,7 @@ items/weapons/shotgun_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_high_caliber"
+		ammo_storage "ammo_mech_high_caliber_lvl3"
 		damage_type "physical"
 		rarity "EXTREME"
 		stat_def_vec
@@ -9753,7 +9680,7 @@ items/weapons/shotgun_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_high_caliber"
+		ammo_storage "ammo_mech_high_caliber_lvl2"
 		damage_type "physical"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -9932,7 +9859,7 @@ items/weapons/small_machinegun_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_low_caliber"
+		ammo_storage "ammo_mech_low_caliber_lvl2"
 		damage_type "physical"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -10107,11 +10034,181 @@ items/weapons/small_machinegun_advanced_item
 
 }
 
-items/weapons/small_machinegun_extreme_item
+items/weapons/small_machinegun_demo_item
 {
 	WeaponItemDesc
 	{
 		ammo_storage "ammo_mech_low_caliber"
+		damage_type "physical"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "45.000"
+				min_value "45.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2.000"
+				min_value "1.500"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1000.000"
+				min_value "1000.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "76.000"
+				min_value "74.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "225.000"
+				min_value "200.000"
+				stat_features "MODABLE"
+				stat_type "AMMO_ANGLE_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2.500"
+				min_value "2.000"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "2.000"
+				min_value "1.660"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "2.000"
+				min_value "1.660"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "0.700"
+				min_value "0.600"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|MODABLE|HIDDEN"
+				stat_type "AMMO_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100.000"
+				min_value "100.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_HOMING"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2.000"
+				min_value "1.660"
+				stat_features "MODABLE"
+				stat_type "AMMO_CLUSTER"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.500"
+				max_value "2.500"
+				min_value "2.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "30.000"
+				min_value "25.000"
+				stat_features "MODABLE"
+				stat_type "AMMO_AUTOAIM"
+			}
+
+		}
+
+	}
+
+}
+
+items/weapons/small_machinegun_extreme_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_low_caliber_lvl3"
 		damage_type "physical"
 		rarity "EXTREME"
 		stat_def_vec
@@ -10437,7 +10534,7 @@ items/weapons/small_machinegun_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_low_caliber"
+		ammo_storage "ammo_mech_low_caliber_lvl2"
 		damage_type "physical"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -10617,7 +10714,7 @@ items/weapons/sniper_rifle_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_high_caliber"
+		ammo_storage "ammo_mech_high_caliber_lvl2"
 		damage_type "physical"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -10804,7 +10901,7 @@ items/weapons/sniper_rifle_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_high_caliber"
+		ammo_storage "ammo_mech_high_caliber_lvl3"
 		damage_type "physical"
 		rarity "EXTREME"
 		stat_def_vec
@@ -11146,7 +11243,7 @@ items/weapons/sniper_rifle_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_high_caliber"
+		ammo_storage "ammo_mech_high_caliber_lvl2"
 		damage_type "physical"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -11334,7 +11431,7 @@ items/weapons/swarm_missiles_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "area"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -11528,7 +11625,7 @@ items/weapons/swarm_missiles_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl3"
 		damage_type "area"
 		rarity "EXTREME"
 		stat_def_vec
@@ -11884,7 +11981,7 @@ items/weapons/swarm_missiles_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "area"
 		rarity "SUPERIOR"
 		stat_def_vec
