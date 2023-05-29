@@ -19,6 +19,8 @@ EntityBlueprint
 		overrides			"tower,wall"
 		upgrade				"buildings/defense/tower_artillery_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		condition			"BIOME"	
+		condition_value		"magma,jungle,desert,acid,metallic,legacy_maps"			
 
 		costs
 		{

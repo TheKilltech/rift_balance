@@ -208,7 +208,12 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
 					bone "att_chimney"
-				}			
+				}
+				Effect
+				{
+					blueprint "effects/buildings_main/armory_working"	
+					delay "0.5"					
+				}
 			}
 		}			
 		EffectGroup

@@ -16,6 +16,8 @@ EntityBlueprint
 		overrides			"tower,wall"
 		upgrade				"buildings/defense/tower_artillery_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		condition			"BIOME"	
+		condition_value		"magma,jungle,desert,acid,metallic,legacy_maps"		
 
 		costs
 		{
@@ -414,7 +416,7 @@ EntityBlueprint
 		on_enemy_hit_effect 	"effects/weapon_hit/artillery_explosion"
 		on_world_hit_effect 	"effects/weapon_hit/artillery_explosion"
 		on_resisted_hit_effect 	"effects/weapon_hit/artillery_explosion"
-		collision_3d 			"world|world_blocker|destructible|ground_unit|shield"
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|shield"
 	}
 	
 	children

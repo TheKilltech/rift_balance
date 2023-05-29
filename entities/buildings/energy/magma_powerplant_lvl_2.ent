@@ -229,7 +229,12 @@ EntityBlueprint
 					blueprint "effects/buildings_and_machines/magma_powerplant_flow"								
 					bone "att_magma_flow"
 					delay "1"
-				}					
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/magma_powerplant_working"		
+					delay "0.5"
+				}
 			}
 		}	
 		EffectGroup

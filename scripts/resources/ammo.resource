@@ -114,7 +114,8 @@ GameplayResourceDef
 	production		"6"
 	hud_visible 	"build_menu"
 	order			"13"
-		
+	
+	
 	manufacture_cost "1"
 }
 
