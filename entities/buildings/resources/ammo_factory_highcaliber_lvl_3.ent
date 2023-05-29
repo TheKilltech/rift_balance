@@ -442,9 +442,11 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_main/research_lab_energy"
+					//blueprint "effects/buildings_main/research_lab_energy"
+					blueprint "effects/buildings_and_machines/nuclear_powerplant_rods"						
 					bone "be_sphere"
-				}
+					delay "1"
+				}		
 			}
 		}	
 		EffectGroup
