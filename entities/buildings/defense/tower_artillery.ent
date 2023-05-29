@@ -40,7 +40,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"4"
+				value 		"1"
 			}
 		}
 
@@ -50,7 +50,7 @@ EntityBlueprint
 
 		priority 6
 	}
-	
+
 	LuaDesc
 	{
 		script "lua/buildings/defense/tower.lua"
@@ -209,8 +209,8 @@ EntityBlueprint
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "8"
-			range_max "42"
-			aiming_range "52"
+			range_max "60"
+			aiming_range "70"
 		}
 
 		aiming_cooldown "1"
@@ -414,7 +414,7 @@ EntityBlueprint
 		on_enemy_hit_effect 	"effects/weapon_hit/artillery_explosion"
 		on_world_hit_effect 	"effects/weapon_hit/artillery_explosion"
 		on_resisted_hit_effect 	"effects/weapon_hit/artillery_explosion"
-		collision_3d 			"world|world_blocker|destructible|ground_unit|hitbox|shield"
+		collision_3d 			"world|world_blocker|destructible|ground_unit|shield"
 	}
 	
 	children

@@ -82,27 +82,6 @@ EntityBlueprint
 	{
 	}
 
-	TurretDesc
-	{
-		target "ground_unit"
-		target_ignore "invisible"
-		speed "300"
-		aim_volume "SphericalAimVolume"
-		{
-			range_min "0"
-			range_max "15"
-			aiming_range "20"
-		}
-
-		aiming_cooldown "1"
-		aiming_target_time "2"
-		aiming_idle_angle "20"
-		pitch "att_muzzle"
-		yaw "att_muzzle"
-		check_target_visibility "1"
-		fog_of_war_filtering "1"
-	}
-
 	TowerDesc
 	{
 	}	

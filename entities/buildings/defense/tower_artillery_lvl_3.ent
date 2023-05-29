@@ -43,7 +43,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"80"
+				value 		"1"
 			}
 		}
 
@@ -53,7 +53,7 @@ EntityBlueprint
 
 		priority 6
 	}
-	
+
 	HealthDesc
 	{
 		max_health 					"1000"
@@ -98,28 +98,6 @@ EntityBlueprint
 
 	WeaponItemDesc
 	{
-	}
-
-	TurretDesc
-	{
-		target "ground_unit_artillery|ground_unit_large|ground_unit_medium|ground_unit"
-		target_ignore "invisible"
-		speed "300"
-		aim_volume "SphericalAimVolume"
-		{
-			range_min "8"
-			range_max "50"
-			aiming_range "60"
-		}
-
-		aiming_cooldown "1"
-		aiming_target_time "2"
-		aiming_idle_angle "20"
-		pitch "be_barrel"
-		gravity_factor "8"
-		yaw "be_turret"
-		check_target_visibility "1"
-		fog_of_war_filtering "1"
 	}
 
 	BurstWeaponComponent

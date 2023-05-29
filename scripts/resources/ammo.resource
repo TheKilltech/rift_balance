@@ -109,13 +109,12 @@ GameplayResourceDef
 	type 			"global"
 	specific_type 	"ammo"
 	icon			"gui/hud/resource_icons/ammo_tower_explosive_icon"	
-	bigger_icon		"gui/hud/resource_icons/ammo_tower_explosive_icon_bigger"
-	base_storage	"100"
-	production		"1"
-	allow_overflow 	"0"
-	hud_visible 	"always"
+	bigger_icon		"gui/hud/resource_icons/ammo_tower_explosive_icon_bigger"	
+	base_storage	"30"
+	production		"6"
+	hud_visible 	"build_menu"
 	order			"13"
-	
+		
 	manufacture_cost "1"
 }
 
@@ -152,5 +151,3 @@ GameplayResourceDef
 		
 	manufacture_cost "1"
 }
-
-
