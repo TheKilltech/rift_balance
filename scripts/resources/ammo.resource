@@ -113,7 +113,7 @@ GameplayResourceDef
 	base_storage	"100"
 	production		"1"
 	allow_overflow 	"0"
-	hud_visible 	"always"
+	hud_visible 	"build_menu"
 	order			"13"
 	
 	manufacture_cost "1"
