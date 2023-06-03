@@ -1,0 +1,12 @@
+import * from "materials/scripts/gui.material"
+
+
+material gui/hud/building_icons/ammo_factory_energy_lvl_2 : gui/default
+{
+	set_texture_alias diffuse materials/textures/gui/hud/building_icons/cryo_station.dds
+}
+
+material gui/hud/building_icons/ammo_factory_energy_lvl_2_disabled : gui/default
+{
+	set_texture_alias diffuse materials/textures/gui/hud/building_icons/cryo_station_disabled.dds
+}

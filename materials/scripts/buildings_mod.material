@@ -1,0 +1,22 @@
+import * from "materials/scripts/pbr.material"
+import * from "materials/scripts/buildings_base.material"
+
+material buildings/resources/ammo_factory_energy_lvl_2 : buildings/destructible
+{
+	set_texture_alias albedo			materials/textures/buildings/resources/ammo_factory_energy_lvl_2_albedo.dds
+	set_texture_alias normal			materials/textures/buildings/main/cryo_station_normal.dds
+	set_texture_alias packed			materials/textures/buildings/main/cryo_station_packed.dds
+	set_texture_alias emissive			materials/textures/buildings/resources/ammo_factory_energy_lvl_2_emissive.dds
+
+	glow 5
+}
+
+material buildings/resources/ammo_factory_energy_lvl_2 : pbr/height_dissolve
+{
+	set_texture_alias albedo			materials/textures/buildings/resources/ammo_factory_energy_lvl_2_albedo.dds
+	set_texture_alias normal			materials/textures/buildings/main/cryo_station_normal.dds
+	set_texture_alias packed			materials/textures/buildings/main/cryo_station_packed.dds
+	set_texture_alias emissive			materials/textures/buildings/resources/ammo_factory_energy_lvl_2_emissive.dds
+
+	glow 5
+}
