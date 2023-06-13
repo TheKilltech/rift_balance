@@ -14,9 +14,9 @@ EntityBlueprint
 		category 			"resources"
 		localization_id		"Mech advanced explosive ammunition factory"//"gui/hud/building_name/ammo_factory_explosive_lvl_2"
 		description			"Ammunition factory for advanced and better mech explosives weapons"//"gui/hud/building_description/ammo_factory_explosive_lvl_2"
-		menu_icon			"gui/hud/building_icons/crystal_collector"
+		menu_icon			"gui/hud/building_icons/ammo_factory_explosive_lvl_2"
 		require 			"headquarters"
-		order				"34"
+		order				"33"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
 		
 		costs
@@ -82,81 +82,17 @@ EntityBlueprint
 		database
 		{
 			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell 	string:"sell_big"
+			cone_effect_sell	string:"sell_big"
 			building_time		float:"10"
-		}
+		}		
 	}
-
-	HealthDesc
-	{
-		max_health 					"1000"
-		health 						"1000"
-		regeneration 				"0"
-		regeneration_cooldown 		"0"
-		 is_manual 1
-		update_health_uniform 		"1"
-		
-		DestructionLevels
-		{
-			DestructionLevel
-			{
-				health 								"80"
-				destroy_state_change_effect_group 	"80_transition"
-				destroy_comp_delay 					"0.5"
-				destroy_comp_event 					"80_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
-				destroyed_state_effect_group 		"80_state"
-				destrucion_level_name 				"80"
-
-			}
-			DestructionLevel
-			{
-				health 								"60"
-				destroy_state_change_effect_group 	"60_transition"
-				destroy_comp_delay 					"0.5"
-				destroy_comp_event 					"60_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
-				destroyed_state_effect_group 		"60_state"
-				destrucion_level_name 				"60"
-			}
-			DestructionLevel
-			{
-				health 								"40"
-				destroy_state_change_effect_group 	"40_transition"
-				destroy_comp_delay 					"0.5"
-				destroy_comp_event 					"40_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
-				destroyed_state_effect_group 		"40_state"
-				destrucion_level_name 				"40"
-			}
-			DestructionLevel
-			{
-				health 								"20"
-				destroy_state_change_effect_group 	"20_transition"
-				destroy_comp_delay 					"0.5"
-				destroy_comp_event 					"20_destroy"
-				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
-				destroyed_state_effect_group 		"20_state"
-				destrucion_level_name 				"20"
-			}
-			DestructionLevel
-			{
-				health 								"0"
-				destroy_state_change_effect_group 	"0_transition"
-				destroy_comp_delay 					"0.6"
-				destroy_comp_event 					"default"
-				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
-				//destroyed_state_effect_group 		"0_state"
-			}			
-		}
-	}
-
+	
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/crystal_collector.mesh"
-		material "buildings/resources/crystal_collector"
+		mesh "meshes/buildings/resources/steel_factory_lvl_3.mesh"		
+		material "buildings/resources/steel_factory_lvl_3"
 	}
-
+	
 	TypeDesc
 	{
 		type "building|resource"
@@ -164,14 +100,14 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/crystal_collector"
+		name "meshes/buildings/resources/steel_factory_lvl_3"
 	}
 
 	AnimationGraphDesc
 	{
 		animation_graph_name "building_working"
 	}
-
+	
 	PhysicsDesc
  	{
 		objects
@@ -183,26 +119,17 @@ EntityBlueprint
 				physics_material 	"default"
 				Shapes
 				{
-					PhysicsCapsuleShape
+					PhysicsSphereShape
 					{
 						r "2.45"
-						half_height "2"
-
-						position
+	
+						position 
 						{
 							x "0.0"
-							y "2"
+							y "1.0"
 							z "0.0"
 						}
-
-						orientation
-						{
-							w "0.7"
-							x "0.0"
-							z "0.7"
-							y "0.0"
-						}
-					}	
+					}
 				}
 			}
 		}
@@ -242,12 +169,13 @@ EntityBlueprint
 			y "3"
 		}
 
+		additional_z_order	"5"
 		visibility			"always"
 	}
 
 	FogOfWarRevealerComponentDesc
 	{
-		radius "5"
+		radius "10"
 	}
 
 	HealthBarDesc
@@ -259,7 +187,7 @@ EntityBlueprint
 	LootDesc
 	{
 		explosion_max_power 	"2000"
-		explosion_min_power 	"1000"
+		explosion_min_power 	"1000"	
 	}
 
 	DestroyDesc
@@ -366,12 +294,111 @@ EntityBlueprint
 			}				
 		}
 	}
+	
+	HealthDesc
+	{
+		max_health 					"1600"
+		health 						"1600"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_effect_group 		"0_state"
+			}			
+		}
+	}
 
 	EffectDesc
 	{		
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}
+		}	
+////////////////////////MISC/////////////////////////			
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
+					bone "att_furnace_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/steel_factory_working"	
+					delay "0.5"					
+				}
+			}
+		}		
 	}
 }
