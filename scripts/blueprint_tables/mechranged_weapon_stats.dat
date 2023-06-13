@@ -5781,8 +5781,8 @@ items/weapons/flamer_advanced_item
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "6.000"
+				min_value "5.500"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -5861,8 +5861,8 @@ items/weapons/flamer_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "8.000"
+				min_value "7.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -5940,7 +5940,7 @@ items/weapons/flamer_item
 
 			WeaponStatDef
 			{
-				max_value "5.000"
+				max_value "5.500"
 				min_value "5.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
@@ -6012,8 +6012,8 @@ items/weapons/flamer_superior_item
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "6.900"
+				min_value "6.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -15477,9 +15477,10 @@ items/weapons/small_machinegun_advanced_item
 
 			WeaponStatDef
 			{
+				default_value "0.100"
 				max_value "0.200"
 				min_value "0.100"
-				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
@@ -15826,9 +15827,10 @@ items/weapons/small_machinegun_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "0.400"
+				default_value "0.200"
+				max_value "0.500"
 				min_value "0.300"
-				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
@@ -16152,9 +16154,10 @@ items/weapons/small_machinegun_superior_item
 
 			WeaponStatDef
 			{
+				default_value "0.100"
 				max_value "0.300"
 				min_value "0.200"
-				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
@@ -16897,7 +16900,7 @@ items/weapons/sniper_rifle_superior_item
 				default_value "1.000"
 				max_value "1.300"
 				min_value "1.200"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
