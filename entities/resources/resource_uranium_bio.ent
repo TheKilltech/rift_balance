@@ -1,0 +1,371 @@
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_01_large"
+
+	base_blueprint "resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_large_01.mesh"
+		material 	"resources/resource_uranium_large"
+	}
+
+
+	
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_01_medium"
+
+	base_blueprint "resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_medium_01.mesh"
+		material 	"resources/resource_uranium_medium"
+	}
+
+
+	
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_01_small"
+
+	base_blueprint "resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_small_01.mesh"
+		material 	"resources/resource_uranium_small"
+	}
+
+
+	
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_01_very_large"
+
+	base_blueprint "resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_very_large_01.mesh"
+		material 	"resources/resource_uranium_very_large"
+	}
+
+
+	
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_02_large"
+
+	base_blueprint 	"resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_large_02.mesh"
+		material 	"resources/resource_uranium_large"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_02_medium"
+
+	base_blueprint 	"resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_medium_02.mesh"
+		material 	"resources/resource_uranium_medium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_02_small"
+
+	base_blueprint 	"resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_small_02.mesh"
+		material 	"resources/resource_uranium_small"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_02_very_large"
+
+	base_blueprint 	"resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_very_large_02.mesh"
+		material 	"resources/resource_uranium_very_large"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_03_large"
+
+	base_blueprint 	"resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_large_03.mesh"
+		material 	"resources/resource_uranium_large"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_03_medium"
+
+	base_blueprint 	"resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_medium_03.mesh"
+		material 	"resources/resource_uranium_medium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_03_small"
+
+	base_blueprint 	"resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_small_03.mesh"
+		material 	"resources/resource_uranium_small"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_03_very_large"
+
+	base_blueprint 	"resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_very_large_03.mesh"
+		material 	"resources/resource_uranium_very_large"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_04_large"
+
+	base_blueprint 	"resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_large_04.mesh"
+		material 	"resources/resource_uranium_large"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_04_medium"
+
+	base_blueprint 	"resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_medium_04.mesh"
+		material 	"resources/resource_uranium_medium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_04_small"
+
+	base_blueprint 	"resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_small_04.mesh"
+		material 	"resources/resource_uranium_small"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_uranium_bio_04_very_large"
+
+	base_blueprint 	"resources/resource_uranium_bio_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_very_large_04.mesh"
+		material 	"resources/resource_uranium_very_large"
+	}
+}
+
+EntityBlueprint
+{
+	name "resources/resource_uranium_bio_base"
+
+	TypeDesc
+	{
+		type "resource"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"resource"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x 2
+						y 1
+						z 2
+					}
+				}
+			}
+		}
+	}
+
+	GridMarkerComponent
+	{
+		mode			"bounds"
+		terrain_type  	"uranium"	
+		extend  		"2"
+	}
+
+	SelectableDesc
+	{
+		content "resource_name/uranium_bio"
+		can_activate "0"
+	}
+
+	InteractiveComponent 
+	{
+		slot 			"DRILL"
+		remove_entity 	"0"
+	}
+}
+
+EntityBlueprint 
+{
+		name resources/resource_uranium_bio_large
+
+	RandomBlueprintDesc
+	{
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_01_large"
+		}
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_02_large"
+		}		
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_03_large"
+		}	
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_04_large"
+		}		
+	}
+}
+
+EntityBlueprint 
+{
+		name resources/resource_uranium_bio_medium
+
+	RandomBlueprintDesc
+	{
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_01_medium"
+		}
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_02_medium"
+		}		
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_03_medium"
+		}	
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_04_medium"
+		}		
+	}
+}
+
+EntityBlueprint 
+{
+		name resources/resource_uranium_bio_small
+
+	RandomBlueprintDesc
+	{
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_01_small"
+		}
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_02_small"
+		}		
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_03_small"
+		}	
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_04_small"
+		}		
+	}
+}
+
+EntityBlueprint 
+{
+		name resources/resource_uranium_bio_very_large
+
+	RandomBlueprintDesc
+	{
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_01_very_large"
+		}
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_02_very_large"
+		}		
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_03_very_large"
+		}	
+		Blueprint
+		{
+			blueprint "resources/resource_uranium_bio_04_very_large"
+		}		
+	}
+}
+
