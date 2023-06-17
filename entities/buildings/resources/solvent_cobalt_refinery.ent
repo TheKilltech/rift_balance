@@ -1,19 +1,19 @@
 EntityBlueprint
 {
-	name  "buildings/resources/solvent_refinery"
+	name  "buildings/resources/solvent_cobalt_refinery"
 
 	BuildingDesc
 	{
-		name 				"solvent_refinery"
-		bp   				"buildings/resources/solvent_refinery"
+		name 				"solvent_cobalt_refinery"
+		bp   				"buildings/resources/solvent_cobalt_refinery"
 		category 			"resources"
+		localization_id		"Bio-Cobalt Refinery" //"gui/hud/building_name/solvent_cobalt_refinery"
+		description			"refines cobalt from bio-compounds and solvent" //"gui/hud/building_description/solvent_cobalt_refinery"
+		menu_icon			"gui/hud/building_icons/gas_filtering_plant"
 		type				"pipe"
-		localization_id		"Solvent Plant" //"gui/hud/building_name/water_filtering_plant"
-		description			"produces solvent for resource processing" // "gui/hud/building_description/water_filtering_plant"
-		menu_icon			"gui/hud/building_icons/water_filtering_plant"
 		require 			"headquarters"
-		order				"30"	
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		order				"31"		
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
@@ -21,12 +21,12 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 15
+				building_time 60
 				building_cost
 				{
-					carbonium 	"1000"
-					steel 		"2500"	
-					cobalt		"2500"		
+					carbonium 	"4000"
+					steel 		"800"
+					cobalt		"2000"
 				}
 			}		
 		}
@@ -38,37 +38,34 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 			"energy"
-				value			 	"150"
-			}
-			
+				resource 	"solvent"
+				value 		"100"
+				attachment	"att_in_1"
+			}			
 			GameplayResource
 			{
-				resource 			"biomass_plant"
-				value			 	"8"
+				resource 	"cobalt_bio"
+				value 		"0.3"
 			}
-			
 			GameplayResource
 			{
-				resource 			"carbonium"
-				value			 	"1"
-			}
-			
-			GameplayResource
-			{
-				resource 			"water"
-				value			 	"100"
-				attachment			"att_in_1"
+				resource 	"energy"
+				value 		"100"
 			}
 		}
 		
 		out
-		{
+		{	
 			GameplayResource
 			{
-				resource 			"solvent"
-				value 				"100"
-				attachment			"att_out_1"
+				resource 	"cobalt"
+				value 		"0.2"
+			}
+			GameplayResource
+			{
+				resource 	"mud"
+				value 		"50"
+				attachment	"att_out_1"
 			}
 		}
 		priority 4		
@@ -80,8 +77,8 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource	 	"solvent"
-				max 	 		"200"
+				resource	 	"mud"
+				max 	 		"100"
 				attachment		"att_out_1"
 			}
 		}
@@ -91,18 +88,19 @@ EntityBlueprint
 	{
 		script "lua/buildings/building.lua"
 		
+		
 		database
 		{
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
-			building_time		float:"10"
-		}		
+			building_time		float:"60"
+		}			
 	}
 
 	HealthDesc
 	{
-		max_health 					"1000"
-		health 						"1000"
+		max_health 					"1600"
+		health 						"1600"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -116,6 +114,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"80_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
 				destroyed_state_effect_group 		"80_state"
 				destrucion_level_name 				"80"
 
@@ -126,6 +125,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"60_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"60_state"
 				destrucion_level_name 				"60"
 			}
@@ -135,6 +135,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"40_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
 				destroyed_state_effect_group 		"40_state"
 				destrucion_level_name 				"40"
 			}
@@ -144,6 +145,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"20_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				destroyed_state_effect_group 		"20_state"
 				destrucion_level_name 				"20"
 			}
@@ -153,6 +155,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"0_transition"
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
@@ -160,8 +163,8 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/water_filtering_plant.mesh"
-		material "buildings/resources/water_filtering_plant"
+		mesh "meshes/buildings/resources/gas_filtering_plant.mesh"
+		material "buildings/resources/gas_filtering_plant"
 	}
 
 	TypeDesc
@@ -171,7 +174,7 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/water_filtering_plant"
+		name "meshes/buildings/resources/gas_filtering_plant"
 	}
 
 	AnimationGraphDesc
@@ -200,7 +203,7 @@ EntityBlueprint
 							y "1.0"
 							z "0.0"
 						}
-					}	
+					}		
 				}
 			}
 		}
@@ -219,7 +222,7 @@ EntityBlueprint
 		{
 			PhysicsMeshShape
 			{
-				mesh "meshes/buildings/resources/water_filtering_plant_g1.nxs"
+				mesh "meshes/buildings/resources/gas_filtering_plant_g1.nxs"
 			}	
 		}
 	}
@@ -239,7 +242,7 @@ EntityBlueprint
 			x "3"
 			y "3"
 		}
-		big_minimap_scale 	"1.9"
+					
 		visibility			"always"
 	}
 
@@ -370,7 +373,7 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
+		}		
 ////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
@@ -401,7 +404,7 @@ EntityBlueprint
 					bone "att_out_arrow"
 				}
 			}
-		}
+		}	
 ////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
@@ -412,15 +415,25 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/water_filtering_pool"								
-					bone "att_water"
+					blueprint "effects/buildings_and_machines/gas_chimney_small"								
+					bone "att_chimney_1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_resources/water_filtering_plant_working"	
+					blueprint "effects/buildings_and_machines/gas_chimney_small"								
+					bone "att_chimney_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_filtering_sludge"								
+					bone "att_sludge"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/gas_filtering_plant_working"	
 					delay "0.5"					
-				}	
+				}
 			}
-		}	
+		}		
 	}
 }

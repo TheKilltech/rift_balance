@@ -3300,6 +3300,70 @@ Research
 					icon "gui/menu/research/icons/basic_resource_production"
 				}
 
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/headquarters_lvl4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+				
+					}
+				
+					research_name "Bio metal processing" //"gui/menu/research/name/solvent"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "1500.000"
+						}
+				
+					}
+				
+					research_scripts
+					position
+					{
+						x "414.000"
+						y "-81.000"
+					}
+				
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/solvent_refinery"
+							is_visible "1"
+						}
+						
+						ResearchAward
+						{
+							blueprint "buildings/resources/solvent_cobalt_refinery"
+							is_visible "1"
+						}
+						
+						ResearchAward
+						{
+							blueprint "buildings/resources/solvent_uranium_ore_refinery"
+							is_visible "1"
+						}
+						
+						ResearchAward
+						{
+							blueprint "buildings/resources/solvent_palladium_refinery"
+							is_visible "1"
+						}
+				
+					}
+				
+					icon "gui/menu/research/icons/carbonium_synthesizer"
+				}
+
 				//ResearchNode
 				//{
 				//	research_flags
