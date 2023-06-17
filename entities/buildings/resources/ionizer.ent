@@ -39,28 +39,34 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 			"energy"
-				value			 	"250"
+				resource 		"energy"
+				value			"250"
 			}
 			GameplayResource
 			{
-				resource 			"carbonium"
-				value			 	"3"
+				resource 		"carbonium"
+				value			"3"
 			}		
 			GameplayResource
 			{
-				resource 			"tanzanite"
-				value			 	"1"
+				resource 		"tanzanite"
+				value			"1"
 			}			
+			GameplayResource
+			{
+				resource 		"flammable_gas"
+				value 			"50"
+				attachment		"att_in_1"
+			}	
 		}
 		
 		out
 		{
 			GameplayResource
 			{
-				resource 	"plasma"
-				value 		"50"
-				attachment	"att_out_1"
+				resource 		"plasma"
+				value 			"100"
+				attachment		"att_out_1"
 			}	
 		}
 		priority 4			
@@ -73,7 +79,7 @@ EntityBlueprint
 			Storage
 			{
 				resource	 	"plasma"
-				max 	 		"100"
+				max 	 		"200"
 				attachment		"att_out_1"
 			}	
 			
@@ -370,6 +376,21 @@ EntityBlueprint
 			"buildings/effects_medium_base"
 		}	
 ////////////////////////Resources/////////////////////////			
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_arrow"
+				}
+			}
+		}	
 		EffectGroup
 		{
 			group "att_out_1"
