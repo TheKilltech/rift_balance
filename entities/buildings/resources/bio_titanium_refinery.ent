@@ -1,14 +1,14 @@
 EntityBlueprint
 {
-	name  "buildings/resources/solvent_palladium_refinery"
+	name  "buildings/resources/bio_titanium_refinery"
 
 	BuildingDesc
 	{
-		name 				"solvent_palladium_refinery"
-		bp   				"buildings/resources/solvent_palladium_refinery"
+		name 				"bio_titanium_refinery"
+		bp   				"buildings/resources/bio_titanium_refinery"
 		category 			"resources"
-		localization_id		"Bio-Palladium Refinery" //"gui/hud/building_name/solvent_palladium_refinery"
-		description			"refines palladium from bio-compounds and solvent" //"gui/hud/building_description/solvent_palladium_refinery"
+		localization_id		"Bio-Palladium Refinery" //"gui/hud/building_name/bio_titanium_refinery"
+		description			"refines palladium from bio-compounds and solvent" //"gui/hud/building_description/bio_titanium_refinery"
 		menu_icon			"gui/hud/building_icons/gas_filtering_plant"
 		type				"pipe"
 		require 			"headquarters"
@@ -44,7 +44,7 @@ EntityBlueprint
 			}			
 			GameplayResource
 			{
-				resource 	"palladium_bio"
+				resource 	"titanium_bio"
 				value 		"0.3"
 			}
 			GameplayResource
@@ -58,7 +58,7 @@ EntityBlueprint
 		{	
 			GameplayResource
 			{
-				resource 	"palladium"
+				resource 	"titanium"
 				value 		"0.2"
 			}
 			GameplayResource
@@ -415,12 +415,12 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/lamp_light_yellow"								
+					blueprint "effects/buildings_and_machines/lamp_light_violet"								
 					bone "att_chimney_1"
 				}
 				//Effect
 				//{
-				//	blueprint "effects/buildings_and_machines/lamp_light_yellow"								
+				//	blueprint "effects/buildings_and_machines/lamp_light_violet"								
 				//	bone "att_chimney_2"
 				//}
 				Effect
