@@ -36,24 +36,15 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource	 "ammo_tower_liquid"
-				max 	 	 "4000" 
+				group		 "global"
+				subgroup	 "ammo_liquid"
+				max 	 	 "2"
 			}
 			Storage
 			{
-				resource	 "ammo_mech_liquid"
-				max 	 	 "500"
-			}
-			Storage
-			{
-				resource	 "ammo_mech_liquid_lvl2"
-				max 	 	 "500" 
-			}
-			Storage
-			{
-				resource	 "ammo_mech_liquid_lvl3"
-				max 	 	 "500" 
-			}
+				resource "ammo_tower_liquid"
+				max 	 "2"
+			}		
 			Storage
 			{
 				resource "energy"

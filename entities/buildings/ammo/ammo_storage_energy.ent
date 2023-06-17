@@ -36,18 +36,9 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource	 "ammo_mech_energy_cell"
-				max 	 	 "160"
-			}
-			Storage
-			{
-				resource	 "ammo_mech_energy_cell_lvl2"
-				max 	 	 "160" 
-			}
-			Storage
-			{
-				resource	 "ammo_mech_energy_cell_lvl3"
-				max 	 	 "160" 
+				group		 "global"
+				subgroup	 "ammo_energy"
+				max 	 	 "2"
 			}
 			Storage
 			{

@@ -36,24 +36,15 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource	 "ammo_tower_low_caliber"
-				max 	 	 "2000" 
+				group		 "global"
+				subgroup	 "ammo_lowcaliber"
+				max 	 	 "2"
 			}
 			Storage
 			{
-				resource	 "ammo_mech_low_caliber"
-				max 	 	 "160"
-			}
-			Storage
-			{
-				resource	 "ammo_mech_low_caliber_lvl2"
-				max 	 	 "160" 
-			}
-			Storage
-			{
-				resource	 "ammo_mech_low_caliber_lvl3"
-				max 	 	 "160" 
-			}
+				resource "ammo_tower_low_caliber"
+				max 	 "2"
+			}		
 			Storage
 			{
 				resource "energy"

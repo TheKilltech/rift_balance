@@ -36,24 +36,15 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource	 "ammo_tower_explosive"
-				max 	 	 "60" 
+				group		 "global"
+				subgroup	 "ammo_explosive"
+				max 	 	 "2"
 			}
 			Storage
 			{
-				resource	 "ammo_mech_explosive"
-				max 	 	 "6"
-			}
-			Storage
-			{
-				resource	 "ammo_mech_explosive_lvl2"
-				max 	 	 "6" 
-			}
-			Storage
-			{
-				resource	 "ammo_mech_explosive_lvl3"
-				max 	 	 "6" 
-			}
+				resource "ammo_tower_explosive"
+				max 	 "2"
+			}	
 			Storage
 			{
 				resource "energy"

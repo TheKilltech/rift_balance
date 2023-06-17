@@ -4,11 +4,11 @@ GameplayResourceDef
 	localization_id "Low caliber top end" //"resource_name/ammo_mech_low_caliber_lvl3"
 	bp  			""
 	type 			"global"
-	specific_type 	"ammo"
+	specific_type 	"ammo_lowcaliber"
 	icon			"gui/hud/resource_icons/ammo_mech_low_caliber_lvl3_icon"
 	bigger_icon		"gui/hud/resource_icons/ammo_mech_low_caliber_lvl3_icon_bigger"
 	base_storage	"80"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	order			"35"
 }
 
@@ -18,11 +18,11 @@ GameplayResourceDef
 	localization_id "High caliber top end" //"resource_name/ammo_mech_high_caliber_lvl3"
 	bp  			""
 	type 			"global"
-	specific_type 	"ammo"
+	specific_type 	"ammo_highcaliber"
 	icon			"gui/hud/resource_icons/ammo_mech_high_caliber_lvl3_icon"
 	bigger_icon		"gui/hud/resource_icons/ammo_mech_high_caliber_lvl3_icon_bigger"
 	base_storage	"30"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	order			"36"
 }
 
@@ -32,11 +32,11 @@ GameplayResourceDef
 	localization_id "Liquid top end" //"resource_name/ammo_mech_liquid_lvl3"
 	bp  			""
 	type 			"global"
-	specific_type 	"ammo"
+	specific_type 	"ammo_liquid"
 	icon			"gui/hud/resource_icons/ammo_mech_liquid_lvl3_icon"
 	bigger_icon		"gui/hud/resource_icons/ammo_mech_liquid_lvl3_icon_bigger"
 	base_storage	"250"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	order			"37"
 }
 
@@ -46,11 +46,11 @@ GameplayResourceDef
 	localization_id "Explosive top end" //"resource_name/ammo_mech_explosive_lvl3"
 	bp  			""
 	type 			"global"
-	specific_type 	"ammo"
+	specific_type 	"ammo_explosive"
 	icon			"gui/hud/resource_icons/ammo_mech_explosive_lvl3_icon"
 	bigger_icon		"gui/hud/resource_icons/ammo_mech_explosive_lvl3_icon_bigger"
 	base_storage	"3"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	order			"38"
 }
 
@@ -60,10 +60,10 @@ GameplayResourceDef
 	localization_id "Energy cell top end" //"resource_name/ammo_mech_energy_lvl3"
 	bp  			""
 	type 			"global"
-	specific_type 	"ammo"
+	specific_type 	"ammo_energy"
 	icon			"gui/hud/resource_icons/ammo_mech_energy_lvl3_icon"
 	bigger_icon		"gui/hud/resource_icons/ammo_mech_energy_lvl3_icon_bigger"
 	base_storage	"20"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	order			"39"
 }
