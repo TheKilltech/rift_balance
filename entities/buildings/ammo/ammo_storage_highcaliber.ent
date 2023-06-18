@@ -36,19 +36,34 @@ EntityBlueprint
 		{
 			Storage
 			{
-				group		 "global"
-				subgroup	 "ammo_highcaliber"
-				max 	 	 "2"
+				group		"global"
+				subgroup	"ammo_highcaliber"
+				max 	 	"2"
 			}
 			Storage
 			{
-				resource "ammo_tower_high_caliber"
-				max 	 "2"
+				resource 	"ammo_tower_high_caliber"
+				max 	 	"2"
 			}	
 			Storage
 			{
-				resource "energy"
-				max 	 "0"
+				resource	"ammo_mech_high_caliber"
+				max 	 	"2"
+			}			
+			Storage
+			{
+				resource	"ammo_mech_high_caliber_lvl2"
+				max 	 	"2"
+			}			
+			Storage
+			{
+				resource	"ammo_mech_high_caliber_lvl3"
+				max 	 	"2"
+			}			
+			Storage
+			{
+				resource 	"energy"
+				max 	 	"0"
 			}			
 		}
 	}

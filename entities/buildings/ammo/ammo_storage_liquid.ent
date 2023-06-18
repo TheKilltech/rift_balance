@@ -36,19 +36,34 @@ EntityBlueprint
 		{
 			Storage
 			{
-				group		 "global"
-				subgroup	 "ammo_liquid"
-				max 	 	 "2"
+				group		"global"
+				subgroup	"ammo_liquid"
+				max 	 	"2"
 			}
 			Storage
 			{
-				resource "ammo_tower_liquid"
-				max 	 "2"
+				resource 	"ammo_tower_liquid"
+				max 	 	"2"
 			}		
 			Storage
 			{
-				resource "energy"
-				max 	 "0"
+				resource	"ammo_mech_liquid"
+				max 	 	"2"
+			}	
+			Storage
+			{
+				resource	"ammo_mech_liquid_lvl2"
+				max 	 	"2"
+			}	
+			Storage
+			{
+				resource	"ammo_mech_liquid_lvl3"
+				max 	 	"2"
+			}
+			Storage
+			{
+				resource 	"energy"
+				max 	 	"0"
 			}			
 		}
 	}
