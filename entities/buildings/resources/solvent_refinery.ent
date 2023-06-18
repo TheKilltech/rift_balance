@@ -8,7 +8,7 @@ EntityBlueprint
 		bp   				"buildings/resources/solvent_refinery"
 		category 			"resources"
 		type				"pipe"
-		localization_id		"Solvent Plant" //"gui/hud/building_name/water_filtering_plant"
+		localization_id		"Solvent Refinery" //"gui/hud/building_name/water_filtering_plant"
 		description			"produces solvent for resource processing" // "gui/hud/building_description/water_filtering_plant"
 		menu_icon			"gui/hud/building_icons/water_filtering_plant"
 		require 			"headquarters"
@@ -161,7 +161,7 @@ EntityBlueprint
 	MeshDesc
 	{
 		mesh "meshes/buildings/resources/water_filtering_plant.mesh"
-		material "buildings/resources/water_filtering_plant"
+		material "buildings/resources/solvent_refinery"
 	}
 
 	TypeDesc
