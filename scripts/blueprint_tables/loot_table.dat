@@ -1,5 +1,20 @@
 Blueprints
 {
+	LootItems "buildings/ammo/ammo_factory_energy_lvl_2"
+	LootItems "buildings/ammo/ammo_factory_energy_lvl_3"
+	LootItems "buildings/ammo/ammo_factory_explosive_lvl_2"
+	LootItems "buildings/ammo/ammo_factory_explosive_lvl_3"
+	LootItems "buildings/ammo/ammo_factory_highcaliber_lvl_2"
+	LootItems "buildings/ammo/ammo_factory_highcaliber_lvl_3"
+	LootItems "buildings/ammo/ammo_factory_liquid_lvl_2"
+	LootItems "buildings/ammo/ammo_factory_liquid_lvl_3"
+	LootItems "buildings/ammo/ammo_factory_lowcaliber_lvl_2"
+	LootItems "buildings/ammo/ammo_factory_lowcaliber_lvl_3"
+	LootItems "buildings/ammo/ammo_storage_energy"
+	LootItems "buildings/ammo/ammo_storage_explosive"
+	LootItems "buildings/ammo/ammo_storage_highcaliber"
+	LootItems "buildings/ammo/ammo_storage_liquid"
+	LootItems "buildings/ammo/ammo_storage_lowcaliber"
 	LootItems "buildings/decorations/base_lamp"
 	LootItems "buildings/decorations/base_lamp_blue"
 	LootItems "buildings/decorations/base_lamp_cyan"
@@ -298,9 +313,13 @@ Blueprints
 	LootItems "buildings/resources/ammunition_storage"
 	LootItems "buildings/resources/ammunition_storage_lvl_2"
 	LootItems "buildings/resources/ammunition_storage_lvl_3"
+	LootItems "buildings/resources/bio_cobalt_refinery"
 	LootItems "buildings/resources/bio_composter"
 	LootItems "buildings/resources/bio_composter_lvl_2"
 	LootItems "buildings/resources/bio_composter_lvl_3"
+	LootItems "buildings/resources/bio_palladium_refinery"
+	LootItems "buildings/resources/bio_titanium_refinery"
+	LootItems "buildings/resources/bio_uranium_refinery"
 	LootItems "buildings/resources/carbonium_factory"
 	LootItems "buildings/resources/carbonium_factory_lvl_2"
 	LootItems "buildings/resources/carbonium_factory_lvl_3"
@@ -357,6 +376,7 @@ Blueprints
 	LootItems "buildings/resources/solid_material_storage"
 	LootItems "buildings/resources/solid_material_storage_lvl_2"
 	LootItems "buildings/resources/solid_material_storage_lvl_3"
+	LootItems "buildings/resources/solvent_refinery"
 	LootItems "buildings/resources/steel_factory"
 	LootItems "buildings/resources/steel_factory_lvl_2"
 	LootItems "buildings/resources/steel_factory_lvl_3"
@@ -3754,7 +3774,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -3831,7 +3851,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -3875,7 +3895,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -3952,7 +3972,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -3996,7 +4016,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4073,7 +4093,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4117,7 +4137,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4194,7 +4214,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4238,7 +4258,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4315,7 +4335,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4359,7 +4379,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4436,7 +4456,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4723,17 +4743,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_uranium_bio_item"
-		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
-			package_size "3"
-			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_uranium"
-		}
-
 	}
 
 	LootItems "props/cactus/pear_big_01_skin3"
@@ -4866,17 +4875,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_uranium_bio_item"
-		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
-			package_size "3"
-			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_uranium"
-		}
-
 	}
 
 	LootItems "props/cactus/pear_big_02_skin3"
@@ -5007,17 +5005,6 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "5"
-		}
-
-		LootItem "items/loot/resources/shard_uranium_bio_item"
-		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
-			package_size "3"
-			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
 
 	}
@@ -7967,7 +7954,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8011,7 +7998,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8055,7 +8042,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8099,7 +8086,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8143,7 +8130,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8187,7 +8174,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8231,7 +8218,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8275,7 +8262,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8319,7 +8306,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8363,7 +8350,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8407,7 +8394,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8451,7 +8438,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8495,7 +8482,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8539,7 +8526,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8583,7 +8570,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8627,7 +8614,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8671,7 +8658,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8715,7 +8702,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -8759,7 +8746,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -8792,7 +8779,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -8825,7 +8812,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -8858,7 +8845,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -8891,7 +8878,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -8924,7 +8911,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -8957,7 +8944,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -8990,7 +8977,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -9023,7 +9010,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -10676,10 +10663,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
-			chance "0.2000"
-			min "3"
-			max "6"
-			gather_amount "6"
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -10687,10 +10674,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.1000"
-			min "2"
-			max "3"
-			gather_amount "3"
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -10863,10 +10850,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.1000"
-			min "2"
-			max "3"
-			gather_amount "3"
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -11028,10 +11015,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
-			chance "0.2000"
-			min "3"
-			max "6"
-			gather_amount "6"
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -11039,10 +11026,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.1000"
-			min "2"
-			max "3"
-			gather_amount "3"
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -11215,10 +11202,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.0500"
-			min "1"
-			max "2"
-			gather_amount "2"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -11567,10 +11554,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.0500"
-			min "1"
-			max "2"
-			gather_amount "2"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -11917,6 +11904,17 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
 
+		LootItem "items/loot/resources/shard_uranium_ore_item"
+		{
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_uranium"
+		}
+
 	}
 
 	LootItems "props/crystals/entvined_small_02_skin2"
@@ -12250,12 +12248,12 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -12301,7 +12299,7 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -12388,12 +12386,12 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -12439,7 +12437,7 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -12526,12 +12524,12 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -12577,7 +12575,7 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -12643,7 +12641,7 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_titanium_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -12664,7 +12662,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -12759,7 +12757,7 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_titanium_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -12780,7 +12778,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -12875,7 +12873,7 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_titanium_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -12896,7 +12894,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -13401,10 +13399,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -13454,10 +13452,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -13555,10 +13553,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -13709,10 +13707,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -13762,10 +13760,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -13863,10 +13861,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -13916,10 +13914,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -14017,10 +14015,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -14171,10 +14169,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -14235,10 +14233,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.1000"
-			min "2"
-			max "3"
-			gather_amount "3"
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -14325,10 +14323,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.2000"
-			min "3"
-			max "6"
-			gather_amount "6"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -14378,10 +14376,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
-			chance "0.2000"
-			min "3"
-			max "6"
-			gather_amount "6"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -14479,10 +14477,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.2000"
-			min "3"
-			max "6"
-			gather_amount "6"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -14633,10 +14631,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.2000"
-			min "3"
-			max "6"
-			gather_amount "6"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -14686,10 +14684,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
-			chance "0.2000"
-			min "3"
-			max "6"
-			gather_amount "6"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -14697,10 +14695,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.0500"
-			min "1"
-			max "2"
-			gather_amount "2"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -14787,10 +14785,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.2000"
-			min "3"
-			max "6"
-			gather_amount "6"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -14840,10 +14838,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
-			chance "0.2000"
-			min "3"
-			max "6"
-			gather_amount "6"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -14851,10 +14849,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.0500"
-			min "1"
-			max "2"
-			gather_amount "2"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -14941,10 +14939,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.2000"
-			min "3"
-			max "6"
-			gather_amount "6"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -15095,10 +15093,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.2000"
-			min "3"
-			max "6"
-			gather_amount "6"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -15148,10 +15146,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
-			chance "0.2000"
-			min "3"
-			max "6"
-			gather_amount "6"
+			chance "0.1000"
+			min "2"
+			max "3"
+			gather_amount "3"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -15249,10 +15247,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.1000"
-			min "2"
-			max "3"
-			gather_amount "3"
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -15260,7 +15258,7 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -15403,10 +15401,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.1000"
-			min "2"
-			max "3"
-			gather_amount "3"
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -15414,7 +15412,7 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -15557,10 +15555,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.1000"
-			min "2"
-			max "3"
-			gather_amount "3"
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -15568,7 +15566,7 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -15621,11 +15619,11 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.0100"
+			chance "0.0500"
 			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
+			max "2"
+			gather_amount "2"
+			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
@@ -15711,10 +15709,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.1000"
-			min "2"
-			max "3"
-			gather_amount "3"
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -15722,7 +15720,7 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -15775,11 +15773,11 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.0100"
+			chance "0.0500"
 			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
+			max "2"
+			gather_amount "2"
+			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
@@ -15865,10 +15863,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.1000"
-			min "2"
-			max "3"
-			gather_amount "3"
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -15876,7 +15874,7 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -15929,10 +15927,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.1000"
-			min "2"
-			max "3"
-			gather_amount "3"
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
@@ -16019,10 +16017,10 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
-			chance "0.1000"
-			min "2"
-			max "3"
-			gather_amount "3"
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
@@ -16030,22 +16028,13 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_cobalt_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
 			package_size "1"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "items/loot/resources/shard_cobalt_ore_item"
-		{
-			chance "0.0300"
-			min "2"
-			max "3"
-			gather_amount "3"
-			package_size "3"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -16235,7 +16224,7 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -16334,15 +16323,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "items/loot/resources/shard_cobalt_ore_item"
-		{
-			chance "0.0050"
-			min "1"
-			max "2"
-			gather_amount "2"
-			package_size "3"
-		}
-
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0300"
@@ -16381,6 +16361,17 @@ Blueprints
 			max "2"
 			gather_amount "2"
 			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_uranium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_ore_item"
+		{
+			chance "0.0200"
+			min "1"
+			max "1"
+			gather_amount "1"
+			package_size "1"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
@@ -16519,7 +16510,7 @@ Blueprints
 
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -18425,7 +18416,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -18458,7 +18449,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -18590,7 +18581,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -18623,7 +18614,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -18755,7 +18746,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -18788,7 +18779,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -19250,7 +19241,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -19283,7 +19274,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -19415,7 +19406,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -19448,7 +19439,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -19580,7 +19571,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -19613,7 +19604,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -19746,7 +19737,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -19779,7 +19770,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -19911,7 +19902,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -19944,7 +19935,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -20076,7 +20067,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -20109,7 +20100,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -20241,7 +20232,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -20274,7 +20265,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -20406,7 +20397,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -20439,7 +20430,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -20571,7 +20562,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -20604,7 +20595,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -23475,7 +23466,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -23574,7 +23565,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -23673,7 +23664,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -23772,7 +23763,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -23871,7 +23862,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -23970,7 +23961,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -24069,7 +24060,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -24168,7 +24159,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -24256,7 +24247,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -24344,7 +24335,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -24432,7 +24423,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -24490,6 +24481,17 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0300"
@@ -24520,7 +24522,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -24910,7 +24912,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -25036,7 +25038,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -25162,7 +25164,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -25288,7 +25290,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -25414,7 +25416,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -25540,7 +25542,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -25644,7 +25646,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -25748,7 +25750,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -25852,7 +25854,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -26956,7 +26958,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -26989,7 +26991,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27066,7 +27068,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27099,7 +27101,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27176,7 +27178,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27209,7 +27211,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27286,7 +27288,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27319,7 +27321,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27396,7 +27398,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27429,7 +27431,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27506,7 +27508,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27539,7 +27541,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27616,7 +27618,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27649,7 +27651,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27715,7 +27717,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27748,7 +27750,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27814,7 +27816,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -27847,7 +27849,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -31837,7 +31839,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -31921,7 +31923,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -31963,7 +31965,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32047,7 +32049,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32089,7 +32091,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32173,7 +32175,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32215,7 +32217,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32299,7 +32301,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32341,7 +32343,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32425,7 +32427,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32467,7 +32469,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32551,7 +32553,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32593,7 +32595,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32677,7 +32679,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32719,7 +32721,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32803,7 +32805,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32845,7 +32847,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -32929,7 +32931,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -33013,7 +33015,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -33121,7 +33123,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -33229,7 +33231,7 @@ Blueprints
 			gather_amount "9"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -33337,7 +33339,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -33445,7 +33447,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -33553,7 +33555,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -33661,7 +33663,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -33769,7 +33771,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -33877,7 +33879,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -40680,7 +40682,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -40713,7 +40715,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -40779,7 +40781,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -40812,7 +40814,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -40878,7 +40880,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -40911,7 +40913,7 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -40977,7 +40979,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -41010,7 +41012,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -41076,7 +41078,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -41109,7 +41111,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -41175,7 +41177,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -41208,7 +41210,7 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -41274,7 +41276,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -41307,7 +41309,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -41373,7 +41375,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -41406,7 +41408,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -41472,7 +41474,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -41505,7 +41507,7 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
@@ -44029,9 +44031,6 @@ Blueprints
 	LootItems "spawners/metallic_spawner_extreme"
 	LootItems "spawners/metallic_spawner_standard"
 	LootItems "spawners/metallic_spawner_superior"
-	LootItems "test/caverns_boss_test"
-	LootItems "test/spawner_canoptrix_nospawn"
-	LootItems "test/test_physical_rock"
 	LootItems "units/air/baxmoth_drone"
 	{
 		LootItem "items/loot/resources/shard_hazenite_item"
@@ -58242,17 +58241,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_cobalt_bio_item"
-		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
-			package_size "3"
-			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
 		LootItem "items/loot/resources/shard_cobalt_item"
 		{
 			chance "0.3000"
@@ -58317,17 +58305,6 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "5"
-		}
-
-		LootItem "items/loot/resources/shard_cobalt_bio_item"
-		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
-			package_size "3"
-			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_cobalt_item"
@@ -58396,17 +58373,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_cobalt_bio_item"
-		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
-			package_size "3"
-			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
 		LootItem "items/loot/resources/shard_cobalt_item"
 		{
 			chance "0.3000"
@@ -58471,17 +58437,6 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "5"
-		}
-
-		LootItem "items/loot/resources/shard_cobalt_bio_item"
-		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
-			package_size "3"
-			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_cobalt_item"
@@ -58550,17 +58505,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_cobalt_bio_item"
-		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
-			package_size "3"
-			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
 		LootItem "items/loot/resources/shard_cobalt_item"
 		{
 			chance "0.3000"
@@ -58625,17 +58569,6 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "5"
-		}
-
-		LootItem "items/loot/resources/shard_cobalt_bio_item"
-		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
-			package_size "3"
-			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 		LootItem "items/loot/resources/shard_cobalt_item"
@@ -59012,7 +58945,7 @@ LootTemplates
 				gather_amount "50"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.3000"
 				min "4"
@@ -59033,7 +58966,7 @@ LootTemplates
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.3000"
 				min "4"
@@ -59054,14 +58987,14 @@ LootTemplates
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.3000"
 				min "4"
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.3000"
 				min "4"
@@ -59084,7 +59017,7 @@ LootTemplates
 				gather_amount "20"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -59105,7 +59038,7 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -59126,14 +59059,14 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0400"
 				min "2"
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -59156,7 +59089,7 @@ LootTemplates
 				gather_amount "10"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -59177,7 +59110,7 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -59198,14 +59131,14 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
 				min "1"
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -59228,7 +59161,7 @@ LootTemplates
 				gather_amount "5"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -59249,7 +59182,7 @@ LootTemplates
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -59270,14 +59203,14 @@ LootTemplates
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0100"
 				min "1"
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -59300,7 +59233,7 @@ LootTemplates
 				gather_amount "25"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0500"
 				min "2"
@@ -59321,7 +59254,7 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0500"
 				min "2"
@@ -59342,14 +59275,14 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0500"
 				min "2"
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0500"
 				min "2"
@@ -59372,7 +59305,7 @@ LootTemplates
 				gather_amount "20"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -59393,7 +59326,7 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -59414,14 +59347,14 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0400"
 				min "2"
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -59444,7 +59377,7 @@ LootTemplates
 				gather_amount "10"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -59465,7 +59398,7 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -59486,14 +59419,14 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
 				min "1"
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -59516,7 +59449,7 @@ LootTemplates
 				gather_amount "30"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0800"
 				min "3"
@@ -59537,7 +59470,7 @@ LootTemplates
 				max "6"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0800"
 				min "3"
@@ -59558,14 +59491,14 @@ LootTemplates
 				max "6"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0800"
 				min "3"
 				max "6"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0800"
 				min "3"
@@ -59588,7 +59521,7 @@ LootTemplates
 				gather_amount "5"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -59609,7 +59542,7 @@ LootTemplates
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -59630,14 +59563,14 @@ LootTemplates
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0100"
 				min "1"
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -59660,7 +59593,7 @@ LootTemplates
 				gather_amount "50"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.2500"
 				min "4"
@@ -59681,7 +59614,7 @@ LootTemplates
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.2500"
 				min "4"
@@ -59702,14 +59635,14 @@ LootTemplates
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.2500"
 				min "4"
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.2500"
 				min "4"
@@ -59732,7 +59665,7 @@ LootTemplates
 				gather_amount "20"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -59753,7 +59686,7 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -59774,14 +59707,14 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0400"
 				min "2"
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -59804,7 +59737,7 @@ LootTemplates
 				gather_amount "10"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -59825,7 +59758,7 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -59846,14 +59779,14 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
 				min "1"
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -59876,7 +59809,7 @@ LootTemplates
 				gather_amount "5"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -59897,7 +59830,7 @@ LootTemplates
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -59918,14 +59851,14 @@ LootTemplates
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0100"
 				min "1"
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -59940,7 +59873,7 @@ LootTemplates
 	{
 		LootItems
 		{
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.3000"
 				min "4"
@@ -59962,7 +59895,7 @@ LootTemplates
 				gather_amount "40"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.3000"
 				min "4"
@@ -59983,14 +59916,14 @@ LootTemplates
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.3000"
 				min "4"
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.3000"
 				min "4"
@@ -60005,7 +59938,7 @@ LootTemplates
 	{
 		LootItems
 		{
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -60027,7 +59960,7 @@ LootTemplates
 				gather_amount "25"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -60048,14 +59981,14 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0400"
 				min "2"
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -60070,7 +60003,7 @@ LootTemplates
 	{
 		LootItems
 		{
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -60092,7 +60025,7 @@ LootTemplates
 				gather_amount "15"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -60113,14 +60046,14 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
 				min "1"
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -60135,7 +60068,7 @@ LootTemplates
 	{
 		LootItems
 		{
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -60157,7 +60090,7 @@ LootTemplates
 				gather_amount "10"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -60178,14 +60111,14 @@ LootTemplates
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0100"
 				min "1"
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -60208,7 +60141,7 @@ LootTemplates
 				gather_amount "20"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.1000"
 				min "4"
@@ -60229,7 +60162,7 @@ LootTemplates
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.1000"
 				min "4"
@@ -60250,14 +60183,14 @@ LootTemplates
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.1000"
 				min "4"
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.1000"
 				min "4"
@@ -60280,7 +60213,7 @@ LootTemplates
 				gather_amount "10"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -60301,7 +60234,7 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -60322,14 +60255,14 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0400"
 				min "2"
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -60352,7 +60285,7 @@ LootTemplates
 				gather_amount "5"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -60373,7 +60306,7 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -60394,14 +60327,14 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
 				min "1"
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -60424,7 +60357,7 @@ LootTemplates
 				gather_amount "20"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0300"
 				min "2"
@@ -60445,7 +60378,7 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0300"
 				min "2"
@@ -60466,14 +60399,14 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0300"
 				min "2"
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0300"
 				min "2"
@@ -60496,7 +60429,7 @@ LootTemplates
 				gather_amount "10"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -60517,7 +60450,7 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -60538,14 +60471,14 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
 				min "1"
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -60568,7 +60501,7 @@ LootTemplates
 				gather_amount "5"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -60589,7 +60522,7 @@ LootTemplates
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -60610,14 +60543,14 @@ LootTemplates
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0100"
 				min "1"
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -60640,7 +60573,7 @@ LootTemplates
 				gather_amount "25"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -60661,7 +60594,7 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -60682,14 +60615,14 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0400"
 				min "2"
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -60712,7 +60645,7 @@ LootTemplates
 				gather_amount "50"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.2000"
 				min "4"
@@ -60733,7 +60666,7 @@ LootTemplates
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.2000"
 				min "4"
@@ -60754,14 +60687,14 @@ LootTemplates
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.2000"
 				min "4"
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.2000"
 				min "4"
@@ -60784,7 +60717,7 @@ LootTemplates
 				gather_amount "20"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -60805,7 +60738,7 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -60826,14 +60759,14 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0400"
 				min "2"
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -60856,7 +60789,7 @@ LootTemplates
 				gather_amount "10"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -60877,7 +60810,7 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -60898,14 +60831,14 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
 				min "1"
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -60928,7 +60861,7 @@ LootTemplates
 				gather_amount "50"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.1000"
 				min "4"
@@ -60949,7 +60882,7 @@ LootTemplates
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.1000"
 				min "4"
@@ -60970,14 +60903,14 @@ LootTemplates
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.1000"
 				min "4"
 				max "8"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.1000"
 				min "4"
@@ -61000,7 +60933,7 @@ LootTemplates
 				gather_amount "20"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -61021,7 +60954,7 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -61042,14 +60975,14 @@ LootTemplates
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0400"
 				min "2"
 				max "5"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -61072,7 +61005,7 @@ LootTemplates
 				gather_amount "10"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -61093,7 +61026,7 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -61114,14 +61047,14 @@ LootTemplates
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
 				min "1"
 				max "3"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -61144,7 +61077,7 @@ LootTemplates
 				gather_amount "5"
 			}
 
-			LootItem "items/loot/resources/shard_cobalt_bio_item"
+			LootItem "items/loot/resources/shard_cobalt_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -61165,7 +61098,7 @@ LootTemplates
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_palladium_bio_item"
+			LootItem "items/loot/resources/shard_palladium_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -61186,14 +61119,14 @@ LootTemplates
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_titanium_bio_item"
+			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0100"
 				min "1"
 				max "2"
 			}
 
-			LootItem "items/loot/resources/shard_uranium_bio_item"
+			LootItem "items/loot/resources/shard_uranium_ore_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -61481,7 +61414,7 @@ LootTemplates
 	{
 		LootItem "items/loot/resources/shard_cobalt_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -62018,7 +61951,7 @@ LootTemplates
 	{
 		LootItem "items/loot/resources/shard_palladium_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -62239,7 +62172,7 @@ LootTemplates
 	{
 		LootItem "items/loot/resources/shard_titanium_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -62326,19 +62259,6 @@ LootTemplates
 
 	}
 
-	LootInfoTemplate "uranium_ore_big"
-	{
-		LootItem "items/loot/resources/shard_uranium_ore_item"
-		{
-			chance "0.3000"
-			min "6"
-			max "9"
-			gather_amount "9"
-			package_size "3"
-		}
-
-	}
-
 	LootInfoTemplate "uranium_ore_medium"
 	{
 		LootItem "items/loot/resources/shard_uranium_ore_item"
@@ -62382,7 +62302,7 @@ LootTemplates
 	{
 		LootItem "items/loot/resources/shard_uranium_ore_item"
 		{
-			chance "0.0100"
+			chance "0.0200"
 			min "1"
 			max "1"
 			gather_amount "1"
@@ -62421,6 +62341,30 @@ LootTemplates
 
 LootConditions
 {
+	LootCondition "SHARD_COBALT_BIO_ITEM"
+	{
+		condition "has_research"
+		condition_value "gui/menu/research/name/resource_handling_cobalt"
+	}
+
+	LootCondition "SHARD_PALLADIUM_BIO_ITEM"
+	{
+		condition "has_research"
+		condition_value "gui/menu/research/name/resource_handling_palladium"
+	}
+
+	LootCondition "SHARD_TITANIUM_BIO_ITEM"
+	{
+		condition "has_research"
+		condition_value "gui/menu/research/name/resource_handling_titanium"
+	}
+
+	LootCondition "SHARD_URANIUM_BIO_ITEM"
+	{
+		condition "has_research"
+		condition_value "gui/menu/research/name/resource_handling_uranium"
+	}
+
 	LootCondition "items/loot/resources/biomass_animal_item"
 	{
 		condition "has_research"
@@ -62454,7 +62398,7 @@ LootConditions
 	LootCondition "items/loot/resources/shard_palladium_bio_item"
 	{
 		condition "has_research"
-		condition_value "gui/menu/research/name/resource_handling_palladium"
+		condition_value "gui/menu/research/name/resource_handling_cobalt"
 	}
 
 	LootCondition "items/loot/resources/shard_palladium_item"
@@ -63067,8 +63011,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_medium
 			cobalt_bio_small
+			ironium_medium
 			biomass_plant_medium
 		}
 
@@ -63078,8 +63022,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_very_small
+			ironium_small
 			biomass_plant_small
 		}
 
@@ -63089,8 +63033,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_very_small
 			cobalt_bio_very_small
+			ironium_very_small
 			biomass_plant_very_small
 		}
 
@@ -63100,8 +63044,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_small
+			ironium_small
 			biomass_plant_medium
 		}
 
@@ -63111,8 +63055,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_small
+			ironium_small
 			biomass_plant_medium
 		}
 
@@ -63122,8 +63066,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_small
+			ironium_small
 			biomass_plant_medium
 		}
 
@@ -63133,8 +63077,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_small
+			ironium_small
 			biomass_plant_medium
 		}
 
@@ -63144,8 +63088,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_small
+			ironium_small
 			biomass_plant_medium
 		}
 
@@ -63155,8 +63099,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_very_small
+			ironium_small
 			biomass_plant_small
 		}
 
@@ -63166,8 +63110,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_very_small
+			ironium_small
 			biomass_plant_small
 		}
 
@@ -63177,8 +63121,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_very_small
+			ironium_small
 			biomass_plant_small
 		}
 
@@ -63188,8 +63132,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_very_small
+			ironium_small
 			biomass_plant_small
 		}
 
@@ -63199,8 +63143,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_very_small
+			ironium_small
 			biomass_plant_small
 		}
 
@@ -64152,8 +64096,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_big
 			cobalt_bio_big
+			ironium_big
 			biomass_plant_big
 		}
 
@@ -64187,8 +64131,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_big
 			cobalt_bio_big
+			ironium_big
 			biomass_plant_big
 		}
 
@@ -64222,8 +64166,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_big
 			cobalt_bio_big
+			ironium_big
 			biomass_plant_big
 		}
 
@@ -64257,8 +64201,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_small
+			ironium_small
 			biomass_plant_small
 		}
 
@@ -64292,8 +64236,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_small
+			ironium_small
 			biomass_plant_small
 		}
 
@@ -64327,8 +64271,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_small
+			ironium_small
 			biomass_plant_small
 		}
 
@@ -64462,7 +64406,6 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
-			uranium_bio_big
 			biomass_plant_big
 		}
 
@@ -64515,7 +64458,6 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
-			uranium_bio_big
 			biomass_plant_big
 		}
 
@@ -64568,7 +64510,6 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
-			uranium_bio_big
 			biomass_plant_big
 		}
 
@@ -64926,8 +64867,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ferdonite_small
 			cobalt_bio_small
+			ferdonite_small
 			ironium_big
 			biomass_plant_medium
 		}
@@ -64962,8 +64903,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ferdonite_small
 			cobalt_bio_small
+			ferdonite_small
 			ironium_big
 			biomass_plant_medium
 		}
@@ -64998,8 +64939,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ferdonite_small
 			cobalt_bio_small
+			ferdonite_small
 			ironium_big
 			biomass_plant_medium
 		}
@@ -65034,8 +64975,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ferdonite_very_small
 			cobalt_bio_very_small
+			ferdonite_very_small
 			ironium_medium
 			biomass_plant_small
 		}
@@ -65070,8 +65011,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ferdonite_very_small
 			cobalt_bio_very_small
+			ferdonite_very_small
 			ironium_medium
 			biomass_plant_small
 		}
@@ -65106,8 +65047,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ferdonite_very_small
 			cobalt_bio_very_small
+			ferdonite_very_small
 			ironium_medium
 			biomass_plant_small
 		}
@@ -65701,8 +65642,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_big
-			rhodonite_small
 			palladium_bio_medium
+			rhodonite_small
 			ironium_big
 		}
 
@@ -65712,8 +65653,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			rhodonite_small
 			palladium_bio_medium
+			rhodonite_small
 			ironium_big
 			biomass_plant_big
 		}
@@ -65724,8 +65665,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			rhodonite_small
 			palladium_bio_medium
+			rhodonite_small
 			ironium_big
 			biomass_plant_big
 		}
@@ -65737,8 +65678,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_big
-			rhodonite_small
 			palladium_bio_medium
+			rhodonite_small
 			ironium_big
 		}
 
@@ -65748,8 +65689,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			rhodonite_small
 			palladium_bio_medium
+			rhodonite_small
 			ironium_big
 			biomass_plant_big
 		}
@@ -65760,8 +65701,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			rhodonite_small
 			palladium_bio_medium
+			rhodonite_small
 			ironium_big
 			biomass_plant_big
 		}
@@ -65773,8 +65714,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_big
-			rhodonite_small
 			palladium_bio_medium
+			rhodonite_small
 			ironium_big
 		}
 
@@ -65784,8 +65725,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			rhodonite_small
 			palladium_bio_medium
+			rhodonite_small
 			ironium_big
 			biomass_plant_big
 		}
@@ -65796,8 +65737,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			rhodonite_small
 			palladium_bio_medium
+			rhodonite_small
 			ironium_big
 			biomass_plant_big
 		}
@@ -65809,8 +65750,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			rhodonite_very_small
 			palladium_bio_small
+			rhodonite_very_small
 			ironium_medium
 		}
 
@@ -65820,8 +65761,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			rhodonite_very_small
 			palladium_bio_small
+			rhodonite_very_small
 			ironium_medium
 			biomass_plant_medium
 		}
@@ -65832,8 +65773,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			rhodonite_very_small
 			palladium_bio_small
+			rhodonite_very_small
 			ironium_medium
 			biomass_plant_medium
 		}
@@ -65845,8 +65786,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			rhodonite_very_small
 			palladium_bio_small
+			rhodonite_very_small
 			ironium_medium
 		}
 
@@ -65856,8 +65797,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			rhodonite_very_small
 			palladium_bio_small
+			rhodonite_very_small
 			ironium_medium
 			biomass_plant_medium
 		}
@@ -65868,8 +65809,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			rhodonite_very_small
 			palladium_bio_small
+			rhodonite_very_small
 			ironium_medium
 			biomass_plant_medium
 		}
@@ -65881,8 +65822,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			rhodonite_very_small
 			palladium_bio_small
+			rhodonite_very_small
 			ironium_medium
 		}
 
@@ -65892,8 +65833,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			rhodonite_very_small
 			palladium_bio_small
+			rhodonite_very_small
 			ironium_medium
 			biomass_plant_medium
 		}
@@ -65904,8 +65845,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			rhodonite_very_small
 			palladium_bio_small
+			rhodonite_very_small
 			ironium_medium
 			biomass_plant_medium
 		}
@@ -66746,8 +66687,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			uranium_ore_small
-			uranium_bio_medium
+			uranium_ore_medium
+			uranium_bio_big
 			ironium_big
 			carbonium_big
 		}
@@ -66802,7 +66743,7 @@ BlueprintOverrides
 	{
 		Items
 		{
-			uranium_ore_small
+			uranium_ore_medium
 			uranium_bio_big
 			ironium_big
 			carbonium_big
@@ -66858,8 +66799,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			uranium_ore_small
-			uranium_bio_medium
+			uranium_ore_medium
+			uranium_bio_big
 			ironium_big
 			carbonium_big
 		}
@@ -66914,7 +66855,7 @@ BlueprintOverrides
 	{
 		Items
 		{
-			uranium_ore_very_small
+			uranium_ore_small
 			uranium_bio_medium
 			ironium_medium
 			carbonium_medium
@@ -67026,7 +66967,7 @@ BlueprintOverrides
 	{
 		Items
 		{
-			uranium_ore_very_small
+			uranium_ore_small
 			uranium_bio_medium
 			ironium_medium
 			carbonium_medium
@@ -67138,6 +67079,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_ore_very_small
 			uranium_bio_small
 			ironium_small
 			carbonium_small
@@ -67239,8 +67181,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_very_small
-			titanium_bio_medium
 			rhodonite_medium
+			titanium_bio_medium
 			ironium_big
 		}
 
@@ -67275,8 +67217,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_very_small
-			titanium_bio_medium
 			rhodonite_medium
+			titanium_bio_medium
 			ironium_big
 		}
 
@@ -67311,8 +67253,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_very_small
-			titanium_bio_medium
 			rhodonite_medium
+			titanium_bio_medium
 			ironium_big
 		}
 
@@ -67347,8 +67289,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_zerolike
-			titanium_bio_small
 			rhodonite_small
+			titanium_bio_small
 			ironium_medium
 		}
 
@@ -67381,8 +67323,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_zerolike
-			titanium_bio_small
 			rhodonite_small
+			titanium_bio_small
 			ironium_medium
 		}
 
@@ -67415,8 +67357,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_zerolike
-			titanium_bio_small
 			rhodonite_small
+			titanium_bio_small
 			ironium_medium
 		}
 
@@ -67448,8 +67390,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			titanium_bio_very_small
 			rhodonite_very_small
+			titanium_bio_very_small
 			ironium_small
 		}
 
@@ -67479,8 +67421,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			titanium_bio_very_small
 			rhodonite_very_small
+			titanium_bio_very_small
 			ironium_small
 		}
 
@@ -67510,8 +67452,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			titanium_bio_very_small
 			rhodonite_very_small
+			titanium_bio_very_small
 			ironium_small
 		}
 
@@ -67628,8 +67570,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_medium
 			cobalt_small
-			cobalt_bio_big
 			ironium_big
 			carbonium_big
 		}
@@ -67640,10 +67582,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_bio_medium
 			uranium_ore_medium
-			uranium_bio_big
-			ironium_big
 			carbonium_big
+			ironium_big
 		}
 
 	}
@@ -67674,8 +67616,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_medium
 			cobalt_small
-			cobalt_bio_big
 			ironium_big
 			carbonium_big
 		}
@@ -67686,10 +67628,10 @@ BlueprintOverrides
 	{
 		Items
 		{
-			uranium_ore_medium
 			uranium_bio_medium
-			ironium_big
+			uranium_ore_medium
 			carbonium_big
+			ironium_big
 		}
 
 	}
@@ -67720,8 +67662,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_medium
 			cobalt_small
-			cobalt_bio_big
 			ironium_big
 			carbonium_big
 		}
@@ -67732,10 +67674,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_bio_medium
 			uranium_ore_medium
-			uranium_bio_big
-			ironium_big
 			carbonium_big
+			ironium_big
 		}
 
 	}
@@ -67766,8 +67708,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_medium
 			cobalt_small
-			cobalt_bio_big
 			ironium_big
 			carbonium_big
 		}
@@ -67778,10 +67720,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_bio_medium
 			uranium_ore_medium
-			uranium_bio_big
-			ironium_big
 			carbonium_big
+			ironium_big
 		}
 
 	}
@@ -67812,8 +67754,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_medium
 			cobalt_small
-			cobalt_bio_big
 			ironium_big
 			carbonium_big
 		}
@@ -67824,10 +67766,10 @@ BlueprintOverrides
 	{
 		Items
 		{
-			uranium_ore_medium
 			uranium_bio_medium
-			ironium_big
+			uranium_ore_medium
 			carbonium_big
+			ironium_big
 		}
 
 	}
@@ -67858,8 +67800,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_medium
 			cobalt_small
-			cobalt_bio_big
 			ironium_big
 			carbonium_big
 		}
@@ -67870,10 +67812,10 @@ BlueprintOverrides
 	{
 		Items
 		{
-			uranium_ore_small
 			uranium_bio_medium
-			ironium_big
+			uranium_ore_medium
 			carbonium_big
+			ironium_big
 		}
 
 	}
@@ -67904,8 +67846,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_small
 			cobalt_very_small
-			cobalt_bio_medium
 			ironium_medium
 			carbonium_medium
 		}
@@ -67917,9 +67859,9 @@ BlueprintOverrides
 		Items
 		{
 			uranium_ore_small
-			uranium_bio_medium
-			ironium_medium
+			uranium_bio_small
 			carbonium_medium
+			ironium_medium
 		}
 
 	}
@@ -67950,8 +67892,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_small
 			cobalt_very_small
-			cobalt_bio_medium
 			ironium_medium
 			carbonium_medium
 		}
@@ -67964,8 +67906,8 @@ BlueprintOverrides
 		{
 			uranium_ore_small
 			uranium_bio_small
-			ironium_medium
 			carbonium_medium
+			ironium_medium
 		}
 
 	}
@@ -67996,8 +67938,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_small
 			cobalt_very_small
-			cobalt_bio_medium
 			ironium_medium
 			carbonium_medium
 		}
@@ -68008,10 +67950,10 @@ BlueprintOverrides
 	{
 		Items
 		{
-			uranium_ore_very_small
-			uranium_bio_medium
-			ironium_medium
+			uranium_ore_small
+			uranium_bio_small
 			carbonium_medium
+			ironium_medium
 		}
 
 	}
@@ -68042,8 +67984,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_small
 			cobalt_very_small
-			cobalt_bio_medium
 			ironium_medium
 			carbonium_medium
 		}
@@ -68054,10 +67996,10 @@ BlueprintOverrides
 	{
 		Items
 		{
-			uranium_ore_very_small
-			uranium_bio_medium
-			ironium_medium
+			uranium_ore_small
+			uranium_bio_small
 			carbonium_medium
+			ironium_medium
 		}
 
 	}
@@ -68088,8 +68030,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_small
 			cobalt_very_small
-			cobalt_bio_medium
 			ironium_medium
 			carbonium_medium
 		}
@@ -68102,8 +68044,8 @@ BlueprintOverrides
 		{
 			uranium_ore_small
 			uranium_bio_small
-			ironium_medium
 			carbonium_medium
+			ironium_medium
 		}
 
 	}
@@ -68134,8 +68076,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_small
 			cobalt_very_small
-			cobalt_bio_medium
 			ironium_medium
 			carbonium_medium
 		}
@@ -68147,9 +68089,9 @@ BlueprintOverrides
 		Items
 		{
 			uranium_ore_small
-			uranium_bio_medium
-			ironium_medium
+			uranium_bio_small
 			carbonium_medium
+			ironium_medium
 		}
 
 	}
@@ -68180,8 +68122,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_very_small
 			cobalt_zerolike
-			cobalt_bio_small
 			ironium_small
 			carbonium_small
 		}
@@ -68194,8 +68136,8 @@ BlueprintOverrides
 		{
 			uranium_ore_very_small
 			uranium_bio_small
-			ironium_small
 			carbonium_small
+			ironium_small
 		}
 
 	}
@@ -68226,8 +68168,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_very_small
 			cobalt_zerolike
-			cobalt_bio_small
 			ironium_small
 			carbonium_small
 		}
@@ -68240,8 +68182,8 @@ BlueprintOverrides
 		{
 			uranium_ore_very_small
 			uranium_bio_small
-			ironium_small
 			carbonium_small
+			ironium_small
 		}
 
 	}
@@ -68272,8 +68214,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_very_small
 			cobalt_zerolike
-			cobalt_bio_small
 			ironium_small
 			carbonium_small
 		}
@@ -68284,10 +68226,10 @@ BlueprintOverrides
 	{
 		Items
 		{
-			uranium_ore_zerolike
+			uranium_ore_very_small
 			uranium_bio_small
-			ironium_small
 			carbonium_small
+			ironium_small
 		}
 
 	}
@@ -68318,8 +68260,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_very_small
 			cobalt_zerolike
-			cobalt_bio_small
 			ironium_small
 			carbonium_small
 		}
@@ -68330,10 +68272,10 @@ BlueprintOverrides
 	{
 		Items
 		{
-			uranium_ore_zerolike
+			uranium_ore_very_small
 			uranium_bio_small
-			ironium_small
 			carbonium_small
+			ironium_small
 		}
 
 	}
@@ -68364,8 +68306,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_very_small
 			cobalt_zerolike
-			cobalt_bio_small
 			ironium_small
 			carbonium_small
 		}
@@ -68376,10 +68318,10 @@ BlueprintOverrides
 	{
 		Items
 		{
-			uranium_ore_small
+			uranium_ore_very_small
 			uranium_bio_small
-			ironium_small
 			carbonium_small
+			ironium_small
 		}
 
 	}
@@ -68410,8 +68352,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_very_small
 			cobalt_zerolike
-			cobalt_bio_small
 			ironium_small
 			carbonium_small
 		}
@@ -68424,8 +68366,8 @@ BlueprintOverrides
 		{
 			uranium_ore_very_small
 			uranium_bio_small
-			ironium_small
 			carbonium_small
+			ironium_small
 		}
 
 	}
@@ -68469,8 +68411,8 @@ BlueprintOverrides
 		{
 			uranium_ore_zerolike
 			uranium_bio_very_small
-			ironium_very_small
 			carbonium_very_small
+			ironium_very_small
 		}
 
 	}
@@ -68512,9 +68454,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_ore_zerolike
 			uranium_bio_very_small
-			ironium_very_small
 			carbonium_very_small
+			ironium_very_small
 		}
 
 	}
@@ -68558,8 +68501,8 @@ BlueprintOverrides
 		{
 			uranium_ore_zerolike
 			uranium_bio_very_small
-			ironium_very_small
 			carbonium_very_small
+			ironium_very_small
 		}
 
 	}
@@ -69595,8 +69538,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_big
-			ironium_big
 			titanium_bio_big
+			ironium_big
 		}
 
 	}
@@ -69650,8 +69593,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_big
-			ironium_big
 			titanium_bio_big
+			ironium_big
 		}
 
 	}
@@ -69855,8 +69798,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			ironium_medium
 			titanium_bio_medium
+			ironium_medium
 		}
 
 	}
@@ -70075,8 +70018,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_small
-			ironium_small
 			titanium_bio_small
+			ironium_small
 		}
 
 	}
@@ -70130,8 +70073,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_small
-			ironium_small
 			titanium_bio_small
+			ironium_small
 		}
 
 	}
@@ -70185,8 +70128,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_very_small
-			ironium_very_small
 			titanium_bio_very_small
+			ironium_very_small
 		}
 
 	}
@@ -71107,8 +71050,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_big
-			ironium_big
 			titanium_bio_big
+			ironium_big
 			hazenite_medium
 		}
 
@@ -71119,8 +71062,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_big
-			ironium_big
 			titanium_bio_big
+			ironium_big
 			rhodonite_medium
 		}
 
@@ -71143,8 +71086,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_big
-			ironium_big
 			titanium_bio_big
+			ironium_big
 			hazenite_medium
 		}
 
@@ -71155,8 +71098,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_big
-			ironium_big
 			titanium_bio_big
+			ironium_big
 			rhodonite_medium
 		}
 
@@ -71179,8 +71122,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			ironium_medium
 			titanium_bio_medium
+			ironium_medium
 			hazenite_small
 		}
 
@@ -71191,8 +71134,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			ironium_medium
 			titanium_bio_medium
+			ironium_medium
 			rhodonite_small
 		}
 
@@ -71323,8 +71266,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_small
-			ironium_small
 			titanium_bio_small
+			ironium_small
 			hazenite_very_small
 		}
 
@@ -71335,8 +71278,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_small
-			ironium_small
 			titanium_bio_small
+			ironium_small
 			rhodonite_very_small
 		}
 
@@ -71359,8 +71302,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_small
-			ironium_small
 			titanium_bio_small
+			ironium_small
 			hazenite_very_small
 		}
 
@@ -71371,8 +71314,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_small
-			ironium_small
 			titanium_bio_small
+			ironium_small
 			rhodonite_very_small
 		}
 
@@ -71393,8 +71336,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_medium
 			cobalt_bio_small
+			ironium_medium
 			biomass_plant_big
 		}
 
@@ -71426,8 +71369,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_medium
 			cobalt_bio_small
+			ironium_medium
 			biomass_plant_big
 		}
 
@@ -71459,8 +71402,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_medium
 			cobalt_bio_small
+			ironium_medium
 			biomass_plant_big
 		}
 
@@ -71492,8 +71435,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_medium
 			cobalt_bio_small
+			ironium_medium
 			biomass_plant_big
 		}
 
@@ -71525,8 +71468,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_very_small
+			ironium_small
 			biomass_plant_medium
 		}
 
@@ -71558,8 +71501,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_very_small
+			ironium_small
 			biomass_plant_medium
 		}
 
@@ -71591,8 +71534,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_very_small
+			ironium_small
 			biomass_plant_medium
 		}
 
@@ -71624,8 +71567,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
 			cobalt_bio_very_small
+			ironium_small
 			biomass_plant_medium
 		}
 
@@ -71656,8 +71599,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_very_small
 			cobalt_bio_very_small
+			ironium_very_small
 			biomass_plant_small
 		}
 
@@ -71688,8 +71631,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_very_small
 			cobalt_bio_very_small
+			ironium_very_small
 			biomass_plant_small
 		}
 
@@ -71720,8 +71663,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_very_small
 			cobalt_bio_very_small
+			ironium_very_small
 			biomass_plant_small
 		}
 
@@ -71752,8 +71695,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_very_small
 			cobalt_bio_very_small
+			ironium_very_small
+			cobalt_very_small
 			biomass_plant_small
 		}
 
@@ -72728,8 +72672,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_big
-			ironium_big
 			titanium_bio_big
+			ironium_big
 			rhodonite_small
 		}
 
@@ -72762,8 +72706,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_big
-			ironium_big
 			titanium_bio_big
+			ironium_big
 			rhodonite_small
 		}
 
@@ -72796,8 +72740,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			ironium_medium
 			titanium_bio_medium
+			ironium_medium
 			rhodonite_very_small
 		}
 
@@ -73075,8 +73019,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ferdonite_medium
 			cobalt_bio_medium
+			ferdonite_medium
 			ironium_big
 			biomass_plant_medium
 		}
@@ -73109,9 +73053,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_big
-			ferdonite_medium
 			cobalt_bio_medium
+			ferdonite_medium
+			ironium_big
 			biomass_plant_medium
 		}
 
@@ -73143,9 +73087,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_big
-			ferdonite_medium
 			cobalt_bio_medium
+			ferdonite_medium
+			ironium_big
 			biomass_plant_medium
 		}
 
@@ -73177,9 +73121,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_medium
-			ferdonite_small
 			cobalt_bio_small
+			ferdonite_small
+			ironium_medium
 			biomass_plant_small
 		}
 
@@ -73309,9 +73253,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
-			ferdonite_very_small
 			cobalt_bio_very_small
+			ferdonite_very_small
+			ironium_small
 		}
 
 	}
@@ -73340,9 +73284,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_small
-			ferdonite_very_small
 			cobalt_bio_very_small
+			ferdonite_very_small
+			ironium_small
 		}
 
 	}
@@ -73371,9 +73315,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_very_small
-			ferdonite_very_small
 			cobalt_bio_very_small
+			ferdonite_very_small
+			ironium_very_small
 		}
 
 	}
@@ -73465,8 +73409,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_big
 			cobalt_bio_big
+			ironium_big
 			biomass_plant_big
 		}
 
@@ -73608,8 +73552,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_big
 			cobalt_bio_big
+			ironium_big
 			biomass_plant_big
 		}
 
@@ -73751,8 +73695,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_big
 			cobalt_bio_big
+			ironium_big
 			biomass_plant_big
 		}
 
@@ -73894,9 +73838,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			biomass_plant_medium
-			ironium_medium
 			cobalt_bio_medium
+			ironium_medium
+			biomass_plant_medium
 		}
 
 	}
@@ -74037,8 +73981,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_medium
 			cobalt_bio_medium
+			ironium_medium
 			biomass_plant_medium
 		}
 
@@ -74180,9 +74124,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			biomass_plant_medium
-			ironium_medium
 			cobalt_bio_medium
+			ironium_medium
+			biomass_plant_medium
 		}
 
 	}
@@ -74358,8 +74302,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_bio_big
-			ironium_big
 			carbonium_big
+			ironium_big
 			biomass_plant_big
 		}
 
@@ -74394,8 +74338,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_bio_big
-			ironium_big
 			carbonium_big
+			ironium_big
 			biomass_plant_big
 		}
 
@@ -74430,8 +74374,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_bio_big
-			ironium_big
 			carbonium_big
+			ironium_big
 			biomass_plant_big
 		}
 
@@ -74466,8 +74410,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_bio_medium
-			ironium_medium
 			carbonium_medium
+			ironium_medium
 			biomass_plant_medium
 		}
 
@@ -74502,8 +74446,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_bio_medium
-			ironium_medium
 			carbonium_medium
+			ironium_medium
 			biomass_plant_medium
 		}
 
@@ -74538,8 +74482,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_bio_medium
-			ironium_medium
 			carbonium_medium
+			ironium_medium
 			biomass_plant_medium
 		}
 
@@ -74574,8 +74518,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_bio_small
-			ironium_small
 			carbonium_small
+			ironium_small
 			biomass_plant_small
 		}
 
@@ -74610,8 +74554,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_bio_small
-			ironium_small
 			carbonium_small
+			ironium_small
 			biomass_plant_small
 		}
 
@@ -74646,8 +74590,8 @@ BlueprintOverrides
 		Items
 		{
 			titanium_bio_small
-			ironium_small
 			carbonium_small
+			ironium_small
 			biomass_plant_small
 		}
 
@@ -74669,9 +74613,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_big
 			ironium_big
 			carbonium_big
-			cobalt_bio_big
 			biomass_plant_big
 		}
 
@@ -74703,9 +74647,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_big
 			ironium_big
 			carbonium_big
-			cobalt_bio_big
 			biomass_plant_big
 		}
 
@@ -74737,9 +74681,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_big
 			ironium_big
 			carbonium_big
-			cobalt_bio_big
 			biomass_plant_big
 		}
 
@@ -74771,9 +74715,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_medium
 			ironium_medium
 			carbonium_medium
-			cobalt_bio_medium
 			biomass_plant_medium
 		}
 
@@ -74805,9 +74749,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_medium
 			ironium_medium
 			carbonium_medium
-			cobalt_bio_medium
 			biomass_plant_medium
 		}
 
@@ -74839,9 +74783,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_medium
 			ironium_medium
 			carbonium_medium
-			cobalt_bio_medium
 			biomass_plant_medium
 		}
 
@@ -74873,9 +74817,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_small
 			ironium_small
 			carbonium_small
-			cobalt_bio_small
 			biomass_plant_small
 		}
 
@@ -74907,9 +74851,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_small
 			ironium_small
 			carbonium_small
-			cobalt_bio_small
 			biomass_plant_small
 		}
 
@@ -74941,9 +74885,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			cobalt_bio_small
 			ironium_small
 			carbonium_small
-			cobalt_bio_small
 			biomass_plant_small
 		}
 
@@ -75231,8 +75175,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			carbonium_big
 			cobalt_bio_medium
+			carbonium_big
 			biomass_plant_big
 		}
 
@@ -75264,9 +75208,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			biomass_plant_big
-			carbonium_big
 			cobalt_bio_medium
+			carbonium_big
+			biomass_plant_big
 		}
 
 	}
@@ -75297,9 +75241,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			biomass_plant_big
-			carbonium_big
 			cobalt_bio_medium
+			carbonium_big
+			biomass_plant_big
 		}
 
 	}
@@ -75330,9 +75274,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			biomass_plant_medium
-			carbonium_medium
 			cobalt_bio_small
+			carbonium_medium
+			biomass_plant_medium
 		}
 
 	}
@@ -75888,8 +75832,8 @@ BlueprintOverrides
 	{
 		Items
 		{
-			carbonium_medium
 			cobalt_bio_medium
+			carbonium_medium
 			biomass_plant_medium
 		}
 
@@ -75932,9 +75876,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			biomass_plant_medium
-			carbonium_medium
 			cobalt_bio_medium
+			carbonium_medium
+			biomass_plant_medium
 		}
 
 	}
@@ -75944,8 +75888,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			carbonium_medium
 			titanium_bio_medium
+			carbonium_medium
 		}
 
 	}
@@ -75955,8 +75899,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			carbonium_medium
 			titanium_bio_medium
+			carbonium_medium
 		}
 
 	}
@@ -75976,9 +75920,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			biomass_plant_medium
-			carbonium_medium
 			cobalt_bio_medium
+			carbonium_medium
+			biomass_plant_medium
 		}
 
 	}
@@ -75988,8 +75932,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			carbonium_medium
 			titanium_bio_medium
+			carbonium_medium
 		}
 
 	}
@@ -75999,8 +75943,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			carbonium_medium
 			titanium_bio_medium
+			carbonium_medium
 		}
 
 	}
@@ -76020,9 +75964,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			biomass_plant_small
-			carbonium_small
 			cobalt_bio_small
+			carbonium_small
+			biomass_plant_small
 		}
 
 	}
@@ -76032,8 +75976,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_small
-			carbonium_small
 			titanium_bio_small
+			carbonium_small
 		}
 
 	}
@@ -76043,8 +75987,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_small
-			carbonium_small
 			titanium_bio_small
+			carbonium_small
 		}
 
 	}
@@ -76196,9 +76140,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			biomass_plant_very_small
-			carbonium_very_small
 			cobalt_bio_very_small
+			carbonium_very_small
+			biomass_plant_very_small
 		}
 
 	}
@@ -76208,8 +76152,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_very_small
-			carbonium_very_small
 			titanium_bio_very_small
+			carbonium_very_small
 		}
 
 	}
@@ -76219,8 +76163,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_very_small
-			carbonium_very_small
 			titanium_bio_very_small
+			carbonium_very_small
 		}
 
 	}
@@ -76240,9 +76184,9 @@ BlueprintOverrides
 	{
 		Items
 		{
-			biomass_plant_very_small
-			carbonium_very_small
 			cobalt_bio_very_small
+			carbonium_very_small
+			biomass_plant_very_small
 		}
 
 	}
@@ -76252,8 +76196,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_very_small
-			carbonium_very_small
 			titanium_bio_very_small
+			carbonium_very_small
 		}
 
 	}
@@ -76263,8 +76207,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_very_small
-			carbonium_very_small
 			titanium_bio_very_small
+			carbonium_very_small
 		}
 
 	}
@@ -76316,8 +76260,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_big
-			carbonium_medium
 			titanium_bio_medium
+			carbonium_medium
 		}
 
 	}
@@ -76348,8 +76292,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_big
-			carbonium_medium
 			titanium_bio_medium
+			carbonium_medium
 		}
 
 	}
@@ -76380,8 +76324,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			carbonium_small
 			titanium_bio_small
+			carbonium_small
 		}
 
 	}
@@ -76508,8 +76452,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_small
-			carbonium_very_small
 			titanium_bio_very_small
+			carbonium_very_small
 		}
 
 	}
@@ -76540,8 +76484,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_small
-			carbonium_very_small
 			titanium_bio_very_small
+			carbonium_very_small
 		}
 
 	}
@@ -77162,8 +77106,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			carbonium_medium
 			titanium_bio_medium
+			carbonium_medium
 		}
 
 	}
@@ -77195,8 +77139,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_medium
-			carbonium_medium
 			titanium_bio_medium
+			carbonium_medium
 		}
 
 	}
@@ -77228,8 +77172,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_small
-			carbonium_small
 			titanium_bio_small
+			carbonium_small
 		}
 
 	}
@@ -77360,8 +77304,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_very_small
-			carbonium_very_small
 			titanium_bio_very_small
+			carbonium_very_small
 		}
 
 	}
@@ -77393,8 +77337,8 @@ BlueprintOverrides
 		Items
 		{
 			biomass_plant_very_small
-			carbonium_very_small
 			titanium_bio_very_small
+			carbonium_very_small
 		}
 
 	}
