@@ -1,0 +1,163 @@
+EntityBlueprint
+{
+	name  			"units/drones/drone_flora_cultivator"
+	base_blueprint 	"units/drones/drone_base"
+
+	StateMachineDesc
+	{
+		template_name "drone"
+		params
+		{
+			hover_height			float:"1"
+			hover_min_height		float:"7"
+
+			owner_movement			string:"land"
+			target_movement			string:"hover"
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/units/air/planter_drone.lua"
+		
+		database
+		{		
+			plant_marker		string:"units/drones/drone_flora_cultivator_marker"
+			plant_effect		string:"effects/destructibles/grass_medium"
+
+			plant_time			float:"0.75"
+			plant_radius		float:"20"
+			
+			min_scale			float:"0.75"
+			max_scale			float:"0.75"
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/units/drones/drone_flora_cultivator.mesh"
+		material "units/drones/drone_flora_cultivator"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/units/drones/drone_flora_cultivator"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "flora_cultivator_drone"
+	}
+
+	MovementDataComponent
+	{
+		acceleration 			
+		{
+			base 	"20"
+		}		
+		
+		deacceleration 			
+		{
+			base 	"20"
+		}
+		
+		max_speed 				
+		{
+			base 	"60"
+		}
+	}
+
+	DestroyDesc
+	{
+		
+		DestroyPatterns
+		{		
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_energy/explosion_building_energy_small"	
+					part_physics_material   "debris_heavy"	
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}
+
+				key "default"
+			}			
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"units/drones/drone_base"
+		}	
+		
+		EffectGroup
+		{
+			group "work"
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/drone_cultivate_plants"
+				}
+
+			}
+		}
+	}
+		
+}
+
+EntityBlueprint
+{
+	name  "units/drones/drone_flora_cultivator_marker"
+
+	GridMarkerComponent
+	{
+		mode "origin"
+
+		layers_template
+		{
+			components
+			{
+				FloraCultivatorLayerComponent
+				{
+				}
+			}
+		}
+	}
+
+	LifeTimeDesc
+	{
+		time "30.0"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"vegetation"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "2"
+					}			
+				}
+			}
+		}
+	}
+}
