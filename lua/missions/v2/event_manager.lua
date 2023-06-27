@@ -9,6 +9,10 @@ end
 
 function event_manager:init()
 
+	LogService:Log( "event_manager:------- EVENT MANAGER VER 2.0 ------- " )
+
+	self:InitRules()
+
 	self.currentEventLevel = 1
 
 	self.streamActionResourceGiveBelowPercentage		= 80
@@ -23,7 +27,6 @@ function event_manager:init()
 	self.areNegativeEventsAllowed	= true
 	self.arePositiveEventsAllowed	= true
 
-	self.streamingTapTapVotingTime	= 4
 	self.resourcePercentageStep	    = 3
 	self.idleTimeEventMul			= 0.35
 	self.idleTimeObjectiveMul		= 0.2
@@ -37,31 +40,11 @@ function event_manager:init()
 	self.objectiveActiveList						= {}
 	self.objectiveAvailableList						= {}
 
-	self.excludeResourceList = 
-	{
-		"uranium",
-		"uranium_ore",
-		"titanium",
-		"palladium"
-    }
-
-	self.availableResourcesToSpawn =
-	{
-		"carbon_vein",
-		"iron_vein"
-    }
-
 	-- ======================================== DO NOT TOUCH BELOW THE FILE ============================================
 
 	self:RegisterHandler( event_sink, "GameStreamingCreateVoteRequest", "OnGameStreamingCreateVoteRequest" )
 	self:RegisterHandler( event_sink, "GameStreamingClearVoteRequest",  "OnGameStreamingClearVoteRequest" )
 	self:RegisterHandler( event_sink, "GameStreamingActionEvent",		"OnGameStreamingActionEvent" )
-
-	self.tapTap = self:CreateStateMachine()
-	self.tapTap:AddState( "taptap_prepare", { enter="OnEnterTapTapPrepare", exit= "OnExitTapTapPrepare" } )
-
-	self.tapTapVoting = self:CreateStateMachine()
-	self.tapTapVoting:AddState( "taptap_voting_prepare", { enter="OnEnterTapTapVotingPrepare", exit= "OnExitTapTapVotingPrepare" } )
 
 	self.eventManagerTimer = self:CreateStateMachine()
 	self.eventManagerTimer:AddState( "timer", { execute="OnExecuteTimer" } )
@@ -69,9 +52,7 @@ function event_manager:init()
 
 	self.eventManagerTimer = 0
 
-	self.dynamicStreamingSceneName = "dynamic_scene"
-	self.tapTapEventName		   = ""
-	self.tapTapTime				   = 30
+	self.dynamicStreamingSceneName = "   "
 
 	self.cancelTheAttack		   = false
 	self.spawnBoss				   = false;
@@ -84,6 +65,9 @@ function event_manager:init()
 
 	self.eventLogicFile				= ""
 	self.lastNonStreamEvent			= ""
+
+	self:FillInitialParamsEventManager()
+
 end
 
 function event_manager:Activated()
@@ -91,19 +75,64 @@ function event_manager:Activated()
 
 end
 
-function event_manager:IncreamentEventLevel()
+function event_manager:InitRules()
+    if ( type( self.rules ) == "string" ) then
+        self.rulesFile = self.rules
+		LogService:Log( "event_manager:InitRules() : rules file path : " .. tostring( self.rulesFile ) )
+		LogService:Log( "event_manager:InitRules() : difficulty : " .. tostring( DifficultyService:GetCurrentDifficultyName() ) )
+        self.rules = require( self.rulesFile )()
+    end
+end
+
+function event_manager:FillInitialParamsEventManager()
+	self.excludeResourceList = 
+	{
+		"uranium",
+		"uranium_ore",
+		"titanium",
+		"palladium",
+		"cobalt"
+    }
+
+	self.resourceEvents = 
+	{
+		"spawn_resource_comet",
+		"spawn_resource_earthquake"
+	}
+
+	self.availableResourcesToSpawn =
+	{
+		"carbon_vein",
+		"iron_vein"
+    }
+
+	self.addResourcesOnRunOut		= DeepCopy( self.rules.addResourcesOnRunOut )
+	self.addResourcesOnRunOutTimer	= 0
+	self.addResourcesOnRunOutTime	= 1200
+
+	if ( self.rules.baseTimeBetweenObjectives ~= nil ) then
+		self.objectiveBaseTimeBetweenNext = self.rules.baseTimeBetweenObjectives
+	end
+end
+
+function event_manager:IncreamentEventLevel( freezedDifficultyLevel )
 
 	self.currentEventLevel = self.currentEventLevel + 1
+
+	if ( self.currentEventLevel > freezedDifficultyLevel ) then
+		LogService:Log( "event_manager:IncreamentEventLevel() : Event level will not rise. Clamped to  " .. tostring( freezedDifficultyLevel ) )
+		self.currentEventLevel = freezedDifficultyLevel
+	end
 
 	LogService:Log( "event_manager:IncreamentEventLevel() - Event level : " .. tostring( self.currentEventLevel ) )
 end
 
 function event_manager:OnGameStreamingCreateVoteRequest( event )
-	LogService:Log( "DOM voting start" )
+	LogService:Log( "event_manager:DOM voting start" )
 end
 
 function event_manager:OnGameStreamingClearVoteRequest( event )
-	LogService:Log( "DOM voting end" )
+	LogService:Log( "event_manager:DOM voting end" )
 
 	GameStreamingService:RemoveDynamicScene( self.dynamicStreamingSceneName )
 end
@@ -118,76 +147,6 @@ end
 
 function event_manager:OnExecuteTimer( state, dt )
 	self.eventManagerTimer = self.eventManagerTimer + dt
-end
-
---  ----------------------------------------------------------- TapTapPrepare ---------------------------------------
-
-function event_manager:OnEnterTapTapPrepare( state )
-
-	LogService:Log( "OnEnterPrepare" )
-
-	state:SetDurationLimit( 5 )
-
-end
-
-function event_manager:OnExitTapTapPrepare( state )
-	
-	LogService:Log( "OnExitPrepare" )
-
-	if ( GameStreamingService:IsInStreamEvent() == false ) then
-		if ( RiftbreakerGameStreamingService:AreThereAnyEnemiesInFrustum() == true ) then
-
-			LogService:Log( "Creatures in frustum - starting taptap" )
-
-			GameStreamingService:CreateDynamicScene( self.dynamicStreamingSceneName )
-
-			if ( self.tapTapEventName == "ammunition_support"  ) then
-				GameStreamingService:AddActionToDynamicScene( self.dynamicStreamingSceneName, "extra_ammo", 0, "" )
-			elseif ( self.tapTapEventName == "help_from_above" ) then
-				GameStreamingService:AddActionToDynamicScene( self.dynamicStreamingSceneName, "meteor_strike", 0, "" )
-			end
-
-			GameStreamingService:StartTapTap( self.dynamicStreamingSceneName, self.tapTapTime, true, false )
-		else
-			
-			LogService:Log( "No Creatures in frustum - waiting taptap" )
-
-			self.tapTap:ChangeState( "taptap_prepare" )
-		end
-	end
-end
-
-
---  ----------------------------------------------------------- TapTapVotingPrepare ---------------------------------------
-
-function event_manager:OnEnterTapTapVotingPrepare( state )
-
-	LogService:Log( "OnEnterTapTapVotingPrepare" )
-
-	state:SetDurationLimit( 5 )
-
-end
-
-function event_manager:OnExitTapTapVotingPrepare( state )
-	
-	LogService:Log( "OnExitTapTapVotingPrepare" )
-
-	if ( GameStreamingService:IsInStreamEvent() == false ) then
-
-		GameStreamingService:CreateDynamicScene( self.dynamicStreamingSceneName )
-		
-		if ( self.tapTapEventName == "spawn_tornado_near_base" ) then	
-			GameStreamingService:AddActionToDynamicScene( self.dynamicStreamingSceneName, "tornado_away_base", 0, "" )
-			GameStreamingService:AddActionToDynamicScene( self.dynamicStreamingSceneName, "tornado_towards_base", 0, "" )
-			MissionService:ActivateMissionFlow( "", self.eventLogicFile, "default", self.data )
-		elseif ( self.tapTapEventName == "spawn_tornado_near_player"  ) then
-			GameStreamingService:AddActionToDynamicScene( self.dynamicStreamingSceneName, "tornado_away_player", 0, "" )
-			GameStreamingService:AddActionToDynamicScene( self.dynamicStreamingSceneName, "tornado_towards_player", 0, "" )
-			MissionService:ActivateMissionFlow( "", self.eventLogicFile, "default", self.data )
-		end
-
-		GameStreamingService:StartTapTapVoting( self.dynamicStreamingSceneName, self.tapTapTime, true, self.streamingTapTapVotingTime )
-	end
 end
 
 function event_manager:GetAmountFromAction( actionName )
@@ -235,8 +194,8 @@ function event_manager:GetResearchNameFromAction( actionName )
 	return ""
 end
 
-function event_manager:GetLogicFileFromAction( actionName )
-	for data in Iter( self.currentStreamingData ) do 
+function event_manager:GetLogicFileFromAction( actionName, currentStreamingData )
+	for data in Iter( currentStreamingData ) do 
 		
 		if ( data.action == actionName ) and ( data.logicFile ~= nil ) then
 			return data.logicFile
@@ -246,15 +205,26 @@ function event_manager:GetLogicFileFromAction( actionName )
 	return ""
 end
 
-function event_manager:GetTimeFromAction( actionName )
+function event_manager:GetMinTimeFromAction( actionName )
 	for data in Iter( self.currentStreamingData ) do 		
 
-		if ( data.action == actionName ) and ( data.time ~= nil ) then
-			return data.time
+		if ( data.action == actionName ) and ( data.minTime ~= nil ) then
+			return data.minTime
 		end
 	end
 
-	return 0
+	return 90
+end
+
+function event_manager:GetMaxTimeFromAction( actionName )
+	for data in Iter( self.currentStreamingData ) do 		
+
+		if ( data.action == actionName ) and ( data.maxTime ~= nil ) then
+			return data.maxTime
+		end
+	end
+
+	return 90
 end
 
 function event_manager:HasGameState( gameStates, state )
@@ -386,13 +356,13 @@ function event_manager:PrepareEvents( gameState )
 
 	local streamActive				= GameStreamingService:IsStreamingSessionStarted()
 
-	self.areNegativeEventsAllowed	= GameStreamingService:AreNegativeEventsAllowed()
+	self.areNegativeEventsAllowed   = GameStreamingService:AreNegativeEventsAllowed()
 	self.arePositiveEventsAllowed	= GameStreamingService:ArePositiveEventsAllowed()
 
 	if ( streamActive == true ) then
 		LogService:Log( "event_manager:PrepareEvents() - Stream session is active." )
 	else
-		self.areNegativeEventsAllowed = true
+		self.areNegativeEventsAllowed = DifficultyService:AreNegativeEventsEnabled()
 		self.arePositiveEventsAllowed = true
 		LogService:Log( "event_manager:PrepareEvents() - Stream session is not active." )
 	end
@@ -592,12 +562,6 @@ function event_manager:PrepareEvents( gameState )
 			end
 		end
 	
-		-- tap tap events are not available on the Twitch platform
-		if ( ( data.isTapTap ~= nil ) and ( data.isTapTap == true ) and ( GameStreamingService:GetCurrentStreamingType() == GST_TWITCH ) ) then
-			LogService:Log( "Tap tap events are not available on the Twitch platform. Removining an action : " .. tostring( data.action ) )
-			table.insert( tableTmp, data )
-		end
-
 	end
 
 	-- remove not allowed events
@@ -621,7 +585,7 @@ function event_manager:CheckResourceToAdd( data, addResourceList )
 	for i = 1, #resourceList, 1 do 
 		local resourcePercentage = ( PlayerService:GetResourceAmount( resourceList[i] ) / PlayerService:GetResourceLimit( resourceList[i] ) ) * 100
 
-		LogService:Log( "Checking resource " .. resourceList[i] .. " - current percentage : " .. tostring( resourcePercentage ) )
+		LogService:Log( "event_manager:Checking resource " .. resourceList[i] .. " - current percentage : " .. tostring( resourcePercentage ) )
 
 		if ( resourcePercentage < self.streamActionResourceGiveBelowPercentage ) then
 			
@@ -645,7 +609,7 @@ function event_manager:CheckResourceToAdd( data, addResourceList )
 				table.insert( availableResurces, resourceList[i] )
 			end
 		else
-			LogService:Log( "Resource percentage above " .. tostring( self.streamActionResourceGiveBelowPercentage ) .. " removing resource : " .. resourceList[i] )
+			LogService:Log( "event_manager:Resource percentage above " .. tostring( self.streamActionResourceGiveBelowPercentage ) .. " removing resource : " .. resourceList[i] )
 		end
 	end
 
@@ -684,7 +648,7 @@ function event_manager:IsEarlyDay()
 
 	LogService:Log( "event_manager:IsEarlyDay() - current hour : " .. tostring( hour ) )
 
-	if ( ( hour >= 9 ) and ( hour <= 12 ) ) then
+	if ( ( hour >= 9 ) and ( hour <= 16 ) ) then
 		return false
 	end
 
@@ -750,7 +714,7 @@ function event_manager:CheckResourceToRemove( data, removeResourceList )
 	for i = 1, #resourceList, 1 do 
 		local resourcePercentage = ( PlayerService:GetResourceAmount( resourceList[i] ) / PlayerService:GetResourceLimit( resourceList[i] ) ) * 100
 
-		LogService:Log( "Checking resource " .. resourceList[i] .. " - current percentage : " .. tostring( resourcePercentage ) )
+		LogService:Log( "event_manager:Checking resource " .. resourceList[i] .. " - current percentage : " .. tostring( resourcePercentage ) )
 
 		if ( resourcePercentage > self.streamActionResourceTakeAwayAbovePercentage ) then
 
@@ -774,7 +738,7 @@ function event_manager:CheckResourceToRemove( data, removeResourceList )
 				table.insert( availableResurces, resourceList[i] )
 			end
 		else
-			LogService:Log( "Resource percentage below " .. tostring( self.streamActionResourceTakeAwayAbovePercentage ) .. " removing action : " .. resourceList[i] )
+			LogService:Log( "event_manager:Resource percentage below " .. tostring( self.streamActionResourceTakeAwayAbovePercentage ) .. " removing action : " .. resourceList[i] )
 		end
 	end
 
@@ -808,10 +772,10 @@ function event_manager:CheckAmmoRefill( data )
 	
 			local ammoPercentage = ( PlayerService:GetResourceAmount( ammoList[i] ) / PlayerService:GetResourceLimit( ammoList[i] ) ) * 100
 
-			LogService:Log( "Checking action " .. tostring( data.action ) .. " for " .. ammoList[i] .. " - current percentage : " .. tostring( ammoPercentage ) )
+			LogService:Log( "event_manager:Checking action " .. tostring( data.action ) .. " for " .. ammoList[i] .. " - current percentage : " .. tostring( ammoPercentage ) )
 
 			if ( ammoPercentage > self.streamActionAmmoGivePercentage ) then
-				LogService:Log( "Ammo give percentage " .. tostring( self.streamActionAmmoGivePercentage ) .. " removing action : " .. data.action )
+				LogService:Log( "event_manager:Ammo give percentage " .. tostring( self.streamActionAmmoGivePercentage ) .. " removing action : " .. data.action )
 				return true
 			end
 		end
@@ -857,11 +821,10 @@ function event_manager:CheckObjectiveLogicFile( logicFile )
 	end
 end
 
-function event_manager:SpawnExtraResources( logicFile )
-	local resourceName = self.availableResourcesToSpawn[RandInt( 1, #self.availableResourcesToSpawn )]
-
+function event_manager:SpawnExtraResources( logicFile, resourceName, minAmount, maxAmount )
 	LogService:Log( "event_manager:SpawnExtraResources " .. resourceName  )
-
+	self.data:SetInt( "minAmount", minAmount )
+	self.data:SetInt( "maxAmount", maxAmount )
 	self.data:SetString( "resource", resourceName )
 	MissionService:ActivateMissionFlow( "", logicFile, "default", self.data )
 
@@ -870,6 +833,73 @@ end
 function event_manager:StartAnEvent( gameState )
 
 	LogService:Log( "event_manager:StartAnEvent()" )
+
+	if ( gameState == "IDLE" ) then	
+		if ( ( self.addResourcesOnRunOut ~= nil ) and ( #self.addResourcesOnRunOut > 0 ) )then
+
+			LogService:Log( "event_manager:StartAnEvent - checking resources amount on map." )
+
+			local runningOutResources = {}
+
+			for i = 1, #self.addResourcesOnRunOut, 1 do 
+				local currentResourcePercentage = ResourceService:GetPercentOfAvailableResourceByType( self.addResourcesOnRunOut[i].name )
+
+				if ( currentResourcePercentage ~= nil ) then
+					
+					currentResourcePercentage = currentResourcePercentage * 100;
+
+					if ( self.addResourcesOnRunOut[i].runOutPercentageOnMap >= currentResourcePercentage ) then
+						local runningOutResourcesIndex = #runningOutResources + 1
+						runningOutResources[runningOutResourcesIndex] = self.addResourcesOnRunOut[i]
+						runningOutResources[runningOutResourcesIndex].currentResourcePercentage = currentResourcePercentage
+						LogService:Log( "event_manager:StartAnEvent - resource is running out : " .. self.addResourcesOnRunOut[i].name .. " amount " ..  tostring( currentResourcePercentage ) .. " adding on below " .. tostring( self.addResourcesOnRunOut[i].runOutPercentageOnMap ) ) 
+					else
+						LogService:Log( "event_manager:StartAnEvent - resource is not running out : " .. self.addResourcesOnRunOut[i].name .. " amount " ..  tostring( currentResourcePercentage ) .. " adding on below " .. tostring( self.addResourcesOnRunOut[i].runOutPercentageOnMap ) ) 
+					end
+				else
+					LogService:Log( "event_manager:StartAnEvent - resource does not exist on this map : " .. self.addResourcesOnRunOut[i].name )
+				end
+			end
+
+			local runOutOnMap = false
+			local lowerIndex = 1
+			local minResourcePercentage = 100
+
+			for i = 1, #runningOutResources, 1 do 
+				local currentResourcePercentage = runningOutResources[i].currentResourcePercentage
+				if ( minResourcePercentage >= currentResourcePercentage ) then
+					lowerIndex = i
+					runOutOnMap = true
+					minResourcePercentage = currentResourcePercentage
+				end
+			end
+
+			if ( runOutOnMap ) then
+				LogService:Log( "event_manager:StartAnEvent - selecting most run out resource : " .. runningOutResources[lowerIndex].name )	
+			
+				if ( self.addResourcesOnRunOutTimer > self.eventManagerTimer ) then
+					LogService:Log( "event_manager:StartAnEvent - timer is not ready to spawn new resources : " .. tostring( self.addResourcesOnRunOutTimer ) .. " current time : " .. tostring( self.eventManagerTimer ) )
+				elseif ( ( runOutOnMap ) and ( self.addResourcesOnRunOutTimer < self.eventManagerTimer ) ) then
+					local eventName = self.resourceEvents[RandInt( 1, #self.resourceEvents )] 
+					local logicFile = self:GetLogicFileFromAction( eventName, self.rules.gameEvents )
+
+					self.addResourcesOnRunOutTimer = self.eventManagerTimer + self.addResourcesOnRunOutTime
+
+					if ( logicFile ~= "" ) then
+						
+						LogService:Log( "event_manager:StartAnEvent - spawning resource event : " .. eventName .. " logic file name : " .. logicFile )			
+						LogService:Log( "event_manager:StartAnEvent - skipping events : " .. gameState )
+
+						self:SpawnExtraResources( logicFile, runningOutResources[lowerIndex].name, runningOutResources[lowerIndex].minToSpawn, runningOutResources[lowerIndex].maxToSpawn )
+
+						return
+					else
+						LogService:Log( "event_manager:StartAnEvent - spawning resource event " .. eventName .. " does not exist in the rules." )
+					end
+				end		
+			end
+		end
+	end
 
 	self.currentStreamingData = self:PrepareEvents( gameState )
 
@@ -880,17 +910,38 @@ function event_manager:StartAnEvent( gameState )
 
 		local optionsAtOnce = RandInt( 3, 6 )
 
-		LogService:Log( "Options count : " .. tostring( optionsAtOnce) )
+		LogService:Log( "event_manager:Options count : " .. tostring( optionsAtOnce) )
 
-		-- remove extra options
-		while #self.currentStreamingData > optionsAtOnce do
-			local random = RandInt( 1, #self.currentStreamingData )
-			LogService:Log( "Removing : " .. self.currentStreamingData[random].action )
-			table.remove( self.currentStreamingData, random )	
+		local currentStreamingData = {}
+
+		for i = 1, #self.currentStreamingData, 1 do 
+			LogService:Log( "event_manager:StartAnEvent() - available event : " .. self.currentStreamingData[i].action )
+		end
+
+		local tempStreamingData = DeepCopy( self.currentStreamingData )
+
+		if ( optionsAtOnce > #tempStreamingData ) then
+			optionsAtOnce = #tempStreamingData
+			LogService:Log( "event_manager:StartAnEvent() - clamping optionsAtOnce : " .. tostring( #tempStreamingData ) )
+		end
+
+		while #currentStreamingData ~= optionsAtOnce do
+			local event = self:GetEventByWeight( tempStreamingData )
+
+			for i = 1, #tempStreamingData, 1 do 
+				if ( event == tempStreamingData[i].action ) then
+					LogService:Log( "event_manager:StartAnEvent() - picking event : " .. tempStreamingData[i].action )
+					currentStreamingData[#currentStreamingData + 1] = tempStreamingData[i]
+					table.remove( tempStreamingData, i )
+					break
+				end
+			end
 		end 
 
+		LogService:Log( "event_manager: Creating streaming actions : " .. tostring( optionsAtOnce) )
+
 		-- create actions
-		for data in Iter( self.currentStreamingData ) do 
+		for data in Iter( currentStreamingData ) do 
 			LogService:Log( data.action )
 
 			local value = 0
@@ -919,7 +970,7 @@ function event_manager:StartAnEvent( gameState )
 
 		
 		local eventChanceRoll = RandInt( 0, 100 )
-		local eventChance = 70
+		local eventChance = 100
 
 		LogService:Log( "event_manager:StartAnEvent() - eventChanceRoll : " .. eventChanceRoll )
 
@@ -939,16 +990,57 @@ function event_manager:StartAnEvent( gameState )
 				end
 			end
 
+			for i = 1, #self.currentStreamingData, 1 do 
+				LogService:Log( "event_manager:StartAnEvent() - available event : " .. self.currentStreamingData[i].action )
+			end
+
 			if ( #self.currentStreamingData > 0 ) then
-				local random = RandInt( 1, #self.currentStreamingData )
-				self.lastNonStreamEvent	= self.currentStreamingData[random].action
-				self:SpawnEvent( self.currentStreamingData[random].action, "" )
+				local event = self:GetEventByWeight( self.currentStreamingData )
+				self.lastNonStreamEvent	= event
+				self:SpawnEvent( event, "" )
 			end
 		else
 			LogService:Log( "event_manager:StartAnEvent() - eventChanceRoll is below roll chance : " .. eventChance )
 		end
 
 	end
+end
+
+
+function event_manager:GetEventByWeight( currentStreamingData )
+    
+	LogService:Log( "event_manager:GetEventByWeight - checking events Probability." )	
+
+	local totalWeight = 0.0
+
+    local events = {}
+    for i = 1, #currentStreamingData, 1 do 
+
+        local rangeStart = totalWeight
+
+        if ( currentStreamingData[i].weight ~= nil )  then
+            totalWeight = totalWeight + currentStreamingData[i].weight
+        else
+            totalWeight = totalWeight + 1.0
+        end
+
+        local rangeEnd = totalWeight
+
+		LogService:Log( tostring( currentStreamingData[i].action ) .. " -  range : " .. tostring( rangeStart ) .. " - " .. tostring( rangeEnd ) )
+
+        events[currentStreamingData[i].action] = { min = rangeStart, max = rangeEnd }
+    end
+
+    local rand = math.random( 0.0, ( totalWeight * 100 ) - 1 ) / 100
+    LogService:Log("event_manager:GetEventByWeight - Random : " .. tostring( rand ) )
+
+    for event,v in pairs( events ) do
+        if v.min <= rand and v.max > rand then
+			LogService:Log("event_manager:GetEventByWeight - Choosing " .. tostring( event ) .. " range: " .. tostring( v.min ) .. " - " .. tostring( v.max ) )
+            return event;
+        end
+    end
+
 end
 
 function event_manager:ChangeTimeOfDay()
@@ -971,7 +1063,7 @@ end
 
 function event_manager:OnEnterHelpFromAbove( state )
 
-	LogService:Log( "OnEnterHelpFromAbove" )
+	LogService:Log( "event_manager:OnEnterHelpFromAbove" )
 
 	state:SetDurationLimit( 5 )
 
@@ -984,26 +1076,9 @@ end
 
 function event_manager:OnExitHelpFromAbove( state )
 
-	LogService:Log( "OnExitHelpFromAbove" )
+	LogService:Log( "event_manager:OnExitHelpFromAbove" )
 
 end
-
---  ----------------------------------------------------------- DefaultTapTap ---------------------------------------
-
-function event_manager:OnEnterDefaultTapTap( state )
-
-	LogService:Log( "OnEnterDefaultTapTap" )
-
-	state:SetDurationLimit( 5 )
-
-end
-
-function event_manager:OnExitDefaultTapTap( state )
-
-	LogService:Log( "OnExitDefaultTapTap" )
-
-end
-
 
 function event_manager:OnGameStreamingActionEvent( event )
 	self:SpawnEvent( event:GetActionName(), event:GetParticipantList() )
@@ -1030,34 +1105,39 @@ function event_manager:SpawnEvent( action, participants )
 	LogService:Log( "event_manager:SpawnEvent : participants " .. participants )
 
 	local amount		= self:GetAmountFromAction( action )
-	local time			= self:GetTimeFromAction( action )
-	self.eventLogicFile = self:GetLogicFileFromAction( action )
+	self.eventLogicFile = self:GetLogicFileFromAction( action, self.currentStreamingData )
 
-	if ( ( translatedEventName == "spawn_tornado_near_player" ) or ( translatedEventName == "spawn_tornado_near_base" ) ) then
-		self.tapTapEventName = translatedEventName;
-		self.tapTapTime		 = time
-		self.tapTapVoting:ChangeState( "taptap_voting_prepare" )
-	elseif ( translatedEventName == "spawn_acid_rain" ) or 
-		   ( translatedEventName == "spawn_wind_weak" ) or
-		   ( translatedEventName == "spawn_wind_strong" ) or
-		   ( translatedEventName == "spawn_wind_none" ) or
-		   ( translatedEventName == "spawn_meteor_shower" ) or
-		   ( translatedEventName == "spawn_volcanic_rock_rain" ) or		   
-		   ( translatedEventName == "spawn_ion_storm" ) or
-		   ( translatedEventName == "spawn_thunderstorm" ) or
-		   ( translatedEventName == "spawn_solar_eclipse" ) or
-		   ( translatedEventName == "spawn_earthquake" ) or
-		   ( translatedEventName == "spawn_volcanic_ash_clouds" ) or
-		   ( translatedEventName == "spawn_solar_burn" ) or	  
-		   ( translatedEventName == "spawn_blue_hail" ) or	  	   
-		   ( translatedEventName == "spawn_super_moon" ) or
-		   ( translatedEventName == "spawn_fog" ) or
-		   ( translatedEventName == "shegret_attack" ) or
-		   ( translatedEventName == "spawn_acid_fissures" ) or
-		   ( translatedEventName == "spawn_blood_moon" ) or
-		   ( translatedEventName == "spawn_blue_moon" ) or
-		   ( translatedEventName == "spawn_dust_storm" ) or
-		   ( translatedEventName == "spawn_rain" ) then
+	if ( translatedEventName == "spawn_acid_rain" ) or 
+		( translatedEventName == "spawn_comet_silent" ) or
+		( translatedEventName == "spawn_wind_weak" ) or
+		( translatedEventName == "spawn_wind_strong" ) or
+		( translatedEventName == "spawn_wind_none" ) or
+		( translatedEventName == "spawn_meteor_shower" ) or
+		( translatedEventName == "spawn_volcanic_rock_rain" ) or		   
+		( translatedEventName == "spawn_ion_storm" ) or
+		( translatedEventName == "spawn_thunderstorm" ) or
+		( translatedEventName == "spawn_solar_eclipse" ) or
+		( translatedEventName == "spawn_earthquake" ) or
+		( translatedEventName == "spawn_volcanic_ash_clouds" ) or
+		( translatedEventName == "spawn_solar_burn" ) or	  
+		( translatedEventName == "spawn_blue_hail" ) or	  	   
+		( translatedEventName == "spawn_super_moon" ) or
+		( translatedEventName == "spawn_fog" ) or
+		( translatedEventName == "shegret_attack" ) or
+		( translatedEventName == "spawn_acid_fissures" ) or
+		( translatedEventName == "spawn_blood_moon" ) or
+		( translatedEventName == "spawn_blue_moon" ) or
+		( translatedEventName == "spawn_dust_storm" ) or
+		( translatedEventName == "spawn_tornado_near_player" ) or
+		( translatedEventName == "spawn_tornado_near_base" ) or
+		( translatedEventName == "spawn_rain" ) then
+		local timeMin		= self:GetMinTimeFromAction( action )
+		local timeMax		= self:GetMaxTimeFromAction( action )
+		local randomTime    = RandInt( timeMin, timeMax )
+		LogService:Log( "event_manager:SpawnEvent - min time " .. tostring( timeMin ) )
+		LogService:Log( "event_manager:SpawnEvent - max time " .. tostring( timeMax ) )
+		LogService:Log( "event_manager:SpawnEvent - time set to " .. tostring( randomTime ) )
+		self.data:SetInt( "time", randomTime )
 		MissionService:ActivateMissionFlow( "", self.eventLogicFile, "default", self.data )
 	elseif ( translatedEventName == "add_resource" ) then
 		PlayerService:AddResourceAmount( self:GetResourceNameFromAction( action ), amount )
@@ -1075,22 +1155,15 @@ function event_manager:SpawnEvent( action, participants )
 		self:AddAmmo( -100 )
 	elseif ( translatedEventName == "extra_ammo" ) then
 		self:AddAmmo( self.streamAmmunitionSupportGiveAmmoPercentage )
-	elseif ( ( translatedEventName == "help_from_above" ) or ( translatedEventName == "ammunition_support" ) )then
-		self.tapTapEventName = translatedEventName;
-		self.tapTapTime = time
-		self.tapTap:ChangeState( "taptap_prepare" )
 	elseif ( translatedEventName == "meteor_strike" ) then
 		MeteorService:SpawnMeteorInFrustum( "weather/meteor_medium", 50, 140 )
-	elseif ( ( translatedEventName == "tornado_away_base" ) or ( translatedEventName == "tornado_away_player" ) ) then
-		TornadoService:SetEvadeMultiplier( 3.0 )
-	elseif ( ( translatedEventName == "tornado_towards_base" ) or ( translatedEventName == "tornado_towards_player" ) ) then
-		TornadoService:SetEvadeMultiplier( 0.0 )
 	elseif ( translatedEventName == "new_objective" ) then
 		self:SpawnObjective()
 	elseif ( translatedEventName == "change_time_of_day" ) then
 		self:ChangeTimeOfDay()
 	elseif ( ( translatedEventName == "spawn_resource_comet" ) or ( translatedEventName == "spawn_resource_earthquake" ) )then
-		self:SpawnExtraResources( self.eventLogicFile )
+		local resource = self.availableResourcesToSpawn[RandInt( 1, #self.availableResourcesToSpawn )]
+		self:SpawnExtraResources( self.eventLogicFile, resource, 10000, 20000 )
 	elseif ( translatedEventName == "boss_attack" ) then
 		self.spawnBoss = true
 		self.participants = self:PickRandomParticipant( participants )
