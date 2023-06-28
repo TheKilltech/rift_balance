@@ -471,7 +471,7 @@ function dom_mananger:DumpDomProgress( rules )
 	local attackTime = 0
 	local prepareAttackTime = 0
 
-	if ( self.pauseAttacks == false ) then
+	if ( self:GetPauseAttacks() == false ) then
 		self:VerboseLog("Attack number : 1 Time : 0 Difficulty level : 1 ");
 
 		for i = 2, 20, 1 do
@@ -519,9 +519,9 @@ function dom_mananger:DumpDomData()
 	local domType = "error"
 	local idleTime = self:GetIdleTime()
 
-	if ( ( self.pauseAttacks == true ) and ( idleTime > 0 ) ) then
+	if ( ( self:GetPauseAttacks() == true ) and ( idleTime > 0 ) ) then
 		domType = "scout"
-	elseif ( ( self.pauseAttacks == true ) and ( idleTime == 0 ) ) then
+	elseif ( ( self:GetPauseAttacks() == true ) and ( idleTime == 0 ) ) then
 		domType = "sandbox"
 	elseif ( idleTime == 0 ) then
 		domType = "survival"
@@ -981,6 +981,17 @@ function dom_mananger:GetExtraWavePool()
 	end
 end
 
+function dom_mananger:GetPauseAttacks()	
+	if (self.pauseAttacks == false) then
+		if (self:GetAttackCount( self.currentDifficultyLevel ) <= 0) then return true end
+		
+		local wavesPool = self:GetWavePool( self.currentDifficultyLevel )		
+		if (#wavesPool <= 0) then return true end
+	end
+	
+	return false
+end
+
 function dom_mananger:GetAttackCount( currentDifficultyLevel )	
 	return self.rules.maxAttackCountPerDifficulty[currentDifficultyLevel]
 end
@@ -1016,9 +1027,10 @@ function dom_mananger:OnExitWait( state )
 	if ( self.upgradeHQ:GetCurrentState() ~= "hq_entry_logic" ) then
 		local idleTime = self:GetIdleTime()
 
-		if ( ( self.pauseAttacks == true ) and ( idleTime > 0 ) ) then
+		local pauseAttacks = self:GetPauseAttacks()
+		if ( ( pauseAttacks == true ) and ( idleTime > 0 ) ) then
 			self.spawner:ChangeState( "idle" )
-		elseif ( ( self.pauseAttacks == true ) and ( idleTime == 0 ) ) then
+		elseif ( ( pauseAttacks == true ) and ( idleTime == 0 ) ) then
 			self.spawner:ChangeState( "prepare_spawn" )
 		else
 			self.spawner:ChangeState( "streaming" )
@@ -1044,7 +1056,7 @@ function dom_mananger:OnEnterPrepareSpawn( state )
 	self.objectiveActivated		= false	
 
 
-	if ( ( self.pauseAttacks == false ) and ( self.cancelTheAttack == false ) ) then
+	if ( ( self:GetPauseAttacks() == false ) and ( self.cancelTheAttack == false ) ) then
 		self.data:SetFloat( "time_max", self.waitForSpawnTimer )
 		MissionService:ActivateMissionFlow( self.objectivePrepareForTheAttacLogicFileName, self.objectivePrepareForTheAttacLogicFile, "default", self.data )
 
@@ -1079,7 +1091,7 @@ function dom_mananger:OnExecutePrepareSpawn( state, dt )
 
 	if ( self.waitForSpawnTimer < 0 ) then
 
-		if ( self.pauseAttacks == true ) then
+		if ( self:GetPauseAttacks() == true ) then
 			self.spawner:ChangeState( "dummy_state" )
 		else
 			self.spawner:ChangeState( "streaming" )
@@ -1178,7 +1190,7 @@ function dom_mananger:OnExecuteIdle( state, dt )
 
 		local idleTime = self:GetIdleTime()
 		
-		if ( ( self.pauseAttacks == true ) and ( idleTime > 0 ) ) then
+		if ( ( self:GetPauseAttacks() == true ) and ( idleTime > 0 ) ) then
 			self.spawner:ChangeState( "dummy_state" )
 		else
 			self.spawner:ChangeState( "prepare_spawn" )
@@ -1222,10 +1234,11 @@ end
 
 function dom_mananger:OnExecuteDummyState( state, dt )
 	local idleTime = self:GetIdleTime()
+	local pauseAttacks = self:GetPauseAttacks()
 
-	if ( ( self.pauseAttacks == true ) and ( idleTime > 0 ) ) then
+	if ( ( pauseAttacks == true ) and ( idleTime > 0 ) ) then
 		self.spawner:ChangeState( "idle" )
-	elseif ( ( self.pauseAttacks == true ) and ( idleTime == 0 ) ) then
+	elseif ( ( pauseAttacks == true ) and ( idleTime == 0 ) ) then
 		self.spawner:ChangeState( "prepare_spawn" )
 	else
 		self.spawner:ChangeState( "cooldown_after_spawn" )
