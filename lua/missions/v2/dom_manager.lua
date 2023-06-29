@@ -32,20 +32,20 @@ local function ProcessRulesTable( rules )
 	if data.waves then
 		for _,difficulties in pairs( data.waves ) do
 			for _,waves in ipairs( difficulties ) do
-				ConvertLogicEntries(waves)
+				if waves then ConvertLogicEntries(waves) end
 			end
 		end
 	end
 
 	if data.extraWaves then
 		for _,waves in ipairs( data.extraWaves ) do
-			ConvertLogicEntries(waves)
+			if waves then ConvertLogicEntries(waves) end
 		end
 	end
 
 	if data.bosses then
 		for _,waves in pairs( data.bosses ) do
-			ConvertLogicEntries(waves)
+			if waves then ConvertLogicEntries(waves) end
 		end
 	end
 
@@ -333,14 +333,14 @@ function dom_mananger:LogicFilesSanityCheck()
 
 			for i = 1, self.maxDifficultyLevel, 1 do 
 				for data in Iter( groupData[i] ) do 
-
-					if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.name ) ) then
-						local log = "rules.waves" .. " " .. tostring( i ) .. " : " .. data.name
-						table.insert( failedLogicFileTable, log )
-						log = log .. " NOT EXIST"			
-						LogService:Log( log )
+					if data then
+						if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.name ) ) then
+							local log = "rules.waves" .. " " .. tostring( i ) .. " : " .. data.name
+							table.insert( failedLogicFileTable, log )
+							log = log .. " NOT EXIST"			
+							LogService:Log( log )
+						end
 					end
-
 				end
 			end
 		end
@@ -369,11 +369,13 @@ function dom_mananger:LogicTableCheck( logicTable, logString, failedLogicFileTab
 
 		for i = 1, self.maxDifficultyLevel, 1 do 
 			for data in Iter( logicTable[i] ) do 
-				if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.name ) ) then
-					local log = logString .. " " .. tostring( i ) .. " : " .. data.name
-					table.insert( failedLogicFileTable, log )
-					log = log .. " NOT EXIST"			
-					LogService:Log( log )
+				if data then
+					if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.name ) ) then
+						local log = logString .. " " .. tostring( i ) .. " : " .. data.name
+						table.insert( failedLogicFileTable, log )
+						log = log .. " NOT EXIST"			
+						LogService:Log( log )
+					end
 				end
 			end
 		end

@@ -1,32 +1,32 @@
 return function()
     local rules = {}
 
-	rules.maxObjectivesAtOnce = 1
-	rules.eventsPerIdleState = 1
+	rules.maxObjectivesAtOnce = 2
+	rules.eventsPerIdleState = 2
 	rules.eventsPerPrepareState = 0 -- [0,1]
-	rules.pauseAttacks = true
+	rules.pauseAttacks = false
 	rules.prepareAttacks = true
 
 	rules.gameEvents = 
 	{
 		--{ action = "spawn_earthquake", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/earthquake.logic", minTime = 60, maxTime = 60 },
 		--{ action = "spawn_earthquake", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/earthquake.logic", minTime = 60, maxTime = 60 },		
-		{ action = "spawn_blood_moon", type = "NEGATIVE", gameStates="IDLE|STREAMING", minEventLevel = 3, logicFile="logic/weather/blood_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_blood_moon", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/blood_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_blue_moon", type = "POSITIVE", gameStates="IDLE|STREAMING", minEventLevel = 3, logicFile="logic/weather/blue_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_blue_moon", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/blue_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_solar_eclipse", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4, logicFile="logic/weather/solar_eclipse.logic", minTime = 60, maxTime = 120, weight = 0.25 },
-		{ action = "spawn_solar_eclipse", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/solar_eclipse.logic", minTime = 60, maxTime = 120, weight = 0.25  },
-		{ action = "spawn_super_moon", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4, logicFile="logic/weather/super_moon.logic", minTime = 60, maxTime = 120, weight = 0.25  },
-		{ action = "spawn_super_moon", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/super_moon.logic", minTime = 60, maxTime = 120, weight = 0.25  },				
-		{ action = "spawn_ion_storm", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 3, logicFile="logic/weather/ion_storm.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_ion_storm", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/ion_storm.logic", minTime = 60, maxTime = 120 },				
 		--{ action = "spawn_volcanic_rock_rain", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/volcanic_rock_rain.logic", minTime = 40, maxTime = 90 },
 		--{ action = "spawn_volcanic_rock_rain", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/volcanic_rock_rain.logic", minTime = 40, maxTime = 90 },
-		{ action = "spawn_volcanic_ash_clouds", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/volcanic_ash_clouds.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_volcanic_ash_clouds", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/volcanic_ash_clouds.logic", minTime = 60, maxTime = 120 },
 		--{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 3 },
-		{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 2 }
+		{ action = "spawn_blood_moon",          type = "NEGATIVE", gameStates="IDLE|STREAMING",        minEventLevel = 3, logicFile="logic/weather/blood_moon.logic",          minTime = 60, maxTime = 120, weight = 0.5 },
+		{ action = "spawn_blood_moon",          type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 3, logicFile="logic/weather/blood_moon.logic",          minTime = 60, maxTime = 120, weight = 0.5 },
+		{ action = "spawn_blue_moon",           type = "POSITIVE", gameStates="IDLE|STREAMING",        minEventLevel = 3, logicFile="logic/weather/blue_moon.logic",           minTime = 60, maxTime = 120, weight = 0.5 },
+		{ action = "spawn_blue_moon",           type = "POSITIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 3, logicFile="logic/weather/blue_moon.logic",           minTime = 60, maxTime = 120, weight = 0.5 },
+		{ action = "spawn_solar_eclipse",       type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4, logicFile="logic/weather/solar_eclipse.logic",       minTime = 60, maxTime = 120, weight = 0.25 },
+		{ action = "spawn_solar_eclipse",       type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 4, logicFile="logic/weather/solar_eclipse.logic",       minTime = 60, maxTime = 120, weight = 0.25  },
+		{ action = "spawn_super_moon",          type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4, logicFile="logic/weather/super_moon.logic",          minTime = 60, maxTime = 120, weight = 0.25  },
+		{ action = "spawn_super_moon",          type = "POSITIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 4, logicFile="logic/weather/super_moon.logic",          minTime = 60, maxTime = 120, weight = 0.25  },
+		{ action = "spawn_ion_storm",           type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 3, logicFile="logic/weather/ion_storm.logic",           minTime = 60, maxTime = 120 },
+		{ action = "spawn_ion_storm",           type = "POSITIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 3, logicFile="logic/weather/ion_storm.logic",           minTime = 60, maxTime = 120 },				
+		{ action = "spawn_volcanic_ash_clouds", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/volcanic_ash_clouds.logic", minTime = 60, maxTime = 120 },
+		{ action = "spawn_volcanic_ash_clouds", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 1, logicFile="logic/weather/volcanic_ash_clouds.logic", minTime = 60, maxTime = 120 },
+		{ action = "spawn_comet_silent",        type = "POSITIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 1, logicFile="logic/weather/comet_silent.logic",        weight = 2 }
 	}
 
 	rules.addResourcesOnRunOut = 
@@ -36,15 +36,15 @@ return function()
 
 	rules.timeToNextDifficultyLevel = 
 	{			
-		300, -- difficulty level 1
-		300, -- difficulty level 2
-		300, -- difficulty level 3	
-		300, -- difficulty level 4
-		300, -- difficulty level 5
-		300, -- difficulty level 6
-		300, -- difficulty level 7
-		300, -- difficulty level 8
-		300, -- difficulty level 9
+		200, -- difficulty level 1
+		200, -- difficulty level 2
+		200, -- difficulty level 3	
+		600, -- difficulty level 4
+		1200, -- difficulty level 5
+		1200, -- difficulty level 6
+		1500, -- difficulty level 7
+		1500, -- difficulty level 8
+		1500, -- difficulty level 9
 	}
 
 	rules.prepareSpawnTime = 
@@ -67,33 +67,34 @@ return function()
 
 	rules.objectivesLogic = 
 	{
-	
+		{ name = "logic/objectives/destroy_nest_morirot_single.logic",   minDifficultyLevel = 3 }, 
+		{ name = "logic/objectives/destroy_nest_morirot_multiple.logic", minDifficultyLevel = 6 }
 	}
 
 	rules.cooldownAfterAttacks = 
 	{			
 		0,  -- difficulty level 1
 		0,  -- difficulty level 2
-		0,  -- difficulty level 3
-		0,  -- difficulty level 4	
-		0,  -- difficulty level 5	
-		0,  -- difficulty level 6	
-		0,  -- difficulty level 7
-		0,  -- difficulty level 8	
-		0,  -- difficulty level 9	
+		90,  -- difficulty level 3
+		120,  -- difficulty level 4	
+		120,  -- difficulty level 5	
+		180,  -- difficulty level 6	
+		180,  -- difficulty level 7
+		240,  -- difficulty level 8	
+		240,  -- difficulty level 9	
 	}
 
 	rules.idleTime = 
 	{			
-		300,  -- difficulty level 1
-		300,  -- difficulty level 2
-		300,  -- difficulty level 3
-		300,  -- difficulty level 4	
-		300,  -- difficulty level 5	
-		300,  -- difficulty level 6	
-		300,  -- difficulty level 7
-		300,  -- difficulty level 8	
-		300,  -- difficulty level 9	
+		450,  -- difficulty level 1
+		600,  -- difficulty level 2
+		660,  -- difficulty level 3
+		720,  -- difficulty level 4	
+		780,  -- difficulty level 5	
+		1200,  -- difficulty level 6	
+		1200,  -- difficulty level 7
+		1200,  -- difficulty level 8	
+		1200,  -- difficulty level 9	
 	}
 
 	rules.maxAttackCountPerDifficulty = 
@@ -104,19 +105,67 @@ return function()
 		0,  -- difficulty level 4
 		0,  -- difficulty level 5
 		0,  -- difficulty level 6
-		0,  -- difficulty level 7
-		0,  -- difficulty level 8
-		0,  -- difficulty level 9
+		1,  -- difficulty level 7
+		2,  -- difficulty level 8
+		3,  -- difficulty level 9
 	}
 	
-	rules.wavesEntryDefinitions =
-	{
+	rules.prepareAttackDefinitions =
+	{		
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 1		
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 2			
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 3				
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 4				
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 5					
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 6			
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 7			
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 8					
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 9		
 	}
 
+	rules.wavesEntryDefinitions =
+	{		 
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 1		 
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 2			
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 3			
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 4				
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 5			
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 6					
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 7				
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 8					
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 9
+	}
+	
 	rules.waves = 
 	{
 		["default"] =
-		{			
+		{					
+			{}, -- difficulty level 1
+			{}, -- difficulty level 2
+			{}, -- difficulty level 3
+			{}, -- difficulty level 4
+			{}, -- difficulty level 5			
+			{}, -- difficulty level 6
+			
+			{ -- difficulty level 7
+				"logic/missions/survival/attack_level_1_id_1_magma.logic",
+				"logic/missions/survival/attack_level_1_id_2_magma.logic",
+			},
+			
+			{ -- difficulty level 8
+				"logic/missions/survival/attack_level_1_id_1_magma.logic",
+				"logic/missions/survival/attack_level_1_id_2_magma.logic",
+				"logic/missions/survival/attack_level_2_id_1_magma.logic",
+			},
+			
+			{ -- difficulty level 9
+				"logic/missions/survival/attack_level_1_id_1_magma.logic",
+				"logic/missions/survival/attack_level_1_id_2_magma.logic",
+				"logic/missions/survival/attack_level_2_id_1_magma.logic",
+				"logic/missions/survival/attack_level_2_id_2_magma.logic",
+				"logic/missions/survival/attack_level_3_id_1_magma.logic",
+				"logic/missions/survival/attack_level_5_id_1_magma.logic",
+			},
 		},
 	}
 
