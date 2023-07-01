@@ -1422,6 +1422,7 @@ function dom_mananger:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, prepare
 end
 
 function dom_mananger:SpawnWave( attackCount, borderSpawnPointGroupName, wavePool, log, shouldAddtoSpawnedAttacks, participants, labelName, participantsPercentageUse, spawnedAttacks )
+	if #wavePool == 0 then return end
 	for i = 1, attackCount do
 		local waveData = wavePool[RandInt( 1, #wavePool )]
 		self:VerboseLog( "SpawnWave: wave_logic='" .. waveData.name .. "'")
@@ -1442,7 +1443,6 @@ function dom_mananger:SpawnWave( attackCount, borderSpawnPointGroupName, wavePoo
 			end
 		end
 	end
-
 end
 --------------------------------------------------- spawn -------------------------------------------------
 
@@ -1470,6 +1470,13 @@ end
 function dom_mananger:OnEnterSpawn( state )
 
 	self:VerboseLog("OnEnterSpawn" )
+	
+	if (self.spawnAttackEventProbability and self.spawnAttackEventProbability >= RandInt(0, 100)/100.0) then
+		self:StartAnEvent( "ATTACK" )
+		if (self.spawn2ndAttackEventProbability and self.spawn2ndAttackEventProbability >= RandInt(0, 100)/100.0) then
+			self:StartAnEvent( "ATTACK" )
+		end
+	end
 
 	if ( self.cancelTheAttack == true ) then
 		self:VerboseLog("Canceling the attack." )
