@@ -65,15 +65,15 @@ return function()
 
 	rules.timeToNextDifficultyLevel = 
 	{			
-		120, -- difficulty level 1
-		120, -- difficulty level 2
-		120, -- difficulty level 3
+		180, -- difficulty level 1
+		180, -- difficulty level 2
+		180, -- difficulty level 3
 		300, -- difficulty level 4
-		600, -- difficulty level 5
-		600, -- difficulty level 6
-		780, -- difficulty level 7
-		780, -- difficulty level 8
-		780, -- difficulty level 9
+		900, -- difficulty level 5
+		1020, -- difficulty level 6
+		1200, -- difficulty level 7
+		1500, -- difficulty level 8
+		1500, -- difficulty level 9
 	}
 
 	rules.prepareSpawnTime = 
