@@ -20,7 +20,7 @@ return function()
 	end
 
 	for i = 1, #rules.prepareSpawnTime, 1 do
-		rules.prepareSpawnTime[i] = rules.prepareSpawnTime[i] * prepareAttackTimeMultiplier * (1 + (progressionMultiplier-1)*(9-i)/8.0)
+		rules.prepareSpawnTime[i] = rules.prepareSpawnTime[i] * prepareAttackTimeMultiplier
 	end
 	
 	for i = 1, #rules.timeToNextDifficultyLevel, 1 do
