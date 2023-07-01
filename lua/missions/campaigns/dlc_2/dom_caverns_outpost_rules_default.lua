@@ -7,21 +7,23 @@ return function()
 	rules.pauseAttacks = false
 	rules.prepareAttacks = true
 	rules.baseTimeBetweenObjectives = 1800
+	rules.spawnAttackEventProbability = 0.33
+	rules.spawn2ndAttackEventProbability = 0.33
 
 	rules.gameEvents = 
 	{
-		{ action = "new_objective", type = "POSITIVE", gameStates="IDLE|STREAMING", minEventLevel = 3 }, -- new_objective is only an option in the streaming mode; do not try to pass it as NO_STREAMING
-		{ action = "change_time_of_day", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 3 },
-		{ action = "add_resource", type = "POSITIVE", gameStates = "ATTACK|IDLE|STREAMING", minEventLevel = 1, basePercentage = 30 },
-		{ action = "remove_resource", type = "NEGATIVE", gameStates = "ATTACK|IDLE|STREAMING", minEventLevel = 1, basePercentage = 20 },
-		{ action = "stronger_attack", type = "NEGATIVE", gameStates = "ATTACK|STREAMING", minEventLevel = 1, amount = 2 },
-		{ action = "cancel_the_attack", type = "POSITIVE", gameStates = "ATTACK|STREAMING", minEventLevel = 1 },
-		{ action = "unlock_research", type = "POSITIVE", gameStates = "ATTACK|IDLE|STREAMING", minEventLevel = 1 },
-		{ action = "full_ammo", type = "POSITIVE", gameStates = "ATTACK|STREAMING", minEventLevel = 2 },
-		{ action = "remove_ammo", type = "NEGATIVE", gameStates = "ATTACK|STREAMING", minEventLevel = 2 },
-		{ action = "boss_attack", type = "NEGATIVE", gameStates = "ATTACK|STREAMING", minEventLevel = 4 },
-		{ action = "spawn_earthquake", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 3, logicFile="logic/weather/earthquake.logic", minTime = 60, maxTime = 60, weight = 0.5 },
-		{ action = "spawn_earthquake", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/earthquake.logic", minTime = 60, maxTime = 60, weight = 0.5 },
+		{ action = "new_objective",      type = "POSITIVE", gameStates="IDLE|STREAMING",           minEventLevel = 3 }, -- new_objective is only an option in the streaming mode; do not try to pass it as NO_STREAMING
+		{ action = "change_time_of_day", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 3 },
+		{ action = "add_resource",       type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, basePercentage = 30 },
+		{ action = "remove_resource",    type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, basePercentage = 20 },
+		{ action = "stronger_attack",    type = "NEGATIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 1, amount = 2 },
+		{ action = "cancel_the_attack",  type = "POSITIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 1 },
+		{ action = "unlock_research",    type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1 },
+		{ action = "full_ammo",          type = "POSITIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 2 },
+		{ action = "remove_ammo",        type = "NEGATIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 2 },
+		{ action = "boss_attack",        type = "NEGATIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 4 },
+		{ action = "spawn_earthquake",   type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 3, logicFile="logic/weather/earthquake.logic", minTime = 60, maxTime = 60, weight = 0.5 },
+		{ action = "spawn_earthquake",   type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/earthquake.logic", minTime = 60, maxTime = 60, weight = 0.5 },
 		--{ action = "spawn_blue_hail", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4, logicFile="logic/weather/blue_hail.logic", minTime = 30, maxTime = 60, weight = 0.25 },
 		--{ action = "spawn_blue_hail", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/blue_hail.logic", minTime = 30, maxTime = 60, weight = 0.25 },
 		--{ action = "spawn_thunderstorm", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 2, logicFile="logic/weather/thunderstorm.logic", minTime = 60, maxTime = 120 },
@@ -78,9 +80,9 @@ return function()
 		650, -- difficulty level 4
 		650, -- difficulty level 5
 		750, -- difficulty level 6
-		750, -- difficulty level 7
-		750, -- difficulty level 8
-		750, -- difficulty level 9
+		900, -- difficulty level 7
+		1200, -- difficulty level 8
+		1500, -- difficulty level 9
 	}
 
 	rules.prepareSpawnTime = 
@@ -153,47 +155,29 @@ return function()
 	}
 	
 	rules.prepareAttackDefinitions =
-	{
-		 -- difficulty level 1
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 2
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 3		
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 4		
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 5		
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 6		
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 7		
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 8		
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 9		
-			"logic/dom/attack_level_1_prepare.logic",		
+	{		
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 1		
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 2			
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 3				
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 4				
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 5					
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 6			
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 7			
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 8					
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 9		
 	}
-
+	
 	rules.wavesEntryDefinitions =
-	{
-		 -- difficulty level 1
-			"logic/missions/survival/caverns/attack_level_1_caverns_entry.logic",
-		 -- difficulty level 2
-			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic",
-		 -- difficulty level 3		
-			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic",
-		 -- difficulty level 4		
-			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic",
-		 -- difficulty level 5		
-			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic",
-		 -- difficulty level 6		
-			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic",
-		 -- difficulty level 7		
-			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic",
-		 -- difficulty level 8		
-			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic",
-		 -- difficulty level 9		
-			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic",
+	{		 
+		"logic/dom/attack_level_1_caverns_entry.logic", -- difficulty level 1		 
+		"logic/dom/attack_level_2_caverns_entry.logic", -- difficulty level 2			
+		"logic/dom/attack_level_2_caverns_entry.logic", -- difficulty level 3			
+		"logic/dom/attack_level_2_caverns_entry.logic", -- difficulty level 4				
+		"logic/dom/attack_level_2_caverns_entry.logic", -- difficulty level 5			
+		"logic/dom/attack_level_2_caverns_entry.logic", -- difficulty level 6					
+		"logic/dom/attack_level_2_caverns_entry.logic", -- difficulty level 7				
+		"logic/dom/attack_level_2_caverns_entry.logic", -- difficulty level 8					
+		"logic/dom/attack_level_2_caverns_entry.logic", -- difficulty level 9
 	}
 
 	rules.waves = 
