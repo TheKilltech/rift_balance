@@ -6,7 +6,7 @@ GameplayResourceDef {
 	type 			"global"	
 	icon			"gui/hud/resource_icons/cobalt_bio"
 	bigger_icon		"gui/hud/resource_icons/cobalt_bio_bigger"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	order   		"8"
 }
 
@@ -17,7 +17,7 @@ GameplayResourceDef {
 	type 			"global"	
 	icon			"gui/hud/resource_icons/palladium_bio"
 	bigger_icon		"gui/hud/resource_icons/palladium_bio_bigger"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	order   		"8"
 }
 
@@ -28,7 +28,7 @@ GameplayResourceDef {
 	type 			"global"	
 	icon			"gui/hud/resource_icons/titanium_bio"
 	bigger_icon		"gui/hud/resource_icons/titanium_bio_bigger"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	order   		"8"
 }
 
@@ -39,7 +39,7 @@ GameplayResourceDef {
 	type 			"global"	
 	icon			"gui/hud/resource_icons/uranium_bio"
 	bigger_icon		"gui/hud/resource_icons/uranium_bio_bigger"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	order   		"8"
 }
 
