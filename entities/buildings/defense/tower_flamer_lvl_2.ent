@@ -1,0 +1,161 @@
+EntityBlueprint
+{
+	name  "buildings/defense/tower_flamer_beam_lvl2"
+
+	base_blueprints
+	{
+		lights/point/fire_orange_big
+		effects/no_lifetime
+	}
+
+	FlameBeamComponent
+	{
+        max_hits					"16"
+        box_count					"3"
+        angle_speed					"180"
+        range_speed					"1.5"
+        particle_velocity_scale 	"0.0125"
+        particle_reference_range	"16"
+
+		collision_3d 				"world|world_blocker|world_destructible|destructible|ground_unit|building|hitbox" 
+	}
+
+	ParticleDesc
+	{
+		name    "rift/tower_flamer_lvl2"
+	}
+
+	SoundDesc
+	{
+		name 		"items/weapons/fluid/flamer_loop"
+		start_name 	"items/weapons/fluid/flamer_start"
+		end_name 	"items/weapons/fluid/flamer_stop"
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/defense/tower_flamer_lvl_2"
+
+	base_blueprint 			buildings/defense/tower_flamer
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"tower_flamer_lvl_2"
+		bp   				"buildings/defense/tower_flamer_lvl_2"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_flamer"
+		description			"gui/hud/building_description/tower_flamer"
+		menu_icon			"gui/hud/building_icons/tower_flamer_lvl2"
+		require 			"headquarters"
+		order				"10"
+		type				"tower"
+		overrides			"tower,wall"
+		upgrade				"buildings/defense/tower_flamer_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 2.5
+				building_cost
+				{
+					carbonium 	"200"
+					steel 		"100"
+					titanium	"10"
+				}
+			}		
+		}			
+	}
+
+	ResourceConverterDesc // must be here for AI
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"1"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
+	}
+
+	HealthDesc
+	{
+		max_health 					"750"
+		health 						"750"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+  {
+    mesh "meshes/buildings/defense/tower_flamer_lvl_2.mesh"
+    material "buildings/defense/tower_flamer_lvl_2"
+  }
+
+	SkeletonDesc
+  {
+    name "meshes/buildings/defense/tower_flamer_lvl_2"
+  }
+
+	WeaponItemDesc
+	{
+	}
+
+	BeamWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "35"
+			submesh_idx "1"
+		}
+
+		ammo_blueprint				"buildings/defense/tower_flamer_beam_lvl2"
+
+		burst_column_spacing 		"0"
+		burst_rate 					"0"
+		burst_column_angle 			"0"
+	}
+}
