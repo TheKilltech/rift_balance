@@ -24,10 +24,13 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 10
+				building_time 20
 				building_cost
 				{
-					carbonium 	"200"
+					carbonium 	"500"	
+					steel 		"1000"	
+					cobalt 		"250"		
+					titanium	"100"	
 				}
 			}		
 		}
@@ -42,7 +45,14 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"carbon_vein"
-				value			 	"1"
+				value			 	"0.25"
+			}	
+			
+			GameplayResource
+			{
+				resource 			"supercoolant"
+				value			 	"10"
+				attachment			"att_in_1"
 			}
 		}
 		
@@ -51,10 +61,10 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"180"
+				value			 	"800"
 			}
 		}
-		priority 9	
+		priority 8
 		reset_interval 0.5
 	}
 
@@ -65,7 +75,7 @@ EntityBlueprint
 			Storage
 			{
 				resource "energy"
-				max 	 "180"
+				max 	 "800"
 			}
 			
 		}
@@ -135,6 +145,22 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
+		}			
+////////////////////////Resources/////////////////////////			
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_arrow"
+				}
+			}
 		}	
 ////////////////////////MISC/////////////////////////			
 		EffectGroup
