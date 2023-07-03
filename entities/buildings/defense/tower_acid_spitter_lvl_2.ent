@@ -24,7 +24,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 6
 				building_cost
 				{
 					carbonium 	"300"
@@ -32,6 +32,24 @@ EntityBlueprint
 				}
 			}
 		}
+	}
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"25"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
 	}
 	
 	HealthDesc

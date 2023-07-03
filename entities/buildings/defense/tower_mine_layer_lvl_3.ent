@@ -24,7 +24,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 14
 				building_cost
 				{
 					carbonium 	"200"
@@ -42,7 +42,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"4"
+				value 		"60"
 			}
 		}
 
@@ -137,7 +137,7 @@ EntityBlueprint
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell 	string:"sell_big"
 
-			drone_search_radius	float:"20"
+			drone_search_radius	float:"28"
 			drone_blueprint		string:"units/drones/drone_mine"
 			drone_attachments	string:"att_landing"
 			drone_per_spot		int:"3"
