@@ -1,0 +1,163 @@
+EntityBlueprint
+{
+	name  "buildings/resources/ammunition_storage_lvl_2"
+
+	base_blueprint buildings/resources/ammunition_storage		
+
+	BuildingDesc
+	{
+		buildable 			"0"		
+		name 				"ammunition_storage_lvl_2"
+		bp   				"buildings/resources/ammunition_storage_lvl_2"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/ammunition_storage"
+		description			"gui/hud/building_description/ammunition_storage"
+		menu_icon			"gui/hud/building_icons/ammunition_storage_lvl2"
+		require 			"headquarters"
+		limit			    "6"
+		limit_name			"ammo_storage"		
+		upgrade				"buildings/resources/ammunition_storage_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 10
+				building_cost
+				{
+					carbonium 	"200"
+				}
+			}		
+		}		
+
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				group		 "global"
+				subgroup	 "ammo"
+				max 	 	 "2"
+			}
+			Storage
+			{
+				resource "energy"
+				max 	 "0"
+			}				
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"1300"
+		health 						"1300"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				//destroyed_state_effect_group 		"0_state"
+			}			
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/ammunition_storage_lvl_2.mesh"
+		material "buildings/resources/ammunition_storage_lvl_2"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/ammunition_storage_lvl_2"
+	}
+
+	AnimationDesc
+	{
+		animations
+		{
+			Anim
+			{
+				animName "working"
+				animTime "0.0"
+			}
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}		
+	}
+}

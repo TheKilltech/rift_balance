@@ -1,0 +1,343 @@
+EntityBlueprint
+{
+	name "buildings/resources/ironium_synthesizer"
+
+	BuildingDesc
+	{
+		name 				"ironium_synthesizer"
+		bp   				"buildings/resources/ironium_synthesizer"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/ironium_synthesizer"
+		description			"gui/hud/building_description/ironium_synthesizer"
+		menu_icon			"gui/hud/building_icons/ironium_synthesizer"
+		order				"19"
+		upgrade				"buildings/resources/ironium_synthesizer_lvl_2"		
+		require 			"headquarters"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"500"
+				}
+			}		
+		}
+	}
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"500"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"steel"
+				value			 	"2"
+			}
+		}
+		priority 4	
+	}
+	
+	LuaDesc
+	{
+		script "lua/buildings/building.lua"
+		
+		database
+		{
+			cone_effect			string:"build_cone_3x3"
+			cone_effect_sell	string:"sell_big"
+		}
+	}		
+
+	HealthDesc
+	{
+		max_health 					"1000"
+		health 						"1000"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				//destroyed_state_effect_group 		"0_state"
+			}			
+		}
+	}	
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/ironium_synthesizer.mesh"
+		material "buildings/resources/ironium_synthesizer"
+	}
+	
+	TypeDesc
+	{
+		type "building|resource"
+	}	
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/ironium_synthesizer"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "building_working"
+	}
+
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "2.45"
+	
+						position 
+						{
+							x "0.0"
+							y "1.0"
+							z "0.0"
+						}
+					}			
+				}
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsMeshShape
+			{
+				mesh "meshes/buildings/resources/carbonium_factory_g1.nxs"
+			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color 
+		{
+			x "0.5"
+			y "0.5"
+			z "1"
+			w "1"
+		}
+		size
+		{
+			x "3"
+			y "3"
+		}
+		additional_z_order	"5"
+		visibility			"always"
+	}
+
+	FogOfWarRevealerComponentDesc
+	{
+		radius "16"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	LootDesc
+	{
+		explosion_max_power 	"2000"
+		explosion_min_power 	"1000"	
+	}
+
+	DestroyDesc
+	{
+		
+		DestroyPatterns
+		{		
+			Pair
+			{
+				key "80_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"					
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}	
+			}
+			Pair
+			{
+				key "60_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"					
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}	
+			}
+			Pair
+			{
+				key "40_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"					
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}	
+			}			
+			Pair
+			{
+				key "20_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"					
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}
+			}		
+			Pair
+			{
+				key "default"			
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					//explosion_effect 		"effects/buildings_generic/explosion_building_small_01"	
+					part_physics_material   "debris_heavy"					
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_large_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}
+			}	
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"	
+					part_material 			"misc/building_parts_generic"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_large_parts_generic"
+					part_lifetime "3"	
+				}
+
+				key "quicksand"
+			}				
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}			
+	}
+}

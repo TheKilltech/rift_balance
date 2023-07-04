@@ -1,0 +1,394 @@
+EntityBlueprint
+{
+	name "buildings/defense/tower_shockwave"
+
+	BuildingDesc
+	{
+		name 				"tower_shockwave"
+		bp   				"buildings/defense/tower_shockwave"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_shockwave"
+		description			"gui/hud/building_description/tower_shockwave"
+		menu_icon			"gui/hud/building_icons/tower_shockwave"
+		require 			"headquarters"
+		order				"12"
+		type				"tower"
+		overrides			"tower,wall"
+		upgrade				"buildings/defense/tower_shockwave_lvl_2"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 2.5
+				building_cost
+				{
+					carbonium 	"75"
+					steel 		"150"
+					ai			"1"
+					titanium	"50"
+				}
+			}		
+		}			
+	}
+
+	ResourceConverterDesc // must be here for AI
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"1"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/defense/tower_shockwave.lua"
+
+		database
+		{
+			cone_effect			string:"build_cone_1x1"
+			cone_effect_sell	string:"sell_small"
+			time_machine		int:"0"
+			
+			display_radius_group	 string:"tower_shockwave"
+			display_radius_blueprint string:"effects/decals/range_circle_harvesting"			
+		}
+
+	}
+
+	HealthDesc
+	{
+		max_health 					"500"
+		health 						"500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/tower_shockwave_lvl_1.mesh"
+		material 	"buildings/defense/tower_shockwave_lvl_1"
+	}
+
+	TypeDesc
+	{
+		type "building|defense|tower"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/tower_shockwave_lvl_1"
+	}
+
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x "2"
+						y "4"
+						z "2"
+
+						position
+						{
+							x "0.0"
+							y "2"
+							z "0.0"
+						}
+					}
+				}
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsBoxShape
+			{
+				x	2
+				y	2
+				z	2
+			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "1"
+			y "0.5"
+			z "0"
+			w "1"
+		}
+		size
+		{
+			x "1"
+			y "1"
+		}
+		visibility			"always"
+	}
+
+	FogOfWarRevealerComponentDesc
+	{
+		radius "20"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	LootDesc
+	{
+		explosion_max_power 	"2000"
+		explosion_min_power 	"1000"
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	TowerDesc
+	{
+	}
+
+	TurretDesc
+	{
+		target "ground_unit"
+		target_ignore "invisible"
+		speed "300"
+		aim_volume "SphericalAimVolume"
+		{
+			range_min "0"
+			range_max "13"
+			aiming_range "20"
+		}
+
+		aiming_cooldown "1"
+		aiming_target_time "2"
+		aiming_idle_angle "20"
+		pitch "att_muzzle"
+		yaw "att_muzzle"
+		check_target_visibility "1"
+		fog_of_war_filtering "1"
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+				recoil_bone  "animation"
+				recoil_time   "1.00"
+				recoil_offset   "3.5"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "60"
+			submesh_idx "1"
+		}
+
+		ammo_blueprint 				"buildings/defense/tower_shockwave_projectile"
+
+		burst_column_spacing 		"0"
+		burst_rate 					"0"
+		burst_column_angle 			"0"
+	}
+
+	DestroyDesc
+	{
+
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "66_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				key "33_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_large_parts_generic"
+					part_lifetime "3"
+				}
+
+				key "default"
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_large_parts_generic"
+					part_lifetime "3"
+				}
+
+				key "quicksand"
+			}
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_omni_light"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name "buildings/defense/tower_shockwave_projectile"
+
+	MeshDesc
+	{
+		mesh 		"meshes/projectiles/rocket_small.mesh"
+		material 	"projectiles/rocket_small"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/projectiles/rocket_small"
+	}
+
+	VegetationBendingComponentDesc
+	{
+		bending_power	"5000.0"
+		bending_radius	"5.0"
+	}
+	
+	BombAmmoComponent
+	{			
+		explosion_effect 		"effects/weapons_explosive/tower_shockwave_blast"
+
+		DamagePattern
+		{
+			area_damage_speed 		"30"
+		}
+	}	
+
+	LifeTimeDesc
+	{
+		time 		2
+		//type 		"camera"
+	}	
+}
+

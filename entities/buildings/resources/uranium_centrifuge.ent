@@ -1,0 +1,305 @@
+EntityBlueprint
+{
+	name  "buildings/resources/uranium_centrifuge"
+
+	BuildingDesc
+	{
+		name 				"uranium_centrifuge"
+		bp   				"buildings/resources/uranium_centrifuge"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/uranium_centrifuge"
+		description			"gui/hud/building_description/uranium_centrifuge"
+		menu_icon			"gui/hud/building_icons/uranium_centrifuge"
+		require 			"headquarters"
+		order				"20"
+		upgrade				"buildings/resources/uranium_centrifuge_lvl_2"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 180
+				building_cost
+				{
+					carbonium 	"500"
+					steel 		"350"		
+				}
+			}
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"500"
+					steel 		"350"	
+				}
+			}			
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"100"
+			}
+			GameplayResource
+			{
+				resource 			"uranium_ore"
+				value			 	"1"
+			}			
+		}
+		out
+		{
+			GameplayResource
+			{
+				resource 			"uranium"
+				value			 	"1"
+			}
+			
+		}		
+		priority 4
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/building.lua"
+		
+		database
+		{
+			cone_effect			string:"build_cone_2x2"
+			cone_effect_sell	string:"sell_medium"
+			building_time		float:"180"
+		}	
+	}
+
+	HealthDesc
+	{
+		max_health 					"500"
+		health 						"500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"				
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/uranium_centrifuge.mesh"
+		material "buildings/resources/uranium_centrifuge"	
+	}
+
+	TypeDesc
+	{
+		type "building|resource"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/uranium_centrifuge"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "building_working"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsCapsuleShape
+					{
+						r "1.45"
+						half_height "2"
+
+						position 
+						{
+							x "0.0"
+							y "2"
+							z "0.0"
+						}
+
+						orientation
+						{
+							w "0.7"
+							x "0.0"
+							z "0.7"
+							y "0.0"
+						}
+					}	
+				}
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+   			PhysicsBoxShape
+   			{
+    				x	4
+    				y	4
+    				z	4
+   			}			
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color 
+		{
+			x "0.7"
+			y "0.7"
+			z "0.7"
+			w "1"
+		}
+		size
+		{
+			x "2"
+			y "2"
+		}
+		visibility			"always"
+	}
+
+	FogOfWarRevealerComponentDesc
+	{
+		radius "16"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	LootDesc
+	{
+		explosion_max_power 	"2000"
+		explosion_min_power 	"1000"	
+	}
+
+	DestroyDesc
+	{
+		
+		DestroyPatterns
+		{		
+			Pair
+			{
+				key "66_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"								
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}	
+			}
+			Pair
+			{
+				key "33_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"	
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"	
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_large_parts_generic"
+					part_lifetime "3"	
+				}
+
+				key "default"
+			}	
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"	
+					part_material 			"misc/building_parts_generic"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_large_parts_generic"
+					part_lifetime "3"	
+				}
+
+				key "quicksand"
+			}				
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+	}
+}
