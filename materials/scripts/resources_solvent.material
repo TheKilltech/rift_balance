@@ -58,7 +58,7 @@ material resources/resource_solvent_fresnel
 	render_group 109
 
 	fresnel 1 0.5 0 0
-	fresnel_color 10 10 10 0.1
+	fresnel_color 14 14 10 0.1
 
 	technique
 	{
@@ -79,6 +79,14 @@ material resources/resource_solvent_fresnel
 
 			fragment_program_ref forward_object_fresnel_fog_fp
 			{
+			}
+			
+			texture_unit volumetric_fog
+			{
+				texture 			materials/textures/black_volume.dds 3d
+				content_type 		shared volumetric_fog
+				tex_address_mode 	clamp
+				filtering 			bilinear
 			}
 		}
 	}
