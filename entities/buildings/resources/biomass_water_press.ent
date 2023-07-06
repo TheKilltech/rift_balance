@@ -10,7 +10,7 @@ EntityBlueprint
 		localization_id		"Biomass Water Press"               //"gui/hud/building_name/biomass_water_press"
 		description			"Extracts water from plant biomass" //"gui/hud/building_description/animal_biomass_powerplant"
 		menu_icon			"gui/hud/building_icons/animal_biomass_powerplant"
-		order				"7"
+		order				"11"
 		//upgrade			"buildings/energy/biomass_water_press_lvl_2"		
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -39,12 +39,12 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"200"
+				value			 	"20"
 			}
 			
 			GameplayResource
 			{
-				resource 			"biomass_plant"
+				resource 			"biomass_water"
 				value			 	"2"
 			}
 		}
@@ -385,10 +385,10 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
+					blueprint "effects/buildings_and_machines/water_filtering_pool"								
 					bone "att_chimney"
 					delay "1"
-				}	
+				}
 				Effect
 				{
 					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"	
