@@ -320,6 +320,7 @@ Blueprints
 	LootItems "buildings/resources/bio_palladium_refinery"
 	LootItems "buildings/resources/bio_titanium_refinery"
 	LootItems "buildings/resources/bio_uranium_refinery"
+	LootItems "buildings/resources/biomass_water_press"
 	LootItems "buildings/resources/carbonium_factory"
 	LootItems "buildings/resources/carbonium_factory_lvl_2"
 	LootItems "buildings/resources/carbonium_factory_lvl_3"
@@ -3748,11 +3749,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_ferdonite_item"
@@ -3792,11 +3804,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
-			chance "1.0000"
-			min "3"
-			max "6"
-			gather_amount "12"
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
@@ -3825,11 +3848,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_hazenite_item"
@@ -3869,11 +3903,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_ferdonite_item"
@@ -3913,11 +3958,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
-			chance "1.0000"
-			min "3"
-			max "6"
-			gather_amount "12"
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
@@ -3946,11 +4002,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_hazenite_item"
@@ -3990,11 +4057,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_ferdonite_item"
@@ -4034,11 +4112,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
-			chance "1.0000"
-			min "3"
-			max "6"
-			gather_amount "12"
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
@@ -4067,11 +4156,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_hazenite_item"
@@ -4111,11 +4211,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.3300"
 			min "1"
 			max "2"
 			gather_amount "4"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_ferdonite_item"
@@ -4155,11 +4266,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
-			chance "0.3300"
+			chance "0.1500"
 			min "1"
-			max "2"
-			gather_amount "4"
+			max "1"
+			gather_amount "2"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
@@ -4188,11 +4310,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.3300"
 			min "1"
 			max "2"
 			gather_amount "4"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_hazenite_item"
@@ -4232,11 +4365,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.3300"
 			min "1"
 			max "2"
 			gather_amount "4"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_ferdonite_item"
@@ -4276,11 +4420,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
-			chance "0.3300"
+			chance "0.1500"
 			min "1"
-			max "2"
-			gather_amount "4"
+			max "1"
+			gather_amount "2"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
@@ -4309,11 +4464,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.3300"
 			min "1"
 			max "2"
 			gather_amount "4"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_hazenite_item"
@@ -4353,11 +4519,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.3300"
 			min "1"
 			max "2"
 			gather_amount "4"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_ferdonite_item"
@@ -4397,11 +4574,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
-			chance "0.3300"
+			chance "0.1500"
 			min "1"
-			max "2"
-			gather_amount "4"
+			max "1"
+			gather_amount "2"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
@@ -4430,11 +4618,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.3300"
 			min "1"
 			max "2"
 			gather_amount "4"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_hazenite_item"
@@ -4474,11 +4673,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.1500"
 			min "1"
 			max "1"
 			gather_amount "2"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4496,11 +4706,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.1500"
 			min "1"
 			max "1"
 			gather_amount "2"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4518,11 +4739,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.1500"
 			min "1"
 			max "1"
 			gather_amount "2"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4540,11 +4772,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.1500"
 			min "1"
 			max "1"
 			gather_amount "2"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4562,11 +4805,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.1500"
 			min "1"
 			max "1"
 			gather_amount "2"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4584,11 +4838,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.1500"
 			min "1"
 			max "1"
 			gather_amount "2"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4606,11 +4871,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.1500"
 			min "1"
 			max "1"
 			gather_amount "2"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4628,11 +4904,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.1500"
 			min "1"
 			max "1"
 			gather_amount "2"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4650,11 +4937,22 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
 		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
 			chance "0.1500"
 			min "1"
 			max "1"
 			gather_amount "2"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4677,6 +4975,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -4712,6 +5021,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.3000"
@@ -4732,6 +5052,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4756,6 +5087,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.3000"
@@ -4776,6 +5118,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4811,6 +5164,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_rhodonite_item"
 		{
 			chance "0.5000"
@@ -4844,6 +5208,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.3000"
@@ -4864,6 +5239,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4888,6 +5274,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.3000"
@@ -4908,6 +5305,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -4943,6 +5351,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_rhodonite_item"
 		{
 			chance "0.5000"
@@ -4976,6 +5395,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.3000"
@@ -4996,6 +5426,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5020,6 +5461,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.3000"
@@ -5040,6 +5492,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5075,6 +5538,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_rhodonite_item"
 		{
 			chance "0.3500"
@@ -5108,6 +5582,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.1500"
@@ -5128,6 +5613,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5163,6 +5659,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.1500"
@@ -5183,6 +5690,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5218,6 +5736,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_rhodonite_item"
 		{
 			chance "0.3500"
@@ -5251,6 +5780,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.1500"
@@ -5271,6 +5811,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5306,6 +5857,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.1500"
@@ -5326,6 +5888,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5361,6 +5934,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_rhodonite_item"
 		{
 			chance "0.3500"
@@ -5394,6 +5978,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.1500"
@@ -5414,6 +6009,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5449,6 +6055,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.1500"
@@ -5469,6 +6086,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5504,6 +6132,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -5526,6 +6165,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -5546,6 +6196,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5581,6 +6242,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -5601,6 +6273,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5636,6 +6319,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -5658,6 +6352,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -5678,6 +6383,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5713,6 +6429,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -5733,6 +6460,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5768,6 +6506,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -5790,6 +6539,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -5810,6 +6570,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5845,6 +6616,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -5865,6 +6647,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -5898,6 +6691,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -5944,6 +6748,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
 			chance "0.1000"
@@ -5986,6 +6801,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -6032,6 +6858,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_rhodonite_item"
 		{
 			chance "0.2000"
@@ -6074,6 +6911,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
@@ -6120,6 +6968,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.3000"
@@ -6162,6 +7021,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_rhodonite_item"
@@ -6208,6 +7078,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
 			chance "0.1000"
@@ -6250,6 +7131,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7154,6 +8046,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.3000"
@@ -7174,6 +8077,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7198,6 +8112,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.3000"
@@ -7218,6 +8143,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7242,6 +8178,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.3000"
@@ -7262,6 +8209,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7286,6 +8244,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.3000"
@@ -7306,6 +8275,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7330,6 +8310,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.3000"
@@ -7350,6 +8341,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7374,6 +8376,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.1500"
@@ -7394,6 +8407,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7418,6 +8442,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.1500"
@@ -7438,6 +8473,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7462,6 +8508,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.1500"
@@ -7482,6 +8539,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7506,6 +8574,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.1500"
@@ -7526,6 +8605,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7550,6 +8640,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -7570,6 +8671,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7594,6 +8706,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -7614,6 +8737,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7638,6 +8772,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -7658,6 +8803,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7682,6 +8838,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -7702,6 +8869,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7726,6 +8904,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0700"
@@ -7746,6 +8935,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7770,6 +8970,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0300"
@@ -7790,6 +9001,17 @@ Blueprints
 			max "1"
 			gather_amount "2"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7814,6 +9036,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0300"
@@ -7834,6 +9067,17 @@ Blueprints
 			max "1"
 			gather_amount "2"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7858,6 +9102,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0300"
@@ -7878,6 +9133,17 @@ Blueprints
 			max "1"
 			gather_amount "2"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_steel_item"
@@ -7902,6 +9168,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0300"
@@ -7924,6 +9201,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0300"
@@ -7944,6 +9232,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_bio_item"
@@ -7990,6 +9289,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.2000"
@@ -8032,6 +9342,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_bio_item"
@@ -8078,6 +9399,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.2000"
@@ -8120,6 +9452,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_bio_item"
@@ -8166,6 +9509,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.2000"
@@ -8208,6 +9562,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_bio_item"
@@ -8254,6 +9619,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.2000"
@@ -8296,6 +9672,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_bio_item"
@@ -8342,6 +9729,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.1000"
@@ -8384,6 +9782,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_bio_item"
@@ -8430,6 +9839,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.1000"
@@ -8472,6 +9892,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_bio_item"
@@ -8518,6 +9949,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.1000"
@@ -8562,48 +10004,15 @@ Blueprints
 			package_size "1"
 		}
 
-		LootItem "items/loot/resources/shard_palladium_bio_item"
+		LootItem "items/loot/resources/biomass_water_item"
 		{
-			chance "0.1000"
-			min "2"
-			max "3"
-			gather_amount "3"
-			package_size "3"
-			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "items/loot/resources/shard_rhodonite_item"
-		{
-			chance "0.0800"
+			chance "0.3300"
 			min "1"
 			max "2"
-			gather_amount "1"
-			package_size "3"
-			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_rhodonite"
-		}
-
-		LootItem "items/loot/resources/shard_steel_item"
-		{
-			chance "0.1500"
-			min "2"
-			max "4"
-			gather_amount "8"
-			package_size "5"
-		}
-
-	}
-
-	LootItems "props/cactus/yellowtooth_medium_03"
-	{
-		LootItem "items/loot/resources/biomass_plant_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
+			gather_amount "4"
 			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_bio_item"
@@ -8650,6 +10059,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.1000"
@@ -8692,6 +10112,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_bio_item"
@@ -8738,6 +10169,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.0500"
@@ -8769,6 +10211,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_bio_item"
@@ -8804,6 +10257,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.0500"
@@ -8835,6 +10299,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_bio_item"
@@ -8870,6 +10345,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.0500"
@@ -8901,6 +10387,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_bio_item"
@@ -8936,6 +10433,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.0500"
@@ -8969,6 +10477,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.0500"
@@ -9000,6 +10519,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_bio_item"
@@ -35484,6 +37014,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -35515,6 +37056,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -35550,6 +37102,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -35581,6 +37144,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -35616,6 +37190,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -35647,6 +37232,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -35682,6 +37278,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -35713,6 +37320,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -35748,6 +37366,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -35779,6 +37408,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -35814,6 +37454,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -35845,6 +37496,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -35880,6 +37542,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -35911,6 +37584,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -35946,6 +37630,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -35977,6 +37672,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36012,6 +37718,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -36045,6 +37762,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -36076,6 +37804,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36122,6 +37861,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -36142,6 +37892,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36188,6 +37949,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -36208,6 +37980,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36252,6 +38035,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36474,6 +38268,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -36505,6 +38310,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36540,6 +38356,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -36571,6 +38398,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36606,6 +38444,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -36637,6 +38486,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36672,6 +38532,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -36703,6 +38574,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36738,6 +38620,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -36771,6 +38664,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -36791,6 +38695,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36815,6 +38730,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -36835,6 +38761,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36859,6 +38796,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -36879,6 +38827,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36903,6 +38862,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -36923,6 +38893,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36947,6 +38928,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -36967,6 +38959,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -36991,6 +38994,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -37011,6 +39025,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -37035,6 +39060,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -37055,6 +39091,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -37079,6 +39126,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -37099,6 +39157,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -37123,6 +39192,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -37143,6 +39223,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -37167,6 +39258,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -37189,39 +39291,6 @@ Blueprints
 
 	}
 
-	LootItems "props/trees/catkins_big_01_skin1"
-	{
-		LootItem "items/loot/resources/biomass_plant_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
-		LootItem "items/loot/resources/shard_carbonium_item"
-		{
-			chance "0.1500"
-			min "2"
-			max "4"
-			gather_amount "8"
-			package_size "5"
-		}
-
-		LootItem "items/loot/resources/shard_cobalt_bio_item"
-		{
-			chance "0.2000"
-			min "3"
-			max "6"
-			gather_amount "6"
-			package_size "3"
-			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-	}
-
 	LootItems "props/trees/catkins_big_01_skin2"
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
@@ -37231,6 +39300,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -37266,6 +39346,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -37297,6 +39388,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -37332,6 +39434,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -37363,6 +39476,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -37398,6 +39522,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -37429,6 +39564,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -37464,6 +39610,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -37497,6 +39654,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -37528,6 +39696,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -38355,6 +40534,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -38375,6 +40565,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -38410,6 +40611,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -38443,6 +40655,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -38463,6 +40686,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -38498,6 +40732,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -38531,6 +40776,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -38551,6 +40807,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -38586,6 +40853,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -38619,6 +40897,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -38639,6 +40928,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -38674,6 +40974,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -38707,6 +41018,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -38727,6 +41049,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -38762,6 +41095,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -38795,6 +41139,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -38815,6 +41170,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -38850,6 +41216,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -38883,6 +41260,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0300"
@@ -38903,6 +41291,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -38938,6 +41337,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0300"
@@ -38971,6 +41381,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0300"
@@ -38991,6 +41412,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -39026,6 +41458,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0300"
@@ -39059,6 +41502,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0300"
@@ -39079,6 +41533,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -39114,6 +41579,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0300"
@@ -39145,6 +41621,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -39180,6 +41667,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -39211,6 +41709,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -39246,6 +41755,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -39277,6 +41797,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -39312,6 +41843,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -39343,6 +41885,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -39378,6 +41931,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -39409,6 +41973,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -39444,6 +42019,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -39475,6 +42061,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -39510,6 +42107,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -39541,6 +42149,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -39576,6 +42195,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -39607,6 +42237,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -39642,6 +42283,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -39675,6 +42327,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -39706,6 +42369,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -39939,6 +42613,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -39970,6 +42655,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -40005,6 +42701,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -40036,6 +42743,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -40071,6 +42789,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -40102,6 +42831,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -40137,6 +42877,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -40168,6 +42919,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -40203,6 +42965,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -40236,6 +43009,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -40256,6 +43040,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -40280,6 +43075,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -40300,6 +43106,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -40324,6 +43141,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -40344,6 +43172,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -40434,6 +43273,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0300"
@@ -40454,6 +43304,17 @@ Blueprints
 			max "1"
 			gather_amount "2"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -40478,6 +43339,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0300"
@@ -40498,6 +43370,17 @@ Blueprints
 			max "1"
 			gather_amount "2"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -40522,6 +43405,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0300"
@@ -40542,6 +43436,17 @@ Blueprints
 			max "1"
 			gather_amount "2"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -42887,6 +45792,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -42907,6 +45823,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -42931,6 +45858,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -42951,6 +45889,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -42975,6 +45924,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -42995,6 +45955,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -43019,6 +45990,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -43039,6 +46021,17 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -43063,6 +46056,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.3000"
@@ -43083,6 +46087,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -43107,6 +46122,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -43127,6 +46153,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -43151,6 +46188,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -43171,6 +46219,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -43195,6 +46254,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -43215,6 +46285,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -43239,6 +46320,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.1500"
@@ -43259,6 +46351,17 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -43283,6 +46386,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -43303,6 +46417,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -43327,6 +46452,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -43347,6 +46483,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -43371,6 +46518,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -43391,6 +46549,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -43415,6 +46584,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -43437,6 +46617,17 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "0.0700"
@@ -43457,6 +46648,17 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+			condition "has_research"
+			condition_value "Biomass water processing"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -58837,6 +62039,7 @@ ColumnGroups
 	{
 		items/loot/resources/biomass_animal_item
 		items/loot/resources/biomass_plant_item
+		items/loot/resources/biomass_water_item
 		items/loot/resources/shard_carbonium_item
 		items/loot/resources/shard_cobalt_bio_item
 		items/loot/resources/shard_cobalt_item
@@ -58987,6 +62190,13 @@ LootTemplates
 				max "8"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.3000"
+				min "4"
+				max "8"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.3000"
@@ -59053,6 +62263,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.0400"
+				min "2"
+				max "5"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -59131,6 +62348,13 @@ LootTemplates
 				max "3"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.0200"
+				min "1"
+				max "3"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
@@ -59197,6 +62421,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.0100"
+				min "1"
+				max "2"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -59275,6 +62506,13 @@ LootTemplates
 				max "5"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.0500"
+				min "2"
+				max "5"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0500"
@@ -59341,6 +62579,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.0400"
+				min "2"
+				max "5"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -59419,6 +62664,13 @@ LootTemplates
 				max "3"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.0200"
+				min "1"
+				max "3"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
@@ -59485,6 +62737,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.0800"
+				min "3"
+				max "6"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.0800"
 				min "3"
@@ -59563,6 +62822,13 @@ LootTemplates
 				max "2"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.0100"
+				min "1"
+				max "2"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0100"
@@ -59629,6 +62895,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.2500"
+				min "4"
+				max "8"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.2500"
 				min "4"
@@ -59707,6 +62980,13 @@ LootTemplates
 				max "5"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.0400"
+				min "2"
+				max "5"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0400"
@@ -59773,6 +63053,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.0200"
+				min "1"
+				max "3"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -59851,6 +63138,13 @@ LootTemplates
 				max "2"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.0100"
+				min "1"
+				max "2"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0100"
@@ -59910,6 +63204,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.3000"
+				min "4"
+				max "8"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.3000"
 				min "4"
@@ -59981,6 +63282,13 @@ LootTemplates
 				max "5"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.0400"
+				min "2"
+				max "5"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0400"
@@ -60046,6 +63354,13 @@ LootTemplates
 				max "3"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.0200"
+				min "1"
+				max "3"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
@@ -60105,6 +63420,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.0100"
+				min "1"
+				max "2"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -60183,6 +63505,13 @@ LootTemplates
 				max "8"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.1000"
+				min "4"
+				max "8"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.1000"
@@ -60249,6 +63578,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.0400"
+				min "2"
+				max "5"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -60327,6 +63663,13 @@ LootTemplates
 				max "3"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.0200"
+				min "1"
+				max "3"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
@@ -60393,6 +63736,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.0300"
+				min "2"
+				max "5"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.0300"
 				min "2"
@@ -60471,6 +63821,13 @@ LootTemplates
 				max "3"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.0200"
+				min "1"
+				max "3"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
@@ -60537,6 +63894,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.0100"
+				min "1"
+				max "2"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -60615,6 +63979,13 @@ LootTemplates
 				max "5"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.0400"
+				min "2"
+				max "5"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0400"
@@ -60681,6 +64052,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.2000"
+				min "4"
+				max "8"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.2000"
 				min "4"
@@ -60759,6 +64137,13 @@ LootTemplates
 				max "5"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.0400"
+				min "2"
+				max "5"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0400"
@@ -60825,6 +64210,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.0200"
+				min "1"
+				max "3"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.0200"
 				min "1"
@@ -60903,6 +64295,13 @@ LootTemplates
 				max "8"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.1000"
+				min "4"
+				max "8"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.1000"
@@ -60969,6 +64368,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.0400"
+				min "2"
+				max "5"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.0400"
 				min "2"
@@ -61047,6 +64453,13 @@ LootTemplates
 				max "3"
 			}
 
+			LootItem "items/loot/resources/shard_titanium_bio_item"
+			{
+				chance "0.0200"
+				min "1"
+				max "3"
+			}
+
 			LootItem "items/loot/resources/shard_titanium_item"
 			{
 				chance "0.0200"
@@ -61113,6 +64526,13 @@ LootTemplates
 			}
 
 			LootItem "items/loot/resources/shard_tanzanite_item"
+			{
+				chance "0.0100"
+				min "1"
+				max "2"
+			}
+
+			LootItem "items/loot/resources/shard_titanium_bio_item"
 			{
 				chance "0.0100"
 				min "1"
@@ -61244,6 +64664,84 @@ LootTemplates
 	LootInfoTemplate "biomass_plant_very_small"
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+		}
+
+	}
+
+	LootInfoTemplate "biomass_plant_zerolike"
+	{
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
+			package_size "1"
+		}
+
+	}
+
+	LootInfoTemplate "biomass_water_abdundant"
+	{
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "4"
+			max "10"
+			gather_amount "16"
+			package_size "1"
+		}
+
+	}
+
+	LootInfoTemplate "biomass_water_big"
+	{
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+	}
+
+	LootInfoTemplate "biomass_water_medium"
+	{
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "1"
+		}
+
+	}
+
+	LootInfoTemplate "biomass_water_small"
+	{
+		LootItem "items/loot/resources/biomass_water_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+		}
+
+	}
+
+	LootInfoTemplate "biomass_water_very_small"
+	{
+		LootItem "items/loot/resources/biomass_water_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -62369,6 +65867,12 @@ LootConditions
 	{
 		condition "has_research"
 		condition_value "gui/menu/research/name/biomass_energy_lvl1"
+	}
+
+	LootCondition "items/loot/resources/biomass_water_item"
+	{
+		condition "has_research"
+		condition_value "Biomass water processing"
 	}
 
 	LootCondition "items/loot/resources/shard_cobalt_bio_item"
@@ -64084,10 +67588,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_big
 			ironium_big
 			ferdonite_big
 			palladium_bio_big
-			biomass_plant_big
+			biomass_plant_medium
 		}
 
 	}
@@ -64098,7 +67603,8 @@ BlueprintOverrides
 		{
 			cobalt_bio_big
 			ironium_big
-			biomass_plant_big
+			biomass_water_abdundant
+			biomass_plant_medium
 		}
 
 	}
@@ -64107,10 +67613,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_big
 			ironium_big
 			hazenite_big
 			palladium_bio_big
-			biomass_plant_big
+			biomass_plant_medium
 		}
 
 	}
@@ -64119,10 +67626,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_big
 			ironium_big
 			ferdonite_big
 			palladium_bio_big
-			biomass_plant_big
+			biomass_plant_medium
 		}
 
 	}
@@ -64133,7 +67641,8 @@ BlueprintOverrides
 		{
 			cobalt_bio_big
 			ironium_big
-			biomass_plant_big
+			biomass_water_abdundant
+			biomass_plant_medium
 		}
 
 	}
@@ -64142,10 +67651,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_big
 			ironium_big
 			hazenite_big
 			palladium_bio_big
-			biomass_plant_big
+			biomass_plant_medium
 		}
 
 	}
@@ -64154,10 +67664,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_big
 			ironium_big
 			ferdonite_big
 			palladium_bio_big
-			biomass_plant_big
+			biomass_plant_medium
 		}
 
 	}
@@ -64166,9 +67677,10 @@ BlueprintOverrides
 	{
 		Items
 		{
-			cobalt_bio_big
 			ironium_big
-			biomass_plant_big
+			cobalt_bio_big
+			biomass_water_abdundant
+			biomass_plant_medium
 		}
 
 	}
@@ -64177,10 +67689,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_big
 			ironium_big
 			hazenite_big
 			palladium_bio_big
-			biomass_plant_big
+			biomass_plant_medium
 		}
 
 	}
@@ -64189,10 +67702,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			ironium_small
 			ferdonite_small
 			palladium_bio_small
-			biomass_plant_small
+			biomass_plant_very_small
 		}
 
 	}
@@ -64203,7 +67717,8 @@ BlueprintOverrides
 		{
 			cobalt_bio_small
 			ironium_small
-			biomass_plant_small
+			biomass_water_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -64212,10 +67727,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			ironium_small
 			palladium_bio_small
 			hazenite_small
-			biomass_plant_small
+			biomass_plant_very_small
 		}
 
 	}
@@ -64224,10 +67740,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			ironium_small
 			ferdonite_small
 			palladium_bio_small
-			biomass_plant_small
+			biomass_plant_very_small
 		}
 
 	}
@@ -64238,7 +67755,8 @@ BlueprintOverrides
 		{
 			cobalt_bio_small
 			ironium_small
-			biomass_plant_small
+			biomass_water_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -64247,10 +67765,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			ironium_small
 			palladium_bio_small
 			hazenite_small
-			biomass_plant_small
+			biomass_plant_very_small
 		}
 
 	}
@@ -64259,10 +67778,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			ironium_small
 			ferdonite_small
 			palladium_bio_small
-			biomass_plant_small
+			biomass_plant_very_small
 		}
 
 	}
@@ -64273,7 +67793,8 @@ BlueprintOverrides
 		{
 			cobalt_bio_small
 			ironium_small
-			biomass_plant_small
+			biomass_water_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -64282,10 +67803,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			ironium_small
 			palladium_bio_small
 			hazenite_small
-			biomass_plant_small
+			biomass_plant_very_small
 		}
 
 	}
@@ -64295,7 +67817,8 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
-			biomass_plant_very_small
+			biomass_water_very_small
+			biomass_plant_zerolike
 		}
 
 	}
@@ -64305,7 +67828,8 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
-			biomass_plant_very_small
+			biomass_water_very_small
+			biomass_plant_zerolike
 		}
 
 	}
@@ -64315,7 +67839,8 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
-			biomass_plant_very_small
+			biomass_water_very_small
+			biomass_plant_zerolike
 		}
 
 	}
@@ -64325,7 +67850,8 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
-			biomass_plant_very_small
+			biomass_water_very_small
+			biomass_plant_zerolike
 		}
 
 	}
@@ -64335,7 +67861,8 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
-			biomass_plant_very_small
+			biomass_water_very_small
+			biomass_plant_zerolike
 		}
 
 	}
@@ -64345,7 +67872,8 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
-			biomass_plant_very_small
+			biomass_water_very_small
+			biomass_plant_zerolike
 		}
 
 	}
@@ -64355,7 +67883,8 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
-			biomass_plant_very_small
+			biomass_water_very_small
+			biomass_plant_zerolike
 		}
 
 	}
@@ -64365,7 +67894,8 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
-			biomass_plant_very_small
+			biomass_water_very_small
+			biomass_plant_zerolike
 		}
 
 	}
@@ -64375,7 +67905,8 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
-			biomass_plant_very_small
+			biomass_water_very_small
+			biomass_plant_zerolike
 		}
 
 	}
@@ -64386,6 +67917,7 @@ BlueprintOverrides
 		{
 			rhodonite_big
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -64396,6 +67928,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -64406,6 +67939,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_big
 			biomass_plant_big
 		}
 
@@ -64416,6 +67950,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -64426,6 +67961,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			tanzanite_big
 			biomass_plant_big
 		}
@@ -64438,6 +67974,7 @@ BlueprintOverrides
 		{
 			rhodonite_big
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -64448,6 +67985,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -64458,6 +67996,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_big
 			biomass_plant_big
 		}
 
@@ -64468,6 +68007,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -64478,6 +68018,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			tanzanite_big
 			biomass_plant_big
 		}
@@ -64490,6 +68031,7 @@ BlueprintOverrides
 		{
 			rhodonite_big
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -64500,6 +68042,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -64510,6 +68053,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_big
 			biomass_plant_big
 		}
 
@@ -64520,6 +68064,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -64530,6 +68075,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			tanzanite_big
 			biomass_plant_big
 		}
@@ -64542,6 +68088,7 @@ BlueprintOverrides
 		{
 			rhodonite_medium
 			ironium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -64552,6 +68099,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_big
 			biomass_plant_medium
 		}
 
@@ -64562,6 +68110,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_small
 			uranium_bio_medium
 			biomass_plant_medium
 		}
@@ -64573,6 +68122,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -64583,6 +68133,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_medium
 			tanzanite_medium
 			biomass_plant_medium
 		}
@@ -64595,6 +68146,7 @@ BlueprintOverrides
 		{
 			rhodonite_medium
 			ironium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -64604,6 +68156,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_big
 			biomass_plant_medium
 			ironium_medium
 		}
@@ -64615,6 +68168,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_small
 			uranium_bio_medium
 			biomass_plant_medium
 		}
@@ -64626,6 +68180,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -64636,6 +68191,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_medium
 			tanzanite_medium
 			biomass_plant_medium
 		}
@@ -64648,6 +68204,7 @@ BlueprintOverrides
 		{
 			rhodonite_medium
 			ironium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -64658,6 +68215,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_big
 			biomass_plant_medium
 		}
 
@@ -64668,6 +68226,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_small
 			uranium_bio_medium
 			biomass_plant_medium
 		}
@@ -64679,6 +68238,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -64689,6 +68249,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_medium
 			tanzanite_medium
 			biomass_plant_medium
 		}
@@ -64700,6 +68261,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_small
 			biomass_plant_small
 		}
 
@@ -64710,6 +68272,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_medium
 			biomass_plant_small
 		}
 
@@ -64720,6 +68283,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_very_small
 			uranium_bio_small
 			biomass_plant_small
 		}
@@ -64731,6 +68295,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_small
 			biomass_plant_small
 		}
 
@@ -64741,6 +68306,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_small
 			tanzanite_small
 			biomass_plant_small
 		}
@@ -64752,6 +68318,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_small
 			biomass_plant_small
 		}
 
@@ -64762,6 +68329,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_medium
 			biomass_plant_small
 		}
 
@@ -64772,6 +68340,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_very_small
 			uranium_bio_small
 			biomass_plant_small
 		}
@@ -64783,6 +68352,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_small
 			biomass_plant_small
 		}
 
@@ -64793,6 +68363,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_small
 			tanzanite_small
 			biomass_plant_small
 		}
@@ -64804,6 +68375,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_small
 			biomass_plant_small
 		}
 
@@ -64814,6 +68386,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_small
 			biomass_plant_small
 		}
 
@@ -64824,6 +68397,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_very_small
 			uranium_bio_small
 			biomass_plant_small
 		}
@@ -64835,6 +68409,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_small
 			biomass_plant_small
 		}
 
@@ -64845,6 +68420,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_small
 			tanzanite_small
 			biomass_plant_small
 		}
@@ -64855,6 +68431,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			rhodonite_small
 			titanium_bio_small
 			ironium_big
@@ -64867,6 +68444,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			cobalt_bio_small
 			ferdonite_small
 			ironium_big
@@ -64879,6 +68457,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			tanzanite_small
 			titanium_bio_small
 			ironium_big
@@ -64891,6 +68470,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			rhodonite_small
 			titanium_bio_small
 			ironium_big
@@ -64903,6 +68483,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			cobalt_bio_small
 			ferdonite_small
 			ironium_big
@@ -64915,6 +68496,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			tanzanite_small
 			titanium_bio_small
 			ironium_big
@@ -64927,6 +68509,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			rhodonite_small
 			titanium_bio_small
 			ironium_big
@@ -64939,6 +68522,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			cobalt_bio_small
 			ferdonite_small
 			ironium_big
@@ -64951,6 +68535,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			tanzanite_small
 			titanium_bio_small
 			ironium_big
@@ -65282,6 +68867,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -65292,6 +68878,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -65302,6 +68889,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -65312,6 +68900,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -65322,6 +68911,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -65332,6 +68922,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -65342,6 +68933,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -65352,6 +68944,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -65362,6 +68955,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_big
+			biomass_water_abdundant
 			biomass_plant_big
 		}
 
@@ -65372,6 +68966,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_big
 			biomass_plant_medium
 		}
 
@@ -65382,6 +68977,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_big
 			biomass_plant_medium
 		}
 
@@ -65392,6 +68988,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_big
 			biomass_plant_medium
 		}
 
@@ -65402,6 +68999,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_big
 			biomass_plant_medium
 		}
 
@@ -65412,6 +69010,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_big
 			biomass_plant_medium
 		}
 
@@ -65422,6 +69021,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_big
 			biomass_plant_medium
 		}
 
@@ -65432,6 +69032,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_big
 			biomass_plant_medium
 		}
 
@@ -65442,6 +69043,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_big
 			biomass_plant_medium
 		}
 
@@ -65452,6 +69054,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_medium
+			biomass_water_big
 			biomass_plant_medium
 		}
 
@@ -65462,6 +69065,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_medium
 			biomass_plant_small
 		}
 
@@ -65472,6 +69076,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_medium
 			biomass_plant_small
 		}
 
@@ -65482,6 +69087,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_medium
 			biomass_plant_small
 		}
 
@@ -65492,6 +69098,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_medium
 			biomass_plant_small
 		}
 
@@ -65502,6 +69109,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_medium
 			biomass_plant_small
 		}
 
@@ -65512,6 +69120,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_medium
 			biomass_plant_small
 		}
 
@@ -65522,6 +69131,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_medium
 			biomass_plant_small
 		}
 
@@ -65532,6 +69142,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_medium
 			biomass_plant_small
 		}
 
@@ -65542,6 +69153,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_medium
 			biomass_plant_small
 		}
 
@@ -65552,6 +69164,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_small
+			biomass_water_medium
 			biomass_plant_small
 		}
 
@@ -65562,6 +69175,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
+			biomass_water_small
 			biomass_plant_very_small
 		}
 
@@ -65572,6 +69186,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
+			biomass_water_small
 			biomass_plant_very_small
 		}
 
@@ -65582,6 +69197,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
+			biomass_water_small
 			biomass_plant_very_small
 		}
 
@@ -65592,6 +69208,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
+			biomass_water_small
 			biomass_plant_very_small
 		}
 
@@ -65602,6 +69219,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
+			biomass_water_small
 			biomass_plant_very_small
 		}
 
@@ -65612,6 +69230,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
+			biomass_water_small
 			biomass_plant_very_small
 		}
 
@@ -65622,6 +69241,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
+			biomass_water_small
 			biomass_plant_very_small
 		}
 
@@ -65632,6 +69252,7 @@ BlueprintOverrides
 		Items
 		{
 			ironium_very_small
+			biomass_water_small
 			biomass_plant_very_small
 		}
 
@@ -65641,6 +69262,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_big
 			palladium_bio_medium
 			rhodonite_small
@@ -65653,6 +69275,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			palladium_bio_medium
 			rhodonite_small
 			ironium_big
@@ -65665,6 +69288,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			palladium_bio_medium
 			rhodonite_small
 			ironium_big
@@ -65677,6 +69301,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_big
 			palladium_bio_medium
 			rhodonite_small
@@ -65689,6 +69314,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			palladium_bio_medium
 			rhodonite_small
 			ironium_big
@@ -65701,6 +69327,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			palladium_bio_medium
 			rhodonite_small
 			ironium_big
@@ -65713,6 +69340,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_big
 			palladium_bio_medium
 			rhodonite_small
@@ -65725,6 +69353,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			palladium_bio_medium
 			rhodonite_small
 			ironium_big
@@ -65737,6 +69366,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			palladium_bio_medium
 			rhodonite_small
 			ironium_big
@@ -65749,6 +69379,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			biomass_plant_medium
 			palladium_bio_small
 			rhodonite_very_small
@@ -65761,6 +69392,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			palladium_bio_small
 			rhodonite_very_small
 			ironium_medium
@@ -65773,6 +69405,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			palladium_bio_small
 			rhodonite_very_small
 			ironium_medium
@@ -65785,6 +69418,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			biomass_plant_medium
 			palladium_bio_small
 			rhodonite_very_small
@@ -65797,6 +69431,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			palladium_bio_small
 			rhodonite_very_small
 			ironium_medium
@@ -65809,6 +69444,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			palladium_bio_small
 			rhodonite_very_small
 			ironium_medium
@@ -65821,6 +69457,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			biomass_plant_medium
 			palladium_bio_small
 			rhodonite_very_small
@@ -65833,6 +69470,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			palladium_bio_small
 			rhodonite_very_small
 			ironium_medium
@@ -65845,6 +69483,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			palladium_bio_small
 			rhodonite_very_small
 			ironium_medium
@@ -65857,6 +69496,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_small
 			palladium_bio_very_small
 			ironium_small
@@ -65870,6 +69510,7 @@ BlueprintOverrides
 		{
 			palladium_bio_very_small
 			ironium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -65881,6 +69522,7 @@ BlueprintOverrides
 		{
 			palladium_bio_very_small
 			ironium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -65890,6 +69532,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_small
 			palladium_bio_very_small
 			ironium_small
@@ -65903,6 +69546,7 @@ BlueprintOverrides
 		{
 			palladium_bio_very_small
 			ironium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -65914,6 +69558,7 @@ BlueprintOverrides
 		{
 			palladium_bio_very_small
 			ironium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -65923,6 +69568,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_small
 			palladium_bio_very_small
 			ironium_small
@@ -65936,6 +69582,7 @@ BlueprintOverrides
 		{
 			palladium_bio_very_small
 			ironium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -65947,6 +69594,7 @@ BlueprintOverrides
 		{
 			palladium_bio_very_small
 			ironium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75165,6 +78813,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
+			biomass_water_medium
 			tanzanite_medium
 			biomass_plant_big
 		}
@@ -75177,6 +78826,7 @@ BlueprintOverrides
 		{
 			cobalt_bio_medium
 			carbonium_big
+			biomass_water_small
 			biomass_plant_big
 		}
 
@@ -75188,6 +78838,7 @@ BlueprintOverrides
 		{
 			hazenite_medium
 			carbonium_big
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -75198,8 +78849,9 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
-			biomass_plant_big
+			biomass_water_medium
 			tanzanite_medium
+			biomass_plant_big
 		}
 
 	}
@@ -75210,6 +78862,7 @@ BlueprintOverrides
 		{
 			cobalt_bio_medium
 			carbonium_big
+			biomass_water_small
 			biomass_plant_big
 		}
 
@@ -75219,6 +78872,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_big
 			carbonium_big
 			hazenite_medium
@@ -75231,8 +78885,9 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
-			biomass_plant_big
+			biomass_water_medium
 			tanzanite_medium
+			biomass_plant_big
 		}
 
 	}
@@ -75243,6 +78898,7 @@ BlueprintOverrides
 		{
 			cobalt_bio_medium
 			carbonium_big
+			biomass_water_very_small
 			biomass_plant_big
 		}
 
@@ -75252,6 +78908,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_big
 			carbonium_big
 			hazenite_medium
@@ -75264,8 +78921,9 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
-			biomass_plant_medium
+			biomass_water_small
 			tanzanite_small
+			biomass_plant_medium
 		}
 
 	}
@@ -75276,6 +78934,7 @@ BlueprintOverrides
 		{
 			cobalt_bio_small
 			carbonium_medium
+			biomass_water_very_small
 			biomass_plant_medium
 		}
 
@@ -75285,6 +78944,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			biomass_plant_medium
 			carbonium_medium
 			hazenite_small
@@ -75296,6 +78956,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			tanzanite_small
 			biomass_plant_medium
 			carbonium_medium
@@ -75307,6 +78968,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_medium
 			cobalt_bio_small
 			carbonium_medium
@@ -75320,6 +78982,7 @@ BlueprintOverrides
 		{
 			hazenite_small
 			carbonium_medium
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -75329,6 +78992,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			tanzanite_small
 			biomass_plant_medium
 			carbonium_medium
@@ -75340,6 +79004,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_medium
 			cobalt_bio_small
 			carbonium_medium
@@ -75353,6 +79018,7 @@ BlueprintOverrides
 		{
 			hazenite_small
 			carbonium_medium
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -75362,6 +79028,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_small
 			carbonium_small
 		}
@@ -75383,6 +79050,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75393,6 +79061,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75413,6 +79082,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75423,6 +79093,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75443,6 +79114,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75543,6 +79215,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
+			biomass_water_big
 			tanzanite_small
 			biomass_plant_big
 		}
@@ -75555,6 +79228,7 @@ BlueprintOverrides
 		{
 			hazenite_small
 			carbonium_big
+			biomass_water_big
 			biomass_plant_big
 		}
 
@@ -75566,6 +79240,7 @@ BlueprintOverrides
 		{
 			ferdonite_small
 			carbonium_big
+			biomass_water_big
 			biomass_plant_big
 		}
 
@@ -75576,6 +79251,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
+			biomass_water_big
 			tanzanite_small
 			biomass_plant_big
 		}
@@ -75588,6 +79264,7 @@ BlueprintOverrides
 		{
 			hazenite_small
 			carbonium_big
+			biomass_water_big
 			biomass_plant_big
 		}
 
@@ -75599,6 +79276,7 @@ BlueprintOverrides
 		{
 			ferdonite_small
 			carbonium_big
+			biomass_water_big
 			biomass_plant_big
 		}
 
@@ -75609,6 +79287,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
+			biomass_water_big
 			tanzanite_small
 			biomass_plant_big
 		}
@@ -75621,6 +79300,7 @@ BlueprintOverrides
 		{
 			hazenite_small
 			carbonium_big
+			biomass_water_big
 			biomass_plant_big
 		}
 
@@ -75632,6 +79312,7 @@ BlueprintOverrides
 		{
 			ferdonite_small
 			carbonium_big
+			biomass_water_big
 			biomass_plant_big
 		}
 
@@ -75642,6 +79323,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -75652,6 +79334,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -75662,6 +79345,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -75672,6 +79356,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -75682,6 +79367,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -75692,6 +79378,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -75702,6 +79389,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -75712,6 +79400,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -75722,6 +79411,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -75732,6 +79422,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75742,6 +79433,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75752,6 +79444,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75762,6 +79455,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75772,6 +79466,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75782,6 +79477,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75792,6 +79488,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75802,6 +79499,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75812,6 +79510,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -75823,17 +79522,7 @@ BlueprintOverrides
 		{
 			hazenite_medium
 			carbonium_medium
-			biomass_plant_medium
-		}
-
-	}
-
-	Blueprint "props/trees/catkins_big_01_skin1"
-	{
-		Items
-		{
-			cobalt_bio_medium
-			carbonium_medium
+			biomass_water_very_small
 			biomass_plant_medium
 		}
 
@@ -75845,6 +79534,7 @@ BlueprintOverrides
 		{
 			titanium_bio_medium
 			carbonium_medium
+			biomass_water_very_small
 			biomass_plant_medium
 		}
 
@@ -75856,6 +79546,7 @@ BlueprintOverrides
 		{
 			titanium_bio_medium
 			carbonium_medium
+			biomass_water_very_small
 			biomass_plant_medium
 		}
 
@@ -75865,6 +79556,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_medium
 			carbonium_medium
 			hazenite_medium
@@ -75878,6 +79570,7 @@ BlueprintOverrides
 		{
 			cobalt_bio_medium
 			carbonium_medium
+			biomass_water_very_small
 			biomass_plant_medium
 		}
 
@@ -75887,6 +79580,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_medium
 			titanium_bio_medium
 			carbonium_medium
@@ -75898,6 +79592,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_medium
 			titanium_bio_medium
 			carbonium_medium
@@ -75909,6 +79604,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_medium
 			carbonium_medium
 			hazenite_medium
@@ -75922,6 +79618,7 @@ BlueprintOverrides
 		{
 			cobalt_bio_medium
 			carbonium_medium
+			biomass_water_very_small
 			biomass_plant_medium
 		}
 
@@ -75931,6 +79628,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_medium
 			titanium_bio_medium
 			carbonium_medium
@@ -75942,6 +79640,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_medium
 			titanium_bio_medium
 			carbonium_medium
@@ -76218,6 +79917,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_big
 			biomass_plant_big
 		}
 
@@ -76229,6 +79929,7 @@ BlueprintOverrides
 		{
 			titanium_bio_medium
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -76240,6 +79941,7 @@ BlueprintOverrides
 		{
 			hazenite_medium
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -76249,6 +79951,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_big
 			biomass_plant_big
 			carbonium_medium
 		}
@@ -76259,6 +79962,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_big
 			titanium_bio_medium
 			carbonium_medium
@@ -76270,6 +79974,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_big
 			carbonium_medium
 			hazenite_medium
@@ -76281,6 +79986,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_big
 			biomass_plant_big
 			carbonium_medium
 		}
@@ -76291,6 +79997,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_big
 			titanium_bio_medium
 			carbonium_medium
@@ -76302,6 +80009,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_big
 			carbonium_medium
 			hazenite_medium
@@ -76313,6 +80021,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_medium
 			carbonium_small
 		}
@@ -76323,6 +80032,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			biomass_plant_medium
 			titanium_bio_small
 			carbonium_small
@@ -76334,6 +80044,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			biomass_plant_medium
 			carbonium_small
 			hazenite_small
@@ -76346,6 +80057,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -76357,6 +80069,7 @@ BlueprintOverrides
 		{
 			titanium_bio_small
 			carbonium_small
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -76368,6 +80081,7 @@ BlueprintOverrides
 		{
 			hazenite_small
 			carbonium_small
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -76378,6 +80092,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_medium
 			biomass_plant_medium
 		}
 
@@ -76389,6 +80104,7 @@ BlueprintOverrides
 		{
 			titanium_bio_small
 			carbonium_small
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -76400,6 +80116,7 @@ BlueprintOverrides
 		{
 			hazenite_small
 			carbonium_small
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -76410,6 +80127,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_very_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -76421,6 +80139,7 @@ BlueprintOverrides
 		{
 			titanium_bio_very_small
 			carbonium_very_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -76432,6 +80151,7 @@ BlueprintOverrides
 		{
 			hazenite_very_small
 			carbonium_very_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -76441,6 +80161,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_small
 			carbonium_very_small
 		}
@@ -76451,6 +80172,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_small
 			titanium_bio_very_small
 			carbonium_very_small
@@ -76462,6 +80184,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_small
 			carbonium_very_small
 			hazenite_very_small
@@ -76473,6 +80196,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_small
 			carbonium_very_small
 		}
@@ -76483,6 +80207,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_small
 			titanium_bio_very_small
 			carbonium_very_small
@@ -76494,6 +80219,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_very_small
 			biomass_plant_small
 			carbonium_very_small
 			hazenite_very_small
@@ -76506,6 +80232,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_medium
 			tanzanite_small
 			biomass_plant_big
 		}
@@ -76518,6 +80245,7 @@ BlueprintOverrides
 		{
 			hazenite_small
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -76529,6 +80257,7 @@ BlueprintOverrides
 		{
 			rhodonite_small
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -76539,6 +80268,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_big
 			tanzanite_small
 		}
@@ -76549,6 +80279,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_big
 			carbonium_medium
 			hazenite_small
@@ -76560,6 +80291,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_big
 			carbonium_medium
 			rhodonite_small
@@ -76572,6 +80304,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_medium
 			biomass_plant_big
 			tanzanite_small
 		}
@@ -76582,6 +80315,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_big
 			carbonium_medium
 			hazenite_small
@@ -76593,6 +80327,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_medium
 			biomass_plant_big
 			carbonium_medium
 			rhodonite_small
@@ -76605,6 +80340,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_small
 			biomass_plant_medium
 			tanzanite_very_small
 		}
@@ -76615,6 +80351,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			biomass_plant_medium
 			carbonium_small
 			hazenite_very_small
@@ -76626,6 +80363,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			biomass_plant_medium
 			carbonium_small
 			rhodonite_very_small
@@ -76637,6 +80375,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			tanzanite_very_small
 			biomass_plant_medium
 			carbonium_small
@@ -76650,6 +80389,7 @@ BlueprintOverrides
 		{
 			hazenite_very_small
 			carbonium_small
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -76661,6 +80401,7 @@ BlueprintOverrides
 		{
 			rhodonite_very_small
 			carbonium_small
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -76670,6 +80411,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_small
 			tanzanite_very_small
 			biomass_plant_medium
 			carbonium_small
@@ -76683,6 +80425,7 @@ BlueprintOverrides
 		{
 			hazenite_very_small
 			carbonium_small
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -76694,6 +80437,7 @@ BlueprintOverrides
 		{
 			rhodonite_very_small
 			carbonium_small
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -76794,6 +80538,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_abdundant
 			tanzanite_very_small
 			biomass_plant_medium
 		}
@@ -76806,6 +80551,7 @@ BlueprintOverrides
 		{
 			hazenite_very_small
 			carbonium_medium
+			biomass_water_abdundant
 			biomass_plant_medium
 		}
 
@@ -76817,6 +80563,7 @@ BlueprintOverrides
 		{
 			ferdonite_very_small
 			carbonium_medium
+			biomass_water_abdundant
 			biomass_plant_medium
 		}
 
@@ -76827,6 +80574,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_abdundant
 			biomass_plant_medium
 			tanzanite_very_small
 		}
@@ -76837,6 +80585,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_abdundant
 			biomass_plant_medium
 			carbonium_medium
 			hazenite_very_small
@@ -76848,6 +80597,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_abdundant
 			biomass_plant_medium
 			carbonium_medium
 			ferdonite_very_small
@@ -76860,6 +80610,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_abdundant
 			biomass_plant_medium
 			tanzanite_very_small
 		}
@@ -76870,6 +80621,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_abdundant
 			biomass_plant_medium
 			carbonium_medium
 			hazenite_very_small
@@ -76881,6 +80633,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_abdundant
 			biomass_plant_medium
 			carbonium_medium
 			ferdonite_very_small
@@ -76893,6 +80646,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_big
 			biomass_plant_small
 		}
 
@@ -76902,6 +80656,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_big
 			biomass_plant_small
 			carbonium_small
 		}
@@ -76912,6 +80667,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_water_big
 			biomass_plant_small
 			carbonium_small
 		}
@@ -76923,6 +80679,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_big
 			biomass_plant_small
 		}
 
@@ -76933,6 +80690,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_big
 			biomass_plant_small
 		}
 
@@ -76943,6 +80701,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_big
 			biomass_plant_small
 		}
 
@@ -76983,6 +80742,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_very_small
+			biomass_water_very_small
 			biomass_plant_very_small
 		}
 
@@ -76993,6 +80753,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_very_small
+			biomass_water_very_small
 			biomass_plant_very_small
 		}
 
@@ -77003,6 +80764,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_very_small
+			biomass_water_very_small
 			biomass_plant_very_small
 		}
 
@@ -77013,6 +80775,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_very_small
+			biomass_water_very_small
 			biomass_plant_very_small
 		}
 
@@ -77023,6 +80786,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_very_small
+			biomass_water_very_small
 			biomass_plant_very_small
 		}
 
@@ -77033,6 +80797,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_very_small
+			biomass_water_very_small
 			biomass_plant_very_small
 		}
 
@@ -77990,6 +81755,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -78000,6 +81766,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -78010,6 +81777,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -78020,6 +81788,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -78030,6 +81799,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -78040,6 +81810,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -78050,6 +81821,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -78060,6 +81832,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -78070,6 +81843,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_big
+			biomass_water_medium
 			biomass_plant_big
 		}
 
@@ -78080,6 +81854,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -78090,6 +81865,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -78100,6 +81876,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -78110,6 +81887,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -78120,6 +81898,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -78130,6 +81909,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -78140,6 +81920,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -78150,6 +81931,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -78160,6 +81942,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_medium
+			biomass_water_small
 			biomass_plant_medium
 		}
 
@@ -78170,6 +81953,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -78180,6 +81964,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -78190,6 +81975,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -78200,6 +81986,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -78210,6 +81997,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -78220,6 +82008,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -78230,6 +82019,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -78240,6 +82030,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
@@ -78250,6 +82041,7 @@ BlueprintOverrides
 		Items
 		{
 			carbonium_small
+			biomass_water_very_small
 			biomass_plant_small
 		}
 
