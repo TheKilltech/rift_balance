@@ -73,3 +73,17 @@ GameplayResourceDef
 	missing_effect "voice_over/announcement/not_enough_animal_biomass"
 	order   		"10"		
 }
+
+GameplayResourceDef
+{
+	id				"biomass_water"
+	localization_id "Biomass-Water" //"resource_name/biomass_animal"
+	bp  			"items/loot/resources/biomass_water_item"
+	type 			"global"
+	icon			"gui/hud/resource_icons/sludge_pool"
+	bigger_icon		"gui/hud/resource_icons/sludge_pool_bigger"
+	hud_visible 	"build_menu"
+	allow_overflow 	"0"
+	missing_effect "voice_over/announcement/not_enough_animal_biomass"
+	order   		"11"		
+}
