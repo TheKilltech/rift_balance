@@ -50,7 +50,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"ferdonite"
-				value		"0.2"
+				value		"0.3"
 			}	
 		}
 		
@@ -60,13 +60,6 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"800"
-			}
-			GameplayResource
-			{
-				resource 	"magma_metal"
-				value 		"50"
-				attachment	"att_out_1"
-				optional    "1"
 			}
 		}
 		priority 10
@@ -80,14 +73,8 @@ EntityBlueprint
 			Storage
 			{
 				resource "energy"
-				max 	 "850"
-			}		
-			Storage
-			{
-				resource 	"magma_metal"
-				max 	 	"400"
-				attachment	"att_out_1"
-			}				
+				max 	 "800"
+			}	
 		}
 	}
 
