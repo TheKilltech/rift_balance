@@ -44,11 +44,6 @@ EntityBlueprint
 				value 		"300"
 				attachment	"att_in_1"
 			}
-			GameplayResource
-			{
-				resource 	"ferdonite"
-				value		"0.1"
-			}		
 		}
 		
 		out
@@ -57,11 +52,6 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"500"
-			}
-			GameplayResource
-			{
-				resource 	"steel"
-				value		"2"
 			}
 		}
 		priority 10
@@ -73,10 +63,9 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource "energy"
-				max 	 "500"
-			}
-			
+				resource 	"energy"
+				max 	 	"550"
+			}		
 		}
 	}
 
@@ -441,7 +430,7 @@ EntityBlueprint
 					bone "att_in_arrow"
 				}
 			}
-		}	
+		}		
 ////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{

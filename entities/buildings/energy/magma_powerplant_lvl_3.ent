@@ -50,7 +50,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"ferdonite"
-				value		"0.1"
+				value		"0.2"
 			}	
 		}
 		
@@ -59,15 +59,18 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"1000"
+				value 		"1100"
 			}
 			GameplayResource
 			{
-				resource 	"steel"
-				value		"3"
+				resource 	"magma_metal"
+				value 		"100"
+				attachment	"att_out_1"
+				optional    "1"
 			}
 		}
 		priority 10
+		reset_interval 0.5
 	}
 
 	ResourceStorageDesc
@@ -76,10 +79,15 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource "energy"
-				max 	 "1000"
-			}
-			
+				resource 	"energy"
+				max 	 	"1200"
+			}		
+			Storage
+			{
+				resource 	"magma_metal"
+				max 	 	"400"
+				attachment	"att_out_1"
+			}				
 		}
 	}
 
@@ -205,6 +213,21 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"								
 					bone "att_in_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_out_arrow"
 				}
 			}
 		}	
