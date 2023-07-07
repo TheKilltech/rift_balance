@@ -45,13 +45,19 @@ EntityBlueprint
 			}
 			GameplayResource
 			{
-				resource 			"carbonium"
-				value				"3"
+				resource 			"steel"
+				value				"2"
 			}
 			
 			GameplayResource
 			{
-				resource 			"ammo_mech_explosive"
+				resource 			"carbonium"
+				value				"2"
+			}
+			
+			GameplayResource
+			{
+				resource 			"ammo_tower_explosive" //"ammo_mech_explosive"
 				value				"0.2"
 			}
 			
@@ -65,11 +71,16 @@ EntityBlueprint
 		
 		out
 		{
-
+			GameplayResource
+			{
+				resource 			"ammo_tower_explosive_lvl2"
+				value				"0.2"
+			}	
 			GameplayResource
 			{
 				resource 			"ammo_mech_explosive_lvl2"
 				value				"0.2"
+				optional			"1"
 			}		
 		}
 		priority 6		

@@ -36,19 +36,25 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value	"100"
+				value				"100"
 			}
 			
 			GameplayResource
 			{
-				resource 			"ammo_mech_liquid"
-				value	"5"
+				resource 			"ammo_tower_liquid"
+				value				"5"
+			}
+			
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value				"2"
 			}
 			
 			GameplayResource
 			{
 				resource 			"ferdonite"
-				value	"1"
+				value				"1"
 			}
 		}
 		
@@ -56,9 +62,15 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
+				resource 			"ammo_tower_liquid_lvl2"
+				value				"5"
+			}	
+			GameplayResource
+			{
 				resource 			"ammo_mech_liquid_lvl2"
 				value				"5"
-			}					
+				optional			"1"
+			}			
 		}	
 		priority 5		
 	}

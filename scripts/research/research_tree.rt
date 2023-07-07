@@ -418,6 +418,12 @@ Research
 							research_name "gui/menu/research/name/headquarters_lvl7"
 							research_category "gui/menu/research/category_base_buildings"
 						}
+						
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_weapons_small_caliber_extreme"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
 
 					}
 
@@ -469,6 +475,12 @@ Research
 						{
 							research_name "gui/menu/research/name/tower_ammunition_handling_lvl3"
 							research_category "gui/menu/research/category_base_buildings"
+						}
+						
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_weapons_small_caliber_advanced"
+							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
 					}
@@ -1297,6 +1309,12 @@ Research
 							research_name "gui/menu/research/name/defensive_buildings_lvl3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
+						
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_weapons_liquid_extreme"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
 
 					}
 
@@ -1401,7 +1419,11 @@ Research
 							research_name "gui/menu/research/name/defensive_buildings_lvl2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
-
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_weapons_liquid_advanced"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
 					}
 
 					research_name "gui/menu/research/name/towers_flamer_lvl2"
@@ -2308,6 +2330,12 @@ Research
 						{
 							research_name "gui/menu/research/name/tower_ammunition_handling_lvl2"
 							research_category "gui/menu/research/category_base_buildings"
+						}
+						
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_weapons_explosive_advanced"
+							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
 					}
@@ -3262,6 +3290,12 @@ Research
 						{
 							research_name "gui/menu/research/name/headquarters_lvl5"
 							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_weapons_explosive_extreme"
+							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
 					}
@@ -8394,6 +8428,12 @@ Research
 						
 						ResearchAward
 						{
+							blueprint "resources/ammo_tower_low_caliber_lvl2"
+							is_visible "1"
+						}
+						
+						ResearchAward
+						{
 							blueprint "items/weapons/small_machinegun_advanced_item"
 							is_visible "1"
 						}
@@ -8419,6 +8459,12 @@ Research
 						{
 							research_name "gui/menu/research/name/armory_lvl5"
 							research_category "gui/menu/research/category_weapons_equipment"
+						}
+						
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/resource_handling_uranium"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -8453,6 +8499,12 @@ Research
 						ResearchAward
 						{
 							blueprint "resources/ammo_mech_explosive_lvl3"
+							is_visible "1"
+						}
+						
+						ResearchAward
+						{
+							blueprint "resources/ammo_tower_explosive_lvl3"
 							is_visible "1"
 						}
 
@@ -8604,6 +8656,12 @@ Research
 
 						ResearchAward
 						{
+							blueprint "resources/ammo_tower_explosive_lvl2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "items/weapons/floating_mines_advanced_item"
 							is_visible "1"
 						}
@@ -8694,7 +8752,12 @@ Research
 							research_name "gui/menu/research/name/armory_lvl4"
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
-
+						
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/resource_handling_palladium"
+							research_category "gui/menu/research/category_base_buildings"
+						}
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_liquid_extreme"
@@ -8729,6 +8792,13 @@ Research
 							blueprint "resources/ammo_mech_liquid_lvl3"
 							is_visible "1"
 						}
+						
+						ResearchAward
+						{
+							blueprint "resources/ammo_tower_liquid_lvl3"
+							is_visible "1"
+						}
+
 
 						ResearchAward
 						{
@@ -8848,6 +8918,12 @@ Research
 						ResearchAward
 						{
 							blueprint "resources/ammo_mech_liquid_lvl2"
+							is_visible "1"
+						}
+						
+						ResearchAward
+						{
+							blueprint "resources/ammo_tower_liquid_lvl2"
 							is_visible "1"
 						}
 						
@@ -9046,6 +9122,12 @@ Research
 						{
 							research_name "gui/menu/research/name/armory_lvl5"
 							research_category "gui/menu/research/category_weapons_equipment"
+						}
+						
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/resource_handling_cobalt"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -10003,6 +10085,11 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/resource_handling_titanium"
+							research_category "gui/menu/research/category_base_buildings"
+						}
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_small_caliber_extreme"
@@ -10032,6 +10119,12 @@ Research
 							is_visible "1"
 						}
 
+						ResearchAward
+						{
+							blueprint "resources/ammo_tower_low_caliber_lvl3"
+							is_visible "1"
+						}
+						
 						ResearchAward
 						{
 							blueprint "resources/ammo_mech_low_caliber_lvl3"

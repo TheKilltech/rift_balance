@@ -7,8 +7,8 @@ EntityBlueprint
 		name 				"ammo_factory_explosive_lvl_3"
 		bp   				"buildings/ammo/ammo_factory_explosive_lvl_3"
 		category 			"ammo"
-		localization_id		"Mech top end explosive ammunition factory"//"gui/hud/building_name/ammo_factory_explosive_lvl_3"
-		description			"Ammunition factory for top end mech explosives weapons"//"gui/hud/building_description/ammo_factory_explosive_lvl_3"
+		localization_id		"Top end explosives factory" //"gui/hud/building_name/ammo_factory_explosive_lvl_3"
+		description			"Produces top end explosive ammunition" //"gui/hud/building_description/ammo_factory_explosive_lvl_3"
 		menu_icon			"gui/hud/building_icons/flora_cultivator"
 		type				"pipe"
 		require 			"headquarters"
@@ -51,14 +51,14 @@ EntityBlueprint
 			
 			GameplayResource
 			{
-				resource 	"ammo_mech_explosive_lvl2"
-				value		"0.1"
+				resource 	"ammo_tower_explosive_lvl2"
+				value		"0.2"
 			}
 			
 			GameplayResource
 			{
 				resource 	"uranium"
-				value		"0.3"
+				value		"0.6"
 			}		
 						
 		}
@@ -68,8 +68,14 @@ EntityBlueprint
 
 			GameplayResource
 			{
+				resource 	"ammo_tower_explosive_lvl3"
+				value		"0.2"
+			}	
+			GameplayResource
+			{
 				resource 	"ammo_mech_explosive_lvl3"
-				value		"0.1"
+				value		"0.2"
+				optional	"1"
 			}		
 		}
 		priority 6

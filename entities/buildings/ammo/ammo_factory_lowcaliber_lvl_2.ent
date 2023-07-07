@@ -41,12 +41,12 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"steel"
-				value				"2"
+				value				"4"
 			}
 			
 			GameplayResource
 			{
-				resource 			"ammo_mech_low_caliber"
+				resource 			"ammo_tower_low_caliber"
 				value				"1.6"
 			}
 			
@@ -63,8 +63,14 @@ EntityBlueprint
 
 			GameplayResource
 			{
+				resource 			"ammo_tower_low_caliber_lvl2"
+				value				"1.6"
+			}		
+			GameplayResource
+			{
 				resource 			"ammo_mech_low_caliber_lvl2"
 				value				"1.6"
+				optional			"1"
 			}		
 		}
 		priority 5		

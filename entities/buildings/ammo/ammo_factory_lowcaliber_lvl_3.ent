@@ -8,8 +8,8 @@ EntityBlueprint
 		bp   				"buildings/ammo/ammo_factory_lowcaliber_lvl_3"
 		category 			"ammo"
 		type				"pipe"
-		localization_id		"Mech top end low caliber ammunition factory"//"gui/hud/building_name/ammo_factory_lowcaliber_lvl_3"
-		description			"Ammunition factory for top end mech low caliber weapons"//"gui/hud/building_description/ammo_factory_lowcaliber_lvl_3"
+		localization_id		"Top end low caliber ammo factory" //"gui/hud/building_name/ammo_factory_lowcaliber_lvl_3"
+		description			"Produces top end low caliber ammunition" //"gui/hud/building_description/ammo_factory_lowcaliber_lvl_3"
 		menu_icon			"gui/hud/building_icons/laboratory"
 		require 			"headquarters"		
 		order				"40"
@@ -45,14 +45,14 @@ EntityBlueprint
 			
 			GameplayResource
 			{
-				resource 			"ammo_mech_low_caliber_lvl2"
-				value				"0.8"
+				resource 			"ammo_tower_low_caliber_lvl2"
+				value				"1.6"
 			}
 			
 			GameplayResource
 			{
 				resource 			"titanium"
-				value				"0.2"
+				value				"0.5"
 			}								
 
 			GameplayResource
@@ -68,9 +68,15 @@ EntityBlueprint
 
 			GameplayResource
 			{
+				resource 			"ammo_tower_low_caliber_lvl3"
+				value				"1.6"
+			}	
+			GameplayResource
+			{
 				resource 			"ammo_mech_low_caliber_lvl3"
-				value				"0.8"
-			}		
+				value				"1.6"
+				optional			"1"
+			}			
 		}
 		priority 6			
 	}

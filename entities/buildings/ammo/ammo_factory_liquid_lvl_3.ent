@@ -8,8 +8,8 @@ EntityBlueprint
 		bp   				"buildings/ammo/ammo_factory_liquid_lvl_3"
 		category 			"ammo"
 		type				"pipe"
-		localization_id		"Mech top end liquid ammunition factory"//"gui/hud/building_name/ammo_factory_liquid_lvl_3"
-		description			"Ammunition factory for top end mech low caliber weapons"//"gui/hud/building_description/ammo_factory_liquid_lvl_3"
+		localization_id		"Top end liquid ammo factory" //"gui/hud/building_name/ammo_factory_liquid_lvl_3"
+		description			"Produces top end liquid ammunitions" //"gui/hud/building_description/ammo_factory_liquid_lvl_3"
 		menu_icon			"gui/hud/building_icons/bio_composter"
 		require 			"headquarters"		
 		order				"45"
@@ -45,14 +45,14 @@ EntityBlueprint
 			
 			GameplayResource
 			{
-				resource 			"ammo_mech_liquid_lvl2"
-				value				"2.5"
+				resource 			"ammo_tower_liquid_lvl2"
+				value				"5"
 			}
 			
 			GameplayResource
 			{
 				resource 			"palladium"
-				value				"0.1"
+				value				"0.5"
 			}								
 
 			GameplayResource
@@ -68,9 +68,15 @@ EntityBlueprint
 
 			GameplayResource
 			{
-				resource 			"ammo_mech_liquid_lvl3"
-				value				"2.5"
+				resource 			"ammo_tower_liquid_lvl3"
+				value				"5"
 			}		
+			GameplayResource
+			{
+				resource 			"ammo_mech_liquid_lvl3"
+				value				"5"
+				optional			"1"
+			}			
 		}
 		priority 6			
 	}
