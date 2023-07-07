@@ -87,3 +87,79 @@ EntityBlueprint
 		add_quality "0"
 	}
 }
+
+
+
+// --------- tower ammo ---------
+
+EntityBlueprint
+{
+	name "resources/ammo_tower_liquid_lvl3"
+
+	ResourceComponent
+	{
+		type_produced 	ammo_tower_liquid_lvl3
+		initial_amount	1		
+	}
+
+	InventoryItemDesc
+	{
+		name 		"Liquid top end T" //"resource_name/ammo_tower_liquid_lvl3"
+		bigger_icon	"gui/hud/resource_icons/ammo_tower_liquid_lvl3_icon_bigger"	
+		add_quality "0"
+	}
+}
+
+EntityBlueprint
+{
+	name "resources/ammo_tower_explosive_lvl3"
+
+	ResourceComponent
+	{
+		type_produced 	ammo_tower_explosive_lvl3
+		initial_amount	1		
+	}
+
+	InventoryItemDesc
+	{
+		name 		"Explosives top end T" //"resource_name/ammo_tower_explosive_lvl3"
+		bigger_icon	"gui/hud/resource_icons/ammo_tower_explosive_lvl3_icon_bigger"	
+		add_quality "0"
+	}
+}
+
+EntityBlueprint
+{
+	name "resources/ammo_tower_low_caliber_lvl3"
+
+	ResourceComponent
+	{
+		type_produced 	ammo_tower_low_caliber_lvl3
+		initial_amount	1		
+	}
+
+	InventoryItemDesc
+	{
+		name 		"Low Caliber top end T" //"resource_name/ammo_tower_low_caliber_lvl3"
+		bigger_icon	"gui/hud/resource_icons/ammo_tower_low_caliber_lvl3_icon_bigger"	
+		add_quality "0"
+	}
+}
+
+EntityBlueprint
+{
+	name "resources/ammo_tower_high_caliber_lvl3"
+
+	ResourceComponent
+	{
+		type_produced 	ammo_tower_high_caliber_lvl3
+		initial_amount	1		
+	}
+
+	InventoryItemDesc
+	{
+		name 		"High Caliber top end T" //"resource_name/ammo_tower_high_caliber_lvl3"
+		bigger_icon	"gui/hud/resource_icons/ammo_tower_high_caliber_lvl3_icon_bigger"	
+		add_quality "0"
+	}
+}
