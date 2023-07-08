@@ -22,22 +22,43 @@ material buildings/ammo/ammo_factory_energy_adv_dissolve : pbr/height_dissolve
 }
 
 
-material buildings/resources/ammo_factory_liquid_lvl_2 : buildings/destructible
+material buildings/ammo/ammo_factory_liquid_adv : buildings/destructible
 {
-	set_texture_alias albedo			materials/textures/buildings/resources/ammo_factory_liquid_lvl_2_albedo.dds
-	set_texture_alias normal			materials/textures/buildings/resources/uranium_centrifuge_normal.dds
-	set_texture_alias packed			materials/textures/buildings/resources/uranium_centrifuge_packed.dds
-	set_texture_alias emissive			materials/textures/buildings/resources/ammo_factory_liquid_lvl_2_emissive.dds
+	set_texture_alias albedo			materials/textures/buildings/resources/ironium_synthesizer_albedo.dds
+	set_texture_alias normal			materials/textures/buildings/resources/ironium_synthesizer_normal.dds
+	set_texture_alias packed			materials/textures/buildings/resources/ironium_synthesizer_packed.dds
+	set_texture_alias emissive			materials/textures/buildings/resources/ammo_factory_liquid_adv_emissive.dds
 
 	glow 5
 }
 
-material buildings/resources/ammo_factory_liquid_lvl_2_dissolve : pbr/height_dissolve
+material buildings/ammo/ammo_factory_liquid_adv_dissolve : pbr/height_dissolve
 {
-	set_texture_alias albedo			materials/textures/buildings/resources/ammo_factory_liquid_lvl_2_albedo.dds
+	set_texture_alias albedo			materials/textures/buildings/resources/ironium_synthesizer_albedo.dds
+	set_texture_alias normal			materials/textures/buildings/resources/ironium_synthesizer_normal.dds
+	set_texture_alias packed			materials/textures/buildings/resources/ironium_synthesizer_packed.dds
+	set_texture_alias emissive			materials/textures/buildings/resources/ammo_factory_liquid_adv_emissive.dds
+
+	glow 5
+}
+
+material buildings/ammo/ammo_factory_liquid_ext : buildings/destructible
+{
+	//set_texture_alias albedo			materials/textures/buildings/resources/ammo_factory_liquid_ext_albedo.dds
+	set_texture_alias albedo			materials/textures/buildings/resources/uranium_centrifuge_albedo.dds
 	set_texture_alias normal			materials/textures/buildings/resources/uranium_centrifuge_normal.dds
 	set_texture_alias packed			materials/textures/buildings/resources/uranium_centrifuge_packed.dds
-	set_texture_alias emissive			materials/textures/buildings/resources/ammo_factory_liquid_lvl_2_emissive.dds
+	set_texture_alias emissive			materials/textures/buildings/resources/ammo_factory_liquid_ext_emissive.dds
+
+	glow 5
+}
+
+material buildings/ammo/ammo_factory_liquid_ext_dissolve : pbr/height_dissolve
+{
+	set_texture_alias albedo			materials/textures/buildings/resources/uranium_centrifuge_albedo.dds
+	set_texture_alias normal			materials/textures/buildings/resources/uranium_centrifuge_normal.dds
+	set_texture_alias packed			materials/textures/buildings/resources/uranium_centrifuge_packed.dds
+	set_texture_alias emissive			materials/textures/buildings/resources/ammo_factory_liquid_ext_emissive.dds
 
 	glow 5
 }
