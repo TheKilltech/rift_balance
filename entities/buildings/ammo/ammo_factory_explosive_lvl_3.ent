@@ -9,7 +9,7 @@ EntityBlueprint
 		category 			"ammo"
 		localization_id		"Top end explosives factory" //"gui/hud/building_name/ammo_factory_explosive_lvl_3"
 		description			"Produces top end explosive ammunition" //"gui/hud/building_description/ammo_factory_explosive_lvl_3"
-		menu_icon			"gui/hud/building_icons/flora_cultivator"
+		menu_icon			"gui/hud/building_icons/supercoolant_refinery"
 		type				"pipe"
 		require 			"headquarters"
 		order				"43"	
@@ -26,7 +26,7 @@ EntityBlueprint
 				{
 					carbonium 	"8000"
 					steel 		"2000"
-					uranium     "2500"
+					uranium     "1000"
 				}
 			}		
 		}
@@ -38,7 +38,7 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 	"flammable_gas"
+				resource 	"nitric_acid"
 				value 		"5"
 				attachment	"att_in_1"
 			}
@@ -83,12 +83,13 @@ EntityBlueprint
 
 	LuaDesc
 	{
-		script "lua/buildings/resources/flora_cultivator.lua"
+		script "lua/buildings/building.lua"
 		
 		database
 		{
 			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell 	string:"sell_big"
+			cone_effect_sell	string:"sell_big"
+			building_time		float:"10"
 		}
 	}
 
@@ -109,7 +110,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"80_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"80_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
 				destroyed_state_effect_group 		"80_state"
 				destrucion_level_name 				"80"
 
@@ -120,7 +120,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"60_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"60_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"60_state"
 				destrucion_level_name 				"60"
 			}
@@ -130,7 +129,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"40_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"40_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
 				destroyed_state_effect_group 		"40_state"
 				destrucion_level_name 				"40"
 			}
@@ -140,7 +138,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"20_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"20_destroy"
-				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				destroyed_state_effect_group 		"20_state"
 				destrucion_level_name 				"20"
 			}
@@ -150,7 +147,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"0_transition"
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
-				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
@@ -158,8 +154,8 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/flora_cultivator.mesh"
-		material "buildings/resources/flora_cultivator"
+		mesh 		"meshes/buildings/resources/supercoolant_refinery.mesh" // "meshes/buildings/ammo/ammo_factory_explosive_ext.mesh"
+		material 	"buildings/resources/supercoolant_refinery"
 	}
 
 	TypeDesc
@@ -169,7 +165,7 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/flora_cultivator"
+		name "meshes/buildings/ammo/ammo_factory_explosive_ext"
 	}
 
 	AnimationGraphDesc
@@ -198,7 +194,7 @@ EntityBlueprint
 							y "1.0"
 							z "0.0"
 						}
-					}
+					}		
 				}
 			}
 		}
@@ -217,7 +213,7 @@ EntityBlueprint
 		{
 			PhysicsMeshShape
 			{
-				mesh "meshes/buildings/resources/steel_factory_g1.nxs"
+				mesh "meshes/buildings/resources/liquid_material_storage_g1.nxs"
 			}	
 		}
 	}
@@ -237,13 +233,13 @@ EntityBlueprint
 			x "3"
 			y "3"
 		}
-
+					
 		visibility			"always"
 	}
 
 	FogOfWarRevealerComponentDesc
 	{
-		radius "10"
+		radius "16"
 	}
 
 	HealthBarDesc
@@ -257,7 +253,7 @@ EntityBlueprint
 		explosion_max_power 	"2000"
 		explosion_min_power 	"1000"	
 	}
-	
+
 	DestroyDesc
 	{
 		
@@ -368,7 +364,7 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}
+		}	
 ////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
@@ -381,9 +377,9 @@ EntityBlueprint
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_arrow"
+					bone "att_in_1_arrow"
 				}
 			}
-		}			
+		}					
 	}
 }

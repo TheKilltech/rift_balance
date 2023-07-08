@@ -1,20 +1,15 @@
 EntityBlueprint
 {
 	name  "buildings/ammo/ammo_factory_explosive_lvl_2"
-
-	IdDesc
-	{
-		name "ammo_factory_explosive_lvl_2"
-	}
 	
 	BuildingDesc
 	{
 		name 				"ammo_factory_explosive_lvl_2"
 		bp   				"buildings/ammo/ammo_factory_explosive_lvl_2"
 		category 			"ammo"
-		localization_id		"Mech advanced explosive ammunition factory"//"gui/hud/building_name/ammo_factory_explosive_lvl_2"
-		description			"Ammunition factory for advanced and better mech explosives weapons"//"gui/hud/building_description/ammo_factory_explosive_lvl_2"
-		menu_icon			"gui/hud/building_icons/ammo_factory_explosive_lvl_2"
+		localization_id		"Advanced explosives factory"//"gui/hud/building_name/ammo_factory_explosive_lvl_2"
+		description			"Produces advanced and better explosive ammunitions"//"gui/hud/building_description/ammo_factory_explosive_lvl_2"
+		menu_icon			"gui/hud/building_icons/tower_ammunition_factory"
 		require 			"headquarters"
 		order				"33"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
@@ -92,18 +87,77 @@ EntityBlueprint
 		
 		database
 		{
-			cone_effect			string:"build_cone_3x3"
+			cone_effect			string:"build_cone_5x5"
 			cone_effect_sell	string:"sell_big"
 			building_time		float:"10"
-		}		
+		}
 	}
-	
+
+	HealthDesc
+	{
+		max_health 					"1000"
+		health 						"1000"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_effect_group 		"0_state"
+			}			
+		}
+	}
+
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/steel_factory_lvl_3.mesh"		
-		material "buildings/resources/steel_factory_lvl_3"
+		mesh "meshes/buildings/resources/tower_ammunition_factory.mesh"
+		material "buildings/resources/tower_ammunition_factory"
 	}
-	
+
 	TypeDesc
 	{
 		type "building|resource"
@@ -111,14 +165,14 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/steel_factory_lvl_3"
+		name "meshes/buildings/resources/tower_ammunition_factory"
 	}
 
 	AnimationGraphDesc
 	{
 		animation_graph_name "building_working"
 	}
-	
+
 	PhysicsDesc
  	{
 		objects
@@ -140,8 +194,9 @@ EntityBlueprint
 							y "1.0"
 							z "0.0"
 						}
-					}
+					}	
 				}
+
 			}
 		}
 	}
@@ -157,10 +212,12 @@ EntityBlueprint
 	{
 		Shapes
 		{
-			PhysicsMeshShape
-			{
-				mesh "meshes/buildings/resources/steel_factory_g1.nxs"
-			}	
+   			PhysicsBoxShape
+   			{
+    				x	6
+    				y	6
+    				z	6
+   			}			
 		}
 	}
 
@@ -179,14 +236,13 @@ EntityBlueprint
 			x "3"
 			y "3"
 		}
-
-		additional_z_order	"5"
+					
 		visibility			"always"
 	}
 
 	FogOfWarRevealerComponentDesc
 	{
-		radius "10"
+		radius "16"
 	}
 
 	HealthBarDesc
@@ -285,7 +341,7 @@ EntityBlueprint
 					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
 					part_lifetime "3"
 				}
-			}	
+			}
 			Pair
 			{
 				value
@@ -305,65 +361,6 @@ EntityBlueprint
 			}				
 		}
 	}
-	
-	HealthDesc
-	{
-		max_health 					"1600"
-		health 						"1600"
-		regeneration 				"0"
-		regeneration_cooldown 		"0"
-		 is_manual 1
-		update_health_uniform 		"1"
-		
-		DestructionLevels
-		{
-			DestructionLevel
-			{
-				health 								"80"
-				destroy_state_change_effect_group 	"80_transition"
-				destroy_comp_delay 					"0.5"
-				destroy_comp_event 					"80_destroy"
-				destroyed_state_effect_group 		"80_state"
-				destrucion_level_name 				"80"
-
-			}
-			DestructionLevel
-			{
-				health 								"60"
-				destroy_state_change_effect_group 	"60_transition"
-				destroy_comp_delay 					"0.5"
-				destroy_comp_event 					"60_destroy"
-				destroyed_state_effect_group 		"60_state"
-				destrucion_level_name 				"60"
-			}
-			DestructionLevel
-			{
-				health 								"40"
-				destroy_state_change_effect_group 	"40_transition"
-				destroy_comp_delay 					"0.5"
-				destroy_comp_event 					"40_destroy"
-				destroyed_state_effect_group 		"40_state"
-				destrucion_level_name 				"40"
-			}
-			DestructionLevel
-			{
-				health 								"20"
-				destroy_state_change_effect_group 	"20_transition"
-				destroy_comp_delay 					"0.5"
-				destroy_comp_event 					"20_destroy"
-				destroyed_state_effect_group 		"20_state"
-				destrucion_level_name 				"20"
-			}
-			DestructionLevel
-			{
-				health 								"0"
-				destroy_state_change_effect_group 	"0_transition"
-				destroy_comp_delay 					"0.6"
-				destroy_comp_event 					"default"
-				//destroyed_state_effect_group 		"0_state"
-			}			
-		}
-	}
 
 	EffectDesc
 	{		
@@ -371,7 +368,7 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-////////////////////////MISC/////////////////////////			
+		
 		EffectGroup
 		{
 			group "working"
@@ -381,35 +378,10 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
-					bone "att_furnace_1"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
-					bone "att_furnace_2"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
-					bone "att_furnace_3"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
-					bone "att_furnace_4"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
-					bone "att_furnace_5"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_resources/steel_factory_working"	
+					blueprint "effects/buildings_resources/tower_ammunition_factory_working"	
 					delay "0.5"					
-				}
+				}	
 			}
-		}		
+		}	
 	}
 }
