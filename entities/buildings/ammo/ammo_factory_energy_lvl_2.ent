@@ -12,8 +12,8 @@ EntityBlueprint
 		name 				  "ammo_factory_energy_lvl_2"
 		bp   				  "buildings/ammo/ammo_factory_energy_lvl_2"
 		category 			  "ammo"
-		localization_id		  "Mech advanced energy ammunition factory"//"gui/hud/building_name/ammo_factory_energy_lvl_2"
-		description			  "Ammunition factory for advanced and better mech energy weapons"//"gui/hud/building_description/ammo_factory_energy_lvl_2"
+		localization_id		  "Advanced energy ammo factory"//"gui/hud/building_name/ammo_factory_energy_lvl_2"
+		description			  "Produces advanced mech energy ammunition"//"gui/hud/building_description/ammo_factory_energy_lvl_2"
 		menu_icon			  "gui/hud/building_icons/ammo_factory_energy_lvl_2"
 		require 			  "headquarters"
 		order				  "34"
@@ -40,20 +40,20 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 			"energy"
-				value	"750"
+				resource 		"energy"
+				value			"750"
 			}
 			
 			GameplayResource
 			{
-				resource 			"ammo_mech_energy_cell"
-				value	"0.4"
+				resource 		"ammo_mech_energy_cell"
+				value			"0.4"
 			}
 			
 			GameplayResource
 			{
-				resource 			"rhodonite"
-				value	"1.5"
+				resource 		"rhodonite"
+				value			"1.5"
 			}
 		}
 		
@@ -61,8 +61,8 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 			"ammo_mech_energy_cell_lvl2"
-				value				"0.4"
+				resource 		"ammo_mech_energy_cell_lvl2"
+				value			"0.4"
 			}					
 		}	
 		priority 5		
@@ -112,7 +112,7 @@ EntityBlueprint
 	MeshDesc
 	{
 		mesh 		"meshes/buildings/main/cryo_station.mesh"
-		material 	"buildings/resources/ammo_factory_energy_lvl_2"
+		material 	"buildings/ammo/ammo_factory_energy_adv"
 	}
 
 	TypeDesc

@@ -27,7 +27,7 @@ EntityBlueprint
 				{
 					carbonium 	"3500"
 					steel 		"8000"
-					palladium	"2500"
+					palladium	"1000"
 				}
 			}		
 		}		
@@ -58,8 +58,16 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"plasma"
-				value 				"2"
+				value 				"15"
 				attachment			"att_in_1"
+				family				"in"
+			}
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				value 				"5"
+				attachment			"att_in_1"
+				family				"in"
 			}
 		}
 		
