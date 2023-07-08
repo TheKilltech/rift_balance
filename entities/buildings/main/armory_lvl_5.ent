@@ -62,11 +62,11 @@ EntityBlueprint
 		}
 		
 		out
-		{
+		{					
 			GameplayResource
 			{
-				resource 			"consumables_manufacturing"
-				value				"1.4"
+				resource 			"ammo_manufacturing"
+				value				"2.33"
 				family				"manufacturing"
 			}	
 			
@@ -75,7 +75,16 @@ EntityBlueprint
 				resource 			"player_ammo_manufacturing"
 				value				"0.50"
 				family				"manufacturing"
-			}					
+				optional			"1"
+			}		
+			
+			GameplayResource
+			{
+				resource 			"consumables_manufacturing"
+				value				"1.4"
+				family				"manufacturing"
+				optional			"1"
+			}		
 		}	
 		priority 5		
 	}

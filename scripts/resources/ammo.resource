@@ -111,7 +111,7 @@ GameplayResourceDef
 	icon			"gui/hud/resource_icons/ammo_tower_explosive_icon"	
 	bigger_icon		"gui/hud/resource_icons/ammo_tower_explosive_icon_bigger"
 	base_storage	"100"
-	production		"1"
+	production		"2"
 	allow_overflow 	"0"
 	hud_visible 	"build_menu"
 	order			"13"
