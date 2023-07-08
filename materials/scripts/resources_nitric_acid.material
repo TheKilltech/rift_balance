@@ -1,0 +1,109 @@
+import * from "materials/scripts/pbr.material"
+import * from "materials/scripts/resources.material"
+
+
+material resources/resource_nitric_acid : resources/resource_liquid
+{
+	set_texture_alias albedo_1			materials/textures/resources/resource_nitric_acid_01_albedo.dds
+	set_texture_alias normal_1			materials/textures/resources/resource_sludge_01_normal.dds
+	set_texture_alias packed_1			materials/textures/resources/resource_sludge_01_packed.dds
+	//set_texture_alias emissive_1		materials/textures/resources/resource_sludge_01_emissive.dds
+	set_texture_alias albedo_2			materials/textures/resources/resource_nitric_acid_02_albedo.dds
+	set_texture_alias normal_2			materials/textures/resources/resource_sludge_02_normal.dds
+	set_texture_alias packed_2			materials/textures/resources/resource_sludge_02_packed.dds
+	//set_texture_alias emissive_2		materials/textures/resources/resource_sludge_02_emissive.dds
+	set_texture_alias gradient			materials/textures/gradient/cloudy_gradient.dds 174 6
+
+	glow 1
+}
+
+material resources/resource_nitric_acid_storage : resources/resource_liquid
+{
+	set_texture_alias albedo_1			materials/textures/resources/resource_nitric_acid_01_albedo.dds
+	set_texture_alias normal_1			materials/textures/resources/resource_sludge_01_normal.dds
+	set_texture_alias packed_1			materials/textures/resources/resource_sludge_01_packed.dds
+	//set_texture_alias emissive_1		materials/textures/resources/resource_sludge_01_emissive.dds
+	set_texture_alias albedo_2			materials/textures/resources/resource_nitric_acid_02_albedo.dds
+	set_texture_alias normal_2			materials/textures/resources/resource_sludge_02_normal.dds
+	set_texture_alias packed_2			materials/textures/resources/resource_sludge_02_packed.dds
+	//set_texture_alias emissive_2		materials/textures/resources/resource_sludge_02_emissive.dds
+	set_texture_alias gradient			materials/textures/gradient/cloudy_gradient.dds 174 1
+
+	glow 1
+
+	technique
+	{
+		pass
+		{
+			vertex_program_ref deferred_gbuffer_vp
+			{
+
+			}
+		}
+	}
+}
+
+material resources/resource_nitric_acid_pipe : resources/resource_liquid
+{
+	set_texture_alias albedo_1			materials/textures/resources/resource_nitric_acid_01_albedo.dds
+	set_texture_alias normal_1			materials/textures/resources/resource_sludge_01_normal.dds
+	set_texture_alias packed_1			materials/textures/resources/resource_sludge_01_packed.dds
+	//set_texture_alias emissive_1		materials/textures/resources/resource_sludge_01_emissive.dds
+	set_texture_alias albedo_2			materials/textures/resources/resource_nitric_acid_02_albedo.dds
+	set_texture_alias normal_2			materials/textures/resources/resource_sludge_02_normal.dds
+	set_texture_alias packed_2			materials/textures/resources/resource_sludge_02_packed.dds
+	//set_texture_alias emissive_2		materials/textures/resources/resource_sludge_02_emissive.dds
+	set_texture_alias gradient			materials/textures/gradient/cloudy_gradient.dds 174 1
+
+	glow 1
+
+	technique
+	{
+		pass
+		{
+			vertex_program_ref deferred_gbuffer_tiled_vp
+			{
+        		param_named      cTilingFactor  float 1
+			}
+		}
+	}
+}
+
+material resources/resource_nitric_acid_fresnel
+{
+	render_group 109
+
+	fresnel 1.1 0.5 0 0
+	fresnel_color 8 6 0 0.2
+
+	technique
+	{
+		pass
+		{
+			check       on
+            comp_func   always_pass
+            ref_value   1
+            pass_op     replace
+            two_sided   on
+
+            scene_blend alpha_blend
+            depth_bias -4 -1
+
+            vertex_program_ref forward_object_fresnel_fog_vp
+			{
+			}
+
+			fragment_program_ref forward_object_fresnel_fog_fp
+			{
+			}
+
+			texture_unit volumetric_fog
+			{
+				texture 			materials/textures/black_volume.dds 3d
+				content_type 		shared volumetric_fog
+				tex_address_mode 	clamp
+				filtering 			bilinear
+			}
+		}
+	}
+}
