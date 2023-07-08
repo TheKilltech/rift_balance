@@ -10,7 +10,7 @@ EntityBlueprint
 		type				"pipe"
 		localization_id		"Top end low caliber ammo factory" //"gui/hud/building_name/ammo_factory_lowcaliber_lvl_3"
 		description			"Produces top end low caliber ammunition" //"gui/hud/building_description/ammo_factory_lowcaliber_lvl_3"
-		menu_icon			"gui/hud/building_icons/laboratory"
+		menu_icon			"gui/hud/building_icons/steel_factory_lvl3"
 		require 			"headquarters"		
 		order				"40"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -26,7 +26,7 @@ EntityBlueprint
 				{
 					carbonium 	"3000"
 					steel 		"8000"
-					titanium	"2500"		
+					titanium	"1000"		
 				}
 			}		
 		}
@@ -40,7 +40,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value				"250"
+				value				"450"
 			}
 			
 			GameplayResource
@@ -57,7 +57,7 @@ EntityBlueprint
 
 			GameplayResource
 			{
-				resource 			"water"
+				resource 			"nitric_acid"
 				value 				"5"
 				attachment			"att_in_1"
 			}
@@ -83,134 +83,89 @@ EntityBlueprint
 	
 	LuaDesc
 	{
-		script "lua/buildings/main/laboratory.lua"
-						
+		script "lua/buildings/building.lua"
+		
 		database
 		{
-			cone_effect			string:"build_cone_6x4"
+			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
-		}
-		
+			building_time		float:"10"
+		}		
 	}
 
 	HealthDesc
 	{
-		max_health 					"2000"
-		health 						"2000"
+		max_health 					"1000"
+		health 						"1000"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
 		update_health_uniform 		"1"
-	
-
+		
 		DestructionLevels
 		{
 			DestructionLevel
 			{
-				health "90"
-				destroy_state_change_effect_group "80_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "generic_destroy"				
-				destroyed_state_effect_group "80_state"
-				destrucion_level_name "90"
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
 			}
 			DestructionLevel
 			{
-				health "80"
-				destroy_state_change_effect_group "80_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "80_destroy"
-				destroyed_state_effect_group "80_state"
-				destrucion_level_name "80"
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
 			}
 			DestructionLevel
 			{
-				health "70"
-				destroy_state_change_effect_group "60_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "generic_destroy"				
-				destroyed_state_effect_group "60_state"
-				destrucion_level_name "70"
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
 			}
 			DestructionLevel
 			{
-				health "60"
-				destroy_state_change_effect_group "60_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "60_destroy"
-				destroyed_state_effect_group "60_state"
-				destrucion_level_name "60"
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
 			}
 			DestructionLevel
 			{
-				health "50"
-				destroy_state_change_effect_group "40_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "generic_destroy"				
-				destroyed_state_effect_group "40_state"
-				destrucion_level_name "50"
-			}
-			DestructionLevel
-			{
-				health "40"
-				destroy_state_change_effect_group "40_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "40_destroy"
-				destroyed_state_effect_group "40_state"
-				destrucion_level_name "40"
-			}
-			DestructionLevel
-			{
-				health "30"
-				destroy_state_change_effect_group "40_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "generic_destroy"
-				destroyed_state_effect_group "40_state"
-				destrucion_level_name "30"
-			}
-			DestructionLevel
-			{
-				health "20"
-				destroy_state_change_effect_group "20_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "20_destroy"
-				destroyed_state_effect_group "20_state"
-				destrucion_level_name "20"
-			}
-			DestructionLevel
-			{
-				health "10"
-				destroy_state_change_effect_group "20_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "generic_destroy"
-				destroyed_state_effect_group "20_state"
-				destrucion_level_name "10"
-			}
-			DestructionLevel
-			{
-				health "0"
-				destroy_state_change_effect_group "0_transition"
-				destroy_comp_delay "0.7"
-				destroy_comp_event "default"
-				destrucion_level_name "0"
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
 	}
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/main/laboratory.mesh"
-		material "buildings/main/laboratory"
+		mesh "meshes/buildings/resources/steel_factory_lvl_3.mesh"		
+		material "buildings/resources/steel_factory_lvl_3"
 	}
-
+	
 	TypeDesc
 	{
-		type "building|main"
+		type "building|resource"
 	}
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/main/laboratory"
+		name "meshes/buildings/resources/steel_factory_lvl_3"
 	}
 
 	AnimationGraphDesc
@@ -229,13 +184,19 @@ EntityBlueprint
 				physics_material 	"default"
 				Shapes
 				{
-					PhysicsMeshShape
+					PhysicsSphereShape
 					{
-						mesh "meshes/buildings/main/laboratory_c1.nxs"
-					}	
+						r "2.45"
+	
+						position 
+						{
+							x "0.0"
+							y "1.0"
+							z "0.0"
+						}
+					}
 				}
 			}
-			
 		}
 	}
 
@@ -250,15 +211,13 @@ EntityBlueprint
 	{
 		Shapes
 		{
-   			PhysicsBoxShape
-   			{
-    				x	12
-    				y	8
-    				z	10
-   			}			
+			PhysicsMeshShape
+			{
+				mesh "meshes/buildings/resources/steel_factory_g1.nxs"
+			}	
 		}
 	}
-
+	
 	MinimapItemDesc
 	{
 		type	"quad"
@@ -271,8 +230,8 @@ EntityBlueprint
 		}
 		size
 		{
-			x "6"
-			y "5"
+			x "3"
+			y "3"
 		}
 					
 		visibility			"always"
@@ -297,42 +256,25 @@ EntityBlueprint
 
 	DestroyDesc
 	{
+		
 		DestroyPatterns
-		{
+		{		
 			Pair
 			{
-				key "generic_destroy"				
+				key "80_destroy"
 				value
 				{
 					explosion_type 			"centered"
 					explosion_max_power 	"8000"
 					explosion_min_power 	"3000"
-					explosion_effect 		"effects/buildings_generic/explosion_big_random"
-					part_physics_material   "debris_heavy"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"					
 					part_material 			"misc/building_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_prefix 			"meshes/misc/building_medium_parts_generic"
-					part_lifetime 			"3"
-				}				
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}	
 			}
-			
-			Pair
-			{
-				key "80_destroy"				
-				value
-				{
-					explosion_type 			"centered"
-					explosion_max_power 	"8000"
-					explosion_min_power 	"3000"
-					explosion_effect 		"effects/buildings_generic/explosion_big_random"
-					part_physics_material   "debris_heavy"
-					part_material 			"misc/building_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
-					part_prefix 			"meshes/misc/building_medium_parts_generic"
-					part_lifetime 			"3"			
-				}				
-			}
-			
 			Pair
 			{
 				key "60_destroy"
@@ -341,13 +283,13 @@ EntityBlueprint
 					explosion_type 			"centered"
 					explosion_max_power 	"8000"
 					explosion_min_power 	"3000"
-					explosion_effect 		"effects/buildings_generic/explosion_big_random"
-					part_physics_material   "debris_heavy"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"					
 					part_material 			"misc/building_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_prefix 			"meshes/misc/building_medium_parts_generic"
-					part_lifetime 			"3"			
-				}				
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}	
 			}
 			Pair
 			{
@@ -357,14 +299,14 @@ EntityBlueprint
 					explosion_type 			"centered"
 					explosion_max_power 	"8000"
 					explosion_min_power 	"3000"
-					explosion_effect 		"effects/buildings_generic/explosion_big_random"
-					part_physics_material   "debris_heavy"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"					
 					part_material 			"misc/building_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_prefix 			"meshes/misc/building_medium_parts_generic"
-					part_lifetime 			"3"			
-				}				
-			}
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}	
+			}			
 			Pair
 			{
 				key "20_destroy"
@@ -373,41 +315,42 @@ EntityBlueprint
 					explosion_type 			"centered"
 					explosion_max_power 	"8000"
 					explosion_min_power 	"3000"
-					explosion_effect 		"effects/buildings_generic/explosion_big_random"
-					part_physics_material   "debris_heavy"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"					
 					part_material 			"misc/building_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_prefix 			"meshes/misc/building_medium_parts_generic"
-					part_lifetime 			"3"			
-				}				
-			}			
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}
+			}		
 			Pair
 			{
-				key "default"
+				key "default"			
 				value
 				{
 					explosion_type 			"centered"
 					explosion_max_power 	"8000"
-					explosion_min_power 	"5000"
-					//explosion_effect 		"effects/buildings_generic/explosion_building_big_01"
-					part_physics_material   "debris_heavy"
+					explosion_min_power 	"3000"
+					//explosion_effect 		"effects/buildings_generic/explosion_building_small_01"	
+					part_physics_material   "debris_heavy"					
 					part_material 			"misc/building_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
-					part_prefix 			"meshes/misc/building_very_large_parts_generic"			
-				}				
-			}
+					part_prefix 			"meshes/misc/building_large_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}
+			}	
 			Pair
 			{
 				value
 				{
 					explosion_type 			"centered"
 					explosion_max_power 	"8000"
-					explosion_min_power 	"5000"
+					explosion_min_power 	"3000"
 					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
 					part_physics_material   "debris_heavy"	
 					part_material 			"misc/building_parts_generic"
 					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
-					part_prefix 			"meshes/misc/building_very_large_parts_generic"
+					part_prefix 			"meshes/misc/building_large_parts_generic"
 					part_lifetime "3"	
 				}
 
@@ -418,11 +361,10 @@ EntityBlueprint
 
 	EffectDesc
 	{		
-
 		EffectBaseBlueprints
 		{
-			"buildings/effects_big_base"
-		}
+			"buildings/effects_medium_base"
+		}	
 ////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
@@ -435,7 +377,7 @@ EntityBlueprint
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_arrow"
+					bone "att_in_1_arrow"
 				}
 			}
 		}	
@@ -449,12 +391,35 @@ EntityBlueprint
 			{
 				Effect
 				{
-					//blueprint "effects/buildings_main/research_lab_energy"
-					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"								
-					bone "be_sphere"
-					delay "1"
-				}				
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
+					bone "att_furnace_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/steel_factory_working"	
+					delay "0.5"					
+				}
 			}
-		}	
+		}		
 	}
 }
