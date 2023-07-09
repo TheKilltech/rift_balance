@@ -968,6 +968,267 @@ buildings/defense/tower_basic_lvl_3
 
 }
 
+buildings/defense/tower_cannon
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_tower_high_caliber"
+		damage_type "physical"
+		rarity "ADVANCED"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "200.000"
+				min_value "200.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.500"
+				min_value "0.500"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				max_value "130.000"
+				min_value "130.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2.000"
+				min_value "2.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.800"
+				min_value "0.800"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+		}
+
+	}
+
+}
+
+buildings/defense/tower_cannon_lvl_2
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_tower_high_caliber_lvl2"
+		damage_type "physical"
+		rarity "SUPERIOR"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "280.000"
+				min_value "280.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.550"
+				min_value "0.550"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				max_value "130.000"
+				min_value "130.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.900"
+				min_value "0.900"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+		}
+
+	}
+
+}
+
+buildings/defense/tower_cannon_lvl_3
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_tower_high_caliber_lvl3"
+		damage_type "physical"
+		rarity "EXTREME"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "360.000"
+				min_value "360.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.600"
+				min_value "0.600"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				max_value "130.000"
+				min_value "130.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "4.000"
+				min_value "4.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+		}
+
+	}
+
+}
+
 buildings/defense/tower_flamer
 {
 	WeaponItemDesc
@@ -1931,7 +2192,7 @@ buildings/defense/tower_lightning_lvl_2
 			WeaponStatDef
 			{
 				max_value "3.000"
-				min_value "3.000"
+				min_value "3.100"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_PER_SHOT"
 			}
