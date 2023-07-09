@@ -7,8 +7,8 @@ EntityBlueprint
 		name 				"ammo_factory_highcaliber_lvl_2"
 		bp   				"buildings/ammo/ammo_factory_highcaliber_lvl_2"
 		category 			"ammo"
-		localization_id		"Mech advanced high caliber ammunition factory"//"gui/hud/building_name/ammo_factory_highcaliber_lvl_2"
-		description			"Ammunition factory for advanced and better mech high caliber weapons"//"gui/hud/building_description/ammo_factory_highcaliber_lvl_2"
+		localization_id		"Advanced high caliber ammo factory"//"gui/hud/building_name/ammo_factory_highcaliber_lvl_2"
+		description			"Produces advanced high caliber ammunitions"//"gui/hud/building_description/ammo_factory_highcaliber_lvl_2"
 		menu_icon			"gui/hud/building_icons/ammo_factory_high_caliber_lvl_2"
 		require 			"headquarters"
 		order				"31"	
@@ -46,25 +46,31 @@ EntityBlueprint
 			
 			GameplayResource
 			{
-				resource 			"ammo_mech_high_caliber"
+				resource 			"ammo_tower_high_caliber"
 				value				"0.6"
 			}
 			
 			GameplayResource
 			{
 				resource 			"hazenite"
-				value				"1.5"
+				value				"1"
 			}		
 						
 		}
 		
 		out
 		{
-
+			GameplayResource
+			{
+				resource 			"ammo_tower_high_caliber_lvl2"
+				value				"0.6"
+			}		
+			
 			GameplayResource
 			{
 				resource 			"ammo_mech_high_caliber_lvl2"
 				value				"0.6"
+				optional			"1"
 			}		
 		}
 		priority 5		
