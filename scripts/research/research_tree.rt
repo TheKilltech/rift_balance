@@ -170,7 +170,7 @@ Research
 					research_scripts
 					position
 					{
-						x "9.000"
+						x "18.000"
 						y "333.000"
 					}
 
@@ -201,7 +201,7 @@ Research
 
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/tower_ammunition_handling_lvl3"
+							research_name "gui/menu/research/name/headquarters_lvl6"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -222,8 +222,8 @@ Research
 					research_scripts
 					position
 					{
-						x "9.000"
-						y "261.000"
+						x "18.000"
+						y "198.000"
 					}
 
 					research_awards
@@ -247,7 +247,7 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/high_caliber_weapons_lvl_2"
+							research_name "gui/menu/research/name/towers_minigun_lvl1"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -268,8 +268,8 @@ Research
 					research_scripts
 					position
 					{
-						x "9.000"
-						y "54.000"
+						x "18.000"
+						y "-18.000"
 					}
 
 					research_awards
@@ -300,6 +300,12 @@ Research
 						ResearchNodeRequirement
 						{
 							research_name "gui/menu/research/name/headquarters_lvl7"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_artillery_lvl3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -352,12 +358,6 @@ Research
 						ResearchNodeRequirement
 						{
 							research_name "gui/menu/research/name/towers_heavy_artillery_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/tower_ammunition_handling_lvl3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -425,12 +425,6 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/tower_ammunition_handling_lvl3"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
 					}
 
 					research_name "gui/menu/research/name/towers_minigun_lvl3"
@@ -446,9 +440,43 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_lowcaliber"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "4"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
-						x "-36.000"
+						x "-27.000"
 						y "333.000"
 					}
 
@@ -491,14 +519,14 @@ Research
 
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/tower_ammunition_handling_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
+							research_name "gui/menu/research/name/resource_handling_hazenite"
+							research_category "gui/menu/research/category_alien"
 						}
 
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/resource_handling_hazenite"
-							research_category "gui/menu/research/category_alien"
+							research_name "gui/menu/research/name/headquarters_lvl6"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -516,10 +544,44 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_lowcaliber"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "2"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
-						x "-36.000"
-						y "54.000"
+						x "-27.000"
+						y "198.000"
 					}
 
 					research_awards
@@ -555,7 +617,7 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/tower_ammunition_handling_lvl1"
+							research_name "gui/menu/research/name/defensive_buildings_lvl1"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -576,12 +638,18 @@ Research
 					research_scripts
 					position
 					{
-						x "-36.000"
+						x "-27.000"
 						y "-162.000"
 					}
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_storage_lowcaliber"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_minigun"
@@ -757,7 +825,7 @@ Research
 					research_scripts
 					position
 					{
-						x "171.000"
+						x "153.000"
 						y "333.000"
 					}
 
@@ -815,7 +883,7 @@ Research
 					research_scripts
 					position
 					{
-						x "171.000"
+						x "153.000"
 						y "198.000"
 					}
 
@@ -1253,6 +1321,40 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_liquid"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "4"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "-315.000"
@@ -1375,6 +1477,40 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_liquid"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "4"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "-315.000"
@@ -1860,7 +1996,7 @@ Research
 
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/tower_ammunition_handling_lvl3"
+							research_name "gui/menu/research/name/defensive_buildings_lvl3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -1879,6 +2015,40 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_explosive"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "4"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "-153.000"
@@ -2282,14 +2452,14 @@ Research
 
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/tower_ammunition_handling_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
+							research_name "gui/menu/research/name/resource_handling_tanzanite"
+							research_category "gui/menu/research/category_alien"
 						}
 
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/resource_handling_tanzanite"
-							research_category "gui/menu/research/category_alien"
+							research_name "gui/menu/research/name/defensive_buildings_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -2307,6 +2477,40 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_explosive"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "4"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "-153.000"
@@ -2547,7 +2751,7 @@ Research
 					research_scripts
 					position
 					{
-						x "171.000"
+						x "153.000"
 						y "54.000"
 					}
 
@@ -2765,284 +2969,6 @@ Research
 					}
 
 					icon "gui/menu/research/icons/tools"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/tower_ammunition_handling_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/headquarters_lvl4"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/tower_ammunition_handling_lvl2"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "600.000"
-						}
-
-					}
-
-					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_lowcaliber"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_highcaliber"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_explosive"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_explosive"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_energy"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_liquid"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
-					position
-					{
-						x "-72.000"
-						y "-72.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/resources/tower_ammunition_factory_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "research/building_limit_cap_increase_ammo_storage"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/tower_ammunition_handling"
 				}
 
 				ResearchNode
@@ -4195,7 +4121,7 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/tower_ammunition_handling_lvl1"
+							research_name "gui/menu/research/name/defensive_buildings_lvl1"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -4222,6 +4148,12 @@ Research
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_storage_liquid"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_flamer"
@@ -4411,284 +4343,6 @@ Research
 					}
 
 					icon "gui/menu/research/icons/energy_storage"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/tower_ammunition_handling_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/headquarters_lvl6"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/tower_ammunition_handling_lvl3"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "1500.000"
-						}
-
-					}
-
-					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_lowcaliber"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_highcaliber"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_explosive"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_explosive"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_energy"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_liquid"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
-					position
-					{
-						x "-72.000"
-						y "198.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/resources/tower_ammunition_factory_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "research/building_limit_cap_increase_ammo_storage"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/tower_ammunition_handling"
 				}
 
 				ResearchNode
@@ -4901,82 +4555,6 @@ Research
 
 					}
 
-					research_name "gui/menu/research/name/tower_ammunition_handling_lvl1"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "200.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "-72.000"
-						y "-270.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_storage_energy"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_storage_explosive"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_storage_highcaliber"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_storage_liquid"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_storage_lowcaliber"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/tower_ammunition_factory"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/tower_ammunition_handling"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/tower_ammunition_handling_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
 					research_name "gui/menu/research/name/towers_artillery_lvl1"
 					research_costs
 					{
@@ -4998,6 +4576,12 @@ Research
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_storage_explosive"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_artillery"
@@ -5202,8 +4786,8 @@ Research
 					research_scripts
 					position
 					{
-						x "206.000"
-						y "-162.000"
+						x "189.000"
+						y "-126.000"
 					}
 
 					research_awards
@@ -5548,8 +5132,8 @@ Research
 					research_scripts
 					position
 					{
-						x "171.000"
-						y "-162.000"
+						x "153.000"
+						y "-81.000"
 					}
 
 					research_awards
@@ -6256,6 +5840,12 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_artillery_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/tower_portal_lvl2"
@@ -6305,6 +5895,12 @@ Research
 						ResearchNodeRequirement
 						{
 							research_name "gui/menu/research/name/headquarters_lvl7"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_artillery_lvl3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -6776,14 +6372,14 @@ Research
 
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/tower_ammunition_handling_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
+							research_name "gui/menu/research/name/resource_handling_hazenite"
+							research_category "gui/menu/research/category_alien"
 						}
 
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/resource_handling_hazenite"
-							research_category "gui/menu/research/category_alien"
+							research_name "gui/menu/research/name/defensive_buildings_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -6795,15 +6391,49 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "600.000"
+							count "1500.000"
 						}
 
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_highcaliber"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "2"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
-						x "-9.000"
+						x "-63.000"
 						y "-18.000"
 					}
 
@@ -6840,7 +6470,7 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/tower_ammunition_handling_lvl1"
+							research_name "gui/menu/research/name/defensive_buildings_lvl1"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -6853,7 +6483,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "600.000"
+							count "350.000"
 						}
 
 					}
@@ -6861,12 +6491,18 @@ Research
 					research_scripts
 					position
 					{
-						x "-9.000"
+						x "-63.000"
 						y "-216.000"
 					}
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_storage_highcaliber"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_cannon"
@@ -6902,6 +6538,12 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/defensive_buildings_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/high_caliber_weapons_lvl_3"
@@ -6911,16 +6553,50 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "2000.000"
+							count "3000.000"
 						}
 
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_highcaliber"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "4"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
-						x "-9.000"
-						y "117.000"
+						x "-63.000"
+						y "261.000"
 					}
 
 					research_awards
@@ -8566,6 +8242,12 @@ Research
 
 						ResearchAward
 						{
+							blueprint "buildings/ammo/ammo_storage_energy"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "items/weapons/small_machinegun_advanced_item"
 							is_visible "1"
 						}
@@ -9062,6 +8744,40 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_energy"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "4"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "513.000"
@@ -10487,6 +10203,40 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_energy"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "2"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "513.000"
@@ -10701,6 +10451,40 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_lowcaliber"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "2"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "72.000"
@@ -10753,6 +10537,40 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_energy"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "2"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "513.000"
@@ -11019,6 +10837,12 @@ Research
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_storage_energy"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "items/weapons/plasma_gun_item"
@@ -22322,6 +22146,6 @@ Research
 
 	type
 	editor "5682"
-	version "94"
+	version "95"
 }
 
