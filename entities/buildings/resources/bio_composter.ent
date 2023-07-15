@@ -46,14 +46,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"biomass_plant"
-				value			 	"1"
-			}			
-			
-			GameplayResource
-			{
-				resource 			"water"
-				value			 	"10"
-				attachment			"att_in_1"
+				value			 	"2"
 			}
 		}
 		
@@ -66,8 +59,9 @@ EntityBlueprint
 				attachment	"att_out_1"
 			}	
 		}
-		priority 4			
+		priority 4
 	}
+	
 	ResourceStorageDesc
 	{
 		Storages
@@ -80,6 +74,7 @@ EntityBlueprint
 			}
 		}
 	}
+	
 	LuaDesc
 	{
 		script "lua/buildings/building.lua"
@@ -378,21 +373,6 @@ EntityBlueprint
 			"buildings/effects_medium_base"
 		}
 ////////////////////////Resources/////////////////////////			
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_arrow"
-				}
-			}
-		}	
 		EffectGroup
 		{
 			group "att_out_1"

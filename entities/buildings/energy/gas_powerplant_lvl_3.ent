@@ -1,8 +1,7 @@
 EntityBlueprint
 {
 	name  					"buildings/energy/gas_powerplant_lvl_3"
-
-	base_blueprint 			buildings/energy/gas_powerplant_lvl_2
+	base_blueprint 			"buildings/energy/gas_powerplant_lvl_2"
 
 	BuildingDesc
 	{
@@ -28,8 +27,8 @@ EntityBlueprint
 				building_time 120
 				building_cost
 				{
-					carbonium 	"400"
-					steel 		"300"
+					carbonium 	"800"
+					steel 		"500"
 					palladium	"100"
 				}
 			}		
@@ -42,9 +41,17 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 	"flammable_gas"
-				value 		"50"
-				attachment	"att_in_1"
+				resource 		"flammable_gas"
+				value 			"50"
+				attachment		"att_in_1"
+			}
+						
+			GameplayResource
+			{
+				resource 		"supercoolant"
+				value			"15"
+				attachment		"att_in_2"
+				family			"coolant"
 			}
 		}
 		
@@ -53,7 +60,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"1000"
+				value 		"1400"
 			}
 		}
 		priority 9		
@@ -67,7 +74,7 @@ EntityBlueprint
 			Storage
 			{
 				resource "energy"
-				max 	 "1000"
+				max 	 "1400"
 			}
 			
 		}
@@ -199,6 +206,21 @@ EntityBlueprint
 				}
 			}
 		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
 ////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
@@ -239,7 +261,5 @@ EntityBlueprint
 			}
 		}			
 	}
-
-		
 }
 
