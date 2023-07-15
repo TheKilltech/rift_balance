@@ -12,7 +12,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/ionizer"
 		menu_icon			"gui/hud/building_icons/ionizer"
 		require 			"headquarters"
-		//upgrade				"buildings/resources/ionizer_lvl_2"			
+		upgrade				"buildings/resources/ionizer_lvl_2"			
 		order				"17"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
@@ -26,8 +26,7 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"500"
-					steel 		"2000"			
-					palladium	"1000"
+					steel 		"2500"
 				}
 			}		
 		}
@@ -51,13 +50,7 @@ EntityBlueprint
 			{
 				resource 		"tanzanite"
 				value			"1"
-			}			
-			GameplayResource
-			{
-				resource 		"flammable_gas"
-				value 			"50"
-				attachment		"att_in_1"
-			}	
+			}		
 		}
 		
 		out
@@ -65,7 +58,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"plasma"
-				value 			"100"
+				value 			"50"
 				attachment		"att_out_1"
 			}	
 		}
@@ -79,7 +72,7 @@ EntityBlueprint
 			Storage
 			{
 				resource	 	"plasma"
-				max 	 		"200"
+				max 	 		"100"
 				attachment		"att_out_1"
 			}	
 			
@@ -376,21 +369,6 @@ EntityBlueprint
 			"buildings/effects_medium_base"
 		}	
 ////////////////////////Resources/////////////////////////			
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_arrow"
-				}
-			}
-		}	
 		EffectGroup
 		{
 			group "att_out_1"
