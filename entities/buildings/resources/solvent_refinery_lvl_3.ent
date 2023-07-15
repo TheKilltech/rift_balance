@@ -1,51 +1,53 @@
 EntityBlueprint
 {
-	name  			"buildings/resources/nitric_acid_refinery_lvl_3"
-	base_blueprint	"buildings/resources/nitric_acid_refinery_lvl_2"
+	name  			"buildings/resources/solvent_refinery_lvl_3"
+	base_blueprint	"buildings/resources/solvent_refinery_lvl_2"
 
 	BuildingDesc
 	{
-		buildable			"0"		
-		name 				"nitric_acid_refinery_lvl_3"
-		bp   				"buildings/resources/nitric_acid_refinery_lvl_3"
+		buildable			"0"
+		name 				"solvent_refinery_lvl_3"
+		bp   				"buildings/resources/solvent_refinery_lvl_3"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/nitric_acid_refinery"
-		description			"gui/hud/building_description/nitric_acid_refinery"
-		menu_icon			"gui/hud/building_icons/animal_biomass_powerplant_lvl3"
-		order				"11"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/solvent_refinery"
+		description			"gui/hud/building_description/solvent_refinery"
+		menu_icon			"gui/hud/building_icons/solvent_refinery"
 		require 			"headquarters"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		order				"30"	
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 18
+				building_time 25
 				building_cost
 				{
-					carbonium 	"400"
-					steel 		"600"		
-					cobalt 		"250"
+					carbonium 	"1000"
+					steel 		"2500"	
+					cobalt		"1500"		
 				}
-			}	
+			}		
 		}
 	}
 
 	ResourceConverterDesc
 	{
 		in
-		{	
+		{
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"600"
+				value			 	"300"
 			}
 			
 			GameplayResource
 			{
-				resource 			"biomass_animal"
-				value			 	"1"
+				resource 			"biomass_plant"
+				value			 	"10"
 			}
 			
 			GameplayResource
@@ -56,8 +58,15 @@ EntityBlueprint
 			
 			GameplayResource
 			{
-				resource 			"hazenite"
-				value			 	"2"
+				resource 			"carbonium"
+				value			 	"3"
+			}
+			
+			GameplayResource
+			{
+				resource 			"water"
+				value			 	"150"
+				attachment			"att_in_1"
 			}
 		}
 		
@@ -65,32 +74,31 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 			"nitric_acid"
-				value				"60"
-				attachment			"att_out_1"				
-			}		
+				resource 			"solvent"
+				value 				"150"
+				attachment			"att_out_1"
+			}
 		}
-		priority 9		
-		reset_interval 0.5
+		priority 4		
 	}
-
+	
 	ResourceStorageDesc
 	{
 		Storages
 		{
 			Storage
 			{
-				resource "nitric_acid"
-				max 	 "120"
+				resource	 	"solvent"
+				max 	 		"300"
+				attachment		"att_out_1"
 			}
-			
 		}
-	}
-	
+	}	
+
 	HealthDesc
 	{
-		max_health 					"1600"
-		health 						"1600"
+		max_health 					"1300"
+		health 						"1300"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -152,7 +160,22 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-////////////////////////Resources/////////////////////////		
+////////////////////////Resources/////////////////////////			
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_arrow"
+				}
+			}
+		}	
 		EffectGroup
 		{
 			group "att_out_1"
@@ -168,7 +191,7 @@ EntityBlueprint
 				}
 			}
 		}
-////////////////////////MISC/////////////////////////					
+////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
 			group "working"
@@ -178,15 +201,14 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"								
-					bone "att_chimney"
-					delay "1"
-				}	
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"				
+					bone "att_water"
+				}
 				Effect
 				{
-					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"	
-					delay "1"			
-				}							
+					blueprint "effects/buildings_resources/water_filtering_plant_working"	
+					delay "0.5"					
+				}	
 			}
 		}
 		EffectGroup
@@ -204,4 +226,3 @@ EntityBlueprint
 		}			
 	}
 }
-

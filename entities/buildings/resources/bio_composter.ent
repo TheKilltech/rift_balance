@@ -1,18 +1,19 @@
 EntityBlueprint
 {
-	name  "buildings/resources/bio_uranium_refinery"
+	name  "buildings/resources/bio_composter"
 
 	BuildingDesc
 	{
-		name 				"bio_uranium_refinery"
-		bp   				"buildings/resources/bio_uranium_refinery"
+		name 				"bio_composter"
+		bp   				"buildings/resources/bio_composter"
 		category 			"resources"
 		type				"pipe"
-		localization_id		"gui/hud/building_name/bio_uranium_ore_refinery"
-		description			"gui/hud/building_description/bio_uranium_ore_refinery"
-		menu_icon			"gui/hud/building_icons/bio_uranium_refinery"
-		require 			"headquarters"	
-		order				"32"
+		localization_id		"gui/hud/building_name/bio_composter"
+		description			"gui/hud/building_description/bio_composter"
+		menu_icon			"gui/hud/building_icons/bio_composter"
+		require 			"headquarters"
+		upgrade				"buildings/resources/bio_composter_lvl_2"			
+		order				"15"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
@@ -21,12 +22,11 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 60
+				building_time 10
 				building_cost
 				{
-					carbonium 	"4000"
-					steel 		"800"
-					cobalt		"2000"
+					carbonium 	"100"
+					steel 		"100"		
 				}
 			}		
 		}
@@ -39,21 +39,21 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 	"energy"
-				value		"300"
+				resource 			"energy"
+				value			 	"10"
 			}
 			
 			GameplayResource
 			{
-				resource 	"uranium_bio"
-				value		"1"
+				resource 			"biomass_plant"
+				value			 	"1"
 			}			
 			
 			GameplayResource
 			{
-				resource 	"solvent"
-				value		"50"
-				attachment	"att_in_1"
+				resource 			"water"
+				value			 	"10"
+				attachment			"att_in_1"
 			}
 		}
 		
@@ -61,13 +61,8 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 	"uranium_ore"
-				value		"0.2"
-			}	
-			GameplayResource
-			{
-				resource 	"sludge"
-				value 		"40"
+				resource 	"flammable_gas"
+				value 		"25"
 				attachment	"att_out_1"
 			}	
 		}
@@ -79,7 +74,7 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource	 	"sludge"
+				resource	 	"flammable_gas"
 				max 	 		"100"
 				attachment		"att_out_1"
 			}
@@ -163,7 +158,7 @@ EntityBlueprint
 	MeshDesc
 	{
 		mesh 		"meshes/buildings/resources/bio_composter.mesh"
-		material 	"buildings/resources/bio_uranium_refinery"
+		material 	"buildings/resources/bio_composter"
 	}
 
 	TypeDesc

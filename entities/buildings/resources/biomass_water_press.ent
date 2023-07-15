@@ -2,19 +2,19 @@ EntityBlueprint
 {
 	name  "buildings/resources/biomass_water_press"
 
+
 	BuildingDesc
 	{
 		name 				"biomass_water_press"
 		bp   				"buildings/resources/biomass_water_press"
 		category 			"resources"
-		localization_id		"Biomass Water Press"               //"gui/hud/building_name/biomass_water_press"
-		description			"Extracts water from plant biomass" //"gui/hud/building_description/animal_biomass_powerplant"
+		localization_id		"gui/hud/building_name/biomass_water_press"
+		description			"gui/hud/building_description/biomass_water_press"
 		menu_icon			"gui/hud/building_icons/animal_biomass_powerplant"
 		order				"14"
-		//upgrade			"buildings/energy/biomass_water_press_lvl_2"		
+		upgrade				"buildings/resources/biomass_water_press_lvl_2"
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		going_green_state	"1"
 
 		costs
 		{
@@ -25,8 +25,7 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"400"
-					steel 		"600"		
-					cobalt		"100"
+					steel 		"600"
 				}
 			}		
 		}
@@ -39,7 +38,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"20"
+				value			 	"75"
 			}
 			
 			GameplayResource
@@ -77,7 +76,7 @@ EntityBlueprint
 
 	LuaDesc
 	{
-		script "lua/buildings/resources/carbonium_factory.lua"
+		script "lua/buildings/building.lua"
 		
 		database
 		{

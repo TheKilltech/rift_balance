@@ -7,8 +7,8 @@ EntityBlueprint
 		name 				"nitric_acid_refinery"
 		bp   				"buildings/resources/nitric_acid_refinery"
 		category 			"resources"
-		localization_id		"Nitric Acid Refinery"               //"gui/hud/building_name/nitric_acid_refinery"
-		description			"Extracts nitric acid from biomaterials" //"gui/hud/building_description/nitric_acid_refinery"
+		localization_id		"gui/hud/building_name/nitric_acid_refinery"
+		description			"gui/hud/building_description/nitric_acid_refinery"
 		menu_icon			"gui/hud/building_icons/animal_biomass_powerplant"
 		order				"11"
 		upgrade				"buildings/resources/nitric_acid_refinery_lvl_2"		
@@ -82,7 +82,7 @@ EntityBlueprint
 
 	LuaDesc
 	{
-		script "lua/buildings/resources/carbonium_factory.lua"
+		script "lua/buildings/building.lua"
 		
 		database
 		{

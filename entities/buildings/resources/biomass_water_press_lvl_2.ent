@@ -1,21 +1,22 @@
 EntityBlueprint
 {
-	name  			"buildings/resources/nitric_acid_refinery_lvl_3"
-	base_blueprint	"buildings/resources/nitric_acid_refinery_lvl_2"
+	name  			"buildings/resources/biomass_water_press_lvl_2"
+	base_blueprint	"buildings/resources/biomass_water_press"
 
 	BuildingDesc
 	{
-		buildable			"0"		
-		name 				"nitric_acid_refinery_lvl_3"
-		bp   				"buildings/resources/nitric_acid_refinery_lvl_3"
+		buildable			"0"
+		name 				"biomass_water_press_lvl_2"
+		bp   				"buildings/resources/biomass_water_press_lvl_2"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/nitric_acid_refinery"
-		description			"gui/hud/building_description/nitric_acid_refinery"
-		menu_icon			"gui/hud/building_icons/animal_biomass_powerplant_lvl3"
-		order				"11"
+		localization_id		"gui/hud/building_name/biomass_water_press"
+		description			"gui/hud/building_description/biomass_water_press"
+		menu_icon			"gui/hud/building_icons/animal_biomass_powerplant_lvl2"
+		order				"14"
+		//upgrade			"buildings/energy/biomass_water_press_lvl_3"		
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		
+
 		costs
 		{
 			BuildingCostInfo
@@ -26,9 +27,9 @@ EntityBlueprint
 				{
 					carbonium 	"400"
 					steel 		"600"		
-					cobalt 		"250"
+					cobalt		"150"
 				}
-			}	
+			}		
 		}
 	}
 
@@ -39,25 +40,13 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"600"
-			}
-			
-			GameplayResource
-			{
-				resource 			"biomass_animal"
-				value			 	"1"
+				value			 	"150"
 			}
 			
 			GameplayResource
 			{
 				resource 			"biomass_water"
-				value			 	"3"
-			}
-			
-			GameplayResource
-			{
-				resource 			"hazenite"
-				value			 	"2"
+				value			 	"4"
 			}
 		}
 		
@@ -65,8 +54,8 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 			"nitric_acid"
-				value				"60"
+				resource 			"water"
+				value				"100"
 				attachment			"att_out_1"				
 			}		
 		}
@@ -80,17 +69,17 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource "nitric_acid"
-				max 	 "120"
+				resource "water"
+				max 	 "200"
 			}
 			
 		}
 	}
-	
+
 	HealthDesc
 	{
-		max_health 					"1600"
-		health 						"1600"
+		max_health 					"1300"
+		health 						"1300"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -178,17 +167,17 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"								
+					blueprint "effects/buildings_and_machines/water_filtering_pool"								
 					bone "att_chimney"
 					delay "1"
-				}	
+				}
 				Effect
 				{
 					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"	
-					delay "1"			
+					delay "1"					
 				}							
 			}
-		}
+		}	
 		EffectGroup
 		{
 			group "level"
@@ -197,7 +186,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/level_3"
+					blueprint "effects/buildings_and_machines/level_2"
 					bone "att_level"
 				}
 			}
