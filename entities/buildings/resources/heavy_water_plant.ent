@@ -7,16 +7,14 @@ EntityBlueprint
 		name 				"heavy_water_plant"
 		bp   				"buildings/resources/heavy_water_plant"
 		category 			"resources"
-		localization_id		"Heavy Water Plant" //"gui/hud/building_name/laboratory"
-		description			"Extracts deuterium from heavy water" // "gui/hud/building_description/laboratory"
+		localization_id		"gui/hud/building_name/heavy_water_plant"
+		description			"gui/hud/building_description/heavy_water_plant"
 		menu_icon			"gui/hud/building_icons/laboratory"
 		type				"pipe"
 		order				"40"
-		limit			    "1"
-		limit_name			"laboratory"		
 		require 			"headquarters"
 		menu_action			"research"
-		//upgrade				"buildings/resources/heavy_water_plant"
+		//upgrade				"buildings/resources/heavy_water_plant_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"	
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"		
 
@@ -64,7 +62,7 @@ EntityBlueprint
 				attachment		"att_out_1"
 			}
 		}
-		priority 10			
+		priority 10
 	}
 
 	ResourceStorageDesc

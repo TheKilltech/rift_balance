@@ -2765,6 +2765,12 @@ Research
 
 						ResearchAward
 						{
+							blueprint "buildings/resources/heavy_water_plant"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/resources/plasma_converter"
 							is_visible "1"
 						}
@@ -22395,7 +22401,19 @@ Research
 					{
 						ResearchAward
 						{
+							blueprint "buildings/resources/biomass_water_press_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/resources/nitric_acid_refinery_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/solvent_refinery_lvl_2"
 							is_visible "1"
 						}
 
@@ -22727,6 +22745,12 @@ Research
 							is_visible "1"
 						}
 
+						ResearchAward
+						{
+							blueprint "buildings/resources/solvent_refinery_lvl_3"
+							is_visible "1"
+						}
+
 					}
 
 					icon "gui/menu/research/icons/biomass_energy"
@@ -22832,6 +22856,6 @@ Research
 
 	type
 	editor "5682"
-	version "97"
+	version "98"
 }
 
