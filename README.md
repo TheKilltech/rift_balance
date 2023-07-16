@@ -21,16 +21,16 @@ Resources:
   - added bio-resources replacing the direct rare resource yield from cultivators. those bio resources require additional processing steps to refine them into palladium, titanium, uranium ore or cobalt.
   - the refining involves a new pipe-resource solvent. it is refined from plant biomass mostly.
   - different types of biomass have become quite important to some production chains
-  - work in progress: building upgrades should be more interesting. for example tier 2 carbonium power plant will now additionally require cooling, which tier 1 doesn't have. The additional trouble will come at significant power output increase. Tier 3 only accepts supercoolant for cooling.
+  - work in progress: building upgrades should be more interesting. for example tier 2 carbonium power plant will now additionally require cooling, which tier 1 doesn't have. The additional trouble will come at significant power output increase. Tier 3 only accepts supercoolant for cooling. reworked buildings: carbonium power plant, bio composter, gas power plant, fusion reactor, ai hub, supercoolant refinery, ionizer
 
- * Weapons:
+* Weapons:
    - higher tier weapons, especially are nerfed to the ground compared to their original stats. top tier towers nerfed also a little.
    - higher tier weapons and turrents need higher tier ammo
    - towers can now block each other, so placement becomes actually relevant
    - higher tier towers now consume a lot more energy.
    - energy based towers consume large armounts of energy per shot on top of that.
   
- * Missions:
+* Missions:
    - i have changed all the non-outpost missions, so that if you chose on a map longer, it won't be entierly boring
    - started to adjust the events manager to produce more randoness in events, partiularly create 1 in a 100 rare random events where every everything bad happens all at once. a certain level of unpredictibility can create very unique experiences even 100h into the game and keep the player on their toes.
   
@@ -38,4 +38,8 @@ Resources:
   - so far i have been just warming up and testing things. so expect major changes. don't wont to start certain things before the devs haven't realeased their difficulty improvements and multiplayer.
   - test friendly fire. hope the devs implement it is as a custom game setting though
   - rework building upgrages
-  - rework AI resource
+  - add nitrate as resource & surface deposit
+  - add underground deposits (ironium, uranium, palladium, titanium, nitrate) which need a dedicated mine. swap to one mine for all surface deposits
+  - change campaign maps resource deposits
+  - improve icons and visuals of entities added by the mod
+  - bio-ironium
