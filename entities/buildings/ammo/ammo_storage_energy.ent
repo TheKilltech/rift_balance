@@ -7,9 +7,9 @@ EntityBlueprint
 		name 				"ammo_storage_energy"
 		bp   				"buildings/ammo/ammo_storage_energy"
 		category 			"ammo"
-		localization_id		"Energy Cell Storage" //"gui/hud/building_name/ammunition_storage"
-		description			"Stores energy based ammunition" //"gui/hud/building_description/ammunition_storage"
-		menu_icon			"gui/hud/building_icons/energy_storage"
+		localization_id		"gui/hud/building_name/ammo_storage_energy"
+		description			"gui/hud/building_description/ammo_storage_energy"
+		menu_icon			"gui/hud/building_icons/ammo_storage_energy"
 		require 			"headquarters"
 		order				"4"	
 		limit			    "6"
@@ -21,7 +21,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 10
+				building_time 40
 				building_cost
 				{
 					carbonium 	"300"
@@ -120,6 +120,16 @@ EntityBlueprint
 		name "meshes/buildings/energy/energy_storage_lvl_2"
 	}
 
+	AnimationGraphDesc
+	{
+		animation_graph_name "idle_working"
+	}
+
+	StateMachineDesc
+	{
+		template_name "animation_visible"
+	}
+	
 	PhysicsDesc
  	{
 		objects
@@ -312,5 +322,33 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}
+		EffectGroup
+		{
+			group "working"
+			enabled "1"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/energy_storage_working"	
+					delay "0.5"					
+				}				
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_reactor"
+					bone  "att_vismod_1"
+					scale "1.0 1.0 1.0"
+				}
+			}
+		}	
 	}
 }

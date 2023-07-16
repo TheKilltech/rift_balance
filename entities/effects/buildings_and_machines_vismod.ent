@@ -78,3 +78,20 @@ EntityBlueprint "effects/no_lifetime"
 		material "buildings/ammo/ammo_factory_liquid_ext"
 	}
 }
+
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name "effects/buildings_and_machines/gas_reactor"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/energy/gas_powerplant.mesh"
+		material 	"buildings/energy/gas_powerplant"
+	}
+}
