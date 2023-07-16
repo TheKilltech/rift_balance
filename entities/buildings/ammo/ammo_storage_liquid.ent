@@ -7,9 +7,9 @@ EntityBlueprint
 		name 				"ammo_storage_liquid"
 		bp   				"buildings/ammo/ammo_storage_liquid"
 		category 			"ammo"
-		localization_id		"Liquid Ammunition Storage" //"gui/hud/building_name/ammunition_storage"
-		description			"Stores liquid ammunition" //"gui/hud/building_description/ammunition_storage"
-		menu_icon			"gui/hud/building_icons/liquid_material_storage"
+		localization_id		"gui/hud/building_name/ammo_storage_liquid"
+		description			"gui/hud/building_description/ammo_storage_liquid"
+		menu_icon			"gui/hud/building_icons/ammo_storage_liquid"
 		require 			"headquarters"
 		order				"5"	
 		limit			    "6"
@@ -157,7 +157,7 @@ EntityBlueprint
 	MeshDesc
 	{
 		mesh 		"meshes/buildings/resources/liquid_material_storage.mesh"
-		material 	"buildings/resources/liquid_material_storage"
+		material 	"buildings/resources/ammo_storage_liquid"
 	}
 
 	TypeDesc
@@ -371,5 +371,19 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}
+		//EffectGroup
+		//{
+		//	group "vismod"
+		//	enabled "1"
+		//	Effects
+		//	{
+		//		Effect
+		//		{
+		//			blueprint "effects/buildings_and_machines/gas_reactor"
+		//			bone  "att_vismod_1"
+		//			scale "1.0 1.0 1.0"
+		//		}
+		//	}
+		//}	
 	}
 }
