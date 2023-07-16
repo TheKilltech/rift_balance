@@ -1,8 +1,7 @@
 EntityBlueprint
 {
-	name  "buildings/resources/carbonium_factory_lvl_2"
-
-	base_blueprint buildings/resources/carbonium_factory		
+	name  					"buildings/resources/carbonium_factory_lvl_2"
+	base_blueprint			"buildings/resources/carbonium_factory"
 
 	BuildingDesc
 	{
@@ -10,8 +9,8 @@ EntityBlueprint
 		name 				"carbonium_factory_lvl_2"
 		bp   				"buildings/resources/carbonium_factory_lvl_2"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/carbonium_factory"
-		description			"gui/hud/building_description/carbonium_factory"
+		localization_id		"gui/hud/building_name/strip_mine"
+		description			"gui/hud/building_description/strip_mine"
 		menu_icon			"gui/hud/building_icons/carbonium_factory_lvl2"
 		order				"1"
 		upgrade				"buildings/resources/carbonium_factory_lvl_3"			

@@ -7,12 +7,12 @@ EntityBlueprint
 		name 				"ammo_factory_explosive_lvl_2"
 		bp   				"buildings/ammo/ammo_factory_explosive_lvl_2"
 		category 			"ammo"
-		localization_id		"Advanced explosives factory"//"gui/hud/building_name/ammo_factory_explosive_lvl_2"
-		description			"Produces advanced and better explosive ammunitions"//"gui/hud/building_description/ammo_factory_explosive_lvl_2"
+		localization_id		"gui/hud/building_name/ammo_factory_explosive_adv"
+		description			"gui/hud/building_description/ammo_factory_explosive_adv"
 		menu_icon			"gui/hud/building_icons/tower_ammunition_factory"
 		require 			"headquarters"
 		order				"33"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{

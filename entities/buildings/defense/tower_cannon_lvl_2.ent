@@ -1,8 +1,7 @@
 EntityBlueprint
 {
-	name "buildings/defense/tower_cannon_lvl_2"
-
-	base_blueprint 			buildings/defense/tower_cannon
+	name					"buildings/defense/tower_cannon_lvl_2"
+	base_blueprint 			"buildings/defense/tower_cannon"
 
 	BuildingDesc
 	{
@@ -10,8 +9,8 @@ EntityBlueprint
 		name 				"tower_cannon_lvl_2"
 		bp   				"buildings/defense/tower_cannon_lvl_2"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_basic"
-		description			"gui/hud/building_description/tower_basic"
+		localization_id		"gui/hud/building_name/tower_cannon"
+		description			"gui/hud/building_description/tower_cannon"
 		menu_icon			"gui/hud/building_icons/tower_basic_lvl2"
 		require 			"headquarters"
 		order				"8"
