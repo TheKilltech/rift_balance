@@ -46,3 +46,35 @@ EntityBlueprint "effects/no_lifetime"
 		material 	"buildings/resources/liquid_material_storage"
 	}
 }
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name "effects/buildings_and_machines/reactor_green"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/uranium_centrifuge.mesh"
+		material "buildings/resources/uranium_centrifuge"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name "effects/buildings_and_machines/reactor_orange"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/uranium_centrifuge.mesh"
+		material "buildings/ammo/ammo_factory_liquid_ext"
+	}
+}

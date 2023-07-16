@@ -213,6 +213,20 @@ EntityBlueprint
 		}
 		EffectGroup
 		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/reactor_orange"
+					bone  "att_vismod_1"
+					scale "0.8 0.8 0.8"
+				}
+			}
+		}	
+		EffectGroup
+		{
 			group "level"
 			enabled "1"
 			Effects
@@ -223,6 +237,6 @@ EntityBlueprint
 					bone "att_level"
 				}
 			}
-		}			
+		}				
 	}
 }

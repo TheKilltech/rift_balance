@@ -425,6 +425,20 @@ EntityBlueprint
 					delay "0.5"					
 				}	
 			}
-		}	
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/reactor_orange"
+					bone  "att_vismod_1"
+					scale "0.8 0.8 0.8"
+				}
+			}
+		}			
 	}
 }
