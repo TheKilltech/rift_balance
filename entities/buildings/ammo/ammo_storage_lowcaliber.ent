@@ -7,8 +7,8 @@ EntityBlueprint
 		name 				"ammo_storage_lowcaliber"
 		bp   				"buildings/ammo/ammo_storage_lowcaliber"
 		category 			"ammo"
-		localization_id		"Low Caliber Ammunition Storage" //"gui/hud/building_name/ammunition_storage"
-		description			"Stores low caliber ammunition" //"gui/hud/building_description/ammunition_storage"
+		localization_id		"gui/hud/building_name/ammo_storage_lowcaliber"
+		description			"gui/hud/building_description/ammo_storage_lowcaliber"
 		menu_icon			"gui/hud/building_icons/ammunition_storage"
 		require 			"headquarters"
 		order				"1"	
@@ -21,7 +21,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 10
+				building_time 40
 				building_cost
 				{
 					carbonium 	"250"
