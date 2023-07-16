@@ -1,8 +1,7 @@
 EntityBlueprint
 {
 	name  					"buildings/defense/repair_facility_lvl_2"
-
-	base_blueprint 			buildings/defense/repair_facility
+	base_blueprint 			"buildings/defense/repair_facility"
 
 	BuildingDesc
 	{
@@ -16,7 +15,7 @@ EntityBlueprint
 		require 			"headquarters"
 		order				"4"
 		upgrade				"buildings/defense/repair_facility_lvl_3"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"			
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -29,9 +28,24 @@ EntityBlueprint
 					carbonium 	"200"
 					steel 		"150"						
 					cobalt 		"50"
+					ai			"1"
 				}
 			}		
 		}		
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"15"
+			}
+			
+		}
+		priority 5
 	}
 
 	LuaDesc

@@ -1,7 +1,7 @@
 EntityBlueprint
 {
 	name  					"buildings/defense/repair_facility_lvl_3"
-	base_blueprint 			buildings/defense/repair_facility_lvl_2
+	base_blueprint 			"buildings/defense/repair_facility_lvl_2"
 
 	BuildingDesc
 	{
@@ -26,11 +26,26 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"400"
-					steel 		"300"					
+					steel 		"300"
 					cobalt 		"100"
+					ai			"1"
 				}
 			}		
 		}		
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"25"
+			}
+			
+		}
+		priority 5
 	}
 
 	LuaDesc
