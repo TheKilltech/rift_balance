@@ -1,0 +1,213 @@
+EntityBlueprint
+{
+	name  "buildings/main/communications_hub_lvl_3"
+
+	base_blueprint buildings/main/communications_hub_lvl_2
+
+	BuildingDesc
+	{
+		buildable 			"0"	
+		name 				"communications_hub_lvl_3"
+		bp   				"buildings/main/communications_hub_lvl_3"
+		category 			"main"
+		localization_id		"gui/hud/building_name/communications_hub"
+		description			"gui/hud/building_description/communications_hub"
+		menu_icon			"gui/hud/building_icons/communications_hub_lvl3"
+		order				"3"
+		limit			    "1"
+		limit_name			"communications_hub"		
+		require 			"headquarters"
+		upgrade				"buildings/main/communications_hub_lvl_4"
+		menu_action 		"research"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 120
+				building_cost
+				{
+					carbonium 	"1600"
+					steel 		"2400"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"200"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"download"
+				value			 	"3"
+			}
+		}
+		priority 2			
+	}
+
+	HealthDesc
+	{
+		max_health 					"3500"
+		health 						"3500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+	
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health "90"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "90"
+			}
+			DestructionLevel
+			{
+				health "80"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "80_destroy"
+				//destroyed_state_material "buildings/main/headquarters_dest_75"
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "80"
+			}
+			DestructionLevel
+			{
+				health "70"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "70"
+			}
+			DestructionLevel
+			{
+				health "60"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "60_destroy"
+				//destroyed_state_material "buildings/main/headquarters_dest_50"
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "60"
+			}
+			DestructionLevel
+			{
+				health "50"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "50"
+			}
+			DestructionLevel
+			{
+				health "40"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "40_destroy"
+				//destroyed_state_material "buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "40"
+			}
+			DestructionLevel
+			{
+				health "30"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "30"
+			}
+			DestructionLevel
+			{
+				health "20"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "20_destroy"
+				//destroyed_state_material "buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "20"
+			}
+			DestructionLevel
+			{
+				health "10"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "10"
+			}
+			DestructionLevel
+			{
+				health "0"
+				destroy_state_change_effect_group "0_transition"
+				destroy_comp_delay "0.7"
+				destroy_comp_event "default"
+				//destroyed_state_material "buildings/main/headquarters_dest_0"
+				//destroyed_state_effect_group "0_state"
+				destrucion_level_name "0"
+			}			
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+////////////////////////MISC/////////////////////////			
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/comms_hub_energy"								
+					bone "att_antenna"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_main/communications_hub_working"	
+					delay "0.5"					
+				}
+			}
+		}		
+
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}			
+	}
+}
+

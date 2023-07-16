@@ -1,0 +1,136 @@
+EntityBlueprint
+{
+	name  					"buildings/defense/repair_facility_lvl_2"
+
+	base_blueprint 			buildings/defense/repair_facility
+
+	BuildingDesc
+	{
+		buildable			"0"		
+		name 				"repair_facility_lvl_2"
+		bp   				"buildings/defense/repair_facility_lvl_2"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/repair_facility"
+		description			"gui/hud/building_description/repair_facility"
+		menu_icon			"gui/hud/building_icons/repair_facility_lvl2"
+		require 			"headquarters"
+		order				"4"
+		upgrade				"buildings/defense/repair_facility_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"			
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 20
+				building_cost
+				{
+					carbonium 	"200"
+					steel 		"150"						
+					cobalt 		"50"
+				}
+			}		
+		}		
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/defense/repair_facility_drone.lua"
+		
+		database
+		{
+			cone_effect				string:"build_cone_3x3"
+			cone_effect_sell		string:"sell_big"
+			energy_cost				float:"10"
+
+			drone_search_radius		float:"25"
+			drone_blueprint			string:"units/drones/drone_repair_facility_lvl_2"
+			drone_attachments		string:"att_landing"
+			drone_per_spot			int:"3"
+			drone_visible_on_spot 	int:"0"
+
+			display_radius_blueprint string:"effects/decals/range_circle_repair"
+			display_radius_group	 string:"repair_tower"
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"750"
+		health 						"750"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"				
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/repair_facility_idle"
+					bone "att_healing_energy"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "drones"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "buildings/defense/repair_facility_drone_flying"
+
+				}
+			}
+		}			
+	}
+}
+
