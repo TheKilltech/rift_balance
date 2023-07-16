@@ -43,3 +43,4 @@ Resources:
   - change campaign maps resource deposits
   - improve icons and visuals of entities added by the mod
   - bio-ironium
+  - pimp building visuals

@@ -435,6 +435,20 @@ EntityBlueprint
 					delay "0.5"					
 				}
 			}
-		}		
+		}	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pylon"
+					bone "att_vismod_1"
+					//scale "1.0 1.0 1.0"
+				}
+			}
+		}				
 	}
 }
