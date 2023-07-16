@@ -127,3 +127,38 @@ EntityBlueprint "effects/no_lifetime"
 		material 	"buildings/main/fusion_field_accelerator"
 	}
 }
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name "effects/buildings_and_machines/particle_condenser"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh		"meshes/buildings/main/hyper_particle_condenser.mesh"
+		material	"buildings/main/hyper_particle_condenser"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "buildings/main/hyper_particle_condenser"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/main/hyper_particle_condenser_screen_off"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/main/hyper_particle_condenser_screen_back_off"
+			}
+		}
+	}
+}

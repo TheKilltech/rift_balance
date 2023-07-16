@@ -368,7 +368,8 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}		
+		}
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
@@ -396,6 +397,46 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"								
 					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/lamp_light_yellow"	
+					bone "att_smoke_1" //"att_turbine_light"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/drone_cultivate_plants
+					bone "att_smoke_1""
+					delay "0.5"	
+				}
+				//Effect
+				//{
+				//	blueprint "effects/buildings_resources/gas_filtering_plant_working"	
+				//	delay "0.5"					
+				//}
+			}
+		}	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/particle_condenser"
+					bone "att_vismod_1"
+					scale "0.6 0.6 0.6"
 				}
 			}
 		}		
