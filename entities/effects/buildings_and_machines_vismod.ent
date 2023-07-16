@@ -30,3 +30,19 @@ EntityBlueprint "effects/no_lifetime"
 		material "buildings/resources/pipe_ground"
 	}
 }
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name "effects/buildings_and_machines/silo"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/resources/liquid_material_storage.mesh"
+		material 	"buildings/resources/liquid_material_storage"
+	}
+}
