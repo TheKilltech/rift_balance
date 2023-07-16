@@ -1,0 +1,32 @@
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name "effects/buildings_and_machines/pylon"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/energy_storage_lvl_1.mesh"
+		material "buildings/energy/energy_storage_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name "effects/buildings_and_machines/pipe"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/pipe_ground.mesh"
+		material "buildings/resources/pipe_ground"
+	}
+}

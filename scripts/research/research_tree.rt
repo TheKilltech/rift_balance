@@ -4052,19 +4052,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/liquid_material_storage_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/liquid_pump_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/water_filtering_plant_lvl_2"
+							blueprint "buildings/resources/water_drill"
 							is_visible "1"
 						}
 
@@ -6576,6 +6564,58 @@ Research
 					}
 
 					icon "gui/menu/research/icons/towers_basic"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/resource_handling_liquid_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/headquarters_lvl4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/groundwater_access"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "1500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "360.000"
+						y "-81.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/water_drill"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling_liquid"
 				}
 
 			}
@@ -22856,6 +22896,6 @@ Research
 
 	type
 	editor "5682"
-	version "98"
+	version "99"
 }
 
