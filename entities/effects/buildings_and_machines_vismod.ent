@@ -111,3 +111,19 @@ EntityBlueprint "effects/no_lifetime"
 		material 	"buildings/energy/gas_powerplant"
 	}
 }
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name "effects/buildings_and_machines/orb_uranium"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/main/fusion_field_accelerator.mesh"
+		material 	"buildings/main/fusion_field_accelerator"
+	}
+}
