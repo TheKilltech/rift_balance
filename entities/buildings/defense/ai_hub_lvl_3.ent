@@ -1,8 +1,7 @@
 EntityBlueprint
 {
 	name  					"buildings/defense/ai_hub_lvl_3"
-
-	base_blueprint 			buildings/defense/ai_hub_lvl_2
+	base_blueprint 			"buildings/defense/ai_hub_lvl_2"
 
 	BuildingDesc
 	{
@@ -41,7 +40,23 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"80"
+				value			 	"125"
+			}
+				
+			GameplayResource
+			{
+				resource 			"supercoolant"
+				value			 	"2"
+				attachment			"att_in_1"
+				family				"coolant"
+			}
+						
+			GameplayResource
+			{
+				resource 			"supercoolant"
+				value			 	"2"
+				attachment			"att_in_2"
+				family				"coolant"
 			}
 			
 		}
@@ -55,7 +70,7 @@ EntityBlueprint
 			Storage
 			{
 				resource	"ai"
-				max			"16"
+				max			"25"
 			}
 		}
 	}
@@ -96,6 +111,38 @@ EntityBlueprint
 		{
 			"buildings/effects_small_base"
 		}	
+		////////////////////////Resources/////////////////////////			
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////Misc/////////////////////////		
 		EffectGroup
 		{
 			group "level"

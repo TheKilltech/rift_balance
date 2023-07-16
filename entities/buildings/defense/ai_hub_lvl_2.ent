@@ -1,8 +1,7 @@
 EntityBlueprint
 {
 	name  					"buildings/defense/ai_hub_lvl_2"
-
-	base_blueprint 			buildings/defense/ai_hub
+	base_blueprint 			"buildings/defense/ai_hub"
 
 	BuildingDesc
 	{
@@ -41,9 +40,40 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"40"
+				value			 	"50"
+			}
+						
+			GameplayResource
+			{
+				resource 			"supercoolant"
+				value			 	"1"
+				attachment			"att_in_1"
+				family				"coolant"
 			}
 			
+			GameplayResource
+			{
+				resource 			"water"
+				value			 	"5"
+				attachment			"att_in_1"
+				family				"coolant"
+			}
+						
+			GameplayResource
+			{
+				resource 			"supercoolant"
+				value			 	"1"
+				attachment			"att_in_2"
+				family				"coolant"
+			}
+			
+			GameplayResource
+			{
+				resource 			"water"
+				value			 	"5"
+				attachment			"att_in_2"
+				family				"coolant"
+			}
 		}
 		priority 7
 	}
@@ -55,7 +85,7 @@ EntityBlueprint
 			Storage
 			{
 				resource	"ai"
-				max			"8"
+				max			"10"
 			}
 		}
 	}
@@ -75,7 +105,7 @@ EntityBlueprint
 			{
 				health 								"66"
 				destroy_comp_delay 					"0"
-				destroy_comp_event 					"66_destroy"				
+				destroy_comp_event 					"66_destroy"
 				destroyed_state_effect_group 		"66_state"
 			}
 			DestructionLevel
@@ -94,6 +124,38 @@ EntityBlueprint
 		{
 			"buildings/effects_small_base"
 		}	
+		////////////////////////Resources/////////////////////////			
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////Misc/////////////////////////		
 		EffectGroup
 		{
 			group "level"
