@@ -1,5 +1,5 @@
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"		//pylon
 {
 	name "effects/buildings_and_machines/pylon"
 
@@ -15,7 +15,7 @@ EntityBlueprint "effects/no_lifetime"
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"		//pipe
 {
 	name "effects/buildings_and_machines/pipe"
 
@@ -31,7 +31,7 @@ EntityBlueprint "effects/no_lifetime"
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"		//silo
 {
 	name "effects/buildings_and_machines/silo"
 
@@ -47,7 +47,7 @@ EntityBlueprint "effects/no_lifetime"
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"		//silo_grey
 {
 	name "effects/buildings_and_machines/silo_grey"
 
@@ -63,7 +63,7 @@ EntityBlueprint "effects/no_lifetime"
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"		//reactor_green
 {
 	name "effects/buildings_and_machines/reactor_green"
 
@@ -79,7 +79,7 @@ EntityBlueprint "effects/no_lifetime"
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"		//reactor_orange
 {
 	name "effects/buildings_and_machines/reactor_orange"
 
@@ -95,8 +95,7 @@ EntityBlueprint "effects/no_lifetime"
 	}
 }
 
-
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"		//gas_reactor
 {
 	name "effects/buildings_and_machines/gas_reactor"
 
@@ -112,7 +111,7 @@ EntityBlueprint "effects/no_lifetime"
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"		//orb_uranium
 {
 	name "effects/buildings_and_machines/orb_uranium"
 
@@ -128,7 +127,7 @@ EntityBlueprint "effects/no_lifetime"
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"		//particle_condenser
 {
 	name "effects/buildings_and_machines/particle_condenser"
 
@@ -160,5 +159,21 @@ EntityBlueprint "effects/no_lifetime"
 				material "buildings/main/hyper_particle_condenser_screen_back_off"
 			}
 		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//minipipes
+{
+	name "effects/buildings_and_machines/minipipes"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		material "props/special/hitech_structure_very_small_01_03"
+		mesh "meshes/buildings/decorations/hitech_structure_very_small_02.mesh"
 	}
 }

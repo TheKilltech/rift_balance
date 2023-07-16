@@ -11,7 +11,7 @@ EntityBlueprint
 		category 			"resources"
 		localization_id		"gui/hud/building_name/nitric_acid_refinery"
 		description			"gui/hud/building_description/nitric_acid_refinery"
-		menu_icon			"gui/hud/building_icons/animal_biomass_powerplant_lvl2"
+		menu_icon			"gui/hud/building_icons/nitric_acid_refinery_lvl_2"
 		order				"11"
 		upgrade				"buildings/resources/nitric_acid_refinery_lvl_3"		
 		require 			"headquarters"
@@ -153,7 +153,7 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-////////////////////////Resources/////////////////////////		
+		////////////////////////Resources/////////////////////////		
 		EffectGroup
 		{
 			group "att_out_1"
@@ -169,7 +169,7 @@ EntityBlueprint
 				}
 			}
 		}
-////////////////////////MISC/////////////////////////					
+		////////////////////////MISC/////////////////////////					
 		EffectGroup
 		{
 			group "working"
@@ -192,6 +192,26 @@ EntityBlueprint
 		}		
 		EffectGroup
 		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/reactor_green"
+					bone "att_vismod_1"
+					scale "0.5 0.8 0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/minipipes"
+					bone "att_vismod_2"
+					scale "0.8 0.8 0.8"
+				}
+			}
+		}		
+		EffectGroup
+		{
 			group "level"
 			enabled "1"
 			Effects
@@ -200,6 +220,16 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/level_2"
 					bone "att_level"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level_side1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level_side2"
 				}
 			}
 		}			
