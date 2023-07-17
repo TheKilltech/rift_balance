@@ -1,27 +1,28 @@
 EntityBlueprint
 {
-	name  "buildings/ammo/ammo_factory_liquid_lvl_3"
+	name  "buildings/ammo/ammo_factory_liquid_ext"
 
 	BuildingDesc
 	{
-		name 				"ammo_factory_liquid_lvl_3"
-		bp   				"buildings/ammo/ammo_factory_liquid_lvl_3"
-		category 			"ammo"
-		type				"pipe"
-		localization_id		"gui/hud/building_name/ammo_factory_liquid_ext"
-		description			"gui/hud/building_description/ammo_factory_liquid_ext"
-		menu_icon			"gui/hud/building_icons/ammo_factory_liquid_ext"
-		require 			"headquarters"		
-		order				"45"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		name 					"ammo_factory_liquid_ext"
+		bp   					"buildings/ammo/ammo_factory_liquid_ext"
+		category 				"ammo"
+		type					"pipe"
+		localization_id			"gui/hud/building_name/ammo_factory_liquid_ext"
+		description				"gui/hud/building_description/ammo_factory_liquid_ext"
+		menu_icon				"gui/hud/building_icons/ammo_factory_liquid_ext"
+		upgrade					"buildings/ammo/ammo_factory_liquid_ext_lvl_2"
+		require 				"headquarters"		
+		order					"45"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 180
+				building_time 160
 				building_cost
 				{
 					carbonium 	"8000"
@@ -53,7 +54,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"palladium"
-				value				"0.5"
+				value				"0.7"
 			}								
 
 			GameplayResource
@@ -316,7 +317,7 @@ EntityBlueprint
 		{
 			"buildings/effects_small_base"
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////	
 		EffectGroup
 		{
 			group "att_in_1"
@@ -327,10 +328,44 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
 				}
 			}
 		}	
+		
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_main/ai_hub_working"	
+					delay "0.5"					
+				}	
+			}
+		}	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+			}
+		}
 	}
 }
