@@ -1,18 +1,20 @@
 EntityBlueprint
 {
-	name  					"buildings/ammo/ammo_factory_highcaliber_lvl_2"	
+	name  					"buildings/ammo/ammo_factory_highcaliber_adv"	
 	
 	BuildingDesc
 	{
-		name 				"ammo_factory_highcaliber_lvl_2"
-		bp   				"buildings/ammo/ammo_factory_highcaliber_lvl_2"
-		category 			"ammo"
-		localization_id		"gui/hud/building_name/ammo_factory_highcaliber_adv"
-		description			"gui/hud/building_description/ammo_factory_highcaliber_adv"
-		menu_icon			"gui/hud/building_icons/ammo_factory_high_caliber_lvl_2"
-		require 			"headquarters"
-		order				"31"	
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		name 					"ammo_factory_highcaliber_adv"
+		bp   					"buildings/ammo/ammo_factory_highcaliber_adv"
+		category 				"ammo"
+		localization_id			"gui/hud/building_name/ammo_factory_highcaliber_adv"
+		description				"gui/hud/building_description/ammo_factory_highcaliber_adv"
+		menu_icon				"gui/hud/building_icons/ammo_factory_highcaliber_adv"
+		upgrade					"buildings/ammo/ammo_factory_highcaliber_adv_lvl_2"
+		require 				"headquarters"
+		order					"31"	
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{
@@ -24,7 +26,7 @@ EntityBlueprint
 				{
 					carbonium 	"200"
 					steel 		"1200"
-					ai			"2"
+					ai			"3"
 				}
 			}		
 		}
@@ -363,7 +365,7 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
 			group "working"
@@ -403,5 +405,18 @@ EntityBlueprint
 				}	
 			}
 		}		
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+			}
+		}
 	}
 }

@@ -151,14 +151,45 @@ material "gui/hud/building_icons/ammo_factory_low_caliber_lvl_2_disabled"  : gui
 
 /////  high caliber factory
 
+material "gui/hud/building_icons/ammo_factory_highcaliber_adv" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_highcaliber_adv.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_highcaliber_adv_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_highcaliber_adv_disabled.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_highcaliber_adv_lvl_2" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_highcaliber_adv_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_highcaliber_adv_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_highcaliber_adv_disabled.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_highcaliber_adv_lvl_3" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_highcaliber_adv_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_highcaliber_adv_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_highcaliber_adv_disabled.dds"
+}
+
+
 material "gui/hud/building_icons/ammo_factory_high_caliber_lvl_2" : gui/default // outdated; downwards compatibility
 {
-	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_high_caliber_lvl_2.dds"
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_highcaliber_adv.dds"
 }
 
 material "gui/hud/building_icons/ammo_factory_high_caliber_lvl_2_disabled" : gui/default // outdated; downwards compatibility
 {
-	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_high_caliber_lvl_2_disabled.dds"
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_highcaliber_adv_disabled.dds"
 }
 
 
