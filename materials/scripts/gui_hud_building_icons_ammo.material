@@ -1,5 +1,6 @@
 import * from "materials/scripts/gui.material"
 
+/////  energy cell factory
 
 material "gui/hud/building_icons/ammo_factory_energy_lvl_2" : gui/default
 {
@@ -12,23 +13,57 @@ material "gui/hud/building_icons/ammo_factory_energy_lvl_2_disabled" : gui/defau
 }
 
 
-material "gui/hud/building_icons/ammo_factory_low_caliber_lvl_2" : gui/default
+/////  low caliber factory
+
+material "gui/hud/building_icons/ammo_factory_lowcaliber_adv" : gui/default
 {
-	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_low_caliber_lvl_2.dds"
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_lowcaliber_adv.dds"
 }
 
-material "gui/hud/building_icons/ammo_factory_low_caliber_lvl_2_disabled"  : gui/default
+material "gui/hud/building_icons/ammo_factory_lowcaliber_adv_disabled"  : gui/default
 {
-	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_low_caliber_lvl_2_disabled.dds"
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_lowcaliber_adv_disabled.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_lowcaliber_adv_lvl_2" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_lowcaliber_adv_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_lowcaliber_adv_lvl_2_disabled"  : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_lowcaliber_adv_disabled.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_lowcaliber_adv_lvl_3" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_lowcaliber_adv_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_lowcaliber_adv_lvl_3_disabled"  : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_lowcaliber_adv_disabled.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_low_caliber_lvl_2" : gui/default  // outdated; downwards compatibility
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_lowcaliber_adv.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_low_caliber_lvl_2_disabled"  : gui/default  // outdated; downwards compatibility
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_lowcaliber_adv_disabled.dds"
 }
 
 
-material "gui/hud/building_icons/ammo_factory_high_caliber_lvl_2" : gui/default
+/////  high caliber factory
+
+material "gui/hud/building_icons/ammo_factory_high_caliber_lvl_2" : gui/default // outdated; downwards compatibility
 {
 	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_high_caliber_lvl_2.dds"
 }
 
-material "gui/hud/building_icons/ammo_factory_high_caliber_lvl_2_disabled" : gui/default
+material "gui/hud/building_icons/ammo_factory_high_caliber_lvl_2_disabled" : gui/default // outdated; downwards compatibility
 {
 	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_high_caliber_lvl_2_disabled.dds"
 }
