@@ -1,19 +1,19 @@
 EntityBlueprint
 {
-	name  "buildings/ammo/ammo_factory_explosive_lvl_3"  // obsolete. mainteined for save compatibility
+	name  "buildings/ammo/ammo_factory_explosive_ext"
 
 	BuildingDesc
 	{
-		name 				"ammo_factory_explosive_lvl_3"
-		bp   				"buildings/ammo/ammo_factory_explosive_lvl_3"
+		name 				"ammo_factory_explosive_ext"
+		bp   				"buildings/ammo/ammo_factory_explosive_ext"
 		category 			"ammo"
 		localization_id		"gui/hud/building_name/ammo_factory_explosive_ext"
 		description			"gui/hud/building_description/ammo_factory_explosive_ext"
-		menu_icon			"gui/hud/building_icons/supercoolant_refinery"
+		menu_icon			"gui/hud/building_icons/ammo_factory_explosive_ext"
+		upgrade				"buildings/ammo/ammo_factory_explosive_ext_lvl_2"
 		type				"pipe"
 		require 			"headquarters"
-		order				"43"
-		buildable			"0"
+		order				"43"	
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
@@ -42,7 +42,7 @@ EntityBlueprint
 			{
 				resource 	"nitric_acid"
 				value 		"5"
-				attachment	"att_in_1"
+				attachment	"att_in_0"
 			}
 						
 			GameplayResource
@@ -60,7 +60,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"uranium"
-				value		"0.6"
+				value		"0.8"
 			}		
 						
 		}
@@ -367,10 +367,10 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
-			group "att_in_1"
+			group "att_in_0"
 			enabled "0"				
 			delay "0"
 			
@@ -379,9 +379,23 @@ EntityBlueprint
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_1_arrow"
+					bone "att_in_0_arrow"
 				}
 			}
-		}					
+		}	
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+			}
+		}	
 	}
 }
