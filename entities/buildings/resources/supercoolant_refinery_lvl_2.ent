@@ -11,7 +11,7 @@ EntityBlueprint
 		category 			"resources"
 		localization_id		"gui/hud/building_name/supercoolant_refinery"
 		description			"gui/hud/building_description/supercoolant_refinery_lvl_2"
-		menu_icon			"gui/hud/building_icons/supercoolant_refinery"
+		menu_icon			"gui/hud/building_icons/supercoolant_refinery_lvl_2"
 		order				"16"
 		upgrade				"buildings/resources/supercoolant_refinery_lvl_3"		
 		require 			"headquarters"
@@ -56,7 +56,7 @@ EntityBlueprint
 			{
 				resource 			"water"
 				value 				"25"
-				attachment			"att_in_2"
+				attachment			"att_in_1"
 			}	
 		}
 		
@@ -150,10 +150,10 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
-			group "att_in_2"
+			group "att_in_1"
 			enabled "0"				
 			delay "0"
 			
@@ -162,14 +162,14 @@ EntityBlueprint
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_2_arrow"
+					bone "att_in_1_arrow"
 				}
 			}
 		}	
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -181,7 +181,20 @@ EntityBlueprint
 				}
 			}
 		}	
-////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+			}
+		}	
 		EffectGroup
 		{
 			group "level"
