@@ -2,22 +2,18 @@ EntityBlueprint
 {
 	name "buildings/ammo/ammo_factory_energy_lvl_2"
 
-	IdDesc
-	{
-		name "ammo_factory_energy_lvl_2"
-	}
-
 	BuildingDesc
 	{
-		name 				  "ammo_factory_energy_lvl_2"
-		bp   				  "buildings/ammo/ammo_factory_energy_lvl_2"
-		category 			  "ammo"
-		localization_id		  "gui/hud/building_name/ammo_factory_energy_adv"
-		description			  "gui/hud/building_description/ammo_factory_energy_adv"
-		menu_icon			  "gui/hud/building_icons/ammo_factory_energy_lvl_2"
-		require 			  "headquarters"
-		order				  "34"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		name 					"ammo_factory_energy_lvl_2"
+		bp   					"buildings/ammo/ammo_factory_energy_lvl_2"
+		category 				"ammo"
+		localization_id			"gui/hud/building_name/ammo_factory_energy_adv"
+		description				"gui/hud/building_description/ammo_factory_energy_adv"
+		menu_icon				"gui/hud/building_icons/ammo_factory_energy_adv"
+		require 				"headquarters"
+		order					"34"
+		buildable				"0"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
 
 		costs
 		{
