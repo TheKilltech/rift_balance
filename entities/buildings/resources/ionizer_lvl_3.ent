@@ -11,7 +11,7 @@ EntityBlueprint
 		category 			"resources"
 		localization_id		"gui/hud/building_name/ionizer"
 		description			"gui/hud/building_description/ionizer_lvl_3"
-		menu_icon			"gui/hud/building_icons/ionizer"
+		menu_icon			"gui/hud/building_icons/ionizer_lvl_3"
 		order				"17"
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -172,7 +172,7 @@ EntityBlueprint
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_arrow"
+					bone "att_in_1_arrow"
 				}
 			}
 		}	
@@ -192,6 +192,19 @@ EntityBlueprint
 			}
 		}	
 ////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"	
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+			}
+		}	
 		EffectGroup
 		{
 			group "level"

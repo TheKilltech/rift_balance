@@ -11,7 +11,7 @@ EntityBlueprint
 		category 			"resources"
 		localization_id		"gui/hud/building_name/ionizer"
 		description			"gui/hud/building_description/ionizer_lvl_2"
-		menu_icon			"gui/hud/building_icons/ionizer"
+		menu_icon			"gui/hud/building_icons/ionizer_lvl_2"
 		order				"17"
 		upgrade				"buildings/resources/ionizer_lvl_3"		
 		require 			"headquarters"
@@ -145,7 +145,6 @@ EntityBlueprint
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
 				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
-				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
 	}
@@ -156,7 +155,7 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
 			group "att_in_1"
@@ -168,7 +167,7 @@ EntityBlueprint
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_arrow"
+					bone "att_in_1_arrow"
 				}
 			}
 		}	
@@ -187,7 +186,20 @@ EntityBlueprint
 				}
 			}
 		}	
-////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+			}
+		}	
 		EffectGroup
 		{
 			group "level"
