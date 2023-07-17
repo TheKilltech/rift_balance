@@ -1,80 +1,116 @@
 import * from "materials/scripts/gui.material"
 
 
-material gui/hud/building_icons/ammo_factory_energy_lvl_2 : gui/default
+material "gui/hud/building_icons/ammo_factory_energy_lvl_2" : gui/default
 {
-	set_texture_alias diffuse	materials/textures/gui/hud/building_icons/ammo_factory_energy_lvl_2.dds
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_energy_lvl_2.dds"
 }
 
-material gui/hud/building_icons/ammo_factory_energy_lvl_2_disabled : gui/default
+material "gui/hud/building_icons/ammo_factory_energy_lvl_2_disabled" : gui/default
 {
-	set_texture_alias diffuse	materials/textures/gui/hud/building_icons/cryo_station_disabled.dds
-}
-
-
-material gui/hud/building_icons/ammo_factory_low_caliber_lvl_2 : gui/default
-{
-	set_texture_alias diffuse	materials/textures/gui/hud/building_icons/ammo_factory_low_caliber_lvl_2.dds
-}
-
-material gui/hud/building_icons/ammo_factory_low_caliber_lvl_2_disabled  : gui/default
-{
-	set_texture_alias diffuse	materials/textures/gui/hud/building_icons/ammo_factory_low_caliber_lvl_2_disabled.dds
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/cryo_station_disabled.dds"
 }
 
 
-material gui/hud/building_icons/ammo_factory_high_caliber_lvl_2 : gui/default
+material "gui/hud/building_icons/ammo_factory_low_caliber_lvl_2" : gui/default
 {
-	set_texture_alias diffuse	materials/textures/gui/hud/building_icons/ammo_factory_high_caliber_lvl_2.dds
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_low_caliber_lvl_2.dds"
 }
 
-material gui/hud/building_icons/ammo_factory_high_caliber_lvl_2_disabled : gui/default
+material "gui/hud/building_icons/ammo_factory_low_caliber_lvl_2_disabled"  : gui/default
 {
-	set_texture_alias diffuse	materials/textures/gui/hud/building_icons/ammo_factory_high_caliber_lvl_2_disabled.dds
-}
-
-
-material gui/hud/building_icons/ammo_factory_explosive_lvl_2 : gui/default
-{
-	set_texture_alias diffuse	materials/textures/gui/hud/building_icons/ammo_factory_explosive_lvl_2.dds
-}
-
-material gui/hud/building_icons/ammo_factory_explosive_lvl_2_disabled : gui/default
-{
-	set_texture_alias diffuse	materials/textures/gui/hud/building_icons/ammo_factory_explosive_lvl_2_disabled.dds
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_low_caliber_lvl_2_disabled.dds"
 }
 
 
-material gui/hud/building_icons/ammo_factory_liquid_ext : gui/default
+material "gui/hud/building_icons/ammo_factory_high_caliber_lvl_2" : gui/default
 {
-	set_texture_alias diffuse	materials/textures/gui/hud/building_icons/ammo_factory_liquid_ext.dds
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_high_caliber_lvl_2.dds"
 }
 
-material gui/hud/building_icons/ammo_factory_liquid_ext_disabled : gui/default
+material "gui/hud/building_icons/ammo_factory_high_caliber_lvl_2_disabled" : gui/default
 {
-	set_texture_alias diffuse	materials/textures/gui/hud/building_icons/uranium_centrifuge_disabled.dds
-}
-
-
-
-material gui/hud/building_icons/ammo_storage_energy : gui/default
-{
-	set_texture_alias diffuse materials/textures/gui/hud/building_icons/ammo_storage_energy.dds
-}
-
-material gui/hud/building_icons/ammo_storage_energy_disabled : gui/default
-{
-	set_texture_alias diffuse materials/textures/gui/hud/building_icons/energy_storage_disabled.dds
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_high_caliber_lvl_2_disabled.dds"
 }
 
 
+/////  explosives factory
 
-material gui/hud/building_icons/ammo_storage_liquid : gui/default
+material "gui/hud/building_icons/ammo_factory_explosive_adv" : gui/default
 {
-	set_texture_alias diffuse materials/textures/gui/hud/building_icons/ammo_storage_liquid.dds
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_explosive_adv.dds"
 }
 
-material gui/hud/building_icons/ammo_storage_liquid_disabled : gui/default
+material "gui/hud/building_icons/ammo_factory_explosive_adv_disabled" : gui/default
 {
-	set_texture_alias diffuse materials/textures/gui/hud/building_icons/liquid_meterial_storage_disabled.dds
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_explosive_adv_disabled.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_explosive_adv_lvl_2" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_explosive_adv_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_explosive_adv_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_explosive_adv_disabled.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_explosive_adv_lvl_3" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_explosive_adv_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_explosive_adv_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_explosive_adv_disabled.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_explosive_lvl_2" : gui/default  // outdated; downwards compatibility
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_explosive_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_explosive_lvl_2_disabled" : gui/default // outdated; downwards compatibility
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_explosive_adv_disabled.dds"
+}
+
+
+/////  liquids factory
+
+material "gui/hud/building_icons/ammo_factory_liquid_ext" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ammo_factory_liquid_ext.dds"
+}
+
+material "gui/hud/building_icons/ammo_factory_liquid_ext_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/uranium_centrifuge_disabled.dds"
+}
+
+
+
+/////  ammo storages
+
+material "gui/hud/building_icons/ammo_storage_energy" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ammo_storage_energy.dds"
+}
+
+material "gui/hud/building_icons/ammo_storage_energy_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/energy_storage_disabled.dds"
+}
+
+
+
+material "gui/hud/building_icons/ammo_storage_liquid" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ammo_storage_liquid.dds"
+}
+
+material "gui/hud/building_icons/ammo_storage_liquid_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/liquid_meterial_storage_disabled.dds"
 }

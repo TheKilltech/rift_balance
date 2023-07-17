@@ -1,18 +1,18 @@
 EntityBlueprint
 {
-	name  "buildings/ammo/ammo_factory_explosive_lvl_2" // outdated. obtained for save compatibility
+	name  "buildings/ammo/ammo_factory_explosive_adv"
 	
 	BuildingDesc
 	{
-		name 				"ammo_factory_explosive_lvl_2"
-		bp   				"buildings/ammo/ammo_factory_explosive_lvl_2"
+		name 				"ammo_factory_explosive_adv"
+		bp   				"buildings/ammo/ammo_factory_explosive_adv"
 		category 			"ammo"
 		localization_id		"gui/hud/building_name/ammo_factory_explosive_adv"
 		description			"gui/hud/building_description/ammo_factory_explosive_adv"
-		menu_icon			"gui/hud/building_icons/tower_ammunition_factory"
+		menu_icon			"gui/hud/building_icons/ammo_factory_explosive_adv"
+		upgrade				"buildings/ammo/ammo_factory_explosive_adv_lvl_2"
 		require 			"headquarters"
 		order				"33"
-		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
@@ -61,7 +61,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"tanzanite"
-				value				"1.3"
+				value				"1.5"
 			}		
 						
 		}
@@ -370,6 +370,20 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+			}
+		}
 		
 		EffectGroup
 		{
