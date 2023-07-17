@@ -1,19 +1,19 @@
 EntityBlueprint
 {
-	name  "buildings/ammo/ammo_factory_lowcaliber_lvl_3"  // outdated. maintened for save compatibility
+	name  "buildings/ammo/ammo_factory_lowcaliber_ext"
 
 	BuildingDesc
 	{
-		name 				"ammo_factory_lowcaliber_lvl_3"
-		bp   				"buildings/ammo/ammo_factory_lowcaliber_lvl_3"
+		name 				"ammo_factory_lowcaliber_ext"
+		bp   				"buildings/ammo/ammo_factory_lowcaliber_ext"
 		category 			"ammo"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/ammo_factory_lowcaliber_ext"
 		description			"gui/hud/building_description/ammo_factory_lowcaliber_ext"
-		menu_icon			"gui/hud/building_icons/steel_factory_lvl3"
+		menu_icon			"gui/hud/building_icons/ammo_factory_lowcaliber_ext"
+		upgrade				"buildings/ammo/ammo_factory_lowcaliber_ext_lvl_2"
 		require 			"headquarters"		
 		order				"40"
-		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
@@ -54,7 +54,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"titanium"
-				value				"0.5"
+				value				"0.7"
 			}								
 
 			GameplayResource
@@ -423,5 +423,18 @@ EntityBlueprint
 				}
 			}
 		}		
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+			}
+		}	
 	}
 }
