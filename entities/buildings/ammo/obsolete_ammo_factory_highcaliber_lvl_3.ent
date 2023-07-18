@@ -1,20 +1,21 @@
 EntityBlueprint
 {
-	name  "buildings/ammo/ammo_factory_highcaliber_lvl_3"
+	name  "buildings/ammo/ammo_factory_highcaliber_lvl_3" // outdated. maintened for save compatibility
 
 	BuildingDesc
 	{
-		name 				"ammo_factory_highcaliber_lvl_3"
-		bp   				"buildings/ammo/ammo_factory_highcaliber_lvl_3"
-		category 			"ammo"
-		type				"pipe"
-		localization_id		"gui/hud/building_name/ammo_factory_highcaliber_ext"
-		description			"gui/hud/building_description/ammo_factory_highcaliber_ext"
-		menu_icon			"gui/hud/building_icons/bio_composter"
-		require 			"headquarters"		
-		order				"41"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		name 					"ammo_factory_highcaliber_lvl_3"
+		bp   					"buildings/ammo/ammo_factory_highcaliber_lvl_3"
+		category 				"ammo"
+		type					"pipe"
+		localization_id			"gui/hud/building_name/ammo_factory_highcaliber_ext"
+		description				"gui/hud/building_description/ammo_factory_highcaliber_ext"
+		menu_icon				"gui/hud/building_icons/bio_composter"
+		require 				"headquarters"		
+		order					"41"
+		buildable				"0"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
