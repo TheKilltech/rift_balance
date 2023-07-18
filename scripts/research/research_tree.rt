@@ -168,278 +168,6 @@ Research
 					}
 
 					research_scripts
-					position
-					{
-						x "18.000"
-						y "333.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/defense/tower_drone_attack_lvl_3"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/towers_drone_attack"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/towers_drone_attack_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/headquarters_lvl6"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/towers_drone_attack_lvl2"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "5000.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "18.000"
-						y "198.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/defense/tower_drone_attack_lvl_2"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/towers_drone_attack"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/towers_minigun_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/towers_drone_attack_lvl1"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "3000.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "18.000"
-						y "-18.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/defense/tower_drone_attack"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/towers_drone_attack"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/towers_heavy_artillery_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/headquarters_lvl7"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/towers_artillery_lvl3"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/towers_heavy_artillery_lvl3"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "6500.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "-108.000"
-						y "333.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/defense/tower_heavy_artillery_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/defense/tower_mine_layer_lvl_3"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/towers_heavy_artillery"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/towers_heavy_artillery_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/towers_heavy_artillery_lvl2"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "4500.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "-108.000"
-						y "261.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/defense/tower_heavy_artillery_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/defense/tower_mine_layer_lvl_2"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/towers_heavy_artillery"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/towers_minigun_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/headquarters_lvl7"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/resource_handling_titanium"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/towers_minigun_lvl3"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "8500.000"
-						}
-
-					}
-
-					research_scripts
 					{
 						ResearchScript
 						{
@@ -462,7 +190,7 @@ Research
 								{
 									IntData
 									{
-										value "4"
+										value "2"
 										key "increase_amount"
 									}
 
@@ -476,21 +204,21 @@ Research
 
 					position
 					{
-						x "-27.000"
-						y "333.000"
+						x "-18.000"
+						y "261.000"
 					}
 
 					research_awards
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_lvl_3"
+							blueprint "buildings/ammo/ammo_factory_lowcaliber_ext"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "buildings/defense/tower_minigun_lvl_3"
+							blueprint "buildings/defense/tower_drone_attack_lvl_3"
 							is_visible "1"
 						}
 
@@ -502,7 +230,7 @@ Research
 
 					}
 
-					icon "gui/menu/research/icons/towers_minigun"
+					icon "gui/menu/research/icons/towers_drone_attack"
 				}
 
 				ResearchNode
@@ -513,7 +241,13 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/towers_minigun_lvl1"
+							research_name "gui/menu/research/name/towers_drone_attack_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/headquarters_lvl5"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -523,22 +257,16 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/headquarters_lvl6"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
 					}
 
-					research_name "gui/menu/research/name/towers_minigun_lvl2"
+					research_name "gui/menu/research/name/towers_drone_attack_lvl2"
 					research_costs
 					{
 						ResearchCost
 						{
 							amount "0.000"
 							resource "download"
-							count "6000.000"
+							count "5000.000"
 						}
 
 					}
@@ -580,27 +308,415 @@ Research
 
 					position
 					{
-						x "-27.000"
-						y "198.000"
+						x "-18.000"
+						y "117.000"
 					}
 
 					research_awards
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_lvl_2"
+							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "buildings/defense/tower_minigun_lvl_2"
+							blueprint "buildings/defense/tower_drone_attack_lvl_2"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
 							blueprint "resources/ammo_tower_low_caliber_lvl2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_drone_attack"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/high_caliber_weapons"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_drone_attack_lvl1"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "2500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-18.000"
+						y "-162.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_storage_lowcaliber"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_drone_attack"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "resources/ammo_tower_low_caliber"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_drone_attack"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_heavy_artillery_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/headquarters_lvl7"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_heavy_artillery_lvl3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "6500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-108.000"
+						y "333.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_explosive_ext_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_heavy_artillery_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_mine_layer_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_heavy_artillery"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_heavy_artillery_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_artillery_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_heavy_artillery_lvl2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "6000.000"
+						}
+
+					}
+
+					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_explosive"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "2"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+					position
+					{
+						x "-108.000"
+						y "261.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_explosive_ext_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_heavy_artillery_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_mine_layer_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_heavy_artillery"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_minigun_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/headquarters_lvl7"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/resource_handling_titanium"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_drone_attack_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_minigun_lvl3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "8500.000"
+						}
+
+					}
+
+					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_lowcaliber"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "2"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+					position
+					{
+						x "27.000"
+						y "333.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_lowcaliber_ext_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_minigun_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_minigun"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_minigun_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/headquarters_lvl6"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_drone_attack_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_minigun_lvl2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "6000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "27.000"
+						y "180.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_minigun_lvl_2"
 							is_visible "1"
 						}
 
@@ -621,6 +737,12 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_drone_attack_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/towers_minigun_lvl1"
@@ -638,8 +760,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-27.000"
-						y "-162.000"
+						x "27.000"
+						y "-81.000"
 					}
 
 					research_awards
@@ -653,12 +775,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_minigun"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "resources/ammo_tower_low_caliber"
 							is_visible "1"
 						}
 
@@ -1343,7 +1459,7 @@ Research
 								{
 									IntData
 									{
-										value "4"
+										value "2"
 										key "increase_amount"
 									}
 
@@ -1365,7 +1481,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_liquid_lvl_3"
+							blueprint "buildings/ammo/ammo_factory_liquid_ext"
 							is_visible "1"
 						}
 
@@ -1499,7 +1615,7 @@ Research
 								{
 									IntData
 									{
-										value "4"
+										value "2"
 										key "increase_amount"
 									}
 
@@ -1521,7 +1637,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_liquid_lvl_2"
+							blueprint "buildings/ammo/ammo_factory_liquid_adv"
 							is_visible "1"
 						}
 
@@ -2037,7 +2153,7 @@ Research
 								{
 									IntData
 									{
-										value "4"
+										value "2"
 										key "increase_amount"
 									}
 
@@ -2052,14 +2168,14 @@ Research
 					position
 					{
 						x "-153.000"
-						y "261.000"
+						y "216.000"
 					}
 
 					research_awards
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_explosive_lvl_3"
+							blueprint "buildings/ammo/ammo_factory_explosive_ext"
 							is_visible "1"
 						}
 
@@ -2521,7 +2637,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_explosive_lvl_2"
+							blueprint "buildings/ammo/ammo_factory_explosive_adv"
 							is_visible "1"
 						}
 
@@ -2824,58 +2940,6 @@ Research
 					}
 
 					icon "gui/menu/research/icons/basic_resource_production"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/basic_energy_production"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/biomass_energy_lvl1"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "250.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "-558.000"
-						y "-270.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/energy/animal_biomass_powerplant"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/loot/resources/biomass_animal_item"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/biomass_energy"
 				}
 
 				ResearchNode
@@ -3930,12 +3994,6 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/energy/animal_biomass_powerplant_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/energy/plant_biomass_powerplant_lvl_3"
 							is_visible "1"
 						}
@@ -4173,12 +4231,6 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/biomass_energy_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
 							research_name "gui/menu/research/name/energy_storage_lvl2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
@@ -4206,12 +4258,6 @@ Research
 
 					research_awards
 					{
-						ResearchAward
-						{
-							blueprint "buildings/energy/animal_biomass_powerplant_lvl_2"
-							is_visible "1"
-						}
-
 						ResearchAward
 						{
 							blueprint "buildings/energy/plant_biomass_powerplant_lvl_2"
@@ -4518,6 +4564,12 @@ Research
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_explosive_adv_lvl_2"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_heavy_artillery"
@@ -5969,6 +6021,12 @@ Research
 					{
 						ResearchAward
 						{
+							blueprint "buildings/ammo/ammo_factory_liquid_adv_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/defense/tower_acid_spitter_lvl_2"
 							is_visible "1"
 						}
@@ -6011,6 +6069,40 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "ammo_storage_liquid"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "2"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "-351.000"
@@ -6019,6 +6111,12 @@ Research
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_liquid_ext_lvl_2"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_acid_spitter_lvl_3"
@@ -6333,7 +6431,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "1500.000"
+							count "3000.000"
 						}
 
 					}
@@ -6383,7 +6481,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_highcaliber_lvl_2"
+							blueprint "buildings/ammo/ammo_factory_highcaliber_adv"
 							is_visible "1"
 						}
 
@@ -6545,7 +6643,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_highcaliber_lvl_3"
+							blueprint "buildings/ammo/ammo_factory_highcaliber_ext"
 							is_visible "1"
 						}
 
@@ -8782,7 +8880,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_energy_lvl_3"
+							blueprint "buildings/ammo/ammo_factory_energy_ext"
 							is_visible "1"
 						}
 
@@ -8954,6 +9052,12 @@ Research
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_highcaliber_ext_lvl_2"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "items/weapons/burst_rifle_extreme_item"
@@ -10241,7 +10345,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_energy_lvl_2"
+							blueprint "buildings/ammo/ammo_factory_energy_adv"
 							is_visible "1"
 						}
 
@@ -10573,6 +10677,12 @@ Research
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_energy_adv_lvl_2"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "items/weapons/blaster_superior_item"
@@ -11233,6 +11343,12 @@ Research
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_lvl_2"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "items/weapons/burst_rifle_advanced_item"
@@ -12241,6 +12357,12 @@ Research
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_energy_ext_lvl_2"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "items/weapons/heavy_plasma_extreme_item"
@@ -22395,6 +22517,12 @@ Research
 
 						ResearchAward
 						{
+							blueprint "items/loot/resources/biomass_animal_item"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "items/loot/resources/biomass_water_item"
 							is_visible "1"
 						}
@@ -22896,6 +23024,6 @@ Research
 
 	type
 	editor "5682"
-	version "99"
+	version "100"
 }
 
