@@ -4110,7 +4110,19 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/water_drill"
+							blueprint "buildings/resources/liquid_material_storage_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/liquid_pump_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/water_filtering_plant_lvl_2"
 							is_visible "1"
 						}
 
@@ -8326,18 +8338,6 @@ Research
 
 					research_awards
 					{
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_storage_energy"
-							is_visible "1"
-						}
-
 						ResearchAward
 						{
 							blueprint "items/weapons/small_machinegun_advanced_item"
@@ -22378,7 +22378,7 @@ Research
 
 					}
 
-					research_name "gui/menu/research/name/suoercooling_lvl_2"
+					research_name "gui/menu/research/name/supercooling_lvl_2"
 					research_costs
 					{
 						ResearchCost
@@ -22424,7 +22424,7 @@ Research
 
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/suoercooling_lvl_2"
+							research_name "gui/menu/research/name/supercooling_lvl_2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -23024,6 +23024,6 @@ Research
 
 	type
 	editor "5682"
-	version "100"
+	version "101"
 }
 
