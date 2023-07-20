@@ -37,10 +37,12 @@ Resources:
 * ToDo:
   - so far i have been just warming up and testing things. so expect major changes. don't wont to start certain things before the devs haven't realeased their difficulty improvements and multiplayer.
   - test friendly fire. hope the devs implement it is as a custom game setting though
-  - rework building upgrages
+  - rework building upgrages:
+	- change level 3 nuclear reactor to use molten salt reactor (solvent + bio-uranium => liquid uranium)
   - add nitrate as resource & surface deposit
   - add underground deposits (ironium, uranium, palladium, titanium, nitrate) which need a dedicated mine. swap to one mine for all surface deposits
   - change campaign maps resource deposits
   - improve icons and visuals of entities added by the mod
   - bio-ironium
   - pimp building visuals
+  - nerf higher tier mech equipment
