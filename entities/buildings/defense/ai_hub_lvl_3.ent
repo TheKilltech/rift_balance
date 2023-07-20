@@ -69,10 +69,21 @@ EntityBlueprint
 		{
 			Storage
 			{
+				group	 		"local"
+				max 	 		"5"
+				attachment		"att_in_1|att_in_2"
+			}
+			Storage
+			{
 				resource	"ai"
 				max			"25"
-			}
+			}	
 		}
+	}
+
+	PipeComponent
+	{
+		attachment		"att_in_1,att_in_2"
 	}
 
 	HealthDesc
@@ -156,6 +167,24 @@ EntityBlueprint
 				}
 			}
 		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+			}
+		}	
 		EffectGroup
 		{
 			group "working"
