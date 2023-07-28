@@ -18,6 +18,7 @@ Playing Riftbreaker is a greata game but i find the campaign increadibly unchall
    - tier 2 ammo is crafted from tier 1 ammo. same for tier 3 ammo. This means you have to setup production chains
    - higher tier ammo production is map local. you have to build up a production chain on every map you need it - or bring enough ammo to get through your mission. (i couldn't make this feature, but then i discovered that because of a bug, it is already kind of that way)
    - split ammo storages into one for each category. not sure yet, if they should share the same building limit.
+   - moved all ammo related buildings (production and storage into an own new category. currently it reuses the ^ upgrade symbol).
     
  - Resources: cultivators are an infinite entierly automated infinite source and they are very powerful compared to mines.
    - added bio-resources replacing the direct rare resource yield from cultivators. those bio resources require additional processing steps to refine them into palladium, titanium, uranium ore or cobalt.
@@ -43,13 +44,15 @@ Playing Riftbreaker is a greata game but i find the campaign increadibly unchall
  - test friendly fire. hope the devs implement it is as a custom game setting though
  - rework building upgrages:
    - change level 3 nuclear reactor to use molten salt reactor (solvent + bio-uranium => liquid uranium)
- - add nitrate as resource & surface deposit
+   - rework of morphium buildings
+   - rework plasma towers
+ - add nitrate as resource & surface deposit (alternate option to produce nitric acid)
  - add underground deposits (ironium, uranium, palladium, titanium, nitrate) which need a dedicated mine. swap to one mine for all surface deposits
  - change campaign maps resource deposits
- - improve icons and visuals of entities added by the mod
  - bio-ironium
  - pimp building visuals
- - nerf higher tier mech equipment
+ - improve icons and visuals of entities added by the mod
+ - nerf higher tier mech equipment 
 
 ## Remarks
 you are free to modify the mod to your own liking for personal use, but please don't republish it under your name. If you want to reuse some of the assets from this mod in your own, feel free but make sure to mention me and this mod as the source.
@@ -60,6 +63,7 @@ Please note, that due to the extensive changes this mod does to the base game, i
 
 ## Links
 github repository for the mod: https://github.com/TheKilltech/rift_balance
+mod.io page: https://mod.io/g/riftbreaker/m/rift-exploration-defense-industry
 
 Recommended mods:
 Rebalenced Energy Walls https://mod.io/g/riftbreaker/m/distributed-force-energy-walls
