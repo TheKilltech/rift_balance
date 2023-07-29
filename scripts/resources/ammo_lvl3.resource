@@ -1,7 +1,7 @@
 GameplayResourceDef
 {
 	id				"ammo_mech_low_caliber_lvl3"
-	localization_id "Low caliber top end M" //"resource_name/ammo_mech_low_caliber_lvl3"
+	localization_id "resource_name/ammo_mech_low_caliber_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo" // "ammo_lowcaliber"
@@ -15,7 +15,7 @@ GameplayResourceDef
 GameplayResourceDef
 {
 	id				"ammo_mech_high_caliber_lvl3"
-	localization_id "High caliber top end M" //"resource_name/ammo_mech_high_caliber_lvl3"
+	localization_id "resource_name/ammo_mech_high_caliber_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo" // "ammo_highcaliber"
@@ -29,7 +29,7 @@ GameplayResourceDef
 GameplayResourceDef
 {
 	id				"ammo_mech_liquid_lvl3"
-	localization_id "Liquid top end M" //"resource_name/ammo_mech_liquid_lvl3"
+	localization_id "resource_name/ammo_mech_liquid_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo" // "ammo_liquid"
@@ -43,7 +43,7 @@ GameplayResourceDef
 GameplayResourceDef
 {
 	id				"ammo_mech_explosive_lvl3"
-	localization_id "Explosive top end M" //"resource_name/ammo_mech_explosive_lvl3"
+	localization_id "resource_name/ammo_mech_explosive_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo" // "ammo_explosive"
@@ -57,7 +57,7 @@ GameplayResourceDef
 GameplayResourceDef
 {
 	id				"ammo_mech_energy_cell_lvl3"
-	localization_id "Energy cell top end" //"resource_name/ammo_mech_energy_lvl3"
+	localization_id "resource_name/ammo_mech_energy_cell_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo" // "ammo_energy"
@@ -73,7 +73,7 @@ GameplayResourceDef
 GameplayResourceDef
 {
 	id				"ammo_tower_liquid_lvl3"
-	localization_id "Liquid top end" //"resource_name/ammo_tower_liquid"
+	localization_id "resource_name/ammo_tower_liquid_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo" // "ammo_liquid"
@@ -88,7 +88,7 @@ GameplayResourceDef
 GameplayResourceDef
 {
 	id				"ammo_tower_explosive_lvl3"
-	localization_id "Explosive top end" //"resource_name/ammo_tower_explosive"
+	localization_id "resource_name/ammo_tower_explosive_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo" // "ammo_explosive"
@@ -104,7 +104,7 @@ GameplayResourceDef
 GameplayResourceDef
 {
 	id				"ammo_tower_low_caliber_lvl3"
-	localization_id "Low caliber top end" //"resource_name/ammo_tower_low_caliber"
+	localization_id "resource_name/ammo_tower_low_caliber_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo"  // "ammo_lowcaliber"
@@ -119,7 +119,7 @@ GameplayResourceDef
 GameplayResourceDef
 {
 	id				"ammo_tower_high_caliber_lvl3"
-	localization_id "High caliber top end" //"resource_name/ammo_tower_high_caliber"
+	localization_id "resource_name/ammo_tower_high_caliber_lvl3"
 	bp  			""
 	type 			"global"
 	specific_type 	"ammo"  // "ammo_highcaliber"

@@ -1,7 +1,7 @@
 GameplayResourceDef
 {
 	id				"solvent"
-	localization_id "Solvent" //"resource_name/flammable_gas"
+	localization_id "resource_name/solvent"
 	bp  			""
 	type 			"local"
 	icon			"gui/hud/resource_icons/solvent"

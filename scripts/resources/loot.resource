@@ -77,7 +77,7 @@ GameplayResourceDef
 GameplayResourceDef
 {
 	id				"biomass_water"
-	localization_id "Wet Biomass" //"resource_name/biomass_animal"
+	localization_id "resource_name/biomass_water"
 	bp  			"items/loot/resources/biomass_water_item"
 	type 			"global"
 	icon			"gui/hud/resource_icons/biomass_water"
