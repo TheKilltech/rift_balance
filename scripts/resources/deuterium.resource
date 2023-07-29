@@ -1,7 +1,7 @@
 GameplayResourceDef
 {
 	id				"deuterium"
-	localization_id "Deuterium" //"resource_name/deuterium"
+	localization_id "resource_name/deuterium"
 	bp  			""
 	type 			"local"
 	specific_type	"vein"

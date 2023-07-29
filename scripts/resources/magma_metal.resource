@@ -1,7 +1,7 @@
 GameplayResourceDef
 {
 	id				"magma_metal"
-	localization_id "Metalic Magma" //"resource_name/magma"
+	localization_id "resource_name/magma_metal"
 	bp  			""
 	type 			"local"
 	specific_type	"vein"

@@ -1,7 +1,7 @@
 GameplayResourceDef
 {
 	id				"nitric_acid"
-	localization_id "Nitric Acid" //"resource_name/nitric_acid"
+	localization_id "resource_name/nitric_acid"
 	bp  			""
 	type 			"local"
 	specific_type	"vein"
