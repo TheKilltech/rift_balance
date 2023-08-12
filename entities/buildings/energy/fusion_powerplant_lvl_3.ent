@@ -1,0 +1,336 @@
+EntityBlueprint
+{
+	name  					"buildings/energy/fusion_powerplant_lvl_3"
+
+	base_blueprint 			"buildings/energy/fusion_powerplant_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"fusion_powerplant_lvl_3"
+		bp   				"buildings/energy/fusion_powerplant_lvl_3"
+		category 			"energy"
+		localization_id		"gui/hud/building_name/fusion_powerplant"
+		description			"gui/hud/building_description/fusion_powerplant"
+		menu_icon			"gui/hud/building_icons/fusion_powerplant_lvl3"
+		type				"pipe"
+		require 			"headquarters"
+		//upgrade				"buildings/energy/fusion_powerplant_lvl_4"	
+		order				"5"		
+		buildable			"0"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		going_green_state	"1"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 300
+				building_cost
+				{
+					carbonium 	"10000"		
+					steel 		"10000"
+					uranium		"2000"
+					titanium	"2000"
+					palladium	"2000"
+					cobalt		"2000"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{                                       
+		in
+		{
+			GameplayResource
+			{
+				resource 	"water"
+				value 		"100"
+				attachment	"att_in_1"
+				family		"coolant"
+			}				
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"50"
+				attachment	"att_in_1"
+				family		"coolant"				
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"7000"
+			}
+			GameplayResource
+			{
+				resource 	"plasma"
+				value 		"200"
+				attachment	"att_out_1"
+				optional    "1"				
+			}			
+		}
+		priority 9
+		reset_interval 0.5
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "energy"
+				max 	 "7000"
+			}
+			
+			Storage
+			{
+				resource "plasma"
+				max	 "800"
+				attachment "att_out_1"
+			}
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"4500"
+		health 						"4500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+	
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health "90"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "90"
+			}
+			DestructionLevel
+			{
+				health "80"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "80_destroy"
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "80"
+			}
+			DestructionLevel
+			{
+				health "70"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "70"
+			}
+			DestructionLevel
+			{
+				health "60"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "60_destroy"
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "60"
+			}
+			DestructionLevel
+			{
+				health "50"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "50"
+			}
+			DestructionLevel
+			{
+				health "40"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "40_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "40"
+			}
+			DestructionLevel
+			{
+				health "30"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "30"
+			}
+			DestructionLevel
+			{
+				health "20"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "20_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "20"
+			}
+			DestructionLevel
+			{
+				health "10"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "10"
+			}
+			DestructionLevel
+			{
+				health "0"
+				destroy_state_change_effect_group "0_transition"
+				destroy_comp_delay "0.7"
+				destroy_comp_event "default"
+				destrucion_level_name "0"
+			}			
+		}
+	}
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}	
+		////////////////////////Destruction level 0 transition effects/////////////////////////
+		EffectGroup
+		{
+			group "0_transition"
+			enabled "0"				
+			
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"								
+					bone "att_smoke_1"
+					delay "0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"								
+					bone "att_smoke_2"
+					delay "0.15"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"								
+					bone "att_smoke_3"
+					delay "0.25"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"								
+					bone "att_smoke_4"
+					delay "0.3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_big_random"								
+					bone "att_smoke_5"
+					delay "0.4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_big_random"								
+					bone "att_smoke_6"
+					delay "0.45"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_big_random"								
+					bone "att_smoke_7"
+					delay "0.5"
+				}	
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_building_nuclear_01"								
+					delay "0.6"
+				}				
+			}
+		}
+////////////////////////Resources/////////////////////////			
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_arrow"
+				}
+			}
+		}	
+		
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_out_arrow"
+				}
+			}
+		}	
+////////////////////////MISC/////////////////////////			
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"								
+					bone "att_lightning"
+					delay "1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/fusion_powerplant_working"		
+					delay "0.5"
+				}					
+			}
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+	}			
+}
+

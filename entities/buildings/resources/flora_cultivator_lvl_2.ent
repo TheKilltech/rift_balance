@@ -1,0 +1,182 @@
+EntityBlueprint
+{
+	name  					"buildings/resources/flora_cultivator_lvl_2"
+
+	base_blueprint 			"buildings/resources/flora_cultivator"
+
+	BuildingDesc
+	{
+		name 				"flora_cultivator_lvl_2"
+		bp   				"buildings/resources/flora_cultivator_lvl_2"
+		category 			"resources"
+		type				"pipe"		
+		localization_id		"gui/hud/building_name/flora_cultivator"
+		description			"gui/hud/building_description/flora_cultivator"
+		menu_icon			"gui/hud/building_icons/flora_cultivator_lvl2"
+		require 			"headquarters"
+		order				"4"
+		menu_action			"working_mod"
+		upgrade				"buildings/resources/flora_cultivator_lvl_3"	
+		buildable			"0"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+	
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 10
+				building_cost
+				{
+					carbonium 	"600"
+					steel 		"600"		
+					cobalt		"200"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"125"
+			}
+			GameplayResource
+			{
+				resource 			"water"
+				value				"100"
+				attachment			"att_in_1"				
+			}			
+		}
+		
+		out
+		{					
+		}
+		priority 4		
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/resources/flora_cultivator.lua"
+		
+		database
+		{
+			cone_effect			string:"build_cone_3x3"
+			cone_effect_sell 	string:"sell_big"
+			building_time		float:"10"
+
+			drone_search_radius	float:"20"
+			drone_blueprint		string:"units/drones/drone_flora_cultivator"
+			drone_attachments	string:"att_landing"
+			drone_per_spot		int:"4"
+
+			display_radius_group	 string:"cultivator_harvester"
+			display_radius_blueprint string:"effects/decals/range_circle_cultivator"
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"1500"
+		health 						"1500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				//destroyed_state_effect_group 		"0_state"
+			}			
+		}
+	}
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+////////////////////////Resources/////////////////////////			
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}			
+	}	
+}

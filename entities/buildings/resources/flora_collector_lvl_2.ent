@@ -1,24 +1,23 @@
 EntityBlueprint
 {
-	name  "buildings/resources/ammunition_storage_lvl_3"
+	name  					"buildings/resources/flora_collector_lvl_2"
 
-	base_blueprint buildings/resources/ammunition_storage_lvl_2
+	base_blueprint 			"buildings/resources/flora_collector"
 
 	BuildingDesc
 	{
-		buildable 			"0"		
-		name 				"ammunition_storage_lvl_3"
-		bp   				"buildings/resources/ammunition_storage_lvl_3"
+		name 				"flora_collector_lvl_2"
+		bp   				"buildings/resources/flora_collector_lvl_2"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/ammunition_storage"
-		description			"gui/hud/building_description/ammunition_storage"
-		menu_icon			"gui/hud/building_icons/ammunition_storage_lvl3"
+		localization_id		"gui/hud/building_name/flora_collector"
+		description			"gui/hud/building_description/flora_collector"
+		menu_icon			"gui/hud/building_icons/flora_collector_lvl2"
 		require 			"headquarters"
-		limit			    "6"
-		limit_name			"ammo_storage"		
-		//upgrade				"buildings/resources/ammunition_storage_lvl_4"
+		order				"4"
+		upgrade				"buildings/resources/flora_collector_lvl_3"			
+		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		
+
 		costs
 		{
 			BuildingCostInfo
@@ -27,34 +26,52 @@ EntityBlueprint
 				building_time 10
 				building_cost
 				{
-					carbonium 	"400"
+					carbonium 	"300"
+					steel 		"300"		
+					cobalt		"50"
 				}
 			}		
-		}	
+		}
 	}
 
-	ResourceStorageDesc
+	ResourceConverterDesc
 	{
-		Storages
+		in
 		{
-			Storage
+			GameplayResource
 			{
-				group		 "global"
-				subgroup	 "ammo"
-				max 	 	 "4"
+				resource 			"energy"
+				value				"150"
 			}
-			Storage
-			{
-				resource "energy"
-				max 	 "0"
-			}				
+		}
+		
+		priority 4		
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/resources/flora_collector.lua"
+		
+		database
+		{
+			cone_effect			string:"build_cone_3x3"
+			cone_effect_sell 	string:"sell_big"
+			building_time		float:"10"
+
+			drone_search_radius	float:"25"
+			drone_blueprint		string:"units/drones/drone_flora_collector"
+			drone_attachments	string:"att_landing"
+			drone_per_spot		int:"3"
+
+			display_radius_group	 string:"cultivator_harvester"
+			display_radius_blueprint string:"effects/decals/range_circle_harvesting"
 		}
 	}
 
 	HealthDesc
 	{
-		max_health 					"1600"
-		health 						"1600"
+		max_health 					"1500"
+		health 						"1500"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -114,39 +131,13 @@ EntityBlueprint
 			}			
 		}
 	}
-
-	MeshDesc
-	{
-		mesh "meshes/buildings/resources/ammunition_storage_lvl_3.mesh"
-		material "buildings/resources/ammunition_storage_lvl_3"
-	}
-
-	SkeletonDesc
-	{
-		name "meshes/buildings/resources/ammunition_storage_lvl_3"
-	}
-
-	AnimationDesc
-	{
-		animations
-		{
-			Anim
-			{
-				animName "working"
-				animTime "0.0"
-			}
-		}
-	}
-
-
-
 	EffectDesc
 	{		
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}
-
+		}	
+	
 		EffectGroup
 		{
 			group "level"
@@ -155,10 +146,10 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/level_3"
+					blueprint "effects/buildings_and_machines/level_2"
 					bone "att_level"
 				}
 			}
 		}		
-	}
+	}		
 }

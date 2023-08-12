@@ -1,0 +1,127 @@
+EntityBlueprint
+{
+	name  					"buildings/defense/ai_hub_lvl_3"
+
+	base_blueprint 			buildings/defense/ai_hub_lvl_2
+
+	BuildingDesc
+	{
+		buildable			"0"		
+		name 				"ai_hub_lvl_3"
+		bp   				"buildings/defense/ai_hub_lvl_3"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/ai_hub"
+		description			"gui/hud/building_description/ai_hub"
+		menu_icon			"gui/hud/building_icons/ai_hub_lvl3"
+		require 			"headquarters"
+		order				"4"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"			
+		//upgrade				"buildings/defense/ai_hub_lvl_4"				
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 10
+				building_cost
+				{
+					carbonium 	"400"
+					steel 		"300"
+					cobalt	 	"100"
+				}
+			}		
+		}		
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"80"
+			}
+			
+		}
+		priority 7
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource	"ai"
+				max			"16"
+			}
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"900"
+		health 						"900"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"				
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_defense/ai_hub_working"	
+					delay "0.5"					
+				}				
+			}
+		}		
+	}	
+}
