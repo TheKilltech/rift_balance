@@ -87,6 +87,15 @@ EntityBlueprint
 		
 	}
 
+	InteractiveComponent 
+	{
+		slot 			"ACTIVATOR"
+		radius 			"6"
+		remove_entity 	 "0"
+		remove_component "0"
+		recreate_component "1"
+	}
+
 	HealthDesc
 	{
 		max_health 					"2000"
