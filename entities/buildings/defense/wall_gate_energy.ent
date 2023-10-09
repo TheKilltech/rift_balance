@@ -41,38 +41,52 @@ EntityBlueprint
 		}
 	}
 
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource			"energy"
+				value				"2"
+			}			
+		}
+		priority 6
+	}
+	
 	LuaDesc
 	{
-		script "lua/buildings/defense/wall_gate.lua"
+		script "lua/buildings/defense/wall_gate_energy.lua"
 
 
 		database
 		{
+			shield_bp			string:"buildings/defense/wall_gate_energy/shield"
 		}
 
 	}
 
 	ReflectDamageComponent
 	{
-		reflect_type 	"flat_damage"  // health_ratio, damage_ratio, flat_damage
-		melee_only	 	"1"			   // reflect only melee damage
-		damage_value 	"15"
-		damage_type 	"energy"	   // optional, if not provided damage type will be set to "reflect"
+		reflect_type	"flat_damage"  // health_ratio, damage_ratio, flat_damage
+		melee_only		"1"			   // reflect only melee damage
+		damage_value	"10"
+		damage_type		"energy"	   // optional, if not provided damage type will be set to "reflect"
 	}
-
+	
 	ReflectHighlightComponent
 	{
 		submesh_idx 	1
 		glow_factor 	100
 	}
-
+	
 	HealthDesc
 	{
-		max_health 					"700"
-		health 						"700"
+		max_health					"140"	// Base HP 700
+		health						"140"	// 20% of Base HP
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
-		 is_manual 1
+		is_manual					1
 		update_health_uniform 		"1"
 
 		DestructionLevels
@@ -96,29 +110,26 @@ EntityBlueprint
 		}
 	}
 
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_gate_energy_lvl_1.mesh"
 
-		MeshDesc
+		SubMeshes
 		{
-			mesh "meshes/buildings/defense/wall_gate_energy_lvl_1.mesh"
 
-			SubMeshes
+			SubMesh
 			{
+				id "0"
+				material 					"buildings/defense/wall_gate_energy_solid"
+			}
 
-				SubMesh
-				{
-					id "0"
-					material 					"buildings/defense/wall_gate_energy_solid"
-				}
-
-				SubMesh
-				{
-					id "1"
-					material 					"buildings/defense/wall_gate_energy_energy"
-				}
+			SubMesh
+			{
+				id "1"
+				material 					"buildings/defense/wall_gate_energy_energy"
 			}
 		}
-
-
+	}
 
 	TypeDesc
 	{
@@ -397,6 +408,50 @@ EntityBlueprint
 				}
 			}
 		}
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/defense/wall_gate_energy/shield"
+
+	IdDesc
+	{
+		name "_shield_"
+	}
+
+	HealthDesc
+	{
+		max_health					"560"	// 80% of Base HP
+		health						"56"	// Shield Starts at 10%
+	}
+
+	RegenerationComponent
+	{
+		regeneration				"28" //5% of Shield HP
+		regeneration_cooldown		"10" 
+	}
+	
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "shield_down"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/mech/jump_portal_exit"
+				}
+			}
+		}
+	}
+
+	ShieldComponent
+	{
+		owner	"custom"
 	}
 }
 

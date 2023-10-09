@@ -5,19 +5,19 @@ EntityBlueprint
 	BuildingDesc
 	{
 		buildable				"0"
-		name 					"wall_energy"
-		bp   					"buildings/defense/wall_energy_straight_01"
-		category 				"defense"
+		name					"wall_energy"
+		bp						"buildings/defense/wall_energy_straight_01"
+		category				"defense"
 		type					"wall"
 		localization_id			"gui/hud/building_name/wall_energy"
 		description				"gui/hud/building_description/wall_energy"
 		menu_icon				"gui/hud/building_icons/wall_energy"
 		build_on_water			"0"
-		require 				"headquarters"
+		require					"headquarters"
 		order					"0"
 		upgrade					"buildings/defense/wall_energy_straight_01_lvl_2"
 		building_mode			"line"
-		exclude_terrain_types 	"magma_hot_ground,magma_very_hot_ground"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
 		overrides				"wall"
 		building_group			"wall_small"
 
@@ -25,78 +25,89 @@ EntityBlueprint
 		{
 			BuildingCostInfo
 			{
-				name 			"default"
-				building_time 	5
+				name			"default"
+				building_time	5
 				building_cost
 				{
-					carbonium 	"5"
-					steel 		"5"
+					carbonium	"5"
+					steel		"5"
 				}
 			}
 		}
 
 		connect
 		{
-			T 		"buildings/defense/wall_energy_t_01"
+			T		"buildings/defense/wall_energy_t_01"
 			X		"buildings/defense/wall_energy_x_01"
 			L		"buildings/defense/wall_energy_corner_01"
 			I		"buildings/defense/wall_energy_straight_01"
 		}
 	}
 
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource			"energy"
+				value				"1"
+			}		
+		}
+		priority 6
+	}
+
 	LuaDesc
 	{
-		script "lua/buildings/defense/wall.lua"
+		script "lua/buildings/defense/wall_energy.lua"
 
 		database
 		{
-			cone_effect			string:"build_cone_1x1"
-			cone_effect_sell	string:"sell_small"
-			remove_lua_after_build int:"1"
+			shield_bp			string:"buildings/defense/wall_energy/shield"
 		}
 	}
 
 	ReflectDamageComponent
 	{
-		reflect_type 	"flat_damage"  // health_ratio, damage_ratio, flat_damage
-		melee_only	 	"1"			   // reflect only melee damage
-		damage_value 	"15"
-		damage_type 	"energy"	   // optional, if not provided damage type will be set to "reflect"
+		reflect_type	"flat_damage"  // health_ratio, damage_ratio, flat_damage
+		melee_only		"1"			   // reflect only melee damage
+		damage_value	"10"
+		damage_type		"energy"	   // optional, if not provided damage type will be set to "reflect"
 	}
 
 	ReflectHighlightComponent
 	{
-		submesh_idx 	1
-		glow_factor 	100
+		submesh_idx	1
+		glow_factor	100
 	}
-	
+
 	HealthDesc
 	{
-		max_health 					"350"
-		health 						"350"
-		regeneration 				"0"
-		regeneration_cooldown 		"0"
-		is_manual 1
-		update_health_uniform 		"1"
+		max_health					"70"	// Base HP 350
+		health						"70"	// 20% of Base HP
+		regeneration				"0"
+		regeneration_cooldown		"0"
+		is_manual					1
+		update_health_uniform		"1"
 
 
 		DestructionLevels
 		{
 			DestructionLevel
 			{
-				health 								"66"
-				destroy_comp_delay 					"0"
-				destroy_comp_event 					"66_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
-				destroyed_state_effect_group 		"66_state"
+				health								"66"
+				destroy_comp_delay					"0"
+				destroy_comp_event					"66_destroy"
+				//destroyed_state_material			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group		"66_state"
 			}
 			DestructionLevel
 			{
-				health 								"33"
-				destroy_comp_delay 					"0"
-				destroy_comp_event 					"33_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
-				destroyed_state_effect_group 		"33_state"
+				health								"33"
+				destroy_comp_delay					"0"
+				destroy_comp_event					"33_destroy"
+				//destroyed_state_material			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group		"33_state"
 			}
 		}
 	}
@@ -123,23 +134,18 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building"
-	}
-
-	TypeDesc
-	{
 		type "building|defense|wall"
 	}
 
 	PhysicsDesc
- 	{
+	{
 		objects
 		{
 			PhysicsObjectDesc
 			{
-				type 				"static"
-				group_id 			"building"
-				physics_material 	"default"
+				type				"static"
+				group_id			"building"
+				physics_material	"default"
 				Shapes
 				{
 					PhysicsBoxShape
@@ -171,12 +177,12 @@ EntityBlueprint
 	{
 		Shapes
 		{
-   			PhysicsBoxShape
-   			{
-    				x	2
-    				y	2
-    				z	2
-   			}
+			PhysicsBoxShape
+			{
+				x	2
+				y	2
+				z	2
+			}
 		}
 	}
 
@@ -197,7 +203,7 @@ EntityBlueprint
 		}
 
 
-		visibility			"always"
+		visibility	"always"
 	}
 
 	HealthBarDesc
@@ -216,14 +222,14 @@ EntityBlueprint
 				key "66_destroy"
 				value
 				{
-					explosion_type 			"centered"
-					explosion_max_power 	"6000"
-					explosion_min_power 	"2000"
-					explosion_effect 		"effects/buildings_generic/explosion_building_smoke_medium"
+					explosion_type		"centered"
+					explosion_max_power	"6000"
+					explosion_min_power	"2000"
+					explosion_effect		"effects/buildings_generic/explosion_building_smoke_medium"
 					part_physics_material   "debris_heavy"
-					part_material 			"misc/building_parts_generic"
-					part_prefix 			"meshes/misc/building_small_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/smoke_trail_small_random"
+					part_material			"misc/building_parts_generic"
+					part_prefix			"meshes/misc/building_small_parts_generic"
+					part_effect			"effects/projectiles_and_trails/smoke_trail_small_random"
 					part_lifetime "3"
 				}
 			}
@@ -232,14 +238,14 @@ EntityBlueprint
 				key "33_destroy"
 				value
 				{
-					explosion_type 			"centered"
-					explosion_max_power 	"6000"
-					explosion_min_power 	"2000"
-					explosion_effect 		"effects/buildings_generic/explosion_building_smoke_medium"
+					explosion_type		"centered"
+					explosion_max_power	"6000"
+					explosion_min_power	"2000"
+					explosion_effect		"effects/buildings_generic/explosion_building_smoke_medium"
 					part_physics_material   "debris_heavy"
-					part_material 			"misc/building_parts_generic"
-					part_prefix 			"meshes/misc/building_small_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/smoke_trail_small_random"
+					part_material			"misc/building_parts_generic"
+					part_prefix			"meshes/misc/building_small_parts_generic"
+					part_effect			"effects/projectiles_and_trails/smoke_trail_small_random"
 					part_lifetime "3"
 				}
 			}
@@ -247,14 +253,14 @@ EntityBlueprint
 			{
 				value
 				{
-					explosion_type 			"centered"
-					explosion_max_power 	"6000"
-					explosion_min_power 	"2000"
-					explosion_effect 		"effects/buildings_generic/explosion_building_smoke_medium"
+					explosion_type		"centered"
+					explosion_max_power	"6000"
+					explosion_min_power	"2000"
+					explosion_effect		"effects/buildings_generic/explosion_building_smoke_medium"
 					part_physics_material   "debris_heavy"
-					part_material 			"misc/building_parts_generic"
-					part_prefix 			"meshes/misc/building_small_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/smoke_trail_small_random"
+					part_material			"misc/building_parts_generic"
+					part_prefix			"meshes/misc/building_small_parts_generic"
+					part_effect			"effects/projectiles_and_trails/smoke_trail_small_random"
 					part_lifetime "3"
 				}
 
@@ -264,14 +270,14 @@ EntityBlueprint
 			{
 				value
 				{
-					explosion_type 			"centered"
-					explosion_max_power 	"6000"
-					explosion_min_power 	"2000"
-					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					explosion_type		"centered"
+					explosion_max_power	"6000"
+					explosion_min_power	"2000"
+					explosion_effect		"effects/buildings_generic/building_sand_collapse"
 					part_physics_material   "debris_heavy"
-					part_material 			"misc/building_parts_generic"
-					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
-					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_material			"misc/building_parts_generic"
+					//part_effect			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix			"meshes/misc/building_small_parts_generic"
 					part_lifetime "3"
 				}
 
@@ -299,7 +305,7 @@ EntityBlueprint
 
 		SubMeshes
 		{
-			
+		
 			SubMesh
 			{
 				id "0"
@@ -317,6 +323,6 @@ EntityBlueprint
 				id "2"
 				material "buildings/main/buildings_ruins"
 			}
-		}		
+		}	
 	}
 }

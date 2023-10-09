@@ -1,0 +1,132 @@
+EntityBlueprint
+{
+	name  "buildings/defense/wall_energy/shield"
+
+	IdDesc
+	{
+		name "_shield_"
+	}
+
+	HealthDesc
+	{
+		max_health					"280"	// 80% of Base HP
+		health						"28"	// Shield Starts at 10%
+	}
+
+	RegenerationComponent
+	{
+		regeneration				"14" //5% of Shield HP
+		regeneration_cooldown		"10" 
+	}
+	
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "shield_down"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/mech/jump_portal_exit"
+				}
+			}
+		}
+	}
+
+	ShieldComponent
+	{
+		owner	"custom"
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/defense/wall_energy/shield_lvl_2"
+
+	IdDesc
+	{
+		name "_shield_"
+	}
+
+	HealthDesc
+	{
+		max_health					"560"	// 80% of Base HP
+		health						"56"	// Shield Starts at 10%
+	}
+
+	RegenerationComponent
+	{
+		regeneration				"28" // 5% of Shield HP
+		regeneration_cooldown		"10"
+	}
+	
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "shield_down"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/mech/jump_portal_exit"
+				}
+			}
+		}
+	}
+
+	ShieldComponent
+	{
+		owner	"custom"
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/defense/wall_energy/shield_lvl_3"
+
+	IdDesc
+	{
+		name "_shield_"
+	}
+
+	HealthDesc
+	{
+		max_health					"1120"	// 80% of Base HP
+		health						"112"	// Shield Starts at 10%
+	}
+
+	RegenerationComponent
+	{
+		regeneration				"56" // 5% of Shield HP
+		regeneration_cooldown		"10"
+	}
+
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "shield_down"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/mech/jump_portal_exit"
+				}
+			}
+		}
+	}_type	    "energy"	   // optional, if not provided damage type will be set to "reflect"
+
+	
+	ShieldComponent
+	{
+		owner	"custom"
+	}
+}
