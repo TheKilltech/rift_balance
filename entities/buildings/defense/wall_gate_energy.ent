@@ -1,0 +1,438 @@
+EntityBlueprint
+{
+	name  "buildings/defense/wall_gate_energy"
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"wall_gate_energy"
+		bp   				"buildings/defense/wall_gate_energy"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/wall_gate_energy"
+		description			"gui/hud/building_description/wall_gate_energy"
+		menu_icon			"gui/hud/building_icons/wall_gate_energy"
+		require 			"headquarters"
+		upgrade				"buildings/defense/wall_gate_energy_lvl_2"
+		order				"1"
+		type				"gate"
+		overrides			"wall,gate"
+		rotate_info			"1"
+		block_rotation 		"1"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		check_connect		"1"
+		building_group		"wall_gate"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"25"
+					steel 		"25"
+				}
+			}
+		}
+		connect
+		{
+			I		"buildings/defense/wall_gate_energy"
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/defense/wall_gate.lua"
+
+
+		database
+		{
+		}
+
+	}
+
+	ReflectDamageComponent
+	{
+		reflect_type 	"flat_damage"  // health_ratio, damage_ratio, flat_damage
+		melee_only	 	"1"			   // reflect only melee damage
+		damage_value 	"15"
+		damage_type 	"energy"	   // optional, if not provided damage type will be set to "reflect"
+	}
+
+	ReflectHighlightComponent
+	{
+		submesh_idx 	1
+		glow_factor 	100
+	}
+
+	HealthDesc
+	{
+		max_health 					"700"
+		health 						"700"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+
+		MeshDesc
+		{
+			mesh "meshes/buildings/defense/wall_gate_energy_lvl_1.mesh"
+
+			SubMeshes
+			{
+
+				SubMesh
+				{
+					id "0"
+					material 					"buildings/defense/wall_gate_energy_solid"
+				}
+
+				SubMesh
+				{
+					id "1"
+					material 					"buildings/defense/wall_gate_energy_energy"
+				}
+			}
+		}
+
+
+
+	TypeDesc
+	{
+		type "building|defense|wall"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/wall_gate_energy_lvl_1"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"kinematic"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsMeshShape
+					{
+						mesh "meshes/buildings/defense/wall_gate_c1.nxs"
+					}
+
+				}
+			}
+		}
+	}
+
+	GridMarkerComponent
+	{
+		mode			"bounds"
+		terrain_type  	"floor"
+		extend  		"0.0"
+	}
+
+	LocalAabbDesc
+	{
+		local_aabb
+		{
+			min
+			{
+				x "-2"
+				y "0"
+				z "-2"
+			}
+			max
+			{
+				x "2"
+				y "2"
+				z "2"
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+   			PhysicsBoxShape
+   			{
+    				x	4.0
+    				y	4.0
+    				z	4.0
+   			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "0.7"
+			y "0.7"
+			z "0.7"
+			w "1"
+		}
+		size
+		{
+			x "2"
+			y "2"
+		}
+
+		visibility			"always"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	LootDesc
+	{
+		explosion_max_power 	"2000"
+		explosion_min_power 	"1000"
+	}
+
+	DestroyDesc
+	{
+
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "66_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				key "33_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime "3"
+				}
+
+				key "default"
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime "3"
+				}
+
+				key "quicksand"
+			}
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		EffectGroup
+		{
+			group "up"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_defense/gate_up"
+					bone "att_door"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "down"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_defense/gate_down"
+					bone "att_door"
+				}
+			}
+		}
+	}
+
+	children
+	{
+		EntityBlueprint
+		{
+		    name "buildings/defense/wall_gate/trigger"
+
+			AttachmentDesc
+			{
+				attachment "att_door"
+			}
+
+			TriggerDesc
+			{
+				owner 		"parent"
+				type		"GRID"
+
+				collision 	"character"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "6"
+					}
+				}
+			}
+		}
+
+		EntityBlueprint
+		{
+		    name "buildings/defense/wall_gate/main_door"
+
+			AttachmentDesc
+			{
+				attachment "main_door"
+			}
+
+			PhysicsDesc
+ 			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"kinematic"
+						group_id 			"building"
+						physics_material 	"default"
+
+						Shapes
+						{
+   							PhysicsBoxShape
+   							{
+    								x	1.3
+    								y	2.95
+    								z	3.6
+   							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/defense/wall_gate_energy_ruins"
+
+	LuaDesc
+	{
+		script "lua/buildings/defense/wall_gate_energy_ruins.lua"
+
+		database
+		{
+			regeneration_time		float:"60"
+			regeneration_chance		float:"100"
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_gate_energy_lvl_1_ruins.mesh"
+
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material 					"buildings/defense/wall_gate_energy_solid"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material 					"buildings/main/buildings_ruins"
+			}
+		}
+	}
+}
