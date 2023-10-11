@@ -1,0 +1,222 @@
+EntityBlueprint
+{
+	name  "buildings/defense/wall_gate_energy_lvl_3"
+
+	base_blueprint 			buildings/defense/wall_gate_energy_lvl_2
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"wall_gate_energy_lvl_3"
+		bp   				"buildings/defense/wall_gate_energy_lvl_3"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/wall_gate_energy"
+		description			"gui/hud/building_description/wall_gate_energy"
+		menu_icon			"gui/hud/building_icons/wall_gate_energy_lvl3"
+		//upgrade				"buildings/defense/wall_gate_energy_lvl_4"
+		require 			"headquarters"
+		order				"2"
+		type				"gate"
+		overrides			"wall,gate"
+		rotate_info			"1"
+		block_rotation 		"1"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		check_connect		"1"
+		building_group		"wall_gate"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"100"
+					steel 		"100"
+				}
+			}
+		}
+
+		connect
+		{
+			I		"buildings/defense/wall_gate_energy_lvl_3"
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource			"energy"
+				value				"8"
+			}			
+		}
+		priority 6
+	}
+	
+	LuaDesc
+	{
+		script "lua/buildings/defense/wall_gate_energy.lua"
+
+		database
+		{
+			shield_bp			string:"buildings/defense/wall_gate_energy/shield_lvl_3"
+		}
+
+	}
+
+	ReflectDamageComponent
+	{
+		reflect_type	"flat_damage"  // health_ratio, damage_ratio, flat_damage
+		melee_only		"1"			   // reflect only melee damage
+		damage_value	"30"
+		damage_type	    "energy"	   // optional, if not provided damage type will be set to "reflect"
+	}
+
+	ReflectHighlightComponent
+	{
+		submesh_idx 	1
+		glow_factor 	150
+	}	
+
+	HealthDesc
+	{
+		max_health					"520"	// Base HP 2800
+		health						"520"	// 20% of Base HP
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 					1
+		update_health_uniform 		"1"
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_gate_energy_lvl_3.mesh"
+
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material 					"buildings/defense/wall_gate_energy_solid"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material 					"buildings/defense/wall_gate_energy_energy"
+			}
+		}
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/wall_gate_energy_lvl_3"
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/defense/wall_gate_energy/shield_lvl_3"
+
+	IdDesc
+	{
+		name "_shield_"
+	}
+
+	HealthDesc
+	{
+		max_health					"2240"	// 80% of Base HP
+		health						"224"	// Shield Starts at 10%
+	}
+
+	RegenerationComponent
+	{
+		regeneration				"112" // 5% of Shield HP
+		regeneration_cooldown		"10"
+	}
+
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "shield_down"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/mech/jump_portal_exit"
+				}
+			}
+		}
+	}
+
+	ShieldComponent
+	{
+		owner	"custom"
+	}
+}
+
+
+EntityBlueprint
+{
+	name  "buildings/defense/wall_gate_energy_lvl_3_ruins"
+
+	LuaDesc
+	{
+		script "lua/buildings/defense/wall_gate_energy_lvl_3_ruins.lua"
+
+		database
+		{
+			regeneration_time		float:"60"
+			regeneration_chance		float:"100"
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_gate_energy_lvl_3_ruins.mesh"
+
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material 					"buildings/defense/wall_gate_energy_solid"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material 					"buildings/main/buildings_ruins"
+			}
+		}
+	}
+}

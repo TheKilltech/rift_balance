@@ -1,0 +1,324 @@
+EntityBlueprint
+{
+	name  "buildings/defense/wall_energy_corner_01"
+
+	BuildingDesc
+	{
+		buildable				"0"
+		name					"wall_energy_corner"
+		bp						"buildings/defense/wall_energy_corner_01"
+		localization_id			"gui/hud/building_name/wall_energy"
+		category				"defense"
+		type					"wall"
+		build_on_water			"0"
+		require					"headquarters"
+		upgrade					"buildings/defense/wall_energy_corner_01_lvl_2"
+		building_mode			"line"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+		overrides				"wall"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name			"default"
+				building_time	5
+				building_cost
+				{
+					carbonium	"5"
+					steel		"5"
+				}
+			}
+		}
+
+		connect
+		{
+			T		"buildings/defense/wall_energy_t_01"
+			X		"buildings/defense/wall_energy_x_01"
+			L		"buildings/defense/wall_energy_corner_01"
+			I		"buildings/defense/wall_energy_straight_01"
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource			"energy"
+				value				"1"
+			}			
+		}
+		priority 6
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/defense/wall_energy.lua"
+
+		database
+		{
+			shield_bp			string:"buildings/defense/wall_energy/shield"
+		}
+	}
+
+	ReflectDamageComponent
+	{
+		reflect_type	"flat_damage"  // health_ratio, damage_ratio, flat_damage
+		melee_only		"1"			   // reflect only melee damage
+		damage_value	"10"
+		damage_type		"energy"	   // optional, if not provided damage type will be set to "reflect"
+	}
+	
+	ReflectHighlightComponent
+	{
+		submesh_idx	1
+		glow_factor	100
+	}
+
+	HealthDesc
+	{
+		max_health					"70"	// Base HP 350
+		health						"70"	// 20% of Base HP
+		regeneration				"0"
+		regeneration_cooldown		"0"
+		is_manual					1
+		update_health_uniform		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health								"66"
+				destroy_comp_delay					"0"
+				destroy_comp_event					"66_destroy"
+				//destroyed_state_material			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group		"66_state"
+			}
+			DestructionLevel
+			{
+				health								"33"
+				destroy_comp_delay					"0"
+				destroy_comp_event					"33_destroy"
+				//destroyed_state_material			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_energy_corner_01.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/defense/wall_energy_lvl_1_solid"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/defense/wall_energy_lvl_1_energy"
+			}
+		}
+	}
+
+	TypeDesc
+	{
+		type "building|defense|wall"
+	}
+
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type				"static"
+				group_id			"building"
+				physics_material	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x "2"
+						y "3"
+						z "2"
+
+						position
+						{
+							x "0.0"
+							y "1.5"
+							z "0.0"
+						}
+					}
+				}
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsBoxShape
+			{
+				x	2
+				y	2
+				z	2
+			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "1"
+			y "1"
+			z "1"
+			w "1"
+		}
+		size
+		{
+			x "1"
+			y "1"
+		}
+
+
+		visibility			"always"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	DestroyDesc
+	{
+
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "66_destroy"
+				value
+				{
+					explosion_type			"centered"
+					explosion_max_power	"6000"
+					explosion_min_power	"2000"
+					explosion_effect		"effects/buildings_generic/explosion_building_smoke_medium"
+					part_physics_material   "debris_heavy"
+					part_material			"misc/building_parts_generic"
+					part_prefix			"meshes/misc/building_small_parts_generic"
+					part_effect			"effects/projectiles_and_trails/smoke_trail_small_random"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				key "33_destroy"
+				value
+				{
+					explosion_type			"centered"
+					explosion_max_power	"6000"
+					explosion_min_power	"2000"
+					explosion_effect		"effects/buildings_generic/explosion_building_smoke_medium"
+					part_physics_material   "debris_heavy"
+					part_material			"misc/building_parts_generic"
+					part_prefix			"meshes/misc/building_small_parts_generic"
+					part_effect			"effects/projectiles_and_trails/smoke_trail_small_random"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type			"centered"
+					explosion_max_power	"6000"
+					explosion_min_power	"2000"
+					explosion_effect		"effects/buildings_generic/explosion_building_smoke_medium"
+					part_physics_material   "debris_heavy"
+					part_material			"misc/building_parts_generic"
+					part_prefix			"meshes/misc/building_small_parts_generic"
+					part_effect			"effects/projectiles_and_trails/smoke_trail_small_random"
+					part_lifetime "3"
+				}
+
+				key "default"
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type			"centered"
+					explosion_max_power	"6000"
+					explosion_min_power	"2000"
+					explosion_effect		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"
+					part_material			"misc/building_parts_generic"
+					//part_effect			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix			"meshes/misc/building_small_parts_generic"
+					part_lifetime "3"
+				}
+
+				key "quicksand"
+			}
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/defense/wall_energy_corner_01_ruins"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_energy_corner_01_ruins.mesh"
+
+		SubMeshes
+		{
+			
+			SubMesh
+			{
+				id "0"
+				material "buildings/defense/wall_energy_lvl_1_solid"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/defense/wall_energy_lvl_1_energy"
+			}
+
+			SubMesh
+			{
+				id "2"
+				material "buildings/main/buildings_ruins"
+			}
+		}		
+	}
+}
