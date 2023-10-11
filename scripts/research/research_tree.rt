@@ -438,12 +438,6 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_explosive_ext_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/defense/tower_heavy_artillery_lvl_3"
 							is_visible "1"
 						}
@@ -3261,12 +3255,6 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/mech_weapons_explosive_extreme"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
 					}
 
 					research_name "gui/menu/research/name/basic_resource_production_lvl3"
@@ -3299,76 +3287,6 @@ Research
 					}
 
 					icon "gui/menu/research/icons/basic_resource_production"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/headquarters_lvl4"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "Bio metal processing"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "1500.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "414.000"
-						y "-81.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/resources/bio_cobalt_refinery"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/bio_palladium_refinery"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/bio_titanium_refinery"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/bio_uranium_refinery"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/solvent_refinery"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/carbonium_synthesizer"
 				}
 
 				ResearchNode
@@ -23060,6 +22978,6 @@ Research
 
 	type
 	editor "5682"
-	version "102"
+	version "104"
 }
 

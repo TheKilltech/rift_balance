@@ -1,7 +1,7 @@
 
 GameplayResourceDef {
 	id				"cobalt_bio"
-	localization_id "Bio-Cobalt" //"resource_name/cobalt"
+	localization_id "resource_name/cobalt_bio"
 	bp  			"items/loot/resources/shard_cobalt_item"
 	type 			"global"	
 	icon			"gui/hud/resource_icons/cobalt_bio"
@@ -12,7 +12,7 @@ GameplayResourceDef {
 
 GameplayResourceDef {
 	id				"palladium_bio"
-	localization_id "Bio-Palladium" //"resource_name/palladium"
+	localization_id "resource_name/palladium_bio"
 	bp  			"items/loot/resources/shard_palladium_item"
 	type 			"global"	
 	icon			"gui/hud/resource_icons/palladium_bio"
@@ -23,7 +23,7 @@ GameplayResourceDef {
 
 GameplayResourceDef {
 	id				"titanium_bio"
-	localization_id "Bio-Titanium" //"resource_name/titanium"
+	localization_id "resource_name/titanium_bio"
 	bp  			"items/loot/resources/shard_titanium_item"
 	type 			"global"	
 	icon			"gui/hud/resource_icons/titanium_bio"
@@ -34,7 +34,7 @@ GameplayResourceDef {
 
 GameplayResourceDef {
 	id				"uranium_bio"
-	localization_id "Bio-Uranium" //"resource_name/uranium"
+	localization_id "resource_name/uranium_bio"
 	bp  			"items/loot/resources/shard_uranium_ore_item"
 	type 			"global"	
 	icon			"gui/hud/resource_icons/uranium_bio"
