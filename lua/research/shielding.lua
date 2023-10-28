@@ -30,10 +30,10 @@ function research_shielding:OnResearchAcquired()
 		self:SetResistance(entity, 0.0)
 	end
 	
-	entities = FindService:FindEntitiesByType( "player" )
-	for entity in Iter( entities ) do
-		self:SetResistance(entity, self.resistance_factors[self.damage_type] or 0.0)
-	end
+	-- entities = FindService:FindEntitiesByType( "player" )
+	-- for entity in Iter( entities ) do
+	--	self:SetResistance(entity, self.resistance_factors[self.damage_type] or 0.0)
+	--end
 	
 	--EnvironmentService:SetWeatherResistance( self.damage_type )
 	

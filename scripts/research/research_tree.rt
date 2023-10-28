@@ -6858,12 +6858,6 @@ Research
 							is_visible "1"
 						}
 
-						ResearchAward
-						{
-							blueprint "items/upgrades/reflective_armor_extreme_item"
-							is_visible "1"
-						}
-
 					}
 
 					icon "gui/menu/research/icons/passive_upgrade"
@@ -6968,12 +6962,6 @@ Research
 							is_visible "1"
 						}
 
-						ResearchAward
-						{
-							blueprint "items/upgrades/reflective_armor_superior_item"
-							is_visible "1"
-						}
-
 					}
 
 					icon "gui/menu/research/icons/passive_upgrade"
@@ -7039,13 +7027,13 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/mech_upgrade_armor_standard"
+							research_name "gui/menu/research/name/armory_lvl3"
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/armory_lvl3"
+							research_name "gui/menu/research/name/mech_basic_upgrades"
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
@@ -7075,12 +7063,6 @@ Research
 						ResearchAward
 						{
 							blueprint "items/upgrades/armor_plating_advanced_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/upgrades/reflective_armor_advanced_item"
 							is_visible "1"
 						}
 
@@ -7305,7 +7287,7 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/mech_upgrade_armor_standard"
+							research_name "gui/menu/research/name/mech_basic_upgrades"
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
@@ -7351,7 +7333,7 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/mech_upgrade_armor_standard"
+							research_name "gui/menu/research/name/mech_basic_upgrades"
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
@@ -9451,7 +9433,7 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/mech_upgrade_armor_standard"
+							research_name "gui/menu/research/name/mech_basic_upgrades"
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
@@ -10396,7 +10378,7 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/mech_upgrade_armor_standard"
+							research_name "gui/menu/research/name/mech_basic_upgrades"
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
@@ -11408,20 +11390,20 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/mech_basic_upgrades"
+							research_name "gui/menu/research/name/mech_technology"
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
 					}
 
-					research_name "gui/menu/research/name/mech_upgrade_armor_standard"
+					research_name "gui/menu/research/name/mech_basic_upgrades"
 					research_costs
 					{
 						ResearchCost
 						{
 							amount "0.000"
 							resource "download"
-							count "300.000"
+							count "100.000"
 						}
 
 					}
@@ -11431,42 +11413,6 @@ Research
 					{
 						x "-513.000"
 						y "-261.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "items/upgrades/reflective_armor_standard_item"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/passive_upgrade"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/mech_technology"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/mech_basic_upgrades"
-					research_costs
-					research_scripts
-					position
-					{
-						x "-513.000"
-						y "-315.000"
 					}
 
 					research_awards
@@ -13175,7 +13121,7 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/mech_upgrade_armor_standard"
+							research_name "gui/menu/research/name/mech_basic_upgrades"
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
@@ -13377,7 +13323,7 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/mech_upgrade_armor_standard"
+							research_name "gui/menu/research/name/mech_basic_upgrades"
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
@@ -15259,156 +15205,6 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/resource_handling_rhodonite"
-							research_category "gui/menu/research/category_alien"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/mech_upgrade_alien_armor_standard"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "analysis"
-							count "450.000"
-						}
-
-					}
-
-					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/requirements/familiarity_level.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "geotrupex"
-										key "species_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "familiarity_level"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
-					position
-					{
-						x "-144.000"
-						y "-234.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "items/upgrades/anti_corrosive_armor_standard_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/upgrades/energy_armor_standard_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/upgrades/fireproof_armor_standard_item"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/environment_shielding"
-				}
-
-				ResearchNode
-				{
-					research_flags "hidden"
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/mech_upgrade_alien_armor_advanced"
-							research_category "gui/menu/research/category_alien"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/mech_upgrade_alien_armor_superior"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "analysis"
-							count "8000.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "-144.000"
-						y "36.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "items/upgrades/anti_corrosive_armor_superior_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/upgrades/energy_armor_superior_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/upgrades/fireproof_armor_superior_item"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/environment_shielding"
-				}
-
-				ResearchNode
-				{
 					research_flags "hidden"
 					requirement_tooltip
 					requirements
@@ -15987,70 +15783,6 @@ Research
 					}
 
 					icon "gui/menu/research/icons/mech_upgrade_fusion_core"
-				}
-
-				ResearchNode
-				{
-					research_flags "hidden"
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/mech_upgrade_alien_armor_standard"
-							research_category "gui/menu/research/category_alien"
-						}
-
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/alien_research_lvl2"
-							research_category "gui/menu/research/category_alien"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/mech_upgrade_alien_armor_advanced"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "analysis"
-							count "3000.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "-144.000"
-						y "-99.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "items/upgrades/anti_corrosive_armor_advanced_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/upgrades/energy_armor_advanced_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/upgrades/fireproof_armor_advanced_item"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/environment_shielding"
 				}
 
 				ResearchNode
@@ -18393,6 +18125,12 @@ Research
 					{
 						ResearchAward
 						{
+							blueprint "items/upgrades/fireproof_armor_standard_item"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "research/environment_shielding_heat"
 							is_visible "1"
 						}
@@ -18456,8 +18194,8 @@ Research
 
 					position
 					{
-						x "432.000"
-						y "-297.000"
+						x "405.000"
+						y "-333.000"
 					}
 
 					research_awards
@@ -18555,11 +18293,17 @@ Research
 					position
 					{
 						x "-144.000"
-						y "-297.000"
+						y "-342.000"
 					}
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/anti_corrosive_armor_standard_item"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "research/environment_shielding_acid"
@@ -18677,12 +18421,18 @@ Research
 
 					position
 					{
-						x "549.000"
-						y "-297.000"
+						x "450.000"
+						y "-333.000"
 					}
 
 					research_awards
 					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/energy_armor_standard_item"
+							is_visible "1"
+						}
+
 						ResearchAward
 						{
 							blueprint "research/environment_shielding_radiation"
@@ -19462,70 +19212,6 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/mech_upgrade_alien_armor_superior"
-							research_category "gui/menu/research/category_alien"
-						}
-
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/alien_research_lvl5"
-							research_category "gui/menu/research/category_alien"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/mech_upgrade_alien_armor_extreme "
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "analysis"
-							count "17500.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "-144.000"
-						y "324.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "items/upgrades/anti_corrosive_armor_extreme_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/upgrades/energy_armor_extreme_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/upgrades/fireproof_armor_extreme_item"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/environment_shielding"
-				}
-
-				ResearchNode
-				{
-					research_flags "hidden"
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
 							research_name "gui/menu/research/name/towers_railgun_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
@@ -19725,7 +19411,7 @@ Research
 
 					position
 					{
-						x "117.000"
+						x "-18.000"
 						y "-9.000"
 					}
 
@@ -22970,6 +22656,549 @@ Research
 					icon "gui/menu/research/icons/rare_element_mining"
 				}
 
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/environmental_shielding_radiation"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_upgrade_energy_armor_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "1000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "450.000"
+						y "-180.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/energy_armor_advanced_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/environmental_shielding_radiation"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_upgrade_energy_armor_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_upgrade_energy_armor_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "5000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "450.000"
+						y "-9.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/energy_armor_superior_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/environmental_shielding_radiation"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_upgrade_energy_armor_lvl_3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_upgrade_energy_armor_lvl_4"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "10000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "450.000"
+						y "144.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/energy_armor_extreme_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/environmental_shielding_radiation"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/environmental_shielding_sun"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_upgrade_reflective_armor_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "1000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "405.000"
+						y "-180.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/reflective_armor_advanced_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/environmental_shielding_sun"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_upgrade_reflective_armor_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_upgrade_reflective_armor_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "5000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "405.000"
+						y "-9.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/reflective_armor_superior_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/environmental_shielding_sun"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_upgrade_reflective_armor_lvl_3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_upgrade_reflective_armor_lvl_4"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "10000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "405.000"
+						y "144.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/reflective_armor_extreme_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/environmental_shielding_sun"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip "gui/menu/research/tooltip_requirement_objective"
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/environmental_shielding_acid"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_upgrade_anti_corrosive_armor_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "1000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-144.000"
+						y "-180.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/anti_corrosive_armor_advanced_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/environmental_shielding_acid"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip "gui/menu/research/tooltip_requirement_objective"
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_upgrade_anti_corrosive_armor_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_upgrade_anti_corrosive_armor_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "5000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-144.000"
+						y "-9.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/anti_corrosive_armor_superior_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/environmental_shielding_acid"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip "gui/menu/research/tooltip_requirement_objective"
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_upgrade_anti_corrosive_armor_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_upgrade_anti_corrosive_armor_lvl_4"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "10000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-144.000"
+						y "153.000"
+					}
+
+					research_awards
+					icon "gui/menu/research/icons/environmental_shielding_acid"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/environmental_shielding_heat"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_upgrade_fireproof_armor_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "1000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "162.000"
+						y "-180.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/fireproof_armor_advanced_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/environmental_shielding_heat"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_upgrade_fireproof_armor_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_upgrade_fireproof_armor_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "5000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "162.000"
+						y "-9.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/fireproof_armor_superior_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/environmental_shielding_heat"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/mech_upgrade_fireproof_armor_lvl_3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_upgrade_fireproof_armor_lvl_4"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "10000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "162.000"
+						y "144.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/fireproof_armor_extreme_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/environmental_shielding_heat"
+				}
+
 			}
 
 		}
@@ -22978,6 +23207,6 @@ Research
 
 	type
 	editor "5682"
-	version "104"
+	version "106"
 }
 
