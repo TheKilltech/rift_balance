@@ -1,0 +1,558 @@
+MissionDef
+{
+    script          "lua/missions/campaigns/dlc_2/caverns_outpost.lua"
+	localization_id	"gui/menu/planetary_scanner/mission_caverns_outpost"
+	description		"gui/menu/planetary_scanner/mission_caverns_outpost_description"
+	detector_disabled "1"
+
+	script_database
+    {
+		spawn_near_position string:"80,0,60"    
+    }
+
+    biomes          						"caverns"
+	light_mask_materials
+    {
+        logic/caverns_light_mask_holes_medium
+    }
+
+    destructible_volume_texture_patterns
+    {
+        materials/textures/logic/caverns_destructible_rocks_mask_edge_1_full.png
+		
+		//BELOW MASK IS TO GUARANTEE FULL CAVERNS ON STARTING TILE COORDINATES
+		materials/textures/logic/caverns_destructible_rocks_mask_edge_1_full.png
+		{	
+			min_instances	1
+			max_instances	1
+			tile_coord
+			{		
+				0,0					
+			}
+		}		
+	    materials/textures/logic/caverns_destructible_rocks_mask_edge_1_large_hole_1.png
+		{	
+			min_instances	3			
+			max_instances	5
+		}
+	    materials/textures/logic/caverns_destructible_rocks_mask_edge_1_large_hole_2.png
+		{	
+			min_instances	3			
+			max_instances	5
+		}
+	    materials/textures/logic/caverns_destructible_rocks_mask_edge_1_large_hole_3.png
+		{	
+			min_instances	3			
+			max_instances	5
+		}
+		
+	    materials/textures/logic/caverns_destructible_rocks_mask_edge_1_medium_hole_1.png
+		{	
+			min_instances	1			
+			max_instances	3
+		}
+	    materials/textures/logic/caverns_destructible_rocks_mask_edge_1_medium_hole_2.png
+		{	
+			min_instances	1			
+			max_instances	3
+		}
+	    materials/textures/logic/caverns_destructible_rocks_mask_edge_1_medium_hole_3.png
+		{	
+			min_instances	1			
+			max_instances	3
+		}
+		
+	    //materials/textures/logic/caverns_destructible_rocks_mask_edge_1_small_hole_1.png
+		//{	
+		//	min_instances	1			
+		//	max_instances	3
+		//}
+	    //materials/textures/logic/caverns_destructible_rocks_mask_edge_1_small_hole_2.png
+		//{	
+		//	min_instances	1			
+		//	max_instances	3
+		//}
+	    //materials/textures/logic/caverns_destructible_rocks_mask_edge_1_small_hole_3.png
+		//{	
+		//	min_instances	1			
+		//	max_instances	3
+		//}
+    }
+	
+    map_size		8	
+	
+	tile_spawn_rules
+	{	
+		biomes/caverns/tiles/caverns_custom_starting_01/caverns_custom_starting_01.tile
+		{	
+			min_instances	1			
+			max_instances	1
+			tile_coord
+			{		
+				0,0	
+				//0,-1
+				//-1,0
+				//-1,-1
+			}
+		}		
+		//OUTPOST OPENING TILES
+		biomes/caverns/tiles/caverns_custom_opening_01/caverns_custom_opening_01.tile
+		{	
+			min_instances	1		
+			max_instances	1
+			//These tiles only appear within an outer rimof the level that's the third tile from the center of the map
+			tile_coord
+			{	
+				2,-2
+				2,-1
+				2,0
+				2,1
+				2,2				
+			}
+		}
+		biomes/caverns/tiles/caverns_custom_opening_01/caverns_custom_opening_01.tile
+		{	
+			min_instances	1			
+			max_instances	1
+			//These tiles only appear within an outer rimof the level that's the third tile from the center of the map
+			tile_coord
+			{					
+				1,-2
+				1,2
+				0,-2
+				0,2
+				-1,-2
+				-1,2								
+			}
+		}	
+		biomes/caverns/tiles/caverns_custom_opening_01/caverns_custom_opening_01.tile
+		{	
+			min_instances	1			
+			max_instances	1
+			//These tiles only appear within an outer rimof the level that's the third tile from the center of the map
+			tile_coord
+			{	
+				-2,-2
+				-2,-1
+				-2,0
+				-2,1
+				-2,2				
+			}
+		}
+		//MINING ELEVATOR LOCATION TILES
+		biomes/caverns/tiles/caverns_custom_drill_location_01/caverns_custom_drill_location_01.tile
+		{	
+			min_instances	1			
+			max_instances	1
+			tile_coord
+			{		
+				2,-3
+				1,-3
+				0,-3
+				-1,-3
+				-2,-3								
+			}
+		}
+		biomes/caverns/tiles/caverns_custom_drill_location_02/caverns_custom_drill_location_02.tile
+		{	
+			min_instances	1			
+			max_instances	1
+			tile_coord
+			{						
+				-3,-2
+				-3,-1
+				-3,0
+				-3,1				
+			}
+		}
+		//SEISMIC DETECTOR NETWORK TILES
+		biomes/caverns/tiles/caverns_custom_seismic_building_location_01/caverns_custom_seismic_building_location_01.tile
+		{
+			min_instances	1			
+			max_instances	1	
+			tile_coord
+			{		
+				2,-2										
+				2,-1										
+				1,-2																												
+			}	
+		}
+		biomes/caverns/tiles/caverns_custom_seismic_building_location_02/caverns_custom_seismic_building_location_02.tile
+		{
+			min_instances	1			
+			max_instances	1	
+			tile_coord
+			{		
+				2,1										
+				2,2										
+				1,2																												
+			}	
+		}
+		biomes/caverns/tiles/caverns_custom_seismic_building_location_03/caverns_custom_seismic_building_location_03.tile
+		{
+			min_instances	1			
+			max_instances	1	
+			tile_coord
+			{		
+				-1,-2										
+				-2,-2										
+				-2,-1																												
+			}	
+		}
+		biomes/caverns/tiles/caverns_custom_seismic_building_location_04/caverns_custom_seismic_building_location_04.tile
+		{
+			min_instances	1			
+			max_instances	1	
+			tile_coord
+			{		
+				-1,2
+				-2,2										
+				-2,1																												
+			}	
+		}
+		//SONIC GRENADE TILE
+		biomes/caverns/tiles/caverns_canyons_01/caverns_canyons_01.tile
+		{	
+			min_instances	1	
+			max_instances	1	
+			tile_coord
+			{		
+				2,2
+				2,-3																																																
+				-3,-2																						
+			}	
+		}
+		//SECRET ENTRANCE TILE
+		biomes/caverns/tiles/caverns_custom_quest_entrance_01/caverns_custom_quest_entrance_01.tile
+		{	
+			min_instances	1	
+			max_instances	1	
+			tile_coord
+			{	
+				-3,-3	
+				-3,2
+			}	
+		}
+		biomes/caverns/tiles/caverns_plains_01/caverns_plains_01.tile
+		{	
+			random_weight	1.0
+		}
+		biomes/caverns/tiles/caverns_plains_02/caverns_plains_02.tile
+		{	
+			random_weight	6.0
+		}
+		biomes/caverns/tiles/caverns_plains_03/caverns_plains_03.tile
+		{	
+			random_weight	3.0
+		}
+		biomes/caverns/tiles/caverns_plains_04/caverns_plains_04.tile
+		{	
+			random_weight	3.0
+		}
+		biomes/caverns/tiles/caverns_plains_05/caverns_plains_05.tile
+		{	
+			random_weight	1.0
+		}		
+		biomes/caverns/tiles/caverns_canyons_02/caverns_canyons_02.tile
+		{	
+			max_instances	5			
+		}
+		biomes/caverns/tiles/caverns_canyons_03/caverns_canyons_03.tile
+		{	
+			max_instances	5			
+		}
+		biomes/caverns/tiles/caverns_canyons_04/caverns_canyons_04.tile
+		{	
+			max_instances	5			
+		}
+		biomes/caverns/tiles/caverns_canyons_05/caverns_canyons_05.tile
+		{	
+			max_instances	5			
+		}
+	}
+    
+	failed_action   "remain"
+	success_action  "remain"
+
+	creature_volumes_min_distance   "128.0"
+	creature_volumes_density        "0.35"
+
+    threat  "0.5"
+    block_outpost_remove "1"
+
+    ambient_creature_species
+    {
+        ground
+        {     
+			max_count 50
+			spawn_rate 6
+			search_to_spawn_radius "2"
+			
+            species
+            {
+                CreatureVolume
+                {
+                    creature_species    "crysder"
+                }
+            }
+        }
+    }
+
+    creature_volumes_species
+    {
+        neutral_units
+        {         
+			CreatureVolume
+            {
+                creature_species    "moltug_crystal"
+            }
+        }
+
+        regular_units
+        {
+            CreatureVolume
+            {
+                creature_species    "crawlog"
+                volume_spawn_ratio  "2"
+            }  
+			
+			CreatureVolume
+            {
+                creature_species    "gulgor"
+                volume_spawn_ratio  "1.5"
+            }  
+			
+			CreatureVolume
+            {
+                creature_species    "stregaros_crystal"
+                volume_spawn_ratio  "1"
+            }  
+			CreatureVolume
+            {
+                creature_species    "necrodon"
+                volume_spawn_ratio  "0.75"
+            }  
+            
+        }
+
+        resource_units
+        {
+			CreatureVolume
+            {
+                creature_species    "gnerot_caverns"
+                volume_spawn_ratio  "0.25"
+            }
+        }		
+    }
+	
+	mission_object_spawners
+	{	
+		MarkerBlueprintSpawner
+        {
+			//UNDERGROUND OPENING MARKERS
+            spawn_pool               "opening"           
+            spawn_at_marker          "logic/position_marker" 
+			spawn_at_name 			 "logic/position_marker_opening"
+            
+			spawn_blueprints
+            {
+                logic/position_marker                
+            }
+        }	
+		
+		MarkerBlueprintSpawner
+        {
+			//UNDERGROUND OPENING RESOURCES
+            spawn_pool               "resource_volumes"           
+            spawn_at_marker          "resources/volume_random_resources"            
+            spawn_instances_minmax    18,18
+			
+			spawn_max_distance_from_pools
+            {
+                opening  		40.0				
+            }
+			
+			spawn_min_distance_from_pools
+            {
+                resource_volumes  		5.0				
+            }            
+			
+			spawn_blueprints
+            {
+                spawners/resource_spawner
+				{
+					spawn_chance           0.4
+					database
+					{	
+						resource        string:"carbon_vein"
+						min_resources   float:"20000"
+						max_resources   float:"25000"
+					}
+				}
+				
+				spawners/resource_spawner
+				{
+					spawn_chance           0.4
+					database
+					{	
+						resource        string:"iron_vein"
+						min_resources   float:"10000"
+						max_resources   float:"15000"
+					}					
+                }
+				
+				spawners/resource_spawner
+                {
+					spawn_chance           0.2
+					database
+					{	
+						resource        string:"cobalt_vein"
+						min_resources   float:"6000"
+						max_resources   float:"12000"
+					}				
+				}
+			}
+			
+        }
+		
+		MarkerBlueprintSpawner
+        {
+			//WIND TUNNELS
+            spawn_pool               "resource_volumes"           
+            spawn_at_marker          "resources/volume_random_resources"            
+            spawn_instances_minmax    10,15
+			
+			spawn_min_distance_from_pools
+            {
+                resource_volumes  		10.0
+				player_spawn_point		150.0
+				underground_treasures   10.0
+				opening					80.0
+            }
+            
+			spawn_blueprints
+            {
+                weather/cave_wind_spot_small
+                {                    
+                    spawn_chance           0.5
+                }
+            }
+        }	
+		
+        MarkerBlueprintSpawner
+        {
+            spawn_pool               "loot_containers"
+
+            // find all entities on map with this blueprint as possible spawn point
+            spawn_at_marker          "logic/spawn_objective"
+
+            // min distance from objects in other pools
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  250.0				
+                loot_containers     150.0
+            }
+
+            // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
+            spawn_instances_minmax    10,15
+
+            spawn_blueprints
+            {
+                spawners/caverns_spawner_standard
+                {
+                    // make a roll to check if blueprint can be spawned
+                    spawn_chance           0.75
+                }
+            }
+			
+			spawn_blueprints
+            {
+                spawners/caverns_spawner_advanced
+                {
+                    // make a roll to check if blueprint can be spawned
+                    spawn_chance           0.25
+                }
+            }
+        }		
+	}
+
+	random_resources
+    {
+		ResourceVolume
+        {
+            resource        "cobalt_vein"
+			
+            min_resources   "6000"
+            max_resources   "12000"
+
+            min_spawned_volumes "15"
+            max_spawned_volumes "20"
+        }			
+		
+        ResourceVolume
+        {
+            resource        "carbon_vein"
+
+            min_resources   "4000"
+            max_resources   "8000"
+
+            min_spawned_volumes "5"
+            max_spawned_volumes "8"
+        }
+		
+		ResourceVolume
+        {
+            resource        "carbon_vein"
+
+            min_resources   "8000"
+            max_resources   "15000"
+
+            min_spawned_volumes "10"
+            max_spawned_volumes "15"
+        }		
+		
+        ResourceVolume
+        {
+            resource        "iron_vein"
+
+            min_resources   "8000"
+            max_resources   "12000"
+
+            min_spawned_volumes "4"
+            max_spawned_volumes "6"
+        }
+		
+		ResourceVolume
+        {
+            resource        "iron_vein"
+
+            min_resources   "12000"
+            max_resources   "25000"
+
+            min_spawned_volumes "20"
+            max_spawned_volumes "25"
+        }
+
+        ResourceVolume
+        {
+            resource        "geothermal_vent"
+
+            min_resources   "6000"
+            max_resources   "10000"
+            
+            is_infinite     "1"
+            
+            min_spawned_volumes "12"
+            max_spawned_volumes "15"
+        }			
+
+    }
+
+    min_starting_distance "16.0"
+    max_starting_distance "96.0"
+
+    starting_resources
+    {
+        
+    }
+}

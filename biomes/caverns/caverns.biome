@@ -1,0 +1,252 @@
+BiomeDef
+{
+	base_materials
+	{
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_0"
+			value
+			{
+				String "ground/misc/biome_material_0"
+				String "ground/magma/vulcanic_gravel_01"
+				String "ground/crystal_caverns/sand_rocks_02"
+				String "ground/crystal_caverns/crystal_ground_11"
+				String "ground/crystal_caverns/caverns_gravel_02"
+				String "ground/crystal_caverns/dark_rock_05"
+				String "ground/crystal_caverns/rusty_rock_01"
+				String "ground/crystal_caverns/crystal_ground_08"
+				String "ground/crystal_caverns/dark_sand_02"
+				String "ground/crystal_caverns/dark_rock_07"
+				String "ground/crystal_caverns/crystal_ground_02"
+				String "ground/crystal_caverns/crystal_ground_03"
+				String "ground/crystal_caverns/caverns_gravel_05"
+			}
+
+		}
+
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_1"
+			value
+			{
+				String "ground/misc/biome_material_1"
+				String "ground/crystal_caverns/fossils_01"
+				String "ground/magma/magma_ground_13"
+				String "ground/crystal_caverns/crystal_ground_04"
+				String "ground/crystal_caverns/crystal_ground_09"
+				String "ground/crystal_caverns/roots_01"
+			}
+
+		}
+
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_2"
+			value
+			{
+				String "ground/misc/biome_material_2"
+				String "ground/magma/magma_layered_01"
+				String "ground/crystal_caverns/crystal_ground_06"
+				String "ground/crystal_caverns/dark_rock_04"
+			}
+
+		}
+
+	}
+
+	default_liquid_resource "mud_vein"
+	icon 					"gui/menu/biomes_prev/crystal_caverns_prev"
+	icon_with_outpost 		"gui/menu/biomes_prev/crystal_caverns_base_prev"
+	loading 				"gui/menu/loading/caverns"
+	loading_with_outpost 	"gui/menu/loading/caverns_outpost"
+	resources "carbon_vein,iron_vein,geothermal_vent,uranium_ore_vein,titanium_vein,palladium_vein,cobalt_vein,water_vein,mud_vein,sludge_vein,morphium_vein"
+	root_template
+	{
+		children
+		{
+			EntityTemplate
+			{
+				components
+				{
+					IdComponent
+					{
+						name "skybox"
+					}
+
+					MeshDesc
+					{
+						flags "4"
+						material "pbr/skybox"
+						mesh "meshes/skybox.mesh"
+						renderable_custom_parameters
+						{
+							Params
+						}
+
+					}
+
+					TransformComponent
+					{
+						scale
+						{
+							x "30.000"
+							y "30.000"
+							z "30.000"
+						}
+
+					}
+
+				}
+
+			}
+
+			EntityTemplate
+			{
+				components
+				{
+					IdComponent
+					{
+						name "main_light"
+					}
+
+					LightDesc
+					{
+						is_shadow_caster "1"
+						scattering_intensity "1.0"
+						light_color
+						{
+							w "12.000"
+							y "0.784"
+							z "0.376"
+						}
+
+						light_mask_texture
+					}
+
+					TransformComponent
+					{
+						orientation
+						{
+							w "0.880"
+							x "-0.116"
+							y "0.365"
+							z "-0.280"
+						}
+
+						position
+						{
+							x "-30.000"
+							y "30.000"
+							z "-30.000"
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		components
+		{
+			BiomeModificatorComponent
+			{
+				solar_power "0.000"
+				wind_power "0.000"
+			}
+
+			DirectionalWindComponent
+			{
+				factor "0.000"
+				position_frequency_factor "0.001"
+				power_frequency "0.000"
+				power_max "0.000"
+				power_min "0.000"
+				rotation_frequency "0.000"
+				rotation_max "0.000"
+			}
+
+			SceneParamsDesc
+			{
+				bloom_params
+				{
+					max_exposure "0.850"
+					min_exposure "0.100"
+					scale "0.850"
+					threshold "0.200"
+				}
+
+				fog_params
+				{
+					color
+					{
+						x "0.009"
+						y "0.077"
+						z "0.847"
+					}
+
+					density "0.421"
+					end "58.708"
+					start "46.177"
+				}
+
+				shadow_params
+				{
+					intensity "1.000"
+				}
+
+				skybox_params
+				{
+					diffuse "materials/textures/skybox/skybox_cavern_diffuse.dds"
+					diffuse_intensity "0.000"
+					environment "materials/textures/skybox/skybox_cavern_env.dds"
+					specular "materials/textures/skybox/skybox_cavern_specular.dds"
+					specular_intensity "0.497"
+					sun_roll "2.000"
+					sun_yaw "2.000"
+				}
+
+				skybox_procedural_params
+				{
+					atmosphere_thickness "1.094"
+					clouds "0.400"
+					sun_convergence "0.503"
+					sun_size "1.001"
+				}
+
+				ssao_params
+				{
+					angle_bias "0.397"
+					factor "7.497"
+					intensity "1.501"
+					sample_length "0.054"
+				}
+
+			}
+
+			TimeOfDayComponent
+			{
+				shadow_degree_limit "90"
+				timeofday_override
+				{
+					TimeOfDay "2"
+				}
+
+				timeofday_presets
+				{
+					TimeOfDayPresetHolder
+					{
+						resource_name "biomes/caverns/scene_params/caverns.td"
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
