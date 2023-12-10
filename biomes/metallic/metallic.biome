@@ -1,0 +1,243 @@
+BiomeDef
+{
+	base_materials
+	{
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_0"
+			value
+			{
+				String "ground/misc/biome_material_0"
+				String "ground/metallic/soil_rocks_03"
+				String "ground/metallic/red_soil_01"
+				String "ground/metallic/soil_rocks_01"
+				String "ground/metallic/soil_rocks_02"
+				String "ground/metallic/soil_rocks_06"
+				String "ground/metallic/metallic_ground_07"
+			}
+
+		}
+
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_1"
+			value
+			{
+				String "ground/misc/biome_material_1"
+				String "ground/metallic/metallic_tech_floor"
+				String "ground/metallic/metallic_ground_01"
+				String "ground/metallic/metallic_ground_02"
+				String "ground/metallic/metallic_red_foliage_01"
+				String "ground/metallic/metallic_ground_08"
+				String "ground/metallic/metallic_ground_06"
+				String "ground/metallic/metallic_ground_04"
+			}
+
+		}
+
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_2"
+			value
+			{
+				String "ground/misc/biome_material_2"
+				String "ground/metallic/black_red_ground_01"
+				String "ground/metallic/metallic_veins_01"
+				String "ground/metallic/red_soil_02"
+				String "ground/metallic/organic_ground_01"
+				String "ground/metallic/organic_ground_05"
+				String "ground/metallic/soil_rocks_07"
+				String "ground/metallic/organic_ground_07"
+			}
+
+		}
+
+	}
+
+	default_liquid_resource "morphium_vein"
+	icon "gui/menu/biomes_prev/metallic_prev"
+	icon_with_outpost "gui/menu/biomes_prev/metallic_base_prev"
+	loading "gui/menu/loading/metallic"
+	loading_with_outpost "gui/menu/loading/metallic_outpost"
+	resources "carbon_vein,iron_vein,geothermal_vent,uranium_ore_vein,titanium_vein,palladium_vein,cobalt_vein,water_vein,mud_vein,sludge_vein,morphium_vein"
+	root_template
+	{
+		children
+		{
+			EntityTemplate
+			{
+				components
+				{
+					IdComponent
+					{
+						name "skybox"
+					}
+
+					LocalAabbDesc
+					{
+						local_aabb
+						{
+							min
+							{
+								x "-5.100"
+								y "-5.100"
+								z "-5.100"
+							}
+
+							max
+							{
+								x "5.100"
+								y "5.100"
+								z "5.100"
+							}
+
+						}
+
+					}
+
+					MeshDesc
+					{
+						material "pbr/skybox"
+						mesh "meshes/skybox.mesh"
+						renderable_custom_parameters
+						{
+							Params
+						}
+
+					}
+
+					UniformComponent
+					{
+						renderable_custom_parameters
+						{
+							Params
+						}
+
+					}
+
+				}
+
+			}
+
+			EntityTemplate
+			{
+				components
+				{
+					IdComponent
+					{
+						name "main_light"
+					}
+
+					LightDesc
+					{
+						is_shadow_caster "1"
+						scattering_intensity "1.0"
+						light_color
+						{
+							w "12.038"
+							x "0.907"
+							y "0.932"
+						}
+					}
+
+				}
+
+			}
+
+		}
+
+		components
+		{
+			BiomeModificatorComponent
+			{
+				solar_power "0.750"
+				wind_power "1.250"
+			}
+
+			DirectionalWindComponent
+			{
+				factor "0.000"
+				position_frequency_factor "0.001"
+				power_frequency "0.000"
+				power_max "0.000"
+				power_min "0.000"
+				rotation_frequency "0.000"
+				rotation_max "0.000"
+			}
+
+			SceneParamsDesc
+			{
+				bloom_params
+				{
+					max_exposure "1.284"
+					scale "1.058"
+					threshold "0.203"
+				}
+
+				fog_params
+				{
+					color
+					{
+						x "0.009"
+						y "0.077"
+						z "0.847"
+					}
+
+					density "0.421"
+					end "58.708"
+					start "46.177"
+				}
+
+				shadow_params
+				{
+					intensity "1.000"
+				}
+
+				skybox_params
+				{
+					diffuse "materials/textures/skybox/skybox_metallic_diffuse.dds"
+					diffuse_intensity "0.000"
+					environment "materials/textures/skybox/skybox_metallic_env.dds"
+					specular "materials/textures/skybox/skybox_metallic_specular.dds"
+					specular_intensity "0.497"
+					sun_roll "33.750"
+					sun_yaw "20.468"
+				}
+
+				skybox_procedural_params
+				{
+					atmosphere_thickness "1.094"
+					clouds "0.400"
+					sun_convergence "0.503"
+					sun_size "1.001"
+				}
+
+				ssao_params
+				{
+					angle_bias "0.397"
+					factor "7.497"
+					intensity "1.501"
+					sample_length "0.054"
+				}
+
+			}
+
+			TimeOfDayComponent
+			{
+				timeofday_presets
+				{
+					TimeOfDayPresetHolder
+					{
+						resource_name "biomes/metallic/scene_params/metallic.td"
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+

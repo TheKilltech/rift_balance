@@ -1,0 +1,580 @@
+MissionDef
+{
+    script          "lua/missions/campaigns/story/v2/acid/acid_resource_outpost.lua"
+	localization_id	"gui/menu/planetary_scanner/mission_acid_resource_outpost"
+	description		"gui/menu/planetary_scanner/mission_acid_resource_outpost_description"
+
+    biomes          "acid"
+    map_size		8
+	
+	tile_spawn_rules
+	{		
+		biomes/acid/tiles/acid_canyons_01/acid_canyons_01.tile
+		{			
+			max_instances	3
+			//random_weight	1.0
+		}		
+		biomes/acid/tiles/acid_canyons_02/acid_canyons_02.tile
+		{			
+			max_instances	2			
+		}		
+		biomes/acid/tiles/acid_plains_04/acid_plains_04.tile
+		{			
+			max_instances	4			
+		}
+		biomes/acid/tiles/acid_nest_01/acid_nest_01.tile
+		{			
+			max_instances	5			
+		}	
+		biomes/acid/tiles/acid_lakes_01/acid_lakes_01.tile
+		{			
+			max_instances	4			
+		}
+		biomes/acid/tiles/acid_canyons_03/acid_canyons_03.tile
+		{			
+			max_instances	2			
+		}		
+		biomes/acid/tiles/acid_canyons_04/acid_canyons_04.tile
+		{			
+			max_instances	1			
+		}		
+		biomes/acid/tiles/acid_canyons_05/acid_canyons_05.tile
+		{			
+			max_instances	1			
+		}	
+		biomes/acid/tiles/acid_lakes_05/acid_lakes_05.tile
+		{			
+			max_instances	1			
+		}	
+		biomes/acid/tiles/acid_lakes_06/acid_lakes_06.tile
+		{			
+			max_instances	2			
+		}	
+		biomes/acid/tiles/acid_plains_05/acid_plains_05.tile
+		{			
+			max_instances	2			
+		}
+	}
+    
+	failed_action   "remain"
+	success_action  "remain"
+	
+	creature_volumes_min_distance   "96.0"
+	creature_volumes_density        "0.75"
+    threat  "1"
+    block_outpost_remove "1"
+
+    ambient_creature_species
+    {
+        ground
+        {      
+			max_count 150
+			spawn_rate 5
+			
+            species
+            {
+                CreatureVolume
+                {
+                    creature_species    "crader"
+                }
+            }
+        }
+
+        air
+        {
+			max_count "10"
+			spawn_rate 2
+			search_to_spawn_radius "1"
+			
+            species
+            {
+                CreatureVolume
+                {
+                    creature_species    "vathamite"
+                }
+            }
+        }
+    }
+
+    creature_volumes_species
+    {
+        neutral_units
+        {
+            CreatureVolume
+            {
+                creature_species    "sulphorit"
+            }
+        }
+
+        regular_units
+        {
+            CreatureVolume
+            {
+                creature_species    "granan"
+                volume_spawn_ratio  "2"
+            }
+            
+            CreatureVolume
+            {
+                creature_species    "arachnoid_sentinel"
+                volume_spawn_ratio  "1.25"
+            }
+			
+            CreatureVolume
+            {
+                creature_species    "nerilian"
+                volume_spawn_ratio  "1.25"
+            }
+			
+            CreatureVolume
+            {
+                creature_species    "bomogan"
+                volume_spawn_ratio  "1"
+            }
+			
+			CreatureVolume
+            {
+                creature_species    "nurglax"
+                volume_spawn_ratio  "0.5"
+            }
+            
+            CreatureVolume
+            {
+                creature_species    "phirian_acid"
+                volume_spawn_ratio  "0.5"
+            }            
+            CreatureVolume
+            {
+                creature_species    "baxmoth_acid"
+                volume_spawn_ratio  "0.5"
+            }            
+        }
+		
+		liquid_units
+        {            
+			CreatureVolume
+            {
+                creature_species    "hedroner_acid"
+                volume_spawn_ratio  "0.25"
+            }
+        }  
+
+        resource_units
+        {
+            CreatureVolume
+            {
+                creature_species    "krocoon_acid"
+                volume_spawn_ratio  "0.5"
+            }
+        }
+		
+		guardian_standard
+        {		
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_cryo"
+				volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_acid"
+                volume_spawn_ratio  "1"
+            }		
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_energy"
+                volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_fire"
+                volume_spawn_ratio  "1"
+            }				
+        }
+
+        guardian_advanced
+        {				
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_cryo"
+				volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_acid"
+                volume_spawn_ratio  "1"
+            }		
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_energy"
+                volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_fire"
+                volume_spawn_ratio  "1"
+            }			
+        }
+
+        guardian_superior
+        {			
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_cryo"
+				volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_acid"
+                volume_spawn_ratio  "1"
+            }		
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_energy"
+                volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_fire"
+                volume_spawn_ratio  "1"
+            }		
+        }
+
+        guardian_extreme
+        {		
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_cryo"
+				volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_acid"
+                volume_spawn_ratio  "1"
+            }		
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_energy"
+                volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_fire"
+                volume_spawn_ratio  "1"
+            }	
+        }
+    }
+	
+	mission_object_spawners
+	{
+        MarkerBlueprintSpawner
+        {
+            spawn_pool               "loot_containers"
+            spawn_at_marker          "logic/spawn_objective"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  250.0
+                loot_containers     150.0
+            }
+
+            spawn_instances_minmax    15,20
+
+            spawn_blueprints
+            {
+                spawners/acid_spawner_standard
+                {
+                make a roll to check if blueprint can be spawned
+                    spawn_chance           0.5
+                }
+
+                spawners/acid_spawner_advanced
+                {
+                    spawn_instances_minmax 3,5
+                    spawn_chance           0.2
+                }
+
+                spawners/acid_spawner_superior
+                {
+                    spawn_instances_minmax 2,3
+                    spawn_chance           0.2
+                }
+
+                spawners/acid_spawner_extreme
+                {
+                    spawn_instances_minmax 1,2
+                    spawn_chance           0.1
+                }
+            }
+        }
+		
+		GridSpawner
+        {
+            spawn_pool                  "underground_treasures"
+
+            //terrain_types               "mud,floor"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      150.0
+                loot_containers         50.0
+                underground_treasures   100.0
+            }
+
+            spawn_blueprints
+            {
+                spawners/loot_spawner
+                {
+                    spawn_instances_minmax      3,5
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	    string:"items/loot/resources/shard_carbonium_item"
+                        min   	 	    int:"200"
+                        max   	 	    int:"500"
+						package_size    int:"5"
+                    }
+                }
+
+                spawners/loot_spawner
+                {
+                    spawn_instances_minmax      3,5
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_steel_item"
+                        min   	 	int:"200"
+                        max   	 	int:"500"
+						package_size    int:"5"
+                    }
+                }
+				
+				spawners/loot_spawner
+                {
+                    spawn_instances_minmax      3,5
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_rhodonite_item"
+                        min   	 	int:"50"
+                        max   	 	int:"100"
+                    }
+                }			
+				
+				spawners/loot_spawner
+                {
+                    spawn_instances_minmax      5,10
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_palladium_item"
+                        min   	 	int:"200"
+                        max   	 	int:"500"
+						package_size    int:"5"
+                    }
+                }
+            }
+        }
+        
+		GridSpawner
+        {
+            spawn_pool                  "underground_mushrooms"
+	        spawn_team                  "enemy"
+	
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      250.0
+                loot_containers         50.0
+                underground_treasures   70.0
+                underground_mushrooms   150.0
+            }
+	
+            spawn_blueprints
+            {  
+                props/special/undergound_mushroom/undergound_mushroom_hidden
+                {
+                    spawn_group_radius          "30"
+                    spawn_group_count           "15"   
+					spawn_group_object_distance "5"
+                }
+            }
+        }
+	}	
+
+	random_resources
+    {
+		ResourceVolume
+        {
+            resource        "palladium_vein"
+			
+            min_resources   "6000"
+            max_resources   "12000"
+
+            min_spawned_volumes "15"
+            max_spawned_volumes "20"
+        }
+		ResourceVolume
+        {
+            resource        "palladium_vein"
+			required_discovery_lvl	"1"
+			
+            min_resources   "6000"
+            max_resources   "12000"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "5"
+        }
+        ResourceVolume
+        {
+            resource        "carbon_vein"
+
+            min_resources   "4000"
+            max_resources   "8000"
+
+            min_spawned_volumes "5"
+            max_spawned_volumes "8"
+        }
+		
+		ResourceVolume
+        {
+            resource        "carbon_vein"
+
+            min_resources   "12000"
+            max_resources   "25000"
+
+            min_spawned_volumes "15"
+            max_spawned_volumes "20"
+        }
+		
+		ResourceVolume
+        {
+            resource        "carbon_vein"
+			required_discovery_lvl	"1"
+
+            min_resources   "12000"
+            max_resources   "25000"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "5"
+        }
+
+        ResourceVolume
+        {
+            resource        "iron_vein"
+
+            min_resources   "3000"
+            max_resources   "6000"
+
+            min_spawned_volumes "4"
+            max_spawned_volumes "6"
+        }
+		
+		ResourceVolume
+        {
+            resource        "iron_vein"
+
+            min_resources   "8000"
+            max_resources   "16000"
+
+            min_spawned_volumes "10"
+            max_spawned_volumes "15"
+        }
+		
+		ResourceVolume
+        {
+            resource        "iron_vein"
+			required_discovery_lvl	"1"
+
+            min_resources   "8000"
+            max_resources   "16000"
+
+            min_spawned_volumes "10"
+            max_spawned_volumes "15"
+        } 
+		
+		ResourceVolume
+        {
+            resource        "geothermal_vent"
+
+            min_resources   "6000"
+            max_resources   "10000"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+			
+            is_infinite        "1"			
+        }	
+		
+        ResourceVolume
+        {
+            resource        "geothermal_vent"
+			
+			required_discovery_lvl	"1"
+			
+            min_resources   "6000"
+            max_resources   "10000"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+			
+            is_infinite        "1"			
+        }					
+    }
+
+    min_starting_distance "16.0"
+    max_starting_distance "96.0"
+
+    starting_resources
+    {
+		ResourceVolume
+        {
+            resource        "palladium_vein"
+			
+            min_resources   "6000"
+            max_resources   "12000"
+
+            min_spawned_volumes "1"
+            max_spawned_volumes "2"
+        }	
+       ResourceVolume
+        {
+            resource        "carbon_vein"
+
+            min_resources   "10000"
+            max_resources   "20000"
+
+            min_spawned_volumes "1"
+            max_spawned_volumes "3"
+        }
+
+        ResourceVolume
+        {
+            resource        "iron_vein"
+
+            min_resources   "4000"
+            max_resources   "8000"
+
+            min_spawned_volumes "1"
+            max_spawned_volumes "2"
+        }
+		
+		ResourceVolume
+        {
+            resource        "geothermal_vent"
+
+            min_resources   "6000"
+            max_resources   "10000"
+
+            min_spawned_volumes "1"
+            max_spawned_volumes "1"
+			
+            is_infinite        "1"			
+        }	
+		
+    }	
+    
+}

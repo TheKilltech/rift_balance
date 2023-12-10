@@ -1,0 +1,231 @@
+BiomeDef
+{
+	base_materials
+	{
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_0"
+			value
+			{
+				String "ground/misc/biome_material_0"
+				String "ground/desert/sand_rocks_05"
+				String "ground/desert/desert_cracked_soil_01"
+				String "ground/desert/red_sand_01"
+				String "ground/desert/sand_rocks_02"
+				String "ground/desert/mud_cracked_01"
+				String "ground/desert/soil_02"
+				String "ground/desert/soil_rocky_03"
+				String "ground/magma/magma_ground_15"
+				String "ground/desert/soil_rocky_04"
+			}
+
+		}
+
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_1"
+			value
+			{
+				String "ground/misc/biome_material_1"
+				String "ground/mud/red_dirt_mud_01"
+				String "ground/rock/coral_mud"
+				String "ground/rock/small_rocks_01"
+				String "ground/rock/rocks_01"
+				String "ground/rock/rocky_ground_01"
+			}
+
+		}
+
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_2"
+			value
+			{
+				String "ground/misc/biome_material_2"
+				String "ground/desert/desert_sand_01"
+				String "ground/desert/small_dunes_03"
+				String "ground/sand/desert_sand_03"
+				String "ground/sand/desert_sand_04"
+			}
+
+		}
+
+	}
+
+	default_liquid_resource "mud_vein"
+	resources "carbon_vein,iron_vein,geothermal_vent,uranium_ore_vein,titanium_vein,palladium_vein,cobalt_vein,water_vein,mud_vein,sludge_vein"
+	icon						"gui/menu/biomes_prev/desert_prev"
+	icon_with_outpost			"gui/menu/biomes_prev/desert_base_prev"
+	loading						"gui/menu/loading/desert"
+	loading_with_outpost        "gui/menu/loading/desert_outpost"
+	
+	root_template
+	{
+		children
+		{
+			EntityTemplate
+			{
+				components
+				{
+					IdComponent
+					{
+						name "skybox"
+					}
+
+					LocalAabbDesc
+					{
+						local_aabb
+						{
+							min
+							{
+								x "-5.100"
+								y "-5.100"
+								z "-5.100"
+							}
+
+							max
+							{
+								x "5.100"
+								y "5.100"
+								z "5.100"
+							}
+
+						}
+
+					}
+
+					MeshDesc
+					{
+						material "pbr/skybox"
+						mesh "meshes/skybox.mesh"
+						renderable_custom_parameters
+						{
+							Params
+						}
+
+					}
+
+				}
+
+			}
+
+			EntityTemplate
+			{
+				components
+				{
+					IdComponent
+					{
+						name "main_light"
+					}
+
+					LightDesc
+					{
+						is_shadow_caster "1"
+						scattering_intensity "1.0"
+						light_color
+						{
+							w "15.062"
+							x "0.908"
+							y "0.663"
+							z "0.228"
+						}
+					}
+				}
+			}
+		}
+
+		components
+		{
+			BiomeModificatorComponent
+			{
+				solar_power "2.000"
+			}
+
+			DirectionalWindComponent
+			{
+				factor "0.000"
+				position_frequency_factor "0.001"
+				power_frequency "0.000"
+				power_max "0.000"
+				power_min "0.000"
+				rotation_frequency "0.000"
+				rotation_max "0.000"
+			}
+
+			SceneParamsDesc
+			{
+				bloom_params
+				{
+					max_exposure "0.873"
+					min_exposure "0.131"
+					scale "1.556"
+					threshold "0.386"
+				}
+
+				fog_params
+				{
+					color
+					{
+						x "0.776"
+						y "0.282"
+						z "0.034"
+					}
+
+					density "0.366"
+					end "56.000"
+					start "42.000"
+				}
+
+				shadow_params
+				{
+					intensity "1.000"
+				}
+
+				skybox_params
+				{
+					diffuse "materials/textures/skybox/skybox_desert_01_diffuse.dds"
+					diffuse_intensity "0.881"
+					environment "materials/textures/skybox/skybox_desert_01_env.dds"
+					specular "materials/textures/skybox/skybox_desert_01_specular.dds"
+					specular_intensity "0.825"
+					sun_roll "-47.215"
+					sun_yaw "37.837"
+				}
+
+				skybox_procedural_params
+				{
+					atmosphere_thickness "1.094"
+					clouds "0.401"
+					sun_convergence "0.503"
+					sun_size "1.001"
+				}
+
+				ssao_params
+				{
+					angle_bias "0.397"
+					factor "7.497"
+					intensity "1.501"
+					sample_length "0.054"
+				}
+
+			}
+
+			TimeOfDayComponent
+			{
+				timeofday_presets
+				{
+					TimeOfDayPresetHolder
+					{
+						resource_name "biomes/desert/scene_params/desert.td"
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+

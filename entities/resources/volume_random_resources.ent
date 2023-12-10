@@ -1,0 +1,63 @@
+EntityBlueprint
+{
+	name  "resources/volume_random_placement"
+
+	SceneEditorDesc
+    {
+        mesh        "meshes/resources/volume_resource_iron.mesh"
+        material    "resources/volume_resource_random_placement"
+
+        is_editable_in_hierarchy    "1"
+
+        highlight_grid              "1"
+        highlight_color
+        {
+            r "0.0"
+            g "0.0"
+            b "1.0"
+            a "1.0"
+        }
+    }
+
+	VolumeResourcesPlacementComponent
+    {
+
+    }
+
+
+}
+
+EntityBlueprint
+{
+	name  "resources/volume_random_resources"
+
+	SceneEditorDesc
+    {
+        mesh        "meshes/volume.mesh"
+        material    "resources/volume_resource_random"
+
+        highlight_grid              "0"
+        highlight_color
+        {
+            r "0.0"
+            g "0.0"
+            b "0.75"
+            a "0.5"
+        }
+
+        initial_scale
+        {
+            x "5"
+            y "3"
+            z "5"
+        }
+	}
+
+	VolumeResourcesSpawnerComponent
+    {
+		resources "carbon_vein,iron_vein,geothermal_vent,uranium_ore_vein,palladium_vein,titanium_vein,cobalt_vein"
+    }
+
+
+}
+
