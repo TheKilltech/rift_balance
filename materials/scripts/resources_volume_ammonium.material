@@ -1,0 +1,52 @@
+import * from "materials/scripts/resources.material"
+
+material resources/volume_resource_ammonium
+{
+	render_group 106
+
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+			depth_write off
+
+			texture_unit diffuse
+			{
+				texture materials/textures/resources/volume_resource_iron.dds
+			}
+
+			vertex_program_ref forward_object_texture_vp
+			{
+			}
+
+			fragment_program_ref forward_object_texture_fp
+			{
+			}
+		}
+	}
+}
+
+material resources/resource_ammonium : resources/resource_vein
+{
+	set_texture_alias albedo			materials/textures/resources/resource_ammonium_albedo.dds
+	set_texture_alias normal			materials/textures/resources/resource_iron_normal.dds
+	set_texture_alias packed			materials/textures/resources/resource_iron_packed.dds
+	set_texture_alias gradient			materials/textures/gradient/selector_gradient.dds 190 8
+
+	technique
+	{
+		pass
+		{
+			glow 1
+
+			fragment_program_ref deferred_resource_vein_fp
+			{
+        		param_named      	cGlowFactor     float 0.5
+				param_named 		cFresnelColor 	float4 2 1.5 0.5 1
+				param_named 		cFresnelScale   float 3
+				param_named 		cFresnelPower   float 2
+			}
+		}
+	}
+}

@@ -1,0 +1,66 @@
+EntityBlueprint
+{
+	name  "resources/volume_resource_ammonium"
+
+	SceneEditorDesc
+	{
+		mesh 		"meshes/resources/volume_resource_iron.mesh"
+		material 	"resources/volume_resource_ammonium"
+
+		highlight_grid              "1"
+        highlight_color
+        {
+            r "1"
+            g "0.9"
+            b "0.8"
+            a "1.0"
+        }
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"volume"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsMeshShape
+					{
+						mesh "meshes/resources/volume_resource_iron_c1.nxs"
+					}
+				}
+			}
+		}
+	}
+
+	LocalAabbDesc
+	{
+		local_aabb
+		{
+			min
+			{
+				x "-0.5"
+				y "-0.5"
+				z "-0.5"
+			}
+			max
+			{
+				x "0.5"
+				y "0.5"
+				z "0.5"
+			}	
+		}
+	}
+	
+	ResourceVolumeDesc
+	{
+		type 		"ammonium_vein"
+		amount 		"500"
+		infinity 	"0"
+	}
+}
+

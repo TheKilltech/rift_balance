@@ -1,0 +1,19 @@
+import * from "materials/scripts/loot.material"
+
+material loot/resources/shard_ammonium : loot/resources
+{
+	set_texture_alias albedo			materials/textures/loot/resources/shard_ammonium_albedo.dds
+	set_texture_alias normal			materials/textures/loot/resources/biomass_animal_normal.dds
+	set_texture_alias packed			materials/textures/loot/resources/biomass_animal_packed.dds
+
+	technique
+	{
+		pass
+		{
+			fragment_program_ref deferred_loot_fp
+			{
+				param_named cFresnelColor 	float4 3 3 2 1
+			}
+		}
+	}
+}

@@ -1,6 +1,42 @@
 import * from "materials/scripts/gui.material"
 import * from "materials/scripts/gui_hud_resource_icons.material"
 
+
+material gui/hud/resource_icons/ammonium : gui/unsharp
+{
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/ammonium.dds
+}
+
+material gui/hud/resource_icons/ammonium_bigger : gui/unsharp
+{
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/ammonium_bigger.dds
+}
+
+material gui/hud/resource_icons/ammonium_bigger_disabled : gui/unsharp
+{
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/ammonium_bigger.dds
+}
+
+
+material gui/hud/resource_icons/ammonium_vein : gui/unsharp
+{
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/ammonium_vein.dds
+}
+
+material gui/hud/resource_icons/ammonium_vein_bigger : gui/unsharp
+{
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/ammonium_vein_bigger.dds
+}
+
+material gui/hud/resource_icons/ammonium_vein_bigger_disabled : gui/unsharp
+{
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/ammonium_vein_bigger.dds
+}
+
+
+
+
+
 material gui/hud/resource_icons/ammo_mech_explosive_lvl2_icon : gui/unsharp
 {
 	set_texture_alias diffuse materials/textures/gui/hud/resource_icons/ammo_mech_explosive_lvl2_icon.dds
