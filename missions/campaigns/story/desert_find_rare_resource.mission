@@ -289,6 +289,17 @@ MissionDef
             min_spawned_volumes "3"
             max_spawned_volumes "5"
         }
+		
+        ResourceVolume
+        {
+            resource        "ammonium_vein"
+
+            min_resources   "3600"
+            max_resources   "7200"
+
+            min_spawned_volumes "8"
+            max_spawned_volumes "15"
+        }
 
         ResourceVolume
         {
