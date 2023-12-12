@@ -29,7 +29,7 @@ EntityBlueprint
 			}		
 		}
 		
-		resource_requirement "carbon_vein|iron_vein" 
+		resource_requirement "carbon_vein|iron_vein|ammonium_vein" 
 	}
 
 	ResourceConverterDesc
@@ -55,6 +55,13 @@ EntityBlueprint
 				value			 	"1"
 				family				"base"
 			}
+			
+			GameplayResource
+			{
+				resource 			"ammonium_vein"
+				value			 	"1"
+				family				"base"
+			}
 		}
 		
 		out
@@ -69,6 +76,13 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"steel"
+				value			 	"1"
+				family				"base"
+			}
+			
+			GameplayResource
+			{
+				resource 			"ammonium"
 				value			 	"1"
 				family				"base"
 			}
