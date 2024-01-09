@@ -21,12 +21,13 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 18
+				building_time 36
 				building_cost
 				{
 					carbonium 	"400"
 					steel 		"600"		
 					cobalt 		"250"
+					ai			"1"
 				}
 			}	
 		}
@@ -39,25 +40,19 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"600"
+				value			 	"200"
 			}
 			
 			GameplayResource
 			{
-				resource 			"ammonium"
-				value			 	"1"
-			}
-			
-			GameplayResource
-			{
-				resource 			"biomass_water"
-				value			 	"3"
+				resource 			"biomass_animal"
+				value			 	"4"
 			}
 			
 			GameplayResource
 			{
 				resource 			"hazenite"
-				value			 	"2"
+				value			 	"1.5"
 			}
 		}
 		
