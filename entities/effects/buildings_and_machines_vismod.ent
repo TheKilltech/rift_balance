@@ -369,3 +369,34 @@ EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_orange_03
 		material 	"buildings/decorations/scifi_structure_orange"
 	}
 }
+
+EntityBlueprint "effects/no_lifetime"		//rapture
+{
+	name effects/world/rapture
+	
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_geothermal_vent.mesh"
+		material 	"resources/resource_geothermal_vent"
+	}	
+
+	//ParticleDesc
+	//{
+	//	name    "rift/geothermal_vent"
+	//}
+	//SoundDesc
+	//{
+	//	name	"ambient/geothermal_vent_ambient"
+	//}		
+}
+
+EntityBlueprint "effects/no_lifetime"		//cobalt
+{
+	name effects/world/cobalt_vein_vl4
+	
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_titanium_very_large_04.mesh"
+		material 	"loot/resources/shard_cobalt"
+	}
+}
