@@ -378,19 +378,32 @@ EntityBlueprint "effects/no_lifetime"		//rapture
 	{
 		mesh 		"meshes/resources/resource_geothermal_vent.mesh"
 		material 	"resources/resource_geothermal_vent"
-	}	
-
-	//ParticleDesc
-	//{
-	//	name    "rift/geothermal_vent"
-	//}
-	//SoundDesc
-	//{
-	//	name	"ambient/geothermal_vent_ambient"
-	//}		
+	}
 }
 
-EntityBlueprint "effects/no_lifetime"		//cobalt
+EntityBlueprint "effects/no_lifetime"		//carbon_vein_vl3
+{
+	name effects/world/carbon_vein_vl3
+	
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_very_large_03.mesh"
+		material 	"resources/resource_carbonium"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//iron_vein_vl1
+{
+	name effects/world/iron_vein_vl1
+	
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_iron_very_large_01.mesh"
+		material 	"resources/resource_iron"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//cobalt_vein_vl4
 {
 	name effects/world/cobalt_vein_vl4
 	
@@ -398,5 +411,38 @@ EntityBlueprint "effects/no_lifetime"		//cobalt
 	{
 		mesh 		"meshes/resources/resource_titanium_very_large_04.mesh"
 		material 	"loot/resources/shard_cobalt"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//palladium_vein_vl2
+{
+	name effects/world/palladium_vein_vl2
+	
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_palladium_very_large_02.mesh"
+		material 	"resources/resource_palladium"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//titanium_vein_l1
+{
+	name effects/world/titanium_vein_l1
+	
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_titanium_large_01.mesh"
+		material 	"resources/resource_titanium"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//uranium_vein_vl3
+{
+	name effects/world/uranium_vein_vl3
+	
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_uranium_very_large_03.mesh"
+		material 	"resources/resource_uranium_very_large"
 	}
 }

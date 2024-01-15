@@ -1,6 +1,39 @@
 EntityBlueprint
 {
-	name  "resources/volume_random_cobalt_deepvein_resources"
+	name  "resources/volume_random_carbon_deepvein_resources"
+
+	SceneEditorDesc
+    {
+        mesh        "meshes/volume.mesh"
+        material    "resources/volume_resource_random"
+
+        highlight_grid              "0"
+        highlight_color
+        {
+            r "0.0"
+            g "0.0"
+            b "0.75"
+            a "0.5"
+        }
+
+        initial_scale
+        {
+            x "2"
+            y "3"
+            z "2"
+        }
+	}
+
+	VolumeResourcesSpawnerComponent
+    {
+        resources "carbon_deepvein"
+    }
+
+}
+
+EntityBlueprint
+{
+	name  "resources/volume_random_iron_deepvein_resources"
 
 	SceneEditorDesc
     {
@@ -28,6 +61,132 @@ EntityBlueprint
     {
         resources "cobalt_deepvein"
     }
-
 }
 
+EntityBlueprint
+{
+	name  "resources/volume_random_cobalt_deepvein_resources"
+
+	SceneEditorDesc
+    {
+        mesh        "meshes/volume.mesh"
+        material    "resources/volume_resource_random"
+
+        highlight_grid              "0"
+        highlight_color
+        {
+            r "0.0"
+            g "0.0"
+            b "0.75"
+            a "0.5"
+        }
+
+        initial_scale
+        {
+            x "2"
+            y "3"
+            z "2"
+        }
+	}
+
+	VolumeResourcesSpawnerComponent
+    {
+        resources "iron_deepvein"
+    }
+}
+
+EntityBlueprint
+{
+	name  "resources/volume_random_palladium_deepvein_resources"
+
+	SceneEditorDesc
+    {
+        mesh        "meshes/volume.mesh"
+        material    "resources/volume_resource_random"
+
+        highlight_grid              "0"
+        highlight_color
+        {
+            r "0.0"
+            g "0.0"
+            b "0.75"
+            a "0.5"
+        }
+
+        initial_scale
+        {
+            x "2"
+            y "3"
+            z "2"
+        }
+	}
+
+	VolumeResourcesSpawnerComponent
+    {
+        resources "palladium_deepvein"
+    }
+}
+
+EntityBlueprint
+{
+	name  "resources/volume_random_titanium_deepvein_resources"
+
+	SceneEditorDesc
+    {
+        mesh        "meshes/volume.mesh"
+        material    "resources/volume_resource_random"
+
+        highlight_grid              "0"
+        highlight_color
+        {
+            r "0.0"
+            g "0.0"
+            b "0.75"
+            a "0.5"
+        }
+
+        initial_scale
+        {
+            x "2"
+            y "3"
+            z "2"
+        }
+	}
+
+	VolumeResourcesSpawnerComponent
+    {
+        resources "titanium_deepvein"
+    }
+}
+
+EntityBlueprint
+{
+	name  "resources/volume_random_uranium_ore_deepvein_resources"
+
+	SceneEditorDesc
+    {
+        mesh        "meshes/volume.mesh"
+        material    "resources/volume_resource_random"
+
+        highlight_grid              "0"
+        highlight_color
+        {
+            r "0.0"
+            g "0.0"
+            b "0.75"
+            a "0.5"
+        }
+
+        initial_scale
+        {
+            x "2"
+            y "3"
+            z "2"
+        }
+	}
+
+	VolumeResourcesSpawnerComponent
+    {
+        resources "uranium_ore_deepvein"
+    }
+}

@@ -1,6 +1,6 @@
 EntityBlueprint
 {
-	name "resources/resource_cobalt_deepvein"
+	name "resources/resource_iron_deepvein"
 	
 	TypeDesc
 	{
@@ -37,7 +37,7 @@ EntityBlueprint
 	MinimapItemDesc
 	{
 		type			"image"
-		icon_material 	"gui/hud/minimap_icons/cobalt_deepvein"
+		icon_material 	"gui/hud/minimap_icons/iron_deepvein"
 		unknown_until_visible 	"1"
 
 		visibility 			"discovered|radar"
@@ -45,7 +45,7 @@ EntityBlueprint
 
 	SelectableDesc
 	{
-		content "resource_name/cobalt"
+		content "resource_name/iron_vein"
 		can_activate "0"
 	}
 	
@@ -77,7 +77,7 @@ EntityBlueprint
 				}		
 				Effect
 				{
-					blueprint "effects/world/cobalt_vein_vl4"
+					blueprint "effects/world/iron_vein_vl1"
 					scale "1.0 2.0 1.0"
 					//bone "att_vismod_1"
 				}			
