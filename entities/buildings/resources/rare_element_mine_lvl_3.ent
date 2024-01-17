@@ -9,8 +9,8 @@ EntityBlueprint
 		name 				"rare_element_mine_lvl_3"
 		bp   				"buildings/resources/rare_element_mine_lvl_3"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/rare_element_mine"
-		description			"gui/hud/building_description/rare_element_mine"
+		localization_id		"gui/hud/building_name/mining_drill_lvl_3"
+		description			"gui/hud/building_description/mining_drill_lvl_3"
 		menu_icon			"gui/hud/building_icons/rare_element_mine_lvl3"
 		order				"3"
 		//upgrade				"buildings/resources/rare_element_mine_lvl_4"		
@@ -39,7 +39,7 @@ EntityBlueprint
 				}
 			}			
 		}	
-		resource_requirement "uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
+		resource_requirement "carbon_deepvein|iron_deepvein|cobalt_deepvein|palladium_deepvein|titanium_deepvein|uranium_ore_deepvein"
 	}
 
 	ResourceConverterDesc
@@ -49,60 +49,93 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"115"
+				value			 	"350"
 			}
 			
 			GameplayResource
 			{
-				resource 			"uranium_ore_vein"
+				resource 			"carbon_deepvein"
+				value			 	"4"
+				family				"base"
+			}
+			GameplayResource
+			{
+				resource 			"iron_deepvein"
+				value			 	"4"
+				family				"base"
+			}
+			
+			GameplayResource
+			{
+				resource 			"uranium_ore_deepvein"
 				value			 	"4"
 				family				"rare"
 			}
 			
 			GameplayResource
 			{
-				resource 			"titanium_vein"
+				resource 			"titanium_deepvein"
 				value			 	"4"
 				family				"rare"
 			}
 			GameplayResource
 			{
-				resource 			"palladium_vein"
+				resource 			"palladium_deepvein"
 				value			 	"4"
 				family				"rare"
 			}
 			GameplayResource
 			{
-				resource 			"cobalt_vein"
+				resource 			"cobalt_deepvein"
 				value			 	"4"
 				family				"rare"
-			}				
+			}	
+			
+			GameplayResource
+			{
+				resource 			"solvent"
+				value 				"30"
+				attachment			"att_in_1"
+			}
 		}
 		
 		out
 		{
 			GameplayResource
 			{
+				resource 			"carbonium"
+				value			 	"5.3"
+				family				"base"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value			 	"5.3"
+				family				"base"
+			}
+			
+			GameplayResource
+			{
 				resource 			"uranium_ore"
-				value			 	"4"
+				value			 	"5.3"
 				family				"rare"
 			}
 			GameplayResource
 			{
 				resource 			"palladium"
-				value			 	"4"
+				value			 	"5.3"
 				family				"rare"
 			}
 			GameplayResource
 			{
 				resource 			"titanium"
-				value			 	"4"
+				value			 	"5.3"
 				family				"rare"
 			}
 			GameplayResource
 			{
 				resource 			"cobalt"
-				value			 	"4"
+				value			 	"5.3"
 				family				"rare"
 			}
 		}
@@ -169,8 +202,9 @@ EntityBlueprint
 			}			
 		}
 	}
+	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -197,7 +231,7 @@ EntityBlueprint
 		}				
 	}
 
-		MeshDesc
+	MeshDesc
 	{
 		mesh "meshes/buildings/resources/rare_element_mine_lvl_3.mesh"
 		material "buildings/resources/rare_element_mine_lvl_3"
@@ -207,4 +241,72 @@ EntityBlueprint
 	{
 		name "meshes/buildings/resources/rare_element_mine_lvl_3"
 	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////			
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_chimney_small"								
+					bone "att_chimney_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/rare_element_mine_working"	
+					delay "0.5"					
+				}				
+			}
+		}		
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone "att_in_1_pipe"
+				}
+				//Effect
+				//{
+				//	blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_01"
+				//	bone "att_vismod_1"
+				//	scale 0.8 1.0 0.8
+				//}
+				//Effect
+				//{
+				//	blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_02"
+				//	bone "att_vismod_2"
+				//	scale 0.7 0.7 0.7
+				//}
+			}
+		}		
+	}		
 }

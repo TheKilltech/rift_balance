@@ -7,8 +7,8 @@ EntityBlueprint
 		name 				"rare_element_mine"
 		bp   				"buildings/resources/rare_element_mine"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/rare_element_mine"
-		description			"gui/hud/building_description/rare_element_mine"
+		localization_id		"gui/hud/building_name/mining_drill"
+		description			"gui/hud/building_description/mining_drill"
 		menu_icon			"gui/hud/building_icons/rare_element_mine"
 		order				"3"
 		upgrade				"buildings/resources/rare_element_mine_lvl_2"		
@@ -39,17 +39,15 @@ EntityBlueprint
 			}			
 		}
 
-		resource_requirement "uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
+		resource_requirement "carbon_deepvein|iron_deepvein|cobalt_deepvein|palladium_deepvein|titanium_deepvein|uranium_ore_deepvein"
 	}
 
-	
-	
  	//AnimationGraphDesc
 	//{
 	//	animation_graph_name "building_working"
 	//}	
 	
-		ResourceConverterDesc
+	ResourceConverterDesc
 	{
 		in
 		{
@@ -61,26 +59,38 @@ EntityBlueprint
 			
 			GameplayResource
 			{
-				resource 			"uranium_ore_vein"
+				resource 			"carbon_deepvein"
 				value			 	"1"
-				family				"rare"
+				family				"base"
+			}
+			GameplayResource
+			{
+				resource 			"iron_deepvein"
+				value			 	"1"
+				family				"base"
 			}
 			
 			GameplayResource
 			{
-				resource 			"titanium_vein"
+				resource 			"cobalt_deepvein"
 				value			 	"1"
 				family				"rare"
 			}
 			GameplayResource
 			{
-				resource 			"palladium_vein"
+				resource 			"palladium_deepvein"
 				value			 	"1"
 				family				"rare"
 			}
 			GameplayResource
 			{
-				resource 			"cobalt_vein"
+				resource 			"titanium_deepvein"
+				value			 	"1"
+				family				"rare"
+			}
+			GameplayResource
+			{
+				resource 			"uranium_ore_deepvein"
 				value			 	"1"
 				family				"rare"
 			}			
@@ -90,10 +100,23 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 			"uranium_ore"
+				resource 			"carbonium"
+				value			 	"1"
+				family				"base"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value			 	"1"
+				family				"base"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt"
 				value			 	"1"
 				family				"rare"
-			}
+			}	
 			GameplayResource
 			{
 				resource 			"palladium"
@@ -105,13 +128,13 @@ EntityBlueprint
 				resource 			"titanium"
 				value			 	"1"
 				family				"rare"
-			}
+			}		
 			GameplayResource
 			{
-				resource 			"cobalt"
+				resource 			"uranium_ore"
 				value			 	"1"
 				family				"rare"
-			}			
+			}
 		}
 		
 		priority 4		
@@ -414,7 +437,7 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
 			group "working"
@@ -433,6 +456,31 @@ EntityBlueprint
 					delay "0.5"					
 				}				
 			}
-		}			
+		}		
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				//Effect
+				//{
+				//	blueprint "effects/buildings_and_machines/pipe"
+				//	bone "att_in_1_pipe"
+				//}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_01"
+					bone "att_vismod_1"
+					scale 0.8 1.0 0.8
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_02"
+					bone "att_vismod_2"
+					scale 0.7 0.7 0.7
+				}
+			}
+		}		
 	}		
 }
