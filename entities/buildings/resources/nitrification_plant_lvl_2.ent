@@ -13,7 +13,7 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/nitrification_plant"
 		description			"gui/hud/building_description/nitrification_plant"
 		menu_icon			"gui/hud/building_icons/nitrification_plant_lvl_2"
-		order				"3"
+		order				"11"
 		upgrade				"buildings/resources/nitrification_plant_lvl_3"		
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -49,18 +49,19 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"ammonium"
-				value			 	"2"
-			}
-			
-			GameplayResource
-			{
-				resource 			"hazenite"
 				value			 	"1"
 			}
 			
 			GameplayResource
 			{
-				resource 			"biomass_water"
+				resource 			"water"
+				value			 	"15"
+				attachment			"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 			"rhodonite" //"hazenite"
 				value			 	"1"
 			}
 		}
@@ -156,7 +157,22 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////		
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "att_out_1"
@@ -182,6 +198,11 @@ EntityBlueprint
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_out_pipe"
 				}
 				Effect
@@ -202,6 +223,12 @@ EntityBlueprint
 					bone "att_vismod_3"
 					scale "1.4 1.0 1.0"
 				}
+				//Effect
+				//{
+				//	blueprint "effects/buildings_and_machines/minipipes"
+				//	bone "att_vismod_4"
+				//	scale "0.5 0.5 0.5"
+				//}
 			}
 		}
 		EffectGroup
