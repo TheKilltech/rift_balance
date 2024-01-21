@@ -1,38 +1,36 @@
 EntityBlueprint
 {
-	name 			"buildings/resources/carbonium_synthesizer_lvl_2"
+	name  					"buildings/resources/steel_factory_lvl_3"
 
-	base_blueprint 	"buildings/resources/carbonium_synthesizer"
+	base_blueprint 			buildings/resources/steel_factory_lvl_2   	
 
 	BuildingDesc
 	{
-		name 				"carbonium_synthesizer_lvl_2"
-		bp   				"buildings/resources/carbonium_synthesizer_lvl_2"
+		name 				"steel_factory_lvl_3"
+		bp   				"buildings/resources/steel_factory_lvl_3"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/carbonium_synthesizer"
-		description			"gui/hud/building_description/carbonium_synthesizer"
-		menu_icon			"gui/hud/building_icons/carbonium_synthesizer_lvl2"
-		order				"3"
-		upgrade				"buildings/resources/carbonium_synthesizer_lvl_3"		
+		localization_id		"gui/hud/building_name/steel_factory"
+		description			"gui/hud/building_description/steel_factory"
+		menu_icon			"gui/hud/building_icons/steel_factory_lvl3"
 		require 			"headquarters"
 		buildable			"0"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		
-		
+		building_group		"carbonium_factory"
+		order				"2"
+		//upgrade				"buildings/resources/steel_factory_lvl_4"	
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 30
+				building_time 10
 				building_cost
 				{
-					steel 	"1000"
-					cobalt	"50"
+					carbonium 	"800"
 				}
 			}		
-		}
-		
+		}			
+		resource_requirement "iron_vein"
 	}
 
 	ResourceConverterDesc
@@ -42,30 +40,43 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"300"
+				value				"45"
 			}
+			
 			GameplayResource
 			{
-				resource 			"biomass_plant"
-				value			 	"1"
-			}	
+				resource 			"iron_vein"
+				value			 	"3.2"
+			}
 		}
 		
 		out
 		{
 			GameplayResource
 			{
-				resource 			"carbonium"
-				value			 	"3"
+				resource 			"steel"
+				value				"4"
 			}
+			
 		}
-		priority 4	
+		priority 4		
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/steel_factory_lvl_3.mesh"		
+		material "buildings/resources/steel_factory_lvl_3"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/steel_factory_lvl_3"
 	}
 
 	HealthDesc
 	{
-		max_health 					"1500"
-		health 						"1500"
+		max_health 					"1600"
+		health 						"1600"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -79,7 +90,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"80_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"80_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
 				destroyed_state_effect_group 		"80_state"
 				destrucion_level_name 				"80"
 
@@ -90,7 +100,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"60_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"60_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"60_state"
 				destrucion_level_name 				"60"
 			}
@@ -100,7 +109,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"40_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"40_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
 				destroyed_state_effect_group 		"40_state"
 				destrucion_level_name 				"40"
 			}
@@ -110,7 +118,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"20_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"20_destroy"
-				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				destroyed_state_effect_group 		"20_state"
 				destrucion_level_name 				"20"
 			}
@@ -120,19 +127,18 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"0_transition"
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
-				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
 	}
-	
+
 	EffectDesc
 	{		
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////MISC/////////////////////////					
+////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
 			group "working"
@@ -143,23 +149,34 @@ EntityBlueprint
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
-					bone "att_chimney"
-				}			
-			}
-		}	
-		EffectGroup
-		{
-			group "level"
-			enabled "1"
-			Effects
-			{
+					bone "att_furnace_1"
+				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/level_2"
-					bone "att_level"
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/steel_factory_working"	
+					delay "0.5"					
 				}
 			}
 		}		
-	}	
+	}
 }
-

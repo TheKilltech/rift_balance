@@ -1,54 +1,37 @@
 EntityBlueprint
 {
-	name  "buildings/resources/rare_element_mine"
+	name  "buildings/resources/steel_factory"
 
 	BuildingDesc
 	{
-		name 				"rare_element_mine"
-		bp   				"buildings/resources/rare_element_mine"
+		name 				"steel_factory"
+		bp   				"buildings/resources/steel_factory"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/mining_drill"
-		description			"gui/hud/building_description/mining_drill"
-		menu_icon			"gui/hud/building_icons/rare_element_mine"
-		order				"3"
-		upgrade				"buildings/resources/rare_element_mine_lvl_2"		
+		localization_id		"gui/hud/building_name/steel_factory"
+		description			"gui/hud/building_description/steel_factory"
+		menu_icon			"gui/hud/building_icons/steel_factory"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"carbonium_factory"
+		order				"2"
+		upgrade				"buildings/resources/steel_factory_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-						
+		
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 120
+				building_time 10
 				building_cost
 				{
-					carbonium 	"500"
-					ai			"4"
+					carbonium 	"50"
 				}
-			}	
-			BuildingCostInfo
-			{
-				name "survival"
-				building_time 60
-				building_cost
-				{
-					carbonium 	"250"
-					ai			"1"
-				}
-			}			
+			}		
 		}
-
-		resource_requirement "carbon_deepvein|iron_deepvein|cobalt_deepvein|palladium_deepvein|titanium_deepvein|uranium_ore_deepvein"
+		resource_requirement "iron_vein"
 	}
 
- 	//AnimationGraphDesc
-	//{
-	//	animation_graph_name "building_working"
-	//}	
-	
 	ResourceConverterDesc
 	{
 		in
@@ -56,119 +39,37 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"50"
+				value				"20"
 			}
 			
 			GameplayResource
 			{
-				resource 			"fluorine"
-				value			 	"30"
-				attachment			"att_in_1"
-				family				"in"
-			}
-			GameplayResource
-			{
-				resource 			"solvent"
-				value			 	"10"
-				attachment			"att_in_1"
-				family				"in"
-			}
-			
-			GameplayResource
-			{
-				resource 			"carbon_deepvein"
+				resource 			"iron_vein"
 				value			 	"1"
-				family				"base"
 			}
-			GameplayResource
-			{
-				resource 			"iron_deepvein"
-				value			 	"1"
-				family				"base"
-			}
-			
-			GameplayResource
-			{
-				resource 			"cobalt_deepvein"
-				value			 	"1"
-				family				"rare"
-			}
-			GameplayResource
-			{
-				resource 			"palladium_deepvein"
-				value			 	"1"
-				family				"rare"
-			}
-			GameplayResource
-			{
-				resource 			"titanium_deepvein"
-				value			 	"1"
-				family				"rare"
-			}
-			GameplayResource
-			{
-				resource 			"uranium_ore_deepvein"
-				value			 	"1"
-				family				"rare"
-			}			
 		}
 		
 		out
 		{
 			GameplayResource
 			{
-				resource 			"carbonium"
-				value			 	"1"
-				family				"base"
-			}
-			GameplayResource
-			{
 				resource 			"steel"
-				value			 	"1"
-				family				"base"
-			}
-			
-			GameplayResource
-			{
-				resource 			"cobalt"
-				value			 	"1"
-				family				"rare"
-			}	
-			GameplayResource
-			{
-				resource 			"palladium"
-				value			 	"1"
-				family				"rare"
-			}
-			GameplayResource
-			{
-				resource 			"titanium"
-				value			 	"1"
-				family				"rare"
+				value				"1"
 			}		
-			GameplayResource
-			{
-				resource 			"uranium_ore"
-				value			 	"1"
-				family				"rare"
-			}
 		}
-		
 		priority 4		
-		one_vein_mode "1"
 	}
 
 	LuaDesc
 	{
-		script "lua/buildings/resources/carbonium_factory.lua"
+		script "lua/buildings/building.lua"
 		
 		database
 		{
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
-			building_time		float:"120"
-		}
-		
+			building_time		float:"10"
+		}		
 	}
 
 	HealthDesc
@@ -232,8 +133,8 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/rare_element_mine_lvl_1.mesh"
-		material "buildings/resources/rare_element_mine_lvl_1"
+		mesh "meshes/buildings/resources/steel_factory_lvl_1.mesh"
+		material "buildings/resources/steel_factory_lvl_1"
 	}
 
 	TypeDesc
@@ -243,7 +144,7 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/rare_element_mine_lvl_1"
+		name "meshes/buildings/resources/steel_factory_lvl_1"
 	}
 
 	AnimationGraphDesc
@@ -262,26 +163,17 @@ EntityBlueprint
 				physics_material 	"default"
 				Shapes
 				{
-					PhysicsCapsuleShape
+					PhysicsSphereShape
 					{
 						r "2.45"
-						half_height "1.5"
-
-						position
+	
+						position 
 						{
 							x "0.0"
-							y "1.5"
+							y "1.0"
 							z "0.0"
 						}
-
-						orientation
-						{
-							w "0.7"
-							x "0.0"
-							z "0.7"
-							y "0.0"
-						}
-					}	
+					}
 				}
 			}
 		}
@@ -298,12 +190,10 @@ EntityBlueprint
 	{
 		Shapes
 		{
-   			PhysicsBoxShape
-   			{
-    				x	6
-    				y	6
-    				z	6
-   			}			
+			PhysicsMeshShape
+			{
+				mesh "meshes/buildings/resources/steel_factory_g1.nxs"
+			}	
 		}
 	}
 
@@ -322,6 +212,7 @@ EntityBlueprint
 			x "3"
 			y "3"
 		}
+
 		additional_z_order	"5"
 		visibility			"always"
 	}
@@ -453,8 +344,8 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}
-		////////////////////////MISC/////////////////////////			
+		}	
+////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
 			group "working"
@@ -464,40 +355,35 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"								
-					bone "att_chimney_1"
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
+					bone "att_furnace_1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_resources/rare_element_mine_working"	
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					bone "att_furnace_5"
+				}				
+				Effect
+				{
+					blueprint "effects/buildings_resources/steel_factory_working"	
 					delay "0.5"					
 				}				
 			}
 		}		
-		EffectGroup
-		{
-			group "vismod"
-			enabled "1"
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone "att_in_1_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_01"
-					bone "att_vismod_1"
-					scale 0.8 1.0 0.8
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_02"
-					bone "att_vismod_2"
-					scale 0.7 0.7 0.7
-				}
-			}
-		}		
-	}		
+	}
 }

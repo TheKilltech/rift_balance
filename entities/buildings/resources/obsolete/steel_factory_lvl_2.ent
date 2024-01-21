@@ -1,22 +1,24 @@
 EntityBlueprint
 {
-	name  					"buildings/resources/steel_factory_lvl_3"
+	name  					"buildings/resources/steel_factory_lvl_2"
 
-	base_blueprint 			buildings/resources/steel_factory_lvl_2   	
+	base_blueprint 			buildings/resources/steel_factory   	
 
 	BuildingDesc
 	{
-		buildable 			"0"		
-		name 				"steel_factory_lvl_3"
-		bp   				"buildings/resources/steel_factory_lvl_3"
+		name 				"steel_factory_lvl_2"
+		bp   				"buildings/resources/steel_factory_lvl_2"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/steel_factory"
 		description			"gui/hud/building_description/steel_factory"
-		menu_icon			"gui/hud/building_icons/steel_factory_lvl3"
+		menu_icon			"gui/hud/building_icons/steel_factory_lvl2"
 		require 			"headquarters"
+		buildable			"0"
+		building_group		"carbonium_factory"
 		order				"2"
-		//upgrade				"buildings/resources/steel_factory_lvl_4"	
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		upgrade				"buildings/resources/steel_factory_lvl_3"		
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
 		costs
 		{
 			BuildingCostInfo
@@ -25,10 +27,10 @@ EntityBlueprint
 				building_time 10
 				building_cost
 				{
-					carbonium 	"800"
+					carbonium 	"200"
 				}
 			}		
-		}			
+		}
 		resource_requirement "iron_vein"
 	}
 
@@ -39,13 +41,13 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value				"45"
+				value				"30"
 			}
 			
 			GameplayResource
 			{
 				resource 			"iron_vein"
-				value			 	"3.2"
+				value			 	"1.8"
 			}
 		}
 		
@@ -54,28 +56,28 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"steel"
-				value				"4"
-			}
-			
+				value				"2"
+			}	
 		}
 		priority 4		
 	}
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/steel_factory_lvl_3.mesh"		
-		material "buildings/resources/steel_factory_lvl_3"
+		mesh "meshes/buildings/resources/steel_factory.mesh"
+		material "buildings/resources/steel_factory"
+		
 	}
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/steel_factory_lvl_3"
+		name "meshes/buildings/resources/steel_factory"
 	}
 
 	HealthDesc
 	{
-		max_health 					"1600"
-		health 						"1600"
+		max_health 					"1300"
+		health 						"1300"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -169,12 +171,12 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
 					bone "att_furnace_5"
-				}
+				}				
 				Effect
 				{
 					blueprint "effects/buildings_resources/steel_factory_working"	
 					delay "0.5"					
-				}
+				}	
 			}
 		}		
 	}

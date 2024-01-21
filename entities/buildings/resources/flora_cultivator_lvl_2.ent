@@ -14,10 +14,11 @@ EntityBlueprint
 		description			"gui/hud/building_description/flora_cultivator"
 		menu_icon			"gui/hud/building_icons/flora_cultivator_lvl2"
 		require 			"headquarters"
+		buildable			"0"
+		building_group		"flora_cultivator"
 		order				"4"
 		menu_action			"working_mod"
-		upgrade				"buildings/resources/flora_cultivator_lvl_3"	
-		buildable			"0"
+		upgrade				"buildings/resources/flora_cultivator_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 	

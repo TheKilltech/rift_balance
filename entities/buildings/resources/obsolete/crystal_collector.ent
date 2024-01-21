@@ -1,54 +1,39 @@
 EntityBlueprint
 {
-	name  "buildings/resources/rare_element_mine"
+	name  "buildings/resources/crystal_collector"
 
 	BuildingDesc
 	{
-		name 				"rare_element_mine"
-		bp   				"buildings/resources/rare_element_mine"
+		name 				"crystal_collector"
+		bp   				"buildings/resources/crystal_collector"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/mining_drill"
-		description			"gui/hud/building_description/mining_drill"
-		menu_icon			"gui/hud/building_icons/rare_element_mine"
-		order				"3"
-		upgrade				"buildings/resources/rare_element_mine_lvl_2"		
+		localization_id		"gui/hud/building_name/crystal_collector"
+		description			"gui/hud/building_description/crystal_collector"
+		menu_icon			"gui/hud/building_icons/crystal_collector"
 		require 			"headquarters"
 		buildable			"0"
-		building_group		"carbonium_factory"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-						
+		building_group		"flora_cultivator"
+		order				"14"
+		upgrade				"buildings/resources/crystal_collector_lvl_2"	
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 120
+				building_time 10
 				building_cost
 				{
-					carbonium 	"500"
-					ai			"4"
+								carbonium 	"200"
+								steel 		"200"
+								ai			"1"
+								palladium	"25"
 				}
-			}	
-			BuildingCostInfo
-			{
-				name "survival"
-				building_time 60
-				building_cost
-				{
-					carbonium 	"250"
-					ai			"1"
-				}
-			}			
+			}		
 		}
-
-		resource_requirement "carbon_deepvein|iron_deepvein|cobalt_deepvein|palladium_deepvein|titanium_deepvein|uranium_ore_deepvein"
 	}
 
- 	//AnimationGraphDesc
-	//{
-	//	animation_graph_name "building_working"
-	//}	
-	
 	ResourceConverterDesc
 	{
 		in
@@ -56,119 +41,62 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"50"
+				value				"15"
 			}
-			
-			GameplayResource
-			{
-				resource 			"fluorine"
-				value			 	"30"
-				attachment			"att_in_1"
-				family				"in"
-			}
-			GameplayResource
-			{
-				resource 			"solvent"
-				value			 	"10"
-				attachment			"att_in_1"
-				family				"in"
-			}
-			
-			GameplayResource
-			{
-				resource 			"carbon_deepvein"
-				value			 	"1"
-				family				"base"
-			}
-			GameplayResource
-			{
-				resource 			"iron_deepvein"
-				value			 	"1"
-				family				"base"
-			}
-			
-			GameplayResource
-			{
-				resource 			"cobalt_deepvein"
-				value			 	"1"
-				family				"rare"
-			}
-			GameplayResource
-			{
-				resource 			"palladium_deepvein"
-				value			 	"1"
-				family				"rare"
-			}
-			GameplayResource
-			{
-				resource 			"titanium_deepvein"
-				value			 	"1"
-				family				"rare"
-			}
-			GameplayResource
-			{
-				resource 			"uranium_ore_deepvein"
-				value			 	"1"
-				family				"rare"
-			}			
+						
 		}
 		
 		out
 		{
+
 			GameplayResource
 			{
-				resource 			"carbonium"
-				value			 	"1"
-				family				"base"
-			}
-			GameplayResource
-			{
-				resource 			"steel"
-				value			 	"1"
-				family				"base"
-			}
-			
-			GameplayResource
-			{
-				resource 			"cobalt"
-				value			 	"1"
-				family				"rare"
-			}	
-			GameplayResource
-			{
-				resource 			"palladium"
-				value			 	"1"
-				family				"rare"
-			}
-			GameplayResource
-			{
-				resource 			"titanium"
-				value			 	"1"
-				family				"rare"
+				resource 			"hazenite"
+				value				"0"
 			}		
 			GameplayResource
 			{
-				resource 			"uranium_ore"
-				value			 	"1"
-				family				"rare"
-			}
+				resource 			"tanzanite"
+				value				"0"
+			}			
 		}
-		
 		priority 4		
-		one_vein_mode "1"
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				group	 "global"
+				subgroup "base"
+				max 	 "0"
+			}
+			Storage
+			{
+				group	 "loot"
+				max 	 "0"
+			}			
+		}
 	}
 
 	LuaDesc
 	{
-		script "lua/buildings/resources/carbonium_factory.lua"
+		script "lua/buildings/drone_spawner_building.lua"
 		
 		database
 		{
 			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell	string:"sell_big"
-			building_time		float:"120"
+			cone_effect_sell 	string:"sell_big"
+
+			drone_search_radius	float:"100"
+			drone_blueprint		string:"units/drones/drone_crystal_collector"
+			drone_attachments	string:"att_landing,att_landing_1,att_landing_2"
+			drone_per_spot		int:"1"
+
+			display_radius_blueprint string:"effects/decals/range_circle_harvesting"
 		}
-		
 	}
 
 	HealthDesc
@@ -188,6 +116,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"80_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
 				destroyed_state_effect_group 		"80_state"
 				destrucion_level_name 				"80"
 
@@ -198,6 +127,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"60_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"60_state"
 				destrucion_level_name 				"60"
 			}
@@ -207,6 +137,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"40_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
 				destroyed_state_effect_group 		"40_state"
 				destrucion_level_name 				"40"
 			}
@@ -216,6 +147,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"20_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				destroyed_state_effect_group 		"20_state"
 				destrucion_level_name 				"20"
 			}
@@ -225,6 +157,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"0_transition"
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
@@ -232,8 +165,8 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/rare_element_mine_lvl_1.mesh"
-		material "buildings/resources/rare_element_mine_lvl_1"
+		mesh "meshes/buildings/resources/crystal_collector.mesh"
+		material "buildings/resources/crystal_collector"
 	}
 
 	TypeDesc
@@ -243,7 +176,7 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/rare_element_mine_lvl_1"
+		name "meshes/buildings/resources/crystal_collector"
 	}
 
 	AnimationGraphDesc
@@ -265,12 +198,12 @@ EntityBlueprint
 					PhysicsCapsuleShape
 					{
 						r "2.45"
-						half_height "1.5"
+						half_height "2"
 
 						position
 						{
 							x "0.0"
-							y "1.5"
+							y "2"
 							z "0.0"
 						}
 
@@ -298,12 +231,10 @@ EntityBlueprint
 	{
 		Shapes
 		{
-   			PhysicsBoxShape
-   			{
-    				x	6
-    				y	6
-    				z	6
-   			}			
+			PhysicsMeshShape
+			{
+				mesh "meshes/buildings/resources/steel_factory_g1.nxs"
+			}	
 		}
 	}
 
@@ -322,6 +253,7 @@ EntityBlueprint
 			x "3"
 			y "3"
 		}
+
 		additional_z_order	"5"
 		visibility			"always"
 	}
@@ -340,7 +272,7 @@ EntityBlueprint
 	LootDesc
 	{
 		explosion_max_power 	"2000"
-		explosion_min_power 	"1000"	
+		explosion_min_power 	"1000"
 	}
 
 	DestroyDesc
@@ -454,50 +386,5 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}
-		////////////////////////MISC/////////////////////////			
-		EffectGroup
-		{
-			group "working"
-			enabled "0"				
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"								
-					bone "att_chimney_1"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_resources/rare_element_mine_working"	
-					delay "0.5"					
-				}				
-			}
-		}		
-		EffectGroup
-		{
-			group "vismod"
-			enabled "1"
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone "att_in_1_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_01"
-					bone "att_vismod_1"
-					scale 0.8 1.0 0.8
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_02"
-					bone "att_vismod_2"
-					scale 0.7 0.7 0.7
-				}
-			}
-		}		
-	}		
+	}
 }

@@ -13,9 +13,10 @@ EntityBlueprint
 		description			"gui/hud/building_description/flora_collector"
 		menu_icon			"gui/hud/building_icons/flora_collector_lvl3"
 		require 			"headquarters"
+		buildable			"0"
+		building_group		"flora_cultivator"
 		order				"4"
 		//upgrade				"buildings/resources/flora_collector_lvl_4"
-		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs

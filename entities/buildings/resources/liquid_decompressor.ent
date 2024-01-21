@@ -12,6 +12,8 @@ EntityBlueprint
 		menu_icon				"gui/hud/building_icons/liquid_decompressor"
 		type					"pipe"
 		require 				"headquarters"
+		//buildable				"0"
+		//building_group			"liquid_compressor"
 		upgrade					"buildings/resources/liquid_decompressor_lvl_2"	
 		order					"15"	
 		exclude_terrain_types 	"magma_hot_ground,magma_very_hot_ground"		

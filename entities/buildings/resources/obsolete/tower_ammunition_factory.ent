@@ -1,20 +1,23 @@
 EntityBlueprint
 {
-	name  "buildings/resources/crystal_collector"
+	name  "buildings/resources/tower_ammunition_factory"
 
 	BuildingDesc
 	{
-		name 				"crystal_collector"
-		bp   				"buildings/resources/crystal_collector"
+		name 				"tower_ammunition_factory"
+		bp   				"buildings/resources/tower_ammunition_factory"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/crystal_collector"
-		description			"gui/hud/building_description/crystal_collector"
-		menu_icon			"gui/hud/building_icons/crystal_collector"
+		//type				"pipe"
+		localization_id		"gui/hud/building_name/tower_ammunition_factory"
+		description			"gui/hud/building_description/tower_ammunition_factory"
+		menu_icon			"gui/hud/building_icons/tower_ammunition_factory"
+		order				"4"
 		require 			"headquarters"
-		order				"14"
-		upgrade				"buildings/resources/crystal_collector_lvl_2"	
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		
+		buildable			"0"
+		building_group		"solid_material_storage"
+		upgrade				"buildings/resources/tower_ammunition_factory_lvl_2"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+				
 		costs
 		{
 			BuildingCostInfo
@@ -23,10 +26,8 @@ EntityBlueprint
 				building_time 10
 				building_cost
 				{
-								carbonium 	"200"
-								steel 		"200"
-								ai			"1"
-								palladium	"25"
+					carbonium 	"50"
+					steel 		"200"		
 				}
 			}		
 		}
@@ -39,61 +40,42 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value				"15"
+				value	"40"
 			}
-						
+			
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value	"1"
+			}
+			
+			GameplayResource
+			{
+				resource 			"steel"
+				value	"1"
+			}
 		}
 		
 		out
 		{
-
 			GameplayResource
 			{
-				resource 			"hazenite"
-				value				"0"
-			}		
-			GameplayResource
-			{
-				resource 			"tanzanite"
-				value				"0"
-			}			
-		}
-		priority 4		
-	}
-
-	ResourceStorageDesc
-	{
-		Storages
-		{
-			Storage
-			{
-				group	 "global"
-				subgroup "base"
-				max 	 "0"
-			}
-			Storage
-			{
-				group	 "loot"
-				max 	 "0"
-			}			
-		}
+				resource 			"ammo_manufacturing"
+				value				"1.5"
+			}					
+		}	
+		priority 5		
 	}
 
 	LuaDesc
 	{
-		script "lua/buildings/drone_spawner_building.lua"
+		script "lua/buildings/building.lua"
 		
 		database
 		{
-			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell 	string:"sell_big"
-
-			drone_search_radius	float:"100"
-			drone_blueprint		string:"units/drones/drone_crystal_collector"
-			drone_attachments	string:"att_landing,att_landing_1,att_landing_2"
-			drone_per_spot		int:"1"
-
-			display_radius_blueprint string:"effects/decals/range_circle_harvesting"
+			cone_effect			string:"build_cone_5x5"
+			cone_effect_sell	string:"sell_big"
+			building_time		float:"10"
 		}
 	}
 
@@ -114,7 +96,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"80_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"80_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
 				destroyed_state_effect_group 		"80_state"
 				destrucion_level_name 				"80"
 
@@ -125,7 +106,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"60_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"60_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"60_state"
 				destrucion_level_name 				"60"
 			}
@@ -135,7 +115,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"40_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"40_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
 				destroyed_state_effect_group 		"40_state"
 				destrucion_level_name 				"40"
 			}
@@ -145,7 +124,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"20_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"20_destroy"
-				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				destroyed_state_effect_group 		"20_state"
 				destrucion_level_name 				"20"
 			}
@@ -155,7 +133,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"0_transition"
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
-				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
@@ -163,8 +140,8 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/crystal_collector.mesh"
-		material "buildings/resources/crystal_collector"
+		mesh "meshes/buildings/resources/tower_ammunition_factory.mesh"
+		material "buildings/resources/tower_ammunition_factory"
 	}
 
 	TypeDesc
@@ -174,7 +151,7 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/crystal_collector"
+		name "meshes/buildings/resources/tower_ammunition_factory"
 	}
 
 	AnimationGraphDesc
@@ -193,27 +170,19 @@ EntityBlueprint
 				physics_material 	"default"
 				Shapes
 				{
-					PhysicsCapsuleShape
+					PhysicsSphereShape
 					{
 						r "2.45"
-						half_height "2"
-
-						position
+	
+						position 
 						{
 							x "0.0"
-							y "2"
+							y "1.0"
 							z "0.0"
-						}
-
-						orientation
-						{
-							w "0.7"
-							x "0.0"
-							z "0.7"
-							y "0.0"
 						}
 					}	
 				}
+
 			}
 		}
 	}
@@ -229,10 +198,12 @@ EntityBlueprint
 	{
 		Shapes
 		{
-			PhysicsMeshShape
-			{
-				mesh "meshes/buildings/resources/steel_factory_g1.nxs"
-			}	
+   			PhysicsBoxShape
+   			{
+    				x	6
+    				y	6
+    				z	6
+   			}			
 		}
 	}
 
@@ -241,8 +212,8 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
+			x "0.2"
+			y "0.2"
 			z "1"
 			w "1"
 		}
@@ -251,8 +222,7 @@ EntityBlueprint
 			x "3"
 			y "3"
 		}
-
-		additional_z_order	"5"
+					
 		visibility			"always"
 	}
 
@@ -270,7 +240,7 @@ EntityBlueprint
 	LootDesc
 	{
 		explosion_max_power 	"2000"
-		explosion_min_power 	"1000"
+		explosion_min_power 	"1000"	
 	}
 
 	DestroyDesc
@@ -357,7 +327,7 @@ EntityBlueprint
 					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
 					part_lifetime "3"
 				}
-			}	
+			}
 			Pair
 			{
 				value
@@ -383,6 +353,21 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}
+		}	
+		
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/tower_ammunition_factory_working"	
+					delay "0.5"					
+				}	
+			}
+		}	
 	}
 }

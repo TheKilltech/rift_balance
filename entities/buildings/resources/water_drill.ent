@@ -12,6 +12,8 @@ EntityBlueprint
 		description			"gui/hud/building_description/water_drill"
 		menu_icon			"gui/hud/building_icons/water_drill"
 		require 			"headquarters"
+		buildable			"0"
+		building_group		"liquid_pump"
 		//upgrade				"buildings/resources/water_drill_lvl_2"
 		min_radius_effect   "voice_over/announcement/pump_too_close"
 		order				"9"

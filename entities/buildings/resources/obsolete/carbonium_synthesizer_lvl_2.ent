@@ -1,22 +1,24 @@
 EntityBlueprint
 {
-	name 			"buildings/resources/carbonium_synthesizer_lvl_3"
+	name 			"buildings/resources/carbonium_synthesizer_lvl_2"
 
-	base_blueprint 	"buildings/resources/carbonium_synthesizer_lvl_2"
+	base_blueprint 	"buildings/resources/carbonium_synthesizer"
 
 	BuildingDesc
 	{
-		name 				"carbonium_synthesizer_lvl_3"
-		bp   				"buildings/resources/carbonium_synthesizer_lvl_3"
+		name 				"carbonium_synthesizer_lvl_2"
+		bp   				"buildings/resources/carbonium_synthesizer_lvl_2"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/carbonium_synthesizer"
 		description			"gui/hud/building_description/carbonium_synthesizer"
-		menu_icon			"gui/hud/building_icons/carbonium_synthesizer_lvl3"
+		menu_icon			"gui/hud/building_icons/carbonium_synthesizer_lvl2"
 		order				"3"
-		//upgrade				"buildings/resources/carbonium_synthesizer_lvl_4"		
+		upgrade				"buildings/resources/carbonium_synthesizer_lvl_3"		
 		require 			"headquarters"
 		buildable			"0"
+		building_group		"steel_seperator"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
 		
 		costs
 		{
@@ -26,11 +28,12 @@ EntityBlueprint
 				building_time 30
 				building_cost
 				{
-					steel 	"1500"
-					cobalt	"100"
+					steel 	"1000"
+					cobalt	"50"
 				}
 			}		
 		}
+		
 	}
 
 	ResourceConverterDesc
@@ -40,16 +43,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"450"
-			}
-		}
-		
-		out
-		{
-			GameplayResource
-			{
-				resource 			"carbonium"
-				value			 	"4"
+				value			 	"300"
 			}
 			GameplayResource
 			{
@@ -57,13 +51,22 @@ EntityBlueprint
 				value			 	"1"
 			}	
 		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value			 	"3"
+			}
+		}
 		priority 4	
 	}
 
 	HealthDesc
 	{
-		max_health 					"2250"
-		health 						"2250"
+		max_health 					"1500"
+		health 						"1500"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -123,6 +126,7 @@ EntityBlueprint
 			}			
 		}
 	}
+	
 	EffectDesc
 	{		
 		EffectBaseBlueprints
@@ -152,7 +156,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/level_3"
+					blueprint "effects/buildings_and_machines/level_2"
 					bone "att_level"
 				}
 			}
