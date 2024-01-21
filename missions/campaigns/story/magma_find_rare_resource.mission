@@ -1,0 +1,550 @@
+MissionDef
+{
+    script          "lua/missions/campaigns/story/v2/magma/magma_find_rare_resource.lua"
+	script_database
+    {
+        objective_tile         string:"biomes/magma/tiles/magma_custom_rare_resource_01/magma_custom_rare_resource_01.tile"
+        objective_min_distance float:"512.0"
+    }
+	localization_id	"gui/menu/planetary_scanner/mission_magma_find_rare_resource"
+	description		"gui/menu/planetary_scanner/mission_magma_find_rare_resource_description"
+
+    biomes          "magma"
+    map_size		8
+	
+	tile_spawn_rules
+	{
+		biomes/magma/tiles/magma_custom_rare_resource_01/magma_custom_rare_resource_01.tile
+		{
+			min_instances 1
+			max_instances 1
+		}	
+		biomes/magma/tiles/magma_canyons_04/magma_canyons_04.tile
+		{			
+			max_instances	1
+		}	
+		
+	}
+
+	prefab_force_variants
+    {
+        blocking_fields_dense
+        {
+            crystals_entwined_blue_with_grass_glowing
+        }
+    }
+    
+	failed_action   "remain"
+	success_action  "remove"
+
+	min_starting_distance "16.0"
+    max_starting_distance "96.0"
+    
+    creature_volumes_min_distance   "128.0"
+	creature_volumes_density        "1.0"
+    threat  "0.5"
+
+    ambient_creature_species
+    {
+        ground
+        {               
+            species
+            {
+                CreatureVolume
+                {
+                    creature_species    "venomine"
+                }
+            }
+        }
+		air
+        {
+			max_count "15"
+			spawn_rate 2
+			search_to_spawn_radius "1"
+			
+            species
+            {
+                CreatureVolume
+                {
+                    creature_species    "bitrid"
+                }
+            }
+        }
+    }
+	
+	creature_volumes_species
+    {
+		neutral_units
+        {
+            CreatureVolume
+            {
+                creature_species    "moltug"
+            }
+        }
+        regular_units
+        {        
+			
+			CreatureVolume
+            {
+                creature_species    "morirot"
+                volume_spawn_ratio  "3"
+            }            
+            
+            
+            CreatureVolume
+            {
+                creature_species    "bomogan"
+                volume_spawn_ratio  "0.5"
+            }
+			
+			CreatureVolume
+            {
+                creature_species    "magmoth"
+                volume_spawn_ratio  "2"
+            }
+			CreatureVolume
+            {
+                creature_species    "nerilian"
+                volume_spawn_ratio  "2"
+            }
+			//CreatureVolume
+            //{
+            //    creature_species    "necrodon"
+            //    volume_spawn_ratio  "0.25"
+            //}
+			CreatureVolume
+            {
+                creature_species    "phirian_magma"
+                volume_spawn_ratio  "1"
+            }
+			//CreatureVolume
+            //{
+            //    creature_species    "drexolian_magma"
+            //    volume_spawn_ratio  "0.35"
+            //}			
+			CreatureVolume
+            {
+                creature_species    "hedroner_magma"
+                volume_spawn_ratio  "1"
+            }
+            
+                     
+        }
+        resource_units
+        {
+            CreatureVolume
+            {
+                creature_species    "gnerot_magma"
+                volume_spawn_ratio  "0.25"
+            }
+			CreatureVolume
+            {
+                creature_species    "krocoon_magma"
+                volume_spawn_ratio  "0.25"
+            }
+        }   
+
+		guardian_standard
+        {		
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_cryo"
+				volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_acid"
+                volume_spawn_ratio  "1"
+            }		
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_energy"
+                volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_fire"
+                volume_spawn_ratio  "1"
+            }				
+        }
+
+        guardian_advanced
+        {				
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_cryo"
+				volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_acid"
+                volume_spawn_ratio  "1"
+            }		
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_energy"
+                volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_fire"
+                volume_spawn_ratio  "1"
+            }			
+        }
+
+        guardian_superior
+        {			
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_cryo"
+				volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_acid"
+                volume_spawn_ratio  "1"
+            }		
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_energy"
+                volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_fire"
+                volume_spawn_ratio  "1"
+            }		
+        }
+
+        guardian_extreme
+        {		
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_cryo"
+				volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_acid"
+                volume_spawn_ratio  "1"
+            }		
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_energy"
+                volume_spawn_ratio  "1"
+            }
+            CreatureVolume
+            {
+                creature_species    "nerilian_boss_fire"
+                volume_spawn_ratio  "1"
+            }	
+        }
+    }
+	
+	mission_object_spawners
+	{
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "mission_objective"
+            spawn_at_marker          "logic/mission_objective_marker"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  10.0                
+            }
+
+            spawn_instances_minmax    1,1
+
+            spawn_blueprints
+            {
+                items/loot/treasures/treasure_ferdonite_medium_lvl1
+                {                
+                    spawn_chance           1
+                }                
+            }
+        }
+        MarkerBlueprintSpawner
+        {
+            spawn_pool               "loot_containers"
+
+            // find all entities on map with this blueprint as possible spawn point
+            spawn_at_marker          "logic/spawn_objective"
+
+            // min distance from objects in other pools
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  250.0
+                loot_containers     150.0
+                mission_objective   150.0
+            }
+
+            // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
+            spawn_instances_minmax    15,20
+
+            spawn_blueprints
+            {
+                spawners/magma_spawner_standard
+                {
+                    // make a roll to check if blueprint can be spawned
+                    spawn_chance           0.5
+                }
+
+                spawners/magma_spawner_advanced
+                {
+                    spawn_instances_minmax 3,5
+                    spawn_chance           0.2
+                }
+
+                spawners/magma_spawner_superior
+                {
+                    spawn_instances_minmax 2,3
+                    spawn_chance           0.2
+                }
+
+                spawners/magma_spawner_extreme
+                {
+                    spawn_instances_minmax 1,2
+                    spawn_chance           0.1
+                }
+            }
+        }
+		
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "cryo_plants"
+
+            // find all entities on map with this blueprint as possible spawn point
+            spawn_at_marker          "logic/spawn_special_object"
+
+            // min distance from objects in other pools
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  20.0
+				loot_containers     15.0
+                magnetic_rocks     10.0
+            }
+
+            // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
+            spawn_instances_minmax    0,0
+            spawn_density    0.25
+
+            spawn_blueprints
+            {
+                props/special/cryo_plant/cryo_plant_big_01
+                {
+                    // make a roll to check if blueprint can be spawned
+                    spawn_chance           0.1
+                }
+				props/special/cryo_plant/cryo_plant_big_02
+                {
+                    // make a roll to check if blueprint can be spawned
+                    spawn_chance           0.1
+                }
+				props/special/cryo_plant/cryo_plant_big_03
+                {
+                    // make a roll to check if blueprint can be spawned
+                    spawn_chance           0.1
+                }
+
+                props/special/cryo_plant/cryo_plant_medium_01
+                {                    
+                    spawn_chance           0.15
+                }
+				props/special/cryo_plant/cryo_plant_medium_02
+                {                    
+                    spawn_chance           0.15
+                }
+				props/special/cryo_plant/cryo_plant_medium_03
+                {                    
+                    spawn_chance           0.15
+                }
+				
+                props/special/cryo_plant/cryo_plant_small_01
+                {                    
+                    spawn_chance           0.15
+                }
+				props/special/cryo_plant/cryo_plant_small_01
+                {                    
+                    spawn_chance           0.15
+                } 
+				props/special/cryo_plant/cryo_plant_small_01
+                {                    
+                    spawn_chance           0.15
+                } 				
+				
+            }
+        }
+		
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "magnetic_rocks"
+
+            // find all entities on map with this blueprint as possible spawn point
+            spawn_at_marker          "logic/spawn_special_object"
+
+            // min distance from objects in other pools
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  70.0
+				loot_containers     15.0
+                cryo_plants     10.0
+            }
+
+            // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
+            spawn_instances_minmax    0,0
+			spawn_density    0.3
+
+            spawn_blueprints
+            {
+                props/special/magnetic_rocks/magnetic_big_01
+                {
+                    // make a roll to check if blueprint can be spawned
+                    spawn_chance           0.15
+                }
+				props/special/magnetic_rocks/magnetic_big_02
+                {                    
+                    spawn_chance           0.15
+                }
+				props/special/magnetic_rocks/magnetic_big_03
+                {                    
+                    spawn_chance           0.15
+                }
+
+                props/special/magnetic_rocks/magnetic_medium_01
+                {                    
+                    spawn_chance           0.1
+                }
+				props/special/magnetic_rocks/magnetic_medium_02
+                {                    
+                    spawn_chance           0.1
+                }
+				props/special/magnetic_rocks/magnetic_medium_03
+                {                    
+                    spawn_chance           0.1
+                }
+				
+                props/special/magnetic_rocks/magnetic_small_01
+                {                    
+                    spawn_chance           0.1
+                }
+				props/special/magnetic_rocks/magnetic_small_02
+                {                    
+                    spawn_chance           0.1
+                }  
+				props/special/magnetic_rocks/magnetic_small_03
+                {                    
+                    spawn_chance           0.1
+                }  
+            }
+        }
+		GridSpawner
+        {
+            spawn_pool                  "underground_treasures"
+
+            //terrain_types               "mud,floor"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      150.0				
+                mission_objective       150.0				
+                loot_containers         50.0
+                underground_treasures   100.0
+                cryo_plants			    10.0
+                magnetic_rocks			20.0
+            }
+
+            spawn_blueprints
+            {  
+                spawners/loot_spawner
+                {
+                    spawn_instances_minmax      40,50
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_ferdonite_item"
+                        min   	 	int:"20"
+                        max   	 	int:"50"
+                    }
+                }                
+            }
+        }
+	}	
+	
+	random_resources
+    {
+        ResourceVolume
+        {
+            resource        "carbon_vein"
+
+            min_resources   "3000"
+            max_resources   "8000"
+
+            min_spawned_volumes "10"
+            max_spawned_volumes "15"
+        }
+		
+		ResourceVolume
+        {
+            resource        "carbon_vein"
+			required_discovery_lvl	"1"
+
+            min_resources   "5000"
+            max_resources   "10000"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "5"
+        }
+
+        ResourceVolume
+        {
+            resource        "iron_vein"
+
+            min_resources   "2500"
+            max_resources   "6000"
+
+            min_spawned_volumes "5"
+            max_spawned_volumes "10"
+        }
+
+		ResourceVolume
+        {
+            resource        "iron_vein"
+			required_discovery_lvl	"1"
+
+            min_resources   "4000"
+            max_resources   "8000"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "5"
+        }	
+		
+        ResourceVolume
+        {
+            resource        "geothermal_vent"
+
+            min_resources   "6000"
+            max_resources   "10000"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+			
+            is_infinite        "1"			
+        }	
+		
+        ResourceVolume
+        {
+            resource        "geothermal_vent"
+			
+			required_discovery_lvl	"1"
+			
+            min_resources   "6000"
+            max_resources   "10000"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+			
+            is_infinite        "1"			
+        }							
+    } 
+}
