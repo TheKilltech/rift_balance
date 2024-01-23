@@ -1,0 +1,160 @@
+EntityBlueprint
+{
+	name  					"buildings/resources/liquid_pump_lvl_3"
+
+	base_blueprint 			buildings/resources/liquid_pump_lvl_2
+
+	BuildingDesc
+	{
+		buildable 			"0"
+		name 				"liquid_pump_lvl_3"
+		bp   				"buildings/resources/liquid_pump_lvl_3"
+		category 			"resources"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/liquid_pump"
+		description			"gui/hud/building_description/liquid_pump"
+		menu_icon			"gui/hud/building_icons/liquid_pump_lvl3"
+		build_on_water		"1"
+		require 			"headquarters"
+		//upgrade				"buildings/resources/liquid_pump_lvl_4"
+		radius_name			"pump"
+		min_radius			"20"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 2
+				building_cost
+				{
+					carbonium 	"100"
+				}
+			}
+		}
+
+		resource_requirement "water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein"
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				group 			"vein"
+				value			"200"
+				specific_group	"local"
+				family			"production"
+			}
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				group 			"local"
+				specific_group  "vein"
+				value			"200"
+				attachment		"att_out_1"
+				family			"production"
+			}
+		}
+		priority 4
+		one_vein_mode "1"
+	}
+	
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				group	 "local"
+				max 	 "800"
+				attachment		"att_out_1"
+			}
+		}
+	}	
+
+	HealthDesc
+	{
+		max_health 					"340"
+		health 						"340"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+	
+	ResistanceComponent
+	{
+		magma		"0"
+	}		
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/liquid_pump_lvl_3.mesh"
+		material "buildings/resources/liquid_pump_lvl_3"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/liquid_pump_lvl_3"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/resources/liquid_pump"
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_pump_working"								
+				}			
+			}
+		}		
+	}
+}
