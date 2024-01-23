@@ -365,8 +365,74 @@ EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_orange_03
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/decorations/scifi_structure_medium_03.mesh"
+		mesh "meshes/buildings/decorations/scifi_structure_medium_03.mesh" // tower
 		material 	"buildings/decorations/scifi_structure_orange"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//surface_water
+{
+	name effects/world/surface_water
+	
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/decorations/floor_basic_1x1_nosides.mesh"
+		material 	"resources/resource_water"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//surface_mud
+{
+	name effects/world/surface_mud
+	
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/decorations/floor_basic_1x1_nosides.mesh"
+		material 	"resources/resource_mud"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//surface_sludge
+{
+	name effects/world/surface_sludge
+	
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/decorations/floor_basic_1x1_nosides.mesh"
+		material 	"resources/resource_sludge"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//surface_magma
+{
+	name effects/world/surface_magma
+	
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/decorations/floor_basic_1x1_nosides.mesh"
+		material 	"resources/resource_magma"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//surface_morphium
+{
+	name effects/world/surface_morphium
+	
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/decorations/floor_basic_1x1_nosides.mesh"
+		material 	"resources/resource_morphium"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//rock_mossy_02
+{
+	name effects/world/rock_mossy_02
+	
+	MeshDesc
+	{
+		mesh "meshes/props/rocks/sandstone/sandstone_small_02.mesh"
+		material "props/rocks/granite_mossy/granite_mossy_small_02"
 	}
 }
 

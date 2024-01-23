@@ -37,6 +37,25 @@ GameplayResourceDef
 
 GameplayResourceDef
 {
+	id					"ammonium_deepvein"
+	localization_id 	"resource_name/ammonium_deepvein"
+	bp  				"resources/resource_ammonium_deepvein"
+	type 				"vein"
+	specific_type		"local"
+	ore					"ammonium"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/ammonium_vein"
+	bigger_icon			"gui/hud/resource_icons/ammonium_vein_bigger"
+	order   			"29"
+
+	spawn_type			"single"
+}
+
+
+// rare resources
+
+GameplayResourceDef
+{
 	id					"cobalt_deepvein"
 	localization_id 	"resource_name/cobalt_deepvein"
 	bp  				"resources/resource_cobalt_deepvein"
@@ -96,5 +115,104 @@ GameplayResourceDef
 	order   			"32"
 
 	terrain_material	"ground/resources/uranium"
+	spawn_type			"single"
+}
+
+
+// liquids
+
+GameplayResourceDef
+{
+	id					"mud_deepvein"
+	localization_id 	"resource_name/mud_deepvein"
+	bp  				"resources/resource_mud_deepvein"
+	type 				"vein"
+	specific_type		"local"
+	ore					"mud"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/mud_pool"
+	bigger_icon			"gui/hud/resource_icons/mud_pool_bigger"
+	order   			"21"
+
+	spawn_type			"single"
+}
+
+GameplayResourceDef
+{
+	id					"water_deepvein"
+	localization_id 	"resource_name/water_deepvein"
+	bp  				"resources/resource_water_deepvein"
+	type 				"vein"
+	specific_type		"local"
+	ore					"water"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/water_pool"
+	bigger_icon			"gui/hud/resource_icons/water_pool_bigger"
+	order   			"20"
+
+	spawn_type			"single"
+}
+
+GameplayResourceDef
+{
+	id					"sludge_deepvein"
+	localization_id 	"resource_name/sludge_deepvein"
+	bp  				"resources/resource_sludge_deepvein"
+	type 				"vein"
+	specific_type		"local"
+	ore					"sludge"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/sludge_pool"
+	bigger_icon			"gui/hud/resource_icons/sludge_pool_bigger"
+	order   			"36"
+
+	spawn_type			"single"
+}
+
+GameplayResourceDef
+{
+	id					"sludge_deepvein"
+	localization_id 	"resource_name/sludge_deepvein"
+	bp  				"resources/resource_sludge_deepvein"
+	type 				"vein"
+	specific_type		"local"
+	ore					"sludge"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/sludge_pool"
+	bigger_icon			"gui/hud/resource_icons/sludge_pool_bigger"
+	order   			"36"
+
+	spawn_type			"single"
+}
+
+GameplayResourceDef
+{
+	id					"magma_deepvein"
+	localization_id 	"resource_name/magma_deepvein"
+	bp  				"resources/resource_magma_deepvein"
+	type 				"vein"
+	specific_type		"local"
+	ore					"magma"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/magma_pool"
+	bigger_icon			"gui/hud/resource_icons/magma_pool_bigger"
+	order   			"37"
+
+	spawn_type			"single"
+}
+
+GameplayResourceDef
+{
+	id					"morphium_deepvein"
+	localization_id 	"resource_name/morphium_deepvein"
+	bp  				"resources/resource_morphium_deepvein"
+	type 				"vein"
+	specific_type		"local"
+	ore					"morphium"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/morphium_pool"
+	bigger_icon			"gui/hud/resource_icons/morphium_pool_bigger"
+	order   			"35"
+
 	spawn_type			"single"
 }

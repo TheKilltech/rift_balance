@@ -1,0 +1,108 @@
+EntityBlueprint
+{
+	name "resources/resource_ammonium_deepvein"
+	
+	TypeDesc
+	{
+		type "resource"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"resource"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x 2
+						y 1
+						z 2
+					}
+				}
+			}
+		}
+	}
+
+	GridMarkerComponent
+	{
+		terrain_type  	"resource"
+	}
+
+	MinimapItemDesc
+	{
+		type			"image"
+		icon_material 	"gui/hud/minimap_icons/ammonium_deepvein"
+		unknown_until_visible 	"1"
+
+		visibility 			"discovered|radar"
+	}
+
+	SelectableDesc
+	{
+		content "resource_name/ammonium_vein"
+		can_activate "0"
+	}
+	
+	DecalDesc
+	{	
+		blueprint "effects/decals/geothermal_vent"
+		scale
+		{
+			x		7.0
+			y		7.0
+			z		7.0
+		
+		}
+	}
+
+	EffectDesc
+	{	
+		EffectGroup
+		{						
+			group "rapture"
+			enabled "1"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/world/rapture"
+				}		
+				//Effect
+				//{
+				//	blueprint "effects/world/iron_vein_vl1"
+				//	scale "1.0 1.0 1.0"
+				//	//bone "att_vismod_1"
+				//}			
+			}
+		}	
+	}
+
+	children
+	{
+		EntityBlueprint
+		{
+			GridCullerDesc
+			{
+				type 8
+
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "5.0"
+					}
+				}	
+			}
+		}
+	}
+
+}
+
