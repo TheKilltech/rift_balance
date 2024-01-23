@@ -45,24 +45,94 @@ EntityBlueprint
 	{
 		in
 		{
+			//GameplayResource
+			//{
+			//	group 			"vein"
+			//	value			"100"
+			//	specific_group	"local"
+			//	family			"production"
+			//}
 			GameplayResource
 			{
-				group 			"vein"
-				value			"100"
-				specific_group	"local"
-				family			"production"
+				resource 			"water_vein"
+				specific_group		"local"
+				value			 	"1"
+				family				"production"
+			}
+			GameplayResource
+			{
+				resource 			"mud_vein"
+				specific_group		"local"
+				value			 	"1"
+				family				"production"
+			}
+			GameplayResource
+			{
+				resource 			"sludge_vein"
+				specific_group		"local"
+				value			 	"1"
+				family				"production"
+			}
+			GameplayResource
+			{
+				resource 			"magma_vein"
+				specific_group		"local"
+				value			 	"1"
+				family				"production"
+			}
+			GameplayResource
+			{
+				resource 			"morphium_vein"
+				specific_group		"local"
+				value			 	"1"
+				family				"production"
 			}
 		}
 
 		out
 		{
+			//GameplayResource
+			//{
+			//	group 			"local"
+			//	specific_group  "vein"
+			//	family			"production"
+			//	value			"100"
+			//	attachment		"att_out_1"
+			//}
 			GameplayResource
 			{
-				group 			"local"
-				specific_group  "vein"
-				family			"production"
-				value			"100"
-				attachment		"att_out_1"
+				resource 			"water"
+				value			 	"100"
+				family				"production"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"mud"
+				value			 	"100"
+				family				"production"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"sludge"
+				value			 	"100"
+				family				"production"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"magma"
+				value			 	"100"
+				family				"production"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"morphium"
+				value			 	"100"
+				family				"production"
+				attachment			"att_out_1"
 			}
 		}
 
