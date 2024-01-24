@@ -178,6 +178,22 @@ EntityBlueprint "effects/no_lifetime"		//minipipes
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//platform
+{
+	name "effects/buildings_and_machines/platform"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_floor_01.mesh"
+		material "buildings/defense/wall_small_floor_01"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_01
 {
 	name "effects/buildings_and_machines/scifi_structure_medium_white_01"

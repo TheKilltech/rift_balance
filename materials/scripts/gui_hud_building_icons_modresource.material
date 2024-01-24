@@ -1,6 +1,18 @@
 import * from "materials/scripts/gui.material"
 
 
+/////  energy_connector_water
+
+material "gui/hud/building_icons/energy_connector_water" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/energy_connector_water.dds"
+}
+
+material "gui/hud/building_icons/energy_connector_water_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/energy_connector_water_disabled.dds"
+}
+
 /////  bio-metal refineries
 
 material "gui/hud/building_icons/bio_cobalt_refinery" : gui/default
