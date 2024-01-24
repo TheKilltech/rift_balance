@@ -1,0 +1,274 @@
+EntityBlueprint
+{
+	name  "buildings/resources/liquid_pumpjack_lvl_3"
+
+	base_blueprint 			buildings/resources/liquid_pumpjack_lvl_2
+	
+	BuildingDesc
+	{
+		name 				"liquid_pumpjack_lvl_3"
+		bp   				"buildings/resources/liquid_pumpjack_lvl_3"
+		category 			"resources"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/liquid_pumpjack"
+		description			"gui/hud/building_description/liquid_pumpjack"
+		menu_icon			"gui/hud/building_icons/liquid_pump_lvl3"
+		build_on_water		"0"
+		require 			"headquarters"
+		buildable			"0"
+		building_group		"liquid_pump"
+		//upgrade				"buildings/resources/liquid_pumpjack_lvl_4"
+		order				"9"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 2
+				building_cost
+				{
+					carbonium 	"200"
+					steel 		"1000"
+				}
+			}
+		}
+
+		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"260"
+			}
+			GameplayResource
+			{
+				resource 			"fluorine"
+				value			 	"5"
+				attachment			"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 			"water_deepvein"
+				specific_group		"local"
+				value			 	"1"
+				family				"deep"
+			}
+			GameplayResource
+			{
+				resource 			"mud_deepvein"
+				specific_group		"local"
+				value			 	"1"
+				family				"deep"
+			}
+			GameplayResource
+			{
+				resource 			"sludge_deepvein"
+				specific_group		"local"
+				value			 	"1"
+				family				"deep"
+			}
+			GameplayResource
+			{
+				resource 			"magma_deepvein"
+				specific_group		"local"
+				value			 	"1"
+				family				"deep"
+			}
+			GameplayResource
+			{
+				resource 			"morphium_deepvein"
+				specific_group		"local"
+				value			 	"1"
+				family				"deep"
+			}
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				resource 			"water"
+				value			 	"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"mud"
+				value			 	"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"sludge"
+				value			 	"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"magma"
+				value			 	"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"morphium"
+				value			 	"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+		}
+
+		priority 4
+		one_vein_mode "1"
+	}
+	
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				group		"local"
+				max 		"800"
+				attachment	"att_out_1"
+			}
+		}
+	}	
+
+	HealthDesc
+	{
+		max_health 					"340"
+		health 						"340"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+	
+	ResistanceComponent
+	{
+		magma		"0"
+	}		
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/liquid_pump_lvl_3.mesh"
+		material "buildings/resources/liquid_pump_lvl_3"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/liquid_pump_lvl_3"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pylon"
+					bone "att_vismod_1"
+					scale "0.6 1.5 0.6"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_02"
+					bone "att_vismod_2"
+					scale "0.8 0.6 0.6"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_pipe"
+				}
+			}
+		}		
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_pump_working"
+				}			
+			}
+		}		
+	}
+}
+

@@ -1,0 +1,444 @@
+EntityBlueprint
+{
+	name  "buildings/resources/liquid_pumpjack"
+
+	BuildingDesc
+	{
+		name 				"liquid_pumpjack"
+		bp   				"buildings/resources/liquid_pumpjack"
+		category 			"resources"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/liquid_pumpjack"
+		description			"gui/hud/building_description/liquid_pumpjack"
+		menu_icon			"gui/hud/building_icons/liquid_pump"
+		build_on_water		"0"
+		require 			"headquarters"
+		buildable			"0"
+		building_group		"liquid_pump"
+		upgrade				"buildings/resources/liquid_pumpjack_lvl_2"
+		order				"9"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 2
+				building_cost
+				{
+					carbonium 	"100"
+					steel 		"250"
+				}
+			}
+		}
+
+		pipe_mode  			"1"
+		connect
+		{
+			I		"buildings/resources/liquid_pumpjack"
+		}
+
+		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"85"
+			}
+			//GameplayResource
+			//{
+			//	group 			"vein"
+			//	value			"100"
+			//	specific_group	"local"
+			//	family			"production"
+			//}
+			GameplayResource
+			{
+				resource 			"water_deepvein"
+				specific_group		"local"
+				value			 	"1"
+				family				"deep"
+			}
+			GameplayResource
+			{
+				resource 			"mud_deepvein"
+				specific_group		"local"
+				value			 	"1"
+				family				"deep"
+			}
+			GameplayResource
+			{
+				resource 			"sludge_deepvein"
+				specific_group		"local"
+				value			 	"1"
+				family				"deep"
+			}
+			GameplayResource
+			{
+				resource 			"magma_deepvein"
+				specific_group		"local"
+				value			 	"1"
+				family				"deep"
+			}
+			GameplayResource
+			{
+				resource 			"morphium_deepvein"
+				specific_group		"local"
+				value			 	"1"
+				family				"deep"
+			}
+			//
+
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				resource 			"water"
+				value			 	"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"mud"
+				value			 	"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"sludge"
+				value			 	"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"magma"
+				value			 	"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"morphium"
+				value			 	"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			//GameplayResource
+			//{
+			//	group 			"local"
+			//	specific_group  "vein"
+			//	family			"production"
+			//	value			"100"
+			//	attachment		"att_out_1"
+			//}
+		}
+
+		priority 4
+		one_vein_mode "1"
+	}
+	
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				group	 		"local"
+				max 	 		"400"
+				attachment		"att_out_1"
+			}
+		}
+	}	
+
+	LuaDesc
+	{
+		script "lua/buildings/building.lua"
+
+		database
+		{
+			cone_effect			string:"build_cone_1x1"
+			cone_effect_sell	string:"sell_small"
+			building_time		float:"2"
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"200"
+		health 						"200"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+	
+	ResistanceComponent
+	{
+		magma		"0"
+	}		
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/liquid_pump_lvl_1.mesh"
+		material "buildings/resources/liquid_pump_lvl_1"
+	}
+
+	TypeDesc
+	{
+		type "building|resource|not_move_to_target"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/liquid_pump_lvl_1"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "building_working"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building_small"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x "2"
+						y "2"
+						z "2"
+
+						position
+						{
+							x "0.0"
+							y "1"
+							z "0.0"
+						}
+					}
+				}
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsBoxShape
+			{
+					x	2
+					y	2
+					z	6
+			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "0.5"
+			y "0.5"
+			z "1"
+			w "1"
+		}
+		size
+		{
+			x "1"
+			y "3"
+		}
+		additional_z_order	"5"
+		visibility			"always"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	LootDesc
+	{
+		explosion_max_power 	"8000"
+		explosion_min_power 	"4000"
+	}
+
+	DestroyDesc
+	{
+
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "66_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				key "33_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_lifetime "3"
+				}
+
+				key "default"
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_lifetime "3"
+				}
+
+				key "quicksand"
+			}
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pylon"
+					bone "att_vismod_1"
+					scale "0.45 1.2 0.45"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_02"
+					bone "att_vismod_2"
+					scale "0.8 0.6 0.6"
+				}
+			}
+		}		
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_pump_working"
+				}			
+			}
+		}		
+	}
+}
+
