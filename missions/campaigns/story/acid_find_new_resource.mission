@@ -108,8 +108,8 @@ MissionDef
         {
             resource        "carbon_vein"
 
-            min_resources   "3000"
-            max_resources   "8000"
+            min_resources   "2000"
+            max_resources   "6000"
 
             min_spawned_volumes "10"
             max_spawned_volumes "15"
@@ -119,11 +119,11 @@ MissionDef
         {
             resource        "iron_vein"
 
-            min_resources   "2500"
-            max_resources   "6000"
+            min_resources   "1500"
+            max_resources   "4000"
 
-            min_spawned_volumes "5"
-            max_spawned_volumes "10"
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
         }
 		
         ResourceVolume
@@ -136,8 +136,36 @@ MissionDef
             min_spawned_volumes "3"
             max_spawned_volumes "6"
 			
-            is_infinite        "1"			
+            is_infinite        "1"	
         }	
+
+		ResourceVolume
+        {
+            resource        "mud_deepvein"
+			required_discovery_lvl	"1"
+			
+            min_resources   "9999"
+            max_resources   "9999"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+			
+            is_infinite        "1"
+        }
+
+		ResourceVolume
+        {
+            resource        "magma_deepvein"
+			required_discovery_lvl	"1"
+			
+            min_resources   "9999"
+            max_resources   "9999"
+
+            min_spawned_volumes "1"
+            max_spawned_volumes "2"
+			
+            is_infinite        "1"
+        }
     } 
 	
     creature_volumes_min_distance   "64.0"
