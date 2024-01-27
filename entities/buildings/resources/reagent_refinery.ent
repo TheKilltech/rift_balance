@@ -1,23 +1,21 @@
 EntityBlueprint
 {
-	name  "buildings/resources/solvent_condenser"
+	name  "buildings/resources/reagent_refinery"
 
 
 
 	BuildingDesc
 	{
-		name 				"solvent_condenser"
-		bp   				"buildings/resources/solvent_condenser"
+		name 				"reagent_refinery"
+		bp   				"buildings/resources/reagent_refinery"
 		category 			"resources"
 		type				"pipe"
-		localization_id		"gui/hud/building_name/solvent_condenser"
-		description			"gui/hud/building_description/solvent_condenser"
-		menu_icon			"gui/hud/building_icons/solvent_condenser"
+		localization_id		"gui/hud/building_name/reagent_refinery"
+		description			"gui/hud/building_description/reagent_refinery"
+		menu_icon			"gui/hud/building_icons/reagent_refinery"
 		require 			"headquarters"
-		buildable			"0"
-		building_group		"solvent_refinery"
 		order				"30"	
-		//upgrade				"buildings/resources/solvent_condenser_lvl_2"
+		upgrade				"buildings/resources/reagent_refinery_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
@@ -29,9 +27,10 @@ EntityBlueprint
 				building_time 25
 				building_cost
 				{
-					carbonium 	"500"
-					steel 		"1500"
-					ai			"1"
+					carbonium 	"1000"
+					steel 		"2500"	
+					cobalt		"500"
+					ai			"3"
 				}
 			}		
 		}
@@ -44,19 +43,25 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"200"
+				value			 	"75"
 			}
 			
 			GameplayResource
 			{
-				resource 			"hazenite"
-				value			 	"1"
+				resource 			"biomass_plant"
+				value			 	"8"
 			}
+			
+			//GameplayResource
+			//{
+			//	resource 			"hazenite"
+			//	value			 	"1"
+			//}
 			
 			GameplayResource
 			{
-				resource 			"fluorine"
-				value			 	"20"
+				resource 			"water"
+				value			 	"50"
 				attachment			"att_in_1"
 			}
 		}
@@ -65,7 +70,7 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 			"solvent"
+				resource 			"reagent"
 				value 				"50"
 				attachment			"att_out_1"
 			}
@@ -79,8 +84,8 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource	 	"solvent"
-				max 	 		"100"
+				resource	 	"reagent"
+				max 	 		"200"
 				attachment		"att_out_1"
 			}
 		}
@@ -159,8 +164,8 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh 		"meshes/buildings/main/quantum_gate_stabilizer.mesh"
-		material 	"buildings/main/quantum_gate_stabilizer"
+		mesh "meshes/buildings/resources/water_filtering_plant.mesh"
+		material "buildings/resources/reagent_refinery"
 	}
 
 	TypeDesc
@@ -170,7 +175,7 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/solvent_condenser"
+		name "meshes/buildings/resources/water_filtering_plant"
 	}
 
 	AnimationGraphDesc
@@ -179,7 +184,7 @@ EntityBlueprint
 	}
 
 	PhysicsDesc
-	{
+ 	{
 		objects
 		{
 			PhysicsObjectDesc
@@ -189,26 +194,17 @@ EntityBlueprint
 				physics_material 	"default"
 				Shapes
 				{
-					PhysicsCapsuleShape
+					PhysicsSphereShape
 					{
-						r "1.45"
-						half_height "2"
-
-						position
+						r "2.45"
+	
+						position 
 						{
 							x "0.0"
-							y "2"
+							y "1.0"
 							z "0.0"
 						}
-
-						orientation
-						{
-							w "0.7"
-							x "0.0"
-							z "0.7"
-							y "0.0"
-						}
-					}
+					}	
 				}
 			}
 		}
@@ -379,7 +375,7 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////			
+////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
 			group "att_in_1"
@@ -410,7 +406,7 @@ EntityBlueprint
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////			
+////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
 			group "working"
@@ -420,24 +416,14 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_cube_trail"
-					bone "att_working"
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"				
+					bone "att_water"
 				}
-				//Effect
-				//{
-				//	blueprint "effects/buildings_main/rift_small_rotor"
-				//	bone "att_small_rotor_1"
-				//}		
-				//Effect
-				//{
-				//	blueprint "effects/buildings_main/rift_small_rotor"
-				//	bone "att_small_rotor_2"
-				//}	
-				//Effect
-				//{
-				//	blueprint "effects/buildings_main/rift_small_rotor"
-				//	bone "att_small_rotor_3"
-				//}
+				Effect
+				{
+					blueprint "effects/buildings_resources/water_filtering_plant_working"	
+					delay "0.5"					
+				}	
 			}
 		}
 		EffectGroup
@@ -448,25 +434,9 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_out_pipe"
-				}
-				//Effect
-				//{
-				//	blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_03"
-				//	bone  "att_vismod_1"
-				//	scale "0.5 0.5 0.5"
-				//}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_02"
-					bone  "att_vismod_2"
-					scale "0.86 0.7 1.2"
+					blueprint "effects/buildings_and_machines/reactor_orange"
+					bone  "att_vismod_1"
+					scale "0.8 0.8 0.8"
 				}
 			}
 		}			

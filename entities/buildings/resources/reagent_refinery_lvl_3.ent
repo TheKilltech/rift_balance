@@ -1,57 +1,71 @@
 EntityBlueprint
 {
-	name  "buildings/energy/carbonium_powerplant_lvl_3"
-
-	base_blueprint buildings/energy/carbonium_powerplant_lvl_2
+	name  			"buildings/resources/reagent_refinery_lvl_3"
+	base_blueprint	"buildings/resources/reagent_refinery_lvl_2"
 
 	BuildingDesc
 	{
-		buildable			"0"		
-		name 				"carbonium_powerplant_lvl_3"
-		bp   				"buildings/energy/carbonium_powerplant_lvl_3"
-		category 			"energy"
-		localization_id		"gui/hud/building_name/carbonium_powerplant"
-		description			"gui/hud/building_description/carbonium_powerplant"
-		menu_icon			"gui/hud/building_icons/carbonium_powerplant_lvl3"
-		order				"3"
-		//upgrade				"buildings/energy/carbonium_powerplant_lvl_4"		
+		buildable			"0"
+		name 				"reagent_refinery_lvl_3"
+		bp   				"buildings/resources/reagent_refinery_lvl_3"
+		category 			"resources"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/reagent_refinery"
+		description			"gui/hud/building_description/reagent_refinery"
+		menu_icon			"gui/hud/building_icons/reagent_refinery_lvl_3"
 		require 			"headquarters"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		going_green_state	"1"
+		order				"30"	
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 20
+				building_time 25
 				building_cost
 				{
-					carbonium 	"500"	
-					steel 		"1000"	
-					cobalt 		"250"		
-					titanium	"100"	
+					carbonium 	"1000"
+					steel 		"2500"	
+					cobalt		"1500"		
 				}
 			}		
 		}
-		
-		resource_requirement "carbon_vein" 
 	}
 
 	ResourceConverterDesc
 	{
 		in
-		{	
+		{
 			GameplayResource
 			{
-				resource 			"carbon_vein"
-				value			 	"0.20"
-			}	
+				resource 			"energy"
+				value			 	"300"
+			}
 			
 			GameplayResource
 			{
-				resource 			"reagent"
-				value			 	"5"
+				resource 			"biomass_plant"
+				value			 	"8"
+			}
+			
+			GameplayResource
+			{
+				resource 			"hazenite"
+				value			 	"1"
+			}
+			
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value			 	"2"
+			}
+			
+			GameplayResource
+			{
+				resource 			"water"
+				value			 	"100"
 				attachment			"att_in_1"
 			}
 		}
@@ -60,31 +74,31 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 			"energy"
-				value			 	"800"
+				resource 			"reagent"
+				value 				"150"
+				attachment			"att_out_1"
 			}
 		}
-		priority 8
-		reset_interval 0.5
+		priority 4		
 	}
-
+	
 	ResourceStorageDesc
 	{
 		Storages
 		{
 			Storage
 			{
-				resource "energy"
-				max 	 "800"
+				resource	 	"reagent"
+				max 	 		"300"
+				attachment		"att_out_1"
 			}
-			
 		}
-	}
+	}	
 
 	HealthDesc
 	{
-		max_health 					"1600"
-		health 						"1600"
+		max_health 					"1300"
+		health 						"1300"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -145,7 +159,7 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}			
+		}	
 ////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
@@ -162,6 +176,21 @@ EntityBlueprint
 				}
 			}
 		}	
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_out_arrow"
+				}
+			}
+		}
 ////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
@@ -172,35 +201,30 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
-					bone "att_chimney"
-					delay "0.5"
-				}	
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"				
+					bone "att_water"
+				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/carbonium_powerplant_dig"								
-					bone "att_dig"
-					delay "0.5"
+					blueprint "effects/buildings_resources/water_filtering_plant_working"	
+					delay "0.5"					
 				}	
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/electric_machinery_big"								
-					bone "att_electric_1"
-					delay "0.5"
-				}	
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/electric_machinery_big"								
-					bone "att_electric_2"
-					delay "0.5"
-				}	
-				Effect
-				{
-					blueprint "effects/buildings_energy/carbonium_powerplant_working"
-					delay "0.5"
-				}				
 			}
-		}		
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/reactor_orange"
+					bone  "att_vismod_1"
+					scale "0.8 0.8 0.8"
+				}
+			}
+		}	
 		EffectGroup
 		{
 			group "level"
@@ -213,7 +237,6 @@ EntityBlueprint
 					bone "att_level"
 				}
 			}
-		}		
+		}				
 	}
 }
-

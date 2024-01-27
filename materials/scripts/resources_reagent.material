@@ -2,13 +2,13 @@ import * from "materials/scripts/pbr.material"
 import * from "materials/scripts/resources.material"
 
 
-material resources/resource_solvent : resources/resource_liquid
+material resources/resource_reagent : resources/resource_liquid
 {
-	set_texture_alias albedo_1			materials/textures/resources/resource_solvent_01_albedo.dds
+	set_texture_alias albedo_1			materials/textures/resources/resource_reagent_01_albedo.dds
 	set_texture_alias normal_1			materials/textures/resources/resource_supercoolant_normal.dds
 	set_texture_alias packed_1			materials/textures/resources/resource_supercoolant_packed.dds
 	//set_texture_alias emissive_1		materials/textures/resources/resource_fluorine_02_albedo.dds
-	set_texture_alias albedo_2			materials/textures/resources/resource_solvent_01_albedo.dds
+	set_texture_alias albedo_2			materials/textures/resources/resource_reagent_01_albedo.dds
 	set_texture_alias normal_2			materials/textures/resources/resource_flammable_gas_normal.dds
 	set_texture_alias packed_2			materials/textures/resources/resource_flammable_gas_packed.dds
 	//set_texture_alias emissive_2		materials/textures/resources/resource_sludge_02_emissive.dds
@@ -17,13 +17,13 @@ material resources/resource_solvent : resources/resource_liquid
 	glow 1
 }
 
-material resources/resource_solvent_storage : resources/resource_liquid
+material resources/resource_reagent_storage : resources/resource_liquid
 {
-	set_texture_alias albedo_1			materials/textures/resources/resource_solvent_01_albedo.dds
+	set_texture_alias albedo_1			materials/textures/resources/resource_reagent_01_albedo.dds
 	set_texture_alias normal_1			materials/textures/resources/resource_supercoolant_normal.dds
 	set_texture_alias packed_1			materials/textures/resources/resource_supercoolant_packed.dds
-	//set_texture_alias emissive_1		materials/textures/resources/resource_solvent_02_albedo.dds
-	set_texture_alias albedo_2			materials/textures/resources/resource_solvent_01_albedo.dds
+	//set_texture_alias emissive_1		materials/textures/resources/resource_reagent_02_albedo.dds
+	set_texture_alias albedo_2			materials/textures/resources/resource_reagent_01_albedo.dds
 	set_texture_alias normal_2			materials/textures/resources/resource_flammable_gas_normal.dds
 	set_texture_alias packed_2			materials/textures/resources/resource_flammable_gas_packed.dds
 	//set_texture_alias emissive_2		materials/textures/resources/resource_sludge_02_emissive.dds
@@ -42,13 +42,13 @@ material resources/resource_solvent_storage : resources/resource_liquid
 	}
 }
 
-material resources/resource_solvent_pipe : resources/resource_liquid
+material resources/resource_reagent_pipe : resources/resource_liquid
 {
-	set_texture_alias albedo_1			materials/textures/resources/resource_solvent_01_albedo.dds
+	set_texture_alias albedo_1			materials/textures/resources/resource_reagent_01_albedo.dds
 	set_texture_alias normal_1			materials/textures/resources/resource_supercoolant_normal.dds
 	set_texture_alias packed_1			materials/textures/resources/resource_supercoolant_packed.dds
-	//set_texture_alias emissive_1		materials/textures/resources/resource_solvent_02_albedo.dds
-	set_texture_alias albedo_2			materials/textures/resources/resource_solvent_01_albedo.dds
+	//set_texture_alias emissive_1		materials/textures/resources/resource_reagent_02_albedo.dds
+	set_texture_alias albedo_2			materials/textures/resources/resource_reagent_01_albedo.dds
 	set_texture_alias normal_2			materials/textures/resources/resource_flammable_gas_normal.dds
 	set_texture_alias packed_2			materials/textures/resources/resource_flammable_gas_packed.dds
 	//set_texture_alias emissive_2		materials/textures/resources/resource_sludge_02_emissive.dds
@@ -68,7 +68,7 @@ material resources/resource_solvent_pipe : resources/resource_liquid
 	}
 }
 
-material resources/resource_solvent_fresnel
+material resources/resource_reagent_fresnel
 {
 	render_group 109
 

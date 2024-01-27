@@ -119,20 +119,36 @@ material buildings/ammo/ammo_factory_liquid_ext_dissolve : pbr/height_dissolve
 }
 
 
-material buildings/resources/solvent_refinery : buildings/destructible
+material buildings/resources/reagent_refinery : buildings/destructible
 {
-	set_texture_alias albedo			materials/textures/buildings/resources/solvent_refinery_albedo.dds
+	set_texture_alias albedo			materials/textures/buildings/resources/reagent_refinery_albedo.dds
 	set_texture_alias normal			materials/textures/buildings/resources/water_filtering_plant_normal.dds
 	set_texture_alias packed			materials/textures/buildings/resources/water_filtering_plant_packed.dds
-	set_texture_alias emissive			materials/textures/buildings/resources/solvent_refinery_emissive.dds
+	set_texture_alias emissive			materials/textures/buildings/resources/reagent_refinery_emissive.dds
+}
+
+material buildings/resources/reagent_refinery_dissolve : pbr/height_dissolve
+{
+	set_texture_alias albedo			materials/textures/buildings/resources/reagent_refinery_albedo.dds
+	set_texture_alias normal			materials/textures/buildings/resources/water_filtering_plant_normal.dds
+	set_texture_alias packed			materials/textures/buildings/resources/water_filtering_plant_packed.dds
+	set_texture_alias emissive			materials/textures/buildings/resources/reagent_refinery_emissive.dds
+}
+
+material buildings/resources/solvent_refinery : buildings/destructible
+{
+	set_texture_alias albedo			materials/textures/buildings/resources/reagent_refinery_albedo.dds
+	set_texture_alias normal			materials/textures/buildings/resources/water_filtering_plant_normal.dds
+	set_texture_alias packed			materials/textures/buildings/resources/water_filtering_plant_packed.dds
+	set_texture_alias emissive			materials/textures/buildings/resources/reagent_refinery_emissive.dds
 }
 
 material buildings/resources/solvent_refinery_dissolve : pbr/height_dissolve
 {
-	set_texture_alias albedo			materials/textures/buildings/resources/solvent_refinery_albedo.dds
+	set_texture_alias albedo			materials/textures/buildings/resources/reagent_refinery_albedo.dds
 	set_texture_alias normal			materials/textures/buildings/resources/water_filtering_plant_normal.dds
 	set_texture_alias packed			materials/textures/buildings/resources/water_filtering_plant_packed.dds
-	set_texture_alias emissive			materials/textures/buildings/resources/solvent_refinery_emissive.dds
+	set_texture_alias emissive			materials/textures/buildings/resources/reagent_refinery_emissive.dds
 }
 
 
