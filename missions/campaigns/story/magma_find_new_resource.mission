@@ -434,6 +434,17 @@ MissionDef
     {
         ResourceVolume
         {
+            resource        "titanium_vein"
+
+            min_resources   "500"
+            max_resources   "1000"
+
+            min_spawned_volumes "4"
+            max_spawned_volumes "6"
+        }	
+		
+        ResourceVolume
+        {
             resource        "carbon_vein"
 
             min_resources   "3000"
