@@ -5106,7 +5106,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "2000.000"
+							count "2600.000"
 						}
 
 					}
@@ -6620,7 +6620,7 @@ Research
 
 					}
 
-					research_name "gui/menu/research/name/groundwater_access"
+					research_name "gui/menu/research/name/well_contruction"
 					research_costs
 					{
 						ResearchCost
@@ -6643,6 +6643,12 @@ Research
 					{
 						ResearchAward
 						{
+							blueprint "buildings/resources/liquid_pumpjack"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/resources/water_drill"
 							is_visible "1"
 						}
@@ -6650,6 +6656,260 @@ Research
 					}
 
 					icon "gui/menu/research/icons/resource_handling_liquid"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/well_contruction"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/headquarters_lvl5"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/well_contruction_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "2800.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "360.000"
+						y "117.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/liquid_pumpjack_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling_liquid"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/well_contruction_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/headquarters_lvl6"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/well_contruction_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "5000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "360.000"
+						y "198.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/liquid_pumpjack_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling_liquid"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/headquarters_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/nitrogen_chemistry"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "600.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "189.000"
+						y "-162.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/ammonium_extractor"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/nitrification_plant"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/skill_shockwave_blast"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/nitrogen_chemistry"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/headquarters_lvl4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/nitrogen_chemistry_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "1000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "189.000"
+						y "-18.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/nitrification_plant_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/skill_shockwave_blast"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/nitrogen_chemistry_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/nitrogen_chemistry_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "2500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "189.000"
+						y "90.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/nitrification_plant_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/skill_shockwave_blast"
 				}
 
 			}
@@ -22145,12 +22405,6 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/ammonium_extractor"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/resources/biomass_water_press"
 							is_visible "1"
 						}
@@ -22158,12 +22412,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/resources/nitric_acid_refinery"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/nitrification_plant"
 							is_visible "1"
 						}
 
@@ -22234,12 +22482,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/resources/nitric_acid_refinery_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/nitrification_plant_lvl_2"
 							is_visible "1"
 						}
 
@@ -22574,12 +22816,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/resources/nitric_acid_refinery_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/nitrification_plant_lvl_3"
 							is_visible "1"
 						}
 
@@ -23229,6 +23465,174 @@ Research
 					icon "gui/menu/research/icons/environmental_shielding_heat"
 				}
 
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/alien_research_lvl1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/reactive_substances"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "200.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-234.000"
+						y "-297.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/main/fluorine_trap"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/reagent_refinery"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/skill_antimater_ball"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/reactive_substances"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/resource_handling_hazenite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/reactive_substances_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "2000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-234.000"
+						y "-135.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/reagent_condenser"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/reagent_refinery_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/skill_antimater_ball"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/reactive_substances_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/reactive_substances_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "4000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-234.000"
+						y "-9.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/reagent_refinery_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/skill_antimater_ball"
+				}
+
 			}
 
 		}
@@ -23237,6 +23641,6 @@ Research
 
 	type
 	editor "5682"
-	version "108"
+	version "109"
 }
 
