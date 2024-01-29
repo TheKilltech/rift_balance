@@ -26,8 +26,8 @@ EntityBlueprint
 				building_time 120
 				building_cost
 				{
-					carbonium 	"400"
-					steel 		"600"
+					carbonium 	"800"
+					steel 		"200"
 					ai			"2"
 				}
 			}		
@@ -180,7 +180,6 @@ EntityBlueprint
 				destroy_comp_delay "0.7"
 				destroy_comp_event "default"
 				//destroyed_state_material "buildings/main/headquarters_dest_0"
-				//destroyed_state_effect_group "0_state"
 				destrucion_level_name "0"
 			}			
 		}
@@ -425,7 +424,15 @@ EntityBlueprint
 		{
 			"buildings/effects_big_base"
 		}
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+			}
+		}		
 		EffectGroup
 		{
 			group "working"
