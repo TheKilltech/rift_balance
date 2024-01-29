@@ -45,12 +45,15 @@ EntityBlueprint
 				resource 			"energy"
 				value			 	"250"
 			}
-			
 			GameplayResource
 			{
-				resource 			"water"
-				value			 	"10"
-				attachment			"att_in_1"
+				resource 			"biomass_plant"
+				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"biomass_animal"
+				value			 	"2"
 			}
 		}
 		
@@ -416,27 +419,20 @@ EntityBlueprint
 		{
 			"buildings/effects_big_base"
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
+			group "vismod"
+			enabled "1"
 			Effects
 			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_arrow"
-				}
 			}
-		}	
-////////////////////////MISC/////////////////////////			
+		}		
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
