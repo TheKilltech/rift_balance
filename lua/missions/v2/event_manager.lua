@@ -82,6 +82,13 @@ function event_manager:InitRules()
 		LogService:Log( "event_manager:InitRules() : difficulty : " .. tostring( DifficultyService:GetCurrentDifficultyName() ) )
         self.rules = require( self.rulesFile )()
     end
+	
+	-- make sure mod rule variables are available and valid
+	if (self.rules.idleTimeRelativeVariation == nil        or type(self.rules.idleTimeRelativeVariation) ~= "number")        then  self.rules.idleTimeRelativeVariation = 35         end
+	if (self.rules.idleTimeCancelChance == nil             or type(self.rules.idleTimeCancelChance) ~= "number")             then  self.rules.idleTimeCancelChance = 5               end
+	if (self.rules.preparationTimeRelativeVariation == nil or type(self.rules.preparationTimeRelativeVariation) ~= "number") then  self.rules.preparationTimeRelativeVariation = 35  end
+	if (self.rules.preparationTimeCancelChance == nil      or type(self.rules.preparationTimeCancelChance) ~= "number")      then  self.rules.preparationTimeCancelChance = 5        end
+	if (self.rules.spawnCooldownEventChance == nil         or type(self.rules.spawnCooldownEventChance) ~= "table")          then  self.rules.spawnCooldownEventChance = {}          end
 end
 
 function event_manager:FillInitialParamsEventManager()
@@ -1028,16 +1035,16 @@ function event_manager:GetEventByWeight( currentStreamingData )
 
 		LogService:Log( tostring( currentStreamingData[i].action ) .. " -  range : " .. tostring( rangeStart ) .. " - " .. tostring( rangeEnd ) )
 
-        events[currentStreamingData[i].action] = { min = rangeStart, max = rangeEnd }
+        events[i] = { min = rangeStart, max = rangeEnd, action = currentStreamingData[i].action }
     end
 
     local rand = math.random( 0.0, ( totalWeight * 100 ) - 1 ) / 100
     LogService:Log("event_manager:GetEventByWeight - Random : " .. tostring( rand ) )
 
-    for event,v in pairs( events ) do
-        if v.min <= rand and v.max > rand then
-			LogService:Log("event_manager:GetEventByWeight - Choosing " .. tostring( event ) .. " range: " .. tostring( v.min ) .. " - " .. tostring( v.max ) )
-            return event;
+    for i,event in ipairs( events ) do
+        if event.min <= rand and event.max > rand then
+			LogService:Log("event_manager:GetEventByWeight - Choosing " .. tostring( event.action ) .. " range: " .. tostring( event.min ) .. " - " .. tostring( event.max ) )
+            return event.action;
         end
     end
 

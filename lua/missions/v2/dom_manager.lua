@@ -408,7 +408,8 @@ function dom_mananger:LogicEntryTableCheck( logicTable, logString, failedLogicFi
 end
 
 function dom_mananger:VerboseLog( message )
-	LogService:LogIf( g_verbose_dom_manager, message )
+	--LogService:LogIf( g_verbose_dom_manager, message )
+	LogService:Log( message )
 end
 
 function dom_mananger:OnLuaGlobalEvent( evt )
@@ -999,7 +1000,18 @@ function dom_mananger:GetAttackCount( currentDifficultyLevel )
 end
 
 function dom_mananger:GetPrepareSpawnTime()
-	return self.rules.prepareSpawnTime[self.currentDifficultyLevel]
+	local stateDuration = self.rules.prepareSpawnTime[self.currentDifficultyLevel]
+	self:VerboseLog("Preparation time base ".. tostring(stateDuration))
+	
+	if (self.rules.preparationTimeRelativeVariation > 0) then
+		local rngScale = (math.random()-0.5)*2*self.rules.preparationTimeRelativeVariation
+		stateDuration = stateDuration + rngScale
+		self:VerboseLog("Preparation time random scaling by ".. tostring(rngScale) .. " changing base to ".. tostring(stateDuration))
+	elseif (self.rules.preparationTimeCancelChance > math.random()*100) then
+		stateDuration = 15
+		self:VerboseLog("Preparation time modifier: cancelled (down to 15)")
+	end
+	return stateDuration
 end
 
 function dom_mananger:GetIdleTime()
@@ -1124,11 +1136,30 @@ end
 function dom_mananger:OnEnterCooldownAfterSpawnTime( state )
 	self:VerboseLog("OnEnterCooldownAfterSpawnTime" )
 	self.cooldownTimer = self.rules.cooldownAfterAttacks[self.currentDifficultyLevel]
+	
+	self.coolEventSpawnTime = {}
+	local rngRoll = RandInt(0, 100)	
+	for i,prob in ipairs(self.rules.spawnCooldownEventChance) do
+		local isSet = false
+		if (prob and prob >= rngRoll) then
+			self.coolEventSpawnTime[i] = (math.min(self.cooldownTimer, 180) * RandInt(0,100)) / 100.0
+			isSet = true
+		end
+		self:VerboseLog("Event on Cooldown ".. tostring(i) ..": roll " .. tostring(rngRoll) .. " vs probability " .. tostring(prob) .." => ".. tostring(isSet))
+	end
 end
 
 function dom_mananger:OnExecuteCooldownAfterSpawnTime( state, dt )
 	self.cooldownTimer  = self.cooldownTimer - dt
 
+	for i = 1, #self.coolEventSpawnTime, 1 do
+		if (self.coolEventSpawnTime[i] and self.coolEventSpawnTime[i] > self.cooldownTimer) then
+			self:VerboseLog("Event on Cooldown ".. tostring(i) ..": starting")
+			self:StartAnEvent( "ATTACK" )
+			self.coolEventSpawnTime[i] = -1
+		end
+	end
+			
 	if ( self.cooldownTimer < 0 ) then
 		self.spawner:ChangeState( "idle" )
 	end
@@ -1144,7 +1175,16 @@ function dom_mananger:OnEnterIdle( state )
 	self:VerboseLog("OnEnterIdle" )
 
 	local stateDuration = self.rules.idleTime[self.currentDifficultyLevel]
-
+	self:VerboseLog("Idle time base ".. tostring(stateDuration))
+	
+	if (self.rules.idleTimeRelativeVariation > 0) then
+		local rngScale = (math.random()-0.5)*2*self.rules.idleTimeRelativeVariation
+		stateDuration = stateDuration + rngScale
+		self:VerboseLog("Idle time random scaling by ".. tostring(rngScale) .. " changing base ".. tostring(self.rules.idleTime[self.currentDifficultyLevel]) .." to ".. tostring(stateDuration))
+	elseif (self.rules.idleTimeCancelChance > math.random()*100) then
+		stateDuration = 120
+		self:VerboseLog("Idle time modifier: cancelled (down to 120)")
+	end
 	self.idleTimer = stateDuration
 
 	--state:SetDurationLimit( stateDuration )
@@ -1471,13 +1511,6 @@ function dom_mananger:OnEnterSpawn( state )
 
 	self:VerboseLog("OnEnterSpawn" )
 	
-	if (self.spawnAttackEventProbability and self.spawnAttackEventProbability >= RandInt(0, 100)/100.0) then
-		self:StartAnEvent( "ATTACK" )
-		if (self.spawn2ndAttackEventProbability and self.spawn2ndAttackEventProbability >= RandInt(0, 100)/100.0) then
-			self:StartAnEvent( "ATTACK" )
-		end
-	end
-
 	if ( self.cancelTheAttack == true ) then
 		self:VerboseLog("Canceling the attack." )
 		self.cancelTheAttack = false

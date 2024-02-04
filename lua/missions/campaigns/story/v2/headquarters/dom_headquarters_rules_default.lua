@@ -7,6 +7,10 @@ return function()
 	rules.pauseAttacks = false
 	rules.prepareAttacks = true
 	rules.baseTimeBetweenObjectives = 2400
+	rules.idleTimeRelativeVariation = 0.35 -- X factor of idle time that may randomly vary: +/- X * idle_time
+	rules.idleTimeCancelChance = 10
+	rules.preparationTimeRelativeVariation = 0.4 -- X factor of idle time that may randomly vary: +/- X * prep_time
+	rules.preparationTimeCancelChance = 10
 
 	rules.gameEvents = 
 	{
@@ -17,46 +21,32 @@ return function()
 		{ action = "unlock_research",           type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1 },
 		{ action = "full_ammo",                 type = "POSITIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 2 },
 		{ action = "remove_ammo",               type = "NEGATIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 2 },
-		{ action = "stronger_attack",           type = "NEGATIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 1, amount = 2 },
-		{ action = "stronger_attack",           type = "NEGATIVE", gameStates="ATTACK|NO_STREAMING",      minEventLevel = 1, amount = 2 },
-		{ action = "cancel_the_attack",         type = "POSITIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 1 },
-		{ action = "cancel_the_attack",         type = "POSITIVE", gameStates="ATTACK|NO_STREAMING",      minEventLevel = 1 },
-		{ action = "boss_attack",               type = "NEGATIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 4 },
-		{ action = "boss_attack",               type = "NEGATIVE", gameStates="ATTACK|NO_STREAMING",      minEventLevel = 4 },
+		{ action = "stronger_attack",           type = "NEGATIVE", gameStates="ATTACK",                   minEventLevel = 2, amount = 2 },
+		{ action = "cancel_the_attack",         type = "POSITIVE", gameStates="ATTACK",                   minEventLevel = 1 },
+		{ action = "boss_attack",               type = "NEGATIVE", gameStates="ATTACK",                   minEventLevel = 4 },
 		{ action = "spawn_earthquake",          type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 3, logicFile="logic/weather/earthquake.logic", minTime = 60, maxTime = 60, weight = 0.5 },
 		{ action = "spawn_earthquake",          type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/earthquake.logic", minTime = 60, maxTime = 60, weight = 0.2 },
 		{ action = "spawn_blue_hail",           type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 4, logicFile="logic/weather/blue_hail.logic", minTime = 30, maxTime = 60, weight = 0.25 },
 		{ action = "spawn_blue_hail",           type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/blue_hail.logic", minTime = 30, maxTime = 60, weight = 0.1 },
-		{ action = "spawn_thunderstorm",        type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 2, logicFile="logic/weather/thunderstorm.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_thunderstorm",        type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 2, logicFile="logic/weather/thunderstorm.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_blood_moon",          type = "NEGATIVE", gameStates="IDLE|STREAMING",           minEventLevel = 5, logicFile="logic/weather/blood_moon.logic", minTime = 60, maxTime = 120 , weight = 0.5},
-		{ action = "spawn_blood_moon",          type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",        minEventLevel = 5, logicFile="logic/weather/blood_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_blue_moon",           type = "POSITIVE", gameStates="IDLE|STREAMING",           minEventLevel = 3, logicFile="logic/weather/blue_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_blue_moon",           type = "POSITIVE", gameStates="IDLE|NO_STREAMING",        minEventLevel = 3, logicFile="logic/weather/blue_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_solar_eclipse",       type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 5, logicFile="logic/weather/solar_eclipse.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_solar_eclipse",       type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/weather/solar_eclipse.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_super_moon",          type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 3, logicFile="logic/weather/super_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_super_moon",          type = "POSITIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/super_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_fog",                 type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, logicFile="logic/weather/fog.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_fog",                 type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/fog.logic", minTime = 60, maxTime = 120 },
-		{ action = "shegret_attack",            type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 6, logicFile="logic/event/shegret_attack.logic", weight = 5 },
-		{ action = "shegret_attack",            type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 6, logicFile="logic/event/shegret_attack.logic", weight = 5 },
-		{ action = "spawn_rain",                type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, logicFile="logic/weather/rain.logic", minTime = 120, maxTime = 120 },
-		{ action = "spawn_rain",                type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/rain.logic", minTime = 120, maxTime = 120 },
-		{ action = "spawn_wind_weak",           type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, logicFile="logic/weather/wind_weak.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_wind_weak",           type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/wind_weak.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_wind_strong",         type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, logicFile="logic/weather/wind_strong.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_wind_strong",         type = "POSITIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/wind_strong.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_wind_none",           type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 4, logicFile="logic/weather/wind_none.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_wind_none",           type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/wind_none.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_ion_storm",           type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 4, logicFile="logic/weather/ion_storm.logic", minTime = 30, maxTime = 60, weight = 0.5 },
-		{ action = "spawn_ion_storm",           type = "POSITIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/ion_storm.logic", minTime = 30, maxTime = 60, weight = 0.5 },
+		{ action = "spawn_thunderstorm",        type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 2, logicFile="logic/weather/thunderstorm.logic", minTime = 60, maxTime = 120 },
+		{ action = "spawn_blood_moon",          type = "NEGATIVE", gameStates="IDLE",                     minEventLevel = 5, logicFile="logic/weather/blood_moon.logic", minTime = 60, maxTime = 120 , weight = 0.5},
+		{ action = "spawn_blue_moon",           type = "POSITIVE", gameStates="IDLE",                     minEventLevel = 3, logicFile="logic/weather/blue_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
+		{ action = "spawn_solar_eclipse",       type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 5, logicFile="logic/weather/solar_eclipse.logic", minTime = 60, maxTime = 120, weight = 0.5 },
+		{ action = "spawn_super_moon",          type = "POSITIVE", gameStates="ATTACK|IDLE",              minEventLevel = 3, logicFile="logic/weather/super_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
+		{ action = "spawn_fog",                 type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 1, logicFile="logic/weather/fog.logic", minTime = 60, maxTime = 120 },
+		{ action = "shegret_attack",            type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 6, logicFile="logic/event/shegret_attack.logic", weight = 5 },
+		{ action = "spawn_rain",                type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 1, maxEventLevel = 4, logicFile="logic/weather/rain.logic", minTime = 120, maxTime = 120 },
+		{ action = "spawn_rain",                type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 5, logicFile="logic/weather/rain.logic", minTime = 120, maxTime = 360 },
+		{ action = "spawn_wind_weak",           type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 1, maxEventLevel = 2, logicFile="logic/weather/wind_weak.logic", minTime = 60, maxTime = 90 },
+		{ action = "spawn_wind_weak",           type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 3, logicFile="logic/weather/wind_weak.logic", minTime = 60, maxTime = 360 },
+		{ action = "spawn_wind_strong",         type = "POSITIVE", gameStates="ATTACK|IDLE",              minEventLevel = 1, logicFile="logic/weather/wind_strong.logic", minTime = 60, maxTime = 360 },
+		{ action = "spawn_wind_none",           type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 4, logicFile="logic/weather/wind_none.logic", minTime = 60, maxTime = 360 },
+		{ action = "spawn_ion_storm",           type = "POSITIVE", gameStates="ATTACK|IDLE",              minEventLevel = 4, logicFile="logic/weather/ion_storm.logic", minTime = 30, maxTime = 60, weight = 0.5 },
 		{ action = "spawn_tornado_near_player", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 5, maxEventLevel = 2, logicFile="logic/weather/tornado_near_player.logic", weight = 0.5 },
 		{ action = "spawn_tornado_near_player", type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 5, maxEventLevel = 2, logicFile="logic/weather/tornado_near_player.logic", weight = 0.2 },
 		{ action = "spawn_tornado_near_base",   type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 4, logicFile="logic/weather/tornado_near_base.logic", weight = 0.25 },
 		{ action = "spawn_tornado_near_base",   type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/tornado_near_base.logic", weight = 0.1 },		
-		{ action = "spawn_resource_comet",      type = "POSITIVE", gameStates="IDLE|STREAMING",           minEventLevel = 4, logicFile="logic/weather/resource_comet.logic"  },
-		{ action = "spawn_resource_comet",      type = "POSITIVE", gameStates="IDLE|NO_STREAMING",        minEventLevel = 4, logicFile="logic/weather/resource_comet.logic"  },
+		{ action = "spawn_resource_comet",      type = "POSITIVE", gameStates="IDLE",                     minEventLevel = 4, logicFile="logic/weather/resource_comet.logic"  },
 		{ action = "spawn_resource_earthquake", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 5, logicFile="logic/weather/resource_earthquake.logic", weight = 1 },
 		{ action = "spawn_resource_earthquake", type = "POSITIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/weather/resource_earthquake.logic", weight = 0.5 },
 		{ action = "spawn_meteor_shower",       type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 4, logicFile="logic/weather/meteor_shower.logic", minTime = 30, maxTime = 60, weight = 0.5 },
@@ -64,18 +54,24 @@ return function()
 		{ action = "spawn_comet_silent",        type = "POSITIVE", gameStates="IDLE|NO_STREAMING",        minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 2 }		
 		--{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 3 },
 	}
-
+	
+	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be ascending
+	{
+		40,  -- 1st event probability in percent
+		8,   -- 2nd event probability in percent
+	}
+	
 	rules.addResourcesOnRunOut = 
 	{
-		{ name = "carbon_vein", runOutPercentageOnMap = 45, minToSpawn = 20000, maxToSpawn = 30000 },
-		{ name = "iron_vein", runOutPercentageOnMap = 45, minToSpawn = 20000, maxToSpawn = 30000 },
+		{ name = "carbon_vein", runOutPercentageOnMap = 25, minToSpawn = 5000, maxToSpawn = 20000 },
+		{ name = "iron_vein",   runOutPercentageOnMap = 25, minToSpawn = 1000, maxToSpawn = 4000 },
 	}
 
 	rules.timeToNextDifficultyLevel = 
 	{			
-		900, -- difficulty level 1
-		1800, -- difficulty level 2
-		1800, -- difficulty level 3	
+		1800, -- difficulty level 1
+		2400, -- difficulty level 2
+		2400, -- difficulty level 3	
 		1800, -- difficulty level 4
 		1800, -- difficulty level 5
 		1800, -- difficulty level 6
@@ -137,7 +133,7 @@ return function()
 
 	rules.idleTime = 
 	{			
-		1200,  -- difficulty level 1
+		1500,  -- difficulty level 1
 		1200,  -- difficulty level 2
 		900,  -- difficulty level 3
 		900,  -- difficulty level 4	
