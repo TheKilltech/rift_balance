@@ -1,0 +1,132 @@
+EntityBlueprint
+{
+	name  					"buildings/defense/short_range_radar_lvl_3"
+
+	base_blueprint 			"buildings/defense/short_range_radar_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"short_range_radar_lvl_3"
+		bp   				"buildings/defense/short_range_radar_lvl_3"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/short_range_radar"
+		description			"gui/hud/building_description/short_range_radar"
+		menu_icon			"gui/hud/building_icons/short_range_radar_lvl3"
+		require 			"headquarters"
+		order				"7"
+		//upgrade				"buildings/defense/short_range_radar_lvl_4"
+		buildable			"0"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"200"
+					steel 		"120"
+					uranium		"100"
+				}
+			}		
+		}			
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"60"
+			}
+		}
+		priority 5		
+		out
+		{
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/defense/short_range_radar.lua"
+		
+		database
+		{
+			name				string:"range"
+			range				float:"200"
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"1150"
+		health 						"1150"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+	
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"				
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}	
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+////////////////////////MISC/////////////////////////			
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/radar_energy"								
+					bone "att_radar_energy"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_defense/short_range_radar_working"	
+					delay "0.5"					
+				}					
+			}
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}		
+	}	
+}
