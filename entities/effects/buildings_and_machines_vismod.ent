@@ -386,6 +386,54 @@ EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_orange_03
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_01
+{
+	name "effects/buildings_and_machines/scifi_structure_medium_white_01"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/scifi_structure_medium_01.mesh"
+		material 	"buildings/decorations/scifi_structure_white"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_02
+{
+	name "effects/buildings_and_machines/scifi_structure_medium_white_02"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/scifi_structure_medium_02.mesh"
+		material 	"buildings/decorations/scifi_structure_white"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_03
+{
+	name "effects/buildings_and_machines/scifi_structure_medium_white_03"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/scifi_structure_medium_03.mesh" // tower
+		material 	"buildings/decorations/scifi_structure_white"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//surface_water
 {
 	name effects/world/surface_water

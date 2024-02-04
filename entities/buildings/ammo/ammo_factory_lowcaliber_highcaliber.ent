@@ -1,18 +1,18 @@
 EntityBlueprint
 {
-	name  "buildings/ammo/ammo_factory_explosive_adv"
+	name  "buildings/ammo/ammo_factory_lowcaliber_highcaliber"
 	
 	BuildingDesc
 	{
-		name 				"ammo_factory_explosive_adv"
-		bp   				"buildings/ammo/ammo_factory_explosive_adv"
+		name 				"ammo_factory_lowcaliber_highcaliber"
+		bp   				"buildings/ammo/ammo_factory_lowcaliber_highcaliber"
 		category 			"ammo"
-		localization_id		"gui/hud/building_name/ammo_factory_explosive_adv"
-		description			"gui/hud/building_description/ammo_factory_explosive_adv"
-		menu_icon			"gui/hud/building_icons/ammo_factory_explosive_adv"
-		upgrade				"buildings/ammo/ammo_factory_explosive_adv_lvl_2"
+		localization_id		"gui/hud/building_name/ammo_factory_lowcaliber_highcaliber"
+		description			"gui/hud/building_description/ammo_factory_lowcaliber_highcaliber"
+		menu_icon			"gui/hud/building_icons/tower_ammunition_factory"
+		//upgrade				"buildings/ammo/ammo_factory_lowcaliber_highcaliber_lvl_2"
 		require 			"headquarters"
-		order				"33"
+		order				"1"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
@@ -23,8 +23,8 @@ EntityBlueprint
 				building_time 25
 				building_cost
 				{
-					carbonium 	"1000"
-					steel 		"800"
+					carbonium 	"50"
+					steel 		"250"
 					ai			"2"
 				}
 			}		
@@ -38,49 +38,47 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value				"350"
+				value	"25"
 			}
 			GameplayResource
 			{
 				resource 			"steel"
-				value				"2"
+				value	"1"
 			}
 			
 			GameplayResource
 			{
-				resource 			"carbonium"
-				value				"2"
+				resource 			"ammonium"
+				value	"1"
 			}
-			
-			GameplayResource
-			{
-				resource 			"ammo_tower_explosive" //"ammo_mech_explosive"
-				value				"0.2"
-			}
-			
-			GameplayResource
-			{
-				resource 			"tanzanite"
-				value				"1.5"
-			}		
-						
 		}
 		
 		out
 		{
 			GameplayResource
 			{
-				resource 			"ammo_tower_explosive_lvl2"
-				value				"0.2"
+				resource 			"ammo_tower_low_caliber"
+				value				"1.6"
+			}
+			GameplayResource
+			{
+				resource 			"ammo_mech_low_caliber"
+				value				"1.6"
+				optional			"1"
+			}
+			GameplayResource
+			{
+				resource 			"ammo_tower_high_caliber"
+				value				"0.6"
 			}	
 			GameplayResource
 			{
-				resource 			"ammo_mech_explosive_lvl2"
-				value				"0.2"
+				resource 			"ammo_mech_high_caliber"
+				value				"0.6"
 				optional			"1"
-			}		
+			}
 		}
-		priority 6		
+		priority 5		
 	}
 
 	LuaDesc
@@ -157,17 +155,17 @@ EntityBlueprint
 	MeshDesc
 	{
 		mesh "meshes/buildings/resources/tower_ammunition_factory.mesh"
-		material "buildings/ammo/ammo_factory_explosive_adv"
+		material "buildings/resources/tower_ammunition_factory"
 	}
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|ammo"
 	}
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/ammo/ammo_factory_explosive_adv"
+		name "meshes/buildings/ammo/ammo_factory_lowcaliber_highcaliber"
 	}
 
 	AnimationGraphDesc
@@ -379,20 +377,16 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_1_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_03"
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_01"
 					bone 	"att_vismod_1"
-					scale "0.8 0.8 0.8"
+					scale "0.40 0.40 0.40" //"0.63 0.63 0.63"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/minipipes"
+					blueprint "effects/buildings_and_machines/particle_condenser"
 					bone 	"att_vismod_2"
-					scale "1.2 1.2 1.2"
+					scale "0.63 0.63 0.63"
+					orientation "0 0 90"
 				}
 			}
 		}
@@ -406,7 +400,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_resources/tower_ammunition_factory_working"	
+					blueprint "effects/buildings_resources/tower_ammunition_factory_working"
 					delay "0.5"					
 				}	
 			}
