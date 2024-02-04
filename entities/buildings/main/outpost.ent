@@ -17,8 +17,9 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/outpost"
 		order				"1"
 		map_limit			"LOCAL_ANG_GLOBAL"
-		limit			    "10"
-		sellable 			"1"`
+		limit			    "1"
+		limit_name			"outpost"
+		sellable 			"1"
 		mission_mode		"2"
 		radius_name			"portal"
 		min_radius			"40"
@@ -121,7 +122,7 @@ EntityBlueprint
 			Storage
 			{
 				resource	"ai"
-				max			"4"
+				max			"8"
 			}
 		}
 	}
