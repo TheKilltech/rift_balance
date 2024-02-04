@@ -374,12 +374,6 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_storage_lowcaliber"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/defense/tower_drone_attack"
 							is_visible "1"
 						}
@@ -827,6 +821,68 @@ Research
 
 						}
 
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "communications_hub"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "1"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "outpost"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "8"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
 					}
 
 					position
@@ -840,6 +896,12 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/main/headquarters_lvl_7"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/building_limit_cap_increase_comms_hub"
 							is_visible "1"
 						}
 
@@ -1733,6 +1795,37 @@ Research
 
 						}
 
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "outpost"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "3"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
 					}
 
 					position
@@ -1825,7 +1918,7 @@ Research
 								{
 									StringData
 									{
-										value "communications_hub"
+										value "outpost"
 										key "limit_name"
 									}
 
@@ -1837,7 +1930,7 @@ Research
 								{
 									IntData
 									{
-										value "1"
+										value "2"
 										key "increase_amount"
 									}
 
@@ -1866,12 +1959,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/main/headquarters_lvl_6"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "research/building_limit_cap_increase_comms_hub"
 							is_visible "1"
 						}
 
@@ -1952,6 +2039,37 @@ Research
 									IntData
 									{
 										value "1"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "outpost"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "4"
 										key "increase_amount"
 									}
 
@@ -2769,6 +2887,12 @@ Research
 					{
 						ResearchAward
 						{
+							blueprint "buildings/ammo/ammo_storage_lowcaliber"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/defense/ai_hub"
 							is_visible "1"
 						}
@@ -3172,7 +3296,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "200.000"
+							count "150.000"
 						}
 
 					}
@@ -4122,7 +4246,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "450.000"
+							count "150.000"
 						}
 
 					}
@@ -4666,7 +4790,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "250.000"
+							count "120.000"
 						}
 
 					}
@@ -5152,7 +5276,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "200.000"
+							count "300.000"
 						}
 
 					}
@@ -6085,7 +6209,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "200.000"
+							count "50.000"
 						}
 
 					}
@@ -6459,7 +6583,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "350.000"
+							count "300.000"
 						}
 
 					}
@@ -10217,7 +10341,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "150.000"
+							count "50.000"
 						}
 
 					}
@@ -23641,6 +23765,6 @@ Research
 
 	type
 	editor "5682"
-	version "109"
+	version "111"
 }
 
