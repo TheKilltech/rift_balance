@@ -3266,6 +3266,12 @@ Research
 					{
 						ResearchAward
 						{
+							blueprint "buildings/main/fluorine_trap"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/resources/rare_element_mine"
 							is_visible "1"
 						}
@@ -23612,7 +23618,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
