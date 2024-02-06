@@ -1,20 +1,20 @@
 EntityBlueprint
 {
-	name					"buildings/defense/tower_cannon_lvl_2"
+	name					"buildings/defense/tower_cannon_acid"
 	base_blueprint 			"buildings/defense/tower_cannon"
 
 	BuildingDesc
 	{
 		buildable			"0"
-		name 				"tower_cannon_lvl_2"
-		bp   				"buildings/defense/tower_cannon_lvl_2"
+		name 				"tower_cannon_acid"
+		bp   				"buildings/defense/tower_cannon_acid"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_cannon_cooled"
-		description			"gui/hud/building_description/tower_cannon_cooled"
-		menu_icon			"gui/hud/building_icons/tower_cannon_cooled"
+		localization_id		"gui/hud/building_name/tower_cannon_acid"
+		description			"gui/hud/building_description/tower_cannon_acid"
+		menu_icon			"gui/hud/building_icons/tower_cannon_acid"
 		require 			"headquarters"
 		building_group		"tower_cannon"
-		order				"9"
+		order				"10"
 		check_connect		"1"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
@@ -30,7 +30,8 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"150"
-					steel 		"250"
+					steel 		"100"
+					cobalt 		"150"
 				}
 			}		
 		}		
@@ -48,15 +49,15 @@ EntityBlueprint
 			
 			GameplayResource
 			{
-				resource 	"water"
+				resource 	"sludge"
 				value 		"5"
-				family		"coolant"
+				family		"coating"
 			}		
 			GameplayResource
 			{
-				resource 	"supercoolant"
+				resource 	"nitric_acid"
 				value 		"1"
-				family		"coolant"
+				family		"coating"
 			}
 		}
 
@@ -113,6 +114,33 @@ EntityBlueprint
 	{
 	}
 	
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment 		"att_muzzle"
+				recoil_bone		"be_recoil"
+				recoil_time		"0.3"
+				recoil_offset	"0.5"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "4"
+		}		
+
+		ammo_blueprint 				"buildings/defense/tower_cannon_projectile_acid"
+
+		muzzle_flash_effect 		"effects/weapons_bullet/sniper_rifle_fire"
+
+		burst_column_spacing 		"0.5"
+		burst_rate 					"0.3"
+	}
+	
 	EffectDesc
 	{		
 		EffectBaseBlueprints
@@ -167,3 +195,61 @@ EntityBlueprint
 		}
 	}
 }
+
+EntityBlueprint
+{
+	name "buildings/defense/tower_cannon_projectile_acid"
+
+	base_blueprint "effects/weapons_bullet/sniper_rifle_projectile"
+
+	ProjectileAmmoComponent
+	{
+		diameter				"1"
+		distribution 			"dissipation"
+		dissipation_count 		"10"
+	
+		on_enemy_hit_effect 	"effects/weapons_elemental/hit_acid"
+		on_world_hit_effect 	"effects/weapons_elemental/hit_acid"
+		on_resisted_hit_effect 	"effects/weapons_generic/projectile_hit_resisted"
+	
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|building"
+		collision_2d 			"ground_unit|destructible"
+	
+	}
+	
+	LifeTimeDesc
+	{
+		time 		0.3
+	}
+	
+	children
+	{
+		EntityBlueprint
+		{
+			RibbonComponent
+			{		
+				material 			ribbon/grenade_trail_green
+				update_bounds 		1
+				fade_out_time		0.75
+				uv_scroll			"0 -2.5"
+				tiling_distance     "0"
+				tesselation_step 	"0.25"
+				keep_local			"0"
+	
+				Ribbons
+				{
+					Ribbon
+					{
+						offset "0 0.5 0"
+					}
+	
+					Ribbon
+					{
+						offset "0 -0.5 0"
+					}
+				}
+			}
+		}
+	}
+}
+

@@ -1,20 +1,20 @@
 EntityBlueprint
 {
-	name 					"buildings/defense/tower_cannon_lvl_3"
-	base_blueprint 			"buildings/defense/tower_cannon"
+	name 					"buildings/defense/tower_cannon_incindiary"
+	base_blueprint 			"buildings/defense/tower_cannon_lvl_2"
 
 	BuildingDesc
 	{
 		buildable			"0"
-		name 				"tower_cannon_lvl_3"
-		bp   				"buildings/defense/tower_cannon_lvl_3"
+		name 				"tower_cannon_incindiary"
+		bp   				"buildings/defense/tower_cannon_incindiary"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_cannon_cryo"
-		description			"gui/hud/building_description/tower_cannon_cryo"
-		menu_icon			"gui/hud/building_icons/tower_cannon_cryo"
+		localization_id		"gui/hud/building_name/tower_cannon_incindiary"
+		description			"gui/hud/building_description/tower_cannon_incindiary"
+		menu_icon			"gui/hud/building_icons/tower_cannon_incindiary"
 		require 			"headquarters"
 		building_group		"tower_cannon"
-		order				"11"
+		order				"12"
 		check_connect		"1"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
@@ -30,8 +30,8 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"150"
-					steel 		"200"
-					cobalt		"150"
+					steel 		"300"
+					cobalt		"50"
 				}
 			}		
 		}		
@@ -49,9 +49,15 @@ EntityBlueprint
 			
 			GameplayResource
 			{
-				resource 	"supercoolant"
+				resource 	"plasma"
 				value 		"2"
-				family		"coolant"
+				family		"plasma"
+			}
+			GameplayResource
+			{
+				resource 	"plasma_charged"
+				value 		"1"
+				family		"plasma"
 			}
 		}
 
@@ -127,7 +133,7 @@ EntityBlueprint
 			emissive_factor "4"
 		}		
 
-		ammo_blueprint 				"buildings/defense/tower_cannon_projectile_cryo"
+		ammo_blueprint 				"buildings/defense/tower_cannon_projectile_incidiary"
 
 		muzzle_flash_effect 		"effects/weapons_bullet/sniper_rifle_fire"
 
@@ -161,14 +167,14 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "vismod"
-			enabled "0"
+			enabled "1"
 			Effects
 			{
 				Effect
 				{
-					blueprint	"effects/buildings_and_machines/scifi_structure_very_small_white_01"
-					bone 		"att_vismod_3"
-					scale		"0.2 0.2 0.2"
+					blueprint	"effects/buildings_and_machines/scifi_structure_very_small_white_03"
+					bone 		"att_vismod_2"
+					scale		"0.4 0.2 0.4"
 				}
 			}
 		}	
@@ -192,7 +198,7 @@ EntityBlueprint
 
 EntityBlueprint
 {
-	name "buildings/defense/tower_cannon_projectile_cryo"
+	name "buildings/defense/tower_cannon_projectile_incidiary"
 
 	base_blueprint "effects/weapons_bullet/sniper_rifle_projectile"
 
@@ -202,8 +208,8 @@ EntityBlueprint
 		distribution 			"dissipation"
 		dissipation_count 		"10"
 	
-		on_enemy_hit_effect 	"effects/weapons_elemental/hit_cryo"
-		on_world_hit_effect 	"effects/weapons_elemental/hit_cryo"
+		on_enemy_hit_effect 	"effects/weapons_elemental/hit_fire"
+		on_world_hit_effect 	"effects/weapons_elemental/hit_fire"
 		on_resisted_hit_effect 	"effects/weapons_generic/projectile_hit_resisted"
 	
 		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|building"
@@ -222,7 +228,7 @@ EntityBlueprint
 		{
 			RibbonComponent
 			{		
-				material 			ribbon/grenade_trail_blue
+				material 			ribbon/grenade_trail_red
 				update_bounds 		1
 				fade_out_time		0.75
 				uv_scroll			"0 -2.5"
@@ -246,3 +252,4 @@ EntityBlueprint
 		}
 	}
 }
+
