@@ -8,15 +8,16 @@ EntityBlueprint
 		name 					"ammo_factory_liquid_adv_lvl_2"
 		bp   					"buildings/ammo/ammo_factory_liquid_adv_lvl_2"
 		category 				"ammo"
-		localization_id			"gui/hud/building_name/ammo_factory_liquid_adv"
-		description				"gui/hud/building_description/ammo_factory_liquid_adv"
+		localization_id			"gui/hud/building_name/ammo_factory_liquid_adv_gas"
+		description				"gui/hud/building_description/ammo_factory_liquid_adv_gas"
 		menu_icon				"gui/hud/building_icons/ammo_factory_liquid_adv_lvl_2"
 		//upgrade					"buildings/ammo/ammo_factory_liquid_adv_lvl_3"
 		require 				"headquarters"
-		order					"35"
+		order					"36"
 		buildable				"0"
+		building_group			"ammo_factory_liquid_adv"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_liquid_adv,ammo_factory_liquid_adv_gas"
 
 		costs
 		{
@@ -26,7 +27,7 @@ EntityBlueprint
 				building_time 30
 				building_cost
 				{
-					carbonium 	"800"
+					carbonium 	"300"
 					steel 		"800"
 					ai			"1"
 				}
@@ -199,12 +200,18 @@ EntityBlueprint
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_1_pipe"
 				}
+				Effect
+				{
+					blueprint 	"effects/buildings_and_machines/scifi_structure_very_small_white_03"
+					bone 		"att_vismod_2"
+					scale 		"0.7 0.7 0.7"
+				}
 			}
 		}	
 		EffectGroup
 		{
 			group "level"
-			enabled "1"
+			enabled "0"
 			Effects
 			{
 				Effect
