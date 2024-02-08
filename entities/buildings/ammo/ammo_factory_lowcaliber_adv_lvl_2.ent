@@ -8,6 +8,7 @@ EntityBlueprint
 		name 				"ammo_factory_lowcaliber_adv_lvl_2"
 		bp   				"buildings/ammo/ammo_factory_lowcaliber_adv_lvl_2"
 		category 			"ammo"
+		type				"pipe"
 		localization_id		"gui/hud/building_name/ammo_factory_lowcaliber_adv"
 		description			"gui/hud/building_description/ammo_factory_lowcaliber_adv"
 		menu_icon			"gui/hud/building_icons/ammo_factory_lowcaliber_adv_lvl_2"
@@ -16,6 +17,7 @@ EntityBlueprint
 		order				"30"
 		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_lowcaliber_adv"
 		
 		costs
 		{

@@ -14,7 +14,7 @@ EntityBlueprint
 		require 				"headquarters"
 		order					"31"	
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides				"ammo_factory_highcaliber_adv_lvl_2"
 
 		costs
 		{
@@ -100,7 +100,7 @@ EntityBlueprint
 	
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|ammo"
 	}
 	
 	SkeletonDesc

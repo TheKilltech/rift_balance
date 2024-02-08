@@ -13,7 +13,8 @@ EntityBlueprint
 		upgrade				"buildings/ammo/ammo_factory_lowcaliber_adv_lvl_2"
 		require 			"headquarters"
 		order				"30"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+		overrides			"ammo_factory_lowcaliber_adv_lvl_2"
 		
 		costs
 		{
@@ -157,7 +158,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|ammo"
 	}
 
 	SkeletonDesc
