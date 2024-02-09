@@ -1,3 +1,49 @@
+buildings/defense/fire_control_station
+{
+	WeaponItemDesc
+	{
+		ammo_storage
+		damage_type "area"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_MINMAX"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+		}
+
+	}
+
+}
+
 buildings/defense/tower_acid_spitter
 {
 	WeaponItemDesc
