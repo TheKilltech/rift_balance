@@ -31,7 +31,7 @@ EntityBlueprint
 		}
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
@@ -125,8 +125,8 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/defense/tower_heavy_artillery_lvl_1.mesh"
-		material "buildings/defense/tower_heavy_artillery_lvl_1"
+		mesh 		"meshes/buildings/main/research_station.mesh"
+		material 	"buildings/main/research_station"
 	}
 
 	TypeDesc
@@ -136,11 +136,11 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/defense/tower_heavy_artillery_lvl_1"
+		name "meshes/buildings/defense/fire_control_station"
 	}
 
 	PhysicsDesc
-	{
+ 	{
 		objects
 		{
 			PhysicsObjectDesc
@@ -158,7 +158,7 @@ EntityBlueprint
 						position
 						{
 							x "0.0"
-							y "1.45"
+							y "2"
 							z "0.0"
 						}
 
@@ -253,9 +253,9 @@ EntityBlueprint
 		aiming_cooldown "1"
 		aiming_target_time "2"
 		aiming_idle_angle "20"
-		pitch "be_barrel"
+		pitch "att_smoke_5"
 		gravity_factor "8"
-		yaw "be_turret"
+		yaw "att_smoke_5"
 		check_target_visibility "1"
 		fog_of_war_filtering "1"
 	}
@@ -266,8 +266,8 @@ EntityBlueprint
 		{
 			WeaponMuzzle
 			{
-				attachment "att_muzzle"
-				recoil_bone  "be_recoil"
+				attachment "att_smoke_5"
+				recoil_bone  "body"
 				recoil_time   "0.35"
 				recoil_offset   "1.0"
 			}
@@ -281,7 +281,6 @@ EntityBlueprint
 		}
 
 		ammo_blueprint 			"buildings/defense/dummy_projectile"
-		muzzle_flash_effect 	"effects/weapons_energy/heavy_artillery_muzzle"
 
 		burst_column_spacing 	"0"
 		burst_rate 				"0"
@@ -402,6 +401,20 @@ EntityBlueprint
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
+			group "working"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_main/research_station_working"
+					bone "att_working"
+				}
+			}
+		}
+		EffectGroup
+		{
 			group "lamp"
 			enabled "0"
 
@@ -410,7 +423,7 @@ EntityBlueprint
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/tower_omni_light"
-					bone "att_muzzle"
+					bone "att_working"
 					random_delay "3"
 				}
 			}
@@ -421,104 +434,4 @@ EntityBlueprint
 EntityBlueprint
 {
 	name "buildings/defense/dummy_projectile"
-
-	MeshDesc
-	{
-		mesh 		"meshes/projectiles/rocket_heavy_artillery.mesh"
-		material 	"projectiles/rocket_heavy_artillery"
-	}
-
-	SkeletonDesc
-	{
-		name "meshes/projectiles/rocket_small"
-	}
-
-	MinimapItemDesc
-	{
-		type	"quad"
-		color
-		{
-			x "1"
-			y "1"
-			z "0"
-			w "1"
-		}
-		size
-		{
-			x "2"
-			y "2"
-		}
-		visibility			"radar"
-	}
-
-	VegetationBendingComponentDesc
-	{
-		bending_power	"5000.0"
-		bending_radius	"5.0"
-	}
-
-	SoundDesc
-	{
-		name 		"items/weapons/explosive/rocket_projectile_medium"
-	}
-
-	EffectDesc
-	{
-		EffectGroup
-		{
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/projectiles_and_trails/tower_heavy_artillery_projectile"
-					bone "att_exhaust"
-				}
-			}
-		}
-	}
-
-	ArtilleryAmmoComponent
-	{
-		on_enemy_hit_effect 	"effects/weapon_hit/tower_projectile_hit"
-		on_world_hit_effect 	"effects/weapon_hit/tower_projectile_hit"
-		on_resisted_hit_effect 	"effects/weapons_generic/projectile_hit_resisted"
-		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield"
-		hit_effect_direction 	"up"
-		DamagePattern
-		{
-			area_damage_speed	"5"
-		}
-	}
-	
-	children
-	{
-		EntityBlueprint
-		{
-			RibbonComponent
-			{		
-				material 			ribbon/smoke_trail_blue_01
-				update_bounds 		1
-				fade_out_time		0.9
-				uv_scroll			"0 -2.5"
-				tiling_distance     "0"
-				tesselation_step 	"0.25"
-				keep_local			"0"
-
-				Ribbons
-				{
-					Ribbon
-					{
-						parent_attachment "att_exhaust"
-						offset "0 0 0.9"
-					}
-
-					Ribbon
-					{
-						parent_attachment "att_exhaust"
-						offset "0 0 -0.9"
-					}
-				}
-			}
-		}
-	}	
 }
