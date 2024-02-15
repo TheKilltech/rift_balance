@@ -13,10 +13,12 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_plasma"
 		menu_icon			"gui/hud/building_icons/tower_plasma_lvl3"
 		require 			"headquarters"
-		order				"13"
+		building_group		"tower_basic"
+		order				"14"
+		check_connect		"0"
 		buildable			"0"
 		type				"tower"
-		overrides			"tower,wall"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		//upgrade				"buildings/defense/tower_plasma_lvl_4"
 
@@ -28,22 +30,29 @@ EntityBlueprint
 				building_time 2.5
 				building_cost
 				{
-					carbonium 	"600"
-					steel 		"300"
+					carbonium 	"1200"
+					steel 		"500"
 					palladium	"200"
 				}
 			}		
 		}		
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"50"
+				value 		"250"
+			}
+			GameplayResource
+			{
+				resource 	"plasma_charged"
+				value 		"6"
+				family		"charge"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -102,6 +111,94 @@ EntityBlueprint
 
 	TowerDesc
 	{
+	}
+	
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+				recoil_bone  "be_recoil"
+				recoil_time   "0.2"
+				recoil_offset   "0.4"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "6"
+			submesh_idx "1"
+		}
+
+		ammo_blueprint 				"buildings/defense/tower_plasma_projectile_yellow"
+
+		muzzle_flash_effect 		"effects/weapons_energy/plasma_gun_fire_yellow"
+
+		burst_column_spacing 		"0"
+		burst_rate 					"0"
+		burst_column_angle 			"0"
+	}
+	
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone 		"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/energywall_x2"
+					bone 		"att_vismod_1"
+					scale		"1.5 0.8 1.5"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
 	}
 }
 

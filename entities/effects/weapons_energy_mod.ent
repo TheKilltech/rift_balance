@@ -1,0 +1,184 @@
+
+// lights/point
+
+EntityBlueprint		// muzzle_yellow_small
+{
+	name lights/point/muzzle_yellow_small
+
+	SceneEditorDesc
+	{
+		mesh 		"meshes/light_point.mesh"
+	}
+
+	LightDesc
+	{
+		type "0"
+		scattering_intensity "0.41"
+		light_color
+		{
+			x "1.0"
+			y "1.0"
+			z "0.0"
+			w "500.0"
+		}
+
+		light_range "9"
+	}
+
+	AffectorDesc
+	{
+	 	AffectorLambdaDesc
+	 	{
+		 	affector_lambda LightLinearAffector
+			{
+				start    	"1"
+				end    		"0"
+				duration	"0.3"
+			}
+	 	}
+	}
+}
+
+EntityBlueprint		// yellow_small
+{
+	name lights/point/yellow_small
+
+	SceneEditorDesc
+	{
+		mesh 		"meshes/light_point.mesh"
+	}
+
+	LightDesc
+	{
+		type "0"
+		scattering_intensity "0.41"
+		light_color
+		{
+			x "1.0"
+			y "1.0"
+			z "0.0"
+			w "1000.0"
+		}
+
+		light_range "9"
+	}
+}
+
+
+// effects/weapons_energy
+
+EntityBlueprint		// plasma_gun_projectile_red
+{
+	name effects/weapons_energy/plasma_gun_projectile_red
+
+	base_blueprints 
+	{
+		effects/enemies_magmoth/projectile // effects/weapons_elemental/projectile
+		lights/point/red_small
+		effects/no_lifetime
+	}
+	
+	MinimapItemDesc
+	{
+		type	"quad"
+		color 
+		{
+			x "1"
+			y "1"
+			z "0"
+			w "1"
+		}
+		size
+		{
+			x "1"
+			y "1"
+		}
+		visibility		"discovered"
+	}
+
+	ParticleDesc
+	{
+		name    "rift/plasma_gun_projectile_red"
+	}	
+}
+
+EntityBlueprint		// plasma_gun_projectile_yellow
+{
+	name effects/weapons_energy/plasma_gun_projectile_yellow
+
+	base_blueprints 
+	{
+		effects/weapons_elemental/projectile
+		lights/point/yellow_small
+		effects/no_lifetime
+	}	
+	
+	MinimapItemDesc
+	{
+		type	"quad"
+		color 
+		{
+			x "1"
+			y "1"
+			z "0"
+			w "1"
+		}
+		size
+		{
+			x "1"
+			y "1"
+		}
+		visibility		"discovered"
+	}
+
+	ParticleDesc
+	{
+		name    "rift/plasma_gun_projectile_yellow"
+	}	
+}
+
+EntityBlueprint		// plasma_gun_fire_red
+{
+	name effects/weapons_energy/plasma_gun_fire_red
+
+	base_blueprints
+	{
+		effects/weapons_elemental/muzzle
+		lights/point/muzzle_red_small
+		effects/default
+	}
+
+	ParticleDesc
+	{
+		name    "rift/mech_plasma_gun_muzzle"
+	}
+
+	SoundDesc
+	{
+		name "items/weapons/energy/plasma_gun_fire"
+	}
+
+}
+
+EntityBlueprint		// plasma_gun_fire_yellow
+{
+	name effects/weapons_energy/plasma_gun_fire_yellow
+
+	base_blueprints
+	{
+		effects/weapons_elemental/muzzle
+		lights/point/muzzle_yellow_small
+		effects/default
+	}
+
+	ParticleDesc
+	{
+		name    "rift/mech_plasma_gun_muzzle"
+	}
+
+	SoundDesc
+	{
+		name "items/weapons/energy/plasma_gun_fire"
+	}
+
+}
