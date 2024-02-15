@@ -7,7 +7,7 @@ function fire_control_station:__init()
 end
 
 function fire_control_station:OnInit()
-	LogService:Log( "FCS: OnInit" )
+	-- LogService:Log( "FCS: OnInit" )
 	self.radius = 40
 	self.alert = 1
 	self.alertCooldown = 10
@@ -25,7 +25,7 @@ end
 
 
 function fire_control_station:OnActivate()
-	LogService:Log( "FCS: OnActivate" )
+	-- LogService:Log( "FCS: OnActivate" )
 	self.powered = true
 	self.fsm:ChangeState("alert_cooldown")
 	if ( AnimationService:HasAnim( self.entity, "working") ) then
@@ -34,7 +34,7 @@ function fire_control_station:OnActivate()
 end
 
 function fire_control_station:OnDeactivate()
-	LogService:Log( "FCS: OnDeactivate" )
+	-- LogService:Log( "FCS: OnDeactivate" )
 	self.powered = false
 	self.fsm:ChangeState("alert_cooldown")
 	if ( AnimationService:IsAnimActive( self.entity, "working") ) then
@@ -46,15 +46,15 @@ local TS_ON_WEAPON_AIM = 4 -- constant enum value of GetTurretStatus return type
 local noTargetId = "4294967295" -- max uint: 2^32 - 1 or (uint)(-1)
 
 function fire_control_station:OnTurretEvent(evt)
-	LogService:Log( "FCS: OnTurretEvent" )
+	-- LogService:Log( "FCS: OnTurretEvent" )
 	local target  = evt:GetTargetEntity()
 	local tstatus = evt:GetTurretStatus()
-	LogService:Log( "FCS: event target ".. tostring(target) .. " status ".. tostring(tstatus) .. " alert " ..tostring(self.alert))
+	-- LogService:Log( "FCS: event target ".. tostring(target) .. " status ".. tostring(tstatus) .. " alert " ..tostring(self.alert))
 	if tostring(target) ~= noTargetId then 
-		LogService:Log( "FCS: turret has target")
+		-- LogService:Log( "FCS: turret has target")
 		self.fsm:ChangeState("alert")
 	elseif tstatus == 0 and self.alert > 0 then
-		LogService:Log( "FCS: no target")
+		-- LogService:Log( "FCS: no target")
 		self.fsm:ChangeState("alert_cooldown")
 	end
 end
@@ -62,7 +62,7 @@ end
 --------- state = alert
 
 function fire_control_station:OnEnterAlert(state)	
-	LogService:Log( "FCS: OnEnterAlert alert ".. tostring(self.alert))
+	-- LogService:Log( "FCS: OnEnterAlert alert ".. tostring(self.alert))
 	self:OperateAlertLight("red")
 	if self.working and self.alert ~= 2 then
 		local entities = self:GetControlledEntities()
@@ -72,35 +72,35 @@ function fire_control_station:OnEnterAlert(state)
 end
 
 function fire_control_station:OnExitAlert(state)	
-	LogService:Log( "FCS: OnExitAlert alert ".. tostring(self.alert))
+	-- LogService:Log( "FCS: OnExitAlert alert ".. tostring(self.alert))
 end
 
 --------- state = alert_cooldown
 
 function fire_control_station:OnEnterAlertCooldown(state)	
-	LogService:Log( "FCS: OnEnterAlertCooldown alert ".. tostring(self.alert))
+	-- LogService:Log( "FCS: OnEnterAlertCooldown alert ".. tostring(self.alert))
 	self:OperateAlertLight("yellow")
 	self.alertCooldown = 10
 	self.alert = 1
 end
 
 function fire_control_station:OnExecuteAlertCooldown(state, dt)
-	LogService:Log( "FCS: OnExecuteAlertCooldown alert ".. tostring(self.alert) ..", cooldown ".. tostring(self.alertCooldown))
+	-- LogService:Log( "FCS: OnExecuteAlertCooldown alert ".. tostring(self.alert) ..", cooldown ".. tostring(self.alertCooldown))
 	self.alertCooldown = self.alertCooldown - dt
 	if self.alertCooldown <= 0 then	
-		LogService:Log( "FCS: cooldown ended. switching off alert" )
+		-- LogService:Log( "FCS: cooldown ended. switching off alert" )
 		self.fsm:ChangeState("noalert")
 	end
 end
 
 function fire_control_station:OnExitCooldownAlertCooldown(state)	
-	LogService:Log( "FCS: OnExitCooldownAlertCooldown alert ".. tostring(self.alert) ..", cooldown " .. tostring(self.alertCooldown))
+	-- LogService:Log( "FCS: OnExitCooldownAlertCooldown alert ".. tostring(self.alert) ..", cooldown " .. tostring(self.alertCooldown))
 end
 
 --------- state = noalert
 
 function fire_control_station:OnEnterNoAlert(state)	
-	LogService:Log( "FCS: OnEnterNoAlert alert ".. tostring(self.alert))
+	-- LogService:Log( "FCS: OnEnterNoAlert alert ".. tostring(self.alert))
 	self:OperateAlertLight("green")
 	if self.alert ~= 0 and self.working then
 		local entities = self:GetControlledEntities()
@@ -110,16 +110,16 @@ function fire_control_station:OnEnterNoAlert(state)
 end
 
 function fire_control_station:OnExitNoAlert(state)	
-	LogService:Log( "FCS: OnExitNoAlert alert ".. tostring(self.alert))
+	-- LogService:Log( "FCS: OnExitNoAlert alert ".. tostring(self.alert))
 end
 
 
 
 
 function fire_control_station:GetControlledEntities()
-	LogService:Log( "FCS: GetControlledEntities" )
+	-- LogService:Log( "FCS: GetControlledEntities" )
 	local entities = FindService:FindEntitiesByTypeInRadius( self.entity, "defense", self.radius )
-	LogService:Log( "FCS: ".. tostring(#entities) .. " in radius ".. tostring(self.radius))
+	-- LogService:Log( "FCS: ".. tostring(#entities) .. " in radius ".. tostring(self.radius))
 	
 	local controlled = {}
     for ent in Iter(entities ) do
@@ -132,7 +132,7 @@ function fire_control_station:GetControlledEntities()
 		if string.find(bpname, "short_range_radar")    then goto continue end
 		if string.find(bpname, "ai_hub")               then goto continue end
 		
-		LogService:Log( "FCS: entity ".. tostring(ent).. " name ".. tostring(EntityService:GetBlueprintName(ent)))
+		-- LogService:Log( "FCS: entity ".. tostring(ent).. " name ".. tostring(EntityService:GetBlueprintName(ent)))
         Insert(controlled, ent)
 		::continue::
     end
@@ -141,14 +141,14 @@ function fire_control_station:GetControlledEntities()
 end
 
 function fire_control_station:SwitchPowerState( entities, newStatus )  
-	LogService:Log( "FCS: SwitchPowerState ".. tostring(#entities) .. " entities to power state ".. tostring(newStatus))
+	-- LogService:Log( "FCS: SwitchPowerState ".. tostring(#entities) .. " entities to power state ".. tostring(newStatus))
 	for entity in Iter( entities ) do
 		QueueEvent("ChangeBuildingStatusRequest", entity, newStatus )
 	end
 end
 
 function fire_control_station:OperateAlertLight( targetLightState )
-	LogService:Log( "FCS: OperateAlertLight from ".. tostring(self.alertLight) .. " to " .. tostring(targetLightState))
+	-- LogService:Log( "FCS: OperateAlertLight from ".. tostring(self.alertLight) .. " to " .. tostring(targetLightState))
 	if self.alertLight == targetLightState then return end
 	
 	if self.alertLight == "red" then
