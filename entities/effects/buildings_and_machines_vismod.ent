@@ -194,6 +194,563 @@ EntityBlueprint "effects/no_lifetime"		//platform
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//wall_x1
+{
+	name "effects/buildings_and_machines/wall_x1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_x_01.mesh"
+		material "buildings/defense/walls_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//wall_x2
+{
+	name "effects/buildings_and_machines/wall_x2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_x_01_lvl_2.mesh"
+		material "buildings/defense/walls_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//wall_x3
+{
+	name "effects/buildings_and_machines/wall_x3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_x_01_lvl_3.mesh"
+		material "buildings/defense/walls_lvl_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//wall_s1
+{
+	name "effects/buildings_and_machines/wall_x1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_straight_01.mesh"
+		material "buildings/defense/walls_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//wall_s2
+{
+	name "effects/buildings_and_machines/wall_s2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_straight_01_lvl_2.mesh"
+		material "buildings/defense/walls_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//wall_s3
+{
+	name "effects/buildings_and_machines/wall_s3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_straight_01_lvl_3.mesh"
+		material "buildings/defense/walls_lvl_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//energywall_x1
+{
+	name "effects/buildings_and_machines/energywall_x1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_energy_x_01.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/defense/wall_energy_lvl_1_solid"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/defense/wall_energy_lvl_1_energy"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//energywall_x2
+{
+	name "effects/buildings_and_machines/energywall_x2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_energy_x_01_lvl_2.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/defense/wall_energy_lvl_2_solid"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/defense/wall_energy_lvl_2_energy"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//energywall_x3
+{
+	name "effects/buildings_and_machines/energywall_x3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_energy_x_01_lvl_3.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/defense/wall_energy_lvl_3_solid"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/defense/wall_energy_lvl_3_energy"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//energywall_s1
+{
+	name "effects/buildings_and_machines/energywall_s1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_energy_t_01.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/defense/wall_energy_lvl_1_solid"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/defense/wall_energy_lvl_1_energy"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//energywall_s2
+{
+	name "effects/buildings_and_machines/energywall_s2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_energy_t_01_lvl_2.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/defense/wall_energy_lvl_2_solid"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/defense/wall_energy_lvl_2_energy"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//energywall_s3
+{
+	name "effects/buildings_and_machines/energywall_s3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_energy_t_01_lvl_3.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/defense/wall_energy_lvl_3_solid"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/defense/wall_energy_lvl_3_energy"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hq7
+{
+	name "effects/buildings_and_machines/hq7"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/headquarters_lvl_7.mesh"
+		material "error"
+		
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "buildings/main/headquarters_level_1"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/main/headquarters_level_2"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/main/headquarters_level_7"
+			}
+			SubMesh
+			{
+				id "3"
+				material "buildings/main/headquarters_level_3"
+			}
+			SubMesh
+			{
+				id "4"
+				material "buildings/main/headquarters_level_4"
+			}
+			SubMesh
+			{
+				id "5"
+				material "buildings/main/headquarters_level_6"
+			}
+			SubMesh
+			{
+				id "6"
+				material "buildings/main/headquarters_level_5"
+			}
+		}	
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hq6
+{
+	name "effects/buildings_and_machines/hq6"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/headquarters_lvl_6.mesh"
+		material "error"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "buildings/main/headquarters_level_1"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/main/headquarters_level_2"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/main/headquarters_level_3"
+			}
+			SubMesh
+			{
+				id "3"
+				material "buildings/main/headquarters_level_4"
+			}
+			SubMesh
+			{
+				id "4"
+				material "buildings/main/headquarters_level_6"
+			}
+			SubMesh
+			{
+				id "5"
+				material "buildings/main/headquarters_level_5"
+			}
+		}	
+	}
+
+}
+
+EntityBlueprint "effects/no_lifetime"		//hq5
+{
+	name "effects/buildings_and_machines/hq5"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/headquarters_lvl_5.mesh"
+		material "error"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "buildings/main/headquarters_level_1"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/main/headquarters_level_2"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/main/headquarters_level_3"
+			}
+			SubMesh
+			{
+				id "3"
+				material "buildings/main/headquarters_level_4"
+			}
+			SubMesh
+			{
+				id "4"
+				material "buildings/main/headquarters_level_5"
+			}
+		}	
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hq4
+{
+	name "effects/buildings_and_machines/hq4"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/headquarters_lvl_4.mesh"
+		material "error"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "buildings/main/headquarters_level_1"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/main/headquarters_level_2"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/main/headquarters_level_3"
+			}
+			SubMesh
+			{
+				id "3"
+				material "buildings/main/headquarters_level_4"
+			}
+		}	
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hq3
+{
+	name "effects/buildings_and_machines/hq3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/headquarters_lvl_3.mesh"
+		material "error"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "buildings/main/headquarters_level_1"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/main/headquarters_level_2"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/main/headquarters_level_3"
+			}
+		}	
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hq2
+{
+	name "effects/buildings_and_machines/hq2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/headquarters_lvl_2.mesh"
+		material "error"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "buildings/main/headquarters_level_1"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/main/headquarters_level_2"
+			}
+		}	
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hq1
+{
+	name "effects/buildings_and_machines/hq1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/headquarters_lvl_1.mesh"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "buildings/main/headquarters_level_1"
+			}
+		}	
+	}
+
+}
+
 EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_01
 {
 	name "effects/buildings_and_machines/scifi_structure_medium_white_01"
