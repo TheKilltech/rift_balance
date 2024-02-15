@@ -11,6 +11,7 @@ function fire_control_station:OnInit()
 	self.radius = 40
 	self.alert = 1
 	self.alertCooldown = 10
+	self.alertLight = "off"
 	
 	self.radius = self.data:GetFloatOrDefault("radius", 40)
 	
@@ -27,12 +28,18 @@ function fire_control_station:OnActivate()
 	LogService:Log( "FCS: OnActivate" )
 	self.powered = true
 	self.fsm:ChangeState("alert_cooldown")
+	if ( AnimationService:HasAnim( self.entity, "working") ) then
+		AnimationService:StartAnim( self.entity, "working", true )
+	end
 end
 
 function fire_control_station:OnDeactivate()
 	LogService:Log( "FCS: OnDeactivate" )
 	self.powered = false
 	self.fsm:ChangeState("alert_cooldown")
+	if ( AnimationService:IsAnimActive( self.entity, "working") ) then
+		AnimationService:StopAnim( self.entity, "working")
+	end
 end
 
 local TS_ON_WEAPON_AIM = 4 -- constant enum value of GetTurretStatus return type
@@ -56,16 +63,11 @@ end
 
 function fire_control_station:OnEnterAlert(state)	
 	LogService:Log( "FCS: OnEnterAlert alert ".. tostring(self.alert))
-	
-	if self.working then
-		if self.alert <= 0 then EffectService:AttachEffects(self.entity, "alert") end
-		
-		if self.alert ~= 2 then
-			local entities = self:GetControlledEntities()
-			self:SwitchPowerState( entities, true )
-		end
+	self:OperateAlertLight("red")
+	if self.working and self.alert ~= 2 then
+		local entities = self:GetControlledEntities()
+		self:SwitchPowerState( entities, true )
 	end
-		
 	self.alert = 2
 end
 
@@ -77,6 +79,7 @@ end
 
 function fire_control_station:OnEnterAlertCooldown(state)	
 	LogService:Log( "FCS: OnEnterAlertCooldown alert ".. tostring(self.alert))
+	self:OperateAlertLight("yellow")
 	self.alertCooldown = 10
 	self.alert = 1
 end
@@ -98,12 +101,10 @@ end
 
 function fire_control_station:OnEnterNoAlert(state)	
 	LogService:Log( "FCS: OnEnterNoAlert alert ".. tostring(self.alert))
-	if self.alert ~= 0 then
-		EffectService:DestroyEffectsByGroup(self.entity, "alert")
-		if self.working then
-			local entities = self:GetControlledEntities()
-			self:SwitchPowerState( entities, false )
-		end
+	self:OperateAlertLight("green")
+	if self.alert ~= 0 and self.working then
+		local entities = self:GetControlledEntities()
+		self:SwitchPowerState( entities, false )
 	end
 	self.alert = 0
 end
@@ -131,7 +132,7 @@ function fire_control_station:GetControlledEntities()
 		if string.find(bpname, "short_range_radar")    then goto continue end
 		if string.find(bpname, "ai_hub")               then goto continue end
 		
-		LogService:Log( "FCS: entitiy ".. tostring(ent).. " name ".. tostring(EntityService:GetBlueprintName(ent)))
+		LogService:Log( "FCS: entity ".. tostring(ent).. " name ".. tostring(EntityService:GetBlueprintName(ent)))
         Insert(controlled, ent)
 		::continue::
     end
@@ -144,7 +145,34 @@ function fire_control_station:SwitchPowerState( entities, newStatus )
 	for entity in Iter( entities ) do
 		QueueEvent("ChangeBuildingStatusRequest", entity, newStatus )
 	end
-	-- if( not BuildingService:IsPlayerWorking( entity )) then
+end
+
+function fire_control_station:OperateAlertLight( targetLightState )
+	LogService:Log( "FCS: OperateAlertLight from ".. tostring(self.alertLight) .. " to " .. tostring(targetLightState))
+	if self.alertLight == targetLightState then return end
+	
+	if self.alertLight == "red" then
+		EffectService:DestroyEffectsByGroup(self.entity, "alert_red")
+	elseif self.alertLight == "yellow" then
+		EffectService:DestroyEffectsByGroup(self.entity, "alert_yellow")
+		EffectService:DestroyEffectsByGroup(self.entity, "target")
+	elseif self.alertLight == "green" then
+		EffectService:DestroyEffectsByGroup(self.entity, "alert_green")
+	end
+	
+	if self.working == true then		
+		if targetLightState == "red" then
+			EffectService:AttachEffects(self.entity, "alert_red")
+			EffectService:AttachEffects(self.entity, "target")
+		elseif targetLightState == "yellow" then
+			EffectService:AttachEffects(self.entity, "alert_yellow")
+		elseif targetLightState == "green" then
+			EffectService:AttachEffects(self.entity, "alert_green")
+		end
+		self.alertLight = targetLightState
+	elseif self.working == false then 
+		self.alertLight = "off"
+	end
 end
 
 return fire_control_station

@@ -253,9 +253,8 @@ EntityBlueprint
 		aiming_cooldown "1"
 		aiming_target_time "2"
 		aiming_idle_angle "20"
-		pitch "att_smoke_5"
-		gravity_factor "8"
-		yaw "att_smoke_5"
+		pitch "att_target"
+		yaw "att_target"
 		check_target_visibility "1"
 		fog_of_war_filtering "1"
 	}
@@ -266,8 +265,8 @@ EntityBlueprint
 		{
 			WeaponMuzzle
 			{
-				attachment "att_smoke_5"
-				recoil_bone  "body"
+				attachment "att_target"
+				recoil_bone  "att_target"
 				recoil_time   "0.35"
 				recoil_offset   "1.0"
 			}
@@ -406,9 +405,60 @@ EntityBlueprint
 
 			Effects
 			{
+			}
+		}
+		EffectGroup
+		{
+			group "target"
+			enabled "0"
+			Effects
+			{
 				Effect
 				{
-					blueprint "effects/buildings_main/research_station_working"
+					// blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/mech/laser_pointer"
+					bone "att_target"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "alert_red"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "lights/point/red_big"
+					bone "att_working"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "alert_yellow"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "lights/point/base_lamp_yellow"  //"effects/buildings_and_machines/lamp_light_yellow"
+					bone "att_working"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "alert_green"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "lights/point/green_big"
 					bone "att_working"
 				}
 			}
@@ -420,12 +470,6 @@ EntityBlueprint
 
 			Effects
 			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/tower_omni_light"
-					bone "att_working"
-					random_delay "3"
-				}
 			}
 		}
 	}
