@@ -718,7 +718,7 @@ buildings/defense/tower_artillery_lvl_3
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive_lvl3"
+		ammo_storage "ammo_tower_explosive_lvl3"
 		damage_type "area"
 		rarity "EXTREME"
 		stat_def_vec
@@ -804,7 +804,7 @@ buildings/defense/tower_basic
 	WeaponItemDesc
 	{
 		ammo_storage "energy"
-		damage_type "physical"
+		damage_type "energy"
 		rarity "ADVANCED"
 		stat_def_vec
 		{
@@ -881,7 +881,7 @@ buildings/defense/tower_basic_lvl_2
 	WeaponItemDesc
 	{
 		ammo_storage "energy"
-		damage_type "physical"
+		damage_type "energy"
 		rarity "SUPERIOR"
 		stat_def_vec
 		{
@@ -950,7 +950,7 @@ buildings/defense/tower_basic_lvl_3
 	WeaponItemDesc
 	{
 		ammo_storage "energy"
-		damage_type "physical"
+		damage_type "energy"
 		rarity "EXTREME"
 		stat_def_vec
 		{
@@ -1198,6 +1198,22 @@ buildings/defense/tower_cannon_acid
 				stat_type "WEAPON_SCALE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
 		}
 
 	}
@@ -1208,7 +1224,7 @@ buildings/defense/tower_cannon_incindiary
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_high_caliber_lvl3"
+		ammo_storage "ammo_tower_high_caliber_lvl3"
 		damage_type "fire"
 		rarity "EXTREME"
 		stat_def_vec
@@ -1255,8 +1271,8 @@ buildings/defense/tower_cannon_incindiary
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "1.000"
+				min_value "1.000"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -1291,6 +1307,22 @@ buildings/defense/tower_cannon_incindiary
 				min_value "1.000"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN_LENGTH"
 			}
 
 		}
@@ -2286,8 +2318,8 @@ buildings/defense/tower_laser_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "75.000"
-				min_value "75.000"
+				max_value "25.000"
+				min_value "25.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "AMMO_COST"
 			}
@@ -2349,8 +2381,8 @@ buildings/defense/tower_laser_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "200.000"
-				min_value "200.000"
+				max_value "25.000"
+				min_value "25.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "AMMO_COST"
 			}
@@ -2808,8 +2840,8 @@ buildings/defense/tower_plasma
 
 			WeaponStatDef
 			{
-				max_value "22.000"
-				min_value "22.000"
+				max_value "66.000"
+				min_value "66.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -2885,16 +2917,16 @@ buildings/defense/tower_plasma_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "30.000"
-				min_value "30.000"
+				max_value "90.000"
+				min_value "90.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.100"
-				min_value "1.100"
+				max_value "1.300"
+				min_value "1.300"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -2923,8 +2955,8 @@ buildings/defense/tower_plasma_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "40.000"
+				min_value "40.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "AMMO_COST"
 			}
@@ -2970,16 +3002,16 @@ buildings/defense/tower_plasma_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "44.000"
-				min_value "44.000"
+				max_value "132.000"
+				min_value "132.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.100"
-				min_value "1.100"
+				max_value "1.500"
+				min_value "1.500"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -3008,8 +3040,8 @@ buildings/defense/tower_plasma_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "400.000"
-				min_value "400.000"
+				max_value "40.000"
+				min_value "40.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "AMMO_COST"
 			}
