@@ -37,7 +37,7 @@ EntityBlueprint
 		}		
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
@@ -52,12 +52,14 @@ EntityBlueprint
 				resource 	"sludge"
 				value 		"5"
 				family		"coating"
+				attachment	"att_in_1"
 			}		
 			GameplayResource
 			{
 				resource 	"nitric_acid"
 				value 		"1"
 				family		"coating"
+				attachment	"att_in_1"
 			}
 		}
 

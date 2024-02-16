@@ -36,7 +36,7 @@ EntityBlueprint
 		}		
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
@@ -51,12 +51,14 @@ EntityBlueprint
 				resource 	"water"
 				value 		"5"
 				family		"coolant"
+				attachment	"att_in_1"
 			}		
 			GameplayResource
 			{
 				resource 	"supercoolant"
 				value 		"1"
 				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -139,7 +141,7 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"
+			enabled "0"
 			Effects
 			{
 				Effect
