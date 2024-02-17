@@ -9,14 +9,16 @@ EntityBlueprint
 		name 				"tower_rockets_lvl_3"
 		bp   				"buildings/defense/tower_rockets_lvl_3"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_rockets"
-		description			"gui/hud/building_description/tower_rockets"
+		localization_id		"gui/hud/building_name/tower_rockets_superpropelled"
+		description			"gui/hud/building_description/tower_rockets_superpropelled"
 		menu_icon			"gui/hud/building_icons/tower_rockets_lvl3"
 		require 			"headquarters"
-		order				"12"
+		building_group		"tower_rockets"
+		order				"14"
 		buildable			"0"
+		check_connect		"1"
 		type				"tower"
-		overrides			"tower,wall"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		//upgrade				"buildings/defense/tower_rockets_lvl_4"
 
@@ -36,7 +38,7 @@ EntityBlueprint
 		}			
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
@@ -44,6 +46,14 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"80"
+			}
+			
+			GameplayResource
+			{
+				resource 	"reagent"
+				value 		"8"
+				family		"propellant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -102,6 +112,60 @@ EntityBlueprint
 
 	TowerDesc
 	{
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/minipipes"
+					bone 		"att_vismod_2"
+					scale		"0.6 0.6 0.6"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle_1"
+					random_delay "3"
+				}
+			}
+		}
 	}
 }
 
