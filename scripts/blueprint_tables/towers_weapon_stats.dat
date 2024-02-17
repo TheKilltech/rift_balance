@@ -1283,18 +1283,34 @@ buildings/defense/tower_cannon
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
-				stat_features "BASE_MINMAX"
-				stat_type "AMMO_STUN_LENGTH"
+				max_value "10.000"
+				min_value "10.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2.000"
+				min_value "2.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
 			}
 
 			WeaponStatDef
 			{
 				max_value "10.000"
 				min_value "10.000"
-				stat_features "BASE_MINMAX"
+				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.500"
+				min_value "0.500"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN_LENGTH"
 			}
 
 		}
@@ -1394,16 +1410,32 @@ buildings/defense/tower_cannon_acid
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX"
+				max_value "10.000"
+				min_value "10.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2.000"
+				min_value "2.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "10.000"
+				min_value "10.000"
+				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "0.500"
+				min_value "0.500"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_STUN_LENGTH"
 			}
@@ -1505,16 +1537,32 @@ buildings/defense/tower_cannon_incindiary
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX"
+				max_value "10.000"
+				min_value "10.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2.000"
+				min_value "2.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "10.000"
+				min_value "10.000"
+				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "0.500"
+				min_value "0.500"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_STUN_LENGTH"
 			}
@@ -1600,18 +1648,34 @@ buildings/defense/tower_cannon_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
-				stat_features "BASE_MINMAX"
-				stat_type "AMMO_STUN_LENGTH"
+				max_value "15.000"
+				min_value "15.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2.500"
+				min_value "2.500"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
 			}
 
 			WeaponStatDef
 			{
 				max_value "10.000"
 				min_value "10.000"
-				stat_features "BASE_MINMAX"
+				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.500"
+				min_value "0.500"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN_LENGTH"
 			}
 
 		}
@@ -1695,14 +1759,6 @@ buildings/defense/tower_cannon_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
-				stat_features "BASE_MINMAX"
-				stat_type "AMMO_STUN_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "25.000"
 				min_value "25.000"
 				stat_features "BASE_MINMAX|STATISTIC"
@@ -1719,10 +1775,34 @@ buildings/defense/tower_cannon_lvl_3
 
 			WeaponStatDef
 			{
+				max_value "20.000"
+				min_value "20.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
 				max_value "10.000"
 				min_value "10.000"
-				stat_features "BASE_MINMAX"
+				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.500"
+				min_value "0.500"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN_LENGTH"
 			}
 
 		}
