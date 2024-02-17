@@ -2867,8 +2867,8 @@ buildings/defense/tower_minigun
 		{
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "10.000"
+				min_value "10.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
@@ -2891,8 +2891,8 @@ buildings/defense/tower_minigun
 
 			WeaponStatDef
 			{
-				max_value "15.000"
-				min_value "15.000"
+				max_value "25.000"
+				min_value "25.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -2936,16 +2936,16 @@ buildings/defense/tower_minigun_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "30.000"
+				min_value "30.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "15.000"
+				min_value "15.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
@@ -2990,8 +2990,8 @@ buildings/defense/tower_minigun_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.100"
+				min_value "1.100"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -3013,8 +3013,8 @@ buildings/defense/tower_minigun_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "30.000"
-				min_value "30.000"
+				max_value "40.000"
+				min_value "40.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -3067,10 +3067,18 @@ buildings/defense/tower_minigun_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "1.300"
-				min_value "1.300"
+				max_value "1.400"
+				min_value "1.400"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2.000"
+				min_value "2.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "AMMO_CLUSTER"
 			}
 
 		}
