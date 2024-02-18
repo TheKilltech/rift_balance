@@ -14,7 +14,7 @@ EntityBlueprint
 		order				"10"
 		type				"tower"
 		overrides			"tower,wall"
-		upgrade				"buildings/defense/tower_laser_lvl_2"
+		//upgrade				"buildings/defense/tower_laser_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -34,14 +34,14 @@ EntityBlueprint
 		}			
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"10"
+				value 		"25"
 			}
 		}
 

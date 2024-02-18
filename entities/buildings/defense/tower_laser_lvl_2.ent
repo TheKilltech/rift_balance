@@ -9,15 +9,15 @@ EntityBlueprint
 		name 				"tower_laser_lvl_2"
 		bp   				"buildings/defense/tower_laser_lvl_2"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_laser"
-		description			"gui/hud/building_description/tower_laser"
+		localization_id		"gui/hud/building_name/tower_laser_cooled"
+		description			"gui/hud/building_description/tower_laser_cooled"
 		menu_icon			"gui/hud/building_icons/tower_laser_lvl2"
 		require 			"headquarters"
-		order				"15"
-		buildable			"0"
+		building_group		"tower_laser"
+		order				"11"
 		type				"tower"
-		overrides			"tower,wall"
-		upgrade				"buildings/defense/tower_laser_lvl_3"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		//upgrade				"buildings/defense/tower_laser_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -36,14 +36,30 @@ EntityBlueprint
 		}			
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"40"
+				value 		"60"
+			}
+			
+			GameplayResource
+			{
+				resource 	"water"
+				value 		"30"
+				family		"coolant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"5"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -123,5 +139,59 @@ EntityBlueprint
 
 	TowerDesc
 	{
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/minipipes"
+					bone 		"att_vismod_2"
+					scale		"0.6 0.6 0.6"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
 	}
 }
