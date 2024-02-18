@@ -1,0 +1,112 @@
+EntityBlueprint
+{ 
+	name "items/loot/resources/biomass_morphed"
+
+	MeshDesc
+	{
+		mesh 		"meshes/loot/resources/biomass_plant.mesh"
+		material 	"loot/resources/biomass_morphed"
+	}
+}
+
+EntityBlueprint
+{ 
+	name "items/loot/resources/biomass_morphed_item"
+
+	ResourceComponent
+	{
+		type_produced 	biomass_morphed
+		initial_amount	1		
+	}
+
+	InventoryItemDesc
+	{
+		type 			"misc"
+		name 			"resource_name/biomass_morphed"
+		item_bp			"items/loot/resources/biomass_morphed"
+		icon			"gui/hud/resource_icons/biomass_morphed"
+		bigger_icon		"gui/hud/resource_icons/biomass_morphed_bigger"
+	}
+
+	LuaDesc
+	{
+		script "lua/items/misc/resource_giver.lua"
+	}
+
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"dynamic"
+				group_id 			"loot"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x 	"0.67"
+						y 	"0.02"
+						z 	"0.78"
+
+						position 
+						{
+							x "0.0"
+							y "0.035"
+							z "0.0"
+						}
+					}	
+				}
+			
+				mass 		"380"				
+			}
+		}
+	}
+
+	EffectDesc
+	{
+		//EffectGroup
+		//{
+		//	group "loot_spawn"
+		//	enabled "0"		
+		//	
+		//	Effects
+		//	{
+		//		Effect
+		//		{
+		//			blueprint "effects/loot/loot_spawn"							
+		//		}
+		//	}
+		//}
+
+		EffectGroup
+		{
+			group "loot_collect"
+			enabled "0"		
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/loot/loot_collect_plants"							
+				}
+			}
+		}
+
+		EffectGroup
+		{
+			group "loot_max"
+			enabled "0"		
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/loot/loot_max"							
+				}
+			}
+		}
+	}
+}
+
