@@ -1444,6 +1444,15 @@ Blueprints
 			package_size "5"
 		}
 
+		LootItem "shard_ammonium_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+		}
+
 	}
 
 	LootItems "props/bush/leafy_big_02"
@@ -1464,6 +1473,15 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
+		}
+
+		LootItem "shard_ammonium_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
 		}
 
 	}
@@ -1488,6 +1506,15 @@ Blueprints
 			package_size "5"
 		}
 
+		LootItem "shard_ammonium_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+		}
+
 	}
 
 	LootItems "props/bush/leafy_big_04"
@@ -1508,6 +1535,15 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
+		}
+
+		LootItem "shard_ammonium_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
 		}
 
 	}
@@ -1532,6 +1568,15 @@ Blueprints
 			package_size "5"
 		}
 
+		LootItem "shard_ammonium_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+		}
+
 	}
 
 	LootItems "props/bush/leafy_medium_02"
@@ -1552,6 +1597,15 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
+		}
+
+		LootItem "shard_ammonium_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
 		}
 
 	}
@@ -1576,6 +1630,15 @@ Blueprints
 			package_size "5"
 		}
 
+		LootItem "shard_ammonium_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+		}
+
 	}
 
 	LootItems "props/bush/leafy_medium_04"
@@ -1598,6 +1661,15 @@ Blueprints
 			package_size "5"
 		}
 
+		LootItem "shard_ammonium_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+		}
+
 	}
 
 	LootItems "props/bush/leafy_small_01"
@@ -1608,6 +1680,15 @@ Blueprints
 			min "1"
 			max "1"
 			gather_amount "2"
+			package_size "1"
+		}
+
+		LootItem "shard_ammonium_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -1624,6 +1705,15 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "shard_ammonium_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
+			package_size "1"
+		}
+
 	}
 
 	LootItems "props/bush/leafy_small_03"
@@ -1634,6 +1724,15 @@ Blueprints
 			min "1"
 			max "1"
 			gather_amount "2"
+			package_size "1"
+		}
+
+		LootItem "shard_ammonium_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -1650,16 +1749,25 @@ Blueprints
 			package_size "1"
 		}
 
+		LootItem "shard_ammonium_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
+			package_size "1"
+		}
+
 	}
 
 	LootItems "props/bush/metallic_flowers_big"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
 			package_size "1"
 		}
 
@@ -1687,12 +1795,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_flowers_medium"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
 			package_size "1"
 		}
 
@@ -1720,12 +1828,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_flowers_small"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.1500"
+			chance "0.3300"
 			min "1"
-			max "1"
-			gather_amount "2"
+			max "2"
+			gather_amount "4"
 			package_size "1"
 		}
 
@@ -1753,12 +1861,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_big_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
 			package_size "1"
 		}
 
@@ -1786,12 +1894,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_big_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
 			package_size "1"
 		}
 
@@ -1819,12 +1927,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_big_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
 			package_size "1"
 		}
 
@@ -1852,12 +1960,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_big_04"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
 			package_size "1"
 		}
 
@@ -1885,12 +1993,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_big_05"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
 			package_size "1"
 		}
 
@@ -1918,12 +2026,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_medium_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
 			package_size "1"
 		}
 
@@ -1951,12 +2059,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_medium_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
 			package_size "1"
 		}
 
@@ -1984,12 +2092,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_medium_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
 			package_size "1"
 		}
 
@@ -2017,12 +2125,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_medium_04"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
 			package_size "1"
 		}
 
@@ -2050,12 +2158,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_medium_05"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
 			package_size "1"
 		}
 
@@ -2083,12 +2191,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_small_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.1500"
+			chance "0.3300"
 			min "1"
-			max "1"
-			gather_amount "2"
+			max "2"
+			gather_amount "4"
 			package_size "1"
 		}
 
@@ -2105,12 +2213,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_small_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.1500"
+			chance "0.3300"
 			min "1"
-			max "1"
-			gather_amount "2"
+			max "2"
+			gather_amount "4"
 			package_size "1"
 		}
 
@@ -2127,12 +2235,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_small_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.1500"
+			chance "0.3300"
 			min "1"
-			max "1"
-			gather_amount "2"
+			max "2"
+			gather_amount "4"
 			package_size "1"
 		}
 
@@ -2149,12 +2257,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_small_04"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.1500"
+			chance "0.3300"
 			min "1"
-			max "1"
-			gather_amount "2"
+			max "2"
+			gather_amount "4"
 			package_size "1"
 		}
 
@@ -2171,12 +2279,12 @@ Blueprints
 
 	LootItems "props/bush/metallic_leafy_small_05"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
-			chance "0.1500"
+			chance "0.3300"
 			min "1"
-			max "1"
-			gather_amount "2"
+			max "2"
+			gather_amount "4"
 			package_size "1"
 		}
 
@@ -20639,12 +20747,21 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_big_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -20670,12 +20787,21 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_big_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -20701,12 +20827,21 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_big_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -20732,12 +20867,21 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_big_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -20763,12 +20907,21 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_big_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -20794,12 +20947,21 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_big_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -20825,7 +20987,7 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_medium_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -20856,7 +21018,7 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_medium_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -20887,7 +21049,7 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_medium_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -20918,7 +21080,7 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_medium_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -20949,7 +21111,7 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_medium_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -20980,7 +21142,7 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_medium_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -21011,7 +21173,7 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_small_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -21042,7 +21204,7 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_small_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -21073,7 +21235,7 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_small_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -21104,7 +21266,7 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_small_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -21135,7 +21297,7 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_small_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -21166,7 +21328,7 @@ Blueprints
 
 	LootItems "props/grass/metallic_spiky_small_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -28024,12 +28186,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_big_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -28057,12 +28228,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_big_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -28090,12 +28270,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_big_01_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -28123,12 +28312,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_big_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -28156,12 +28354,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_big_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -28189,12 +28396,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_big_02_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -28222,12 +28438,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_big_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -28255,12 +28480,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_big_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -28288,12 +28522,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_big_03_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -28321,12 +28564,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_big_04"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -28354,12 +28606,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_big_04_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -28387,12 +28648,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_big_04_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "1.0000"
 			min "3"
 			max "6"
 			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -28420,12 +28690,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_medium_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -28453,12 +28732,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_medium_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -28486,12 +28774,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_medium_01_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -28519,12 +28816,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_medium_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -28552,12 +28858,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_medium_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -28585,12 +28900,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_medium_02_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -28618,12 +28942,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_medium_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -28651,12 +28984,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_medium_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -28684,12 +29026,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_medium_03_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -28717,12 +29068,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_medium_04"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -28750,12 +29110,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_medium_04_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -28783,12 +29152,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_medium_04_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			gather_amount "1"
 			package_size "1"
 		}
 
@@ -28816,7 +29194,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_small_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -28838,7 +29216,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_small_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -28871,7 +29249,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_small_01_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -28904,7 +29282,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_small_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -28926,7 +29304,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_small_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -28959,7 +29337,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_small_02_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -28992,7 +29370,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_small_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -29014,7 +29392,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_small_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -29047,7 +29425,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_small_03_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -29080,7 +29458,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_small_04"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -29102,7 +29480,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_small_04_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -29146,7 +29524,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_small_04_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -29179,7 +29557,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_very_small_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -29201,7 +29579,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_very_small_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -29223,7 +29601,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_very_small_01_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -29245,7 +29623,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_very_small_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -29267,7 +29645,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_very_small_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -29289,7 +29667,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_very_small_02_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -29311,7 +29689,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_very_small_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -29333,7 +29711,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_very_small_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -29355,7 +29733,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_very_small_03_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -29377,7 +29755,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_very_small_04"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -29399,7 +29777,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_very_small_04_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -29421,7 +29799,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_fungus_very_small_04_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -29443,12 +29821,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_big_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -29485,12 +29872,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_big_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -29527,12 +29923,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_big_01_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -29569,12 +29974,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_big_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -29611,12 +30025,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_big_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -29653,12 +30076,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_big_02_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -29695,12 +30127,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_big_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -29737,12 +30178,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_big_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -29779,12 +30229,21 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_big_03_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.6600"
 			min "2"
 			max "3"
 			gather_amount "6"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
 			package_size "1"
 		}
 
@@ -29821,7 +30280,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_medium_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -29863,7 +30322,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_medium_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -29905,7 +30364,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_medium_01_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -29947,7 +30406,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_medium_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -29989,7 +30448,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_medium_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -30031,7 +30490,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_medium_02_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -30073,7 +30532,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_medium_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -30115,7 +30574,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_medium_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -30157,7 +30616,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_medium_03_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -30199,7 +30658,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_small_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30230,7 +30689,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_small_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30261,7 +30720,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_small_01_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30303,7 +30762,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_small_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30334,7 +30793,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_small_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30365,7 +30824,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_small_02_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30407,7 +30866,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_small_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30438,7 +30897,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_small_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30469,7 +30928,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_small_03_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30511,7 +30970,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_very_small_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30542,7 +31001,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_very_small_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30573,7 +31032,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_very_small_01_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30604,7 +31063,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_very_small_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30635,7 +31094,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_very_small_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30666,7 +31125,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_very_small_02_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30697,7 +31156,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_very_small_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30728,7 +31187,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_very_small_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -30759,7 +31218,7 @@ Blueprints
 
 	LootItems "props/mushrooms/metallic_stump_very_small_03_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "biomass_morphed_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -53460,6 +53919,15 @@ Blueprints
 	LootItems "units/air/idapian_base"
 	LootItems "units/air/idapian_metallic"
 	{
+		LootItem "biomass_morphed_item"
+		{
+			chance "0.1500"
+			min "1"
+			max "1"
+			gather_amount "2"
+			package_size "1"
+		}
+
 		LootItem "items/loot/resources/biomass_animal_item"
 		{
 			chance "0.0500"
@@ -55075,6 +55543,15 @@ Blueprints
 
 	LootItems "units/ground/bradron"
 	{
+		LootItem "biomass_morphed_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+		}
+
 		LootItem "items/loot/resources/biomass_animal_item"
 		{
 			chance "0.0500"
@@ -55155,6 +55632,15 @@ Blueprints
 
 	LootItems "units/ground/bradron_alpha"
 	{
+		LootItem "biomass_morphed_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+		}
+
 		LootItem "items/loot/resources/biomass_animal_item"
 		{
 			chance "0.0500"
@@ -55275,6 +55761,15 @@ Blueprints
 
 	LootItems "units/ground/bradron_ultra"
 	{
+		LootItem "biomass_morphed_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+		}
+
 		LootItem "items/loot/resources/biomass_animal_item"
 		{
 			chance "0.0500"
@@ -60561,6 +61056,15 @@ Blueprints
 	LootItems "units/ground/kermon_base"
 	LootItems "units/ground/kermon_metallic"
 	{
+		LootItem "biomass_morphed_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+		}
+
 		LootItem "items/loot/resources/biomass_animal_item"
 		{
 			chance "0.1500"
@@ -72530,6 +73034,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			ammonium_small
 			carbonium_small
 			biomass_plant_medium
 		}
@@ -72540,6 +73045,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			ammonium_small
 			carbonium_small
 			biomass_plant_medium
 		}
@@ -72550,6 +73056,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			ammonium_small
 			carbonium_small
 			biomass_plant_medium
 		}
@@ -72560,6 +73067,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			ammonium_small
 			carbonium_small
 			biomass_plant_medium
 		}
@@ -72570,6 +73078,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			ammonium_very_small
 			carbonium_very_small
 			biomass_plant_small
 		}
@@ -72580,6 +73089,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			ammonium_very_small
 			carbonium_very_small
 			biomass_plant_small
 		}
@@ -72590,6 +73100,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			ammonium_very_small
 			carbonium_very_small
 			biomass_plant_small
 		}
@@ -72600,6 +73111,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			ammonium_very_small
 			carbonium_very_small
 			biomass_plant_small
 		}
@@ -72610,6 +73122,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			ammonium_zerolike
 			biomass_plant_very_small
 		}
 
@@ -72619,6 +73132,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			ammonium_zerolike
 			biomass_plant_very_small
 		}
 
@@ -72628,6 +73142,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			ammonium_zerolike
 			biomass_plant_very_small
 		}
 
@@ -72637,6 +73152,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			ammonium_zerolike
 			biomass_plant_very_small
 		}
 
@@ -72646,9 +73162,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			cobalt_bio_small
 			ironium_medium
-			biomass_plant_medium
 		}
 
 	}
@@ -72657,9 +73173,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			cobalt_bio_very_small
 			ironium_small
-			biomass_plant_small
 		}
 
 	}
@@ -72668,9 +73184,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			cobalt_bio_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -72679,9 +73195,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			cobalt_bio_small
 			ironium_small
-			biomass_plant_medium
 		}
 
 	}
@@ -72690,9 +73206,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			cobalt_bio_small
 			ironium_small
-			biomass_plant_medium
 		}
 
 	}
@@ -72701,9 +73217,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			cobalt_bio_small
 			ironium_small
-			biomass_plant_medium
 		}
 
 	}
@@ -72712,9 +73228,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			cobalt_bio_small
 			ironium_small
-			biomass_plant_medium
 		}
 
 	}
@@ -72723,9 +73239,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			cobalt_bio_small
 			ironium_small
-			biomass_plant_medium
 		}
 
 	}
@@ -72734,9 +73250,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			cobalt_bio_very_small
 			ironium_small
-			biomass_plant_small
 		}
 
 	}
@@ -72745,9 +73261,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			cobalt_bio_very_small
 			ironium_small
-			biomass_plant_small
 		}
 
 	}
@@ -72756,9 +73272,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			cobalt_bio_very_small
 			ironium_small
-			biomass_plant_small
 		}
 
 	}
@@ -72767,9 +73283,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			cobalt_bio_very_small
 			ironium_small
-			biomass_plant_small
 		}
 
 	}
@@ -72778,9 +73294,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			cobalt_bio_very_small
 			ironium_small
-			biomass_plant_small
 		}
 
 	}
@@ -72789,8 +73305,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -72799,8 +73315,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -72809,8 +73325,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -72819,8 +73335,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -72829,8 +73345,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -78864,9 +79380,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			ironium_small
 			carbonium_small
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -78875,9 +79392,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			ironium_small
 			carbonium_small
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -78886,9 +79404,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			ironium_small
 			carbonium_small
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -78897,9 +79416,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			ironium_small
 			carbonium_small
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -78908,9 +79428,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			ironium_small
 			carbonium_small
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -78919,9 +79440,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			ironium_small
 			carbonium_small
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -78930,9 +79452,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -78941,9 +79463,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -78952,9 +79474,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -78963,9 +79485,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -78974,9 +79496,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -78985,9 +79507,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -78996,9 +79518,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -79007,9 +79529,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -79018,9 +79540,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -79029,9 +79551,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -79040,9 +79562,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -79051,9 +79573,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -81369,9 +81891,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			titanium_bio_small
 			ironium_medium
-			biomass_plant_big
+			biomass_plant_very_small
 		}
 
 	}
@@ -81380,9 +81903,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			cobalt_bio_small
 			ironium_medium
-			biomass_plant_big
+			biomass_plant_very_small
 		}
 
 	}
@@ -81391,9 +81915,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			palladium_bio_small
 			ironium_medium
-			biomass_plant_big
+			biomass_plant_very_small
 		}
 
 	}
@@ -81402,9 +81927,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			titanium_bio_small
 			ironium_medium
-			biomass_plant_big
+			biomass_plant_very_small
 		}
 
 	}
@@ -81413,9 +81939,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			cobalt_bio_small
 			ironium_medium
-			biomass_plant_big
+			biomass_plant_very_small
 		}
 
 	}
@@ -81424,9 +81951,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			palladium_bio_small
 			ironium_medium
-			biomass_plant_big
+			biomass_plant_very_small
 		}
 
 	}
@@ -81435,9 +81963,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			titanium_bio_small
 			ironium_medium
-			biomass_plant_big
+			biomass_plant_very_small
 		}
 
 	}
@@ -81446,9 +81975,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			cobalt_bio_small
 			ironium_medium
-			biomass_plant_big
+			biomass_plant_very_small
 		}
 
 	}
@@ -81457,9 +81987,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			palladium_bio_small
 			ironium_medium
-			biomass_plant_big
+			biomass_plant_very_small
 		}
 
 	}
@@ -81468,9 +81999,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			titanium_bio_small
 			ironium_medium
-			biomass_plant_big
+			biomass_plant_very_small
 		}
 
 	}
@@ -81479,9 +82011,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			cobalt_bio_small
 			ironium_medium
-			biomass_plant_big
+			biomass_plant_very_small
 		}
 
 	}
@@ -81490,9 +82023,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_big
 			palladium_bio_small
 			ironium_medium
-			biomass_plant_big
+			biomass_plant_very_small
 		}
 
 	}
@@ -81501,9 +82035,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			titanium_bio_very_small
 			ironium_small
-			biomass_plant_medium
+			biomass_plant_zerolike
 		}
 
 	}
@@ -81512,9 +82047,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			cobalt_bio_very_small
 			ironium_small
-			biomass_plant_medium
+			biomass_plant_zerolike
 		}
 
 	}
@@ -81523,9 +82059,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			palladium_bio_very_small
 			ironium_small
-			biomass_plant_medium
+			biomass_plant_zerolike
 		}
 
 	}
@@ -81534,9 +82071,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			titanium_bio_very_small
 			ironium_small
-			biomass_plant_medium
+			biomass_plant_zerolike
 		}
 
 	}
@@ -81545,9 +82083,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			cobalt_bio_very_small
 			ironium_small
-			biomass_plant_medium
+			biomass_plant_zerolike
 		}
 
 	}
@@ -81556,9 +82095,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			palladium_bio_very_small
 			ironium_small
-			biomass_plant_medium
+			biomass_plant_zerolike
 		}
 
 	}
@@ -81567,9 +82107,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			titanium_bio_very_small
 			ironium_small
-			biomass_plant_medium
+			biomass_plant_zerolike
 		}
 
 	}
@@ -81578,9 +82119,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			cobalt_bio_very_small
 			ironium_small
-			biomass_plant_medium
+			biomass_plant_zerolike
 		}
 
 	}
@@ -81589,9 +82131,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			palladium_bio_very_small
 			ironium_small
-			biomass_plant_medium
+			biomass_plant_zerolike
 		}
 
 	}
@@ -81600,9 +82143,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			titanium_bio_very_small
 			ironium_small
-			biomass_plant_medium
+			biomass_plant_zerolike
 		}
 
 	}
@@ -81611,9 +82155,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_plant_zerolike
+			biomass_morphed_medium
 			cobalt_bio_very_small
 			ironium_small
-			biomass_plant_medium
 		}
 
 	}
@@ -81622,9 +82167,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			palladium_bio_very_small
 			ironium_small
-			biomass_plant_medium
+			biomass_plant_zerolike
 		}
 
 	}
@@ -81633,8 +82179,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -81643,9 +82189,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			cobalt_bio_very_small
 			ironium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -81654,9 +82200,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			palladium_bio_very_small
 			ironium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -81665,8 +82211,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -81675,9 +82221,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			cobalt_bio_very_small
 			ironium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -81686,9 +82232,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			palladium_bio_very_small
 			ironium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -81697,8 +82243,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -81707,9 +82253,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			cobalt_bio_very_small
 			ironium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -81718,9 +82264,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			palladium_bio_very_small
 			ironium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -81729,8 +82275,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			ironium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -81739,10 +82285,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			cobalt_bio_very_small
 			ironium_very_small
 			cobalt_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -81751,9 +82297,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			palladium_bio_very_small
 			ironium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -81762,8 +82308,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -81772,8 +82318,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -81782,8 +82328,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -81792,8 +82338,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -81802,8 +82348,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -81812,8 +82358,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -81822,8 +82368,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -81832,8 +82378,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -81842,8 +82388,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -81852,8 +82398,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -81862,8 +82408,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -81872,8 +82418,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -81882,10 +82428,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			hazenite_small
 			carbonium_medium
 			ironium_big
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -81894,10 +82441,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			rhodonite_small
 			ironium_big
 			carbonium_medium
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -81906,10 +82454,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			palladium_bio_medium
 			ironium_big
 			carbonium_medium
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -81918,10 +82467,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			hazenite_small
 			carbonium_medium
 			ironium_big
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -81930,10 +82480,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			rhodonite_small
 			ironium_big
 			carbonium_medium
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -81942,10 +82493,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			palladium_bio_medium
 			ironium_big
 			carbonium_medium
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -81954,10 +82506,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			hazenite_small
 			carbonium_medium
 			ironium_big
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -81966,10 +82519,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			rhodonite_small
 			ironium_big
 			carbonium_medium
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -81978,10 +82532,11 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_medium
 			palladium_bio_medium
 			ironium_big
 			carbonium_medium
-			biomass_plant_medium
+			biomass_plant_very_small
 		}
 
 	}
@@ -81990,10 +82545,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			hazenite_very_small
 			carbonium_small
 			ironium_medium
-			biomass_plant_small
 		}
 
 	}
@@ -82002,10 +82557,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			rhodonite_very_small
 			ironium_medium
 			carbonium_small
-			biomass_plant_small
 		}
 
 	}
@@ -82014,10 +82569,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			palladium_bio_small
 			ironium_medium
 			carbonium_small
-			biomass_plant_small
 		}
 
 	}
@@ -82026,10 +82581,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			hazenite_very_small
 			carbonium_small
 			ironium_medium
-			biomass_plant_small
 		}
 
 	}
@@ -82038,10 +82593,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			rhodonite_very_small
 			ironium_medium
 			carbonium_small
-			biomass_plant_small
 		}
 
 	}
@@ -82050,10 +82605,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			palladium_bio_small
 			ironium_medium
 			carbonium_small
-			biomass_plant_small
 		}
 
 	}
@@ -82062,10 +82617,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			hazenite_very_small
 			carbonium_small
 			ironium_medium
-			biomass_plant_small
 		}
 
 	}
@@ -82074,10 +82629,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			rhodonite_very_small
 			ironium_medium
 			carbonium_small
-			biomass_plant_small
 		}
 
 	}
@@ -82086,10 +82641,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			palladium_bio_small
 			ironium_medium
 			carbonium_small
-			biomass_plant_small
 		}
 
 	}
@@ -82098,9 +82653,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			carbonium_very_small
 			ironium_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82109,9 +82664,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82120,10 +82675,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			palladium_bio_very_small
 			ironium_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82132,9 +82687,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			carbonium_very_small
 			ironium_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82143,9 +82698,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82154,10 +82709,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			palladium_bio_very_small
 			ironium_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82166,9 +82721,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			carbonium_very_small
 			ironium_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82177,9 +82732,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82188,10 +82743,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			palladium_bio_very_small
 			ironium_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82200,9 +82755,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			carbonium_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82211,9 +82766,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82222,9 +82777,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82233,9 +82788,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			carbonium_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82244,9 +82799,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82255,9 +82810,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82266,9 +82821,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			carbonium_very_small
 			ironium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82277,9 +82832,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -82288,9 +82843,9 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			ironium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -89344,6 +89899,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_very_small
 			cobalt_small
 			titanium_medium
 			ironium_medium
@@ -89700,6 +90256,7 @@ BlueprintOverrides
 			ironium_medium
 			biomass_animal_small
 			mods_std_medium
+			biomass_morphed_small
 			mods_ext_medium
 			mods_sup_medium
 			mods_adv_medium
@@ -89716,6 +90273,7 @@ BlueprintOverrides
 			ironium_medium
 			biomass_animal_small
 			mods_std_medium
+			biomass_morphed_small
 			mods_ext_medium
 			mods_sup_medium
 			mods_adv_medium
@@ -89744,6 +90302,7 @@ BlueprintOverrides
 			ironium_big
 			biomass_animal_small
 			mods_std_big
+			biomass_morphed_small
 			mods_ext_big
 			mods_sup_big
 			mods_adv_big
@@ -91020,6 +91579,7 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_morphed_small
 			cobalt_small
 			ironium_medium
 			ferdonite_small
