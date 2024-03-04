@@ -14,10 +14,12 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_railgun"
 		menu_icon			"gui/hud/building_icons/tower_railgun_lvl3"
 		require 			"headquarters"
-		order				"11"
+		building_group		"tower_laser"
+		order				"13"
+		buildable			"0"
+		check_connect		"1"
 		type				"tower"
-		overrides			"tower,wall"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		//upgrade				"buildings/defense/tower_railgun_lvl_4"
 
 		costs
@@ -28,9 +30,9 @@ EntityBlueprint
 				building_time 12
 				building_cost
 				{
-					carbonium 	"600"
-					steel 		"300"
-					cobalt		"200"
+					carbonium 	"900"
+					steel 		"450"
+					cobalt		"300"
 				}
 			}		
 		}			
@@ -43,7 +45,15 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"100"
+				value 		"350"
+			}
+			
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"45"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -96,6 +106,38 @@ EntityBlueprint
       name "meshes/buildings/defense/tower_railgun_lvl_3"
     }
 
+	GridCullerDesc
+	{
+		Shapes
+		{
+   			PhysicsBoxShape
+   			{
+    				x	4
+    				y	4
+    				z	4
+   			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "1"
+			y "0.5"
+			z "0"
+			w "1"
+		}
+		size
+		{
+			x "2"
+			y "2"
+		}
+
+		visibility			"always"
+	}
+	
 	WeaponItemDesc
 	{
 	}
@@ -149,6 +191,66 @@ EntityBlueprint
 		burst_column_spacing 		"0"
 		burst_rate 					"0"
 		burst_column_angle 			"0"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone 		"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pylon"
+					bone 		"att_vismod_1"
+					scale		"2.0 1.4 2.0"
+					orientation "-90 0 0"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
 	}
 }
 
