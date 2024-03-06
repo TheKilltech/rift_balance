@@ -14,7 +14,7 @@ EntityBlueprint
 		order				"7"
 		type				"tower"
 		overrides			"tower,wall"
-		upgrade				"buildings/defense/tower_flamer_lvl_2"
+		//upgrade				"buildings/defense/tower_flamer_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -327,7 +327,8 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
+	
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
