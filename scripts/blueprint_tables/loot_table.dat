@@ -28,6 +28,7 @@ Blueprints
 	LootItems "buildings/ammo/ammo_factory_liquid_lvl_3"
 	LootItems "buildings/ammo/ammo_factory_lowcaliber_adv"
 	LootItems "buildings/ammo/ammo_factory_lowcaliber_adv_lvl_2"
+	LootItems "buildings/ammo/ammo_factory_lowcaliber_ext"
 	LootItems "buildings/ammo/ammo_factory_lowcaliber_ext_lvl_2"
 	LootItems "buildings/ammo/ammo_factory_lowcaliber_highcaliber"
 	LootItems "buildings/ammo/ammo_factory_lowcaliber_lvl_2"
@@ -532,6 +533,7 @@ Blueprints
 	LootItems "buildings/resources/liquid_pump"
 	LootItems "buildings/resources/liquid_pump_lvl_2"
 	LootItems "buildings/resources/liquid_pump_lvl_3"
+	LootItems "buildings/resources/liquid_pumpjack"
 	LootItems "buildings/resources/liquid_pumpjack_lvl_2"
 	LootItems "buildings/resources/liquid_pumpjack_lvl_3"
 	LootItems "buildings/resources/loot_collector"
@@ -558,6 +560,7 @@ Blueprints
 	LootItems "buildings/resources/rare_element_mine_lvl_3"
 	LootItems "buildings/resources/reagent_condenser"
 	LootItems "buildings/resources/reagent_refinery"
+	LootItems "buildings/resources/reagent_refinery_lvl_2"
 	LootItems "buildings/resources/reagent_refinery_lvl_3"
 	LootItems "buildings/resources/solid_material_storage"
 	LootItems "buildings/resources/solid_material_storage_lvl_2"
@@ -1480,15 +1483,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/bush/leafy_big_02"
@@ -1518,15 +1512,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -1560,15 +1545,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/bush/leafy_big_04"
@@ -1598,15 +1574,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -1640,15 +1607,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/bush/leafy_medium_02"
@@ -1678,15 +1636,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -1720,15 +1669,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/bush/leafy_medium_04"
@@ -1760,15 +1700,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/bush/leafy_small_01"
@@ -1783,15 +1714,6 @@ Blueprints
 		}
 
 		LootItem "items/loot/resources/shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
-		LootItem "shard_ammonium_item"
 		{
 			chance "0.0400"
 			min "1"
@@ -1822,15 +1744,6 @@ Blueprints
 			package_size "1"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/bush/leafy_small_03"
@@ -1853,15 +1766,6 @@ Blueprints
 			package_size "1"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/bush/leafy_small_04"
@@ -1876,15 +1780,6 @@ Blueprints
 		}
 
 		LootItem "items/loot/resources/shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
-		LootItem "shard_ammonium_item"
 		{
 			chance "0.0400"
 			min "1"
@@ -42390,15 +42285,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_big_01_skin1"
@@ -42450,15 +42336,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -42514,15 +42391,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_big_02"
@@ -42574,15 +42442,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -42638,15 +42497,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_big_02_skin2"
@@ -42698,15 +42548,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -42762,15 +42603,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_big_03_skin1"
@@ -42822,15 +42654,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -42886,15 +42709,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_medium_01"
@@ -42946,15 +42760,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -43010,15 +42815,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_medium_01_skin2"
@@ -43070,15 +42866,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -43134,15 +42921,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_medium_02_skin1"
@@ -43194,15 +42972,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -43258,15 +43027,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_medium_03"
@@ -43318,15 +43078,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -43382,15 +43133,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_medium_03_skin2"
@@ -43444,15 +43186,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_small_01"
@@ -43495,15 +43228,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_small_01_skin1"
@@ -43533,15 +43257,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -43586,15 +43301,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_small_02"
@@ -43637,15 +43343,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_small_02_skin1"
@@ -43675,15 +43372,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -43728,15 +43416,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_small_03"
@@ -43779,15 +43458,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_small_03_skin1"
@@ -43817,15 +43487,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -43870,15 +43531,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_very_small_01"
@@ -43910,15 +43562,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_very_small_01_skin1"
@@ -43939,15 +43582,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -43981,15 +43615,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_very_small_02"
@@ -44021,15 +43646,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_very_small_02_skin1"
@@ -44050,15 +43666,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -44092,15 +43699,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_very_small_03"
@@ -44132,15 +43730,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/blossomed_very_small_03_skin1"
@@ -44161,15 +43750,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -44201,15 +43781,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -44265,15 +43836,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_big_01_skin1"
@@ -44325,15 +43887,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -44389,15 +43942,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_big_02"
@@ -44449,15 +43993,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -44513,15 +44048,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_big_02_skin2"
@@ -44573,15 +44099,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -44637,15 +44154,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_big_03_skin1"
@@ -44697,15 +44205,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -44761,15 +44260,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_medium_01"
@@ -44810,15 +44300,6 @@ Blueprints
 			max "4"
 			gather_amount "8"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -44863,15 +44344,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_medium_01_skin2"
@@ -44912,15 +44384,6 @@ Blueprints
 			max "4"
 			gather_amount "8"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -44965,15 +44428,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_medium_02_skin1"
@@ -45014,15 +44468,6 @@ Blueprints
 			max "4"
 			gather_amount "8"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -45067,15 +44512,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_medium_03"
@@ -45116,15 +44552,6 @@ Blueprints
 			max "4"
 			gather_amount "8"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -45169,15 +44596,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_medium_03_skin2"
@@ -45218,15 +44636,6 @@ Blueprints
 			max "4"
 			gather_amount "8"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -45271,15 +44680,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_small_01_skin1"
@@ -45320,15 +44720,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -45373,15 +44764,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_small_02"
@@ -45422,15 +44804,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -45475,15 +44848,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_small_02_skin2"
@@ -45524,15 +44888,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -45577,15 +44932,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_small_03_skin1"
@@ -45628,15 +44974,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/burdock_small_03_skin2"
@@ -45677,15 +45014,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -45741,15 +45069,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/catkins_big_01_skin2"
@@ -45801,15 +45120,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_titanium"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -45865,15 +45175,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/catkins_big_02"
@@ -45925,15 +45226,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -45989,15 +45281,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/catkins_big_02_skin2"
@@ -46049,15 +45332,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_titanium"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -46113,15 +45387,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/catkins_big_03"
@@ -46173,15 +45438,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -46237,15 +45493,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/catkins_big_03_skin2"
@@ -46297,15 +45544,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_titanium"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -46361,15 +45599,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/catkins_medium_01"
@@ -46410,15 +45639,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -46463,15 +45683,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/catkins_medium_01_skin2"
@@ -46512,15 +45723,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_titanium"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -46565,15 +45767,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/catkins_medium_02"
@@ -46614,15 +45807,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -46667,15 +45851,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/catkins_medium_02_skin2"
@@ -46716,15 +45891,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_titanium"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -46769,15 +45935,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/catkins_medium_03"
@@ -46818,15 +45975,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -46871,15 +46019,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/catkins_medium_03_skin2"
@@ -46922,15 +46061,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/catkins_medium_03_skin3"
@@ -46971,15 +46101,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_titanium"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -47420,15 +46541,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_big_01_skin1"
@@ -47480,15 +46592,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_titanium"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -47544,15 +46647,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_big_02"
@@ -47593,15 +46687,6 @@ Blueprints
 			max "4"
 			gather_amount "8"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -47657,15 +46742,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_big_02_skin2"
@@ -47719,15 +46795,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_big_03"
@@ -47768,15 +46835,6 @@ Blueprints
 			max "4"
 			gather_amount "8"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -47832,15 +46890,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_big_03_skin2"
@@ -47894,15 +46943,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_medium_01"
@@ -47943,15 +46983,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -48007,15 +47038,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_medium_01_skin2"
@@ -48069,15 +47091,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_medium_02"
@@ -48118,15 +47131,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -48182,15 +47186,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_medium_02_skin2"
@@ -48244,15 +47239,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_medium_03"
@@ -48293,15 +47279,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -48357,15 +47334,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_medium_03_skin2"
@@ -48419,15 +47387,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_small_01"
@@ -48468,15 +47427,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -48532,15 +47482,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_small_01_skin2"
@@ -48594,15 +47535,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_small_02"
@@ -48643,15 +47575,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -48707,15 +47630,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_small_02_skin2"
@@ -48769,15 +47683,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_small_03"
@@ -48818,15 +47723,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -48882,15 +47778,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/drexolian_small_03_skin2"
@@ -48942,15 +47829,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -49006,15 +47884,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/flos_big_01_skin1"
@@ -49066,15 +47935,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -49130,15 +47990,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_rhodonite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/flos_big_02"
@@ -49190,15 +48041,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -49254,15 +48096,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/flos_big_02_skin2"
@@ -49314,15 +48147,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_rhodonite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -49378,15 +48202,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/flos_big_03_skin1"
@@ -49438,15 +48253,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -49502,15 +48308,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_rhodonite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/flos_medium_01"
@@ -49562,15 +48359,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -49626,15 +48414,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/flos_medium_01_skin2"
@@ -49686,15 +48465,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_rhodonite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -49750,15 +48520,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/flos_medium_02_skin1"
@@ -49810,15 +48571,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -49874,15 +48626,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_rhodonite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/flos_medium_03"
@@ -49934,15 +48677,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -49998,15 +48732,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/flos_medium_03_skin2"
@@ -50060,15 +48785,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_rhodonite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/flos_small_01"
@@ -50098,15 +48814,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -50140,15 +48847,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/flos_small_01_skin2"
@@ -50178,15 +48876,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -50220,15 +48909,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/flos_small_02_skin1"
@@ -50258,15 +48938,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -50300,15 +48971,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/flos_small_03"
@@ -50338,15 +49000,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -50380,15 +49033,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/flos_small_03_skin2"
@@ -50418,15 +49062,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -50482,15 +49117,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_big_01_skin1"
@@ -50542,15 +49168,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -50606,15 +49223,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_big_02"
@@ -50666,15 +49274,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -50730,15 +49329,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_big_02_skin2"
@@ -50790,15 +49380,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -50854,15 +49435,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_tanzanite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_big_03_skin1"
@@ -50914,15 +49486,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -50978,15 +49541,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_medium_01"
@@ -51027,15 +49581,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -51080,15 +49625,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_medium_01_skin2"
@@ -51129,15 +49665,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -51182,15 +49709,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_medium_02_skin1"
@@ -51231,15 +49749,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -51284,15 +49793,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_medium_03"
@@ -51322,15 +49822,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -51364,15 +49855,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_medium_03_skin2"
@@ -51402,15 +49884,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -51455,15 +49928,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_small_01_skin1"
@@ -51504,15 +49968,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -51557,15 +50012,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_small_02"
@@ -51606,15 +50052,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -51659,15 +50096,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_small_02_skin2"
@@ -51710,15 +50138,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_small_03"
@@ -51748,15 +50167,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -51790,15 +50200,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/joshua_small_03_skin2"
@@ -51828,15 +50229,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -51881,15 +50273,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_big_01_skin1"
@@ -51930,15 +50313,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -51983,15 +50357,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_big_02"
@@ -52032,15 +50397,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_titanium"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -52085,15 +50441,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_big_02_skin2"
@@ -52134,15 +50481,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -52187,15 +50525,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_big_03_skin1"
@@ -52236,15 +50565,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -52289,15 +50609,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_medium_01"
@@ -52338,15 +50649,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_titanium"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -52391,15 +50693,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_medium_01_skin2"
@@ -52440,15 +50733,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -52493,15 +50777,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_medium_02_skin1"
@@ -52542,15 +50817,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -52595,15 +50861,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_medium_03"
@@ -52644,15 +50901,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_titanium"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -52697,15 +50945,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_medium_03_skin2"
@@ -52746,15 +50985,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -52799,15 +51029,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_small_01_skin1"
@@ -52848,15 +51069,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -52901,15 +51113,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_small_02"
@@ -52950,15 +51153,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_titanium"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -53003,15 +51197,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_small_02_skin2"
@@ -53052,15 +51237,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -53105,15 +51281,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_titanium"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_small_03_skin1"
@@ -53156,15 +51323,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/leaky_small_03_skin2"
@@ -53205,15 +51363,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.0400"
-			min "1"
-			max "1"
-			gather_amount "1"
-			package_size "1"
 		}
 
 	}
@@ -54633,15 +52782,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_big_01_skin1"
@@ -54693,15 +52833,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -54757,15 +52888,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_big_02"
@@ -54817,15 +52939,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -54881,15 +52994,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_big_02_skin2"
@@ -54941,15 +53045,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -55005,15 +53100,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_big_03_skin1"
@@ -55065,15 +53151,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -55129,15 +53206,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_medium_01"
@@ -55189,15 +53257,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -55253,15 +53312,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_medium_01_skin2"
@@ -55313,15 +53363,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -55377,15 +53418,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_medium_02_skin1"
@@ -55437,15 +53469,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -55501,15 +53524,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_medium_03"
@@ -55561,15 +53575,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -55625,15 +53630,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_medium_03_skin2"
@@ -55687,15 +53683,6 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_small_01"
@@ -55736,15 +53723,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -55789,15 +53767,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_small_01_skin2"
@@ -55838,15 +53807,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -55891,15 +53851,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_small_02_skin1"
@@ -55940,15 +53891,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -55993,15 +53935,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_small_03"
@@ -56042,15 +53975,6 @@ Blueprints
 			max "3"
 			gather_amount "6"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -56095,15 +54019,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_small_03_skin2"
@@ -56146,15 +54061,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_very_small_01"
@@ -56184,15 +54090,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -56270,15 +54167,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees/wyginus_very_small_02_skin1"
@@ -56352,15 +54240,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.1500"
-			min "1"
-			max "1"
-			gather_amount "2"
-			package_size "1"
 		}
 
 	}
@@ -56624,15 +54503,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees_dry/twisted_big_02"
@@ -56653,15 +54523,6 @@ Blueprints
 			max "6"
 			gather_amount "12"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
 		}
 
 	}
@@ -56686,15 +54547,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3500"
-			min "3"
-			max "6"
-			gather_amount "12"
-			package_size "10"
-		}
-
 	}
 
 	LootItems "props/trees_dry/twisted_medium_01"
@@ -56715,15 +54567,6 @@ Blueprints
 			max "4"
 			gather_amount "8"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -56748,15 +54591,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees_dry/twisted_medium_03"
@@ -56777,15 +54611,6 @@ Blueprints
 			max "4"
 			gather_amount "8"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.6600"
-			min "2"
-			max "3"
-			gather_amount "6"
-			package_size "1"
 		}
 
 	}
@@ -56810,15 +54635,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees_dry/twisted_small_02"
@@ -56839,15 +54655,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
@@ -56872,15 +54679,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees_dry/twisted_small_04"
@@ -56903,15 +54701,6 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
-		}
-
 	}
 
 	LootItems "props/trees_dry/twisted_small_05"
@@ -56932,15 +54721,6 @@ Blueprints
 			max "2"
 			gather_amount "4"
 			package_size "5"
-		}
-
-		LootItem "shard_ammonium_item"
-		{
-			chance "0.3300"
-			min "1"
-			max "2"
-			gather_amount "4"
-			package_size "1"
 		}
 
 	}
