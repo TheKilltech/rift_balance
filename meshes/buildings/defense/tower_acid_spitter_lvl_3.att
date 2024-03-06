@@ -2,20 +2,6 @@ Attachments
 {
 	Attachment
 	{
-		name "att_muzzle"
-		parent "be_barrel"
-		offset "2.87 0.86 0.02"
-	}
-
-	Attachment
-	{
-		name "att_omni_light"
-		parent "be_barrel"
-		offset "0.00 3.49 0.02"
-	}
-
-	Attachment
-	{
 		name "att_smoke_2"
 		offset "0.64 3.23 -0.04"
 		orientation "90.00 -0.00 0.00"
@@ -46,33 +32,50 @@ Attachments
 
 	Attachment
 	{
-		name "att_in_arrow"
-		offset "-2.80 0.40 0.00"
+		name "att_omni_light"
+		parent "be_barrel"
+		offset "0.66 3.49 0.02"
 	}
 
 	Attachment
 	{
-		name "att_in_1"
-		offset "-0.90 0.40 0.00"
-		orientation "180.00 -0.00 0.00"
+		name "att_muzzle"
+		parent "be_barrel"
+		offset "2.79 0.24 0.02"
 	}
 
 	Attachment
 	{
 		name "att_vismod_2"
-		parent "be_barrel"
-		offset "0.20 1.10 0.00"
-		orientation "90.00 -0.00 0.00"
+		parent "be_turret"
+		offset "-1.00 1.00 0.00"
+		orientation "-90.00 0.00 0.00"
 	}
 
-}
-
-Constraints
-{
-	Constraint
+	Attachment
 	{
-		bone "barrel_1"
-		pitch "-60.0:60.0"
+		name "att_in_arrow"
+		offset "-3.30 0.40 1.00"
+	}
+
+	Attachment
+	{
+		name "att_in_1"
+		offset "-1.00 0.40 1.00"
+		orientation "180.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_in_pipe"
+		offset "-1.00 0.00 1.00"
+		orientation "-180.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_vismod_1"
+		offset "0.00 -1.70 0.00"
 	}
 
 }
