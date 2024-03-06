@@ -73579,40 +73579,22 @@ LootTemplates
 
 LootConditions
 {
-	LootCondition "SHARD_COBALT_BIO_ITEM"
-	{
-		condition "has_research"
-		condition_value "gui/menu/research/name/resource_handling_cobalt"
-	}
-
-	LootCondition "SHARD_PALLADIUM_BIO_ITEM"
-	{
-		condition "has_research"
-		condition_value "gui/menu/research/name/resource_handling_palladium"
-	}
-
-	LootCondition "SHARD_TITANIUM_BIO_ITEM"
-	{
-		condition "has_research"
-		condition_value "gui/menu/research/name/resource_handling_titanium"
-	}
-
-	LootCondition "SHARD_URANIUM_BIO_ITEM"
-	{
-		condition "has_research"
-		condition_value "gui/menu/research/name/resource_handling_uranium"
-	}
-
 	LootCondition "items/loot/resources/biomass_animal_item"
 	{
 		condition "has_research"
-		condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		condition_value "gui/menu/research/name/alien_research"
 	}
 
 	LootCondition "items/loot/resources/biomass_water_item"
 	{
 		condition "has_research"
-		condition_value "Biomass water processing"
+		condition_value "gui/menu/research/name/bio_processing"
+	}
+
+	LootCondition "items/loot/resources/biomass_morphed_item"
+	{
+		condition "has_research"
+		condition_value "gui/menu/research/name/towers_morphium_lvl1"
 	}
 
 	LootCondition "items/loot/resources/shard_cobalt_bio_item"
