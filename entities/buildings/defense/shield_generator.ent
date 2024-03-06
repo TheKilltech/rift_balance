@@ -39,15 +39,25 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 			"energy"
-				value			 	"20"
+				resource 		"energy"
+				value			"100"
 			}
+			
 			GameplayResource
 			{
-				resource 	"plasma"
-				value 		"10"
-				attachment	"att_in_1"
-			}			
+				resource 		"plasma"
+				value 			"50"
+				attachment		"att_in_1"
+				family			"charge"
+			}
+			
+			GameplayResource
+			{
+				resource 		"plasma_charged"
+				value 			"15"
+				attachment		"att_in_1"
+				family			"charge"
+			}
 			
 		}
 		priority 6
