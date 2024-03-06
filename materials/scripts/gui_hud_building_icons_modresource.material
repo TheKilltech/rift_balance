@@ -309,7 +309,27 @@ material "gui/hud/building_icons/heavy_water_plant_disabled" : gui/default
 }
 
 
-/////  biomass_water_press
+/////  biomass_plant_press, biomass_morphed_press, biomass_water_press
+
+material "gui/hud/building_icons/biomass_plant_press" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_plant_press.dds"
+}
+
+material "gui/hud/building_icons/biomass_plant_press_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
+}
+
+material "gui/hud/building_icons/biomass_morphed_press" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_morphed_press.dds"
+}
+
+material "gui/hud/building_icons/biomass_morphed_press_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
+}
 
 material "gui/hud/building_icons/biomass_water_press" : gui/default
 {
