@@ -7,14 +7,14 @@ EntityBlueprint
 		name 				"tower_shockwave"
 		bp   				"buildings/defense/tower_shockwave"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_shockwave"
-		description			"gui/hud/building_description/tower_shockwave"
+		localization_id		"gui/hud/building_name/tower_shockwave_area"
+		description			"gui/hud/building_description/tower_shockwave_area"
 		menu_icon			"gui/hud/building_icons/tower_shockwave"
 		require 			"headquarters"
 		order				"12"
 		type				"tower"
 		overrides			"tower,wall"
-		upgrade				"buildings/defense/tower_shockwave_lvl_2"
+		//upgrade				"buildings/defense/tower_shockwave_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -28,20 +28,19 @@ EntityBlueprint
 					carbonium 	"75"
 					steel 		"150"
 					ai			"1"
-					titanium	"50"
 				}
 			}		
 		}			
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"1"
+				value 		"4"
 			}
 		}
 

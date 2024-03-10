@@ -4226,15 +4226,15 @@ buildings/defense/tower_shockwave
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_liquid"
-		damage_type "cryo"
+		ammo_storage "energy"
+		damage_type "area"
 		rarity "ADVANCED"
 		stat_def_vec
 		{
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "0.500"
+				min_value "0.500"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
@@ -4257,16 +4257,16 @@ buildings/defense/tower_shockwave
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "10.000"
+				min_value "10.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "13.000"
-				min_value "13.000"
+				max_value "16.000"
+				min_value "16.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -4289,10 +4289,34 @@ buildings/defense/tower_shockwave
 
 			WeaponStatDef
 			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "60.000"
+				min_value "60.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
 				max_value "5.000"
 				min_value "5.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2.000"
+				min_value "2.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 		}
@@ -4312,8 +4336,8 @@ buildings/defense/tower_shockwave_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "0.500"
+				min_value "0.500"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
@@ -4336,16 +4360,16 @@ buildings/defense/tower_shockwave_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "28.000"
-				min_value "28.000"
+				max_value "60.000"
+				min_value "60.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "15.000"
-				min_value "15.000"
+				max_value "16.000"
+				min_value "16.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -4368,10 +4392,34 @@ buildings/defense/tower_shockwave_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "8.000"
-				min_value "8.000"
+				max_value "20.000"
+				min_value "20.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "40.000"
+				min_value "40.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.500"
+				min_value "1.500"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "AMMO_STUN_LENGTH"
 			}
 
 		}
@@ -4384,15 +4432,15 @@ buildings/defense/tower_shockwave_lvl_3
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_liquid_lvl3"
-		damage_type "cryo"
-		rarity "EXTREME"
+		ammo_storage "ammo_tower_liquid_lvl2"
+		damage_type "acid"
+		rarity "SUPERIOR"
 		stat_def_vec
 		{
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "0.500"
+				min_value "0.500"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
@@ -4415,16 +4463,16 @@ buildings/defense/tower_shockwave_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "40.000"
-				min_value "40.000"
+				max_value "35.000"
+				min_value "35.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "18.000"
-				min_value "18.000"
+				max_value "16.000"
+				min_value "16.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -4439,18 +4487,42 @@ buildings/defense/tower_shockwave_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "28.000"
-				min_value "28.000"
+				max_value "100.000"
+				min_value "100.000"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "11.000"
-				min_value "11.000"
+				max_value "45.000"
+				min_value "45.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.500"
+				min_value "1.500"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "40.000"
+				min_value "40.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "AMMO_STUN"
 			}
 
 		}

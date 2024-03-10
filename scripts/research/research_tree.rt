@@ -102,6 +102,12 @@ Research
 
 						ResearchAward
 						{
+							blueprint "buildings/defense/fire_control_station"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/defense/wall_gate_lvl_2"
 							is_visible "1"
 						}
@@ -2755,7 +2761,19 @@ Research
 
 						ResearchAward
 						{
+							blueprint "buildings/defense/tower_artillery_acid"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/defense/tower_artillery_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_artillery_napalm"
 							is_visible "1"
 						}
 
@@ -17061,6 +17079,12 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_flamer_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/towers_shockwave_lvl2"
@@ -17087,6 +17111,12 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_shockwave_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_shockwave_lvl_3"
 							is_visible "1"
 						}
 
@@ -17635,12 +17665,6 @@ Research
 						{
 							research_name "gui/menu/research/name/resource_handling_tanzanite"
 							research_category "gui/menu/research/category_alien"
-						}
-
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/towers_flamer_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -23810,6 +23834,6 @@ Research
 
 	type
 	editor "5682"
-	version "114"
+	version "116"
 }
 
