@@ -1,0 +1,112 @@
+EntityBlueprint
+{
+	name					"buildings/defense/tower_cannon_small"
+	base_blueprint 			"buildings/defense/tower_cannon"
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"tower_cannon_small"
+		bp   				"buildings/defense/tower_cannon_small"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_cannon_small"
+		description			"gui/hud/building_description/tower_cannon_small"
+		menu_icon			"gui/hud/building_icons/tower_cannon_small"
+		require 			"headquarters"
+		building_group		"tower_minigun"
+		order				"5"
+		check_connect		"1"
+		type				"tower"
+		overrides			"tower,wall"
+		//upgrade				"buildings/defense/tower_cannon_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 8
+				building_cost
+				{
+					carbonium 	"25"
+					steel 		"100"
+				}
+			}		
+		}		
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"8"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
+	}
+
+	TowerDesc
+	{
+	}
+
+	TurretDesc
+	{
+		target "ground_unit|air_unit"
+		target_ignore "invisible"
+		speed "300"
+		aim_volume "SphericalAimVolume"
+		{
+			range_min "0"
+			range_max "34"
+			aiming_range "40"
+		}
+
+		aiming_cooldown "1"
+		aiming_target_time "2"
+		aiming_idle_angle "20"
+		pitch "be_barrel"
+		yaw "be_turret"
+		check_target_visibility "1"
+		fog_of_war_filtering "1"
+	}
+	
+	WeaponItemDesc
+	{
+	}
+	
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment 		"att_muzzle"
+				recoil_bone		"be_recoil"
+				recoil_time		"0.3"
+				recoil_offset	"0.5"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "4"
+		}		
+
+		ammo_blueprint 				"buildings/defense/tower_cannon_projectile"
+
+		muzzle_flash_effect 		"effects/weapons_bullet/cannon_small_fire"
+
+		burst_column_spacing 		"0.5"
+		burst_rate 					"0.3"
+	}
+}

@@ -182,3 +182,28 @@ EntityBlueprint		// plasma_gun_fire_yellow
 	}
 
 }
+
+// effects/weapons_bullet
+
+EntityBlueprint		// cannon_small_fire
+{
+	name effects/weapons_bullet/cannon_small_fire
+
+	base_blueprints
+	{
+		effects/weapons_elemental/muzzle
+		lights/point/muzzle_orange_small
+		effects/default
+	}
+
+	ParticleDesc
+	{
+		name    "rift/mech_missile_launch"
+	}
+
+	SoundDesc
+	{
+		name "items/weapons/fluid/lava_gun_fire"
+		//name "items/weapons/bullet/burst_rifle_fire"
+	}	
+}

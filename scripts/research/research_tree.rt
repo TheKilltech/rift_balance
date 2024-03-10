@@ -351,7 +351,7 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/high_caliber_weapons"
+							research_name "gui/menu/research/name/towers_lowcaliber"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -737,6 +737,12 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_lowcaliber"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/towers_minigun_lvl1"
@@ -760,12 +766,6 @@ Research
 
 					research_awards
 					{
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_storage_lowcaliber"
-							is_visible "1"
-						}
-
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_minigun"
@@ -2903,12 +2903,6 @@ Research
 
 					research_awards
 					{
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_storage_lowcaliber"
-							is_visible "1"
-						}
-
 						ResearchAward
 						{
 							blueprint "buildings/defense/ai_hub"
@@ -7088,6 +7082,64 @@ Research
 					}
 
 					icon "gui/menu/research/icons/skill_shockwave_blast"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/defensive_buildings_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_lowcaliber"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "250.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "27.000"
+						y "-216.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_storage_lowcaliber"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_cannon_small"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "resources/ammo_mech_low_caliber"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_basic"
 				}
 
 			}
@@ -23834,6 +23886,6 @@ Research
 
 	type
 	editor "5682"
-	version "116"
+	version "117"
 }
 
