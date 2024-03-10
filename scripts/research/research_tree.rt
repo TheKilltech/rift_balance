@@ -2533,8 +2533,14 @@ Research
 
 						ResearchAward
 						{
+							blueprint "items/loot/resources/biomass_animal_item"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "items/loot/resources/biomass_plant_item"
-							is_visible "0"
+							is_visible "1"
 						}
 
 					}
@@ -5179,6 +5185,12 @@ Research
 						ResearchAward
 						{
 							blueprint "items/interactive/scanner_item"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "items/loot/resources/biomass_animal_item"
 							is_visible "1"
 						}
 
@@ -18737,15 +18749,6 @@ Research
 					}
 
 					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "items/loot/resources/biomass_animal_item"
-							is_visible "1"
-						}
-
-					}
-
 					icon "gui/menu/research/icons/alien_research"
 				}
 
