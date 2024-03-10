@@ -23,10 +23,10 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 4
+				building_time 8
 				building_cost
 				{
-					carbonium 	"50"
+					carbonium 	"250"
 					steel 		"20"
 					ai			"4"
 				}
@@ -34,14 +34,20 @@ EntityBlueprint
 		}		
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"15"
+				value 		"60"
+			}
+			
+			GameplayResource // only for display, but the drone itself consumes ammo, not the tower
+			{
+				resource 	"ammo_tower_low_caliber" 
+				value 		"0"
 			}
 		}
 
@@ -50,6 +56,23 @@ EntityBlueprint
 		}
 
 		priority 6
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/drone_spawner_building.lua"
+		
+		database
+		{
+			cone_effect				string:"build_cone_3x3"
+			cone_effect_sell 		string:"sell_big"
+
+			drone_search_radius		float:"38"
+			drone_blueprint			string:"units/drones/drone_attack_physical"
+			drone_attachments		string:"att_landing"
+			drone_per_spot			int:"2"
+			drone_visible_on_spot 	int:"0"
+		}
 	}
 
 	HealthDesc
@@ -130,23 +153,6 @@ EntityBlueprint
 	AnimationGraphDesc
 	{
 		animation_graph_name "building_working"
-	}
-
-	LuaDesc
-	{
-		script "lua/buildings/drone_spawner_building.lua"
-		
-		database
-		{
-			cone_effect				string:"build_cone_3x3"
-			cone_effect_sell 		string:"sell_big"
-
-			drone_search_radius		float:"40"
-			drone_blueprint			string:"units/drones/drone_attack"
-			drone_attachments		string:"att_landing"
-			drone_per_spot			int:"2"
-			drone_visible_on_spot 	int:"0"
-		}
 	}
 
 	PhysicsDesc
