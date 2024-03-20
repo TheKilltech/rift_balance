@@ -335,6 +335,20 @@ EntityBlueprint
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/weapon_items/high_caliber"
+					bone 		"att_vismod_2"
+					scale		"0.6 0.8 0.8"
+				}
+			}
+		}	
+		EffectGroup
+		{
 			group "lamp"
 			enabled "0"
 
