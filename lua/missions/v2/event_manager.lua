@@ -84,11 +84,11 @@ function event_manager:InitRules()
     end
 	
 	-- make sure mod rule variables are available and valid
-	if (self.rules.idleTimeRelativeVariation == nil        or type(self.rules.idleTimeRelativeVariation) ~= "number")        then  self.rules.idleTimeRelativeVariation = 35         end
-	if (self.rules.idleTimeCancelChance == nil             or type(self.rules.idleTimeCancelChance) ~= "number")             then  self.rules.idleTimeCancelChance = 5               end
-	if (self.rules.preparationTimeRelativeVariation == nil or type(self.rules.preparationTimeRelativeVariation) ~= "number") then  self.rules.preparationTimeRelativeVariation = 35  end
-	if (self.rules.preparationTimeCancelChance == nil      or type(self.rules.preparationTimeCancelChance) ~= "number")      then  self.rules.preparationTimeCancelChance = 5        end
-	if (self.rules.spawnCooldownEventChance == nil         or type(self.rules.spawnCooldownEventChance) ~= "table")          then  self.rules.spawnCooldownEventChance = {}          end
+	if (self.rules.idleTimeRelativeVariation == nil        or type(self.rules.idleTimeRelativeVariation) ~= "number")        then  self.rules.idleTimeRelativeVariation = 0.35        end
+	if (self.rules.idleTimeCancelChance == nil             or type(self.rules.idleTimeCancelChance) ~= "number")             then  self.rules.idleTimeCancelChance = 5                end
+	if (self.rules.preparationTimeRelativeVariation == nil or type(self.rules.preparationTimeRelativeVariation) ~= "number") then  self.rules.preparationTimeRelativeVariation = 0.35 end
+	if (self.rules.preparationTimeCancelChance == nil      or type(self.rules.preparationTimeCancelChance) ~= "number")      then  self.rules.preparationTimeCancelChance = 5         end
+	if (self.rules.spawnCooldownEventChance == nil         or type(self.rules.spawnCooldownEventChance) ~= "table")          then  self.rules.spawnCooldownEventChance = {}           end
 end
 
 function event_manager:FillInitialParamsEventManager()

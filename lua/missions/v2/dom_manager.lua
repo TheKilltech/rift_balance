@@ -1003,11 +1003,11 @@ function dom_mananger:GetPrepareSpawnTime()
 	local stateDuration = self.rules.prepareSpawnTime[self.currentDifficultyLevel]
 	self:VerboseLog("Preparation time base ".. tostring(stateDuration))
 	
-	if (self.rules.preparationTimeRelativeVariation > 0) then
-		local rngScale = (math.random()-0.5)*2*self.rules.preparationTimeRelativeVariation
-		stateDuration = stateDuration + rngScale
+	if ((self.rules.preparationTimeRelativeVariation or 0.35) > 0) then
+		local rngScale = (math.random()-0.5)*2*(self.rules.preparationTimeRelativeVariation or 0.35)
+		stateDuration = stateDuration * (1 + rngScale)
 		self:VerboseLog("Preparation time random scaling by ".. tostring(rngScale) .. " changing base to ".. tostring(stateDuration))
-	elseif (self.rules.preparationTimeCancelChance > math.random()*100) then
+	elseif ((self.rules.preparationTimeCancelChance or 5) > math.random()*100) then
 		stateDuration = 15
 		self:VerboseLog("Preparation time modifier: cancelled (down to 15)")
 	end
@@ -1177,11 +1177,11 @@ function dom_mananger:OnEnterIdle( state )
 	local stateDuration = self.rules.idleTime[self.currentDifficultyLevel]
 	self:VerboseLog("Idle time base ".. tostring(stateDuration))
 	
-	if (self.rules.idleTimeRelativeVariation > 0) then
-		local rngScale = (math.random()-0.5)*2*self.rules.idleTimeRelativeVariation
-		stateDuration = stateDuration + rngScale
+	if ((self.rules.idleTimeRelativeVariation or 0.35) > 0) then
+		local rngScale = (math.random()-0.5)*2*(self.rules.idleTimeRelativeVariation or 0.35)
+		stateDuration = stateDuration * (1 + rngScale)
 		self:VerboseLog("Idle time random scaling by ".. tostring(rngScale) .. " changing base ".. tostring(self.rules.idleTime[self.currentDifficultyLevel]) .." to ".. tostring(stateDuration))
-	elseif (self.rules.idleTimeCancelChance > math.random()*100) then
+	elseif ((self.rules.idleTimeCancelChance or 10)> math.random()*100) then
 		stateDuration = 120
 		self:VerboseLog("Idle time modifier: cancelled (down to 120)")
 	end

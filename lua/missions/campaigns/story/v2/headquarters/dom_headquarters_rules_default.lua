@@ -7,10 +7,10 @@ return function()
 	rules.pauseAttacks = false
 	rules.prepareAttacks = true
 	rules.baseTimeBetweenObjectives = 2400
-	rules.idleTimeRelativeVariation = 0.35 -- X factor of idle time that may randomly vary: +/- X * idle_time
-	rules.idleTimeCancelChance = 10
-	rules.preparationTimeRelativeVariation = 0.4 -- X factor of idle time that may randomly vary: +/- X * prep_time
-	rules.preparationTimeCancelChance = 10
+	rules.idleTimeRelativeVariation = 0.25        -- X factor of idle time that may randomly vary: +/- X * idle_time
+	rules.idleTimeCancelChance = 10               -- chance in percent
+	rules.preparationTimeRelativeVariation = 0.4  -- X factor of idle time that may randomly vary: +/- X * prep_time
+	rules.preparationTimeCancelChance = 10        -- chance in percent
 
 	rules.gameEvents = 
 	{
@@ -55,10 +55,11 @@ return function()
 		--{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 3 },
 	}
 	
-	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be ascending
+	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
 	{
 		40,  -- 1st event probability in percent
 		8,   -- 2nd event probability in percent
+		2,   -- 3rd event probability in percent
 	}
 	
 	rules.addResourcesOnRunOut = 

@@ -6,6 +6,10 @@ return function()
 	rules.eventsPerPrepareState = 1 -- [0,1]
 	rules.pauseAttacks = false
 	rules.prepareAttacks = true
+	rules.idleTimeRelativeVariation = 0.25        -- X factor of idle time that may randomly vary: +/- X * idle_time
+	rules.idleTimeCancelChance = 10               -- chance in percent
+	rules.preparationTimeRelativeVariation = 0.25 -- X factor of idle time that may randomly vary: +/- X * prep_time
+	rules.preparationTimeCancelChance = 10        -- chance in percent
 
 	rules.gameEvents = 
 	{
@@ -43,6 +47,13 @@ return function()
 		--{ action = "spawn_resource_earthquake", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 3, logicFile="logic/weather/resource_earthquake.logic" },
 		--{ action = "spawn_resource_earthquake", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/resource_earthquake.logic" },
 		--{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 3 },
+	}
+	
+	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
+	{
+		15,  -- 1st event probability in percent
+		5,   -- 2nd event probability in percent
+		1,   -- 3rd event probability in percent
 	}
 
 	rules.addResourcesOnRunOut = 
