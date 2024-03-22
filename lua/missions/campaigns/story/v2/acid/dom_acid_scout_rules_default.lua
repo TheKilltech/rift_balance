@@ -4,8 +4,10 @@ return function()
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 1
 	rules.eventsPerPrepareState = 1 -- [0,1]
+	rules.eventsPerPrepareStateChance = 15        -- chance to spawn events with objectives
 	rules.pauseAttacks = false
 	rules.prepareAttacks = true
+	rules.baseTimeBetweenObjectives = 2400
 	rules.idleTimeRelativeVariation = 0.25        -- X factor of idle time that may randomly vary: +/- X * idle_time
 	rules.idleTimeCancelChance = 10               -- chance in percent
 	rules.preparationTimeRelativeVariation = 0.25 -- X factor of idle time that may randomly vary: +/- X * prep_time
@@ -51,9 +53,9 @@ return function()
 	
 	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
 	{
-		15,  -- 1st event probability in percent
-		5,   -- 2nd event probability in percent
-		1,   -- 3rd event probability in percent
+		25,  -- 1st event probability in percent
+		10,  -- 2nd event probability in percent
+		3,   -- 3rd event probability in percent
 	}
 
 	rules.addResourcesOnRunOut = 
@@ -66,12 +68,12 @@ return function()
 		200, -- difficulty level 1
 		200, -- difficulty level 2
 		200, -- difficulty level 3	
-		600, -- difficulty level 4
+		1200, -- difficulty level 4
 		1200, -- difficulty level 5
-		1200, -- difficulty level 6
-		1500, -- difficulty level 7
-		1500, -- difficulty level 8
-		1500, -- difficulty level 9
+		1500, -- difficulty level 6
+		3600, -- difficulty level 7
+		3600, -- difficulty level 8
+		3600, -- difficulty level 9
 	}
 
 	rules.prepareSpawnTime = 
@@ -101,15 +103,15 @@ return function()
 
 	rules.cooldownAfterAttacks = 
 	{			
-		0,  -- difficulty level 1
-		0,  -- difficulty level 2
-		0,  -- difficulty level 3
-		0,  -- difficulty level 4	
-		0,  -- difficulty level 5	
-		0,  -- difficulty level 6	
-		0,  -- difficulty level 7
-		0,  -- difficulty level 8	
-		0,  -- difficulty level 9	
+		300,  -- difficulty level 1
+		300,  -- difficulty level 2
+		300,  -- difficulty level 3
+		300,  -- difficulty level 4	
+		300,  -- difficulty level 5	
+		300,  -- difficulty level 6	
+		300,  -- difficulty level 7
+		300,  -- difficulty level 8	
+		300,  -- difficulty level 9	
 	}
 
 	rules.idleTime = 

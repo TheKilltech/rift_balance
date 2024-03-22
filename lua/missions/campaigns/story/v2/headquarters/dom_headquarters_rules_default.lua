@@ -3,13 +3,14 @@ return function()
 
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 2
-	rules.eventsPerPrepareState = 0 -- [0,1]
+	rules.eventsPerPrepareState = 1 -- [0,1]
+	rules.eventsPerPrepareStateChance = 35
 	rules.pauseAttacks = false
 	rules.prepareAttacks = true
 	rules.baseTimeBetweenObjectives = 2400
-	rules.idleTimeRelativeVariation = 0.25        -- X factor of idle time that may randomly vary: +/- X * idle_time
+	rules.idleTimeRelativeVariation = 0.5         -- X factor of idle time that may randomly vary: +/- X * idle_time
 	rules.idleTimeCancelChance = 10               -- chance in percent
-	rules.preparationTimeRelativeVariation = 0.4  -- X factor of idle time that may randomly vary: +/- X * prep_time
+	rules.preparationTimeRelativeVariation = 0.6  -- X factor of idle time that may randomly vary: +/- X * prep_time
 	rules.preparationTimeCancelChance = 10        -- chance in percent
 
 	rules.gameEvents = 
