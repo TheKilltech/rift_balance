@@ -102,6 +102,12 @@ Research
 
 						ResearchAward
 						{
+							blueprint "buildings/defense/fire_control_station"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/defense/wall_gate_lvl_2"
 							is_visible "1"
 						}
@@ -345,7 +351,7 @@ Research
 					{
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/high_caliber_weapons"
+							research_name "gui/menu/research/name/towers_lowcaliber"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -731,6 +737,12 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_lowcaliber"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/towers_minigun_lvl1"
@@ -754,12 +766,6 @@ Research
 
 					research_awards
 					{
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_storage_lowcaliber"
-							is_visible "1"
-						}
-
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_minigun"
@@ -2527,8 +2533,14 @@ Research
 
 						ResearchAward
 						{
+							blueprint "items/loot/resources/biomass_animal_item"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "items/loot/resources/biomass_plant_item"
-							is_visible "0"
+							is_visible "1"
 						}
 
 					}
@@ -2755,7 +2767,19 @@ Research
 
 						ResearchAward
 						{
+							blueprint "buildings/defense/tower_artillery_acid"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/defense/tower_artillery_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_artillery_napalm"
 							is_visible "1"
 						}
 
@@ -2885,12 +2909,6 @@ Research
 
 					research_awards
 					{
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_storage_lowcaliber"
-							is_visible "1"
-						}
-
 						ResearchAward
 						{
 							blueprint "buildings/defense/ai_hub"
@@ -5170,6 +5188,12 @@ Research
 							is_visible "1"
 						}
 
+						ResearchAward
+						{
+							blueprint "items/loot/resources/biomass_animal_item"
+							is_visible "1"
+						}
+
 					}
 
 					icon "gui/menu/research/icons/alien_research"
@@ -7070,6 +7094,64 @@ Research
 					}
 
 					icon "gui/menu/research/icons/skill_shockwave_blast"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/defensive_buildings_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_lowcaliber"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "250.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "27.000"
+						y "-216.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_storage_lowcaliber"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_cannon_small"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "resources/ammo_mech_low_caliber"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_basic"
 				}
 
 			}
@@ -17061,6 +17143,12 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/towers_flamer_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/towers_shockwave_lvl2"
@@ -17087,6 +17175,12 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_shockwave_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_shockwave_lvl_3"
 							is_visible "1"
 						}
 
@@ -17635,12 +17729,6 @@ Research
 						{
 							research_name "gui/menu/research/name/resource_handling_tanzanite"
 							research_category "gui/menu/research/category_alien"
-						}
-
-						ResearchNodeRequirement
-						{
-							research_name "gui/menu/research/name/towers_flamer_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -18661,15 +18749,6 @@ Research
 					}
 
 					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "items/loot/resources/biomass_animal_item"
-							is_visible "1"
-						}
-
-					}
-
 					icon "gui/menu/research/icons/alien_research"
 				}
 
@@ -23810,6 +23889,6 @@ Research
 
 	type
 	editor "5682"
-	version "114"
+	version "117"
 }
 

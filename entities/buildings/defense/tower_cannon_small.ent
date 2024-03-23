@@ -1,47 +1,48 @@
 EntityBlueprint
 {
-	name "buildings/defense/tower_cannon"
+	name					"buildings/defense/tower_cannon_small"
 
 	BuildingDesc
 	{
-		name 				"tower_cannon"
-		bp   				"buildings/defense/tower_cannon"
+		buildable			"0"
+		name 				"tower_cannon_small"
+		bp   				"buildings/defense/tower_cannon_small"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_cannon"
-		description			"gui/hud/building_description/tower_cannon"
-		menu_icon			"gui/hud/building_icons/tower_cannon"
+		localization_id		"gui/hud/building_name/tower_cannon_small"
+		description			"gui/hud/building_description/tower_cannon_small"
+		menu_icon			"gui/hud/building_icons/tower_cannon_small"
 		require 			"headquarters"
+		building_group		"tower_minigun"
 		order				"5"
+		check_connect		"1"
 		type				"tower"
-		overrides			"wall,tower"
-		//upgrade				"buildings/defense/tower_cannon_lvl_2"
+		overrides			"tower,wall"
+		//upgrade				"buildings/defense/tower_cannon_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-
 
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 8
 				building_cost
-				{					
-					carbonium 	"100"
-					steel 		"125"
-					ai			"1"
+				{
+					carbonium 	"25"
+					steel 		"100"
 				}
 			}		
 		}		
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"10"
+				value 		"8"
 			}
 		}
 
@@ -196,10 +197,6 @@ EntityBlueprint
 		explosion_min_power 	"1000"
 	}
 
-	WeaponItemDesc
-	{
-	}
-
 	TowerDesc
 	{
 	}
@@ -224,7 +221,11 @@ EntityBlueprint
 		check_target_visibility "1"
 		fog_of_war_filtering "1"
 	}
-
+	
+	WeaponItemDesc
+	{
+	}
+	
 	BurstWeaponComponent
 	{
 		WeaponMuzzles
@@ -244,9 +245,9 @@ EntityBlueprint
 			emissive_factor "4"
 		}		
 
-		ammo_blueprint 				"buildings/defense/tower_cannon_projectile"
+		ammo_blueprint 				"buildings/defense/tower_cannon_projectile_small"
 
-		muzzle_flash_effect 		"effects/weapons_bullet/sniper_rifle_fire"
+		muzzle_flash_effect 		"effects/weapons_bullet/cannon_small_fire"
 
 		burst_column_spacing 		"0.5"
 		burst_rate 					"0.3"
@@ -335,20 +336,6 @@ EntityBlueprint
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
-			group "vismod"
-			enabled "1"
-			Effects
-			{
-				Effect
-				{
-					blueprint	"effects/weapon_items/high_caliber"
-					bone 		"att_vismod_2"
-					scale		"0.6 0.8 0.8"
-				}
-			}
-		}	
-		EffectGroup
-		{
 			group "lamp"
 			enabled "0"
 
@@ -363,12 +350,11 @@ EntityBlueprint
 			}
 		}
 	}
-
 }
 
 EntityBlueprint
 {
-	name "buildings/defense/tower_cannon_projectile"
+	name "buildings/defense/tower_cannon_projectile_small"
 
 	base_blueprint "effects/weapons_bullet/sniper_rifle_projectile"
 

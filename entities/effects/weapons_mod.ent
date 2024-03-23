@@ -65,6 +65,76 @@ EntityBlueprint		// yellow_small
 }
 
 
+// effects/weapon_items
+
+
+EntityBlueprint "effects/no_lifetime"		//blaster
+{
+	name "effects/weapon_items/blaster"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/blaster.mesh"
+		material 	"items/weapons/blaster"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//high_caliber
+{
+	name "effects/weapon_items/high_caliber"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/high_caliber.mesh"
+		material 	"items/weapons/high_caliber"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//burst_rifle
+{
+	name "effects/weapon_items/burst_rifle"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/burst_rifle.mesh"
+		material 	"items/weapons/burst_rifle"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//shotgun
+{
+	name "effects/weapon_items/shotgun"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/shotgun.mesh"
+		material 	"items/weapons/shotgun"
+	}
+}
+
+
+
+
 // effects/weapons_energy
 
 EntityBlueprint		// plasma_gun_projectile_red
@@ -181,4 +251,29 @@ EntityBlueprint		// plasma_gun_fire_yellow
 		name "items/weapons/energy/plasma_gun_fire"
 	}
 
+}
+
+// effects/weapons_bullet
+
+EntityBlueprint		// cannon_small_fire
+{
+	name effects/weapons_bullet/cannon_small_fire
+
+	base_blueprints
+	{
+		effects/weapons_elemental/muzzle
+		lights/point/muzzle_orange_small
+		effects/default
+	}
+
+	ParticleDesc
+	{
+		name    "rift/mech_missile_launch"
+	}
+
+	SoundDesc
+	{
+		name "items/weapons/fluid/lava_gun_fire"
+		//name "items/weapons/bullet/burst_rifle_fire"
+	}	
 }

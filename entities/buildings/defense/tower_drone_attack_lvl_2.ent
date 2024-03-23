@@ -6,7 +6,6 @@ EntityBlueprint
 
 	BuildingDesc
 	{
-		buildable			"0"
 		name 				"tower_drone_attack_lvl_2"
 		bp   				"buildings/defense/tower_drone_attack_lvl_2"
 		category 			"defense"
@@ -14,23 +13,25 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_drone_attack"
 		menu_icon			"gui/hud/building_icons/tower_drone_attack_lvl2"
 		require 			"headquarters"
-		order				"16"
+		building_group		"tower_drone_attack"
+		order				"17"
+		buildable			"0"
+		check_connect		"1"
 		type				"tower"
-		overrides			"wall,tower"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		upgrade				"buildings/defense/tower_drone_attack_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-
 
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 8
+				building_time 10
 				building_cost
 				{
-					carbonium 	"100"
-					steel 		"40"
+					carbonium 	"400"
+					steel 		"100"
 					cobalt 		"10"
 					ai			"1"
 				}
@@ -38,14 +39,36 @@ EntityBlueprint
 		}		
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"40"
+				value 		"25"
+			}
+			
+			GameplayResource // only for display, but the drone itself consumes ammo, not the tower
+			{
+				resource 	"ammo_tower_low_caliber" 
+				value 		"0"
+			}
+			
+			GameplayResource
+			{
+				resource 	"flammable_gas"
+				value 		"25"
+				family		"fuel"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"reagent"
+				value 		"10"
+				family		"fuel"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -54,6 +77,23 @@ EntityBlueprint
 		}
 
 		priority 6
+	}
+	
+	LuaDesc
+	{
+		script "lua/buildings/drone_spawner_building.lua"
+		
+		database
+		{
+			cone_effect				string:"build_cone_3x3"
+			cone_effect_sell 		string:"sell_big"
+
+			drone_search_radius		float:"50"
+			drone_blueprint			string:"units/drones/drone_attack_physical"
+			drone_attachments		string:"att_landing,att_landing_1"
+			drone_per_spot			int:"2"
+			drone_visible_on_spot 	int:"0"
+		}
 	}
 	
 	HealthDesc
@@ -126,20 +166,41 @@ EntityBlueprint
 		name "meshes/buildings/defense/tower_drone_attack_lvl_2"
 	}
 
-	LuaDesc
+	EffectDesc
 	{
-		script "lua/buildings/drone_spawner_building.lua"
-		
-		database
+		EffectBaseBlueprints
 		{
-			cone_effect				string:"build_cone_3x3"
-			cone_effect_sell 		string:"sell_big"
-
-			drone_search_radius		float:"45"
-			drone_blueprint			string:"units/drones/drone_attack"
-			drone_attachments		string:"att_landing,att_landing_1"
-			drone_per_spot			int:"2"
-			drone_visible_on_spot 	int:"0"
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone 		"att_in_pipe"
+				}
+			}
 		}
 	}
 }

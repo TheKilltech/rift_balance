@@ -84,11 +84,12 @@ function event_manager:InitRules()
     end
 	
 	-- make sure mod rule variables are available and valid
-	if (self.rules.idleTimeRelativeVariation == nil        or type(self.rules.idleTimeRelativeVariation) ~= "number")        then  self.rules.idleTimeRelativeVariation = 35         end
-	if (self.rules.idleTimeCancelChance == nil             or type(self.rules.idleTimeCancelChance) ~= "number")             then  self.rules.idleTimeCancelChance = 5               end
-	if (self.rules.preparationTimeRelativeVariation == nil or type(self.rules.preparationTimeRelativeVariation) ~= "number") then  self.rules.preparationTimeRelativeVariation = 35  end
-	if (self.rules.preparationTimeCancelChance == nil      or type(self.rules.preparationTimeCancelChance) ~= "number")      then  self.rules.preparationTimeCancelChance = 5        end
-	if (self.rules.spawnCooldownEventChance == nil         or type(self.rules.spawnCooldownEventChance) ~= "table")          then  self.rules.spawnCooldownEventChance = {}          end
+	if (self.rules.eventsPerPrepareStateChance == nil      or type(self.rules.eventsPerPrepareStateChance) ~= "number")      then  self.rules.eventsPerPrepareStateChance = 75        end
+	if (self.rules.idleTimeRelativeVariation == nil        or type(self.rules.idleTimeRelativeVariation) ~= "number")        then  self.rules.idleTimeRelativeVariation = 0.35        end
+	if (self.rules.idleTimeCancelChance == nil             or type(self.rules.idleTimeCancelChance) ~= "number")             then  self.rules.idleTimeCancelChance = 5                end
+	if (self.rules.preparationTimeRelativeVariation == nil or type(self.rules.preparationTimeRelativeVariation) ~= "number") then  self.rules.preparationTimeRelativeVariation = 0.35 end
+	if (self.rules.preparationTimeCancelChance == nil      or type(self.rules.preparationTimeCancelChance) ~= "number")      then  self.rules.preparationTimeCancelChance = 5         end
+	if (self.rules.spawnCooldownEventChance == nil         or type(self.rules.spawnCooldownEventChance) ~= "table")          then  self.rules.spawnCooldownEventChance = {}           end
 end
 
 function event_manager:FillInitialParamsEventManager()
@@ -426,18 +427,14 @@ function event_manager:PrepareEvents( gameState )
 			table.insert( tableTmp, data )
 		end
 
-		if ( ( self:HasGameState( data.gameStates, "STREAMING" ) == false ) or ( self:HasGameState( data.gameStates, "NO_STREAMING" ) == false ) ) then
-			if ( ( streamActive == false ) and ( self:HasGameState( data.gameStates, "STREAMING" ) == true ) and ( self:HasGameState( data.gameStates, "NO_STREAMING" ) == false ) ) then
-				LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. " Only allowed with streaming session." )
-				table.insert( tableTmp, data )
-			end
-
-			if ( ( streamActive == true ) and ( self:HasGameState( data.gameStates, "STREAMING" ) == false ) and ( self:HasGameState( data.gameStates, "NO_STREAMING" ) == true ) ) then
-				LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. " Only allowed without streaming session." )
-				table.insert( tableTmp, data )
-			end
-		else
-			LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. ". Allowed in STREAMING and NO_STREAMING." )
+		if ( not streamActive and     self:HasGameState(data.gameStates, "STREAMING") and not self:HasGameState(data.gameStates, "NO_STREAMING")) then
+			LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. " Only allowed with streaming session.")
+			table.insert( tableTmp, data )
+		elseif ( streamActive and not self:HasGameState(data.gameStates, "STREAMING") and     self:HasGameState(data.gameStates, "NO_STREAMING")) then
+			LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. " Only allowed without streaming session.")
+			table.insert( tableTmp, data )
+		else 
+			LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. ". Allowed in STREAMING and NO_STREAMING.")
 		end
 
 

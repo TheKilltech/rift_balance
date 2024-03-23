@@ -56,7 +56,7 @@ function dom_mananger:init()
 
 	-- ========================================= Configuration ======================================
 
-	self:VerboseLog(" ------- DOM MANAGER VER 2.0 ------- " )
+	self:VerboseLog(" ------- DOM MANAGER VER 2.0 mod 0.2 ------- " )
 
 	event_manager.init( self )
 
@@ -1003,11 +1003,11 @@ function dom_mananger:GetPrepareSpawnTime()
 	local stateDuration = self.rules.prepareSpawnTime[self.currentDifficultyLevel]
 	self:VerboseLog("Preparation time base ".. tostring(stateDuration))
 	
-	if (self.rules.preparationTimeRelativeVariation > 0) then
-		local rngScale = (math.random()-0.5)*2*self.rules.preparationTimeRelativeVariation
-		stateDuration = stateDuration + rngScale
+	if ((self.rules.preparationTimeRelativeVariation or 0.35) > 0) then
+		local rngScale = (math.random()-0.5)*2*(self.rules.preparationTimeRelativeVariation or 0.35)
+		stateDuration = stateDuration * (1 + rngScale)
 		self:VerboseLog("Preparation time random scaling by ".. tostring(rngScale) .. " changing base to ".. tostring(stateDuration))
-	elseif (self.rules.preparationTimeCancelChance > math.random()*100) then
+	elseif ((self.rules.preparationTimeCancelChance or 5) > math.random()*100) then
 		stateDuration = 15
 		self:VerboseLog("Preparation time modifier: cancelled (down to 15)")
 	end
@@ -1068,7 +1068,16 @@ function dom_mananger:OnEnterPrepareSpawn( state )
 
 	self.objectiveActivateTime	= self.waitForSpawnTimer - ( self.waitForSpawnTimer * self.idleTimeObjectiveMul )
 	self.objectiveActivated		= false	
-
+	
+	if ( self.rules.eventsPerPrepareState ~= 0) then
+		self:VerboseLog("OnEnterPrepareSpawn - deciding events in prepared state" );
+		local rngRoll = RandInt(0, 100)	
+		if ( (self.rules.eventsPerPrepareStateChance or 100) >= rngRoll ) then
+			self.eventsPerPrepareState  = 1
+		else self.eventsPerPrepareState  = 0
+		end		
+		self:VerboseLog("OnEnterPrepareSpawn - chance ".. tostring(self.rules.eventsPerPrepareStateChance or 100) .. ", roll ".. tostring(rngRoll) .. ", result: ".. tostring(self.eventsPerPrepareState) );
+	end
 
 	if ( ( self:GetPauseAttacks() == false ) and ( self.cancelTheAttack == false ) ) then
 		self.data:SetFloat( "time_max", self.waitForSpawnTimer )
@@ -1104,7 +1113,7 @@ function dom_mananger:OnExecutePrepareSpawn( state, dt )
 	self.waitForSpawnTimer  = self.waitForSpawnTimer - dt
 
 	if ( self.waitForSpawnTimer < 0 ) then
-
+		self.waveRepeated = 0
 		if ( self:GetPauseAttacks() == true ) then
 			self.spawner:ChangeState( "dummy_state" )
 		else
@@ -1112,13 +1121,13 @@ function dom_mananger:OnExecutePrepareSpawn( state, dt )
 		end
 	end
 
-	if ( self.rules.eventsPerPrepareState ~= 0 ) then
-		if ( ( self.waitForSpawnTimer < self.eventActivateTime ) and ( self.eventActivated == false ) ) then
+	if ( self.eventsPerPrepareState ~= 0 ) then
+		if ( ( self.waitForSpawnTimer < self.eventActivateTime ) and not self.eventActivated ) then
 			self:StartAnEvent( "IDLE" )
 			self.eventActivated = true
 		end
 
-		if ( ( self.waitForSpawnTimer < self.objectiveActivateTime ) and ( self.objectiveActivated == false ) ) then
+		if ( ( self.waitForSpawnTimer < self.objectiveActivateTime ) and not self.objectiveActivated ) then
 			self:StartObjective()
 			self.objectiveActivated = true
 		end
@@ -1135,17 +1144,20 @@ end
 
 function dom_mananger:OnEnterCooldownAfterSpawnTime( state )
 	self:VerboseLog("OnEnterCooldownAfterSpawnTime" )
-	self.cooldownTimer = self.rules.cooldownAfterAttacks[self.currentDifficultyLevel]
+	self.cooldownTimer  = self.rules.cooldownAfterAttacks[self.currentDifficultyLevel]
+	self.waveRepeatTime = math.max(self.cooldownTimer - 60, 0)
 	
 	self.coolEventSpawnTime = {}
-	local rngRoll = RandInt(0, 100)	
-	for i,prob in ipairs(self.rules.spawnCooldownEventChance) do
-		local isSet = false
-		if (prob and prob >= rngRoll) then
-			self.coolEventSpawnTime[i] = (math.min(self.cooldownTimer, 180) * RandInt(0,100)) / 100.0
-			isSet = true
+	if ((self.waveRepeated or 0) == 0) then
+		local rngRoll = RandInt(0, 100)	
+		for i,prob in ipairs(self.rules.spawnCooldownEventChance) do
+			local isSet = false
+			if (prob and prob >= rngRoll) then
+				self.coolEventSpawnTime[i] = RandInt(0,self.cooldownTimer)
+				isSet = true
+			end
+			self:VerboseLog("Event on Cooldown ".. tostring(i) ..": roll " .. tostring(rngRoll) .. " vs probability " .. tostring(prob) .." => ".. tostring(isSet))
 		end
-		self:VerboseLog("Event on Cooldown ".. tostring(i) ..": roll " .. tostring(rngRoll) .. " vs probability " .. tostring(prob) .." => ".. tostring(isSet))
 	end
 end
 
@@ -1159,7 +1171,27 @@ function dom_mananger:OnExecuteCooldownAfterSpawnTime( state, dt )
 			self.coolEventSpawnTime[i] = -1
 		end
 	end
-			
+
+	if ( self.cooldownTimer < self.waveRepeatTime and self.rules.waveRepeatChances ) then
+		if ( self.waveRepeated == nil ) then self.waveRepeated = 0 end
+		local rngRoll       = RandInt(0, 100)
+		local repeatChances = self.rules.waveRepeatChances[self.currentDifficultyLevel]
+		local repeatChance  = repeatChances[self.waveRepeated+1] or 0
+		self:VerboseLog("Wave Repeat ".. tostring(self.waveRepeated + 1) ..": chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll))
+		
+		if ( repeatChance > rngRoll) then
+			self:VerboseLog("Wave Repeat succesful")
+			if ( self:GetPauseAttacks() == true ) then  -- starts attack (depending on streaming state)
+				self.spawner:ChangeState( "dummy_state" )
+			else
+				self.spawner:ChangeState( "streaming" )
+			end
+			self.waveRepeated = self.waveRepeated + 1
+			self.eventsPerPrepareState = 0
+		else self.waveRepeatTime = -9999
+		end
+	end
+	
 	if ( self.cooldownTimer < 0 ) then
 		self.spawner:ChangeState( "idle" )
 	end
@@ -1177,11 +1209,11 @@ function dom_mananger:OnEnterIdle( state )
 	local stateDuration = self.rules.idleTime[self.currentDifficultyLevel]
 	self:VerboseLog("Idle time base ".. tostring(stateDuration))
 	
-	if (self.rules.idleTimeRelativeVariation > 0) then
-		local rngScale = (math.random()-0.5)*2*self.rules.idleTimeRelativeVariation
-		stateDuration = stateDuration + rngScale
+	if ((self.rules.idleTimeRelativeVariation or 0.35) > 0) then
+		local rngScale = (math.random()-0.5)*2*(self.rules.idleTimeRelativeVariation or 0.35)
+		stateDuration = stateDuration * (1 + rngScale)
 		self:VerboseLog("Idle time random scaling by ".. tostring(rngScale) .. " changing base ".. tostring(self.rules.idleTime[self.currentDifficultyLevel]) .." to ".. tostring(stateDuration))
-	elseif (self.rules.idleTimeCancelChance > math.random()*100) then
+	elseif ((self.rules.idleTimeCancelChance or 10)> math.random()*100) then
 		stateDuration = 120
 		self:VerboseLog("Idle time modifier: cancelled (down to 120)")
 	end
