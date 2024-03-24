@@ -1,6 +1,6 @@
-local building_base = require("lua/buildings/building_base.lua")
+local base_gate = require("lua/buildings/defense/wall_gate.lua")
 
-class 'wall_gate_energy' ( wall_gate )
+class 'wall_gate_energy' ( base_gate )
 
 --Hard-coded here because otherwise there will be 12 copies. Static because they will never change.
 --Search diameter
@@ -12,11 +12,11 @@ local decay_multiplier = -1.5
 
 
 function wall_gate_energy:__init()
-	building_base.__init(self,self)
+	base_gate.__init(self,self)
 end
 
 function wall_gate_energy:OnInit()
-	building_base.OnInit()
+	base_gate.OnInit(self)
 		
 	--Assign this Entity to a group for Map search purposes.
 	EntityService:SetGroup(self.entity, "energy_walls")
