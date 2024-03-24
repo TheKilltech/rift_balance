@@ -4878,6 +4878,12 @@ Research
 
 						ResearchAward
 						{
+							blueprint "buildings/resources/pipe_junction"
+							is_visible "0"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/resources/pipe_straight"
 							is_visible "1"
 						}
@@ -17103,7 +17109,7 @@ Research
 					position
 					{
 						x "45.000"
-						y "-180.000"
+						y "-189.000"
 					}
 
 					research_awards
@@ -17263,6 +17269,13 @@ Research
 							amount "0.000"
 							resource "analysis"
 							count "1000.000"
+						}
+
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "500.000"
 						}
 
 					}
@@ -22698,6 +22711,12 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/bio_processing_lvl_2"
@@ -23035,6 +23054,12 @@ Research
 						ResearchNodeRequirement
 						{
 							research_name "gui/menu/research/name/bio_processing"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							research_name "gui/menu/research/name/alien_research_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -23889,6 +23914,6 @@ Research
 
 	type
 	editor "5682"
-	version "117"
+	version "118"
 }
 
