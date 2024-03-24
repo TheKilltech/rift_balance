@@ -26,10 +26,10 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name 			"default"
-				building_time 	5
+				building_time 	10
 				building_cost
 				{
-					carbonium 	"10"
+					carbonium 	"25"
 					steel 		"10"
 				}
 			}
@@ -43,6 +43,16 @@ EntityBlueprint
 			I		"buildings/defense/wall_crystal_straight_01_lvl_2"
 
 		}
+	}
+
+	ResistanceComponent
+	{
+		physical		"1.0"
+		fire			"0.5"
+		acid			"0.5"
+		energy			"1.0"
+		cryo			"0.8"
+		area			"2.0"
 	}
 	
 	HealthDesc

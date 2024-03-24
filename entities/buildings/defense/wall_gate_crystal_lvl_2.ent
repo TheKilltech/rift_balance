@@ -28,20 +28,30 @@ EntityBlueprint
 		{
 			BuildingCostInfo
 			{
-				name "default"
-				building_time 5
+				name 			"default"
+				building_time 	10
 				building_cost
 				{
-					carbonium 	"50"
-					steel 		"50"
+					carbonium 	"25"
+					steel 		"10"
 				}
-			}		
+			}
 		}	
 	
 		connect
 		{
 			I		"buildings/defense/wall_gate_crystal_lvl_2"
 		}
+	}
+
+	ResistanceComponent
+	{
+		physical		"1.0"
+		fire			"0.5"
+		acid			"0.5"
+		energy			"1.0"
+		cryo			"0.8"
+		area			"2.0"
 	}
 	
 	LuaDesc

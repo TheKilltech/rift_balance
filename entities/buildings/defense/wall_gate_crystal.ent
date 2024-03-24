@@ -41,6 +41,16 @@ EntityBlueprint
 		}
 	}
 
+	ResistanceComponent
+	{
+		physical		"1.0"
+		fire			"0.5"
+		acid			"0.5"
+		energy			"1.0"
+		cryo			"0.8"
+		area			"2.0"
+	}
+
 	LuaDesc
 	{
 		script "lua/buildings/defense/wall_gate.lua"
