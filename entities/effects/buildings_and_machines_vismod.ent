@@ -49,6 +49,225 @@ EntityBlueprint "effects/no_lifetime"		//pylon3
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//lamp
+{
+	name "effects/buildings_and_machines/lamp"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/base_lamp.mesh"
+		material "buildings/decorations/base_lamp"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//lamp_blue
+{
+	name "effects/buildings_and_machines/lamp_blue"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/base_lamp.mesh"
+		material "buildings/decorations/base_lamp_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//lamp_cyan
+{
+	name "effects/buildings_and_machines/lamp_cyan"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/base_lamp.mesh"
+		material "buildings/decorations/base_lamp_cyan"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//lamp_green
+{
+	name "effects/buildings_and_machines/lamp_green"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/base_lamp.mesh"
+		material "buildings/decorations/base_lamp_green"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//lamp_orange
+{
+	name "effects/buildings_and_machines/lamp_orange"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/base_lamp.mesh"
+		material "buildings/decorations/base_lamp_orange"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//lamp_red
+{
+	name "effects/buildings_and_machines/lamp_red"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/base_lamp.mesh"
+		material "buildings/decorations/base_lamp_red"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//lamp_violet
+{
+	name "effects/buildings_and_machines/lamp_violet"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/base_lamp.mesh"
+		material "buildings/decorations/base_lamp_violet"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//lamp_yellow
+{
+	name "effects/buildings_and_machines/lamp_yellow"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/base_lamp.mesh"
+		material "buildings/decorations/base_lamp_yellow"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//futurelamp
+{
+	name "effects/buildings_and_machines/futurelamp"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/future_city_lamp_white.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/decorations/future_city"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/decorations/future_city_posters"
+			}
+		}
+		
+	}
+	
+}
+
+EntityBlueprint "effects/no_lifetime"		//bin
+{
+	name "effects/buildings_and_machines/bin"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/future_city_bins_01.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/decorations/future_city"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/decorations/future_city_posters"
+			}
+		}
+		
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//bins
+{
+	name "effects/buildings_and_machines/bins"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/future_city_bins_04.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/decorations/future_city"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/decorations/future_city_posters"
+			}
+		}
+		
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//wturbine1
 {
 	name "effects/buildings_and_machines/wturbine1"
@@ -110,6 +329,22 @@ EntityBlueprint "effects/no_lifetime"		//pipe
 	{
 		mesh "meshes/buildings/resources/pipe_ground.mesh"
 		material "buildings/resources/pipe_ground"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//pipe_s
+{
+	name "effects/buildings_and_machines/pipe_s"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/pipe_straight_windowless.mesh"
+		material "buildings/resources/pipe_straight_windowless"
 	}
 }
 
@@ -549,6 +784,66 @@ EntityBlueprint "effects/no_lifetime"		//energywall_s3
 				material "buildings/defense/wall_energy_lvl_3_energy"
 			}
 		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//futurewall_white
+{
+	name "effects/buildings_and_machines/futurewall_white"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/future_city_wall_white.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/decorations/future_city"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/decorations/future_city_posters"
+			}
+		}
+		
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//futurewall_cyan
+{
+	name "effects/buildings_and_machines/futurewall_cyan"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/future_city_wall_cyan.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/decorations/future_city"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/decorations/future_city_posters"
+			}
+		}
+		
 	}
 }
 
