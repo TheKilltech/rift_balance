@@ -1,0 +1,97 @@
+EntityBlueprint
+{
+	name  "buildings/defense/wall_gate_lvl_3"
+
+	base_blueprint 			buildings/defense/wall_gate_lvl_2
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"wall_gate_lvl_3"
+		bp   				"buildings/defense/wall_gate_lvl_3"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/wall_gate"
+		description			"gui/hud/building_description/wall_gate"
+		menu_icon			"gui/hud/building_icons/wall_gate_lvl3"
+		//upgrade				"buildings/defense/wall_gate_lvl_4"
+		require 			"headquarters"
+		order				"2"
+		type				"gate"
+		overrides			"wall,gate"
+		rotate_info			"1"
+		block_rotation 		"1"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		check_connect		"1"
+		building_group		"wall_gate"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"100"
+				}
+			}		
+		}	
+
+		connect
+		{
+			I		"buildings/defense/wall_gate_lvl_3"
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/defense/wall_gate.lua"
+
+
+		database
+		{
+		}
+
+	}
+
+	HealthDesc
+	{
+		max_health 					"2800"
+		health 						"2800"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_gate_lvl_3.mesh"
+		material "buildings/defense/wall_gate_lvl_3"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/wall_gate"
+	}
+}

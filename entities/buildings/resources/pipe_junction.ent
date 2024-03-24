@@ -1,0 +1,393 @@
+EntityBlueprint
+{
+	name  "buildings/resources/pipe_junction"
+
+	BuildingDesc
+	{
+		buildable 			"0"
+		name 				"pipe_junction"
+		bp   				"buildings/resources/pipe_junction"
+		localization_id		"gui/hud/building_name/pipe_junction"
+		description			"gui/hud/building_description/pipe_junction"
+		menu_icon			"gui/hud/building_icons/pipe_junction"
+		category 			"resources"
+		order				"8"
+		type				"pipe"
+		require 			"headquarters"
+		menu_action			"resource_clear"	
+		build_on_water		"1"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		//check_connect		"1"
+		//pipe_mode  			"1"
+		building_group		"pipeline"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 1
+				building_cost
+				{
+					carbonium 	"50"
+				}
+			}		
+		}
+	}
+	
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				group	 		"local"
+				max 	 		"1"
+				attachment		"att_in_1|att_in_3"
+			}
+
+			Storage
+			{
+				resource "energy"
+				max 	 "0"
+			}	
+		}
+	}
+
+	PipeComponent
+	{
+		attachment		"att_in_2,att_in_4"
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/resources/pipe_straight.lua"
+		
+		database
+		{
+			cone_effect			string:"build_cone_1x1"
+			cone_effect_sell	string:"sell_small"
+			building_time		float:"1"
+			postfix				string:"_storage"
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"200"
+		health 						"200"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 					"1"
+		update_health_uniform 		"1"
+	
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"				
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+	
+	ResistanceComponent
+	{
+		magma		"0"
+	}		
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/pipe_connector_x.mesh"
+		material "buildings/floor_yellow_1x1"
+	}
+
+	TypeDesc
+	{
+		type "building|resource"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/pipe_junction"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building_small"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x "2"
+						y "1.0"
+						z "2"
+							
+						position 
+						{
+							x "0.0"
+							y "0.5"
+							z "0.0"
+						}							
+					}
+				}
+			}
+		}
+	}
+
+	LocalAabbDesc
+	{
+		local_aabb
+		{
+			min
+			{
+				x "-1"
+				y "0"
+				z "-1"
+			}
+			max
+			{
+				x "1"
+				y "1"
+				z "1"
+			}	
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type          "building"
+		flow_field_size    "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsBoxShape
+			{
+					x	1.9
+					y	1.9
+					z	1.9
+			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color 
+		{
+			x "0.5"
+			y "0.5"
+			z "1"
+			w "1"
+		}
+		size
+		{
+			x "1"
+			y "1"
+		}
+		big_minimap_scale 	"1.9"
+		visibility			"always"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	DestroyDesc
+	{
+		
+		DestroyPatterns
+		{		
+			Pair
+			{
+				key "66_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_building_smoke_medium"
+				}	
+			}
+			Pair
+			{
+				key "33_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_building_smoke_medium"
+				}
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_building_smoke_medium"	
+					part_physics_material   "debris_heavy"	
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}
+
+				key "default"
+			}	
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"	
+					part_material 			"misc/building_parts_generic"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_lifetime "3"	
+				}
+
+				key "quicksand"
+			}				
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+	
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_3_arrow"
+				}
+			}
+		}
+		
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+
+		EffectGroup
+		{
+			group "att_in_4"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_4_arrow"
+				}
+			}
+		}
+		
+		//EffectGroup
+		//{
+		//	group "working"
+		//	enabled "1"				
+		//	delay "0"
+		//	
+		//	Effects
+		//	{
+		//		Effect
+		//		{
+		//			blueprint "effects/buildings_and_machines/building_arrow"								
+		//			bone "att_in_1"
+		//			scale	"0.4 0.4 0.4"
+		//		}
+		//		
+		//		Effect
+		//		{
+		//			blueprint "effects/buildings_and_machines/building_arrow"								
+		//			bone "att_in_2"
+		//			scale	"0.4 0.4 0.4"
+		//		}
+		//		
+		//		Effect
+		//		{
+		//			blueprint "effects/buildings_and_machines/building_arrow"								
+		//			bone "att_in_3"
+		//			scale	"0.4 0.4 0.4"
+		//		}
+		//		
+		//		Effect
+		//		{
+		//			blueprint "effects/buildings_and_machines/building_arrow"								
+		//			bone "att_in_4"
+		//			scale	"0.4 0.4 0.4"
+		//		}
+		//	}
+		//}
+	}
+}
