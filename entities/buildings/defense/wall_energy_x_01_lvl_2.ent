@@ -26,11 +26,11 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name			"default"
-				building_time	5
+				building_time	10
 				building_cost
 				{
-					carbonium	"10"
-					steel		"10"
+					carbonium	"15"
+					steel		"15"
 				}
 			}
 		}
@@ -55,6 +55,16 @@ EntityBlueprint
 			}			
 		}
 		priority 6
+	}
+
+	ResistanceComponent
+	{
+		physical		"2.5"
+		fire			"1.5"
+		acid			"1.5"
+		energy			"0.5"
+		cryo			"0.5"
+		area			"1.5"
 	}
 
 	LuaDesc
