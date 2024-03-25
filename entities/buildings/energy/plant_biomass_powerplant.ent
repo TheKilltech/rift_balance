@@ -14,6 +14,7 @@ EntityBlueprint
 		upgrade				"buildings/energy/plant_biomass_powerplant_lvl_2"		
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"plant_biomass_powerplant_lvl_2,plant_biomass_powerplant_lvl_3"
 		going_green_state	"2"
 
 		costs
@@ -47,7 +48,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"100"
+				value			 	"120"
 			}
 		}
 		priority 9

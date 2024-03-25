@@ -17,6 +17,7 @@ EntityBlueprint
 		upgrade				"buildings/energy/plant_biomass_powerplant_lvl_3"		
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"plant_biomass_powerplant,plant_biomass_powerplant_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		going_green_state	"2"
 		
 		costs
@@ -43,6 +44,21 @@ EntityBlueprint
 				resource 			"biomass_plant"
 				value			 	"1"
 			}
+			
+			GameplayResource
+			{
+				resource 			"sludge"
+				value			 	"10"
+				attachment			"att_in_1|att_in_2"
+				family				"in"
+			}
+			GameplayResource
+			{
+				resource 			"nitric_acid"
+				value			 	"2"
+				attachment			"att_in_1|att_in_2"
+				family				"in"
+			}
 		}
 		
 		out
@@ -50,7 +66,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"150"
+				value			 	"250"
 			}
 		}
 		priority 9
@@ -64,12 +80,22 @@ EntityBlueprint
 			Storage
 			{
 				resource "energy"
-				max 	 "150"
+				max 	 "500"
 			}
-			
+			Storage
+			{
+				group	 		"local"
+				max 	 		"20"
+				attachment		"att_in_1|att_in_2"
+			}
 		}
 	}
 
+	PipeComponent
+	{
+		attachment		"att_in_1,att_in_2"
+	}
+	
 	HealthDesc
 	{
 		max_health 					"1300"
@@ -134,7 +160,56 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-////////////////////////MISC/////////////////////////				
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone "att_in_pipe_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone "att_in_pipe_2"
+				}
+			}
+		}		
 		EffectGroup
 		{
 			group "working"
