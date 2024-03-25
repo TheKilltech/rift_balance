@@ -351,5 +351,17 @@ MissionDef
 			
             is_infinite        "1"
         }
+		
+		ResourceVolume
+        {
+            resource        "petroleum_deepvein"
+			required_discovery_lvl	"1"
+
+            min_resources   "5000"
+            max_resources   "8000"
+
+            min_spawned_volumes "1"
+            max_spawned_volumes "9"
+        }	
 	}
 }

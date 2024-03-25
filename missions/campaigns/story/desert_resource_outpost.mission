@@ -409,6 +409,32 @@ MissionDef
 			
             is_infinite        "1"
         }
+		
+		ResourceVolume
+        {
+            resource        "petroleum_deepvein"
+			required_discovery_lvl	"1"
+
+            min_resources   "5000"
+            max_resources   "8000"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+        }	
+		
+		ResourceVolume
+        {
+            resource        "petroleum_deepvein"
+			required_discovery_lvl	"1"
+
+            min_resources   "9999"
+            max_resources   "9999"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "4"
+			
+            is_infinite        "1"
+        }	
     }
 
     min_starting_distance "16.0"
