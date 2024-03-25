@@ -1,7 +1,7 @@
 return function()
     local rules = {}
 
-	rules.maxObjectivesAtOnce = 2
+	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 2
 	rules.eventsPerPrepareState = 1 -- [0,1]
 	rules.eventsPerPrepareStateChance = 15        -- chance to spawn events with objectives
@@ -25,7 +25,7 @@ return function()
 		{ action = "spawn_solar_eclipse",       type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 3,                    logicFile="logic/weather/solar_eclipse.logic",       minTime = 60, maxTime = 120, weight = 0.5 },
 		{ action = "spawn_super_moon",          type = "POSITIVE", gameStates="ATTACK|IDLE",           minEventLevel = 3,                    logicFile="logic/weather/super_moon.logic",          minTime = 60, maxTime = 120, weight = 0.5 },
 		{ action = "spawn_fog",                 type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 1,                    logicFile="logic/weather/fog.logic",                 minTime = 60, maxTime = 120 },
-		{ action = "shegret_attack",            type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 3,                    logicFile="logic/event/shegret_attack.logic",                                     weight = 8 },
+		{ action = "shegret_attack",            type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 3,                    logicFile="logic/event/shegret_attack.logic",                                     weight = 0.2 },
 		{ action = "spawn_rain",                type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 1,                    logicFile="logic/weather/rain.logic",                minTime = 120, maxTime = 120 },
 		{ action = "spawn_wind_weak",           type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 1,                    logicFile="logic/weather/wind_weak.logic",           minTime = 60, maxTime = 120 },
 		{ action = "spawn_wind_strong",         type = "POSITIVE", gameStates="ATTACK|IDLE",           minEventLevel = 1,                    logicFile="logic/weather/wind_strong.logic",         minTime = 60, maxTime = 120 },
@@ -57,15 +57,15 @@ return function()
 
 	rules.timeToNextDifficultyLevel = 
 	{			
-		200, -- difficulty level 1
-		200, -- difficulty level 2
-		200, -- difficulty level 3	
+		600, -- difficulty level 1
+		600, -- difficulty level 2
+		600, -- difficulty level 3	
 		600, -- difficulty level 4
 		1200, -- difficulty level 5
-		1200, -- difficulty level 6
-		1500, -- difficulty level 7
-		1500, -- difficulty level 8
-		1500, -- difficulty level 9
+		1800, -- difficulty level 6
+		3600, -- difficulty level 7
+		3600, -- difficulty level 8
+		7200, -- difficulty level 9
 	}
 
 	rules.prepareSpawnTime = 
@@ -112,11 +112,11 @@ return function()
 		600,  -- difficulty level 2
 		660,  -- difficulty level 3
 		720,  -- difficulty level 4	
-		780,  -- difficulty level 5	
-		1200,  -- difficulty level 6	
-		1200,  -- difficulty level 7
-		1200,  -- difficulty level 8	
-		1200,  -- difficulty level 9	
+		1200,  -- difficulty level 5	
+		1800,  -- difficulty level 6	
+		2400,  -- difficulty level 7
+		2400,  -- difficulty level 8	
+		2400,  -- difficulty level 9	
 	}
 
 	rules.maxAttackCountPerDifficulty = 
@@ -134,27 +134,27 @@ return function()
 	
 	rules.prepareAttackDefinitions =
 	{		
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 1		
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 2			
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 3				
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 4				
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 5					
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 6			
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 7			
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 8					
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 9		
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 1	
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 2	
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 3	
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 4	
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 5	
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 6	
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 7	
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 8	
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 9	
 	}
 
 	rules.wavesEntryDefinitions =
 	{		 
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 1		 
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 2			
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 3			
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 4				
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 5			
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 6					
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 7				
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 8					
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 1
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 2
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 3
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 4
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 5
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 6
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 7
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 8
 		"logic/dom/attack_level_1_entry.logic", -- difficulty level 9
 	}
 	
