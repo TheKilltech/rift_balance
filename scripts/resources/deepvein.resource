@@ -216,3 +216,19 @@ GameplayResourceDef
 
 	spawn_type			"single"
 }
+
+GameplayResourceDef
+{
+	id					"petroleum_deepvein"
+	localization_id 	"resource_name/petroleum_deepvein"
+	bp  				"resources/resource_petroleum_deepvein"
+	type 				"vein"
+	specific_type		"local"
+	ore					"petroleum"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/petroleum_pool"
+	bigger_icon			"gui/hud/resource_icons/petroleum_pool_bigger"
+	order   			"35"
+
+	spawn_type			"single"
+}

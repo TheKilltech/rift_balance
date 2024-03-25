@@ -38,7 +38,7 @@ EntityBlueprint
 			I		"buildings/resources/liquid_pumpjack"
 		}
 
-		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
+		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
 	}
 
 	ResourceConverterDesc
@@ -92,7 +92,13 @@ EntityBlueprint
 				value			 	"1"
 				family				"deep"
 			}
-			//
+			GameplayResource
+			{
+				resource 			"petroleum_deepvein"
+				specific_group		"local"
+				value			 	"1"
+				family				"deep"
+			}
 
 		}
 
@@ -129,6 +135,13 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"morphium"
+				value			 	"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"petroleum"
 				value			 	"100"
 				family				"deep"
 				attachment			"att_out_1"
