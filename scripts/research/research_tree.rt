@@ -10786,7 +10786,7 @@ Research
 								{
 									StringData
 									{
-										value "buildings/main/headquarters_lvl_3"
+										value "buildings/main/armory_lvl_3"
 										key "building_blueprint"
 									}
 
@@ -12231,7 +12231,7 @@ Research
 								{
 									StringData
 									{
-										value "buildings/main/headquarters_lvl_4"
+										value "buildings/main/armory_lvl_4"
 										key "building_blueprint"
 									}
 
@@ -17988,6 +17988,28 @@ Research
 
 						}
 
+						ResearchScript
+						{
+							script_name "lua/research/requirements/building_exists.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "buildings/main/laboratory_lvl_2"
+										key "building_blueprint"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+							}
+
+						}
+
 					}
 
 					position
@@ -18146,6 +18168,28 @@ Research
 
 								}
 
+							}
+
+						}
+
+						ResearchScript
+						{
+							script_name "lua/research/requirements/building_exists.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "buildings/main/laboratory"
+										key "building_blueprint"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
 							}
 
 						}
@@ -19379,6 +19423,28 @@ Research
 
 						}
 
+						ResearchScript
+						{
+							script_name "lua/research/requirements/building_exists.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "buildings/main/laboratory_lvl_4"
+										key "building_blueprint"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+							}
+
+						}
+
 					}
 
 					position
@@ -20326,6 +20392,28 @@ Research
 
 								}
 
+							}
+
+						}
+
+						ResearchScript
+						{
+							script_name "lua/research/requirements/building_exists.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "buildings/main/laboratory_lvl_3"
+										key "building_blueprint"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
 							}
 
 						}
@@ -25062,6 +25150,6 @@ Research
 
 	type
 	editor "5682"
-	version "120"
+	version "121"
 }
 
