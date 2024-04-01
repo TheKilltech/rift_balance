@@ -141,7 +141,7 @@ buildings/defense/tower_acid_spitter_lvl_2
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_liquid_lvl2"
+		ammo_storage "ammo_tower_liquid"
 		damage_type "acid"
 		rarity "EXTREME"
 		stat_def_vec
@@ -242,7 +242,7 @@ buildings/defense/tower_acid_spitter_lvl_3
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_liquid_lvl3"
+		ammo_storage "ammo_tower_liquid_lvl2"
 		damage_type "acid"
 		rarity "EXTREME"
 		stat_def_vec
@@ -734,7 +734,7 @@ buildings/defense/tower_artillery_lvl_2
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_explosive_lvl2"
+		ammo_storage "ammo_tower_explosive"
 		damage_type "area"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -819,7 +819,7 @@ buildings/defense/tower_artillery_lvl_3
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_explosive_lvl3"
+		ammo_storage "ammo_mech_explosive"
 		damage_type "area"
 		rarity "EXTREME"
 		stat_def_vec
@@ -1450,7 +1450,7 @@ buildings/defense/tower_cannon_incindiary
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_high_caliber_lvl3"
+		ammo_storage "ammo_tower_high_caliber_lvl2"
 		damage_type "fire"
 		rarity "EXTREME"
 		stat_def_vec
@@ -1577,7 +1577,7 @@ buildings/defense/tower_cannon_lvl_2
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_high_caliber_lvl2"
+		ammo_storage "ammo_tower_high_caliber"
 		damage_type "physical"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -1688,7 +1688,7 @@ buildings/defense/tower_cannon_lvl_3
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_high_caliber_lvl3"
+		ammo_storage "ammo_tower_high_caliber"
 		damage_type "cryo"
 		rarity "EXTREME"
 		stat_def_vec
@@ -1956,7 +1956,7 @@ buildings/defense/tower_flamer_lvl_2
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_liquid_lvl2"
+		ammo_storage "ammo_tower_liquid"
 		damage_type "fire"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -2035,7 +2035,7 @@ buildings/defense/tower_flamer_lvl_3
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_liquid_lvl3"
+		ammo_storage "ammo_tower_liquid_lvl2"
 		damage_type "fire"
 		rarity "EXTREME"
 		stat_def_vec
@@ -3023,7 +3023,7 @@ buildings/defense/tower_minigun_lvl_2
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_low_caliber_lvl2"
+		ammo_storage "ammo_tower_low_caliber"
 		damage_type "physical"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -3100,7 +3100,7 @@ buildings/defense/tower_minigun_lvl_3
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_low_caliber_lvl3"
+		ammo_storage "ammo_mech_low_caliber_lvl2"
 		damage_type "physical"
 		rarity "EXTREME"
 		stat_def_vec
@@ -3185,7 +3185,7 @@ buildings/defense/tower_minigun_platform
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_high_caliber_lvl2"
+		ammo_storage "ammo_tower_low_caliber"
 		damage_type "physical"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -3516,8 +3516,8 @@ buildings/defense/tower_portal
 		{
 			WeaponStatDef
 			{
-				max_value "0.200"
-				min_value "0.200"
+				max_value "0.100"
+				min_value "0.100"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
@@ -3548,8 +3548,8 @@ buildings/defense/tower_portal
 
 			WeaponStatDef
 			{
-				max_value "8.000"
-				min_value "8.000"
+				max_value "7.500"
+				min_value "7.500"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -3593,8 +3593,8 @@ buildings/defense/tower_portal_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "0.200"
-				min_value "0.200"
+				max_value "0.100"
+				min_value "0.100"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
@@ -3670,8 +3670,8 @@ buildings/defense/tower_portal_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "0.200"
-				min_value "0.200"
+				max_value "0.100"
+				min_value "0.100"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
@@ -3702,8 +3702,8 @@ buildings/defense/tower_portal_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "8.000"
-				min_value "8.000"
+				max_value "8.600"
+				min_value "8.600"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -4086,7 +4086,7 @@ buildings/defense/tower_rockets_lvl_2
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_explosive_lvl2"
+		ammo_storage "ammo_tower_explosive"
 		damage_type "area"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -4195,7 +4195,7 @@ buildings/defense/tower_rockets_lvl_3
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_explosive_lvl3"
+		ammo_storage "ammo_mech_explosive"
 		damage_type "area"
 		rarity "EXTREME"
 		stat_def_vec
