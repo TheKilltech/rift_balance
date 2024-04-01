@@ -43,6 +43,15 @@ EntityBlueprint
 			{
 				resource 		"flammable_gas"
 				value 			"50"
+				family			"fuel"
+				attachment		"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 		"petroleum"
+				value 			"50"
+				family			"fuel"
 				attachment		"att_in_1"
 			}
 			
@@ -51,7 +60,7 @@ EntityBlueprint
 				resource 		"fluorine"
 				value			"10"
 				attachment		"att_in_2"
-				family			"in"
+				family			"catalyst"
 			}
 			
 			GameplayResource
@@ -59,7 +68,7 @@ EntityBlueprint
 				resource 		"reagent"
 				value			"5"
 				attachment		"att_in_2"
-				family			"in"
+				family			"catalyst"
 			}
 		}
 		
