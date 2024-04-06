@@ -51,14 +51,14 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"plasma"
-				value 		"20"
+				value 		"10"
 				family		"charge"
 				attachment	"att_in_1"
 			}		
 			GameplayResource
 			{
 				resource 	"plasma_charged"
-				value 		"4"
+				value 		"2"
 				family		"charge"
 				attachment	"att_in_1"
 			}
@@ -121,6 +121,27 @@ EntityBlueprint
 	{
 	}
 
+	TurretDesc
+	{
+		target "ground_unit_large|ground_unit_medium|ground_unit"
+		target_ignore "invisible"
+		speed "150"
+		aim_volume "SphericalAimVolume"
+		{
+			range_min "0"
+			range_max "24"
+			aiming_range "30"
+		}
+
+		aiming_cooldown "1"
+		aiming_target_time "2"
+		aiming_idle_angle "20"
+		pitch "att_muzzle"
+		yaw "att_muzzle"
+		check_target_visibility "1"
+		fog_of_war_filtering "1"
+	}
+	
 	EffectDesc
 	{		
 		EffectBaseBlueprints

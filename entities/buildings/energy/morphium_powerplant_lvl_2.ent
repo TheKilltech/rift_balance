@@ -1,35 +1,36 @@
 EntityBlueprint
 {
-	name  					"buildings/energy/gas_powerplant_lvl_3"
-	base_blueprint 			"buildings/energy/gas_powerplant_lvl_2"
+	name  "buildings/energy/morphium_powerplant_lvl_2"
+	
+	base_blueprint buildings/energy/morphium_powerplant
 
 	BuildingDesc
 	{
-		buildable			"0"		
-		name 				"gas_powerplant_lvl_3"
-		bp   				"buildings/energy/gas_powerplant_lvl_3"
-		category 			"energy"
-		localization_id		"gui/hud/building_name/gas_powerplant"
-		description			"gui/hud/building_description/gas_powerplant"
-		menu_icon			"gui/hud/building_icons/gas_powerplant_lvl3"
-		type				"pipe"
-		require 			"headquarters"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		//upgrade				"buildings/energy/gas_powerplant_lvl_4"		
-		going_green_state	"1"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		buildable				"0"		
+		name 					"morphium_powerplant_lvl_2"
+		bp   					"buildings/energy/morphium_powerplant_lvl_2"
+		category 				"energy"
+		localization_id			"gui/hud/building_name/morphium_powerplant"
+		description				"gui/hud/building_description/morphium_powerplant"
+		menu_icon				"gui/hud/building_icons/morphium_powerplant_lvl2"
+		type					"pipe"
+		require 				"headquarters"
+		order					"11"		
+		upgrade					"buildings/energy/morphium_powerplant_lvl_3"
+		going_green_state		"1"
+		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
 			BuildingCostInfo
 			{
-				name "default"
-				building_time 120
+				name 			"default"
+				building_time 	120
 				building_cost
 				{
-					carbonium 	"800"
-					steel 		"500"
-					palladium	"100"
+					carbonium 	"350"		
+					steel 		"100"
+					cobalt 		"50"
 				}
 			}		
 		}
@@ -41,26 +42,9 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 		"flammable_gas"
-				value 			"50"
-				family			"fuel"
-				attachment		"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 		"petroleum"
-				value 			"50"
-				family			"fuel"
-				attachment		"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 		"reagent"
-				value			"5"
-				family			"catalyst"
-				attachment		"att_in_2"
+				resource 	"morphium"
+				value 		"200"
+				attachment	"att_in_1"
 			}
 		}
 		
@@ -69,11 +53,10 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"1200"
+				value 		"750"
 			}
 		}
-		priority 9		
-		reset_interval 0.5
+		priority 10
 	}
 
 	ResourceStorageDesc
@@ -83,7 +66,7 @@ EntityBlueprint
 			Storage
 			{
 				resource "energy"
-				max 	 "1200"
+				max 	 "750"
 			}
 			
 		}
@@ -91,11 +74,11 @@ EntityBlueprint
 
 	HealthDesc
 	{
-		max_health 					"3400"
-		health 						"3400"
+		max_health 					"2500"
+		health 						"2500"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
-		 is_manual 1
+		is_manual 					1
 		update_health_uniform 		"1"
 	
 
@@ -215,45 +198,20 @@ EntityBlueprint
 				}
 			}
 		}	
-		EffectGroup
-		{
-			group "att_in_2"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_2_arrow"
-				}
-			}
-		}	
 ////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
 			group "working"
 			enabled "0"				
+			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_big"								
-					bone "att_gas"
+					blueprint "effects/buildings_and_machines/morphium_powerplant_energy"								
+					bone "att_energy"
 					delay "1"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_energy/gas_powerplant_working"					
-					delay "1"
-				}	
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"								
-					bone "lightning"
-					delay "1"
-				}				
+				}						
 			}
 		}
 		EffectGroup
@@ -264,11 +222,15 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/level_3"
+					blueprint "effects/buildings_and_machines/level_2"
 					bone "att_level"
 				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/morphium_powerplant_working"		
+					delay "0.5"
+				}	
 			}
-		}			
+		}		
 	}
 }
-
