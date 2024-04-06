@@ -52,6 +52,12 @@ EntityBlueprint
 				resource 	"energy"
 				value 		"200"
 			}
+			
+			GameplayResource
+			{
+				resource 	"rhodonite"
+				value		"0.2"
+			}
 		}
 		
 		out
@@ -137,8 +143,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"0_transition"
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
-				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
-				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
 	}
@@ -148,7 +152,8 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}		
+		}	
+		////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
 			group "att_in_1"
@@ -178,22 +183,46 @@ EntityBlueprint
 					bone "att_out_arrow"
 				}
 			}
-		}	
-////////////////////////MISC/////////////////////////			
-		//EffectGroup
-		//{
-		//	group "working"
-		//	enabled "0"				
-		//	
-		//	Effects
-		//	{
-		//		Effect
-		//		{
-		//			blueprint "effects/buildings_and_machines/electric_machinery_big"								
-		//			bone "att_working"
-		//		}				
-		//	}
-		//}			
+		}
+		////////////////////////MISC/////////////////////////			
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_cube_trail"
+					bone "att_working"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_out_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_02"
+					bone  "att_vismod_2"
+					scale "0.86 0.7 1.2"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "level"

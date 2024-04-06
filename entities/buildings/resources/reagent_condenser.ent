@@ -17,9 +17,9 @@ EntityBlueprint
 		buildable			"0"
 		building_group		"reagent_refinery"
 		order				"30"	
-		//upgrade				"buildings/resources/reagent_condenser_lvl_2"
+		upgrade				"buildings/resources/reagent_condenser_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,reagent_condenser_lvl_2,reagent_condenser_lvl_3"
 		
 		costs
 		{
@@ -94,7 +94,7 @@ EntityBlueprint
 		{
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
-			building_time		float:"10"
+			building_time		float:"25"
 		}		
 	}
 
@@ -159,8 +159,8 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh 		"meshes/buildings/main/quantum_gate_stabilizer.mesh"
-		material 	"buildings/main/quantum_gate_stabilizer"
+		mesh "meshes/buildings/resources/plasma_converter.mesh"
+		material "buildings/resources/plasma_converter"
 	}
 
 	TypeDesc
@@ -170,7 +170,7 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/reagent_condenser"
+		name "meshes/buildings/resources/plasma_converter"
 	}
 
 	AnimationGraphDesc
@@ -179,7 +179,7 @@ EntityBlueprint
 	}
 
 	PhysicsDesc
-	{
+ 	{
 		objects
 		{
 			PhysicsObjectDesc
@@ -189,31 +189,22 @@ EntityBlueprint
 				physics_material 	"default"
 				Shapes
 				{
-					PhysicsCapsuleShape
+					PhysicsSphereShape
 					{
-						r "1.45"
-						half_height "2"
-
-						position
+						r "2.45"
+	
+						position 
 						{
 							x "0.0"
-							y "2"
+							y "1.0"
 							z "0.0"
 						}
-
-						orientation
-						{
-							w "0.7"
-							x "0.0"
-							z "0.7"
-							y "0.0"
-						}
-					}
+					}		
 				}
 			}
 		}
 	}
-
+	
 	NodeCullerDesc
 	{
 		nav_mesh_cull_type "1"
@@ -227,7 +218,7 @@ EntityBlueprint
 		{
 			PhysicsMeshShape
 			{
-				mesh "meshes/buildings/resources/water_filtering_plant_g1.nxs"
+				mesh "meshes/buildings/resources/gas_filtering_plant_g1.nxs"
 			}	
 		}
 	}
@@ -410,65 +401,5 @@ EntityBlueprint
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////			
-		EffectGroup
-		{
-			group "working"
-			enabled "0"				
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_cube_trail"
-					bone "att_working"
-				}
-				//Effect
-				//{
-				//	blueprint "effects/buildings_main/rift_small_rotor"
-				//	bone "att_small_rotor_1"
-				//}		
-				//Effect
-				//{
-				//	blueprint "effects/buildings_main/rift_small_rotor"
-				//	bone "att_small_rotor_2"
-				//}	
-				//Effect
-				//{
-				//	blueprint "effects/buildings_main/rift_small_rotor"
-				//	bone "att_small_rotor_3"
-				//}
-			}
-		}
-		EffectGroup
-		{
-			group "vismod"
-			enabled "1"
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_out_pipe"
-				}
-				//Effect
-				//{
-				//	blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_03"
-				//	bone  "att_vismod_1"
-				//	scale "0.5 0.5 0.5"
-				//}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_02"
-					bone  "att_vismod_2"
-					scale "0.86 0.7 1.2"
-				}
-			}
-		}			
 	}
 }
