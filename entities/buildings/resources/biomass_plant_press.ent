@@ -2,7 +2,6 @@ EntityBlueprint
 {
 	name  "buildings/resources/biomass_plant_press"
 
-
 	BuildingDesc
 	{
 		name 				"biomass_plant_press"
@@ -11,12 +10,14 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/biomass_plant_press"
 		description			"gui/hud/building_description/biomass_plant_press"
 		menu_icon			"gui/hud/building_icons/biomass_plant_press"
-		order				"14"
-		//upgrade				"buildings/resources/biomass_water_press_lvl_2"
+		type				"pipe"
+		upgrade				"buildings/resources/biomass_plant_press_lvl_2"
 		require 			"headquarters"
-		building_group		"water_filtering_plant"
-		buildable			"0"
+		//building_group		"water_filtering_plant"
+		buildable			"1"
+		order				"19"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{
@@ -26,8 +27,8 @@ EntityBlueprint
 				building_time 18
 				building_cost
 				{
-					carbonium 	"400"
-					steel 		"600"
+					carbonium 	"300"
+					steel 		"100"
 				}
 			}		
 		}
@@ -56,7 +57,7 @@ EntityBlueprint
 			{
 				resource 			"sludge"
 				value				"50"
-				attachment			"att_out_1"				
+				attachment			"att_out_1"	
 			}		
 		}
 		priority 9		
@@ -371,12 +372,12 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////					
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
@@ -386,7 +387,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"								
+					blueprint "effects/buildings_and_machines/gas_chimney_small"
 					bone "att_chimney"
 					delay "1"
 				}
