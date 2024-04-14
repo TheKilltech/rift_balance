@@ -1,21 +1,23 @@
 EntityBlueprint
 {
-	name  "buildings/resources/ionizer"
+	name  "buildings/resources/gas_ionizer"
 
 	BuildingDesc
 	{
-		name 				"ionizer"
-		bp   				"buildings/resources/ionizer"
+		name 				"gas_ionizer"
+		bp   				"buildings/resources/gas_ionizer"
 		category 			"resources"
 		type				"pipe"
-		localization_id		"gui/hud/building_name/ionizer"
-		description			"gui/hud/building_description/ionizer"
-		menu_icon			"gui/hud/building_icons/ionizer"
+		localization_id		"gui/hud/building_name/gas_ionizer"
+		description			"gui/hud/building_description/gas_ionizer"
+		menu_icon			"gui/hud/building_icons/gas_ionizer"
 		require 			"headquarters"
-		upgrade				"buildings/resources/ionizer_lvl_2"			
-		order				"17"
+		building_group		"ionizer"
+		buildable			"0"
+		upgrade				"buildings/resources/gas_ionizer_lvl_2"
+		order				"20"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"ionizer_lvl_2,ionizer_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"gas_ionizer_lvl_2,gas_ionizer_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -27,7 +29,7 @@ EntityBlueprint
 				{
 					carbonium 	"500"
 					steel 		"2500"
-					ai			"2"
+					ai			"1"
 				}
 			}		
 		}
@@ -40,13 +42,22 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"energy"
-				value			"80"
+				value			"150"
 			}
 			GameplayResource
 			{
-				resource 		"tanzanite"
-				value			"1"
-			}		
+				resource 		"flammable_gas"
+				family			"gas"
+				value 			"50"
+				attachment		"att_in_1|att_in_3"
+			}
+			GameplayResource
+			{
+				resource 		"fluorine"
+				family			"gas"
+				value 			"30"
+				attachment		"att_in_1|att_in_3"
+			}
 		}
 		
 		out
@@ -58,7 +69,7 @@ EntityBlueprint
 				attachment		"att_out_1"
 			}	
 		}
-		priority 4			
+		priority 4
 	}
 	
 	ResourceStorageDesc
@@ -71,10 +82,26 @@ EntityBlueprint
 				max 	 		"100"
 				attachment		"att_out_1"
 			}	
-			
+			Storage
+			{
+				resource	 	"flammable_gas"
+				max 	 		"20"
+				attachment		"att_in_1|att_in_3"
+			}
+			Storage
+			{
+				resource		"fluorine"
+				max 	 		"20"
+				attachment		"att_in_1|att_in_3"
+			}
 		}
 	}	
-
+	
+	PipeComponent
+	{
+		attachment		"att_in_1,att_in_3"
+	}
+	
 	LuaDesc
 	{
 		script "lua/buildings/building.lua"
@@ -145,7 +172,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"0_transition"
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
-				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 			}			
 		}
 	}
@@ -363,7 +389,37 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_3_arrow"
+				}
+			}
+		}	
 		EffectGroup
 		{
 			group "att_out_1"
@@ -374,11 +430,11 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
-		}
+		}	
 		////////////////////////MISC/////////////////////////	
 		EffectGroup
 		{
@@ -388,9 +444,27 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint	"effects/buildings_and_machines/crystal_vs1_violet"
-					bone 		"att_vismod_2"
-					scale		"0.8 0.7 0.8"
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_3_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pump"
+					bone 	"att_vismod_3"
+					scale		"0.7 0.7 0.7"
+					offset		"0 -0.35 0.2"
+					orientation "0 90 0"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_very_small_white_01"
+					bone 		"att_vismod_4"
+					scale		"0.7 1.05 0.7"
 				}
 			}
 		}	

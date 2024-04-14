@@ -1,21 +1,23 @@
 EntityBlueprint
 {
-	name			"buildings/resources/ionizer_lvl_3"
-	base_blueprint	"buildings/resources/ionizer_lvl_2"
+	name			"buildings/resources/gas_ionizer_lvl_2"
+	base_blueprint	"buildings/resources/gas_ionizer"
 
 	BuildingDesc
 	{
-		buildable			"0"		
-		name 				"ionizer_lvl_3"
-		bp   				"buildings/resources/ionizer_lvl_3"
+		name 				"gas_ionizer_lvl_2"
+		bp   				"buildings/resources/gas_ionizer_lvl_2"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/ionizer"
-		description			"gui/hud/building_description/ionizer_lvl_3"
-		menu_icon			"gui/hud/building_icons/ionizer_lvl_3"
-		order				"17"
+		localization_id		"gui/hud/building_name/gas_ionizer"
+		description			"gui/hud/building_description/gas_ionizer"
+		menu_icon			"gui/hud/building_icons/gas_ionizer_lvl_2"
+		order				"21"
+		upgrade				"buildings/resources/gas_ionizer_lvl_3"		
 		require 			"headquarters"
+		building_group		"ionizer"
+		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"ionizer,ionizer_lvl_2,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"gas_ionizer,gas_ionizer_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -26,8 +28,8 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"500"
-					steel 		"2000"
-					cobalt		"1000"
+					steel 		"2000"			
+					palladium	"350"
 				}
 			}		
 		}
@@ -40,23 +42,25 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"energy"
-				value			"250"
+				value			"300"
 			}
 			GameplayResource
 			{
 				resource 		"carbonium"
-				value			"3"
+				value			"2"
 			}		
 			GameplayResource
 			{
-				resource 		"tanzanite"
-				value			"1"
-			}	
+				resource 		"flammable_gas"
+				family			"gas"
+				value 			"50"
+				attachment		"att_in_1|att_in_3"
+			}
 			GameplayResource
 			{
-				resource 		"reagent"
+				resource 		"fluorine"
 				family			"gas"
-				value 			"25"
+				value 			"30"
 				attachment		"att_in_1|att_in_3"
 			}
 		}
@@ -66,9 +70,21 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"plasma"
-				value 			"200"
+				value 			"75"
 				attachment		"att_out_1"
 			}	
+			Storage
+			{
+				resource	 	"flammable_gas"
+				max 	 		"20"
+				attachment		"att_in_1|att_in_3"
+			}
+			Storage
+			{
+				resource		"fluorine"
+				max 	 		"20"
+				attachment		"att_in_1|att_in_3"
+			}
 		}
 		priority 4			
 	}
@@ -80,12 +96,12 @@ EntityBlueprint
 			Storage
 			{
 				resource	 	"plasma"
-				max 	 		"400"
+				max 	 		"200"
 				attachment		"att_out_1"
 			}	
 			Storage
 			{
-				resource	 	"reagent"
+				group	 		"local"
 				max 	 		"20"
 				attachment		"att_in_1|att_in_3"
 			}
@@ -94,8 +110,8 @@ EntityBlueprint
 	
 	HealthDesc
 	{
-		max_health 					"1800"
-		health 						"1800"
+		max_health 					"1500"
+		health 						"1500"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -202,7 +218,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow"								
 					bone "att_out_arrow"
 				}
 			}
@@ -211,7 +227,7 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"	
+			enabled "1"			
 			Effects
 			{
 				Effect
@@ -226,16 +242,17 @@ EntityBlueprint
 				}
 				Effect
 				{
-					blueprint	"effects/buildings_and_machines/futurewall_cyan"
-					bone 		"att_vismod_1"
-					scale		"0.5 0.35 0.7"
+					blueprint	"effects/buildings_and_machines/pump2"
+					bone 		"att_vismod_3"
+					offset		"-0.2 -0.28 0.1"
+					scale		"0.6 0.6 0.6"
 					orientation "0 90 0"
 				}
 				Effect
 				{
-					blueprint	"effects/buildings_and_machines/crystal_vs1_violet"
-					bone 		"att_vismod_2"
-					scale		"0.8 0.7 0.8"
+					blueprint	"effects/buildings_and_machines/scifi_structure_very_small_white_01"
+					bone 		"att_vismod_4"
+					scale		"0.7 1.05 0.7"
 				}
 			}
 		}	
@@ -247,7 +264,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/level_3"
+					blueprint "effects/buildings_and_machines/level_2"
 					bone "att_level"
 				}
 			}

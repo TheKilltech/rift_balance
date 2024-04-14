@@ -16,6 +16,7 @@ EntityBlueprint
 		upgrade				"buildings/resources/ionizer_lvl_3"		
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"ionizer,ionizer_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -26,8 +27,8 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"500"
-					steel 		"2000"			
-					palladium	"1000"
+					steel 		"2000"
+					cobalt		"850"
 				}
 			}		
 		}
@@ -40,24 +41,18 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"energy"
-				value			"350"
+				value			"160"
 			}
 			GameplayResource
 			{
 				resource 		"carbonium"
-				value			"2"
+				value			"3"
 			}		
 			GameplayResource
 			{
 				resource 		"tanzanite"
-				value			"0.4"
-			}			
-			GameplayResource
-			{
-				resource 		"flammable_gas"
-				value 			"50"
-				attachment		"att_in_1|att_in_3"
-			}	
+				value			"1"
+			}
 		}
 		
 		out
@@ -90,11 +85,6 @@ EntityBlueprint
 			}
 		}
 	}	
-	
-	PipeComponent
-	{
-		attachment		"att_in_1,att_in_3"
-	}
 	
 	HealthDesc
 	{
@@ -165,37 +155,7 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////			
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_1_arrow"
-				}
-			}
-		}	
-		EffectGroup
-		{
-			group "att_in_3"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_3_arrow"
-				}
-			}
-		}	
+		////////////////////////Resources/////////////////////////	
 		EffectGroup
 		{
 			group "att_out_1"
@@ -227,6 +187,19 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_3_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/futurewall_cyan"
+					bone 		"att_vismod_1"
+					scale		"0.5 0.35 0.7"
+					orientation "0 90 0"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/crystal_vs1_violet"
+					bone 		"att_vismod_2"
+					scale		"0.8 0.7 0.8"
 				}
 			}
 		}	
