@@ -268,6 +268,54 @@ EntityBlueprint "effects/no_lifetime"		//bins
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//pump
+{
+	name "effects/buildings_and_machines/pump"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/liquid_pump_lvl_1.mesh"
+		material "buildings/resources/liquid_pump_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//pump2
+{
+	name "effects/buildings_and_machines/pump2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/liquid_pump_lvl_2.mesh"
+		material "buildings/resources/liquid_pump_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//pump3
+{
+	name "effects/buildings_and_machines/pump3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/liquid_pump_lvl_3.mesh"
+		material "buildings/resources/liquid_pump_lvl_3"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//wturbine1
 {
 	name "effects/buildings_and_machines/wturbine1"
@@ -1320,9 +1368,9 @@ EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_orange_03
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_01
+EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_orange_01
 {
-	name "effects/buildings_and_machines/scifi_structure_medium_white_01"
+	name "effects/buildings_and_machines/scifi_structure_medium_orange_01"
 
 	IdDesc
 	{
@@ -1332,13 +1380,13 @@ EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_01
 	MeshDesc
 	{
 		mesh "meshes/buildings/decorations/scifi_structure_medium_01.mesh"
-		material 	"buildings/decorations/scifi_structure_white"
+		material 	"buildings/decorations/scifi_structure_orange"
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_02
+EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_orange_02
 {
-	name "effects/buildings_and_machines/scifi_structure_medium_white_02"
+	name "effects/buildings_and_machines/scifi_structure_medium_orange_02"
 
 	IdDesc
 	{
@@ -1348,13 +1396,13 @@ EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_02
 	MeshDesc
 	{
 		mesh "meshes/buildings/decorations/scifi_structure_medium_02.mesh"
-		material 	"buildings/decorations/scifi_structure_white"
+		material 	"buildings/decorations/scifi_structure_orange"
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_03
+EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_orange_03
 {
-	name "effects/buildings_and_machines/scifi_structure_medium_white_03"
+	name "effects/buildings_and_machines/scifi_structure_medium_orange_03"
 
 	IdDesc
 	{
@@ -1364,7 +1412,55 @@ EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_03
 	MeshDesc
 	{
 		mesh "meshes/buildings/decorations/scifi_structure_medium_03.mesh" // tower
-		material 	"buildings/decorations/scifi_structure_white"
+		material 	"buildings/decorations/scifi_structure_orange"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//crystal_vs1_violet
+{
+	name "effects/buildings_and_machines/crystal_vs1_violet"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		material "buildings/decorations/crystal_structure_violet"
+		mesh "meshes/buildings/decorations/crystal_structure_very_small_01.mesh"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//crystal_vs2_violet
+{
+	name "effects/buildings_and_machines/crystal_vs2_violet"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		material "buildings/decorations/crystal_structure_violet"
+		mesh "meshes/buildings/decorations/crystal_structure_very_small_02.mesh"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//crystal_vs3_violet
+{
+	name "effects/buildings_and_machines/crystal_vs3_violet"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		material "buildings/decorations/crystal_structure_violet"
+		mesh "meshes/buildings/decorations/crystal_structure_very_small_03.mesh"
 	}
 }
 
