@@ -1205,7 +1205,8 @@ end
 
 function dom_mananger:OnEnterIdle( state )
 	self:VerboseLog("OnEnterIdle" )
-
+	CampaignService:OperateDOMPlanetaryJump( true ) -- just in case, planetary travel is stuck due to a bug
+	
 	local stateDuration = self.rules.idleTime[self.currentDifficultyLevel]
 	self:VerboseLog("Idle time base ".. tostring(stateDuration))
 	
