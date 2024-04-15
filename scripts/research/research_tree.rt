@@ -28,7 +28,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "3000.000"
+							count "1000.000"
 						}
 
 					}
@@ -44,7 +44,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/solid_material_storage_lvl_2"
+							blueprint "buildings/resources/solid_material_storage_rare"
 							is_visible "1"
 						}
 
@@ -2623,7 +2623,7 @@ Research
 
 						ResearchAward
 						{
-							blueprint "buildings/resources/solid_material_storage"
+							blueprint "buildings/resources/solid_material_storage_basic"
 							is_visible "1"
 						}
 
@@ -2646,7 +2646,7 @@ Research
 
 						ResearchNodeRequirement
 						{
-							research_name "gui/menu/research/name/headquarters_lvl6"
+							research_name "gui/menu/research/name/headquarters_lvl5"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -2659,7 +2659,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "5000.000"
+							count "1500.000"
 						}
 
 					}
@@ -2668,14 +2668,14 @@ Research
 					position
 					{
 						x "90.000"
-						y "198.000"
+						y "36.000"
 					}
 
 					research_awards
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/solid_material_storage_lvl_3"
+							blueprint "buildings/resources/solid_material_storage_other"
 							is_visible "1"
 						}
 
@@ -3525,7 +3525,7 @@ Research
 					position
 					{
 						x "63.000"
-						y "54.000"
+						y "90.000"
 					}
 
 					research_awards
@@ -25671,7 +25671,7 @@ Research
 
 					}
 
-					icon "gui/menu/research/icons/research_station_big"
+					icon "gui/menu/research/icons/research_station"
 				}
 
 				ResearchNode
@@ -25774,6 +25774,6 @@ Research
 
 	type
 	editor "5682"
-	version "124"
+	version "126"
 }
 
