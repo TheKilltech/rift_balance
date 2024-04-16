@@ -1,0 +1,228 @@
+EntityBlueprint
+{
+	name 			"buildings/resources/supercoolant_chem_plant_lvl_2"
+	base_blueprint	"buildings/resources/supercoolant_chem_plant"
+
+	BuildingDesc
+	{
+		name 				"supercoolant_chem_plant_lvl_2"
+		bp   				"buildings/resources/supercoolant_chem_plant_lvl_2"
+		category 			"resources"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/supercoolant_chem_plant"
+		description			"gui/hud/building_description/supercoolant_chem_plant"
+		menu_icon			"gui/hud/building_icons/supercoolant_chem_plant_lvl_2"
+		require 			"headquarters"
+		building_group		"supercoolant_refinery"
+		buildable			"0"
+		upgrade				"buildings/resources/supercoolant_chem_plant_lvl_3"
+		order				"19"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"supercoolant_chem_plant,supercoolant_chem_plant_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 60
+				building_cost
+				{
+					carbonium 	"900"
+					steel 		"1600"
+					cobalt		"200"
+					ai			"1"
+				}
+			}		
+		}	
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"180"
+			}
+			GameplayResource
+			{
+				resource 			"flammable_gas"
+				value 				"50"
+				attachment			"att_in_1|att_in_2"
+			}	
+			GameplayResource
+			{
+				resource 			"fluorine"
+				family				"in2"
+				value 				"15"
+				attachment			"att_in_3"
+			}	
+			GameplayResource
+			{
+				resource 			"reagent"
+				family				"in2"
+				value 				"5"
+				attachment			"att_in_3"
+			}	
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value 				"1"
+			}	
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"100"
+				attachment	"att_out_1"
+			}	
+		}
+		priority 4			
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource	 "supercoolant"
+				max 	 	 "50"
+				attachment	 "att_out_1"
+			}
+			Storage
+			{
+				group	 	"local"
+				max 	 	"20"
+				attachment	"att_in_1|att_in_2"
+			}
+		}
+	}	
+
+	PipeComponent
+	{
+		attachment		"att_in_1,att_in_2"
+	}
+	
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////	
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_3_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_3_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pump3"
+					bone 	"att_vismod_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pump3"
+					bone 	"att_vismod_3"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}
+	}
+}
+

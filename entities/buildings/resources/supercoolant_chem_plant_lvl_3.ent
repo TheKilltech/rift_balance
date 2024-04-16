@@ -1,24 +1,23 @@
 EntityBlueprint
 {
-	name 			"buildings/resources/supercoolant_refinery_basic"
-	base_blueprint	"buildings/resources/supercoolant_refinery"
+	name 			"buildings/resources/supercoolant_chem_plant_lvl_3"
+	base_blueprint	"buildings/resources/supercoolant_chem_plant_lvl_2"
 
 	BuildingDesc
 	{
-		name 				"supercoolant_refinery_basic"
-		bp   				"buildings/resources/supercoolant_refinery_basic"
+		name 				"supercoolant_chem_plant_lvl_3"
+		bp   				"buildings/resources/supercoolant_chem_plant_lvl_3"
 		category 			"resources"
 		type				"pipe"
-		localization_id		"gui/hud/building_name/supercoolant_refinery_basic"
-		description			"gui/hud/building_description/supercoolant_refinery_basic"
-		menu_icon			"gui/hud/building_icons/supercoolant_refinery"
+		localization_id		"gui/hud/building_name/supercoolant_chem_plant"
+		description			"gui/hud/building_description/supercoolant_chem_plant"
+		menu_icon			"gui/hud/building_icons/supercoolant_chem_plant_lvl_3"
 		require 			"headquarters"
 		building_group		"supercoolant_refinery"
 		buildable			"0"
-		//upgrade				"buildings/resources/supercoolant_refinery_lvl_2"			
-		order				"16"
+		order				"20"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"supercoolant_chem_plant,supercoolant_chem_plant_lvl_2,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -28,10 +27,9 @@ EntityBlueprint
 				building_time 60
 				building_cost
 				{
-					carbonium 	"500"
-					steel 		"1500"
-					cobalt		"200"
-					ai			"2"
+					carbonium 	"1200"
+					steel 		"2500"
+					cobalt		"500"
 				}
 			}		
 		}	
@@ -44,19 +42,25 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"150"
+				value			 	"260"
 			}
 			GameplayResource
 			{
 				resource 			"flammable_gas"
 				value 				"50"
 				attachment			"att_in_1|att_in_2"
+			}
+			GameplayResource
+			{
+				resource 			"reagent"
+				family				"in2"
+				value 				"5"
+				attachment			"att_in_3"
 			}	
 			GameplayResource
 			{
-				resource 			"fluorine"
-				value 				"10"
-				attachment			"att_in_3"
+				resource 			"ammonium"
+				value 				"1"
 			}	
 		}
 		
@@ -65,11 +69,11 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"supercoolant"
-				value 		"25"
+				value 		"75"
 				attachment	"att_out_1"
 			}	
 		}
-		priority 4			
+		priority 4
 	}
 
 	ResourceStorageDesc
@@ -79,7 +83,7 @@ EntityBlueprint
 			Storage
 			{
 				resource	 "supercoolant"
-				max 	 	 "50"
+				max 	 	 "150"
 				attachment	 "att_out_1"
 			}
 			Storage
@@ -102,7 +106,7 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////	
 		EffectGroup
 		{
 			group "att_in_1"
@@ -158,7 +162,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"	
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
@@ -196,7 +200,20 @@ EntityBlueprint
 					bone 	"att_vismod_3"
 				}
 			}
-		}	
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
 	}
 }
 
