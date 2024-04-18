@@ -18,7 +18,7 @@ EntityBlueprint
 		//upgrade				"buildings/resources/water_filtering_plant_lvl_4"
 		order				"10"	
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"water_filtering_plant,water_filtering_plant_lvl_2,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -56,9 +56,30 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"sludge"
-				value			 	"200"
+				value			 	"100"
 				attachment			"att_in_1"
 				family				"in"
+			}
+			
+			GameplayResource
+			{
+				resource 			"fluorine"
+				family				"purifier"
+				value 				"5"
+				attachment			"att_in_3"
+			}	
+			GameplayResource
+			{
+				resource 			"reagent"
+				family				"purifier"
+				value 				"1"
+				attachment			"att_in_3"
+			}	
+			
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value			 	"0.2"
 			}
 		}
 		
@@ -84,8 +105,19 @@ EntityBlueprint
 				max 	 		"400"
 				attachment		"att_out_1"
 			}
+			Storage
+			{
+				group	 	"local"
+				max 	 	"20"
+				attachment	"att_in_2|att_in_3"
+			}
 		}
 	}	
+
+	PipeComponent
+	{
+		attachment		"att_in_2,att_in_3"
+	}
 
 	HealthDesc
 	{
@@ -152,7 +184,7 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
 			group "att_in_1"
@@ -165,6 +197,36 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"								
 					bone "att_in_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_3_arrow"
 				}
 			}
 		}	
@@ -183,7 +245,32 @@ EntityBlueprint
 				}
 			}
 		}
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_3_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/blaster" //"effects/buildings_and_machines/pump3"
+					bone		"att_vismod_2"
+					orientation	"0 90 0"
+					scale		"1.9 1.3 1.3"
+				}
+			}
+		}			
 		EffectGroup
 		{
 			group "working"

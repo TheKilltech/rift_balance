@@ -18,7 +18,7 @@ EntityBlueprint
 		upgrade				"buildings/resources/water_filtering_plant_lvl_3"
 		order				"10"	
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"	
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"		
+		overrides			"water_filtering_plant,water_filtering_plant_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"		
 		
 		costs
 		{
@@ -60,6 +60,12 @@ EntityBlueprint
 				attachment			"att_in_1"
 				family				"in"
 			}
+			
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value			 	"0.4"
+			}
 		}
 		
 		out
@@ -67,7 +73,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"water"
-				value 				"75"
+				value 				"100"
 				attachment			"att_out_1"
 			}
 		}
