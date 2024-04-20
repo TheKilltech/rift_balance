@@ -275,17 +275,17 @@ function dom_mananger:LogicFilesSanityCheck()
 
 	self:VerboseLog(" ------- LogicFilesSanityCheck ------- " )
 
-	local failedLogicFile = {}
+	local failedLogicFileTable = {}
 
-	self:LogicEntryTableCheck( self.rules.buildingsUpgradeStartsLogic, "rules.buildingsUpgradeStartsLogic : ", failedLogicFile )
-	self:LogicEntryTableCheck( self.rules.majorAttackLogic, "rules.majorAttackLogic : ", failedLogicFile )
+	self:LogicEntryTableCheck( self.rules.buildingsUpgradeStartsLogic, "rules.buildingsUpgradeStartsLogic : ", failedLogicFileTable )
+	self:LogicEntryTableCheck( self.rules.majorAttackLogic, "rules.majorAttackLogic : ", failedLogicFileTable )
 
 	for data in Iter( self.rules.objectivesLogic ) do 
 
 		if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.name ) ) then
 			local log = "rules.objectivesLogic : " .. data.name
 
-			table.insert( failedLogicFile, log )
+			table.insert( failedLogicFileTable, log )
 			log = log .. " NOT EXIST"
 			LogService:Log( log )
 		end
@@ -295,7 +295,7 @@ function dom_mananger:LogicFilesSanityCheck()
 		if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.name ) ) then
 			local log = "rules.wavesEntryDefinitions : " .. data.name
 
-			table.insert( failedLogicFile, log )
+			table.insert( failedLogicFileTable, log )
 			log = log .. " NOT EXIST"			
 			LogService:Log( log )
 		end
@@ -314,7 +314,7 @@ function dom_mananger:LogicFilesSanityCheck()
 			if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.name ) ) then
 				local log = "rules.prepareAttackDefinitions : " .. data.name 
 
-				table.insert( failedLogicFile, log )
+				table.insert( failedLogicFileTable, log )
 				log = log .. " NOT EXIST"			
 				LogService:Log( log )
 			end	
@@ -346,13 +346,13 @@ function dom_mananger:LogicFilesSanityCheck()
 		end
 	end
 
-	self:LogicTableCheck( self.rules.extraWaves, "rules.extraWaves", failedLogicFile )
-	self:LogicTableCheck( self.rules.bosses, "rules.bosses", failedLogicFile )
+	self:LogicTableCheck( self.rules.extraWaves, "rules.extraWaves", failedLogicFileTable )
+	self:LogicTableCheck( self.rules.bosses, "rules.bosses", failedLogicFileTable )
 
 
-	if ( #failedLogicFile > 0 ) then
+	if ( #failedLogicFileTable > 0 ) then
 		local log = ""
-		for data in Iter( failedLogicFile ) do 
+		for data in Iter( failedLogicFileTable ) do 
 			log = log .. data .. " "
 		end
 
@@ -389,7 +389,7 @@ function dom_mananger:LogicEntryTableCheck( logicTable, logString, failedLogicFi
 
 			if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.entryLogic ) ) then
 				local log = logString .. data.entryLogic
-				table.insert( failedLogicFile, log )
+				table.insert( failedLogicFileTable, log )
 				log = log .. " NOT EXIST"
 				LogService:Log( log )
 			end
@@ -399,7 +399,7 @@ function dom_mananger:LogicEntryTableCheck( logicTable, logString, failedLogicFi
 		for data in Iter( logicTable ) do 
 			if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.exitLogic ) ) then
 				local log = logString .. data.exitLogic
-				table.insert( failedLogicFile, log )
+				table.insert( failedLogicFileTable, log )
 				log = log .. " NOT EXIST"
 				LogService:Log( log )
 			end
