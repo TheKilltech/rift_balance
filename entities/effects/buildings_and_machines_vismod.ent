@@ -609,7 +609,7 @@ EntityBlueprint "effects/no_lifetime"		//wall_x3
 
 EntityBlueprint "effects/no_lifetime"		//wall_s1
 {
-	name "effects/buildings_and_machines/wall_x1"
+	name "effects/buildings_and_machines/wall_s1"
 
 	IdDesc
 	{
@@ -651,6 +651,54 @@ EntityBlueprint "effects/no_lifetime"		//wall_s3
 	MeshDesc
 	{
 		mesh "meshes/buildings/defense/wall_small_straight_01_lvl_3.mesh"
+		material "buildings/defense/walls_lvl_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//wall_c1
+{
+	name "effects/buildings_and_machines/wall_c1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_corner_01.mesh"
+		material "buildings/defense/walls_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//wall_c2
+{
+	name "effects/buildings_and_machines/wall_c2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_corner_01_lvl_2.mesh"
+		material "buildings/defense/walls_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//wall_c3
+{
+	name "effects/buildings_and_machines/wall_c3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_corner_01_lvl_3.mesh"
 		material "buildings/defense/walls_lvl_3"
 	}
 }
