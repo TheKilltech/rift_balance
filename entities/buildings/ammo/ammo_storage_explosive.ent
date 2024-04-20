@@ -374,7 +374,21 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}
-
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_small_white_01"
+					bone 		"att_vismod_1"
+					scale 		"0.9 1.4 0.9"
+				}
+			}
+		}	
 		EffectGroup
 		{
 			group "level"
