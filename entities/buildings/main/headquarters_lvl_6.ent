@@ -58,6 +58,53 @@ EntityBlueprint
 		disableable 0
 	}
 
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "energy"
+				max 	 "4500"
+				distribution_radius	"2"
+			}
+			
+			Storage
+			{
+				group	 		"global"
+				subgroup		"base"
+				max 	 		"50"
+			}
+
+			Storage
+			{
+				resource	 "ammo_tower_explosive"
+				max 	 	"1"
+			}
+			Storage
+			{
+				resource	 "ammo_tower_liquid"
+				max 	 	"1"
+			}
+			Storage
+			{
+				resource	 "ammo_tower_low_caliber"
+				max 	 	"1"
+			}
+			Storage
+			{
+				resource	 "ammo_tower_high_caliber"
+				max 	 	"1"
+			}
+			Storage
+			{
+				resource	"ai"
+				max			"60"
+			}
+		}
+	}
+	
+
 	LuaDesc
 	{
 		script "lua/buildings/main/headquarters.lua"
