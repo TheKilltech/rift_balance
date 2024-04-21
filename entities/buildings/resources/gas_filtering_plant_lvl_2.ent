@@ -1,8 +1,7 @@
 EntityBlueprint
 {
 	name  					"buildings/resources/gas_filtering_plant_lvl_2"
-
-	base_blueprint 			buildings/resources/gas_filtering_plant 	
+	base_blueprint 			"buildings/resources/gas_filtering_plant"
 
 	BuildingDesc
 	{
@@ -29,7 +28,6 @@ EntityBlueprint
 				{
 					carbonium 	"400"
 					steel 		"400"
-					palladium	"100"	
 				}
 			}		
 		}
@@ -64,6 +62,7 @@ EntityBlueprint
 		}
 		priority 4		
 	}
+	
 	ResourceStorageDesc
 	{
 		Storages
@@ -76,6 +75,7 @@ EntityBlueprint
 			}
 		}
 	}	
+	
 	HealthDesc
 	{
 		max_health 					"1300"
@@ -135,7 +135,6 @@ EntityBlueprint
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
 				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
-				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
 	}
