@@ -17,8 +17,12 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/outpost"
 		order				"1"
 		map_limit			"LOCAL_ANG_GLOBAL"
+	#ifdef win
+		limit			    "12"
+	#else
 		limit			    "10"
-		sellable 			"1"`
+	#endif
+		sellable 			"1"
 		mission_mode		"2"
 		radius_name			"portal"
 		min_radius			"40"

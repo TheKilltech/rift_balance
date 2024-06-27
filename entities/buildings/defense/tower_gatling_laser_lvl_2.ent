@@ -13,7 +13,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_gatling_laser"
 		menu_icon			"gui/hud/building_icons/tower_gatling_laser_lvl2"
 		require 			"headquarters"
-		order				"16"
+		order				"32"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		upgrade				"buildings/defense/tower_gatling_laser_lvl_3"
@@ -26,7 +26,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 20
 				building_cost
 				{
 					carbonium 	"1000"
@@ -167,7 +167,7 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "5"
+			emissive_factor "4" // "5"
 			submesh_idx "0"
 		}
 

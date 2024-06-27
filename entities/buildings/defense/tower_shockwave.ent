@@ -11,7 +11,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_shockwave"
 		menu_icon			"gui/hud/building_icons/tower_shockwave"
 		require 			"headquarters"
-		order				"12"
+		order				"22"
 		type				"tower"
 		overrides			"tower,wall"
 		upgrade				"buildings/defense/tower_shockwave_lvl_2"
@@ -22,7 +22,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"75"
@@ -244,8 +244,8 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "60"
-			submesh_idx "1"
+			emissive_factor "10" // "60"
+			submesh_idx "0"
 		}
 
 		ammo_blueprint 				"buildings/defense/tower_shockwave_projectile"
@@ -357,23 +357,6 @@ EntityBlueprint
 EntityBlueprint
 {
 	name "buildings/defense/tower_shockwave_projectile"
-
-	MeshDesc
-	{
-		mesh 		"meshes/projectiles/rocket_small.mesh"
-		material 	"projectiles/rocket_small"
-	}
-
-	SkeletonDesc
-	{
-		name "meshes/projectiles/rocket_small"
-	}
-
-	VegetationBendingComponentDesc
-	{
-		bending_power	"5000.0"
-		bending_radius	"5.0"
-	}
 	
 	BombAmmoComponent
 	{			

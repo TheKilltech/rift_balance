@@ -11,7 +11,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_plasma"
 		menu_icon			"gui/hud/building_icons/tower_plasma"
 		require 			"headquarters"
-		order				"11"
+		order				"16"
 		type				"tower"
 		overrides			"tower,wall"
 		upgrade				"buildings/defense/tower_plasma_lvl_2"
@@ -22,7 +22,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"150"
@@ -241,7 +241,7 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "6"
+			emissive_factor "4" // "6"
 			submesh_idx "1"
 		}
 

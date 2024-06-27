@@ -13,7 +13,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_portal"
 		menu_icon			"gui/hud/building_icons/tower_portal_lvl3"
 		require 			"headquarters"
-		order				"16"
+		order				"35"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		//upgrade				"buildings/defense/tower_heavy_artillery_lvl_4"
@@ -26,7 +26,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 20
 				building_cost
 				{
 					carbonium 	"2000"
@@ -125,6 +125,42 @@ EntityBlueprint
 	{
 		name "meshes/buildings/defense/tower_portal_lvl_3"
 	}
+	
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsCapsuleShape
+					{
+						r "1.45"
+						half_height "5"
+
+						position
+						{
+							x "0.0"
+							y "5"
+							z "0.0"
+						}
+
+						orientation
+						{
+							w "0.7"
+							x "0.0"
+							z "0.7"
+							y "0.0"
+						}
+					}
+				}
+			}
+		}
+	}	
 
 	WeaponItemDesc
 	{

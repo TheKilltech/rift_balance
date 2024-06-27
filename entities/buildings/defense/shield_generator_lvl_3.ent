@@ -57,7 +57,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/shield_generator"
 		menu_icon			"gui/hud/building_icons/shield_generator_lvl3"
 		require 			"headquarters"
-		order				"17"
+		order				"46"
 		type				"pipe"		
 		//upgrade				"buildings/defense/shield_generator_lvl_4"
 		buildable			"0"
@@ -110,7 +110,15 @@ EntityBlueprint
 				resource 	"plasma"
 				value 		"10"
 				attachment	"att_in_1"
-			}			
+				family		"plasma"				
+			}		
+			GameplayResource
+			{
+				resource 	"resin"
+				value 		"10"
+				attachment	"att_in_1"
+				family		"plasma"
+			}				
 			
 		}
 		priority 6

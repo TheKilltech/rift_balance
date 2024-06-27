@@ -310,15 +310,129 @@ MissionDef
 		
 		GridSpawner
         {
-            spawn_pool                  "underground_treasures"
+            spawn_pool                  "loot_containers_small"
+			spawn_min_free_cell_margin	3
 
             //terrain_types               "mud,floor"
 
             spawn_min_distance_from_pools
             {
-                player_spawn_point      150.0
-                loot_containers         50.0
-                underground_treasures   100.0
+                mission_objective   	100
+				player_spawn_point      200
+                loot_containers         50
+                loot_containers_small   120
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+				yeast_root				50
+            }
+
+            spawn_blueprints
+            {
+				spawners/loot_container_small_bulb_standard
+                {
+                    // make a roll to check if blueprint can be spawned
+                    spawn_chance           0.25					
+                }
+                spawners/loot_container_small_bulb_advanced
+                {                
+                    spawn_chance           0.1
+                }				
+                spawners/loot_container_small_bulb_superior
+                {                 
+                    spawn_chance           0.1
+                }				
+                spawners/loot_container_small_bulb_extreme
+                {                 
+                    spawn_chance           0.05
+                }				
+			}
+		}
+		
+		GridSpawner
+        {
+            spawn_pool                  "power_well"
+			spawn_min_free_cell_margin	5
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      250
+				mission_objective   	100
+                loot_containers         50
+                loot_containers_small   50
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+				power_well				450	
+				yeast_root				50
+            }
+
+            spawn_blueprints
+            {
+				props/special/power_wells/power_well_source_health
+                {                    
+                    spawn_chance           0.1					
+                }
+				props/special/power_wells/power_well_source_forcefield
+                {                    
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_cooldowns
+                {
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_radar
+                {                 
+                    spawn_chance           0.1
+                }
+                props/special/power_wells/power_well_source_building
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_loot
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_reflect_damage
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_drones
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_ammo
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_firerate
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_damage
+                {                 
+                    spawn_chance           0.1
+                }					
+			}
+		}
+		
+		GridSpawner
+        {
+            spawn_pool                  "underground_treasures"
+
+            spawn_min_free_cell_margin	3
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      150
+				mission_objective   	100
+                loot_containers         50
+                loot_containers_small   50
+                underground_treasures   100
+				resource_volumes		10
+				enemy					5
+				power_well				15
+				yeast_root				20
             }
 
             spawn_blueprints
@@ -387,10 +501,13 @@ MissionDef
 	
             spawn_min_distance_from_pools
             {
-                player_spawn_point      250.0
-                loot_containers         50.0
-                underground_treasures   70.0
-                underground_mushrooms   150.0
+                player_spawn_point      100
+                loot_containers         70
+                loot_containers_small   30
+                power_well				30
+				mission_objective		70
+                underground_treasures   70
+                underground_mushrooms   70
             }
 	
             spawn_blueprints
@@ -499,29 +616,39 @@ MissionDef
 		ResourceVolume
         {
             resource        "geothermal_vent"
-
-            min_resources   "6000"
-            max_resources   "10000"
-
+            
+            is_infinite     "1"            
             min_spawned_volumes "3"
             max_spawned_volumes "6"
-			
-            is_infinite        "1"			
-        }	
-		
-        ResourceVolume
+        }
+
+		ResourceVolume
         {
-            resource        "geothermal_vent"
-			
-			required_discovery_lvl	"1"
-			
-            min_resources   "6000"
-            max_resources   "10000"
+            resource        "geothermal_vent"			
+			required_discovery_lvl	"1"			
+            
+			is_infinite        "1"			
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }
 
-            min_spawned_volumes "3"
-            max_spawned_volumes "6"
-			
-            is_infinite        "1"			
+		ResourceVolume
+        {
+            resource        "flammable_gas_vent"
+            
+            is_infinite     "1"            
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }
+
+		ResourceVolume
+        {
+            resource        "flammable_gas_vent"
+			required_discovery_lvl	"1"			
+            
+			is_infinite        "1"		
+            min_spawned_volumes "1"
+            max_spawned_volumes "2"
         }					
     }
 
@@ -566,12 +693,8 @@ MissionDef
         {
             resource        "geothermal_vent"
 
-            min_resources   "6000"
-            max_resources   "10000"
-
             min_spawned_volumes "1"
-            max_spawned_volumes "1"
-			
+            max_spawned_volumes "1"			
             is_infinite        "1"			
         }	
 		

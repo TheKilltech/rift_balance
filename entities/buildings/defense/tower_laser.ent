@@ -11,7 +11,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_laser"
 		menu_icon			"gui/hud/building_icons/tower_laser"
 		require 			"headquarters"
-		order				"10"
+		order				"17"
 		type				"tower"
 		overrides			"tower,wall"
 		upgrade				"buildings/defense/tower_laser_lvl_2"
@@ -22,7 +22,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"150"
@@ -238,8 +238,8 @@ EntityBlueprint
 
 		WeaponAffector
 		{
-			emissive_time "0.7"
-			emissive_factor "4"
+			emissive_time "0.35"
+			emissive_factor "3" // "4"
 			submesh_idx "1"
 		}
 

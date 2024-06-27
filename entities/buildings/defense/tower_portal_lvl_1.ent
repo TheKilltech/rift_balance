@@ -11,7 +11,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_portal"
 		menu_icon			"gui/hud/building_icons/tower_portal"
 		require 			"headquarters"
-		order				"13"
+		order				"35"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		upgrade				"buildings/defense/tower_portal_lvl_2"
@@ -23,7 +23,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 20
 				building_cost
 				{
 					carbonium 	"500"
@@ -160,12 +160,12 @@ EntityBlueprint
 					PhysicsCapsuleShape
 					{
 						r "1.45"
-						half_height "2"
+						half_height "3"
 
 						position
 						{
 							x "0.0"
-							y "1.45"
+							y "3"
 							z "0.0"
 						}
 
@@ -262,7 +262,6 @@ EntityBlueprint
 		aiming_idle_angle "20"
 		pitch "att_muzzle"
 		check_target_visibility 0
-		gravity_factor "80"
 		yaw "att_muzzle"
 		fog_of_war_filtering "1"
 	}
@@ -280,8 +279,8 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "10"
-			submesh_idx "1"
+			emissive_factor "5" // "10"
+			submesh_idx "0"
 		}
 
 		ammo_blueprint 			"buildings/defense/tower_portal_projectile"

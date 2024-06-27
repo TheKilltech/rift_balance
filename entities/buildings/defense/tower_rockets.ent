@@ -11,7 +11,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_rockets"
 		menu_icon			"gui/hud/building_icons/tower_rockets"
 		require 			"headquarters"
-		order				"12"
+		order				"8"
 		type				"tower"
 		overrides			"tower,wall"
 		upgrade				"buildings/defense/tower_rockets_lvl_2"
@@ -22,7 +22,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"100"
@@ -304,7 +304,7 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "10"
+			emissive_factor "10" // "10"
 			submesh_idx "1"
 		}
 

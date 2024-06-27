@@ -11,7 +11,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_minigun"
 		menu_icon			"gui/hud/building_icons/tower_minigun"
 		require 			"headquarters"
-		order				"9"
+		order				"10"
 		type				"tower"
 		overrides			"tower,wall"
 		upgrade				"buildings/defense/tower_minigun_lvl_2"
@@ -22,7 +22,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"150"
@@ -241,8 +241,8 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "60"
-			submesh_idx "1"
+			emissive_factor "1.5" // "60"
+			submesh_idx "0"
 		}
 
 		ammo_blueprint 				"buildings/defense/tower_minigun_projectile"

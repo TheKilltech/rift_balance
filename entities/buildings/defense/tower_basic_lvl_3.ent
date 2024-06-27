@@ -14,7 +14,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_basic"
 		menu_icon			"gui/hud/building_icons/tower_basic_lvl3"
 		require 			"headquarters"
-		order				"8"
+		order				"5"
 		type				"tower"
 		overrides			"tower,wall"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -116,8 +116,8 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "60"
-			submesh_idx "1"
+			emissive_factor "3" // "60"
+			submesh_idx "0"
 		}
 
 		ammo_blueprint 				"buildings/defense/tower_basic_projectile_lvl3"

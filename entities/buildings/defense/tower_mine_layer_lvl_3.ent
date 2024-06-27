@@ -14,7 +14,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_mine_layer"
 		menu_icon			"gui/hud/building_icons/tower_mine_layer_lvl3"
 		require 			"headquarters"
-		order				"13"
+		order				"40"
 		type				"tower"
 		overrides			"tower,wall"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -24,7 +24,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 20
 				building_cost
 				{
 					carbonium 	"200"

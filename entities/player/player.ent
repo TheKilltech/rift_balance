@@ -130,6 +130,14 @@ EntityBlueprint
 				bone			"att_r_hand_item"
 				subslots_count	"1"
 			}
+
+			EquipmentSlot
+			{
+				name			"LIFT"
+				allow_types		"interactive|equipment|lift"
+				bone			"att_r_hand_item"
+				subslots_count	"1"
+			}
 			
 			EquipmentSlot
 			{
@@ -288,3 +296,114 @@ EntityBlueprint
 	}
 }
 
+EntityBlueprint
+{
+	name  "player/player_respawner"
+
+	LuaDesc
+	{
+		script "lua/props/special/player_respawner.lua"
+	}
+
+	InteractiveComponent 
+	{
+		slot 			 "ACTIVATOR"
+		radius 			 "4"
+		remove_component "1"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/player/mech.mesh"
+		material "selector/hologram_skinned_blue"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/player/mech"
+	}
+	
+	AnimationDesc
+	{
+		animations
+		{
+			Anim
+			{
+				animName "inventor_ranged_melee"
+				animTime "0.0"
+			}
+		}
+	}	
+
+	MinimapItemDesc
+	{
+		type			"image"
+		icon_material 	"gui/menu/buttons/journal/journal_death_selected"
+		size
+		{
+			x "0.6"
+			y "0.6"
+		}
+		visibility 		"always"		
+	}		
+
+	children
+	{
+		EntityBlueprint
+		{
+			MeshDesc
+			{
+				mesh 		"meshes/items/consumables/holo_decoy.mesh"
+				material 	"items/consumables/holo_decoy"
+			}
+		}
+	}
+
+	DestroyDesc
+	{
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "interact"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/enemies_alien_tower/influence_pylon_dissolve"	
+				}
+			}	
+		}		
+	}
+}
+
+EntityBlueprint
+{
+	name  "player/player_label"
+
+	GuiDesc
+	{
+		def_name 				"gui/template/text_label_center"
+		alignment 				"center"
+		use_database_component 	"1"
+	}
+
+	DatabaseComponent
+	{
+		tooltip_content string:"error"
+	}
+}
+
+EntityBlueprint
+{
+	name  "player/player_marker"
+
+	GuiDesc
+	{
+		type 				"image"
+        material 			"gui/hud/player_border_marker"
+		mode				"clamp"
+		clamp_in_frustum 	"0"
+	}
+}

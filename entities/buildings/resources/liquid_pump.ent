@@ -11,13 +11,14 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/liquid_pump"
 		description			"gui/hud/building_description/liquid_pump"
 		menu_icon			"gui/hud/building_icons/liquid_pump"
-		build_on_water		"1"
 		require 			"headquarters"
 		upgrade				"buildings/resources/liquid_pump_lvl_2"
 		min_radius_effect   "voice_over/announcement/pump_too_close"
 		order				"9"
 		radius_name			"pump"
 		min_radius			"20"
+
+		building_functionality	"BUILD_ON_WATER|PIPE_MODE|NO_FOUNDATION"
 
 		costs
 		{
@@ -32,7 +33,6 @@ EntityBlueprint
 			}
 		}
 
-		pipe_mode  			"1"
 		connect
 		{
 			I		"buildings/resources/liquid_pump"
@@ -92,7 +92,6 @@ EntityBlueprint
 		{
 			cone_effect			string:"build_cone_1x1"
 			cone_effect_sell	string:"sell_small"
-			building_time		float:"2"
 			range				float:"20"
 			display_radius_group	 string:"liquid_pump"
 			display_radius_blueprint string:"effects/decals/range_circle_repair"			

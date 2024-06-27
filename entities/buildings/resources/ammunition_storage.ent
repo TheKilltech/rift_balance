@@ -37,10 +37,16 @@ EntityBlueprint
 		{
 			Storage
 			{
-				group		 "global"
-				subgroup	 "ammo"
+				group		 "ammo_mech"
 				max 	 	 "1"
 			}
+			
+			Storage
+			{
+				group		 "ammo_tower"
+				max 	 	 "1"
+			}
+			
 			Storage
 			{
 				resource "energy"

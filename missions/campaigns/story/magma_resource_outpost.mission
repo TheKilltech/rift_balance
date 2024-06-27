@@ -117,22 +117,12 @@ MissionDef
             {
                 creature_species    "nerilian"
                 volume_spawn_ratio  "2"
-            }
-			//CreatureVolume
-            //{
-            //    creature_species    "necrodon"
-            //    volume_spawn_ratio  "0.35"
-            //}
+            }			
 			CreatureVolume
             {
                 creature_species    "phirian_magma"
                 volume_spawn_ratio  "0.35"
-            }
-			//CreatureVolume
-            //{
-            //    creature_species    "drexolian_magma"
-            //    volume_spawn_ratio  "0.35"
-            //}			
+            }			
 			CreatureVolume
             {
                 creature_species    "hedroner_magma"
@@ -265,6 +255,7 @@ MissionDef
             {
                 player_spawn_point  250.0
                 loot_containers     150.0
+				resource_volumes	10
             }
 
             // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
@@ -310,7 +301,8 @@ MissionDef
             {
                 player_spawn_point  20.0
 				loot_containers     15.0
-                magnetic_rocks     10.0
+                magnetic_rocks  	10.0
+                cryo_plants		    10.0
             }
 
             // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
@@ -376,7 +368,9 @@ MissionDef
             {
                 player_spawn_point  70.0
 				loot_containers     15.0
-                cryo_plants     10.0
+                cryo_plants     	10.0
+                magnetic_rocks     	20.0
+                resource_volumes   	10.0
             }
 
             // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
@@ -428,17 +422,129 @@ MissionDef
         }  
 		GridSpawner
         {
-            spawn_pool                  "underground_treasures"
-
-            //terrain_types               "mud,floor"
+            spawn_pool                  "loot_containers_small"			
+			spawn_min_free_cell_margin	5           
 
             spawn_min_distance_from_pools
             {
-                player_spawn_point      150.0				
-                loot_containers         50.0
-                underground_treasures   100.0
-                cryo_plants			    10.0
-                magnetic_rocks			20.0
+                mission_objective   	100
+				player_spawn_point      200
+                loot_containers         50
+                loot_containers_small   120
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+				cryo_plants				25
+				magnetic_rocks			25
+            }
+
+            spawn_blueprints
+            {
+				spawners/loot_container_small_pile_standard
+                {                    
+                    spawn_chance           0.25					
+                }
+                spawners/loot_container_small_pile_advanced
+                {                
+                    spawn_chance           0.1
+                }				
+                spawners/loot_container_small_pile_superior
+                {                 
+                    spawn_chance           0.1
+                }				
+                spawners/loot_container_small_pile_extreme
+                {                 
+                    spawn_chance           0.05
+                }				
+			}
+		}
+		
+		GridSpawner
+        {
+            spawn_pool                  "power_well"			
+			spawn_min_free_cell_margin	5
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      250
+				mission_objective   	100
+                loot_containers         50
+                loot_containers_small   50
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+				power_well				450	
+				cryo_plants				25
+				magnetic_rocks			25
+            }
+
+            spawn_blueprints
+            {
+				props/special/power_wells/power_well_source_health
+                {                    
+                    spawn_chance           0.1					
+                }
+				props/special/power_wells/power_well_source_forcefield
+                {                    
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_cooldowns
+                {
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_radar
+                {                 
+                    spawn_chance           0.1
+                }
+                props/special/power_wells/power_well_source_building
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_loot
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_reflect_damage
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_drones
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_ammo
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_firerate
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_damage
+                {                 
+                    spawn_chance           0.1
+                }					
+			}
+		}
+		
+		GridSpawner
+        {
+            spawn_pool                  "underground_treasures"
+
+            spawn_min_free_cell_margin	3
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      150
+				mission_objective   	100
+                loot_containers         50
+                loot_containers_small   50
+                underground_treasures   100
+				resource_volumes		10
+				enemy					5
+				power_well				15
+				cryo_plants				15
+				magnetic_rocks			15
             }
 
             spawn_blueprints
@@ -592,12 +698,8 @@ MissionDef
 		ResourceVolume
         {
             resource        "geothermal_vent"
-
-            min_resources   "6000"
-            max_resources   "10000"
             
             is_infinite     "1"
-
             min_spawned_volumes "20"
             max_spawned_volumes "30"
         }	
@@ -606,14 +708,28 @@ MissionDef
             resource        "geothermal_vent"
 			required_discovery_lvl	"1"
 
-            min_resources   "6000"
-            max_resources   "10000"
-            
+           
             is_infinite     "1"
-
             min_spawned_volumes "3"
             max_spawned_volumes "5"
-        }			
+        }
+		ResourceVolume
+        {
+            resource        "flammable_gas_vent"
+            
+            is_infinite     "1"            
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+        }
+		ResourceVolume
+        {
+            resource        "flammable_gas_vent"
+            required_discovery_lvl	"1"
+			
+            is_infinite     "1"            
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+        }	
     }
 
     min_starting_distance "16.0"

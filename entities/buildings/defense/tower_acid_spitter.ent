@@ -11,7 +11,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_acid_spitter"
 		menu_icon			"gui/hud/building_icons/tower_acid_spitter"
 		require 			"headquarters"
-		order				"6"
+		order				"21"
 		type				"tower"
 		overrides			"tower,wall"
 		upgrade				"buildings/defense/tower_acid_spitter_lvl_2"
@@ -22,7 +22,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"150"
@@ -217,7 +217,6 @@ EntityBlueprint
 		aiming_target_time "2"
 		aiming_idle_angle "20"
 		pitch "be_barrel"
-		gravity_factor "8"
 		yaw "be_turret"
 		check_target_visibility "1"
 		fog_of_war_filtering "1"
@@ -236,8 +235,8 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "60"
-			submesh_idx "1"
+			emissive_factor "5"
+			submesh_idx "0"
 		}
 
 		ammo_blueprint 			"items/weapons/acid_spitter_projectile"

@@ -14,7 +14,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_railgun"
 		menu_icon			"gui/hud/building_icons/tower_railgun_lvl3"
 		require 			"headquarters"
-		order				"11"
+		order				"15"
 		type				"tower"
 		overrides			"tower,wall"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
@@ -25,7 +25,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"600"
@@ -115,8 +115,8 @@ EntityBlueprint
 
 		WeaponAffector
 		{
-			emissive_time "0.8"
-			emissive_factor "120"
+			emissive_time "0.35"
+			emissive_factor "80" // "120"
 			submesh_idx "1"
 		}
 

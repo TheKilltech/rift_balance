@@ -18,41 +18,81 @@ MissionDef
 		{
 			min_instances 1
 			max_instances 1
+			tile_coord
+			{	
+				//skip outer map rim
+				2,-3
+				2,-2
+				2,-1
+				2,0
+				2,1
+				2,2				
+				1,-3
+				1,-2
+				1,-1
+				1,0
+				1,1
+				1,2
+				0,-3
+				0,-2
+				0,-1
+				0,0
+				0,1
+				0,2
+				-1,-3
+				-1,-2
+				-1,-1
+				-1,0
+				-1,1
+				-1,2
+				-2,-3
+				-2,-2
+				-2,-1
+				-2,0
+				-2,1
+				-2,2
+				-3,-3
+				-3,-2
+				-3,-1
+				-3,0
+				-3,1
+				-3,2	
+			}
 		}	
 		biomes/acid/tiles/acid_nest_01/acid_nest_01.tile
 		{
-			min_instances   10
+			min_instances   5
 			//max_instances   0
-            random_weight   15.0
+            random_weight   2.0
 		}
 		biomes/acid/tiles/acid_lakes_01/acid_lakes_01.tile
 		{
-			min_instances   8
+			min_instances   4
 			//max_instances   1
-            random_weight   5.0
+            random_weight   2.0
 		}
 		biomes/acid/tiles/acid_lakes_02/acid_lakes_02.tile
 		{
-			min_instances   8
+			min_instances   4
 			//max_instances   1
-            random_weight   5.0
+            random_weight   2.0
 		}
 		biomes/acid/tiles/acid_lakes_03/acid_lakes_03.tile
 		{
-			min_instances   8
+			min_instances   3
 			//max_instances   1
-            random_weight   5.0
+            random_weight   2.0
 		}
 		biomes/acid/tiles/acid_lakes_04/acid_lakes_04.tile
 		{
-			min_instances   6
+			min_instances   3
 			//max_instances   1
-            random_weight   5.0
+            random_weight   2.0
 		}
 		biomes/acid/tiles/acid_lakes_06/acid_lakes_06.tile
 		{			
 			min_instances	2						
-			random_weight   3.0
+			random_weight   2.0
 		}	
 		biomes/acid/tiles/acid_plains_01/acid_plains_01.tile
 		{
@@ -102,44 +142,6 @@ MissionDef
 	success_action  "remove"
     threat  "0.75"
 
-    random_resources
-    {
-        ResourceVolume
-        {
-            resource        "carbon_vein"
-
-            min_resources   "3000"
-            max_resources   "8000"
-
-            min_spawned_volumes "10"
-            max_spawned_volumes "15"
-        }		
-
-        ResourceVolume
-        {
-            resource        "iron_vein"
-
-            min_resources   "2500"
-            max_resources   "6000"
-
-            min_spawned_volumes "5"
-            max_spawned_volumes "10"
-        }
-		
-        ResourceVolume
-        {
-            resource        "geothermal_vent"
-
-            min_resources   "6000"
-            max_resources   "10000"
-
-            min_spawned_volumes "3"
-            max_spawned_volumes "6"
-			
-            is_infinite        "1"			
-        }	
-    } 
-	
     creature_volumes_min_distance   "64.0"
 	creature_volumes_density        "0.5"
 
@@ -412,16 +414,129 @@ MissionDef
 		
 		GridSpawner
         {
-            spawn_pool                  "underground_treasures"
+            spawn_pool                  "loot_containers_small"
+			spawn_min_free_cell_margin	3
 
             //terrain_types               "mud,floor"
 
             spawn_min_distance_from_pools
             {
-                player_spawn_point      70.0
-				mission_objective		150.0
-                loot_containers         60.0
-                underground_treasures   150.0
+                mission_objective   	100
+				player_spawn_point      200
+                loot_containers         50
+                loot_containers_small   120
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+				yeast_root				50
+            }
+
+            spawn_blueprints
+            {
+				spawners/loot_container_small_bulb_standard
+                {
+                    // make a roll to check if blueprint can be spawned
+                    spawn_chance           0.25					
+                }
+                spawners/loot_container_small_bulb_advanced
+                {                
+                    spawn_chance           0.1
+                }				
+                spawners/loot_container_small_bulb_superior
+                {                 
+                    spawn_chance           0.1
+                }				
+                spawners/loot_container_small_bulb_extreme
+                {                 
+                    spawn_chance           0.05
+                }				
+			}
+		}
+		
+		GridSpawner
+        {
+            spawn_pool                  "power_well"
+			spawn_min_free_cell_margin	5
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      250
+				mission_objective   	100
+                loot_containers         50
+                loot_containers_small   50
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+				power_well				450	
+				yeast_root				50
+            }
+
+            spawn_blueprints
+            {
+				props/special/power_wells/power_well_source_health
+                {                    
+                    spawn_chance           0.1					
+                }
+				props/special/power_wells/power_well_source_forcefield
+                {                    
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_cooldowns
+                {
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_radar
+                {                 
+                    spawn_chance           0.1
+                }
+                props/special/power_wells/power_well_source_building
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_loot
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_reflect_damage
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_drones
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_ammo
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_firerate
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_damage
+                {                 
+                    spawn_chance           0.1
+                }					
+			}
+		}
+		
+		GridSpawner
+        {
+            spawn_pool                  "underground_treasures"
+
+            spawn_min_free_cell_margin	3
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      150
+				mission_objective   	100
+                loot_containers         50
+                loot_containers_small   50
+                underground_treasures   100
+				resource_volumes		10
+				enemy					5
+				power_well				15
+				yeast_root				20
             }
 
             spawn_blueprints
@@ -449,11 +564,13 @@ MissionDef
 	
             spawn_min_distance_from_pools
             {
-                player_spawn_point      100.0
-                loot_containers         10.0
-				mission_objective		70.0
-                underground_treasures   70.0
-                underground_mushrooms   70.0
+                player_spawn_point      100
+                loot_containers         15
+                loot_containers_small   15
+                power_well				15
+				mission_objective		70
+                underground_treasures   70
+                underground_mushrooms   70
             }
 	
             spawn_blueprints
@@ -466,5 +583,48 @@ MissionDef
                 }
             }
         }
-	}	
+	}
+
+	random_resources
+    {
+        ResourceVolume
+        {
+            resource        "carbon_vein"
+
+            min_resources   "3000"
+            max_resources   "8000"
+
+            min_spawned_volumes "10"
+            max_spawned_volumes "15"
+        }		
+
+        ResourceVolume
+        {
+            resource        "iron_vein"
+
+            min_resources   "2500"
+            max_resources   "6000"
+
+            min_spawned_volumes "5"
+            max_spawned_volumes "10"
+        }
+		
+        ResourceVolume
+        {
+            resource        "geothermal_vent"
+            
+            is_infinite     "1"            
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+        }	
+		
+		ResourceVolume
+        {
+            resource        "flammable_gas_vent"
+            
+            is_infinite     "1"            
+            min_spawned_volumes "1"
+            max_spawned_volumes "2"
+        }	
+    } 
 }

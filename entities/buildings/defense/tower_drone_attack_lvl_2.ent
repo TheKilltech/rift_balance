@@ -14,7 +14,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_drone_attack"
 		menu_icon			"gui/hud/building_icons/tower_drone_attack_lvl2"
 		require 			"headquarters"
-		order				"16"
+		order				"41"
 		type				"tower"
 		overrides			"wall,tower"
 		upgrade				"buildings/defense/tower_drone_attack_lvl_3"
@@ -26,12 +26,12 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 20
 				building_cost
 				{
-					carbonium 	"100"
-					steel 		"40"
-					cobalt 		"10"
+					carbonium 	"300"
+					steel 		"150"
+					cobalt		"25"
 				}
 			}
 		}		

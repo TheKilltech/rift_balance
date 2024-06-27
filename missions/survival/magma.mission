@@ -99,38 +99,19 @@ MissionDef
             {
                 creature_species    "bomogan_magma"
                 volume_spawn_ratio  "0.5"
-            }
+            }			
 			
-			//CreatureVolume
-            //{
-            //    creature_species    "magmoth"
-            //    volume_spawn_ratio  "2"
-            //}
 			CreatureVolume
             {
                 creature_species    "nerilian"
                 volume_spawn_ratio  "2"
-            }
-			CreatureVolume
-            {
-                creature_species    "necrodon"
-                volume_spawn_ratio  "0.35"
-            }
+            }			
 			CreatureVolume
             {
                 creature_species    "phirian_magma"
                 volume_spawn_ratio  "0.35"
-            }
-			//CreatureVolume
-            //{
-            //    creature_species    "drexolian_magma"
-            //    volume_spawn_ratio  "0.35"
-            //}			
-			//CreatureVolume
-            //{
-            //    creature_species    "hedroner_magma"
-            //    volume_spawn_ratio  "1"
-            //}  
+            }		
+			
         }
 		liquid_units
         {
@@ -157,102 +138,7 @@ MissionDef
                 creature_species    "krocoon_magma"
                 volume_spawn_ratio  "0.25"
             }
-        }  
-		//guardian_standard
-        //{		
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_cryo"
-		//		volume_spawn_ratio  "1"
-        //    }
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_acid"
-        //        volume_spawn_ratio  "1"
-        //    }		
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_energy"
-        //        volume_spawn_ratio  "1"
-        //    }
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_fire"
-        //        volume_spawn_ratio  "1"
-        //    }				
-        //}
-		//
-        //guardian_advanced
-        //{				
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_cryo"
-		//		volume_spawn_ratio  "1"
-        //    }
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_acid"
-        //        volume_spawn_ratio  "1"
-        //    }		
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_energy"
-        //        volume_spawn_ratio  "1"
-        //    }
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_fire"
-        //        volume_spawn_ratio  "1"
-        //    }			
-        //}
-		//
-        //guardian_superior
-        //{			
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_cryo"
-		//		volume_spawn_ratio  "1"
-        //    }
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_acid"
-        //        volume_spawn_ratio  "1"
-        //    }		
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_energy"
-        //        volume_spawn_ratio  "1"
-        //    }
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_fire"
-        //        volume_spawn_ratio  "1"
-        //    }		
-        //}
-		//
-        //guardian_extreme
-        //{		
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_cryo"
-		//		volume_spawn_ratio  "1"
-        //    }
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_acid"
-        //        volume_spawn_ratio  "1"
-        //    }		
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_energy"
-        //        volume_spawn_ratio  "1"
-        //    }
-        //    CreatureVolume
-        //    {
-        //        creature_species    "nerilian_boss_fire"
-        //        volume_spawn_ratio  "1"
-        //    }	
-        //}
+        }  		
     }
 	
 	mission_object_spawners
@@ -269,6 +155,7 @@ MissionDef
             {
                 player_spawn_point  250.0
                 loot_containers     150.0
+				resource_volumes 	10
             }
 
             // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
@@ -315,6 +202,7 @@ MissionDef
                 player_spawn_point  20.0
                 loot_containers  	15.0
                 magnetic_rocks    	10.0
+				resource_volumes	5
             }
 
             // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
@@ -378,9 +266,11 @@ MissionDef
             // min distance from objects in other pools
             spawn_min_distance_from_pools
             {
-                player_spawn_point  100.0
-				loot_containers  	15.0
-                cryo_plants     10.0
+                player_spawn_point  100
+				loot_containers  	15
+                cryo_plants     	10
+				resource_volumes	5
+				magnetic_rocks		20
             }
 
             // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
@@ -434,6 +324,7 @@ MissionDef
         GridSpawner
         {
             spawn_pool                  "underground_treasures"
+			spawn_min_free_cell_margin	3 
 
             //terrain_types               "mud,floor"
 
@@ -587,6 +478,117 @@ MissionDef
                 }
             }
         }
+		
+		GridSpawner
+        {
+            spawn_pool                  "loot_containers_small"
+			spawn_min_free_cell_margin	3
+
+            //terrain_types               "mud,floor"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      120
+                loot_containers         50
+                loot_containers_small   80
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+				cryo_plants				20
+				magnetic_rocks			20
+            }
+
+            spawn_blueprints
+            {				
+				spawners/loot_container_small_pile_standard
+                {
+                    // make a roll to check if blueprint can be spawned
+                    spawn_chance           0.25
+                }                
+				spawners/loot_container_small_pile_advanced
+                {
+                    //spawn_instances_minmax 3,5
+                    spawn_chance           0.1
+                }
+				spawners/loot_container_small_pile_superior
+                {
+                   // spawn_instances_minmax 2,3
+                    spawn_chance           0.1
+                }
+				spawners/loot_container_small_pile_extreme
+                {
+                    //spawn_instances_minmax 1,2
+                    spawn_chance           0.05
+                }
+			}
+		}
+		
+		GridSpawner
+        {
+            spawn_pool                  "power_well"
+			spawn_min_free_cell_margin	3
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      200
+                loot_containers         40
+                loot_containers_small   40
+                underground_treasures   10
+				resource_volumes		20
+				enemy					5
+				power_well				250
+				cryo_plants				25
+				magnetic_rocks			25
+            }
+
+            spawn_blueprints
+            {
+				props/special/power_wells/power_well_source_health
+                {                    
+                    spawn_chance           0.1					
+                }
+				props/special/power_wells/power_well_source_forcefield
+                {                    
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_cooldowns
+                {
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_radar
+                {                 
+                    spawn_chance           0.1
+                }
+                props/special/power_wells/power_well_source_building
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_loot
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_reflect_damage
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_drones
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_ammo
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_firerate
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_damage
+                {                 
+                    spawn_chance           0.1
+                }					
+			}
+		}
 	}
 
 	random_resources
@@ -643,29 +645,38 @@ MissionDef
         {
             resource        "geothermal_vent"
 
-            min_resources   "6000"
-            max_resources   "10000"
-
             min_spawned_volumes "6"
-            max_spawned_volumes "12"
-			
+            max_spawned_volumes "12"			
             is_infinite        "1"			
         }	
 		
         ResourceVolume
         {
-            resource        "geothermal_vent"
-			
+            resource        "geothermal_vent"			
 			required_discovery_lvl	"1"
-			
-            min_resources   "6000"
-            max_resources   "10000"
 
             min_spawned_volumes "3"
-            max_spawned_volumes "6"
-			
+            max_spawned_volumes "6"			
             is_infinite        "1"			
-        }		
+        }
+
+		ResourceVolume
+        {
+            resource        "flammable_gas_vent"
+            
+            is_infinite     "1"            
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+        }
+		ResourceVolume
+        {
+            resource        "flammable_gas_vent"
+            required_discovery_lvl	"1"
+			
+            is_infinite     "1"            
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+        }
 
         ResourceVolume
         {
@@ -805,12 +816,8 @@ MissionDef
 		ResourceVolume
         {
             resource        "geothermal_vent"
-
-            min_resources   "6000"
-            max_resources   "10000"
             
             is_infinite     "1"
-
             min_spawned_volumes "20"
             max_spawned_volumes "30"
         }		

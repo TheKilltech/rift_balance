@@ -14,20 +14,20 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_artillery"
 		menu_icon			"gui/hud/building_icons/tower_artillery_lvl3"
 		require 			"headquarters"
-		order				"9"
+		order				"7"
 		type				"tower"
 		overrides			"tower,wall"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		//upgrade				"buildings/defense/tower_artillery_lvl_4"
-		condition			"BIOME"	
-		condition_value		"magma,jungle,desert,acid,metallic,legacy_maps"			
+		condition			"NOT_BIOME"	
+		condition_value		"caverns"			
 
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"400"
@@ -117,8 +117,8 @@ EntityBlueprint
 
 		WeaponAffector
 		{
-			emissive_time "0.8"
-			emissive_factor "80"
+			emissive_time "0.35"
+			emissive_factor "80" // "80"
 			submesh_idx "1"
 		}
 

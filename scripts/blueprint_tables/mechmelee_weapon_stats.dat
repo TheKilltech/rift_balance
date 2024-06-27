@@ -10,8 +10,8 @@ items/weapons/chainsaw_advanced_item
 		{
 			WeaponStatDef
 			{
-				max_value "250.000"
-				min_value "200.000"
+				max_value "275.000"
+				min_value "250.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -99,8 +99,8 @@ items/weapons/chainsaw_extreme_item
 		{
 			WeaponStatDef
 			{
-				max_value "350.000"
-				min_value "300.000"
+				max_value "450.000"
+				min_value "375.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -269,8 +269,8 @@ items/weapons/chainsaw_superior_item
 		{
 			WeaponStatDef
 			{
-				max_value "300.000"
-				min_value "250.000"
+				max_value "350.000"
+				min_value "300.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -359,8 +359,8 @@ items/weapons/hammer_advanced_item
 		{
 			WeaponStatDef
 			{
-				max_value "255.000"
-				min_value "230.000"
+				max_value "275.000"
+				min_value "250.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -715,8 +715,8 @@ items/weapons/hammer_superior_item
 		{
 			WeaponStatDef
 			{
-				max_value "310.000"
-				min_value "290.000"
+				max_value "350.000"
+				min_value "312.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -837,8 +837,8 @@ items/weapons/laser_sword_advanced_item
 		{
 			WeaponStatDef
 			{
-				max_value "126.000"
-				min_value "105.000"
+				max_value "146.000"
+				min_value "131.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -957,8 +957,8 @@ items/weapons/laser_sword_extreme_item
 		{
 			WeaponStatDef
 			{
-				max_value "200.000"
-				min_value "185.000"
+				max_value "240.000"
+				min_value "205.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -1187,8 +1187,8 @@ items/weapons/laser_sword_superior_item
 		{
 			WeaponStatDef
 			{
-				max_value "158.000"
-				min_value "146.000"
+				max_value "185.000"
+				min_value "164.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -1818,8 +1818,8 @@ items/weapons/power_fist_advanced_item
 		{
 			WeaponStatDef
 			{
-				max_value "130.000"
-				min_value "120.000"
+				max_value "140.000"
+				min_value "125.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -2058,8 +2058,8 @@ items/weapons/power_fist_extreme_item
 		{
 			WeaponStatDef
 			{
-				max_value "200.000"
-				min_value "175.000"
+				max_value "230.000"
+				min_value "195.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -2298,8 +2298,8 @@ items/weapons/power_fist_superior_item
 		{
 			WeaponStatDef
 			{
-				max_value "166.000"
-				min_value "146.000"
+				max_value "180.000"
+				min_value "156.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -2409,6 +2409,193 @@ items/weapons/power_fist_superior_item
 
 }
 
+
+items/weapons/sniper_rifle_superior_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_high_caliber"
+		damage_type "physical"
+		rarity "SUPERIOR"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "700.000"
+				min_value "625.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.100"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "8.000"
+				max_value "17.000"
+				min_value "13.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "140.000"
+				min_value "125.000"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.500"
+				min_value "1.000"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "200.000"
+				min_value "200.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "151.000"
+				min_value "149.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "450.000"
+				min_value "400.000"
+				stat_features "MODABLE"
+				stat_type "AMMO_ANGLE_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "10.000"
+				min_value "9.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.200"
+				min_value "0.160"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.300"
+				min_value "1.200"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.300"
+				min_value "1.200"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				max_value "15.000"
+				min_value "11.000"
+				stat_features "MODABLE"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				default_value "24.000"
+				max_value "23.000"
+				min_value "19.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "25.000"
+				min_value "20.000"
+				stat_features "MODABLE"
+				stat_type "AMMO_AUTOAIM"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100.000"
+				min_value "100.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_HOMING"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.300"
+				min_value "0.200"
+				stat_features "MODABLE"
+				stat_type "AMMO_CLUSTER"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.300"
+				min_value "1.300"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+		}
+
+	}
+
+}
 
 items/weapons/sonic_fist_advanced_item
 {
@@ -2938,8 +3125,8 @@ items/weapons/spear_advanced_item
 		{
 			WeaponStatDef
 			{
-				max_value "95.000"
-				min_value "86.000"
+				max_value "106.000"
+				min_value "94.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -3051,8 +3238,8 @@ items/weapons/spear_extreme_item
 		{
 			WeaponStatDef
 			{
-				max_value "150.000"
-				min_value "128.000"
+				max_value "170.000"
+				min_value "148.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -3270,8 +3457,8 @@ items/weapons/spear_superior_item
 		{
 			WeaponStatDef
 			{
-				max_value "115.000"
-				min_value "105.000"
+				max_value "125.000"
+				min_value "118.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -3384,8 +3571,8 @@ items/weapons/sword_advanced_item
 		{
 			WeaponStatDef
 			{
-				max_value "131.000"
-				min_value "121.000"
+				max_value "146.000"
+				min_value "131.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -3496,8 +3683,8 @@ items/weapons/sword_extreme_item
 		{
 			WeaponStatDef
 			{
-				max_value "200.000"
-				min_value "185.000"
+				max_value "240.000"
+				min_value "205.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -3710,8 +3897,8 @@ items/weapons/sword_superior_item
 		{
 			WeaponStatDef
 			{
-				max_value "165.000"
-				min_value "147.000"
+				max_value "185.000"
+				min_value "164.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}

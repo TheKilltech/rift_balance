@@ -49,7 +49,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_flamer"
 		menu_icon			"gui/hud/building_icons/tower_flamer_lvl3"
 		require 			"headquarters"
-		order				"10"
+		order				"6"
 		type				"tower"
 		overrides			"tower,wall"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -60,7 +60,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"400"
@@ -148,7 +148,7 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "15"
+			emissive_factor "15" // "15"
 			submesh_idx "1"
 		}
 
