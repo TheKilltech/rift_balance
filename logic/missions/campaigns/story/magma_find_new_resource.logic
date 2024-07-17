@@ -1,8 +1,8 @@
-//editor "scroll(-0.00,-0.00)|zoom(0.52)"
+//editor "scroll(1845.77,279.26)|zoom(0.60)"
 FlowGraphTemplate
 {
 	version "11"
-	editor "5682"
+	editor "6039"
 	GraphNodes
 	{
 		LuaBehaviourNode
@@ -98,7 +98,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(mission_change_creature_difficulty.xml)|pos(2785,846)"
+			//editor "layout(mission_change_creature_difficulty.xml)|pos(2785,1251)"
 			database
 			{
 				Floats
@@ -372,7 +372,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(1676,-441)"
+			//editor "layout(condition_int.xml)|pos(1676,-557)"
 			key "0"
 			self_id "logic_random_output_0###0"
 			value "logic_random_output_0###0"
@@ -380,7 +380,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(1676,-410)"
+			//editor "layout(condition_int.xml)|pos(1676,-526)"
 			key "1"
 			self_id "logic_random_output_0###1"
 			value "logic_random_output_0###1"
@@ -388,7 +388,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(1676,-379)"
+			//editor "layout(condition_int.xml)|pos(1676,-495)"
 			key "2"
 			self_id "logic_random_output_0###2"
 			value "logic_random_output_0###2"
@@ -679,6 +679,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "0"
 			self_id "interface_dialogue_show_group_0"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -741,6 +742,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "0"
 			self_id "interface_dialogue_show_group_1"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -1056,6 +1058,7 @@ FlowGraphTemplate
 		logic_wait_7 "logic_or_0"
 		logic_wait_on_event_0 "interface_dialogue_show_group_0|logic_wait_4"
 		logic_wait_on_event_1 "objective_finish_0"
+		mission_change_creature_difficulty_0 "mission_end_1"
 		mission_enable_research_0 "logic_event_send_0"
 		objective_exist_0 "objective_exist_0###true"
 		objective_exist_0###true "campaign_objective_finish_0"

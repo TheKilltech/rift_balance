@@ -27,11 +27,12 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 6
+				building_time 10
 				building_cost
 				{
 					carbonium 	"300"
 					steel 		"150"
+					palladium	"25"
 				}
 			}
 		}
@@ -116,8 +117,8 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "60"
-			submesh_idx "1"
+			emissive_factor "5"
+			submesh_idx "0"
 		}
 
 		ammo_blueprint 			"items/weapons/acid_spitter_projectile_superior"

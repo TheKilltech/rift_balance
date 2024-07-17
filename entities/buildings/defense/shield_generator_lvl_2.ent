@@ -57,7 +57,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/shield_generator"
 		menu_icon			"gui/hud/building_icons/shield_generator_lvl2"
 		require 			"headquarters"
-		order				"17"
+		order				"46"
 		type				"pipe"		
 		upgrade				"buildings/defense/shield_generator_lvl_3"
 		buildable			"0"
@@ -89,6 +89,14 @@ EntityBlueprint
 				resource 		"energy"
 				value			"200"
 			}
+				
+			GameplayResource
+			{
+				resource 		"resin"
+				value 			"75"
+				attachment		"att_in_1"
+				family			"plasma"
+			}	
 			
 			GameplayResource
 			{

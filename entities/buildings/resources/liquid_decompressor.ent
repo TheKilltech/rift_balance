@@ -46,7 +46,6 @@ EntityBlueprint
 				group 			"local_compressed"
 				value			"100"
 				family			"production"
-				attachment		"att_out_1"
 			}
 
 			GameplayResource
@@ -63,10 +62,13 @@ EntityBlueprint
 				group 			"local"
 				family			"production"
 				value			"100"
+				attachment		"att_out_1"
+
 			}
 		}
 
 		priority 4
+		continous_local_production "1"
 	}
 
 	
@@ -111,7 +113,6 @@ EntityBlueprint
 			cone_effect			string:	"build_cone_4x4"
 			cone_effect_sell	string:	"sell_big"
 			attachment			string:	"att_out_1"
-			//building_time		float:	"120"
 			production			float:	"100"
 			consumption			float:	"100"
 		}

@@ -14,6 +14,8 @@ function research_shielding:init()
 	{
 		["sunburn"] = 0.0
 	};
+
+	self.version = 1
 end
 
 function research_shielding:IsReadyForResearch()
@@ -37,12 +39,12 @@ function research_shielding:OnResearchAcquired()
 	
 	--EnvironmentService:SetWeatherResistance( self.damage_type )
 	
-	self:RegisterHandler( event_sink , "BuildingStartEvent", "OnBuildingStartEvent")
+	self:RegisterHandler( event_sink , "StartBuildingEvent", "OnStartBuildingEvent")
 	self:RegisterHandler( event_sink , "PlayerControlledEntityChangeEvent", "OnPlayerControlledEntityChangeEvent")
 	self:RegisterHandler( event_sink , "ShieldEntityCreatedEvent", "OnShieldEntityCreatedEvent")
 end
 
-function research_shielding:OnBuildingStartEvent(evt)
+function research_shielding:OnStartBuildingEvent(evt)
 	self:SetResistance(evt:GetEntity(), 0.0)
 end
 
@@ -63,5 +65,19 @@ function research_shielding:Activated()
 		self:OnResearchAcquired()
 	end
 end
+
+-- Deprecated start
+function research_shielding:OnBuildingStartEvent( evt )
+end
+-- Deprecated end
+
+function research_shielding:OnLoad( )
+	
+	if ( self.version == nil or self.version < 1 ) then
+		self:UnregisterHandler( event_sink , "BuildingStartEvent", "OnBuildingStartEvent");
+		self.version = 1
+	end
+end
+
 
 return research_shielding

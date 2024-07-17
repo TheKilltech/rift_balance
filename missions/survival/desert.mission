@@ -61,14 +61,7 @@ MissionDef
     threat  "1"
     
     ambient_creature_species
-    {
-		neutral_units
-        {
-            CreatureVolume
-            {
-                creature_species    "geotrupex"
-            }
-        }
+    {		
         ground
         {       
 			//max_count 600
@@ -97,6 +90,13 @@ MissionDef
     
     creature_volumes_species
     {
+		neutral_units
+        {
+            CreatureVolume
+            {
+                creature_species    "geotrupex"
+            }
+        }
         regular_units
         {
 			CreatureVolume
@@ -121,12 +121,6 @@ MissionDef
             {
                 creature_species    "lesigian"
                 volume_spawn_ratio  "0.75"
-            }
-            
-            CreatureVolume
-            {
-                creature_species    "necrodon"
-                volume_spawn_ratio  "0.35"
             }
 			
 			CreatureVolume
@@ -384,6 +378,118 @@ MissionDef
                 }
             }
         }
+		
+		GridSpawner
+        {
+            spawn_pool                  "loot_containers_small"
+			spawn_min_free_cell_margin	5 
+			exclude_terrain_types               "quicksand"
+
+            //terrain_types               "mud,floor"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      120
+                loot_containers         50
+                loot_containers_small   80
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+            }
+
+            spawn_blueprints
+            {				
+				spawners/loot_container_small_pile_standard
+                {
+                    // make a roll to check if blueprint can be spawned
+                    spawn_chance           0.25
+                }
+             
+				spawners/loot_container_small_pile_advanced
+                {
+                    //spawn_instances_minmax 3,5
+                    spawn_chance           0.1
+                }
+                
+				spawners/loot_container_small_pile_superior
+                {
+                   // spawn_instances_minmax 2,3
+                    spawn_chance           0.1
+                }
+                
+				spawners/loot_container_small_pile_extreme
+                {
+                    //spawn_instances_minmax 1,2
+                    spawn_chance           0.05
+                }
+			}
+		}
+		
+		GridSpawner
+        {
+            spawn_pool                  "power_well"
+			spawn_min_free_cell_margin	5 
+			exclude_terrain_types               "quicksand"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      200
+                loot_containers         40
+                loot_containers_small   40
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+				power_well				180
+            }
+
+            spawn_blueprints
+            {
+				props/special/power_wells/power_well_source_health
+                {                    
+                    spawn_chance           0.1					
+                }
+				props/special/power_wells/power_well_source_forcefield
+                {                    
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_cooldowns
+                {
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_radar
+                {                 
+                    spawn_chance           0.1
+                }
+                props/special/power_wells/power_well_source_building
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_loot
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_reflect_damage
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_drones
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_ammo
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_firerate
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_damage
+                {                 
+                    spawn_chance           0.1
+                }					
+			}
+		}
 	}
 
 		

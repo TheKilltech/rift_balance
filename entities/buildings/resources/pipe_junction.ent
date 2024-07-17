@@ -14,13 +14,14 @@ EntityBlueprint
 		order				"8"
 		type				"pipe"
 		require 			"headquarters"
-		menu_action			"resource_clear"	
-		build_on_water		"1"
+		menu_action			"resource_clear"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		//check_connect		"1"
 		//pipe_mode  			"1"
 		building_group		"pipeline"
-		
+
+		building_functionality	"BUILD_ON_WATER|PIPE_MODE|NO_FOUNDATION"
+
 		costs
 		{
 			BuildingCostInfo
@@ -31,10 +32,10 @@ EntityBlueprint
 				{
 					carbonium 	"50"
 				}
-			}		
+			}
 		}
 	}
-	
+
 	ResourceStorageDesc
 	{
 		Storages
@@ -46,28 +47,57 @@ EntityBlueprint
 				attachment		"att_in_1|att_in_3"
 			}
 
-			Storage
-			{
-				resource "energy"
-				max 	 "0"
-			}	
 		}
 	}
 
 	PipeComponent
 	{
-		attachment		"att_in_2,att_in_4"
+		attachment		"att_in_1,att_in_3"
+	}
+
+
+	children
+	{
+		EntityBlueprint
+		{
+			name "buildings/resources/pipe_junction_second"
+			PipeComponent
+			{
+				attachment		"att_in_2,att_in_4"
+			}
+
+			ResourceStorageDesc
+			{
+				Storages
+				{
+					Storage
+					{
+						group	 		"local"
+						max 	 		"1"
+						attachment		"att_in_2|att_in_4"
+					}
+
+				}
+			}
+
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/resources/pipe_junction_second"
+			}
+
+
+		}
 	}
 
 	LuaDesc
 	{
 		script "lua/buildings/resources/pipe_straight.lua"
-		
+
 		database
 		{
 			cone_effect			string:"build_cone_1x1"
 			cone_effect_sell	string:"sell_small"
-			building_time		float:"1"
 			postfix				string:"_storage"
 		}
 	}
@@ -80,7 +110,7 @@ EntityBlueprint
 		regeneration_cooldown 		"0"
 		 is_manual 					"1"
 		update_health_uniform 		"1"
-	
+
 
 		DestructionLevels
 		{
@@ -88,7 +118,7 @@ EntityBlueprint
 			{
 				health 								"66"
 				destroy_comp_delay 					"0"
-				destroy_comp_event 					"66_destroy"				
+				destroy_comp_event 					"66_destroy"
 				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"66_state"
 			}
@@ -102,16 +132,30 @@ EntityBlueprint
 			}
 		}
 	}
-	
+
 	ResistanceComponent
 	{
 		magma		"0"
-	}		
+	}
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/pipe_connector_x.mesh"
-		material "buildings/floor_yellow_1x1"
+		mesh "meshes/buildings/resources/pipe_junction.mesh"
+		material "buildings/resources/pipe_junction"
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "buildings/resources/pipe_junction"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "resources/resource_empty_fresnel"
+			}
+		}
 	}
 
 	TypeDesc
@@ -137,16 +181,16 @@ EntityBlueprint
 				{
 					PhysicsBoxShape
 					{
-						x "2"
-						y "1.0"
+						x "6"
+						y "2"
 						z "2"
-							
-						position 
+
+						position
 						{
 							x "0.0"
-							y "0.5"
+							y "1"
 							z "0.0"
-						}							
+						}
 					}
 				}
 			}
@@ -159,16 +203,16 @@ EntityBlueprint
 		{
 			min
 			{
-				x "-1"
+				x "-3"
 				y "0"
 				z "-1"
 			}
 			max
 			{
-				x "1"
+				x "3"
 				y "1"
 				z "1"
-			}	
+			}
 		}
 	}
 
@@ -185,7 +229,7 @@ EntityBlueprint
 		{
 			PhysicsBoxShape
 			{
-					x	1.9
+					x	5.9
 					y	1.9
 					z	1.9
 			}
@@ -195,7 +239,7 @@ EntityBlueprint
 	MinimapItemDesc
 	{
 		type	"quad"
-		color 
+		color
 		{
 			x "0.5"
 			y "0.5"
@@ -219,9 +263,9 @@ EntityBlueprint
 
 	DestroyDesc
 	{
-		
+
 		DestroyPatterns
-		{		
+		{
 			Pair
 			{
 				key "66_destroy"
@@ -231,7 +275,7 @@ EntityBlueprint
 					explosion_max_power 	"6000"
 					explosion_min_power 	"2000"
 					explosion_effect 		"effects/buildings_generic/explosion_building_smoke_medium"
-				}	
+				}
 			}
 			Pair
 			{
@@ -251,16 +295,16 @@ EntityBlueprint
 					explosion_type 			"centered"
 					explosion_max_power 	"6000"
 					explosion_min_power 	"2000"
-					explosion_effect 		"effects/buildings_generic/explosion_building_smoke_medium"	
-					part_physics_material   "debris_heavy"	
+					explosion_effect 		"effects/buildings_generic/explosion_building_smoke_medium"
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					part_prefix 			"meshes/misc/building_small_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_lifetime "3"
 				}
 
 				key "default"
-			}	
+			}
 			Pair
 			{
 				value
@@ -269,68 +313,68 @@ EntityBlueprint
 					explosion_max_power 	"6000"
 					explosion_min_power 	"2000"
 					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
-					part_physics_material   "debris_heavy"	
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_prefix 			"meshes/misc/building_small_parts_generic"
-					part_lifetime "3"	
+					part_lifetime "3"
 				}
 
 				key "quicksand"
-			}				
+			}
 		}
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
-	
+		}
+
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
-			
+
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
 				}
 			}
 		}
-		
+
 		EffectGroup
 		{
 			group "att_in_3"
-			enabled "0"				
+			enabled "0"
 			delay "0"
-			
+
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_3_arrow"
 				}
 			}
 		}
-		
+
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
-			
+
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_2_arrow"
 				}
 			}
@@ -339,51 +383,51 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "att_in_4"
-			enabled "0"				
+			enabled "0"
 			delay "0"
-			
+
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_4_arrow"
 				}
 			}
 		}
-		
+
 		//EffectGroup
 		//{
 		//	group "working"
-		//	enabled "1"				
+		//	enabled "1"
 		//	delay "0"
-		//	
+		//
 		//	Effects
 		//	{
 		//		Effect
 		//		{
-		//			blueprint "effects/buildings_and_machines/building_arrow"								
+		//			blueprint "effects/buildings_and_machines/building_arrow"
 		//			bone "att_in_1"
 		//			scale	"0.4 0.4 0.4"
 		//		}
-		//		
+		//
 		//		Effect
 		//		{
-		//			blueprint "effects/buildings_and_machines/building_arrow"								
+		//			blueprint "effects/buildings_and_machines/building_arrow"
 		//			bone "att_in_2"
 		//			scale	"0.4 0.4 0.4"
 		//		}
-		//		
+		//
 		//		Effect
 		//		{
-		//			blueprint "effects/buildings_and_machines/building_arrow"								
+		//			blueprint "effects/buildings_and_machines/building_arrow"
 		//			bone "att_in_3"
 		//			scale	"0.4 0.4 0.4"
 		//		}
-		//		
+		//
 		//		Effect
 		//		{
-		//			blueprint "effects/buildings_and_machines/building_arrow"								
+		//			blueprint "effects/buildings_and_machines/building_arrow"
 		//			bone "att_in_4"
 		//			scale	"0.4 0.4 0.4"
 		//		}

@@ -32,7 +32,18 @@ EntityBlueprint
 					steel 		"4000"
 					palladium	"1000"
 				}
-			}		
+			}
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"500"
+					steel 		"1000"
+					palladium	"250"
+				}
+			}			
 		}
 	}
 
@@ -45,7 +56,15 @@ EntityBlueprint
 				resource 	"plasma"
 				value 		"100"
 				attachment	"att_in_1"
+				family		"plasma"				
 			}
+			GameplayResource
+			{
+				resource 	"resin"
+				value 		"12"
+				attachment	"att_in_1"
+				family		"plasma"
+			}				
 			
 			GameplayResource
 			{

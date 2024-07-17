@@ -1,8 +1,8 @@
-//editor "scroll(1293.58,55.50)|zoom(0.67)"
+//editor "scroll(744.80,209.54)|zoom(0.40)"
 FlowGraphTemplate
 {
 	version "18"
-	editor "5682"
+	editor "6142"
 	GraphNodes
 	{
 		LuaBehaviourNode
@@ -124,7 +124,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_true.xml)|pos(747,589)"
+			//editor "layout(condition_true.xml)|pos(747,583)"
 			key "true"
 			self_id "objective_exist_0###true"
 			value "objective_exist_0###true"
@@ -132,7 +132,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_false.xml)|pos(747,618)"
+			//editor "layout(condition_false.xml)|pos(747,611)"
 			key "false"
 			self_id "objective_exist_0###false"
 			value "objective_exist_0###false"
@@ -188,7 +188,34 @@ FlowGraphTemplate
 					IntData
 					{
 						key "marker_color_a"
-						value "50"
+					}
+
+					IntData
+					{
+						key "marker_name_is_global"
+						value "1"
+					}
+
+					IntData
+					{
+						key "target_name_is_global"
+						value "1"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "target_name"
+						value "uranium_vein"
+					}
+
+					StringData
+					{
+						key "marker_name"
+						value "uranium_deposit_minimap_marker"
 					}
 
 				}
@@ -225,7 +252,7 @@ FlowGraphTemplate
 					FloatData
 					{
 						key "duration"
-						value "240.00"
+						value "240"
 					}
 
 				}
@@ -241,6 +268,16 @@ FlowGraphTemplate
 			//editor "layout(interface_minimap_hide_zone.xml)|pos(3577,1610)"
 			database
 			{
+				Integers
+				{
+					IntData
+					{
+						key "name_is_global"
+						value "1"
+					}
+
+				}
+
 				Strings
 				{
 					StringData
@@ -581,6 +618,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "0"
 			self_id "interface_dialogue_show_group_0"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -611,6 +649,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "1.00"
 			self_id "interface_dialogue_show_group_1"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -649,6 +688,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "0"
 			self_id "interface_dialogue_show_group_2"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -687,6 +727,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "1.00"
 			self_id "interface_dialogue_show_group_3"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -1245,7 +1286,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_true.xml)|pos(2920,1591)"
+			//editor "layout(condition_true.xml)|pos(2920,1575)"
 			key "true"
 			self_id "logic_if_exist_entity_new_0###true"
 			value "logic_if_exist_entity_new_0###true"

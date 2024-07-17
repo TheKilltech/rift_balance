@@ -1,8 +1,8 @@
-//editor "scroll(3082.93,-570.65)|zoom(0.67)"
+//editor "scroll(192.42,-683.34)|zoom(0.20)"
 FlowGraphTemplate
 {
 	version "23"
-	editor "5682"
+	editor "6048"
 	GraphNodes
 	{
 		LuaBehaviourNode
@@ -200,6 +200,16 @@ FlowGraphTemplate
 			//editor "layout(logic_wait_on_dissolve.xml)|pos(1594,766)"
 			database
 			{
+				Integers
+				{
+					IntData
+					{
+						key "name_is_global"
+						value "1"
+					}
+
+				}
+
 				Strings
 				{
 					StringData
@@ -260,7 +270,34 @@ FlowGraphTemplate
 					IntData
 					{
 						key "marker_color_a"
-						value "50"
+					}
+
+					IntData
+					{
+						key "marker_name_is_global"
+						value "1"
+					}
+
+					IntData
+					{
+						key "target_name_is_global"
+						value "1"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "target_name"
+						value "logic/position_marker_resource_deposit"
+					}
+
+					StringData
+					{
+						key "marker_name"
+						value "palladium_vein_minimap_marker"
 					}
 
 				}
@@ -443,7 +480,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(objective_generic.xml)|pos(2885,-468)"
+			//editor "layout(objective_generic.xml)|pos(3067,-458)"
 			database
 			{
 				Integers
@@ -894,6 +931,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "0"
 			self_id "interface_dialogue_show_group_0"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -932,6 +970,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "0"
 			self_id "interface_dialogue_show_group_1"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -962,6 +1001,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "0"
 			self_id "interface_dialogue_show_group_2"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -992,6 +1032,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "1.00"
 			self_id "interface_dialogue_show_group_3"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -1014,6 +1055,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "1.00"
 			self_id "interface_dialogue_show_group_4"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -1036,6 +1078,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "1.00"
 			self_id "interface_dialogue_show_group_5"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -1061,7 +1104,7 @@ FlowGraphTemplate
 					FloatData
 					{
 						key "duration"
-						value "30.00"
+						value "300"
 					}
 
 				}
@@ -1244,6 +1287,12 @@ FlowGraphTemplate
 						value "0"
 					}
 
+					IntData
+					{
+						key "name_is_global"
+						value "1"
+					}
+
 				}
 
 				Strings
@@ -1398,6 +1447,16 @@ FlowGraphTemplate
 
 				}
 
+				Integers
+				{
+					IntData
+					{
+						key "name_is_global"
+						value "1"
+					}
+
+				}
+
 				Strings
 				{
 					StringData
@@ -1528,6 +1587,16 @@ FlowGraphTemplate
 			//editor "layout(interface_minimap_hide_zone.xml)|pos(4879,-1111)"
 			database
 			{
+				Integers
+				{
+					IntData
+					{
+						key "name_is_global"
+						value "1"
+					}
+
+				}
+
 				Strings
 				{
 					StringData
@@ -1549,6 +1618,16 @@ FlowGraphTemplate
 			//editor "layout(interface_minimap_hide_zone.xml)|pos(4651,-861)"
 			database
 			{
+				Integers
+				{
+					IntData
+					{
+						key "name_is_global"
+						value "1"
+					}
+
+				}
+
 				Strings
 				{
 					StringData

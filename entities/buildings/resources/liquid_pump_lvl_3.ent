@@ -14,11 +14,12 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/liquid_pump"
 		description			"gui/hud/building_description/liquid_pump"
 		menu_icon			"gui/hud/building_icons/liquid_pump_lvl3"
-		build_on_water		"1"
 		require 			"headquarters"
 		//upgrade				"buildings/resources/liquid_pump_lvl_4"
 		radius_name			"pump"
 		min_radius			"20"
+
+		building_functionality	"BUILD_ON_WATER|PIPE_MODE|NO_FOUNDATION"
 
 		costs
 		{
