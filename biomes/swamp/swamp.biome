@@ -4,30 +4,17 @@ BiomeDef
 	{
 		Pair_String_Vector_String
 		{
-			key "ground/misc/biome_material_2"
-			value
-			{
-				String "ground/misc/biome_material_2"
-				String "ground/grass/muddy_grass_02"
-				String "ground/grass/forest_ground_01"
-				String "ground/grass/forest_ground_grass_01"
-				String "ground/moss/moss_01"
-				String "ground/mud/stylized_mud"
-			}
-
-		}
-
-		Pair_String_Vector_String
-		{
 			key "ground/misc/biome_material_1"
 			value
 			{
 				String "ground/misc/biome_material_1"
-				String "ground/mud/forest_mud_01"
-				String "ground/mud/green_mud"
-				String "ground/pebbles/sand_pebbles"
-				String "ground/mud/forest_mud_02"
-				String "ground/mud/forest_mud_03"
+				String "ground/swamp/swamp_fungus_08"
+				String "ground/swamp/swamp_fungus_10"
+				String "ground/swamp/roots_moss_03"
+				String "ground/swamp/swamp_plants_02"
+				String "ground/swamp/swamp_roots_03"
+				String "ground/swamp/roots_moss_02"
+				String "ground/swamp/swamp_plants_01"
 			}
 
 		}
@@ -38,12 +25,30 @@ BiomeDef
 			value
 			{
 				String "ground/misc/biome_material_0"
-				String "ground/grass/grass_04"
-				String "ground/grass/grass_15"
-				String "ground/pebbles/brown_pebbles_01"
-				String "ground/groundplants/jungle_roots_04"
-				String "ground/grass/grass_12"
-				String "ground/mud/green_mud_01"
+				String "ground/swamp/mycelium_05"
+				String "ground/swamp/mycelium_06"
+				String "ground/swamp/organic_ground_03"
+				String "ground/swamp/organic_ground_04"
+				String "ground/swamp/organic_ground_07"
+				String "ground/swamp/swamp_fungus_09"
+				String "ground/swamp/swamp_plants_03"
+			}
+
+		}
+
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_2"
+			value
+			{
+				String "ground/misc/biome_material_2"
+				String "ground/swamp/swamp_02"
+				String "ground/swamp/swamp_fungus_01"
+				String "ground/swamp/swamp_01"
+				String "ground/swamp/mud_rough_01"
+				String "ground/mud/mud_01"
+				String "ground/swamp/mud_leafs_01"
+				String "ground/swamp/swamp_fungus_04"
 			}
 
 		}
@@ -51,12 +56,11 @@ BiomeDef
 	}
 
 	default_liquid_resource "mud_vein"
+	icon "gui/menu/biomes_prev/swamp_prev"
+	icon_with_outpost "gui/menu/biomes_prev/swamp_base_prev"
+	loading "gui/menu/loading/swamp"
+	loading_with_outpost "gui/menu/loading/swamp_outpost"
 	resources "carbon_vein,iron_vein,geothermal_vent,flammable_gas_vent,uranium_ore_vein,titanium_vein,palladium_vein,cobalt_vein,water_vein,mud_vein,sludge_vein"
-	icon						"gui/menu/biomes_prev/jungle_prev"
-	icon_with_outpost			"gui/menu/biomes_prev/jungle_base_prev"
-	loading						"gui/menu/loading/jungle"
-	loading_with_outpost        "gui/menu/loading/jungle_outpost"
-
 	root_template
 	{
 		children
@@ -72,19 +76,20 @@ BiomeDef
 
 					LightDesc
 					{
-						scattering_intensity "1.0"
 						light_color
 						{
 							w "13.416"
 							y "0.779"
 							z "0.354"
 						}
+
 					}
-					
+
 					ShadowComponent
 					{
-					
+						light_mask_texture
 					}
+
 				}
 
 			}
@@ -140,6 +145,10 @@ BiomeDef
 		components
 		{
 			BiomeModificatorComponent
+			{
+				solar_power "0.750"
+			}
+
 			DirectionalWindComponent
 			{
 				factor "0.000"
@@ -181,13 +190,13 @@ BiomeDef
 
 				skybox_params
 				{
-					diffuse "materials/textures/skybox/skybox_day_1_diffuse.dds"
+					diffuse "materials/textures/skybox/skybox_swamp_diffuse.dds"
 					diffuse_intensity "0.403"
-					environment "materials/textures/skybox/skybox_day_1_env.dds"
-					specular "materials/textures/skybox/skybox_day_1_specular.dds"
+					environment "materials/textures/skybox/skybox_swamp_env.dds"
+					specular "materials/textures/skybox/skybox_swamp_specular.dds"
 					specular_intensity "0.588"
-					sun_roll "-19.225"
-					sun_yaw "-33.275"
+					sun_roll "29.686"
+					sun_yaw "40.755"
 				}
 
 			}
@@ -198,7 +207,7 @@ BiomeDef
 				{
 					TimeOfDayPresetHolder
 					{
-						resource_name "biomes/jungle/scene_params/jungle.td"
+						resource_name "biomes/swamp/scene_params/swamp.td"
 					}
 
 				}

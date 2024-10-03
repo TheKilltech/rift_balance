@@ -111,7 +111,6 @@ BiomeDef
 
 					LightDesc
 					{
-						is_shadow_caster "1"
 						scattering_intensity "1.0"
 						light_color
 						{
@@ -119,8 +118,11 @@ BiomeDef
 							y "0.784"
 							z "0.376"
 						}
+					}
 
-						light_mask_texture
+					ShadowComponent
+					{
+					
 					}
 
 					TransformComponent
