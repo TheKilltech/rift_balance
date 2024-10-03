@@ -131,7 +131,6 @@ BiomeDef
 
 					LightDesc
 					{
-						is_shadow_caster "1"
 						scattering_intensity "1.0"
 						light_color
 						{
@@ -141,10 +140,12 @@ BiomeDef
 						}
 					}
 
+					ShadowComponent
+					{
+					
+					}
 				}
-
 			}
-
 		}
 
 		components
