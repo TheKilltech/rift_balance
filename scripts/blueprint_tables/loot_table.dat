@@ -67287,6 +67287,10 @@ Blueprints
 
 	}
 
+	LootItems "units/air/darnot"
+	LootItems "units/air/darnot_alpha"
+	LootItems "units/air/darnot_ultra"
+	LootItems "units/air/elite_drone"
 	LootItems "units/air/idapian"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -68128,6 +68132,246 @@ Blueprints
 
 	}
 
+	LootItems "units/ground/artigian"
+	{
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0050"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0030"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0060"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0040"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/artigian_alpha"
+	{
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0050"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0030"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0060"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0040"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/artigian_ultra"
+	{
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0050"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0030"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0060"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0040"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
 	LootItems "units/ground/baxmoth"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -68547,6 +68791,7 @@ Blueprints
 
 	}
 
+	LootItems "units/ground/baxmoth_spawner"
 	LootItems "units/ground/baxmoth_ultra"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -69243,6 +69488,328 @@ Blueprints
 		LootItem "mods_superior"
 		{
 			chance "0.0040"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/canceroth"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "20"
+			max "40"
+			gather_amount "40"
+			package_size "10"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0300"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0100"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0200"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/canceroth_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "20"
+			max "40"
+			gather_amount "40"
+			package_size "10"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0300"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0100"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0200"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/canceroth_child"
+	LootItems "units/ground/canceroth_child_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+		}
+
+	}
+
+	LootItems "units/ground/canceroth_child_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "1"
+		}
+
+	}
+
+	LootItems "units/ground/canceroth_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "20"
+			max "40"
+			gather_amount "40"
+			package_size "10"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0300"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0100"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0200"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -72163,7 +72730,57 @@ Blueprints
 	}
 
 	LootItems "units/ground/egg_arachnoid_sentinel_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+	}
+
 	LootItems "units/ground/egg_arachnoid_sentinel_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+	}
+
 	LootItems "units/ground/egg_canoptrix"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -72191,7 +72808,159 @@ Blueprints
 	}
 
 	LootItems "units/ground/egg_canoptrix_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+	}
+
 	LootItems "units/ground/egg_canoptrix_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+	}
+
+	LootItems "units/ground/egg_crawlog"
+	LootItems "units/ground/egg_crawlog_alpha"
+	LootItems "units/ground/egg_crawlog_ultra"
+	LootItems "units/ground/egg_elite_canoptrix"
+	LootItems "units/ground/egg_elite_canoptrix_alpha"
+	LootItems "units/ground/egg_elite_canoptrix_ultra"
+	LootItems "units/ground/egg_elite_crawlog"
+	LootItems "units/ground/egg_elite_crawlog_alpha"
+	LootItems "units/ground/egg_elite_crawlog_ultra"
+	LootItems "units/ground/egg_elite_granan"
+	LootItems "units/ground/egg_elite_granan_alpha"
+	LootItems "units/ground/egg_elite_granan_ultra"
+	LootItems "units/ground/egg_elite_morirot"
+	LootItems "units/ground/egg_elite_morirot_alpha"
+	LootItems "units/ground/egg_elite_morirot_ultra"
+	LootItems "units/ground/egg_elite_mushbit"
+	LootItems "units/ground/egg_elite_mushbit_alpha"
+	LootItems "units/ground/egg_elite_mushbit_ultra"
+	LootItems "units/ground/egg_elite_stickrid"
+	LootItems "units/ground/egg_elite_stickrid_alpha"
+	LootItems "units/ground/egg_elite_stickrid_ultra"
+	LootItems "units/ground/egg_elite_wingmite"
+	LootItems "units/ground/egg_elite_wingmite_alpha"
+	LootItems "units/ground/egg_elite_wingmite_ultra"
+	LootItems "units/ground/egg_fungor"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+	}
+
+	LootItems "units/ground/egg_fungor_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+	}
+
+	LootItems "units/ground/egg_fungor_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+	}
+
 	LootItems "units/ground/egg_granan"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -72219,7 +72988,57 @@ Blueprints
 	}
 
 	LootItems "units/ground/egg_granan_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+	}
+
 	LootItems "units/ground/egg_granan_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+	}
+
 	LootItems "units/ground/egg_krocoon"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -72236,7 +73055,35 @@ Blueprints
 	}
 
 	LootItems "units/ground/egg_krocoon_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+	}
+
 	LootItems "units/ground/egg_krocoon_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+	}
+
 	LootItems "units/ground/egg_morirot"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -72264,7 +73111,57 @@ Blueprints
 	}
 
 	LootItems "units/ground/egg_morirot_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+	}
+
 	LootItems "units/ground/egg_morirot_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+	}
+
 	LootItems "units/ground/egg_mushbit"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -72292,7 +73189,57 @@ Blueprints
 	}
 
 	LootItems "units/ground/egg_mushbit_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+	}
+
 	LootItems "units/ground/egg_mushbit_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+	}
+
 	LootItems "units/ground/egg_nurglax_drone"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -72339,6 +73286,168 @@ Blueprints
 
 	}
 
+	LootItems "units/ground/egg_phirian"
+	LootItems "units/ground/egg_phirian_alpha"
+	LootItems "units/ground/egg_phirian_ultra"
+	LootItems "units/ground/egg_plutrodon"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+	}
+
+	LootItems "units/ground/egg_plutrodon_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+	}
+
+	LootItems "units/ground/egg_plutrodon_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+	}
+
+	LootItems "units/ground/egg_stickrid"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+	}
+
+	LootItems "units/ground/egg_stickrid_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+	}
+
+	LootItems "units/ground/egg_stickrid_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+	}
+
+	LootItems "units/ground/egg_wingmite"
+	LootItems "units/ground/egg_wingmite_alpha"
+	LootItems "units/ground/egg_wingmite_ultra"
 	LootItems "units/ground/flurian"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -72649,6 +73758,279 @@ Blueprints
 
 	}
 
+	LootItems "units/ground/fungor"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.3500"
+			min "8"
+			max "15"
+			gather_amount "15"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0050"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0030"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0060"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0040"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/fungor_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.3500"
+			min "8"
+			max "15"
+			gather_amount "15"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0050"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0030"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0060"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0040"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/fungor_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.3500"
+			min "8"
+			max "15"
+			gather_amount "15"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0050"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0030"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0060"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0040"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
 	LootItems "units/ground/geotrupex"
 	LootItems "units/ground/geotrupex_alpha"
 	LootItems "units/ground/geotrupex_base"
@@ -72808,6 +74190,9 @@ Blueprints
 	}
 
 	LootItems "units/ground/gnerot_base"
+	LootItems "units/ground/gnerot_boss_acid"
+	LootItems "units/ground/gnerot_boss_cryo"
+	LootItems "units/ground/gnerot_boss_energy"
 	LootItems "units/ground/gnerot_burning"
 	{
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -73997,6 +75382,326 @@ Blueprints
 		LootItem "mods_superior"
 		{
 			chance "0.0006"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/invigor"
+	{
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0050"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0030"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0060"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0040"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/invigor_alpha"
+	{
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0050"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0030"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0060"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0040"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/invigor_base"
+	{
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0050"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0030"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0060"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0040"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/invigor_ultra"
+	{
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0050"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0030"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0060"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0040"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -75258,6 +76963,39 @@ Blueprints
 
 	}
 
+	LootItems "units/ground/lurkid"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0200"
+			min "1"
+			max "4"
+			gather_amount "4"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.0300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.0300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "5"
+		}
+
+	}
+
 	LootItems "units/ground/magmoth"
 	{
 		LootItem "items/loot/resources/shard_steel_item"
@@ -76445,6 +78183,365 @@ Blueprints
 
 	}
 
+	LootItems "units/ground/mudroner"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.1500"
+			min "5"
+			max "10"
+			gather_amount "10"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.1500"
+			min "2"
+			max "4"
+			gather_amount "8"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "0.3500"
+			min "2"
+			max "4"
+			gather_amount "3"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0008"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0004"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0010"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0006"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/mudroner_boss_acid"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "150"
+			max "250"
+			gather_amount "250"
+			package_size "35"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "50"
+			max "150"
+			gather_amount "150"
+			package_size "10"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "50"
+			max "150"
+			gather_amount "150"
+			package_size "10"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.4000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.2500"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.5000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.3000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/mudroner_boss_cryo"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "150"
+			max "250"
+			gather_amount "250"
+			package_size "35"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "50"
+			max "150"
+			gather_amount "150"
+			package_size "10"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "50"
+			max "150"
+			gather_amount "150"
+			package_size "10"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.4000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.2500"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.5000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.3000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/mudroner_boss_energy"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "150"
+			max "250"
+			gather_amount "250"
+			package_size "35"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "50"
+			max "150"
+			gather_amount "150"
+			package_size "10"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "50"
+			max "150"
+			gather_amount "150"
+			package_size "10"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.4000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.2500"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.5000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.3000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/mudroner_boss_fire"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "150"
+			max "250"
+			gather_amount "250"
+			package_size "35"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "50"
+			max "150"
+			gather_amount "150"
+			package_size "10"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "50"
+			max "150"
+			gather_amount "150"
+			package_size "10"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.4000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.2500"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.5000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.3000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/mudroner_spawner"
 	LootItems "units/ground/mushbit"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -78419,6 +80516,7 @@ Blueprints
 
 	}
 
+	LootItems "units/ground/parabian"
 	LootItems "units/ground/phirian"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -78625,6 +80723,607 @@ Blueprints
 		LootItem "mods_superior"
 		{
 			chance "0.0200"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/plutrodon"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.1500"
+			min "5"
+			max "10"
+			gather_amount "10"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.0800"
+			min "1"
+			max "2"
+			gather_amount "1"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.1500"
+			min "2"
+			max "4"
+			gather_amount "8"
+			package_size "5"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0008"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0004"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0010"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0006"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/plutrodon_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.1500"
+			min "5"
+			max "10"
+			gather_amount "10"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.2000"
+			min "2"
+			max "3"
+			gather_amount "2"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "0.2000"
+			min "2"
+			max "3"
+			gather_amount "2"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.1500"
+			min "2"
+			max "4"
+			gather_amount "8"
+			package_size "5"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0008"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0004"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0010"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0006"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/plutrodon_base"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.1500"
+			min "5"
+			max "10"
+			gather_amount "10"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.0800"
+			min "1"
+			max "2"
+			gather_amount "1"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.1500"
+			min "2"
+			max "4"
+			gather_amount "8"
+			package_size "5"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0008"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0004"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0010"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0006"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/plutrodon_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.1500"
+			min "5"
+			max "10"
+			gather_amount "10"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.3500"
+			min "2"
+			max "4"
+			gather_amount "3"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "0.2000"
+			min "3"
+			max "6"
+			gather_amount "6"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0008"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0004"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0010"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0006"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/poogret"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.3500"
+			min "8"
+			max "15"
+			gather_amount "15"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0050"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0030"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0060"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0040"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/poogret_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.3500"
+			min "8"
+			max "15"
+			gather_amount "15"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0050"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0030"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0060"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0040"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/poogret_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.3500"
+			min "8"
+			max "15"
+			gather_amount "15"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "0.3000"
+			min "6"
+			max "9"
+			gather_amount "9"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0050"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0030"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0060"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0040"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -79526,6 +82225,387 @@ Blueprints
 
 	}
 
+	LootItems "units/ground/spawner_swamp_base"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "150"
+			max "250"
+			gather_amount "250"
+			package_size "35"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "150"
+			max "250"
+			gather_amount "250"
+			package_size "35"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "50"
+			max "100"
+			gather_amount "100"
+			package_size "10"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "100"
+			max "250"
+			gather_amount "250"
+			package_size "10"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.4000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.2500"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.5000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.3000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/spawner_swamp_canceroth"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "150"
+			max "250"
+			gather_amount "250"
+			package_size "35"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "50"
+			max "100"
+			gather_amount "100"
+			package_size "10"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "100"
+			max "250"
+			gather_amount "250"
+			package_size "10"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.4000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.2500"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.5000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.3000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/spawner_swamp_fungor"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "150"
+			max "250"
+			gather_amount "250"
+			package_size "35"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "150"
+			max "250"
+			gather_amount "250"
+			package_size "35"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "50"
+			max "100"
+			gather_amount "100"
+			package_size "10"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "100"
+			max "250"
+			gather_amount "250"
+			package_size "10"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.4000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.2500"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.5000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.3000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/spawner_swamp_plutrodon"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "150"
+			max "250"
+			gather_amount "250"
+			package_size "35"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "150"
+			max "250"
+			gather_amount "250"
+			package_size "35"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "50"
+			max "100"
+			gather_amount "100"
+			package_size "10"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "100"
+			max "250"
+			gather_amount "250"
+			package_size "10"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.4000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.2500"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.5000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.3000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/spawner_swamp_stickrid"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "150"
+			max "250"
+			gather_amount "250"
+			package_size "35"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/biomass_plant_item"
+		{
+			chance "1.0000"
+			min "150"
+			max "250"
+			gather_amount "250"
+			package_size "35"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "50"
+			max "100"
+			gather_amount "100"
+			package_size "10"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "100"
+			max "250"
+			gather_amount "250"
+			package_size "10"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.4000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.2500"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.5000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.3000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
 	LootItems "units/ground/spawner_wingmite"
 	{
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -79576,6 +82656,219 @@ Blueprints
 		LootItem "mods_superior"
 		{
 			chance "0.3000"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/stickrid"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			gather_amount "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.0700"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0005"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0002"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0006"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0003"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/stickrid_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.1500"
+			min "5"
+			max "10"
+			gather_amount "10"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.1500"
+			min "2"
+			max "4"
+			gather_amount "8"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0005"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0002"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0006"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0003"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
+	LootItems "units/ground/stickrid_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.1500"
+			min "5"
+			max "10"
+			gather_amount "10"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.1500"
+			min "2"
+			max "4"
+			gather_amount "8"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "0.0500"
+			min "1"
+			max "2"
+			gather_amount "2"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0005"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0002"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0006"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0003"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -81317,6 +84610,7 @@ Blueprints
 
 	}
 
+	LootItems "units/skills/waller_obstacle_root"
 	LootItems "weather/crystal_growth_crystal_01"
 	{
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -108002,7 +111296,6 @@ BlueprintOverrides
 	{
 		Items
 		{
-			biomass_morphed_very_small
 			ironium_medium
 			titanium_medium
 			biomass_animal_small
@@ -108175,6 +111468,54 @@ BlueprintOverrides
 			hazenite_very_small
 			mods_sup_big
 			biomass_animal_big
+		}
+
+	}
+
+	Blueprint "units/ground/artigian"
+	{
+		Items
+		{
+			mods_ext_big
+			mods_std_big
+			ironium_big
+			mods_adv_big
+			tanzanite_big
+			mods_sup_big
+			cobalt_big
+			biomass_plant_big
+		}
+
+	}
+
+	Blueprint "units/ground/artigian_alpha"
+	{
+		Items
+		{
+			mods_ext_big
+			mods_std_big
+			ironium_big
+			mods_adv_big
+			tanzanite_big
+			mods_sup_big
+			cobalt_big
+			biomass_plant_big
+		}
+
+	}
+
+	Blueprint "units/ground/artigian_ultra"
+	{
+		Items
+		{
+			mods_ext_big
+			mods_std_big
+			ironium_big
+			mods_adv_big
+			tanzanite_big
+			mods_sup_big
+			cobalt_big
+			biomass_plant_big
 		}
 
 	}
@@ -108355,7 +111696,6 @@ BlueprintOverrides
 		Items
 		{
 			mods_ext_medium
-			biomass_morphed_small
 			ironium_medium
 			mods_std_medium
 			titanium_small
@@ -108372,7 +111712,6 @@ BlueprintOverrides
 		Items
 		{
 			mods_ext_medium
-			biomass_morphed_small
 			ironium_medium
 			mods_std_medium
 			titanium_small
@@ -108401,7 +111740,6 @@ BlueprintOverrides
 		Items
 		{
 			mods_ext_big
-			biomass_morphed_small
 			ironium_big
 			mods_std_big
 			titanium_medium
@@ -108409,6 +111747,87 @@ BlueprintOverrides
 			mods_sup_big
 			carbonium_small
 			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/canceroth"
+	{
+		Items
+		{
+			mods_ext_very_big
+			mods_std_very_big
+			rhodonite_big
+			mods_adv_very_big
+			titanium_big
+			mods_sup_very_big
+			carbonium_big
+			biomass_animal_very_big
+			biomass_plant_big
+		}
+
+	}
+
+	Blueprint "units/ground/canceroth_alpha"
+	{
+		Items
+		{
+			mods_ext_very_big
+			mods_std_very_big
+			rhodonite_big
+			mods_adv_very_big
+			titanium_big
+			mods_sup_very_big
+			carbonium_big
+			biomass_animal_very_big
+			biomass_plant_big
+		}
+
+	}
+
+	Blueprint "units/ground/canceroth_child_alpha"
+	{
+		Items
+		{
+			biomass_animal_small
+			biomass_plant_small
+		}
+
+	}
+
+	Blueprint "units/ground/canceroth_child_base"
+	{
+		Items
+		{
+			biomass_animal_small
+			biomass_plant_small
+		}
+
+	}
+
+	Blueprint "units/ground/canceroth_child_ultra"
+	{
+		Items
+		{
+			biomass_animal_small
+			biomass_plant_small
+		}
+
+	}
+
+	Blueprint "units/ground/canceroth_ultra"
+	{
+		Items
+		{
+			mods_ext_very_big
+			mods_std_very_big
+			rhodonite_big
+			mods_adv_very_big
+			titanium_big
+			mods_sup_very_big
+			carbonium_big
+			biomass_animal_very_big
+			biomass_plant_big
 		}
 
 	}
@@ -109120,6 +112539,26 @@ BlueprintOverrides
 
 	}
 
+	Blueprint "units/ground/egg_arachnoid_sentinel_alpha"
+	{
+		Items
+		{
+			hazenite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_arachnoid_sentinel_ultra"
+	{
+		Items
+		{
+			hazenite_big
+			biomass_animal_small
+		}
+
+	}
+
 	Blueprint "units/ground/egg_canoptrix"
 	{
 		Items
@@ -109130,7 +112569,77 @@ BlueprintOverrides
 
 	}
 
+	Blueprint "units/ground/egg_canoptrix_alpha"
+	{
+		Items
+		{
+			biomass_animal_small
+			cobalt_big
+		}
+
+	}
+
+	Blueprint "units/ground/egg_canoptrix_ultra"
+	{
+		Items
+		{
+			biomass_animal_small
+			cobalt_big
+		}
+
+	}
+
+	Blueprint "units/ground/egg_fungor"
+	{
+		Items
+		{
+			rhodonite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_fungor_alpha"
+	{
+		Items
+		{
+			rhodonite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_fungor_ultra"
+	{
+		Items
+		{
+			rhodonite_big
+			biomass_animal_small
+		}
+
+	}
+
 	Blueprint "units/ground/egg_granan"
+	{
+		Items
+		{
+			rhodonite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_granan_alpha"
+	{
+		Items
+		{
+			rhodonite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_granan_ultra"
 	{
 		Items
 		{
@@ -109149,6 +112658,24 @@ BlueprintOverrides
 
 	}
 
+	Blueprint "units/ground/egg_krocoon_alpha"
+	{
+		Items
+		{
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_krocoon_ultra"
+	{
+		Items
+		{
+			biomass_animal_small
+		}
+
+	}
+
 	Blueprint "units/ground/egg_morirot"
 	{
 		Items
@@ -109159,7 +112686,47 @@ BlueprintOverrides
 
 	}
 
+	Blueprint "units/ground/egg_morirot_alpha"
+	{
+		Items
+		{
+			ferdonite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_morirot_ultra"
+	{
+		Items
+		{
+			ferdonite_big
+			biomass_animal_small
+		}
+
+	}
+
 	Blueprint "units/ground/egg_mushbit"
+	{
+		Items
+		{
+			tanzanite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_mushbit_alpha"
+	{
+		Items
+		{
+			tanzanite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_mushbit_ultra"
 	{
 		Items
 		{
@@ -109191,6 +112758,66 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_plutrodon"
+	{
+		Items
+		{
+			hazenite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_plutrodon_alpha"
+	{
+		Items
+		{
+			hazenite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_plutrodon_ultra"
+	{
+		Items
+		{
+			hazenite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_stickrid"
+	{
+		Items
+		{
+			ferdonite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_stickrid_alpha"
+	{
+		Items
+		{
+			ferdonite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_stickrid_ultra"
+	{
+		Items
+		{
+			ferdonite_big
 			biomass_animal_small
 		}
 
@@ -109252,6 +112879,57 @@ BlueprintOverrides
 			carbonium_medium
 			biomass_animal_medium
 			cobalt_medium
+		}
+
+	}
+
+	Blueprint "units/ground/fungor"
+	{
+		Items
+		{
+			mods_ext_big
+			mods_std_big
+			rhodonite_big
+			mods_adv_big
+			titanium_big
+			mods_sup_big
+			carbonium_big
+			biomass_animal_big
+			biomass_plant_big
+		}
+
+	}
+
+	Blueprint "units/ground/fungor_alpha"
+	{
+		Items
+		{
+			mods_ext_big
+			mods_std_big
+			rhodonite_big
+			mods_adv_big
+			titanium_big
+			mods_sup_big
+			carbonium_big
+			biomass_animal_big
+			biomass_plant_big
+		}
+
+	}
+
+	Blueprint "units/ground/fungor_ultra"
+	{
+		Items
+		{
+			mods_ext_big
+			mods_std_big
+			rhodonite_big
+			mods_adv_big
+			titanium_big
+			mods_sup_big
+			carbonium_big
+			biomass_animal_big
+			biomass_plant_big
 		}
 
 	}
@@ -109571,6 +113249,70 @@ BlueprintOverrides
 
 	}
 
+	Blueprint "units/ground/invigor"
+	{
+		Items
+		{
+			mods_ext_big
+			mods_std_big
+			mods_adv_big
+			hazenite_big
+			mods_sup_big
+			carbonium_big
+			palladium_big
+			biomass_plant_big
+		}
+
+	}
+
+	Blueprint "units/ground/invigor_alpha"
+	{
+		Items
+		{
+			mods_ext_big
+			mods_std_big
+			mods_adv_big
+			hazenite_big
+			mods_sup_big
+			carbonium_big
+			palladium_big
+			biomass_plant_big
+		}
+
+	}
+
+	Blueprint "units/ground/invigor_base"
+	{
+		Items
+		{
+			mods_ext_big
+			mods_std_big
+			mods_adv_big
+			hazenite_big
+			mods_sup_big
+			carbonium_big
+			palladium_big
+			biomass_plant_big
+		}
+
+	}
+
+	Blueprint "units/ground/invigor_ultra"
+	{
+		Items
+		{
+			mods_ext_big
+			mods_std_big
+			mods_adv_big
+			hazenite_big
+			mods_sup_big
+			carbonium_big
+			palladium_big
+			biomass_plant_big
+		}
+
+	}
+
 	Blueprint "units/ground/jurvine"
 	{
 		Items
@@ -109682,7 +113424,6 @@ BlueprintOverrides
 	{
 		Items
 		{
-			biomass_morphed_small
 			ironium_medium
 			ferdonite_small
 			biomass_animal_medium
@@ -109841,6 +113582,17 @@ BlueprintOverrides
 
 	}
 
+	Blueprint "units/ground/lurkid"
+	{
+		Items
+		{
+			ironium_very_small
+			carbonium_very_small
+			biomass_animal_very_small
+		}
+
+	}
+
 	Blueprint "units/ground/magmoth"
 	{
 		Items
@@ -109972,6 +113724,70 @@ BlueprintOverrides
 			mods_sup_small
 			carbonium_very_small
 			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/mudroner"
+	{
+		Items
+		{
+			mods_ext_medium
+			mods_std_medium
+			ironium_medium
+			mods_adv_medium
+			titanium_medium
+			tanzanite_medium
+			mods_sup_medium
+			biomass_animal_medium
+		}
+
+	}
+
+	Blueprint "units/ground/mudroner_boss_acid"
+	{
+		Items
+		{
+			mods_ext_boss
+			mods_std_boss
+			mods_adv_boss
+			mods_sup_boss
+		}
+
+	}
+
+	Blueprint "units/ground/mudroner_boss_cryo"
+	{
+		Items
+		{
+			mods_ext_boss
+			mods_std_boss
+			mods_adv_boss
+			mods_sup_boss
+		}
+
+	}
+
+	Blueprint "units/ground/mudroner_boss_energy"
+	{
+		Items
+		{
+			mods_ext_boss
+			mods_std_boss
+			mods_adv_boss
+			mods_sup_boss
+		}
+
+	}
+
+	Blueprint "units/ground/mudroner_boss_fire"
+	{
+		Items
+		{
+			mods_ext_boss
+			mods_std_boss
+			mods_adv_boss
+			mods_sup_boss
 		}
 
 	}
@@ -110456,6 +114272,120 @@ BlueprintOverrides
 
 	}
 
+	Blueprint "units/ground/plutrodon"
+	{
+		Items
+		{
+			mods_ext_medium
+			mods_std_medium
+			ironium_medium
+			mods_adv_medium
+			hazenite_very_small
+			mods_sup_medium
+			biomass_animal_medium
+			palladium_very_small
+		}
+
+	}
+
+	Blueprint "units/ground/plutrodon_alpha"
+	{
+		Items
+		{
+			mods_ext_medium
+			mods_std_medium
+			ironium_medium
+			mods_adv_medium
+			hazenite_small
+			mods_sup_medium
+			biomass_animal_medium
+		}
+
+	}
+
+	Blueprint "units/ground/plutrodon_base"
+	{
+		Items
+		{
+			mods_ext_medium
+			mods_std_medium
+			ironium_medium
+			mods_adv_medium
+			hazenite_very_small
+			mods_sup_medium
+			biomass_animal_medium
+			palladium_very_small
+		}
+
+	}
+
+	Blueprint "units/ground/plutrodon_ultra"
+	{
+		Items
+		{
+			mods_ext_medium
+			mods_std_medium
+			ironium_big
+			mods_adv_medium
+			hazenite_medium
+			mods_sup_medium
+			biomass_animal_medium
+			palladium_medium
+		}
+
+	}
+
+	Blueprint "units/ground/poogret"
+	{
+		Items
+		{
+			mods_ext_big
+			mods_std_big
+			ironium_big
+			mods_adv_big
+			mods_sup_big
+			carbonium_big
+			ferdonite_big
+			biomass_animal_big
+			uranium_big
+		}
+
+	}
+
+	Blueprint "units/ground/poogret_alpha"
+	{
+		Items
+		{
+			mods_ext_big
+			mods_std_big
+			ironium_big
+			mods_adv_big
+			mods_sup_big
+			carbonium_big
+			ferdonite_big
+			biomass_animal_big
+			uranium_big
+		}
+
+	}
+
+	Blueprint "units/ground/poogret_ultra"
+	{
+		Items
+		{
+			mods_ext_big
+			mods_std_big
+			ironium_big
+			mods_adv_big
+			mods_sup_big
+			carbonium_big
+			ferdonite_big
+			biomass_animal_big
+			uranium_big
+		}
+
+	}
+
 	Blueprint "units/ground/quelver"
 	{
 		Items
@@ -110631,6 +114561,66 @@ BlueprintOverrides
 
 	}
 
+	Blueprint "units/ground/spawner_swamp_base"
+	{
+		Items
+		{
+			mods_ext_boss
+			mods_std_boss
+			mods_adv_boss
+			mods_sup_boss
+		}
+
+	}
+
+	Blueprint "units/ground/spawner_swamp_canceroth"
+	{
+		Items
+		{
+			mods_ext_boss
+			mods_std_boss
+			mods_adv_boss
+			mods_sup_boss
+		}
+
+	}
+
+	Blueprint "units/ground/spawner_swamp_fungor"
+	{
+		Items
+		{
+			mods_ext_boss
+			mods_std_boss
+			mods_adv_boss
+			mods_sup_boss
+		}
+
+	}
+
+	Blueprint "units/ground/spawner_swamp_plutrodon"
+	{
+		Items
+		{
+			mods_ext_boss
+			mods_std_boss
+			mods_adv_boss
+			mods_sup_boss
+		}
+
+	}
+
+	Blueprint "units/ground/spawner_swamp_stickrid"
+	{
+		Items
+		{
+			mods_ext_boss
+			mods_std_boss
+			mods_adv_boss
+			mods_sup_boss
+		}
+
+	}
+
 	Blueprint "units/ground/spawner_wingmite"
 	{
 		Items
@@ -110639,6 +114629,51 @@ BlueprintOverrides
 			mods_std_boss
 			mods_adv_boss
 			mods_sup_boss
+		}
+
+	}
+
+	Blueprint "units/ground/stickrid"
+	{
+		Items
+		{
+			mods_ext_small
+			mods_std_small
+			ironium_small
+			mods_adv_small
+			mods_sup_small
+			biomass_animal_small
+			uranium_very_small
+		}
+
+	}
+
+	Blueprint "units/ground/stickrid_alpha"
+	{
+		Items
+		{
+			mods_ext_small
+			mods_std_small
+			ironium_medium
+			mods_adv_small
+			mods_sup_small
+			biomass_animal_medium
+			uranium_very_small
+		}
+
+	}
+
+	Blueprint "units/ground/stickrid_ultra"
+	{
+		Items
+		{
+			mods_ext_small
+			mods_std_small
+			ironium_medium
+			mods_adv_small
+			mods_sup_small
+			biomass_animal_medium
+			uranium_very_small
 		}
 
 	}
