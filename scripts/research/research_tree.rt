@@ -185,40 +185,6 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_lowcaliber"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
 						x "-99.000"
@@ -229,19 +195,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_ext"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/defense/tower_drone_attack_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "resources/ammo_tower_low_caliber_lvl3"
 							is_visible "1"
 						}
 
@@ -285,40 +239,6 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_lowcaliber"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
 						x "-99.000"
@@ -329,19 +249,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/defense/tower_drone_attack_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "resources/ammo_tower_low_caliber_lvl2"
 							is_visible "1"
 						}
 
@@ -389,12 +297,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_drone_attack"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "resources/ammo_tower_low_caliber"
 							is_visible "1"
 						}
 
@@ -542,12 +444,6 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_explosive_ext_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/defense/tower_heavy_artillery_lvl_2"
 							is_visible "1"
 						}
@@ -642,12 +538,6 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_ext_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/defense/tower_minigun_lvl_3"
 							is_visible "1"
 						}
@@ -700,12 +590,6 @@ Research
 
 					research_awards
 					{
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_lvl_2"
-							is_visible "1"
-						}
-
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_minigun_lvl_2"
@@ -1523,40 +1407,6 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_liquid"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
 						x "-684.000"
@@ -1567,19 +1417,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_liquid_ext"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/defense/tower_flamer_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "resources/ammo_tower_liquid_lvl3"
 							is_visible "1"
 						}
 
@@ -2274,40 +2112,6 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_explosive"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
 						x "-441.000"
@@ -2648,14 +2452,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/solid_materials_storage_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl5"
+							research_name "gui/menu/research/name/headquarters_lvl4"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -2668,7 +2465,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "1500.000"
+							count "1000.000"
 						}
 
 					}
@@ -2676,8 +2473,8 @@ Research
 					research_scripts
 					position
 					{
-						x "90.000"
-						y "36.000"
+						x "36.000"
+						y "-81.000"
 					}
 
 					research_awards
@@ -4677,12 +4474,6 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_explosive_adv_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/defense/tower_heavy_artillery"
 							is_visible "1"
 						}
@@ -6182,12 +5973,6 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_liquid_adv_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/defense/tower_acid_spitter_lvl_2"
 							is_visible "1"
 						}
@@ -6274,12 +6059,6 @@ Research
 
 					research_awards
 					{
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_liquid_ext_lvl_2"
-							is_visible "1"
-						}
-
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_acid_spitter_lvl_3"
@@ -6609,40 +6388,6 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_highcaliber"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
 						x "-171.000"
@@ -6775,40 +6520,6 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_highcaliber"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
 						x "-171.000"
@@ -6819,12 +6530,6 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_highcaliber_ext"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/defense/tower_cannon_incindiary"
 							is_visible "1"
 						}
@@ -6832,12 +6537,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_cannon_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "resources/ammo_tower_high_caliber_lvl3"
 							is_visible "1"
 						}
 
@@ -7190,7 +6889,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "250.000"
+							count "200.000"
 						}
 
 					}
@@ -7224,7 +6923,7 @@ Research
 
 						ResearchAward
 						{
-							blueprint "resources/ammo_mech_low_caliber"
+							blueprint "resources/ammo_tower_low_caliber"
 							is_visible "1"
 						}
 
@@ -7278,7 +6977,7 @@ Research
 								{
 									StringData
 									{
-										value "ammo_storage_highcaliber"
+										value "ammo_storage_lowcaliber"
 										key "limit_name"
 									}
 
@@ -7391,7 +7090,7 @@ Research
 								{
 									StringData
 									{
-										value "ammo_storage_highcaliber"
+										value "ammo_storage_lowcaliber"
 										key "limit_name"
 									}
 
@@ -7711,7 +7410,7 @@ Research
 								{
 									StringData
 									{
-										value "ammo_storage_highcaliber"
+										value "ammo_storage_explosive"
 										key "limit_name"
 									}
 
@@ -7811,7 +7510,7 @@ Research
 								{
 									StringData
 									{
-										value "ammo_storage_highcaliber"
+										value "ammo_storage_explosive"
 										key "limit_name"
 									}
 
@@ -7924,7 +7623,7 @@ Research
 								{
 									StringData
 									{
-										value "ammo_storage_highcaliber"
+										value "ammo_storage_liquid"
 										key "limit_name"
 									}
 
@@ -8640,7 +8339,7 @@ Research
 								{
 									StringData
 									{
-										value "ammo_storage_highcaliber"
+										value "ammo_storage_lowcaliber"
 										key "limit_name"
 									}
 
@@ -9936,7 +9635,7 @@ Research
 								{
 									StringData
 									{
-										value "ammo_storage_highcaliber"
+										value "ammo_storage_explosive"
 										key "limit_name"
 									}
 
@@ -30211,6 +29910,6 @@ Research
 
 	type
 	editor "6197"
-	version "130"
+	version "131"
 }
 
