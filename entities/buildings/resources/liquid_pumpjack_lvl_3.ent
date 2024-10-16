@@ -12,12 +12,14 @@ EntityBlueprint
 		type				"pipe"
 		localization_id		"gui/hud/building_name/liquid_pumpjack"
 		description			"gui/hud/building_description/liquid_pumpjack"
-		menu_icon			"gui/hud/building_icons/liquid_pump_lvl3"
-		build_on_water		"0"
+		menu_icon			"gui/hud/building_icons/gas_extractor_lvl3"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"liquid_pump"
 		//upgrade				"buildings/resources/liquid_pumpjack_lvl_4"
+		check_connect		"1"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		order				"9"
 
 		costs
@@ -25,16 +27,17 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2
+				building_time 70
 				building_cost
 				{
 					carbonium 	"200"
 					steel 		"1000"
+					palladium	"200"
 				}
 			}
 		}
 
-		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
+		resource_requirement "flammable_gas_vent|mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
 	}
 
 	ResourceConverterDesc
@@ -56,44 +59,44 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"water_deepvein"
-				specific_group		"local"
-				value			 	"3"
 				family				"deep"
+				value			 	"3"
 			}
 			GameplayResource
 			{
 				resource 			"mud_deepvein"
-				specific_group		"local"
-				value			 	"3"
 				family				"deep"
+				value			 	"3"
 			}
 			GameplayResource
 			{
 				resource 			"sludge_deepvein"
-				specific_group		"local"
-				value			 	"3"
 				family				"deep"
+				value			 	"3"
 			}
 			GameplayResource
 			{
 				resource 			"magma_deepvein"
-				specific_group		"local"
-				value			 	"3"
 				family				"deep"
+				value			 	"3"
 			}
 			GameplayResource
 			{
 				resource 			"morphium_deepvein"
-				specific_group		"local"
-				value			 	"3"
 				family				"deep"
+				value			 	"3"
 			}
 			GameplayResource
 			{
 				resource 			"petroleum_deepvein"
-				specific_group		"local"
-				value			 	"3"
 				family				"deep"
+				value			 	"3"
+			}
+			GameplayResource
+			{
+				resource 			"flammable_gas_vent"
+				family				"deep"
+				value			 	"3"
 			}
 		}
 
@@ -141,6 +144,13 @@ EntityBlueprint
 				family				"deep"
 				attachment			"att_out_1"
 			}
+			GameplayResource
+			{
+				resource 			"flammable_gas"
+				value				"300"
+				family				"deep"
+				attachment			"att_out_1"
+			}		
 		}
 
 		priority 4
@@ -191,96 +201,25 @@ EntityBlueprint
 		}
 	}
 	
-	ResistanceComponent
-	{
-		magma		"0"
-	}		
-
-	MeshDesc
-	{
-		mesh "meshes/buildings/resources/liquid_pump_lvl_3.mesh"
-		material "buildings/resources/liquid_pump_lvl_3"
-	}
-
-	SkeletonDesc
-	{
-		name "meshes/buildings/resources/liquid_pumpjack_lvl_3"
-	}
 
 	EffectDesc
 	{
 		EffectBaseBlueprints
 		{
-			"buildings/effects_small_base"
-		}
-		////////////////////////Resources/////////////////////////
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"
-			delay "0"
-
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_arrow"
-				}
-			}
-		}
-		EffectGroup
-		{
-			group "att_out_1"
-			enabled "0"
-			delay "0"
-
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_arrow"
-				}
-			}
+			"buildings/resources/liquid_pumpjack_lvl_2"
 		}
 		////////////////////////MISC/////////////////////////	
 		EffectGroup
 		{
-			group "vismod"
+			group "level"
 			enabled "1"
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/pylon"
-					bone "att_vismod_1"
-					scale "0.6 1.5 0.6"
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
 				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_02"
-					bone "att_vismod_2"
-					scale "0.8 0.6 0.6"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_pipe"
-				}
-			}
-		}		
-		EffectGroup
-		{
-			group "working"
-			enabled "0"				
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_resources/liquid_pump_working"
-				}			
 			}
 		}		
 	}
