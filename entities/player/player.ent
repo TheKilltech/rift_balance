@@ -385,8 +385,10 @@ EntityBlueprint
 
 	GuiDesc
 	{
-		def_name 				"gui/template/text_label_center"
-		alignment 				"center"
+		def_name 				"gui/template/text_label"
+		alignment 				"bottom"
+		anchor					"top"
+		anchor_target			"parent_all"
 		use_database_component 	"1"
 	}
 
