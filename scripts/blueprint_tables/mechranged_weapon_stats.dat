@@ -3629,7 +3629,7 @@ items/weapons/bouncing_blades_advanced_item
 				default_value "1000.000"
 				max_value "1000.000"
 				min_value "1000.000"
-				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
@@ -3677,9 +3677,9 @@ items/weapons/bouncing_blades_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "3.700"
-				max_value "3.500"
-				min_value "3.000"
+				default_value "4.800"
+				max_value "4.700"
+				min_value "3.600"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -3826,7 +3826,7 @@ items/weapons/bouncing_blades_extreme_item
 				default_value "1000.000"
 				max_value "1000.000"
 				min_value "1000.000"
-				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
@@ -3874,9 +3874,9 @@ items/weapons/bouncing_blades_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "6.100"
-				max_value "5.900"
-				min_value "5.000"
+				default_value "8.000"
+				max_value "7.900"
+				min_value "6.600"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -3976,7 +3976,6 @@ items/weapons/bouncing_blades_item
 
 			WeaponStatDef
 			{
-				stat_features "INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_SPLASH"
 			}
 
@@ -4056,9 +4055,9 @@ items/weapons/bouncing_blades_item
 
 			WeaponStatDef
 			{
-				default_value "2.500"
-				max_value "2.500"
-				min_value "2.500"
+				default_value "3.200"
+				max_value "3.200"
+				min_value "3.200"
 				stat_features "BASE_DEFAULT"
 				stat_type "AMMO_COST"
 			}
@@ -4192,7 +4191,7 @@ items/weapons/bouncing_blades_superior_item
 				default_value "1000.000"
 				max_value "1000.000"
 				min_value "1000.000"
-				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
@@ -4240,9 +4239,9 @@ items/weapons/bouncing_blades_superior_item
 
 			WeaponStatDef
 			{
-				default_value "4.900"
-				max_value "4.700"
-				min_value "4.100"
+				default_value "6.400"
+				max_value "6.300"
+				min_value "5.100"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -5644,6 +5643,584 @@ items/weapons/charged_bomb_superior_item
 
 }
 
+items/weapons/charged_bomb_advanced_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_explosive"
+		damage_type "energy"
+		rarity "ADVANCED"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "425.000"
+				min_value "375.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.400"
+				min_value "1.200"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "5.000"
+				max_value "8.000"
+				min_value "6.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "85.000"
+				min_value "75.000"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "7.000"
+				min_value "6.500"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "300.000"
+				min_value "300.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "36.000"
+				min_value "34.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.600"
+				min_value "0.500"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.200"
+				min_value "1.100"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.200"
+				min_value "1.100"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				default_value "18.000"
+				max_value "21.000"
+				min_value "19.000"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				default_value "2.250"
+				max_value "1.400"
+				min_value "1.100"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.200"
+				min_value "1.200"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+		}
+
+	}
+
+}
+
+items/weapons/charged_bomb_extreme_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_explosive"
+		damage_type "energy"
+		rarity "EXTREME"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "670.000"
+				min_value "585.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.800"
+				min_value "1.600"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "5.000"
+				max_value "12.000"
+				min_value "10.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "140.000"
+				min_value "117.000"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "8.000"
+				min_value "7.500"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "300.000"
+				min_value "300.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "36.000"
+				min_value "34.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.800"
+				min_value "0.700"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.400"
+				min_value "1.300"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.400"
+				min_value "1.300"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				default_value "24.000"
+				max_value "27.000"
+				min_value "25.000"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				default_value "3.750"
+				max_value "2.400"
+				min_value "2.100"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.400"
+				min_value "1.400"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+		}
+
+	}
+
+}
+
+items/weapons/charged_bomb_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_explosive"
+		damage_type "energy"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "350.000"
+				min_value "300.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.200"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "5.000"
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "6.500"
+				min_value "6.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "300.000"
+				min_value "300.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "36.000"
+				min_value "34.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				default_value "15.000"
+				max_value "15.000"
+				min_value "15.000"
+				stat_features "BASE_DEFAULT|STATISTIC"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.500"
+				max_value "1.500"
+				min_value "1.500"
+				stat_features "BASE_DEFAULT"
+				stat_type "AMMO_COST"
+			}
+
+		}
+
+	}
+
+}
+
+items/weapons/charged_bomb_superior_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_explosive"
+		damage_type "energy"
+		rarity "SUPERIOR"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "525.000"
+				min_value "468.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.600"
+				min_value "1.400"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "5.000"
+				max_value "10.000"
+				min_value "8.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "105.000"
+				min_value "93.000"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "7.500"
+				min_value "7.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "300.000"
+				min_value "300.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "36.000"
+				min_value "34.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.700"
+				min_value "0.600"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.300"
+				min_value "1.200"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.300"
+				min_value "1.200"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				default_value "21.000"
+				max_value "24.000"
+				min_value "22.000"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				default_value "3.000"
+				max_value "1.900"
+				min_value "1.600"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.300"
+				min_value "1.300"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+		}
+
+	}
+
+}
+
+
 items/weapons/corrosive_gun_advanced_item
 {
 	WeaponItemDesc
@@ -5998,19 +6575,20 @@ items/weapons/corrosive_gun_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "30.000"
-				min_value "25.000"
-				stat_features "MODABLE"
-				stat_type "AMMO_AUTOAIM"
 			}
 
 			WeaponStatDef
 			{
+				max_value "30.000"
+				min_value "25.000"
+				stat_features "MODABLE"
+				stat_type "AMMO_AUTOAIM"
 				max_value "100.000"
 				min_value "100.000"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_HOMING"
 			}
+
 
 			WeaponStatDef
 			{
@@ -6019,7 +6597,6 @@ items/weapons/corrosive_gun_extreme_item
 				stat_features "MODABLE"
 				stat_type "AMMO_CLUSTER"
 			}
-
 			WeaponStatDef
 			{
 				max_value "1.400"
@@ -6129,6 +6706,17 @@ items/weapons/corrosive_gun_item
 
 			WeaponStatDef
 			{
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			WeaponStatDef
+			{
 				default_value "1.000"
 				max_value "1.000"
 				min_value "1.000"
@@ -6145,17 +6733,6 @@ items/weapons/corrosive_gun_item
 				stat_type "FIRE_PER_SHOT"
 			}
 
-			WeaponStatDef
-			{
-				stat_type "AMMO_STUN"
-			}
-
-			WeaponStatDef
-			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "AMMO_STUN_LENGTH"
 			}
 
 			WeaponStatDef
@@ -6356,19 +6933,20 @@ items/weapons/corrosive_gun_superior_item
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "20.000"
-				stat_features "MODABLE"
-				stat_type "AMMO_AUTOAIM"
 			}
 
 			WeaponStatDef
 			{
+				max_value "25.000"
+				min_value "20.000"
+				stat_features "MODABLE"
+				stat_type "AMMO_AUTOAIM"
 				max_value "100.000"
 				min_value "100.000"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_HOMING"
 			}
+
 
 			WeaponStatDef
 			{
@@ -6377,7 +6955,6 @@ items/weapons/corrosive_gun_superior_item
 				stat_features "MODABLE"
 				stat_type "AMMO_CLUSTER"
 			}
-
 			WeaponStatDef
 			{
 				max_value "1.300"
@@ -6708,10 +7285,557 @@ items/weapons/cryo_spitter_item
 		{
 			WeaponStatDef
 			{
+				stat_type "FIRE_RATE"
 				max_value "11.000"
 				min_value "10.000"
 				stat_features "BASE_MINMAX|STATISTIC"
-				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				default_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				min_value "0.100"
+			}
+
+			WeaponStatDef
+			{
+				min_value "4.000"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+			}
+
+		}
+
+	}
+
+}
+
+{
+	WeaponItemDesc
+	{
+		damage_type "cryo"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|HIDDEN"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "MODABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+			}
+
+		}
+
+	}
+
+}
+
+{
+	WeaponItemDesc
+	{
+		damage_type "cryo"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|HIDDEN"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+		}
+
+	}
+
+}
+
+{
+	WeaponItemDesc
+	{
+		damage_type "cryo"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "76.000"
+				min_value "74.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "225.000"
+				min_value "200.000"
+				stat_features "MODABLE"
+				stat_type "AMMO_ANGLE_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "MODABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "6.000"
+				min_value "6.000"
+				stat_features "BASE_MINMAX|MODABLE|HIDDEN"
+				stat_type "AMMO_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "MODABLE"
+				stat_type "AMMO_AUTOAIM"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100.000"
+				min_value "100.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_HOMING"
+			}
+
+			WeaponStatDef
+			{
+				default_value "5.000"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC"
+				stat_type "AMMO_CLUSTER"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.500"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+		}
+
+	}
+
+}
+
+{
+	WeaponItemDesc
+	{
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|HIDDEN"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "MODABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.400"
+			}
+
+
+
+
+			WeaponStatDef
+			{
+				max_value "14.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|HIDDEN"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|STATISTIC"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|HIDDEN"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
 			}
 
 			WeaponStatDef
@@ -6734,56 +7858,34 @@ items/weapons/cryo_spitter_item
 
 			WeaponStatDef
 			{
-				stat_features "BASE_MINMAX"
-				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|HIDDEN"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
 			}
 
 			WeaponStatDef
 			{
 				max_value "5.000"
 				min_value "5.000"
+			}
+
+			WeaponStatDef
+			{
 				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
 			}
 
 			WeaponStatDef
 			{
-				default_value "2.000"
-				max_value "2.000"
-				min_value "2.000"
-				stat_features "BASE_DEFAULT"
-				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "700.000"
-				min_value "700.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_CRITICAL_FACTOR"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|STATISTIC"
-				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
-				max_value "0.100"
-				min_value "0.100"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "4.000"
-				min_value "4.000"
-				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
@@ -6794,40 +7896,25 @@ items/weapons/cryo_spitter_item
 
 			WeaponStatDef
 			{
-				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "AMMO_STUN_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				default_value "12.000"
-				max_value "12.000"
-				min_value "12.000"
-				stat_features "BASE_DEFAULT"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "36.000"
-				min_value "34.000"
 				stat_features "BASE_MINMAX"
-				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
 				stat_features "BASE_MINMAX"
-				stat_type "AMMO_SPREAD"
 			}
 
 		}
@@ -6836,19 +7923,14 @@ items/weapons/cryo_spitter_item
 
 }
 
-items/weapons/cryo_spitter_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_liquid_lvl2"
-		damage_type "cryo"
-		rarity "SUPERIOR"
+		damage_type "fire"
 		stat_def_vec
 		{
 			WeaponStatDef
 			{
-				max_value "13.000"
-				min_value "12.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
@@ -6856,8 +7938,6 @@ items/weapons/cryo_spitter_superior_item
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.300"
-				min_value "1.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_PER_BURST"
 			}
@@ -6865,8 +7945,6 @@ items/weapons/cryo_spitter_superior_item
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.300"
-				min_value "1.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
@@ -6888,8 +7966,6 @@ items/weapons/cryo_spitter_superior_item
 			WeaponStatDef
 			{
 				default_value "2.000"
-				max_value "5.000"
-				min_value "4.000"
 				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
@@ -6904,8 +7980,6 @@ items/weapons/cryo_spitter_superior_item
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
@@ -6928,16 +8002,12 @@ items/weapons/cryo_spitter_superior_item
 
 			WeaponStatDef
 			{
-				max_value "0.200"
-				min_value "0.160"
 				stat_features "MODABLE"
 				stat_type "DAMAGE_LIFESTEAL"
 			}
 
 			WeaponStatDef
 			{
-				max_value "15.000"
-				min_value "11.000"
 				stat_features "MODABLE"
 				stat_type "AMMO_STUN"
 			}
@@ -6952,9 +8022,6 @@ items/weapons/cryo_spitter_superior_item
 
 			WeaponStatDef
 			{
-				default_value "30.000"
-				max_value "29.000"
-				min_value "20.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -6969,8 +8036,6 @@ items/weapons/cryo_spitter_superior_item
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -6989,19 +8054,176 @@ items/weapons/cryo_spitter_superior_item
 
 }
 
-items/weapons/cryogenic_atomizer_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_liquid_lvl2"
-		damage_type "cryo"
-		rarity "ADVANCED"
+		damage_type "fire"
 		stat_def_vec
 		{
 			WeaponStatDef
 			{
-				max_value "35.000"
-				min_value "31.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|HIDDEN"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+			}
+
+		}
+
+	}
+
+}
+
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_liquid"
+		damage_type "fire"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|STATISTIC"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|HIDDEN"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_DEFAULT"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+			}
+
+		}
+
+	}
+
+}
+
+{
+	WeaponItemDesc
+	{
+		damage_type "fire"
+		rarity "SUPERIOR"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -7016,10 +8238,255 @@ items/weapons/cryogenic_atomizer_advanced_item
 
 			WeaponStatDef
 			{
-				max_value "8.000"
-				min_value "7.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+			}
+
+		}
+
+	}
+
+}
+
+{
+	WeaponItemDesc
+	{
+		rarity "ADVANCED"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+		}
+
+	}
+
+}
+
+{
+	WeaponItemDesc
+	{
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				min_value "3.100"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+		}
+
+	}
+
+}
+
+{
+	WeaponItemDesc
+	{
+		damage_type "acid"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "8.000"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "8.000"
+				min_value "6.000"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "200.000"
+				min_value "200.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
 			}
 
 			WeaponStatDef
@@ -7032,37 +8499,349 @@ items/weapons/cryogenic_atomizer_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "165.000"
-				max_value "160.000"
-				min_value "130.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				min_value "2.000"
+				stat_type "AMMO_COST"
+			}
+
+		}
+
+	}
+
+}
+
+{
+	WeaponItemDesc
+	{
+		damage_type "acid"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "8.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "MODABLE"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "8.000"
+				min_value "6.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "200.000"
+				min_value "200.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "MODABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "MODABLE"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "18.000"
-				min_value "16.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "BEAM_RANGE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.200"
-				min_value "5.100"
-				stat_features "BASE_MINMAX"
-				stat_type "BEAM_WIDTH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "1.200"
-				min_value "1.200"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
+		}
+
+	}
+
+}
+
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_explosive"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "8.000"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "8.000"
+				min_value "6.000"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "200.000"
+				min_value "200.000"
+				default_value "2.000"
+				max_value "2.000"
+				min_value "2.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+				max_value "700.000"
+				min_value "700.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_OVER_TIME"
+				max_value "0.100"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+				max_value "4.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_SPLASH"
+				stat_type "DAMAGE_LIFESTEAL"
+				stat_type "AMMO_STUN"
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+				default_value "12.000"
+				max_value "12.000"
+				min_value "12.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "AMMO_COST"
+				max_value "36.000"
+				min_value "34.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+				max_value "1.000"
+				min_value "1.000"
+				stat_type "AMMO_SPREAD"
+items/weapons/cryo_spitter_superior_item
+		ammo_storage "ammo_mech_liquid_lvl2"
+		rarity "SUPERIOR"
+				max_value "13.000"
+				min_value "12.000"
+				stat_type "FIRE_RATE"
+				default_value "1.000"
+				max_value "1.300"
+				min_value "1.200"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_BURST"
+				default_value "1.000"
+				max_value "1.300"
+				min_value "1.200"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_SHOT"
+				stat_features "BASE_MINMAX|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+				default_value "2.000"
+				max_value "5.000"
+				min_value "4.000"
+				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+				max_value "700.000"
+				min_value "700.000"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+				max_value "10.000"
+				min_value "10.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_OVER_TIME"
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+				max_value "4.000"
+				min_value "4.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_SPLASH"
+				max_value "0.200"
+				min_value "0.160"
+				max_value "15.000"
+				min_value "11.000"
+				stat_features "MODABLE"
+				stat_type "AMMO_STUN"
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+				default_value "30.000"
+				max_value "29.000"
+				min_value "20.000"
+				max_value "36.000"
+				min_value "34.000"
+				stat_type "AMMO_SPEED"
+				max_value "1.200"
+				min_value "1.200"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+				max_value "1.000"
+				min_value "1.000"
+				stat_type "AMMO_SPREAD"
+items/weapons/cryogenic_atomizer_advanced_item
+		ammo_storage "ammo_mech_liquid_lvl2"
+		rarity "ADVANCED"
+				max_value "35.000"
+				min_value "31.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				max_value "8.000"
+				min_value "7.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				default_value "165.000"
+				max_value "160.000"
+				min_value "130.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+				max_value "18.000"
+				min_value "16.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "BEAM_RANGE"
+				max_value "5.200"
+				min_value "5.100"
+				stat_features "BASE_MINMAX"
+				stat_type "BEAM_WIDTH"
+				max_value "1.200"
+				min_value "1.200"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
 		}
 
 	}
@@ -7078,128 +8857,56 @@ items/weapons/cryogenic_atomizer_extreme_item
 		rarity "EXTREME"
 		stat_def_vec
 		{
-			WeaponStatDef
-			{
 				max_value "55.000"
 				min_value "47.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "5.000"
 				min_value "5.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "13.000"
 				min_value "11.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
 				max_value "5.000"
 				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				default_value "275.000"
 				max_value "270.000"
 				min_value "240.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "22.000"
 				min_value "20.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "BEAM_RANGE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "5.600"
 				min_value "5.500"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.400"
 				min_value "1.400"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
-			}
-
-		}
-
-	}
-
-}
-
 items/weapons/cryogenic_atomizer_item
-{
-	WeaponItemDesc
-	{
 		ammo_storage "ammo_mech_liquid"
-		damage_type "cryo"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
 				max_value "29.000"
 				min_value "25.000"
 				stat_features "BASE_MINMAX|STATISTIC"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "6.000"
 				min_value "5.000"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
 				max_value "5.000"
 				min_value "5.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				default_value "110.000"
 				max_value "110.000"
 				min_value "110.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "16.000"
 				min_value "14.000"
 				stat_features "BASE_MINMAX|STATISTIC"
@@ -7355,311 +9062,108 @@ items/weapons/crystal_gun_advanced_item
 				min_value "1000.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "76.000"
-				min_value "74.000"
-				stat_features "BASE_MINMAX"
-				stat_type "AMMO_SPEED"
-			}
-
-			WeaponStatDef
-			{
-				max_value "225.000"
-				min_value "200.000"
-				stat_features "MODABLE"
-				stat_type "AMMO_ANGLE_SPEED"
-			}
-
-			WeaponStatDef
-			{
 				max_value "0.200"
 				min_value "0.100"
-				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_PENETRATION"
-			}
-
-			WeaponStatDef
-			{
 				max_value "0.150"
 				min_value "0.100"
-				stat_features "MODABLE"
-				stat_type "DAMAGE_LIFESTEAL"
-			}
-
-			WeaponStatDef
-			{
-				default_value "1.000"
 				max_value "1.200"
 				min_value "1.100"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "FIRE_PER_BURST"
-			}
-
-			WeaponStatDef
-			{
-				default_value "1.000"
 				max_value "1.200"
 				min_value "1.100"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "FIRE_PER_SHOT"
-			}
-
-			WeaponStatDef
-			{
 				default_value "4.500"
 				max_value "4.400"
 				min_value "4.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
-				max_value "6.000"
-				min_value "6.000"
-				stat_features "BASE_MINMAX|MODABLE|HIDDEN"
-				stat_type "AMMO_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "20.000"
 				min_value "15.000"
-				stat_features "MODABLE"
-				stat_type "AMMO_AUTOAIM"
-			}
-
-			WeaponStatDef
-			{
-				max_value "100.000"
-				min_value "100.000"
-				stat_features "BASE_MINMAX"
-				stat_type "AMMO_HOMING"
-			}
-
-			WeaponStatDef
-			{
-				default_value "5.000"
 				max_value "6.000"
 				min_value "5.500"
-				stat_features "BASE_DEFAULT|MODABLE|STATISTIC"
-				stat_type "AMMO_CLUSTER"
-			}
-
-			WeaponStatDef
-			{
-				default_value "1.500"
 				max_value "2.000"
 				min_value "1.500"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.200"
 				min_value "1.200"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_SCALE"
-			}
-
-		}
-
-	}
-
-}
-
 items/weapons/crystal_gun_extreme_item
-{
-	WeaponItemDesc
-	{
 		ammo_storage "ammo_mech_low_caliber"
 		damage_type "cryo"
 		rarity "EXTREME"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
 				max_value "26.000"
 				min_value "24.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "5.000"
 				min_value "5.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "22.000"
 				min_value "21.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "3.100"
-				min_value "2.600"
+				max_value "4.100"
+				min_value "3.600"
 				stat_features "MODABLE"
 				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
 				max_value "2.000"
 				min_value "1.500"
 				stat_features "MODABLE"
 				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1000.000"
 				min_value "1000.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
-			}
-
-			WeaponStatDef
-			{
 				max_value "5.000"
 				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "76.000"
 				min_value "74.000"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
-			}
-
-			WeaponStatDef
-			{
 				max_value "225.000"
 				min_value "200.000"
 				stat_features "MODABLE"
 				stat_type "AMMO_ANGLE_SPEED"
-			}
-
-			WeaponStatDef
-			{
 				max_value "0.400"
 				min_value "0.300"
 				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_PENETRATION"
-			}
-
-			WeaponStatDef
-			{
 				max_value "0.250"
 				min_value "0.210"
-				stat_features "MODABLE"
-				stat_type "DAMAGE_LIFESTEAL"
-			}
-
-			WeaponStatDef
-			{
 				default_value "1.000"
 				max_value "1.400"
 				min_value "1.300"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_PER_BURST"
-			}
-
-			WeaponStatDef
-			{
 				default_value "1.000"
 				max_value "1.400"
 				min_value "1.300"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_PER_SHOT"
-			}
-
-			WeaponStatDef
-			{
 				default_value "7.500"
 				max_value "7.400"
 				min_value "7.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "6.000"
 				min_value "6.000"
 				stat_features "BASE_MINMAX|MODABLE|HIDDEN"
 				stat_type "AMMO_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "30.000"
 				min_value "25.000"
 				stat_features "MODABLE"
 				stat_type "AMMO_AUTOAIM"
-			}
-
-			WeaponStatDef
-			{
 				max_value "100.000"
 				min_value "100.000"
-				stat_features "BASE_MINMAX"
 				stat_type "AMMO_HOMING"
-			}
-
-			WeaponStatDef
-			{
 				default_value "5.000"
 				max_value "7.000"
 				min_value "6.500"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC"
 				stat_type "AMMO_CLUSTER"
-			}
-
-			WeaponStatDef
-			{
 				default_value "1.500"
 				max_value "3.500"
 				min_value "3.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "1.400"
 				min_value "1.400"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
-			}
-
 		}
-
 	}
-
 }
-
 items/weapons/crystal_gun_item
 {
 	WeaponItemDesc
@@ -7668,136 +9172,42 @@ items/weapons/crystal_gun_item
 		damage_type "cryo"
 		stat_def_vec
 		{
-			WeaponStatDef
-			{
-				max_value "14.000"
 				min_value "12.000"
-				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "5.000"
 				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "16.000"
 				min_value "15.000"
-				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "FIRE_RATE"
-			}
-
-			WeaponStatDef
-			{
 				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
 				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1000.000"
 				min_value "1000.000"
-				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
-			}
-
-			WeaponStatDef
-			{
 				max_value "5.000"
 				min_value "5.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "76.000"
 				min_value "74.000"
-				stat_features "BASE_MINMAX"
-				stat_type "AMMO_SPEED"
-			}
-
-			WeaponStatDef
-			{
 				stat_type "AMMO_ANGLE_SPEED"
-			}
-
-			WeaponStatDef
-			{
 				stat_type "DAMAGE_PENETRATION"
-			}
-
-			WeaponStatDef
-			{
 				stat_type "DAMAGE_LIFESTEAL"
-			}
-
-			WeaponStatDef
-			{
-				default_value "1.000"
-				max_value "1.000"
-				min_value "1.000"
-				stat_features "BASE_DEFAULT"
-				stat_type "FIRE_PER_BURST"
-			}
-
-			WeaponStatDef
-			{
-				default_value "1.000"
-				max_value "1.000"
-				min_value "1.000"
-				stat_features "BASE_DEFAULT"
-				stat_type "FIRE_PER_SHOT"
-			}
-
-			WeaponStatDef
-			{
 				default_value "3.000"
 				max_value "3.000"
 				min_value "3.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "6.000"
 				min_value "6.000"
-				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "AMMO_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				stat_type "AMMO_AUTOAIM"
-			}
-
-			WeaponStatDef
-			{
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_HOMING"
-			}
-
-			WeaponStatDef
-			{
 				default_value "5.000"
-				max_value "5.000"
-				min_value "5.000"
 				stat_features "BASE_DEFAULT|STATISTIC"
 				stat_type "AMMO_CLUSTER"
-			}
-
-			WeaponStatDef
-			{
 				default_value "1.500"
 				max_value "1.500"
 				min_value "1.500"
@@ -7832,12 +9242,7 @@ items/weapons/crystal_gun_superior_item
 			{
 				max_value "5.000"
 				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "20.000"
 				min_value "19.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
@@ -7857,11 +9262,6 @@ items/weapons/crystal_gun_superior_item
 				max_value "1.500"
 				min_value "1.000"
 				stat_features "MODABLE"
-				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1000.000"
 				min_value "1000.000"
 				stat_features "BASE_MINMAX|HIDDEN"
@@ -7905,38 +9305,20 @@ items/weapons/crystal_gun_superior_item
 				max_value "0.200"
 				min_value "0.160"
 				stat_features "MODABLE"
-				stat_type "DAMAGE_LIFESTEAL"
-			}
-
-			WeaponStatDef
-			{
 				default_value "1.000"
 				max_value "1.300"
 				min_value "1.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_PER_BURST"
-			}
-
-			WeaponStatDef
-			{
 				default_value "1.000"
 				max_value "1.300"
 				min_value "1.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_PER_SHOT"
-			}
-
-			WeaponStatDef
-			{
 				default_value "6.000"
 				max_value "5.900"
 				min_value "5.500"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "6.000"
 				min_value "6.000"
 				stat_features "BASE_MINMAX|MODABLE|HIDDEN"
@@ -7955,12 +9337,7 @@ items/weapons/crystal_gun_superior_item
 			{
 				max_value "100.000"
 				min_value "100.000"
-				stat_features "BASE_MINMAX"
 				stat_type "AMMO_HOMING"
-			}
-
-			WeaponStatDef
-			{
 				default_value "5.000"
 				max_value "6.500"
 				min_value "6.000"
@@ -7981,197 +9358,40 @@ items/weapons/crystal_gun_superior_item
 			{
 				max_value "1.300"
 				min_value "1.300"
-				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
-			}
-
-		}
-
-	}
-
-}
-
 items/weapons/fire_spitter_advanced_item
-{
-	WeaponItemDesc
-	{
 		ammo_storage "ammo_mech_liquid_lvl2"
-		damage_type "fire"
 		rarity "ADVANCED"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
 				max_value "12.000"
 				min_value "11.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "FIRE_RATE"
-			}
-
-			WeaponStatDef
-			{
-				default_value "1.000"
 				max_value "1.200"
 				min_value "1.100"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "FIRE_PER_BURST"
-			}
-
-			WeaponStatDef
-			{
-				default_value "1.000"
 				max_value "1.200"
 				min_value "1.100"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "FIRE_PER_SHOT"
-			}
-
-			WeaponStatDef
-			{
-				stat_features "BASE_MINMAX|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
-				default_value "2.000"
 				max_value "4.000"
 				min_value "3.000"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "700.000"
-				min_value "700.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_CRITICAL_FACTOR"
-			}
-
-			WeaponStatDef
-			{
 				max_value "7.000"
 				min_value "7.000"
-				stat_features "BASE_MINMAX|STATISTIC"
-				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
-				max_value "0.100"
-				min_value "0.100"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "4.000"
-				min_value "4.000"
-				stat_features "BASE_MINMAX|STATISTIC"
-				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "0.150"
 				min_value "0.100"
-				stat_features "MODABLE"
-				stat_type "DAMAGE_LIFESTEAL"
-			}
-
-			WeaponStatDef
-			{
 				max_value "10.000"
 				min_value "5.000"
-				stat_features "MODABLE"
-				stat_type "AMMO_STUN"
-			}
-
-			WeaponStatDef
-			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "AMMO_STUN_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				default_value "17.000"
 				max_value "16.000"
 				min_value "12.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
-				max_value "36.000"
-				min_value "34.000"
-				stat_features "BASE_MINMAX"
-				stat_type "AMMO_SPEED"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.100"
 				min_value "1.100"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_SCALE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "1.000"
-				min_value "1.000"
-				stat_features "BASE_MINMAX"
-				stat_type "AMMO_SPREAD"
-			}
-
-		}
-
-	}
-
-}
-
 items/weapons/fire_spitter_extreme_item
-{
-	WeaponItemDesc
-	{
 		ammo_storage "ammo_mech_liquid_lvl3"
-		damage_type "fire"
 		rarity "EXTREME"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
 				max_value "14.000"
 				min_value "13.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
-			}
-
-			WeaponStatDef
-			{
 				default_value "1.000"
 				max_value "1.400"
 				min_value "1.300"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_PER_BURST"
-			}
-
-			WeaponStatDef
-			{
 				default_value "1.000"
 				max_value "1.400"
 				min_value "1.300"
@@ -8183,103 +9403,48 @@ items/weapons/fire_spitter_extreme_item
 			{
 				stat_features "BASE_MINMAX|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				default_value "2.000"
 				max_value "6.000"
 				min_value "5.000"
 				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "700.000"
 				min_value "700.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
-			}
-
-			WeaponStatDef
-			{
 				max_value "14.000"
 				min_value "14.000"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
 				max_value "0.100"
 				min_value "0.100"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "4.000"
 				min_value "4.000"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "0.250"
 				min_value "0.210"
 				stat_features "MODABLE"
 				stat_type "DAMAGE_LIFESTEAL"
-			}
-
-			WeaponStatDef
-			{
 				max_value "20.000"
 				min_value "16.000"
 				stat_features "MODABLE"
 				stat_type "AMMO_STUN"
-			}
-
-			WeaponStatDef
-			{
 				max_value "3.000"
 				min_value "3.000"
-				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "AMMO_STUN_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				default_value "16.000"
 				max_value "15.500"
 				min_value "12.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "36.000"
 				min_value "34.000"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.300"
 				min_value "1.300"
-				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
@@ -8289,41 +9454,16 @@ items/weapons/fire_spitter_extreme_item
 				min_value "1.000"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
-			}
-
-		}
-
-	}
-
-}
-
 items/weapons/fire_spitter_item
-{
-	WeaponItemDesc
-	{
-		ammo_storage "ammo_mech_liquid"
-		damage_type "fire"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
 				max_value "11.000"
 				min_value "10.000"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "FIRE_RATE"
-			}
-
-			WeaponStatDef
-			{
 				default_value "1.000"
 				max_value "1.000"
 				min_value "1.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_BURST"
-			}
-
-			WeaponStatDef
-			{
 				default_value "1.000"
 				max_value "1.000"
 				min_value "1.000"
@@ -8335,120 +9475,46 @@ items/weapons/fire_spitter_item
 			{
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				default_value "2.000"
 				max_value "2.000"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "700.000"
 				min_value "700.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
-			}
-
-			WeaponStatDef
-			{
 				max_value "5.000"
 				min_value "5.000"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
 				max_value "0.100"
 				min_value "0.100"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "4.000"
 				min_value "4.000"
-				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
 				stat_type "DAMAGE_LIFESTEAL"
-			}
-
-			WeaponStatDef
-			{
 				stat_type "AMMO_STUN"
-			}
-
-			WeaponStatDef
-			{
 				max_value "3.000"
 				min_value "3.000"
-				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "AMMO_STUN_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				default_value "12.000"
 				max_value "12.000"
 				min_value "12.000"
-				stat_features "BASE_DEFAULT"
-				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "36.000"
 				min_value "34.000"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.000"
 				min_value "1.000"
-				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
-			}
-
-		}
-
-	}
-
-}
-
 items/weapons/fire_spitter_superior_item
-{
-	WeaponItemDesc
-	{
 		ammo_storage "ammo_mech_liquid_lvl2"
-		damage_type "fire"
-		rarity "SUPERIOR"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
 				max_value "13.000"
 				min_value "12.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -8473,19 +9539,6 @@ items/weapons/fire_spitter_superior_item
 			WeaponStatDef
 			{
 				stat_features "BASE_MINMAX|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				default_value "2.000"
 				max_value "5.000"
 				min_value "4.000"
@@ -8506,19 +9559,8 @@ items/weapons/fire_spitter_superior_item
 				max_value "10.000"
 				min_value "10.000"
 				stat_features "BASE_MINMAX|STATISTIC"
-				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
 				max_value "0.100"
 				min_value "0.100"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "4.000"
 				min_value "4.000"
 				stat_features "BASE_MINMAX|STATISTIC"
@@ -8554,114 +9596,44 @@ items/weapons/fire_spitter_superior_item
 				default_value "30.000"
 				max_value "29.000"
 				min_value "20.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "36.000"
 				min_value "34.000"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.200"
 				min_value "1.200"
-				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.000"
 				min_value "1.000"
-				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
-			}
-
-		}
-
-	}
-
-}
-
 items/weapons/flamer_advanced_item
-{
-	WeaponItemDesc
-	{
 		ammo_storage "ammo_mech_liquid_lvl2"
 		damage_type "fire"
-		rarity "ADVANCED"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
 				max_value "35.000"
 				min_value "31.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "8.000"
 				min_value "7.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
 				max_value "6.000"
 				min_value "5.500"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				default_value "165.000"
 				max_value "160.000"
 				min_value "130.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "18.000"
 				min_value "16.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "BEAM_RANGE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "3.100"
 				min_value "2.900"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.200"
 				min_value "1.200"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
-			}
-
 		}
 
 	}
@@ -8677,148 +9649,69 @@ items/weapons/flamer_extreme_item
 		rarity "EXTREME"
 		stat_def_vec
 		{
-			WeaponStatDef
-			{
 				max_value "55.000"
 				min_value "47.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "5.000"
 				min_value "5.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "13.000"
 				min_value "11.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
 				max_value "8.000"
 				min_value "7.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				default_value "275.000"
 				max_value "270.000"
 				min_value "240.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "22.000"
 				min_value "20.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "BEAM_RANGE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "3.500"
 				min_value "3.300"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.400"
 				min_value "1.400"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_SCALE"
-			}
-
-		}
-
-	}
-
-}
-
 items/weapons/flamer_item
-{
-	WeaponItemDesc
-	{
 		ammo_storage "ammo_mech_liquid"
 		damage_type "fire"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
 				max_value "29.000"
 				min_value "25.000"
 				stat_features "BASE_MINMAX|STATISTIC"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "6.000"
 				min_value "5.000"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
 				max_value "5.500"
 				min_value "5.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				default_value "110.000"
 				max_value "110.000"
 				min_value "110.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "16.000"
 				min_value "14.000"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "BEAM_RANGE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "2.900"
 				min_value "2.700"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
-			}
-
 		}
 
 	}
 
 }
-
 items/weapons/flamer_superior_item
 {
 	WeaponItemDesc
@@ -8828,208 +9721,65 @@ items/weapons/flamer_superior_item
 		rarity "SUPERIOR"
 		stat_def_vec
 		{
-			WeaponStatDef
-			{
 				max_value "42.000"
 				min_value "38.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "5.000"
 				min_value "5.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "10.000"
 				min_value "9.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
 				max_value "6.900"
 				min_value "6.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				default_value "220.000"
 				max_value "215.000"
 				min_value "185.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "20.000"
 				min_value "18.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "BEAM_RANGE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "3.300"
-				min_value "3.100"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.300"
 				min_value "1.300"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_SCALE"
-			}
-
-		}
-
-	}
-
-}
-
 items/weapons/floating_mines_acid_advanced_item
-{
-	WeaponItemDesc
-	{
 		ammo_storage "ammo_mech_explosive_lvl2"
-		damage_type "acid"
 		rarity "ADVANCED"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
 				max_value "400.000"
 				min_value "350.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.800"
 				min_value "1.600"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "FIRE_RATE"
-			}
-
-			WeaponStatDef
-			{
-				default_value "8.000"
 				max_value "12.000"
 				min_value "9.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "85.000"
 				min_value "75.000"
 				stat_features "MODABLE"
-				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
-				max_value "8.000"
-				min_value "6.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "200.000"
-				min_value "200.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_CRITICAL_FACTOR"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
-				stat_features "BASE_MINMAX"
-				stat_type "AMMO_SPEED"
-			}
-
-			WeaponStatDef
-			{
 				max_value "0.150"
 				min_value "0.100"
 				stat_features "MODABLE"
-				stat_type "DAMAGE_LIFESTEAL"
-			}
-
-			WeaponStatDef
-			{
-				default_value "1.000"
 				max_value "1.200"
 				min_value "1.100"
-				stat_features "BASE_DEFAULT"
-				stat_type "FIRE_PER_BURST"
-			}
-
-			WeaponStatDef
-			{
-				default_value "1.000"
 				max_value "1.200"
 				min_value "1.100"
-				stat_features "BASE_DEFAULT"
-				stat_type "FIRE_PER_SHOT"
-			}
-
-			WeaponStatDef
-			{
 				max_value "10.000"
 				min_value "5.000"
 				stat_features "MODABLE"
-				stat_type "AMMO_STUN"
-			}
-
-			WeaponStatDef
-			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "AMMO_STUN_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				default_value "2.500"
 				max_value "2.600"
-				min_value "2.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
-			}
-
 			WeaponStatDef
 			{
 				max_value "1.200"
@@ -9038,215 +9788,42 @@ items/weapons/floating_mines_acid_advanced_item
 				stat_type "WEAPON_SCALE"
 			}
 
-		}
-
-	}
-
-}
-
 items/weapons/floating_mines_acid_extreme_item
-{
-	WeaponItemDesc
-	{
 		ammo_storage "ammo_mech_explosive_lvl3"
-		damage_type "acid"
 		rarity "EXTREME"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
 				max_value "540.000"
 				min_value "460.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "2.200"
 				min_value "2.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "FIRE_RATE"
-			}
-
-			WeaponStatDef
-			{
-				default_value "8.000"
 				max_value "18.000"
 				min_value "15.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "140.000"
 				min_value "117.000"
-				stat_features "MODABLE"
-				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
-				max_value "8.000"
-				min_value "6.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "200.000"
-				min_value "200.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_CRITICAL_FACTOR"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
-				stat_features "BASE_MINMAX"
-				stat_type "AMMO_SPEED"
-			}
-
-			WeaponStatDef
-			{
 				max_value "0.250"
 				min_value "0.210"
-				stat_features "MODABLE"
-				stat_type "DAMAGE_LIFESTEAL"
-			}
-
-			WeaponStatDef
-			{
-				default_value "1.000"
 				max_value "1.400"
 				min_value "1.300"
-				stat_features "BASE_DEFAULT"
-				stat_type "FIRE_PER_BURST"
-			}
-
-			WeaponStatDef
-			{
-				default_value "1.000"
 				max_value "1.400"
 				min_value "1.300"
-				stat_features "BASE_DEFAULT"
-				stat_type "FIRE_PER_SHOT"
-			}
-
-			WeaponStatDef
-			{
 				max_value "20.000"
 				min_value "16.000"
-				stat_features "MODABLE"
-				stat_type "AMMO_STUN"
-			}
-
-			WeaponStatDef
-			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "AMMO_STUN_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				default_value "2.500"
 				max_value "2.400"
 				min_value "2.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.400"
 				min_value "1.400"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_SCALE"
-			}
-
-		}
-
-	}
-
-}
-
 items/weapons/floating_mines_acid_item
-{
-	WeaponItemDesc
-	{
-		ammo_storage "ammo_mech_explosive"
 		damage_type "acid"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
 				max_value "350.000"
 				min_value "300.000"
 				stat_features "BASE_MINMAX|STATISTIC"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.600"
 				min_value "1.400"
 				stat_features "BASE_MINMAX|STATISTIC"
-				stat_type "FIRE_RATE"
-			}
-
-			WeaponStatDef
-			{
-				default_value "8.000"
 				max_value "8.000"
 				min_value "8.000"
 				stat_features "BASE_DEFAULT"
-				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
-				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
-				max_value "8.000"
-				min_value "6.000"
 				stat_features "BASE_MINMAX|STATISTIC"
-				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "200.000"
-				min_value "200.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
 			}
@@ -9273,8 +9850,6 @@ items/weapons/floating_mines_acid_item
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.000"
-				min_value "1.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_BURST"
 			}
@@ -9282,8 +9857,6 @@ items/weapons/floating_mines_acid_item
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.000"
-				min_value "1.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_SHOT"
 			}
@@ -9303,91 +9876,95 @@ items/weapons/floating_mines_acid_item
 
 			WeaponStatDef
 			{
+				stat_type "AMMO_COST"
+			}
+
+		}
+
+	}
+
+}
+
+{
+	WeaponItemDesc
+	{
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "8.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "8.000"
+				min_value "6.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "200.000"
+				min_value "200.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+				max_value "1.000"
+				min_value "1.000"
+				max_value "1.000"
+				min_value "1.000"
 				default_value "2.000"
 				max_value "2.000"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT"
-				stat_type "AMMO_COST"
-			}
-
-		}
-
-	}
-
-}
-
 items/weapons/floating_mines_acid_superior_item
-{
-	WeaponItemDesc
-	{
 		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "acid"
 		rarity "SUPERIOR"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
 				max_value "460.000"
 				min_value "400.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
 				max_value "2.000"
 				min_value "1.800"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "FIRE_RATE"
-			}
-
-			WeaponStatDef
-			{
-				default_value "8.000"
 				max_value "15.000"
 				min_value "12.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "105.000"
 				min_value "93.000"
 				stat_features "MODABLE"
-				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
-				max_value "8.000"
-				min_value "6.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "200.000"
-				min_value "200.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_CRITICAL_FACTOR"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
@@ -9407,18 +9984,18 @@ items/weapons/floating_mines_acid_superior_item
 			WeaponStatDef
 			{
 				default_value "1.000"
+				stat_features "BASE_DEFAULT"
 				max_value "1.300"
 				min_value "1.200"
-				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
+				stat_features "BASE_DEFAULT"
 				max_value "1.300"
 				min_value "1.200"
-				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_SHOT"
 			}
 
@@ -9497,14 +10074,14 @@ items/weapons/floating_mines_advanced_item
 			WeaponStatDef
 			{
 				default_value "8.000"
-				max_value "12.000"
-				min_value "9.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
+				max_value "12.000"
+				min_value "9.000"
 				max_value "85.000"
 				min_value "75.000"
 				stat_features "MODABLE"
@@ -9552,23 +10129,23 @@ items/weapons/floating_mines_advanced_item
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.200"
-				min_value "1.100"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_BURST"
+				max_value "1.200"
+				min_value "1.100"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.200"
-				min_value "1.100"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
+				max_value "1.200"
+				min_value "1.100"
 				max_value "10.000"
 				min_value "5.000"
 				stat_features "MODABLE"
@@ -9594,8 +10171,6 @@ items/weapons/floating_mines_advanced_item
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -9606,20 +10181,14 @@ items/weapons/floating_mines_advanced_item
 
 }
 
-items/weapons/floating_mines_cryo_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "cryo"
-		rarity "ADVANCED"
 		stat_def_vec
 		{
 			WeaponStatDef
 			{
-				max_value "85.000"
-				min_value "75.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
 
@@ -9633,26 +10202,17 @@ items/weapons/floating_mines_cryo_advanced_item
 
 			WeaponStatDef
 			{
-				max_value "1.800"
-				min_value "1.600"
-				stat_features "BASE_MINMAX|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
 				default_value "8.000"
-				max_value "12.000"
-				min_value "9.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "85.000"
-				min_value "75.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
@@ -9660,7 +10220,6 @@ items/weapons/floating_mines_cryo_advanced_item
 			{
 				max_value "8.000"
 				min_value "6.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_SPLASH"
 			}
 
@@ -9684,40 +10243,58 @@ items/weapons/floating_mines_cryo_advanced_item
 			{
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
+				max_value "1.200"
+				min_value "1.200"
+items/weapons/floating_mines_cryo_advanced_item
+		ammo_storage "ammo_mech_explosive_lvl2"
+		rarity "ADVANCED"
+				max_value "85.000"
+				min_value "75.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				max_value "1.800"
+				min_value "1.600"
+				stat_features "BASE_MINMAX|MODABLE|INITIAL_RANDOMIZABLE"
+				max_value "12.000"
+				min_value "9.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				max_value "85.000"
+				min_value "75.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 			}
 
 			WeaponStatDef
 			{
+				stat_type "DAMAGE_LIFESTEAL"
 				max_value "0.150"
 				min_value "0.100"
 				stat_features "MODABLE"
-				stat_type "DAMAGE_LIFESTEAL"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.200"
-				min_value "1.100"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_BURST"
+				max_value "1.200"
+				min_value "1.100"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.200"
-				min_value "1.100"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_SHOT"
+				max_value "1.200"
+				min_value "1.100"
 			}
 
 			WeaponStatDef
 			{
+				stat_type "AMMO_STUN"
 				max_value "10.000"
 				min_value "5.000"
 				stat_features "MODABLE"
-				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
@@ -9730,11 +10307,11 @@ items/weapons/floating_mines_cryo_advanced_item
 
 			WeaponStatDef
 			{
+				min_value "2.000"
+				stat_type "AMMO_COST"
 				default_value "2.700"
 				max_value "2.600"
-				min_value "2.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
@@ -9762,9 +10339,9 @@ items/weapons/floating_mines_cryo_extreme_item
 		{
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				max_value "140.000"
 				min_value "117.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
 
@@ -9778,26 +10355,26 @@ items/weapons/floating_mines_cryo_extreme_item
 
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX|MODABLE|INITIAL_RANDOMIZABLE"
 				max_value "2.200"
 				min_value "2.000"
-				stat_features "BASE_MINMAX|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
 				default_value "8.000"
-				max_value "18.000"
-				min_value "15.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				max_value "18.000"
+				min_value "15.000"
 				max_value "140.000"
 				min_value "117.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
@@ -9833,9 +10410,9 @@ items/weapons/floating_mines_cryo_extreme_item
 
 			WeaponStatDef
 			{
+				stat_features "MODABLE"
 				max_value "0.250"
 				min_value "0.210"
-				stat_features "MODABLE"
 				stat_type "DAMAGE_LIFESTEAL"
 			}
 
@@ -9859,10 +10436,10 @@ items/weapons/floating_mines_cryo_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "16.000"
 				stat_features "MODABLE"
 				stat_type "AMMO_STUN"
+				max_value "20.000"
+				min_value "16.000"
 			}
 
 			WeaponStatDef
@@ -9875,11 +10452,11 @@ items/weapons/floating_mines_cryo_extreme_item
 
 			WeaponStatDef
 			{
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
 				default_value "2.500"
 				max_value "2.300"
 				min_value "2.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
@@ -9931,14 +10508,14 @@ items/weapons/floating_mines_cryo_item
 			WeaponStatDef
 			{
 				default_value "8.000"
-				max_value "8.000"
-				min_value "8.000"
-				stat_features "BASE_DEFAULT"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
+				max_value "8.000"
+				min_value "8.000"
+				stat_features "BASE_DEFAULT"
 				max_value "70.000"
 				min_value "60.000"
 				stat_features "BASE_MINMAX|STATISTIC"
@@ -9983,19 +10560,19 @@ items/weapons/floating_mines_cryo_item
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.000"
-				min_value "1.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_BURST"
+				max_value "1.000"
+				min_value "1.000"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.000"
-				min_value "1.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_SHOT"
+				max_value "1.000"
+				min_value "1.000"
 			}
 
 			WeaponStatDef
@@ -10013,11 +10590,11 @@ items/weapons/floating_mines_cryo_item
 
 			WeaponStatDef
 			{
+				stat_type "AMMO_COST"
 				default_value "2.000"
 				max_value "2.000"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT"
-				stat_type "AMMO_COST"
 			}
 
 		}
@@ -10053,27 +10630,27 @@ items/weapons/floating_mines_cryo_superior_item
 
 			WeaponStatDef
 			{
+				stat_type "FIRE_RATE"
 				max_value "2.000"
 				min_value "1.800"
 				stat_features "BASE_MINMAX|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
 				default_value "8.000"
-				max_value "15.000"
-				min_value "12.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
+				max_value "15.000"
+				min_value "12.000"
 			}
 
 			WeaponStatDef
 			{
+				stat_type "DAMAGE_OVER_TIME"
 				max_value "105.000"
 				min_value "93.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
-				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
@@ -10117,8 +10694,6 @@ items/weapons/floating_mines_cryo_superior_item
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.300"
-				min_value "1.200"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_BURST"
 			}
@@ -10126,14 +10701,16 @@ items/weapons/floating_mines_cryo_superior_item
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.300"
-				min_value "1.200"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
+				max_value "1.300"
+				min_value "1.200"
+				max_value "1.300"
+				min_value "1.200"
 				max_value "15.000"
 				min_value "11.000"
 				stat_features "MODABLE"
@@ -10198,10 +10775,10 @@ items/weapons/floating_mines_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "1.800"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
+				max_value "2.000"
+				min_value "1.800"
 			}
 
 			WeaponStatDef
@@ -10320,17 +10897,17 @@ items/weapons/floating_mines_gravity_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "physical"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		rarity "ADVANCED"
 		stat_def_vec
 		{
 			WeaponStatDef
 			{
+				stat_type "DAMAGE_VALUE"
 				max_value "400.000"
 				min_value "350.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
@@ -10343,35 +10920,35 @@ items/weapons/floating_mines_gravity_advanced_item
 
 			WeaponStatDef
 			{
+				stat_type "FIRE_RATE"
 				max_value "1.800"
 				min_value "1.600"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
 				default_value "8.000"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
 				max_value "12.000"
 				min_value "9.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
+				stat_type "DAMAGE_OVER_TIME"
 				max_value "85.000"
 				min_value "75.000"
 				stat_features "MODABLE"
-				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
 				max_value "8.000"
 				min_value "6.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_SPLASH"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 			}
 
 			WeaponStatDef
@@ -10398,28 +10975,28 @@ items/weapons/floating_mines_gravity_advanced_item
 
 			WeaponStatDef
 			{
+				stat_type "DAMAGE_LIFESTEAL"
 				max_value "0.150"
 				min_value "0.100"
 				stat_features "MODABLE"
-				stat_type "DAMAGE_LIFESTEAL"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.200"
-				min_value "1.100"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_BURST"
+				max_value "1.200"
+				min_value "1.100"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.200"
-				min_value "1.100"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_SHOT"
+				max_value "1.200"
+				min_value "1.100"
 			}
 
 			WeaponStatDef
@@ -10440,9 +11017,9 @@ items/weapons/floating_mines_gravity_advanced_item
 
 			WeaponStatDef
 			{
+				min_value "2.000"
 				default_value "2.700"
 				max_value "2.600"
-				min_value "2.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -10465,8 +11042,8 @@ items/weapons/floating_mines_gravity_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive_lvl3"
 		damage_type "physical"
+		ammo_storage "ammo_mech_explosive_lvl3"
 		rarity "EXTREME"
 		stat_def_vec
 		{
@@ -10488,27 +11065,27 @@ items/weapons/floating_mines_gravity_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "2.200"
-				min_value "2.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
+				max_value "2.200"
+				min_value "2.000"
 			}
 
 			WeaponStatDef
 			{
 				default_value "8.000"
-				max_value "18.000"
-				min_value "15.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
+				max_value "18.000"
+				min_value "15.000"
 			}
 
 			WeaponStatDef
 			{
-				max_value "140.000"
-				min_value "117.000"
 				stat_features "MODABLE"
 				stat_type "DAMAGE_OVER_TIME"
+				max_value "140.000"
+				min_value "117.000"
 			}
 
 			WeaponStatDef
@@ -10543,8 +11120,6 @@ items/weapons/floating_mines_gravity_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "0.250"
-				min_value "0.210"
 				stat_features "MODABLE"
 				stat_type "DAMAGE_LIFESTEAL"
 			}
@@ -10552,19 +11127,21 @@ items/weapons/floating_mines_gravity_extreme_item
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.400"
-				min_value "1.300"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_BURST"
+				max_value "0.250"
+				min_value "0.210"
+				max_value "1.400"
+				min_value "1.300"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.400"
-				min_value "1.300"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_SHOT"
+				max_value "1.400"
+				min_value "1.300"
 			}
 
 			WeaponStatDef
@@ -10632,19 +11209,19 @@ items/weapons/floating_mines_gravity_item
 
 			WeaponStatDef
 			{
+				stat_type "FIRE_RATE"
 				max_value "1.600"
 				min_value "1.400"
 				stat_features "BASE_MINMAX|STATISTIC"
-				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
 				default_value "8.000"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
 				max_value "8.000"
 				min_value "8.000"
 				stat_features "BASE_DEFAULT"
-				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
@@ -10656,8 +11233,8 @@ items/weapons/floating_mines_gravity_item
 			{
 				max_value "8.000"
 				min_value "6.000"
-				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
+				stat_features "BASE_MINMAX|STATISTIC"
 			}
 
 			WeaponStatDef
@@ -10690,19 +11267,19 @@ items/weapons/floating_mines_gravity_item
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.000"
-				min_value "1.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_BURST"
+				max_value "1.000"
+				min_value "1.000"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.000"
-				min_value "1.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_SHOT"
+				max_value "1.000"
+				min_value "1.000"
 			}
 
 			WeaponStatDef
@@ -10720,11 +11297,11 @@ items/weapons/floating_mines_gravity_item
 
 			WeaponStatDef
 			{
+				stat_type "AMMO_COST"
 				default_value "2.000"
 				max_value "2.000"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT"
-				stat_type "AMMO_COST"
 			}
 
 		}
@@ -10744,9 +11321,9 @@ items/weapons/floating_mines_gravity_superior_item
 		{
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				max_value "460.000"
 				min_value "400.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
 
@@ -10760,27 +11337,27 @@ items/weapons/floating_mines_gravity_superior_item
 
 			WeaponStatDef
 			{
+				stat_type "FIRE_RATE"
 				max_value "2.000"
 				min_value "1.800"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
 				default_value "8.000"
-				max_value "15.000"
-				min_value "12.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
+				max_value "15.000"
+				min_value "12.000"
 			}
 
 			WeaponStatDef
 			{
+				stat_type "DAMAGE_OVER_TIME"
 				max_value "105.000"
 				min_value "93.000"
 				stat_features "MODABLE"
-				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
@@ -10815,36 +11392,36 @@ items/weapons/floating_mines_gravity_superior_item
 
 			WeaponStatDef
 			{
-				max_value "0.200"
-				min_value "0.160"
 				stat_features "MODABLE"
 				stat_type "DAMAGE_LIFESTEAL"
+				max_value "0.200"
+				min_value "0.160"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.300"
-				min_value "1.200"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_BURST"
+				max_value "1.300"
+				min_value "1.200"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
+				stat_type "FIRE_PER_SHOT"
 				max_value "1.300"
 				min_value "1.200"
 				stat_features "BASE_DEFAULT"
-				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "15.000"
-				min_value "11.000"
 				stat_features "MODABLE"
 				stat_type "AMMO_STUN"
+				max_value "15.000"
+				min_value "11.000"
 			}
 
 			WeaponStatDef
@@ -10857,11 +11434,11 @@ items/weapons/floating_mines_gravity_superior_item
 
 			WeaponStatDef
 			{
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
 				default_value "5.500"
 				max_value "5.300"
 				min_value "3.200"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
@@ -10882,8 +11459,8 @@ items/weapons/floating_mines_incendiary_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "fire"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		rarity "ADVANCED"
 		stat_def_vec
 		{
@@ -11027,8 +11604,8 @@ items/weapons/floating_mines_incendiary_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive_lvl3"
 		damage_type "fire"
+		ammo_storage "ammo_mech_explosive_lvl3"
 		rarity "EXTREME"
 		stat_def_vec
 		{
@@ -11050,9 +11627,9 @@ items/weapons/floating_mines_incendiary_extreme_item
 
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX|MODABLE|INITIAL_RANDOMIZABLE"
 				max_value "2.200"
 				min_value "2.000"
-				stat_features "BASE_MINMAX|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -11067,9 +11644,9 @@ items/weapons/floating_mines_incendiary_extreme_item
 
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				max_value "140.000"
 				min_value "117.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
@@ -11443,7 +12020,6 @@ items/weapons/floating_mines_incendiary_superior_item
 
 }
 
-items/weapons/floating_mines_item
 {
 	WeaponItemDesc
 	{
@@ -11453,9 +12029,6 @@ items/weapons/floating_mines_item
 		{
 			WeaponStatDef
 			{
-				max_value "350.000"
-				min_value "300.000"
-				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
@@ -11469,18 +12042,12 @@ items/weapons/floating_mines_item
 
 			WeaponStatDef
 			{
-				max_value "1.600"
-				min_value "1.400"
-				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				default_value "8.000"
 				max_value "8.000"
-				min_value "8.000"
-				stat_features "BASE_DEFAULT"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
@@ -11491,16 +12058,12 @@ items/weapons/floating_mines_item
 
 			WeaponStatDef
 			{
-				max_value "8.000"
 				min_value "6.000"
-				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "200.000"
-				min_value "200.000"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
 			}
@@ -11527,18 +12090,12 @@ items/weapons/floating_mines_item
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.000"
-				min_value "1.000"
-				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.000"
-				min_value "1.000"
-				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_SHOT"
 			}
 
@@ -11557,10 +12114,6 @@ items/weapons/floating_mines_item
 
 			WeaponStatDef
 			{
-				default_value "2.000"
-				max_value "2.000"
-				min_value "2.000"
-				stat_features "BASE_DEFAULT"
 				stat_type "AMMO_COST"
 			}
 
@@ -11570,6 +12123,30 @@ items/weapons/floating_mines_item
 
 }
 
+items/weapons/floating_mines_item
+				max_value "350.000"
+				min_value "300.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				max_value "1.600"
+				min_value "1.400"
+				stat_features "BASE_MINMAX|STATISTIC"
+				default_value "8.000"
+				min_value "8.000"
+				stat_features "BASE_DEFAULT"
+				max_value "8.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				max_value "200.000"
+				min_value "200.000"
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_DEFAULT"
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_DEFAULT"
+				default_value "2.000"
+				max_value "2.000"
+				min_value "2.000"
+				stat_features "BASE_DEFAULT"
 items/weapons/floating_mines_superior_item
 {
 	WeaponItemDesc
@@ -11694,9 +12271,9 @@ items/weapons/floating_mines_superior_item
 
 			WeaponStatDef
 			{
+				min_value "3.200"
 				default_value "5.500"
 				max_value "5.300"
-				min_value "3.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -11719,8 +12296,8 @@ items/weapons/grenade_launcher_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "area"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		rarity "ADVANCED"
 		stat_def_vec
 		{
@@ -11850,12 +12427,12 @@ items/weapons/grenade_launcher_advanced_item
 
 			WeaponStatDef
 			{
-				max_value "0.200"
-				min_value "0.100"
-				stat_features "MODABLE"
 				stat_type "AMMO_CLUSTER"
 			}
 
+				max_value "0.200"
+				min_value "0.100"
+				stat_features "MODABLE"
 			WeaponStatDef
 			{
 				max_value "1.200"
@@ -11874,8 +12451,8 @@ items/weapons/grenade_launcher_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive_lvl3"
 		damage_type "area"
+		ammo_storage "ammo_mech_explosive_lvl3"
 		rarity "EXTREME"
 		stat_def_vec
 		{
@@ -11897,9 +12474,9 @@ items/weapons/grenade_launcher_extreme_item
 
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				max_value "1.600"
 				min_value "1.400"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -11914,9 +12491,9 @@ items/weapons/grenade_launcher_extreme_item
 
 			WeaponStatDef
 			{
+				stat_features "MODABLE"
 				max_value "140.000"
 				min_value "117.000"
-				stat_features "MODABLE"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
@@ -11963,18 +12540,18 @@ items/weapons/grenade_launcher_extreme_item
 			WeaponStatDef
 			{
 				default_value "1.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				max_value "1.400"
 				min_value "1.300"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				max_value "1.400"
 				min_value "1.300"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
@@ -12005,12 +12582,12 @@ items/weapons/grenade_launcher_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "0.400"
-				min_value "0.300"
 				stat_features "MODABLE"
 				stat_type "AMMO_CLUSTER"
 			}
 
+				max_value "0.400"
+				min_value "0.300"
 			WeaponStatDef
 			{
 				max_value "1.400"
@@ -12195,17 +12772,17 @@ items/weapons/grenade_launcher_superior_item
 			WeaponStatDef
 			{
 				default_value "5.000"
-				max_value "10.000"
 				min_value "8.000"
+				max_value "10.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
+				stat_features "MODABLE"
 				max_value "105.000"
 				min_value "93.000"
-				stat_features "MODABLE"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
@@ -12294,12 +12871,12 @@ items/weapons/grenade_launcher_superior_item
 
 			WeaponStatDef
 			{
-				max_value "0.300"
-				min_value "0.200"
 				stat_features "MODABLE"
 				stat_type "AMMO_CLUSTER"
 			}
 
+				max_value "0.300"
+				min_value "0.200"
 			WeaponStatDef
 			{
 				max_value "1.300"
@@ -12318,8 +12895,8 @@ items/weapons/heavy_plasma_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		rarity "ADVANCED"
 		stat_def_vec
 		{
@@ -12398,22 +12975,22 @@ items/weapons/heavy_plasma_advanced_item
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "80.000"
-				stat_features "MODABLE"
 				stat_type "AMMO_ANGLE_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.200"
-				min_value "0.100"
-				stat_features "MODABLE"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
+				max_value "100.000"
+				min_value "80.000"
+				stat_features "MODABLE"
+				max_value "0.200"
+				min_value "0.100"
+				stat_features "MODABLE"
 				max_value "0.150"
 				min_value "0.100"
 				stat_features "MODABLE"
@@ -12465,30 +13042,30 @@ items/weapons/heavy_plasma_advanced_item
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "15.000"
-				stat_features "MODABLE"
 				stat_type "AMMO_AUTOAIM"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_HOMING"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.200"
-				min_value "0.100"
-				stat_features "MODABLE"
 				stat_type "AMMO_CLUSTER"
 			}
 
 			WeaponStatDef
 			{
+				max_value "20.000"
+				min_value "15.000"
+				stat_features "MODABLE"
+				max_value "100.000"
+				min_value "100.000"
+				max_value "0.200"
+				min_value "0.100"
+				stat_features "MODABLE"
 				max_value "1.900"
 				min_value "1.900"
 				stat_features "BASE_MINMAX"
@@ -12505,16 +13082,16 @@ items/weapons/heavy_plasma_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell_lvl3"
 		damage_type "energy"
+		ammo_storage "ammo_mech_energy_cell_lvl3"
 		rarity "EXTREME"
 		stat_def_vec
 		{
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				max_value "300.000"
 				min_value "255.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
@@ -12528,18 +13105,18 @@ items/weapons/heavy_plasma_extreme_item
 
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				max_value "2.800"
 				min_value "2.600"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
 				default_value "5.000"
+				stat_features "BASE_DEFAULT|MODABLE"
 				max_value "9.000"
 				min_value "8.000"
-				stat_features "BASE_DEFAULT|MODABLE"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
@@ -12553,9 +13130,9 @@ items/weapons/heavy_plasma_extreme_item
 
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				max_value "6.000"
 				min_value "5.500"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
@@ -12593,14 +13170,14 @@ items/weapons/heavy_plasma_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "0.400"
-				min_value "0.300"
 				stat_features "MODABLE"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
+				max_value "0.400"
+				min_value "0.300"
 				max_value "0.250"
 				min_value "0.200"
 				stat_features "MODABLE"
@@ -12610,18 +13187,18 @@ items/weapons/heavy_plasma_extreme_item
 			WeaponStatDef
 			{
 				default_value "1.000"
+				stat_features "BASE_DEFAULT|MODABLE"
 				max_value "1.400"
 				min_value "1.300"
-				stat_features "BASE_DEFAULT|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
 				default_value "1.000"
+				stat_features "BASE_DEFAULT|MODABLE"
 				max_value "1.400"
 				min_value "1.300"
-				stat_features "BASE_DEFAULT|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
@@ -12652,8 +13229,6 @@ items/weapons/heavy_plasma_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "30.000"
-				min_value "25.000"
 				stat_features "MODABLE"
 				stat_type "AMMO_AUTOAIM"
 			}
@@ -12668,14 +13243,16 @@ items/weapons/heavy_plasma_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "0.400"
-				min_value "0.300"
 				stat_features "MODABLE"
 				stat_type "AMMO_CLUSTER"
 			}
 
 			WeaponStatDef
 			{
+				max_value "30.000"
+				min_value "25.000"
+				max_value "0.400"
+				min_value "0.300"
 				max_value "2.100"
 				min_value "2.100"
 				stat_features "BASE_MINMAX"
@@ -12731,6 +13308,7 @@ items/weapons/heavy_plasma_item
 
 			WeaponStatDef
 			{
+				stat_features "MODABLE"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
@@ -12897,7 +13475,6 @@ items/weapons/heavy_plasma_superior_item
 			{
 				max_value "53.000"
 				min_value "46.000"
-				stat_features "MODABLE"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
@@ -12936,24 +13513,24 @@ items/weapons/heavy_plasma_superior_item
 			WeaponStatDef
 			{
 				max_value "100.000"
-				min_value "80.000"
-				stat_features "MODABLE"
 				stat_type "AMMO_ANGLE_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.300"
-				min_value "0.200"
 				stat_features "MODABLE"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
+				stat_features "MODABLE"
+				min_value "80.000"
+				stat_features "MODABLE"
+				max_value "0.300"
+				min_value "0.200"
 				max_value "0.200"
 				min_value "0.150"
-				stat_features "MODABLE"
 				stat_type "DAMAGE_LIFESTEAL"
 			}
 
@@ -12977,8 +13554,197 @@ items/weapons/heavy_plasma_superior_item
 
 			WeaponStatDef
 			{
+				stat_features "MODABLE"
 				max_value "15.000"
 				min_value "10.000"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "MODABLE"
+				stat_type "AMMO_AUTOAIM"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100.000"
+				min_value "100.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_HOMING"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "MODABLE"
+				stat_type "AMMO_CLUSTER"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+				default_value "10.000"
+				max_value "9.800"
+				min_value "9.300"
+				max_value "25.000"
+				min_value "20.000"
+				max_value "0.300"
+				min_value "0.200"
+				max_value "2.000"
+				min_value "2.000"
+			}
+
+		}
+
+	}
+
+}
+
+items/weapons/insect_gun_advanced_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_explosive"
+		damage_type "area"
+		rarity "ADVANCED"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "45.000"
+				min_value "40.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "18.000"
+				min_value "17.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "2.000"
+				max_value "3.000"
+				min_value "2.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				min_value "14.000"
+				stat_features "MODABLE"
+				max_value "10.000"
+				min_value "8.000"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.300"
+				min_value "1.200"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "700.000"
+				min_value "700.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "25.000"
+				min_value "25.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100.000"
+				min_value "100.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_ANGLE_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.200"
+				min_value "0.100"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.150"
+				min_value "0.100"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.200"
+				min_value "1.100"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.200"
+				min_value "1.100"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				max_value "10.000"
+				min_value "5.000"
 				stat_features "MODABLE"
 				stat_type "AMMO_STUN"
 			}
@@ -12993,11 +13759,578 @@ items/weapons/heavy_plasma_superior_item
 
 			WeaponStatDef
 			{
-				default_value "10.000"
-				max_value "9.800"
-				min_value "9.300"
+				default_value "0.150"
+				max_value "0.130"
+				min_value "0.110"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "15.000"
+				min_value "15.000"
+				stat_features "BASE_MINMAX|MODABLE|HIDDEN"
+				stat_type "AMMO_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "20.000"
+				min_value "15.000"
+				stat_features "MODABLE"
+				stat_type "AMMO_AUTOAIM"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100.000"
+				min_value "100.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_HOMING"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "0.200"
+				min_value "0.100"
+				stat_features "MODABLE"
+				stat_type "AMMO_CLUSTER"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.100"
+				min_value "1.100"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+		}
+
+	}
+
+}
+
+items/weapons/insect_gun_extreme_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_explosive"
+		damage_type "area"
+		rarity "EXTREME"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "75.000"
+				min_value "65.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "22.000"
+				min_value "21.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "2.000"
+				max_value "5.000"
+				min_value "4.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "18.000"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.700"
+				min_value "1.600"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "700.000"
+				min_value "700.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "25.000"
+				min_value "25.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100.000"
+				min_value "100.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_ANGLE_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.400"
+				min_value "0.300"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.250"
+				min_value "0.210"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.400"
+				min_value "1.300"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.400"
+				min_value "1.300"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				max_value "20.000"
+				min_value "16.000"
+				stat_features "MODABLE"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				default_value "0.250"
+				max_value "0.230"
+				min_value "0.200"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "15.000"
+				min_value "15.000"
+				stat_features "BASE_MINMAX|MODABLE|HIDDEN"
+				stat_type "AMMO_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "30.000"
+				min_value "25.000"
+				stat_features "MODABLE"
+				stat_type "AMMO_AUTOAIM"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100.000"
+				min_value "100.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_HOMING"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "0.400"
+				min_value "0.300"
+				stat_features "MODABLE"
+				stat_type "AMMO_CLUSTER"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.300"
+				min_value "1.300"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+		}
+
+	}
+
+}
+
+items/weapons/insect_gun_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_explosive"
+		damage_type "area"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "35.000"
+				min_value "30.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "16.000"
+				min_value "15.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "2.000"
+				max_value "2.000"
+				min_value "2.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.100"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "700.000"
+				min_value "700.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "25.000"
+				min_value "25.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100.000"
+				min_value "100.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_ANGLE_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_DEFAULT"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				default_value "0.100"
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_DEFAULT"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "15.000"
+				min_value "15.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "AMMO_AUTOAIM"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100.000"
+				min_value "100.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_HOMING"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				stat_type "AMMO_CLUSTER"
+			}
+
+		}
+
+	}
+
+}
+
+items/weapons/insect_gun_superior_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_explosive"
+		damage_type "area"
+		rarity "SUPERIOR"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "55.000"
+				min_value "50.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "20.000"
+				min_value "19.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "2.000"
+				max_value "4.000"
+				min_value "3.000"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "12.000"
+				min_value "10.000"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.500"
+				min_value "1.400"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "700.000"
+				min_value "700.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.000"
+				min_value "5.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "25.000"
+				min_value "25.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100.000"
+				min_value "100.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_ANGLE_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.300"
+				min_value "0.200"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.200"
+				min_value "0.160"
+				stat_features "MODABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.300"
+				min_value "1.200"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.000"
+				max_value "1.300"
+				min_value "1.200"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				max_value "15.000"
+				min_value "11.000"
+				stat_features "MODABLE"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				default_value "0.200"
+				max_value "0.180"
+				min_value "0.160"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "15.000"
+				min_value "15.000"
+				stat_features "BASE_MINMAX|MODABLE|HIDDEN"
+				stat_type "AMMO_SPREAD"
 			}
 
 			WeaponStatDef
@@ -13018,6 +14351,7 @@ items/weapons/heavy_plasma_superior_item
 
 			WeaponStatDef
 			{
+				default_value "1.000"
 				max_value "0.300"
 				min_value "0.200"
 				stat_features "MODABLE"
@@ -13026,8 +14360,8 @@ items/weapons/heavy_plasma_superior_item
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "1.200"
+				min_value "1.200"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -13794,6 +15128,7 @@ items/weapons/insect_gun_superior_item
 	}
 
 }
+
 
 items/weapons/laser_advanced_item
 {
@@ -15302,9 +16637,9 @@ items/weapons/lightning_gun_superior_item
 
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX"
 				max_value "1.000"
 				min_value "1.000"
-				stat_features "BASE_MINMAX"
 				stat_type "FIRE_RATE"
 			}
 
@@ -15318,35 +16653,35 @@ items/weapons/lightning_gun_superior_item
 
 			WeaponStatDef
 			{
+				stat_type "DAMAGE_PENETRATION"
 				max_value "3.000"
 				min_value "3.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
-				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.200"
-				min_value "0.160"
 				stat_features "MODABLE"
 				stat_type "DAMAGE_LIFESTEAL"
 			}
 
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX|HIDDEN"
+				max_value "0.200"
+				min_value "0.160"
 				max_value "5.000"
 				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
 				default_value "19.000"
 				max_value "18.000"
 				min_value "13.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
@@ -15657,10 +16992,10 @@ items/weapons/minigun_extreme_item
 			WeaponStatDef
 			{
 				default_value "1.000"
-				max_value "1.400"
-				min_value "1.300"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_PER_SHOT"
+				max_value "1.400"
+				min_value "1.300"
 			}
 
 			WeaponStatDef
@@ -15774,7 +17109,6 @@ items/weapons/minigun_item
 
 			WeaponStatDef
 			{
-				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
@@ -15787,19 +17121,20 @@ items/weapons/minigun_item
 
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX"
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+				stat_type "DAMAGE_SPLASH"
 				max_value "76.000"
 				min_value "74.000"
-				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
-			}
-
-			WeaponStatDef
-			{
 				stat_type "AMMO_ANGLE_SPEED"
-			}
-
-			WeaponStatDef
-			{
 				stat_type "DAMAGE_PENETRATION"
 			}
 
@@ -15810,11 +17145,15 @@ items/weapons/minigun_item
 
 			WeaponStatDef
 			{
-				default_value "1.000"
 				max_value "1.000"
 				min_value "1.000"
+				default_value "1.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
 			}
 
 			WeaponStatDef
@@ -15824,10 +17163,6 @@ items/weapons/minigun_item
 				min_value "1.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "FIRE_PER_SHOT"
-			}
-
-			WeaponStatDef
-			{
 				default_value "1.600"
 				max_value "1.600"
 				min_value "1.600"
@@ -15837,14 +17172,14 @@ items/weapons/minigun_item
 
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
 				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "AMMO_SPREAD"
 			}
 
 			WeaponStatDef
 			{
+				max_value "4.000"
+				min_value "4.000"
+				stat_type "AMMO_SPREAD"
 				stat_type "AMMO_AUTOAIM"
 			}
 
@@ -15861,15 +17196,15 @@ items/weapons/minigun_item
 
 			WeaponStatDef
 			{
+			}
+
+			WeaponStatDef
+			{
 				default_value "1.500"
 				max_value "1.500"
 				min_value "1.500"
 				stat_features "BASE_DEFAULT"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1000.000"
 				min_value "1000.000"
 				stat_features "BASE_MINMAX"
@@ -15935,6 +17270,7 @@ items/weapons/minigun_superior_item
 			{
 				max_value "5.000"
 				min_value "5.000"
+				stat_type "DAMAGE_PENETRATION"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -15960,15 +17296,14 @@ items/weapons/minigun_superior_item
 				max_value "0.300"
 				min_value "0.200"
 				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
+				stat_type "DAMAGE_LIFESTEAL"
 				max_value "0.200"
 				min_value "0.160"
 				stat_features "MODABLE"
-				stat_type "DAMAGE_LIFESTEAL"
 			}
 
 			WeaponStatDef
@@ -15982,6 +17317,7 @@ items/weapons/minigun_superior_item
 
 			WeaponStatDef
 			{
+				stat_type "AMMO_COST"
 				default_value "1.000"
 				max_value "1.300"
 				min_value "1.200"
@@ -15995,11 +17331,11 @@ items/weapons/minigun_superior_item
 				max_value "4.300"
 				min_value "3.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
+				stat_type "AMMO_AUTOAIM"
 				max_value "4.000"
 				min_value "4.000"
 				stat_features "BASE_MINMAX|MODABLE|HIDDEN"
@@ -16011,14 +17347,13 @@ items/weapons/minigun_superior_item
 				max_value "25.000"
 				min_value "20.000"
 				stat_features "MODABLE"
-				stat_type "AMMO_AUTOAIM"
 			}
 
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX"
 				max_value "100.000"
 				min_value "100.000"
-				stat_features "BASE_MINMAX"
 				stat_type "AMMO_HOMING"
 			}
 
@@ -16334,53 +17669,53 @@ items/weapons/mortar_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "16.000"
 				stat_features "MODABLE"
-				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
 				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "AMMO_STUN_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				default_value "2.500"
-				max_value "2.300"
-				min_value "2.100"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+			WeaponStatDef
+			{
+			}
+
+				max_value "20.000"
+				min_value "16.000"
+				stat_type "AMMO_STUN"
+				max_value "3.000"
+				min_value "3.000"
+				stat_type "AMMO_STUN_LENGTH"
+				default_value "2.500"
+				max_value "2.300"
+				min_value "2.100"
 				max_value "0.400"
 				min_value "0.300"
 				stat_features "MODABLE"
 				stat_type "AMMO_CLUSTER"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1.400"
 				min_value "1.400"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
-			}
-
-			WeaponStatDef
-			{
 				max_value "6.000"
 				min_value "6.000"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_SPREAD"
-			}
-
 		}
 
 	}
@@ -17196,19 +18531,19 @@ items/weapons/plasma_gun_item
 
 			WeaponStatDef
 			{
-				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
+				stat_features "BASE_MINMAX|HIDDEN"
+			}
+
+			WeaponStatDef
+			{
+				stat_type "AMMO_STUN"
 				max_value "3.000"
 				min_value "3.000"
-				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "AMMO_STUN_LENGTH"
-			}
-
-			WeaponStatDef
-			{
 				default_value "1.000"
 				max_value "1.000"
 				min_value "1.000"
@@ -17577,6 +18912,14 @@ items/weapons/railgun_advanced_item
 
 			WeaponStatDef
 			{
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.200"
+				min_value "1.200"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
 				max_value "20.000"
 				min_value "15.000"
 				stat_features "MODABLE"
@@ -17597,14 +18940,6 @@ items/weapons/railgun_advanced_item
 				min_value "3.500"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "BEAM_WIDTH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "1.200"
-				min_value "1.200"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_SCALE"
 			}
 
 		}

@@ -444,7 +444,8 @@ EntityBlueprint
 			x "0.6"
 			y "0.6"
 		}
-		visibility 		"always"		
+		visibility 		"always"
+		additional_z_order	"100"			
 	}		
 
 	children
@@ -484,8 +485,10 @@ EntityBlueprint
 
 	GuiDesc
 	{
-		def_name 				"gui/template/text_label_center"
-		alignment 				"center"
+		def_name 				"gui/template/text_label"
+		alignment 				"bottom"
+		anchor					"top"
+		anchor_target			"parent_all"
 		use_database_component 	"1"
 	}
 
