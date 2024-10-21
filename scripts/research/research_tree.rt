@@ -804,60 +804,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/carbonium_synthesizer_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl7"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/carbonium_synthesizer_lvl3"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "2500.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "603.000"
-						y "378.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/resources/steel_seperator_lvl_3"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/carbonium_synthesizer"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/fusion_energy_lvl2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
@@ -3017,12 +2963,6 @@ Research
 
 						ResearchAward
 						{
-							blueprint "buildings/resources/bio_composter_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/resources/gas_filtering_plant_lvl_3"
 							is_visible "1"
 						}
@@ -3241,53 +3181,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl4"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/carbonium_synthesizer_lvl1"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "1500.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "603.000"
-						y "-81.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/resources/steel_seperator"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/carbonium_synthesizer"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/towers_repair_lvl1"
 							research_category "gui/menu/research/category_base_buildings"
 						}
@@ -3485,60 +3378,6 @@ Research
 					}
 
 					icon "gui/menu/research/icons/auxiliary_buildings"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/carbonium_synthesizer_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/basic_resource_production_lvl3"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/carbonium_synthesizer_lvl2"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "2000.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "603.000"
-						y "117.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/resources/steel_seperator_lvl_2"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/carbonium_synthesizer"
 				}
 
 				ResearchNode
@@ -3803,12 +3642,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/energy/gas_powerplant_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/bio_composter_lvl_2"
 							is_visible "1"
 						}
 
@@ -4593,12 +4426,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/energy/gas_powerplant"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/bio_composter"
 							is_visible "1"
 						}
 
@@ -11150,6 +10977,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_low_caliber_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_small_caliber_advanced"
@@ -11403,12 +11237,6 @@ Research
 							is_visible "1"
 						}
 
-						ResearchAward
-						{
-							blueprint "resources/ammo_mech_explosive_lvl2"
-							is_visible "1"
-						}
-
 					}
 
 					icon "gui/menu/research/icons/mech_weapons_explosive"
@@ -11642,12 +11470,6 @@ Research
 						ResearchAward
 						{
 							blueprint "items/weapons/flamer_advanced_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "resources/ammo_mech_liquid_lvl2"
 							is_visible "1"
 						}
 
@@ -13180,9 +13002,9 @@ Research
 
 						ResearchNodeRequirement
 						{
-							render_line "1"
-							research_name "gui/menu/research/name/resource_handling_rhodonite"
-							research_category "gui/menu/research/category_alien"
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_energy_cell_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -13244,12 +13066,6 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_energy_adv"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "items/weapons/blaster_advanced_item"
 							is_visible "1"
 						}
@@ -13257,12 +13073,6 @@ Research
 						ResearchAward
 						{
 							blueprint "items/weapons/plasma_gun_advanced_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "resources/ammo_mech_energy_cell_lvl2"
 							is_visible "1"
 						}
 
@@ -18601,7 +18411,7 @@ Research
 
 					position
 					{
-						x "-342.000"
+						x "-387.000"
 						y "-234.000"
 					}
 
@@ -18673,7 +18483,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-342.000"
+						x "-387.000"
 						y "-99.000"
 					}
 
@@ -18745,7 +18555,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-342.000"
+						x "-387.000"
 						y "90.000"
 					}
 
@@ -18817,7 +18627,7 @@ Research
 					research_scripts
 					position
 					{
-						x "360.000"
+						x "450.000"
 						y "378.000"
 					}
 
@@ -18904,7 +18714,7 @@ Research
 
 					position
 					{
-						x "360.000"
+						x "450.000"
 						y "-234.000"
 					}
 
@@ -18964,7 +18774,7 @@ Research
 					research_scripts
 					position
 					{
-						x "360.000"
+						x "450.000"
 						y "36.000"
 					}
 
@@ -19024,7 +18834,7 @@ Research
 					research_scripts
 					position
 					{
-						x "594.000"
+						x "684.000"
 						y "378.000"
 					}
 
@@ -19085,7 +18895,7 @@ Research
 					research_scripts
 					position
 					{
-						x "477.000"
+						x "567.000"
 						y "90.000"
 					}
 
@@ -19173,7 +18983,7 @@ Research
 
 					position
 					{
-						x "477.000"
+						x "567.000"
 						y "-234.000"
 					}
 
@@ -19227,7 +19037,7 @@ Research
 					research_scripts
 					position
 					{
-						x "477.000"
+						x "567.000"
 						y "252.000"
 					}
 
@@ -19288,7 +19098,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-126.000"
+						x "-171.000"
 						y "378.000"
 					}
 
@@ -19342,7 +19152,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-153.000"
+						x "-198.000"
 						y "162.000"
 					}
 
@@ -19396,7 +19206,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-126.000"
+						x "-171.000"
 						y "252.000"
 					}
 
@@ -19450,7 +19260,7 @@ Research
 					research_scripts
 					position
 					{
-						x "594.000"
+						x "684.000"
 						y "90.000"
 					}
 
@@ -19504,7 +19314,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-315.000"
+						x "-360.000"
 						y "162.000"
 					}
 
@@ -19585,7 +19395,7 @@ Research
 
 					position
 					{
-						x "594.000"
+						x "684.000"
 						y "-234.000"
 					}
 
@@ -19639,7 +19449,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-369.000"
+						x "-414.000"
 						y "207.000"
 					}
 
@@ -19693,7 +19503,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-369.000"
+						x "-414.000"
 						y "45.000"
 					}
 
@@ -19747,7 +19557,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-315.000"
+						x "-360.000"
 						y "-180.000"
 					}
 
@@ -19801,7 +19611,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-369.000"
+						x "-414.000"
 						y "-144.000"
 					}
 
@@ -19855,7 +19665,7 @@ Research
 					research_scripts
 					position
 					{
-						x "441.000"
+						x "531.000"
 						y "198.000"
 					}
 
@@ -19909,7 +19719,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-549.000"
+						x "-594.000"
 						y "207.000"
 					}
 
@@ -19969,7 +19779,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-126.000"
+						x "-171.000"
 						y "-234.000"
 					}
 
@@ -20023,7 +19833,7 @@ Research
 					research_scripts
 					position
 					{
-						x "333.000"
+						x "423.000"
 						y "252.000"
 					}
 
@@ -20077,7 +19887,7 @@ Research
 					research_scripts
 					position
 					{
-						x "333.000"
+						x "423.000"
 						y "-99.000"
 					}
 
@@ -20131,7 +19941,7 @@ Research
 					research_scripts
 					position
 					{
-						x "333.000"
+						x "423.000"
 						y "90.000"
 					}
 
@@ -20192,7 +20002,7 @@ Research
 					research_scripts
 					position
 					{
-						x "477.000"
+						x "567.000"
 						y "378.000"
 					}
 
@@ -20362,7 +20172,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-342.000"
+						x "-387.000"
 						y "378.000"
 					}
 
@@ -20557,7 +20367,7 @@ Research
 					research_scripts
 					position
 					{
-						x "774.000"
+						x "864.000"
 						y "-99.000"
 					}
 
@@ -20624,7 +20434,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-126.000"
+						x "-171.000"
 						y "90.000"
 					}
 
@@ -20712,7 +20522,7 @@ Research
 
 					position
 					{
-						x "-252.000"
+						x "-297.000"
 						y "-288.000"
 					}
 
@@ -20766,7 +20576,7 @@ Research
 					research_scripts
 					position
 					{
-						x "441.000"
+						x "531.000"
 						y "-180.000"
 					}
 
@@ -20820,7 +20630,7 @@ Research
 					research_scripts
 					position
 					{
-						x "774.000"
+						x "864.000"
 						y "252.000"
 					}
 
@@ -20907,7 +20717,7 @@ Research
 
 					position
 					{
-						x "441.000"
+						x "531.000"
 						y "-288.000"
 					}
 
@@ -20968,7 +20778,7 @@ Research
 					research_scripts
 					position
 					{
-						x "702.000"
+						x "792.000"
 						y "378.000"
 					}
 
@@ -21022,7 +20832,7 @@ Research
 					research_scripts
 					position
 					{
-						x "702.000"
+						x "792.000"
 						y "252.000"
 					}
 
@@ -21076,7 +20886,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-153.000"
+						x "-198.000"
 						y "306.000"
 					}
 
@@ -21137,7 +20947,7 @@ Research
 					research_scripts
 					position
 					{
-						x "702.000"
+						x "792.000"
 						y "90.000"
 					}
 
@@ -21218,7 +21028,7 @@ Research
 
 					position
 					{
-						x "774.000"
+						x "864.000"
 						y "-234.000"
 					}
 
@@ -21265,7 +21075,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-549.000"
+						x "-594.000"
 						y "-342.000"
 					}
 
@@ -21419,7 +21229,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-153.000"
+						x "-198.000"
 						y "-180.000"
 					}
 
@@ -21506,7 +21316,7 @@ Research
 
 					position
 					{
-						x "702.000"
+						x "792.000"
 						y "-342.000"
 					}
 
@@ -21560,7 +21370,7 @@ Research
 					research_scripts
 					position
 					{
-						x "441.000"
+						x "531.000"
 						y "36.000"
 					}
 
@@ -21614,7 +21424,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-279.000"
+						x "-324.000"
 						y "-234.000"
 					}
 
@@ -21668,7 +21478,7 @@ Research
 					research_scripts
 					position
 					{
-						x "414.000"
+						x "504.000"
 						y "-99.000"
 					}
 
@@ -21838,7 +21648,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-549.000"
+						x "-594.000"
 						y "-135.000"
 					}
 
@@ -21891,7 +21701,7 @@ Research
 					research_scripts
 					position
 					{
-						x "333.000"
+						x "423.000"
 						y "-288.000"
 					}
 
@@ -21945,7 +21755,7 @@ Research
 					research_scripts
 					position
 					{
-						x "360.000"
+						x "450.000"
 						y "198.000"
 					}
 
@@ -22038,7 +21848,7 @@ Research
 
 					position
 					{
-						x "378.000"
+						x "468.000"
 						y "-342.000"
 					}
 
@@ -22110,7 +21920,7 @@ Research
 
 					position
 					{
-						x "216.000"
+						x "306.000"
 						y "-234.000"
 					}
 
@@ -22188,7 +21998,7 @@ Research
 
 					position
 					{
-						x "513.000"
+						x "603.000"
 						y "-342.000"
 					}
 
@@ -22348,7 +22158,7 @@ Research
 					research_scripts
 					position
 					{
-						x "594.000"
+						x "684.000"
 						y "252.000"
 					}
 
@@ -22420,7 +22230,7 @@ Research
 
 					position
 					{
-						x "621.000"
+						x "711.000"
 						y "-342.000"
 					}
 
@@ -22507,7 +22317,7 @@ Research
 
 					position
 					{
-						x "441.000"
+						x "531.000"
 						y "-342.000"
 					}
 
@@ -22554,7 +22364,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-369.000"
+						x "-414.000"
 						y "-288.000"
 					}
 
@@ -22608,7 +22418,7 @@ Research
 					research_scripts
 					position
 					{
-						x "216.000"
+						x "306.000"
 						y "90.000"
 					}
 
@@ -22662,7 +22472,7 @@ Research
 					research_scripts
 					position
 					{
-						x "216.000"
+						x "306.000"
 						y "-99.000"
 					}
 
@@ -22865,7 +22675,7 @@ Research
 
 					position
 					{
-						x "-81.000"
+						x "-126.000"
 						y "-306.000"
 					}
 
@@ -22952,7 +22762,7 @@ Research
 
 					position
 					{
-						x "-171.000"
+						x "-216.000"
 						y "-234.000"
 					}
 
@@ -22999,7 +22809,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-315.000"
+						x "-360.000"
 						y "-288.000"
 					}
 
@@ -23136,7 +22946,7 @@ Research
 					research_scripts
 					position
 					{
-						x "216.000"
+						x "306.000"
 						y "252.000"
 					}
 
@@ -23223,7 +23033,7 @@ Research
 
 					position
 					{
-						x "-342.000"
+						x "-387.000"
 						y "-342.000"
 					}
 
@@ -23277,7 +23087,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-315.000"
+						x "-360.000"
 						y "306.000"
 					}
 
@@ -23365,7 +23175,7 @@ Research
 
 					position
 					{
-						x "702.000"
+						x "792.000"
 						y "-234.000"
 					}
 
@@ -23452,7 +23262,7 @@ Research
 
 					position
 					{
-						x "18.000"
+						x "9.000"
 						y "90.000"
 					}
 
@@ -23506,7 +23316,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-279.000"
+						x "-324.000"
 						y "252.000"
 					}
 
@@ -23567,7 +23377,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-279.000"
+						x "-324.000"
 						y "90.000"
 					}
 
@@ -23628,7 +23438,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-279.000"
+						x "-324.000"
 						y "378.000"
 					}
 
@@ -23801,7 +23611,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-225.000"
+						x "-270.000"
 						y "-234.000"
 					}
 
@@ -23862,7 +23672,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-225.000"
+						x "-270.000"
 						y "-99.000"
 					}
 
@@ -23916,7 +23726,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-225.000"
+						x "-270.000"
 						y "90.000"
 					}
 
@@ -23977,7 +23787,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-225.000"
+						x "-270.000"
 						y "252.000"
 					}
 
@@ -24031,7 +23841,7 @@ Research
 					research_scripts
 					position
 					{
-						x "279.000"
+						x "369.000"
 						y "-234.000"
 					}
 
@@ -24092,7 +23902,7 @@ Research
 					research_scripts
 					position
 					{
-						x "279.000"
+						x "369.000"
 						y "-99.000"
 					}
 
@@ -24146,7 +23956,7 @@ Research
 					research_scripts
 					position
 					{
-						x "279.000"
+						x "369.000"
 						y "90.000"
 					}
 
@@ -24207,7 +24017,7 @@ Research
 					research_scripts
 					position
 					{
-						x "279.000"
+						x "369.000"
 						y "252.000"
 					}
 
@@ -24254,7 +24064,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-612.000"
+						x "-657.000"
 						y "-288.000"
 					}
 
@@ -24314,7 +24124,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-612.000"
+						x "-657.000"
 						y "-99.000"
 					}
 
@@ -24368,7 +24178,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-612.000"
+						x "-657.000"
 						y "207.000"
 					}
 
@@ -24415,7 +24225,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-657.000"
+						x "-702.000"
 						y "-234.000"
 					}
 
@@ -24469,7 +24279,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-657.000"
+						x "-702.000"
 						y "-45.000"
 					}
 
@@ -24523,7 +24333,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-657.000"
+						x "-702.000"
 						y "252.000"
 					}
 
@@ -24570,7 +24380,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-738.000"
+						x "-783.000"
 						y "-288.000"
 					}
 
@@ -24648,7 +24458,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-738.000"
+						x "-783.000"
 						y "90.000"
 					}
 
@@ -24726,7 +24536,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-738.000"
+						x "-783.000"
 						y "252.000"
 					}
 
@@ -24797,7 +24607,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-180.000"
+						x "-225.000"
 						y "-99.000"
 					}
 
@@ -24851,7 +24661,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-180.000"
+						x "-225.000"
 						y "252.000"
 					}
 
@@ -24905,7 +24715,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-180.000"
+						x "-225.000"
 						y "378.000"
 					}
 
@@ -24952,7 +24762,7 @@ Research
 					research_scripts
 					position
 					{
-						x "729.000"
+						x "819.000"
 						y "-180.000"
 					}
 
@@ -25006,7 +24816,7 @@ Research
 					research_scripts
 					position
 					{
-						x "729.000"
+						x "819.000"
 						y "-99.000"
 					}
 
@@ -25060,7 +24870,7 @@ Research
 					research_scripts
 					position
 					{
-						x "729.000"
+						x "819.000"
 						y "162.000"
 					}
 
@@ -25114,7 +24924,7 @@ Research
 					research_scripts
 					position
 					{
-						x "729.000"
+						x "819.000"
 						y "306.000"
 					}
 
@@ -25161,7 +24971,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-792.000"
+						x "-837.000"
 						y "-288.000"
 					}
 
@@ -25239,7 +25049,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-792.000"
+						x "-837.000"
 						y "90.000"
 					}
 
@@ -25317,7 +25127,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-792.000"
+						x "-837.000"
 						y "252.000"
 					}
 
@@ -25413,7 +25223,7 @@ Research
 
 					position
 					{
-						x "-252.000"
+						x "-297.000"
 						y "-180.000"
 					}
 
@@ -25474,7 +25284,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-252.000"
+						x "-297.000"
 						y "-45.000"
 					}
 
@@ -25528,7 +25338,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-252.000"
+						x "-297.000"
 						y "162.000"
 					}
 
@@ -25589,7 +25399,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-252.000"
+						x "-297.000"
 						y "306.000"
 					}
 
@@ -25661,7 +25471,7 @@ Research
 
 					position
 					{
-						x "306.000"
+						x "396.000"
 						y "-180.000"
 					}
 
@@ -25722,7 +25532,7 @@ Research
 					research_scripts
 					position
 					{
-						x "306.000"
+						x "396.000"
 						y "-45.000"
 					}
 
@@ -25776,7 +25586,7 @@ Research
 					research_scripts
 					position
 					{
-						x "306.000"
+						x "396.000"
 						y "162.000"
 					}
 
@@ -25837,7 +25647,7 @@ Research
 					research_scripts
 					position
 					{
-						x "306.000"
+						x "396.000"
 						y "306.000"
 					}
 
@@ -25909,7 +25719,7 @@ Research
 
 					position
 					{
-						x "819.000"
+						x "909.000"
 						y "-234.000"
 					}
 
@@ -25970,7 +25780,7 @@ Research
 					research_scripts
 					position
 					{
-						x "819.000"
+						x "909.000"
 						y "90.000"
 					}
 
@@ -26024,7 +25834,7 @@ Research
 					research_scripts
 					position
 					{
-						x "819.000"
+						x "909.000"
 						y "252.000"
 					}
 
@@ -26085,7 +25895,7 @@ Research
 					research_scripts
 					position
 					{
-						x "819.000"
+						x "909.000"
 						y "378.000"
 					}
 
@@ -26139,7 +25949,7 @@ Research
 					research_scripts
 					position
 					{
-						x "414.000"
+						x "504.000"
 						y "99.000"
 					}
 
@@ -26193,7 +26003,7 @@ Research
 					research_scripts
 					position
 					{
-						x "414.000"
+						x "504.000"
 						y "252.000"
 					}
 
@@ -26348,7 +26158,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-576.000"
+						x "-621.000"
 						y "-234.000"
 					}
 
@@ -26408,7 +26218,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-576.000"
+						x "-621.000"
 						y "-45.000"
 					}
 
@@ -26508,7 +26318,7 @@ Research
 
 					position
 					{
-						x "-450.000"
+						x "-495.000"
 						y "-180.000"
 					}
 
@@ -26601,7 +26411,7 @@ Research
 
 					position
 					{
-						x "-630.000"
+						x "-675.000"
 						y "-180.000"
 					}
 
@@ -26694,7 +26504,7 @@ Research
 
 					position
 					{
-						x "-711.000"
+						x "-756.000"
 						y "-180.000"
 					}
 
@@ -26754,7 +26564,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-576.000"
+						x "-621.000"
 						y "162.000"
 					}
 
@@ -26847,7 +26657,7 @@ Research
 
 					position
 					{
-						x "-522.000"
+						x "-567.000"
 						y "-180.000"
 					}
 
@@ -26900,7 +26710,7 @@ Research
 					research_scripts
 					position
 					{
-						x "621.000"
+						x "711.000"
 						y "-180.000"
 					}
 
@@ -26954,7 +26764,7 @@ Research
 					research_scripts
 					position
 					{
-						x "621.000"
+						x "711.000"
 						y "36.000"
 					}
 
@@ -27008,7 +26818,7 @@ Research
 					research_scripts
 					position
 					{
-						x "621.000"
+						x "711.000"
 						y "198.000"
 					}
 
@@ -27055,7 +26865,7 @@ Research
 					research_scripts
 					position
 					{
-						x "513.000"
+						x "603.000"
 						y "-180.000"
 					}
 
@@ -27109,7 +26919,7 @@ Research
 					research_scripts
 					position
 					{
-						x "513.000"
+						x "603.000"
 						y "36.000"
 					}
 
@@ -27163,7 +26973,7 @@ Research
 					research_scripts
 					position
 					{
-						x "513.000"
+						x "603.000"
 						y "198.000"
 					}
 
@@ -27363,7 +27173,7 @@ Research
 					research_scripts
 					position
 					{
-						x "252.000"
+						x "342.000"
 						y "-180.000"
 					}
 
@@ -27410,7 +27220,7 @@ Research
 					research_scripts
 					position
 					{
-						x "252.000"
+						x "342.000"
 						y "36.000"
 					}
 
@@ -27457,7 +27267,7 @@ Research
 					research_scripts
 					position
 					{
-						x "252.000"
+						x "342.000"
 						y "198.000"
 					}
 
@@ -27504,7 +27314,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-414.000"
+						x "-459.000"
 						y "-288.000"
 					}
 
@@ -27564,7 +27374,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-414.000"
+						x "-459.000"
 						y "-144.000"
 					}
 
@@ -27618,7 +27428,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-414.000"
+						x "-459.000"
 						y "90.000"
 					}
 
@@ -27672,7 +27482,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-477.000"
+						x "-522.000"
 						y "-45.000"
 					}
 
@@ -27726,7 +27536,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-477.000"
+						x "-522.000"
 						y "-234.000"
 					}
 
@@ -27780,7 +27590,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-504.000"
+						x "-549.000"
 						y "-288.000"
 					}
 
@@ -27853,7 +27663,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-504.000"
+						x "-549.000"
 						y "-99.000"
 					}
 
@@ -27906,7 +27716,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-711.000"
+						x "-756.000"
 						y "-234.000"
 					}
 
@@ -27959,7 +27769,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-432.000"
+						x "-477.000"
 						y "-234.000"
 					}
 
@@ -28006,7 +27816,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-432.000"
+						x "-477.000"
 						y "-99.000"
 					}
 
@@ -28053,7 +27863,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-432.000"
+						x "-477.000"
 						y "162.000"
 					}
 
@@ -28100,7 +27910,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-846.000"
+						x "-891.000"
 						y "-288.000"
 					}
 
@@ -28166,7 +27976,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-846.000"
+						x "-891.000"
 						y "90.000"
 					}
 
@@ -28232,7 +28042,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-846.000"
+						x "-891.000"
 						y "252.000"
 					}
 
@@ -28291,7 +28101,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-900.000"
+						x "-945.000"
 						y "-288.000"
 					}
 
@@ -28351,7 +28161,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-900.000"
+						x "-945.000"
 						y "-90.000"
 					}
 
@@ -28405,7 +28215,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-900.000"
+						x "-945.000"
 						y "252.000"
 					}
 
@@ -28452,7 +28262,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-945.000"
+						x "-990.000"
 						y "-234.000"
 					}
 
@@ -28512,7 +28322,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-945.000"
+						x "-990.000"
 						y "-45.000"
 					}
 
@@ -28566,7 +28376,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-945.000"
+						x "-990.000"
 						y "306.000"
 					}
 
@@ -28613,7 +28423,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-81.000"
+						x "-126.000"
 						y "-234.000"
 					}
 
@@ -28660,7 +28470,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-27.000"
+						x "-72.000"
 						y "-234.000"
 					}
 
@@ -28714,7 +28524,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-27.000"
+						x "-72.000"
 						y "-99.000"
 					}
 
@@ -28768,7 +28578,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-27.000"
+						x "-72.000"
 						y "90.000"
 					}
 
@@ -28822,7 +28632,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-27.000"
+						x "-72.000"
 						y "252.000"
 					}
 
@@ -28876,7 +28686,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-81.000"
+						x "-126.000"
 						y "90.000"
 					}
 
@@ -28930,7 +28740,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-81.000"
+						x "-126.000"
 						y "252.000"
 					}
 
@@ -28984,7 +28794,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-81.000"
+						x "-126.000"
 						y "378.000"
 					}
 
@@ -29265,7 +29075,7 @@ Research
 					research_scripts
 					position
 					{
-						x "549.000"
+						x "639.000"
 						y "-234.000"
 					}
 
@@ -29319,7 +29129,7 @@ Research
 					research_scripts
 					position
 					{
-						x "549.000"
+						x "639.000"
 						y "90.000"
 					}
 
@@ -29373,7 +29183,7 @@ Research
 					research_scripts
 					position
 					{
-						x "549.000"
+						x "639.000"
 						y "252.000"
 					}
 
@@ -29427,7 +29237,7 @@ Research
 					research_scripts
 					position
 					{
-						x "549.000"
+						x "639.000"
 						y "378.000"
 					}
 
@@ -29474,7 +29284,7 @@ Research
 					research_scripts
 					position
 					{
-						x "675.000"
+						x "765.000"
 						y "-180.000"
 					}
 
@@ -29528,7 +29338,7 @@ Research
 					research_scripts
 					position
 					{
-						x "675.000"
+						x "765.000"
 						y "-99.000"
 					}
 
@@ -29582,7 +29392,7 @@ Research
 					research_scripts
 					position
 					{
-						x "675.000"
+						x "765.000"
 						y "162.000"
 					}
 
@@ -29636,7 +29446,7 @@ Research
 					research_scripts
 					position
 					{
-						x "675.000"
+						x "765.000"
 						y "306.000"
 					}
 
@@ -29683,7 +29493,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-990.000"
+						x "-1035.000"
 						y "-180.000"
 					}
 
@@ -29730,7 +29540,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1035.000"
+						x "-1080.000"
 						y "-180.000"
 					}
 
@@ -29747,6 +29557,323 @@ Research
 					icon "gui/menu/research/icons/towers_artillery"
 				}
 
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/magma_energy_lvl1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/carbonium_synthesizer_lvl1"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "1500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "270.000"
+						y "-45.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/steel_seperator"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/carbonium_synthesizer"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/carbonium_synthesizer_lvl1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/magma_energy_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/carbonium_synthesizer_lvl2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "2000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "270.000"
+						y "162.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/steel_seperator_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/carbonium_synthesizer"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/magma_energy_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/carbonium_synthesizer_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/carbonium_synthesizer_lvl3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "2500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "270.000"
+						y "306.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/steel_seperator_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/carbonium_synthesizer"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_handling_liquid_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/biogas"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "200.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "9.000"
+						y "-288.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/bio_composter"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/gas_energy"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/biogas"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/biogas_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "1000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "9.000"
+						y "-99.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/bio_composter_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/gas_energy"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/biogas_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/biogas_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "3000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "9.000"
+						y "36.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/bio_composter_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/gas_energy"
+				}
+
 			}
 
 		}
@@ -29755,6 +29882,6 @@ Research
 
 	type
 	editor "6197"
-	version "132"
+	version "133"
 }
 
