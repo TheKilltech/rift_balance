@@ -25,8 +25,6 @@ EntityBlueprint
 				{
 					carbonium 	"400"
 					steel 		"600"
-					cobalt 		"100"
-					ai			"2"
 				}
 			}		
 		}
@@ -38,20 +36,14 @@ EntityBlueprint
 		{	
 			GameplayResource
 			{
-				resource 			"energy"
-				value			 	"120"
-			}
-			
-			GameplayResource
-			{
 				resource 			"biomass_animal"
 				value			 	"1"
 			}
 			
 			GameplayResource
 			{
-				resource 			"hazenite"
-				value			 	"1"
+				resource 			"energy"
+				value			 	"25"
 			}
 		}
 		
@@ -60,8 +52,8 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"nitric_acid"
-				value				"20"
-				attachment			"att_out_1"				
+				value				"10"
+				attachment			"att_out_1"
 			}		
 		}
 		priority 9		
@@ -75,7 +67,7 @@ EntityBlueprint
 			Storage
 			{
 				resource "nitric_acid"
-				max 	 "40"
+				max 	 "20"
 			}
 			
 		}

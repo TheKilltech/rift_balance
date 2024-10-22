@@ -7,13 +7,13 @@ EntityBlueprint
 		name 				"tower_minigun"
 		bp   				"buildings/defense/tower_minigun"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_minigun"
-		description			"gui/hud/building_description/tower_minigun"
+		localization_id		"gui/hud/building_name/tower_minigun_cooled"
+		description			"gui/hud/building_description/tower_minigun_cooled"
 		menu_icon			"gui/hud/building_icons/tower_minigun"
 		require 			"headquarters"
-		order				"9"
+		order				"10"
 		type				"tower"
-		overrides			"tower,wall"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		upgrade				"buildings/defense/tower_minigun_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
@@ -22,19 +22,18 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"150"
 					steel 		"75"
 					ai			"1"
-					titanium	"50"
 				}
 			}		
 		}		
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
@@ -42,6 +41,22 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"10"
+			}
+			
+			GameplayResource
+			{
+				resource 	"water"
+				value 		"10"
+				family		"coolant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"2"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -241,8 +256,8 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "60"
-			submesh_idx "1"
+			emissive_factor "1.5" // "60"
+			submesh_idx "0"
 		}
 
 		ammo_blueprint 				"buildings/defense/tower_minigun_projectile"
@@ -328,8 +343,38 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/minipipes"
+					bone 		"att_vismod_2"
+					scale		"0.6 0.6 0.6"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "lamp"
@@ -345,6 +390,20 @@ EntityBlueprint
 				}
 			}
 		}
+		EffectGroup
+		{
+			group "shooting"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapons_bullet/tower_minigun_fire_loop"
+					bone "att_muzzle"
+				}
+			}
+		}		
 	}
 }
 

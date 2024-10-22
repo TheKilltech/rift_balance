@@ -82,6 +82,14 @@ function event_manager:InitRules()
 		LogService:Log( "event_manager:InitRules() : difficulty : " .. tostring( DifficultyService:GetCurrentDifficultyName() ) )
         self.rules = require( self.rulesFile )()
     end
+	
+	-- make sure mod rule variables are available and valid
+	if (self.rules.eventsPerPrepareStateChance == nil      or type(self.rules.eventsPerPrepareStateChance) ~= "number")      then  self.rules.eventsPerPrepareStateChance = 75        end
+	if (self.rules.idleTimeRelativeVariation == nil        or type(self.rules.idleTimeRelativeVariation) ~= "number")        then  self.rules.idleTimeRelativeVariation = 0.35        end
+	if (self.rules.idleTimeCancelChance == nil             or type(self.rules.idleTimeCancelChance) ~= "number")             then  self.rules.idleTimeCancelChance = 5                end
+	if (self.rules.preparationTimeRelativeVariation == nil or type(self.rules.preparationTimeRelativeVariation) ~= "number") then  self.rules.preparationTimeRelativeVariation = 0.35 end
+	if (self.rules.preparationTimeCancelChance == nil      or type(self.rules.preparationTimeCancelChance) ~= "number")      then  self.rules.preparationTimeCancelChance = 5         end
+	if (self.rules.spawnCooldownEventChance == nil         or type(self.rules.spawnCooldownEventChance) ~= "table")          then  self.rules.spawnCooldownEventChance = {}           end
 end
 
 function event_manager:FillInitialParamsEventManager()
@@ -243,8 +251,12 @@ function event_manager:AddAmmo( percentage )
 
 	local ammoList = PlayerService:GetAmmoList()
 
-	for i = 1, #ammoList, 1 do 
-		PlayerService:AddResourceAmount( ammoList[i], PlayerService:GetResourceLimit( ammoList[i] ) * ( percentage / 100 ) )
+	local players = PlayerService:GetAllPlayers()
+
+	for i = 1, #players, 1 do
+		for j = 1, #ammoList, 1 do 
+			PlayerService:AddResourceAmount( players[i], ammoList[j], PlayerService:GetResourceLimit( ammoList[j] ) * ( percentage / 100 ), false )
+		end
 	end
 end
 
@@ -419,18 +431,14 @@ function event_manager:PrepareEvents( gameState )
 			table.insert( tableTmp, data )
 		end
 
-		if ( ( self:HasGameState( data.gameStates, "STREAMING" ) == false ) or ( self:HasGameState( data.gameStates, "NO_STREAMING" ) == false ) ) then
-			if ( ( streamActive == false ) and ( self:HasGameState( data.gameStates, "STREAMING" ) == true ) and ( self:HasGameState( data.gameStates, "NO_STREAMING" ) == false ) ) then
-				LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. " Only allowed with streaming session." )
-				table.insert( tableTmp, data )
-			end
-
-			if ( ( streamActive == true ) and ( self:HasGameState( data.gameStates, "STREAMING" ) == false ) and ( self:HasGameState( data.gameStates, "NO_STREAMING" ) == true ) ) then
-				LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. " Only allowed without streaming session." )
-				table.insert( tableTmp, data )
-			end
-		else
-			LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. ". Allowed in STREAMING and NO_STREAMING." )
+		if ( not streamActive and     self:HasGameState(data.gameStates, "STREAMING") and not self:HasGameState(data.gameStates, "NO_STREAMING")) then
+			LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. " Only allowed with streaming session.")
+			table.insert( tableTmp, data )
+		elseif ( streamActive and not self:HasGameState(data.gameStates, "STREAMING") and     self:HasGameState(data.gameStates, "NO_STREAMING")) then
+			LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. " Only allowed without streaming session.")
+			table.insert( tableTmp, data )
+		else 
+			LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. ". Allowed in STREAMING and NO_STREAMING.")
 		end
 
 
@@ -514,7 +522,9 @@ function event_manager:PrepareEvents( gameState )
 			end
 		end	
 
-		if ( data.action == "shegret_attack" ) then
+		if ( data.action == "shegret_attack" ) or
+		   ( data.action == "shegret_attack_hard" ) or
+		   ( data.action == "shegret_attack_very_hard" ) then
 			local remove = false
 
 			if ( ( self:GetTimeOfDay() == "day" ) or ( UnitService:IsLessDefendedOutpostExist( "resource", "light" ) == false ) ) then
@@ -528,6 +538,7 @@ function event_manager:PrepareEvents( gameState )
 
 		if ( data.action == "spawn_super_moon" ) or
 		   ( data.action == "spawn_blood_moon" ) or
+		   ( data.action == "spawn_fireflies" ) or
 		   ( data.action == "spawn_blue_moon" ) then
 			local remove = self:IsEarlyNight( false, false )
 		
@@ -830,6 +841,68 @@ function event_manager:SpawnExtraResources( logicFile, resourceName, minAmount, 
 
 end
 
+function event_manager:StartStreamingVoting()
+	LogService:Log( "event_manager:StartAnEvent() - building streaming event" )
+	GameStreamingService:CreateDynamicScene( self.dynamicStreamingSceneName )
+
+	local optionsAtOnce = RandInt( 3, 6 )
+
+	LogService:Log( "event_manager:Options count : " .. tostring( optionsAtOnce) )
+
+	self.currentActions = {}
+	local currentStreamingData = {}
+
+	for i = 1, #self.currentStreamingData, 1 do 
+		LogService:Log( "event_manager:StartAnEvent() - available event : " .. self.currentStreamingData[i].action )
+	end
+
+	local tempStreamingData = DeepCopy( self.currentStreamingData )
+
+	if ( optionsAtOnce > #tempStreamingData ) then
+		optionsAtOnce = #tempStreamingData
+		LogService:Log( "event_manager:StartAnEvent() - clamping optionsAtOnce : " .. tostring( #tempStreamingData ) )
+	end
+
+	while #currentStreamingData ~= optionsAtOnce do
+		local event = self:GetEventByWeight( tempStreamingData )
+
+		for i = 1, #tempStreamingData, 1 do 
+			if ( event == tempStreamingData[i].action ) then
+				LogService:Log( "event_manager:StartAnEvent() - picking event : " .. tempStreamingData[i].action )
+				currentStreamingData[#currentStreamingData + 1] = tempStreamingData[i]
+				table.remove( tempStreamingData, i )
+				break
+			end
+		end
+	end 
+
+	LogService:Log( "event_manager: Creating streaming actions : " .. tostring( optionsAtOnce) )
+
+	-- create actions
+	for data in Iter( currentStreamingData ) do 
+		LogService:Log( data.action )
+
+		local value = 0
+		local text = ""
+
+		if ( ( data.passValue ~= nil ) or ( data.passValue == true ) ) then
+
+			if ( data.amount ~= nil ) then
+				value = math.abs( data.amount )
+			end 
+
+			if ( data.text ~= nil ) then
+				text = data.text
+			end 
+		end
+		Insert( self.currentActions, data.action )
+		GameStreamingService:AddActionToDynamicScene( self.dynamicStreamingSceneName, data.action, value, text )
+	end
+
+	-- start voting
+	GameStreamingService:StartVoting( self.dynamicStreamingSceneName, self.streamingVotingTime )
+end
+
 function event_manager:StartAnEvent( gameState )
 
 	LogService:Log( "event_manager:StartAnEvent()" )
@@ -901,68 +974,16 @@ function event_manager:StartAnEvent( gameState )
 		end
 	end
 
+	if ( GameStreamingService:IsInStreamEvent() == true ) then
+		LogService:Log( "event_manager:StartAnEvent() - GameStreamingService:IsInStreamEvent() == true" )
+		return
+	end
+
 	self.currentStreamingData = self:PrepareEvents( gameState )
 
 	if ( ( GameStreamingService:IsStreamingSessionStarted() == true ) and ( #self.spawnedAttacks <= 1 ) and ( GameStreamingService:IsInStreamEvent() == false ) and ( #self.currentStreamingData > 1 ) ) then
 
-		LogService:Log( "event_manager:StartAnEvent() - building streaming event" )
-		GameStreamingService:CreateDynamicScene( self.dynamicStreamingSceneName )
-
-		local optionsAtOnce = RandInt( 3, 6 )
-
-		LogService:Log( "event_manager:Options count : " .. tostring( optionsAtOnce) )
-
-		local currentStreamingData = {}
-
-		for i = 1, #self.currentStreamingData, 1 do 
-			LogService:Log( "event_manager:StartAnEvent() - available event : " .. self.currentStreamingData[i].action )
-		end
-
-		local tempStreamingData = DeepCopy( self.currentStreamingData )
-
-		if ( optionsAtOnce > #tempStreamingData ) then
-			optionsAtOnce = #tempStreamingData
-			LogService:Log( "event_manager:StartAnEvent() - clamping optionsAtOnce : " .. tostring( #tempStreamingData ) )
-		end
-
-		while #currentStreamingData ~= optionsAtOnce do
-			local event = self:GetEventByWeight( tempStreamingData )
-
-			for i = 1, #tempStreamingData, 1 do 
-				if ( event == tempStreamingData[i].action ) then
-					LogService:Log( "event_manager:StartAnEvent() - picking event : " .. tempStreamingData[i].action )
-					currentStreamingData[#currentStreamingData + 1] = tempStreamingData[i]
-					table.remove( tempStreamingData, i )
-					break
-				end
-			end
-		end 
-
-		LogService:Log( "event_manager: Creating streaming actions : " .. tostring( optionsAtOnce) )
-
-		-- create actions
-		for data in Iter( currentStreamingData ) do 
-			LogService:Log( data.action )
-
-			local value = 0
-			local text = ""
-
-			if ( ( data.passValue ~= nil ) or ( data.passValue == true ) ) then
-
-				if ( data.amount ~= nil ) then
-					value = math.abs( data.amount )
-				end 
-
-				if ( data.text ~= nil ) then
-					text = data.text
-				end 
-			end
-
-			GameStreamingService:AddActionToDynamicScene( self.dynamicStreamingSceneName, data.action, value, text )
-		end
-
-		-- start voting
-		GameStreamingService:StartVoting( self.dynamicStreamingSceneName, self.streamingVotingTime )
+		self:StartStreamingVoting()
 
 	elseif ( ( GameStreamingService:IsStreamingSessionStarted() == false ) and ( GameStreamingService:IsInStreamEvent() == false ) and ( #self.currentStreamingData > 0 ) ) then
 
@@ -1028,16 +1049,16 @@ function event_manager:GetEventByWeight( currentStreamingData )
 
 		LogService:Log( tostring( currentStreamingData[i].action ) .. " -  range : " .. tostring( rangeStart ) .. " - " .. tostring( rangeEnd ) )
 
-        events[currentStreamingData[i].action] = { min = rangeStart, max = rangeEnd }
+        events[i] = { min = rangeStart, max = rangeEnd, action = currentStreamingData[i].action }
     end
 
     local rand = math.random( 0.0, ( totalWeight * 100 ) - 1 ) / 100
     LogService:Log("event_manager:GetEventByWeight - Random : " .. tostring( rand ) )
 
-    for event,v in pairs( events ) do
-        if v.min <= rand and v.max > rand then
-			LogService:Log("event_manager:GetEventByWeight - Choosing " .. tostring( event ) .. " range: " .. tostring( v.min ) .. " - " .. tostring( v.max ) )
-            return event;
+    for i,event in ipairs( events ) do
+        if event.min <= rand and event.max > rand then
+			LogService:Log("event_manager:GetEventByWeight - Choosing " .. tostring( event.action ) .. " range: " .. tostring( event.min ) .. " - " .. tostring( event.max ) )
+            return event.action;
         end
     end
 
@@ -1124,12 +1145,40 @@ function event_manager:SpawnEvent( action, participants )
 		( translatedEventName == "spawn_super_moon" ) or
 		( translatedEventName == "spawn_fog" ) or
 		( translatedEventName == "shegret_attack" ) or
+		( translatedEventName == "shegret_attack_hard" ) or
+		( translatedEventName == "shegret_attack_very_hard" ) or
+		( translatedEventName == "kermon_attack" ) or
+		( translatedEventName == "kermon_attack_hard" ) or
+		( translatedEventName == "kermon_attack_very_hard" ) or
+		( translatedEventName == "phirian_attack" ) or
+		( translatedEventName == "phirian_attack_hard" ) or
+		( translatedEventName == "phirian_attack_very_hard" ) or
 		( translatedEventName == "spawn_acid_fissures" ) or
 		( translatedEventName == "spawn_blood_moon" ) or
 		( translatedEventName == "spawn_blue_moon" ) or
 		( translatedEventName == "spawn_dust_storm" ) or
+		--SWAMP EVENTS START
 		( translatedEventName == "spawn_tornado_near_player" ) or
 		( translatedEventName == "spawn_tornado_near_base" ) or
+		( translatedEventName == "spawn_tornado_acid_near_player" ) or
+		( translatedEventName == "spawn_tornado_acid_near_base" ) or
+		( translatedEventName == "spawn_tornado_fire_near_player" ) or
+		( translatedEventName == "spawn_tornado_fire_near_base" ) or
+		( translatedEventName == "spawn_firestorm" ) or
+		( translatedEventName == "spawn_fireflies" ) or
+		( translatedEventName == "spawn_blooming_air" ) or
+		( translatedEventName == "spawn_migrating_birds" ) or
+		( translatedEventName == "spawn_monsoon" ) or
+		( translatedEventName == "spawn_comet_boss_mudroner_acid" ) or
+		( translatedEventName == "spawn_comet_boss_mudroner_cryo" ) or
+		( translatedEventName == "spawn_comet_boss_mudroner_energy" ) or
+		( translatedEventName == "spawn_comet_boss_mudroner_fire" ) or
+		--SWAMP EVENTS END
+		--CAVERNS EVENTS START
+		( translatedEventName == "spawn_cave_in" ) or
+		( translatedEventName == "spawn_falling_stalactites" ) or
+		( translatedEventName == "spawn_crystal_growth" ) or
+		--CAVERNS EVENTS END
 		( translatedEventName == "spawn_rain" ) then
 		local timeMin		= self:GetMinTimeFromAction( action )
 		local timeMax		= self:GetMaxTimeFromAction( action )

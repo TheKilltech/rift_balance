@@ -9,12 +9,12 @@ EntityBlueprint
 		category 			"defense"
 		localization_id		"gui/hud/building_name/tower_cannon"
 		description			"gui/hud/building_description/tower_cannon"
-		menu_icon			"gui/hud/building_icons/tower_basic"
+		menu_icon			"gui/hud/building_icons/tower_cannon"
 		require 			"headquarters"
 		order				"5"
 		type				"tower"
 		overrides			"wall,tower"
-		upgrade				"buildings/defense/tower_cannon_lvl_2"
+		//upgrade				"buildings/defense/tower_cannon_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 
@@ -29,7 +29,6 @@ EntityBlueprint
 					carbonium 	"100"
 					steel 		"125"
 					ai			"1"
-					cobalt		"50"
 				}
 			}		
 		}		
@@ -336,6 +335,20 @@ EntityBlueprint
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/weapon_items/high_caliber"
+					bone 		"att_vismod_2"
+					scale		"0.6 0.8 0.8"
+				}
+			}
+		}	
+		EffectGroup
+		{
 			group "lamp"
 			enabled "0"
 
@@ -385,7 +398,7 @@ EntityBlueprint
 		{
 			RibbonComponent
 			{		
-				material 			ribbon/grenade_trail_red
+				material 			ribbon/grenade_trail_yellow
 				update_bounds 		1
 				fade_out_time		0.75
 				uv_scroll			"0 -2.5"

@@ -31,6 +31,7 @@ return function()
 		{ action = "spawn_acid_rain",     type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 3, logicFile="logic/weather/acid_rain.logic",     minTime = 30, maxTime = 30, weight = 0.25 },
 		{ action = "spawn_acid_fissures", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 2, logicFile="logic/weather/acid_fissures.logic", minTime = 30, maxTime = 60, weight = 1 },
 		{ action = "spawn_acid_fissures", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 2, logicFile="logic/weather/acid_fissures.logic", minTime = 30, maxTime = 60, weight = 0.5 },
+		{ action = "spawn_tornado_acid_near_player", type = "NEGATIVE", gameStates="IDLE",       minEventLevel = 3, logicFile="logic/weather/tornado_acid_near_player.logic", minTime = 30, maxTime = 60, weight = 0.5 },
 		{ action = "spawn_meteor_shower", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4, logicFile="logic/weather/meteor_shower.logic", minTime = 40, maxTime = 90, weight = 0.5 },
 		{ action = "spawn_meteor_shower", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 4, logicFile="logic/weather/meteor_shower.logic", minTime = 40, maxTime = 90, weight = 0.25 },	
 		{ action = "spawn_comet_silent",  type = "POSITIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 1, logicFile="logic/weather/comet_silent.logic",  weight = 2 }

@@ -111,7 +111,7 @@ EntityBlueprint
 	{
 		name "meshes/buildings/defense/tower_basic_lvl_1"
 	}
-
+	
 	PhysicsDesc
 	{
 		objects
@@ -241,8 +241,8 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "60"
-			submesh_idx "1"
+			emissive_factor "3"
+			submesh_idx "0"
 		}
 
 		ammo_blueprint 				"buildings/defense/tower_basic_projectile"
@@ -361,9 +361,10 @@ EntityBlueprint
 
 	ProjectileAmmoComponent
 	{
-		on_enemy_hit_effect 	"effects/weapon_hit/tower_projectile_hit"
-		on_world_hit_effect 	"effects/weapon_hit/tower_projectile_hit"
+		on_enemy_hit_effect 	"effects/weapons_energy/energy_weapon_hit"
+		on_world_hit_effect 	"effects/weapons_energy/energy_weapon_hit"
 		on_resisted_hit_effect 	"effects/weapons_generic/projectile_hit_resisted"
+
 		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield|building"
 	}
 }

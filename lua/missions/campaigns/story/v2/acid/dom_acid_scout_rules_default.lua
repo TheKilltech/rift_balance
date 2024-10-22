@@ -4,8 +4,14 @@ return function()
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 1
 	rules.eventsPerPrepareState = 1 -- [0,1]
+	rules.eventsPerPrepareStateChance = 15        -- chance to spawn events with objectives
 	rules.pauseAttacks = false
 	rules.prepareAttacks = true
+	rules.baseTimeBetweenObjectives = 2400
+	rules.idleTimeRelativeVariation = 0.25        -- X factor of idle time that may randomly vary: +/- X * idle_time
+	rules.idleTimeCancelChance = 10               -- chance in percent
+	rules.preparationTimeRelativeVariation = 0.25 -- X factor of idle time that may randomly vary: +/- X * prep_time
+	rules.preparationTimeCancelChance = 10        -- chance in percent
 
 	rules.gameEvents = 
 	{
@@ -29,6 +35,7 @@ return function()
 		{ action = "spawn_ion_storm",     type = "POSITIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 3, logicFile="logic/weather/ion_storm.logic",     minTime = 30, maxTime = 60, weight = 0.5 },		
 		{ action = "spawn_acid_rain",     type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 3, logicFile="logic/weather/acid_rain.logic",     minTime = 30, maxTime = 60 },
 		{ action = "spawn_acid_rain",     type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 3, logicFile="logic/weather/acid_rain.logic",     minTime = 30, maxTime = 30 },
+		{ action = "spawn_tornado_acid_near_player",     type = "NEGATIVE", gameStates="ATTACK|IDLE",     minEventLevel = 3, logicFile="logic/weather/tornado_acid_near_player.logic",     minTime = 30, maxTime = 30, weight = 0.5 },
 		{ action = "spawn_acid_fissures", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 2, logicFile="logic/weather/acid_fissures.logic", minTime = 30, maxTime = 60, weight = 2 },
 		{ action = "spawn_acid_fissures", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 2, logicFile="logic/weather/acid_fissures.logic", minTime = 30, maxTime = 60, weight = 2 },
 		{ action = "spawn_meteor_shower", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4, logicFile="logic/weather/meteor_shower.logic", minTime = 40, maxTime = 90, weight = 0.5 },
@@ -44,6 +51,13 @@ return function()
 		--{ action = "spawn_resource_earthquake", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/resource_earthquake.logic" },
 		--{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 3 },
 	}
+	
+	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
+	{
+		25,  -- 1st event probability in percent
+		10,  -- 2nd event probability in percent
+		3,   -- 3rd event probability in percent
+	}
 
 	rules.addResourcesOnRunOut = 
 	{
@@ -55,12 +69,12 @@ return function()
 		200, -- difficulty level 1
 		200, -- difficulty level 2
 		200, -- difficulty level 3	
-		600, -- difficulty level 4
+		1200, -- difficulty level 4
 		1200, -- difficulty level 5
-		1200, -- difficulty level 6
-		1500, -- difficulty level 7
-		1500, -- difficulty level 8
-		1500, -- difficulty level 9
+		1500, -- difficulty level 6
+		3600, -- difficulty level 7
+		3600, -- difficulty level 8
+		3600, -- difficulty level 9
 	}
 
 	rules.prepareSpawnTime = 
@@ -90,15 +104,15 @@ return function()
 
 	rules.cooldownAfterAttacks = 
 	{			
-		0,  -- difficulty level 1
-		0,  -- difficulty level 2
-		0,  -- difficulty level 3
-		0,  -- difficulty level 4	
-		0,  -- difficulty level 5	
-		0,  -- difficulty level 6	
-		0,  -- difficulty level 7
-		0,  -- difficulty level 8	
-		0,  -- difficulty level 9	
+		300,  -- difficulty level 1
+		300,  -- difficulty level 2
+		300,  -- difficulty level 3
+		300,  -- difficulty level 4	
+		300,  -- difficulty level 5	
+		300,  -- difficulty level 6	
+		300,  -- difficulty level 7
+		300,  -- difficulty level 8	
+		300,  -- difficulty level 9	
 	}
 
 	rules.idleTime = 

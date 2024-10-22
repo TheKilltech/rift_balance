@@ -40,7 +40,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value				"700"
+				value				"450"
 			}
 			GameplayResource
 			{
@@ -197,6 +197,18 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_03"
+					bone 	"att_vismod_1"
+					scale "0.8 0.8 0.8"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/minipipes"
+					bone 	"att_vismod_2"
+					scale "1.2 1.2 1.2"
 				}
 			}
 		}

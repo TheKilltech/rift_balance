@@ -11,9 +11,12 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_plasma"
 		menu_icon			"gui/hud/building_icons/tower_plasma"
 		require 			"headquarters"
+		building_group		"tower_basic"
 		order				"11"
+		check_connect		"1"
+		buildable			"0"
 		type				"tower"
-		overrides			"tower,wall"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		upgrade				"buildings/defense/tower_plasma_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
@@ -22,11 +25,11 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
-					carbonium 	"150"
-					steel 		"75"
+					carbonium 	"300"
+					steel 		"120"
 					ai			"1"
 					palladium	"50"
 				}
@@ -34,14 +37,29 @@ EntityBlueprint
 		}			
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"25"
+				value 		"75"
+			}
+			
+			GameplayResource
+			{
+				resource 	"plasma"
+				value 		"10"
+				family		"charge"
+				attachment	"att_in_1"
+			}		
+			GameplayResource
+			{
+				resource 	"flammable_gas"
+				value 		"20"
+				family		"charge"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -125,9 +143,9 @@ EntityBlueprint
 				{
 					PhysicsBoxShape
 					{
-						x "2"
+						x "3"
 						y "4"
-						z "2"
+						z "3"
 
 						position
 						{
@@ -154,9 +172,9 @@ EntityBlueprint
 		{
 			PhysicsBoxShape
 			{
-				x	2
-				y	2
-				z	2
+				x	4
+				y	4
+				z	4
 			}
 		}
 	}
@@ -173,8 +191,8 @@ EntityBlueprint
 		}
 		size
 		{
-			x "1"
-			y "1"
+			x "2"
+			y "2"
 		}
 		visibility			"always"
 	}
@@ -241,13 +259,13 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "6"
+			emissive_factor "4" // "6"
 			submesh_idx "1"
 		}
 
 		ammo_blueprint 				"buildings/defense/tower_plasma_projectile"
 
-		muzzle_flash_effect 		"effects/weapons_energy/tower_plasma_gun_fire"
+		muzzle_flash_effect 		"effects/weapons_energy/plasma_gun_fire_red"
 
 		burst_column_spacing 		"0"
 		burst_rate 					"0"
@@ -334,7 +352,42 @@ EntityBlueprint
 		{
 			"buildings/effects_small_base"
 		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone 		"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/wall_x1"
+					bone 		"att_vismod_1"
+					scale		"1.5 0.7 1.5"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "lamp"
@@ -357,15 +410,14 @@ EntityBlueprint
 {
 	name "buildings/defense/tower_plasma_projectile"
 
-	base_blueprint "effects/weapons_energy/mech_plasma_gun_projectile"
-
+	base_blueprint "effects/weapons_energy/plasma_gun_projectile_red"
+	
 	ProjectileAmmoComponent
 	{
-		on_enemy_hit_effect 	"effects/weapons_energy/energy_weapon_hit"
-		on_world_hit_effect 	"effects/weapons_energy/energy_weapon_hit"
+		on_enemy_hit_effect 	"effects/weapon_hit/tower_projectile_hit"
+		on_world_hit_effect 	"effects/weapon_hit/tower_projectile_hit"
 		on_resisted_hit_effect 	"effects/weapons_generic/projectile_hit_resisted"
-
-		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield"
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield|building"
 	}
 
 	LifeTimeDesc

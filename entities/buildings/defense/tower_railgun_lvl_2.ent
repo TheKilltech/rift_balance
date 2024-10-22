@@ -14,10 +14,13 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_railgun"
 		menu_icon			"gui/hud/building_icons/tower_railgun_lvl2"
 		require 			"headquarters"
+		building_group		"tower_laser"
 		order				"11"
+		buildable			"0"
+		check_connect		"1"
 		type				"tower"
-		overrides			"tower,wall"
-		upgrade				"buildings/defense/tower_railgun_lvl_3"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		//upgrade				"buildings/defense/tower_railgun_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -25,7 +28,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 6
+				building_time 10
 				building_cost
 				{
 					carbonium 	"300"
@@ -36,14 +39,22 @@ EntityBlueprint
 		}		
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"70"
+				value 		"100"
+			}
+			
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"5"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -86,13 +97,13 @@ EntityBlueprint
 	}
 
 	MeshDesc
-  {
+	{
     mesh "meshes/buildings/defense/tower_railgun_lvl_2.mesh"
     material "buildings/defense/tower_railgun_lvl_2"
   }
 
 	SkeletonDesc
-  {
+	{
     name "meshes/buildings/defense/tower_railgun_lvl_2"
   }
 
@@ -137,8 +148,8 @@ EntityBlueprint
 
 		WeaponAffector
 		{
-			emissive_time "0.80"
-			emissive_factor "120"
+			emissive_time "0.35"
+			emissive_factor "80" // "120"
 			submesh_idx "1"
 		}
 
@@ -149,6 +160,60 @@ EntityBlueprint
 		burst_column_spacing 		"0"
 		burst_rate 					"0"
 		burst_column_angle 			"0"
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/minipipes"
+					bone 		"att_vismod_2"
+					scale		"0.6 0.6 0.6"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
 	}
 }
 
@@ -174,6 +239,7 @@ EntityBlueprint
 			{
 				animName "idle"
 				animTime "0.0"
+				animLoop "0"
 			}
 		}
 	}

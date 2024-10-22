@@ -1,0 +1,506 @@
+EntityBlueprint
+{
+	name  "buildings/main/outpost"
+
+	IdDesc
+	{
+		name "headquarters"
+	}
+
+	BuildingDesc
+	{
+		name 				"outpost"
+		bp   				"buildings/main/outpost"
+		category 			"main"
+		localization_id		"gui/hud/building_name/outpost"
+		description			"gui/hud/building_description/outpost"
+		menu_icon			"gui/hud/building_icons/outpost"
+		order				"1"
+		map_limit			"LOCAL_ANG_GLOBAL"
+	#ifdef win
+		limit			    "1"
+	#else
+		limit			    "1"
+	#endif
+		sellable 			"1"
+		mission_mode		"2"
+		radius_name			"portal"
+		min_radius			"40"
+		min_radius_effect   "voice_over/announcement/portal_too_close"
+		menu_action			"inventory"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"1000"
+					steel 		"1000"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"20"
+
+			}			
+		}
+		
+		disableable 0
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "energy"
+				max 	 "1000"
+			}
+			Storage
+			{
+				resource	 "carbonium"
+				max 		 "50"
+			}
+			Storage
+			{
+				resource	 "steel"
+				max 		 "50"
+			}
+			Storage
+			{
+				resource	 "cobalt"
+				max 		 "50"
+			}	
+			Storage
+			{
+				resource	 "uranium"
+				max 		 "50"
+			}	
+			Storage
+			{
+				resource	 "palladium"
+				max 		 "50"
+			}	
+			Storage
+			{
+				resource	 "titanium"
+				max 	 	 "50"
+			}			
+			Storage
+			{
+				resource	 "ammo_tower_explosive"
+				max 	 	"1"
+			}
+			Storage
+			{
+				resource	 "ammo_tower_liquid"
+				max 	 	"1"
+			}	
+			Storage
+			{
+				resource	 "ammo_tower_low_caliber"
+				max 	 	"1"
+			}
+			Storage
+			{
+				resource	 "ammo_tower_high_caliber"
+				max 	 	"1"
+			}			
+			Storage
+			{
+				resource	"ai"
+				max			"20"
+			}
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/main/headquarters.lua"
+		
+		
+		database
+		{
+			cone_effect			string:"build_cone_5x5"
+			cone_effect_sell	string:"sell_big"
+			interval			float:"1"
+			heal_radius			float:"8"
+			heal_amount			float:"20"
+			energy_cost			float:"0"
+			range				float:"90"
+			heal_count			int:"1"
+		}
+		
+	}
+
+	HealthDesc
+	{
+		max_health 					"2000"
+		health 						"2000"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+	
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health "90"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "90"
+			}
+			DestructionLevel
+			{
+				health "80"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "80_destroy"
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "80"
+			}
+			DestructionLevel
+			{
+				health "70"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "70"
+			}
+			DestructionLevel
+			{
+				health "60"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "60_destroy"
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "60"
+			}
+			DestructionLevel
+			{
+				health "50"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "50"
+			}
+			DestructionLevel
+			{
+				health "40"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "40_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "40"
+			}
+			DestructionLevel
+			{
+				health "30"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "30"
+			}
+			DestructionLevel
+			{
+				health "20"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "20_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "20"
+			}
+			DestructionLevel
+			{
+				health "10"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "10"
+			}
+			DestructionLevel
+			{
+				health "0"
+				destroy_state_change_effect_group "0_transition"
+				destroy_comp_delay "0.7"
+				destroy_comp_event "default"
+				destrucion_level_name "0"
+			}			
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/outpost.mesh"
+		material "buildings/main/outpost"
+	}
+
+	TypeDesc
+	{
+		type "building|main|headquarters"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/main/outpost"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "building_working"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsMeshShape
+					{
+						mesh "meshes/buildings/main/outpost_c1.nxs"
+					}	
+					PhysicsMeshShape
+					{
+						mesh "meshes/buildings/main/outpost_c2.nxs"
+					}
+				}
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsMeshShape
+			{
+				mesh "meshes/buildings/main/outpost_g1.nxs"
+			}	
+			PhysicsMeshShape
+			{
+				mesh "meshes/buildings/main/outpost_c3.nxs"
+			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type			"image"
+		icon_material 	"gui/hud/minimap_icons/headquarters"
+		additional_z_order 1
+	}
+
+	FogOfWarRevealerComponentDesc
+	{
+		radius "30"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	LootDesc
+	{
+		explosion_max_power 	"8000"
+		explosion_min_power 	"4000"
+	}
+
+	DestroyDesc
+	{
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "generic_destroy"				
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"
+				}				
+			}
+			
+			Pair
+			{
+				key "80_destroy"				
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"			
+				}				
+			}
+			
+			Pair
+			{
+				key "60_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"			
+				}				
+			}
+			Pair
+			{
+				key "40_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"			
+				}				
+			}
+			Pair
+			{
+				key "20_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"			
+				}				
+			}			
+			Pair
+			{
+				key "default"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"5000"
+					//explosion_effect 		"effects/buildings_generic/explosion_building_big_01"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_very_large_parts_generic"			
+				}				
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"5000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"	
+					part_material 			"misc/building_parts_generic"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_very_large_parts_generic"
+					part_lifetime "3"	
+				}
+
+				key "quicksand"
+			}				
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+//////////////////////////////// MISC /////////////////////////////////////////		
+		EffectGroup
+		{
+			group "portal"
+			enabled "1"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/headquarters_portal"								
+					bone "att_portal"
+				}
+			}
+		}			
+	}
+
+	children
+	{
+		EntityBlueprint 
+		{
+			base_blueprint "logic/spawn_player"
+			AttachmentDesc
+			{
+				attachment "att_respawn"
+			}
+
+
+		}
+	}
+}

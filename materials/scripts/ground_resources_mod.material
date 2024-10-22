@@ -1,0 +1,9 @@
+import * from "materials/scripts/ground_resources.material"
+
+material ground/resources/ammonium : ground/resources/default
+{
+	set_texture_alias normal materials/textures/ground/resources/palladium_normal.dds
+	set_texture_alias albedo materials/textures/ground/resources/ammonium_albedo.dds
+	set_texture_alias packed materials/textures/ground/resources/palladium_packed.dds
+	//set_texture_alias emissive materials/textures/ground/resources/carbonium_emissive.dds
+}

@@ -1,6 +1,18 @@
 import * from "materials/scripts/gui.material"
 
 
+/////  energy_connector_water
+
+material "gui/hud/building_icons/energy_connector_water" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/energy_connector_water.dds"
+}
+
+material "gui/hud/building_icons/energy_connector_water_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/energy_connector_water_disabled.dds"
+}
+
 /////  bio-metal refineries
 
 material "gui/hud/building_icons/bio_cobalt_refinery" : gui/default
@@ -80,6 +92,52 @@ material "gui/hud/building_icons/nitric_acid_refinery_lvl_3_disabled" : gui/defa
 }
 
 
+/////  nitrification_plant
+
+material "gui/hud/building_icons/nitrification_plant" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/nitrification_plant.dds"
+}
+
+material "gui/hud/building_icons/nitrification_plant_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/nitrification_plant_disabled.dds"
+}
+
+material "gui/hud/building_icons/nitrification_plant_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/nitrification_plant_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/nitrification_plant_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/nitrification_plant_disabled.dds"
+}
+
+material "gui/hud/building_icons/nitrification_plant_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/nitrification_plant_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/nitrification_plant_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/nitrification_plant_disabled.dds"
+}
+
+
+/////  ammonium_extractor
+
+material "gui/hud/building_icons/ammonium_extractor" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ammonium_extractor.dds"
+}
+
+material "gui/hud/building_icons/ammonium_extractor_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ammonium_extractor_disabled.dds"
+}
+
+
 /////  ionizer
 
 material "gui/hud/building_icons/ionizer" : gui/default
@@ -112,6 +170,38 @@ material "gui/hud/building_icons/ionizer_lvl_3_disabled" : gui/default
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ionizer_disabled.dds"
 }
 
+
+/////  gas_ionizer
+
+material "gui/hud/building_icons/gas_ionizer" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/gas_ionizer.dds"
+}
+
+material "gui/hud/building_icons/gas_ionizer_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ionizer_disabled.dds"
+}
+
+material "gui/hud/building_icons/gas_ionizer_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/gas_ionizer_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/gas_ionizer_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ionizer_disabled.dds"
+}
+
+material "gui/hud/building_icons/gas_ionizer_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/gas_ionizer_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/gas_ionizer_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ionizer_disabled.dds"
+}
 
 
 /////  supercoolant_refinery
@@ -146,37 +236,273 @@ material "gui/hud/building_icons/supercoolant_refinery_lvl_3_disabled" : gui/def
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/supercoolant_refinery_disabled.dds"
 }
 
+/////  supercoolant_chem_plant
 
-/////  solvent_refinery
-
-material "gui/hud/building_icons/solvent_refinery" : gui/default
+material "gui/hud/building_icons/supercoolant_chem_plant" : gui/default
 {
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solvent_refinery.dds"
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/supercoolant_chem_plant.dds"
 }
 
-material "gui/hud/building_icons/solvent_refinery_disabled" : gui/default
+material "gui/hud/building_icons/supercoolant_chem_plant_disabled" : gui/default
 {
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solvent_refinery_disabled.dds"
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/supercoolant_refinery_disabled.dds"
 }
 
-material "gui/hud/building_icons/solvent_refinery_lvl_2" : gui/default
+material "gui/hud/building_icons/supercoolant_chem_plant_lvl_2" : gui/default
 {
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solvent_refinery_lvl_2.dds"
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/supercoolant_chem_plant_lvl_2.dds"
 }
 
-material "gui/hud/building_icons/solvent_refinery_lvl_2_disabled" : gui/default
+material "gui/hud/building_icons/supercoolant_chem_plant_lvl_2_disabled" : gui/default
 {
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solvent_refinery_disabled.dds"
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/supercoolant_refinery_disabled.dds"
 }
 
-material "gui/hud/building_icons/solvent_refinery_lvl_3" : gui/default
+material "gui/hud/building_icons/supercoolant_chem_plant_lvl_3" : gui/default
 {
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solvent_refinery_lvl_3.dds"
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/supercoolant_chem_plant_lvl_3.dds"
 }
 
-material "gui/hud/building_icons/solvent_refinery_lvl_3_disabled" : gui/default
+material "gui/hud/building_icons/supercoolant_chem_plant_lvl_3_disabled" : gui/default
 {
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solvent_refinery_disabled.dds"
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/supercoolant_refinery_disabled.dds"
 }
+
+
+/////  fluorine_trap
+
+material "gui/hud/building_icons/fluorine_trap" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/fluorine_trap.dds"
+}
+
+material "gui/hud/building_icons/fluorine_trap_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/fluorine_trap_disabled.dds"
+}
+
+
+/////  reagent_condenser
+
+material "gui/hud/building_icons/reagent_condenser" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/reagent_condenser.dds"
+}
+
+material "gui/hud/building_icons/reagent_condenser_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/reagent_condenser_disabled.dds"
+}
+
+material "gui/hud/building_icons/reagent_condenser_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/reagent_condenser_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/reagent_condenser_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/reagent_condenser_disabled.dds"
+}
+
+material "gui/hud/building_icons/reagent_condenser_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/reagent_condenser_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/reagent_condenser_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/reagent_condenser_disabled.dds"
+}
+
+
+/////  reagent_refinery
+
+material "gui/hud/building_icons/reagent_refinery" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/reagent_refinery.dds"
+}
+
+material "gui/hud/building_icons/reagent_refinery_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/reagent_refinery_disabled.dds"
+}
+
+material "gui/hud/building_icons/reagent_refinery_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/reagent_refinery_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/reagent_refinery_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/reagent_refinery_disabled.dds"
+}
+
+material "gui/hud/building_icons/reagent_refinery_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/reagent_refinery_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/reagent_refinery_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/reagent_refinery_disabled.dds"
+}
+
+
+
+/////  petroleum_refinery
+
+material "gui/hud/building_icons/petroleum_refinery" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/petroleum_refinery.dds"
+}
+
+material "gui/hud/building_icons/petroleum_refinery_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ionizer_disabled.dds"
+}
+
+material "gui/hud/building_icons/petroleum_refinery_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/petroleum_refinery_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/petroleum_refinery_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ionizer_lvl_2_disabled.dds"
+}
+
+
+/////  steel_seperator
+
+material "gui/hud/building_icons/steel_seperator" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/steel_seperator.dds"
+}
+
+material "gui/hud/building_icons/steel_seperator_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/steel_seperator_disabled.dds"
+}
+
+material "gui/hud/building_icons/steel_seperator_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/steel_seperator_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/steel_seperator_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/steel_seperator_disabled.dds"
+}
+
+material "gui/hud/building_icons/steel_seperator_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/steel_seperator_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/steel_seperator_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/steel_seperator_disabled.dds"
+}
+
+
+/////  heavy_water_plant
+
+material "gui/hud/building_icons/heavy_water_plant" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/heavy_water_plant.dds"
+}
+
+material "gui/hud/building_icons/heavy_water_plant_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/laboratory_disabled.dds"
+}
+
+
+/////  biomass_plant_press, biomass_morphed_press, biomass_water_press
+
+material "gui/hud/building_icons/biomass_plant_press" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_plant_press.dds"
+}
+
+material "gui/hud/building_icons/biomass_plant_press_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
+}
+
+material "gui/hud/building_icons/biomass_plant_press_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_plant_press_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/biomass_plant_press_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
+}
+
+material "gui/hud/building_icons/biomass_morphed_press" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_morphed_press.dds"
+}
+
+material "gui/hud/building_icons/biomass_morphed_press_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
+}
+
+material "gui/hud/building_icons/biomass_water_press" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_water_press.dds"
+}
+
+material "gui/hud/building_icons/biomass_water_press_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
+}
+
+material "gui/hud/building_icons/biomass_water_press_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_water_press_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/biomass_water_press_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
+}
+
+material "gui/hud/building_icons/biomass_oil_press" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_oil_press.dds"
+}
+
+material "gui/hud/building_icons/biomass_oil_press_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
+}
+
+material "gui/hud/building_icons/biomass_oil_press_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_oil_press_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/biomass_oil_press_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
+}
+
+
+/////  water_drill
+
+material "gui/hud/building_icons/water_drill" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/water_drill.dds"
+}
+
+material "gui/hud/building_icons/water_drill_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/water_drill_disabled.dds"
+}
+
+
 
 

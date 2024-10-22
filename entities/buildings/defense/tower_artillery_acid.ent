@@ -1,0 +1,200 @@
+EntityBlueprint
+{
+	name "buildings/defense/tower_artillery_acid"
+
+	base_blueprint 			"buildings/defense/tower_artillery_lvl_2"
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"tower_artillery_acid"
+		bp   				"buildings/defense/tower_artillery_acid"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_artillery_acid"
+		description			"gui/hud/building_description/tower_artillery_acid"
+		menu_icon			"gui/hud/building_icons/tower_artillery_lvl2_acid"
+		require 			"headquarters"
+		building_group		"tower_artillery"
+		order				"12"
+		check_connect		"1"
+		type				"tower"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		condition			"BIOME"	
+		condition_value		"magma,jungle,desert,acid,metallic,legacy_maps"	
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 6
+				building_cost
+				{
+					carbonium 	"350"
+					steel 		"75"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"35"
+			}
+			
+			GameplayResource
+			{
+				resource 	"sludge"
+				value 		"20"
+				family		"warhead"
+			}
+			
+			GameplayResource
+			{
+				resource 	"nitric_acid"
+				value 		"5"
+				family		"warhead"
+				attachment	"att_in_1"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
+	}
+	
+	WeaponItemDesc
+	{
+	}
+
+	TurretDesc
+	{
+		target "ground_unit_artillery|ground_unit_large|ground_unit_medium|ground_unit"
+		target_ignore "invisible"
+		speed "300"
+		aim_volume "SphericalAimVolume"
+		{
+			range_min "8"
+			range_max "42"
+			aiming_range "55"
+		}
+
+		aiming_cooldown "1"
+		aiming_target_time "2"
+		aiming_idle_angle "20"
+		pitch "be_barrel"
+		gravity_factor "8"
+		yaw "be_turret"
+		check_target_visibility "1"
+		fog_of_war_filtering "1"
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+				recoil_bone  "be_recoil"
+				recoil_time   "0.35"
+				recoil_offset   "1.0"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "60"
+			submesh_idx "1"
+		}
+
+		ammo_blueprint 			"buildings/defense/tower_artillery_projectile_acid"
+		muzzle_flash_effect 	"effects/weapons_explosive/tower_rocket_fire_medium"
+
+		burst_column_spacing 	"0"
+		burst_rate 				"0"
+		burst_column_angle 		"0"
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/minipipes"
+					bone 		"att_vismod_2"
+					orientation	"0 0 -40"
+					scale		"0.6 0.6 0.6"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name "buildings/defense/tower_artillery_projectile_acid"
+	base_blueprint buildings/defense/tower_artillery_projectile_lvl2
+
+	ArtilleryAmmoComponent
+	{
+		on_enemy_hit_effect 		"effects/weapons_fluid/spitter_acid_hit"
+		on_world_hit_effect 		"effects/weapons_fluid/spitter_acid_hit"
+		on_resisted_hit_effect 		"effects/weapons_fluid/spitter_acid_hit"
+		hit_effect_direction 		"up"
+		on_world_explosion_delay	"0"
+		on_enemy_explosion_delay	"0"
+		explosion_delay_effect 		"effects/weapons_explosive/weapon_grenade_armed"
+		collision_3d 				"world|world_blocker|world_destructible|destructible|ground_unit|shield|building"
+	}
+}

@@ -24,7 +24,7 @@ Playing Riftbreaker is a greata game but i find the campaign increadibly unchall
 	
  - Resources: cultivators are an infinite entierly automated infinite source and they are very powerful compared to mines.
    - added bio-resources replacing the direct rare resource yield from cultivators. those bio resources require additional processing steps to refine them into palladium, titanium, uranium ore or cobalt.
-   - the refining involves a new pipe-resource solvent. it is refined from plant biomass mostly.
+   - the refining involves a new pipe-resource reagent. it is refined from plant biomass mostly.
    - different types of biomass have become quite important to some production chains
    - added new nitic acid fluid involved in production chains of most ammo types. uses animal biomass and hazenite.
   
@@ -46,7 +46,7 @@ Playing Riftbreaker is a greata game but i find the campaign increadibly unchall
  - so far i have been just warming up and testing things. so expect major changes. don't wont to start certain things before the devs haven't realeased their difficulty improvements and multiplayer.
  - test friendly fire. hope the devs implement it is as a custom game setting though
  - rework building upgrages:
-   - change level 3 nuclear reactor to use molten salt reactor (solvent + bio-uranium => liquid uranium)
+   - change level 3 nuclear reactor to use molten salt reactor (reagent + bio-uranium => liquid uranium)
    - rework of morphium buildings
    - rework plasma towers
  - add nitrate as resource & surface deposit (alternate option to produce nitric acid)

@@ -43,15 +43,24 @@ EntityBlueprint
 			{
 				resource 		"flammable_gas"
 				value 			"50"
+				family			"fuel"
 				attachment		"att_in_1"
 			}
-						
+			
 			GameplayResource
 			{
-				resource 		"supercoolant"
-				value			"15"
+				resource 		"petroleum"
+				value 			"50"
+				family			"fuel"
+				attachment		"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 		"reagent"
+				value			"5"
+				family			"catalyst"
 				attachment		"att_in_2"
-				family			"coolant"
 			}
 		}
 		
@@ -60,7 +69,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"1400"
+				value 		"1200"
 			}
 		}
 		priority 9		
@@ -74,7 +83,7 @@ EntityBlueprint
 			Storage
 			{
 				resource "energy"
-				max 	 "1400"
+				max 	 "1200"
 			}
 			
 		}

@@ -11,10 +11,10 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_flamer"
 		menu_icon			"gui/hud/building_icons/tower_flamer"
 		require 			"headquarters"
-		order				"7"
+		order				"6"
 		type				"tower"
 		overrides			"tower,wall"
-		upgrade				"buildings/defense/tower_flamer_lvl_2"
+		//upgrade				"buildings/defense/tower_flamer_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -22,7 +22,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2
+				building_time 10
 				building_cost
 				{
 					carbonium 	"100"
@@ -241,8 +241,8 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "35"
-			submesh_idx "1"
+			emissive_factor "3" // "35"
+			submesh_idx "0"
 		}
 
 		ammo_blueprint				"buildings/defense/tower_flamer_beam"
@@ -327,7 +327,8 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
+	
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"

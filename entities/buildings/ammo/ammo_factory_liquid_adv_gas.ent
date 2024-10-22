@@ -1,0 +1,142 @@
+EntityBlueprint
+{
+	name  "buildings/ammo/ammo_factory_liquid_adv_gas"
+	base_blueprint	"buildings/ammo/ammo_factory_liquid_adv"
+
+	BuildingDesc
+	{
+		name 					"ammo_factory_liquid_adv_gas"
+		bp   					"buildings/ammo/ammo_factory_liquid_adv_gas"
+		category 				"ammo"
+		localization_id			"gui/hud/building_name/ammo_factory_liquid_adv_gas"
+		description				"gui/hud/building_description/ammo_factory_liquid_adv_gas"
+		menu_icon				"gui/hud/building_icons/ammo_factory_liquid_adv_lvl_2"
+		require 				"headquarters"
+		order					"37"
+		buildable				"0"
+		building_group			"ammo_factory_liquid_adv"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_liquid_adv,ammo_factory_liquid_adv_lvl_2"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 25
+				building_cost
+				{
+					carbonium 	"450"
+					steel 		"600"
+					ai			"1"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"45"
+			}
+			
+			GameplayResource
+			{
+				resource 			"ammo_tower_liquid"
+				value				"8"
+			}
+			
+			GameplayResource
+			{
+				resource 			"flammable_gas"
+				value 				"100"
+				attachment			"att_in_1"
+				family				"main"
+			}
+			
+			GameplayResource
+			{
+				resource 			"ferdonite"
+				value				"1"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"ammo_tower_liquid_lvl2"
+				value				"8"
+			}	
+			GameplayResource
+			{
+				resource 			"ammo_mech_liquid_lvl2"
+				value				"8"
+				optional			"1"
+			}			
+		}	
+		priority 5		
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}			
+		////////////////////////Resources/////////////////////////	
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/geothermal_powerplant_working"
+					delay "1"
+				}	
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone 		"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint 	"effects/buildings_and_machines/reactor_orange"
+					bone 		"att_vismod_1"
+					scale 		"0.7 0.7 0.7"
+				}
+			}
+		}	
+	}
+}

@@ -38,7 +38,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value				"350"
+				value				"120"
 			}
 			GameplayResource
 			{
@@ -167,7 +167,7 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/tower_ammunition_factory"
+		name "meshes/buildings/ammo/ammo_factory_explosive_adv"
 	}
 
 	AnimationGraphDesc
@@ -188,7 +188,7 @@ EntityBlueprint
 				{
 					PhysicsSphereShape
 					{
-						r "2.45"
+						r "3.3"
 	
 						position 
 						{
@@ -216,9 +216,9 @@ EntityBlueprint
 		{
    			PhysicsBoxShape
    			{
-    				x	6
-    				y	6
-    				z	6
+    				x	8
+    				y	8
+    				z	8
    			}			
 		}
 	}
@@ -235,8 +235,8 @@ EntityBlueprint
 		}
 		size
 		{
-			x "3"
-			y "3"
+			x "4"
+			y "4"
 		}
 					
 		visibility			"always"
@@ -381,6 +381,18 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_03"
+					bone 	"att_vismod_1"
+					scale "0.8 0.8 0.8"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/minipipes"
+					bone 	"att_vismod_2"
+					scale "1.2 1.2 1.2"
 				}
 			}
 		}

@@ -9,15 +9,16 @@ EntityBlueprint
 		name 				"tower_minigun_lvl_2"
 		bp   				"buildings/defense/tower_minigun_lvl_2"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_minigun"
-		description			"gui/hud/building_description/tower_minigun"
+		localization_id		"gui/hud/building_name/tower_minigun_supercooled"
+		description			"gui/hud/building_description/tower_minigun_supercooled"
 		menu_icon			"gui/hud/building_icons/tower_minigun_lvl2"
 		require 			"headquarters"
-		order				"14"
+		building_group		"tower_minigun"
+		order				"10"
 		buildable			"0"
 		type				"tower"
-		overrides			"tower,wall"
-		upgrade				"buildings/defense/tower_minigun_lvl_3"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		//upgrade				"buildings/defense/tower_minigun_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -25,18 +26,18 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 6
+				building_time 10
 				building_cost
 				{
 					carbonium 	"300"
 					steel 		"150"
-					titanium	"100"
+					titanium	"75"
 				}
 			}		
 		}		
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
@@ -44,6 +45,14 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"25"
+			}
+			
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"3"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -102,6 +111,60 @@ EntityBlueprint
 
 	TowerDesc
 	{
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/minipipes"
+					bone 		"att_vismod_2"
+					scale		"0.6 0.6 0.6"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
 	}
 }
 

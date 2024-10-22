@@ -11,10 +11,10 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_laser"
 		menu_icon			"gui/hud/building_icons/tower_laser"
 		require 			"headquarters"
-		order				"10"
+		order				"17"
 		type				"tower"
 		overrides			"tower,wall"
-		upgrade				"buildings/defense/tower_laser_lvl_2"
+		//upgrade				"buildings/defense/tower_laser_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -22,7 +22,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"150"
@@ -34,14 +34,14 @@ EntityBlueprint
 		}			
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"10"
+				value 		"25"
 			}
 		}
 
@@ -238,8 +238,8 @@ EntityBlueprint
 
 		WeaponAffector
 		{
-			emissive_time "0.7"
-			emissive_factor "4"
+			emissive_time "0.35"
+			emissive_factor "3" // "4"
 			submesh_idx "1"
 		}
 
@@ -382,8 +382,8 @@ EntityBlueprint
 
 	SoundDesc
 	{
-		name 		"items/weapons/fluid/flamer_loop"
-		start_name 	"items/weapons/fluid/flamer_start"
-		end_name 	"items/weapons/fluid/flamer_stop"
+		name 		"items/weapons/energy/laser_small_loop"
+		start_name 	"items/weapons/energy/laser_small_start"
+		end_name 	"items/weapons/energy/laser_small_stop"
 	}
 }

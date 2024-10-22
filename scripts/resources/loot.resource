@@ -84,6 +84,20 @@ GameplayResourceDef
 	bigger_icon		"gui/hud/resource_icons/biomass_water_bigger"
 	hud_visible 	"build_menu"
 	allow_overflow 	"0"
-	missing_effect "voice_over/announcement/not_enough_animal_biomass"
+	missing_effect  "voice_over/announcement/not_enough_plant_biomass"
+	order   		"11"		
+}
+
+GameplayResourceDef
+{
+	id				"biomass_morphed"
+	localization_id "resource_name/biomass_morphed"
+	bp  			"items/loot/resources/biomass_morphed_item"
+	type 			"global"
+	icon			"gui/hud/resource_icons/biomass_morphed"
+	bigger_icon		"gui/hud/resource_icons/biomass_morphed_bigger"
+	hud_visible 	"build_menu"
+	allow_overflow 	"0"
+	missing_effect  "voice_over/announcement/not_enough_plant_biomass"
 	order   		"11"		
 }

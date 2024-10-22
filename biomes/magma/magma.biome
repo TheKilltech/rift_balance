@@ -1,0 +1,218 @@
+BiomeDef
+{
+	base_materials
+	{
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_2"
+			value
+			{
+				String "ground/misc/biome_material_2"
+				String "ground/mud/cracked_mud_01"
+				String "ground/sand/desert_sand_05"
+				String "ground/sand/desert_sand_07"
+			}
+
+		}
+
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_1"
+			value
+			{
+				String "ground/misc/biome_material_1"
+				String "ground/rock/rocky_dirt"
+				String "ground/magma/magma_gravel"
+				String "ground/magma/magma_dirt_1"
+				String "ground/magma/magma_ground_01"
+				String "ground/magma/magma_ground_04"
+				String "ground/magma/vulcanic_gravel_01"
+			}
+
+		}
+
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_0"
+			value
+			{
+				String "ground/misc/biome_material_0"
+				String "ground/magma/magma_lava"
+				String "ground/magma/magma_rock_01"
+				String "ground/magma/magma_rock_02"
+				String "ground/magma/magma_ground_12"
+				String "ground/magma/magma_layered_01"
+			}
+
+		}
+
+	}
+
+	default_liquid_resource "magma_vein"
+	icon "gui/menu/biomes_prev/magma_prev"
+	icon_with_outpost "gui/menu/biomes_prev/magma_base_prev"
+	loading "gui/menu/loading/magma"
+	loading_with_outpost "gui/menu/loading/magma_outpost"
+	override_terrain_type "magma_hot_ground"
+	resources "carbon_vein,iron_vein,ammonium_vein,geothermal_vent,flammable_gas_vent,uranium_ore_vein,titanium_vein,palladium_vein,cobalt_vein,carbon_deepvein,iron_deepvein,cobalt_deepvein,palladium_deepvein,titanium_deepvein,uranium_ore_deepvein,mud_deepvein,water_deepvein,sludge_deepvein,magma_deepvein,morphium_deepvein,petroleum_deepvein"
+	
+	root_template
+	{
+		children
+		{
+			EntityTemplate
+			{
+				components
+				{
+					IdComponent
+					{
+						name "main_light"
+					}
+
+					LightDesc
+					{
+						scattering_intensity "1.0"
+						light_color
+						{
+							w "14.985"
+							x "0.611"
+							y "0.379"
+							z "0.156"
+						}
+					}
+
+					ShadowComponent
+					{
+					
+					}
+				}
+
+			}
+
+			EntityTemplate
+			{
+				components
+				{
+					IdComponent
+					{
+						name "skybox"
+					}
+
+					LocalAabbDesc
+					{
+						local_aabb
+						{
+							min
+							{
+								x "-5.100"
+								y "-5.100"
+								z "-5.100"
+							}
+
+							max
+							{
+								x "5.100"
+								y "5.100"
+								z "5.100"
+							}
+
+						}
+
+					}
+
+					MeshDesc
+					{
+						material "pbr/skybox"
+						mesh "meshes/skybox.mesh"
+						renderable_custom_parameters
+						{
+							Params
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		components
+		{
+			BiomeModificatorComponent
+			{
+				geothermal_power "2.000"
+				solar_power "0.500"
+			}
+
+			DirectionalWindComponent
+			{
+				factor "0.000"
+				position_frequency_factor "0.001"
+				power_frequency "0.000"
+				power_max "0.000"
+				power_min "0.000"
+				rotation_frequency "0.000"
+				rotation_max "0.000"
+			}
+
+			SceneParamsDesc
+			{
+				bloom_params
+				{
+					max_exposure "1.284"
+					scale "1.183"
+					threshold "0.501"
+				}
+
+				fog_params
+				{
+					color
+					{
+						x "0.748"
+						y "0.022"
+						z "0.001"
+					}
+
+					density "0.486"
+					end "54.000"
+					start "45.000"
+				}
+
+				shadow_params
+				{
+					intensity "1.000"
+				}
+
+				skybox_params
+				{
+					diffuse "materials/textures/skybox/skybox_lava_01_diffuse.dds"
+					diffuse_intensity "0.253"
+					environment "materials/textures/skybox/skybox_lava_01_env.dds"
+					specular "materials/textures/skybox/skybox_lava_01_specular.dds"
+					specular_intensity "0.314"
+					sun_roll "21.990"
+					sun_yaw "97.502"
+				}
+
+			}
+
+			TimeOfDayComponent
+			{
+				timeofday_presets
+				{
+					TimeOfDayPresetHolder
+					{
+						resource_name "biomes/magma/scene_params/magma.td"
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+

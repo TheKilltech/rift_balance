@@ -1,0 +1,72 @@
+EntityBlueprint
+{
+	name  "resources/volume_resource_cobalt_deepvein"
+
+	SceneEditorDesc
+	{
+		mesh 		"meshes/resources/volume_resource_iron.mesh"
+		material 	"resources/volume_resource_carbon"
+
+		highlight_grid              "1"
+        highlight_color
+        {
+            r "0.25"
+            g "0.25"
+            b "0.25"
+            a "1.0"
+        }
+        initial_scale
+        {
+            x "0.25"
+            y "1.0"
+            z "0.25"
+        }		
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"volume"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsMeshShape
+					{
+						mesh "meshes/resources/volume_resource_iron_c1.nxs"
+					}
+				}
+			}
+		}
+	}
+
+	LocalAabbDesc
+	{
+		local_aabb
+		{
+			min
+			{
+				x "-0.5"
+				y "-0.5"
+				z "-0.5"
+			}
+			max
+			{
+				x "0.5"
+				y "0.5"
+				z "0.5"
+			}	
+		}
+	}
+	
+	ResourceVolumeDesc
+	{
+		type 		"cobalt_deepvein"
+		amount 		"99999"
+		infinity 	"1"
+	}
+}
+

@@ -11,10 +11,10 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_lightning"
 		menu_icon			"gui/hud/building_icons/tower_lightning"
 		require 			"headquarters"
-		order				"10"
+		order				"20"
 		type				"tower"
 		overrides			"tower,wall"
-		upgrade				"buildings/defense/tower_lightning_lvl_2"
+		//upgrade				"buildings/defense/tower_lightning_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -22,7 +22,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"150"
@@ -41,7 +41,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"10"
+				value 		"50"
 			}
 		}
 
@@ -243,9 +243,9 @@ EntityBlueprint
 
 		WeaponAffector
 		{
-			emissive_time "0.7"
-			emissive_factor "4"
-			submesh_idx "1"
+			emissive_time "0.35"
+			emissive_factor "4" // "4"
+			submesh_idx "0"
 		}
 
 		ammo_blueprint				"buildings/defense/tower_lightning_beam"

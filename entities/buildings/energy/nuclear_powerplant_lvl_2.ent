@@ -26,14 +26,26 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 300
+				building_time 200
 				building_cost
 				{
-					carbonium 	"3000"		
-					steel 		"1500"
-					uranium 	"1000"
+					carbonium 	"1500"
+					steel 		"4500"
+					uranium 	"500"
+					cobalt		"100"
 				}
-			}		
+			}
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 150
+				building_cost
+				{
+					carbonium 	"1500"		
+					steel 		"750"
+					uranium 	"500"
+				}
+			}
 		}
 	}
 
@@ -44,7 +56,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"uranium"
-				value 		"1"
+				value 		"0.5"
 			}
 			GameplayResource
 			{
@@ -81,7 +93,7 @@ EntityBlueprint
 			Storage
 			{
 				resource "energy"
-				max 	 "2250"
+				max 	 "5000"
 			}
 			
 		}

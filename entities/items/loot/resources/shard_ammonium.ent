@@ -1,0 +1,112 @@
+EntityBlueprint
+{ 
+	name "items/loot/resources/shard_ammonium"
+
+	MeshDesc
+	{
+		mesh 		"meshes/loot/resources/shard_titanium.mesh"
+		material 	"loot/resources/shard_ammonium"
+	}
+}
+
+EntityBlueprint
+{ 
+	name "items/loot/resources/shard_ammonium_item"
+
+	ResourceComponent
+	{
+		type_produced 	ammonium
+		initial_amount	1		
+	}
+
+	InventoryItemDesc
+	{
+		type 			"misc"
+		name 			"resource_name/ammonium"
+		item_bp			"items/loot/resources/shard_ammonium"
+		icon			"gui/hud/resource_icons/ammonium"
+		bigger_icon 	"gui/hud/resource_icons/ammonium_bigger"		
+	}
+
+	LuaDesc
+	{
+		script "lua/items/misc/resource_giver.lua"
+	}
+
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"dynamic"
+				group_id 			"loot"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x 	"1.0"
+						y 	"0.5"
+						z 	"1.0"
+
+						position 
+						{
+							x "0.0"
+							y "0.25"
+							z "0.0"
+						}
+					}
+				}
+
+				mass 		"380"				
+			}
+		}
+	}
+
+	EffectDesc
+	{
+		//EffectGroup
+		//{
+		//	group "loot_spawn"
+		//	enabled "0"		
+		//	
+		//	Effects
+		//	{
+		//		Effect
+		//		{
+		//			blueprint "effects/loot/loot_spawn"	
+		//		}
+		//	}
+		//}
+
+		EffectGroup
+		{
+			group "loot_collect"
+			enabled "0"		
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/loot/loot_collect_metallic"
+				}
+			}
+		}
+
+		EffectGroup
+		{
+			group "loot_max"
+			enabled "0"		
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/loot/loot_max"
+				}
+			}
+		}
+	}
+}
+

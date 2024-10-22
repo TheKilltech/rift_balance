@@ -12,7 +12,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/flora_cultivator"
 		menu_icon			"gui/hud/building_icons/flora_cultivator"
 		require 			"headquarters"
-		order				"12"
+		order				"13"
 		menu_action			"working_mod"
 		upgrade				"buildings/resources/flora_cultivator_lvl_2"	
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -66,7 +66,6 @@ EntityBlueprint
 		{
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell 	string:"sell_big"
-			building_time		float:"10"
 
 			drone_search_radius	float:"20"
 			drone_blueprint		string:"units/drones/drone_flora_cultivator"

@@ -1,0 +1,222 @@
+BiomeDef
+{
+	base_materials
+	{
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_1"
+			value
+			{
+				String "ground/misc/biome_material_1"
+				String "ground/swamp/swamp_fungus_08"
+				String "ground/swamp/swamp_fungus_10"
+				String "ground/swamp/roots_moss_03"
+				String "ground/swamp/swamp_plants_02"
+				String "ground/swamp/swamp_roots_03"
+				String "ground/swamp/roots_moss_02"
+				String "ground/swamp/swamp_plants_01"
+			}
+
+		}
+
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_0"
+			value
+			{
+				String "ground/misc/biome_material_0"
+				String "ground/swamp/mycelium_05"
+				String "ground/swamp/mycelium_06"
+				String "ground/swamp/organic_ground_03"
+				String "ground/swamp/organic_ground_04"
+				String "ground/swamp/organic_ground_07"
+				String "ground/swamp/swamp_fungus_09"
+				String "ground/swamp/swamp_plants_03"
+			}
+
+		}
+
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_2"
+			value
+			{
+				String "ground/misc/biome_material_2"
+				String "ground/swamp/swamp_02"
+				String "ground/swamp/swamp_fungus_01"
+				String "ground/swamp/swamp_01"
+				String "ground/swamp/mud_rough_01"
+				String "ground/mud/mud_01"
+				String "ground/swamp/mud_leafs_01"
+				String "ground/swamp/swamp_fungus_04"
+			}
+
+		}
+
+	}
+
+	default_liquid_resource "mud_vein"
+	icon "gui/menu/biomes_prev/swamp_prev"
+	icon_with_outpost "gui/menu/biomes_prev/swamp_base_prev"
+	loading "gui/menu/loading/swamp"
+	loading_with_outpost "gui/menu/loading/swamp_outpost"
+	resources "carbon_vein,iron_vein,geothermal_vent,flammable_gas_vent,uranium_ore_vein,titanium_vein,palladium_vein,cobalt_vein,water_vein,mud_vein,sludge_vein"
+	root_template
+	{
+		children
+		{
+			EntityTemplate
+			{
+				components
+				{
+					IdComponent
+					{
+						name "main_light"
+					}
+
+					LightDesc
+					{
+						light_color
+						{
+							w "13.416"
+							y "0.779"
+							z "0.354"
+						}
+
+					}
+
+					ShadowComponent
+					{
+						light_mask_texture
+					}
+
+				}
+
+			}
+
+			EntityTemplate
+			{
+				components
+				{
+					IdComponent
+					{
+						name "skybox"
+					}
+
+					LocalAabbDesc
+					{
+						local_aabb
+						{
+							min
+							{
+								x "-5.100"
+								y "-5.100"
+								z "-5.100"
+							}
+
+							max
+							{
+								x "5.100"
+								y "5.100"
+								z "5.100"
+							}
+
+						}
+
+					}
+
+					MeshDesc
+					{
+						material "pbr/skybox"
+						mesh "meshes/skybox.mesh"
+						renderable_custom_parameters
+						{
+							Params
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		components
+		{
+			BiomeModificatorComponent
+			{
+				solar_power "0.750"
+			}
+
+			DirectionalWindComponent
+			{
+				factor "0.000"
+				position_frequency_factor "0.001"
+				power_frequency "0.000"
+				power_max "0.000"
+				power_min "0.000"
+				rotation_frequency "0.000"
+				rotation_max "0.000"
+			}
+
+			SceneParamsDesc
+			{
+				bloom_params
+				{
+					max_exposure "0.833"
+					scale "1.030"
+					threshold "0.492"
+				}
+
+				fog_params
+				{
+					color
+					{
+						x "0.521"
+						y "0.855"
+						z "0.920"
+					}
+
+					density "0.283"
+					end "58.708"
+					start "46.177"
+				}
+
+				shadow_params
+				{
+					intensity "1.000"
+				}
+
+				skybox_params
+				{
+					diffuse "materials/textures/skybox/skybox_swamp_diffuse.dds"
+					diffuse_intensity "0.403"
+					environment "materials/textures/skybox/skybox_swamp_env.dds"
+					specular "materials/textures/skybox/skybox_swamp_specular.dds"
+					specular_intensity "0.588"
+					sun_roll "29.686"
+					sun_yaw "40.755"
+				}
+
+			}
+
+			TimeOfDayComponent
+			{
+				timeofday_presets
+				{
+					TimeOfDayPresetHolder
+					{
+						resource_name "biomes/swamp/scene_params/swamp.td"
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+

@@ -15,18 +15,19 @@ EntityBlueprint
 		order				"17"
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"ionizer,ionizer_lvl_2,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 180
+				building_time 50
 				building_cost
 				{
 					carbonium 	"500"
-					steel 		"2000"			
-					palladium	"1000"
+					steel 		"2000"
+					cobalt		"1000"
 				}
 			}		
 		}
@@ -39,7 +40,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"energy"
-				value			"450"
+				value			"250"
 			}
 			GameplayResource
 			{
@@ -49,19 +50,15 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"tanzanite"
-				value			"1.5"
-			}				
-			GameplayResource
-			{
-				resource 		"palladium"
-				value			"0.2"
-			}		
-			GameplayResource
-			{
-				resource 		"flammable_gas"
-				value 			"50"
-				attachment		"att_in_1"
+				value			"1"
 			}	
+			GameplayResource
+			{
+				resource 		"reagent"
+				family			"gas"
+				value 			"25"
+				attachment		"att_in_1|att_in_3"
+			}
 		}
 		
 		out
@@ -69,7 +66,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"plasma"
-				value 			"150"
+				value 			"200"
 				attachment		"att_out_1"
 			}	
 		}
@@ -83,10 +80,15 @@ EntityBlueprint
 			Storage
 			{
 				resource	 	"plasma"
-				max 	 		"300"
+				max 	 		"400"
 				attachment		"att_out_1"
 			}	
-			
+			Storage
+			{
+				resource	 	"reagent"
+				max 	 		"20"
+				attachment		"att_in_1|att_in_3"
+			}
 		}
 	}	
 	
@@ -149,7 +151,6 @@ EntityBlueprint
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
 				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
-				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
 	}
@@ -160,7 +161,7 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
@@ -171,8 +172,23 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_3_arrow"
 				}
 			}
 		}	
@@ -186,12 +202,12 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}	
-////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////	
 		EffectGroup
 		{
 			group "vismod"
@@ -202,6 +218,24 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_3_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/futurewall_cyan"
+					bone 		"att_vismod_1"
+					scale		"0.5 0.35 0.7"
+					orientation "0 90 0"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/crystal_vs1_violet"
+					bone 		"att_vismod_2"
+					scale		"0.8 0.7 0.8"
 				}
 			}
 		}	

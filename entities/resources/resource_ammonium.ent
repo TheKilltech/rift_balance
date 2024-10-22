@@ -1,0 +1,371 @@
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_01_large"
+
+	base_blueprint "resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_large_01.mesh"
+		material 	"resources/resource_ammonium"
+	}
+
+
+	
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_01_medium"
+
+	base_blueprint "resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_medium_01.mesh"
+		material 	"resources/resource_ammonium"
+	}
+
+
+	
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_01_small"
+
+	base_blueprint "resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_small_01.mesh"
+		material 	"resources/resource_ammonium"
+	}
+
+
+	
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_01_very_large"
+
+	base_blueprint "resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_very_large_01.mesh"
+		material 	"resources/resource_ammonium"
+	}
+
+
+	
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_02_large"
+
+	base_blueprint 	"resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_large_02.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_02_medium"
+
+	base_blueprint 	"resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_medium_02.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_02_small"
+
+	base_blueprint 	"resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_small_02.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_02_very_large"
+
+	base_blueprint 	"resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_very_large_02.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_03_large"
+
+	base_blueprint 	"resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_large_03.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_03_medium"
+
+	base_blueprint 	"resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_medium_03.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_03_small"
+
+	base_blueprint 	"resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_small_03.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_03_very_large"
+
+	base_blueprint 	"resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_very_large_03.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_04_large"
+
+	base_blueprint 	"resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_large_04.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_04_medium"
+
+	base_blueprint 	"resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_medium_04.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_04_small"
+
+	base_blueprint 	"resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_small_04.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint
+{
+	name  			"resources/resource_ammonium_04_very_large"
+
+	base_blueprint 	"resources/resource_ammonium_base"
+
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_very_large_04.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint
+{
+	name "resources/resource_ammonium_base"
+
+	TypeDesc
+	{
+		type "resource"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"resource"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x 2
+						y 1
+						z 2
+					}
+				}
+			}
+		}
+	}
+
+	GridMarkerComponent
+	{
+		terrain_type  	"resource"
+		mode	     	"origin"
+		extend  		"4"
+	}
+
+	SelectableDesc
+	{
+		content "resource_name/ammonium_vein"
+		can_activate "0"
+	}
+
+	InteractiveComponent 
+	{
+		slot 			"DRILL"
+		remove_entity 	"0"
+	}
+}
+
+EntityBlueprint 
+{
+		name resources/resource_ammonium_large
+
+	RandomBlueprintDesc
+	{
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_01_large"
+		}
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_02_large"
+		}		
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_03_large"
+		}	
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_04_large"
+		}		
+	}
+}
+
+EntityBlueprint 
+{
+		name resources/resource_ammonium_medium
+
+	RandomBlueprintDesc
+	{
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_01_medium"
+		}
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_02_medium"
+		}		
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_03_medium"
+		}	
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_04_medium"
+		}		
+	}
+}
+
+EntityBlueprint 
+{
+		name resources/resource_ammonium_small
+
+	RandomBlueprintDesc
+	{
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_01_small"
+		}
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_02_small"
+		}		
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_03_small"
+		}	
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_04_small"
+		}		
+	}
+}
+
+EntityBlueprint 
+{
+		name resources/resource_ammonium_very_large
+
+	RandomBlueprintDesc
+	{
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_01_very_large"
+		}
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_02_very_large"
+		}		
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_03_very_large"
+		}	
+		Blueprint
+		{
+			blueprint "resources/resource_ammonium_04_very_large"
+		}		
+	}
+}
+

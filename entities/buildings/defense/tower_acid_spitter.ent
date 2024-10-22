@@ -11,9 +11,12 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_acid_spitter"
 		menu_icon			"gui/hud/building_icons/tower_acid_spitter"
 		require 			"headquarters"
-		order				"6"
+		building_group		"tower_flamer"
+		order				"9"
+		buildable			"0"
+		check_connect		"1"
 		type				"tower"
-		overrides			"tower,wall"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		upgrade				"buildings/defense/tower_acid_spitter_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"	
 
@@ -22,7 +25,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"150"
@@ -33,7 +36,7 @@ EntityBlueprint
 		}
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
@@ -41,6 +44,21 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"10"
+			}
+			
+			GameplayResource
+			{
+				resource 	"sludge"
+				value 		"20"
+				family		"fuel"
+				attachment	"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 	"nitric_acid"
+				value 		"5"
+				family		"fuel"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -217,7 +235,6 @@ EntityBlueprint
 		aiming_target_time "2"
 		aiming_idle_angle "20"
 		pitch "be_barrel"
-		gravity_factor "8"
 		yaw "be_turret"
 		check_target_visibility "1"
 		fog_of_war_filtering "1"
@@ -236,8 +253,8 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "60"
-			submesh_idx "1"
+			emissive_factor "5"
+			submesh_idx "0"
 		}
 
 		ammo_blueprint 			"items/weapons/acid_spitter_projectile"
@@ -328,7 +345,37 @@ EntityBlueprint
 		{
 			"buildings/effects_small_base"
 		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/minipipes"
+					bone 		"att_vismod_2"
+					scale		"0.6 0.6 0.6"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "lamp"

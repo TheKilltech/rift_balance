@@ -9,12 +9,12 @@ EntityBlueprint
 		category 			"ammo"
 		localization_id		"gui/hud/building_name/ammo_storage_highcaliber"
 		description			"gui/hud/building_description/ammo_storage_highcaliber"
-		menu_icon			"gui/hud/building_icons/ammunition_storage_lvl2"
+		menu_icon			"gui/hud/building_icons/ammo_storage_highcaliber"
 		require 			"headquarters"
-		order				"2"	
+		order				"51"
 		limit			    "6"
-		limit_name			"ammo_storage_highcaliber"			
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		limit_name			"ammo_storage_highcaliber"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -374,7 +374,27 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}
-
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/wall_c2"
+					bone 		"att_vismod_1"
+					scale 		"1.2 1.0 1.2"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/wall_c2"
+					bone 		"att_vismod_2"
+					scale 		"1.2 1.0 1.2"
+				}
+			}
+		}	
 		EffectGroup
 		{
 			group "level"

@@ -9,6 +9,7 @@ EntityBlueprint
 		name 				"ai_hub_lvl_2"
 		bp   				"buildings/defense/ai_hub_lvl_2"
 		category 			"defense"
+		type				"pipe"
 		localization_id		"gui/hud/building_name/ai_hub"
 		description			"gui/hud/building_description/ai_hub"
 		menu_icon			"gui/hud/building_icons/ai_hub_lvl2"
@@ -16,13 +17,14 @@ EntityBlueprint
 		order				"4"
 		upgrade				"buildings/defense/ai_hub_lvl_3"	
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		overrides			"ai_hub,ai_hub_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 10
+				building_time 12
 				building_cost
 				{
 					carbonium 	"200"
@@ -58,22 +60,6 @@ EntityBlueprint
 				attachment			"att_in_1"
 				family				"coolant"
 			}
-						
-			GameplayResource
-			{
-				resource 			"supercoolant"
-				value			 	"1"
-				attachment			"att_in_2"
-				family				"coolant"
-			}
-			
-			GameplayResource
-			{
-				resource 			"water"
-				value			 	"5"
-				attachment			"att_in_2"
-				family				"coolant"
-			}
 		}
 		priority 7
 	}
@@ -86,19 +72,19 @@ EntityBlueprint
 			{
 				group	 		"local"
 				max 	 		"5"
-				attachment		"att_in_1|att_in_2"
+				attachment		"att_in_1|att_in_2|att_in_3|att_in_4"
 			}
 			Storage
 			{
 				resource	"ai"
-				max			"10"
+				max			"15"
 			}	
 		}
 	}
 
 	PipeComponent
 	{
-		attachment		"att_in_1,att_in_2"
+		attachment		"att_in_1,att_in_2,att_in_3,att_in_4"
 	}
 
 	HealthDesc
@@ -135,7 +121,7 @@ EntityBlueprint
 		{
 			"buildings/effects_small_base"
 		}	
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////	
 		EffectGroup
 		{
 			group "att_in_1"
@@ -146,7 +132,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_1_arrow"
 				}
 			}
@@ -161,8 +147,38 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_2_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_3_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_4"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_4_arrow"
 				}
 			}
 		}
@@ -195,6 +211,16 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_3_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_4_pipe"
 				}
 			}
 		}	

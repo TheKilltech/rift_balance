@@ -14,13 +14,15 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_artillery"
 		menu_icon			"gui/hud/building_icons/tower_artillery_lvl3"
 		require 			"headquarters"
-		order				"9"
+		building_group		"tower_artillery"
+		order				"13"
+		check_connect		"1"
 		type				"tower"
-		overrides			"tower,wall"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		//upgrade				"buildings/defense/tower_artillery_lvl_4"
-		condition			"BIOME"	
-		condition_value		"magma,jungle,desert,acid,metallic,legacy_maps"			
+		condition			"NOT_BIOME"	
+		condition_value		"caverns"			
 
 		costs
 		{
@@ -38,7 +40,7 @@ EntityBlueprint
 		}
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
@@ -46,6 +48,14 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"100"
+			}
+			
+			GameplayResource
+			{
+				resource 	"reagent"
+				value 		"10"
+				family		"propellant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -139,8 +149,8 @@ EntityBlueprint
 
 		WeaponAffector
 		{
-			emissive_time "0.8"
-			emissive_factor "80"
+			emissive_time "0.35"
+			emissive_factor "80" // "80"
 			submesh_idx "1"
 		}
 
@@ -150,6 +160,60 @@ EntityBlueprint
 		burst_column_spacing 	"0"
 		burst_rate 				"0"
 		burst_column_angle 		"0"
+	}
+	
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/minipipes"
+					bone 		"att_vismod_2"
+					scale		"0.6 0.6 0.6"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
 	}
 }
 

@@ -3,10 +3,15 @@ return function()
 
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 2
-	rules.eventsPerPrepareState = 0 -- [0,1]
+	rules.eventsPerPrepareState = 1 -- [0,1]
+	rules.eventsPerPrepareStateChance = 35
 	rules.pauseAttacks = false
 	rules.prepareAttacks = true
 	rules.baseTimeBetweenObjectives = 2400
+	rules.idleTimeRelativeVariation = 0.5         -- X factor of idle time that may randomly vary: +/- X * idle_time
+	rules.idleTimeCancelChance = 10               -- chance in percent
+	rules.preparationTimeRelativeVariation = 0.6  -- X factor of idle time that may randomly vary: +/- X * prep_time
+	rules.preparationTimeCancelChance = 10        -- chance in percent
 
 	rules.gameEvents = 
 	{
@@ -17,46 +22,40 @@ return function()
 		{ action = "unlock_research",           type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1 },
 		{ action = "full_ammo",                 type = "POSITIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 2 },
 		{ action = "remove_ammo",               type = "NEGATIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 2 },
-		{ action = "stronger_attack",           type = "NEGATIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 1, amount = 2 },
-		{ action = "stronger_attack",           type = "NEGATIVE", gameStates="ATTACK|NO_STREAMING",      minEventLevel = 1, amount = 2 },
-		{ action = "cancel_the_attack",         type = "POSITIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 1 },
-		{ action = "cancel_the_attack",         type = "POSITIVE", gameStates="ATTACK|NO_STREAMING",      minEventLevel = 1 },
-		{ action = "boss_attack",               type = "NEGATIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 4 },
-		{ action = "boss_attack",               type = "NEGATIVE", gameStates="ATTACK|NO_STREAMING",      minEventLevel = 4 },
+		{ action = "stronger_attack",           type = "NEGATIVE", gameStates="ATTACK",                   minEventLevel = 2, amount = 2 },
+		{ action = "cancel_the_attack",         type = "POSITIVE", gameStates="ATTACK",                   minEventLevel = 1 },
+		{ action = "boss_attack",               type = "NEGATIVE", gameStates="ATTACK",                   minEventLevel = 4 },
 		{ action = "spawn_earthquake",          type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 3, logicFile="logic/weather/earthquake.logic", minTime = 60, maxTime = 60, weight = 0.5 },
 		{ action = "spawn_earthquake",          type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/earthquake.logic", minTime = 60, maxTime = 60, weight = 0.2 },
 		{ action = "spawn_blue_hail",           type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 4, logicFile="logic/weather/blue_hail.logic", minTime = 30, maxTime = 60, weight = 0.25 },
 		{ action = "spawn_blue_hail",           type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/blue_hail.logic", minTime = 30, maxTime = 60, weight = 0.1 },
-		{ action = "spawn_thunderstorm",        type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 2, logicFile="logic/weather/thunderstorm.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_thunderstorm",        type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 2, logicFile="logic/weather/thunderstorm.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_blood_moon",          type = "NEGATIVE", gameStates="IDLE|STREAMING",           minEventLevel = 5, logicFile="logic/weather/blood_moon.logic", minTime = 60, maxTime = 120 , weight = 0.5},
-		{ action = "spawn_blood_moon",          type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",        minEventLevel = 5, logicFile="logic/weather/blood_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_blue_moon",           type = "POSITIVE", gameStates="IDLE|STREAMING",           minEventLevel = 3, logicFile="logic/weather/blue_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_blue_moon",           type = "POSITIVE", gameStates="IDLE|NO_STREAMING",        minEventLevel = 3, logicFile="logic/weather/blue_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_solar_eclipse",       type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 5, logicFile="logic/weather/solar_eclipse.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_solar_eclipse",       type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/weather/solar_eclipse.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_super_moon",          type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 3, logicFile="logic/weather/super_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_super_moon",          type = "POSITIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/super_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_fog",                 type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, logicFile="logic/weather/fog.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_fog",                 type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/fog.logic", minTime = 60, maxTime = 120 },
-		{ action = "shegret_attack",            type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 6, logicFile="logic/event/shegret_attack.logic", weight = 5 },
-		{ action = "shegret_attack",            type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 6, logicFile="logic/event/shegret_attack.logic", weight = 5 },
-		{ action = "spawn_rain",                type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, logicFile="logic/weather/rain.logic", minTime = 120, maxTime = 120 },
-		{ action = "spawn_rain",                type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/rain.logic", minTime = 120, maxTime = 120 },
-		{ action = "spawn_wind_weak",           type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, logicFile="logic/weather/wind_weak.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_wind_weak",           type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/wind_weak.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_wind_strong",         type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, logicFile="logic/weather/wind_strong.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_wind_strong",         type = "POSITIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/wind_strong.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_wind_none",           type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 4, logicFile="logic/weather/wind_none.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_wind_none",           type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/wind_none.logic", minTime = 60, maxTime = 120 },
-		{ action = "spawn_ion_storm",           type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 4, logicFile="logic/weather/ion_storm.logic", minTime = 30, maxTime = 60, weight = 0.5 },
-		{ action = "spawn_ion_storm",           type = "POSITIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/ion_storm.logic", minTime = 30, maxTime = 60, weight = 0.5 },
-		{ action = "spawn_tornado_near_player", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 5, maxEventLevel = 2, logicFile="logic/weather/tornado_near_player.logic", weight = 0.5 },
-		{ action = "spawn_tornado_near_player", type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 5, maxEventLevel = 2, logicFile="logic/weather/tornado_near_player.logic", weight = 0.2 },
-		{ action = "spawn_tornado_near_base",   type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 4, logicFile="logic/weather/tornado_near_base.logic", weight = 0.25 },
+		{ action = "spawn_thunderstorm",        type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 2, logicFile="logic/weather/thunderstorm.logic", minTime = 60, maxTime = 120 },
+		{ action = "spawn_blood_moon",          type = "NEGATIVE", gameStates="IDLE",                     minEventLevel = 5, logicFile="logic/weather/blood_moon.logic", minTime = 60, maxTime = 120 , weight = 0.5},
+		{ action = "spawn_blue_moon",           type = "POSITIVE", gameStates="IDLE",                     minEventLevel = 3, logicFile="logic/weather/blue_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
+		{ action = "spawn_solar_eclipse",       type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 5, logicFile="logic/weather/solar_eclipse.logic", minTime = 60, maxTime = 120, weight = 0.5 },
+		{ action = "spawn_super_moon",          type = "POSITIVE", gameStates="ATTACK|IDLE",              minEventLevel = 3, logicFile="logic/weather/super_moon.logic", minTime = 60, maxTime = 120, weight = 0.5 },
+		{ action = "spawn_fog",                 type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 1, logicFile="logic/weather/fog.logic", minTime = 60, maxTime = 120 },
+		{ action = "shegret_attack",            type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 6, logicFile="logic/event/shegret_attack.logic", weight = 5 },
+		{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 8, logicFile="logic/event/shegret_attack_hard.logic", weight = 4 },
+		{ action = "shegret_attack_very_hard",  type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 9, logicFile="logic/event/shegret_attack_very_hard.logic", weight = 3 },
+		{ action = "kermon_attack",             type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 6, logicFile="logic/event/kermon_attack.logic", weight = 0.9 },
+		{ action = "kermon_attack_hard",        type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 8, logicFile="logic/event/kermon_attack_hard.logic", weight = 0.7 },
+		{ action = "kermon_attack_very_hard",   type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 9, logicFile="logic/event/kermon_attack_very_hard.logic", weight = 0.5 },
+		{ action = "phirian_attack",            type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 7, logicFile="logic/event/phirian_attack.logic", weight = 0.5 },		
+		{ action = "spawn_rain",                type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 1, maxEventLevel = 4, logicFile="logic/weather/rain.logic", minTime = 120, maxTime = 120 },
+		{ action = "spawn_rain",                type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 5, logicFile="logic/weather/rain.logic", minTime = 120, maxTime = 360 },
+		{ action = "spawn_wind_weak",           type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 1, maxEventLevel = 2, logicFile="logic/weather/wind_weak.logic", minTime = 60, maxTime = 90 },
+		{ action = "spawn_wind_weak",           type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 3, logicFile="logic/weather/wind_weak.logic", minTime = 60, maxTime = 360 },
+		{ action = "spawn_wind_strong",         type = "POSITIVE", gameStates="ATTACK|IDLE",              minEventLevel = 1, logicFile="logic/weather/wind_strong.logic", minTime = 60, maxTime = 360 },
+		{ action = "spawn_wind_none",           type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 4, logicFile="logic/weather/wind_none.logic", minTime = 60, maxTime = 360 },
+		{ action = "spawn_ion_storm",           type = "POSITIVE", gameStates="ATTACK|IDLE",              minEventLevel = 4, logicFile="logic/weather/ion_storm.logic", minTime = 30, maxTime = 60, weight = 0.5 },
+		{ action = "spawn_tornado_near_player", type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 2, maxEventLevel = 5, logicFile="logic/weather/tornado_near_player.logic", weight = 0.3 },
+		{ action = "spawn_tornado_fire_near_base", type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 8, logicFile="logic/weather/tornado_fire_near_base.logic", weight = 0.4 },
+		{ action = "spawn_tornado_acid_near_base", type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 8, logicFile="logic/weather/tornado_acid_near_base.logic", weight = 0.4 },
+		{ action = "spawn_firestorm",           type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 4, logicFile="logic/weather/tornado_fire_near_base.logic", weight = 0.4 },
+		{ action = "spawn_fireflies",           type = "POSITIVE", gameStates="IDLE",                     minEventLevel = 1, logicFile="logic/weather/tornado_acid_near_base.logic", weight = 0.4 },
 		{ action = "spawn_tornado_near_base",   type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/tornado_near_base.logic", weight = 0.1 },		
-		{ action = "spawn_resource_comet",      type = "POSITIVE", gameStates="IDLE|STREAMING",           minEventLevel = 4, logicFile="logic/weather/resource_comet.logic"  },
-		{ action = "spawn_resource_comet",      type = "POSITIVE", gameStates="IDLE|NO_STREAMING",        minEventLevel = 4, logicFile="logic/weather/resource_comet.logic"  },
+		{ action = "spawn_resource_comet",      type = "POSITIVE", gameStates="IDLE",                     minEventLevel = 4, logicFile="logic/weather/resource_comet.logic"  },
 		{ action = "spawn_resource_earthquake", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 5, logicFile="logic/weather/resource_earthquake.logic", weight = 1 },
 		{ action = "spawn_resource_earthquake", type = "POSITIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/weather/resource_earthquake.logic", weight = 0.5 },
 		{ action = "spawn_meteor_shower",       type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 4, logicFile="logic/weather/meteor_shower.logic", minTime = 30, maxTime = 60, weight = 0.5 },
@@ -64,18 +63,25 @@ return function()
 		{ action = "spawn_comet_silent",        type = "POSITIVE", gameStates="IDLE|NO_STREAMING",        minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 2 }		
 		--{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 3 },
 	}
-
+	
+	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
+	{
+		40,  -- 1st event probability in percent
+		8,   -- 2nd event probability in percent
+		2,   -- 3rd event probability in percent
+	}
+	
 	rules.addResourcesOnRunOut = 
 	{
-		{ name = "carbon_vein", runOutPercentageOnMap = 45, minToSpawn = 20000, maxToSpawn = 30000 },
-		{ name = "iron_vein", runOutPercentageOnMap = 45, minToSpawn = 20000, maxToSpawn = 30000 },
+		{ name = "carbon_vein", runOutPercentageOnMap = 25, minToSpawn = 5000, maxToSpawn = 20000 },
+		{ name = "iron_vein",   runOutPercentageOnMap = 25, minToSpawn = 1000, maxToSpawn = 4000 },
 	}
 
 	rules.timeToNextDifficultyLevel = 
 	{			
-		900, -- difficulty level 1
-		1800, -- difficulty level 2
-		1800, -- difficulty level 3	
+		1800, -- difficulty level 1
+		2400, -- difficulty level 2
+		2400, -- difficulty level 3	
 		1800, -- difficulty level 4
 		1800, -- difficulty level 5
 		1800, -- difficulty level 6
@@ -137,7 +143,7 @@ return function()
 
 	rules.idleTime = 
 	{			
-		1200,  -- difficulty level 1
+		1500,  -- difficulty level 1
 		1200,  -- difficulty level 2
 		900,  -- difficulty level 3
 		900,  -- difficulty level 4	
@@ -576,6 +582,79 @@ return function()
 				"logic/missions/survival/caverns/attack_level_8_id_1_caverns.logic",
 				"logic/missions/survival/caverns/attack_level_8_id_2_caverns.logic",
 				"logic/missions/survival/caverns/attack_level_8_id_3_caverns.logic",
+			},
+		},
+		
+		["swamp"] =
+		{
+			-- difficulty level 1		
+			{ 
+				{ name="logic/missions/survival/swamp/attack_level_1_id_1_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+				{ name="logic/missions/survival/swamp/attack_level_1_id_2_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+				--{ name="logic/missions/survival/swamp/attack_level_1_id_3_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+			},
+	
+			 -- difficulty level 2
+			{ 			
+				{ name="logic/missions/survival/swamp/attack_level_2_id_1_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+				{ name="logic/missions/survival/swamp/attack_level_2_id_2_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+				--{ name="logic/missions/survival/swamp/attack_level_2_id_3_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+			},
+
+			 -- difficulty level 3
+			{ 
+				{ name="logic/missions/survival/swamp/attack_level_3_id_1_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+				{ name="logic/missions/survival/swamp/attack_level_3_id_2_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},				
+				{ name="logic/missions/survival/swamp/attack_level_3_id_3_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},				
+			},
+
+			 -- difficulty level 4
+			{ 			
+				{ name="logic/missions/survival/swamp/attack_level_4_id_1_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+				{ name="logic/missions/survival/swamp/attack_level_4_id_2_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},				
+				{ name="logic/missions/survival/swamp/attack_level_4_id_3_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},				
+			},
+
+			 -- difficulty level 5
+			{ 
+				{ name="logic/missions/survival/swamp/attack_level_5_id_1_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name="logic/missions/survival/swamp/attack_level_5_id_2_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},			
+				{ name="logic/missions/survival/swamp/attack_level_5_id_3_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},							
+			},
+
+			 -- difficulty level 6
+			{ 
+				{ name="logic/missions/survival/swamp/attack_level_6_id_1_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},
+				{ name="logic/missions/survival/swamp/attack_level_6_id_2_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},			
+				{ name="logic/missions/survival/swamp/attack_level_6_id_3_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},							
+				{ name="logic/missions/survival/swamp/attack_level_6_id_4_swamp.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},							
+			},
+
+			 -- difficulty level 7
+			{ 
+				"logic/missions/survival/swamp/attack_level_7_id_1_swamp.logic",
+				"logic/missions/survival/swamp/attack_level_7_id_2_swamp.logic",
+				"logic/missions/survival/swamp/attack_level_7_id_3_swamp.logic",
+				"logic/missions/survival/swamp/attack_level_7_id_4_swamp.logic",
+				--"logic/missions/survival/swamp/attack_level_7_id_5_swamp.logic",
+			},
+
+			 -- difficulty level 8
+			{ 
+				"logic/missions/survival/swamp/attack_level_8_id_1_swamp.logic",
+				"logic/missions/survival/swamp/attack_level_8_id_2_swamp.logic",
+				"logic/missions/survival/swamp/attack_level_8_id_3_swamp.logic",
+				"logic/missions/survival/swamp/attack_level_8_id_4_swamp.logic",
+				--"logic/missions/survival/swamp/attack_level_8_id_5_swamp.logic",
+			},
+
+			 -- difficulty level 9
+			{ 
+				"logic/missions/survival/swamp/attack_level_8_id_1_swamp.logic",
+				"logic/missions/survival/swamp/attack_level_8_id_2_swamp.logic",
+				"logic/missions/survival/swamp/attack_level_8_id_3_swamp.logic",
+				"logic/missions/survival/swamp/attack_level_8_id_4_swamp.logic",
+				--"logic/missions/survival/swamp/attack_level_8_id_5_swamp.logic",
 			},
 		},
 	}

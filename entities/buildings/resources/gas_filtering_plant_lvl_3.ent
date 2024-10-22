@@ -1,0 +1,226 @@
+EntityBlueprint
+{
+	name  					"buildings/resources/gas_filtering_plant_lvl_3"
+
+	base_blueprint 			buildings/resources/gas_filtering_plant_lvl_2
+
+	BuildingDesc
+	{
+		buildable 			"0"		
+		name 				"gas_filtering_plant_lvl_3"
+		bp   				"buildings/resources/gas_filtering_plant_lvl_3"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/gas_filtering_plant"
+		description			"gui/hud/building_description/gas_filtering_plant"
+		menu_icon			"gui/hud/building_icons/gas_filtering_plant_lvl3"
+		type				"pipe"
+		require 			"headquarters"
+		//upgrade				"buildings/resources/gas_filtering_plant_lvl_4"		
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+						
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 60
+				building_cost
+				{
+					carbonium 	"800"
+					steel 		"800"
+					palladium	"200"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"sludge"
+				value 		"100"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"20"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 	"flammable_gas"
+				value 		"75"
+				attachment	"att_out_1"
+			}
+		}
+		priority 4		
+	}
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource	 	"flammable_gas"
+				max 	 		"300"
+				attachment		"att_out_1"
+			}
+		}
+	}	
+	HealthDesc
+	{
+		max_health 					"1600"
+		health 						"1600"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				//destroyed_state_effect_group 		"0_state"
+			}			
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+////////////////////////Resources/////////////////////////			
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_out_arrow"
+				}
+			}
+		}	
+////////////////////////MISC/////////////////////////			
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_chimney_small"								
+					bone "att_chimney_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_chimney_small"								
+					bone "att_chimney_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_filtering_sludge"								
+					bone "att_sludge"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/gas_filtering_plant_working"	
+					delay "0.5"					
+				}
+			}
+		}		
+
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}			
+	}	
+}
+

@@ -49,6 +49,12 @@ local function ProcessRulesTable( rules )
 		end
 	end
 
+	if data.multiplayerWaves then
+		for _,data in pairs( data.multiplayerWaves ) do
+			ConvertLogicEntries( data.waves )
+		end
+	end
+
 	return data
 end
 
@@ -56,7 +62,7 @@ function dom_mananger:init()
 
 	-- ========================================= Configuration ======================================
 
-	self:VerboseLog(" ------- DOM MANAGER VER 2.0 ------- " )
+	self:VerboseLog(" ------- DOM MANAGER VER 2.0 mod 0.2 ------- " )
 
 	event_manager.init( self )
 
@@ -91,7 +97,7 @@ function dom_mananger:init()
 
 	self:RegisterHandler( event_sink, "MissionFlowDeactivatedEvent",   "OnMissionFlowDeactivatedEvent" )
 	self:RegisterHandler( event_sink, "MissionFlowActivatedEvent",     "OnMissionFlowActivatedEvent" )
-	self:RegisterHandler( event_sink, "BuildingStartEvent",        	   "OnBuildingStartEvent" )
+	self:RegisterHandler( event_sink, "StartUpgradingEvent",        	   "OnStartUpgradingEvent" )
 	self:RegisterHandler( event_sink, "LuaGlobalEvent",       		   "OnLuaGlobalEvent" )
 	self:RegisterHandler( event_sink, "RespawnFailedEvent",			   "OnRespawnFailedEvent" )
 	self:RegisterHandler( event_sink, "PlayerDiedEvent",			   "OnPlayerDiedEvent" )
@@ -161,9 +167,25 @@ function dom_mananger:init()
 	self.availableAttackGroups[#self.availableAttackGroups + 1] = self.defaultAttackGroupName
 	self:LogicFilesSanityCheck();
 
+	self.player_death_position 	 = {}
+
+	self.version = 1
 end
 
-function dom_mananger:Update()
+function dom_mananger:Update( dt)
+
+	if ( self.debugVoteMachine == "ENTER") then
+		self:OnDebugVoteStart()
+		self.debugVoteTimer = GameStreamingService:GetVotingTime()
+		self.debugVoteMachine = "EXECUTE";
+	elseif( self.debugVoteMachine == "EXECUTE") then
+		self:OnDebugVoteExecute()
+		self.debugVoteTimer = self.debugVoteTimer - dt
+	elseif( self.debugVoteMachine == "EXIT") then
+		self:OnDebugVoteExit()
+		self.debugVoteMachine = "";
+	end
+
 	if event_manager.Update then
 		event_manager.Update(self)
 	end
@@ -255,6 +277,14 @@ function dom_mananger:OnLoad()
 		self.rules = ProcessRulesTable( require( self.rulesFile )() )
 	end
 
+	if ( self.version == nil ) then
+		self:RegisterHandler( event_sink, "StartUpgradingEvent",        	   "OnStartUpgradingEvent" )
+		self:UnregisterHandler( event_sink, "BuildingStartEvent",        	   "OnBuildingStartEvent" )
+		self.version = 1
+	end
+
+	self.player_death_position 	 = self.player_death_position or {}
+
 	self.rules = ProcessRulesTable( self.rules )
 
 	self:VerboseLog("OnLoad - current hq state : " .. tostring( self.upgradeHQ:GetCurrentState() ) )
@@ -275,17 +305,17 @@ function dom_mananger:LogicFilesSanityCheck()
 
 	self:VerboseLog(" ------- LogicFilesSanityCheck ------- " )
 
-	local failedLogicFile = {}
+	local failedLogicFileTable = {}
 
-	self:LogicEntryTableCheck( self.rules.buildingsUpgradeStartsLogic, "rules.buildingsUpgradeStartsLogic : ", failedLogicFile )
-	self:LogicEntryTableCheck( self.rules.majorAttackLogic, "rules.majorAttackLogic : ", failedLogicFile )
+	self:LogicEntryTableCheck( self.rules.buildingsUpgradeStartsLogic, "rules.buildingsUpgradeStartsLogic : ", failedLogicFileTable )
+	self:LogicEntryTableCheck( self.rules.majorAttackLogic, "rules.majorAttackLogic : ", failedLogicFileTable )
 
 	for data in Iter( self.rules.objectivesLogic ) do 
 
 		if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.name ) ) then
 			local log = "rules.objectivesLogic : " .. data.name
 
-			table.insert( failedLogicFile, log )
+			table.insert( failedLogicFileTable, log )
 			log = log .. " NOT EXIST"
 			LogService:Log( log )
 		end
@@ -295,7 +325,7 @@ function dom_mananger:LogicFilesSanityCheck()
 		if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.name ) ) then
 			local log = "rules.wavesEntryDefinitions : " .. data.name
 
-			table.insert( failedLogicFile, log )
+			table.insert( failedLogicFileTable, log )
 			log = log .. " NOT EXIST"			
 			LogService:Log( log )
 		end
@@ -314,7 +344,7 @@ function dom_mananger:LogicFilesSanityCheck()
 			if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.name ) ) then
 				local log = "rules.prepareAttackDefinitions : " .. data.name 
 
-				table.insert( failedLogicFile, log )
+				table.insert( failedLogicFileTable, log )
 				log = log .. " NOT EXIST"			
 				LogService:Log( log )
 			end	
@@ -346,13 +376,31 @@ function dom_mananger:LogicFilesSanityCheck()
 		end
 	end
 
-	self:LogicTableCheck( self.rules.extraWaves, "rules.extraWaves", failedLogicFile )
-	self:LogicTableCheck( self.rules.bosses, "rules.bosses", failedLogicFile )
+	self:LogicTableCheck( self.rules.extraWaves, "rules.extraWaves", failedLogicFileTable )
+	self:LogicTableCheck( self.rules.bosses, "rules.bosses", failedLogicFileTable )
 
+	if ( self.rules.multiplayerWaves ~= nil ) then		
+		if ( #self.rules.multiplayerWaves ~= self.maxDifficultyLevel ) then
+			Assert( false, "rules.multiplayerWaves size must equal " .. tostring( self.maxDifficultyLevel ) )
+		end
 
-	if ( #failedLogicFile > 0 ) then
+		if self.rules.multiplayerWaves then
+			for i = 1, self.maxDifficultyLevel, 1 do 
+				for wave in Iter( self.rules.multiplayerWaves[i].waves ) do 
+					if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", wave.name ) ) then
+						local log = "rules.multiplayerWaves " .. tostring( i ) .. " : " .. wave.name
+						table.insert( failedLogicFile, log )
+						log = log .. " NOT EXIST"			
+						LogService:Log( log )
+					end
+				end
+			end
+		end
+	end
+
+	if ( #failedLogicFileTable > 0 ) then
 		local log = ""
-		for data in Iter( failedLogicFile ) do 
+		for data in Iter( failedLogicFileTable ) do 
 			log = log .. data .. " "
 		end
 
@@ -389,7 +437,7 @@ function dom_mananger:LogicEntryTableCheck( logicTable, logString, failedLogicFi
 
 			if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.entryLogic ) ) then
 				local log = logString .. data.entryLogic
-				table.insert( failedLogicFile, log )
+				table.insert( failedLogicFileTable, log )
 				log = log .. " NOT EXIST"
 				LogService:Log( log )
 			end
@@ -399,7 +447,7 @@ function dom_mananger:LogicEntryTableCheck( logicTable, logString, failedLogicFi
 		for data in Iter( logicTable ) do 
 			if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.exitLogic ) ) then
 				local log = logString .. data.exitLogic
-				table.insert( failedLogicFile, log )
+				table.insert( failedLogicFileTable, log )
 				log = log .. " NOT EXIST"
 				LogService:Log( log )
 			end
@@ -408,7 +456,43 @@ function dom_mananger:LogicEntryTableCheck( logicTable, logString, failedLogicFi
 end
 
 function dom_mananger:VerboseLog( message )
-	LogService:LogIf( g_verbose_dom_manager, message )
+	--LogService:LogIf( g_verbose_dom_manager, message )
+	LogService:Log( message )
+end
+
+
+function dom_mananger:OnDebugVoteStart()
+	self.debugVoteParticipent = 0
+	self.debugVoteClientAdded = false
+	if ( GameStreamingService:IsStreamingSessionStarted() == false ) then
+		QueueEvent("GameStreamingAddClientEvent", INVALID_ID, 0 )
+		self.debugVoteClientAdded = true
+	end
+	self.debugVoteStarted = false
+end
+
+
+function dom_mananger:OnDebugVoteExecute( )
+	if ( self.debugVoteStarted == false and GameStreamingService:IsStreamingSessionStarted()) then
+		self.currentStreamingData = self:PrepareEvents( "IDLE" )
+		self:StartStreamingVoting()
+		self.debugVoteStarted = true
+	end
+
+	if ( self.debugVoteStarted ) then
+		local actionIdx = RandInt( 1, #self.currentActions )
+		local action = self.currentActions[actionIdx]
+		QueueEvent("GameStreamingUpdateActionEvent",INVALID_ID, action, "ParticipentDebug_" .. tostring(self.debugVoteParticipent), self.debugVoteParticipent)
+		self.debugVoteParticipent = self.debugVoteParticipent + 1
+	end
+end
+
+function dom_mananger:OnDebugVoteExit()
+	self.debugVoteParticipent = 0
+	if( self.debugVoteClientAdded ) then
+		QueueEvent("GameStreamingRemoveClientEvent", INVALID_ID, 0 )
+		self.debugVoteClientAdded = false
+	end
 end
 
 function dom_mananger:OnLuaGlobalEvent( evt )
@@ -444,6 +528,8 @@ function dom_mananger:OnLuaGlobalEvent( evt )
 		self:DumpDomData()
 	elseif ( eventName == self.DOMEventName_DOMSendMajorAttack ) then
 		self:SendMajorAttack()
+	elseif ( eventName == "DebugStartVote") then
+		self.debugVoteMachine = "ENTER";
 	end
 end
 
@@ -750,13 +836,7 @@ function dom_mananger:ClosePrepareForTheAttack()
 	CampaignService:OperateDOMPlanetaryJump( true )
 end
 
-function dom_mananger:OnBuildingStartEvent( evt )
-	
-	local isUpgrading = evt:GetUpgrading();
-	if ( isUpgrading == false ) then
-		return
-	end
-	
+function dom_mananger:OnStartUpgradingEvent( evt )
 	local buildingName = BuildingService:GetBuildingName( evt:GetEntity() );
 	local upgradeTime = BuildingService:CalculateBuildTime( evt:GetEntity() )
 
@@ -889,7 +969,7 @@ function dom_mananger:RandomizeSpawnPoint( borderSpawnPointGroupName, waveData )
 	elseif spawn_type == "CreateDynamic" then
 		local target = FindEntities( spawn_target_type, spawn_target_name )
 		if #target > 0 then
-			entities = UnitService:CreateDynamicSpawnPoints( target[1], spawn_target_min_radius, spawn_target_max_radius, 1 )
+			entities = UnitService:CreateDynamicSpawnPoints( target[1], spawn_target_min_radius, spawn_target_max_radius, 1, false )
 		end
 	else
 		entities = FindEntitiesByTarget(spawn_type, spawn_type_value, spawn_target_min_radius, spawn_target_max_radius, spawn_target_type, spawn_target_value)
@@ -961,26 +1041,43 @@ function dom_mananger:GetWavePool( currentDifficultyLevel )
 	return availableWaves
 end
 
+function dom_mananger:GetPool( pool, currentDifficultyLevel )
+	if ( currentDifficultyLevel > 0 ) then
+		return pool[currentDifficultyLevel]
+	else
+		return {}
+	end
+end
+
 function dom_mananger:GetBossPool()
 	local currentDifficultyLevel = self.currentDifficultyLevel	
 	currentDifficultyLevel = Clamp( currentDifficultyLevel, 0, #self.rules.bosses )	
 
-	if ( currentDifficultyLevel > 0 ) then
-		return self.rules.bosses[currentDifficultyLevel]
-	else
-		return {}
+	return self:GetPool( self.rules.bosses, currentDifficultyLevel )
+end
+
+function dom_mananger:GetMultiplayerWavePool()
+	local currentDifficultyLevel = self.currentDifficultyLevel	
+	currentDifficultyLevel = Clamp( currentDifficultyLevel, 0, #self.rules.multiplayerWaves )	
+
+	local pool = self:GetPool( self.rules.multiplayerWaves, currentDifficultyLevel )
+
+	if ( pool ~= nil ) then	
+		for data in Iter( pool.waves ) do 
+			self:VerboseLog( "Adding multiplayer wave to the wave pool : " .. data.name )
+		end
+
+		return pool.waves
 	end
+
+	return {}
 end
 
 function dom_mananger:GetExtraWavePool()
 	local currentDifficultyLevel = self.currentDifficultyLevel	
 	currentDifficultyLevel = Clamp( currentDifficultyLevel, 0, #self.rules.extraWaves )	
 
-	if ( currentDifficultyLevel > 0 ) then
-		return self.rules.extraWaves[currentDifficultyLevel]
-	else
-		return {}
-	end
+	return self:GetPool( self.rules.extraWaves, currentDifficultyLevel )
 end
 
 function dom_mananger:GetPauseAttacks()	
@@ -998,8 +1095,31 @@ function dom_mananger:GetAttackCount( currentDifficultyLevel )
 	return self.rules.maxAttackCountPerDifficulty[currentDifficultyLevel]
 end
 
+function dom_mananger:GetMultiplayerAttackCount( currentDifficultyLevel )
+	local playersCount = #PlayerService:GetAllPlayers() - 1
+
+	self:VerboseLog("GetMultiplayerAttackCount : " .. tostring( playersCount ) )
+
+	if ( playersCount > 0 ) then
+		return self.rules.multiplayerWaves[currentDifficultyLevel].additionalWaves + playersCount
+	else
+		return 0
+	end
+end
+
 function dom_mananger:GetPrepareSpawnTime()
-	return self.rules.prepareSpawnTime[self.currentDifficultyLevel]
+	local stateDuration = self.rules.prepareSpawnTime[self.currentDifficultyLevel]
+	self:VerboseLog("Preparation time base ".. tostring(stateDuration))
+	
+	if ((self.rules.preparationTimeRelativeVariation or 0.35) > 0) then
+		local rngScale = (math.random()-0.5)*2*(self.rules.preparationTimeRelativeVariation or 0.35)
+		stateDuration = stateDuration * (1 + rngScale)
+		self:VerboseLog("Preparation time random scaling by ".. tostring(rngScale) .. " changing base to ".. tostring(stateDuration))
+	elseif ((self.rules.preparationTimeCancelChance or 5) > math.random()*100) then
+		stateDuration = 15
+		self:VerboseLog("Preparation time modifier: cancelled (down to 15)")
+	end
+	return stateDuration
 end
 
 function dom_mananger:GetIdleTime()
@@ -1056,7 +1176,16 @@ function dom_mananger:OnEnterPrepareSpawn( state )
 
 	self.objectiveActivateTime	= self.waitForSpawnTimer - ( self.waitForSpawnTimer * self.idleTimeObjectiveMul )
 	self.objectiveActivated		= false	
-
+	
+	if ( self.rules.eventsPerPrepareState ~= 0) then
+		self:VerboseLog("OnEnterPrepareSpawn - deciding events in prepared state" );
+		local rngRoll = RandInt(0, 100)	
+		if ( (self.rules.eventsPerPrepareStateChance or 100) >= rngRoll ) then
+			self.eventsPerPrepareState  = 1
+		else self.eventsPerPrepareState  = 0
+		end		
+		self:VerboseLog("OnEnterPrepareSpawn - chance ".. tostring(self.rules.eventsPerPrepareStateChance or 100) .. ", roll ".. tostring(rngRoll) .. ", result: ".. tostring(self.eventsPerPrepareState) );
+	end
 
 	if ( ( self:GetPauseAttacks() == false ) and ( self.cancelTheAttack == false ) ) then
 		self.data:SetFloat( "time_max", self.waitForSpawnTimer )
@@ -1076,6 +1205,14 @@ function dom_mananger:OnEnterPrepareSpawn( state )
 			self:VerboseLog("Difficulty Level : " .. tostring(self.currentDifficultyLevel ) )
 
 			self:PrepareWave( self:GetAttackCount( self.currentDifficultyLevel ), borderSpawnPointGroupName, self:GetWavePool( self.currentDifficultyLevel ), "OnEnterPrepareSpawn: Prepare attack name : ", self.waitForSpawnTimer, self.preparedAttacks, self.preparedAttackMarkers )
+
+			if ( self.rules.multiplayerWaves ~= nil ) then
+				local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
+
+				if ( multiplayerAttackCount > 0 ) then
+					self:PrepareWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( self.currentDifficultyLevel ), "OnEnterPrepareSpawn: Prepare attack name : ", self.waitForSpawnTimer, self.preparedAttacks, self.preparedAttackMarkers )
+				end
+			end
 		end
 	end
 
@@ -1092,7 +1229,7 @@ function dom_mananger:OnExecutePrepareSpawn( state, dt )
 	self.waitForSpawnTimer  = self.waitForSpawnTimer - dt
 
 	if ( self.waitForSpawnTimer < 0 ) then
-
+		self.waveRepeated = 0
 		if ( self:GetPauseAttacks() == true ) then
 			self.spawner:ChangeState( "dummy_state" )
 		else
@@ -1100,13 +1237,13 @@ function dom_mananger:OnExecutePrepareSpawn( state, dt )
 		end
 	end
 
-	if ( self.rules.eventsPerPrepareState ~= 0 ) then
-		if ( ( self.waitForSpawnTimer < self.eventActivateTime ) and ( self.eventActivated == false ) ) then
+	if ( self.eventsPerPrepareState ~= 0 ) then
+		if ( ( self.waitForSpawnTimer < self.eventActivateTime ) and not self.eventActivated ) then
 			self:StartAnEvent( "IDLE" )
 			self.eventActivated = true
 		end
 
-		if ( ( self.waitForSpawnTimer < self.objectiveActivateTime ) and ( self.objectiveActivated == false ) ) then
+		if ( ( self.waitForSpawnTimer < self.objectiveActivateTime ) and not self.objectiveActivated ) then
 			self:StartObjective()
 			self.objectiveActivated = true
 		end
@@ -1123,12 +1260,54 @@ end
 
 function dom_mananger:OnEnterCooldownAfterSpawnTime( state )
 	self:VerboseLog("OnEnterCooldownAfterSpawnTime" )
-	self.cooldownTimer = self.rules.cooldownAfterAttacks[self.currentDifficultyLevel]
+	self.cooldownTimer  = self.rules.cooldownAfterAttacks[self.currentDifficultyLevel]
+	self.waveRepeatTime = math.max(self.cooldownTimer - 60, 0)
+	
+	self.coolEventSpawnTime = {}
+	if ((self.waveRepeated or 0) == 0) then
+		local rngRoll = RandInt(0, 100)	
+		for i,prob in ipairs(self.rules.spawnCooldownEventChance) do
+			local isSet = false
+			if (prob and prob >= rngRoll) then
+				self.coolEventSpawnTime[i] = RandInt(0,self.cooldownTimer)
+				isSet = true
+			end
+			self:VerboseLog("Event on Cooldown ".. tostring(i) ..": roll " .. tostring(rngRoll) .. " vs probability " .. tostring(prob) .." => ".. tostring(isSet))
+		end
+	end
 end
 
 function dom_mananger:OnExecuteCooldownAfterSpawnTime( state, dt )
 	self.cooldownTimer  = self.cooldownTimer - dt
 
+	for i = 1, #self.coolEventSpawnTime, 1 do
+		if (self.coolEventSpawnTime[i] and self.coolEventSpawnTime[i] > self.cooldownTimer) then
+			self:VerboseLog("Event on Cooldown ".. tostring(i) ..": starting")
+			self:StartAnEvent( "ATTACK" )
+			self.coolEventSpawnTime[i] = -1
+		end
+	end
+
+	if ( self.cooldownTimer < self.waveRepeatTime and self.rules.waveRepeatChances ) then
+		if ( self.waveRepeated == nil ) then self.waveRepeated = 0 end
+		local rngRoll       = RandInt(0, 100)
+		local repeatChances = self.rules.waveRepeatChances[self.currentDifficultyLevel]
+		local repeatChance  = repeatChances[self.waveRepeated+1] or 0
+		self:VerboseLog("Wave Repeat ".. tostring(self.waveRepeated + 1) ..": chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll))
+		
+		if ( repeatChance > rngRoll) then
+			self:VerboseLog("Wave Repeat succesful")
+			if ( self:GetPauseAttacks() == true ) then  -- starts attack (depending on streaming state)
+				self.spawner:ChangeState( "dummy_state" )
+			else
+				self.spawner:ChangeState( "streaming" )
+			end
+			self.waveRepeated = self.waveRepeated + 1
+			self.eventsPerPrepareState = 0
+		else self.waveRepeatTime = -9999
+		end
+	end
+	
 	if ( self.cooldownTimer < 0 ) then
 		self.spawner:ChangeState( "idle" )
 	end
@@ -1142,9 +1321,19 @@ end
 
 function dom_mananger:OnEnterIdle( state )
 	self:VerboseLog("OnEnterIdle" )
-
+	CampaignService:OperateDOMPlanetaryJump( true ) -- just in case, planetary travel is stuck due to a bug
+	
 	local stateDuration = self.rules.idleTime[self.currentDifficultyLevel]
-
+	self:VerboseLog("Idle time base ".. tostring(stateDuration))
+	
+	if ((self.rules.idleTimeRelativeVariation or 0.35) > 0) then
+		local rngScale = (math.random()-0.5)*2*(self.rules.idleTimeRelativeVariation or 0.35)
+		stateDuration = stateDuration * (1 + rngScale)
+		self:VerboseLog("Idle time random scaling by ".. tostring(rngScale) .. " changing base ".. tostring(self.rules.idleTime[self.currentDifficultyLevel]) .." to ".. tostring(stateDuration))
+	elseif ((self.rules.idleTimeCancelChance or 10)> math.random()*100) then
+		stateDuration = 120
+		self:VerboseLog("Idle time modifier: cancelled (down to 120)")
+	end
 	self.idleTimer = stateDuration
 
 	--state:SetDurationLimit( stateDuration )
@@ -1316,6 +1505,14 @@ function dom_mananger:OnHqEnterEntryLogic( state )
 		local wavePool = self:GetWavePool( difficultyLevel );
 
 		self:PrepareWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "OnHqEnterEntryLogic: Prepare attack name : ", self.hqLogicLevel.prepareTime, self.hqPreparedAttacks, self.hqPreparedAttackMarkers )
+
+		if ( self.rules.multiplayerWaves ~= nil ) then
+			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
+
+			if ( multiplayerAttackCount > 0 ) then
+				self:PrepareWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( self.currentDifficultyLevel ), "OnHqEnterEntryLogic: Prepare attack name : ", self.hqLogicLevel.prepareTime, self.hqPreparedAttacks, self.hqPreparedAttackMarkers )
+			end
+		end
 	end
 end
 
@@ -1348,6 +1545,14 @@ function dom_mananger:OnHqEnterAttackLogic( state )
 		local wavePool = self:GetWavePool( difficultyLevel );
 
 		self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves )
+
+		if ( self.rules.multiplayerWaves ~= nil ) then
+			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
+
+			if ( multiplayerAttackCount > 0 ) then
+				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( difficultyLevel ), "OnHqEnterAttackLogic: Spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves )
+			end
+		end
 	end
 	self.hqAttackSafeTimer = self.hqAttackSafeTime
 end
@@ -1454,6 +1659,14 @@ function dom_mananger:SpawnWavesForDifficultyLevel( difficultyLevel, shouldAddto
 	else
 		local wavePool = self:GetWavePool( difficultyLevel )
 		self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Normal attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks )
+
+		if ( self.rules.multiplayerWaves ~= nil ) then
+			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
+
+			if ( multiplayerAttackCount > 0 ) then
+				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( difficultyLevel ), "dom_mananger:OnEnterSpawn: Multiplayer attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks )
+			end
+		end
 	end
 
 	self:SpawnWave( self.extraAttacks, borderSpawnPointGroupName, self:GetExtraWavePool(), "dom_mananger:OnEnterSpawn: Extra attack name : ", shouldAddtoSpawnedAttacks, self.participants, "label_small", self.participantsPercentageUse, self.spawnedAttacks )
@@ -1471,13 +1684,6 @@ function dom_mananger:OnEnterSpawn( state )
 
 	self:VerboseLog("OnEnterSpawn" )
 	
-	if (self.spawnAttackEventProbability and self.spawnAttackEventProbability >= RandInt(0, 100)/100.0) then
-		self:StartAnEvent( "ATTACK" )
-		if (self.spawn2ndAttackEventProbability and self.spawn2ndAttackEventProbability >= RandInt(0, 100)/100.0) then
-			self:StartAnEvent( "ATTACK" )
-		end
-	end
-
 	if ( self.cancelTheAttack == true ) then
 		self:VerboseLog("Canceling the attack." )
 		self.cancelTheAttack = false
@@ -1540,11 +1746,41 @@ function dom_mananger:OnExitStreaming( state )
 	self:VerboseLog("OnExitStreaming" )
 end
 
-function dom_mananger:OnRespawnFailedEvent()
+local function HasOtherAlivePlayersInTeam( current_player )
+	local player_team = PlayerService:GetPlayerTeam( current_player )
+
+	local players = PlayerService:GetPlayersFromTeam( player_team )
+	for player_id in Iter(players) do
+		local pawn = PlayerService:GetPlayerControlledEnt( player_id )
+		if current_player ~= player_id and HealthService:IsAlive( pawn ) then
+			return true
+		end
+	end
+
+	return false
+end
+
+function dom_mananger:OnRespawnFailedEvent( evt )
 	self:VerboseLog("Mission failed" )
+
+	local player_id = evt:GetPlayerId()
+	if HasOtherAlivePlayersInTeam( player_id) and self.player_death_position[ player_id ] then
+
+		local position = self.player_death_position[ player_id ]
+		self.player_death_position[ player_id ] = nil;
+
+		local player_team = EntityService:GetTeam(PlayerService:GetPlayerTeam( player_id ))
+		local spawner = EntityService:SpawnEntity("player/player_respawner", position.x, position.y, position.z, "none" )
+
+		local player_reference = reflection_helper(EntityService:CreateComponent(spawner, "PlayerReferenceComponent"))
+		player_reference.player_id = player_id
+		player_reference.reference_type.internal_enum = 4
+		return;
+	end
 
     LampService:ReportGameFailed()
 	MissionService:ShowEndGameHud( 5.0, false )
+
 	local failedAction = MissionService:GetCurrentMissionFailedAction();
 	if ( failedAction ~= MFA_REMAIN ) then
 		MissionService:DeactivateAllFlows()
@@ -1585,6 +1821,14 @@ function dom_mananger:DropPlayerItems( owner, player )
 		return
 	end
 
+	local mech = PlayerService:GetPlayerControlledEnt( player)
+	if ( mech ~= INVALID_ID ) then
+		local mechDatabase = EntityService:GetDatabase( mech )
+		if ( mechDatabase:GetIntOrDefault("disable_drop",0  ) == 1 ) then
+			return
+		end
+	end
+
 	local items = PlayerService:GetAllEquippedItemsInSlot( "LEFT_HAND" , player)
 	ConcatUnique( items, PlayerService:GetAllEquippedItemsInSlot( "RIGHT_HAND", player ) )   
 	dropItemsCount = math.min( dropItemsCount, #items )
@@ -1610,6 +1854,8 @@ end
 function dom_mananger:OnPlayerDiedEvent( evt )
 	self:DestroyPlayerItems(evt:GetEntity(), evt:GetPlayerId())
 	self:DropPlayerItems(evt:GetEntity(), evt:GetPlayerId())
+
+	self.player_death_position[ evt:GetPlayerId() ] = EntityService:GetPosition( evt:GetEntity() )
 end
 
 return dom_mananger

@@ -9,14 +9,14 @@ EntityBlueprint
 		name 				"tower_laser_lvl_3"
 		bp   				"buildings/defense/tower_laser_lvl_3"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_laser"
-		description			"gui/hud/building_description/tower_laser"
+		localization_id		"gui/hud/building_name/tower_laser_supercooled"
+		description			"gui/hud/building_description/tower_laser_supercooled"
 		menu_icon			"gui/hud/building_icons/tower_laser_lvl3"
 		require 			"headquarters"
-		order				"15"
-		buildable			"0"
+		building_group		"tower_laser"
+		order				"12"
 		type				"tower"
-		overrides			"tower,wall"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		//upgrade				"buildings/defense/tower_laser_lvl_4"
 
@@ -25,25 +25,33 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 12
+				building_time 14
 				building_cost
 				{
-					carbonium 	"600"
-					steel 		"300"
-					palladium	"200"
+					carbonium 	"1200"
+					steel 		"400"
+					palladium	"300"
 				}
 			}		
 		}			
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"80"
+				value 		"220"
+			}
+			
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"5"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -96,6 +104,38 @@ EntityBlueprint
 		name "meshes/buildings/defense/tower_laser_lvl_3"
 	}
 
+	GridCullerDesc
+	{
+		Shapes
+		{
+   			PhysicsBoxShape
+   			{
+    				x	4
+    				y	4
+    				z	4
+   			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "1"
+			y "0.5"
+			z "0"
+			w "1"
+		}
+		size
+		{
+			x "2"
+			y "2"
+		}
+
+		visibility			"always"
+	}
+
 	WeaponItemDesc
 	{
 	}
@@ -123,5 +163,65 @@ EntityBlueprint
 
 	TowerDesc
 	{
+	}
+	
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone 		"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pylon3"
+					bone 		"att_vismod_1"
+					scale		"1.0 0.75 1.0"
+					orientation "45 0 0"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
 	}
 }

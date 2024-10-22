@@ -9,14 +9,16 @@ EntityBlueprint
 		name 				"tower_lightning_lvl_2"
 		bp   				"buildings/defense/tower_lightning_lvl_2"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_lightning"
-		description			"gui/hud/building_description/tower_lightning"
+		localization_id		"gui/hud/building_name/tower_lightning_charged"
+		description			"gui/hud/building_description/tower_lightning_charged"
 		menu_icon			"gui/hud/building_icons/tower_lightning_lvl2"
 		require 			"headquarters"
+		building_group		"tower_lightning"
 		order				"15"
 		buildable			"0"
+		check_connect		"1"
 		type				"tower"
-		overrides			"tower,wall"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		upgrade				"buildings/defense/tower_lightning_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
@@ -25,7 +27,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 6
+				building_time 10
 				building_cost
 				{
 					carbonium 	"300"
@@ -36,14 +38,29 @@ EntityBlueprint
 		}			
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"30"
+				value 		"120"
+			}
+			
+			GameplayResource
+			{
+				resource 	"plasma"
+				value 		"10"
+				family		"charge"
+				attachment	"att_in_1"
+			}		
+			GameplayResource
+			{
+				resource 	"plasma_charged"
+				value 		"2"
+				family		"charge"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -102,5 +119,80 @@ EntityBlueprint
 
 	TowerDesc
 	{
+	}
+
+	TurretDesc
+	{
+		target "ground_unit_large|ground_unit_medium|ground_unit"
+		target_ignore "invisible"
+		speed "150"
+		aim_volume "SphericalAimVolume"
+		{
+			range_min "0"
+			range_max "24"
+			aiming_range "30"
+		}
+
+		aiming_cooldown "1"
+		aiming_target_time "2"
+		aiming_idle_angle "20"
+		pitch "att_muzzle"
+		yaw "att_muzzle"
+		check_target_visibility "1"
+		fog_of_war_filtering "1"
+	}
+	
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/minipipes"
+					bone 		"att_vismod_2"
+					scale		"0.6 0.6 0.6"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_omni_light"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
 	}
 }

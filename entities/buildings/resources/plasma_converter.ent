@@ -30,7 +30,18 @@ EntityBlueprint
 					palladium	"500"
 					ai			"2"
 				}
-			}		
+			}	
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"250"
+					steel 		"500"
+					palladium	"125"
+				}
+			}			
 		}
 	}
 
@@ -43,7 +54,15 @@ EntityBlueprint
 				resource 	"plasma"
 				value 		"100"
 				attachment	"att_in_1"
+				family		"plasma"				
 			}
+			GameplayResource
+			{
+				resource 	"resin"
+				value 		"12"
+				attachment	"att_in_1"
+				family		"plasma"
+			}				
 			
 			GameplayResource
 			{
@@ -86,7 +105,6 @@ EntityBlueprint
 		{
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
-			building_time		float:"120"
 		}			
 	}
 
@@ -150,10 +168,10 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/plasma_converter.mesh"
-		material "buildings/resources/plasma_converter"
+		mesh 		"meshes/buildings/main/quantum_gate_stabilizer.mesh"
+		material 	"buildings/main/quantum_gate_stabilizer"
 	}
-
+	
 	TypeDesc
 	{
 		type "building|resource"
@@ -161,7 +179,7 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/plasma_converter"
+		name "meshes/buildings/resources/reagent_condenser"
 	}
 
 	AnimationGraphDesc
@@ -170,7 +188,7 @@ EntityBlueprint
 	}
 
 	PhysicsDesc
- 	{
+	{
 		objects
 		{
 			PhysicsObjectDesc
@@ -180,17 +198,26 @@ EntityBlueprint
 				physics_material 	"default"
 				Shapes
 				{
-					PhysicsSphereShape
+					PhysicsCapsuleShape
 					{
-						r "2.45"
-	
-						position 
+						r "1.45"
+						half_height "2"
+
+						position
 						{
 							x "0.0"
-							y "1.0"
+							y "2"
 							z "0.0"
 						}
-					}		
+
+						orientation
+						{
+							w "0.7"
+							x "0.0"
+							z "0.7"
+							y "0.0"
+						}
+					}
 				}
 			}
 		}
@@ -209,7 +236,7 @@ EntityBlueprint
 		{
 			PhysicsMeshShape
 			{
-				mesh "meshes/buildings/resources/gas_filtering_plant_g1.nxs"
+				mesh "meshes/buildings/resources/water_filtering_plant_g1.nxs"
 			}	
 		}
 	}
@@ -360,7 +387,8 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}		
+		}	
+		////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
 			group "att_in_1"
@@ -371,7 +399,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"	
 					bone "att_in_arrow"
 				}
 			}
@@ -386,11 +414,50 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
-		}		
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_cube_trail"
+					bone "att_working"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_out_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_02"
+					bone  "att_vismod_2"
+					scale "0.86 0.7 1.2"
+				}
+			}
+		}			
 	}
 }
 

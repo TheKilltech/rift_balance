@@ -27,7 +27,7 @@ EntityBlueprint
 				building_time 120
 				building_cost
 				{
-					carbonium 	"600"			
+					carbonium 	"600"	
 					steel 		"500"
 					palladium	"100"
 				}
@@ -43,23 +43,32 @@ EntityBlueprint
 			{
 				resource 		"flammable_gas"
 				value 			"50"
+				family			"fuel"
 				attachment		"att_in_1"
-			}
-						
-			GameplayResource
-			{
-				resource 		"supercoolant"
-				value			"10"
-				attachment		"att_in_2"
-				family			"coolant"
 			}
 			
 			GameplayResource
 			{
-				resource 		"water"
-				value			"50"
+				resource 		"petroleum"
+				value 			"50"
+				family			"fuel"
+				attachment		"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 		"fluorine"
+				value			"10"
 				attachment		"att_in_2"
-				family			"coolant"
+				family			"catalyst"
+			}
+			
+			GameplayResource
+			{
+				resource 		"reagent"
+				value			"5"
+				attachment		"att_in_2"
+				family			"catalyst"
 			}
 		}
 		

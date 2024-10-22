@@ -1,0 +1,505 @@
+MissionDef
+{
+    script          "lua/missions/campaigns/dlc_2/caverns_jungle_entrance.lua"
+	localization_id	"gui/menu/planetary_scanner/mission_caverns_jungle_entrance"
+	description		"gui/menu/planetary_scanner/mission_caverns_jungle_entrance_description"	
+	
+	script_database
+    {
+		spawn_near_position string:"-850,0,0"    
+    }
+
+    biomes          "jungle"
+    map_size		14,4
+	map_no_spawn_margin "24"
+	
+	tile_spawn_rules
+	{	
+		biomes/jungle/tiles/jungle_custom_caverns_entrance_01/jungle_custom_caverns_entrance_01.tile
+		{
+			min_instances	1			
+			max_instances	1	
+			tile_coord
+			{		
+				4,-1							
+			}	
+		}
+		biomes/jungle/tiles/jungle_lakes_01/jungle_lakes_01.tile
+		{
+			min_instances	1
+			max_instances	1		
+			tile_coord
+			{		
+				-4,-1				
+			}	
+		}
+		biomes/jungle/tiles/jungle_canyons_02/jungle_canyons_02.tile
+		{
+			min_instances	2
+			max_instances	2	
+			tile_coord
+			{		
+				-2,-1
+				1,-1
+			}	
+		}		
+		biomes/jungle/tiles/jungle_custom_caverns_01/jungle_custom_caverns_01.tile
+		{
+			min_instances	4
+			max_instances	8	
+		}
+		biomes/jungle/tiles/jungle_custom_caverns_02/jungle_custom_caverns_02.tile
+		{
+			min_instances	3
+			max_instances	6	
+		}
+		biomes/jungle/tiles/jungle_plains_01/jungle_plains_01.tile
+		{
+			max_instances	0			
+		}
+		biomes/jungle/tiles/jungle_plains_02/jungle_plains_02.tile
+		{
+			max_instances	0			
+		}
+		biomes/jungle/tiles/jungle_plains_03/jungle_plains_03.tile
+		{
+			max_instances	0			
+		}
+		biomes/jungle/tiles/jungle_plains_04/jungle_plains_04.tile
+		{
+			max_instances	0			
+		}
+		biomes/jungle/tiles/jungle_starting_01/jungle_starting_01.tile
+		{
+			max_instances	0			
+		}
+		biomes/jungle/tiles/jungle_trees_01/jungle_trees_01.tile
+		{
+			max_instances	0			
+		}
+		biomes/jungle/tiles/jungle_canyons_01/jungle_canyons_01.tile
+		{
+			random_weight	10.0
+		}
+		biomes/jungle/tiles/jungle_nest_01/jungle_nest_01.tile
+		{
+			random_weight	4.0
+		}
+		biomes/jungle/tiles/jungle_nest_02/jungle_nest_02.tile
+		{
+			random_weight	4.0
+		}	
+		biomes/jungle/tiles/jungle_canyons_03/jungle_canyons_03.tile
+		{
+			//min_instances	3
+			max_instances	3
+		}
+	}
+    
+	failed_action   "remain"
+	success_action  "remove"
+
+	creature_volumes_min_distance   "96.0"
+	creature_volumes_density        "1"
+
+    threat  "1"    
+
+    ambient_creature_species
+    {
+        ground
+        {               
+            species
+            {
+                CreatureVolume
+                {
+                    creature_species    "quelver"
+                }
+            }
+        }
+
+        air
+        {
+            species
+            {
+                CreatureVolume
+                {
+                    creature_species    "vesaurus"
+                }
+				CreatureVolume
+                {
+                    creature_species    "mothray"
+                }
+            }
+        }
+    }
+
+    creature_volumes_species
+    {
+        neutral_units
+        {
+            CreatureVolume
+            {
+                creature_species    "jurvine"
+            }
+        }
+
+        regular_units
+        {
+            CreatureVolume
+            {
+                creature_species    "canoptrix_crystal"
+                volume_spawn_ratio  "1"
+            }
+            
+            CreatureVolume
+            {
+                creature_species    "arachnoid_sentinel_crystal"
+                volume_spawn_ratio  "1.25"
+            }
+            
+            CreatureVolume
+            {
+                creature_species    "stregaros_crystal"
+                volume_spawn_ratio  "1.0"
+            }
+            
+            CreatureVolume
+            {
+                creature_species    "phirian_jungle"
+                volume_spawn_ratio  "0.5"
+            }
+           
+            CreatureVolume
+            {
+                creature_species    "baxmoth_jungle"
+                volume_spawn_ratio  "0.5"
+            }
+			
+			CreatureVolume
+            {
+                creature_species    "bomogan_jungle"
+                volume_spawn_ratio  "0.5"
+            }
+			
+            CreatureVolume
+            {
+                creature_species    "kermon"
+                volume_spawn_ratio  "0.5"
+            }
+			CreatureVolume
+            {
+                creature_species    "necrodon"
+                volume_spawn_ratio  "1"
+            }
+        }
+		
+		liquid_units
+        {            
+			CreatureVolume
+            {
+                creature_species    "hedroner_jungle"
+                volume_spawn_ratio  "1"
+            }
+        }  
+
+        resource_units
+        {
+            CreatureVolume
+            {
+                creature_species    "gnerot_jungle"
+                volume_spawn_ratio  "0.3"
+            }
+			CreatureVolume
+            {
+                creature_species    "krocoon_jungle"
+                volume_spawn_ratio  "0.25"
+            }
+			CreatureVolume
+            {
+                creature_species    "baxmoth_jungle"
+                volume_spawn_ratio  "0.45"
+            }
+        }
+		
+		special_units_3
+        {
+            CreatureVolume
+            {
+                creature_species    "canoptrix_crystal"
+                volume_spawn_ratio  "1.5"
+            }
+			CreatureVolume
+            {
+                creature_species    "arachnoid_sentinel_crystal"
+                volume_spawn_ratio  "1.0"
+            }
+        }
+		
+		special_units_2
+        {   
+            
+            
+            CreatureVolume
+            {
+                creature_species    "stregaros_crystal"
+                volume_spawn_ratio  "1.0"
+            }
+            
+            //CreatureVolume
+            //{
+            //    creature_species    "phirian_jungle"
+            //    volume_spawn_ratio  "1.0"
+            //}		
+        }
+		
+		special_units_1
+        {
+            CreatureVolume
+            {
+                creature_species    "necrodon"
+                volume_spawn_ratio  "1.0"
+            }			
+        }
+		
+		guardian_standard
+        {            	
+            CreatureVolume
+            {
+                creature_species    "kermon"
+				volume_spawn_ratio  "1"
+            }
+        }
+		
+        guardian_advanced
+        {            	
+            CreatureVolume
+            {
+                creature_species    "kermon"
+				volume_spawn_ratio  "1"
+            }
+        }
+		
+        guardian_superior
+        {            		
+            CreatureVolume
+            {
+                creature_species    "phirian_jungle"
+				volume_spawn_ratio  "1"
+            }
+        }
+		
+        guardian_extreme
+        {            		
+            CreatureVolume
+            {
+                creature_species    "phirian_jungle"
+				volume_spawn_ratio  "1"
+            }
+        }
+    }
+	
+	mission_object_spawners
+	{	
+        //MarkerBlueprintSpawner
+        //{
+        //    spawn_pool               "loot_containers"
+		//
+        //    // find all entities on map with this blueprint as possible spawn point
+        //    spawn_at_marker          "logic/spawn_objective"
+		//
+        //    // min distance from objects in other pools
+        //    spawn_min_distance_from_pools
+        //    {
+        //        player_spawn_point  250.0				
+        //        loot_containers     150.0
+        //    }
+		//
+        //    // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
+        //    spawn_instances_minmax    3,5
+		//
+        //    spawn_blueprints
+        //    {
+        //        spawners/caverns_spawner_standard
+        //        {
+        //            // make a roll to check if blueprint can be spawned
+        //            spawn_chance           1
+        //        }                
+        //    }
+        //}
+		
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "loot_containers"
+
+            // find all entities on map with this blueprint as possible spawn point
+            spawn_at_marker          "logic/spawn_objective"
+
+            // min distance from objects in other pools
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  150.0				
+                loot_containers     100.0
+            }
+
+            // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
+            spawn_instances_minmax    15,20
+
+            spawn_blueprints
+            {
+                spawners/jungle_spawner_standard
+                {
+                    // make a roll to check if blueprint can be spawned
+                    spawn_chance           0.5
+                }
+
+                spawners/jungle_spawner_advanced
+                {
+                    spawn_instances_minmax 3,5
+                    spawn_chance           0.2
+                }
+
+                spawners/jungle_spawner_superior
+                {
+                    spawn_instances_minmax 2,3
+                    spawn_chance           0.2
+                }
+
+                spawners/jungle_spawner_extreme
+                {
+                    spawn_instances_minmax 1,2
+                    spawn_chance           0.1
+                }
+            }
+        }
+
+        GridSpawner
+        {
+            spawn_pool                  "underground_treasures"
+
+            //terrain_types               "mud,floor"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      150.0				
+                loot_containers         50.0
+                underground_treasures   100.0
+            }
+
+            spawn_blueprints
+            {
+                spawners/loot_spawner
+                {
+                    spawn_instances_minmax      1,3
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	    string:"items/loot/resources/shard_carbonium_item"
+                        min   	 	    int:"100"
+                        max   	 	    int:"250"
+                    }
+                }
+
+                spawners/loot_spawner
+                {
+                    spawn_instances_minmax      1,3
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_steel_item"
+                        min   	 	int:"100"
+                        max   	 	int:"250"
+                    }
+                }
+
+                spawners/loot_spawner
+                {
+                    spawn_instances_minmax      3,5
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_hazenite_item"
+                        min   	 	int:"50"
+                        max   	 	int:"100"
+                    }
+                }  
+				spawners/loot_spawner
+                {
+                    spawn_instances_minmax      3,5
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_cobalt_item"
+                        min   	 	int:"50"
+                        max   	 	int:"100"
+                    }
+                } 
+            }
+        }		
+	}
+
+	random_resources
+    {		
+        ResourceVolume
+        {
+            resource        "carbon_vein"
+
+            min_resources   "4000"
+            max_resources   "8000"
+
+            min_spawned_volumes "5"
+            max_spawned_volumes "8"
+        }	
+
+        ResourceVolume
+        {
+            resource        "iron_vein"
+
+            min_resources   "3000"
+            max_resources   "6000"
+
+            min_spawned_volumes "4"
+            max_spawned_volumes "6"
+        }	
+
+        ResourceVolume
+        {
+            resource        "geothermal_vent"
+
+            min_resources   "6000"
+            max_resources   "10000"
+            
+            is_infinite     "1"
+            
+            min_spawned_volumes "12"
+            max_spawned_volumes "15"
+        }	
+		
+		ResourceVolume
+        {
+            resource        "geothermal_vent"
+			required_discovery_lvl	"1"
+
+            min_resources   "6000"
+            max_resources   "10000"
+            
+            is_infinite     "1"
+            
+            min_spawned_volumes "3"
+            max_spawned_volumes "5"
+        }	
+
+		ResourceVolume
+        {
+            resource        "sludge_vein"
+
+            is_infinite      "1"
+
+            min_spawned_volumes "4"            
+            max_spawned_volumes "8"            
+        }		
+    }
+}

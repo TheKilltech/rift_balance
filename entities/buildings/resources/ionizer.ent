@@ -15,14 +15,14 @@ EntityBlueprint
 		upgrade				"buildings/resources/ionizer_lvl_2"			
 		order				"17"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"ionizer_lvl_2,ionizer_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 180
+				building_time 40
 				building_cost
 				{
 					carbonium 	"500"
@@ -40,13 +40,8 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"energy"
-				value			"250"
+				value			"80"
 			}
-			GameplayResource
-			{
-				resource 		"carbonium"
-				value			"3"
-			}		
 			GameplayResource
 			{
 				resource 		"tanzanite"
@@ -88,7 +83,6 @@ EntityBlueprint
 		{
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
-			building_time		float:"180"
 		}
 	}
 
@@ -151,7 +145,6 @@ EntityBlueprint
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
 				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
-				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
 	}
@@ -394,8 +387,9 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_1_pipe"
+					blueprint	"effects/buildings_and_machines/crystal_vs1_violet"
+					bone 		"att_vismod_2"
+					scale		"0.8 0.7 0.8"
 				}
 			}
 		}	

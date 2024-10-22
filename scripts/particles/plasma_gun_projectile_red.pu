@@ -1,0 +1,241 @@
+system rift/plasma_gun_projectile_red
+{
+    scale_velocity                              0.007
+    scale                                       0.007 0.007 0.007
+    tight_bounding_box                          true
+    category                                    RIFT
+    cache_count                                 40
+    technique glow
+    {
+        keep_local                              true
+        visual_particle_quota                   1
+        emitted_emitter_quota                   0
+        emitted_technique_quota                 0
+        emitted_affector_quota                  0
+        emitted_system_quota                    0
+        material                                particles/glow_nocolor
+        renderer                                Billboard
+        {
+            render_queue_group                  60
+            billboard_type                      oriented_self
+            billboard_origin                    bottom_center
+            billboard_rotation_type             vertex
+        }
+        emitter                                 Point trail1
+        {
+            emission_rate                       1500
+            angle                               0
+            time_to_live                        dyn_random
+            {
+                min                             0.2
+                max                             0.3
+            }
+            velocity                            0.01
+            particle_width                      1000
+            particle_height                     2800
+            position                            1000 0 0
+            direction                           -1 0 0
+            auto_direction                      true
+        }
+        affector                                Colour 
+        {
+            time_colour                         0    1 0.101961 0 0.294118
+            time_colour                         1    1 0.401961 0 0.294118
+        }
+    }
+    technique trail0
+    {
+        visual_particle_quota                   5
+        emitted_emitter_quota                   0
+        emitted_technique_quota                 0
+        emitted_affector_quota                  0
+        emitted_system_quota                    0
+        material                                particles/alien_plasma_hit_atlas
+        renderer                                Billboard
+        {
+            render_queue_group                  61
+            texture_coords_columns              4
+            billboard_type                      oriented_self
+            billboard_origin                    bottom_center
+            billboard_rotation_type             vertex
+        }
+        emitter                                 Point trail1
+        {
+            emission_rate                       15
+            angle                               0
+            time_to_live                        dyn_random
+            {
+                min                             0.4
+                max                             0.5
+            }
+            particle_width                      200
+            particle_height                     400
+            keep_local                          true
+            direction                           -1 0 0
+            end_texture_coords_range            3
+        }
+        affector                                Scale 
+        {
+            x_scale                             -150
+            y_scale                             750
+            since_start_system                  true
+        }
+        affector                                Colour 
+        {
+            time_colour                         0    0.2 0.2 0.2 0.74902
+            time_colour                         0.502174  0.2 0.2 0.2 0.494118
+            time_colour                         1    0.2 0.2 0.2 0
+        }
+    }
+    technique trail
+    {
+        visual_particle_quota                   60
+        emitted_emitter_quota                   0
+        emitted_technique_quota                 0
+        emitted_affector_quota                  0
+        emitted_system_quota                    0
+        material                                particles/alien_plasma_hit_atlas
+        renderer                                Billboard
+        {
+            render_queue_group                  62
+            texture_coords_columns              4
+            billboard_type                      oriented_self
+            billboard_origin                    bottom_center
+            billboard_rotation_type             vertex
+        }
+        emitter                                 Point trail1
+        {
+            angle                               0
+            time_to_live                        dyn_random
+            {
+                min                             0.2
+                max                             0.3
+            }
+            velocity                            dyn_random
+            {
+                min                             3000
+                max                             4000
+            }
+            particle_width                      100
+            particle_height                     400
+            keep_local                          true
+            direction                           -1 0 0
+            end_texture_coords_range            3
+        }
+        affector                                Scale 
+        {
+            x_scale                             -100
+            y_scale                             750
+        }
+        affector                                Colour 
+        {
+            time_colour                         0    0.2 0.2 0.2 0.74902
+            time_colour                         0.502174  0.2 0.2 0.2 0.494118
+            time_colour                         1    0.2 0.2 0.2 0
+        }
+    }
+    technique trail2
+    {
+        visual_particle_quota                   60
+        emitted_emitter_quota                   0
+        emitted_technique_quota                 0
+        emitted_affector_quota                  0
+        emitted_system_quota                    0
+        material                                particles/alien_plasma_hit_atlas
+        renderer                                Billboard
+        {
+            render_queue_group                  65
+            texture_coords_columns              4
+            billboard_type                      oriented_self
+            billboard_origin                    bottom_center
+            billboard_rotation_type             vertex
+        }
+        emitter                                 Point trail1
+        {
+            emission_rate                       8
+            angle                               0
+            time_to_live                        dyn_random
+            {
+                min                             0.2
+                max                             0.3
+            }
+            velocity                            dyn_random
+            {
+                min                             3000
+                max                             4000
+            }
+            particle_width                      50
+            particle_height                     200
+            keep_local                          true
+            direction                           -1 0 0
+            end_texture_coords_range            3
+        }
+        affector                                Scale 
+        {
+            x_scale                             -100
+            y_scale                             1000
+        }
+        affector                                Colour 
+        {
+            time_colour                         0    0.2 0.2 0.2 0.74902
+            time_colour                         0.508696  0.2 0.2 0.2 0.74902
+            time_colour                         1    0.2 0.2 0.2 0
+        }
+    }
+    technique trail3
+    {
+        visual_particle_quota                   60
+        emitted_emitter_quota                   0
+        emitted_technique_quota                 0
+        emitted_affector_quota                  0
+        emitted_system_quota                    0
+        material                                particles/spark_red_01
+        renderer                                Billboard
+        {
+            render_queue_group                  65
+            billboard_type                      oriented_self
+            billboard_rotation_type             vertex
+        }
+        emitter                                 Box trail1
+        {
+            angle                               0
+            time_to_live                        dyn_random
+            {
+                min                             0.5
+                max                             0.7
+            }
+            velocity                            dyn_random
+            {
+                min                             3000
+                max                             4000
+            }
+            particle_width                      dyn_random
+            {
+                min                             20
+                max                             40
+            }
+            particle_height                     dyn_random
+            {
+                min                             60
+                max                             100
+            }
+            position                            -250 0 0
+            keep_local                          true
+            direction                           -1 0 0
+            box_width                           50
+            box_height                          50
+            box_depth                           50
+        }
+        affector                                Colour 
+        {
+            time_colour                         0    0.2 0.2 0.2 0
+            time_colour                         0.0521739  0.2 0.2 0.2 1
+            time_colour                         0.508696  0.2 0.2 0.2 1
+            time_colour                         1    0.2 0.2 0.2 0
+        }
+        affector                                Scale Affector35
+        {
+            xyz_scale                           -30
+        }
+    }
+}

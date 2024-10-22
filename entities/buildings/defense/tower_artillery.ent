@@ -11,20 +11,20 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_artillery"
 		menu_icon			"gui/hud/building_icons/tower_artillery"
 		require 			"headquarters"
-		order				"6"
+		order				"7"
 		type				"tower"
 		overrides			"tower,wall"
 		upgrade				"buildings/defense/tower_artillery_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		condition			"BIOME"	
-		condition_value		"magma,jungle,desert,acid,metallic,legacy_maps"		
+		condition			"NOT_BIOME"	
+		condition_value		"caverns"		
 
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
 				{
 					carbonium 	"100"
@@ -219,7 +219,6 @@ EntityBlueprint
 		aiming_target_time "2"
 		aiming_idle_angle "20"
 		pitch "be_barrel"
-		gravity_factor "8"
 		yaw "be_turret"
 		check_target_visibility "1"
 		fog_of_war_filtering "1"
@@ -241,7 +240,7 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "60"
+			emissive_factor "80" // "60"
 			submesh_idx "1"
 		}
 
@@ -417,6 +416,10 @@ EntityBlueprint
 		on_world_hit_effect 	"effects/weapon_hit/artillery_explosion"
 		on_resisted_hit_effect 	"effects/weapon_hit/artillery_explosion"
 		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|shield|building"
+
+		artillery_gravity_factor 	"8"
+		artillery_min_angle      	"45"
+		artillery_max_angle      	"45"
 	}
 	
 	children

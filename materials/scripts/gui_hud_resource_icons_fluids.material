@@ -1,35 +1,35 @@
 import * from "materials/scripts/gui.material"
 
-
-material gui/hud/resource_icons/solvent : gui/unsharp
+material gui/hud/resource_icons/fluorine : gui/unsharp
 {
-	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/solvent.dds
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/fluorine.dds
 }
 
-material gui/hud/resource_icons/solvent_bigger : gui/unsharp
+material gui/hud/resource_icons/fluorine_bigger : gui/unsharp
 {
-	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/solvent_bigger.dds
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/fluorine_bigger.dds
 }
 
-material gui/hud/resource_icons/solvent_bigger_disabled : gui/unsharp
+material gui/hud/resource_icons/fluorine_bigger_disabled : gui/unsharp
 {
-	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/solvent_bigger.dds
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/fluorine_bigger.dds
 }
 
 
-material gui/hud/resource_icons/magma_metal : gui/unsharp
+
+material gui/hud/resource_icons/reagent : gui/unsharp
 {
-	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/iron_vein.dds
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/reagent.dds
 }
 
-material gui/hud/resource_icons/magma_metal_bigger : gui/unsharp
+material gui/hud/resource_icons/reagent_bigger : gui/unsharp
 {
-	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/iron_vein_bigger.dds
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/reagent_bigger.dds
 }
 
-material gui/hud/resource_icons/magma_metal_bigger_disabled : gui/unsharp
+material gui/hud/resource_icons/reagent_bigger_disabled : gui/unsharp
 {
-	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/iron_vein_bigger.dds
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/reagent_bigger.dds
 }
 
 
@@ -64,4 +64,20 @@ material gui/hud/resource_icons/deuterium_bigger : gui/unsharp
 material gui/hud/resource_icons/deuterium_bigger_disabled : gui/default_disabled
 {
 	set_texture_alias diffuse materials/textures/gui/hud/resource_icons/deuterium_bigger.dds
+}
+
+
+material gui/hud/resource_icons/petroleum : gui/unsharp
+{
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/petroleum.dds
+}
+
+material gui/hud/resource_icons/petroleum_bigger : gui/unsharp
+{
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/petroleum_bigger.dds
+}
+
+material gui/hud/resource_icons/petroleum_bigger_disabled : gui/unsharp
+{
+	set_texture_alias diffuse	materials/textures/gui/hud/resource_icons/petroleum_bigger.dds
 }

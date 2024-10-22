@@ -16,7 +16,7 @@ EntityBlueprint
 		order				"3"
 		limit			    "1"
 		limit_name			"communications_hub"		
-		require 			"headquarters"
+		require 			"headquarters_lvl_2"
 		upgrade				"buildings/main/communications_hub_lvl_5"
 		menu_action 		"research"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -45,6 +45,28 @@ EntityBlueprint
 			{
 				resource 			"energy"
 				value			 	"400"
+			}
+			
+			GameplayResource
+			{
+				resource 			"supercoolant"
+				value			 	"50"
+				attachment			"att_in_1"
+				family				"cooling"
+			}
+			GameplayResource
+			{
+				resource 			"plasma"
+				value			 	"150"
+				attachment			"att_in_2"
+				family				"charging"
+			}
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				value			 	"25"
+				attachment			"att_in_2"
+				family				"charging"
 			}
 		}
 		
@@ -175,7 +197,56 @@ EntityBlueprint
 		{
 			"buildings/effects_big_base"
 		}
-////////////////////////MISC/////////////////////////			
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"	
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"	
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+			}
+		}		
 		EffectGroup
 		{
 			group "working"

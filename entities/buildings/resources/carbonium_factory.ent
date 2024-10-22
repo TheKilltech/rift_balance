@@ -29,7 +29,7 @@ EntityBlueprint
 			}		
 		}
 		
-		resource_requirement "carbon_vein|iron_vein" 
+		resource_requirement "carbon_vein|iron_vein|ammonium_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
 	}
 
 	ResourceConverterDesc
@@ -47,14 +47,44 @@ EntityBlueprint
 				resource 			"carbon_vein"
 				value			 	"1"
 				family				"base"
-			}
-			
+			}			
 			GameplayResource
 			{
 				resource 			"iron_vein"
 				value			 	"1"
 				family				"base"
+			}			
+			GameplayResource
+			{
+				resource 			"ammonium_vein"
+				value			 	"1"
+				family				"base"
 			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt_vein"
+				value			 	"1"
+				family				"rare"
+			}
+			GameplayResource
+			{
+				resource 			"palladium_vein"
+				value			 	"1"
+				family				"rare"
+			}			
+			GameplayResource
+			{
+				resource 			"titanium_vein"
+				value			 	"1"
+				family				"rare"
+			}			
+			GameplayResource
+			{
+				resource 			"uranium_ore_vein"
+				value			 	"1"
+				family				"rare"
+			}			
 		}
 		
 		out
@@ -65,12 +95,42 @@ EntityBlueprint
 				value			 	"1"
 				family				"base"
 			}
-			
 			GameplayResource
 			{
 				resource 			"steel"
 				value			 	"1"
 				family				"base"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value			 	"1"
+				family				"base"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt"
+				value			 	"1"
+				family				"rare"
+			}		
+			GameplayResource
+			{
+				resource 			"palladium"
+				value			 	"1"
+				family				"rare"
+			}
+			GameplayResource
+			{
+				resource 			"titanium"
+				value			 	"1"
+				family				"rare"
+			}	
+			GameplayResource
+			{
+				resource 			"uranium_ore"
+				value			 	"1"
+				family				"rare"
 			}
 		}		
 		priority 4	

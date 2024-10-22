@@ -13,22 +13,22 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_heavy_artillery"
 		menu_icon			"gui/hud/building_icons/tower_heavy_artillery_lvl3"
 		require 			"headquarters"
-		order				"16"
+		order				"31"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		//upgrade				"buildings/defense/tower_heavy_artillery_lvl_4"
 		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		check_connect		"1"
-		condition			"BIOME"	
-		condition_value		"magma,jungle,desert,acid,metallic,legacy_maps"			
+		condition			"NOT_BIOME"	
+		condition_value		"caverns"			
 		
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 26
+				building_time 30
 				building_cost
 				{
 					carbonium 	"2000"
@@ -51,7 +51,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"plasma_charged"
-				value 		"25"
+				value 		"20"
 				attachment	"att_in_1"
 			}			
 		}
@@ -141,6 +141,7 @@ EntityBlueprint
 	TowerDesc
 	{
 	}
+	
 	TurretDesc
 	{
 		target "ground_unit_artillery|ground_unit_large|ground_unit_medium|ground_unit"
@@ -157,7 +158,6 @@ EntityBlueprint
 		aiming_target_time "2"
 		aiming_idle_angle "20"
 		pitch "be_barrel"
-		gravity_factor "8"
 		yaw "be_turret"
 		check_target_visibility "1"
 		fog_of_war_filtering "1"
