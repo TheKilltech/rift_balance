@@ -6225,12 +6225,6 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/defense/tower_cannon_acid"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/defense/tower_cannon_lvl_2"
 							is_visible "1"
 						}
@@ -6355,12 +6349,6 @@ Research
 
 					research_awards
 					{
-						ResearchAward
-						{
-							blueprint "buildings/defense/tower_cannon_incindiary"
-							is_visible "1"
-						}
-
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_cannon_lvl_3"
@@ -29478,7 +29466,7 @@ Research
 
 					}
 
-					research_name "gui/menu/research/name/towers_artillery_napalm"
+					research_name "gui/menu/research/name/tower_artillery_napalm"
 					research_costs
 					{
 						ResearchCost
@@ -29493,7 +29481,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1035.000"
+						x "-1089.000"
 						y "-180.000"
 					}
 
@@ -29540,8 +29528,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-1080.000"
-						y "-180.000"
+						x "-1089.000"
+						y "-135.000"
 					}
 
 					research_awards
@@ -29874,6 +29862,154 @@ Research
 					icon "gui/menu/research/icons/gas_energy"
 				}
 
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_water_basic_lvl1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/towers_minigun_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_water_minigun"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "2200.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-918.000"
+						y "-180.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_minigun_platform"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_water_basic"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/high_caliber_weapons_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_cannon_acid"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "900.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1035.000"
+						y "-180.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_cannon_acid"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_basic"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/high_caliber_weapons_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_cannon_incindiary"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "1100.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1035.000"
+						y "-135.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_cannon_incindiary"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_basic"
+				}
+
 			}
 
 		}
@@ -29882,6 +30018,6 @@ Research
 
 	type
 	editor "6197"
-	version "133"
+	version "134"
 }
 
