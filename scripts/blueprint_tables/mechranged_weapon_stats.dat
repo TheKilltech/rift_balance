@@ -794,7 +794,7 @@ items/weapons/aa_plasma_gun_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -990,7 +990,7 @@ items/weapons/aa_plasma_gun_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl3"
 		damage_type "energy"
 		rarity "EXTREME"
 		stat_def_vec
@@ -1128,7 +1128,7 @@ items/weapons/aa_plasma_gun_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "2.500"
+				default_value "2.600"
 				max_value "2.400"
 				min_value "2.100"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -1355,7 +1355,7 @@ items/weapons/aa_plasma_gun_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_energy_cell"
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -1816,7 +1816,7 @@ items/weapons/acid_spitter_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "15.800"
+				default_value "18.300"
 				max_value "17.500"
 				min_value "12.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -2107,9 +2107,9 @@ items/weapons/acid_spitter_superior_item
 
 			WeaponStatDef
 			{
-				default_value "30.000"
-				max_value "29.000"
-				min_value "20.000"
+				default_value "29.500"
+				max_value "27.000"
+				min_value "19.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -3629,7 +3629,7 @@ items/weapons/bouncing_blades_advanced_item
 				default_value "1000.000"
 				max_value "1000.000"
 				min_value "1000.000"
-				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
@@ -3677,9 +3677,9 @@ items/weapons/bouncing_blades_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "3.700"
+				default_value "3.800"
 				max_value "3.500"
-				min_value "3.000"
+				min_value "2.500"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -3826,7 +3826,7 @@ items/weapons/bouncing_blades_extreme_item
 				default_value "1000.000"
 				max_value "1000.000"
 				min_value "1000.000"
-				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
@@ -3874,9 +3874,9 @@ items/weapons/bouncing_blades_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "6.100"
-				max_value "5.900"
-				min_value "5.000"
+				default_value "4.500"
+				max_value "4.000"
+				min_value "2.500"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -4192,7 +4192,7 @@ items/weapons/bouncing_blades_superior_item
 				default_value "1000.000"
 				max_value "1000.000"
 				min_value "1000.000"
-				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
@@ -4240,9 +4240,9 @@ items/weapons/bouncing_blades_superior_item
 
 			WeaponStatDef
 			{
-				default_value "4.900"
+				default_value "5.300"
 				max_value "4.700"
-				min_value "4.100"
+				min_value "3.500"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -4436,8 +4436,8 @@ items/weapons/burst_rifle_advanced_item
 			WeaponStatDef
 			{
 				default_value "1.800"
-				max_value "1.700"
-				min_value "1.600"
+				max_value "1.600"
+				min_value "1.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -4629,8 +4629,8 @@ items/weapons/burst_rifle_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "1.700"
-				max_value "1.600"
+				default_value "2.000"
+				max_value "1.800"
 				min_value "1.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -4985,9 +4985,9 @@ items/weapons/burst_rifle_superior_item
 
 			WeaponStatDef
 			{
-				default_value "3.300"
+				default_value "3.500"
 				max_value "3.100"
-				min_value "2.300"
+				min_value "2.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -5042,7 +5042,7 @@ items/weapons/charged_bomb_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "energy"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -5165,9 +5165,9 @@ items/weapons/charged_bomb_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "2.250"
-				max_value "1.400"
-				min_value "1.100"
+				default_value "2.100"
+				max_value "1.900"
+				min_value "1.500"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -5198,7 +5198,7 @@ items/weapons/charged_bomb_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl3"
 		damage_type "energy"
 		rarity "EXTREME"
 		stat_def_vec
@@ -5321,9 +5321,9 @@ items/weapons/charged_bomb_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "3.750"
-				max_value "2.400"
-				min_value "2.100"
+				default_value "2.400"
+				max_value "2.100"
+				min_value "1.500"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -5492,7 +5492,7 @@ items/weapons/charged_bomb_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "energy"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -5616,8 +5616,8 @@ items/weapons/charged_bomb_superior_item
 			WeaponStatDef
 			{
 				default_value "3.000"
-				max_value "1.900"
-				min_value "1.600"
+				max_value "2.500"
+				min_value "1.900"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -5786,9 +5786,9 @@ items/weapons/corrosive_gun_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "17.000"
+				default_value "17.500"
 				max_value "16.000"
-				min_value "13.000"
+				min_value "12.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -5981,9 +5981,9 @@ items/weapons/corrosive_gun_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "26.000"
-				max_value "25.000"
-				min_value "22.000"
+				default_value "20.000"
+				max_value "18.000"
+				min_value "12.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -6339,8 +6339,8 @@ items/weapons/corrosive_gun_superior_item
 
 			WeaponStatDef
 			{
-				default_value "21.000"
-				max_value "20.000"
+				default_value "25.000"
+				max_value "22.000"
 				min_value "18.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -6508,7 +6508,7 @@ items/weapons/cryo_spitter_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "16.600"
+				default_value "16.500"
 				max_value "15.000"
 				min_value "12.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -6661,8 +6661,8 @@ items/weapons/cryo_spitter_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "16.000"
-				max_value "14.800"
+				default_value "18.000"
+				max_value "16.000"
 				min_value "12.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -6952,7 +6952,7 @@ items/weapons/cryo_spitter_superior_item
 
 			WeaponStatDef
 			{
-				default_value "30.000"
+				default_value "32.000"
 				max_value "29.000"
 				min_value "20.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -7032,9 +7032,9 @@ items/weapons/cryogenic_atomizer_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "165.000"
-				max_value "160.000"
-				min_value "130.000"
+				default_value "162.000"
+				max_value "155.000"
+				min_value "110.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -7112,9 +7112,9 @@ items/weapons/cryogenic_atomizer_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "275.000"
-				max_value "270.000"
-				min_value "240.000"
+				default_value "190.000"
+				max_value "170.000"
+				min_value "110.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -7263,7 +7263,7 @@ items/weapons/cryogenic_atomizer_superior_item
 
 			WeaponStatDef
 			{
-				default_value "220.000"
+				default_value "238.000"
 				max_value "215.000"
 				min_value "185.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -7304,7 +7304,7 @@ items/weapons/crystal_gun_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_low_caliber"
+		ammo_storage "ammo_mech_low_caliber_lvl2"
 		damage_type "cryo"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -7418,8 +7418,8 @@ items/weapons/crystal_gun_advanced_item
 			WeaponStatDef
 			{
 				default_value "4.500"
-				max_value "4.400"
-				min_value "4.000"
+				max_value "4.200"
+				min_value "3.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -7484,7 +7484,7 @@ items/weapons/crystal_gun_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_low_caliber"
+		ammo_storage "ammo_mech_low_caliber_lvl3"
 		damage_type "cryo"
 		rarity "EXTREME"
 		stat_def_vec
@@ -7597,9 +7597,9 @@ items/weapons/crystal_gun_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "7.500"
-				max_value "7.400"
-				min_value "7.000"
+				default_value "4.900"
+				max_value "4.500"
+				min_value "3.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -7815,7 +7815,7 @@ items/weapons/crystal_gun_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_low_caliber"
+		ammo_storage "ammo_mech_low_caliber_lvl2"
 		damage_type "cryo"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -7929,8 +7929,8 @@ items/weapons/crystal_gun_superior_item
 			WeaponStatDef
 			{
 				default_value "6.000"
-				max_value "5.900"
-				min_value "5.500"
+				max_value "5.600"
+				min_value "4.600"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -8107,7 +8107,7 @@ items/weapons/fire_spitter_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "17.000"
+				default_value "17.600"
 				max_value "16.000"
 				min_value "12.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -8260,8 +8260,8 @@ items/weapons/fire_spitter_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "16.000"
-				max_value "15.500"
+				default_value "20.000"
+				max_value "18.000"
 				min_value "12.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -8551,9 +8551,9 @@ items/weapons/fire_spitter_superior_item
 
 			WeaponStatDef
 			{
-				default_value "30.000"
-				max_value "29.000"
-				min_value "20.000"
+				default_value "25.000"
+				max_value "22.000"
+				min_value "18.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -8631,9 +8631,9 @@ items/weapons/flamer_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "165.000"
-				max_value "160.000"
-				min_value "130.000"
+				default_value "160.000"
+				max_value "150.000"
+				min_value "111.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -8711,9 +8711,9 @@ items/weapons/flamer_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "275.000"
-				max_value "270.000"
-				min_value "240.000"
+				default_value "185.000"
+				max_value "170.000"
+				min_value "111.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -8790,9 +8790,9 @@ items/weapons/flamer_item
 
 			WeaponStatDef
 			{
-				default_value "110.000"
-				max_value "110.000"
-				min_value "110.000"
+				default_value "111.000"
+				max_value "111.000"
+				min_value "111.000"
 				stat_features "BASE_DEFAULT"
 				stat_type "AMMO_COST"
 			}
@@ -8862,9 +8862,9 @@ items/weapons/flamer_superior_item
 
 			WeaponStatDef
 			{
-				default_value "220.000"
+				default_value "230.000"
 				max_value "215.000"
-				min_value "185.000"
+				min_value "180.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -9023,7 +9023,7 @@ items/weapons/floating_mines_acid_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "2.500"
+				default_value "2.800"
 				max_value "2.600"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -9168,8 +9168,8 @@ items/weapons/floating_mines_acid_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "2.500"
-				max_value "2.400"
+				default_value "3.200"
+				max_value "3.000"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -9440,8 +9440,8 @@ items/weapons/floating_mines_acid_superior_item
 
 			WeaponStatDef
 			{
-				default_value "5.500"
-				max_value "5.300"
+				default_value "5.400"
+				max_value "5.000"
 				min_value "3.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -9585,7 +9585,7 @@ items/weapons/floating_mines_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "2.700"
+				default_value "2.800"
 				max_value "2.600"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -9730,7 +9730,7 @@ items/weapons/floating_mines_cryo_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "2.700"
+				default_value "2.800"
 				max_value "2.600"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -9875,8 +9875,8 @@ items/weapons/floating_mines_cryo_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "2.500"
-				max_value "2.300"
+				default_value "3.200"
+				max_value "3.000"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -10150,8 +10150,8 @@ items/weapons/floating_mines_cryo_superior_item
 
 			WeaponStatDef
 			{
-				default_value "5.500"
-				max_value "5.300"
+				default_value "5.400"
+				max_value "5.000"
 				min_value "3.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -10295,8 +10295,8 @@ items/weapons/floating_mines_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "2.500"
-				max_value "2.400"
+				default_value "3.200"
+				max_value "3.000"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -10440,7 +10440,7 @@ items/weapons/floating_mines_gravity_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "2.700"
+				default_value "2.800"
 				max_value "2.600"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -10585,8 +10585,8 @@ items/weapons/floating_mines_gravity_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "2.500"
-				max_value "2.400"
+				default_value "3.200"
+				max_value "3.000"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -10857,8 +10857,8 @@ items/weapons/floating_mines_gravity_superior_item
 
 			WeaponStatDef
 			{
-				default_value "5.500"
-				max_value "5.300"
+				default_value "5.400"
+				max_value "5.000"
 				min_value "3.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -11002,7 +11002,7 @@ items/weapons/floating_mines_incendiary_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "2.700"
+				default_value "2.800"
 				max_value "2.600"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -11147,8 +11147,8 @@ items/weapons/floating_mines_incendiary_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "2.500"
-				max_value "2.400"
+				default_value "3.200"
+				max_value "3.000"
 				min_value "2.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -11422,8 +11422,8 @@ items/weapons/floating_mines_incendiary_superior_item
 
 			WeaponStatDef
 			{
-				default_value "5.500"
-				max_value "5.300"
+				default_value "5.400"
+				max_value "5.000"
 				min_value "3.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -11694,8 +11694,8 @@ items/weapons/floating_mines_superior_item
 
 			WeaponStatDef
 			{
-				default_value "5.500"
-				max_value "5.300"
+				default_value "5.400"
+				max_value "5.000"
 				min_value "3.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -11841,9 +11841,9 @@ items/weapons/grenade_launcher_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "2.250"
+				default_value "2.300"
 				max_value "2.100"
-				min_value "1.800"
+				min_value "1.500"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -11996,9 +11996,9 @@ items/weapons/grenade_launcher_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "3.750"
-				max_value "3.600"
-				min_value "3.200"
+				default_value "2.800"
+				max_value "2.500"
+				min_value "1.500"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -12285,9 +12285,9 @@ items/weapons/grenade_launcher_superior_item
 
 			WeaponStatDef
 			{
-				default_value "3.000"
-				max_value "2.800"
-				min_value "2.500"
+				default_value "5.400"
+				max_value "3.200"
+				min_value "2.400"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -12319,7 +12319,7 @@ items/weapons/heavy_plasma_advanced_item
 	WeaponItemDesc
 	{
 		ammo_storage "ammo_mech_energy_cell_lvl2"
-		damage_type "energy"
+		damage_type "fire"
 		rarity "ADVANCED"
 		stat_def_vec
 		{
@@ -12458,7 +12458,7 @@ items/weapons/heavy_plasma_advanced_item
 			{
 				default_value "7.500"
 				max_value "7.300"
-				min_value "7.000"
+				min_value "5.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -12506,7 +12506,7 @@ items/weapons/heavy_plasma_extreme_item
 	WeaponItemDesc
 	{
 		ammo_storage "ammo_mech_energy_cell_lvl3"
-		damage_type "energy"
+		damage_type "fire"
 		rarity "EXTREME"
 		stat_def_vec
 		{
@@ -12643,9 +12643,9 @@ items/weapons/heavy_plasma_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "12.500"
-				max_value "12.200"
-				min_value "11.000"
+				default_value "10.000"
+				max_value "9.000"
+				min_value "5.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -12693,7 +12693,7 @@ items/weapons/heavy_plasma_item
 	WeaponItemDesc
 	{
 		ammo_storage "ammo_mech_energy_cell"
-		damage_type "energy"
+		damage_type "fire"
 		stat_def_vec
 		{
 			WeaponStatDef
@@ -12856,7 +12856,7 @@ items/weapons/heavy_plasma_superior_item
 	WeaponItemDesc
 	{
 		ammo_storage "ammo_mech_energy_cell_lvl2"
-		damage_type "energy"
+		damage_type "fire"
 		rarity "SUPERIOR"
 		stat_def_vec
 		{
@@ -12993,9 +12993,9 @@ items/weapons/heavy_plasma_superior_item
 
 			WeaponStatDef
 			{
-				default_value "10.000"
-				max_value "9.800"
-				min_value "9.300"
+				default_value "11.200"
+				max_value "10.000"
+				min_value "9.200"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -13042,7 +13042,7 @@ items/weapons/insect_gun_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "area"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -13182,7 +13182,7 @@ items/weapons/insect_gun_advanced_item
 			{
 				default_value "0.150"
 				max_value "0.130"
-				min_value "0.110"
+				min_value "0.100"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -13238,7 +13238,7 @@ items/weapons/insect_gun_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl3"
 		damage_type "area"
 		rarity "EXTREME"
 		stat_def_vec
@@ -13376,9 +13376,9 @@ items/weapons/insect_gun_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "0.250"
-				max_value "0.230"
-				min_value "0.200"
+				default_value "0.170"
+				max_value "0.150"
+				min_value "0.100"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -13603,7 +13603,7 @@ items/weapons/insect_gun_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive"
+		ammo_storage "ammo_mech_explosive_lvl2"
 		damage_type "area"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -13864,7 +13864,7 @@ items/weapons/laser_advanced_item
 			{
 				default_value "18.000"
 				max_value "17.000"
-				min_value "15.000"
+				min_value "12.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -13974,9 +13974,9 @@ items/weapons/laser_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "32.000"
-				max_value "31.000"
-				min_value "29.000"
+				default_value "24.000"
+				max_value "22.000"
+				min_value "12.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -14367,8 +14367,8 @@ items/weapons/lava_gun_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "51.000"
-				max_value "48.000"
+				default_value "46.000"
+				max_value "44.000"
 				min_value "36.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -14562,7 +14562,7 @@ items/weapons/lava_gun_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "49.000"
+				default_value "51.000"
 				max_value "48.000"
 				min_value "36.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -14923,7 +14923,7 @@ items/weapons/lava_gun_superior_item
 
 			WeaponStatDef
 			{
-				default_value "85.000"
+				default_value "87.000"
 				max_value "83.000"
 				min_value "65.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -15145,8 +15145,8 @@ items/weapons/lightning_gun_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "10.500"
-				max_value "10.000"
+				default_value "12.000"
+				max_value "11.000"
 				min_value "7.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -15487,7 +15487,7 @@ items/weapons/minigun_advanced_item
 			WeaponStatDef
 			{
 				default_value "2.400"
-				max_value "2.300"
+				max_value "2.100"
 				min_value "1.600"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -15665,8 +15665,8 @@ items/weapons/minigun_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "2.300"
-				max_value "2.200"
+				default_value "2.600"
+				max_value "2.400"
 				min_value "1.600"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -15991,7 +15991,7 @@ items/weapons/minigun_superior_item
 
 			WeaponStatDef
 			{
-				default_value "4.500"
+				default_value "4.600"
 				max_value "4.300"
 				min_value "3.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -16189,7 +16189,7 @@ items/weapons/mortar_advanced_item
 			{
 				default_value "1.500"
 				max_value "1.400"
-				min_value "1.200"
+				min_value "1.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -16350,9 +16350,9 @@ items/weapons/mortar_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "2.500"
-				max_value "2.300"
-				min_value "2.100"
+				default_value "1.900"
+				max_value "1.700"
+				min_value "1.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -16656,8 +16656,8 @@ items/weapons/mortar_superior_item
 
 			WeaponStatDef
 			{
-				default_value "2.000"
-				max_value "1.800"
+				default_value "2.100"
+				max_value "1.900"
 				min_value "1.600"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -16837,7 +16837,7 @@ items/weapons/plasma_gun_advanced_item
 			{
 				default_value "1.500"
 				max_value "1.400"
-				min_value "1.200"
+				min_value "1.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -17030,8 +17030,8 @@ items/weapons/plasma_gun_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "1.450"
-				max_value "1.400"
+				default_value "1.900"
+				max_value "1.700"
 				min_value "1.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -17388,9 +17388,9 @@ items/weapons/plasma_gun_superior_item
 
 			WeaponStatDef
 			{
-				default_value "2.500"
-				max_value "2.400"
-				min_value "1.800"
+				default_value "2.100"
+				max_value "1.900"
+				min_value "1.600"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -17740,8 +17740,8 @@ items/weapons/railgun_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "15.000"
-				max_value "14.000"
+				default_value "17.000"
+				max_value "16.000"
 				min_value "10.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -18060,7 +18060,7 @@ items/weapons/railgun_superior_item
 
 			WeaponStatDef
 			{
-				default_value "25.000"
+				default_value "26.000"
 				max_value "24.000"
 				min_value "16.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -18434,8 +18434,8 @@ items/weapons/rocket_launcher_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "1.450"
-				max_value "1.400"
+				default_value "1.750"
+				max_value "1.600"
 				min_value "1.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -18965,9 +18965,9 @@ items/weapons/root_gun_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "7.500"
+				default_value "7.300"
 				max_value "7.000"
-				min_value "6.500"
+				min_value "5.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -19176,9 +19176,9 @@ items/weapons/root_gun_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "12.500"
-				max_value "11.500"
-				min_value "10.500"
+				default_value "9.600"
+				max_value "9.000"
+				min_value "5.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -19566,9 +19566,9 @@ items/weapons/root_gun_superior_item
 
 			WeaponStatDef
 			{
-				default_value "10.000"
-				max_value "9.500"
-				min_value "8.000"
+				default_value "11.600"
+				max_value "11.000"
+				min_value "9.500"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -19779,7 +19779,7 @@ items/weapons/semi_auto_advanced_item
 			{
 				default_value "1.500"
 				max_value "1.400"
-				min_value "1.200"
+				min_value "1.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -19972,9 +19972,9 @@ items/weapons/semi_auto_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "2.500"
-				max_value "2.400"
-				min_value "2.000"
+				default_value "1.750"
+				max_value "1.600"
+				min_value "1.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -20694,8 +20694,8 @@ items/weapons/shotgun_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "1.150"
-				max_value "1.100"
+				default_value "1.450"
+				max_value "1.300"
 				min_value "0.800"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -21026,7 +21026,7 @@ items/weapons/shotgun_superior_item
 
 			WeaponStatDef
 			{
-				default_value "2.200"
+				default_value "2.300"
 				max_value "2.100"
 				min_value "1.400"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -21539,8 +21539,8 @@ items/weapons/small_machinegun_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "1.450"
-				max_value "1.400"
+				default_value "1.750"
+				max_value "1.600"
 				min_value "1.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -21866,7 +21866,7 @@ items/weapons/small_machinegun_superior_item
 
 			WeaponStatDef
 			{
-				default_value "2.500"
+				default_value "2.600"
 				max_value "2.400"
 				min_value "1.600"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
@@ -22070,8 +22070,8 @@ items/weapons/sniper_rifle_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "18.000"
-				max_value "17.000"
+				default_value "17.000"
+				max_value "16.000"
 				min_value "12.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -22257,8 +22257,8 @@ items/weapons/sniper_rifle_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "17.500"
-				max_value "17.000"
+				default_value "18.300"
+				max_value "17.400"
 				min_value "12.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -22599,8 +22599,8 @@ items/weapons/sniper_rifle_superior_item
 
 			WeaponStatDef
 			{
-				default_value "30.000"
-				max_value "29.000"
+				default_value "28.600"
+				max_value "26.000"
 				min_value "19.000"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
@@ -22788,7 +22788,7 @@ items/weapons/swarm_missiles_advanced_item
 			{
 				default_value "0.150"
 				max_value "0.140"
-				min_value "0.120"
+				min_value "0.100"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
@@ -22981,9 +22981,9 @@ items/weapons/swarm_missiles_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "0.250"
-				max_value "0.230"
-				min_value "0.200"
+				default_value "1.850"
+				max_value "0.170"
+				min_value "0.100"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_COST"
 			}
