@@ -5548,13 +5548,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/towers_artillery_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/ammo_explosive_lvl2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
@@ -26249,6 +26242,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/resource_handling_palladium"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/bio_palladium"
@@ -26342,6 +26342,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/resource_handling_titanium"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/bio_titanium"
@@ -26433,6 +26440,13 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/bio_processing"
 							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/resource_handling_uranium"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -26586,6 +26600,13 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/bio_processing"
 							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/resource_handling_cobalt"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -29547,7 +29568,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags
+					research_flags "hidden"
 					requirement_tooltip
 					requirements
 					{
@@ -29566,8 +29587,8 @@ Research
 						ResearchCost
 						{
 							amount "0.000"
-							resource "download"
-							count "1500.000"
+							resource "analysis"
+							count "1000.000"
 						}
 
 					}
@@ -29594,7 +29615,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags
+					research_flags "hidden"
 					requirement_tooltip
 					requirements
 					{
@@ -29620,8 +29641,8 @@ Research
 						ResearchCost
 						{
 							amount "0.000"
-							resource "download"
-							count "2000.000"
+							resource "analysis"
+							count "1500.000"
 						}
 
 					}
@@ -29648,7 +29669,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags
+					research_flags "hidden"
 					requirement_tooltip
 					requirements
 					{
@@ -29674,8 +29695,8 @@ Research
 						ResearchCost
 						{
 							amount "0.000"
-							resource "download"
-							count "2500.000"
+							resource "analysis"
+							count "2000.000"
 						}
 
 					}
@@ -30018,6 +30039,6 @@ Research
 
 	type
 	editor "6197"
-	version "134"
+	version "135"
 }
 
