@@ -169,46 +169,28 @@ return function()
 	
 	rules.prepareAttackDefinitions =
 	{
-		 -- difficulty level 1
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 2
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 3		
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 4		
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 5		
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 6		
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 7		
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 8		
-			"logic/dom/attack_level_1_prepare.logic",
-		 -- difficulty level 9		
-			"logic/dom/attack_level_1_prepare.logic",		
+		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 1
+		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 2
+		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 3
+		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 4
+		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 5
+		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 6
+		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 7
+		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 8
+		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 9
 	}
 
 	rules.wavesEntryDefinitions =
 	{
-		 -- difficulty level 1
-			"logic/dom/attack_level_1_entry.logic",
-		 -- difficulty level 2
-			"logic/dom/attack_level_2_entry.logic",
-		 -- difficulty level 3		
-			"logic/dom/attack_level_2_entry.logic",
-		 -- difficulty level 4		
-			"logic/dom/attack_level_2_entry.logic",
-		 -- difficulty level 5		
-			"logic/dom/attack_level_2_entry.logic",
-		 -- difficulty level 6		
-			"logic/dom/attack_level_2_entry.logic",
-		 -- difficulty level 7		
-			"logic/dom/attack_level_2_entry.logic",
-		 -- difficulty level 8		
-			"logic/dom/attack_level_2_entry.logic",
-		 -- difficulty level 9		
-			"logic/dom/attack_level_2_entry.logic",		
+		"logic/dom/attack_level_1_entry.logic",-- difficulty level 1
+		"logic/dom/attack_level_2_entry.logic",-- difficulty level 2
+		"logic/dom/attack_level_2_entry.logic",-- difficulty level 3
+		"logic/dom/attack_level_2_entry.logic",-- difficulty level 4
+		"logic/dom/attack_level_2_entry.logic",-- difficulty level 5
+		"logic/dom/attack_level_2_entry.logic",-- difficulty level 6
+		"logic/dom/attack_level_2_entry.logic",-- difficulty level 7
+		"logic/dom/attack_level_2_entry.logic",-- difficulty level 8
+		"logic/dom/attack_level_2_entry.logic",-- difficulty level 9
 	}
 
 	rules.waves = 

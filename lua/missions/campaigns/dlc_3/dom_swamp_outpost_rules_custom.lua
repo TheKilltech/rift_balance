@@ -1,8 +1,8 @@
 require("lua/utils/rules_utils.lua")
 
 return function()
-	
-	local rulesName = GetRulesForCustomDifficulty( "lua/missions/campaigns/dlc_1/dom_metallic_outpost_rules_" )
+
+	local rulesName = GetRulesForCustomDifficulty( "lua/missions/campaigns/dlc_3/dom_swamp_outpost_rules_" )
 	rules = require( rulesName )()	
 
 	local attackCountMultiplier			= DifficultyService:GetAttacksCountMultiplier()

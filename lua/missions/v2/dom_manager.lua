@@ -1266,6 +1266,9 @@ function dom_mananger:OnEnterCooldownAfterSpawnTime( state )
 	self.coolEventSpawnTime = {}
 	if ((self.waveRepeated or 0) == 0) then
 		local rngRoll = RandInt(0, 100)	
+		if (not self.rules.spawnCooldownEventChance) then
+			self.rules.spawnCooldownEventChance = { 25, 5, 1}
+		end
 		for i,prob in ipairs(self.rules.spawnCooldownEventChance) do
 			local isSet = false
 			if (prob and prob >= rngRoll) then
