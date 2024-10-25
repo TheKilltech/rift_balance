@@ -1,31 +1,10 @@
 return function()
     local rules = require("lua/missions/campaigns/story/v2/jungle/dom_jungle_resource_outpost_rules_default.lua")()
 	
-	rules.timeToNextDifficultyLevel = 
-	{			
-		200, -- difficulty level 1
-		300, -- difficulty level 2
-		300, -- difficulty level 3	
-		300, -- difficulty level 4
-		450, -- difficulty level 5
-		450, -- difficulty level 6
-		450, -- difficulty level 7
-		450, -- difficulty level 8
-		450, -- difficulty level 9
-	}
-	
-	rules.idleTime = 
-	{			
-		450,  -- difficulty level 1
-		450,  -- difficulty level 2
-		450,  -- difficulty level 3
-		600,  -- difficulty level 4	
-		600,  -- difficulty level 5	
-		600,  -- difficulty level 6	
-		720,  -- difficulty level 7
-		720,  -- difficulty level 8	
-		720,  -- difficulty level 9	
-	}
+	for i = 1, 9 do
+		rules.timeToNextDifficultyLevel[i] = rules.timeToNextDifficultyLevel[i] * 0.7
+		rules.idleTime[i]                  = rules.idleTime[i] * 0.7
+	end
 	
 	rules.maxAttackCountPerDifficulty = 
 	{			
