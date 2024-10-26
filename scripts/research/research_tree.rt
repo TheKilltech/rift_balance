@@ -3010,12 +3010,6 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/main/fluorine_trap"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/resources/rare_element_mine"
 							is_visible "1"
 						}
@@ -6760,6 +6754,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl4"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_low_caliber_lvl3"
@@ -6769,7 +6770,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "2500.000"
+							count "3500.000"
 						}
 
 					}
@@ -6873,6 +6874,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl2"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_low_caliber_lvl2"
@@ -6938,6 +6946,12 @@ Research
 
 						ResearchAward
 						{
+							blueprint "buildings/main/armory_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "resources/ammo_mech_low_caliber_lvl2"
 							is_visible "1"
 						}
@@ -6978,6 +6992,13 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/defensive_buildings_lvl2"
 							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl3"
+							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
 					}
@@ -7080,6 +7101,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl4"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_high_caliber_lvl3"
@@ -7089,7 +7117,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "3000.000"
+							count "4000.000"
 						}
 
 					}
@@ -7193,6 +7221,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl3"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_explosive_lvl2"
@@ -7293,6 +7328,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl4"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_explosive_lvl3"
@@ -7302,7 +7344,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "3500.000"
+							count "4500.000"
 						}
 
 					}
@@ -7404,6 +7446,13 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/towers_flamer_lvl1"
 							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl3"
+							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
 					}
@@ -7512,6 +7561,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl4"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_liquid_lvl3"
@@ -7521,7 +7577,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "2500.000"
+							count "3500.000"
 						}
 
 					}
@@ -7712,6 +7768,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl4"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_energy_cell_lvl3"
@@ -7721,7 +7784,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "2500.000"
+							count "3500.000"
 						}
 
 					}
@@ -8122,6 +8185,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl5"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_low_caliber_lvl4"
@@ -8131,7 +8201,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "4000.000"
+							count "5000.000"
 						}
 
 					}
@@ -8710,6 +8780,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl5"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_high_caliber_lvl4"
@@ -8719,7 +8796,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "3000.000"
+							count "4000.000"
 						}
 
 					}
@@ -8946,6 +9023,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl5"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_liquid_lvl4"
@@ -9025,6 +9109,13 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/ammo_energy_cell_lvl3"
 							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl5"
+							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
 					}
@@ -9263,6 +9354,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/armory_lvl5"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_explosive_lvl4"
@@ -9272,7 +9370,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "3500.000"
+							count "7500.000"
 						}
 
 					}
@@ -9370,7 +9468,7 @@ Research
 					research_scripts
 					position
 					{
-						x "423.000"
+						x "441.000"
 						y "-261.000"
 					}
 
@@ -10953,13 +11051,6 @@ Research
 
 						ResearchNodeRequirement
 						{
-							render_line "1"
-							research_name "gui/menu/research/name/resource_handling_hazenite"
-							research_category "gui/menu/research/category_alien"
-						}
-
-						ResearchNodeRequirement
-						{
 							render_line "0"
 							research_name "gui/menu/research/name/ammo_low_caliber_lvl2"
 							research_category "gui/menu/research/category_base_buildings"
@@ -10994,233 +11085,9 @@ Research
 							is_visible "1"
 						}
 
-						ResearchAward
-						{
-							blueprint "resources/ammo_mech_low_caliber_lvl2"
-							is_visible "1"
-						}
-
 					}
 
 					icon "gui/menu/research/icons/mech_weapons_equipment"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/mech_weapons_explosive_superior"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/armory_lvl5"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/ammo_explosive_lvl3"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/mech_weapons_explosive_extreme"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "12500.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "495.000"
-						y "270.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "items/weapons/floating_mines_extreme_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/grenade_launcher_extreme_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/rocket_launcher_extreme_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "resources/ammo_mech_explosive_lvl3"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/mech_weapons_explosive"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/mech_weapons_explosive_advanced"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/armory_lvl4"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/mech_weapons_explosive_superior"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "7000.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "495.000"
-						y "126.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "items/weapons/floating_mines_superior_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/grenade_launcher_superior_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/rocket_launcher_superior_item"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/mech_weapons_explosive"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/mech_weapons_explosive_standard"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/armory_lvl3"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/ammo_explosive_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/mech_weapons_explosive_advanced"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "3500.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "495.000"
-						y "-36.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "items/weapons/floating_mines_advanced_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/grenade_launcher_advanced_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/rocket_launcher_advanced_item"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/mech_weapons_explosive"
 				}
 
 				ResearchNode
@@ -11292,15 +11159,8 @@ Research
 
 						ResearchNodeRequirement
 						{
-							render_line "1"
-							research_name "gui/menu/research/name/armory_lvl4"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/towers_flamer_lvl3"
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_liquid_lvl3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -11321,7 +11181,7 @@ Research
 					research_scripts
 					position
 					{
-						x "423.000"
+						x "441.000"
 						y "126.000"
 					}
 
@@ -11407,13 +11267,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/armory_lvl2"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/mech_weapons_liquid_standard"
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
@@ -11442,7 +11295,7 @@ Research
 					research_scripts
 					position
 					{
-						x "423.000"
+						x "441.000"
 						y "-180.000"
 					}
 
@@ -11474,9 +11327,9 @@ Research
 
 						ResearchNodeRequirement
 						{
-							render_line "1"
-							research_name "gui/menu/research/name/armory_lvl5"
-							research_category "gui/menu/research/category_weapons_equipment"
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_energy_cell_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -11494,54 +11347,14 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_energy"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "4"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
-						x "549.000"
+						x "702.000"
 						y "270.000"
 					}
 
 					research_awards
 					{
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_energy_ext"
-							is_visible "1"
-						}
-
 						ResearchAward
 						{
 							blueprint "items/weapons/blaster_extreme_item"
@@ -11551,12 +11364,6 @@ Research
 						ResearchAward
 						{
 							blueprint "items/weapons/plasma_gun_extreme_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "resources/ammo_mech_energy_cell_lvl3"
 							is_visible "1"
 						}
 
@@ -11675,91 +11482,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/mech_weapons_high_caliber_superior"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/armory_lvl5"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/ammo_high_caliber_lvl3"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/mech_weapons_high_caliber_extreme"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "10000.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "603.000"
-						y "270.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_highcaliber_ext_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/burst_rifle_extreme_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/shotgun_extreme_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/sniper_rifle_extreme_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "resources/ammo_mech_high_caliber_lvl3"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/mech_weapons_high_caliber"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/consumable_nuclear_mine_standard"
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
@@ -11842,7 +11564,7 @@ Research
 					research_scripts
 					position
 					{
-						x "423.000"
+						x "441.000"
 						y "-36.000"
 					}
 
@@ -11857,72 +11579,6 @@ Research
 					}
 
 					icon "gui/menu/research/icons/mech_weapons_liquid"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/mech_weapons_high_caliber_advanced"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/armory_lvl4"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/mech_weapons_high_caliber_superior"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "6000.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "603.000"
-						y "126.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "items/weapons/burst_rifle_superior_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/shotgun_superior_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/sniper_rifle_superior_item"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/mech_weapons_high_caliber"
 				}
 
 				ResearchNode
@@ -12712,12 +12368,6 @@ Research
 							is_visible "1"
 						}
 
-						ResearchAward
-						{
-							blueprint "resources/ammo_mech_low_caliber_lvl3"
-							is_visible "1"
-						}
-
 					}
 
 					icon "gui/menu/research/icons/mech_weapons_equipment"
@@ -12976,13 +12626,6 @@ Research
 
 						ResearchNodeRequirement
 						{
-							render_line "1"
-							research_name "gui/menu/research/name/armory_lvl3"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
 							render_line "0"
 							research_name "gui/menu/research/name/ammo_energy_cell_lvl2"
 							research_category "gui/menu/research/category_base_buildings"
@@ -13003,43 +12646,9 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_energy"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
-						x "549.000"
+						x "702.000"
 						y "-36.000"
 					}
 
@@ -13230,13 +12839,6 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/ammo_low_caliber_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_small_caliber_superior"
@@ -13252,40 +12854,6 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_lowcaliber"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
 						x "72.000"
@@ -13318,13 +12886,6 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/armory_lvl4"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_energy_superior"
@@ -13334,49 +12895,15 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "5000.000"
+							count "7500.000"
 						}
 
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_energy"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
-						x "549.000"
+						x "702.000"
 						y "126.000"
 					}
 
@@ -13645,7 +13172,7 @@ Research
 					research_scripts
 					position
 					{
-						x "549.000"
+						x "702.000"
 						y "-180.000"
 					}
 
@@ -13704,7 +13231,7 @@ Research
 					research_scripts
 					position
 					{
-						x "495.000"
+						x "585.000"
 						y "-261.000"
 					}
 
@@ -14023,91 +13550,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/mech_weapons_high_caliber_standard"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/armory_lvl3"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/ammo_high_caliber_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/mech_weapons_high_caliber_advanced"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0.000"
-							resource "download"
-							count "3000.000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "603.000"
-						y "-36.000"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/burst_rifle_advanced_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/shotgun_advanced_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "items/weapons/sniper_rifle_advanced_item"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "resources/ammo_mech_high_caliber_lvl2"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/mech_weapons_high_caliber"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/mech_weapons_minigun_standard"
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
@@ -14183,7 +13625,7 @@ Research
 					research_scripts
 					position
 					{
-						x "603.000"
+						x "846.000"
 						y "-180.000"
 					}
 
@@ -14900,7 +14342,7 @@ Research
 					research_scripts
 					position
 					{
-						x "576.000"
+						x "729.000"
 						y "-126.000"
 					}
 
@@ -14910,12 +14352,6 @@ Research
 						{
 							blueprint "items/weapons/heavy_plasma_item"
 							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "resources/ammo_mech_energy_cell"
-							is_visible "0"
 						}
 
 					}
@@ -14960,7 +14396,7 @@ Research
 					research_scripts
 					position
 					{
-						x "576.000"
+						x "729.000"
 						y "27.000"
 					}
 
@@ -15014,7 +14450,7 @@ Research
 					research_scripts
 					position
 					{
-						x "576.000"
+						x "729.000"
 						y "189.000"
 					}
 
@@ -15068,7 +14504,7 @@ Research
 					research_scripts
 					position
 					{
-						x "576.000"
+						x "729.000"
 						y "333.000"
 					}
 
@@ -16443,8 +15879,8 @@ Research
 					research_scripts
 					position
 					{
-						x "630.000"
-						y "-126.000"
+						x "936.000"
+						y "-144.000"
 					}
 
 					research_awards
@@ -16475,9 +15911,9 @@ Research
 
 						ResearchNodeRequirement
 						{
-							render_line "1"
-							research_name "gui/menu/research/name/mech_weapons_high_caliber_advanced"
-							research_category "gui/menu/research/category_weapons_equipment"
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -16489,7 +15925,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "1500.000"
+							count "3000.000"
 						}
 
 					}
@@ -16497,8 +15933,8 @@ Research
 					research_scripts
 					position
 					{
-						x "630.000"
-						y "27.000"
+						x "936.000"
+						y "-36.000"
 					}
 
 					research_awards
@@ -16527,13 +15963,6 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/mech_weapons_high_caliber_superior"
-							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_bouncing_blades_superior"
@@ -16543,7 +15972,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "3000.000"
+							count "6000.000"
 						}
 
 					}
@@ -16551,8 +15980,8 @@ Research
 					research_scripts
 					position
 					{
-						x "630.000"
-						y "189.000"
+						x "936.000"
+						y "126.000"
 					}
 
 					research_awards
@@ -16583,9 +16012,9 @@ Research
 
 						ResearchNodeRequirement
 						{
-							render_line "1"
-							research_name "gui/menu/research/name/mech_weapons_high_caliber_extreme"
-							research_category "gui/menu/research/category_weapons_equipment"
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -16597,7 +16026,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "5000.000"
+							count "10000.000"
 						}
 
 					}
@@ -16605,8 +16034,8 @@ Research
 					research_scripts
 					position
 					{
-						x "630.000"
-						y "333.000"
+						x "936.000"
+						y "270.000"
 					}
 
 					research_awards
@@ -17513,7 +16942,7 @@ Research
 					research_scripts
 					position
 					{
-						x "468.000"
+						x "486.000"
 						y "-180.000"
 					}
 
@@ -17567,7 +16996,7 @@ Research
 					research_scripts
 					position
 					{
-						x "468.000"
+						x "486.000"
 						y "-108.000"
 					}
 
@@ -17621,7 +17050,7 @@ Research
 					research_scripts
 					position
 					{
-						x "468.000"
+						x "486.000"
 						y "27.000"
 					}
 
@@ -17675,7 +17104,7 @@ Research
 					research_scripts
 					position
 					{
-						x "468.000"
+						x "486.000"
 						y "189.000"
 					}
 
@@ -18317,6 +17746,960 @@ Research
 					}
 
 					icon "gui/menu/research/icons/mech_weapons_trident"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_high_caliber_standard"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_sniper_rifle_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "3000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "891.000"
+						y "-36.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/sniper_rifle_advanced_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_heavy_plasma"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_high_caliber_standard"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_burst_rifle_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "3000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "846.000"
+						y "-36.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/burst_rifle_advanced_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_high_caliber"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_high_caliber_standard"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_shotgun_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "3000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "801.000"
+						y "-36.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/shotgun_advanced_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_cryogenic_atomizer"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_sniper_rifle_lvl_2"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_sniper_rifle_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "7500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "891.000"
+						y "126.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/sniper_rifle_superior_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_heavy_plasma"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_burst_rifle_lvl_2"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_burst_rifle_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "6000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "846.000"
+						y "126.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/burst_rifle_superior_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_high_caliber"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_shotgun_lvl_2"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_shotgun_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "7000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "801.000"
+						y "126.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/shotgun_superior_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_cryogenic_atomizer"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_sniper_rifle_lvl_3"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_sniper_rifle_lvl_4"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "12000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "891.000"
+						y "270.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/sniper_rifle_extreme_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_heavy_plasma"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_burst_rifle_lvl_3"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_burst_rifle_lvl_4"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "10000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "846.000"
+						y "270.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/burst_rifle_extreme_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_high_caliber"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_shotgun_lvl_3"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_shotgun_lvl_4"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "11000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "801.000"
+						y "270.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/shotgun_extreme_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_cryogenic_atomizer"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_explosive_standard"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_explosive_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_granade_launcher_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "4000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "585.000"
+						y "-36.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/grenade_launcher_advanced_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_explosive"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_explosive_standard"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_explosive_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_rocket_launcher_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "3500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "540.000"
+						y "-36.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/rocket_launcher_advanced_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_mortar"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_explosive_standard"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_explosive_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_mine_layer_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "3000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "630.000"
+						y "-36.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/floating_mines_advanced_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_railgun"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_granade_launcher_lvl_2"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_granade_launcher_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "9000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "585.000"
+						y "126.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/floating_mines_superior_item"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "items/weapons/grenade_launcher_superior_item"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "items/weapons/rocket_launcher_superior_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_explosive"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_rocket_launcher_lvl_2"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_rocket_launcher_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "8000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "540.000"
+						y "126.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/rocket_launcher_superior_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_mortar"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_mine_layer_lvl_2"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_mine_layer_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "7000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "630.000"
+						y "126.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/floating_mines_superior_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_railgun"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_explosive_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_granade_launcher_lvl_3"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_granade_launcher_lvl_4"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "14000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "585.000"
+						y "270.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/floating_mines_extreme_item"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "items/weapons/grenade_launcher_extreme_item"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "items/weapons/rocket_launcher_extreme_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_explosive"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_explosive_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_mine_layer_lvl_3"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_mine_layer_lvl_4"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "11500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "630.000"
+						y "270.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/floating_mines_extreme_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_railgun"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_explosive_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/mech_weapons_rocket_launcher_lvl_3"
+							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/mech_weapons_rocket_launcher_lvl_4"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "12500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "540.000"
+						y "270.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/rocket_launcher_extreme_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_mortar"
 				}
 
 			}
@@ -30039,6 +30422,6 @@ Research
 
 	type
 	editor "6197"
-	version "135"
+	version "137"
 }
 
