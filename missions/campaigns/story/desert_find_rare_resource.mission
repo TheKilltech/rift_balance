@@ -491,6 +491,17 @@ MissionDef
 		
 		ResourceVolume
         {
+            resource        "uranium_ore_vein"
+			
+            min_resources   "100"
+            max_resources   "200"
+
+            min_spawned_volumes "4"
+            max_spawned_volumes "12"
+        }
+		
+		ResourceVolume
+        {
             resource        "petroleum_deepvein"
 			required_discovery_lvl	"1"
 
