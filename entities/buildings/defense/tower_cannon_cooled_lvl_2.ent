@@ -1,20 +1,20 @@
 EntityBlueprint
 {
-	name 					"buildings/defense/tower_cannon_lvl_3"
-	base_blueprint 			"buildings/defense/tower_cannon"
+	name 					"buildings/defense/tower_cannon_cooled_lvl_2"
+	base_blueprint 			"buildings/defense/tower_cannon_cooled_lvl_1"
 
 	BuildingDesc
 	{
 		buildable			"0"
-		name 				"tower_cannon_lvl_3"
-		bp   				"buildings/defense/tower_cannon"
+		name 				"tower_cannon_cooled_lvl_2"
+		bp   				"buildings/defense/tower_cannon_cooled_lvl_2"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_cannon_lvl_3"
-		description			"gui/hud/building_description/tower_cannon"
-		menu_icon			"gui/hud/building_icons/tower_cannon_lvl_3"
+		localization_id		"gui/hud/building_name/tower_cannon_cryo"
+		description			"gui/hud/building_description/tower_cannon_cryo"
+		menu_icon			"gui/hud/building_icons/tower_cannon_cryo"
 		require 			"headquarters"
 		building_group		"tower_cannon"
-		order				"11"
+		order				"16"
 		check_connect		"1"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
@@ -45,6 +45,14 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"20"
+			}
+			
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"2"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -133,8 +141,38 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
 		}
 		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_very_small_white_01"
+					bone 		"att_vismod_3"
+					scale		"0.2 0.2 0.2"
+				}
+			}
+		}	
 		EffectGroup
 		{
 			group "lamp"
@@ -147,6 +185,63 @@ EntityBlueprint
 					blueprint "effects/buildings_and_machines/tower_white_searchlight"
 					bone "att_muzzle"
 					random_delay "3"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name "buildings/defense/tower_cannon_projectile_cryo"
+
+	base_blueprint "effects/weapons_bullet/sniper_rifle_projectile"
+
+	ProjectileAmmoComponent
+	{
+		diameter				"1"
+		distribution 			"dissipation"
+		dissipation_count 		"10"
+	
+		on_enemy_hit_effect 	"effects/weapons_elemental/hit_cryo"
+		on_world_hit_effect 	"effects/weapons_elemental/hit_cryo"
+		on_resisted_hit_effect 	"effects/weapons_generic/projectile_hit_resisted"
+	
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|building"
+		collision_2d 			"ground_unit|destructible"
+	
+	}
+	
+	LifeTimeDesc
+	{
+		time 		0.3
+	}
+	
+	children
+	{
+		EntityBlueprint
+		{
+			RibbonComponent
+			{		
+				material 			ribbon/grenade_trail_blue
+				update_bounds 		1
+				fade_out_time		0.75
+				uv_scroll			"0 -2.5"
+				tiling_distance     "0"
+				tesselation_step 	"0.25"
+				keep_local			"0"
+	
+				Ribbons
+				{
+					Ribbon
+					{
+						offset "0 0.5 0"
+					}
+	
+					Ribbon
+					{
+						offset "0 -0.5 0"
+					}
 				}
 			}
 		}

@@ -1,37 +1,36 @@
 EntityBlueprint
 {
-	name 					"buildings/defense/tower_cannon_lvl_3"
+	name					"buildings/defense/tower_cannon_cooled_lvl_1"
 	base_blueprint 			"buildings/defense/tower_cannon"
 
 	BuildingDesc
 	{
 		buildable			"0"
-		name 				"tower_cannon_lvl_3"
-		bp   				"buildings/defense/tower_cannon"
+		name 				"tower_cannon_cooled_lvl_1"
+		bp   				"buildings/defense/tower_cannon_cooled_lvl_1"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_cannon_lvl_3"
-		description			"gui/hud/building_description/tower_cannon"
-		menu_icon			"gui/hud/building_icons/tower_cannon_lvl_3"
+		localization_id		"gui/hud/building_name/tower_cannon_cooled"
+		description			"gui/hud/building_description/tower_cannon_cooled"
+		menu_icon			"gui/hud/building_icons/tower_cannon_cooled"
 		require 			"headquarters"
 		building_group		"tower_cannon"
-		order				"11"
+		order				"15"
 		check_connect		"1"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		upgrade				"buildings/defense/tower_cannon_cooled_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		//upgrade				"buildings/defense/tower_basic_lvl_4"
 
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 15
+				building_time 8
 				building_cost
 				{
 					carbonium 	"150"
-					steel 		"200"
-					cobalt		"150"
+					steel 		"250"
 				}
 			}		
 		}		
@@ -44,7 +43,22 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"20"
+				value 		"15"
+			}
+			
+			GameplayResource
+			{
+				resource 	"water"
+				value 		"5"
+				family		"coolant"
+				attachment	"att_in_1"
+			}		
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"1"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -57,8 +71,8 @@ EntityBlueprint
 
 	HealthDesc
 	{
-		max_health 					"1000"
-		health 						"1000"
+		max_health 					"750"
+		health 						"750"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -88,44 +102,17 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/defense/tower_basic_lvl_3.mesh"
-		material "buildings/defense/tower_basic_lvl_3"
+		mesh "meshes/buildings/defense/tower_basic_lvl_2.mesh"
+		material "buildings/defense/tower_basic_lvl_2"
 	}
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/defense/tower_cannon_lvl_3"
+		name "meshes/buildings/defense/tower_cannon_lvl_2"
 	}
 
 	WeaponItemDesc
 	{
-	}
-	
-	BurstWeaponComponent
-	{
-		WeaponMuzzles
-		{
-			WeaponMuzzle
-			{
-				attachment 		"att_muzzle"
-				recoil_bone		"be_recoil"
-				recoil_time		"0.3"
-				recoil_offset	"0.5"
-			}
-		}
-
-		WeaponAffector
-		{
-			emissive_time "0.35"
-			emissive_factor "4"
-		}		
-
-		ammo_blueprint 				"buildings/defense/tower_cannon_projectile_cryo"
-
-		muzzle_flash_effect 		"effects/weapons_bullet/sniper_rifle_fire"
-
-		burst_column_spacing 		"0.5"
-		burst_rate 					"0.3"
 	}
 	
 	EffectDesc
@@ -133,8 +120,38 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
 		}
 		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/minipipes"
+					bone 		"att_vismod_2"
+					scale		"0.6 0.6 0.6"
+				}
+			}
+		}	
 		EffectGroup
 		{
 			group "lamp"

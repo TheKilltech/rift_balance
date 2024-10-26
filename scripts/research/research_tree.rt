@@ -6322,7 +6322,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "3000.000"
+							count "4500.000"
 						}
 
 					}
@@ -9427,6 +9427,107 @@ Research
 					}
 
 					icon "gui/menu/research/icons/tower_ammunition_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/high_caliber_weapons_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_cannon_cooled"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "2000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-135.000"
+						y "72.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_cannon_cooled_lvl_1"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_basic"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_cannon_cooled"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/high_caliber_weapons_lvl_3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_cannon_cooled_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "5000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-135.000"
+						y "378.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_cannon_cooled_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_basic"
 				}
 
 			}
@@ -30422,6 +30523,6 @@ Research
 
 	type
 	editor "6197"
-	version "137"
+	version "138"
 }
 
