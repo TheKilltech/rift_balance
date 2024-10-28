@@ -185,15 +185,15 @@ return function()
 
 	rules.waveRepeatChances = 
 	{
-		{},                    -- concecutive chances of wave repeating at level 1
-		{},                    -- concecutive chances of wave repeating at level 2
-		{},                    -- concecutive chances of wave repeating at level 3
-		{50},                  -- concecutive chances of wave repeating at level 4
-		{50, 50},              -- concecutive chances of wave repeating at level 5
-		{60, 60, 20},          -- concecutive chances of wave repeating at level 6
-		{60, 60, 50},          -- concecutive chances of wave repeating at level 7
-		{70, 70, 60, 20},      -- concecutive chances of wave repeating at level 8
-		{80, 70, 70, 30, 30},  -- concecutive chances of wave repeating at level 9
+		{},                    -- consecutive chances of wave repeating at level 1
+		{},                    -- consecutive chances of wave repeating at level 2
+		{},                    -- consecutive chances of wave repeating at level 3
+		{50},                  -- consecutive chances of wave repeating at level 4
+		{50, 50},              -- consecutive chances of wave repeating at level 5
+		{60, 60, 20},          -- consecutive chances of wave repeating at level 6
+		{60, 60, 50},          -- consecutive chances of wave repeating at level 7
+		{70, 70, 60, 20},      -- consecutive chances of wave repeating at level 8
+		{80, 70, 70, 30, 30},  -- consecutive chances of wave repeating at level 9
 	}
 	
 	rules.waves = 
