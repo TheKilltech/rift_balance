@@ -68221,6 +68221,15 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "1.0000"
@@ -68301,6 +68310,15 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "1.0000"
@@ -68369,11 +68387,70 @@ Blueprints
 	}
 
 	LootItems "units/ground/arachnoid_sentinel_1"
+	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "2"
+		}
+
+	}
+
 	LootItems "units/ground/arachnoid_sentinel_2"
+	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "2"
+		}
+
+	}
+
 	LootItems "units/ground/arachnoid_sentinel_3"
+	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "2"
+		}
+
+	}
+
 	LootItems "units/ground/arachnoid_sentinel_alpha_1"
+	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "2"
+		}
+
+	}
+
 	LootItems "units/ground/arachnoid_sentinel_alpha_2"
-	LootItems "units/ground/arachnoid_sentinel_alpha_3"
+	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "2"
+		}
+
+	}
+
 	LootItems "units/ground/arachnoid_sentinel_alpha_base"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -68387,6 +68464,15 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "2"
+		}
+
 		LootItem "items/loot/resources/shard_hazenite_item"
 		{
 			chance "0.0800"
@@ -68396,15 +68482,6 @@ Blueprints
 			package_size "3"
 			condition "has_research"
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
-		}
-
-		LootItem "items/loot/resources/shard_steel_item"
-		{
-			chance "0.1500"
-			min "2"
-			max "4"
-			gather_amount "8"
-			package_size "5"
 		}
 
 		LootItem "mods_advanced"
@@ -68458,13 +68535,13 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
-		LootItem "items/loot/resources/shard_steel_item"
+		LootItem "items/loot/resources/shard_ammonium_item"
 		{
-			chance "0.1500"
+			chance "0.6600"
 			min "2"
-			max "4"
-			gather_amount "8"
-			package_size "5"
+			max "3"
+			gather_amount "6"
+			package_size "2"
 		}
 
 		LootItem "mods_advanced"
@@ -68518,13 +68595,13 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
-		LootItem "items/loot/resources/shard_steel_item"
+		LootItem "items/loot/resources/shard_ammonium_item"
 		{
-			chance "0.1500"
+			chance "0.6600"
 			min "2"
-			max "4"
-			gather_amount "8"
-			package_size "5"
+			max "3"
+			gather_amount "6"
+			package_size "2"
 		}
 
 		LootItem "mods_advanced"
@@ -68578,13 +68655,13 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
-		LootItem "items/loot/resources/shard_steel_item"
+		LootItem "items/loot/resources/shard_ammonium_item"
 		{
-			chance "0.3000"
+			chance "0.3500"
 			min "3"
 			max "6"
 			gather_amount "12"
-			package_size "5"
+			package_size "2"
 		}
 
 		LootItem "mods_advanced"
@@ -68638,13 +68715,13 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
-		LootItem "items/loot/resources/shard_steel_item"
+		LootItem "items/loot/resources/shard_ammonium_item"
 		{
-			chance "0.3000"
+			chance "0.3500"
 			min "3"
 			max "6"
 			gather_amount "12"
-			package_size "5"
+			package_size "2"
 		}
 
 		LootItem "mods_advanced"
@@ -68686,8 +68763,44 @@ Blueprints
 	}
 
 	LootItems "units/ground/arachnoid_sentinel_ultra_1"
+	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
+		}
+
+	}
+
 	LootItems "units/ground/arachnoid_sentinel_ultra_2"
+	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
+		}
+
+	}
+
 	LootItems "units/ground/arachnoid_sentinel_ultra_3"
+	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
+		}
+
+	}
+
 	LootItems "units/ground/arachnoid_sentinel_ultra_base"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -68699,6 +68812,15 @@ Blueprints
 			package_size "20"
 			condition "has_research"
 			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
 		}
 
 		LootItem "items/loot/resources/shard_hazenite_item"
@@ -73799,6 +73921,7 @@ Blueprints
 			gather_amount "7"
 			package_size "20"
 			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
 		}
 
 		LootItem "items/loot/resources/shard_tanzanite_item"
@@ -73824,6 +73947,7 @@ Blueprints
 			gather_amount "7"
 			package_size "20"
 			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
 		}
 
 		LootItem "items/loot/resources/shard_tanzanite_item"
@@ -73849,6 +73973,7 @@ Blueprints
 			gather_amount "7"
 			package_size "20"
 			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
 		}
 
 		LootItem "items/loot/resources/shard_tanzanite_item"
@@ -73874,6 +73999,7 @@ Blueprints
 			gather_amount "4"
 			package_size "20"
 			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
 		}
 
 	}
@@ -73888,6 +74014,7 @@ Blueprints
 			gather_amount "4"
 			package_size "20"
 			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
 		}
 
 	}
@@ -73903,6 +74030,7 @@ Blueprints
 			gather_amount "7"
 			package_size "20"
 			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
 		}
 
 	}
@@ -73920,6 +74048,7 @@ Blueprints
 			gather_amount "7"
 			package_size "20"
 			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
 		}
 
 		LootItem "items/loot/resources/shard_hazenite_item"
@@ -73945,6 +74074,7 @@ Blueprints
 			gather_amount "7"
 			package_size "20"
 			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
 		}
 
 		LootItem "items/loot/resources/shard_hazenite_item"
@@ -73970,6 +74100,7 @@ Blueprints
 			gather_amount "7"
 			package_size "20"
 			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
 		}
 
 		LootItem "items/loot/resources/shard_hazenite_item"
@@ -73995,6 +74126,7 @@ Blueprints
 			gather_amount "7"
 			package_size "20"
 			condition "has_research"
+			condition_value "gui/menu/research/name/alien_research"
 		}
 
 		LootItem "items/loot/resources/shard_ferdonite_item"
@@ -74011,16 +74143,6 @@ Blueprints
 	}
 
 	LootItems "units/ground/egg_stickrid_alpha"
-			condition_value "gui/menu/research/name/alien_research"
-			condition_value "gui/menu/research/name/alien_research"
-			condition_value "gui/menu/research/name/alien_research"
-			condition_value "gui/menu/research/name/alien_research"
-			condition_value "gui/menu/research/name/alien_research"
-			condition_value "gui/menu/research/name/alien_research"
-			condition_value "gui/menu/research/name/alien_research"
-			condition_value "gui/menu/research/name/alien_research"
-			condition_value "gui/menu/research/name/alien_research"
-			condition_value "gui/menu/research/name/alien_research"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
 		{
@@ -74085,7 +74207,7 @@ Blueprints
 			gather_amount "500"
 			package_size "50"
 			condition "has_research"
-			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+			condition_value "gui/menu/research/name/alien_research"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -77769,25 +77891,25 @@ Blueprints
 			package_size "5"
 		}
 
+	}
+
+	LootItems "units/ground/magmoth"
+	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "2"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
 			chance "0.0300"
 			min "1"
 			max "2"
 			gather_amount "4"
-			package_size "5"
-		}
-
-	}
-
-	LootItems "units/ground/magmoth"
-	{
-		LootItem "items/loot/resources/shard_steel_item"
-		{
-			chance "0.1500"
-			min "2"
-			max "4"
-			gather_amount "8"
 			package_size "5"
 		}
 
@@ -77842,12 +77964,21 @@ Blueprints
 
 	LootItems "units/ground/magmoth_alpha"
 	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "2"
+		}
+
 		LootItem "items/loot/resources/shard_steel_item"
 		{
-			chance "0.1500"
-			min "2"
-			max "4"
-			gather_amount "8"
+			chance "0.0300"
+			min "1"
+			max "2"
+			gather_amount "4"
 			package_size "5"
 		}
 
@@ -77903,6 +78034,15 @@ Blueprints
 	LootItems "units/ground/magmoth_base"
 	LootItems "units/ground/magmoth_boss_acid"
 	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "1.0000"
@@ -77961,6 +78101,15 @@ Blueprints
 
 	LootItems "units/ground/magmoth_boss_cryo"
 	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "1.0000"
@@ -78019,6 +78168,15 @@ Blueprints
 
 	LootItems "units/ground/magmoth_boss_energy"
 	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "1.0000"
@@ -78077,6 +78235,15 @@ Blueprints
 
 	LootItems "units/ground/magmoth_boss_fire"
 	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "1.0000"
@@ -80296,6 +80463,15 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "2"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_item"
 		{
 			chance "0.3000"
@@ -80367,6 +80543,15 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "2"
+		}
+
 		LootItem "items/loot/resources/shard_palladium_item"
 		{
 			chance "0.3000"
@@ -80426,6 +80611,18 @@ Blueprints
 	}
 
 	LootItems "units/ground/nurglax_base"
+	{
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3300"
+			min "1"
+			max "2"
+			gather_amount "4"
+			package_size "2"
+		}
+
+	}
+
 	LootItems "units/ground/nurglax_boss_acid"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -80437,6 +80634,15 @@ Blueprints
 			package_size "35"
 			condition "has_research"
 			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -80508,6 +80714,15 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "1.0000"
@@ -80577,6 +80792,15 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
+		}
+
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
 			chance "1.0000"
@@ -80644,6 +80868,15 @@ Blueprints
 			package_size "35"
 			condition "has_research"
 			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.3500"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "2"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -80786,6 +81019,15 @@ Blueprints
 			package_size "20"
 			condition "has_research"
 			condition_value "gui/menu/research/name/alien_research"
+		}
+
+		LootItem "items/loot/resources/shard_ammonium_item"
+		{
+			chance "0.6600"
+			min "2"
+			max "3"
+			gather_amount "6"
+			package_size "2"
 		}
 
 		LootItem "items/loot/resources/shard_palladium_item"
@@ -85194,13 +85436,13 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
-		LootItem "items/loot/resources/shard_steel_item"
+		LootItem "items/loot/resources/shard_ammonium_item"
 		{
-			chance "0.1500"
+			chance "0.6600"
 			min "2"
-			max "4"
-			gather_amount "8"
-			package_size "5"
+			max "3"
+			gather_amount "6"
+			package_size "2"
 		}
 
 		LootItem "items/loot/resources/shard_tanzanite_item"
@@ -85265,13 +85507,13 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
-		LootItem "items/loot/resources/shard_steel_item"
+		LootItem "items/loot/resources/shard_ammonium_item"
 		{
-			chance "0.1500"
+			chance "0.6600"
 			min "2"
-			max "4"
-			gather_amount "8"
-			package_size "5"
+			max "3"
+			gather_amount "6"
+			package_size "2"
 		}
 
 		LootItem "items/loot/resources/shard_tanzanite_item"
@@ -85337,13 +85579,13 @@ Blueprints
 			condition_value "gui/menu/research/name/alien_research"
 		}
 
-		LootItem "items/loot/resources/shard_steel_item"
+		LootItem "items/loot/resources/shard_ammonium_item"
 		{
-			chance "0.1500"
+			chance "0.6600"
 			min "2"
-			max "4"
-			gather_amount "8"
-			package_size "5"
+			max "3"
+			gather_amount "6"
+			package_size "2"
 		}
 
 		LootItem "items/loot/resources/shard_tanzanite_item"
@@ -112153,6 +112395,7 @@ BlueprintOverrides
 		{
 			mods_ext_boss
 			mods_std_boss
+			ammonium_big
 			mods_adv_boss
 			mods_sup_boss
 		}
@@ -112165,8 +112408,54 @@ BlueprintOverrides
 		{
 			mods_ext_boss
 			mods_std_boss
+			ammonium_big
 			mods_adv_boss
 			mods_sup_boss
+		}
+
+	}
+
+	Blueprint "units/ground/arachnoid_sentinel_1"
+	{
+		Items
+		{
+			ammonium_small
+		}
+
+	}
+
+	Blueprint "units/ground/arachnoid_sentinel_2"
+	{
+		Items
+		{
+			ammonium_small
+		}
+
+	}
+
+	Blueprint "units/ground/arachnoid_sentinel_3"
+	{
+		Items
+		{
+			ammonium_small
+		}
+
+	}
+
+	Blueprint "units/ground/arachnoid_sentinel_alpha_1"
+	{
+		Items
+		{
+			ammonium_small
+		}
+
+	}
+
+	Blueprint "units/ground/arachnoid_sentinel_alpha_2"
+	{
+		Items
+		{
+			ammonium_small
 		}
 
 	}
@@ -112177,7 +112466,7 @@ BlueprintOverrides
 		{
 			mods_ext_medium
 			mods_std_medium
-			ironium_medium
+			ammonium_medium
 			mods_adv_medium
 			hazenite_very_small
 			mods_sup_medium
@@ -112192,7 +112481,7 @@ BlueprintOverrides
 		{
 			mods_ext_medium
 			mods_std_medium
-			ironium_medium
+			ammonium_medium
 			mods_adv_medium
 			mods_sup_medium
 			biomass_animal_medium
@@ -112205,8 +112494,8 @@ BlueprintOverrides
 		Items
 		{
 			mods_ext_medium
-			ironium_medium
 			mods_std_medium
+			ammonium_medium
 			mods_adv_medium
 			mods_sup_medium
 			biomass_animal_medium
@@ -112219,8 +112508,8 @@ BlueprintOverrides
 		Items
 		{
 			mods_ext_big
-			ironium_big
 			mods_std_big
+			ammonium_big
 			mods_adv_big
 			mods_sup_big
 			biomass_animal_big
@@ -112233,11 +112522,38 @@ BlueprintOverrides
 		Items
 		{
 			mods_ext_big
-			ironium_big
 			mods_std_big
+			ammonium_big
 			mods_adv_big
 			mods_sup_big
 			biomass_animal_big
+		}
+
+	}
+
+	Blueprint "units/ground/arachnoid_sentinel_ultra_1"
+	{
+		Items
+		{
+			ammonium_big
+		}
+
+	}
+
+	Blueprint "units/ground/arachnoid_sentinel_ultra_2"
+	{
+		Items
+		{
+			ammonium_big
+		}
+
+	}
+
+	Blueprint "units/ground/arachnoid_sentinel_ultra_3"
+	{
+		Items
+		{
+			ammonium_big
 		}
 
 	}
@@ -112249,6 +112565,7 @@ BlueprintOverrides
 			mods_ext_big
 			mods_std_big
 			ironium_big
+			ammonium_big
 			mods_adv_big
 			hazenite_very_small
 			mods_sup_big
@@ -114383,7 +114700,6 @@ BlueprintOverrides
 	{
 		Items
 		{
-			ironium_very_small
 			carbonium_very_small
 			biomass_animal_very_small
 		}
@@ -114396,7 +114712,8 @@ BlueprintOverrides
 		{
 			mods_ext_medium
 			mods_std_medium
-			ironium_medium
+			ironium_very_small
+			ammonium_medium
 			mods_adv_medium
 			titanium_medium
 			mods_sup_medium
@@ -114410,7 +114727,8 @@ BlueprintOverrides
 		{
 			mods_ext_medium
 			mods_std_medium
-			ironium_medium
+			ironium_very_small
+			ammonium_medium
 			mods_adv_medium
 			titanium_medium
 			mods_sup_medium
@@ -114424,6 +114742,7 @@ BlueprintOverrides
 		{
 			mods_ext_boss_small
 			mods_std_boss_small
+			ammonium_big
 			mods_adv_boss_small
 			mods_sup_boss_small
 		}
@@ -114436,6 +114755,7 @@ BlueprintOverrides
 		{
 			mods_ext_boss_small
 			mods_std_boss_small
+			ammonium_big
 			mods_adv_boss_small
 			mods_sup_boss_small
 		}
@@ -114448,6 +114768,7 @@ BlueprintOverrides
 		{
 			mods_ext_boss_small
 			mods_std_boss_small
+			ammonium_big
 			mods_adv_boss_small
 			mods_sup_boss_small
 		}
@@ -114460,6 +114781,7 @@ BlueprintOverrides
 		{
 			mods_ext_boss_small
 			mods_std_boss_small
+			ammonium_big
 			mods_adv_boss_small
 			mods_sup_boss_small
 		}
@@ -114791,6 +115113,7 @@ BlueprintOverrides
 			mods_ext_big
 			mods_std_big
 			ironium_big
+			ammonium_small
 			mods_adv_big
 			mods_sup_big
 			biomass_animal_big
@@ -114806,10 +115129,20 @@ BlueprintOverrides
 			mods_ext_big
 			mods_std_big
 			ironium_big
+			ammonium_medium
 			mods_adv_big
 			mods_sup_big
 			biomass_animal_big
 			palladium_big
+		}
+
+	}
+
+	Blueprint "units/ground/nurglax_base"
+	{
+		Items
+		{
+			ammonium_small
 		}
 
 	}
@@ -114820,6 +115153,7 @@ BlueprintOverrides
 		{
 			mods_ext_boss
 			mods_std_boss
+			ammonium_big
 			mods_adv_boss
 			mods_sup_boss
 		}
@@ -114832,6 +115166,7 @@ BlueprintOverrides
 		{
 			mods_ext_boss
 			mods_std_boss
+			ammonium_big
 			mods_adv_boss
 			mods_sup_boss
 		}
@@ -114844,6 +115179,7 @@ BlueprintOverrides
 		{
 			mods_ext_boss
 			mods_std_boss
+			ammonium_big
 			mods_adv_boss
 			mods_sup_boss
 		}
@@ -114856,6 +115192,7 @@ BlueprintOverrides
 		{
 			mods_ext_boss
 			mods_std_boss
+			ammonium_big
 			mods_adv_boss
 			mods_sup_boss
 		}
@@ -114899,6 +115236,7 @@ BlueprintOverrides
 			mods_ext_big
 			mods_std_big
 			ironium_big
+			ammonium_medium
 			mods_adv_big
 			mods_sup_big
 			biomass_animal_big
@@ -115833,7 +116171,7 @@ BlueprintOverrides
 		{
 			mods_ext_medium
 			mods_std_medium
-			ironium_medium
+			ammonium_medium
 			mods_adv_medium
 			tanzanite_small
 			mods_sup_medium
@@ -115848,7 +116186,7 @@ BlueprintOverrides
 		{
 			mods_ext_medium
 			mods_std_medium
-			ironium_medium
+			ammonium_medium
 			mods_adv_medium
 			tanzanite_small
 			mods_sup_medium
@@ -115863,7 +116201,7 @@ BlueprintOverrides
 		{
 			mods_ext_medium
 			mods_std_medium
-			ironium_medium
+			ammonium_medium
 			mods_adv_medium
 			tanzanite_small
 			mods_sup_medium
