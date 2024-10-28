@@ -1,21 +1,20 @@
 EntityBlueprint
 {
 	name 					"buildings/defense/tower_cannon_lvl_3"
-	base_blueprint 			"buildings/defense/tower_cannon"
+	base_blueprint 			"buildings/defense/tower_cannon_lvl_2"
 
 	BuildingDesc
 	{
 		buildable			"0"
 		name 				"tower_cannon_lvl_3"
-		bp   				"buildings/defense/tower_cannon"
+		bp   				"buildings/defense/tower_cannon_lvl_3"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_cannon_lvl_3"
+		localization_id		"gui/hud/building_name/tower_cannon"
 		description			"gui/hud/building_description/tower_cannon"
 		menu_icon			"gui/hud/building_icons/tower_cannon_lvl_3"
 		require 			"headquarters"
 		building_group		"tower_cannon"
 		order				"11"
-		check_connect		"1"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
