@@ -167,6 +167,19 @@ return function()
 			"logic/dom/attack_level_1_entry.logic", -- difficulty level 9
 	}
 	
+	rules.waveRepeatChances = 
+	{
+		{},  -- concecutive chances of wave repeating at level 1
+		{},  -- concecutive chances of wave repeating at level 2
+		{},  -- concecutive chances of wave repeating at level 3
+		{},  -- concecutive chances of wave repeating at level 4
+		{},  -- concecutive chances of wave repeating at level 5
+		{},  -- concecutive chances of wave repeating at level 6
+		{15},  -- concecutive chances of wave repeating at level 7
+		{30, 20},  -- concecutive chances of wave repeating at level 8
+		{45, 20, 20 },  -- concecutive chances of wave repeating at level 9
+	}
+	
 	rules.waves = 
 	{
 		["default"] =
