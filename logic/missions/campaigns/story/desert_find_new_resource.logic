@@ -1,8 +1,8 @@
-//editor "scroll(744.80,209.54)|zoom(0.40)"
+//editor "scroll(1681.99,9.47)|zoom(0.60)"
 FlowGraphTemplate
 {
-	version "18"
-	editor "6142"
+	version "19"
+	editor "6197"
 	GraphNodes
 	{
 		LuaBehaviourNode
@@ -200,22 +200,6 @@ FlowGraphTemplate
 					{
 						key "target_name_is_global"
 						value "1"
-					}
-
-				}
-
-				Strings
-				{
-					StringData
-					{
-						key "target_name"
-						value "uranium_vein"
-					}
-
-					StringData
-					{
-						key "marker_name"
-						value "uranium_deposit_minimap_marker"
 					}
 
 				}
@@ -1004,7 +988,7 @@ FlowGraphTemplate
 					IntData
 					{
 						key "progress_max"
-						value "1000"
+						value "600"
 					}
 
 					IntData
@@ -1228,6 +1212,12 @@ FlowGraphTemplate
 					{
 						key "count"
 						value "1"
+					}
+
+					IntData
+					{
+						key "inverse_relationship"
+						value "0"
 					}
 
 				}
