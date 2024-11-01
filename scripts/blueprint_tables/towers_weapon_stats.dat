@@ -3541,7 +3541,7 @@ buildings/defense/tower_minigun_lvl_2
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_low_caliber"
+		ammo_storage "ammo_tower_low_caliber_lvl2"
 		damage_type "physical"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -3556,8 +3556,8 @@ buildings/defense/tower_minigun_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "15.000"
-				min_value "15.000"
+				max_value "11.000"
+				min_value "11.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
@@ -3618,23 +3618,23 @@ buildings/defense/tower_minigun_lvl_3
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_low_caliber_lvl2"
+		ammo_storage "ammo_tower_low_caliber_lvl3"
 		damage_type "physical"
 		rarity "EXTREME"
 		stat_def_vec
 		{
 			WeaponStatDef
 			{
-				max_value "40.000"
-				min_value "40.000"
+				max_value "45.000"
+				min_value "45.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "15.000"
+				min_value "15.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
@@ -3710,8 +3710,8 @@ buildings/defense/tower_minigun_platform
 		{
 			WeaponStatDef
 			{
-				max_value "15.000"
-				min_value "15.000"
+				max_value "11.000"
+				min_value "11.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
@@ -3734,8 +3734,8 @@ buildings/defense/tower_minigun_platform
 
 			WeaponStatDef
 			{
-				max_value "27.000"
-				min_value "27.000"
+				max_value "25.000"
+				min_value "25.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
