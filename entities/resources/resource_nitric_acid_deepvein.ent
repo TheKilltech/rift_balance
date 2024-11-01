@@ -1,0 +1,166 @@
+EntityBlueprint
+{
+	name "resources/resource_nitric_acid_deepvein"
+	
+	
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_flammable_gas_vent.mesh"
+		material 	"resources/resource_wind_spot"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/resources/resource_flammable_gas_vent"
+	}		
+	
+	TypeDesc
+	{
+		type "resource"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"nav_blocker"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+							r "6"
+					}
+				}
+			}
+		}
+	}
+	
+	NodeCullerDesc
+	{
+	    cost_type "prop"
+	    nav_mesh_cull_type "1"
+		flow_field_size "1.5"
+	}		
+
+	MinimapItemDesc
+	{
+		type			"image"
+		icon_material 	"gui/hud/minimap_icons/nitric_acid_deepvein"
+		unknown_until_visible 	"1"
+
+		visibility 			"discovered|radar"
+	}
+
+	SelectableDesc
+	{
+		content "resource_name/geothermal_vent"
+		can_activate "0"
+	}
+
+	DecalDesc
+	{	
+		blueprint "effects/decals/geothermal_vent"
+		scale
+		{
+			x		7.0
+			y		7.0
+			z		7.0
+		
+		}
+	}
+	
+	//BurningComponent
+	//{
+	//	spread_radius 			"3"			// radius to spread fire
+	//	spread_chance_override 	"1"			// allow to override chance to propagate fire if set to 1.0 everything flammable around will catch fire
+	//	//spread_target_mask 		"ground_unit"
+	//	spread_timer
+	//	{
+	//		limit "20" 						// how often e                    ntity will try to spread fire in microseconds ( 2s )
+	//	}
+	//
+	//	burning_effect_group    ""			// effect group to be enabled on entity
+	//	burning_time			"10000000000"	// how long it will burn in seconds
+	//	disable_light_fade_out "1"
+	//}		
+
+	EffectDesc
+	{	
+		EffectGroup
+		{		
+			group "steam"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/decals/geothermal_vent"		
+					scale "7 0.4 7"	
+					bone "att_wind"
+				}									
+				Effect
+				{
+					blueprint "effects/world/flammable_gas_vent_big"		
+					bone "att_wind_big"
+				}		
+				Effect
+				{
+					blueprint "effects/world/flammable_gas_vent_medium"		
+					bone "att_wind_medium_1"
+				}	
+				Effect
+				{
+					blueprint "effects/world/flammable_gas_vent_medium"		
+					bone "att_wind_medium_2"
+				}
+				Effect
+				{
+					blueprint "effects/world/flammable_gas_vent_medium"		
+					bone "att_wind_medium_3"
+				}
+				Effect
+				{
+					blueprint "effects/world/flammable_gas_vent_medium"		
+					bone "att_wind_medium_4"
+				}
+				Effect
+				{
+					blueprint "effects/world/flammable_gas_vent_medium"		
+					bone "att_wind_medium_5"
+				}
+				Effect
+				{
+					blueprint "effects/world/flammable_gas_vent_medium"		
+					bone "att_wind_medium_6"
+				}				
+			}
+		}	
+	}
+
+	children
+	{
+		EntityBlueprint
+		{
+			GridCullerDesc
+			{
+				type 8
+
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "5.0"
+					}
+				}	
+			}
+		}
+	}
+
+}
+
