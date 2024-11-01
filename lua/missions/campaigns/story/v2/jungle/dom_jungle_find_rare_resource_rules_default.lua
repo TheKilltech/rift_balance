@@ -48,9 +48,9 @@ return function()
 	
 	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
 	{
-		50,  -- 1st event probability in percent
-		25,  -- 2nd event probability in percent
-		10,  -- 3rd event probability in percent
+		20,  -- 1st event probability in percent
+		10,  -- 2nd event probability in percent
+		5,  -- 3rd event probability in percent
 	}
 
 	rules.addResourcesOnRunOut = 
@@ -93,7 +93,6 @@ return function()
 	{
 		{ name = "logic/objectives/kill_elite.logic",                      minDifficultyLevel = 4 },
 		{ name = "logic/objectives/destroy_nest_canoptrix_single.logic",   minDifficultyLevel = 3 },
-		{ name = "logic/objectives/destroy_nest_canoptrix_multiple.logic", minDifficultyLevel = 5 }
 	}
 
 	rules.cooldownAfterAttacks = 
@@ -129,10 +128,10 @@ return function()
 		0,  -- difficulty level 3		
 		0,  -- difficulty level 4
 		0,  -- difficulty level 5
-		0,  -- difficulty level 6
+		1,  -- difficulty level 6
 		1,  -- difficulty level 7
 		2,  -- difficulty level 8
-		3,  -- difficulty level 9
+		2,  -- difficulty level 9
 	}
 	
 	rules.prepareAttackDefinitions =
@@ -168,44 +167,22 @@ return function()
 		{},  -- concecutive chances of wave repeating at level 3
 		{},  -- concecutive chances of wave repeating at level 4
 		{},  -- concecutive chances of wave repeating at level 5
-		{},  -- concecutive chances of wave repeating at level 6
-		{50},  -- concecutive chances of wave repeating at level 7
-		{70, 50},  -- concecutive chances of wave repeating at level 8
-		{80, 50, 20, 35, 50},  -- concecutive chances of wave repeating at level 9
+		{10},  -- concecutive chances of wave repeating at level 6
+		{30},  -- concecutive chances of wave repeating at level 7
+		{40, 50},  -- concecutive chances of wave repeating at level 8
+		{60, 40, 20, 35},  -- concecutive chances of wave repeating at level 9
 	}
 	
-	rules.waves = 
-	{
-		["default"] =
-		{					
-			{}, -- difficulty level 1
-			{}, -- difficulty level 2
-			{}, -- difficulty level 3
-			{}, -- difficulty level 4
-			{}, -- difficulty level 5			
-			{}, -- difficulty level 6
-			
-			{ -- difficulty level 7
-				"logic/missions/survival/attack_level_1_id_1.logic",
-				"logic/missions/survival/attack_level_1_id_2.logic",
-			},
-			
-			{ -- difficulty level 8
-				"logic/missions/survival/attack_level_1_id_1.logic",
-				"logic/missions/survival/attack_level_1_id_2.logic",
-				"logic/missions/survival/attack_level_2_id_1.logic",
-			},
-			
-			{ -- difficulty level 9
-				"logic/missions/survival/attack_level_1_id_1.logic",
-				"logic/missions/survival/attack_level_1_id_2.logic",
-				"logic/missions/survival/attack_level_2_id_1.logic",
-				"logic/missions/survival/attack_level_2_id_2.logic",
-				"logic/missions/survival/attack_level_3_id_1.logic",
-				"logic/missions/survival/attack_level_5_id_1.logic",
-			},
-		},
-	}
+	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
+	rules.waves = {}
+	rules.waves = wave_gen:Generate({ groups = { "default" }, difficulty = { 6, 7, 8, 9 },  biomes = { "" }, levels = { 1 },    ids = { 1, 2 }, suffixes = { "", },         },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" }, difficulty = {    7, 8, 9 },  biomes = { "" }, levels = { 1 },    ids = { 1, 2 }, suffixes = { "", "alpha" }, },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" }, difficulty = {    7, 8, 9 },  biomes = { "" }, levels = { 2 },    ids = { 1, 2 }, suffixes = { "" },          },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" }, difficulty = {       8, 9 },  biomes = { "" }, levels = { 2 },    ids = { 1, 2 }, suffixes = { "alpha" },     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" }, difficulty = {          9 },  biomes = { "" }, levels = { 3, 4 }, ids = { 1, 3 }, suffixes = { "" },          },   rules.waves)
+	
+	rules.waves = wave_gen:Generate({ groups = { "acid" },    difficulty = {       8, 9 },  biomes = { "" }, levels = { 1, 2 }, ids = { 2 },    suffixes = { "" },          },   rules.waves)
+	
 
 	rules.extraWaves = 
 	{
