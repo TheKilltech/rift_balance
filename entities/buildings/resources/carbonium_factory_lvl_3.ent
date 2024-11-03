@@ -26,7 +26,9 @@ EntityBlueprint
 				building_time 10
 				building_cost
 				{
-					carbonium 	"800"
+					carbonium 	"300"
+					steel 		"400"
+					cobalt		"150"
 				}
 			}		
 		}
@@ -42,49 +44,54 @@ EntityBlueprint
 				resource 			"energy"
 				value			 	"45"
 			}
+			GameplayResource
+			{
+				resource 			"hazenite"
+				value			 	"0.01"
+			}
 			
 			GameplayResource
 			{
 				resource 			"carbon_vein"
 				value			 	"3.2"
-				family				"base"
+				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"iron_vein"
 				value			 	"3.2"
-				family				"base"
+				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium_vein"
 				value			 	"3.2"
-				family				"base"
+				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"cobalt_vein"
 				value			 	"3.2"
-				family				"rare"
+				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium_vein"
 				value			 	"3.2"
-				family				"rare"
+				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"titanium_vein"
 				value			 	"3.2"
-				family				"rare"
+				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"uranium_ore_vein"
 				value			 	"3.2"
-				family				"rare"
+				family				"resource"
 			}		
 		}
 		
@@ -94,44 +101,44 @@ EntityBlueprint
 			{
 				resource 			"carbonium"
 				value			 	"4"
-				family				"base"
+				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"steel"
 				value			 	"4"
-				family				"base"
+				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium"
 				value			 	"4"
-				family				"base"
+				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"cobalt"
 				value			 	"4"
-				family				"rare"
+				family				"resource"
 			}		
 			GameplayResource
 			{
 				resource 			"palladium"
 				value			 	"4"
-				family				"rare"
+				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"titanium"
 				value			 	"4"
-				family				"rare"
+				family				"resource"
 			}	
 			GameplayResource
 			{
 				resource 			"uranium_ore"
 				value			 	"4"
-				family				"rare"
+				family				"resource"
 			}
 		}
 		priority 4	
