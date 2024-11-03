@@ -298,8 +298,8 @@ MissionDef
             min_resources   "1000"
             max_resources   "4000"
 
-            min_spawned_volumes "10"
-            max_spawned_volumes "15"
+            min_spawned_volumes "12"
+            max_spawned_volumes "17"
         }	
 		
 		ResourceVolume
@@ -310,8 +310,8 @@ MissionDef
             min_resources   "12000"
             max_resources   "24000"
 
-            min_spawned_volumes "6"
-            max_spawned_volumes "10"
+            min_spawned_volumes "5"
+            max_spawned_volumes "8"
         }	
 		
 		ResourceVolume
@@ -352,11 +352,11 @@ MissionDef
         {
             resource        "iron_vein"
 
-            min_resources   "6000"
-            max_resources   "12000"
+            min_resources   "5000"
+            max_resources   "10000"
 
-            min_spawned_volumes "20"
-            max_spawned_volumes "25"
+            min_spawned_volumes "17"
+            max_spawned_volumes "22"
         }
 		
 		ResourceVolume
@@ -369,6 +369,17 @@ MissionDef
 
             min_spawned_volumes "5"
             max_spawned_volumes "8"
+        }
+		
+		ResourceVolume
+        {
+            resource        "iron_deepvein"
+			required_discovery_lvl	"1"
+
+            is_infinite     "1"
+
+            min_spawned_volumes "1"
+            max_spawned_volumes "1"
         }
 		
         ResourceVolume
@@ -392,68 +403,68 @@ MissionDef
             min_spawned_volumes "2"
             max_spawned_volumes "3"
         }
+		
+		ResourceVolume
+        {
+            resource        "geothermal_vent"
+            
+            is_infinite     "1"
+            
+            min_spawned_volumes "3"
+            max_spawned_volumes "5"
+        }
 
         ResourceVolume
         {
             resource        "geothermal_vent"
-
-            min_resources   "6000"
-            max_resources   "10000"
+			required_discovery_lvl	"1"
             
             is_infinite     "1"
             
             min_spawned_volumes "12"
             max_spawned_volumes "15"
-        }	
+        }
 		
 		ResourceVolume
         {
-            resource        "geothermal_vent"
-			required_discovery_lvl	"1"
-
-            min_resources   "6000"
-            max_resources   "10000"
-            
-            is_infinite     "1"
-            
-            min_spawned_volumes "3"
-            max_spawned_volumes "5"
-        }		
-
-        ResourceVolume
-        {
-            resource        "mud_deepvein"
-			required_discovery_lvl	"1"
-		
-            min_resources   "9999"
-            max_resources   "9999"
-		
-            min_spawned_volumes "12"
-            max_spawned_volumes "16"
-        }
-
-        ResourceVolume
-        {
             resource        "magma_deepvein"
 			required_discovery_lvl	"1"
-		
-            min_resources   "9999"
-            max_resources   "9999"
-		
-            min_spawned_volumes "3"
-            max_spawned_volumes "5"
-        }	
-
-        ResourceVolume
-        {
-            resource        "sludge_deepvein"
-			required_discovery_lvl	"1"
-		
-            min_resources   "9999"
-            max_resources   "9999"
-		
+			
+            is_infinite     "1"
+			
             min_spawned_volumes "4"
             max_spawned_volumes "6"
+        }
+		
+		ResourceVolume
+        {
+            resource        "fluorine_deepvein"
+			required_discovery_lvl	"1"
+			
+            is_infinite     "1"
+			
+            min_spawned_volumes "3"
+            max_spawned_volumes "5"
+        }
+		
+        ResourceVolume
+        {
+            resource        "plasma_deepvein"
+
+            is_infinite     "1"
+
+            min_spawned_volumes "4"
+            max_spawned_volumes "6"
+        }
+		
+        ResourceVolume
+        {
+            resource        "plasma_charged_deepvein"
+
+            is_infinite     "1"
+
+            min_spawned_volumes "1"
+            max_spawned_volumes "1"
         }
     }
 

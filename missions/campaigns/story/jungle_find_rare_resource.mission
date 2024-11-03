@@ -534,15 +534,23 @@ MissionDef
             min_spawned_volumes "2"
             max_spawned_volumes "3"
         }	
+		
+		ResourceVolume
+        {
+            resource        "petroleum_deepvein"
+			required_discovery_lvl	"1"
+
+            is_infinite     "1"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "3"
+        }	
 
 		ResourceVolume
         {
             resource        "sludge_vein"
 
-            min_resources   "9999"
-            max_resources   "9999"
-
-            is_infinite      "1"
+            is_infinite     "1"
 
             min_spawned_volumes "2"
             max_spawned_volumes "4"
@@ -553,22 +561,17 @@ MissionDef
             resource        "water_deepvein"
 			required_discovery_lvl	"1"
 			
-            min_resources   "9999"
-            max_resources   "9999"
+            is_infinite        "1"
 
             min_spawned_volumes "6"
             max_spawned_volumes "8"
 			
-            is_infinite        "1"
         }
 		
 		ResourceVolume
         {
             resource        "magma_deepvein"
 			required_discovery_lvl	"1"
-
-            min_resources   "9999"
-            max_resources   "9999"
 
             is_infinite      "1"
 
