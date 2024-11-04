@@ -56,6 +56,46 @@ EntityBlueprint
 				family		"warhead"
 				attachment	"att_in_1"
 			}
+			
+			GameplayResource
+			{
+				resource 	"petroleum"
+				value 		"10"
+				family		"warhead"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"magma"
+				value 		"25"
+				family		"fuel"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"resin"
+				value 		"5"
+				family		"warhead"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"plasma"
+				value 		"5"
+				family		"warhead"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"plasma_charged"
+				value 		"2"
+				family		"warhead"
+				attachment	"att_in_1"
+			}
 		}
 
 		out
@@ -77,7 +117,7 @@ EntityBlueprint
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "8"
-			range_max "42"
+			range_max "44"
 			aiming_range "55"
 		}
 

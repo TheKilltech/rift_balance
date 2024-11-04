@@ -49,14 +49,6 @@ EntityBlueprint
 				resource 	"energy"
 				value 		"100"
 			}
-			
-			GameplayResource
-			{
-				resource 	"reagent"
-				value 		"10"
-				family		"propellant"
-				attachment	"att_in_1"
-			}
 		}
 
 		out
@@ -120,8 +112,8 @@ EntityBlueprint
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "8"
-			range_max "50"
-			aiming_range "60"
+			range_max "44"
+			aiming_range "54"
 		}
 
 		aiming_cooldown "1"
@@ -167,22 +159,6 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
-		////////////////////////Resources/////////////////////////
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_arrow"
-				}
-			}
 		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
