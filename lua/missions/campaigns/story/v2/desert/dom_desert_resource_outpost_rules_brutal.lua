@@ -1,5 +1,5 @@
 return function()
-    local rules = require("lua/missions/campaigns/story/v2/desert/dom_desert_resource_outpost_rules_default.lua")()
+    local rules = require("lua/missions/campaigns/story/v2/desert/dom_desert_resource_outpost_rules_hard.lua")()
 	
 	rules.idleTime = 
 	{			
