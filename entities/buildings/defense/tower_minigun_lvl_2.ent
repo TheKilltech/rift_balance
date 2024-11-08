@@ -10,7 +10,7 @@ EntityBlueprint
 		bp   				"buildings/defense/tower_minigun_lvl_2"
 		category 			"defense"
 		localization_id		"gui/hud/building_name/tower_minigun_supercooled"
-		description			"gui/hud/building_description/tower_minigun_supercooled"
+		description			"gui/hud/building_description/tower_minigun_cooled"
 		menu_icon			"gui/hud/building_icons/tower_minigun_lvl2"
 		require 			"headquarters"
 		building_group		"tower_minigun"
@@ -45,6 +45,14 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"25"
+			}
+			
+			GameplayResource
+			{
+				resource 	"water"
+				value 		"15"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 			
 			GameplayResource

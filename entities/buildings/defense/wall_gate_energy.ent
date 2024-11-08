@@ -31,7 +31,7 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"25"
-					steel 		"25"
+					cobalt 		"10"
 				}
 			}
 		}
@@ -53,15 +53,15 @@ EntityBlueprint
 		}
 		priority 6
 	}
-
+	
 	ResistanceComponent
 	{
-		physical		"2.5"
-		fire			"1.5"
-		acid			"1.5"
+		physical		"1.5"
+		fire			"1.3"
+		acid			"1.3"
 		energy			"0.5"
 		cryo			"0.5"
-		area			"1.5"
+		area			"1.0"
 	}
 	
 	LuaDesc

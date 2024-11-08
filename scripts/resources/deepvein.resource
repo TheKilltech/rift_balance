@@ -205,9 +205,89 @@ GameplayResourceDef
 	type 				"vein"
 	ore					"petroleum"
 	random_rotation 	"1"
-	icon				"gui/hud/resource_icons/petroleum_pool"
-	bigger_icon			"gui/hud/resource_icons/petroleum_pool_bigger"
+	//icon				"gui/hud/resource_icons/petroleum_pool"
+	//bigger_icon			"gui/hud/resource_icons/petroleum_pool_bigger"
+	icon				"gui/hud/resource_icons/petroleum"
+	bigger_icon			"gui/hud/resource_icons/petroleum_bigger"
 	order   			"38"
 
 	spawn_type			"single"
 }
+
+GameplayResourceDef
+{
+	id					"nitric_acid_deepvein"
+	localization_id 	"resource_name/nitric_acid_deepvein"
+	bp  				"resources/resource_nitric_acid_deepvein"
+	type 				"vein"
+	ore					"nitric_acid"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/nitric_acid"
+	bigger_icon			"gui/hud/resource_icons/nitric_acid_bigger"
+	order   			"41"
+
+	spawn_type			"single"
+}
+
+// gases & plasmas
+
+GameplayResourceDef
+{
+	id					"fluorine_deepvein"
+	localization_id 	"resource_name/fluorine_deepvein"
+	bp  				"resources/resource_fluorine_deepvein"
+	type 				"vein"
+	ore					"fluorine"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/fluorine"
+	bigger_icon			"gui/hud/resource_icons/fluorine_bigger"
+	order   			"40"
+
+	spawn_type			"single"
+}
+
+GameplayResourceDef
+{
+	id					"resin_deepvein"
+	localization_id 	"resource_name/resin_deepvein"
+	bp  				"resources/resource_resin_deepvein"
+	type 				"vein"
+	ore					"resin"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/resin"
+	bigger_icon			"gui/hud/resource_icons/resin_bigger"
+	order   			"42"
+
+	spawn_type			"single"
+}
+
+GameplayResourceDef
+{
+	id					"plasma_deepvein"
+	localization_id 	"resource_name/plasma_deepvein"
+	bp  				"resources/resource_plasma_deepvein"
+	type 				"vein"
+	ore					"plasma"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/plasma"
+	bigger_icon			"gui/hud/resource_icons/plasma_bigger"
+	order   			"45"
+
+	spawn_type			"single"
+}
+
+GameplayResourceDef
+{
+	id					"plasma_charged_deepvein"
+	localization_id 	"resource_name/plasma_charged_deepvein"
+	bp  				"resources/resource_plasma_charged_deepvein"
+	type 				"vein"
+	ore					"plasma_charged"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/supercharged_plasma"
+	bigger_icon			"gui/hud/resource_icons/supercharged_plasma_bigger"
+	order   			"46"
+
+	spawn_type			"single"
+}
+

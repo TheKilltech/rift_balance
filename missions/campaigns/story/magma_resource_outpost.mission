@@ -632,6 +632,17 @@ MissionDef
 		
 		ResourceVolume
         {
+            resource        "titanium_deepvein"
+			required_discovery_lvl	"1"
+			
+            is_infinite     "1"
+
+            min_spawned_volumes "1"
+            max_spawned_volumes "1"
+        }
+		
+		ResourceVolume
+        {
             resource        "carbon_vein"
 			required_discovery_lvl	"1"
 
@@ -663,17 +674,6 @@ MissionDef
             min_spawned_volumes "10"
             max_spawned_volumes "15"
         }
-		ResourceVolume
-        {
-            resource        "iron_vein"
-			required_discovery_lvl	"1"
-
-            min_resources   "8000"
-            max_resources   "16000"
-
-            min_spawned_volumes "3"
-            max_spawned_volumes "5"
-        }
 
         ResourceVolume
         {
@@ -683,8 +683,19 @@ MissionDef
             min_resources   "25000"
             max_resources   "50000"
 		
+            min_spawned_volumes "4"
+            max_spawned_volumes "5"
+        }
+
+        ResourceVolume
+        {
+            resource        "iron_deepvein"
+			required_discovery_lvl	"1"
+		
+            is_infinite     "1"
+		
             min_spawned_volumes "2"
-            max_spawned_volumes "3"
+            max_spawned_volumes "2"
         }
 		
         ResourceVolume
@@ -703,6 +714,7 @@ MissionDef
             resource        "geothermal_vent"
             
             is_infinite     "1"
+			
             min_spawned_volumes "20"
             max_spawned_volumes "30"
         }	
@@ -711,43 +723,42 @@ MissionDef
             resource        "geothermal_vent"
 			required_discovery_lvl	"1"
 
-           
             is_infinite     "1"
+			
             min_spawned_volumes "3"
             max_spawned_volumes "5"
         }
         
 		ResourceVolume
         {
-            resource        "flammable_gas_vent"
+            resource        "fluorine_deepvein"
             
-            is_infinite     "1"            
+            is_infinite     "1"
+			
             min_spawned_volumes "3"
             max_spawned_volumes "6"
         }
-        
-		ResourceVolume
-        {
-            resource        "flammable_gas_vent"
-            required_discovery_lvl	"1"
-			
-            is_infinite     "1"            
-            min_spawned_volumes "3"
-            max_spawned_volumes "6"
-        }	
 		
         ResourceVolume
         {
             resource        "sludge_deepvein"
 			required_discovery_lvl	"1"
 			
-            min_resources   "9999"
-            max_resources   "9999"
+            is_infinite        "1"
+
+            min_spawned_volumes "8"
+            max_spawned_volumes "12"
+        }	
+		
+        ResourceVolume
+        {
+            resource        "nitric_acid_deepvein"
+			required_discovery_lvl	"1"
+			
+            is_infinite        "1"
 
             min_spawned_volumes "3"
-            max_spawned_volumes "6"
-			
-            is_infinite        "1"	
+            max_spawned_volumes "5"
         }	
     }
 

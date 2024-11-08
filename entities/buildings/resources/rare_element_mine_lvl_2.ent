@@ -27,7 +27,9 @@ EntityBlueprint
 				building_time 120
 				building_cost
 				{
-					carbonium 	"1000"
+					carbonium 	"500"
+					steel		"800"
+					cobalt		"50"
 				}
 			}	
 			BuildingCostInfo
@@ -75,10 +77,23 @@ EntityBlueprint
 			}
 			GameplayResource
 			{
+				resource 			"morphium"
+				value			 	"50"
+				attachment			"att_in_1"
+				family				"in"
+			}
+			GameplayResource
+			{
 				resource 			"reagent"
 				value			 	"10"
 				attachment			"att_in_1"
 				family				"in"
+			}
+			
+			GameplayResource
+			{
+				resource 			"tanzanite"
+				value				"0.02"
 			}
 			
 			
@@ -86,38 +101,44 @@ EntityBlueprint
 			{
 				resource 			"carbon_deepvein"
 				value			 	"2"
-				family				"base"
+				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"iron_deepvein"
 				value			 	"2"
-				family				"base"
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium_deepvein"
+				value			 	"2"
+				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"uranium_ore_deepvein"
 				value			 	"2"
-				family				"rare"
+				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"titanium_deepvein"
 				value			 	"2"
-				family				"rare"
+				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium_deepvein"
 				value			 	"2"
-				family				"rare"
+				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"cobalt_deepvein"
 				value			 	"2"
-				family				"rare"
+				family				"resource"
 			}
 		}
 		
@@ -127,38 +148,44 @@ EntityBlueprint
 			{
 				resource 			"carbonium"
 				value			 	"2.5"
-				family				"base"
+				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"steel"
 				value			 	"2.5"
-				family				"base"
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value			 	"2.5"
+				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"uranium_ore"
 				value			 	"2.5"
-				family				"rare"
+				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium"
 				value			 	"2.5"
-				family				"rare"
+				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"titanium"
 				value			 	"2.5"
-				family				"rare"
+				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"cobalt"
 				value			 	"2.5"
-				family				"rare"
+				family				"resource"
 			}
 		}
 		

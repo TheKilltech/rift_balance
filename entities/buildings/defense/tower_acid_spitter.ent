@@ -11,9 +11,8 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_acid_spitter"
 		menu_icon			"gui/hud/building_icons/tower_acid_spitter"
 		require 			"headquarters"
-		building_group		"tower_flamer"
 		order				"9"
-		buildable			"0"
+		buildable			"1"
 		check_connect		"1"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
@@ -49,15 +48,40 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"sludge"
-				value 		"20"
-				family		"fuel"
+				value 		"10"
+				family		"carrier"
 				attachment	"att_in_1"
 			}
+			
 			GameplayResource
 			{
 				resource 	"nitric_acid"
-				value 		"5"
-				family		"fuel"
+				value 		"3"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"mud"
+				value		"20"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"water"
+				value		"20"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"morphium"
+				value		"20"
+				family		"carrier"
 				attachment	"att_in_1"
 			}
 		}

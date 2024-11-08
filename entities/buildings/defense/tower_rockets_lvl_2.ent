@@ -48,20 +48,20 @@ EntityBlueprint
 				value 		"25"
 			}
 			
-			GameplayResource
-			{
-				resource 	"fluorine"
-				value 		"15"
-				family		"propellant"
-				attachment	"att_in_1"
-			}		
-			GameplayResource
-			{
-				resource 	"reagent"
-				value 		"5"
-				family		"propellant"
-				attachment	"att_in_1"
-			}
+			//GameplayResource
+			//{
+			//	resource 	"fluorine"
+			//	value 		"15"
+			//	family		"propellant"
+			//	attachment	"att_in_1"
+			//}		
+			//GameplayResource
+			//{
+			//	resource 	"reagent"
+			//	value 		"5"
+			//	family		"propellant"
+			//	attachment	"att_in_1"
+			//}
 		}
 
 		out
@@ -129,20 +129,20 @@ EntityBlueprint
 		}
 		////////////////////////Resources/////////////////////////
 		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_arrow"
-				}
-			}
-		}
+		//{
+		//	group "att_in_1"
+		//	enabled "0"				
+		//	delay "0"
+		//	
+		//	Effects
+		//	{
+		//		Effect
+		//		{
+		//			blueprint "effects/buildings_and_machines/building_arrow"
+		//			bone "att_in_arrow"
+		//		}
+		//	}
+		//}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{

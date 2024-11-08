@@ -1,5 +1,5 @@
 return function()
-    local rules = require("lua/missions/campaigns/dlc_1/dom_metallic_outpost_rules_default.lua")()
+    local rules = require("lua/missions/campaigns/dlc_1/dom_metallic_outpost_rules_hard.lua")()
 	
 	rules.timeToNextDifficultyLevel = 
 	{			

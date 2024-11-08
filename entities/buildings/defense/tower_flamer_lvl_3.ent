@@ -82,29 +82,29 @@ EntityBlueprint
 				value 		"50"
 			}
 			
-			GameplayResource
-			{
-				resource 	"magma"
-				value 		"25"
-				family		"fuel"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"plasma"
-				value 		"10"
-				family		"fuel"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"plasma_charged"
-				value 		"3"
-				family		"fuel"
-				attachment	"att_in_1"
-			}
+			//GameplayResource
+			//{
+			//	resource 	"magma"
+			//	value 		"25"
+			//	family		"fuel"
+			//	attachment	"att_in_1"
+			//}
+			//
+			//GameplayResource
+			//{
+			//	resource 	"plasma"
+			//	value 		"10"
+			//	family		"fuel"
+			//	attachment	"att_in_1"
+			//}
+			//
+			//GameplayResource
+			//{
+			//	resource 	"plasma_charged"
+			//	value 		"3"
+			//	family		"fuel"
+			//	attachment	"att_in_1"
+			//}
 		}
 
 		out
@@ -236,21 +236,21 @@ EntityBlueprint
 			"buildings/effects_small_base"
 		}	
 		////////////////////////Resources/////////////////////////
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_arrow"
-				}
-			}
-		}
+		//EffectGroup
+		//{
+		//	group "att_in_1"
+		//	enabled "0"				
+		//	delay "0"
+		//	
+		//	Effects
+		//	{
+		//		Effect
+		//		{
+		//			blueprint "effects/buildings_and_machines/building_arrow"
+		//			bone "att_in_arrow"
+		//		}
+		//	}
+		//}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -258,11 +258,11 @@ EntityBlueprint
 			enabled "1"
 			Effects
 			{
-				Effect
-				{
-					blueprint	"effects/buildings_and_machines/pipe"
-					bone 		"att_in_pipe"
-				}
+				//Effect
+				//{
+				//	blueprint	"effects/buildings_and_machines/pipe"
+				//	bone 		"att_in_pipe"
+				//}
 				Effect
 				{
 					blueprint	"effects/buildings_and_machines/pylon2"

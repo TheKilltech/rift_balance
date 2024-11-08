@@ -52,9 +52,8 @@ return function()
 
 	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
 	{
-		30,  -- 1st event probability in percent
-		10,  -- 2nd event probability in percent
-		 5,  -- 3rd event probability in percent
+		20,  -- 1st event probability in percent
+		 5,  -- 2nd event probability in percent
 	}
 
 	rules.addResourcesOnRunOut = 
@@ -68,16 +67,16 @@ return function()
 	}
 	
 	rules.timeToNextDifficultyLevel = 
-	{			
-		600, -- difficulty level 1
-		600, -- difficulty level 2
-		1200, -- difficulty level 3	
-		1800, -- difficulty level 4
-		1800, -- difficulty level 5
-		2400, -- difficulty level 6
-		2400, -- difficulty level 7
-		3200, -- difficulty level 8
-		3200, -- difficulty level 9
+	{
+		660,  -- difficulty level 1
+		720,  -- difficulty level 2
+		780,  -- difficulty level 3
+		840,  -- difficulty level 4	
+		900,  -- difficulty level 5	
+		1080,  -- difficulty level 6	
+		1200,  -- difficulty level 7
+		1500,  -- difficulty level 8	
+		1800,  -- difficulty level 9	
 	}
 
 	rules.prepareSpawnTime = 
@@ -180,96 +179,31 @@ return function()
 		{},                       -- concecutive chances of wave repeating at level 1
 		{},                       -- concecutive chances of wave repeating at level 2
 		{},                       -- concecutive chances of wave repeating at level 3
-		{50, 20},                 -- concecutive chances of wave repeating at level 4
-		{80, 50, 20},             -- concecutive chances of wave repeating at level 5
-		{90, 75, 70},             -- concecutive chances of wave repeating at level 6
-		{90, 90, 70, 20},         -- concecutive chances of wave repeating at level 7
-		{90, 80, 80, 80},         -- concecutive chances of wave repeating at level 8
-		{80, 80, 80, 35, 50, 90}, -- concecutive chances of wave repeating at level 9
+		{10 },                    -- concecutive chances of wave repeating at level 4
+		{25, 40, 20},             -- concecutive chances of wave repeating at level 5
+		{40, 55, 40},             -- concecutive chances of wave repeating at level 6
+		{55, 50, 40, 20},         -- concecutive chances of wave repeating at level 7
+		{70, 60, 80, 20},         -- concecutive chances of wave repeating at level 8
+		{85, 70, 80, 35, 90},     -- concecutive chances of wave repeating at level 9
 	}
 
-	rules.waves = 
-	{
-		["default"] =
-		{				
-			{ -- difficulty level 1	
-				"logic/missions/survival/metallic/attack_level_1_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_1_id_2_metallic.logic",
-			},			
-			{  -- difficulty level 2			
-				"logic/missions/survival/metallic/attack_level_2_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_2_id_2_metallic.logic",
-			},
-			{  -- difficulty level 3
-				"logic/missions/survival/metallic/attack_level_3_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_3_id_2_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_3_id_3_metallic.logic", -- double wave to increase octabit probability
-				"logic/missions/survival/metallic/attack_level_3_id_3_metallic.logic", -- double wave to increase octabit probability
-			},
-			{  -- difficulty level 4			
-				"logic/missions/survival/metallic/attack_level_3_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_3_id_2_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_2_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_3_metallic.logic",				
-			},
-			{  -- difficulty level 5
-				"logic/missions/survival/metallic/attack_level_4_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_2_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_3_metallic.logic",		
-				"logic/missions/survival/metallic/attack_level_5_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_5_id_2_metallic.logic",			
-				"logic/missions/survival/metallic/attack_level_5_id_3_metallic.logic",								
-			},
-			{  -- difficulty level 6
-				"logic/missions/survival/metallic/attack_level_4_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_2_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_3_metallic.logic",		
-				"logic/missions/survival/metallic/attack_level_5_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_5_id_2_metallic.logic",			
-				"logic/missions/survival/metallic/attack_level_5_id_3_metallic.logic",									
-			},
-			{  -- difficulty level 7
-				"logic/missions/survival/metallic/attack_level_3_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_3_id_2_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_3_id_3_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_2_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_3_metallic.logic",		
-				"logic/missions/survival/metallic/attack_level_5_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_5_id_2_metallic.logic",			
-				"logic/missions/survival/metallic/attack_level_5_id_3_metallic.logic",				
-			},
-			{  -- difficulty level 8
-				"logic/missions/survival/metallic/attack_level_3_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_3_id_2_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_3_id_3_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_2_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_3_metallic.logic",		
-				"logic/missions/survival/metallic/attack_level_5_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_5_id_2_metallic.logic",			
-				"logic/missions/survival/metallic/attack_level_5_id_3_metallic.logic",		
-				"logic/missions/survival/metallic/attack_level_6_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_6_id_2_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_6_id_3_metallic.logic",				
-			},
-			{ -- difficulty level 9
-				"logic/missions/survival/metallic/attack_level_3_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_3_id_2_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_3_id_3_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_2_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_4_id_3_metallic.logic",		
-				"logic/missions/survival/metallic/attack_level_5_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_5_id_2_metallic.logic",			
-				"logic/missions/survival/metallic/attack_level_5_id_3_metallic.logic",		
-				"logic/missions/survival/metallic/attack_level_6_id_1_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_6_id_2_metallic.logic",
-				"logic/missions/survival/metallic/attack_level_6_id_3_metallic.logic",				
-			},
-		},
-	}
+	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
+	rules.waves = {}
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3 },                  biomes = { "metallic" }, levels = { 1 },   ids = { 1, 2 },      suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5},             biomes = { "metallic" }, levels = { 1 },   ids = { 1, 2 },      suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       3, 4, 5, 6},          biomes = { "metallic" }, levels = { 2 },   ids = { 1, 2 },      suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7},       biomes = { "metallic" }, levels = { 2 },   ids = { 1, 2 },      suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7},       biomes = { "metallic" }, levels = { 3 },   ids = { 1, 2, 3 },   suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             5, 6, 7, 8},    biomes = { "metallic" }, levels = { 3 },   ids = { 1, 2, 3 },   suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8,  }, biomes = { "metallic" }, levels = { 4 },   ids = { 1, 2, 3 },   suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                   7, 8, 9}, biomes = { "metallic" }, levels = { 4 },   ids = { 1, 2, 3 },   suffixes = { "", "alpha" },     },   rules.waves)
+	
+	rules.waves = wave_gen:Generate({ groups = { "magma" },     difficulty = {                6, 7, 8, 9}, biomes = { "magma" },    levels = { 2 },   ids = { 1, 2 },      suffixes = { "ultra" },         },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "magma" },     difficulty = {          4, 5, 6, 7},       biomes = { "magma" },    levels = { 3 },   ids = { 1, 2 },      suffixes = { "", "" },          },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "magma" },     difficulty = {                6, 7, 8, 9}, biomes = { "magma" },    levels = { 3 },   ids = { 1, 2 },      suffixes = { "alpha" },         },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "magma" },     difficulty = {                6, 7, 8,  }, biomes = { "magma" },    levels = { 4 },   ids = { 1, 2 },      suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "magma" },     difficulty = {                   7, 8, 9}, biomes = { "magma" },    levels = { 4 },   ids = { 1, 2 },      suffixes = { "", "alpha" },     },   rules.waves)
+	
 
 	rules.extraWaves = 
 	{

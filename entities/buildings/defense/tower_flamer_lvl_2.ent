@@ -81,30 +81,6 @@ EntityBlueprint
 				resource 	"energy"
 				value 		"15"
 			}
-			
-			GameplayResource
-			{
-				resource 	"flammable_gas"
-				value 		"15"
-				family		"fuel"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"magma"
-				value 		"15"
-				family		"fuel"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"plasma
-				value 		"4"
-				family		"fuel"
-				attachment	"att_in_1"
-			}
 		}
 
 		out
@@ -205,21 +181,21 @@ EntityBlueprint
 			"buildings/effects_small_base"
 		}	
 		////////////////////////Resources/////////////////////////
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_arrow"
-				}
-			}
-		}
+		//EffectGroup
+		//{
+		//	group "att_in_1"
+		//	enabled "0"				
+		//	delay "0"
+		//	
+		//	Effects
+		//	{
+		//		Effect
+		//		{
+		//			blueprint "effects/buildings_and_machines/building_arrow"
+		//			bone "att_in_arrow"
+		//		}
+		//	}
+		//}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{

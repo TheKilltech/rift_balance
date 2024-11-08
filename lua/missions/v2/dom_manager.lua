@@ -1261,10 +1261,10 @@ end
 function dom_mananger:OnEnterCooldownAfterSpawnTime( state )
 	self:VerboseLog("OnEnterCooldownAfterSpawnTime" )
 	self.cooldownTimer  = self.rules.cooldownAfterAttacks[self.currentDifficultyLevel]
-	self.waveRepeatTime = math.max(self.cooldownTimer - 60, 0)
+	self.waveRepeatTime = RandInt(40, math.max(self.cooldownTimer - 60, 60))
 	
-	self.coolEventSpawnTime = {}
 	if ((self.waveRepeated or 0) == 0) then
+		self.coolEventSpawnTime = {}
 		local rngRoll = RandInt(0, 100)	
 		if (not self.rules.spawnCooldownEventChance) then
 			self.rules.spawnCooldownEventChance = { 25, 5, 1}
@@ -1616,7 +1616,8 @@ function dom_mananger:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, prepare
 	for preparedWave in Iter( preparedAttacks ) do 
 		self.data:SetString( "spawn_point", preparedWave.spawnPointName )
 
-		self:VerboseLog( log .. preparedWave.waveName )
+		self:VerboseLog( log .. preparedWave.waveName .. "  " )
+		self:VerboseLog( "dom_mananger activating " .. preparedWave.waveName .. "  (wave repeat: " .. tostring((self.waveRepeated or 0) -1) .. ", repeat time: ".. tostring(self.waveRepeatTime) .. ")" )
 
 		self:PrepareLabels( "", "label_small", 0 )
 
@@ -1638,6 +1639,7 @@ function dom_mananger:SpawnWave( attackCount, borderSpawnPointGroupName, wavePoo
 		local spawnPointName = self:RandomizeSpawnPoint(borderSpawnPointGroupName, waveData )
 		if ( spawnPointName ~= "none" ) then
 			self:VerboseLog( log .. waveData.name )
+		    self:VerboseLog( "dom_mananger activating " .. waveData.name .. "  (wave repeat: " .. tostring((self.waveRepeated or 0) -1) .. ", repeat time: ".. tostring(self.waveRepeatTime) .. ")" )
 
 			self:PrepareLabels( participants, labelName, participantsPercentageUse )
 

@@ -95,14 +95,24 @@ material "gui/hud/building_icons/tower_cannon_disabled" : gui/default
 	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_cannon_disabled.dds"
 }
 
-material "gui/hud/building_icons/tower_cannon_small" : gui/default
+material "gui/hud/building_icons/tower_cannon_lvl_2" : gui/default
 {
-	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_cannon_small.dds"
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_cannon_lvl2.dds"
 }
 
-material "gui/hud/building_icons/tower_cannon_small_disabled" : gui/default
+material "gui/hud/building_icons/tower_cannon_lvl_2_disabled" : gui/default
 {
-	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_basic_disabled.dds"
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_cannon_cooled_disabled.dds"
+}
+
+material "gui/hud/building_icons/tower_cannon_lvl_3" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_cannon_lvl3.dds"
+}
+
+material "gui/hud/building_icons/tower_cannon_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_basic_lvl3_disabled.dds"
 }
 
 material "gui/hud/building_icons/tower_cannon_cooled" : gui/default
@@ -143,6 +153,57 @@ material "gui/hud/building_icons/tower_cannon_incindiary" : gui/default
 material "gui/hud/building_icons/tower_cannon_incindiary_disabled" : gui/default
 {
 	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_cannon_incindiary_disabled.dds"
+}
+
+
+/////  tower_cannon_small
+
+material "gui/hud/building_icons/tower_cannon_small" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_cannon_small.dds"
+}
+
+material "gui/hud/building_icons/tower_cannon_small_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_basic_disabled.dds"
+}
+
+material "gui/hud/building_icons/tower_cannon_small_lvl2" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_cannon_small.dds"
+}
+
+material "gui/hud/building_icons/tower_cannon_small_lvl2_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_basic_disabled.dds"
+}
+
+material "gui/hud/building_icons/tower_cannon_small_lvl3" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_cannon_small.dds"
+}
+
+material "gui/hud/building_icons/tower_cannon_small_lvl3_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_basic_disabled.dds"
+}
+
+
+/////  tower_shotgun
+
+material "gui/hud/building_icons/tower_shotgun" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_shotgun.dds"
+}
+
+material "gui/hud/building_icons/tower_shotgun_lvl2" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_shotgun_lvl2.dds"
+}
+
+material "gui/hud/building_icons/tower_shotgun_lvl3" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_shotgun_lvl3.dds"
 }
 
 

@@ -36,7 +36,7 @@ EntityBlueprint
 			}
 		}
 
-		resource_requirement "flammable_gas_vent|mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
+		resource_requirement "flammable_gas_vent|mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein|nitric_acid_deepvein|fluorine_deepvein|resin_deepvein|plasma_deepvein|plasma_charged_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
 	}
 
 	ResourceConverterDesc
@@ -101,6 +101,36 @@ EntityBlueprint
 			}
 			GameplayResource
 			{
+				resource 			"nitric_acid_deepvein"
+				family				"deep"
+				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"fluorine_deepvein"
+				family				"deep"
+				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"plasma_deepvein"
+				family				"deep"
+				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"plasma_charged_deepvein"
+				family				"deep"
+				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"resin_deepvein"
+				family				"deep"
+				value			 	"2"
+			}
+			GameplayResource
+			{
 				resource 			"flammable_gas_vent"
 				family				"deep"
 				value			 	"2"
@@ -153,11 +183,46 @@ EntityBlueprint
 			}
 			GameplayResource
 			{
+				resource 			"nitric_acid"
+				value			 	"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
 				resource 			"flammable_gas"
 				value				"200"
 				family				"deep"
 				attachment			"att_out_1"
+			}		
+			GameplayResource
+			{
+				resource 			"fluorine"
+				value				"200"
+				family				"deep"
+				attachment			"att_out_1"
 			}	
+			GameplayResource
+			{
+				resource 			"plasma"
+				value				"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}	
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				value				"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}	
+			GameplayResource
+			{
+				resource 			"resin"
+				value				"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
 		}
 
 		priority 4

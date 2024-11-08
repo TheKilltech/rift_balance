@@ -9,16 +9,15 @@ EntityBlueprint
 		name 				"tower_cannon_lvl_2"
 		bp   				"buildings/defense/tower_cannon_lvl_2"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_cannon_cooled"
-		description			"gui/hud/building_description/tower_cannon_cooled"
-		menu_icon			"gui/hud/building_icons/tower_cannon_cooled"
+		localization_id		"gui/hud/building_name/tower_cannon"
+		description			"gui/hud/building_description/tower_cannon"
+		menu_icon			"gui/hud/building_icons/tower_cannon_lvl_2"
 		require 			"headquarters"
 		building_group		"tower_cannon"
-		order				"9"
-		check_connect		"1"
+		order				"10"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
-		//upgrade				"buildings/defense/tower_cannon_lvl_3"
+		upgrade				"buildings/defense/tower_cannon_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -44,21 +43,6 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"15"
-			}
-			
-			GameplayResource
-			{
-				resource 	"water"
-				value 		"5"
-				family		"coolant"
-				attachment	"att_in_1"
-			}		
-			GameplayResource
-			{
-				resource 	"supercoolant"
-				value 		"1"
-				family		"coolant"
-				attachment	"att_in_1"
 			}
 		}
 
@@ -121,37 +105,7 @@ EntityBlueprint
 		{
 			"buildings/effects_small_base"
 		}	
-		////////////////////////Resources/////////////////////////
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_arrow"
-				}
-			}
-		}
 		////////////////////////MISC/////////////////////////
-		EffectGroup
-		{
-			group "vismod"
-			enabled "0"
-			Effects
-			{
-				Effect
-				{
-					blueprint	"effects/buildings_and_machines/minipipes"
-					bone 		"att_vismod_2"
-					scale		"0.6 0.6 0.6"
-				}
-			}
-		}	
 		EffectGroup
 		{
 			group "lamp"
