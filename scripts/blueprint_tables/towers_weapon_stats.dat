@@ -826,8 +826,8 @@ buildings/defense/tower_artillery_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "180.000"
-				min_value "180.000"
+				max_value "260.000"
+				min_value "260.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -880,16 +880,16 @@ buildings/defense/tower_artillery_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "2.000"
+				min_value "2.000"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.300"
-				min_value "1.300"
+				max_value "1.500"
+				min_value "1.500"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -991,6 +991,174 @@ buildings/defense/tower_artillery_napalm
 			{
 				max_value "1.200"
 				min_value "1.200"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+		}
+
+	}
+
+}
+
+buildings/defense/tower_artillery_propelled
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_tower_explosive_lvl2"
+		damage_type "area"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "0.250"
+				min_value "0.250"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				max_value "120.000"
+				min_value "120.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "6.500"
+				min_value "6.500"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "28.000"
+				min_value "28.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.200"
+				min_value "1.200"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+		}
+
+	}
+
+}
+
+buildings/defense/tower_artillery_propelled_lvl_2
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_tower_explosive_lvl3"
+		damage_type "area"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "0.250"
+				min_value "0.250"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				max_value "260.000"
+				min_value "260.000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "6.500"
+				min_value "6.500"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2.000"
+				min_value "2.000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "28.000"
+				min_value "28.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.500"
+				min_value "1.500"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -2273,7 +2441,7 @@ buildings/defense/tower_flamer_lvl_3
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_liquid_lvl2"
+		ammo_storage "ammo_tower_liquid_lvl3"
 		damage_type "fire"
 		rarity "EXTREME"
 		stat_def_vec

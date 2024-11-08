@@ -1,26 +1,25 @@
 EntityBlueprint
 {
-	name "buildings/defense/tower_artillery_lvl_3"
+	name "buildings/defense/tower_artillery_propelled"
 
-	base_blueprint 			buildings/defense/tower_artillery_lvl_2
+	base_blueprint 			buildings/defense/tower_artillery
 
 	BuildingDesc
 	{
 		buildable			"0"
-		name 				"tower_artillery_lvl_3"
-		bp   				"buildings/defense/tower_artillery_lvl_3"
+		name 				"tower_artillery_propelled"
+		bp   				"buildings/defense/tower_artillery_propelled"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_artillery"
-		description			"gui/hud/building_description/tower_artillery"
-		menu_icon			"gui/hud/building_icons/tower_artillery_lvl3"
+		localization_id		"gui/hud/building_name/tower_artillery_propelled"
+		description			"gui/hud/building_description/tower_artillery_propelled"
+		menu_icon			"gui/hud/building_icons/tower_artillery_lvl2"
 		require 			"headquarters"
-		building_group		"tower_artillery"
-		order				"13"
+		order				"10"
 		check_connect		"1"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		upgrade				"buildings/defense/tower_artillery_propelled_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		//upgrade				"buildings/defense/tower_artillery_lvl_4"
 		condition			"NOT_BIOME"	
 		condition_value		"caverns"			
 
@@ -29,12 +28,12 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 12
+				building_time 6
 				building_cost
 				{
-					carbonium 	"400"
-					steel 		"200"
-					uranium		"100"
+					carbonium 	"200"
+					steel 		"100"
+					uranium		"10"
 				}
 			}
 		}
@@ -47,7 +46,39 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"100"
+				value 		"30"
+			}
+			
+			GameplayResource
+			{
+				resource 	"flammable_gas"
+				value 		"10"
+				family		"propellant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"fluorine"
+				value 		"10"
+				family		"propellant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"petroleum"
+				value 		"8"
+				family		"propellant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"reagent"
+				value 		"3"
+				family		"propellant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -60,8 +91,8 @@ EntityBlueprint
 	
 	HealthDesc
 	{
-		max_health 					"1000"
-		health 						"1000"
+		max_health 					"750"
+		health 						"750"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -91,47 +122,15 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/defense/tower_artillery_lvl_3.mesh"
-		material "buildings/defense/tower_artillery_lvl_3"
+		mesh "meshes/buildings/defense/tower_artillery_lvl_2.mesh"
+		material "buildings/defense/tower_artillery_lvl_2"
 	}
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/defense/tower_artillery_lvl_3"
+		name "meshes/buildings/defense/tower_artillery_lvl_2"
 	}
 
-	GridCullerDesc
-	{
-		Shapes
-		{
-   			PhysicsBoxShape
-   			{
-    				x	4
-    				y	4
-    				z	4
-   			}
-		}
-	}
-
-	MinimapItemDesc
-	{
-		type	"quad"
-		color
-		{
-			x "1"
-			y "0.5"
-			z "0"
-			w "1"
-		}
-		size
-		{
-			x "2"
-			y "2"
-		}
-
-		visibility			"always"
-	}
-	
 	WeaponItemDesc
 	{
 	}
@@ -144,8 +143,8 @@ EntityBlueprint
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "8"
-			range_max "44"
-			aiming_range "54"
+			range_max "48"
+			aiming_range "55"
 		}
 
 		aiming_cooldown "1"
@@ -174,23 +173,39 @@ EntityBlueprint
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "80" // "80"
+			emissive_factor "80" // "60"
 			submesh_idx "1"
 		}
 
-		ammo_blueprint 			"buildings/defense/tower_artillery_projectile_lvl3"
+		ammo_blueprint 			"buildings/defense/tower_artillery_projectile_lvl2"
 		muzzle_flash_effect 	"effects/weapons_explosive/tower_rocket_fire_medium"
 
 		burst_column_spacing 	"0"
 		burst_rate 				"0"
 		burst_column_angle 		"0"
 	}
-	
+
 	EffectDesc
 	{		
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
 		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
@@ -227,7 +242,7 @@ EntityBlueprint
 
 EntityBlueprint
 {
-	name "buildings/defense/tower_artillery_projectile_lvl3"
+	name "buildings/defense/tower_artillery_projectile_lvl2"
 	base_blueprint buildings/defense/tower_artillery_projectile
 
 	EffectDesc
@@ -238,7 +253,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/projectiles_and_trails/tower_artillery_projectile_lvl3"
+					blueprint "effects/projectiles_and_trails/tower_artillery_projectile_lvl2"
 					bone "att_exhaust"
 				}
 			}

@@ -1,17 +1,17 @@
 EntityBlueprint
 {
-	name "buildings/defense/tower_artillery_lvl_3"
+	name "buildings/defense/tower_artillery_propelled_lvl_2"
 
-	base_blueprint 			buildings/defense/tower_artillery_lvl_2
+	base_blueprint 			buildings/defense/tower_artillery_propelled
 
 	BuildingDesc
 	{
 		buildable			"0"
-		name 				"tower_artillery_lvl_3"
-		bp   				"buildings/defense/tower_artillery_lvl_3"
+		name 				"tower_artillery_propelled_lvl_2"
+		bp   				"buildings/defense/tower_artillery_propelled_lvl_2"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_artillery"
-		description			"gui/hud/building_description/tower_artillery"
+		localization_id		"gui/hud/building_name/tower_artillery_propelled"
+		description			"gui/hud/building_description/tower_artillery_propelled"
 		menu_icon			"gui/hud/building_icons/tower_artillery_lvl3"
 		require 			"headquarters"
 		building_group		"tower_artillery"
@@ -48,6 +48,30 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"100"
+			}
+			
+			GameplayResource
+			{
+				resource 	"flammable_gas"
+				value 		"30"
+				family		"propellant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"fluorine"
+				value 		"30"
+				family		"propellant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"reagent"
+				value 		"5"
+				family		"propellant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -100,38 +124,6 @@ EntityBlueprint
 		name "meshes/buildings/defense/tower_artillery_lvl_3"
 	}
 
-	GridCullerDesc
-	{
-		Shapes
-		{
-   			PhysicsBoxShape
-   			{
-    				x	4
-    				y	4
-    				z	4
-   			}
-		}
-	}
-
-	MinimapItemDesc
-	{
-		type	"quad"
-		color
-		{
-			x "1"
-			y "0.5"
-			z "0"
-			w "1"
-		}
-		size
-		{
-			x "2"
-			y "2"
-		}
-
-		visibility			"always"
-	}
-	
 	WeaponItemDesc
 	{
 	}
@@ -144,8 +136,8 @@ EntityBlueprint
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "8"
-			range_max "44"
-			aiming_range "54"
+			range_max "50"
+			aiming_range "60"
 		}
 
 		aiming_cooldown "1"
@@ -191,6 +183,22 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
 		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
