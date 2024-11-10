@@ -1,0 +1,963 @@
+MissionDef
+{
+    script          "lua/missions/survival/survival_swamp.lua"
+	localization_id	"campaigns/survival/swamp.campaign"
+    player_spawn_logic  "logic/loadout/player_loadout_survival_swamp.logic"
+	mission_award   "items/awards/survival_swamp_award_giver_item"
+
+	map_size        "6"
+
+    biomes          	"swamp"
+	
+    creature_volumes_min_distance   "128.0"
+	creature_volumes_density        "0.3"	
+	
+	//destructible_volume_texture_patterns
+    //{
+    //    materials/textures/logic/caverns_destructible_rocks_mask_edge_1_full.png
+	//}
+	
+	tile_spawn_rules
+	{
+		biomes/swamp/tiles/swamp_plains_07/swamp_plains_07.tile
+		{			
+			min_instances	3	
+			max_instances	5				
+		}	
+		biomes/swamp/tiles/swamp_canyons_01/swamp_canyons_01.tile
+		{			
+			max_instances	3				
+		}
+		biomes/swamp/tiles/swamp_canyons_02/swamp_canyons_02.tile
+		{			
+			max_instances	3				
+		}
+		biomes/swamp/tiles/swamp_canyons_03/swamp_canyons_03.tile
+		{			
+			max_instances	3				
+		}
+		biomes/swamp/tiles/swamp_canyons_04/swamp_canyons_04.tile
+		{			
+			max_instances	3				
+		}
+		biomes/swamp/tiles/swamp_lakes_01/swamp_lakes_01.tile
+		{			
+			max_instances	3				
+		}
+		biomes/swamp/tiles/swamp_lakes_02/swamp_lakes_02.tile
+		{			
+			max_instances	3				
+		}	
+	}
+
+    ambient_creature_species
+    {
+        ground
+        {               
+            species
+            {
+                CreatureVolume
+                {
+                    creature_species    "lurkid"
+                }
+            }
+        }
+
+        air
+        {
+			max_count "10"
+			spawn_rate 2
+			search_to_spawn_radius "1"
+			
+            species
+            {
+                CreatureVolume
+                {
+                    creature_species    "darnot"
+                }
+            }
+        }
+    }
+
+    creature_volumes_species
+    {
+        neutral_units
+        {
+            CreatureVolume
+            {
+                creature_species    "poogret"
+            }
+			CreatureVolume
+            {
+                creature_species    "stickrid"
+                volume_spawn_ratio  "2"
+            }
+        }
+
+        regular_units
+        {
+            CreatureVolume
+            {
+                creature_species    "stickrid"
+                volume_spawn_ratio  "1"
+            }
+            
+            CreatureVolume
+            {
+                creature_species    "plutrodon"
+                volume_spawn_ratio  "1.25"
+            }
+            
+            CreatureVolume
+            {
+                creature_species    "fungor"
+                volume_spawn_ratio  "1.0"
+            }
+            
+            CreatureVolume
+            {
+                creature_species    "phirian_jungle"
+                volume_spawn_ratio  "0.2"
+            }
+           
+            CreatureVolume
+            {
+                creature_species    "baxmoth"
+                volume_spawn_ratio  "0.3"
+            }
+			
+            CreatureVolume
+            {
+                creature_species    "nurglax"
+                volume_spawn_ratio  "0.2"
+            }
+			
+			CreatureVolume
+            {
+                creature_species    "canceroth"
+                volume_spawn_ratio  "0.2"
+            }
+        }
+		
+		liquid_units
+        {            
+			CreatureVolume
+            {
+                creature_species    "mudroner"
+                volume_spawn_ratio  "1"
+            }
+			CreatureVolume
+            {
+                creature_species    "stickrid"
+                volume_spawn_ratio  "2"
+            }
+            
+            CreatureVolume
+            {
+                creature_species    "plutrodon"
+                volume_spawn_ratio  "1.25"
+            }
+            
+            CreatureVolume
+            {
+                creature_species    "fungor"
+                volume_spawn_ratio  "1.0"
+            }
+			CreatureVolume
+            {
+                creature_species    "baxmoth"
+                volume_spawn_ratio  "0.2"
+            }
+			
+			CreatureVolume
+            {
+                creature_species    "nurglax"
+                volume_spawn_ratio  "0.2"
+            }
+			
+			CreatureVolume
+            {
+                creature_species    "phirian_jungle"
+                volume_spawn_ratio  "0.2"
+            }
+			CreatureVolume
+            {
+                creature_species    "canceroth"
+                volume_spawn_ratio  "0.2"
+            }
+        }  
+
+        resource_units
+        {
+            CreatureVolume
+            {
+                creature_species    "phirian_jungle"
+                volume_spawn_ratio  "1"
+            }			
+        }
+		
+    }
+	
+	mission_object_spawners
+	{
+        MarkerBlueprintSpawner
+        {
+            spawn_pool               "loot_containers"
+
+            // find all entities on map with this blueprint as possible spawn point
+            spawn_at_marker          "logic/spawn_objective"
+
+            // min distance from objects in other pools
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  200.0
+                loot_containers     125.0
+            }
+
+            // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
+            spawn_instances_minmax    15,20
+
+            spawn_blueprints
+            {
+                spawners/swamp_spawner_standard
+                {
+                    // make a roll to check if blueprint can be spawned
+                    spawn_chance           0.5
+                }
+
+                spawners/swamp_spawner_advanced
+                {
+                    spawn_instances_minmax 3,5
+                    spawn_chance           0.2
+                }
+
+                spawners/swamp_spawner_superior
+                {
+                    spawn_instances_minmax 2,3
+                    spawn_chance           0.2
+                }
+
+                spawners/swamp_spawner_extreme
+                {
+                    spawn_instances_minmax 1,2
+                    spawn_chance           0.1
+                }
+            }
+        }
+		
+		GridSpawner
+        {
+            spawn_pool               "poogret_plants"            		
+            spawn_min_free_cell_margin	5
+			spawn_within_destructible_volumes "0"
+			
+			spawn_min_distance_from_pools
+            {
+                player_spawn_point 		 150
+                loot_containers    		 30
+                loot_containers_small    20
+				poogret_plants			 200
+				resource_volumes		 20
+            }
+            
+            spawn_blueprints
+            {
+                props/special/interactive/poogret_plant_big_01                                
+            }
+        }
+		
+		GridSpawner
+        {
+            spawn_pool                  "tower_plant"
+	        spawn_team                  "enemy"
+			spawn_min_free_cell_margin	1
+			spawn_within_destructible_volumes "0"
+	
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      120
+                loot_containers         5
+                loot_containers_small   5
+                underground_treasures   5
+				resource_volumes		5
+				poogret_plants			5
+				tower_plant				15
+            }
+			spawn_max_distance_from_pools
+            {                
+				poogret_plants			15
+            }
+	
+            spawn_blueprints
+            {                  
+				units/ground/invigor
+                {
+					spawn_chance           0.3
+					spawn_culls_entities_around 0
+                } 
+				logic/position_marker
+                {
+					spawn_chance           0.7
+					spawn_culls_entities_around 0
+                }                  
+            }
+        }
+		
+		GridSpawner
+        {
+            spawn_pool                  "tower_plant"
+	        spawn_team                  "enemy"
+			spawn_min_free_cell_margin	3
+			spawn_within_destructible_volumes "0"
+	
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      120
+                loot_containers         8
+                loot_containers_small   8
+                underground_treasures   5
+				resource_volumes		5
+				poogret_plants			5
+				tower_plant				12
+				enemy					5
+            }
+			spawn_max_distance_from_pools
+            {                
+				loot_containers			20
+            }
+	
+            spawn_blueprints
+            {                  
+				units/ground/artigian
+                {
+					spawn_chance           0.25
+					spawn_culls_entities_around 1
+                } 
+				logic/position_marker
+                {
+					spawn_chance           0.75
+					spawn_culls_entities_around 0
+                }                  
+            }
+        }
+		
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "drexolian,enemy"
+            spawn_at_marker          "logic/spawn_prefab_marker_drexolian"
+		
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  128.0
+                loot_containers     5.0
+				resource_volumes	2
+				poogret_plants		5
+            }
+            
+            spawn_blueprints
+            {
+                units/ground/drexolian				
+				{
+					spawn_culls_entities_around 0
+					spawn_chance           0.5
+				}
+				props/trees/drexolian_big_03
+				{
+					spawn_culls_entities_around 0
+					
+				}
+            }
+        }
+		
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "drexolian,enemy"
+            spawn_at_marker          "logic/spawn_prefab_marker_drexolian_alpha"
+		
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  128.0
+                loot_containers     5.0
+				resource_volumes	2
+				poogret_plants		5
+            }
+            
+            spawn_blueprints
+            {
+                units/ground/drexolian_alpha				
+				{
+					spawn_culls_entities_around 0
+					spawn_chance           0.5
+				}				
+				props/trees/drexolian_big_03_skin1
+				{
+					spawn_culls_entities_around 0
+					spawn_chance           0.5
+				}
+            }
+        }
+		
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "carnicinth,enemy"
+            spawn_at_marker          "logic/spawn_prefab_marker_carnicinth"            
+		
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  128.0
+                loot_containers     5.0
+				resource_volumes	2
+				poogret_plants		5
+            }
+            
+            spawn_blueprints
+            {
+                units/ground/carnicinth				
+				{
+					spawn_culls_entities_around 0
+					spawn_chance           0.4
+				}
+				props/bush/standard_medium_01_skin13				
+				{
+					spawn_culls_entities_around 0
+					spawn_chance           0.6
+				}
+            }
+        }
+		
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "carnicinth,enemy"
+            spawn_at_marker          "logic/spawn_prefab_marker_carnicinth_alpha"            
+		
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  128.0
+                loot_containers     5.0
+				resource_volumes	2
+				poogret_plants		5
+            }
+            
+            spawn_blueprints
+            {
+                units/ground/carnicinth_alpha				
+				{
+					spawn_culls_entities_around 0
+					spawn_chance           0.4
+				}
+				props/bush/standard_medium_01_skin14				
+				{
+					spawn_culls_entities_around 0
+					spawn_chance           0.6
+				}
+            }
+        }
+		
+		GridSpawner
+        {
+            spawn_pool                  "loot_containers_small"
+			spawn_min_free_cell_margin	3
+
+            //terrain_types               "mud,floor"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      120
+                loot_containers         50
+                loot_containers_small   100
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+				poogret_plants			20
+            }
+
+            spawn_blueprints
+            {
+				spawners/loot_container_small_swamp_standard
+                {                    
+                    spawn_chance           0.4				
+                }				
+                spawners/loot_container_small_swamp_advanced
+                {                    
+                    spawn_chance           0.3
+                }				
+                spawners/loot_container_small_swamp_superior
+                {                   
+                    spawn_chance           0.2
+                }				
+                spawners/loot_container_small_swamp_extreme
+                {                    
+                    spawn_chance           0.1
+                }				
+			}
+		}
+		
+		GridSpawner
+        {
+            spawn_pool                  "power_well"
+			spawn_min_free_cell_margin	3
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      200
+                loot_containers         40
+                loot_containers_small   40
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+				power_well				250
+				poogret_plants			20
+            }
+
+            spawn_blueprints
+            {
+				props/special/power_wells/power_well_source_health
+                {                    
+                    spawn_chance           0.1					
+                }
+				props/special/power_wells/power_well_source_forcefield
+                {                    
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_cooldowns
+                {
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_radar
+                {                 
+                    spawn_chance           0.1
+                }
+                props/special/power_wells/power_well_source_building
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_loot
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_reflect_damage
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_drones
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_ammo
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_firerate
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_damage
+                {                 
+                    spawn_chance           0.1
+                }					
+			}
+		}
+
+        GridSpawner
+        {
+            spawn_pool                  "underground_treasures"
+			spawn_min_free_cell_margin	3            
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      100.0
+                loot_containers         50.0
+                loot_containers_small   10.0
+                underground_treasures   75.0
+				power_well				10.0
+				poogret_plants			20
+            }
+
+            spawn_blueprints
+            {
+                spawners/loot_spawner
+                {
+                    spawn_instances_minmax      0,2
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	    string:"items/loot/resources/shard_carbonium_item"
+                        min   	 	    int:"200"
+                        max   	 	    int:"500"
+						package_size    int:"5"
+                    }
+                }
+
+                spawners/loot_spawner
+                {
+                    spawn_instances_minmax      0,2
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_steel_item"
+                        min   	 	int:"200"
+                        max   	 	int:"500"
+						package_size    int:"5"
+                    }
+                }
+
+                spawners/loot_spawner
+                {
+                    spawn_instances_minmax      3,5
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_hazenite_item"
+                        min   	 	int:"100"
+                        max   	 	int:"250"
+						package_size    int:"3"
+                    }
+                }
+
+                spawners/loot_spawner
+                {
+                    spawn_instances_minmax      3,5
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_tanzanite_item"
+                        min   	 	int:"100"
+                        max   	 	int:"250"
+						package_size    int:"3"
+                    }
+                }
+				
+				spawners/loot_spawner
+                {
+                    spawn_instances_minmax      3,5
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_rhodonite_item"
+                        min   	 	int:"100"
+                        max   	 	int:"250"
+						package_size    int:"3"
+                    }
+                }
+				
+				spawners/loot_spawner
+                {
+                    spawn_instances_minmax      3,5
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_ferdonite_item"
+                        min   	 	int:"100"
+                        max   	 	int:"250"
+						package_size    int:"3"
+                    }
+                }
+
+                spawners/loot_spawner
+                {
+                    spawn_instances_minmax      3,5
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_uranium_item"
+                        min   	 	int:"200"
+                        max   	 	int:"500"
+						package_size    int:"5"
+                    }
+                }
+
+                spawners/loot_spawner
+                {
+                    spawn_instances_minmax      3,5
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_cobalt_item"
+                        min   	 	int:"200"
+                        max   	 	int:"500"
+						package_size    int:"5"
+                    }
+                }
+				
+				spawners/loot_spawner
+                {
+                    spawn_instances_minmax      3,5
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_titanium_item"
+                        min   	 	int:"200"
+                        max   	 	int:"500"
+						package_size    int:"5"
+                    }
+                }
+				
+				spawners/loot_spawner
+                {
+                    spawn_instances_minmax      3,5
+                    spawn_discoverable_level    1
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_palladium_item"
+                        min   	 	int:"200"
+                        max   	 	int:"500"
+						package_size    int:"5"
+                    }
+                }
+            }
+        }
+	}
+
+    random_resources
+    {
+        ResourceVolume
+        {
+            resource        "carbon_vein"
+
+            min_resources   "5000"
+            max_resources   "15000"
+
+            min_spawned_volumes "10"
+            max_spawned_volumes "15"
+        }
+		
+        ResourceVolume
+        {
+            resource        "carbon_vein"
+			
+			required_discovery_lvl	"1"
+			
+            min_resources   "7000"
+            max_resources   "18000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }		
+
+        ResourceVolume
+        {
+            resource        "iron_vein"
+
+            min_resources   "3500"
+            max_resources   "10000"
+
+            min_spawned_volumes "5"
+            max_spawned_volumes "15"
+        }
+		
+        ResourceVolume
+        {
+            resource        "iron_vein"
+			
+			required_discovery_lvl	"1"
+			
+            min_resources   "4500"
+            max_resources   "12000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }		
+		
+        //ResourceVolume
+        //{
+        //    resource        "geothermal_vent"
+		//
+        //    min_resources   "6000"
+        //    max_resources   "10000"
+		//
+        //    min_spawned_volumes "2"
+        //    max_spawned_volumes "4"
+		//	
+        //    is_infinite        "1"			
+        //}
+
+		ResourceVolume
+        {
+            resource        "flammable_gas_vent"
+
+            min_resources   "6000"
+            max_resources   "10000"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+			
+            is_infinite        "1"			
+        }	
+		
+        //ResourceVolume
+        //{
+        //    resource        "geothermal_vent"
+		//	
+		//	required_discovery_lvl	"1"
+		//	
+        //    min_resources   "6000"
+        //    max_resources   "10000"
+		//
+        //    min_spawned_volumes "3"
+        //    max_spawned_volumes "6"
+		//	
+        //    is_infinite        "1"			
+        //}		
+
+        ResourceVolume
+        {
+            resource        "uranium_ore_vein"
+			
+            min_resources   "1500"
+            max_resources   "4000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }	
+
+        ResourceVolume
+        {
+            resource        "uranium_ore_vein"
+			
+			required_discovery_lvl	"1"
+			
+            min_resources   "2000"
+            max_resources   "4000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }	
+		
+		ResourceVolume
+        {
+            resource        "titanium_vein"
+			
+            min_resources   "1500"
+            max_resources   "4000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }	
+
+        ResourceVolume
+        {
+            resource        "titanium_vein"
+			
+			required_discovery_lvl	"1"
+			
+            min_resources   "2000"
+            max_resources   "4000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }	
+		
+		ResourceVolume
+        {
+            resource        "palladium_vein"
+			
+            min_resources   "1500"
+            max_resources   "4000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }	
+
+        ResourceVolume
+        {
+            resource        "palladium_vein"
+			
+			required_discovery_lvl	"1"
+			
+            min_resources   "2000"
+            max_resources   "4000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }	
+		
+		ResourceVolume
+        {
+            resource        "cobalt_vein"
+			
+            min_resources   "1500"
+            max_resources   "4000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }	
+
+        ResourceVolume
+        {
+            resource        "cobalt_vein"
+			
+			required_discovery_lvl	"1"
+			
+            min_resources   "2000"
+            max_resources   "4000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }	
+		
+		ResourceVolume
+        {
+            resource        "sludge_vein" 
+            is_infinite      "1"
+
+            min_spawned_volumes "2"            
+            max_spawned_volumes "9001"            
+        }
+		
+		ResourceVolume
+        {
+            resource        "mud_vein"
+            is_infinite      "1"
+
+            min_spawned_volumes "2"            
+            max_spawned_volumes "9001"            
+        }
+    }
+
+    min_starting_distance "16.0"
+    max_starting_distance "96.0"
+
+    starting_resources
+    {
+        ResourceVolume
+        {
+            resource        "carbon_vein"
+
+            min_resources   "16000"
+            max_resources   "22000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "2"
+        }
+
+        ResourceVolume
+        {
+            resource        "iron_vein"
+
+            min_resources   "12000"
+            max_resources   "18000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "2"
+        }
+		
+		//ResourceVolume
+        //{
+        //    resource        "flammable_gas_vent"
+        //    is_infinite     "1"
+        //    
+        //    min_spawned_volumes "1"
+        //    max_spawned_volumes "1"
+        //}	
+    }
+}

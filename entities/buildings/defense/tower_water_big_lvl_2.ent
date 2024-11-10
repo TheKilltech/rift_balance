@@ -1,0 +1,117 @@
+EntityBlueprint
+{
+	name  "buildings/defense/tower_water_big_lvl_2"
+	base_blueprint "buildings/defense/tower_water_big"
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"tower_water_big_lvl_2"
+		bp   				"buildings/defense/tower_water_big_lvl_2"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_water_big"
+		description			"gui/hud/building_description/tower_water_big"
+		menu_icon			"gui/hud/building_icons/tower_water_big_lvl2"
+		require 			"headquarters"
+		order				"30"
+		type				"tower"
+		overrides			"tower,wall"
+		upgrade				"buildings/defense/tower_water_big_lvl_3"
+		//exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		building_functionality	"BUILD_ON_WATER|NO_FOUNDATION"
+		resource_requirement "water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein"
+		radius_name				"water_tower"
+		min_radius				"15"
+		min_radius_effect   	"voice_over/announcement/building_too_close"		
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"250"
+					steel 		"1000"
+					uranium		"400"
+				}
+			}
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"2500"
+		health 						"2500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_effect_group 		"0_state"
+			}	
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_water_big_lvl_2.mesh"
+		material "buildings/defense/tower_water_big_lvl_2"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/tower_water_big_lvl_2"
+	}
+
+	WeaponItemDesc
+	{
+	}
+}

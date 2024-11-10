@@ -1,0 +1,452 @@
+EntityBlueprint
+{
+	name  "buildings/defense/tower_power_rod_lvl_2"
+	base_blueprint "buildings/defense/tower_power_rod"
+	
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"tower_power_rod_lvl_2"
+		bp   				"buildings/defense/tower_power_rod_lvl_2"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_power_rod"
+		description			"gui/hud/building_description/tower_power_rod"
+		menu_icon			"gui/hud/building_icons/tower_power_rod_lvl2"
+		require 			"headquarters"
+		order				"36"
+		type				"tower"
+		overrides			"tower,wall"
+		upgrade				"buildings/defense/tower_power_rod_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"	
+		condition			"NOT_BIOME"	
+		condition_value		"caverns"
+		radius_name				"power_rod"
+		min_radius				"25"
+		min_radius_effect   	"voice_over/announcement/building_too_close"		
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"1000"
+					steel 		"500"
+					titanium	"400"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc // must be here for AI
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"50"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
+	}	
+	
+	HealthDesc
+	{
+		max_health 					"2500"
+		health 						"2500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_effect_group 		"0_state"
+			}			
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_power_rod_lvl_2.mesh"
+		material "buildings/defense/tower_power_rod_lvl_2"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/tower_power_rod_lvl_2"
+	}
+	
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsCapsuleShape
+					{
+						r "2.45"
+						half_height "3.5"
+
+						position
+						{
+							x "0.0"
+							y "3.5"
+							z "0.0"
+						}
+
+						orientation
+						{
+							w "0.7"
+							x "0.0"
+							z "0.7"
+							y "0.0"
+						}
+					}
+				}
+			}
+		}
+	}	
+
+	WeaponItemDesc
+	{
+	}
+
+	TowerDesc
+	{
+	}
+	
+	TurretDesc
+	{
+		target "ground_unit_artillery|ground_unit_large|ground_unit_medium|ground_unit"
+		target_ignore "invisible"
+		speed "300"
+		aim_volume "SphericalAimVolume"
+		{
+			range_min "25"
+			range_max "180"
+			aiming_range "190"
+		}
+
+		aiming_cooldown "1"
+		aiming_target_time "2"
+		aiming_idle_angle "20"
+		pitch "att_muzzle"
+		yaw "att_muzzle"
+		check_target_visibility "0"
+		fog_of_war_filtering "1"
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/defense/tower_power_rod.lua"
+
+		database
+		{
+			cone_effect				string:"build_cone_1x1"
+			cone_effect_sell		string:"sell_small"
+			time_machine			int:"0"
+			rocket_radius 			float:"10"
+			rocket_height 			float:"400"
+			rocket_initial_height	float:"12"
+			rocket_bp				string:"buildings/defense/tower_power_rod_lvl_2_rocket"
+			crosshair_bp			string:"effects/messages_and_markers/target_laser_marker"
+		}
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle_1"
+				recoil_bone  "be_recoil"
+				recoil_time   "0.35"
+				recoil_offset   "1.0"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "6" // "10"
+			submesh_idx "0"
+		}
+
+		ammo_blueprint 			"buildings/defense/tower_power_rod_lvl_2_projectile"
+		zzle_flash_effect 	"effects/weapons_energy/heavy_artillery_muzzle"
+
+		burst_column_spacing 	"0"
+		burst_rate 				"0"
+		burst_column_angle 		"0"
+	}	
+}
+
+EntityBlueprint
+{
+	name "buildings/defense/tower_power_rod_lvl_2_rocket"
+
+	MeshDesc
+	{
+		mesh 	"meshes/projectiles/tower_power_rod_lvl_2_projectile.mesh"
+		material "buildings/defense/tower_power_rod_lvl_2_projectile"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/projectiles/tower_power_rod_lvl_1_projectile"
+	}
+
+	EffectDesc
+	{
+		EffectGroup
+		{			
+			group "exhaust"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapons_energy/power_rod_engine"
+					bone "att_exhaust"
+				}			
+			}
+		}
+	}
+
+	children
+	{
+		EntityBlueprint
+		{
+			RibbonComponent
+			{
+				material 			"ribbon/smoke_trail_blue_01"
+				update_bounds 		1
+				fade_out_time		1.9
+				tesselation_step 	0.1
+				manual_fade 		1	
+
+				Ribbons
+				{
+					Ribbon
+					{
+						parent_attachment "att_exhaust"
+						offset "0 0 0.9"
+					}
+
+					Ribbon
+					{
+						parent_attachment "att_exhaust"
+						offset "0 0 -0.9"
+					}
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name "buildings/defense/tower_power_rod_lvl_2_projectile"
+
+	MeshDesc
+	{
+		mesh 	"meshes/projectiles/tower_power_rod_lvl_2_projectile.mesh"
+		material "buildings/defense/tower_power_rod_lvl_2_projectile"	
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/projectiles/tower_power_rod_lvl_1_projectile"
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/defense/tower_power_rod_projectile.lua"
+
+		database
+		{
+			shockwave_count			int:"8"
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "1"
+			y "1"
+			z "0"
+			w "1"
+		}
+		size
+		{
+			x "2"
+			y "2"
+		}
+		visibility			"radar"
+	}
+
+	VegetationBendingComponentDesc
+	{
+		bending_power	"5000.0"
+		bending_radius	"5.0"
+	}
+
+	SoundDesc
+	{
+		name 		"items/weapons/explosive/rocket_projectile_medium"
+	}
+
+	EffectDesc
+	{
+		EffectGroup
+		{			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapons_energy/power_rod_engine_flare"
+					bone "att_exhaust"
+				}
+				Effect
+				{
+					blueprint "effects/weapons_energy/power_rod_energy"
+					bone "att_exhaust"
+				}				
+			}
+		}
+	}
+
+	ProjectileAmmoComponent
+	{
+		on_enemy_hit_effect 	"effects/weapons_energy/power_rod_energy_shockwave"
+		on_world_hit_effect 	"effects/weapons_energy/power_rod_energy_shockwave"
+		on_resisted_hit_effect 	"effects/weapons_energy/power_rod_energy_shockwave"
+		collision_3d 			"world|world_blocker"
+		hit_effect_direction 	"up"
+		manual_remove 			"1"
+
+		DamagePattern
+		{
+			area_damage_speed	"30"
+		}
+	}
+	
+	DestroyDesc
+	{
+		
+		DestroyPatterns
+		{		
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_energy/explosion_building_energy_medium"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime "3"
+				}
+
+				key "default"
+			}			
+		}
+	}		
+
+	children
+	{
+		EntityBlueprint
+		{
+			RibbonComponent
+			{		
+				material 			ribbon/smoke_trail_blue_01
+				update_bounds 		1
+				fade_out_time		0.9
+				uv_scroll			"0 -2.5"
+				tiling_distance     "0"
+				tesselation_step 	"0.25"
+				keep_local			"0"
+
+				Ribbons
+				{
+					Ribbon
+					{
+						parent_attachment "att_exhaust"
+						offset "0 0 0.9"
+					}
+
+					Ribbon
+					{
+						parent_attachment "att_exhaust"
+						offset "0 0 -0.9"
+					}
+				}
+			}
+		}
+	}	
+}

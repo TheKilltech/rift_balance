@@ -1,0 +1,48 @@
+Attachments
+{
+	Attachment
+	{
+		name "att_omni_light"
+		parent "be_barrel"
+		offset "0.53 3.49 -0.00"
+	}
+
+	Attachment
+	{
+		name "att_smoke_1"
+		parent "be_barrel"
+		offset "-0.76 1.40 0.02"
+		orientation "90.00 -0.00 -0.00"
+	}
+
+	Attachment
+	{
+		name "att_smoke_2"
+		offset "0.45 2.75 -0.30"
+		orientation "90.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_smoke_3"
+		offset "-0.53 2.53 0.52"
+		orientation "90.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_muzzle"
+		parent "be_barrel"
+		offset "2.71 0.79 0.02"
+	}
+
+}
+
+Constraints
+{
+	Constraint
+	{
+		bone "be_barrel"
+		pitch "-60.0:60.0"
+	}
+}
