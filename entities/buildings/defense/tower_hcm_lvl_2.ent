@@ -30,7 +30,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 30
+				building_time 50
 				building_cost
 				{
 					carbonium 	"2000"
@@ -48,12 +48,13 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"50"
+				value 		"60"
 			}
 			GameplayResource
 			{
-				resource 	"flammable_gas"
-				value 		"25"
+				resource 	"reagent"
+				value 		"12"
+				family		"fuel"
 				attachment	"att_in_1"
 			}
 		}

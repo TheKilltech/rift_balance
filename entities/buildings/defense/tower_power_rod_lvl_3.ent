@@ -39,6 +39,7 @@ EntityBlueprint
 			}
 		}
 	}
+	
 	ResourceConverterDesc // must be here for AI
 	{
 		in
@@ -47,6 +48,14 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"50"
+			}
+			
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"5"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 

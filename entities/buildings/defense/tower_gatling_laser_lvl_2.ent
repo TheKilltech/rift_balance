@@ -26,12 +26,13 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 25
+				building_time 50
 				building_cost
 				{
 					carbonium 	"1000"
 					steel 		"500"
 					cobalt		"400"
+					palladium	"50"
 				}
 			}
 		}
@@ -44,7 +45,23 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"450"
+				value 		"250"
+			}
+			
+			GameplayResource
+			{
+				resource 	"plasma_charged"
+				value 		"15"
+				family		"coolant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"morphium"
+				value		"100"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 
