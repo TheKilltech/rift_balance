@@ -6,7 +6,7 @@ return function()
 	rules.eventsPerPrepareState = 1 -- [0,1]
 	rules.pauseAttacks = false
 	rules.prepareAttacks = true
-	rules.baseTimeBetweenObjectives = 1800
+	rules.baseTimeBetweenObjectives = 1200
 	rules.spawnAttackEventProbability = 0.2
 	rules.spawn2ndAttackEventProbability = 0.2
 
@@ -129,7 +129,7 @@ return function()
 		1200,  -- difficulty level 6	
 		1200,  -- difficulty level 7
 		1200,  -- difficulty level 8	
-		1200,  -- difficulty level 9	
+		1800,  -- difficulty level 9	
 	}
 
 	rules.maxAttackCountPerDifficulty = 
@@ -137,9 +137,9 @@ return function()
 		0,  -- difficulty level 1
 		0,  -- difficulty level 2
 		0,  -- difficulty level 3		
-		0,  -- difficulty level 4
-		0,  -- difficulty level 5
-		0,  -- difficulty level 6
+		1,  -- difficulty level 4
+		1,  -- difficulty level 5
+		1,  -- difficulty level 6
 		1,  -- difficulty level 7
 		1,  -- difficulty level 8
 		2,  -- difficulty level 9
@@ -170,41 +170,29 @@ return function()
 		"logic/dom/attack_level_2_entry.logic", -- difficulty level 8					
 		"logic/dom/attack_level_2_entry.logic", -- difficulty level 9
 	}
-
-	rules.waves = 
+	
+	rules.waveRepeatChances = 
 	{
-		["default"] =
-		{			
-			{}, -- difficulty level 1
-			{}, -- difficulty level 2
-			{}, -- difficulty level 3
-			{}, -- difficulty level 4
-			{}, -- difficulty level 5			
-			{}, -- difficulty level 6	
-			
-			{ -- difficulty level 7
-				"logic/missions/survival/caverns/attack_level_1_id_1_metallic.logic",
-				"logic/missions/survival/caverns/attack_level_1_id_2_metallic.logic",
-			},
-						 
-			{ -- difficulty level 8
-				"logic/missions/survival/caverns/attack_level_1_id_1_metallic.logic",
-				"logic/missions/survival/caverns/attack_level_1_id_2_metallic.logic",
-				"logic/missions/survival/caverns/attack_level_2_id_1_metallic.logic",
-				"logic/missions/survival/caverns/attack_level_2_id_2_metallic.logic",
-			},
-			 
-			{ -- difficulty level 9
-				"logic/missions/survival/caverns/attack_level_1_id_1_metallic.logic",
-				"logic/missions/survival/caverns/attack_level_1_id_2_metallic.logic",
-				"logic/missions/survival/caverns/attack_level_2_id_1_metallic.logic",
-				"logic/missions/survival/caverns/attack_level_2_id_2_metallic.logic",
-				"logic/missions/survival/caverns/attack_level_3_id_1_metallic.logic",
-				"logic/missions/survival/caverns/attack_level_3_id_2_metallic.logic",
-				"logic/missions/survival/caverns/attack_level_3_id_3_metallic.logic",
-			},
-		},
+		{},                   -- concecutive chances of wave repeating at level 1
+		{},                   -- concecutive chances of wave repeating at level 2
+		{},                   -- concecutive chances of wave repeating at level 3
+		{10 },                -- concecutive chances of wave repeating at level 4
+		{25 },                -- concecutive chances of wave repeating at level 5
+		{30, 25},             -- concecutive chances of wave repeating at level 6
+		{45, 30, 20},         -- concecutive chances of wave repeating at level 7
+		{60, 45, 25},         -- concecutive chances of wave repeating at level 8
+		{75, 60, 40, 40},     -- concecutive chances of wave repeating at level 9
 	}
+
+	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
+	rules.waves = {}
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 3, 4, 5, 6 },          biomes = { "metallic" }, levels = { 1 },   ids = { 2 },      suffixes = { "" },        },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 3, 4, 5, 6, 7, 8},     biomes = { "metallic" }, levels = { 2 },   ids = { 2 },      suffixes = { "" },        },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    4, 5, 6, 7, 8, 9 }, biomes = { "metallic" }, levels = { 1 },   ids = { 2 },      suffixes = { "alpha" },   },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       5, 6, 7, 8, 9 }, biomes = { "metallic" }, levels = { 3 },   ids = { 2, 3 },   suffixes = { "" },        },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          6, 7, 8, 9 }, biomes = { "metallic" }, levels = { 4 },   ids = { 2, 3 },   suffixes = { "" },        },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             7, 8, 9 }, biomes = { "metallic" }, levels = { 2 },   ids = { 2 },      suffixes = { "alpha" },   },   rules.waves)
+	
 
 	rules.extraWaves = 
 	{
@@ -217,22 +205,22 @@ return function()
 		{}, -- difficulty level 7
 		
 		{ -- difficulty level 8
-			"logic/missions/survival/caverns/attack_level_2_id_1_metallic.logic",
-			"logic/missions/survival/caverns/attack_level_2_id_2_metallic.logic",
-			"logic/missions/survival/caverns/attack_level_3_id_1_metallic.logic",
-			"logic/missions/survival/caverns/attack_level_3_id_2_metallic.logic",
+			"logic/missions/survival/metallic/attack_level_2_id_1_metallic.logic",
+			"logic/missions/survival/metallic/attack_level_2_id_2_metallic.logic",
+			"logic/missions/survival/metallic/attack_level_3_id_1_metallic.logic",
+			"logic/missions/survival/metallic/attack_level_3_id_2_metallic.logic",
 		},
 		  
 		{ -- difficulty level 9
-			"logic/missions/survival/caverns/attack_level_3_id_1_metallic.logic",
-			"logic/missions/survival/caverns/attack_level_3_id_2_metallic.logic",
-			"logic/missions/survival/caverns/attack_level_3_id_3_metallic.logic",
-			"logic/missions/survival/caverns/attack_level_4_id_1_metallic.logic",
-			"logic/missions/survival/caverns/attack_level_4_id_2_metallic.logic",
-			"logic/missions/survival/caverns/attack_level_4_id_3_metallic.logic",
-			"logic/missions/survival/caverns/attack_level_5_id_1_metallic.logic",
-			"logic/missions/survival/caverns/attack_level_5_id_2_metallic.logic",
-			"logic/missions/survival/caverns/attack_level_5_id_3_metallic.logic",
+			"logic/missions/survival/metallic/attack_level_3_id_1_metallic.logic",
+			"logic/missions/survival/metallic/attack_level_3_id_2_metallic.logic",
+			"logic/missions/survival/metallic/attack_level_3_id_3_metallic.logic",
+			"logic/missions/survival/metallic/attack_level_4_id_1_metallic.logic",
+			"logic/missions/survival/metallic/attack_level_4_id_2_metallic.logic",
+			"logic/missions/survival/metallic/attack_level_4_id_3_metallic.logic",
+			"logic/missions/survival/metallic/attack_level_5_id_1_metallic.logic",
+			"logic/missions/survival/metallic/attack_level_5_id_2_metallic.logic",
+			"logic/missions/survival/metallic/attack_level_5_id_3_metallic.logic",
 		},	
 	}
 
