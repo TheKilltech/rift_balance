@@ -30,12 +30,12 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"600"
-					steel 	"300"
-					palladium	"150"
+					steel		"300"
+					cobalt		"150"
 				}
 			}		
 		}
-		resource_requirement "flammable_gas_vent"
+		resource_requirement "flammable_gas_vent|fluorine_deepvein|plasma_deepvein|plasma_charged_deepvein" 
 	}
 
 	ResourceConverterDesc
@@ -45,25 +45,74 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value				"15"
+				value				"140"
+			}
+			GameplayResource
+			{
+				resource 			"tanzanite"
+				value			 	"0.01"
 			}
 			
 			GameplayResource
 			{
 				resource 			"flammable_gas_vent"
-				value			 	"1"
+				family				"deep"
+				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"fluorine_deepvein"
+				family				"deep"
+				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"plasma_deepvein"
+				family				"deep"
+				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"plasma_charged_deepvein"
+				family				"deep"
+				value			 	"2"
 			}
 		}
-		
+
 		out
 		{
 			GameplayResource
 			{
 				resource 			"flammable_gas"
-				value				"100"
-			}		
+				value				"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"fluorine"
+				value			 	"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"plasma"
+				value				"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}	
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				value				"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}	
 		}
-		priority 4		
+
+		priority 4
+		one_vein_mode "1"
 	}
 	
 	ResourceStorageDesc
@@ -72,17 +121,17 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource	 	"flammable_gas"
-				max 	 		"300"
+				group	 		"local"
+				max 	 		"600"
 				attachment		"att_out_1"
-			}			
+			}
 		}
 	}	
 
 	HealthDesc
 	{
-		max_health 					"2000"
-		health 						"2000"
+		max_health 					"750"
+		health 						"750"
 		is_manual 1
 		update_health_uniform 		"1"
 		
@@ -94,6 +143,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"80_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
 				destroyed_state_effect_group 		"80_state"
 				destrucion_level_name 				"80"
 
@@ -104,6 +154,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"60_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"60_state"
 				destrucion_level_name 				"60"
 			}
@@ -113,6 +164,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"40_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
 				destroyed_state_effect_group 		"40_state"
 				destrucion_level_name 				"40"
 			}
@@ -122,6 +174,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"20_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				destroyed_state_effect_group 		"20_state"
 				destrucion_level_name 				"20"
 			}
@@ -131,7 +184,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"0_transition"
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
-				//destroyed_state_effect_group 		"0_state"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 			}			
 		}
 	}
@@ -140,9 +193,9 @@ EntityBlueprint
 	{		
 		EffectBaseBlueprints
 		{
-			"buildings/resources/gas_extractor"
-		}	
-
+			"buildings/resources/bio_condenser"
+		}
+		
 		EffectGroup
 		{
 			group "level"

@@ -27,11 +27,12 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"400"
-					steel 	"200"
+					steel		"200"
 				}
 			}		
 		}
-		resource_requirement "flammable_gas_vent"
+		
+		resource_requirement "flammable_gas_vent|fluorine_deepvein|plasma_deepvein|plasma_charged_deepvein"
 	}
 
 	ResourceConverterDesc
@@ -41,26 +42,70 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value				"10"
+				value				"85"
 			}
 			
 			GameplayResource
 			{
 				resource 			"flammable_gas_vent"
+				family				"deep"
 				value			 	"1"
 			}
+			GameplayResource
+			{
+				resource 			"fluorine_deepvein"
+				family				"deep"
+				value			 	"1"
+			}
+			GameplayResource
+			{
+				resource 			"plasma_deepvein"
+				family				"deep"
+				value			 	"1"
+			}
+			GameplayResource
+			{
+				resource 			"plasma_charged_deepvein"
+				family				"deep"
+				value			 	"1"
+			}
+
 		}
-		
+
 		out
 		{
 			GameplayResource
 			{
 				resource 			"flammable_gas"
-				value				"75"
+				value				"100"
+				family				"deep"
 				attachment			"att_out_1"
 			}		
+			GameplayResource
+			{
+				resource 			"fluorine"
+				value				"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}	
+			GameplayResource
+			{
+				resource 			"plasma"
+				value				"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}	
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				value				"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
 		}
-		priority 4		
+		
+		priority 4
+		one_vein_mode "1"
 	}
 	
 	ResourceStorageDesc
@@ -69,8 +114,8 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource	 	"flammable_gas"
-				max 	 		"300"
+				group	 		"local"
+				max 	 		"400"
 				attachment		"att_out_1"
 			}			
 		}
@@ -78,7 +123,7 @@ EntityBlueprint
 
 	LuaDesc
 	{
-		script "lua/buildings/resources/gas_extractor.lua"
+		script "lua/buildings/building.lua"
 		
 		database
 		{
@@ -89,8 +134,8 @@ EntityBlueprint
 
 	HealthDesc
 	{
-		max_health 					"1500"
-		health 						"1500"
+		max_health 					"500"
+		health 						"500"
 		is_manual 1
 		update_health_uniform 		"1"
 		
@@ -102,6 +147,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"80_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
 				destroyed_state_effect_group 		"80_state"
 				destrucion_level_name 				"80"
 
@@ -112,6 +158,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"60_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"60_state"
 				destrucion_level_name 				"60"
 			}
@@ -121,6 +168,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"40_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
 				destroyed_state_effect_group 		"40_state"
 				destrucion_level_name 				"40"
 			}
@@ -130,6 +178,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"20_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				destroyed_state_effect_group 		"20_state"
 				destrucion_level_name 				"20"
 			}
@@ -139,17 +188,17 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"0_transition"
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
-				//destroyed_state_effect_group 		"0_state"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 			}			
 		}
 	}
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/gas_extractor.mesh"
-		material "buildings/resources/gas_extractor"
+		mesh 		"meshes/buildings/resources/bio_condenser.mesh"
+		material 	"buildings/resources/bio_condenser"
 	}
-
+	
 	TypeDesc
 	{
 		type "building|resource"
@@ -157,7 +206,7 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/gas_extractor"
+		name "meshes/buildings/resources/bio_condenser"
 	}
 
 	AnimationGraphDesc
@@ -166,7 +215,7 @@ EntityBlueprint
 	}
 
 	PhysicsDesc
-	{
+ 	{
 		objects
 		{
 			PhysicsObjectDesc
@@ -178,13 +227,13 @@ EntityBlueprint
 				{
 					PhysicsCapsuleShape
 					{
-						r "4.45"
-						half_height "2.5"
+						r "2.45"
+						half_height "2"
 
 						position
 						{
 							x "0.0"
-							y "2.5"
+							y "2"
 							z "0.0"
 						}
 
@@ -195,7 +244,7 @@ EntityBlueprint
 							z "0.7"
 							y "0.0"
 						}
-					}
+					}	
 				}
 			}
 		}
@@ -212,12 +261,10 @@ EntityBlueprint
 	{
 		Shapes
 		{
-   			PhysicsBoxShape
-   			{
-    				x	10
-    				y	10
-    				z	10
-   			}			
+			PhysicsMeshShape
+			{
+				mesh "meshes/buildings/resources/liquid_material_storage_g1.nxs"
+			}	
 		}
 	}
 
@@ -236,8 +283,7 @@ EntityBlueprint
 			x "3"
 			y "3"
 		}
-
-		additional_z_order	"5"
+					
 		visibility			"always"
 	}
 
@@ -368,40 +414,8 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
-////////////////////////MISC/////////////////////////			
-		EffectGroup
-		{
-			group "working"
-			enabled "0"				
-			
-			Effects
-			{			
-				Effect
-				{
-					blueprint "effects/buildings_resources/gas_extractor_working"	
-					delay "0.5"					
-				}				
-				Effect
-				{
-					blueprint "effects/buildings_resources/gas_extractor_vent"	
-					bone "att_vent_1"
-					delay "0.5"					
-				}	
-				Effect
-				{
-					blueprint "effects/buildings_resources/gas_extractor_vent"	
-					bone "att_vent_2"
-					delay "0.6"					
-				}
-				Effect
-				{
-					blueprint "effects/buildings_resources/gas_extractor_vent"	
-					bone "att_vent_3"
-					delay "0.7"					
-				}				
-			}
 		}
+		////////////////////////Resources/////////////////////////				
 		EffectGroup
 		{
 			group "att_out_1"
@@ -416,6 +430,33 @@ EntityBlueprint
 					bone "att_out_arrow"
 				}
 			}
-		}		
+		}				
+		//////////////////////////////// MISC /////////////////////////////////////////		
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/bio_condenser_rotor"	
+					bone "att_rotor_1"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/bio_condenser_rotor"	
+					bone "att_rotor_2"
+					delay "0.5"
+				}				
+				Effect
+				{
+					blueprint "effects/buildings_resources/bio_condenser_working"
+					delay "0.5"
+				}
+			}
+		}			
 	}
 }

@@ -12,7 +12,7 @@ EntityBlueprint
 		type				"pipe"
 		localization_id		"gui/hud/building_name/liquid_pumpjack"
 		description			"gui/hud/building_description/liquid_pumpjack"
-		menu_icon			"gui/hud/building_icons/gas_extractor_lvl2"
+		menu_icon			"gui/hud/building_icons/liquid_pumpjack_lvl2"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"liquid_pump"
@@ -36,7 +36,7 @@ EntityBlueprint
 			}
 		}
 
-		resource_requirement "flammable_gas_vent|mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein|nitric_acid_deepvein|fluorine_deepvein|resin_deepvein|plasma_deepvein|plasma_charged_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
+		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein|nitric_acid_deepvein|resin_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
 	}
 
 	ResourceConverterDesc
@@ -107,31 +107,7 @@ EntityBlueprint
 			}
 			GameplayResource
 			{
-				resource 			"fluorine_deepvein"
-				family				"deep"
-				value			 	"2"
-			}
-			GameplayResource
-			{
-				resource 			"plasma_deepvein"
-				family				"deep"
-				value			 	"2"
-			}
-			GameplayResource
-			{
-				resource 			"plasma_charged_deepvein"
-				family				"deep"
-				value			 	"2"
-			}
-			GameplayResource
-			{
 				resource 			"resin_deepvein"
-				family				"deep"
-				value			 	"2"
-			}
-			GameplayResource
-			{
-				resource 			"flammable_gas_vent"
 				family				"deep"
 				value			 	"2"
 			}
@@ -188,34 +164,6 @@ EntityBlueprint
 				family				"deep"
 				attachment			"att_out_1"
 			}
-			GameplayResource
-			{
-				resource 			"flammable_gas"
-				value				"200"
-				family				"deep"
-				attachment			"att_out_1"
-			}		
-			GameplayResource
-			{
-				resource 			"fluorine"
-				value				"200"
-				family				"deep"
-				attachment			"att_out_1"
-			}	
-			GameplayResource
-			{
-				resource 			"plasma"
-				value				"200"
-				family				"deep"
-				attachment			"att_out_1"
-			}	
-			GameplayResource
-			{
-				resource 			"plasma_charged"
-				value				"200"
-				family				"deep"
-				attachment			"att_out_1"
-			}	
 			GameplayResource
 			{
 				resource 			"resin"
