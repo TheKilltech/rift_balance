@@ -26,7 +26,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 60
+				building_time 70
 				building_cost
 				{
 					carbonium 	"600"
@@ -130,8 +130,8 @@ EntityBlueprint
 
 	HealthDesc
 	{
-		max_health 					"750"
-		health 						"750"
+		max_health 					"2000"
+		health 						"2000"
 		is_manual 1
 		update_health_uniform 		"1"
 		
@@ -143,7 +143,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"80_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"80_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
 				destroyed_state_effect_group 		"80_state"
 				destrucion_level_name 				"80"
 
@@ -154,7 +153,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"60_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"60_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"60_state"
 				destrucion_level_name 				"60"
 			}
@@ -164,7 +162,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"40_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"40_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
 				destroyed_state_effect_group 		"40_state"
 				destrucion_level_name 				"40"
 			}
@@ -174,7 +171,6 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"20_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"20_destroy"
-				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				destroyed_state_effect_group 		"20_state"
 				destrucion_level_name 				"20"
 			}
@@ -184,7 +180,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"0_transition"
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
-				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
 	}
@@ -193,9 +189,9 @@ EntityBlueprint
 	{		
 		EffectBaseBlueprints
 		{
-			"buildings/resources/bio_condenser"
-		}
-		
+			"buildings/resources/gas_extractor"
+		}	
+
 		EffectGroup
 		{
 			group "level"

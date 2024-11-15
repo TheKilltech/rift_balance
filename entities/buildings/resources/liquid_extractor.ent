@@ -1,23 +1,25 @@
 EntityBlueprint
 {
-	name  "buildings/resources/gas_extractor"
+	name  "buildings/resources/liquid_extractor"
 
 	BuildingDesc
 	{
-		name 				"gas_extractor"
-		bp   				"buildings/resources/gas_extractor"
+		name 				"liquid_extractor"
+		bp   				"buildings/resources/liquid_extractor"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/gas_extractor"
-		description			"gui/hud/building_description/gas_extractor"
-		menu_icon			"gui/hud/building_icons/gas_extractor"
+		localization_id		"gui/hud/building_name/liquid_pumpjack"
+		description			"gui/hud/building_description/liquid_pumpjack"
+		menu_icon			"gui/hud/building_icons/liquid_pumpjack"
 		require 			"headquarters"
-		order				"15"
-		upgrade				"buildings/resources/gas_extractor_lvl_2"	
-		check_connect		"1"
 		type				"pipe"
+		buildable			"0"
+		building_group		"liquid_pump"
+		upgrade				"buildings/resources/liquid_extractor_lvl_2"
+		check_connect		"1"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
-		
+		order				"9"
+
 		costs
 		{
 			BuildingCostInfo
@@ -27,12 +29,12 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"400"
-					steel		"200"
+					steel 		"200"
 				}
-			}		
+			}
 		}
-		
-		resource_requirement "flammable_gas_vent|fluorine_deepvein|plasma_deepvein|plasma_charged_deepvein"
+
+		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein|nitric_acid_deepvein|resin_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
 	}
 
 	ResourceConverterDesc
@@ -44,28 +46,58 @@ EntityBlueprint
 				resource 			"energy"
 				value				"85"
 			}
-			
+			//GameplayResource
+			//{
+			//	group 			"vein"
+			//	value			"100"
+			//	specific_group	"local"
+			//	family			"production"
+			//}
 			GameplayResource
 			{
-				resource 			"flammable_gas_vent"
+				resource 			"water_deepvein"
 				family				"deep"
 				value			 	"1"
 			}
 			GameplayResource
 			{
-				resource 			"fluorine_deepvein"
+				resource 			"mud_deepvein"
 				family				"deep"
 				value			 	"1"
 			}
 			GameplayResource
 			{
-				resource 			"plasma_deepvein"
+				resource 			"sludge_deepvein"
 				family				"deep"
 				value			 	"1"
 			}
 			GameplayResource
 			{
-				resource 			"plasma_charged_deepvein"
+				resource 			"magma_deepvein"
+				family				"deep"
+				value			 	"1"
+			}
+			GameplayResource
+			{
+				resource 			"morphium_deepvein"
+				family				"deep"
+				value			 	"1"
+			}
+			GameplayResource
+			{
+				resource 			"petroleum_deepvein"
+				family				"deep"
+				value			 	"1"
+			}
+			GameplayResource
+			{
+				resource 			"nitric_acid_deepvein"
+				family				"deep"
+				value			 	"1"
+			}
+			GameplayResource
+			{
+				resource 			"resin_deepvein"
 				family				"deep"
 				value			 	"1"
 			}
@@ -76,34 +108,62 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 			"flammable_gas"
-				value				"100"
+				resource 			"water"
+				value			 	"100"
 				family				"deep"
 				attachment			"att_out_1"
-			}		
+			}
 			GameplayResource
 			{
-				resource 			"fluorine"
-				value				"100"
+				resource 			"mud"
+				value			 	"100"
 				family				"deep"
 				attachment			"att_out_1"
-			}	
+			}
 			GameplayResource
 			{
-				resource 			"plasma"
-				value				"100"
+				resource 			"sludge"
+				value			 	"100"
 				family				"deep"
 				attachment			"att_out_1"
-			}	
+			}
 			GameplayResource
 			{
-				resource 			"plasma_charged"
+				resource 			"magma"
+				value			 	"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"morphium"
+				value			 	"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"petroleum"
+				value			 	"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"nitric_acid"
+				value			 	"50"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"resin"
 				value				"100"
 				family				"deep"
 				attachment			"att_out_1"
 			}
 		}
-		
+
 		priority 4
 		one_vein_mode "1"
 	}
@@ -117,13 +177,13 @@ EntityBlueprint
 				group	 		"local"
 				max 	 		"400"
 				attachment		"att_out_1"
-			}			
+			}
 		}
 	}	
 
 	LuaDesc
 	{
-		script "lua/buildings/resources/gas_extractor.lua"
+		script "lua/buildings/building.lua"
 		
 		database
 		{
@@ -134,8 +194,8 @@ EntityBlueprint
 
 	HealthDesc
 	{
-		max_health 					"1500"
-		health 						"1500"
+		max_health 					"500"
+		health 						"500"
 		is_manual 1
 		update_health_uniform 		"1"
 		
@@ -147,6 +207,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"80_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
 				destroyed_state_effect_group 		"80_state"
 				destrucion_level_name 				"80"
 
@@ -157,6 +218,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"60_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"60_state"
 				destrucion_level_name 				"60"
 			}
@@ -166,6 +228,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"40_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
 				destroyed_state_effect_group 		"40_state"
 				destrucion_level_name 				"40"
 			}
@@ -175,6 +238,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"20_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				destroyed_state_effect_group 		"20_state"
 				destrucion_level_name 				"20"
 			}
@@ -184,17 +248,17 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"0_transition"
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
-				//destroyed_state_effect_group 		"0_state"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 			}			
 		}
 	}
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/gas_extractor.mesh"
-		material "buildings/resources/gas_extractor"
+		mesh 		"meshes/buildings/resources/bio_condenser.mesh"
+		material 	"buildings/resources/bio_condenser"
 	}
-
+	
 	TypeDesc
 	{
 		type "building|resource"
@@ -202,7 +266,7 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/gas_extractor"
+		name "meshes/buildings/resources/bio_condenser"
 	}
 
 	AnimationGraphDesc
@@ -211,7 +275,7 @@ EntityBlueprint
 	}
 
 	PhysicsDesc
-	{
+ 	{
 		objects
 		{
 			PhysicsObjectDesc
@@ -223,13 +287,13 @@ EntityBlueprint
 				{
 					PhysicsCapsuleShape
 					{
-						r "4.45"
-						half_height "2.5"
+						r "2.45"
+						half_height "2"
 
 						position
 						{
 							x "0.0"
-							y "2.5"
+							y "2"
 							z "0.0"
 						}
 
@@ -240,7 +304,7 @@ EntityBlueprint
 							z "0.7"
 							y "0.0"
 						}
-					}
+					}	
 				}
 			}
 		}
@@ -257,12 +321,10 @@ EntityBlueprint
 	{
 		Shapes
 		{
-   			PhysicsBoxShape
-   			{
-    				x	10
-    				y	10
-    				z	10
-   			}			
+			PhysicsMeshShape
+			{
+				mesh "meshes/buildings/resources/liquid_material_storage_g1.nxs"
+			}	
 		}
 	}
 
@@ -281,8 +343,7 @@ EntityBlueprint
 			x "3"
 			y "3"
 		}
-
-		additional_z_order	"5"
+					
 		visibility			"always"
 	}
 
@@ -412,41 +473,11 @@ EntityBlueprint
 	{		
 		EffectBaseBlueprints
 		{
-			"buildings/effects_medium_base"
-		}	
-		////////////////////////MISC/////////////////////////			
-		EffectGroup
-		{
-			group "working"
-			enabled "0"				
-			
-			Effects
-			{			
-				Effect
-				{
-					blueprint "effects/buildings_resources/gas_extractor_working"	
-					delay "0.5"					
-				}				
-				//Effect
-				//{
-				//	blueprint "effects/buildings_resources/gas_extractor_vent"	
-				//	bone "att_vent_1"
-				//	delay "0.5"					
-				//}	
-				//Effect
-				//{
-				//	blueprint "effects/buildings_resources/gas_extractor_vent"	
-				//	bone "att_vent_2"
-				//	delay "0.6"					
-				//}
-				//Effect
-				//{
-				//	blueprint "effects/buildings_resources/gas_extractor_vent"	
-				//	bone "att_vent_3"
-				//	delay "0.7"					
-				//}				
-			}
+			//"buildings/effects_medium_base"
+			//"buildings/resources/gas_extractor"
+			"buildings/resources/bio_condenser"
 		}
+		////////////////////////Resources/////////////////////////				
 		EffectGroup
 		{
 			group "att_out_1"
@@ -461,6 +492,42 @@ EntityBlueprint
 					bone "att_out_arrow"
 				}
 			}
-		}		
+		}				
+		//////////////////////////////// MISC /////////////////////////////////////////		
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/bio_condenser_rotor"	
+					bone "att_rotor_1"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/bio_condenser_rotor"	
+					bone "att_rotor_2"
+					delay "0.5"
+				}				
+				Effect
+				{
+					blueprint "effects/buildings_resources/bio_condenser_working"
+					delay "0.5"
+				}
+				//Effect
+				//{
+				//	blueprint "effects/buildings_resources/liquid_pump_working"								
+				//}				
+				//Effect
+				//{
+				//	blueprint "effects/buildings_resources/gas_extractor_working"	
+				//	delay "0.5"					
+				//}		
+			}
+		}			
 	}
 }
