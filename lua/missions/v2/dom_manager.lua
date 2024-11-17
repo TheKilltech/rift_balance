@@ -1261,7 +1261,7 @@ end
 function dom_mananger:OnEnterCooldownAfterSpawnTime( state )
 	self:VerboseLog("OnEnterCooldownAfterSpawnTime" )
 	self.cooldownTimer  = self.rules.cooldownAfterAttacks[self.currentDifficultyLevel]
-	self.waveRepeatTime = RandInt(40, math.max(self.cooldownTimer - 60, 60))
+	self.waveRepeatTime = RandInt(40, 120)
 	
 	if ((self.waveRepeated or 0) == 0) then
 		self.coolEventSpawnTime = {}
