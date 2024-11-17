@@ -26,16 +26,16 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 60
+				building_time 70
 				building_cost
 				{
 					carbonium 	"600"
-					steel 	"300"
-					palladium	"150"
+					steel		"300"
+					cobalt		"150"
 				}
 			}		
 		}
-		resource_requirement "flammable_gas_vent"
+		resource_requirement "flammable_gas_vent|fluorine_deepvein|plasma_deepvein|plasma_charged_deepvein" 
 	}
 
 	ResourceConverterDesc
@@ -45,25 +45,74 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value				"15"
+				value				"140"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value			 	"0.1"
 			}
 			
 			GameplayResource
 			{
 				resource 			"flammable_gas_vent"
-				value			 	"1"
+				family				"deep"
+				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"fluorine_deepvein"
+				family				"deep"
+				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"plasma_deepvein"
+				family				"deep"
+				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"plasma_charged_deepvein"
+				family				"deep"
+				value			 	"2"
 			}
 		}
-		
+
 		out
 		{
 			GameplayResource
 			{
 				resource 			"flammable_gas"
-				value				"100"
-			}		
+				value				"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"fluorine"
+				value			 	"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"plasma"
+				value				"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}	
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				value				"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}	
 		}
-		priority 4		
+
+		priority 4
+		one_vein_mode "1"
 	}
 	
 	ResourceStorageDesc
@@ -72,10 +121,10 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource	 	"flammable_gas"
-				max 	 		"300"
+				group	 		"local"
+				max 	 		"600"
 				attachment		"att_out_1"
-			}			
+			}
 		}
 	}	
 

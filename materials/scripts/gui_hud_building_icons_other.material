@@ -1,0 +1,13 @@
+import * from "materials/scripts/gui.material"
+
+/////  base factory
+
+material "gui/hud/building_icons/obsolete_building" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/obsolete_building.dds"
+}
+
+material "gui/hud/building_icons/obsolete_building_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/obsolete_building.dds"
+}

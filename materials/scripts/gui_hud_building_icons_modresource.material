@@ -13,6 +13,38 @@ material "gui/hud/building_icons/energy_connector_water_disabled" : gui/default
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/energy_connector_water_disabled.dds"
 }
 
+/////  liquid_pumpjack
+
+material "gui/hud/building_icons/liquid_pumpjack" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/liquid_extractor.dds"
+}
+
+material "gui/hud/building_icons/liquid_pumpjack_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bio_condenser_disabled.dds"
+}
+
+material "gui/hud/building_icons/liquid_pumpjack_lvl2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/liquid_extractor_lvl2.dds"
+}
+
+material "gui/hud/building_icons/liquid_pumpjack_lvl2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bio_condenser_lvl2_disabled.dds"
+}
+
+material "gui/hud/building_icons/liquid_pumpjack_lvl3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/liquid_extractor_lvl3.dds"
+}
+
+material "gui/hud/building_icons/liquid_pumpjack_lvl3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bio_condenser_lvl3_disabled.dds"
+}
+
 /////  bio-metal refineries
 
 material "gui/hud/building_icons/bio_cobalt_refinery" : gui/default

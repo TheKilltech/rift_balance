@@ -42,8 +42,14 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
+				resource 	"cobalt"
+				value 		"0.2"
+			}
+			
+			GameplayResource
+			{
 				resource 	"morphium"
-				value 		"200"
+				value 		"150"
 				attachment	"att_in_1"
 			}
 		}
@@ -72,6 +78,22 @@ EntityBlueprint
 		}
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/defense/shield_generator.lua"
+		
+		database
+		{
+			cone_effect				string:"build_cone_4x4"
+			cone_effect_sell		string:"sell_big"
+			radius					float:"23"
+			range					float:"23"
+			shield_bp				string:"buildings/defense/wall_energy/shield"
+			display_radius_group	string:"shield_generator"
+			display_radius_blueprint string:"effects/decals/range_circle_shield"
+		}
+	}
+	
 	HealthDesc
 	{
 		max_health 					"2500"
@@ -182,7 +204,7 @@ EntityBlueprint
 		{
 			"buildings/effects_big_base"
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
 			group "att_in_1"
@@ -198,7 +220,7 @@ EntityBlueprint
 				}
 			}
 		}	
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
 			group "working"
@@ -211,7 +233,12 @@ EntityBlueprint
 					blueprint "effects/buildings_and_machines/morphium_powerplant_energy"								
 					bone "att_energy"
 					delay "1"
-				}						
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/morphium_powerplant_working"		
+					delay "0.5"
+				}	
 			}
 		}
 		EffectGroup
@@ -234,3 +261,4 @@ EntityBlueprint
 		}		
 	}
 }
+

@@ -26,16 +26,16 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 60
+				building_time 80
 				building_cost
 				{
 					carbonium 	"800"
-					steel 	"400"
-					palladium	"300"
+					steel		"400"
+					cobalt		"300"
 				}
 			}		
 		}
-		resource_requirement "flammable_gas_vent"
+		resource_requirement "flammable_gas_vent|fluorine_deepvein|plasma_deepvein|plasma_charged_deepvein" 
 	}
 
 	ResourceConverterDesc
@@ -45,13 +45,65 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value				"20"
+				value				"140"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value			 	"0.05"
+			}
+			GameplayResource
+			{
+				resource 			"mud"
+				value			 	"25"
+				attachment			"att_in_1"
+				family				"in"
+			}
+			GameplayResource
+			{
+				resource 			"water"
+				value			 	"25"
+				attachment			"att_in_1"
+				family				"in"
+			}
+			GameplayResource
+			{
+				resource 			"sludge"
+				value			 	"25"
+				attachment			"att_in_1"
+				family				"in"
+			}
+			GameplayResource
+			{
+				resource 			"morphium"
+				value			 	"25"
+				attachment			"att_in_1"
+				family				"in"
 			}
 			
 			GameplayResource
 			{
 				resource 			"flammable_gas_vent"
-				value			 	"1"
+				family				"deep"
+				value			 	"3"
+			}
+			GameplayResource
+			{
+				resource 			"fluorine_deepvein"
+				family				"deep"
+				value			 	"3"
+			}
+			GameplayResource
+			{
+				resource 			"plasma_deepvein"
+				family				"deep"
+				value			 	"3"
+			}
+			GameplayResource
+			{
+				resource 			"plasma_charged_deepvein"
+				family				"deep"
+				value			 	"3"
 			}
 		}
 		
@@ -60,10 +112,35 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"flammable_gas"
-				value				"125"
+				value				"300"
+				family				"deep"
+				attachment			"att_out_1"
 			}		
+			GameplayResource
+			{
+				resource 			"fluorine"
+				value			 	"300"
+				family				"deep"
+				attachment			"att_out_1"
 		}
+			GameplayResource
+			{
+				resource 			"plasma"
+				value				"300"
+				family				"deep"
+				attachment			"att_out_1"
+			}	
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				value				"300"
+				family				"deep"
+				attachment			"att_out_1"
+			}	
+		}
+
 		priority 4		
+		one_vein_mode "1"
 	}
 	
 	ResourceStorageDesc
@@ -72,8 +149,8 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource	 	"flammable_gas"
-				max 	 		"300"
+				group	 		"local"
+				max 	 		"800"
 				attachment		"att_out_1"
 			}			
 		}
@@ -143,6 +220,36 @@ EntityBlueprint
 			"buildings/resources/gas_extractor"
 		}	
 
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_pipe"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "level"

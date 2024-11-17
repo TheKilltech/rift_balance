@@ -360,7 +360,7 @@ MissionDef
 		
 		ResourceVolume
         {
-            resource        "carbon_vein"
+            resource        "carbon_deepvein"
 			required_discovery_lvl	"1"
 
             min_resources   "5000"
@@ -368,6 +368,17 @@ MissionDef
 
             min_spawned_volumes "3"
             max_spawned_volumes "5"
+        }
+
+        ResourceVolume
+        {
+            resource        "ammonium_vein"
+
+            min_resources   "2500"
+            max_resources   "6000"
+
+            min_spawned_volumes "4"
+            max_spawned_volumes "6"
         }
 
         ResourceVolume
@@ -397,28 +408,47 @@ MissionDef
         {
             resource        "geothermal_vent"
 
-            min_resources   "6000"
-            max_resources   "10000"
+            is_infinite        "1"
 
             min_spawned_volumes "3"
             max_spawned_volumes "6"
-			
-            is_infinite        "1"			
+						
         }	
 		
         ResourceVolume
         {
             resource        "geothermal_vent"
-			
 			required_discovery_lvl	"1"
 			
-            min_resources   "6000"
-            max_resources   "10000"
+            is_infinite        "1"
 
             min_spawned_volumes "3"
             max_spawned_volumes "6"
 			
-            is_infinite        "1"			
-        }							
+        }
+		
+        ResourceVolume
+        {
+            resource        "plasma_charged_deepvein"
+			required_discovery_lvl	"1"
+			
+            is_infinite        "1"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+			
+        }
+		
+        ResourceVolume
+        {
+            resource        "plasma_deepvein"
+			required_discovery_lvl	"1"
+			
+            is_infinite        "1"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "6"
+			
+        }
     } 
 }

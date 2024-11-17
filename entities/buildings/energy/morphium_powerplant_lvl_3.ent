@@ -28,7 +28,7 @@ EntityBlueprint
 				building_time 	120
 				building_cost
 				{
-					carbonium 	"350"		
+					carbonium 	"350"
 					steel 		"100"
 					cobalt		"150"
 				}
@@ -42,8 +42,14 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
+				resource 	"cobalt"
+				value 		"0.3"
+			}
+			
+			GameplayResource
+			{
 				resource 	"morphium"
-				value 		"200"
+				value 		"100"
 				attachment	"att_in_1"
 			}
 		}
@@ -72,6 +78,22 @@ EntityBlueprint
 		}
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/defense/shield_generator.lua"
+		
+		database
+		{
+			cone_effect				string:"build_cone_4x4"
+			cone_effect_sell		string:"sell_big"
+			radius					float:"25"
+			range					float:"25"
+			shield_bp				string:"buildings/defense/wall_energy/shield_lvl_2"
+			display_radius_group	string:"shield_generator"
+			display_radius_blueprint string:"effects/decals/range_circle_shield"
+		}
+	}
+	
 	HealthDesc
 	{
 		max_health 					"3000"

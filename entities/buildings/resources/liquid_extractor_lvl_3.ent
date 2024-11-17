@@ -1,19 +1,20 @@
 EntityBlueprint
 {
-	name  "buildings/resources/liquid_pumpjack_lvl_3"
-
-	base_blueprint 			buildings/resources/liquid_pumpjack_lvl_2
+	name  "buildings/resources/liquid_extractor_lvl_3"
 	
+	base_blueprint buildings/resources/liquid_extractor_lvl_2
+
 	BuildingDesc
 	{
-		name 				"liquid_pumpjack_lvl_3"
-		bp   				"buildings/resources/liquid_pumpjack_lvl_3"
+		buildable 			"0"	
+		name 				"liquid_extractor_lvl_3"
+		bp   				"buildings/resources/liquid_extractor_lvl_3"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/liquid_pumpjack"
 		description			"gui/hud/building_description/liquid_pumpjack"
-		menu_icon			"gui/hud/building_icons/gas_extractor_lvl3"
+		menu_icon			"gui/hud/building_icons/liquid_pumpjack_lvl3"
 		require 			"headquarters"
+		type				"pipe"
 		buildable			"0"
 		building_group		"liquid_pump"
 		//upgrade				"buildings/resources/liquid_pumpjack_lvl_4"
@@ -32,12 +33,12 @@ EntityBlueprint
 				{
 					carbonium 	"200"
 					steel 		"1000"
-					palladium	"200"
+					uranium		"200"
 				}
 			}
 		}
 
-		resource_requirement "flammable_gas_vent|mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein|nitric_acid_deepvein|fluorine_deepvein|resin_deepvein|plasma_deepvein|plasma_charged_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
+		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein|nitric_acid_deepvein|resin_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
 	}
 
 	ResourceConverterDesc
@@ -95,24 +96,6 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"nitric_acid_deepvein"
-				family				"deep"
-				value			 	"3"
-			}
-			GameplayResource
-			{
-				resource 			"fluorine_deepvein"
-				family				"deep"
-				value			 	"3"
-			}
-			GameplayResource
-			{
-				resource 			"plasma_deepvein"
-				family				"deep"
-				value			 	"3"
-			}
-			GameplayResource
-			{
-				resource 			"plasma_charged_deepvein"
 				family				"deep"
 				value			 	"3"
 			}
@@ -177,34 +160,6 @@ EntityBlueprint
 			}
 			GameplayResource
 			{
-				resource 			"flammable_gas"
-				value				"300"
-				family				"deep"
-				attachment			"att_out_1"
-			}		
-			GameplayResource
-			{
-				resource 			"fluorine"
-				value				"300"
-				family				"deep"
-				attachment			"att_out_1"
-			}	
-			GameplayResource
-			{
-				resource 			"plasma"
-				value				"300"
-				family				"deep"
-				attachment			"att_out_1"
-			}	
-			GameplayResource
-			{
-				resource 			"plasma_charged"
-				value				"300"
-				family				"deep"
-				attachment			"att_out_1"
-			}	
-			GameplayResource
-			{
 				resource 			"resin"
 				value				"300"
 				family				"deep"
@@ -231,43 +186,98 @@ EntityBlueprint
 
 	HealthDesc
 	{
-		max_health 					"340"
-		health 						"340"
-		regeneration 				"0"
-		regeneration_cooldown 		"0"
-		 is_manual 1
+		max_health 					"3000"
+		health 						"3000"
+		is_manual 1
 		update_health_uniform 		"1"
-
-
+		
 		DestructionLevels
 		{
 			DestructionLevel
 			{
-				health 								"66"
-				destroy_comp_delay 					"0"
-				destroy_comp_event 					"66_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
-				destroyed_state_effect_group 		"66_state"
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
 			}
 			DestructionLevel
 			{
-				health 								"33"
-				destroy_comp_delay 					"0"
-				destroy_comp_event 					"33_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
-				destroyed_state_effect_group 		"33_state"
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
 			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_effect_group 		"0_state"
+			}			
 		}
 	}
-	
 
 	EffectDesc
-	{
+	{		
 		EffectBaseBlueprints
 		{
-			"buildings/resources/liquid_pumpjack_lvl_2"
+			"buildings/resources/bio_condenser"
+		}	
+
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
 		}
 		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_pipe"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "level"
@@ -283,4 +293,3 @@ EntityBlueprint
 		}		
 	}
 }
-
