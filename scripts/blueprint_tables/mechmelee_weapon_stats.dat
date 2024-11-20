@@ -1,9 +1,8 @@
-
 items/weapons/chainsaw_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "physical"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -82,6 +81,14 @@ items/weapons/chainsaw_advanced_item
 				stat_type "WEAPON_SCALE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -92,7 +99,7 @@ items/weapons/chainsaw_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell_lvl3"
 		damage_type "physical"
 		rarity "EXTREME"
 		stat_def_vec
@@ -171,6 +178,14 @@ items/weapons/chainsaw_extreme_item
 				stat_type "WEAPON_SCALE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.200"
+				min_value "0.200"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -181,7 +196,7 @@ items/weapons/chainsaw_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "physical"
 		stat_def_vec
 		{
@@ -255,6 +270,14 @@ items/weapons/chainsaw_item
 				stat_type "WEAPON_SCALE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -265,7 +288,7 @@ items/weapons/chainsaw_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "physical"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -344,18 +367,25 @@ items/weapons/chainsaw_superior_item
 				stat_type "WEAPON_SCALE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.150"
+				min_value "0.150"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
 
 }
 
-
 items/weapons/flame_blade_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_liquid_lvl2"
 		damage_type "fire"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -473,6 +503,14 @@ items/weapons/flame_blade_advanced_item
 				stat_type "DAMAGE_SPLASH"
 			}
 
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -483,7 +521,7 @@ items/weapons/flame_blade_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_liquid_lvl3"
 		damage_type "fire"
 		rarity "EXTREME"
 		stat_def_vec
@@ -601,6 +639,14 @@ items/weapons/flame_blade_extreme_item
 				stat_type "DAMAGE_SPLASH"
 			}
 
+			WeaponStatDef
+			{
+				max_value "1.500"
+				min_value "1.500"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -611,7 +657,7 @@ items/weapons/flame_blade_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_liquid"
 		damage_type "fire"
 		stat_def_vec
 		{
@@ -719,6 +765,14 @@ items/weapons/flame_blade_item
 				stat_type "DAMAGE_SPLASH"
 			}
 
+			WeaponStatDef
+			{
+				max_value "1.000"
+				min_value "1.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -729,7 +783,7 @@ items/weapons/flame_blade_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_liquid_lvl2"
 		damage_type "fire"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -847,18 +901,25 @@ items/weapons/flame_blade_superior_item
 				stat_type "DAMAGE_SPLASH"
 			}
 
+			WeaponStatDef
+			{
+				max_value "1.500"
+				min_value "1.500"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
 
 }
 
-
 items/weapons/hammer_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "area"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -969,6 +1030,14 @@ items/weapons/hammer_advanced_item
 				stat_type "WEAPON_ANIMATION_SPEED"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.200"
+				min_value "0.200"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -979,7 +1048,7 @@ items/weapons/hammer_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "area"
 		rarity "EXTREME"
 		stat_def_vec
@@ -1088,6 +1157,14 @@ items/weapons/hammer_extreme_item
 				min_value "1.660"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_ANIMATION_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.400"
+				min_value "0.400"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
 			}
 
 		}
@@ -1214,7 +1291,7 @@ items/weapons/hammer_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "area"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -1325,18 +1402,25 @@ items/weapons/hammer_superior_item
 				stat_type "WEAPON_ANIMATION_SPEED"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.400"
+				min_value "0.400"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
 
 }
 
-
 items/weapons/laser_sword_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -1446,6 +1530,14 @@ items/weapons/laser_sword_advanced_item
 				stat_type "FIRE_RATE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -1456,7 +1548,7 @@ items/weapons/laser_sword_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell_lvl3"
 		damage_type "energy"
 		rarity "EXTREME"
 		stat_def_vec
@@ -1566,6 +1658,14 @@ items/weapons/laser_sword_extreme_item
 				stat_type "FIRE_RATE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.200"
+				min_value "0.200"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -1576,7 +1676,7 @@ items/weapons/laser_sword_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "energy"
 		stat_def_vec
 		{
@@ -1676,6 +1776,14 @@ items/weapons/laser_sword_item
 				stat_type "FIRE_RATE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -1686,7 +1794,7 @@ items/weapons/laser_sword_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -1796,18 +1904,25 @@ items/weapons/laser_sword_superior_item
 				stat_type "FIRE_RATE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.200"
+				min_value "0.200"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
 
 }
 
-
 items/weapons/pickaxe_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "area"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -1926,6 +2041,14 @@ items/weapons/pickaxe_advanced_item
 				stat_type "FIRE_RATE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -1936,7 +2059,7 @@ items/weapons/pickaxe_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "area"
 		rarity "EXTREME"
 		stat_def_vec
@@ -2053,6 +2176,14 @@ items/weapons/pickaxe_extreme_item
 				min_value "1.000"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.150"
+				min_value "0.150"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
 			}
 
 		}
@@ -2187,7 +2318,7 @@ items/weapons/pickaxe_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "area"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -2306,18 +2437,25 @@ items/weapons/pickaxe_superior_item
 				stat_type "FIRE_RATE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
 
 }
 
-
 items/weapons/power_fist_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "energy"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -2427,6 +2565,14 @@ items/weapons/power_fist_advanced_item
 				min_value "0.349"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_ANIMATION_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.050"
+				min_value "0.050"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
 			}
 
 		}
@@ -2557,7 +2703,7 @@ items/weapons/power_fist_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "energy"
 		rarity "EXTREME"
 		stat_def_vec
@@ -2667,6 +2813,14 @@ items/weapons/power_fist_extreme_item
 				min_value "0.349"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_ANIMATION_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
 			}
 
 		}
@@ -2797,7 +2951,7 @@ items/weapons/power_fist_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "energy"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -2909,18 +3063,25 @@ items/weapons/power_fist_superior_item
 				stat_type "WEAPON_ANIMATION_SPEED"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
 
 }
 
-
 items/weapons/sonic_fist_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "physical"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -3040,6 +3201,14 @@ items/weapons/sonic_fist_advanced_item
 				stat_type "FIRE_RATE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.050"
+				min_value "0.050"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -3050,7 +3219,7 @@ items/weapons/sonic_fist_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "physical"
 		rarity "EXTREME"
 		stat_def_vec
@@ -3168,6 +3337,14 @@ items/weapons/sonic_fist_extreme_item
 				min_value "0.500"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
 			}
 
 		}
@@ -3306,7 +3483,7 @@ items/weapons/sonic_fist_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "physical"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -3426,18 +3603,25 @@ items/weapons/sonic_fist_superior_item
 				stat_type "FIRE_RATE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
 
 }
 
-
 items/weapons/spear_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "cryo"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -3540,6 +3724,14 @@ items/weapons/spear_advanced_item
 				stat_type "WEAPON_ANIMATION_SPEED"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.100"
+				min_value "0.100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -3550,7 +3742,7 @@ items/weapons/spear_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "cryo"
 		rarity "EXTREME"
 		stat_def_vec
@@ -3651,6 +3843,14 @@ items/weapons/spear_extreme_item
 				min_value "1.330"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_ANIMATION_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.200"
+				min_value "0.200"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
 			}
 
 		}
@@ -3769,7 +3969,7 @@ items/weapons/spear_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "cryo"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -3872,12 +4072,19 @@ items/weapons/spear_superior_item
 				stat_type "WEAPON_ANIMATION_SPEED"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.200"
+				min_value "0.200"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
 
 }
-
 
 items/weapons/sword_advanced_item
 {
@@ -4317,20 +4524,19 @@ items/weapons/sword_superior_item
 
 }
 
-
 items/weapons/trident_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "physical"
 		rarity "ADVANCED"
 		stat_def_vec
 		{
 			WeaponStatDef
 			{
-				max_value "146.000"
-				min_value "131.000"
+				max_value "80.000"
+				min_value "65.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -4433,6 +4639,14 @@ items/weapons/trident_advanced_item
 				stat_type "WEAPON_SCALE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.150"
+				min_value "0.150"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -4443,15 +4657,15 @@ items/weapons/trident_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell_lvl2"
 		damage_type "physical"
 		rarity "EXTREME"
 		stat_def_vec
 		{
 			WeaponStatDef
 			{
-				max_value "240.000"
-				min_value "205.000"
+				max_value "120.000"
+				min_value "100.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -4554,6 +4768,14 @@ items/weapons/trident_extreme_item
 				stat_type "WEAPON_SCALE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.300"
+				min_value "0.300"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -4570,8 +4792,8 @@ items/weapons/trident_item
 		{
 			WeaponStatDef
 			{
-				max_value "120.000"
-				min_value "105.000"
+				max_value "60.000"
+				min_value "50.000"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -4675,15 +4897,15 @@ items/weapons/trident_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "physical"
 		rarity "SUPERIOR"
 		stat_def_vec
 		{
 			WeaponStatDef
 			{
-				max_value "185.000"
-				min_value "164.000"
+				max_value "100.000"
+				min_value "80.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -4786,8 +5008,17 @@ items/weapons/trident_superior_item
 				stat_type "WEAPON_SCALE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.300"
+				min_value "0.300"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
 
 }
+
