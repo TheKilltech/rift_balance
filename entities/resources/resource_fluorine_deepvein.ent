@@ -93,50 +93,44 @@ EntityBlueprint
 		EffectGroup
 		{		
 			group "steam"
-			enabled "0"				
+			enabled "1"				
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/decals/geothermal_vent"		
-					scale "7 0.4 7"	
-					bone "att_wind"
-				}									
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_big"		
+					blueprint "effects/buildings_and_machines/gas_chimney_big"
 					bone "att_wind_big"
 				}		
 				Effect
 				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
+					blueprint "effects/buildings_and_machines/gas_chimney_small"		
 					bone "att_wind_medium_1"
 				}	
 				Effect
 				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
+					blueprint "effects/buildings_and_machines/gas_chimney_small"		
 					bone "att_wind_medium_2"
 				}
 				Effect
 				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
+					blueprint "effects/buildings_and_machines/gas_chimney_small"
 					bone "att_wind_medium_3"
 				}
 				Effect
 				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
+					blueprint "effects/buildings_and_machines/gas_chimney_small"		
 					bone "att_wind_medium_4"
 				}
 				Effect
 				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
+					blueprint "effects/buildings_and_machines/gas_chimney_small"		
 					bone "att_wind_medium_5"
 				}
 				Effect
 				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
+					blueprint "effects/buildings_and_machines/gas_chimney_small"		
 					bone "att_wind_medium_6"
 				}				
 			}

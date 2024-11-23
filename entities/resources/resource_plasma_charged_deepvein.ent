@@ -5,8 +5,8 @@ EntityBlueprint
 	
 	MeshDesc
 	{
-		mesh 		"meshes/resources/resource_flammable_gas_vent.mesh"
-		material 	"resources/resource_wind_spot"
+		mesh 		"meshes/props/special/loot_containers/loot_container_metallic_root.mesh"
+		material	"props/special/loot_container_metallic_core_extreme"
 	}
 	
 	SkeletonDesc
@@ -90,55 +90,28 @@ EntityBlueprint
 
 	EffectDesc
 	{	
+		
 		EffectGroup
 		{		
 			group "steam"
-			enabled "0"				
+			enabled "1"				
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/decals/geothermal_vent"		
-					scale "7 0.4 7"	
-					bone "att_wind"
-				}									
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_big"		
+					blueprint "effects/buildings_and_machines/nuclear_powerplant_rods"
 					bone "att_wind_big"
-				}		
+					delay "1"
+				}
 				Effect
 				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_1"
+					blueprint "effects/buildings_and_machines/nuclear_powerplant_energy"
+					bone "att_wind_big"
+					scale "1.5 1.5 1.5"
+					delay "1"
 				}	
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_2"
-				}
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_3"
-				}
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_4"
-				}
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_5"
-				}
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_6"
-				}				
 			}
 		}	
 	}
