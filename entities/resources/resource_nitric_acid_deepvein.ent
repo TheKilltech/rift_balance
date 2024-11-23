@@ -5,8 +5,8 @@ EntityBlueprint
 	
 	MeshDesc
 	{
-		mesh 		"meshes/resources/resource_flammable_gas_vent.mesh"
-		material 	"resources/resource_wind_spot"
+		material "props/special/loot_container_magma"
+		mesh "meshes/props/special/loot_containers/loot_container_magma_root.mesh"
 	}
 	
 	SkeletonDesc
@@ -93,50 +93,26 @@ EntityBlueprint
 		EffectGroup
 		{		
 			group "steam"
-			enabled "0"				
+			enabled "1"				
 			delay "0"
 			
 			Effects
 			{
+				//Effect
+				//{
+				//	blueprint "effects/world/acid_fissure"
+				//	scale "7 0.4 7"	
+				//	bone "att_wind"
+				//}									
 				Effect
 				{
-					blueprint "effects/decals/geothermal_vent"		
-					scale "7 0.4 7"	
-					bone "att_wind"
-				}									
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_big"		
+					blueprint "effects/world/acid_fissure"
 					bone "att_wind_big"
-				}		
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_1"
-				}	
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_2"
+					scale "0.8 0.8 0.8"
 				}
 				Effect
 				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_3"
-				}
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_4"
-				}
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_5"
-				}
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
+					blueprint "effects/buildings_and_machines/gas_chimney_small"
 					bone "att_wind_medium_6"
 				}				
 			}
