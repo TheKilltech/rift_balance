@@ -50,11 +50,11 @@ return function()
 		600, -- difficulty level 1
 		600, -- difficulty level 2
 		600, -- difficulty level 3	
-		600, -- difficulty level 4
-		1200, -- difficulty level 5
-		1800, -- difficulty level 6
+		1200, -- difficulty level 4
+		1800, -- difficulty level 5
+		2400, -- difficulty level 6
 		3600, -- difficulty level 7
-		3600, -- difficulty level 8
+		5200, -- difficulty level 8
 		7200, -- difficulty level 9
 	}
 
@@ -77,8 +77,8 @@ return function()
 	}
 	rules.objectivesLogic = 
 	{
-		{ name = "logic/objectives/destroy_nest_morirot_single.logic",   minDifficultyLevel = 3 }, 
-		{ name = "logic/objectives/destroy_nest_morirot_multiple.logic", minDifficultyLevel = 6 }
+	--	{ name = "logic/objectives/destroy_nest_morirot_single.logic",   minDifficultyLevel = 3 }, 
+	--	{ name = "logic/objectives/destroy_nest_morirot_multiple.logic", minDifficultyLevel = 6 }
 	}
 
 	rules.cooldownAfterAttacks = 
@@ -103,8 +103,8 @@ return function()
 		780,  -- difficulty level 5	
 		1200,  -- difficulty level 6	
 		1200,  -- difficulty level 7
-		1200,  -- difficulty level 8	
-		1200,  -- difficulty level 9	
+		1380,  -- difficulty level 8	
+		1500,  -- difficulty level 9	
 	}
 
 	rules.maxAttackCountPerDifficulty = 
@@ -117,7 +117,7 @@ return function()
 		1,  -- difficulty level 6
 		1,  -- difficulty level 7
 		2,  -- difficulty level 8
-		3,  -- difficulty level 9
+		2,  -- difficulty level 9
 	}
 	
 	rules.prepareAttackDefinitions =
@@ -159,46 +159,15 @@ return function()
 		{80, 50, 20, 80, 70},  -- concecutive chances of wave repeating at level 9
 	}
 	
-	rules.waves = 
-	{
-		["default"] =
-		{	
-			{}, -- difficulty level 1
-			{}, -- difficulty level 2
-			{}, -- difficulty level 3
-			{}, -- difficulty level 4
-			{}, -- difficulty level 5			
-			{ -- difficulty level 6
-				"logic/missions/survival/attack_level_1_id_1_magma.logic",
-				"logic/missions/survival/attack_level_1_id_2_magma.logic",
-				"logic/missions/survival/attack_level_2_id_1_magma.logic",
-				"logic/missions/survival/attack_level_2_id_2_magma.logic", 
-			},			
-			{ -- difficulty level 7
-				"logic/missions/survival/attack_level_2_id_1_magma.logic",
-				"logic/missions/survival/attack_level_2_id_1_magma.logic",
-				"logic/missions/survival/attack_level_2_id_2_magma.logic",
-				"logic/missions/survival/attack_level_2_id_2_magma.logic",
-				"logic/missions/survival/attack_level_3_id_1_magma.logic",
-				"logic/missions/survival/attack_level_3_id_2_magma.logic",
-			},			 
-			{ -- difficulty level 8
-				"logic/missions/survival/attack_level_2_id_1_magma.logic",
-				"logic/missions/survival/attack_level_2_id_2_magma.logic",
-				"logic/missions/survival/attack_level_3_id_1_magma.logic",
-				"logic/missions/survival/attack_level_3_id_2_magma.logic",
-			},
-			{ -- difficulty level 9
-				"logic/missions/survival/attack_level_2_id_1_magma_alpha.logic",
-				"logic/missions/survival/attack_level_2_id_2_magma_alpha.logic",
-				"logic/missions/survival/attack_level_3_id_1_magma.logic",
-				"logic/missions/survival/attack_level_3_id_2_magma.logic",
-				"logic/missions/survival/attack_level_4_id_1_magma.logic",
-				"logic/missions/survival/attack_level_4_id_2_magma.logic",
-			},
-		},
-	}
-
+	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
+	rules.waves = {}
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 1 },   ids = {    2 },      suffixes = { "" },        },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 2 },   ids = { 1, 2 },      suffixes = { "" },        },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 1 },   ids = { 1, 2 },      suffixes = { "alpha" },   },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 3 },   ids = { 1, 2, 3 },   suffixes = { "" },        },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 4 },   ids = { 1, 2, 3 },   suffixes = { "" },        },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    7, 8, 9},  biomes = { "magma" }, levels = { 2 },   ids = { 1, 2 },      suffixes = { "alpha" },   },   rules.waves)
+	
 	rules.extraWaves = 
 	{
 	

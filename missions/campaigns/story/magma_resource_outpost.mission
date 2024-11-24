@@ -757,8 +757,19 @@ MissionDef
 			
             is_infinite        "1"
 
-            min_spawned_volumes "3"
-            max_spawned_volumes "5"
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }	
+		
+        ResourceVolume
+        {
+            resource        "morphium_deepvein"
+			required_discovery_lvl	"1"
+			
+            is_infinite        "1"
+
+            min_spawned_volumes "1"
+            max_spawned_volumes "2"
         }	
     }
 
