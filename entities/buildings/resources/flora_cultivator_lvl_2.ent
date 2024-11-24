@@ -33,7 +33,7 @@ EntityBlueprint
 					carbonium 	"600"
 					steel 		"600"		
 					cobalt		"200"
-					ai			"2"
+					ai			"1"
 				}
 			}		
 		}
@@ -51,9 +51,14 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"water"
-				value				"100"
-				attachment			"att_in_1"				
-			}			
+				value				"85"
+				attachment			"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value				"0.2"
+			}
 		}
 		
 		out
@@ -71,7 +76,7 @@ EntityBlueprint
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell 	string:"sell_big"
 
-			drone_search_radius	float:"20"
+			drone_search_radius	float:"22"
 			drone_blueprint		string:"units/drones/drone_flora_cultivator"
 			drone_attachments	string:"att_landing"
 			drone_per_spot		int:"4"
