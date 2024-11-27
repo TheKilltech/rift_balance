@@ -4,61 +4,47 @@ return function()
 	rules.maxObjectivesAtOnce = 2
 	rules.eventsPerIdleState = 2
 	rules.eventsPerPrepareState = 1 -- [0,1]
+	rules.eventsPerPrepareStateChance = 25        -- chance to spawn events with objectives
 	rules.pauseAttacks = false
 	rules.prepareAttacks = true
 	rules.baseTimeBetweenObjectives = 900
 	rules.spawnAttackEventProbability = 0.33
 	rules.spawn2ndAttackEventProbability = 0.33
+	rules.idleTimeRelativeVariation = 0.6         -- X factor of idle time that may randomly vary: +/- X * idle_time
+	rules.idleTimeCancelChance = 15               -- chance in percent
+	rules.preparationTimeRelativeVariation = 0.35 -- X factor of idle time that may randomly vary: +/- X * prep_time
+	rules.preparationTimeCancelChance = 15        -- chance in percent
 
 	rules.gameEvents = 
 	{
-		{ action = "cancel_the_attack",   type = "POSITIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 1 },
-		{ action = "cancel_the_attack",   type = "POSITIVE", gameStates="ATTACK|NO_STREAMING",      minEventLevel = 1 },
-		{ action = "boss_attack",         type = "NEGATIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 8 },
-		{ action = "boss_attack",         type = "NEGATIVE", gameStates="ATTACK|NO_STREAMING",      minEventLevel = 8 },
-		{ action = "stronger_attack", 	  type = "NEGATIVE", gameStates="ATTACK|STREAMING", 		minEventLevel = 7, amount = 2 },
-		{ action = "stronger_attack", 	  type = "NEGATIVE", gameStates="ATTACK|NO_STREAMING", 		minEventLevel = 7, amount = 2 },
-		{ action = "stronger_attack", 	  type = "NEGATIVE", gameStates="ATTACK|STREAMING", 		minEventLevel = 8, amount = 3 },
-		{ action = "stronger_attack", 	  type = "NEGATIVE", gameStates="ATTACK|NO_STREAMING", 		minEventLevel = 8, amount = 3 },
-		{ action = "shegret_attack",      type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",  weight = 5 },
-		{ action = "shegret_attack",      type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",  weight = 3 },
-		{ action = "spawn_earthquake",    type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 2, logicFile="logic/weather/earthquake.logic",    minTime = 30, maxTime = 60,  weight = 0.5 },
-		{ action = "spawn_earthquake",    type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 2, logicFile="logic/weather/earthquake.logic",    minTime = 30, maxTime = 60,  weight = 0.5 },		
-		{ action = "spawn_blood_moon",    type = "NEGATIVE", gameStates="IDLE|STREAMING",           minEventLevel = 4, logicFile="logic/weather/blood_moon.logic",    minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_blood_moon",    type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",        minEventLevel = 4, logicFile="logic/weather/blood_moon.logic",    minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_blue_moon",     type = "POSITIVE", gameStates="IDLE|STREAMING",           minEventLevel = 4, logicFile="logic/weather/blue_moon.logic",     minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_blue_moon",     type = "POSITIVE", gameStates="IDLE|NO_STREAMING",        minEventLevel = 4, logicFile="logic/weather/blue_moon.logic",     minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_solar_eclipse", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 5, logicFile="logic/weather/solar_eclipse.logic", minTime = 60, maxTime = 120, weight = 0.25 },
-		{ action = "spawn_solar_eclipse", type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/weather/solar_eclipse.logic", minTime = 60, maxTime = 120, weight = 0.25 },
-		{ action = "spawn_super_moon",    type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 3, logicFile="logic/weather/super_moon.logic",    minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_super_moon",    type = "POSITIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/super_moon.logic",    minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_fog",           type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, logicFile="logic/weather/fog.logic",           minTime = 30, maxTime = 60 },
-		{ action = "spawn_fog",           type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/fog.logic",           minTime = 30, maxTime = 60 },
-		{ action = "spawn_wind_weak",     type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, logicFile="logic/weather/wind_weak.logic",     minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_wind_weak",     type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/wind_weak.logic",     minTime = 60, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_wind_none",     type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, logicFile="logic/weather/wind_none.logic",     minTime = 30, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_wind_none",     type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/wind_none.logic",     minTime = 30, maxTime = 120, weight = 0.5 },
-		{ action = "spawn_ion_storm",     type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 3, logicFile="logic/weather/ion_storm.logic",     minTime = 30, maxTime = 60,  weight = 0.5 },
-		{ action = "spawn_ion_storm",     type = "POSITIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/ion_storm.logic",     minTime = 30, maxTime = 60,  weight = 0.5 },		
-		{ action = "spawn_acid_rain",     type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 3, logicFile="logic/weather/acid_rain.logic",     minTime = 30, maxTime = 60 },
-		{ action = "spawn_acid_rain",     type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/acid_rain.logic",     minTime = 30, maxTime = 30 },
-		{ action = "spawn_acid_fissures", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 2, logicFile="logic/weather/acid_fissures.logic", minTime = 30, maxTime = 60,  weight = 2 },
-		{ action = "spawn_acid_fissures", type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 2, logicFile="logic/weather/acid_fissures.logic", minTime = 30, maxTime = 60,  weight = 2 },
-		{ action = "spawn_tornado_acid_near_player", type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 3, logicFile="logic/weather/tornado_acid_near_player.logic", minTime = 30, maxTime = 60, weight = 0.5 },
-		{ action = "spawn_meteor_shower", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 4, logicFile="logic/weather/meteor_shower.logic", minTime = 40, maxTime = 90,  weight = 0.5 },
-		{ action = "spawn_meteor_shower", type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/meteor_shower.logic", minTime = 40, maxTime = 90,  weight = 0.5 },	
-		{ action = "spawn_comet_silent",  type = "POSITIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic",  weight = 2 }
-		--{ action = "spawn_rain", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/rain.logic", minTime = 120, maxTime = 120 },
-		--{ action = "spawn_rain", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/rain.logic", minTime = 120, maxTime = 120 },
-		--{ action = "spawn_wind_strong", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/wind_strong.logic", minTime = 60, maxTime = 120 },
-		--{ action = "spawn_wind_strong", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/wind_strong.logic", minTime = 60, maxTime = 120 },
-		--{ action = "spawn_resource_comet", type = "POSITIVE", gameStates = "IDLE|STREAMING", minEventLevel = 3, logicFile="logic/weather/resource_comet.logic"  },
-		--{ action = "spawn_resource_comet", type = "POSITIVE", gameStates = "IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/resource_comet.logic"  },
-		--{ action = "spawn_resource_earthquake", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 3, logicFile="logic/weather/resource_earthquake.logic" },
-		--{ action = "spawn_resource_earthquake", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/resource_earthquake.logic" },
-		--{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 3 },
+		{ action = "cancel_the_attack",              type = "POSITIVE", gameStates="ATTACK",                minEventLevel = 1 },
+		{ action = "boss_attack",                    type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 8 },
+		{ action = "stronger_attack", 	             type = "NEGATIVE", gameStates="ATTACK", 		       minEventLevel = 7, amount = 2 },
+		{ action = "stronger_attack", 	             type = "NEGATIVE", gameStates="ATTACK", 		       minEventLevel = 8, amount = 3 },
+		{ action = "shegret_attack",                 type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",                                           weight = 2},
+		{ action = "spawn_earthquake",               type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2, logicFile="logic/weather/earthquake.logic",               minTime = 60, maxTime = 60,   weight = 1},
+		{ action = "spawn_blood_moon",               type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 4, logicFile="logic/weather/blood_moon.logic",               minTime = 60, maxTime = 120,  weight = 0.2,  weather = "SUN" },
+		{ action = "spawn_blue_moon",                type = "POSITIVE", gameStates="IDLE",                  minEventLevel = 4, logicFile="logic/weather/blue_moon.logic",                minTime = 60, maxTime = 120,  weight = 0.2,  weather = "SUN" },
+		{ action = "spawn_solar_eclipse",            type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 3, logicFile="logic/weather/solar_eclipse.logic",            minTime = 60, maxTime = 120,  weight = 0.25, weather = "SUN" },
+		{ action = "spawn_super_moon",               type = "POSITIVE", gameStates="ATTACK|IDLE",           minEventLevel = 3, logicFile="logic/weather/super_moon.logic",               minTime = 60, maxTime = 120,  weight = 1,    weather = "SUN"  },
+		{ action = "spawn_wind_weak",                type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2, logicFile="logic/weather/wind_weak.logic",                minTime = 60, maxTime = 120,  weight = 0.5,  weather = "WIND" },
+		{ action = "spawn_wind_strong",              type = "POSITIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2, logicFile="logic/weather/wind_strong.logic",              minTime = 60, maxTime = 120,  weight = 0.1,  weather = "WIND" },
+		{ action = "spawn_wind_none",                type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2, logicFile="logic/weather/wind_none.logic",                minTime = 60, maxTime = 120,  weight = 0.5,  weather = "WIND"  },
+		{ action = "spawn_ion_storm",                type = "POSITIVE", gameStates="ATTACK|IDLE",           minEventLevel = 3, logicFile="logic/weather/ion_storm.logic",                minTime = 30, maxTime = 60,   weight = 1.25, weather = "SUN|WIND" },
+		{ action = "spawn_acid_rain",                type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 3, logicFile="logic/weather/acid_rain.logic",                minTime = 30, maxTime = 60,   weight = 1,    weather = "SUN|WIND" },
+		{ action = "spawn_acid_fissures",            type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2, logicFile="logic/weather/acid_fissures.logic",            minTime = 30, maxTime = 60,   weight = 2 },
+		{ action = "spawn_meteor_shower",            type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 8, logicFile="logic/weather/meteor_shower.logic",            minTime = 30, maxTime = 60,   weight = 0.5  },
+		{ action = "spawn_meteor_shower",            type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 8, logicFile="logic/weather/meteor_shower.logic",            minTime = 30, maxTime = 60,   weight = 0.2  },	
+		{ action = "spawn_comet_silent",             type = "POSITIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 2, logicFile="logic/weather/comet_silent.logic",                                           weight = 1.2  },
+		{ action = "spawn_tornado_acid_near_player", type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 3, logicFile="logic/weather/tornado_acid_near_player.logic", minTime = 30, maxTime = 30,   weight = 0.5, weather = "SUN|WIND" },
 	}
 
+	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
+	{
+		20,  -- 1st event probability in percent
+		10,  -- 2nd event probability in percent
+	}
+	
 	rules.addResourcesOnRunOut = 
 	{
 
@@ -74,7 +60,7 @@ return function()
 		1020, -- difficulty level 6
 		1200, -- difficulty level 7
 		1500, -- difficulty level 8
-		1500, -- difficulty level 9
+		1800, -- difficulty level 9
 	}
 
 	rules.prepareSpawnTime = 
@@ -135,7 +121,7 @@ return function()
 		0,  -- difficulty level 3		
 		0,  -- difficulty level 4
 		0,  -- difficulty level 5
-		0,  -- difficulty level 6
+		1,  -- difficulty level 6
 		1,  -- difficulty level 7
 		2,  -- difficulty level 8
 		3,  -- difficulty level 9
@@ -167,38 +153,30 @@ return function()
 		"logic/dom/attack_level_1_entry.logic", -- difficulty level 9
 	}
 	
-	rules.waves = 
+	rules.waveRepeatChances = 
 	{
-		["default"] =
-		{				
-			{}, -- difficulty level 1
-			{}, -- difficulty level 2
-			{}, -- difficulty level 3
-			{}, -- difficulty level 4
-			{}, -- difficulty level 5			
-			{}, -- difficulty level 6
-			
-			{ -- difficulty level 7
-				"logic/missions/survival/attack_level_1_id_1_acid.logic",
-				"logic/missions/survival/attack_level_1_id_2_acid.logic",
-			},
-
-			{ -- difficulty level 8
-				"logic/missions/survival/attack_level_1_id_1_acid.logic",
-				"logic/missions/survival/attack_level_1_id_2_acid.logic",
-				"logic/missions/survival/attack_level_2_id_1_acid.logic",
-			},
-
-			{ -- difficulty level 9
-				"logic/missions/survival/attack_level_1_id_1_acid.logic",
-				"logic/missions/survival/attack_level_1_id_2_acid.logic",
-				"logic/missions/survival/attack_level_2_id_1_acid.logic",
-				"logic/missions/survival/attack_level_2_id_2_acid.logic",
-				"logic/missions/survival/attack_level_3_id_1_acid.logic",
-				"logic/missions/survival/attack_level_5_id_1_acid.logic",
-			},
-		},
+		{},  -- concecutive chances of wave repeating at level 1
+		{},  -- concecutive chances of wave repeating at level 2
+		{},  -- concecutive chances of wave repeating at level 3
+		{},  -- concecutive chances of wave repeating at level 4
+		{},  -- concecutive chances of wave repeating at level 5
+		{},  -- concecutive chances of wave repeating at level 6
+		{50},  -- concecutive chances of wave repeating at level 7
+		{70, 50},  -- concecutive chances of wave repeating at level 8
+		{80, 50, 20, 80, 70},  -- concecutive chances of wave repeating at level 9
 	}
+	
+	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
+	rules.waves = {}
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8,  }, biomes = { "acid" },  levels = { 1 },   ids = { 1, 2 },         suffixes = { "", "alpha" },  },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8   }, biomes = { "acid" },  levels = { 2 },   ids = { 1, 2 },         suffixes = { "", "" },       },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    7, 8, 9}, biomes = { "acid" },  levels = { 2 },   ids = { 1, 2 },         suffixes = { "alpha" },      },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    7, 8, 9}, biomes = { "acid" },  levels = { 3 },   ids = { 1, 2 },         suffixes = { "" },           },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       8, 9}, biomes = { "acid" },  levels = { 3 },   ids = { 1, 2 },         suffixes = { "", "alpha" },  },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          9}, biomes = { "acid" },  levels = { 4,5 }, ids = { 1, 2 },         suffixes = { "" },           },   rules.waves)
+	
+	rules.waves = wave_gen:Generate({ groups = { "swamp" },     difficulty = {          9}, biomes = { "group" }, levels = { 1,2 }, ids = { 1, 2 },         suffixes = { "", "alpha" },  },   rules.waves)
+	
 
 	rules.extraWaves = 
 	{
