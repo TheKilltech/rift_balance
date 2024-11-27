@@ -140,6 +140,7 @@ function dom_mananger:init()
 	self.onUpgradeHqLogicEndFileName	= ""
 	self.hqAttackSafeTime				= 600
 
+		self.coolEventSpawnTime = {}
 	self.sleepSafeTime = 1200
 
 	self.dumpAllDifficultyInfo = true
@@ -151,6 +152,7 @@ function dom_mananger:init()
 	if ( self.pauseAttacks == false ) then
 		self.pauseAttacks = self.rules.pauseAttacks
 	end
+	self.prepAttacks = self.rules.prepareAttacks
 
 	local currentDifficulty = DifficultyService:GetCurrentDifficultyName()
 
@@ -207,8 +209,7 @@ function dom_mananger:Update( dt)
 	if difficultyState ~= "" then
 		local state = self.difficultyIncrease:GetState( difficultyState )
 
-		debug = debug .. " Current difficulty level: " .. tostring( self.currentDifficultyLevel ) .. "\n"
-		debug = debug .. " Max difficulty level : " .. tostring( self.freezedDifficultyLevel ) .. "\n"
+		debug = debug .. " Current difficulty level: " .. tostring( self.currentDifficultyLevel ) .. " / " .. tostring( self.freezedDifficultyLevel ) .. "\n"
 		debug = debug .. " Time to next difficulty level : " .. tostring( state:GetDurationLimit() - state:GetDuration() )
 	end
 
@@ -225,6 +226,24 @@ function dom_mananger:Update( dt)
 			debug = debug .. " Time left: " .. tostring( state:GetDurationLimit() - state:GetDuration() )
 		elseif ( currentSpawnerState == "cooldown_after_spawn" ) then
 			debug = debug .. " Time left: " .. tostring( self.cooldownTimer )
+			if (self.rules.waveRepeatChances) then 
+				local repeatChances = self.rules.waveRepeatChances[self.currentDifficultyLevel]
+				local repeatChance  = repeatChances[self.waveRepeated+1] or 0
+				debug = debug .. " wave repeat chance: " .. tostring( repeatChance ) .. "%,"
+				debug = debug .. " repeated " .. tostring( self.waveRepeated ) .. " times, "
+				if (self.waveRepeatTime > 0 ) then
+					debug = debug .. " next " .. tostring( self.cooldownTimer - self.waveRepeatTime ) .. " / " .. tostring( self.rules.cooldownAfterAttacks[self.currentDifficultyLevel] - self.waveRepeatTime ) .. "\n"
+				else debug = debug .. " finished\n"
+				end
+				if (self.coolEventSpawnTime) then
+					debug = debug .. " events: " .. tostring( #self.coolEventSpawnTime ) .. " queued, "
+					for i = 1, #self.coolEventSpawnTime, 1 do
+						if (self.coolEventSpawnTime[i] and self.coolEventSpawnTime[i] > 0 and self.coolEventSpawnTime[i] < self.waveEventsTimer) then
+							debug = debug .. " [" .. tostring(i) .. "]: " .. tostring( self.waveEventsTimer - self.coolEventSpawnTime[i] )
+						end
+					end		
+				end				
+			end
 		elseif ( currentSpawnerState == "prepare_spawn" ) then
 			debug = debug .. " Time left: " .. tostring( self.waitForSpawnTimer )
 		elseif ( currentSpawnerState == "idle" ) then
@@ -534,7 +553,7 @@ function dom_mananger:OnLuaGlobalEvent( evt )
 end
 
 function dom_mananger:DumpDomProgress( rules )
-	self:VerboseLog("prepare attacks : " .. tostring( rules.prepareAttacks ) )
+	self:VerboseLog("prepare attacks : " .. tostring( self.prepAttacks ) )
 	
 	local difficultyData = {}
 	for i = 1, self.maxDifficultyLevel, 1 do 
@@ -572,13 +591,13 @@ function dom_mananger:DumpDomProgress( rules )
 			attackTime = attackTime + rules.idleTime[difficultyLevel]
 			prepareAttackTime = attackTime
 
-			if ( rules.prepareAttacks == true ) then
+			if ( self.prepAttacks == true ) then
 				difficultyLevel = self:GetDifficultyLevelFromTime( attackTime, difficultyData )
 			end
 
 			attackTime = attackTime + rules.prepareSpawnTime[difficultyLevel]
 
-			if ( rules.prepareAttacks == false ) then
+			if ( self.prepAttacks == false ) then
 				difficultyLevel = self:GetDifficultyLevelFromTime( attackTime, difficultyData )
 				prepareAttackTime = attackTime
 			end
@@ -586,7 +605,7 @@ function dom_mananger:DumpDomProgress( rules )
 			self:VerboseLog("Attack number : " .. tostring( i ) .. " Prepare time " .. tostring( prepareAttackTime ) ..  " Attack time : " .. tostring( attackTime ) ..
 							"  Difficulty level : ".. tostring( difficultyLevel ) );
 
-			if ( rules.prepareAttacks == true ) then
+			if ( self.prepAttacks == true ) then
 				prepareAttackTime = attackTime
 			end
 		 
@@ -1198,7 +1217,7 @@ function dom_mananger:OnEnterPrepareSpawn( state )
 		self.preparedAttacks = {}
 		self.preparedAttackMarkers = {}
 
-		if ( self.rules.prepareAttacks == true ) then
+		if ( self.prepAttacks == true ) then
 			local borderSpawnPointGroupName = self.borderSpawnPointGroupNames[RandInt( 1,#self.borderSpawnPointGroupNames )]
 
 			self:VerboseLog("Border spawn point group :" .. borderSpawnPointGroupName )
@@ -1261,54 +1280,44 @@ end
 function dom_mananger:OnEnterCooldownAfterSpawnTime( state )
 	self:VerboseLog("OnEnterCooldownAfterSpawnTime" )
 	self.cooldownTimer  = self.rules.cooldownAfterAttacks[self.currentDifficultyLevel]
-	self.waveRepeatTime = RandInt(40, 120)
+	self.waveRepeatTime = self.cooldownTimer - (10 + RandInt(2, 6)*self.currentDifficultyLevel)
+	if (self.rules.waveRepeatChances) then
+		self.prepAttacks = false
+	end 
 	
 	if ((self.waveRepeated or 0) == 0) then
+		self.waveEventsTimer = self.cooldownTimer
 		self.coolEventSpawnTime = {}
 		local rngRoll = RandInt(0, 100)	
 		if (not self.rules.spawnCooldownEventChance) then
 			self.rules.spawnCooldownEventChance = { 25, 5, 1}
 		end
 		for i,prob in ipairs(self.rules.spawnCooldownEventChance) do
-			local isSet = false
+			local strEventOutcome = "skipped"
 			if (prob and prob >= rngRoll) then
-				self.coolEventSpawnTime[i] = RandInt(0,self.cooldownTimer)
-				isSet = true
+				self.coolEventSpawnTime[i] = RandInt(1,self.cooldownTimer)
+				strEventOutcome = "triggered, time ".. tostring( self.coolEventSpawnTime[i] )
 			end
-			self:VerboseLog("Event on Cooldown ".. tostring(i) ..": roll " .. tostring(rngRoll) .. " vs probability " .. tostring(prob) .." => ".. tostring(isSet))
+			self:VerboseLog("Event on Cooldown ".. tostring(i) ..": roll " .. tostring(rngRoll) .. " vs probability " .. tostring(prob) .." => ".. strEventOutcome)
 		end
 	end
 end
 
 function dom_mananger:OnExecuteCooldownAfterSpawnTime( state, dt )
-	self.cooldownTimer  = self.cooldownTimer - dt
-
+	self.cooldownTimer   = self.cooldownTimer   - dt
+	self.waveEventsTimer = self.waveEventsTimer - dt
+	if (self.waveEventsTimer < 0) then self.waveEventsTimer = 0 end
+	
 	for i = 1, #self.coolEventSpawnTime, 1 do
-		if (self.coolEventSpawnTime[i] and self.coolEventSpawnTime[i] > self.cooldownTimer) then
+		if (self.coolEventSpawnTime[i] and self.coolEventSpawnTime[i] > self.waveEventsTimer) then
 			self:VerboseLog("Event on Cooldown ".. tostring(i) ..": starting")
 			self:StartAnEvent( "ATTACK" )
-			self.coolEventSpawnTime[i] = -1
+			self.coolEventSpawnTime[i] = -9999
 		end
 	end
 
 	if ( self.cooldownTimer < self.waveRepeatTime and self.rules.waveRepeatChances ) then
-		if ( self.waveRepeated == nil ) then self.waveRepeated = 0 end
-		local rngRoll       = RandInt(0, 100)
-		local repeatChances = self.rules.waveRepeatChances[self.currentDifficultyLevel]
-		local repeatChance  = repeatChances[self.waveRepeated+1] or 0
-		self:VerboseLog("Wave Repeat ".. tostring(self.waveRepeated + 1) ..": chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll))
-		
-		if ( repeatChance > rngRoll) then
-			self:VerboseLog("Wave Repeat succesful")
-			if ( self:GetPauseAttacks() == true ) then  -- starts attack (depending on streaming state)
-				self.spawner:ChangeState( "dummy_state" )
-			else
-				self.spawner:ChangeState( "streaming" )
-			end
-			self.waveRepeated = self.waveRepeated + 1
-			self.eventsPerPrepareState = 0
-		else self.waveRepeatTime = -9999
-		end
+		self:RepeatWave()
 	end
 	
 	if ( self.cooldownTimer < 0 ) then
@@ -1530,7 +1539,7 @@ end
 function dom_mananger:OnHqEnterAttackLogic( state )
 	self:VerboseLog("OnHqEnterAttackLogic" )
 
-	if ( self.rules.prepareAttacks == true ) then
+	if ( self.prepAttacks == true ) then
 		self:SpawnPreparedWave( "dom_mananger:OnHqExitEntryLogic: Spawn attack name : ", true, self.hqPreparedAttacks, self.upgradeHqWaves )
 	else
 		local borderSpawnPointGroupName = self.borderSpawnPointGroupNames[RandInt( 1,#self.borderSpawnPointGroupNames )]
@@ -1601,15 +1610,89 @@ function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, waveP
 			local index = #attacks + 1
 
 			attacks[index] = {}
-			attacks[index].waveName = waveData.name
+			attacks[index].waveName       = waveData.name
+			attacks[index].spawnGroupName = borderSpawnPointGroupName
 			attacks[index].spawnPointName = spawnPointName
+			attacks[index].originalPool   = wavePool
 
 			markers[#markers + 1] = self:SpawnWaveIndicator( indicatorTimer, spawnPointName, "effects/messages_and_markers/wave_marker" )
 
 			self:VerboseLog( log .. waveData.name )
 		end
 	end
+end
 
+function dom_mananger:ReshuffleWave( index, attacks, reshuffleSwapn, reshuffleSpawnGroup )
+	local borderSpawnPointGroupName = attacks[index].spawnGroupName
+	local spawnPointName            = attacks[index].spawnPointName
+	local wavePool                  = attacks[index].originalPool
+	if (wavePool == nil or #wavePool == 0) then
+		self:VerboseLog( "Wave Reshuffle: attack ".. tostring(index) .." original wavePool is nil. using default pool")
+		wavePool = self:GetWavePool( self.currentDifficultyLevel )
+	end
+	local waveData  = wavePool[RandInt( 1, #wavePool )]
+	local textSpawn = ""
+	
+	if (reshuffleSpawnGroup ) then
+		borderSpawnPointGroupName = self.borderSpawnPointGroupNames[RandInt( 1,#self.borderSpawnPointGroupNames )]
+		reshuffleSwapn = true
+		textSpawn = ", new group: " .. tostring(borderSpawnPointGroupName)
+	end
+	
+	if (reshuffleSwapn and borderSpawnPointGroupName ~= nil) then
+		spawnPointName = self:RandomizeSpawnPoint( borderSpawnPointGroupName, waveData )
+		textSpawn = textSpawn .. " new spawn: " .. tostring(spawnPointName)
+	end
+	
+	if ( spawnPointName ~= "none" ) then
+		attacks[index] = {}
+		attacks[index].waveName       = waveData.name
+		attacks[index].spawnGroupName = borderSpawnPointGroupName
+		attacks[index].spawnPointName = spawnPointName
+		attacks[index].originalPool   = wavePool
+
+		-- markers[index] = self:SpawnWaveIndicator( indicatorTimer, spawnPointName, "effects/messages_and_markers/wave_marker" )
+		
+		self:VerboseLog( "Wave Reshuffle: attack ".. tostring(index).. " changed to wave_logic='" .. waveData.name .. "'".. textSpawn)
+	end
+end
+
+function dom_mananger:RepeatWave()
+	if ( self.waveRepeated == nil ) then self.waveRepeated = 0 end
+	local rngRoll       = RandInt(0, 100)
+	local repeatChances = self.rules.waveRepeatChances[self.currentDifficultyLevel]
+	local repeatChance  = repeatChances[self.waveRepeated+1] or 0
+	self:VerboseLog("Wave Repeat ".. tostring(self.waveRepeated + 1) ..": chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll))
+	
+	if ( repeatChance > rngRoll) then
+		self:VerboseLog("Wave Repeat succesful")
+	
+		if (self.preparedAttacks) then
+			self:VerboseLog("Wave Reshuffle, checking " .. tostring(#self.preparedAttacks) .. " attacks for reshuffle")
+			for i = 1, #self.preparedAttacks, 1 do
+				local chanceWaveReroll    = self.rules.waveChanceReroll or 40
+				local chanceNewSpawn      = self.rules.waveChanceRerollSpawn or 15
+				local chanceNewSpawnGroup = self.rules.waveChanceRerollSpawnGroup or 0
+				rngRoll = RandInt(1, 100)
+				self:VerboseLog("Wave Reshuffle: attack ".. tostring(i) .."/".. tostring(#self.preparedAttacks).. ", chance ".. tostring(chanceWaveReroll) ..", rolled ".. tostring(rngRoll) .." => " .. tostring(chanceWaveReroll > rngRoll) )
+				if ( chanceWaveReroll > rngRoll) then
+					self:ReshuffleWave( i, self.preparedAttacks, chanceNewSpawnGroup < RandInt(1, 100), chanceNewSpawn < RandInt(1, 100) )
+				end
+			end
+		end
+		self:VerboseLog("Wave Repeat ".. tostring(self.waveRepeated + 1) .." is set up")
+		
+		if ( self:GetPauseAttacks() == true ) then  -- starts attack (depending on streaming state)
+			self.spawner:ChangeState( "dummy_state" )
+		else
+			self.spawner:ChangeState( "streaming" )
+		end
+		self.waveRepeated = self.waveRepeated + 1
+		self.eventsPerPrepareState = 0
+	else 
+		self.waveRepeatTime = -9999
+		self.prepAttacks = self.rules.prepareAttacks
+	end
 end
 
 function dom_mananger:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, preparedAttacks, spawnedAttacks )
@@ -1736,7 +1819,7 @@ function dom_mananger:OnEnterStreaming( state )
 		table.remove( self.spawnedAttacks, 1 )	
 	end
 
-	self:StartAnEvent( "ATTACK" )
+	--self:StartAnEvent( "ATTACK" )
 end
 
 function dom_mananger:OnExecuteStreaming( state )
