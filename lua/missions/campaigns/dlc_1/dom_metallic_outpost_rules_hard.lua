@@ -1,6 +1,19 @@
 return function()
     local rules = require("lua/missions/campaigns/dlc_1/dom_metallic_outpost_rules_default.lua")()
-		
+	
+	rules.timeToNextDifficultyLevel = 
+	{
+		660,  -- difficulty level 1
+		720,  -- difficulty level 2
+		780,  -- difficulty level 3
+		840,  -- difficulty level 4	
+		900,  -- difficulty level 5	
+		1080,  -- difficulty level 6	
+		1200,  -- difficulty level 7
+		1500,  -- difficulty level 8	
+		1800,  -- difficulty level 9	
+	}
+	
 	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
 	{
 		35,  -- 1st event probability in percent
@@ -38,6 +51,10 @@ return function()
 		{90, 80, 80, 80},         -- concecutive chances of wave repeating at level 8
 		{80, 80, 80, 35, 50, 90}, -- concecutive chances of wave repeating at level 9
 	}
+	
+	rules.waveChanceRerollSpawnGroup = 20
+	rules.waveChanceRerollSpawn      = 30
+	rules.waveChanceReroll           = 40
 	
 	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
 	rules.waves = {}

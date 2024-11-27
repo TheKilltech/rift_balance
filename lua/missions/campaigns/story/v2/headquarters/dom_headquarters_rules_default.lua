@@ -206,6 +206,10 @@ return function()
 		{100, 60, 50, 25, 15},  -- consecutive chances of wave repeating at level 9
 	}
 	
+	rules.waveChanceRerollSpawnGroup = 0
+	rules.waveChanceRerollSpawn      = 15
+	rules.waveChanceReroll           = 30
+	
 	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
 	rules.waves = {}
 	rules.waves = wave_gen:Generate({ groups = { "default" },                      difficulty = { 1, 2, 3 },                  biomes = { "" },      levels = { 1 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)

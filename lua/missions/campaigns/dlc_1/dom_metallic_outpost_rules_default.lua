@@ -65,18 +65,18 @@ return function()
 	{			
 		{ level = 2, minLevel = 5, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },
 	}
-	
+
 	rules.timeToNextDifficultyLevel = 
-	{
-		660,  -- difficulty level 1
-		720,  -- difficulty level 2
-		780,  -- difficulty level 3
-		840,  -- difficulty level 4	
-		900,  -- difficulty level 5	
-		1080,  -- difficulty level 6	
-		1200,  -- difficulty level 7
-		1500,  -- difficulty level 8	
-		1800,  -- difficulty level 9	
+	{			
+		600, -- difficulty level 1
+		600, -- difficulty level 2
+		600, -- difficulty level 3	
+		600, -- difficulty level 4
+		900, -- difficulty level 5
+		1200, -- difficulty level 6
+		1800, -- difficulty level 7
+		2400, -- difficulty level 8
+		2400, -- difficulty level 9
 	}
 
 	rules.prepareSpawnTime = 
@@ -186,6 +186,10 @@ return function()
 		{70, 60, 80, 20},         -- concecutive chances of wave repeating at level 8
 		{85, 70, 80, 35, 90},     -- concecutive chances of wave repeating at level 9
 	}
+	
+	rules.waveChanceRerollSpawnGroup = 0
+	rules.waveChanceRerollSpawn      = 15
+	rules.waveChanceReroll           = 30
 
 	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
 	rules.waves = {}
