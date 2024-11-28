@@ -44,7 +44,7 @@ end
 
 function wave_gen:GetWaveLogic( level, id, biome, suffix )
 	-- e.g. make  "logic/missions/survival/attack_level_3_id_1_desert_alpha.logic"
-	-- consider rework for return e.g  { name="logic/missions/survival/caverns/attack_level_1_id_1_caverns.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+	-- consider rework to produce e.g  { name="logic/missions/survival/caverns/attack_level_1_id_1_caverns.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
 	local oldbiomes = {"", "acid", "magma", "desert" }
 	local waveFile = "logic/missions/survival/"
 	if table.contains(oldbiomes, biome) then
@@ -61,6 +61,160 @@ function wave_gen:GetWaveLogic( level, id, biome, suffix )
 	if suffix ~= nil and suffix ~= "" then waveFile = waveFile .. "_" .. suffix end
 	waveFile = waveFile .. ".logic"
 	return waveFile
+end
+
+function wave_gen:PrepareDefaultRules(rules, missionType, difficulty)
+	-- missionType: { "outpost", "survival", "scout", "temp" }
+	-- difficulty:  { "easy", "default", "hard", "brutal" }
+
+	rules.prepareAttackDefinitions = self:PrepareAttackDefinitions(          missionType, difficulty )
+	rules.wavesEntryDefinitions    = self:WavesEntryDefinitions(             missionType, difficulty )
+	
+	rules.prepareSpawnTime          = self:DefaultPrepareSpawnTime(          missionType, difficulty )
+	rules.timeToNextDifficultyLevel = self:DefaultTimeToNextDifficultyLevel( missionType, difficulty )
+
+	-- to do: pack the below into a script
+	rules.cooldownAfterAttacks = 
+	{			
+		60,  -- difficulty level 1
+		90,  -- difficulty level 2
+		120,  -- difficulty level 3
+		180,  -- difficulty level 4	
+		180,  -- difficulty level 5	
+		180,  -- difficulty level 6	
+		240,  -- difficulty level 7
+		240,  -- difficulty level 8	
+		240,  -- difficulty level 9	
+	}
+
+	rules.idleTime = 
+	{			
+		 450,  -- difficulty level 1
+		 600,  -- difficulty level 2
+		 660,  -- difficulty level 3
+		 660,  -- difficulty level 4	
+		 900,  -- difficulty level 5	
+		 900,  -- difficulty level 6	
+		 900,  -- difficulty level 7
+		1200,  -- difficulty level 8	
+		1200,  -- difficulty level 9	
+	}
+	return rules
+end
+
+function wave_gen:PrepareAttackDefinitions( missionType, difficulty )
+	local defs = {
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 1
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 2
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 3
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 4
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 5
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 6
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 7
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 8
+		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 9
+	}
+	return defs
+end
+
+function wave_gen:WavesEntryDefinitions( missionType, difficulty )
+	local defs = {
+		"logic/dom/attack_level_1_entry.logic", -- difficulty level 1
+		"logic/dom/attack_level_2_entry.logic", -- difficulty level 2
+		"logic/dom/attack_level_2_entry.logic", -- difficulty level 3
+		"logic/dom/attack_level_2_entry.logic", -- difficulty level 4
+		"logic/dom/attack_level_2_entry.logic", -- difficulty level 5
+		"logic/dom/attack_level_2_entry.logic", -- difficulty level 6
+		"logic/dom/attack_level_2_entry.logic", -- difficulty level 7
+		"logic/dom/attack_level_2_entry.logic", -- difficulty level 8
+		"logic/dom/attack_level_2_entry.logic", -- difficulty level 9
+	}
+	return defs
+end
+
+function wave_gen:DefaultTimeToNextDifficultyLevel(missionType, difficulty, factor)
+	local times = {}
+	if (missionType == "outpost") then
+		times = {			
+			600, -- difficulty level 1
+			780, -- difficulty level 2
+			900, -- difficulty level 3	
+			1020, -- difficulty level 4
+			1200, -- difficulty level 5
+			1500, -- difficulty level 6
+			1800, -- difficulty level 7
+			2400, -- difficulty level 8
+			3600, -- difficulty level 9
+		}
+	elseif (missionType == "scout" or missionType == "temp") then
+		times = {
+			200, -- difficulty level 1
+			200, -- difficulty level 2
+			200, -- difficulty level 3	
+			1200, -- difficulty level 4
+			1200, -- difficulty level 5
+			1500, -- difficulty level 6
+			2400, -- difficulty level 7
+			3600, -- difficulty level 8
+			3600, -- difficulty level 9
+		}
+	else 
+		times = {			
+			180,  -- difficulty level 1
+			180,  -- difficulty level 2
+			180,  -- difficulty level 3
+			300,  -- difficulty level 4
+			900,  -- difficulty level 5
+			1020, -- difficulty level 6
+			1200, -- difficulty level 7
+			1500, -- difficulty level 8
+			1800, -- difficulty level 9
+		}
+	end
+	if factor == nil then factor = 1 end
+	if (difficulty == "brutal")      then factor = factor * 0.9
+	elseif (difficulty == "hard")    then factor = factor * 0.95
+	elseif (difficulty == "default") then factor = factor * 1.00
+	elseif (difficulty == "easy")    then factor = factor * 1.1
+	end
+	
+	times = self:ScaleTable(times, factor)
+	return times
+end
+
+function wave_gen:DefaultPrepareSpawnTime(missionType, difficulty, factor)
+	local times = {}
+	if (missionType == "survival") then								times = self:RepeatingValueTable(120, 9)
+	elseif (missionType == "outpost") then							times = self:RepeatingValueTable(120, 9)
+	elseif (missionType == "scout" or missionType == "temp") then	times = self:RepeatingValueTable(60, 9)
+	else 															times = self:RepeatingValueTable(60, 9)
+	end
+	
+	if factor == nil then factor = 1 end
+	if (difficulty == "brutal")      then factor = factor * 0.75
+	elseif (difficulty == "hard")    then factor = factor * 0.85
+	elseif (difficulty == "default") then factor = factor * 1.00
+	elseif (difficulty == "easy")    then factor = factor * 1.00
+	end
+	
+	times = self:ScaleTable(times, factor)
+	return times
+end
+
+
+function wave_gen:ScaleTable(array, factor)
+	for i = 1, #array, 1 do
+		array[i] = array[i] * factor;
+	end
+	return array
+end
+
+function wave_gen:RepeatingValueTable(value, repeats)
+	local array = {}
+	for i = repeats, 1, -1 do
+		array[i] = value;
+	end
+	return array
 end
 
 function table.contains(table, element)

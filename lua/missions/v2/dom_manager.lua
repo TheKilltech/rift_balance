@@ -1111,7 +1111,16 @@ function dom_mananger:GetPauseAttacks()
 end
 
 function dom_mananger:GetAttackCount( currentDifficultyLevel )	
-	return self.rules.maxAttackCountPerDifficulty[currentDifficultyLevel]
+	local minAttacks = 0
+	local maxAttacks = 0
+	if (self.rules.attackCountPerDifficulty) then
+		minAttacks = self.rules.attackCountPerDifficulty[currentDifficultyLevel].minCount
+		maxAttacks = self.rules.attackCountPerDifficulty[currentDifficultyLevel].maxCount
+	else
+		maxAttacks = self.rules.maxAttackCountPerDifficulty[currentDifficultyLevel]
+		minAttacks = maxAttacks
+	end
+	return RandInt( minAttacks, maxAttacks )
 end
 
 function dom_mananger:GetMultiplayerAttackCount( currentDifficultyLevel )
