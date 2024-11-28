@@ -66,31 +66,6 @@ return function()
 		{ level = 2, minLevel = 5, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },
 	}
 
-	rules.timeToNextDifficultyLevel = 
-	{			
-		600, -- difficulty level 1
-		600, -- difficulty level 2
-		600, -- difficulty level 3	
-		600, -- difficulty level 4
-		900, -- difficulty level 5
-		1200, -- difficulty level 6
-		1800, -- difficulty level 7
-		2400, -- difficulty level 8
-		2400, -- difficulty level 9
-	}
-
-	rules.prepareSpawnTime = 
-	{			
-		120,  -- difficulty level 1
-		120,  -- difficulty level 2
-		120,  -- difficulty level 3
-		120,  -- difficulty level 4	
-		120,  -- difficulty level 5	
-		120,  -- difficulty level 6	
-		120,  -- difficulty level 7
-		120,  -- difficulty level 8	
-		120,  -- difficulty level 9	
-	}
 
 	rules.buildingsUpgradeStartsLogic = 
 	{			
@@ -135,51 +110,26 @@ return function()
 		900,  -- difficulty level 8	
 		900,  -- difficulty level 9	
 	}
-	rules.maxAttackCountPerDifficulty = 
+
+	rules.attackCountPerDifficulty = 
 	{			
-		1,  -- difficulty level 1
-		2,  -- difficulty level 2
-		2,  -- difficulty level 3		
-		2,  -- difficulty level 4
-		3,  -- difficulty level 5
-		3,  -- difficulty level 6
-		3,  -- difficulty level 7
-		3,  -- difficulty level 8
-		4,  -- difficulty level 9
-	}
-
-	rules.prepareAttackDefinitions =
-	{		
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 1		
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 2			
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 3				
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 4				
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 5					
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 6			
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 7			
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 8					
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 9		
-	}
-
-	rules.wavesEntryDefinitions =
-	{		 
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 1		 
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 2			
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 3			
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 4				
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 5			
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 6					
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 7				
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 8					
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 9
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 1
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 2
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 3
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 4
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 5
+		{ minCount = 1, maxCount = 3 },  -- difficulty level 6
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 7
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 8
+		{ minCount = 2, maxCount = 4 },  -- difficulty level 9
 	}
 	
 	rules.waveRepeatChances = 
 	{
 		{},                       -- concecutive chances of wave repeating at level 1
 		{},                       -- concecutive chances of wave repeating at level 2
-		{},                       -- concecutive chances of wave repeating at level 3
-		{10 },                    -- concecutive chances of wave repeating at level 4
+		{10 },                    -- concecutive chances of wave repeating at level 3
+		{15,  5},                 -- concecutive chances of wave repeating at level 4
 		{25, 40, 20},             -- concecutive chances of wave repeating at level 5
 		{40, 55, 40},             -- concecutive chances of wave repeating at level 6
 		{55, 50, 40, 20},         -- concecutive chances of wave repeating at level 7
@@ -192,6 +142,8 @@ return function()
 	rules.waveChanceReroll           = 30
 
 	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
+	rules = wave_gen:PrepareDefaultRules( rules, "outpost", "default")
+	
 	rules.waves = {}
 	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3 },                  biomes = { "metallic" }, levels = { 1 },   ids = { 1, 2 },      suffixes = { "" },              },   rules.waves)
 	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5},             biomes = { "metallic" }, levels = { 1 },   ids = { 1, 2 },      suffixes = { "", "alpha" },     },   rules.waves)

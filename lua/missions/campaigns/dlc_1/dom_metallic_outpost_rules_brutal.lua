@@ -27,17 +27,17 @@ return function()
 		540,  -- difficulty level 9	
 	}
 	
-	rules.maxAttackCountPerDifficulty = 
+	rules.attackCountPerDifficulty = 
 	{			
-		2,  -- difficulty level 1
-		2,  -- difficulty level 2
-		2,  -- difficulty level 3		
-		2,  -- difficulty level 4
-		3,  -- difficulty level 5
-		3,  -- difficulty level 6
-		3,  -- difficulty level 7
-		4,  -- difficulty level 8
-		4,  -- difficulty level 9
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 1
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 2
+		{ minCount = 2, maxCount = 2 },  -- difficulty level 3
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 4
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 5
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 6
+		{ minCount = 3, maxCount = 3 },  -- difficulty level 7
+		{ minCount = 3, maxCount = 4 },  -- difficulty level 8
+		{ minCount = 3, maxCount = 5 },  -- difficulty level 9
 	}
 
 	rules.majorAttackLogic =
@@ -63,6 +63,10 @@ return function()
 	rules.waveChanceReroll           = 40
 	
 	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
+	
+	rules.timeToNextDifficultyLevel = wave_gen:DefaultTimeToNextDifficultyLevel( "outpost", "brutal", 1)
+	rules.prepareSpawnTime          = wave_gen:DefaultPrepareSpawnTime(          "outpost", "brutal", 1)
+	
 	rules.waves = {}
 	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3 },                  biomes = { "metallic" }, levels = { 1, 2 }, ids = { 1, 2 },      suffixes = { "", "alpha" },     },   rules.waves)
 	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5},             biomes = { "metallic" }, levels = { 1, 2 }, ids = { 1, 2 },      suffixes = { "ultra" },         },   rules.waves)

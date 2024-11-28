@@ -1,19 +1,6 @@
 return function()
     local rules = require("lua/missions/campaigns/dlc_1/dom_metallic_outpost_rules_default.lua")()
-	
-	rules.timeToNextDifficultyLevel = 
-	{
-		660,  -- difficulty level 1
-		720,  -- difficulty level 2
-		780,  -- difficulty level 3
-		840,  -- difficulty level 4	
-		900,  -- difficulty level 5	
-		1080,  -- difficulty level 6	
-		1200,  -- difficulty level 7
-		1500,  -- difficulty level 8	
-		1800,  -- difficulty level 9	
-	}
-	
+		
 	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
 	{
 		35,  -- 1st event probability in percent
@@ -26,17 +13,17 @@ return function()
 		{ level = 2, minLevel = 5, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },     
 	}
 	
-	rules.maxAttackCountPerDifficulty = 
+	rules.attackCountPerDifficulty = 
 	{			
-		1,  -- difficulty level 1
-		2,  -- difficulty level 2
-		2,  -- difficulty level 3		
-		2,  -- difficulty level 4
-		3,  -- difficulty level 5
-		3,  -- difficulty level 6
-		3,  -- difficulty level 7
-		3,  -- difficulty level 8
-		4,  -- difficulty level 9
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 1
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 2
+		{ minCount = 2, maxCount = 2 },  -- difficulty level 3
+		{ minCount = 2, maxCount = 2 },  -- difficulty level 4
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 5
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 6
+		{ minCount = 3, maxCount = 3 },  -- difficulty level 7
+		{ minCount = 3, maxCount = 4 },  -- difficulty level 8
+		{ minCount = 3, maxCount = 4 },  -- difficulty level 9
 	}
 	
 	rules.waveRepeatChances = 
@@ -57,6 +44,10 @@ return function()
 	rules.waveChanceReroll           = 40
 	
 	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
+	
+	rules.timeToNextDifficultyLevel = wave_gen:DefaultTimeToNextDifficultyLevel( "outpost", "hard", 1)
+	rules.prepareSpawnTime          = wave_gen:DefaultPrepareSpawnTime(          "outpost", "hard", 1)
+	
 	rules.waves = {}
 	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3 },                  biomes = { "metallic" }, levels = { 1 },   ids = { 1, 2 },      suffixes = { "", "alpha" },     },   rules.waves)
 	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5},             biomes = { "metallic" }, levels = { 1 },   ids = { 1, 2 },      suffixes = { "ultra" },         },   rules.waves)

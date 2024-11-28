@@ -58,32 +58,6 @@ return function()
 		 900,  -- difficulty level 8
 		 900,  -- difficulty level 9
 	}
-	
-	rules.timeToNextDifficultyLevel = 
-	{			
-		600, -- difficulty level 1
-		660, -- difficulty level 2
-		780, -- difficulty level 3	
-		900, -- difficulty level 4
-		1020, -- difficulty level 5
-		1200, -- difficulty level 6
-		1500, -- difficulty level 7
-		1800, -- difficulty level 8
-		2400, -- difficulty level 9
-	}
-	
-	rules.maxAttackCountPerDifficulty = 
-	{			
-		1,  -- difficulty level 1
-		2,  -- difficulty level 2
-		2,  -- difficulty level 3
-		3,  -- difficulty level 4
-		3,  -- difficulty level 5
-		3,  -- difficulty level 6
-		3,  -- difficulty level 7
-		4,  -- difficulty level 8
-		4,  -- difficulty level 9
-	}
 
 	rules.objectivesLogic = 
 	{
@@ -97,18 +71,31 @@ return function()
 	{			
 		{ level = 2, minLevel = 6, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },     
 	}
+
+	rules.attackCountPerDifficulty = 
+	{			
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 1
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 2
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 3
+		{ minCount = 1, maxCount = 3 },  -- difficulty level 4
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 5
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 6
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 7
+		{ minCount = 2, maxCount = 4 },  -- difficulty level 8
+		{ minCount = 3, maxCount = 4 },  -- difficulty level 9
+	}
 	
 	rules.waveRepeatChances = 
 	{
-		{30 },                    -- concecutive chances of wave repeating at level 1
-		{40, 20},                 -- concecutive chances of wave repeating at level 2
-		{50, 20},                 -- concecutive chances of wave repeating at level 3
-		{60, 45},                 -- concecutive chances of wave repeating at level 4
-		{80, 50, 20},             -- concecutive chances of wave repeating at level 5
-		{90, 75, 70},             -- concecutive chances of wave repeating at level 6
-		{90, 90, 70, 20},         -- concecutive chances of wave repeating at level 7
-		{90, 80, 80, 80},         -- concecutive chances of wave repeating at level 8
-		{80, 80, 80, 35, 50, 90}, -- concecutive chances of wave repeating at level 9
+		{30 },                -- concecutive chances of wave repeating at level 1
+		{35, 5},              -- concecutive chances of wave repeating at level 2
+		{40, 15},             -- concecutive chances of wave repeating at level 3
+		{45, 25},             -- concecutive chances of wave repeating at level 4
+		{50, 35, 20},         -- concecutive chances of wave repeating at level 5
+		{60, 45, 35},         -- concecutive chances of wave repeating at level 6
+		{70, 60, 45, 15},     -- concecutive chances of wave repeating at level 7
+		{80, 70, 65, 25},     -- concecutive chances of wave repeating at level 8
+		{90, 80, 70, 35, 90}, -- concecutive chances of wave repeating at level 9
 	}
 	
 	rules.waveChanceRerollSpawnGroup = 15
@@ -116,6 +103,10 @@ return function()
 	rules.waveChanceReroll           = 40
 	
 	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
+	
+	rules.timeToNextDifficultyLevel = wave_gen:DefaultTimeToNextDifficultyLevel( "outpost", "hard", 1)
+	rules.prepareSpawnTime          = wave_gen:DefaultPrepareSpawnTime(          "outpost", "hard", 1)
+	
 	rules.waves = {}
 	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3 },                  biomes = { "acid" },  levels = { 1 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
 	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5},             biomes = { "acid" },  levels = { 1 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
