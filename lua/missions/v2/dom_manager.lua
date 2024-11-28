@@ -1659,39 +1659,46 @@ end
 
 function dom_mananger:RepeatWave()
 	if ( self.waveRepeated == nil ) then self.waveRepeated = 0 end
-	local rngRoll       = RandInt(0, 100)
-	local repeatChances = self.rules.waveRepeatChances[self.currentDifficultyLevel]
-	local repeatChance  = repeatChances[self.waveRepeated+1] or 0
-	self:VerboseLog("Wave Repeat ".. tostring(self.waveRepeated + 1) ..": chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll))
+	local repeatChances       = self.rules.waveRepeatChances[self.currentDifficultyLevel]
+	local repeatChance        = repeatChances[self.waveRepeated+1] or 0
+	local chanceWaveReroll    = self.rules.waveChanceReroll or 40
+	local chanceNewSpawn      = self.rules.waveChanceRerollSpawn or 15
+	local chanceNewSpawnGroup = self.rules.waveChanceRerollSpawnGroup or 0
 	
-	if ( repeatChance > rngRoll) then
-		self:VerboseLog("Wave Repeat succesful")
-	
-		if (self.preparedAttacks) then
-			self:VerboseLog("Wave Reshuffle, checking " .. tostring(#self.preparedAttacks) .. " attacks for reshuffle")
-			for i = 1, #self.preparedAttacks, 1 do
-				local chanceWaveReroll    = self.rules.waveChanceReroll or 40
-				local chanceNewSpawn      = self.rules.waveChanceRerollSpawn or 15
-				local chanceNewSpawnGroup = self.rules.waveChanceRerollSpawnGroup or 0
+	if (self.preparedAttacks) then
+		self:VerboseLog("RepeatWave: checking " .. tostring(#self.preparedAttacks) .. " attacks for repeat and reshuffle")
+		
+		local newAttacks = {}
+		for i = 1, #self.preparedAttacks, 1 do
+			local rngRoll = RandInt(0, 100)
+			local attackStr = tostring(i) .."/".. tostring(#self.preparedAttacks)
+			self:VerboseLog("RepeatWave: attack ".. attackStr .. " repeat ".. tostring(self.waveRepeated + 1) .." chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll) .. " => " ..  tostring(repeatChance > rngRoll))
+			if ( repeatChance > rngRoll) then
 				rngRoll = RandInt(1, 100)
-				self:VerboseLog("Wave Reshuffle: attack ".. tostring(i) .."/".. tostring(#self.preparedAttacks).. ", chance ".. tostring(chanceWaveReroll) ..", rolled ".. tostring(rngRoll) .." => " .. tostring(chanceWaveReroll > rngRoll) )
+				self:VerboseLog("RepeatWave: attack ".. attackStr.. " reshuffle chance ".. tostring(chanceWaveReroll) ..", rolled ".. tostring(rngRoll) .." => " .. tostring(chanceWaveReroll > rngRoll) )
 				if ( chanceWaveReroll > rngRoll) then
 					self:ReshuffleWave( i, self.preparedAttacks, chanceNewSpawnGroup < RandInt(1, 100), chanceNewSpawn < RandInt(1, 100) )
 				end
+				newAttacks[#newAttacks + 1] = self.preparedAttacks[i]
 			end
 		end
-		self:VerboseLog("Wave Repeat ".. tostring(self.waveRepeated + 1) .." is set up")
 		
-		if ( self:GetPauseAttacks() == true ) then  -- starts attack (depending on streaming state)
-			self.spawner:ChangeState( "dummy_state" )
-		else
-			self.spawner:ChangeState( "streaming" )
+		if (#newAttacks > 0) then
+			self:VerboseLog("RepeatWave: repeat ".. tostring(self.waveRepeated + 1) .." is set up with ".. tostring(#newAttacks).. "/".. tostring(#self.preparedAttacks) .." attacks continuing")
+			self.preparedAttacks = newAttacks
+			
+			if ( self:GetPauseAttacks() == true ) then  -- starts attack (depending on streaming state)
+				self.spawner:ChangeState( "dummy_state" )
+			else
+				self.spawner:ChangeState( "streaming" )
+			end
+			self.waveRepeated = self.waveRepeated + 1
+			self.eventsPerPrepareState = 0
+		else 
+			self:VerboseLog("RepeatWave: no attacks remaining, wave is completed.")
+			self.waveRepeatTime = -9999
+			self.prepAttacks = self.rules.prepareAttacks
 		end
-		self.waveRepeated = self.waveRepeated + 1
-		self.eventsPerPrepareState = 0
-	else 
-		self.waveRepeatTime = -9999
-		self.prepAttacks = self.rules.prepareAttacks
 	end
 end
 
