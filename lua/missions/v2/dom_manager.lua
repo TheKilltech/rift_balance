@@ -1725,6 +1725,8 @@ function dom_mananger:BeginWaveCooldown( cooldownTime )
 end
 
 function dom_mananger:DoWaveCooldown( timer, dt )
+	if  (not self.waveEventsTimer) then self.waveEventsTimer = 1000 end -- line for downwards compatibility (property may not be set in older saves)
+	
 	self.waveEventsTimer = self.waveEventsTimer - dt
 	if (self.waveEventsTimer < 0) then self.waveEventsTimer = 0 end
 	

@@ -115,7 +115,7 @@ return function()
 
 	rules.prepareSpawnTime         = helper:RepeatingValueTable( 120, 9)
 	rules.idleTime                 = helper:RepeatingValueTable( 900, 9)
-	rules.cooldownAfterAttacks     = helper:Default_CooldownAfterAttack( "hq", "default" ) 
+	rules.cooldownAfterAttacks     = helper:Default_CooldownAfterAttacks( "hq", "default" ) 
 	
 	rules.attackCountPerDifficulty = 
 	{			
