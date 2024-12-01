@@ -1,6 +1,7 @@
 return function()
-    local rules = {}
-
+	local helper = require( "lua/missions/v2/waves_gen.lua" )
+	local rules  = helper:PrepareDefaultRules( {}, "hq", "default")
+	
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 2
 	rules.eventsPerPrepareState = 1 -- [0,1]
@@ -12,7 +13,7 @@ return function()
 	rules.idleTimeCancelChance = 10               -- chance in percent
 	rules.preparationTimeRelativeVariation = 0.6  -- X factor of idle time that may randomly vary: +/- X * prep_time
 	rules.preparationTimeCancelChance = 10        -- chance in percent
-
+	
 	rules.gameEvents = 
 	{
 		{ action = "new_objective",             type = "POSITIVE", gameStates="IDLE|STREAMING",           minEventLevel = 3 }, -- new_objective is only an option in the streaming mode; do not try to pass it as NO_STREAMING
@@ -64,12 +65,9 @@ return function()
 		--{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 3 },
 	}
 	
-	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
-	{
-		40,  -- 1st event probability in percent
-		8,   -- 2nd event probability in percent
-		2,   -- 3rd event probability in percent
-	}
+	-- events spawn chance during/after attack (cooldown state). event timing is random ranging from the start of attack to max cooldown time.
+	-- chances are consecutive, i.e. dice roll for event n+1 may only happen if roll for event n was also succefful
+	rules.spawnCooldownEventChance = { 35, 35, 20 }
 	
 	rules.addResourcesOnRunOut = 
 	{
@@ -80,27 +78,14 @@ return function()
 	rules.timeToNextDifficultyLevel = 
 	{			
 		1800, -- difficulty level 1
-		2400, -- difficulty level 2
+		1800, -- difficulty level 2
 		2400, -- difficulty level 3	
-		1800, -- difficulty level 4
-		1800, -- difficulty level 5
-		1800, -- difficulty level 6
-		1800, -- difficulty level 7
-		1800, -- difficulty level 8
-		1800, -- difficulty level 9
-	}
-
-	rules.prepareSpawnTime = 
-	{			
-		120,  -- difficulty level 1
-		120,  -- difficulty level 2
-		120,  -- difficulty level 3
-		120,  -- difficulty level 4	
-		120,  -- difficulty level 5	
-		120,  -- difficulty level 6	
-		120,  -- difficulty level 7
-		120,  -- difficulty level 8	
-		120,  -- difficulty level 9	
+		2400, -- difficulty level 4
+		2400, -- difficulty level 5
+		2400, -- difficulty level 6
+		3600, -- difficulty level 7
+		3600, -- difficulty level 8
+		3600, -- difficulty level 9
 	}
 
 	rules.buildingsUpgradeStartsLogic = 
@@ -115,82 +100,34 @@ return function()
 
 	rules.objectivesLogic = 
 	{
-		{ name = "logic/objectives/kill_elite.logic", minDifficultyLevel = 4 },
-		--{ name = "logic/objectives/destroy_fire_gnerot.logic", minDifficultyLevel = 5 },
-		{ name = "logic/objectives/destroy_nest_canoptrix_single.logic", minDifficultyLevel = 3, maxDifficultyLevel = 5 },
+		{ name = "logic/objectives/kill_elite.logic",                      minDifficultyLevel = 4 },
+		--{ name = "logic/objectives/destroy_fire_gnerot.logic",             minDifficultyLevel = 5 },
+		{ name = "logic/objectives/destroy_nest_canoptrix_single.logic",   minDifficultyLevel = 3, maxDifficultyLevel = 5 },
 		{ name = "logic/objectives/destroy_nest_canoptrix_multiple.logic", minDifficultyLevel = 5 }
-		--{ name = "logic/objectives/find_loot_container.logic", minDifficultyLevel = 2 },
-		--{ name = "logic/objectives/find_treasure.logic", minDifficultyLevel = 2 },
-		--{ name = "logic/objectives/harvest_container.logic", minDifficultyLevel = 6 },
-		--{ name = "logic/objectives/harvest_plant.logic", minDifficultyLevel = 6 },
-		--{ name = "logic/objectives/harvest_rubble.logic", minDifficultyLevel = 6 },
-		--{ name = "logic/objectives/hedroner_spawn.logic", minDifficultyLevel = 3 },
-		--{ name = "logic/objectives/destroy_creeper.logic", minDifficultyLevel = 6 } 
+		--{ name = "logic/objectives/find_loot_container.logic",             minDifficultyLevel = 2 },
+		--{ name = "logic/objectives/find_treasure.logic",                   minDifficultyLevel = 2 },
+		--{ name = "logic/objectives/harvest_container.logic",               minDifficultyLevel = 6 },
+		--{ name = "logic/objectives/harvest_plant.logic",                   minDifficultyLevel = 6 },
+		--{ name = "logic/objectives/harvest_rubble.logic",                  minDifficultyLevel = 6 },
+		--{ name = "logic/objectives/hedroner_spawn.logic",                  minDifficultyLevel = 3 },
+		--{ name = "logic/objectives/destroy_creeper.logic",                 minDifficultyLevel = 6 } 
 	}
 
-	rules.cooldownAfterAttacks = 
-	{			
-		60,  -- difficulty level 1
-		90,  -- difficulty level 2
-		120,  -- difficulty level 3
-		180,  -- difficulty level 4	
-		180,  -- difficulty level 5	
-		180,  -- difficulty level 6	
-		240,  -- difficulty level 7
-		240,  -- difficulty level 8	
-		240,  -- difficulty level 9	
-	}
-
-	rules.idleTime = 
-	{			
-		1500,  -- difficulty level 1
-		1200,  -- difficulty level 2
-		900,  -- difficulty level 3
-		900,  -- difficulty level 4	
-		900,  -- difficulty level 5	
-		900,  -- difficulty level 6	
-		900,  -- difficulty level 7
-		900,  -- difficulty level 8	
-		900,  -- difficulty level 9	
-	}
-
-	rules.maxAttackCountPerDifficulty = 
-	{			
-		1,  -- difficulty level 1
-		1,  -- difficulty level 2
-		2,  -- difficulty level 3		
-		2,  -- difficulty level 4
-		2,  -- difficulty level 5
-		3,  -- difficulty level 6
-		3,  -- difficulty level 7
-		3,  -- difficulty level 8
-		4,  -- difficulty level 9
-	}
+	rules.prepareSpawnTime         = helper:RepeatingValueTable( 120, 9)
+	rules.idleTime                 = helper:RepeatingValueTable( 900, 9)
+	rules.cooldownAfterAttacks     = helper:Default_CooldownAfterAttack( "hq", "default" ) 
 	
-	rules.prepareAttackDefinitions =
-	{
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 1
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 2
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 3
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 4
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 5
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 6
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 7
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 8
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 9
-	}
-
-	rules.wavesEntryDefinitions =
-	{
-		"logic/dom/attack_level_1_entry.logic",-- difficulty level 1
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 2
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 3
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 4
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 5
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 6
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 7
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 8
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 9
+	rules.attackCountPerDifficulty = 
+	{			
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 1
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 2
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 3
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 4
+		{ minCount = 2, maxCount = 2 },  -- difficulty level 5
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 6
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 7
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 8
+		{ minCount = 3, maxCount = 4 },  -- difficulty level 9
 	}
 
 	rules.waveRepeatChances = 
@@ -210,28 +147,27 @@ return function()
 	rules.waveChanceRerollSpawn      = 15
 	rules.waveChanceReroll           = 30
 	
-	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
 	rules.waves = {}
-	rules.waves = wave_gen:Generate({ groups = { "default" },                      difficulty = { 1, 2, 3 },                  biomes = { "" },      levels = { 1 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },                      difficulty = {    2, 3, 4, 5},             biomes = { "" },      levels = { 1 },   ids = { 1, 2 },         suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },                      difficulty = {       3, 4, 5, 6},          biomes = { "" },      levels = { 2 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },                      difficulty = {          4, 5, 6, 7},       biomes = { "" },      levels = { 2 },   ids = { 1, 2 },         suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },                      difficulty = {          4, 5, 6, 7},       biomes = { "" },      levels = { 3 },   ids = { 1, 2, 3 },      suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },                      difficulty = {             5, 6, 7, 8},    biomes = { "" },      levels = { 3 },   ids = { 1, 2, 3 },      suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },                      difficulty = {                6, 7, 8,  }, biomes = { "" },      levels = { 4 },   ids = { 1, 2, 3, 4 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },                      difficulty = {                   7, 8, 9}, biomes = { "" },      levels = { 4 },   ids = { 1, 2, 3, 4 },   suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = { 1, 2, 3 },                  biomes = { "" },      levels = { 1 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {    2, 3, 4, 5},             biomes = { "" },      levels = { 1 },   ids = { 1, 2 },         suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {       3, 4, 5, 6},          biomes = { "" },      levels = { 2 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {          4, 5, 6, 7},       biomes = { "" },      levels = { 2 },   ids = { 1, 2 },         suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {          4, 5, 6, 7},       biomes = { "" },      levels = { 3 },   ids = { 1, 2, 3 },      suffixes = { "" },              },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {             5, 6, 7, 8},    biomes = { "" },      levels = { 3 },   ids = { 1, 2, 3 },      suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {                6, 7, 8,  }, biomes = { "" },      levels = { 4 },   ids = { 1, 2, 3, 4 },   suffixes = { "" },              },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {                   7, 8, 9}, biomes = { "" },      levels = { 4 },   ids = { 1, 2, 3, 4 },   suffixes = { "", "alpha" },     },   rules.waves)
 	
-	rules.waves = wave_gen:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 2 },   ids = { 1, 2 },         suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {          4, 5, 6, 7},       biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "", "" },          },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "alpha" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {                6, 7, 8,  }, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },         suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 2 },   ids = { 1, 2 },         suffixes = { "ultra" },         },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {          4, 5, 6, 7},       biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "", "" },          },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "alpha" },         },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {                6, 7, 8,  }, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },         suffixes = { "", "alpha" },     },   rules.waves)
 	
-	rules.waves = wave_gen:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 2 },   ids = { 1, 2 },         suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {          4, 5, 6, 7},       biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "", "" },          },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "alpha" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {                6, 7, 8,  }, biomes = { "group" }, levels = { 4 },   ids = { 1, 2, 3 },      suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2, 3 },      suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 2 },   ids = { 1, 2 },         suffixes = { "ultra" },         },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {          4, 5, 6, 7},       biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "", "" },          },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "alpha" },         },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {                6, 7, 8,  }, biomes = { "group" }, levels = { 4 },   ids = { 1, 2, 3 },      suffixes = { "" },              },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2, 3 },      suffixes = { "", "alpha" },     },   rules.waves)
 	
 	rules.extraWaves = 
 	{

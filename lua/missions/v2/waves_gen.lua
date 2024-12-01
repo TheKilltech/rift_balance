@@ -64,7 +64,7 @@ function wave_gen:GetWaveLogic( level, id, biome, suffix )
 end
 
 function wave_gen:PrepareDefaultRules(rules, missionType, difficulty)
-	-- missionType: { "outpost", "survival", "scout", "temp" }
+	-- missionType: { "hq", "outpost", "survival", "scout", "temp" }
 	-- difficulty:  { "easy", "default", "hard", "brutal" }
 
 	rules.prepareAttackDefinitions = self:Default_PrepareAttackDefinitions(   missionType, difficulty )
@@ -177,7 +177,7 @@ end
 function wave_gen:Default_PrepareSpawnTime(missionType, difficulty, factor)
 	local times = {}
 	if (missionType == "survival") then								times = self:RepeatingValueTable(360, 9)
-	elseif (missionType == "outpost") then							times = self:RepeatingValueTable(120, 9)
+	elseif (missionType == "outpost" or missionType == "hq") then	times = self:RepeatingValueTable(120, 9)
 	elseif (missionType == "scout" or missionType == "temp") then	times = self:RepeatingValueTable(60, 9)
 	else 															times = self:RepeatingValueTable(60, 9)
 	end
@@ -197,10 +197,18 @@ end
 
 function wave_gen:Default_CooldownAfterAttacks(missionType, difficulty, factor)
 	local times = {}
-	times = self:RepeatingValueTable(120, 9)
+	if (missionType == "hq") then
+		times = self:RepeatingValueTable(180, 9)
+		times[3] = 120
+		times[4] = 120
+		times[8] = 240
+		times[9] = 240
+	else 
+		times = self:RepeatingValueTable(120, 9)
+	end 
 	times[1] = 60
 	times[2] = 90
-		
+	
 	if factor == nil then factor = 1 end
 	
 	times = self:ScaleTable(times, factor)
