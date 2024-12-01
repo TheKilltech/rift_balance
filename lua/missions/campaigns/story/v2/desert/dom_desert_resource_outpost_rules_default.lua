@@ -26,11 +26,11 @@ return function()
 		{ action = "remove_ammo",               type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
 		{ action = "boss_attack",               type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 4 },
 		{ action = "shegret_attack",            type = "NEGATIVE", gameStates="IDLE|ATTACK",           minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",                                      weight = 1 },
-		{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="IDLE|ATTACK",           minEventLevel = 5, logicFile="logic/event/shegret_attack_hard.logic",                                 weight = 0.75 },
-		{ action = "shegret_attack_very_hard",  type = "NEGATIVE", gameStates="IDLE|ATTACK",           minEventLevel = 6, logicFile="logic/event/shegret_attack_very_hard.logic",                            weight = 0.5 },
+		{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 5, logicFile="logic/event/shegret_attack_hard.logic",                                 weight = 0.75 },
+		{ action = "shegret_attack_very_hard",  type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 6, logicFile="logic/event/shegret_attack_very_hard.logic",                            weight = 0.5 },
 		{ action = "kermon_attack",             type = "NEGATIVE", gameStates="IDLE|ATTACK",           minEventLevel = 8, logicFile="logic/event/kermon_attack.logic",                                       weight = 1 },
-		{ action = "kermon_attack_hard",        type = "NEGATIVE", gameStates="IDLE|ATTACK",           minEventLevel = 6, logicFile="logic/event/kermon_attack_hard.logic",                                  weight = 0.75 },
-		{ action = "kermon_attack_very_hard",   type = "NEGATIVE", gameStates="IDLE|ATTACK",           minEventLevel = 8, logicFile="logic/event/kermon_attack_very_hard.logic",                             weight = 0.5 },
+		{ action = "kermon_attack_hard",        type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 6, logicFile="logic/event/kermon_attack_hard.logic",                                  weight = 0.75 },
+		{ action = "kermon_attack_very_hard",   type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 8, logicFile="logic/event/kermon_attack_very_hard.logic",                             weight = 0.5 },
 		{ action = "phirian_attack",            type = "NEGATIVE", gameStates="IDLE|ATTACK",           minEventLevel = 3, logicFile="logic/event/phirian_attack.logic",                                      weight = 0.3 },
 		{ action = "spawn_earthquake",          type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2, logicFile="logic/weather/earthquake.logic",          minTime = 60, maxTime = 60,   weight = 0.75 },
 		{ action = "spawn_earthquake",          type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2, logicFile="logic/weather/earthquake.logic",          minTime = 60, maxTime = 60,   weight = 0.5  },
@@ -84,14 +84,14 @@ return function()
 	rules.timeToNextDifficultyLevel = 
 	{			
 		600, -- difficulty level 1
-		600, -- difficulty level 2
-		600, -- difficulty level 3	
-		600, -- difficulty level 4
-		900, -- difficulty level 5
-		1200, -- difficulty level 6
+		780, -- difficulty level 2
+		900, -- difficulty level 3	
+		1020, -- difficulty level 4
+		1200, -- difficulty level 5
+		1500, -- difficulty level 6
 		1800, -- difficulty level 7
 		2400, -- difficulty level 8
-		2400, -- difficulty level 9
+		3600, -- difficulty level 9
 	}
 	
 	rules.prepareSpawnTime = 
@@ -182,20 +182,6 @@ return function()
 			"logic/dom/attack_level_2_entry.logic", -- difficulty level 8
 			"logic/dom/attack_level_2_entry.logic", -- difficulty level 9
 	}
-
-	rules.waveRepeatChances = 
-	{
-		{},                    -- consecutive chances of wave repeating at level 1
-		{},                    -- consecutive chances of wave repeating at level 2
-		{},                    -- consecutive chances of wave repeating at level 3
-		{50},                  -- consecutive chances of wave repeating at level 4
-		{50, 50},              -- consecutive chances of wave repeating at level 5
-		{60, 60, 20},          -- consecutive chances of wave repeating at level 6
-		{60, 60, 50},          -- consecutive chances of wave repeating at level 7
-		{70, 70, 60, 20},      -- consecutive chances of wave repeating at level 8
-		{80, 70, 70, 30, 30},  -- consecutive chances of wave repeating at level 9
-	}
-	
 	
 	rules.waveRepeatChances = 
 	{
@@ -209,6 +195,10 @@ return function()
 		{70, 60, 80, 20},         -- concecutive chances of wave repeating at level 8
 		{85, 70, 80, 35, 90},     -- concecutive chances of wave repeating at level 9
 	}
+	
+	rules.waveChanceRerollSpawnGroup = 10
+	rules.waveChanceRerollSpawn      = 15
+	rules.waveChanceReroll           = 40
 
 	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
 	rules.waves = {}

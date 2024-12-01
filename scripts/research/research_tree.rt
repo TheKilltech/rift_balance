@@ -382,40 +382,6 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_explosive"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
 						x "-639.000"
@@ -470,40 +436,6 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_lowcaliber"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
 						x "-72.000"
@@ -1444,40 +1376,6 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_liquid"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
 						x "-819.000"
@@ -3373,7 +3271,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl7"
+							research_name "gui/menu/research/name/ammo_energy_cell_lvl4"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -3395,7 +3293,7 @@ Research
 					position
 					{
 						x "-1269.000"
-						y "369.000"
+						y "423.000"
 					}
 
 					research_awards
@@ -5227,7 +5125,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl7"
+							research_name "gui/menu/research/name/ammo_energy_cell_lvl4"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -5249,7 +5147,7 @@ Research
 					position
 					{
 						x "-1314.000"
-						y "369.000"
+						y "423.000"
 					}
 
 					research_awards
@@ -5736,40 +5634,6 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_liquid"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
 						x "-873.000"
@@ -9023,6 +8887,13 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl7"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_energy_cell_lvl4"
@@ -9075,7 +8946,7 @@ Research
 					position
 					{
 						x "-1197.000"
-						y "423.000"
+						y "378.000"
 					}
 
 					research_awards
@@ -9788,7 +9659,7 @@ Research
 						{
 							amount "0.000"
 							resource "download"
-							count "1500.000"
+							count "100.000"
 						}
 
 					}
@@ -10151,40 +10022,6 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "ammo_storage_explosive"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "2"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
 						x "-684.000"
@@ -28331,6 +28168,15 @@ Research
 					}
 
 					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/upgrades/anti_corrosive_armor_extreme_item"
+							is_visible "1"
+						}
+
+					}
+
 					icon "gui/menu/research/icons/environmental_shielding_acid"
 				}
 
@@ -31221,6 +31067,6 @@ Research
 
 	type
 	editor "6197"
-	version "145"
+	version "146"
 }
 

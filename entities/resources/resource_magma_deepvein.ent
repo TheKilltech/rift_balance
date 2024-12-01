@@ -2,6 +2,17 @@ EntityBlueprint
 {
 	name "resources/resource_magma_deepvein"
 	
+	MeshDesc
+	{
+		mesh 		"meshes/props/special/loot_containers/loot_container_small_pile_root.mesh" 
+		material 	"props/special/loot_containers/loot_container_small_pile"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/resources/resource_flammable_gas_vent"
+	}		
+	
 	TypeDesc
 	{
 		type "resource"
@@ -65,7 +76,7 @@ EntityBlueprint
 	{	
 		EffectGroup
 		{	
-			group "rapture"
+			group "steam"
 			enabled "1"	
 			delay "0"
 			
@@ -73,19 +84,34 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/world/rapture"
-					scale "0.5 0.5 0.5"
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
+					bone "att_wind_big"
+				}		
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_wind_medium_1"
 				}
 				Effect
 				{
-					blueprint "effects/world/rock_mossy_02"
-					scale "0.15 0.2 0.15"
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_wind_medium_2"
 				}
 				Effect
 				{
-					blueprint "effects/world/surface_magma"
-					scale "1.0 1.3 1.0"
-				}	
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_wind_medium_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_wind_medium_4"
+				}
+				//Effect
+				//{
+				//	blueprint "effects/world/surface_magma"
+				//	scale "1.0 1.5 1.0"
+				//}	
 			}
 		}	
 	}

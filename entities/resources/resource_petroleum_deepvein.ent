@@ -2,6 +2,17 @@ EntityBlueprint
 {
 	name "resources/resource_petroleum_deepvein"
 	
+	MeshDesc
+	{
+		mesh "meshes/props/special/magnetic_rocks/magnetic_big_base_01.mesh"
+		material "props/special/magnetic_big_base_01"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/resources/resource_flammable_gas_vent"
+	}		
+	
 	TypeDesc
 	{
 		type "resource"
@@ -70,11 +81,18 @@ EntityBlueprint
 			delay "0"
 			
 			Effects
-			{
+			{effects/world/earthquake
 				Effect
 				{
-					blueprint "effects/world/rapture"
-					scale "0.6 0.6 0.6"
+					blueprint "effects/enemies_canceroth/healing" // "canceroth_child_energy"
+					bone "att_wind_big"
+					scale "1.3 1.3 1.3"
+				}
+				Effect
+				{
+					blueprint "effects/enemies_generic/damage_generic_black"
+					//scale "0.8 0.8 0.8"
+					random_orientation "1"
 				}
 			}
 		}	

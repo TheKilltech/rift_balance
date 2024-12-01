@@ -41,7 +41,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"energy"
-				value			"450"
+				value			"400"
 			}
 			GameplayResource
 			{
@@ -92,14 +92,8 @@ EntityBlueprint
 			}	
 			Storage
 			{
-				resource	 	"flammable_gas"
-				max 	 		"20"
-				attachment		"att_in_1|att_in_3"
-			}
-			Storage
-			{
-				resource		"fluorine"
-				max 	 		"20"
+				group	 		"local"
+				max 	 		"50"
 				attachment		"att_in_1|att_in_3"
 			}
 		}

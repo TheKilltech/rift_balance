@@ -2,11 +2,10 @@ EntityBlueprint
 {
 	name "resources/resource_nitric_acid_deepvein"
 	
-	
 	MeshDesc
 	{
-		mesh 		"meshes/resources/resource_flammable_gas_vent.mesh"
-		material 	"resources/resource_wind_spot"
+		material	"props/special/loot_container_magma"
+		mesh		"meshes/props/special/loot_containers/loot_container_magma_root.mesh"
 	}
 	
 	SkeletonDesc
@@ -39,13 +38,11 @@ EntityBlueprint
 		}
 	}
 	
-	NodeCullerDesc
+	GridMarkerComponent
 	{
-	    cost_type "prop"
-	    nav_mesh_cull_type "1"
-		flow_field_size "1.5"
-	}		
-
+		terrain_type  	"resource"
+	}
+	
 	MinimapItemDesc
 	{
 		type			"image"
@@ -57,7 +54,7 @@ EntityBlueprint
 
 	SelectableDesc
 	{
-		content "resource_name/geothermal_vent"
+		content "resource_name/nitric_acid"
 		can_activate "0"
 	}
 
@@ -73,70 +70,25 @@ EntityBlueprint
 		}
 	}
 	
-	//BurningComponent
-	//{
-	//	spread_radius 			"3"			// radius to spread fire
-	//	spread_chance_override 	"1"			// allow to override chance to propagate fire if set to 1.0 everything flammable around will catch fire
-	//	//spread_target_mask 		"ground_unit"
-	//	spread_timer
-	//	{
-	//		limit "20" 						// how often e                    ntity will try to spread fire in microseconds ( 2s )
-	//	}
-	//
-	//	burning_effect_group    ""			// effect group to be enabled on entity
-	//	burning_time			"10000000000"	// how long it will burn in seconds
-	//	disable_light_fade_out "1"
-	//}		
-
 	EffectDesc
 	{	
 		EffectGroup
 		{		
 			group "steam"
-			enabled "0"				
+			enabled "1"	
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/decals/geothermal_vent"		
-					scale "7 0.4 7"	
-					bone "att_wind"
-				}									
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_big"		
+					blueprint "effects/world/acid_vein"
 					bone "att_wind_big"
-				}		
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_1"
-				}	
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_2"
+					scale "0.8 0.8 0.8"
 				}
 				Effect
 				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_3"
-				}
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_4"
-				}
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
-					bone "att_wind_medium_5"
-				}
-				Effect
-				{
-					blueprint "effects/world/flammable_gas_vent_medium"		
+					blueprint "effects/buildings_and_machines/gas_chimney_small"
 					bone "att_wind_medium_6"
 				}				
 			}

@@ -461,6 +461,16 @@ MissionDef
             min_spawned_volumes "4"
             max_spawned_volumes "6"
         }
+		
+        ResourceVolume
+        {
+            resource        "plasma_charged_deepvein"
+
+            is_infinite     "1"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "2"
+        }
     }
     
 }

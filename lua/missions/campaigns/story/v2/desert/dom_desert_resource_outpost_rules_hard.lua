@@ -34,6 +34,19 @@ return function()
 		3600, -- difficulty level 9
 	}
 	
+	rules.prepareSpawnTime = 
+	{			
+		90,  -- difficulty level 1
+		90,  -- difficulty level 2
+		90,  -- difficulty level 3
+		90,  -- difficulty level 4	
+		90,  -- difficulty level 5	
+		90,  -- difficulty level 6	
+		90,  -- difficulty level 7
+		90,  -- difficulty level 8	
+		90,  -- difficulty level 9	
+	}
+	
 	rules.maxAttackCountPerDifficulty = 
 	{			
 		1,  -- difficulty level 1
@@ -77,6 +90,10 @@ return function()
 		{90, 80, 80, 80},         -- concecutive chances of wave repeating at level 8
 		{80, 80, 80, 35, 50, 90}, -- concecutive chances of wave repeating at level 9
 	}
+	
+	rules.waveChanceRerollSpawnGroup = 25
+	rules.waveChanceRerollSpawn      = 45
+	rules.waveChanceReroll           = 40
 	
 	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
 	rules.waves = {}
