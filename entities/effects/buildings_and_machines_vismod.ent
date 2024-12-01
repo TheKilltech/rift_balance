@@ -1657,3 +1657,30 @@ EntityBlueprint "effects/no_lifetime"		//uranium_vein_vl3
 		material 	"resources/resource_uranium_very_large"
 	}
 }
+
+EntityBlueprint								//acid_vein
+{
+	name effects/world/acid_vein
+
+	base_blueprints
+	{
+		 lights/point/green_small
+		 effects/no_lifetime
+	}
+
+	ParticleDesc
+	{
+		name    "rift/acid_fissure"
+	}	
+
+	//DecalDesc
+	//{	
+	//	blueprint "effects/decals/puddle_water"
+	//	scale
+	//	{
+	//		x		5.0
+	//		y		5.0
+	//		z		5.0	
+	//	}
+	//}	
+}
