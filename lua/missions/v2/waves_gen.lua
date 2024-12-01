@@ -67,42 +67,22 @@ function wave_gen:PrepareDefaultRules(rules, missionType, difficulty)
 	-- missionType: { "outpost", "survival", "scout", "temp" }
 	-- difficulty:  { "easy", "default", "hard", "brutal" }
 
-	rules.prepareAttackDefinitions = self:PrepareAttackDefinitions(          missionType, difficulty )
-	rules.wavesEntryDefinitions    = self:WavesEntryDefinitions(             missionType, difficulty )
+	rules.prepareAttackDefinitions = self:Default_PrepareAttackDefinitions(   missionType, difficulty )
+	rules.wavesEntryDefinitions    = self:Default_WavesEntryDefinitions(      missionType, difficulty )
 	
-	rules.prepareSpawnTime          = self:DefaultPrepareSpawnTime(          missionType, difficulty )
-	rules.timeToNextDifficultyLevel = self:DefaultTimeToNextDifficultyLevel( missionType, difficulty )
+	rules.prepareSpawnTime          = self:Default_PrepareSpawnTime(          missionType, difficulty, 1)
+	rules.cooldownAfterAttacks      = self:Default_CooldownAfterAttacks(      missionType, difficulty, 1)
+	rules.idleTime                  = self:Default_IdleTime(                  missionType, difficulty, 1)
+	rules.timeToNextDifficultyLevel = self:Default_TimeToNextDifficultyLevel( missionType, difficulty, 1)
 
-	-- to do: pack the below into a script
-	rules.cooldownAfterAttacks = 
-	{			
-		60,  -- difficulty level 1
-		90,  -- difficulty level 2
-		120,  -- difficulty level 3
-		180,  -- difficulty level 4	
-		180,  -- difficulty level 5	
-		180,  -- difficulty level 6	
-		240,  -- difficulty level 7
-		240,  -- difficulty level 8	
-		240,  -- difficulty level 9	
-	}
-
-	rules.idleTime = 
-	{			
-		 450,  -- difficulty level 1
-		 600,  -- difficulty level 2
-		 660,  -- difficulty level 3
-		 660,  -- difficulty level 4	
-		 900,  -- difficulty level 5	
-		 900,  -- difficulty level 6	
-		 900,  -- difficulty level 7
-		1200,  -- difficulty level 8	
-		1200,  -- difficulty level 9	
-	}
+	rules.waveChanceRerollSpawnGroup =  0  -- chance for rerolled attack wave to change its map border spawn direction (N/W/S/E)
+	rules.waveChanceRerollSpawn      = 15  -- chance for rerolled attack wave to change its spawning point
+	rules.waveChanceReroll           = 30  -- chance to reroll and replace an attack wave from its original wave pool
+	
 	return rules
 end
 
-function wave_gen:PrepareAttackDefinitions( missionType, difficulty )
+function wave_gen:Default_PrepareAttackDefinitions( missionType, difficulty )
 	local defs = {
 		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 1
 		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 2
@@ -117,7 +97,7 @@ function wave_gen:PrepareAttackDefinitions( missionType, difficulty )
 	return defs
 end
 
-function wave_gen:WavesEntryDefinitions( missionType, difficulty )
+function wave_gen:Default_WavesEntryDefinitions( missionType, difficulty )
 	local defs = {
 		"logic/dom/attack_level_1_entry.logic", -- difficulty level 1
 		"logic/dom/attack_level_2_entry.logic", -- difficulty level 2
@@ -132,9 +112,21 @@ function wave_gen:WavesEntryDefinitions( missionType, difficulty )
 	return defs
 end
 
-function wave_gen:DefaultTimeToNextDifficultyLevel(missionType, difficulty, factor)
+function wave_gen:Default_TimeToNextDifficultyLevel(missionType, difficulty, factor)
 	local times = {}
-	if (missionType == "outpost") then
+	if (missionType == "survival") then	
+		times =  {			
+			200, -- difficulty level 1
+			600, -- difficulty level 2
+			600, -- difficulty level 3	
+			660, -- difficulty level 4
+			660, -- difficulty level 5
+			720, -- difficulty level 6
+			720, -- difficulty level 7
+			720, -- difficulty level 8
+			720, -- difficulty level 9
+		}
+	elseif (missionType == "outpost") then
 		times = {			
 			600, -- difficulty level 1
 			780, -- difficulty level 2
@@ -182,19 +174,65 @@ function wave_gen:DefaultTimeToNextDifficultyLevel(missionType, difficulty, fact
 	return times
 end
 
-function wave_gen:DefaultPrepareSpawnTime(missionType, difficulty, factor)
+function wave_gen:Default_PrepareSpawnTime(missionType, difficulty, factor)
 	local times = {}
-	if (missionType == "survival") then								times = self:RepeatingValueTable(120, 9)
+	if (missionType == "survival") then								times = self:RepeatingValueTable(360, 9)
 	elseif (missionType == "outpost") then							times = self:RepeatingValueTable(120, 9)
 	elseif (missionType == "scout" or missionType == "temp") then	times = self:RepeatingValueTable(60, 9)
 	else 															times = self:RepeatingValueTable(60, 9)
 	end
 	
 	if factor == nil then factor = 1 end
-	if (difficulty == "brutal")      then factor = factor * 0.75
-	elseif (difficulty == "hard")    then factor = factor * 0.85
+	if (not missionType == "survival") then	
+		if (difficulty == "brutal")      then factor = factor * 0.75
+		elseif (difficulty == "hard")    then factor = factor * 0.85
+		elseif (difficulty == "default") then factor = factor * 1.00
+		elseif (difficulty == "easy")    then factor = factor * 1.00
+		end
+	end
+	
+	times = self:ScaleTable(times, factor)
+	return times
+end
+
+function wave_gen:Default_CooldownAfterAttacks(missionType, difficulty, factor)
+	local times = {}
+	times = self:RepeatingValueTable(120, 9)
+	times[1] = 60
+	times[2] = 90
+		
+	if factor == nil then factor = 1 end
+	
+	times = self:ScaleTable(times, factor)
+	return times
+end
+
+function wave_gen:Default_IdleTime(missionType, difficulty, factor)
+	local times = {}
+	if (missionType == "survival") then	
+		times = self:RepeatingValueTable(0, 9)
+	elseif (missionType == "outpost") then
+		times = {
+			 450,  -- difficulty level 1
+			 600,  -- difficulty level 2
+			 660,  -- difficulty level 3
+			 660,  -- difficulty level 4
+			 900,  -- difficulty level 5
+			 900,  -- difficulty level 6
+			 900,  -- difficulty level 7
+			1200,  -- difficulty level 8
+			1200,  -- difficulty level 9
+		}
+	elseif (missionType == "scout" or missionType == "temp") then
+		times  = self:RepeatingValueTable(1200, 9)
+	else times = self:RepeatingValueTable(1200, 9)
+	end
+	
+	if factor == nil then factor = 1 end
+	if (difficulty == "brutal")      then factor = factor * 0.9
+	elseif (difficulty == "hard")    then factor = factor * 0.95
 	elseif (difficulty == "default") then factor = factor * 1.00
-	elseif (difficulty == "easy")    then factor = factor * 1.00
+	elseif (difficulty == "easy")    then factor = factor * 1.2
 	end
 	
 	times = self:ScaleTable(times, factor)

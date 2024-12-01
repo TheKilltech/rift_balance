@@ -97,25 +97,25 @@ function dom_mananger:init()
 
 	self:RegisterHandler( event_sink, "MissionFlowDeactivatedEvent",   "OnMissionFlowDeactivatedEvent" )
 	self:RegisterHandler( event_sink, "MissionFlowActivatedEvent",     "OnMissionFlowActivatedEvent" )
-	self:RegisterHandler( event_sink, "StartUpgradingEvent",        	   "OnStartUpgradingEvent" )
+	self:RegisterHandler( event_sink, "StartUpgradingEvent",  		   "OnStartUpgradingEvent" )
 	self:RegisterHandler( event_sink, "LuaGlobalEvent",       		   "OnLuaGlobalEvent" )
 	self:RegisterHandler( event_sink, "RespawnFailedEvent",			   "OnRespawnFailedEvent" )
 	self:RegisterHandler( event_sink, "PlayerDiedEvent",			   "OnPlayerDiedEvent" )
 
     self.spawner = self:CreateStateMachine()
-    self.spawner:AddState( "spawn", { enter="OnEnterSpawn", execute="OnExecuteSpawn", exit= "OnExitSpawn" } )
-	self.spawner:AddState( "wait", { enter="OnEnterWait", exit= "OnExitWait" } )
-	self.spawner:AddState( "cooldown_after_spawn", { enter="OnEnterCooldownAfterSpawnTime", execute="OnExecuteCooldownAfterSpawnTime", exit= "OnExitCooldownAfterSpawnTime" } )
-	self.spawner:AddState( "prepare_spawn", { enter="OnEnterPrepareSpawn", execute="OnExecutePrepareSpawn", exit= "OnExitPrepareSpawn" } )
-	self.spawner:AddState( "idle", { enter="OnEnterIdle", execute="OnExecuteIdle", exit= "OnExitIdle" } )
-	self.spawner:AddState( "streaming", { enter="OnEnterStreaming", execute="OnExecuteStreaming", exit= "OnExitStreaming" } )
-	self.spawner:AddState( "sleep", { enter="OnEnterSleep", execute="OnExecuteSleep", exit= "OnExitSleep" } )
-	self.spawner:AddState( "dummy_state", { enter="OnEnterDummyState", execute="OnExecuteDummyState", exit= "OnEnterDummyState" } )
+    self.spawner:AddState( "spawn",                { enter="OnEnterSpawn",                  execute="OnExecuteSpawn",                  exit="OnExitSpawn" } )
+	self.spawner:AddState( "wait",                 { enter="OnEnterWait",                                                              exit="OnExitWait" } )
+	self.spawner:AddState( "cooldown_after_spawn", { enter="OnEnterCooldownAfterSpawnTime", execute="OnExecuteCooldownAfterSpawnTime", exit="OnExitCooldownAfterSpawnTime" } )
+	self.spawner:AddState( "prepare_spawn",        { enter="OnEnterPrepareSpawn",           execute="OnExecutePrepareSpawn",           exit="OnExitPrepareSpawn" } )
+	self.spawner:AddState( "idle",                 { enter="OnEnterIdle",                   execute="OnExecuteIdle",                   exit="OnExitIdle" } )
+	self.spawner:AddState( "streaming",            { enter="OnEnterStreaming",              execute="OnExecuteStreaming",              exit="OnExitStreaming" } )
+	self.spawner:AddState( "sleep",                { enter="OnEnterSleep",                  execute="OnExecuteSleep",                  exit="OnExitSleep" } )
+	self.spawner:AddState( "dummy_state",          { enter="OnEnterDummyState",             execute="OnExecuteDummyState",             exit="OnEnterDummyState" } )
 
 	self.upgradeHQ = self:CreateStateMachine()
-	self.upgradeHQ:AddState( "hq_entry_logic", { enter="OnHqEnterEntryLogic", exit= "OnHqExitEntryLogic" } )
+	self.upgradeHQ:AddState( "hq_entry_logic",  { enter="OnHqEnterEntryLogic",                                  exit= "OnHqExitEntryLogic" } )
 	self.upgradeHQ:AddState( "hq_attack_logic", { enter="OnHqEnterAttackLogic", execute="OnExecuteAttackLogic", exit= "OnHqExitAttackLogic" } )
-	self.upgradeHQ:AddState( "hq_exit_logic", { enter="OnHqEnterExitLogic", exit= "OnHqExitExitLogic" } )
+	self.upgradeHQ:AddState( "hq_exit_logic",   { enter="OnHqEnterExitLogic",                                   exit= "OnHqExitExitLogic" } )
 
 	self.difficultyIncrease = self:CreateStateMachine()
 	self.difficultyIncrease:AddState( "difficulty_increase", { enter="OnEnterDifficultyIncrease", exit= "OnExitDifficultyIncrease" } )
@@ -130,8 +130,10 @@ function dom_mananger:init()
 	self.objectivePrepareForTheAttacLogicFileName		= "objectivePrepareForTheAttacLogicFileName"
 	self.objectivePrepareForTheAttacLogicFile			= "logic/missions/survival/next_attack_in.logic" -- TODO
 
-	self.preparedAttacks = {}
-	self.preparedAttackMarkers = {}
+	self.preparedAttacks                = {}
+	self.preparedAttackMarkers          = {}
+	self.WaveRepeatState                = "streaming"
+	self.WaveStateMachine               = self.spawner
 
 	self.hqPreparedAttacks				= {}
 	self.hqPreparedAttackMarkers		= {}
@@ -140,7 +142,7 @@ function dom_mananger:init()
 	self.onUpgradeHqLogicEndFileName	= ""
 	self.hqAttackSafeTime				= 600
 
-		self.coolEventSpawnTime = {}
+	self.coolEventSpawnTime = {}
 	self.sleepSafeTime = 1200
 
 	self.dumpAllDifficultyInfo = true
@@ -1144,8 +1146,8 @@ function dom_mananger:GetPrepareSpawnTime()
 		stateDuration = stateDuration * (1 + rngScale)
 		self:VerboseLog("Preparation time random scaling by ".. tostring(rngScale) .. " changing base to ".. tostring(stateDuration))
 	elseif ((self.rules.preparationTimeCancelChance or 5) > math.random()*100) then
-		stateDuration = 15
-		self:VerboseLog("Preparation time modifier: cancelled (down to 15)")
+		stateDuration = 10
+		self:VerboseLog("Preparation time modifier: cancelled (down to ".. tostring(stateDuration).. ")")
 	end
 	return stateDuration
 end
@@ -1223,8 +1225,13 @@ function dom_mananger:OnEnterPrepareSpawn( state )
 			MissionService:ActivateMissionFlow( "", self.rules.prepareAttackDefinitions[self.currentDifficultyLevel].name, "default" )
 		end
 
-		self.preparedAttacks = {}
+		self.preparedAttacks       = {}
 		self.preparedAttackMarkers = {}
+		self.WaveStateMachine      = self.spawner
+		self.WaveRepeatState       = "streaming"
+		if ( self:GetPauseAttacks() == true ) then
+			self.WaveRepeatState = "dummy_state"
+		end
 
 		if ( self.prepAttacks == true ) then
 			local borderSpawnPointGroupName = self.borderSpawnPointGroupNames[RandInt( 1,#self.borderSpawnPointGroupNames )]
@@ -1289,45 +1296,14 @@ end
 function dom_mananger:OnEnterCooldownAfterSpawnTime( state )
 	self:VerboseLog("OnEnterCooldownAfterSpawnTime" )
 	self.cooldownTimer  = self.rules.cooldownAfterAttacks[self.currentDifficultyLevel]
-	self.waveRepeatTime = self.cooldownTimer - (10 + RandInt(2, 6)*self.currentDifficultyLevel)
-	if (self.rules.waveRepeatChances) then
-		self.prepAttacks = false
-	end 
 	
-	if ((self.waveRepeated or 0) == 0) then
-		self.waveEventsTimer = self.cooldownTimer
-		self.coolEventSpawnTime = {}
-		local rngRoll = RandInt(0, 100)	
-		if (not self.rules.spawnCooldownEventChance) then
-			self.rules.spawnCooldownEventChance = { 25, 5, 1}
-		end
-		for i,prob in ipairs(self.rules.spawnCooldownEventChance) do
-			local strEventOutcome = "skipped"
-			if (prob and prob >= rngRoll) then
-				self.coolEventSpawnTime[i] = RandInt(1,self.cooldownTimer)
-				strEventOutcome = "triggered, time ".. tostring( self.coolEventSpawnTime[i] )
-			end
-			self:VerboseLog("Event on Cooldown ".. tostring(i) ..": roll " .. tostring(rngRoll) .. " vs probability " .. tostring(prob) .." => ".. strEventOutcome)
-		end
-	end
+	self:BeginWaveCooldown( self.cooldownTimer )
 end
 
 function dom_mananger:OnExecuteCooldownAfterSpawnTime( state, dt )
-	self.cooldownTimer   = self.cooldownTimer   - dt
-	self.waveEventsTimer = self.waveEventsTimer - dt
-	if (self.waveEventsTimer < 0) then self.waveEventsTimer = 0 end
+	self.cooldownTimer = self.cooldownTimer - dt
 	
-	for i = 1, #self.coolEventSpawnTime, 1 do
-		if (self.coolEventSpawnTime[i] and self.coolEventSpawnTime[i] > self.waveEventsTimer) then
-			self:VerboseLog("Event on Cooldown ".. tostring(i) ..": starting")
-			self:StartAnEvent( "ATTACK" )
-			self.coolEventSpawnTime[i] = -9999
-		end
-	end
-
-	if ( self.cooldownTimer < self.waveRepeatTime and self.rules.waveRepeatChances ) then
-		self:RepeatWave()
-	end
+	self:DoWaveCooldown( self.cooldownTimer, dt )
 	
 	if ( self.cooldownTimer < 0 ) then
 		self.spawner:ChangeState( "idle" )
@@ -1352,8 +1328,8 @@ function dom_mananger:OnEnterIdle( state )
 		stateDuration = stateDuration * (1 + rngScale)
 		self:VerboseLog("Idle time random scaling by ".. tostring(rngScale) .. " changing base ".. tostring(self.rules.idleTime[self.currentDifficultyLevel]) .." to ".. tostring(stateDuration))
 	elseif ((self.rules.idleTimeCancelChance or 10)> math.random()*100) then
-		stateDuration = 120
-		self:VerboseLog("Idle time modifier: cancelled (down to 120)")
+		stateDuration = 30
+		self:VerboseLog("Idle time modifier: cancelled (down to ".. tostring(stateDuration) ..")")
 	end
 	self.idleTimer = stateDuration
 
@@ -1443,7 +1419,6 @@ function dom_mananger:OnEnterDummyState( state )
 	self:VerboseLog("OnEnterDummyState" )
 end
 
-
 function dom_mananger:OnExecuteDummyState( state, dt )
 	local idleTime = self:GetIdleTime()
 	local pauseAttacks = self:GetPauseAttacks()
@@ -1456,7 +1431,6 @@ function dom_mananger:OnExecuteDummyState( state, dt )
 		self.spawner:ChangeState( "cooldown_after_spawn" )
 	end
 end
-
 
 function dom_mananger:OnExitDummyState( state )
 	self:VerboseLog( "OnExitDummyState" )
@@ -1506,8 +1480,10 @@ function dom_mananger:OnHqEnterEntryLogic( state )
 	self.hqPreparedAttacks       = {}
 	self.hqPreparedAttackMarkers = {}
 	self.upgradeHqWaves			 = {}
-
-	if ( self.rules.prepareAttacks == true ) then
+	self.WaveRepeatState         = "hq_attack_logic"
+	self.WaveStateMachine        = self.upgradeHQ
+	
+	if ( self.prepAttacks == true ) then
 
 		local borderSpawnPointGroupName = self.borderSpawnPointGroupNames[RandInt( 1,#self.borderSpawnPointGroupNames )]
 
@@ -1538,6 +1514,8 @@ function dom_mananger:OnHqEnterEntryLogic( state )
 end
 
 function dom_mananger:OnHqExitEntryLogic( state )
+	self.waveRepeated = 0
+	
 	self:VerboseLog("OnHqExitEntryLogic" )
 	self.upgradeHQ:ChangeState( "hq_attack_logic" )
 end
@@ -1565,21 +1543,27 @@ function dom_mananger:OnHqEnterAttackLogic( state )
 
 		local wavePool = self:GetWavePool( difficultyLevel );
 
-		self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves )
+		self.WaveRepeatState   = "hq_attack_logic"
+		self.WaveStateMachine  = self.upgradeHQ
+		self.hqPreparedAttacks = {}
+		self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves, self.hqPreparedAttacks )
 
 		if ( self.rules.multiplayerWaves ~= nil ) then
 			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
 
 			if ( multiplayerAttackCount > 0 ) then
-				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( difficultyLevel ), "OnHqEnterAttackLogic: Spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves )
+				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( difficultyLevel ), "OnHqEnterAttackLogic: Spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves, self.hqPreparedAttacks )
 			end
 		end
 	end
 	self.hqAttackSafeTimer = self.hqAttackSafeTime
+	self:BeginWaveCooldown( self.hqAttackSafeTimer )
 end
 
 function dom_mananger:OnExecuteAttackLogic( state, dt )
 	self.hqAttackSafeTimer  = self.hqAttackSafeTimer - dt
+	
+	self:DoWaveCooldown( self.hqAttackSafeTimer, dt )
 
 	if ( self.hqAttackSafeTimer < 0 ) then
 		self.upgradeHQ:ChangeState( "hq_exit_logic" )
@@ -1624,8 +1608,10 @@ function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, waveP
 			attacks[index].spawnPointName = spawnPointName
 			attacks[index].originalPool   = wavePool
 
-			markers[#markers + 1] = self:SpawnWaveIndicator( indicatorTimer, spawnPointName, "effects/messages_and_markers/wave_marker" )
-
+			if (markets) then
+				markers[#markers + 1] = self:SpawnWaveIndicator( indicatorTimer, spawnPointName, "effects/messages_and_markers/wave_marker" )
+			end
+			
 			self:VerboseLog( log .. waveData.name )
 		end
 	end
@@ -1666,7 +1652,10 @@ function dom_mananger:ReshuffleWave( index, attacks, reshuffleSwapn, reshuffleSp
 	end
 end
 
-function dom_mananger:RepeatWave()
+function dom_mananger:RepeatWave(attacks)
+	if (not attacks or #attacks==0) then return end
+	self:VerboseLog("RepeatWave: checking " .. tostring(#attacks) .. " attacks for repeat and reshuffle")
+	
 	if ( self.waveRepeated == nil ) then self.waveRepeated = 0 end
 	local repeatChances       = self.rules.waveRepeatChances[self.currentDifficultyLevel]
 	local repeatChance        = repeatChances[self.waveRepeated+1] or 0
@@ -1674,39 +1663,85 @@ function dom_mananger:RepeatWave()
 	local chanceNewSpawn      = self.rules.waveChanceRerollSpawn or 15
 	local chanceNewSpawnGroup = self.rules.waveChanceRerollSpawnGroup or 0
 	
-	if (self.preparedAttacks) then
-		self:VerboseLog("RepeatWave: checking " .. tostring(#self.preparedAttacks) .. " attacks for repeat and reshuffle")
+	local newAttacks = {}
+	for i = 1, #attacks, 1 do
+		local rngRoll = RandInt(0, 100)
+		local attackStr = tostring(i) .."/".. tostring(#attacks)
+		self:VerboseLog("RepeatWave: attack ".. attackStr .. " repeat ".. tostring(self.waveRepeated + 1) .." chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll) .. " => " ..  tostring(repeatChance > rngRoll))
+		if ( repeatChance > rngRoll) then
+			rngRoll = RandInt(1, 100)
+			self:VerboseLog("RepeatWave: attack ".. attackStr.. " reshuffle chance ".. tostring(chanceWaveReroll) ..", rolled ".. tostring(rngRoll) .." => " .. tostring(chanceWaveReroll > rngRoll) )
+			if ( chanceWaveReroll > rngRoll) then
+				self:ReshuffleWave( i, attacks, chanceNewSpawnGroup < RandInt(1, 100), chanceNewSpawn < RandInt(1, 100) )
+			end
+			newAttacks[#newAttacks + 1] = attacks[i]
+		end
+	end
+	
+	if (#newAttacks > 0) then
+		self:VerboseLog("RepeatWave: repeat ".. tostring(self.waveRepeated + 1) .." is set up with ".. tostring(#newAttacks).. "/".. tostring(#self.preparedAttacks) .." attacks continuing")
+		attacks = newAttacks
 		
-		local newAttacks = {}
-		for i = 1, #self.preparedAttacks, 1 do
-			local rngRoll = RandInt(0, 100)
-			local attackStr = tostring(i) .."/".. tostring(#self.preparedAttacks)
-			self:VerboseLog("RepeatWave: attack ".. attackStr .. " repeat ".. tostring(self.waveRepeated + 1) .." chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll) .. " => " ..  tostring(repeatChance > rngRoll))
-			if ( repeatChance > rngRoll) then
-				rngRoll = RandInt(1, 100)
-				self:VerboseLog("RepeatWave: attack ".. attackStr.. " reshuffle chance ".. tostring(chanceWaveReroll) ..", rolled ".. tostring(rngRoll) .." => " .. tostring(chanceWaveReroll > rngRoll) )
-				if ( chanceWaveReroll > rngRoll) then
-					self:ReshuffleWave( i, self.preparedAttacks, chanceNewSpawnGroup < RandInt(1, 100), chanceNewSpawn < RandInt(1, 100) )
-				end
-				newAttacks[#newAttacks + 1] = self.preparedAttacks[i]
+		if (not self.WaveStateMachine) then -- for downwards compatibility with some saves
+			self.WaveStateMachine = self.spawner
+			self.WaveRepeatState  = "streaming"
+		end
+		self.WaveStateMachine:ChangeState( self.WaveRepeatState ) 
+		
+		self.waveRepeated = self.waveRepeated + 1
+		self.eventsPerPrepareState = 0
+	else 
+		self:VerboseLog("RepeatWave: no attacks remaining, wave is completed.")
+		self.waveRepeatTime = -9999
+		self.prepAttacks = self.rules.prepareAttacks
+	end
+end
+
+function dom_mananger:BeginWaveCooldown( cooldownTime )
+	self:VerboseLog("BeginWaveCooldown ( ".. tostring(cooldownTime) .. " )" )
+	self.waveRepeatTime = math.max(10, cooldownTime - (10 + RandInt(2, 6)*self.currentDifficultyLevel))
+	self:VerboseLog("setting wave repeat time to ".. tostring(self.waveRepeatTime) .. " / " .. tostring(cooldownTime)  )
+	if (self.rules.waveRepeatChances) then
+		self.prepAttacks = false
+	end 
+	
+	if ((self.waveRepeated or 0) == 0) then
+		self.waveEventsTimer = cooldownTime
+		self.coolEventSpawnTime = {}
+		local rngRoll = RandInt(0, 100)	
+		if (not self.rules.spawnCooldownEventChance) then
+			self.rules.spawnCooldownEventChance = { 25, 20, 20}
+		end
+		for i,prob in ipairs(self.rules.spawnCooldownEventChance) do
+			self:VerboseLog("Event ".. tostring(i) .." after wave: roll " .. tostring(rngRoll) .. " vs probability " .. tostring(prob) .." => ".. tostring(prob >= rngRoll))
+			if (prob and prob >= rngRoll) then
+				self.coolEventSpawnTime[i] = RandInt(1,cooldownTime)
+				self:VerboseLog("Event ".. tostring(i) .." after wave: time set to " .. tostring(self.coolEventSpawnTime[i]) .. " / " .. tostring(cooldownTime))
+			else
+				break
 			end
 		end
-		
-		if (#newAttacks > 0) then
-			self:VerboseLog("RepeatWave: repeat ".. tostring(self.waveRepeated + 1) .." is set up with ".. tostring(#newAttacks).. "/".. tostring(#self.preparedAttacks) .." attacks continuing")
-			self.preparedAttacks = newAttacks
-			
-			if ( self:GetPauseAttacks() == true ) then  -- starts attack (depending on streaming state)
-				self.spawner:ChangeState( "dummy_state" )
-			else
-				self.spawner:ChangeState( "streaming" )
-			end
-			self.waveRepeated = self.waveRepeated + 1
-			self.eventsPerPrepareState = 0
-		else 
-			self:VerboseLog("RepeatWave: no attacks remaining, wave is completed.")
-			self.waveRepeatTime = -9999
-			self.prepAttacks = self.rules.prepareAttacks
+	end
+end
+
+function dom_mananger:DoWaveCooldown( timer, dt )
+	self.waveEventsTimer = self.waveEventsTimer - dt
+	if (self.waveEventsTimer < 0) then self.waveEventsTimer = 0 end
+	
+	for i = 1, #self.coolEventSpawnTime, 1 do
+		if (self.coolEventSpawnTime[i] and self.coolEventSpawnTime[i] > self.waveEventsTimer) then
+			self:VerboseLog("Event on Cooldown ".. tostring(i) ..": starting")
+			self:StartAnEvent( "ATTACK" )
+			self.coolEventSpawnTime[i] = -9999
+		end
+	end
+
+	if ( timer < self.waveRepeatTime and self.rules.waveRepeatChances ) then
+		self.waveRepeatTime = -9999
+		if (#self.preparedAttacks>0)   then self:RepeatWave(self.preparedAttacks)   end
+		if (#self.hqPreparedAttacks>0) then self:RepeatWave(self.hqPreparedAttacks) end
+		if (#self.preparedAttacks + #self.hqPreparedAttacks == 0) then
+			self:VerboseLog("DoWaveCooldown: no attack definitions to repeat")
 		end
 	end
 end
@@ -1716,7 +1751,7 @@ function dom_mananger:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, prepare
 		self.data:SetString( "spawn_point", preparedWave.spawnPointName )
 
 		self:VerboseLog( log .. preparedWave.waveName .. "  " )
-		self:VerboseLog( "dom_mananger activating " .. preparedWave.waveName .. "  (wave repeat: " .. tostring((self.waveRepeated or 0) -1) .. ", repeat time: ".. tostring(self.waveRepeatTime) .. ")" )
+		self:VerboseLog( "dom_mananger activating " .. preparedWave.waveName .. "  (wave repeat: " .. tostring((self.waveRepeated or 1) -1) .. ")")
 
 		self:PrepareLabels( "", "label_small", 0 )
 
@@ -1729,29 +1764,10 @@ function dom_mananger:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, prepare
 	end
 end
 
-function dom_mananger:SpawnWave( attackCount, borderSpawnPointGroupName, wavePool, log, shouldAddtoSpawnedAttacks, participants, labelName, participantsPercentageUse, spawnedAttacks )
-	if #wavePool == 0 then return end
-	for i = 1, attackCount do
-		local waveData = wavePool[RandInt( 1, #wavePool )]
-		self:VerboseLog( "SpawnWave: wave_logic='" .. waveData.name .. "'")
-
-		local spawnPointName = self:RandomizeSpawnPoint(borderSpawnPointGroupName, waveData )
-		if ( spawnPointName ~= "none" ) then
-			self:VerboseLog( log .. waveData.name )
-		    self:VerboseLog( "dom_mananger activating " .. waveData.name .. "  (wave repeat: " .. tostring((self.waveRepeated or 0) -1) .. ", repeat time: ".. tostring(self.waveRepeatTime) .. ")" )
-
-			self:PrepareLabels( participants, labelName, participantsPercentageUse )
-
-			self.data:SetString( "spawn_point", spawnPointName )
-
-			local currentLogicFile = MissionService:ActivateMissionFlow( "", waveData.name, "default", self.data )
-			self:SpawnWaveIndicator( 45, spawnPointName, "effects/messages_and_markers/wave_marker" )				
-
-			if ( shouldAddtoSpawnedAttacks == true ) then
-				spawnedAttacks[#spawnedAttacks + 1] = currentLogicFile
-			end
-		end
-	end
+function dom_mananger:SpawnWave( attackCount, borderSpawnPointGroupName, wavePool, log, shouldAddtoSpawnedAttacks, participants, labelName, participantsPercentageUse, spawnedAttacks, attacks )
+	if (not attacks) then attacks = {} end
+	self:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, 0, attacks, nil )
+	self:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, attacks, spawnedAttacks )
 end
 --------------------------------------------------- spawn -------------------------------------------------
 
@@ -1761,22 +1777,26 @@ function dom_mananger:SpawnWavesForDifficultyLevel( difficultyLevel, shouldAddto
 	if ( shouldAddtoSpawnedAttacks and #self.preparedAttacks > 0 ) then
 		self:SpawnPreparedWave( "dom_mananger:OnEnterSpawn: Prepare attack name : ", shouldAddtoSpawnedAttacks, self.preparedAttacks, self.spawnedAttacks )
 	else
+		self.WaveRepeatState  = "streaming"
+		self.WaveStateMachine = self.spawner
+		self.preparedAttacks  = {}
+		
 		local wavePool = self:GetWavePool( difficultyLevel )
-		self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Normal attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks )
+		self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Normal attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks, self.preparedAttacks )
 
 		if ( self.rules.multiplayerWaves ~= nil ) then
 			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
 
 			if ( multiplayerAttackCount > 0 ) then
-				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( difficultyLevel ), "dom_mananger:OnEnterSpawn: Multiplayer attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks )
+				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( difficultyLevel ), "dom_mananger:OnEnterSpawn: Multiplayer attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks, self.preparedAttacks )
 			end
 		end
 	end
 
-	self:SpawnWave( self.extraAttacks, borderSpawnPointGroupName, self:GetExtraWavePool(), "dom_mananger:OnEnterSpawn: Extra attack name : ", shouldAddtoSpawnedAttacks, self.participants, "label_small", self.participantsPercentageUse, self.spawnedAttacks )
+	self:SpawnWave( self.extraAttacks, borderSpawnPointGroupName, self:GetExtraWavePool(), "dom_mananger:OnEnterSpawn: Extra attack name : ", shouldAddtoSpawnedAttacks, self.participants, "label_small", self.participantsPercentageUse, self.spawnedAttacks, self.preparedAttacks )
 
 	if ( self.spawnBoss == true ) then
-		self:SpawnWave( 1, borderSpawnPointGroupName, self:GetBossPool(), "dom_mananger:OnEnterSpawn: Boss attack name : ", false, self.participants, "label_medium", self.participantsPercentageUse, self.spawnedAttacks )
+		self:SpawnWave( 1, borderSpawnPointGroupName, self:GetBossPool(), "dom_mananger:OnEnterSpawn: Boss attack name : ", false, self.participants, "label_medium", self.participantsPercentageUse, self.spawnedAttacks, self.preparedAttacks )
 	end		
 
 	if ( difficultyLevel <= #self.rules.wavesEntryDefinitions ) then
