@@ -1,5 +1,10 @@
 return function()
-    local rules = {}
+	-- the following sets up to default values for the given mission and difficulty type:
+	-- prepareAttackDefinitions, wavesEntryDefinitions, prepareSpawnTime, timeToNextDifficultyLevel, cooldownAfterAttacks
+	-- param missionType: { "outpost", "survival", "scout", "temp" }
+	-- param difficulty:  { "easy", "default", "hard", "brutal" }
+	local helper = require( "lua/missions/v2/waves_gen.lua" )
+	local rules  = helper:PrepareDefaultRules( {}, "outpost", "default")
 
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 2
@@ -12,13 +17,6 @@ return function()
 	rules.idleTimeCancelChance = 5                -- chance in percent, reduces idle time down to 120
 	rules.preparationTimeRelativeVariation = 0.55 -- X factor of idle time that may randomly vary: +/- X * prep_time
 	rules.preparationTimeCancelChance = 25        -- chance in percent
-
-	-- the following sets up to default values for the given mission and difficulty type:
-	-- prepareAttackDefinitions, wavesEntryDefinitions, prepareSpawnTime, timeToNextDifficultyLevel, cooldownAfterAttacks
-	-- param missionType: { "outpost", "survival", "scout", "temp" }
-	-- param difficulty:  { "easy", "default", "hard", "brutal" }
-	local helper = require( "lua/missions/v2/waves_gen.lua" )
-	rules = helper:PrepareDefaultRules( rules, "outpost", "default")
 	
 	rules.gameEvents = 
 	{
@@ -102,7 +100,7 @@ return function()
 	{
 		{},                    -- consecutive chances of wave repeating at level 1
 		{},                    -- consecutive chances of wave repeating at level 2
-		{15},                    -- consecutive chances of wave repeating at level 3
+		{15},                  -- consecutive chances of wave repeating at level 3
 		{50},                  -- consecutive chances of wave repeating at level 4
 		{50, 20},              -- consecutive chances of wave repeating at level 5
 		{60, 40, 10},          -- consecutive chances of wave repeating at level 6
@@ -120,9 +118,9 @@ return function()
 	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5},             biomes = { "acid" },  levels = { 1 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
 	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {       3, 4, 5, 6},          biomes = { "acid" },  levels = { 2 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
 	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7},       biomes = { "acid" },  levels = { 2 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7},       biomes = { "acid" },  levels = { 3 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {             5, 6, 7, 8},    biomes = { "acid" },  levels = { 3 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {                6, 7, 8,  }, biomes = { "acid" },  levels = { 4 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8},    biomes = { "acid" },  levels = { 3 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {             5, 6, 7, 8, 9}, biomes = { "acid" },  levels = { 3 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { "acid" },  levels = { 4 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
 	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {                   7, 8, 9}, biomes = { "acid" },  levels = { 4 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
 	
 	rules.waves = helper:Generate({ groups = { "swamp" },     difficulty = {                6, 7, 8, 9}, biomes = { "swamp" }, levels = { 2 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
