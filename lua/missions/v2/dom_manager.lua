@@ -247,7 +247,7 @@ function dom_mananger:Update( dt)
 				end				
 			end
 		elseif ( currentSpawnerState == "prepare_spawn" ) then
-			debug = debug .. " Time left: " .. tostring( self.waitForSpawnTimer )
+			debug = debug .. " full prepare: ".. tostring(self.prepAttacks).. ", Time left: " .. tostring( self.waitForSpawnTimer )
 		elseif ( currentSpawnerState == "idle" ) then
 			debug = debug .. " Time left: " .. tostring( self.idleTimer )
 		elseif ( currentSpawnerState == "sleep" ) then
@@ -1025,21 +1025,19 @@ function dom_mananger:RandomizeSpawnPoint( borderSpawnPointGroupName, waveData )
 	return spawnPointName;
 end
 
-function dom_mananger:GetWavePool( currentDifficultyLevel )
-
+function dom_mananger:GetWavePool( currentDifficultyLevel, silent )
 	local availableAttackPool = self.availableAttackGroups
-
-	local availableWaves = {}
+	local availableWaves      = {}
 
 	if ( self.isForceAttackGroupEnabled == true ) then
-		self:VerboseLog("GetWavePool - forced group attack : " .. self.forceAttackGroupName )
+		if (not silent) then self:VerboseLog("GetWavePool - forced group attack : " .. self.forceAttackGroupName ) end
 		
 		self.isForceAttackGroupEnabled = false
 
 		availableAttackPool = {}
 		availableAttackPool[#availableAttackPool + 1] = self.forceAttackGroupName
 	else
-		self:VerboseLog("GetWavePool - available groups." )
+		if (not silent) then self:VerboseLog("GetWavePool - available groups." ) end
 
 		for i = 1, #self.availableAttackGroups, 1 do 
 			self:VerboseLog( tostring( self.availableAttackGroups[i] ) )
@@ -1053,7 +1051,7 @@ function dom_mananger:GetWavePool( currentDifficultyLevel )
 
 		if ( currentDifficultyLevel > 0 ) then
 			for data in Iter( waves[currentDifficultyLevel] ) do 
-				self:VerboseLog("Adding wave to the wave pool : " .. data.name)
+				if (not silent) then self:VerboseLog("Adding wave to the wave pool : " .. data.name) end
 				availableWaves[#availableWaves + 1] = data
 			end
 		end
@@ -1105,7 +1103,7 @@ function dom_mananger:GetPauseAttacks()
 	if (self.pauseAttacks == false) then
 		if (self:GetAttackCount( self.currentDifficultyLevel ) <= 0) then return true end
 		
-		local wavesPool = self:GetWavePool( self.currentDifficultyLevel )		
+		local wavesPool = self:GetWavePool( self.currentDifficultyLevel, true )
 		if (#wavesPool <= 0) then return true end
 	end
 	
@@ -1214,7 +1212,7 @@ function dom_mananger:OnEnterPrepareSpawn( state )
 			self.eventsPerPrepareState  = 1
 		else self.eventsPerPrepareState  = 0
 		end		
-		self:VerboseLog("OnEnterPrepareSpawn - chance ".. tostring(self.rules.eventsPerPrepareStateChance or 100) .. ", roll ".. tostring(rngRoll) .. ", result: ".. tostring(self.eventsPerPrepareState) );
+		self:VerboseLog("OnEnterPrepareSpawn - chance ".. tostring(self.rules.eventsPerPrepareStateChance or 100) .. ", roll ".. tostring(rngRoll) .. ", result: ".. tostring(self.eventsPerPrepareState > 0) );
 	end
 
 	if ( ( self:GetPauseAttacks() == false ) and ( self.cancelTheAttack == false ) ) then
@@ -1239,13 +1237,15 @@ function dom_mananger:OnEnterPrepareSpawn( state )
 			self:VerboseLog("Border spawn point group :" .. borderSpawnPointGroupName )
 			self:VerboseLog("Difficulty Level : " .. tostring(self.currentDifficultyLevel ) )
 
-			self:PrepareWave( self:GetAttackCount( self.currentDifficultyLevel ), borderSpawnPointGroupName, self:GetWavePool( self.currentDifficultyLevel ), "OnEnterPrepareSpawn: Prepare attack name : ", self.waitForSpawnTimer, self.preparedAttacks, self.preparedAttackMarkers )
+			local wavePool = self:GetWavePool( self.currentDifficultyLevel )
+			self:PrepareWave( self:GetAttackCount( self.currentDifficultyLevel ), borderSpawnPointGroupName, wavePool, "OnEnterPrepareSpawn: Prepare attack name : ", self.waitForSpawnTimer, self.preparedAttacks, self.preparedAttackMarkers )
 
 			if ( self.rules.multiplayerWaves ~= nil ) then
 				local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
 
 				if ( multiplayerAttackCount > 0 ) then
-					self:PrepareWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( self.currentDifficultyLevel ), "OnEnterPrepareSpawn: Prepare attack name : ", self.waitForSpawnTimer, self.preparedAttacks, self.preparedAttackMarkers )
+					wavePool = self:GetMultiplayerWavePool( self.currentDifficultyLevel )
+					self:PrepareWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "OnEnterPrepareSpawn: Prepare attack name : ", self.waitForSpawnTimer, self.preparedAttacks, self.preparedAttackMarkers )
 				end
 			end
 		end
@@ -1507,7 +1507,8 @@ function dom_mananger:OnHqEnterEntryLogic( state )
 			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
 
 			if ( multiplayerAttackCount > 0 ) then
-				self:PrepareWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( self.currentDifficultyLevel ), "OnHqEnterEntryLogic: Prepare attack name : ", self.hqLogicLevel.prepareTime, self.hqPreparedAttacks, self.hqPreparedAttackMarkers )
+				wavePool = self:GetMultiplayerWavePool( self.currentDifficultyLevel )
+				self:PrepareWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "OnHqEnterEntryLogic: Prepare attack name : ", self.hqLogicLevel.prepareTime, self.hqPreparedAttacks, self.hqPreparedAttackMarkers )
 			end
 		end
 	end
@@ -1552,7 +1553,8 @@ function dom_mananger:OnHqEnterAttackLogic( state )
 			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
 
 			if ( multiplayerAttackCount > 0 ) then
-				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( difficultyLevel ), "OnHqEnterAttackLogic: Spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves, self.hqPreparedAttacks )
+				wavePool = self:GetMultiplayerWavePool( difficultyLevel )
+				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves, self.hqPreparedAttacks )
 			end
 		end
 	end
@@ -1608,7 +1610,7 @@ function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, waveP
 			attacks[index].spawnPointName = spawnPointName
 			attacks[index].originalPool   = wavePool
 
-			if (markets) then
+			if (markers) then
 				markers[#markers + 1] = self:SpawnWaveIndicator( indicatorTimer, spawnPointName, "effects/messages_and_markers/wave_marker" )
 			end
 			
@@ -1699,7 +1701,7 @@ end
 
 function dom_mananger:BeginWaveCooldown( cooldownTime )
 	self:VerboseLog("BeginWaveCooldown ( ".. tostring(cooldownTime) .. " )" )
-	self.waveRepeatTime = math.max(10, cooldownTime - (10 + RandInt(2, 6)*self.currentDifficultyLevel))
+	self.waveRepeatTime = math.max(10, cooldownTime - (10 + RandInt(4, 7)*self.currentDifficultyLevel))
 	self:VerboseLog("setting wave repeat time to ".. tostring(self.waveRepeatTime) .. " / " .. tostring(cooldownTime)  )
 	if (self.rules.waveRepeatChances) then
 		self.prepAttacks = false
@@ -1739,10 +1741,11 @@ function dom_mananger:DoWaveCooldown( timer, dt )
 	end
 
 	if ( timer < self.waveRepeatTime and self.rules.waveRepeatChances ) then
-		self.waveRepeatTime = -9999
-		if (#self.preparedAttacks>0)   then self:RepeatWave(self.preparedAttacks)   end
-		if (#self.hqPreparedAttacks>0) then self:RepeatWave(self.hqPreparedAttacks) end
+		if (#self.hqPreparedAttacks>0)     then self:RepeatWave(self.hqPreparedAttacks)
+		elseif (#self.preparedAttacks>0)   then self:RepeatWave(self.preparedAttacks)
+		end
 		if (#self.preparedAttacks + #self.hqPreparedAttacks == 0) then
+			self.waveRepeatTime = -9999
 			self:VerboseLog("DoWaveCooldown: no attack definitions to repeat")
 		end
 	end
