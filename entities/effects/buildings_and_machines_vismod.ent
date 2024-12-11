@@ -1513,6 +1513,21 @@ EntityBlueprint "effects/no_lifetime"		//crystal_vs3_violet
 }
 
 
+EntityBlueprint "effects/no_lifetime"		//ionized_sphere
+{
+	name effects/buildings_and_machines/ionized_sphere
+
+	SoundDesc
+	{
+		name "structures/drone_gather_resources"
+	}
+	
+	ParticleDesc
+	{
+		name    "rift/research_lab_energy"
+	}
+}
+
 // effects/world
 
 EntityBlueprint "effects/no_lifetime"		//surface_water
