@@ -20,6 +20,8 @@ EntityBlueprint
 		radius_name			"water_drill"
 		min_radius			"175"
 		min_radius_effect	"voice_over/announcement/building_too_close"
+		condition			"NOT_BIOME"
+		condition_value		"magma"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
