@@ -1,5 +1,10 @@
 return function()
-    local rules = {}
+	-- the following sets up to default values for the given mission and difficulty type:
+	-- prepareAttackDefinitions, wavesEntryDefinitions, prepareSpawnTime, timeToNextDifficultyLevel, cooldownAfterAttacks
+	-- param missionType: { "outpost", "survival", "scout", "temp" }
+	-- param difficulty:  { "easy", "default", "hard", "brutal" }
+	local helper = require( "lua/missions/v2/waves_gen.lua" )
+	local rules  = helper:PrepareDefaultRules( {}, "outpost", "default")
 
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 1
@@ -51,13 +56,16 @@ return function()
 		{ action = "spawn_resource_comet",      type = "POSITIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 4, logicFile="logic/weather/resource_comet.logic",                                    weight = 1 }
 	}
 
-	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
-	{
-		30,  -- 1st event probability in percent
-		15,  -- 2nd event probability in percent
-		 5,  -- 3rd event probability in percent
-	}
+	-- events spawn chance during/after attack (cooldown state). event timing is random ranging from the start of attack to max cooldown time.
+	-- chances are consecutive, i.e. dice roll for event n+1 may only happen if roll for event n was also succefful
+	rules.spawnCooldownEventChance = { 25, 50, 20 }
 
+	rules.objectivesLogic = 
+	{		
+		{ name = "logic/objectives/destroy_nest_mushbit_single.logic",   minDifficultyLevel = 3, maxDifficultyLevel = 6 },
+		{ name = "logic/objectives/destroy_nest_mushbit_multiple.logic", minDifficultyLevel = 6 } 
+	}
+	
 	rules.addResourcesOnRunOut = 
 	{
 		{ name = "uranium_ore_deepvein", runOutPercentageOnMap = 30, minToSpawn = 20000, maxToSpawn = 40000 },
@@ -67,133 +75,36 @@ return function()
 	{			
 		{ level = 2, minLevel = 5, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },     
 	}
-
-	rules.idleTime = 
-	{			
-		 450,  -- difficulty level 1
-		 600,  -- difficulty level 2
-		 660,  -- difficulty level 3
-		 660,  -- difficulty level 4	
-		 900,  -- difficulty level 5	
-		 900,  -- difficulty level 6	
-		 900,  -- difficulty level 7
-		1200,  -- difficulty level 8	
-		1200,  -- difficulty level 9	
-	}
-
-	rules.timeToNextDifficultyLevel = 
-	{			
-		600, -- difficulty level 1
-		780, -- difficulty level 2
-		900, -- difficulty level 3	
-		1020, -- difficulty level 4
-		1200, -- difficulty level 5
-		1500, -- difficulty level 6
-		1800, -- difficulty level 7
-		2400, -- difficulty level 8
-		3600, -- difficulty level 9
-	}
 	
-	rules.prepareSpawnTime = 
-	{			
-		120,  -- difficulty level 1
-		120,  -- difficulty level 2
-		120,  -- difficulty level 3
-		120,  -- difficulty level 4	
-		120,  -- difficulty level 5	
-		120,  -- difficulty level 6	
-		120,  -- difficulty level 7
-		120,  -- difficulty level 8	
-		120,  -- difficulty level 9	
-	}
-
 	rules.buildingsUpgradeStartsLogic = 
 	{			
 
 	}
 
-	rules.objectivesLogic = 
-	{		
-		{ name = "logic/objectives/destroy_nest_mushbit_single.logic",   minDifficultyLevel = 3, maxDifficultyLevel = 6 },
-		{ name = "logic/objectives/destroy_nest_mushbit_multiple.logic", minDifficultyLevel = 6 } 
-	}
-
-	rules.cooldownAfterAttacks = 
+	rules.attackCountPerDifficulty = 
 	{			
-		60,  -- difficulty level 1
-		90,  -- difficulty level 2
-		120,  -- difficulty level 3
-		180,  -- difficulty level 4	
-		180,  -- difficulty level 5	
-		180,  -- difficulty level 6	
-		240,  -- difficulty level 7
-		240,  -- difficulty level 8	
-		240,  -- difficulty level 9	
-	}
-
-	rules.idleTime = 
-	{			
-		450,  -- difficulty level 1
-		600,  -- difficulty level 2
-		660,  -- difficulty level 3
-		720,  -- difficulty level 4	
-		780,  -- difficulty level 5	
-		840,  -- difficulty level 6	
-		900,  -- difficulty level 7
-		900,  -- difficulty level 8	
-		900,  -- difficulty level 9	
-	}
-
-	rules.maxAttackCountPerDifficulty = 
-	{			
-		1,  -- difficulty level 1
-		1,  -- difficulty level 2
-		2,  -- difficulty level 3		
-		2,  -- difficulty level 4
-		2,  -- difficulty level 5
-		2,  -- difficulty level 6
-		3,  -- difficulty level 7
-		3,  -- difficulty level 8
-		4,  -- difficulty level 9
-	}
-	
-	rules.prepareAttackDefinitions =
-	{		
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 1
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 2
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 3
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 4
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 5
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 6
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 7
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 8
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 9
-	}
-
-	rules.wavesEntryDefinitions =
-	{		 
-			"logic/dom/attack_level_1_entry.logic", -- difficulty level 1
-			"logic/dom/attack_level_2_entry.logic", -- difficulty level 2
-			"logic/dom/attack_level_2_entry.logic", -- difficulty level 3
-			"logic/dom/attack_level_2_entry.logic", -- difficulty level 4
-			"logic/dom/attack_level_2_entry.logic", -- difficulty level 5
-			"logic/dom/attack_level_2_entry.logic", -- difficulty level 6
-			"logic/dom/attack_level_2_entry.logic", -- difficulty level 7
-			"logic/dom/attack_level_2_entry.logic", -- difficulty level 8
-			"logic/dom/attack_level_2_entry.logic", -- difficulty level 9
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 1
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 2
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 3
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 4
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 5
+		{ minCount = 1, maxCount = 3 },  -- difficulty level 6
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 7
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 8
+		{ minCount = 2, maxCount = 4 },  -- difficulty level 9
 	}
 	
 	rules.waveRepeatChances = 
 	{
-		{},                       -- concecutive chances of wave repeating at level 1
-		{},                       -- concecutive chances of wave repeating at level 2
-		{},                       -- concecutive chances of wave repeating at level 3
-		{10 },                    -- concecutive chances of wave repeating at level 4
-		{25, 40, 20},             -- concecutive chances of wave repeating at level 5
-		{40, 55, 40},             -- concecutive chances of wave repeating at level 6
-		{55, 50, 40, 20},         -- concecutive chances of wave repeating at level 7
-		{70, 60, 80, 20},         -- concecutive chances of wave repeating at level 8
-		{85, 70, 80, 35, 90},     -- concecutive chances of wave repeating at level 9
+		{},                    -- consecutive chances of wave repeating at level 1
+		{},                    -- consecutive chances of wave repeating at level 2
+		{15},                  -- consecutive chances of wave repeating at level 3
+		{50},                  -- consecutive chances of wave repeating at level 4
+		{50, 20},              -- consecutive chances of wave repeating at level 5
+		{60, 40, 10},          -- consecutive chances of wave repeating at level 6
+		{60, 40, 20},          -- consecutive chances of wave repeating at level 7
+		{70, 50, 40, 10},      -- consecutive chances of wave repeating at level 8
+		{80, 60, 50, 30, 30},  -- consecutive chances of wave repeating at level 9
 	}
 	
 	rules.waveChanceRerollSpawnGroup = 10
