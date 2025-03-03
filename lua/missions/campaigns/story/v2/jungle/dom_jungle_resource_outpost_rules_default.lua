@@ -1,5 +1,6 @@
 return function()
-    local rules = {}
+	local helper = require( "lua/missions/v2/waves_gen.lua" )
+	local rules  = helper:PrepareDefaultRules( {}, "outpost", "default")
 
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 2
@@ -54,9 +55,12 @@ return function()
 		{ action = "spawn_fireflies",              type = "POSITIVE", gameStates="IDLE",             minEventLevel = 1,                    logicFile="logic/weather/fireflies.logic",              minTime = 60, maxTime = 120, weight = 1 },
 		{ action = "spawn_tornado_fire_near_base", type = "NEGATIVE", gameStates="ATTACK|IDLE",      minEventLevel = 8,                    logicFile="logic/weather/tornado_fire_near_base.logic",                              weight = 0.5 },
 		{ action = "spawn_tornado_acid_near_base", type = "NEGATIVE", gameStates="ATTACK|IDLE",      minEventLevel = 8,                    logicFile="logic/weather/tornado_acid_near_base.logic",                              weight = 0.5 },
-		--{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 3 },
 		{ action = "spawn_comet_silent",           type = "POSITIVE", gameStates="IDLE",             minEventLevel = 1,                    logicFile="logic/weather/comet_silent.logic",                                        weight = 2 }
 	}
+
+	-- events spawn chance during/after attack (cooldown state). event timing is random ranging from the start of attack to max cooldown time.
+	-- chances are consecutive, i.e. dice roll for event n+1 may only happen if roll for event n was also succefful
+	rules.spawnCooldownEventChance = { 25, 5, 1 }
 
 	rules.addResourcesOnRunOut =     
 	{
@@ -66,39 +70,6 @@ return function()
 	rules.majorAttackLogic =
 	{			
 		{ level = 1, minLevel = 5, prepareTime = 120, entryLogic = "logic/hq_upgrade/upgrade_entry_lvl1.logic", exitLogic = "logic/hq_upgrade/upgrade_exit_lvl1.logic" },     
-	}
-
-	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
-	{
-		25,  -- 1st event probability in percent
-		5,   -- 2nd event probability in percent
-		1,   -- 3rd event probability in percent
-	}
-	
-	rules.timeToNextDifficultyLevel = 
-	{			
-		400, -- difficulty level 1
-		600, -- difficulty level 2
-		800, -- difficulty level 3	
-		1200, -- difficulty level 4
-		1200, -- difficulty level 5
-		1200, -- difficulty level 6
-		1200, -- difficulty level 7
-		1200, -- difficulty level 8
-		1200, -- difficulty level 9
-	}
-
-	rules.prepareSpawnTime = 
-	{			
-		120,  -- difficulty level 1
-		120,  -- difficulty level 2
-		120,  -- difficulty level 3
-		120,  -- difficulty level 4	
-		120,  -- difficulty level 5	
-		120,  -- difficulty level 6	
-		120,  -- difficulty level 7
-		120,  -- difficulty level 8	
-		120,  -- difficulty level 9	
 	}
 
 	rules.buildingsUpgradeStartsLogic = 
@@ -113,148 +84,53 @@ return function()
 		{ name = "logic/objectives/destroy_nest_canoptrix_multiple.logic", minDifficultyLevel = 5 }
 	}
 
-	
-	rules.cooldownAfterAttacks = 
+	rules.attackCountPerDifficulty = 
 	{			
-		60,  -- difficulty level 1
-		90,  -- difficulty level 2
-		120,  -- difficulty level 3
-		180,  -- difficulty level 4	
-		180,  -- difficulty level 5	
-		180,  -- difficulty level 6	
-		240,  -- difficulty level 7
-		240,  -- difficulty level 8	
-		240,  -- difficulty level 9	
-	}
-
-	rules.idleTime = 
-	{			
-		900,  -- difficulty level 1
-		900,  -- difficulty level 2
-		900,  -- difficulty level 3
-		900,  -- difficulty level 4	
-		900,  -- difficulty level 5	
-		900,  -- difficulty level 6	
-		900,  -- difficulty level 7
-		900,  -- difficulty level 8	
-		900,  -- difficulty level 9	
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 1
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 2
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 3
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 4
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 5
+		{ minCount = 1, maxCount = 3 },  -- difficulty level 6
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 7
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 8
+		{ minCount = 2, maxCount = 4 },  -- difficulty level 9
 	}
 	
-	rules.maxAttackCountPerDifficulty = 
-	{			
-		1,  -- difficulty level 1
-		2,  -- difficulty level 2
-		2,  -- difficulty level 3		
-		2,  -- difficulty level 4
-		3,  -- difficulty level 5
-		3,  -- difficulty level 6
-		3,  -- difficulty level 7
-		3,  -- difficulty level 8
-		4,  -- difficulty level 9
-	}
-
-	rules.prepareAttackDefinitions =
+	rules.waveRepeatChances = 
 	{
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 1
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 2
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 3
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 4
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 5
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 6
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 7
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 8
-		"logic/dom/attack_level_1_prepare.logic",-- difficulty level 9
+		{},                    -- consecutive chances of wave repeating at level 1
+		{},                    -- consecutive chances of wave repeating at level 2
+		{15},                  -- consecutive chances of wave repeating at level 3
+		{50},                  -- consecutive chances of wave repeating at level 4
+		{50, 20},              -- consecutive chances of wave repeating at level 5
+		{60, 40, 10},          -- consecutive chances of wave repeating at level 6
+		{60, 40, 20},          -- consecutive chances of wave repeating at level 7
+		{70, 50, 40, 10},      -- consecutive chances of wave repeating at level 8
+		{80, 60, 50, 30, 30},  -- consecutive chances of wave repeating at level 9
 	}
-
-	rules.wavesEntryDefinitions = 
-	{
-		"logic/dom/attack_level_1_entry.logic",-- difficulty level 1
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 2
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 3
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 4
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 5
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 6
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 7
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 8
-		"logic/dom/attack_level_2_entry.logic",-- difficulty level 9
-	}
-
-	rules.waves = 
-	{
-		["default"] =
-		{
-			 -- difficulty level 1		
-			{ 
-				"logic/missions/survival/attack_level_1_id_1.logic",
-				"logic/missions/survival/attack_level_1_id_2.logic",
-			},
 	
-			 -- difficulty level 2
-			{ 			
-				"logic/missions/survival/attack_level_2_id_1.logic",
-				"logic/missions/survival/attack_level_2_id_2.logic",
-			},
+	rules.waveChanceRerollSpawnGroup = 10
+	rules.waveChanceRerollSpawn      = 15
+	rules.waveChanceReroll  
 
-			 -- difficulty level 3
-			{ 
-				"logic/missions/survival/attack_level_3_id_1.logic",
-				"logic/missions/survival/attack_level_3_id_2.logic",
-			},
-
-			 -- difficulty level 4
-			{ 			
-				"logic/missions/survival/attack_level_4_id_1.logic",
-				"logic/missions/survival/attack_level_4_id_2.logic",
-				--"logic/missions/survival/attack_level_4_id_3.logic",
-				"logic/missions/survival/attack_level_4_id_4.logic",
-			},
-
-			 -- difficulty level 5
-			{ 
-				"logic/missions/survival/attack_level_5_id_1.logic",
-				"logic/missions/survival/attack_level_5_id_2.logic",			
-				"logic/missions/survival/attack_level_4_id_3.logic",			
-				"logic/missions/survival/attack_level_5_id_4.logic",			
-			},
-
-			 -- difficulty level 6
-			{ 
-				"logic/missions/survival/attack_level_6_id_1.logic",
-				"logic/missions/survival/attack_level_6_id_2.logic",			
-				"logic/missions/survival/attack_level_5_id_3.logic",			
-				"logic/missions/survival/attack_level_6_id_4.logic",			
-				"logic/missions/survival/attack_level_6_id_5.logic",			
-			},
-
-			 -- difficulty level 7
-			{ 
-				"logic/missions/survival/attack_level_7_id_1.logic",
-				"logic/missions/survival/attack_level_7_id_2.logic",
-				"logic/missions/survival/attack_level_6_id_3.logic",
-				"logic/missions/survival/attack_level_7_id_4.logic",
-				"logic/missions/survival/attack_level_7_id_5.logic",
-			},
-
-			 -- difficulty level 8
-			{ 
-				"logic/missions/survival/attack_level_8_id_1.logic",
-				"logic/missions/survival/attack_level_8_id_2.logic",
-				"logic/missions/survival/attack_level_7_id_3.logic",
-				"logic/missions/survival/attack_level_8_id_4.logic",
-				"logic/missions/survival/attack_level_8_id_5.logic",
-			},
-
-			 -- difficulty level 9
-			{ 
-				"logic/missions/survival/attack_level_8_id_1.logic",
-				"logic/missions/survival/attack_level_8_id_2.logic",
-				"logic/missions/survival/attack_level_8_id_3.logic",
-				"logic/missions/survival/attack_level_8_id_4.logic",
-				"logic/missions/survival/attack_level_8_id_5.logic",
-			},
-		},
-	}
-
+	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
+	rules.waves = {}
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { "" },  levels = { 1 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5, 6, 7},       biomes = { "" },  levels = { 1 },   ids = { 1, 2 },         suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       3, 4, 5, 6, 7, 8},    biomes = { "" },  levels = { 2 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "" },  levels = { 2 },   ids = { 1, 2 },         suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "" },  levels = { 3 },   ids = { 1, 2, 3 },      suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             5, 6, 7, 8, 9}, biomes = { "" },  levels = { 3 },   ids = { 1, 2, 3 },      suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { "" },  levels = { 4 },   ids = { 1, 2, 3, 4 },   suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { "" },  levels = { 4 },   ids = { 1, 2, 3, 4 },   suffixes = { "", "alpha" },     },   rules.waves)
+	
+	rules.waves = wave_gen:Generate({ groups = { "swamp" },     difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 2 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "swamp" },     difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },   suffixes = { "", "" },          },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "swamp" },     difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },   suffixes = { "alpha" },         },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "swamp" },     difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "swamp" },     difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
+	
 	rules.extraWaves = 
 	{
 		 -- difficulty level 1		
