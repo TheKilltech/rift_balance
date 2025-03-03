@@ -54,7 +54,7 @@ GameplayResourceDef
 	type 			"ammo_mech"
 	icon			"gui/hud/resource_icons/ammo_mech_explosive_icon"
 	bigger_icon		"gui/hud/resource_icons/ammo_mech_explosive_icon_bigger"	
-	base_storage	"3"
+	base_storage	"6"
 	production		"3"
 	hud_visible 	"never"
 	order			"17"
