@@ -1,147 +1,120 @@
 return function()
-    local rules = require("lua/missions/campaigns/dlc_2/dom_caverns_outpost_rules_default.lua")()	
+    local rules  = require("lua/missions/campaigns/dlc_2/dom_caverns_outpost_rules_hard.lua")()	
+	local helper = require("lua/missions/v2/waves_gen.lua" )
 		
-	rules.timeToNextDifficultyLevel = 
+	rules.timeToNextDifficultyLevel = helper:Default_TimeToNextDifficultyLevel( "outpost", "brutal", 1)
+	rules.prepareSpawnTime          = helper:Default_PrepareSpawnTime(          "outpost", "brutal", 1)
+	rules.idleTime                  = helper:Default_IdleTime(                  "outpost", "brutal", 1)
+	
+	rules.attackCountPerDifficulty = 
 	{			
-		300, -- difficulty level 1
-		350, -- difficulty level 2
-		350, -- difficulty level 3	
-		450, -- difficulty level 4
-		450, -- difficulty level 5
-		550, -- difficulty level 6
-		550, -- difficulty level 7
-		550, -- difficulty level 8
-		550, -- difficulty level 9
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 1
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 2
+		{ minCount = 2, maxCount = 2 },  -- difficulty level 3
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 4
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 5
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 6
+		{ minCount = 3, maxCount = 3 },  -- difficulty level 7
+		{ minCount = 3, maxCount = 4 },  -- difficulty level 8
+		{ minCount = 3, maxCount = 5 },  -- difficulty level 9
 	}
 	
-	rules.idleTime = 
-	{			
-		330,  -- difficulty level 1
-		380,  -- difficulty level 2
-		380,  -- difficulty level 3
-		480,  -- difficulty level 4	
-		480,  -- difficulty level 5	
-		580,  -- difficulty level 6	
-		580,  -- difficulty level 7
-		580,  -- difficulty level 8	
-		680,  -- difficulty level 9	
+	rules.waveRepeatChances = 
+	{
+		{},                        -- concecutive chances of wave repeating at level 1
+		{20},                      -- concecutive chances of wave repeating at level 2
+		{35},                      -- concecutive chances of wave repeating at level 3
+		{70, 15},                  -- concecutive chances of wave repeating at level 4
+		{70, 60, 15},              -- concecutive chances of wave repeating at level 5
+		{80, 70, 30, 15},          -- concecutive chances of wave repeating at level 6
+		{80, 80, 60, 15},          -- concecutive chances of wave repeating at level 7
+		{90, 90, 80, 30, 10},      -- concecutive chances of wave repeating at level 8
+		{95, 90, 80, 50, 40, 10},  -- concecutive chances of wave repeating at level 9
 	}
 	
-	rules.maxAttackCountPerDifficulty = 
-	{			
-		2,  -- difficulty level 1
-		2,  -- difficulty level 2
-		2,  -- difficulty level 3		
-		2,  -- difficulty level 4
-		3,  -- difficulty level 5
-		3,  -- difficulty level 6
-		3,  -- difficulty level 7
-		3,  -- difficulty level 8
-		4,  -- difficulty level 9
-	}
+	rules.waveChanceRerollSpawnGroup = 30
+	rules.waveChanceRerollSpawn      = 50
+	rules.waveChanceReroll           = 40
 	
+	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
+	rules.waves = {}
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {  6 },         biomes = { "caverns" },  levels = { 1 },   ids = { 1, 2 },     suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {  6, 7, 8},    biomes = { "caverns" },  levels = { 1 },   ids = { 1, 2 },     suffixes = { "ultra" },         },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {  6, 7, 8, 9}, biomes = { "caverns" },  levels = { 2 },   ids = { 1, 2 },     suffixes = { "", "", "alpha" }, },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {  6, 7, 8, 9}, biomes = { "caverns" },  levels = { 2 },   ids = { 1, 2 },     suffixes = { "ultra" },         },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {  6, 7, 8 ,9}, biomes = { "caverns" },  levels = { 3 },   ids = { 1, 2 },     suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {  6, 7, 8, 9}, biomes = { "caverns" },  levels = { 3 },   ids = { 1, 2 },     suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {  6, 7, 8, 9}, biomes = { "caverns" },  levels = { 3 },   ids = { 1, 2 },     suffixes = { "ultra" },         },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {  6, 7, 8, 9}, biomes = { "caverns" },  levels = { 4 },   ids = { 1, 2, 3 },  suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {     7, 8, 9}, biomes = { "caverns" },  levels = { 4 },   ids = { 1, 2, 3 },  suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {        8, 9}, biomes = { "caverns" },  levels = { 4 },   ids = { 1, 2, 3 },  suffixes = { "ultra" },         },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {           9}, biomes = { "caverns" },  levels = { 5 },   ids = { 1, 2, 3 },  suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {           9}, biomes = { "caverns" },  levels = { 6 },   ids = { 1, 2, 3 },  suffixes = { "" },              },   rules.waves)
+																			   
+	rules.waves = wave_gen:Generate({ groups = { "desert" },    difficulty = {  6, 7, 8 ,9}, biomes = { "group" },    levels = { 2 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "desert" },    difficulty = {  6, 7, 8, 9}, biomes = { "group" },    levels = { 3 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "desert" },    difficulty = {  6, 7, 8, 9}, biomes = { "group" },    levels = { 3 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "desert" },    difficulty = {  6, 7, 8, 9}, biomes = { "group" },    levels = { 3 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "desert" },    difficulty = {  6, 7, 8, 9}, biomes = { "group" },    levels = { 4 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "desert" },    difficulty = {     7, 8, 9}, biomes = { "group" },    levels = { 4 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "desert" },    difficulty = {        8, 9}, biomes = { "group" },    levels = { 4 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "desert" },    difficulty = {           9}, biomes = { "group" },    levels = { 5 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
+
 	rules.waves = 
 	{
 		["default"] =
 		{
-			-- difficulty level 1		
-			{ 
-				--{ name="logic/missions/survival/caverns/attack_level_1_id_1_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=220.0, target_max_radius=350.0},
-				{ name="logic/missions/survival/caverns/attack_level_1_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=220.0, target_max_radius=350.0},
-				--{ name="logic/missions/survival/caverns/attack_level_1_id_2_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=220.0, target_max_radius=350.0},
-				{ name="logic/missions/survival/caverns/attack_level_1_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=220.0, target_max_radius=350.0},
+			{ -- difficulty level 1
+				{ name="logic/missions/survival/caverns/attack_level_1_id_1_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+				{ name="logic/missions/survival/caverns/attack_level_1_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+				{ name="logic/missions/survival/caverns/attack_level_1_id_2_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+				{ name="logic/missions/survival/caverns/attack_level_1_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
 			},
 	
-			 -- difficulty level 2
-			{ 			
-				--{ name="logic/missions/survival/caverns/attack_level_2_id_1_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=200.0, target_max_radius=384.0},
-				{ name="logic/missions/survival/caverns/attack_level_2_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=200.0, target_max_radius=384.0},
-				--{ name="logic/missions/survival/caverns/attack_level_2_id_2_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=200.0, target_max_radius=384.0},
-				{ name="logic/missions/survival/caverns/attack_level_2_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=200.0, target_max_radius=384.0},
+			{  -- difficulty level 2			
+				{ name="logic/missions/survival/caverns/attack_level_2_id_1_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+				{ name="logic/missions/survival/caverns/attack_level_2_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+				{ name="logic/missions/survival/caverns/attack_level_2_id_2_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+				{ name="logic/missions/survival/caverns/attack_level_2_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
 			},
-
-			 -- difficulty level 3
-			{ 
-				{ name="logic/missions/survival/caverns/attack_level_3_id_1_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+			
+			{  -- difficulty level 3
+				{ name="logic/missions/survival/caverns/attack_level_1_id_1_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+				{ name="logic/missions/survival/caverns/attack_level_1_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+				{ name="logic/missions/survival/caverns/attack_level_2_id_2_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+				{ name="logic/missions/survival/caverns/attack_level_2_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+				{ name="logic/missions/survival/caverns/attack_level_3_id_1_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
 				{ name="logic/missions/survival/caverns/attack_level_3_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
-				{ name="logic/missions/survival/caverns/attack_level_3_id_2_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},				
-				{ name="logic/missions/survival/caverns/attack_level_3_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},				
+				{ name="logic/missions/survival/caverns/attack_level_3_id_2_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+				{ name="logic/missions/survival/caverns/attack_level_3_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+			},
+			
+			{  -- difficulty level 4			
+				{ name="logic/missions/survival/caverns/attack_level_1_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+				{ name="logic/missions/survival/caverns/attack_level_1_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+				{ name="logic/missions/survival/caverns/attack_level_3_id_1_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+				{ name="logic/missions/survival/caverns/attack_level_3_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+				{ name="logic/missions/survival/caverns/attack_level_3_id_2_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+				{ name="logic/missions/survival/caverns/attack_level_3_id_2_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+				{ name="logic/missions/survival/caverns/attack_level_4_id_2_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+				{ name="logic/missions/survival/caverns/attack_level_4_id_3_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
 			},
 
-			 -- difficulty level 4
-			{ 			
-				{ name="logic/missions/survival/caverns/attack_level_4_id_1_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
-				{ name="logic/missions/survival/caverns/attack_level_4_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
-				{ name="logic/missions/survival/caverns/attack_level_4_id_2_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
-				{ name="logic/missions/survival/caverns/attack_level_4_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
-				{ name="logic/missions/survival/caverns/attack_level_4_id_3_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},				
-				{ name="logic/missions/survival/caverns/attack_level_4_id_3_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},				
-			},
-
-			 -- difficulty level 5
-			{ 
-				{ name="logic/missions/survival/caverns/attack_level_5_id_1_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
-				{ name="logic/missions/survival/caverns/attack_level_5_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
-				{ name="logic/missions/survival/caverns/attack_level_5_id_2_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
-				{ name="logic/missions/survival/caverns/attack_level_5_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
-				{ name="logic/missions/survival/caverns/attack_level_5_id_3_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},						
-				{ name="logic/missions/survival/caverns/attack_level_5_id_3_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},							
-			},
-
-			 -- difficulty level 6
-			{ 
-				{ name="logic/missions/survival/caverns/attack_level_6_id_1_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=0, target_max_radius=700.0},
-				{ name="logic/missions/survival/caverns/attack_level_6_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=0, target_max_radius=700.0},
-				{ name="logic/missions/survival/caverns/attack_level_6_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=0, target_max_radius=700.0},
-				{ name="logic/missions/survival/caverns/attack_level_6_id_2_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=0, target_max_radius=700.0},
-				{ name="logic/missions/survival/caverns/attack_level_6_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=0, target_max_radius=700.0},
-				{ name="logic/missions/survival/caverns/attack_level_6_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=0, target_max_radius=700.0},
-				{ name="logic/missions/survival/caverns/attack_level_6_id_3_caverns_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=0, target_max_radius=700.0},							
-				{ name="logic/missions/survival/caverns/attack_level_6_id_3_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=0, target_max_radius=700.0},							
-				{ name="logic/missions/survival/caverns/attack_level_6_id_3_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=0, target_max_radius=700.0},							
-			},
-
-			 -- difficulty level 7
-			{ 
-				"logic/missions/survival/caverns/attack_level_7_id_1_caverns_ultra.logic",				
-				"logic/missions/survival/caverns/attack_level_7_id_1_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_7_id_1_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_7_id_2_caverns_ultra.logic",				
-				"logic/missions/survival/caverns/attack_level_7_id_2_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_7_id_2_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_7_id_3_caverns_ultra.logic",								
-				"logic/missions/survival/caverns/attack_level_7_id_3_caverns_alpha.logic",			
-				"logic/missions/survival/caverns/attack_level_7_id_3_caverns_alpha.logic",			
-			},
-
-			 -- difficulty level 8
-			{ 
-				"logic/missions/survival/caverns/attack_level_8_id_1_caverns_ultra.logic",				
-				"logic/missions/survival/caverns/attack_level_8_id_1_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_1_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_2_caverns_ultra.logic",				
-				"logic/missions/survival/caverns/attack_level_8_id_2_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_2_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_3_caverns_ultra.logic",				
-				"logic/missions/survival/caverns/attack_level_8_id_3_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_3_caverns_alpha.logic",
-			},
-
-			 -- difficulty level 9
-			{ 				
-				"logic/missions/survival/caverns/attack_level_8_id_1_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_1_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_1_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_1_caverns_ultra.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_1_caverns_ultra.logic",				
-				"logic/missions/survival/caverns/attack_level_8_id_2_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_2_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_2_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_2_caverns_ultra.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_3_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_3_caverns_alpha.logic",
-				"logic/missions/survival/caverns/attack_level_8_id_3_caverns_alpha.logic",				
-				"logic/missions/survival/caverns/attack_level_8_id_3_caverns_ultra.logic",
+			{  -- difficulty level 5
+				{ name="logic/missions/survival/caverns/attack_level_2_id_1_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name="logic/missions/survival/caverns/attack_level_2_id_2_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name="logic/missions/survival/caverns/attack_level_2_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name="logic/missions/survival/caverns/attack_level_2_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name="logic/missions/survival/caverns/attack_level_3_id_1_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name="logic/missions/survival/caverns/attack_level_3_id_1_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name="logic/missions/survival/caverns/attack_level_3_id_2_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name="logic/missions/survival/caverns/attack_level_3_id_2_caverns_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name="logic/missions/survival/caverns/attack_level_4_id_2_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name="logic/missions/survival/caverns/attack_level_4_id_2_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name="logic/missions/survival/caverns/attack_level_4_id_3_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+				{ name="logic/missions/survival/caverns/attack_level_5_id_1_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name="logic/missions/survival/caverns/attack_level_5_id_2_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name="logic/missions/survival/caverns/attack_level_5_id_3_caverns.logic",       spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
 			},
 		},
 	}
