@@ -45,7 +45,7 @@ GameplayResourceDef
 	type 			"ammo_mech"
 	icon			"gui/hud/resource_icons/ammo_mech_explosive_lvl3_icon"
 	bigger_icon		"gui/hud/resource_icons/ammo_mech_explosive_lvl3_icon_bigger"
-	base_storage	"3"
+	base_storage	"6"
 	hud_visible 	"never"
 	order			"38"
 }

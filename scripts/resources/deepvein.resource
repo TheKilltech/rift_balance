@@ -41,7 +41,6 @@ GameplayResourceDef
 	localization_id 	"resource_name/ammonium_deepvein"
 	bp  				"resources/resource_ammonium_deepvein"
 	type 				"vein"
-	specific_type		"local"
 	ore					"ammonium"
 	random_rotation 	"1"
 	icon				"gui/hud/resource_icons/ammonium_vein"

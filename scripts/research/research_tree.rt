@@ -2875,40 +2875,6 @@ Research
 					}
 
 					research_scripts
-					{
-						ResearchScript
-						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "communications_hub"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "1"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
 					position
 					{
 						x "117.000"
@@ -13840,12 +13806,6 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_storage_energy"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "items/weapons/plasma_gun_item"
 							is_visible "1"
 						}
@@ -15170,12 +15130,6 @@ Research
 
 					research_awards
 					{
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_energy_ext_lvl_2"
-							is_visible "1"
-						}
-
 						ResearchAward
 						{
 							blueprint "items/weapons/heavy_plasma_extreme_item"
@@ -19411,8 +19365,8 @@ Research
 
 					position
 					{
-						x "-387.000"
-						y "-234.000"
+						x "-504.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -19462,7 +19416,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_name "gui/menu/research/name/crystalizer_hazenite"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -19483,7 +19437,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-387.000"
+						x "-504.000"
 						y "-99.000"
 					}
 
@@ -19534,7 +19488,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_name "gui/menu/research/name/crystalizer_hazenite_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -19555,7 +19509,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-387.000"
+						x "-504.000"
 						y "90.000"
 					}
 
@@ -19627,8 +19581,8 @@ Research
 					research_scripts
 					position
 					{
-						x "450.000"
-						y "378.000"
+						x "585.000"
+						y "414.000"
 					}
 
 					research_awards
@@ -19714,8 +19668,8 @@ Research
 
 					position
 					{
-						x "450.000"
-						y "-234.000"
+						x "585.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -19753,7 +19707,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_name "gui/menu/research/name/crystalizer_ferdonite_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -19774,7 +19728,7 @@ Research
 					research_scripts
 					position
 					{
-						x "450.000"
+						x "585.000"
 						y "36.000"
 					}
 
@@ -19834,8 +19788,8 @@ Research
 					research_scripts
 					position
 					{
-						x "684.000"
-						y "378.000"
+						x "801.000"
+						y "414.000"
 					}
 
 					research_awards
@@ -19867,15 +19821,15 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
-							research_category "gui/menu/research/category_alien"
+							research_name "gui/menu/research/name/ammo_explosive_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/ammo_explosive_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
+							research_name "gui/menu/research/name/crystalizer_ferdonite_lvl2"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -19887,7 +19841,7 @@ Research
 						{
 							amount "0.000"
 							resource "analysis"
-							count "4000.000"
+							count "5000.000"
 						}
 
 					}
@@ -19895,8 +19849,8 @@ Research
 					research_scripts
 					position
 					{
-						x "567.000"
-						y "90.000"
+						x "612.000"
+						y "81.000"
 					}
 
 					research_awards
@@ -19941,7 +19895,7 @@ Research
 						{
 							amount "0.000"
 							resource "analysis"
-							count "750.000"
+							count "950.000"
 						}
 
 					}
@@ -19983,7 +19937,7 @@ Research
 
 					position
 					{
-						x "567.000"
+						x "612.000"
 						y "-234.000"
 					}
 
@@ -20016,7 +19970,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_ferdonite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -20037,8 +19991,8 @@ Research
 					research_scripts
 					position
 					{
-						x "567.000"
-						y "252.000"
+						x "612.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -20098,8 +20052,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-171.000"
-						y "378.000"
+						x "-189.000"
+						y "414.000"
 					}
 
 					research_awards
@@ -20152,8 +20106,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-198.000"
-						y "162.000"
+						x "-216.000"
+						y "117.000"
 					}
 
 					research_awards
@@ -20185,7 +20139,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_rhodonite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -20206,8 +20160,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-171.000"
-						y "252.000"
+						x "-189.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -20239,7 +20193,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -20260,8 +20214,8 @@ Research
 					research_scripts
 					position
 					{
-						x "684.000"
-						y "90.000"
+						x "801.000"
+						y "36.000"
 					}
 
 					research_awards
@@ -20314,8 +20268,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-360.000"
-						y "162.000"
+						x "-423.000"
+						y "117.000"
 					}
 
 					research_awards
@@ -20395,8 +20349,8 @@ Research
 
 					position
 					{
-						x "684.000"
-						y "-234.000"
+						x "801.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -20428,7 +20382,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_hazenite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -20449,8 +20403,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-414.000"
-						y "207.000"
+						x "-477.000"
+						y "252.000"
 					}
 
 					research_awards
@@ -20482,7 +20436,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_name "gui/menu/research/name/crystalizer_hazenite_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -20503,7 +20457,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-414.000"
+						x "-477.000"
 						y "45.000"
 					}
 
@@ -20557,8 +20511,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-360.000"
-						y "-180.000"
+						x "-423.000"
+						y "-234.000"
 					}
 
 					research_awards
@@ -20590,7 +20544,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_name "gui/menu/research/name/crystalizer_hazenite"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -20611,7 +20565,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-414.000"
+						x "-477.000"
 						y "-144.000"
 					}
 
@@ -20644,7 +20598,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_ferdonite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -20665,8 +20619,8 @@ Research
 					research_scripts
 					position
 					{
-						x "531.000"
-						y "198.000"
+						x "639.000"
+						y "234.000"
 					}
 
 					research_awards
@@ -20698,7 +20652,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/alien_research_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -20719,8 +20673,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-594.000"
-						y "207.000"
+						x "-693.000"
+						y "0.000"
 					}
 
 					research_awards
@@ -20779,8 +20733,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-171.000"
-						y "-234.000"
+						x "-189.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -20812,7 +20766,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_ferdonite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -20833,8 +20787,8 @@ Research
 					research_scripts
 					position
 					{
-						x "423.000"
-						y "252.000"
+						x "513.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -20866,7 +20820,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_name "gui/menu/research/name/crystalizer_ferdonite"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -20887,8 +20841,8 @@ Research
 					research_scripts
 					position
 					{
-						x "423.000"
-						y "-99.000"
+						x "513.000"
+						y "-144.000"
 					}
 
 					research_awards
@@ -20920,7 +20874,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_name "gui/menu/research/name/crystalizer_ferdonite_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -20941,8 +20895,8 @@ Research
 					research_scripts
 					position
 					{
-						x "423.000"
-						y "90.000"
+						x "513.000"
+						y "81.000"
 					}
 
 					research_awards
@@ -21002,8 +20956,8 @@ Research
 					research_scripts
 					position
 					{
-						x "567.000"
-						y "378.000"
+						x "612.000"
+						y "459.000"
 					}
 
 					research_awards
@@ -21155,6 +21109,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_hazenite_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_upgrade_combat_drones_extreme "
@@ -21172,8 +21133,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-387.000"
-						y "378.000"
+						x "-504.000"
+						y "414.000"
 					}
 
 					research_awards
@@ -21245,37 +21206,6 @@ Research
 					{
 						ResearchScript
 						{
-							script_name "lua/research/limit_increase.lua"
-							script_database
-							{
-								Strings
-								{
-									StringData
-									{
-										value "laboratory"
-										key "limit_name"
-									}
-
-								}
-
-								Floats
-								Vectors
-								Integers
-								{
-									IntData
-									{
-										value "1"
-										key "increase_amount"
-									}
-
-								}
-
-							}
-
-						}
-
-						ResearchScript
-						{
 							script_name "lua/research/requirements/building_exists.lua"
 							script_database
 							{
@@ -21301,7 +21231,7 @@ Research
 					position
 					{
 						x "54.000"
-						y "-189.000"
+						y "-207.000"
 					}
 
 					research_awards
@@ -21339,15 +21269,15 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
-							research_category "gui/menu/research/category_alien"
+							research_name "gui/menu/research/name/ammo_liquid_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/ammo_liquid_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
+							research_name "gui/menu/research/name/crystalizer_tanzanite"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -21367,8 +21297,8 @@ Research
 					research_scripts
 					position
 					{
-						x "864.000"
-						y "-99.000"
+						x "963.000"
+						y "-54.000"
 					}
 
 					research_awards
@@ -21406,15 +21336,15 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
-							research_category "gui/menu/research/category_alien"
+							research_name "gui/menu/research/name/ammo_energy_cell_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/ammo_energy_cell_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
+							research_name "gui/menu/research/name/crystalizer_rhodonite_lvl2"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -21434,8 +21364,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-171.000"
-						y "90.000"
+						x "-189.000"
+						y "72.000"
 					}
 
 					research_awards
@@ -21522,8 +21452,8 @@ Research
 
 					position
 					{
-						x "-297.000"
-						y "-288.000"
+						x "-423.000"
+						y "-342.000"
 					}
 
 					research_awards
@@ -21555,7 +21485,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_name "gui/menu/research/name/crystalizer_ferdonite"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -21568,7 +21498,7 @@ Research
 						{
 							amount "0.000"
 							resource "analysis"
-							count "4000.000"
+							count "2500.000"
 						}
 
 					}
@@ -21576,8 +21506,8 @@ Research
 					research_scripts
 					position
 					{
-						x "531.000"
-						y "-180.000"
+						x "639.000"
+						y "-144.000"
 					}
 
 					research_awards
@@ -21609,7 +21539,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -21630,8 +21560,8 @@ Research
 					research_scripts
 					position
 					{
-						x "864.000"
-						y "252.000"
+						x "963.000"
+						y "324.000"
 					}
 
 					research_awards
@@ -21669,7 +21599,7 @@ Research
 						{
 							amount "0.000"
 							resource "analysis"
-							count "800.000"
+							count "750.000"
 						}
 
 					}
@@ -21717,7 +21647,7 @@ Research
 
 					position
 					{
-						x "531.000"
+						x "639.000"
 						y "-288.000"
 					}
 
@@ -21778,8 +21708,8 @@ Research
 					research_scripts
 					position
 					{
-						x "792.000"
-						y "378.000"
+						x "891.000"
+						y "414.000"
 					}
 
 					research_awards
@@ -21811,7 +21741,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -21832,8 +21762,8 @@ Research
 					research_scripts
 					position
 					{
-						x "792.000"
-						y "252.000"
+						x "891.000"
+						y "270.000"
 					}
 
 					research_awards
@@ -21886,8 +21816,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-198.000"
-						y "306.000"
+						x "-216.000"
+						y "324.000"
 					}
 
 					research_awards
@@ -21919,15 +21849,15 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
-							research_category "gui/menu/research/category_alien"
+							research_name "gui/menu/research/name/ammo_explosive_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/ammo_explosive_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
+							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl2"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -21947,8 +21877,8 @@ Research
 					research_scripts
 					position
 					{
-						x "792.000"
-						y "90.000"
+						x "891.000"
+						y "36.000"
 					}
 
 					research_awards
@@ -22028,7 +21958,7 @@ Research
 
 					position
 					{
-						x "864.000"
+						x "963.000"
 						y "-234.000"
 					}
 
@@ -22075,8 +22005,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-594.000"
-						y "-342.000"
+						x "-693.000"
+						y "-396.000"
 					}
 
 					research_awards
@@ -22229,8 +22159,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-198.000"
-						y "-180.000"
+						x "-216.000"
+						y "-234.000"
 					}
 
 					research_awards
@@ -22316,8 +22246,8 @@ Research
 
 					position
 					{
-						x "792.000"
-						y "-342.000"
+						x "837.000"
+						y "-396.000"
 					}
 
 					research_awards
@@ -22349,7 +22279,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_name "gui/menu/research/name/crystalizer_ferdonite_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -22362,7 +22292,7 @@ Research
 						{
 							amount "0.000"
 							resource "analysis"
-							count "8000.000"
+							count "4000.000"
 						}
 
 					}
@@ -22370,7 +22300,7 @@ Research
 					research_scripts
 					position
 					{
-						x "531.000"
+						x "639.000"
 						y "36.000"
 					}
 
@@ -22424,8 +22354,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-324.000"
-						y "-234.000"
+						x "-387.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -22450,14 +22380,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
-							research_category "gui/menu/research/category_alien"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/resource_handling_tanzanite"
+							research_name "gui/menu/research/name/crystalizer_tanzanite"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -22478,7 +22401,7 @@ Research
 					research_scripts
 					position
 					{
-						x "504.000"
+						x "774.000"
 						y "-99.000"
 					}
 
@@ -22589,7 +22512,7 @@ Research
 					position
 					{
 						x "54.000"
-						y "306.000"
+						y "378.000"
 					}
 
 					research_awards
@@ -22648,8 +22571,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-594.000"
-						y "-135.000"
+						x "-693.000"
+						y "-189.000"
 					}
 
 					research_awards
@@ -22701,7 +22624,7 @@ Research
 					research_scripts
 					position
 					{
-						x "423.000"
+						x "513.000"
 						y "-288.000"
 					}
 
@@ -22734,7 +22657,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_ferdonite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -22755,8 +22678,8 @@ Research
 					research_scripts
 					position
 					{
-						x "450.000"
-						y "198.000"
+						x "585.000"
+						y "234.000"
 					}
 
 					research_awards
@@ -22848,8 +22771,8 @@ Research
 
 					position
 					{
-						x "468.000"
-						y "-342.000"
+						x "549.000"
+						y "-396.000"
 					}
 
 					research_awards
@@ -22920,8 +22843,8 @@ Research
 
 					position
 					{
-						x "306.000"
-						y "-234.000"
+						x "270.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -22998,8 +22921,8 @@ Research
 
 					position
 					{
-						x "603.000"
-						y "-342.000"
+						x "135.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -23036,7 +22959,7 @@ Research
 					position
 					{
 						x "54.000"
-						y "-387.000"
+						y "-441.000"
 					}
 
 					research_awards
@@ -23098,8 +23021,8 @@ Research
 
 					position
 					{
-						x "126.000"
-						y "-342.000"
+						x "225.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -23137,7 +23060,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -23158,8 +23081,8 @@ Research
 					research_scripts
 					position
 					{
-						x "684.000"
-						y "252.000"
+						x "801.000"
+						y "270.000"
 					}
 
 					research_awards
@@ -23230,8 +23153,8 @@ Research
 
 					position
 					{
-						x "711.000"
-						y "-342.000"
+						x "180.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -23317,8 +23240,8 @@ Research
 
 					position
 					{
-						x "531.000"
-						y "-342.000"
+						x "270.000"
+						y "-396.000"
 					}
 
 					research_awards
@@ -23364,8 +23287,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-414.000"
-						y "-288.000"
+						x "-477.000"
+						y "-342.000"
 					}
 
 					research_awards
@@ -23419,7 +23342,7 @@ Research
 					position
 					{
 						x "306.000"
-						y "90.000"
+						y "72.000"
 					}
 
 					research_awards
@@ -23583,7 +23506,7 @@ Research
 					position
 					{
 						x "54.000"
-						y "162.000"
+						y "180.000"
 					}
 
 					research_awards
@@ -23675,8 +23598,8 @@ Research
 
 					position
 					{
-						x "-126.000"
-						y "-306.000"
+						x "-153.000"
+						y "-396.000"
 					}
 
 					research_awards
@@ -23762,8 +23685,8 @@ Research
 
 					position
 					{
-						x "-216.000"
-						y "-234.000"
+						x "-243.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -23809,8 +23732,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-360.000"
-						y "-288.000"
+						x "225.000"
+						y "-396.000"
 					}
 
 					research_awards
@@ -23874,8 +23797,8 @@ Research
 					research_scripts
 					position
 					{
-						x "171.000"
-						y "-342.000"
+						x "180.000"
+						y "-396.000"
 					}
 
 					research_awards
@@ -23947,7 +23870,7 @@ Research
 					position
 					{
 						x "306.000"
-						y "252.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -24033,8 +23956,8 @@ Research
 
 					position
 					{
-						x "-387.000"
-						y "-342.000"
+						x "-450.000"
+						y "-396.000"
 					}
 
 					research_awards
@@ -24087,8 +24010,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-360.000"
-						y "306.000"
+						x "-423.000"
+						y "324.000"
 					}
 
 					research_awards
@@ -24175,8 +24098,8 @@ Research
 
 					position
 					{
-						x "792.000"
-						y "-234.000"
+						x "891.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -24262,8 +24185,8 @@ Research
 
 					position
 					{
-						x "9.000"
-						y "90.000"
+						x "-36.000"
+						y "72.000"
 					}
 
 					research_awards
@@ -24295,7 +24218,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_hazenite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -24316,8 +24239,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-324.000"
-						y "252.000"
+						x "-387.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -24349,15 +24272,15 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
-							research_category "gui/menu/research/category_alien"
+							research_name "gui/menu/research/name/ammo_energy_cell_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/ammo_energy_cell_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
+							research_name "gui/menu/research/name/crystalizer_hazenite_lvl2"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -24377,8 +24300,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-324.000"
-						y "90.000"
+						x "-387.000"
+						y "72.000"
 					}
 
 					research_awards
@@ -24438,8 +24361,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-324.000"
-						y "378.000"
+						x "-387.000"
+						y "414.000"
 					}
 
 					research_awards
@@ -24486,7 +24409,7 @@ Research
 					position
 					{
 						x "99.000"
-						y "-288.000"
+						y "-342.000"
 					}
 
 					research_awards
@@ -24557,8 +24480,8 @@ Research
 
 					position
 					{
-						x "225.000"
-						y "-342.000"
+						x "315.000"
+						y "-396.000"
 					}
 
 					research_awards
@@ -24611,8 +24534,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-270.000"
-						y "-234.000"
+						x "-288.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -24644,15 +24567,15 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
-							research_category "gui/menu/research/category_alien"
+							research_name "gui/menu/research/name/ammo_liquid_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/ammo_liquid_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
+							research_name "gui/menu/research/name/crystalizer_rhodonite"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -24672,7 +24595,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-270.000"
+						x "-288.000"
 						y "-99.000"
 					}
 
@@ -24705,7 +24628,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_name "gui/menu/research/name/crystalizer_rhodonite_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -24726,8 +24649,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-270.000"
-						y "90.000"
+						x "-288.000"
+						y "72.000"
 					}
 
 					research_awards
@@ -24759,15 +24682,15 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
-							research_category "gui/menu/research/category_alien"
+							research_name "gui/menu/research/name/ammo_liquid_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/ammo_liquid_lvl3"
-							research_category "gui/menu/research/category_base_buildings"
+							research_name "gui/menu/research/name/crystalizer_rhodonite_lvl3"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -24787,8 +24710,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-270.000"
-						y "252.000"
+						x "-288.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -24841,8 +24764,8 @@ Research
 					research_scripts
 					position
 					{
-						x "369.000"
-						y "-234.000"
+						x "459.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -24874,15 +24797,15 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
-							research_category "gui/menu/research/category_alien"
+							research_name "gui/menu/research/name/ammo_liquid_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/ammo_liquid_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
+							research_name "gui/menu/research/name/crystalizer_ferdonite"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -24902,8 +24825,8 @@ Research
 					research_scripts
 					position
 					{
-						x "369.000"
-						y "-99.000"
+						x "459.000"
+						y "-144.000"
 					}
 
 					research_awards
@@ -24939,6 +24862,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_ferdonite_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_cryogenic_atomizer_superior"
@@ -24956,8 +24886,8 @@ Research
 					research_scripts
 					position
 					{
-						x "369.000"
-						y "90.000"
+						x "459.000"
+						y "81.000"
 					}
 
 					research_awards
@@ -24989,15 +24919,15 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
-							research_category "gui/menu/research/category_alien"
+							research_name "gui/menu/research/name/ammo_liquid_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/ammo_liquid_lvl3"
-							research_category "gui/menu/research/category_base_buildings"
+							research_name "gui/menu/research/name/crystalizer_ferdonite_lvl3"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -25017,8 +24947,8 @@ Research
 					research_scripts
 					position
 					{
-						x "369.000"
-						y "252.000"
+						x "459.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -25064,8 +24994,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-657.000"
-						y "-288.000"
+						x "-891.000"
+						y "-342.000"
 					}
 
 					research_awards
@@ -25102,8 +25032,15 @@ Research
 
 						ResearchNodeRequirement
 						{
+							render_line "0"
+							research_name "gui/menu/research/name/defensive_buildings_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_name "gui/menu/research/name/alien_research_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -25124,8 +25061,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-657.000"
-						y "-99.000"
+						x "-891.000"
+						y "0.000"
 					}
 
 					research_awards
@@ -25161,6 +25098,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/defensive_buildings_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/towers_morphium_lvl3"
@@ -25178,8 +25122,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-657.000"
-						y "207.000"
+						x "-891.000"
+						y "198.000"
 					}
 
 					research_awards
@@ -25225,7 +25169,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-702.000"
+						x "-927.000"
 						y "-234.000"
 					}
 
@@ -25279,8 +25223,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-702.000"
-						y "-45.000"
+						x "-927.000"
+						y "90.000"
 					}
 
 					research_awards
@@ -25333,8 +25277,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-702.000"
-						y "252.000"
+						x "-927.000"
+						y "324.000"
 					}
 
 					research_awards
@@ -25363,6 +25307,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/towers_morphium_lvl1"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/energy_walls_lvl1"
@@ -25380,7 +25331,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-783.000"
+						x "-954.000"
 						y "-288.000"
 					}
 
@@ -25437,7 +25388,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_name "gui/menu/research/name/towers_morphium_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -25458,8 +25409,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-783.000"
-						y "90.000"
+						x "-954.000"
+						y "36.000"
 					}
 
 					research_awards
@@ -25515,7 +25466,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/towers_morphium_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -25536,8 +25487,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-783.000"
-						y "252.000"
+						x "-954.000"
+						y "243.000"
 					}
 
 					research_awards
@@ -25590,6 +25541,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_rhodonite"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/tower_gatling_laser_lvl1"
@@ -25607,8 +25565,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-225.000"
-						y "-99.000"
+						x "-243.000"
+						y "-144.000"
 					}
 
 					research_awards
@@ -25644,6 +25602,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_rhodonite_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/tower_gatling_laser_lvl2"
@@ -25661,8 +25626,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-225.000"
-						y "252.000"
+						x "-243.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -25715,8 +25680,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-225.000"
-						y "378.000"
+						x "-243.000"
+						y "414.000"
 					}
 
 					research_awards
@@ -25762,8 +25727,8 @@ Research
 					research_scripts
 					position
 					{
-						x "819.000"
-						y "-180.000"
+						x "918.000"
+						y "-234.000"
 					}
 
 					research_awards
@@ -25795,7 +25760,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_name "gui/menu/research/name/crystalizer_tanzanite"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -25816,7 +25781,7 @@ Research
 					research_scripts
 					position
 					{
-						x "819.000"
+						x "918.000"
 						y "-99.000"
 					}
 
@@ -25870,8 +25835,8 @@ Research
 					research_scripts
 					position
 					{
-						x "819.000"
-						y "162.000"
+						x "918.000"
+						y "108.000"
 					}
 
 					research_awards
@@ -25924,8 +25889,8 @@ Research
 					research_scripts
 					position
 					{
-						x "819.000"
-						y "306.000"
+						x "918.000"
+						y "324.000"
 					}
 
 					research_awards
@@ -25971,8 +25936,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-837.000"
-						y "-288.000"
+						x "-1053.000"
+						y "-342.000"
 					}
 
 					research_awards
@@ -26032,6 +25997,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/defensive_buildings_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/wall_crystal_lvl2"
@@ -26049,8 +26021,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-837.000"
-						y "90.000"
+						x "-1053.000"
+						y "36.000"
 					}
 
 					research_awards
@@ -26110,6 +26082,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/defensive_buildings_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/wall_crystal_lvl3"
@@ -26127,8 +26106,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-837.000"
-						y "252.000"
+						x "-1053.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -26223,8 +26202,8 @@ Research
 
 					position
 					{
-						x "-297.000"
-						y "-180.000"
+						x "-315.000"
+						y "-234.000"
 					}
 
 					research_awards
@@ -26284,8 +26263,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-297.000"
-						y "-45.000"
+						x "-315.000"
+						y "-54.000"
 					}
 
 					research_awards
@@ -26338,8 +26317,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-297.000"
-						y "162.000"
+						x "-315.000"
+						y "117.000"
 					}
 
 					research_awards
@@ -26399,8 +26378,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-297.000"
-						y "306.000"
+						x "-315.000"
+						y "324.000"
 					}
 
 					research_awards
@@ -26471,8 +26450,8 @@ Research
 
 					position
 					{
-						x "396.000"
-						y "-180.000"
+						x "486.000"
+						y "-234.000"
 					}
 
 					research_awards
@@ -26532,8 +26511,8 @@ Research
 					research_scripts
 					position
 					{
-						x "396.000"
-						y "-45.000"
+						x "486.000"
+						y "-54.000"
 					}
 
 					research_awards
@@ -26586,8 +26565,8 @@ Research
 					research_scripts
 					position
 					{
-						x "396.000"
-						y "162.000"
+						x "486.000"
+						y "126.000"
 					}
 
 					research_awards
@@ -26647,8 +26626,8 @@ Research
 					research_scripts
 					position
 					{
-						x "396.000"
-						y "306.000"
+						x "486.000"
+						y "324.000"
 					}
 
 					research_awards
@@ -26719,8 +26698,8 @@ Research
 
 					position
 					{
-						x "909.000"
-						y "-234.000"
+						x "990.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -26752,15 +26731,15 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
-							research_category "gui/menu/research/category_alien"
+							research_name "gui/menu/research/name/ammo_liquid_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/ammo_liquid_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
+							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl2"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -26780,8 +26759,8 @@ Research
 					research_scripts
 					position
 					{
-						x "909.000"
-						y "90.000"
+						x "990.000"
+						y "36.000"
 					}
 
 					research_awards
@@ -26813,7 +26792,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -26834,8 +26813,8 @@ Research
 					research_scripts
 					position
 					{
-						x "909.000"
-						y "252.000"
+						x "990.000"
+						y "270.000"
 					}
 
 					research_awards
@@ -26895,8 +26874,8 @@ Research
 					research_scripts
 					position
 					{
-						x "909.000"
-						y "378.000"
+						x "990.000"
+						y "414.000"
 					}
 
 					research_awards
@@ -26921,14 +26900,14 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_name "gui/menu/research/name/ionizer"
 							research_category "gui/menu/research/category_alien"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/ionizer"
+							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -26949,8 +26928,8 @@ Research
 					research_scripts
 					position
 					{
-						x "504.000"
-						y "99.000"
+						x "774.000"
+						y "108.000"
 					}
 
 					research_awards
@@ -26982,7 +26961,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -27003,8 +26982,8 @@ Research
 					research_scripts
 					position
 					{
-						x "504.000"
-						y "252.000"
+						x "774.000"
+						y "324.000"
 					}
 
 					research_awards
@@ -27058,7 +27037,7 @@ Research
 					position
 					{
 						x "99.000"
-						y "90.000"
+						y "72.000"
 					}
 
 					research_awards
@@ -27112,7 +27091,7 @@ Research
 					position
 					{
 						x "99.000"
-						y "252.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -27158,8 +27137,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-621.000"
-						y "-234.000"
+						x "-747.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -27167,12 +27146,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/resources/nitric_acid_refinery"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/reagent_refinery"
 							is_visible "1"
 						}
 
@@ -27197,7 +27170,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_name "gui/menu/research/name/alien_flora_cultivation_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -27218,8 +27191,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-621.000"
-						y "-45.000"
+						x "-747.000"
+						y "-54.000"
 					}
 
 					research_awards
@@ -27227,12 +27200,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/resources/nitric_acid_refinery_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/reagent_refinery_lvl_2"
 							is_visible "1"
 						}
 
@@ -27250,13 +27217,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_flora_cultivation_lvl1"
-							research_category "gui/menu/research/category_alien"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/plasma_physics"
 							research_category "gui/menu/research/category_base_buildings"
 						}
@@ -27266,6 +27226,13 @@ Research
 							render_line "0"
 							research_name "gui/menu/research/name/resource_handling_palladium"
 							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_flora_cultivation_lvl3"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -27325,8 +27292,8 @@ Research
 
 					position
 					{
-						x "-495.000"
-						y "-180.000"
+						x "-729.000"
+						y "90.000"
 					}
 
 					research_awards
@@ -27356,16 +27323,23 @@ Research
 					{
 						ResearchNodeRequirement
 						{
+							render_line "0"
+							research_name "gui/menu/research/name/resource_handling_titanium"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
 							render_line "1"
-							research_name "gui/menu/research/name/bio_processing"
+							research_name "gui/menu/research/name/bio_processing_lvl_2"
 							research_category "gui/menu/research/category_alien"
 						}
 
 						ResearchNodeRequirement
 						{
-							render_line "0"
-							research_name "gui/menu/research/name/resource_handling_titanium"
-							research_category "gui/menu/research/category_base_buildings"
+							render_line "1"
+							research_name "gui/menu/research/name/alien_flora_cultivation_lvl3"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -27425,8 +27399,8 @@ Research
 
 					position
 					{
-						x "-675.000"
-						y "-180.000"
+						x "-774.000"
+						y "90.000"
 					}
 
 					research_awards
@@ -27456,16 +27430,23 @@ Research
 					{
 						ResearchNodeRequirement
 						{
+							render_line "0"
+							research_name "gui/menu/research/name/resource_handling_uranium"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
 							render_line "1"
-							research_name "gui/menu/research/name/bio_processing"
+							research_name "gui/menu/research/name/bio_processing_lvl_2"
 							research_category "gui/menu/research/category_alien"
 						}
 
 						ResearchNodeRequirement
 						{
-							render_line "0"
-							research_name "gui/menu/research/name/resource_handling_uranium"
-							research_category "gui/menu/research/category_base_buildings"
+							render_line "1"
+							research_name "gui/menu/research/name/alien_flora_cultivation_lvl3"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -27525,8 +27506,8 @@ Research
 
 					position
 					{
-						x "-756.000"
-						y "-180.000"
+						x "-819.000"
+						y "90.000"
 					}
 
 					research_awards
@@ -27568,6 +27549,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_flora_cultivation_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/bio_processing_lvl_3"
@@ -27585,8 +27573,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-621.000"
-						y "162.000"
+						x "-747.000"
+						y "144.000"
 					}
 
 					research_awards
@@ -27594,12 +27582,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/resources/nitric_acid_refinery_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/reagent_refinery_lvl_3"
 							is_visible "1"
 						}
 
@@ -27626,6 +27608,13 @@ Research
 							render_line "0"
 							research_name "gui/menu/research/name/resource_handling_cobalt"
 							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_flora_cultivation_lvl2"
+							research_category "gui/menu/research/category_alien"
 						}
 
 					}
@@ -27685,8 +27674,8 @@ Research
 
 					position
 					{
-						x "-567.000"
-						y "-180.000"
+						x "-774.000"
+						y "-144.000"
 					}
 
 					research_awards
@@ -27721,6 +27710,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_upgrade_energy_armor_lvl_2"
@@ -27738,8 +27734,8 @@ Research
 					research_scripts
 					position
 					{
-						x "711.000"
-						y "-180.000"
+						x "180.000"
+						y "-144.000"
 					}
 
 					research_awards
@@ -27784,7 +27780,7 @@ Research
 						{
 							amount "0.000"
 							resource "analysis"
-							count "5000.000"
+							count "3500.000"
 						}
 
 					}
@@ -27792,7 +27788,7 @@ Research
 					research_scripts
 					position
 					{
-						x "711.000"
+						x "180.000"
 						y "36.000"
 					}
 
@@ -27846,8 +27842,8 @@ Research
 					research_scripts
 					position
 					{
-						x "711.000"
-						y "198.000"
+						x "180.000"
+						y "234.000"
 					}
 
 					research_awards
@@ -27876,6 +27872,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_upgrade_reflective_armor_lvl_2"
@@ -27893,8 +27896,8 @@ Research
 					research_scripts
 					position
 					{
-						x "603.000"
-						y "-180.000"
+						x "135.000"
+						y "-144.000"
 					}
 
 					research_awards
@@ -27939,7 +27942,7 @@ Research
 						{
 							amount "0.000"
 							resource "analysis"
-							count "5000.000"
+							count "3500.000"
 						}
 
 					}
@@ -27947,7 +27950,7 @@ Research
 					research_scripts
 					position
 					{
-						x "603.000"
+						x "135.000"
 						y "36.000"
 					}
 
@@ -28001,8 +28004,8 @@ Research
 					research_scripts
 					position
 					{
-						x "603.000"
-						y "198.000"
+						x "135.000"
+						y "234.000"
 					}
 
 					research_awards
@@ -28031,6 +28034,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_upgrade_anti_corrosive_armor_lvl_2"
@@ -28048,8 +28058,8 @@ Research
 					research_scripts
 					position
 					{
-						x "126.000"
-						y "-180.000"
+						x "225.000"
+						y "-144.000"
 					}
 
 					research_awards
@@ -28094,7 +28104,7 @@ Research
 						{
 							amount "0.000"
 							resource "analysis"
-							count "5000.000"
+							count "3500.000"
 						}
 
 					}
@@ -28102,7 +28112,7 @@ Research
 					research_scripts
 					position
 					{
-						x "126.000"
+						x "225.000"
 						y "36.000"
 					}
 
@@ -28125,13 +28135,6 @@ Research
 					requirement_tooltip "gui/menu/research/tooltip_requirement_objective"
 					requirements
 					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/mech_upgrade_anti_corrosive_armor_lvl_2"
-							research_category "gui/menu/research/category_alien"
-						}
-
 						ResearchNodeRequirement
 						{
 							render_line "1"
@@ -28163,8 +28166,8 @@ Research
 					research_scripts
 					position
 					{
-						x "126.000"
-						y "198.000"
+						x "225.000"
+						y "234.000"
 					}
 
 					research_awards
@@ -28193,6 +28196,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_upgrade_fireproof_armor_lvl_2"
@@ -28210,8 +28220,8 @@ Research
 					research_scripts
 					position
 					{
-						x "342.000"
-						y "-180.000"
+						x "270.000"
+						y "-144.000"
 					}
 
 					research_awards
@@ -28240,6 +28250,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_upgrade_fireproof_armor_lvl_3"
@@ -28249,7 +28266,7 @@ Research
 						{
 							amount "0.000"
 							resource "analysis"
-							count "5000.000"
+							count "3500.000"
 						}
 
 					}
@@ -28257,7 +28274,7 @@ Research
 					research_scripts
 					position
 					{
-						x "342.000"
+						x "270.000"
 						y "36.000"
 					}
 
@@ -28287,6 +28304,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_upgrade_fireproof_armor_lvl_4"
@@ -28304,8 +28328,8 @@ Research
 					research_scripts
 					position
 					{
-						x "342.000"
-						y "198.000"
+						x "270.000"
+						y "234.000"
 					}
 
 					research_awards
@@ -28351,8 +28375,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-459.000"
-						y "-288.000"
+						x "-531.000"
+						y "-342.000"
 					}
 
 					research_awards
@@ -28390,7 +28414,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_name "gui/menu/research/name/crystalizer_hazenite"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -28411,7 +28435,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-459.000"
+						x "-531.000"
 						y "-144.000"
 					}
 
@@ -28444,7 +28468,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_name "gui/menu/research/name/crystalizer_hazenite_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -28465,8 +28489,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-459.000"
-						y "90.000"
+						x "-531.000"
+						y "45.000"
 					}
 
 					research_awards
@@ -28519,8 +28543,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-522.000"
-						y "-45.000"
+						x "-36.000"
+						y "-99.000"
 					}
 
 					research_awards
@@ -28551,9 +28575,9 @@ Research
 
 						ResearchNodeRequirement
 						{
-							render_line "1"
-							research_name "gui/menu/research/name/alien_flora_cultivation_lvl1"
-							research_category "gui/menu/research/category_alien"
+							render_line "0"
+							research_name "gui/menu/research/name/well_contruction"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -28573,8 +28597,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-522.000"
-						y "-234.000"
+						x "-36.000"
+						y "-342.000"
 					}
 
 					research_awards
@@ -28627,8 +28651,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-549.000"
-						y "-288.000"
+						x "-612.000"
+						y "-342.000"
 					}
 
 					research_awards
@@ -28665,13 +28689,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl1"
-							research_category "gui/menu/research/category_alien"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/biomass_processing"
 							research_category "gui/menu/research/category_alien"
 						}
@@ -28700,7 +28717,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-549.000"
+						x "-612.000"
 						y "-99.000"
 					}
 
@@ -28753,8 +28770,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-756.000"
-						y "-234.000"
+						x "-855.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -28806,8 +28823,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-477.000"
-						y "-234.000"
+						x "-657.000"
+						y "-342.000"
 					}
 
 					research_awards
@@ -28836,6 +28853,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_flora_cultivation_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/bio_reactive_compounds_lvl_2"
@@ -28853,7 +28877,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-477.000"
+						x "-657.000"
 						y "-99.000"
 					}
 
@@ -28883,6 +28907,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_flora_cultivation_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/bio_reactive_compounds_lvl_3"
@@ -28900,8 +28931,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-477.000"
-						y "162.000"
+						x "-657.000"
+						y "144.000"
 					}
 
 					research_awards
@@ -28947,8 +28978,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-891.000"
-						y "-288.000"
+						x "-1107.000"
+						y "-342.000"
 					}
 
 					research_awards
@@ -28996,6 +29027,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/defensive_buildings_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/wall_vine_lvl2"
@@ -29013,8 +29051,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-891.000"
-						y "90.000"
+						x "-1107.000"
+						y "36.000"
 					}
 
 					research_awards
@@ -29062,6 +29100,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/defensive_buildings_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/wall_vine_lvl3"
@@ -29079,8 +29124,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-891.000"
-						y "252.000"
+						x "-1107.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -29138,8 +29183,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-945.000"
-						y "-288.000"
+						x "-1161.000"
+						y "-342.000"
 					}
 
 					research_awards
@@ -29198,8 +29243,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-945.000"
-						y "-90.000"
+						x "-1161.000"
+						y "-99.000"
 					}
 
 					research_awards
@@ -29252,8 +29297,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-945.000"
-						y "252.000"
+						x "-1161.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -29299,8 +29344,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-990.000"
-						y "-234.000"
+						x "-1206.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -29359,8 +29404,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-990.000"
-						y "-45.000"
+						x "-1206.000"
+						y "-54.000"
 					}
 
 					research_awards
@@ -29413,8 +29458,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-990.000"
-						y "306.000"
+						x "-1206.000"
+						y "324.000"
 					}
 
 					research_awards
@@ -29461,7 +29506,7 @@ Research
 					position
 					{
 						x "-126.000"
-						y "-234.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -29507,8 +29552,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-72.000"
-						y "-234.000"
+						x "-81.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -29540,7 +29585,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_name "gui/menu/research/name/crystalizer_rhodonite"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -29561,8 +29606,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-72.000"
-						y "-99.000"
+						x "-81.000"
+						y "-144.000"
 					}
 
 					research_awards
@@ -29594,7 +29639,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_name "gui/menu/research/name/crystalizer_rhodonite_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -29615,8 +29660,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-72.000"
-						y "90.000"
+						x "-81.000"
+						y "72.000"
 					}
 
 					research_awards
@@ -29648,7 +29693,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_rhodonite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -29669,8 +29714,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-72.000"
-						y "252.000"
+						x "-81.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -29702,7 +29747,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_name "gui/menu/research/name/crystalizer_rhodonite_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -29724,7 +29769,7 @@ Research
 					position
 					{
 						x "-126.000"
-						y "90.000"
+						y "72.000"
 					}
 
 					research_awards
@@ -29756,7 +29801,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_rhodonite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -29778,7 +29823,7 @@ Research
 					position
 					{
 						x "-126.000"
-						y "252.000"
+						y "279.000"
 					}
 
 					research_awards
@@ -29832,7 +29877,7 @@ Research
 					position
 					{
 						x "-126.000"
-						y "378.000"
+						y "414.000"
 					}
 
 					research_awards
@@ -29903,8 +29948,8 @@ Research
 
 					position
 					{
-						x "171.000"
-						y "-234.000"
+						x "414.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -29936,7 +29981,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_name "gui/menu/research/name/crystalizer_ferdonite"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -29957,8 +30002,8 @@ Research
 					research_scripts
 					position
 					{
-						x "171.000"
-						y "-99.000"
+						x "414.000"
+						y "-144.000"
 					}
 
 					research_awards
@@ -30011,8 +30056,8 @@ Research
 					research_scripts
 					position
 					{
-						x "171.000"
-						y "90.000"
+						x "414.000"
+						y "36.000"
 					}
 
 					research_awards
@@ -30044,7 +30089,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_ferdonite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -30065,8 +30110,8 @@ Research
 					research_scripts
 					position
 					{
-						x "171.000"
-						y "252.000"
+						x "414.000"
+						y "234.000"
 					}
 
 					research_awards
@@ -30112,8 +30157,8 @@ Research
 					research_scripts
 					position
 					{
-						x "639.000"
-						y "-234.000"
+						x "747.000"
+						y "-288.000"
 					}
 
 					research_awards
@@ -30145,7 +30190,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl2"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -30166,8 +30211,8 @@ Research
 					research_scripts
 					position
 					{
-						x "639.000"
-						y "90.000"
+						x "747.000"
+						y "36.000"
 					}
 
 					research_awards
@@ -30199,7 +30244,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl3"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -30220,8 +30265,8 @@ Research
 					research_scripts
 					position
 					{
-						x "639.000"
-						y "252.000"
+						x "747.000"
+						y "270.000"
 					}
 
 					research_awards
@@ -30274,8 +30319,8 @@ Research
 					research_scripts
 					position
 					{
-						x "639.000"
-						y "378.000"
+						x "747.000"
+						y "414.000"
 					}
 
 					research_awards
@@ -30321,8 +30366,8 @@ Research
 					research_scripts
 					position
 					{
-						x "765.000"
-						y "-180.000"
+						x "864.000"
+						y "-234.000"
 					}
 
 					research_awards
@@ -30354,7 +30399,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_name "gui/menu/research/name/crystalizer_tanzanite"
 							research_category "gui/menu/research/category_alien"
 						}
 
@@ -30375,7 +30420,7 @@ Research
 					research_scripts
 					position
 					{
-						x "765.000"
+						x "864.000"
 						y "-99.000"
 					}
 
@@ -30429,8 +30474,8 @@ Research
 					research_scripts
 					position
 					{
-						x "765.000"
-						y "162.000"
+						x "864.000"
+						y "108.000"
 					}
 
 					research_awards
@@ -30483,8 +30528,8 @@ Research
 					research_scripts
 					position
 					{
-						x "765.000"
-						y "306.000"
+						x "864.000"
+						y "324.000"
 					}
 
 					research_awards
@@ -30530,7 +30575,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1089.000"
+						x "-1305.000"
 						y "-180.000"
 					}
 
@@ -30577,7 +30622,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1089.000"
+						x "-1305.000"
 						y "-135.000"
 					}
 
@@ -30624,8 +30669,8 @@ Research
 					research_scripts
 					position
 					{
-						x "270.000"
-						y "-45.000"
+						x "333.000"
+						y "-54.000"
 					}
 
 					research_awards
@@ -30678,8 +30723,8 @@ Research
 					research_scripts
 					position
 					{
-						x "270.000"
-						y "162.000"
+						x "333.000"
+						y "117.000"
 					}
 
 					research_awards
@@ -30732,8 +30777,8 @@ Research
 					research_scripts
 					position
 					{
-						x "270.000"
-						y "306.000"
+						x "333.000"
+						y "324.000"
 					}
 
 					research_awards
@@ -30787,7 +30832,7 @@ Research
 					position
 					{
 						x "9.000"
-						y "-288.000"
+						y "-342.000"
 					}
 
 					research_awards
@@ -30841,7 +30886,7 @@ Research
 					position
 					{
 						x "9.000"
-						y "-99.000"
+						y "-144.000"
 					}
 
 					research_awards
@@ -30948,8 +30993,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-918.000"
-						y "-180.000"
+						x "-1134.000"
+						y "-234.000"
 					}
 
 					research_awards
@@ -30995,7 +31040,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1035.000"
+						x "-1251.000"
 						y "-180.000"
 					}
 
@@ -31042,7 +31087,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1035.000"
+						x "-1251.000"
 						y "-135.000"
 					}
 
@@ -31059,6 +31104,647 @@ Research
 					icon "gui/menu/research/icons/towers_basic"
 				}
 
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_handling_ferdonite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/crystalizer_ferdonite"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "1500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "549.000"
+						y "-189.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/crystalizer_ferdonite"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_ferdonite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/crystalizer_ferdonite_lvl2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "3000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "549.000"
+						y "0.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/crystalizer_ferdonite_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_ferdonite_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/crystalizer_ferdonite_lvl3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "5000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "549.000"
+						y "198.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/crystalizer_ferdonite_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_handling_tanzanite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/crystalizer_tanzanite"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "1500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "837.000"
+						y "-189.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/crystalizer_tanzanite"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_tanzanite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/crystalizer_tanzanite_lvl2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "3000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "837.000"
+						y "0.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/crystalizer_tanzanite_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/crystalizer_tanzanite_lvl3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "5000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "837.000"
+						y "198.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/crystalizer_tanzanite_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_handling_rhodonite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/crystalizer_rhodonite"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "1500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-153.000"
+						y "-189.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/crystalizer_rhodonite"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_handling_hazenite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/crystalizer_hazenite"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "1500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-450.000"
+						y "-189.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/crystalizer_hazenite"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_hazenite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/crystalizer_hazenite_lvl2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "3000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-450.000"
+						y "0.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/crystalizer_hazenite_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_hazenite_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/crystalizer_hazenite_lvl3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "5000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-450.000"
+						y "198.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/crystalizer_hazenite_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_rhodonite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/crystalizer_rhodonite_lvl2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "3000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-153.000"
+						y "0.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/crystalizer_rhodonite_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_rhodonite_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl4"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/crystalizer_rhodonite_lvl3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "5000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-153.000"
+						y "198.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/crystalizer_rhodonite_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling"
+				}
+
 			}
 
 		}
@@ -31066,7 +31752,7 @@ Research
 	}
 
 	type
-	editor "6197"
-	version "146"
+	editor "6380"
+	version "149"
 }
 

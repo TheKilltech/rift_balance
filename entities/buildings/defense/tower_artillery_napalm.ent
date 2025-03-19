@@ -20,8 +20,8 @@ EntityBlueprint
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		condition			"BIOME"	
-		condition_value		"magma,jungle,desert,acid,metallic,legacy_maps"	
+		condition			"NOT_BIOME"	
+		condition_value		"caverns"	
 
 		costs
 		{
@@ -69,7 +69,7 @@ EntityBlueprint
 			{
 				resource 	"magma"
 				value 		"25"
-				family		"fuel"
+				family		"warhead"
 				attachment	"att_in_1"
 			}
 			
