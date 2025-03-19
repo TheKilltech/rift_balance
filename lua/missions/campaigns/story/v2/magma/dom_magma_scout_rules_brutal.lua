@@ -1,18 +1,10 @@
 return function()
-    local rules = require("lua/missions/campaigns/story/v2/magma/dom_magma_scout_rules_hard.lua")()
+    local rules  = require("lua/missions/campaigns/story/v2/magma/dom_magma_scout_rules_hard.lua")()
+	local helper = require( "lua/missions/v2/waves_gen.lua" )
 	
-	rules.idleTime = 
-	{			
-		450,  -- difficulty level 1
-		600,  -- difficulty level 2
-		660,  -- difficulty level 3
-		660,  -- difficulty level 4	
-		720,  -- difficulty level 5	
-		720,  -- difficulty level 6	
-		780,  -- difficulty level 7
-		1200,  -- difficulty level 8	
-		1200,  -- difficulty level 9	
-	}
+	rules.timeToNextDifficultyLevel = helper:Default_TimeToNextDifficultyLevel( "scout", "brutal", 1)
+	rules.prepareSpawnTime          = helper:Default_PrepareSpawnTime(          "scout", "brutal", 1)
+	rules.idleTime                  = helper:Default_IdleTime(                  "scout", "brutal", 1)
 	
 	rules.waveRepeatChances = 
 	{
@@ -36,16 +28,5 @@ return function()
 	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 4, 5 },   ids = { 1, 2, 3 },   suffixes = { "", },        },   rules.waves)
 	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    7, 8, 9},  biomes = { "magma" }, levels = { 2, 3 },   ids = { 1, 2 },      suffixes = { "alpha" },    },   rules.waves)
 	
-
-	rules.extraWaves = 
-	{
-	
-	}
-
-	rules.bosses = 
-	{
-
-	}
-
     return rules;
 end

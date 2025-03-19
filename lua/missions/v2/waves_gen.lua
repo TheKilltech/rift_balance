@@ -79,6 +79,13 @@ function wave_gen:PrepareDefaultRules(rules, missionType, difficulty)
 	rules.waveChanceRerollSpawn      = 15  -- chance for rerolled attack wave to change its spawning point
 	rules.waveChanceReroll           = 30  -- chance to reroll and replace an attack wave from its original wave pool
 	
+	rules.addResourcesOnRunOut = { }
+	rules.buildingsUpgradeStartsLogic = { }
+	
+	rules.waves = {}
+	rules.extraWaves = { }
+	rules.bosses = { }
+	
 	return rules
 end
 
@@ -140,15 +147,15 @@ function wave_gen:Default_TimeToNextDifficultyLevel(missionType, difficulty, fac
 		}
 	elseif (missionType == "scout" or missionType == "temp") then
 		times = {
-			200, -- difficulty level 1
-			200, -- difficulty level 2
-			200, -- difficulty level 3	
+			600, -- difficulty level 1
+			600, -- difficulty level 2
+			600, -- difficulty level 3	
 			1200, -- difficulty level 4
-			1200, -- difficulty level 5
-			1500, -- difficulty level 6
-			2400, -- difficulty level 7
-			3600, -- difficulty level 8
-			3600, -- difficulty level 9
+			1800, -- difficulty level 5
+			2400, -- difficulty level 6
+			3600, -- difficulty level 7
+			5200, -- difficulty level 8
+			7200, -- difficulty level 9
 		}
 	else 
 		times = {			
