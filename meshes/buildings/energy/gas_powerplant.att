@@ -10,7 +10,7 @@ Attachments
 	{
 		name "att_in_1"
 		offset "-3.00 0.40 -3.00"
-		orientation "-180.00 -0.00 0.00"
+		orientation "180.00 -0.00 0.00"
 	}
 
 	Attachment
@@ -70,12 +70,6 @@ Attachments
 
 	Attachment
 	{
-		name "att_level"
-		offset "0.00 5.41 0.00"
-	}
-
-	Attachment
-	{
 		name "att_in_2"
 		offset "3.00 0.40 1.00"
 	}
@@ -84,7 +78,26 @@ Attachments
 	{
 		name "att_in_2_arrow"
 		offset "4.90 0.40 1.00"
-		orientation "-180.00 -0.00 0.00"
+		orientation "180.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_in_2_pipe"
+		offset "3.00 0.00 1.00"
+	}
+
+	Attachment
+	{
+		name "att_vismod_1"
+		parent "bone"
+		offset "0.00 -2.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_level"
+		offset "-2.90 1.00 -2.10"
 	}
 
 }
