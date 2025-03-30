@@ -1,5 +1,5 @@
 return function()
-    local rules = require("lua/missions/campaigns/story/v2/acid/dom_acid_find_rate_resource_rules_default.lua")()
+    local rules = require("lua/missions/campaigns/story/v2/acid/dom_acid_find_rare_resource_rules_default.lua")()
 	
 	rules.idleTime = 
 	{			
