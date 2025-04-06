@@ -1,0 +1,47 @@
+import * from "materials/scripts/gui.material"
+
+
+/////  energy_connector_water
+
+material "gui/hud/building_icons/energy_connector_water" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/energy_connector_water.dds"
+}
+
+material "gui/hud/building_icons/energy_connector_water_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/energy_connector_water_disabled.dds"
+}
+
+
+/////  rtg
+
+material "gui/hud/building_icons/rtg" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/rtg.dds"
+}
+
+material "gui/hud/building_icons/rtg_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/rtg_disabled.dds"
+}
+
+material "gui/hud/building_icons/rtg_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/rtg_lvl2.dds"
+}
+
+material "gui/hud/building_icons/rtg_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/rtg_disabled.dds"
+}
+
+material "gui/hud/building_icons/rtg_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/rtg_lvl3.dds"
+}
+
+material "gui/hud/building_icons/rtg_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/rtg_disabled.dds"
+}

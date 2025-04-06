@@ -10803,6 +10803,161 @@ Research
 					icon "gui/menu/research/icons/consumable_gravity_granade"
 				}
 
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/nuclear_energy_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/rtg"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "2200.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1188.000"
+						y "-18.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/rtg"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_upgrade_fusion_core"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/rtg"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/rtg_lvl2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "4000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1188.000"
+						y "72.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/rtg_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_upgrade_fusion_core"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/rtg_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_5"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/rtg_lvl3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "7000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1188.000"
+						y "234.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/rtg_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_upgrade_fusion_core"
+				}
+
 			}
 
 		}
@@ -32495,6 +32650,6 @@ Research
 
 	type
 	editor "6380"
-	version "151"
+	version "152"
 }
 
