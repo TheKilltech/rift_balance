@@ -1,12 +1,10 @@
-EntityBlueprint
+ EntityBlueprint
 {
 	name  					"buildings/energy/magma_powerplant_lvl_3"
-
 	base_blueprint 			"buildings/energy/magma_powerplant_lvl_2"
 
 	BuildingDesc
-	{
-	
+	{	
 		name 				"magma_powerplant_lvl_3"
 		bp   				"buildings/energy/magma_powerplant_lvl_3"
 		category 			"energy"
@@ -19,7 +17,7 @@ EntityBlueprint
 		//upgrade				"buildings/energy/magma_powerplant_lvl_4"
 		buildable			"0"
 		going_green_state	"1"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,magma_powerplant,magma_powerplant_lvl_2"
 
 		costs
 		{
@@ -29,9 +27,9 @@ EntityBlueprint
 				building_time 120
 				building_cost
 				{
-					carbonium 	"500"		
-					steel 		"500"
-					titanium	"250"
+					carbonium 	"200"
+					steel 		"700"
+					titanium	"350"
 				}
 			}		
 		}
