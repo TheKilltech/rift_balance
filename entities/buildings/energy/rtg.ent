@@ -358,18 +358,45 @@ EntityBlueprint
 	{
 		in
 		{
+			
 			GameplayResource
 			{
-				resource 		"water"
-				value 			"20"
-				family			"coolant"
+				resource 	"water"
+				value 		"10"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 			
 			GameplayResource
 			{
-				resource 		"supercoolant"
-				value 			"4"
-				family			"coolant"
+				resource 	"supercoolant"
+				value 		"2"
+				family		"coolant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"mud"
+				value		"20"
+				family		"coolant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"sludge"
+				value		"20"
+				family		"coolant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"morphium"
+				value		"20"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 		
@@ -548,14 +575,14 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"water"
-				value 			"50"
+				value 			"30"
 				family			"coolant"
 			}
 			
 			GameplayResource
 			{
 				resource 		"supercoolant"
-				value 			"6"
+				value 			"4"
 				family			"coolant"
 			}
 		}
