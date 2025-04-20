@@ -14,7 +14,7 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/repair_facility_lvl2"
 		require 			"headquarters"
 		order				"4"
-		upgrade				"buildings/defense/repair_facility_lvl_3"
+		//upgrade				"buildings/defense/repair_facility_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
@@ -22,13 +22,13 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 20
+				building_time 25
 				building_cost
 				{
 					carbonium 	"200"
 					steel 		"475"
 					cobalt 		"250"
-					ai			"1"
+					ai			"2"
 				}
 			}		
 		}		
@@ -41,7 +41,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"15"
+				value			 	"25"
 			}
 			
 		}
@@ -58,7 +58,7 @@ EntityBlueprint
 			cone_effect_sell		string:"sell_big"
 			energy_cost				float:"10"
 
-			drone_search_radius		float:"25"
+			drone_search_radius		float:"30"
 			drone_blueprint			string:"units/drones/drone_repair_facility_lvl_2"
 			drone_attachments		string:"att_landing"
 			drone_per_spot			int:"3"
