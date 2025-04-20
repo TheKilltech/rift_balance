@@ -540,11 +540,23 @@ MissionDef
         {
             resource        "titanium_vein"
 
-            min_resources   "200"
-            max_resources   "600"
+            min_resources   "500"
+            max_resources   "1000"
 
-            min_spawned_volumes "4"
-            max_spawned_volumes "6"
+            min_spawned_volumes "3"
+            max_spawned_volumes "5"
+        }	
+		
+        ResourceVolume
+        {
+            resource        "titanium_vein"
+			required_discovery_lvl	"1"
+
+            min_resources   "500"
+            max_resources   "1000"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "4"
         }	
 		
         ResourceVolume
