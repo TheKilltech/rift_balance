@@ -865,12 +865,6 @@ Research
 							is_visible "1"
 						}
 
-						ResearchAward
-						{
-							blueprint "buildings/resources/uranium_centrifuge_lvl_2"
-							is_visible "1"
-						}
-
 					}
 
 					icon "gui/menu/research/icons/nuclear_energy"
@@ -1812,12 +1806,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/energy/nuclear_powerplant_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/uranium_centrifuge_lvl_3"
 							is_visible "1"
 						}
 
@@ -10833,7 +10821,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1188.000"
+						x "1233.000"
 						y "-18.000"
 					}
 
@@ -10887,7 +10875,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1188.000"
+						x "1233.000"
 						y "72.000"
 					}
 
@@ -10941,7 +10929,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1188.000"
+						x "1233.000"
 						y "234.000"
 					}
 
@@ -10956,6 +10944,182 @@ Research
 					}
 
 					icon "gui/menu/research/icons/mech_upgrade_fusion_core"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/fire_control_station"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_explosive_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/fire_control_station_artillery"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "3000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-405.000"
+						y "-18.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/fire_control_station_artillery"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/skill_timewarp"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/nuclear_energy_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/crystalizer_tanzanite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/uranium_enrichment_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "3000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1188.000"
+						y "72.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/uranium_centrifuge_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/nuclear_energy"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_5"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/uranium_enrichment_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/towers_morphium_lvl1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/uranium_enrichment_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "5000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1188.000"
+						y "234.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/uranium_centrifuge_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/nuclear_energy"
 				}
 
 			}
@@ -24203,7 +24367,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
+					research_flags "hidden|hidden_requirements_visible"
 					requirement_tooltip
 					requirements
 					{
@@ -24219,6 +24383,13 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/alien_research_lvl3"
 							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/resource_handling_titanium"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -25891,7 +26062,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-891.000"
+						x "-927.000"
 						y "-342.000"
 					}
 
@@ -25958,7 +26129,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-891.000"
+						x "-927.000"
 						y "0.000"
 					}
 
@@ -26019,7 +26190,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-891.000"
+						x "-927.000"
 						y "198.000"
 					}
 
@@ -26066,7 +26237,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-927.000"
+						x "-963.000"
 						y "-234.000"
 					}
 
@@ -26120,7 +26291,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-927.000"
+						x "-963.000"
 						y "90.000"
 					}
 
@@ -26174,7 +26345,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-927.000"
+						x "-963.000"
 						y "324.000"
 					}
 
@@ -26228,7 +26399,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-954.000"
+						x "-990.000"
 						y "-288.000"
 					}
 
@@ -26306,7 +26477,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-954.000"
+						x "-990.000"
 						y "36.000"
 					}
 
@@ -26384,7 +26555,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-954.000"
+						x "-990.000"
 						y "243.000"
 					}
 
@@ -26833,7 +27004,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1053.000"
+						x "-1089.000"
 						y "-342.000"
 					}
 
@@ -26918,7 +27089,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1053.000"
+						x "-1089.000"
 						y "36.000"
 					}
 
@@ -27003,7 +27174,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1053.000"
+						x "-1089.000"
 						y "279.000"
 					}
 
@@ -29667,7 +29838,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-855.000"
+						x "-891.000"
 						y "-288.000"
 					}
 
@@ -29875,7 +30046,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1107.000"
+						x "-1143.000"
 						y "-342.000"
 					}
 
@@ -29948,7 +30119,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1107.000"
+						x "-1143.000"
 						y "36.000"
 					}
 
@@ -30021,7 +30192,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1107.000"
+						x "-1143.000"
 						y "279.000"
 					}
 
@@ -30080,7 +30251,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1161.000"
+						x "-1197.000"
 						y "-342.000"
 					}
 
@@ -30140,7 +30311,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1161.000"
+						x "-1197.000"
 						y "-99.000"
 					}
 
@@ -30194,7 +30365,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1161.000"
+						x "-1197.000"
 						y "279.000"
 					}
 
@@ -30241,7 +30412,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1206.000"
+						x "-1242.000"
 						y "-288.000"
 					}
 
@@ -30301,7 +30472,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1206.000"
+						x "-1242.000"
 						y "-54.000"
 					}
 
@@ -30355,7 +30526,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1206.000"
+						x "-1242.000"
 						y "324.000"
 					}
 
@@ -31472,7 +31643,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1305.000"
+						x "-1341.000"
 						y "-180.000"
 					}
 
@@ -31519,7 +31690,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1305.000"
+						x "-1341.000"
 						y "-135.000"
 					}
 
@@ -31585,7 +31756,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
+					research_flags "hidden|hidden_requirements_visible"
 					requirement_tooltip
 					requirements
 					{
@@ -31601,6 +31772,13 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/magma_energy_lvl2"
 							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/resource_handling_titanium"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -31890,7 +32068,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1134.000"
+						x "-1170.000"
 						y "-234.000"
 					}
 
@@ -31937,7 +32115,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1251.000"
+						x "-1287.000"
 						y "-180.000"
 					}
 
@@ -31984,7 +32162,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1251.000"
+						x "-1287.000"
 						y "-135.000"
 					}
 
@@ -32642,6 +32820,168 @@ Research
 					icon "gui/menu/research/icons/resource_handling"
 				}
 
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/towers_morphium_lvl1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/resource_handling_cobalt"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/resource_converter_cobalt"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "6000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-891.000"
+						y "-144.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/resource_converter_cobalt"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/rare_element_mining"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_converter_cobalt"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/resource_handling_palladium"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/resource_converter_palladium"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "10000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-891.000"
+						y "-54.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/resource_converter_palladium"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/rare_element_mining"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_converter_cobalt"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/resource_handling_titanium"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/resource_converter_titanium"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "10000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-846.000"
+						y "-54.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/resource_converter_titanium"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/rare_element_mining"
+				}
+
 			}
 
 		}
@@ -32650,6 +32990,6 @@ Research
 
 	type
 	editor "6380"
-	version "153"
+	version "155"
 }
 
