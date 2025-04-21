@@ -1,0 +1,151 @@
+Attachments
+{
+	Attachment
+	{
+		name "att_bottom_rotor"
+		parent "bottom"
+		offset "0.22 0.00 -0.00"
+		orientation "90.00 0.75 0.00"
+	}
+
+	Attachment
+	{
+		name "att_arm_2"
+		parent "arm_2"
+		offset "-0.67 1.07 -0.29"
+		orientation "-131.09 1.63 -101.41"
+	}
+
+	Attachment
+	{
+		name "att_arm_3"
+		parent "arm_3"
+		offset "-0.75 -0.28 1.05"
+		orientation "-130.74 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_arm_1"
+		parent "arm_1"
+		offset "-0.77 -0.73 -0.74"
+		orientation "-127.10 19.14 120.80"
+	}
+
+	Attachment
+	{
+		name "att_working"
+		offset "0.00 1.69 0.00"
+		orientation "180.00 89.92 180.00"
+	}
+
+	Attachment
+	{
+		name "att_vismod_1"
+		offset "2.50 0.00 2.50"
+		orientation "-45.00 0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_vismod_2"
+		offset "2.60 0.00 -2.60"
+		orientation "45.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_in_1_pipe"
+		offset "3.00 0.00 -3.00"
+	}
+
+	Attachment
+	{
+		name "att_in_1"
+		offset "3.00 0.50 -3.00"
+	}
+
+	Attachment
+	{
+		name "att_in_1_arrow"
+		offset "5.90 0.50 -3.00"
+		orientation "-180.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_in_2_pipe"
+		offset "-3.00 0.00 3.00"
+		orientation "-90.00 0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_in_2"
+		offset "-3.00 0.50 3.00"
+		orientation "-90.00 0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_in_2_arrow"
+		offset "-3.00 0.50 5.90"
+		orientation "90.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_vismod_4"
+		offset "-2.32 -0.32 -2.32"
+		orientation "-135.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_vismod_3"
+		offset "-2.60 0.00 2.60"
+		orientation "-135.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_vismod_top"
+		offset "0.00 5.00 0.00"
+	}
+
+}
+
+AnimationEvents
+{
+	Animation
+	{
+		animation_name "start_end"
+		Tracks
+		{
+			Track
+			{
+				name "events"
+				Events
+				{
+					Event
+					{
+						name "fly_start"
+						time "0"
+					}
+
+					Event
+					{
+						name "fly_end"
+						time "2.45833325"
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
