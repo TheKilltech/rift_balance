@@ -8,12 +8,14 @@ end
 
 function fire_control_station:OnInit()
 	-- LogService:Log( "FCS: OnInit" )
+	self.restriction = "defense"
 	self.radius = 40
 	self.alert = 1
 	self.alertCooldown = 10
 	self.alertLight = "off"
 	
 	self.radius = self.data:GetFloatOrDefault("radius", 40)
+	self.restriction = self.data:GetStringOrDefault("restriction", "defense" )
 	
 	self:RegisterHandler(self.entity, "TurretEvent", "OnTurretEvent")
 	
@@ -127,15 +129,27 @@ function fire_control_station:GetControlledEntities()
 		if ( not BuildingService:IsBuildingFinished( ent ))						then goto continue end
 		
 		local bpname = EntityService:GetBlueprintName(ent)
-		if string.find(bpname, "fire_control_station") then goto continue end
-		if string.find(bpname, "repair_facility")      then goto continue end
-		if string.find(bpname, "short_range_radar")    then goto continue end
-		if string.find(bpname, "ai_hub")               then goto continue end
-		
-		-- LogService:Log( "FCS: entity ".. tostring(ent).. " name ".. tostring(EntityService:GetBlueprintName(ent)))
-        Insert(controlled, ent)
+		if self.restriction == "defense" then
+			if string.find(bpname, "fire_control_station") then goto continue end
+			if string.find(bpname, "repair_facility")      then goto continue end
+			if string.find(bpname, "short_range_radar")    then goto continue end
+			if string.find(bpname, "ai_hub")               then goto continue end
+			
+			Insert(controlled, ent)
+		elseif self.restriction == "artillery" then
+			if     string.find(bpname, "heavy_artillery") then Insert(controlled, ent)
+			elseif string.find(bpname, "tower_hcm")       then Insert(controlled, ent)
+			elseif string.find(bpname, "tower_water_big") then Insert(controlled, ent)
+			elseif string.find(bpname, "tower_power_rod") then Insert(controlled, ent)
+			end
+		end
 		::continue::
     end
+	
+	--LogService:Log( "FCS ".. self.restriction .." list")
+    --for ent in Iter(controlled ) do
+	--	LogService:Log( "FCS ".. self.restriction ..": entity ".. tostring(ent).. " name ".. tostring(EntityService:GetBlueprintName(ent)))
+	--end
 
     return controlled
 end
