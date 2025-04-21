@@ -1464,6 +1464,86 @@ EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_orange_03
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//hitech_small_box
+{
+	name "effects/buildings_and_machines/hitech_small_box"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/hitech_structure_small_03.mesh" // box
+		material 	"props/special/hitech_structure_small_01_03"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hitech_small_block
+{
+	name "effects/buildings_and_machines/hitech_small_block"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/hitech_structure_small_01.mesh" // box
+		material 	"buildings/decorations/hitech_structure_small_01_03"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hitech_small_clamp
+{
+	name "effects/buildings_and_machines/hitech_small_clamp"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/props/special/alien_structures_small_01.mesh" 
+		material 	"props/special/alien_structures_small_01"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//morphium_power
+{
+	name "effects/buildings_and_machines/morphium_power"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/morphium_powerplant.mesh" 
+		material 	"buildings/energy/morphium_powerplant"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//morphium_tower2
+{
+	name "effects/buildings_and_machines/morphium_tower2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_alien_influence_lvl_2.mesh" 
+		material 	"buildings/defense/tower_alien_influence_lvl_2"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//crystal_vs1_violet
 {
 	name "effects/buildings_and_machines/crystal_vs1_violet"
