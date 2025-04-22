@@ -129,6 +129,7 @@ function fire_control_station:GetControlledEntities()
 		if ( not BuildingService:IsBuildingFinished( ent ))						then goto continue end
 		
 		local bpname = EntityService:GetBlueprintName(ent)
+		if self.restriction == "" then self.restriction = "defense" end -- for compatibility with older saves where the flag was missing
 		if self.restriction == "defense" then
 			if string.find(bpname, "fire_control_station") then goto continue end
 			if string.find(bpname, "repair_facility")      then goto continue end
