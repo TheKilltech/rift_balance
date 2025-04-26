@@ -1,0 +1,186 @@
+EntityBlueprint
+{
+	name  "buildings/decorations/floor_desert_4x4"
+
+	BuildingDesc
+	{
+		name 				"floor_desert_4x4"
+		bp   				"buildings/decorations/floor_desert_4x4"
+		category 			"decorations"
+		localization_id		"gui/hud/building_name/floor_desert"
+		description			"gui/hud/building_description/floor_desert"
+		menu_icon			"gui/hud/building_icons/floor_desert_1x1"		
+		order				"0"
+		type				"floor"
+		//require 			"headquarters"
+		building_mode		"radius"
+		buildable 			"0"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground,creeper_area"
+		overrides			"floor"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 1
+				building_cost
+				{
+					carbonium 	"32"		
+				}
+			}		
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/building.lua"
+		database
+		{
+			remove_lua_after_build int:"1"
+		}
+	}
+
+	ResistanceComponent
+	{
+		creeper_area		"1"
+		default_factor		"0"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"floor"
+				physics_material 	"default"
+				Shapes
+				{
+   					PhysicsBoxShape
+   					{
+    						x	7.9
+    						y	0.1
+    						z	7.9
+   					}
+				}
+			}
+		}
+	}
+
+	LocalAabbDesc
+	{
+		local_aabb
+		{
+			min
+			{
+				x "-4"
+				y "0"
+				z "-4"
+			}
+			max
+			{
+				x "4"
+				y "0.1"
+				z "4"
+			}
+		}
+	}
+
+	GridCullerDesc
+	{
+		type 2
+
+		Shapes
+		{
+   			PhysicsBoxShape
+   			{
+    			x	7.9
+    			y	7.9
+    			z	7.9
+   			}
+		}
+	}
+
+	GridMarkerComponent
+	{
+		terrain_type  "desert_floor"
+	}
+
+	children
+	{
+		EntityBlueprint
+		{
+			name "buildings/decorations/floor_desert_4x4_random"
+			RandomBlueprintDesc
+			{
+				Blueprint
+				{
+					blueprint "buildings/decorations/floor_desert_4x4_1"
+				}
+				Blueprint
+				{
+					blueprint "buildings/decorations/floor_desert_4x4_2"
+				}
+				Blueprint
+				{
+					blueprint "buildings/decorations/floor_desert_4x4_3"
+				}
+				Blueprint
+				{
+					blueprint "buildings/decorations/floor_desert_4x4_4"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/decorations/floor_desert_4x4_1"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/floor_basic_4x4_nosides.mesh"
+		material "buildings/decorations/floor_desert_4x4_01"
+		flags "2"
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/decorations/floor_desert_4x4_2"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/floor_basic_4x4_nosides.mesh"
+		material "buildings/decorations/floor_desert_4x4_02"
+		flags "2"
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/decorations/floor_desert_4x4_3"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/floor_basic_4x4_nosides.mesh"
+		material "buildings/decorations/floor_desert_4x4_03"
+		flags "2"
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/decorations/floor_desert_4x4_4"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/floor_basic_4x4_nosides.mesh"
+		material "buildings/decorations/floor_desert_4x4_04"
+		flags "2"
+	}
+}
+
