@@ -11,7 +11,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/ammonium_extractor"
 		menu_icon			"gui/hud/building_icons/ammonium_extractor"
 		order				"12"
-		//upgrade				"buildings/resources/ammonium_extractor_lvl_2"		
+		upgrade				"buildings/resources/ammonium_extractor_lvl_2"		
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
@@ -20,7 +20,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 12
+				building_time 20
 				building_cost
 				{
 					carbonium 	"350"
@@ -36,6 +36,12 @@ EntityBlueprint
 		{	
 			GameplayResource
 			{
+				resource 			"energy"
+				value			 	"50"
+			}
+			
+			GameplayResource
+			{
 				resource 			"nitric_acid"
 				value				"80"
 				attachment			"att_in_1"
@@ -48,12 +54,6 @@ EntityBlueprint
 				value			 	"600"
 				attachment			"att_in_1"
 				family				"in"
-			}
-			
-			GameplayResource
-			{
-				resource 			"energy"
-				value			 	"50"
 			}
 		}
 		
@@ -394,7 +394,7 @@ EntityBlueprint
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_arrow"
+					bone "att_in_1_arrow"
 				}
 			}
 		}
@@ -408,7 +408,7 @@ EntityBlueprint
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_pipe"
+					bone 	"att_in_1_pipe"
 				}
 				Effect
 				{
@@ -424,6 +424,180 @@ EntityBlueprint
 				}
 			}
 		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"	
+
+			Effects
+			{
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name  					"buildings/resources/ammonium_extractor_lvl_2"
+	base_blueprint 			"buildings/resources/ammonium_extractor"
+
+	BuildingDesc
+	{
+		name 				"ammonium_extractor_lvl_2"
+		bp   				"buildings/resources/ammonium_extractor_lvl_2"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/ammonium_extractor"
+		description			"gui/hud/building_description/ammonium_extractor"
+		menu_icon			"gui/hud/building_icons/ammonium_extractor_lvl_2"
+		order				"12"
+		buildable			"0"
+		//upgrade				"buildings/resources/ammonium_extractor_lvl_2"
+		require 			"headquarters"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"550"
+					steel 		"800"
+					cobalt		"100"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"150"
+			}
+			
+			GameplayResource
+			{
+				resource 			"nitric_acid"
+				value				"80"
+				attachment			"att_in_1"
+				family				"in"
+			}		
+			
+			GameplayResource
+			{
+				resource 			"sludge"
+				value			 	"600"
+				attachment			"att_in_1"
+				family				"in"
+			}
+			
+			GameplayResource
+			{
+				resource 			"reagent"
+				value			 	"25"
+				attachment			"att_in_2"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value				"3"
+			}		
+		}
+		priority 9		
+		reset_interval 0.5
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////		
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/silo"
+					bone "att_vismod_1"
+					scale "0.5 0.6 0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/reactor_green"
+					bone "att_vismod_2"
+					scale "0.6 0.6 0.6"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}		
 		EffectGroup
 		{
 			group "working"
