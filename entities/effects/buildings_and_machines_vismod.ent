@@ -316,6 +316,241 @@ EntityBlueprint "effects/no_lifetime"		//pump3
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//tower1
+{
+	name "effects/buildings_and_machines/tower1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/tower_mine_layer_lvl_1.mesh"
+		material 	"buildings/defense/tower_mine_layer_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//tower2
+{
+	name "effects/buildings_and_machines/tower2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/tower_mine_layer_lvl_2.mesh"
+		material 	"buildings/defense/tower_mine_layer_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//tower3
+{
+	name "effects/buildings_and_machines/tower3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/tower_mine_layer_lvl_3.mesh"
+		material 	"buildings/defense/tower_mine_layer_lvl_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//loot_tower1
+{
+	name "effects/buildings_and_machines/loot_tower1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/loot_collector_lvl_1.mesh"
+		material "buildings/resources/loot_collector_lvl_1"
+
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/resources/loot_collector_lvl_1_pulsing"
+			}
+			
+			SubMesh
+			{
+				id "2"
+				material "buildings/main/buildings_ruins"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//loot_tower2
+{
+	name "effects/buildings_and_machines/loot_tower2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/loot_collector_lvl_2.mesh"
+		material "buildings/resources/loot_collector_lvl_2"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/resources/loot_collector_lvl_2_pulsing"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//loot_tower3
+{
+	name "effects/buildings_and_machines/loot_tower3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/loot_collector_lvl_3.mesh"
+		material "buildings/resources/loot_collector_lvl_3"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/resources/loot_collector_lvl_3_pulsing"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//mine_tower1
+{
+	name "effects/buildings_and_machines/mine_tower1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/drone_mine_lvl_1.mesh"
+		material "buildings/resources/drone_mine_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//mine_tower2
+{
+	name "effects/buildings_and_machines/mine_tower2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/drone_mine_lvl_2.mesh"
+		material "buildings/resources/drone_mine_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//mine_tower3
+{
+	name "effects/buildings_and_machines/mine_tower3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/drone_mine_lvl_3.mesh"
+		material "buildings/resources/drone_mine_lvl_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//repair_tower
+{
+	name "effects/buildings_and_machines/repair_tower"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/repair_facility.mesh"
+		material "buildings/defense/repair_facility"
+	
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/defense/repair_facility_energy"
+			}
+		}		
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//satelite_tower
+{
+	name "effects/buildings_and_machines/satelite_tower"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/planet_scanner.mesh"
+		material "buildings/main/planet_scanner"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//shield_gen
+{
+	name "effects/buildings_and_machines/shield_gen"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/shield_generator.mesh"
+		material "buildings/defense/shield_generator"		
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//wturbine1
 {
 	name "effects/buildings_and_machines/wturbine1"
@@ -1222,6 +1457,22 @@ EntityBlueprint "effects/no_lifetime"		//hq1
 		}	
 	}
 
+}
+
+EntityBlueprint "effects/no_lifetime"		//ai_hub
+{
+	name "effects/buildings_and_machines/ai_hub"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/ai_hub.mesh"
+		material 	"buildings/defense/ai_hub"
+	}
 }
 
 EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_01
