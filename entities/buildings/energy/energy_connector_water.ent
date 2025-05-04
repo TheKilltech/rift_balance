@@ -29,7 +29,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 4
+				building_time 5
 				building_cost
 				{
 					carbonium 	"50"	
@@ -100,13 +100,13 @@ EntityBlueprint
 			PhysicsObjectDesc
 			{
 				type 				"static"
-				group_id 			"building_small"
+				group_id 			"building"
 				physics_material 	"default"
 				Shapes
 				{
 					PhysicsSphereShape
 					{
-						r "0.8"
+						r "1.6"
 					}	
 				}
 			}
@@ -117,11 +117,9 @@ EntityBlueprint
 	{
 		Shapes
 		{
-   			PhysicsBoxShape
+   			PhysicsSphereShape
    			{
-    				x	2
-    				y	2
-    				z	2
+    			r	2.8
    			}			
 		}
 	}
@@ -148,9 +146,9 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/platform"
+					blueprint "effects/buildings_and_machines/shield_gen"
 					bone "att_vismod_1"
-					scale "1.0 0.8 1.0"
+					scale 0.9 0.9 0.9
 				}
 			}
 		}		
