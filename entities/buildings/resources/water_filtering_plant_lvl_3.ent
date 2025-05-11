@@ -66,14 +66,14 @@ EntityBlueprint
 				resource 			"fluorine"
 				family				"purifier"
 				value 				"5"
-				attachment			"att_in_3"
+				attachment			"att_in_2|att_in_3"
 			}	
 			GameplayResource
 			{
 				resource 			"reagent"
 				family				"purifier"
 				value 				"1"
-				attachment			"att_in_3"
+				attachment			"att_in_2|att_in_3"
 			}	
 			
 			GameplayResource
@@ -101,24 +101,48 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource	 "water"
-				max 	 		"400"
-				attachment		"att_out_1"
-			}
-			Storage
-			{
-				group	 	"local"
-				max 	 	"20"
-				attachment	"att_in_2|att_in_3"
+				resource	"water"
+				max 	 	"400"
+				attachment	"att_out_1"
 			}
 		}
 	}	
 
-	PipeComponent
+	children
 	{
-		attachment		"att_in_1,att_in_2,att_in_3,att_out_1"
-	}
+		EntityBlueprint
+		{
+			name "buildings/resources/water_filtering_plant_pipeline"
+			
+			PipeComponent
+			{
+				attachment		"att_in_2,att_in_3"
+			}
 
+			ResourceStorageDesc
+			{
+				Storages
+				{
+					Storage
+					{
+						group	 		"local"
+						max 	 		"20"
+						attachment		"att_in_2|att_in_3"
+					}
+
+				}
+			}
+
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/resources/water_filtering_plant"
+			}
+
+
+		}
+	}
+	
 	HealthDesc
 	{
 		max_health 					"1600"
