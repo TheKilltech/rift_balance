@@ -599,6 +599,54 @@ EntityBlueprint "effects/no_lifetime"		//wturbine3
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//mine1
+{
+	name "effects/buildings_and_machines/mine1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/carbonium_factory_lvl_1.mesh"
+		material "buildings/resources/carbonium_factory_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//mine2
+{
+	name "effects/buildings_and_machines/mine2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/carbonium_factory.mesh"
+		material "buildings/resources/carbonium_factory"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//mine3
+{
+	name "effects/buildings_and_machines/mine3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/carbonium_factory_lvl_3.mesh"
+		material "buildings/resources/carbonium_factory_lvl_3"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//pipe
 {
 	name "effects/buildings_and_machines/pipe"

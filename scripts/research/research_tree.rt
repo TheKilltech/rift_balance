@@ -799,7 +799,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1161.000"
+						x "1188.000"
 						y "225.000"
 					}
 
@@ -853,7 +853,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1206.000"
+						x "1233.000"
 						y "63.000"
 					}
 
@@ -1635,7 +1635,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1206.000"
+						x "1233.000"
 						y "-171.000"
 					}
 
@@ -1797,7 +1797,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1206.000"
+						x "1233.000"
 						y "225.000"
 					}
 
@@ -1844,7 +1844,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1035.000"
+						x "-1071.000"
 						y "-261.000"
 					}
 
@@ -2427,7 +2427,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1017.000"
+						x "1044.000"
 						y "-171.000"
 					}
 
@@ -2633,7 +2633,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1161.000"
+						x "1188.000"
 						y "-90.000"
 					}
 
@@ -2805,7 +2805,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1017.000"
+						x "1044.000"
 						y "63.000"
 					}
 
@@ -2953,7 +2953,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1251.000"
+						x "1278.000"
 						y "-171.000"
 					}
 
@@ -3060,7 +3060,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1161.000"
+						x "1188.000"
 						y "-171.000"
 					}
 
@@ -3889,7 +3889,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1206.000"
+						x "1233.000"
 						y "-279.000"
 					}
 
@@ -4318,7 +4318,7 @@ Research
 
 					position
 					{
-						x "1206.000"
+						x "1233.000"
 						y "-90.000"
 					}
 
@@ -4450,7 +4450,7 @@ Research
 
 					position
 					{
-						x "1116.000"
+						x "1143.000"
 						y "-171.000"
 					}
 
@@ -4509,7 +4509,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1251.000"
+						x "1278.000"
 						y "-225.000"
 					}
 
@@ -4563,7 +4563,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1161.000"
+						x "1188.000"
 						y "63.000"
 					}
 
@@ -5082,7 +5082,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1116.000"
+						x "1143.000"
 						y "108.000"
 					}
 
@@ -5142,7 +5142,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1116.000"
+						x "1143.000"
 						y "225.000"
 					}
 
@@ -5735,7 +5735,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1116.000"
+						x "1143.000"
 						y "-27.000"
 					}
 
@@ -9970,7 +9970,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1062.000"
+						x "1089.000"
 						y "-243.000"
 					}
 
@@ -10024,7 +10024,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1062.000"
+						x "1089.000"
 						y "-135.000"
 					}
 
@@ -10078,7 +10078,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1062.000"
+						x "1089.000"
 						y "9.000"
 					}
 
@@ -10132,7 +10132,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1062.000"
+						x "1089.000"
 						y "135.000"
 					}
 
@@ -10810,7 +10810,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1296.000"
+						x "1323.000"
 						y "-27.000"
 					}
 
@@ -10864,7 +10864,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1296.000"
+						x "1323.000"
 						y "63.000"
 					}
 
@@ -10918,7 +10918,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1296.000"
+						x "1323.000"
 						y "225.000"
 					}
 
@@ -11033,7 +11033,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1251.000"
+						x "1278.000"
 						y "63.000"
 					}
 
@@ -11094,7 +11094,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1251.000"
+						x "1278.000"
 						y "225.000"
 					}
 
@@ -11311,6 +11311,107 @@ Research
 					}
 
 					icon "gui/menu/research/icons/floor_desert"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/basic_resource_production_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/carbonization"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "2000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1008.000"
+						y "-90.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/carbonizer"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_flame_blade"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/carbonization"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/carbonization_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "6000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1008.000"
+						y "108.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/carbonizer_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_flame_blade"
 				}
 
 			}
@@ -30581,8 +30682,8 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|locked|hidden_requirements_visible"
-					requirement_tooltip "gui/menu/research/tooltip_requirement_objective"
+					research_flags "hidden"
+					requirement_tooltip
 					requirements
 					{
 						ResearchNodeRequirement
@@ -33187,6 +33288,6 @@ Research
 
 	type
 	editor "6380"
-	version "157"
+	version "158"
 }
 
