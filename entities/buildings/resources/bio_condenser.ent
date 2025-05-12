@@ -371,7 +371,7 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}
-////////////////////////Resources/////////////////////////				
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_out_1"
@@ -382,12 +382,33 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}				
-//////////////////////////////// MISC /////////////////////////////////////////		
+		//////////////////////////////// MISC /////////////////////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/reactor_green"
+					bone "att_vismod_1"
+					scale 1.9 2.0 1.9
+					orientation 45 0 0
+				}
+				//Effect
+				//{
+				//	blueprint "effects/buildings_and_machines/minipipes"
+				//	bone "att_vismod_2"
+				//	scale "0.8 0.8 0.8"
+				//}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
