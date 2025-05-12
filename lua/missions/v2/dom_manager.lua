@@ -1107,7 +1107,7 @@ function dom_mananger:GetPauseAttacks()
 		if (#wavesPool <= 0) then return true end
 	end
 	
-	return false
+	return self.pauseAttacks
 end
 
 function dom_mananger:GetAttackCount( currentDifficultyLevel )	
