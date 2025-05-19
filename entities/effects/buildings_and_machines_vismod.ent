@@ -842,6 +842,22 @@ EntityBlueprint "effects/no_lifetime"		//platform
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//barricade
+{
+	name "effects/buildings_and_machines/barricade"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 				"meshes/items/consumables/barricade.mesh"
+		material		"items/consumables/barricade_lvl_2"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//wall_x1
 {
 	name "effects/buildings_and_machines/wall_x1"
