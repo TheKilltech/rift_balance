@@ -266,6 +266,25 @@ EntityBlueprint
 		}	
 		EffectGroup
 		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint 	"effects/buildings_and_machines/wturbine2"
+					bone 		"att_vismod_1"
+					scale 		"0.8 0.7 0.8"
+				}
+			}
+		}	
+		EffectGroup
+		{
 			group "level"
 			enabled "1"
 			Effects

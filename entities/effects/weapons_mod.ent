@@ -116,6 +116,22 @@ EntityBlueprint "effects/no_lifetime"		//burst_rifle
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//minigun
+{
+	name "effects/weapon_items/minigun"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/minigun.mesh"
+		material 	"items/weapons/minigun"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//shotgun
 {
 	name "effects/weapon_items/shotgun"
@@ -131,6 +147,383 @@ EntityBlueprint "effects/no_lifetime"		//shotgun
 		material 	"items/weapons/shotgun"
 	}
 }
+
+EntityBlueprint "effects/no_lifetime"		//railgun
+{
+	name "effects/weapon_items/railgun"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/railgun.mesh"
+		material 	"items/weapons/railgun"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//heavy_plasma_gun
+{
+	name "effects/weapon_items/heavy_plasma_gun"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/heavy_plasma_gun.mesh"
+		material 	"items/weapons/heavy_plasma_gun"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//flamethrower
+{
+	name "effects/weapon_items/flamethrower"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/flamethrower.mesh"
+		material 	"items/weapons/flamethrower"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//grenade_auncher
+{
+	name "effects/weapon_items/grenade_auncher"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/grenade_auncher.mesh"
+		material 	"items/weapons/grenade_auncher"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//rocket_launcher
+{
+	name "effects/weapon_items/rocket_launcher"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/rocket_launcher.mesh"
+		material 	"items/weapons/rocket_launcher"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//nuclear_missiles
+{
+	name "effects/weapon_items/nuclear_missiles"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/nuclear_missiles.mesh"
+		material 	"items/weapons/nuclear_missiles"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//floating_mines
+{
+	name "effects/weapon_items/floating_mines"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/floating_mines.mesh"
+		material 	"items/weapons/floating_mines"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//bouncing_blades
+{
+	name "effects/weapon_items/bouncing_blades"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/bouncing_blades.mesh"
+		material 	"items/weapons/bouncing_blades"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//spitter_cryo
+{
+	name "effects/weapon_items/spitter_cryo"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/spitter.mesh"
+		material 	"items/weapons/spitter_cryo_basic"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//cryogenic_atomizer
+{
+	name "effects/weapon_items/cryogenic_atomizer"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/cryogenic_atomizer.mesh"
+		material 	"items/weapons/cryogenic_atomizer"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//corrosive_gun
+{
+	name "effects/weapon_items/corrosive_gun"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/corrosive_gun.mesh"
+		material 	"items/weapons/corrosive_gun"
+	}
+}
+
+
+
+EntityBlueprint "effects/no_lifetime"		//ball_green
+{
+	name "effects/weapon_items/ball_green"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 						"meshes/items/consumables/cluster_grenade_acid.mesh"
+		material 					"items/consumables/cluster_grenade_acid"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//ball_gas
+{
+	name "effects/weapon_items/ball_gas"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 						"meshes/items/consumables/grenade_gas.mesh"
+		material 					"items/consumables/grenade_gas"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//ball_star
+{
+	name "effects/weapon_items/ball_star"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh        "meshes/items/consumables/grenade_gravity.mesh"
+		material    "items/consumables/grenade_gravity"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//ball_shiny
+{
+	name "effects/weapon_items/ball_shiny"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/consumables/grenade_sonic.mesh"
+		material 	"items/consumables/grenade_sonic"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//ball_mine
+{
+	name "effects/weapon_items/ball_mine"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/units/drones/drone_mine.mesh"
+		material "units/drones/drone_mine"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//mine_simple
+{
+	name "effects/weapon_items/mine_simple"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/items/consumables/proximity_mine.mesh"
+		material "items/consumables/proximity_mine"
+	}
+
+}
+
+EntityBlueprint "effects/no_lifetime"		//mine_gravity
+{
+	name "effects/weapon_items/mine_gravity"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/items/consumables/proximity_mine_gravity.mesh"
+		material "items/consumables/proximity_mine_gravity"
+	}
+
+}
+
+EntityBlueprint "effects/no_lifetime"		//mine_cryo
+{
+	name "effects/weapon_items/mine_cryo"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/items/consumables/proximity_mine_cryogenic.mesh"
+		material "items/consumables/proximity_mine_cryogenic"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//mine_nuclear
+{
+	name "effects/weapon_items/mine_nuclear"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/items/consumables/proximity_mine_nuclear.mesh"
+		material "items/consumables/proximity_mine_nuclear"
+	}
+}
+
+
+EntityBlueprint "effects/no_lifetime"		//drone1
+{
+	name "effects/weapon_items/drone1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/units/drones/drone_crystal_collector.mesh"
+		material "units/drones/drone_crystal_collector"
+	}
+
+}
+
+EntityBlueprint "effects/no_lifetime"		//drone2
+{
+	name "effects/weapon_items/drone2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/units/drones/drone_attack.mesh"
+		material "units/drones/drone_attack"
+	}
+
+
+}
+
+EntityBlueprint "effects/no_lifetime"		//drone3
+{
+	name "effects/weapon_items/drone3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/units/drones/drone_repair_facility.mesh"
+		material "units/drones/drone_repair_facility"
+	}
+}
+
 
 
 

@@ -1,17 +1,6 @@
 import * from "materials/scripts/gui.material"
 
 
-/////  energy_connector_water
-
-material "gui/hud/building_icons/energy_connector_water" : gui/default
-{
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/energy_connector_water.dds"
-}
-
-material "gui/hud/building_icons/energy_connector_water_disabled" : gui/default
-{
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/energy_connector_water_disabled.dds"
-}
 
 /////  liquid_pumpjack
 
@@ -91,6 +80,40 @@ material "gui/hud/building_icons/bio_palladium_refinery_disabled" : gui/default
 }
 
 
+/////  resource converters
+
+material "gui/hud/building_icons/resource_converter_cobalt" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/resource_converter_cobalt.dds"
+}
+
+material "gui/hud/building_icons/resource_converter_cobalt_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/resource_converter_disabled.dds"
+}
+
+material "gui/hud/building_icons/resource_converter_palladium" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/resource_converter_palladium.dds"
+}
+
+material "gui/hud/building_icons/resource_converter_palladium_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/resource_converter_disabled.dds"
+}
+
+material "gui/hud/building_icons/resource_converter_titanium" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/resource_converter_titanium.dds"
+}
+
+material "gui/hud/building_icons/resource_converter_titanium_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/resource_converter_disabled.dds"
+}
+
+
+
 /////  nitric_acid_refinery
 
 material "gui/hud/building_icons/nitric_acid_refinery" : gui/default
@@ -167,6 +190,85 @@ material "gui/hud/building_icons/ammonium_extractor" : gui/default
 material "gui/hud/building_icons/ammonium_extractor_disabled" : gui/default
 {
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ammonium_extractor_disabled.dds"
+}
+
+material "gui/hud/building_icons/ammonium_extractor_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ammonium_extractor_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/ammonium_extractor_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ammonium_extractor_disabled.dds"
+}
+
+
+/////  ammonium_synthesizer
+
+material "gui/hud/building_icons/ammonium_synthesizer" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ammonium_synthesizer.dds"
+}
+
+material "gui/hud/building_icons/ammonium_synthesizer_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ammonium_synthesizer_disabled.dds"
+}
+
+material "gui/hud/building_icons/ammonium_synthesizer_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ammonium_synthesizer_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/ammonium_synthesizer_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ammonium_synthesizer_disabled.dds"
+}
+
+
+/////  bioreactor
+
+material "gui/hud/building_icons/bioreactor" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bioreactor.dds"
+}
+
+material "gui/hud/building_icons/bioreactor_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bioreactor_disabled.dds"
+}
+
+material "gui/hud/building_icons/bioreactor_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bioreactor_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/bioreactor_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bioreactor_disabled.dds"
+}
+
+
+/////  carbonizer
+
+material "gui/hud/building_icons/carbonizer" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/carbonizer.dds"
+}
+
+material "gui/hud/building_icons/carbonizer_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/carbonizer_disabled.dds"
+}
+
+material "gui/hud/building_icons/carbonizer_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/carbonizer_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/carbonizer_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/carbonizer_disabled.dds"
 }
 
 
@@ -390,7 +492,7 @@ material "gui/hud/building_icons/petroleum_refinery" : gui/default
 
 material "gui/hud/building_icons/petroleum_refinery_disabled" : gui/default
 {
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ionizer_disabled.dds"
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/petroleum_refinery_disabled.dds"
 }
 
 material "gui/hud/building_icons/petroleum_refinery_lvl_2" : gui/default
@@ -400,7 +502,7 @@ material "gui/hud/building_icons/petroleum_refinery_lvl_2" : gui/default
 
 material "gui/hud/building_icons/petroleum_refinery_lvl_2_disabled" : gui/default
 {
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/ionizer_lvl_2_disabled.dds"
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/petroleum_refinery_disabled.dds"
 }
 
 

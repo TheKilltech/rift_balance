@@ -1,0 +1,185 @@
+EntityBlueprint
+{
+	name  "buildings/decorations/floor_acid_2x2"
+
+	BuildingDesc
+	{
+		name 				"floor_acid_2x2"
+		bp   				"buildings/decorations/floor_acid_2x2"
+		category 			"decorations"
+		localization_id		"gui/hud/building_name/floor_acid"
+		description			"gui/hud/building_description/floor_acid"
+		menu_icon			"gui/hud/building_icons/floor_acid_1x1"	
+		order				"0"
+		type				"floor"
+		require 			"headquarters"
+		building_mode		"radius"
+		buildable 			"0"
+		exclude_terrain_types "quicksand,magma_hot_ground,magma_very_hot_ground,creeper_area"
+		overrides			"floor"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 1
+				building_cost
+				{
+					carbonium 	"4"
+					rhodonite 	"8"
+				}
+			}		
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/building.lua"
+		database
+		{
+			remove_lua_after_build int:"1"
+		}
+	}
+
+	ResistanceComponent
+	{
+		default_factor		"0"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"floor"
+				physics_material 	"default"
+				Shapes
+				{
+   					PhysicsBoxShape
+   					{
+    						x	3.9
+    						y	0.1
+    						z	3.9
+   					}
+				}
+			}
+		}
+	}
+
+	LocalAabbDesc
+	{
+		local_aabb
+		{
+			min
+			{
+				x "-2"
+				y "0"
+				z "-2"
+			}
+			max
+			{
+				x "2"
+				y "0.1"
+				z "2"
+			}
+		}
+	}
+
+	GridCullerDesc
+	{
+		type 2
+
+		Shapes
+		{
+   			PhysicsBoxShape
+   			{
+    			x	3.9
+    			y	3.9
+    			z	3.9
+   			}
+		}
+	}
+
+	GridMarkerComponent
+	{
+		terrain_type  "acid_floor"
+	}
+
+	children
+	{
+		EntityBlueprint
+		{
+			name "buildings/decorations/floor_acid_2x2_random"
+			RandomBlueprintDesc
+			{
+				Blueprint
+				{
+					blueprint "buildings/decorations/floor_acid_2x2_1"
+				}
+				Blueprint
+				{
+					blueprint "buildings/decorations/floor_acid_2x2_2"
+				}
+				Blueprint
+				{
+					blueprint "buildings/decorations/floor_acid_2x2_3"
+				}
+				Blueprint
+				{
+					blueprint "buildings/decorations/floor_acid_2x2_4"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/decorations/floor_acid_2x2_1"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/floor_basic_2x2_nosides.mesh"
+		material "buildings/decorations/floor_acid_4x4_1"
+		flags "2"
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/decorations/floor_acid_2x2_2"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/floor_basic_2x2_nosides.mesh"
+		material "buildings/decorations/floor_acid_4x4_2"
+		flags "2"
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/decorations/floor_acid_2x2_3"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/floor_basic_2x2_nosides.mesh"
+		material "buildings/decorations/floor_acid_4x4_3"
+		flags "2"
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/decorations/floor_acid_2x2_4"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/floor_basic_2x2_nosides.mesh"
+		material "buildings/decorations/floor_acid_4x4_4"
+		flags "2"
+	}
+}

@@ -112,7 +112,7 @@ return function()
 	
 	rules.waveChanceRerollSpawnGroup = 10
 	rules.waveChanceRerollSpawn      = 15
-	rules.waveChanceReroll  
+	rules.waveChanceReroll           = 40
 
 	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
 	rules.waves = {}

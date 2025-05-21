@@ -1,8 +1,7 @@
 EntityBlueprint
 {
 	name "buildings/defense/tower_artillery_propelled"
-
-	base_blueprint 			buildings/defense/tower_artillery
+	base_blueprint 	buildings/defense/tower_artillery
 
 	BuildingDesc
 	{
@@ -12,8 +11,9 @@ EntityBlueprint
 		category 			"defense"
 		localization_id		"gui/hud/building_name/tower_artillery_propelled"
 		description			"gui/hud/building_description/tower_artillery_propelled"
-		menu_icon			"gui/hud/building_icons/tower_artillery_lvl2"
+		menu_icon			"gui/hud/building_icons/tower_artillery_lvl2_propelled"
 		require 			"headquarters"
+		building_group		"tower_artillery"
 		order				"10"
 		check_connect		"1"
 		type				"tower"

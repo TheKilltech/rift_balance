@@ -435,6 +435,17 @@ MissionDef
             max_spawned_volumes "7"
         }
 		
+        ResourceVolume
+        {
+            resource        "carbon_deepvein"
+
+            min_resources   "30000"
+            max_resources   "80000"
+
+            min_spawned_volumes "4"
+            max_spawned_volumes "7"
+        }
+		
 		ResourceVolume
         {
             resource        "carbon_vein"

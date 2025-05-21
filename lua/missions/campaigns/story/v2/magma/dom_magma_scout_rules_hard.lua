@@ -1,18 +1,11 @@
 return function()
-    local rules = require("lua/missions/campaigns/story/v2/magma/dom_magma_scout_rules_default.lua")()
+    local rules  = require("lua/missions/campaigns/story/v2/magma/dom_magma_scout_rules_default.lua")()
+	local helper = require( "lua/missions/v2/waves_gen.lua" )
 	
-	rules.idleTime = 
-	{			
-		450,  -- difficulty level 1
-		600,  -- difficulty level 2
-		660,  -- difficulty level 3
-		720,  -- difficulty level 4	
-		780,  -- difficulty level 5	
-		780,  -- difficulty level 6	
-		1200,  -- difficulty level 7
-		1200,  -- difficulty level 8	
-		1380,  -- difficulty level 9	
-	}
+	rules.timeToNextDifficultyLevel = helper:Default_TimeToNextDifficultyLevel( "scout", "hard", 1)
+	rules.prepareSpawnTime          = helper:Default_PrepareSpawnTime(          "scout", "hard", 1)
+	rules.idleTime                  = helper:Default_IdleTime(                  "scout", "hard", 1)
+	
 	
 	rules.waveRepeatChances = 
 	{
@@ -29,23 +22,12 @@ return function()
 	
 	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
 	rules.waves = {}
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7,     },  biomes = { "magma" }, levels = { 1 },   ids = {    2 },      suffixes = { "", "alpha"}, },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8   },  biomes = { "magma" }, levels = { 2 },   ids = { 1, 2 },      suffixes = { "", "alpha"}, },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 1 },   ids = { 1, 2 },      suffixes = { "ultra"},     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 3 },   ids = { 1, 2, 3 },   suffixes = { "", "alpha"}, },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 4 },   ids = { 1, 2, 3 },   suffixes = { "" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    7, 8, 9},  biomes = { "magma" }, levels = { 2 },   ids = { 1, 2 },      suffixes = { "alpha" },    },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7,     },  biomes = { "magma" }, levels = { 1 },   ids = {    2 },   suffixes = { "", "alpha"}, },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8   },  biomes = { "magma" }, levels = { 2 },   ids = { 1, 2 },   suffixes = { "", "alpha"}, },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 1 },   ids = { 1, 2 },   suffixes = { "ultra"},     },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 3 },   ids = { 1, 2 },   suffixes = { "", "alpha"}, },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 4 },   ids = { 1, 2 },   suffixes = { "" },         },   rules.waves)
+	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    7, 8, 9},  biomes = { "magma" }, levels = { 2 },   ids = { 1, 2 },   suffixes = { "alpha" },    },   rules.waves)
 	
-
-	rules.extraWaves = 
-	{
-	
-	}
-
-	rules.bosses = 
-	{
-
-	}
-
     return rules;
 end

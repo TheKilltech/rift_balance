@@ -33,59 +33,7 @@ EntityBlueprint
 					steel 		"10000"
 					cobalt		"2000"
 				}
-			}		
-		}	
-	}
-
-	ResourceStorageDesc
-	{
-		Storages
-		{
-			Storage
-			{
-				resource		"palladium"
-				max 	 		"1000"
-			}		
-			Storage
-			{
-				resource		"titanium"
-				max 	 		"1000"
-			}		
-			Storage
-			{
-				resource		"cobalt"
-				max 	 		"1000"
-			}		
-			Storage
-			{
-				resource		"uranium"
-				max 	 		"1000"
-			}	
-			Storage
-			{
-				resource		"uranium_ore"
-				max 	 		"500"
 			}
-			Storage
-			{
-				resource "energy"
-				max 	 "0"
-			}				
-		}
-	}
-
-	LuaDesc
-	{
-		script "lua/buildings/building.lua"
-
-		database
-0		{
-			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell	string:"sell_big"
-			harvest_duration	float:"5"
-			range				float:"250"
-			display_radius_group	 string:"storage_underground" //"liquid_pump"
-			display_radius_blueprint string:"effects/decals/range_circle_repair"
 		}
 	}
 	
@@ -102,10 +50,47 @@ EntityBlueprint
 			Storage
 			{
 				group	 		"global"
+				subgroup		"base"
 				max 	 		"12000"
-			}	
+			}
+			
+			Storage
+			{
+				resource		"ferdonite"
+				max 	 		"12000"
+			}		
+			Storage
+			{
+				resource		"rhodonite"
+				max 	 		"12000"
+			}		
+			Storage
+			{
+				resource		"tanzanite"
+				max 	 		"12000"
+			}		
+			Storage
+			{
+				resource		"hazenite"
+				max 	 		"12000"
+			}
 		}
 	}	
+
+	LuaDesc
+	{
+		script "lua/buildings/building.lua"
+
+		database
+0		{
+			cone_effect			string:"build_cone_3x3"
+			cone_effect_sell	string:"sell_big"
+			harvest_duration	float:"5"
+			range				float:"250"
+			display_radius_group	 string:"storage_underground" //"liquid_pump"
+			display_radius_blueprint string:"effects/decals/range_circle_repair"
+		}
+	}
 
 	HealthDesc
 	{

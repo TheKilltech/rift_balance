@@ -1,7 +1,6 @@
 EntityBlueprint
 {
 	name  					"buildings/defense/tower_lightning_lvl_2"
-
 	base_blueprint 			"buildings/defense/tower_lightning"
 
 	BuildingDesc
@@ -9,8 +8,8 @@ EntityBlueprint
 		name 				"tower_lightning_lvl_2"
 		bp   				"buildings/defense/tower_lightning_lvl_2"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_lightning_charged"
-		description			"gui/hud/building_description/tower_lightning_charged"
+		localization_id		"gui/hud/building_name/tower_lightning"
+		description			"gui/hud/building_description/tower_lightning"
 		menu_icon			"gui/hud/building_icons/tower_lightning_lvl2"
 		require 			"headquarters"
 		building_group		"tower_lightning"
@@ -58,6 +57,14 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"plasma_charged"
+				value 		"2"
+				family		"charge"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"resin"
 				value 		"2"
 				family		"charge"
 				attachment	"att_in_1"

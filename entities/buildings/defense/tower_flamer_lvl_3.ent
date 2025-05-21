@@ -50,7 +50,7 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/tower_flamer_lvl3"
 		require 			"headquarters"
 		building_group		"tower_flamer"
-		order				"10
+		order				"10"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -114,19 +114,6 @@ EntityBlueprint
 		priority 6
 	}
 
-	ResourceStorageDesc
-	{
-		Storages
-		{
-			Storage
-			{
-				group	 		"local"
-				max 	 		"200"
-				attachment		"att_in_1"
-			}
-		}
-	}
-	
 	HealthDesc
 	{
 		max_health 					"1000"

@@ -2743,7 +2743,7 @@ buildings/defense/tower_hcm
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_mech_explosive_lvl2"
+		ammo_storage "ammo_tower_explosive_lvl2"
 		damage_type "fire"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -2837,15 +2837,15 @@ buildings/defense/tower_hcm_lvl_2
 {
 	WeaponItemDesc
 	{
-		ammo_storage "ammo_tower_explosive_lvl2"
+		ammo_storage "ammo_tower_explosive_lvl3"
 		damage_type "fire"
 		rarity "SUPERIOR"
 		stat_def_vec
 		{
 			WeaponStatDef
 			{
-				max_value "0.030"
-				min_value "0.030"
+				max_value "0.025"
+				min_value "0.025"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_RATE"
 			}
@@ -2868,8 +2868,8 @@ buildings/defense/tower_hcm_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "500.000"
-				min_value "500.000"
+				max_value "1000.000"
+				min_value "1000.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}

@@ -17,6 +17,7 @@ EntityBlueprint
 		//upgrade				"buildings/resources/uranium_centrifuge_lvl_4"
 		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,uranium_centrifuge_lvl_2,uranium_centrifuge"
 		
 		costs
 		{
@@ -52,20 +53,26 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"225"
+				value			 	"400"
 			}
 			GameplayResource
 			{
 				resource 			"uranium_ore"
-				value			 	"4"
-			}			
+				value			 	"3"
+			}	
+			GameplayResource
+			{
+				resource 			"morphium"
+				value 				"150"
+				attachment			"att_in_1"
+			}
 		}
 		out
 		{
 			GameplayResource
 			{
 				resource 			"uranium"
-				value			 	"4"
+				value			 	"5"
 			}
 			
 		}		
@@ -101,13 +108,44 @@ EntityBlueprint
 			}
 		}
 	}
+	
 	EffectDesc
 	{		
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
 		}	
+		////////////////////////Resources/////////////////////////	
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
 	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+			}
+		}		
 		EffectGroup
 		{
 			group "level"

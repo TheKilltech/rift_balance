@@ -11,11 +11,13 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/biomass_morphed_press"
 		description			"gui/hud/building_description/biomass_morphed_press"
 		menu_icon			"gui/hud/building_icons/biomass_morphed_press"
+		type				"pipe"
 		order				"14"
 		//upgrade				"buildings/resources/biomass_morphed_press_lvl_2"
 		require 			"headquarters"
-		building_group		"biomass_plant_press"
-		buildable			"0"
+		//building_group	"biomass_plant_press"
+		buildable			"1"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs

@@ -5,7 +5,6 @@ EntityBlueprint
 
 	BuildingDesc
 	{
-		buildable			"0"		
 		name 				"repair_facility_lvl_3"
 		bp   				"buildings/defense/repair_facility_lvl_3"
 		category 			"defense"
@@ -13,22 +12,24 @@ EntityBlueprint
 		description			"gui/hud/building_description/repair_facility"
 		menu_icon			"gui/hud/building_icons/repair_facility_lvl3"
 		require 			"headquarters"
+		building_group		"repair_facility"
+		buildable			"0"		
 		order				"4"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"			
-		//upgrade				"buildings/defense/repair_facility_lvl_4"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"	
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 20
+				building_time 40
 				building_cost
 				{
 					carbonium 	"400"
 					steel 		"1000"
 					cobalt 		"750"
-					ai			"1"
+					ai			"2"
 				}
 			}		
 		}		
@@ -41,7 +42,23 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"25"
+				value			 	"60"
+			}
+			
+			GameplayResource
+			{
+				resource 	"flammable_gas"
+				value 		"10"
+				family		"fuel"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"reagent"
+				value 		"2"
+				family		"fuel"
+				attachment	"att_in_1"
 			}
 			
 		}
@@ -58,10 +75,10 @@ EntityBlueprint
 			cone_effect_sell		string:"sell_big"
 			energy_cost				float:"10"
 
-			drone_search_radius 	float:"25"
+			drone_search_radius 	float:"40"
 			drone_blueprint			string:"units/drones/drone_repair_facility_lvl_3"
 			drone_attachments		string:"att_landing"
-			drone_per_spot			int:"7"
+			drone_per_spot			int:"5"
 			drone_visible_on_spot 	int:"0"
 
 			display_radius_blueprint string:"effects/decals/range_circle_repair"
@@ -69,6 +86,73 @@ EntityBlueprint
 		}
 	}
 
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsBoxShape
+			{
+				x	6
+				y	6
+				z	6
+			}
+		}
+	}
+	
+	MinimapItemDesc
+	{
+		type	"quad"
+		color 
+		{
+			x "0.7"
+			y "0.7"
+			z "0.7"
+			w "1"
+		}
+		size
+		{
+			x "3"
+			y "3"
+		}
+		visibility			"always"
+	}
+	
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsCapsuleShape
+					{
+						r "1.85"
+						half_height "2"
+
+						position 
+						{
+							x "0.0"
+							y "1.45"
+							z "0.0"
+						}
+
+						orientation
+						{
+							w "0.7"
+							x "0.0"
+							z "0.7"
+							y "0.0"
+						}
+					}	
+				}
+			}
+		}
+	}
+	
 	HealthDesc
 	{
 		max_health 					"1000"
@@ -105,6 +189,42 @@ EntityBlueprint
 		{
 			"buildings/effects_small_base"
 		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_reactor"
+					bone  "att_vismod_1"
+					scale "0.9 1.0 0.9"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone 		"att_in_pipe"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
@@ -121,7 +241,7 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "level"
-			enabled "1"
+			enabled "0"
 			Effects
 			{
 				Effect

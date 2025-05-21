@@ -50,10 +50,32 @@ EntityBlueprint
 			}
 			GameplayResource
 			{
+				resource 	"fluorine"
+				value 		"50"
+				family		"charge"
+				attachment	"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 	"plasma"
+				value 		"50"
+				family		"charge"
+				attachment	"att_in_1"
+			}
+			GameplayResource
+			{
 				resource 	"plasma_charged"
 				value 		"20"
+				family		"charge"
 				attachment	"att_in_1"
-			}			
+			}
+			GameplayResource
+			{
+				resource 	"resin"
+				value 		"20"
+				family		"charge"
+				attachment	"att_in_1"
+			}		
 		}
 
 		out

@@ -1,12 +1,10 @@
 EntityBlueprint
 {
 	name  					"buildings/energy/magma_powerplant_lvl_2"
-
 	base_blueprint 			"buildings/energy/magma_powerplant"
 
 	BuildingDesc
-	{
-	
+	{	
 		name 				"magma_powerplant_lvl_2"
 		bp   				"buildings/energy/magma_powerplant_lvl_2"
 		category 			"energy"
@@ -19,7 +17,7 @@ EntityBlueprint
 		upgrade				"buildings/energy/magma_powerplant_lvl_3"
 		buildable			"0"
 		going_green_state	"1"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,magma_powerplant,magma_powerplant_lvl_3"
 				
 		costs
 		{
@@ -29,8 +27,8 @@ EntityBlueprint
 				building_time 120
 				building_cost
 				{
-					carbonium 	"500"		
-					steel 		"500"
+					carbonium 	"300"		
+					steel 		"600"
 					titanium	"250"
 				}
 			}		
@@ -188,7 +186,7 @@ EntityBlueprint
 		{
 			"buildings/effects_big_base"
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
 			group "att_in_1"
@@ -204,22 +202,7 @@ EntityBlueprint
 				}
 			}
 		}	
-		EffectGroup
-		{
-			group "att_out_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_out_arrow"
-				}
-			}
-		}	
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
 			group "working"

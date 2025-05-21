@@ -44,9 +44,8 @@ EntityBlueprint
 
 EntityBlueprint
 {
-	name  					"buildings/defense/shield_generator_lvl_3"
-
-	base_blueprint 			"buildings/defense/shield_generator_lvl_2"
+	name  			"buildings/defense/shield_generator_lvl_3"
+	base_blueprint 	"buildings/defense/shield_generator_lvl_2"
 
 	BuildingDesc
 	{
@@ -88,8 +87,8 @@ EntityBlueprint
 		{
 			cone_effect				string:"build_cone_3x3"
 			cone_effect_sell		string:"sell_big"
-			radius					float:"20"
-			range					float:"20"
+			radius					float:"25"
+			range					float:"25"
 			shield_bp				string:"buildings/defense/shield_generator/shield_lvl_3"
 			display_radius_group	string:"shield_generator"
 			display_radius_blueprint string:"effects/decals/range_circle_shield"
@@ -117,7 +116,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"resin"
-				value 			"100"
+				value 			"30"
 				attachment		"att_in_1"
 				family			"charge"
 			}	

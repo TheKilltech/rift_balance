@@ -26,7 +26,17 @@ function wave_gen:Generate( wavesSetting, waves )
 					for id in Iter( wavesSetting.ids ) do 
 						for suffix in Iter( wavesSetting.suffixes ) do 
 							for w = 1, wavesSetting.weight do
-								table.insert( subwaves, self:GetWaveLogic(level, id, biome, suffix) )
+								local logic = self:GetWaveLogic(level, id, biome, suffix)
+								local wave = { 
+									name              = logic,
+									spawn_type        = wavesSetting.spawn_type,
+									spawn_type_value  = wavesSetting.spawn_type_value,
+									target_type       = wavesSetting.target_type,
+									target_type_value = wavesSetting.target_type_value,
+									target_min_radius = wavesSetting.target_min_radius,
+									target_max_radius = wavesSetting.target_max_radius
+								}
+								table.insert( subwaves, wave )
 							end
 						end
 					end	
@@ -45,6 +55,7 @@ end
 function wave_gen:GetWaveLogic( level, id, biome, suffix )
 	-- e.g. make  "logic/missions/survival/attack_level_3_id_1_desert_alpha.logic"
 	-- consider rework to produce e.g  { name="logic/missions/survival/caverns/attack_level_1_id_1_caverns.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+	if biome == "jungle" then biome = "" end
 	local oldbiomes = {"", "acid", "magma", "desert" }
 	local waveFile = "logic/missions/survival/"
 	if table.contains(oldbiomes, biome) then
@@ -79,6 +90,47 @@ function wave_gen:PrepareDefaultRules(rules, missionType, difficulty)
 	rules.waveChanceRerollSpawn      = 15  -- chance for rerolled attack wave to change its spawning point
 	rules.waveChanceReroll           = 30  -- chance to reroll and replace an attack wave from its original wave pool
 	
+	rules.addResourcesOnRunOut = { }
+	rules.buildingsUpgradeStartsLogic = { }
+	rules.maxAttackCountPerDifficulty = { } -- outdated by this mod, but _custom map scrips scale this
+	
+	rules.waves = {}
+	rules.extraWaves = { }
+	rules.bosses = { }
+	
+	return rules
+end
+
+function wave_gen:PrepareCustomRules(rules, missionType)
+	local attackCountMultiplier			= DifficultyService:GetAttacksCountMultiplier()
+	local prepareAttackTimeMultiplier	= DifficultyService:GetPrepareAttackTimeMultiplier()
+	local idleTimeMultiplier			= DifficultyService:IdleTimeMultiplier()
+	local buildingSpeedMultiplier 		= DifficultyService:GetBuildingSpeedMultiplier()
+	local progressionMultiplier 		= math.sqrt(buildingSpeedMultiplier) -- this should be a product of building speed and building cost multipliers. the squareroot is used because the overall gameplay-progress speed depends on more then just those two apsects
+
+	rules.prepareSpawnTime            = self:ScaleTable(rules.prepareSpawnTime, prepareAttackTimeMultiplier)
+	rules.maxAttackCountPerDifficulty = self:ScaleTable(rules.maxAttackCountPerDifficulty, attackCountMultiplier)
+	if rules.attackCountPerDifficulty then
+		for i = 1, #rules.attackCountPerDifficulty, 1 do
+			local counts = rules.attackCountPerDifficulty[i]
+			if counts then
+				counts.minCount = counts.minCount * attackCountMultiplier
+				counts.maxCount = counts.maxCount * attackCountMultiplier
+			end
+		end
+	end
+
+	for i = 1, #rules.idleTime, 1 do
+		rules.idleTime[i] = rules.idleTime[i] * idleTimeMultiplier * (1 + (progressionMultiplier-1)*(9-i)/8.0)
+	end
+	
+	for i = 1, #rules.cooldownAfterAttacks, 1 do
+		rules.cooldownAfterAttacks[i] = rules.cooldownAfterAttacks[i] * idleTimeMultiplier * (1 + (progressionMultiplier-1)*(9-i)/8.0)
+	end
+
+	for i = 1, #rules.timeToNextDifficultyLevel, 1 do
+		rules.timeToNextDifficultyLevel[i] = rules.timeToNextDifficultyLevel[i] * (1 + (progressionMultiplier-1)*(9-i)/8.0)
+	end
 	return rules
 end
 
@@ -140,15 +192,15 @@ function wave_gen:Default_TimeToNextDifficultyLevel(missionType, difficulty, fac
 		}
 	elseif (missionType == "scout" or missionType == "temp") then
 		times = {
-			200, -- difficulty level 1
-			200, -- difficulty level 2
-			200, -- difficulty level 3	
+			600, -- difficulty level 1
+			600, -- difficulty level 2
+			600, -- difficulty level 3	
 			1200, -- difficulty level 4
-			1200, -- difficulty level 5
-			1500, -- difficulty level 6
-			2400, -- difficulty level 7
-			3600, -- difficulty level 8
-			3600, -- difficulty level 9
+			1800, -- difficulty level 5
+			2400, -- difficulty level 6
+			3600, -- difficulty level 7
+			5200, -- difficulty level 8
+			7200, -- difficulty level 9
 		}
 	else 
 		times = {			
@@ -249,8 +301,12 @@ end
 
 
 function wave_gen:ScaleTable(array, factor)
-	for i = 1, #array, 1 do
-		array[i] = array[i] * factor;
+	if array then
+		for i = 1, #array, 1 do
+			if array[i] then
+				array[i] = array[i] * factor;
+			end
+		end
 	end
 	return array
 end

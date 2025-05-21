@@ -52,7 +52,15 @@ EntityBlueprint
 			{
 				resource 	"plasma_charged"
 				value 		"15"
-				family		"coolant"
+				family		"charge"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"resin"
+				value 		"15"
+				family		"charge"
 				attachment	"att_in_1"
 			}
 			
@@ -60,7 +68,7 @@ EntityBlueprint
 			{
 				resource 	"morphium"
 				value		"100"
-				family		"coolant"
+				family		"charge"
 				attachment	"att_in_1"
 			}
 		}

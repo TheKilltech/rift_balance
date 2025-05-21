@@ -59,6 +59,7 @@ EntityBlueprint
 			cone_effect_sell	string:"sell_small"
 			time_machine		int:"0"
 			radius				float:"50"
+			restriction			string:"defense"
 		}
 
 	}
@@ -207,8 +208,8 @@ EntityBlueprint
 		}
 		size
 		{
-			x "1"
-			y "1"
+			x "2"
+			y "2"
 		}
 		visibility			"always"
 	}
@@ -478,4 +479,230 @@ EntityBlueprint
 EntityBlueprint
 {
 	name "buildings/defense/dummy_projectile"
+}
+
+
+EntityBlueprint
+{
+	name "buildings/defense/fire_control_station_artillery"
+	base_blueprint	"buildings/defense/fire_control_station"
+
+	BuildingDesc
+	{
+		name 				"fire_control_station_artillery"
+		bp   				"buildings/defense/fire_control_station_artillery"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/fire_control_station_artillery"
+		description			"gui/hud/building_description/fire_control_station_artillery"
+		menu_icon			"gui/hud/building_icons/fire_control_station_artillery"
+		require 			"headquarters"
+		building_group		"fire_control_station"
+		buildable 			"0"
+		order				"46"
+		type				"tower"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 2.5
+				building_cost
+				{
+					carbonium 	"1500"
+					steel 		"50"
+					ai			"2"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"75"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/defense/fire_control_station.lua"
+
+		database
+		{
+			cone_effect			string:"build_cone_1x1"
+			cone_effect_sell	string:"sell_small"
+			time_machine		int:"0"
+			radius				float:"50"
+			restriction			string:"artillery"
+		}
+	}
+	
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsBoxShape
+			{
+				x	8
+				y	8
+				z	8
+			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "1"
+			y "0.5"
+			z "0"
+			w "1"
+		}
+		size
+		{
+			x "4"
+			y "4"
+		}
+		visibility			"always"
+	}
+
+	TurretDesc
+	{
+		target "ground_unit_artillery|ground_unit_large|ground_unit_medium|ground_unit"
+		target_ignore "invisible"
+		speed "300"
+		aim_volume "SphericalAimVolume"
+		{
+			range_min "0"
+			range_max "180"
+			aiming_range "190"
+		}
+
+		aiming_cooldown "1"
+		aiming_target_time "2"
+		aiming_idle_angle "20"
+		pitch "att_target"
+		yaw "att_target"
+		check_target_visibility "1"
+		fog_of_war_filtering "1"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/hq1"
+					bone "att_vismod_1"
+					scale "0.5 0.5 0.5"
+					orientation "90 0 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_white_02"
+					bone "att_vismod_2"
+					scale "0.5 0.5 0.5"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+
+			Effects
+			{
+			}
+		}
+		EffectGroup
+		{
+			group "target"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					// blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/mech/laser_pointer"
+					bone "att_target"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "alert_red"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "lights/point/red_big"
+					bone "att_working"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "alert_yellow"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "lights/point/base_lamp_yellow"  //"effects/buildings_and_machines/lamp_light_yellow"
+					bone "att_working"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "alert_green"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "lights/point/green_big"
+					bone "att_working"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+			}
+		}
+	}
 }

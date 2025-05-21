@@ -8,19 +8,21 @@ end
 
 function fire_control_station:OnInit()
 	-- LogService:Log( "FCS: OnInit" )
+	self.restriction = "defense"
 	self.radius = 40
 	self.alert = 1
 	self.alertCooldown = 10
 	self.alertLight = "off"
 	
 	self.radius = self.data:GetFloatOrDefault("radius", 40)
+	self.restriction = self.data:GetStringOrDefault("restriction", "defense" )
 	
 	self:RegisterHandler(self.entity, "TurretEvent", "OnTurretEvent")
 	
 	self.fsm = self:CreateStateMachine()
-	self.fsm:AddState("alert",          { enter = "OnEnterAlert", exit = "OnExitAlert" })
-	self.fsm:AddState("alert_cooldown", { enter = "OnEnterAlertCooldown", execute = "OnExecuteAlertCooldown", exit= "OnExitCooldownAlertCooldown" , interval = 2 })
-	self.fsm:AddState("noalert",        { enter = "OnEnterNoAlert", exit = "OnExitNoAlert" })
+	self.fsm:AddState("alert",          { enter = "OnEnterAlert",         execute = "OnExecuteAlert",         exit = "OnExitAlert",                  interval = 30 })
+	self.fsm:AddState("alert_cooldown", { enter = "OnEnterAlertCooldown", execute = "OnExecuteAlertCooldown", exit = "OnExitCooldownAlertCooldown" , interval = 2 })
+	self.fsm:AddState("noalert",        { enter = "OnEnterNoAlert",       execute = "OnExecuteNoAlert",       exit = "OnExitNoAlert",                interval = 30 })
 end
 
 
@@ -63,12 +65,16 @@ end
 
 function fire_control_station:OnEnterAlert(state)	
 	-- LogService:Log( "FCS: OnEnterAlert alert ".. tostring(self.alert))
+	if self.alert ~= 2 then self:Update(2) end
 	self:OperateAlertLight("red")
-	if self.working and self.alert ~= 2 then
-		local entities = self:GetControlledEntities()
-		self:SwitchPowerState( entities, true )
+end
+
+function fire_control_station:OnExecuteAlert(state, dt )
+	-- LogService:Log( "FCS: OnExecuteAlert alert ".. tostring(self.alert) ..", cooldown ".. tostring(self.updateCooldown))
+	if self.updateCooldown == nil or self.updateCooldown < 0 then
+		self:Update(2)
 	end
-	self.alert = 2
+	self.updateCooldown = self.updateCooldown - dt
 end
 
 function fire_control_station:OnExitAlert(state)	
@@ -101,12 +107,16 @@ end
 
 function fire_control_station:OnEnterNoAlert(state)	
 	-- LogService:Log( "FCS: OnEnterNoAlert alert ".. tostring(self.alert))
+	if self.alert ~= 0 then self:Update(0) end
 	self:OperateAlertLight("green")
-	if self.alert ~= 0 and self.working then
-		local entities = self:GetControlledEntities()
-		self:SwitchPowerState( entities, false )
+end
+
+function fire_control_station:OnExecuteNoAlert(state, dt )
+	-- LogService:Log( "FCS: OnExecuteNoAlert alert ".. tostring(self.alert) ..", cooldown ".. tostring(self.updateCooldown))
+	if self.updateCooldown == nil or self.updateCooldown < 0 then
+		self:Update(0)
 	end
-	self.alert = 0
+	self.updateCooldown = self.updateCooldown - dt
 end
 
 function fire_control_station:OnExitNoAlert(state)	
@@ -127,15 +137,28 @@ function fire_control_station:GetControlledEntities()
 		if ( not BuildingService:IsBuildingFinished( ent ))						then goto continue end
 		
 		local bpname = EntityService:GetBlueprintName(ent)
-		if string.find(bpname, "fire_control_station") then goto continue end
-		if string.find(bpname, "repair_facility")      then goto continue end
-		if string.find(bpname, "short_range_radar")    then goto continue end
-		if string.find(bpname, "ai_hub")               then goto continue end
-		
-		-- LogService:Log( "FCS: entity ".. tostring(ent).. " name ".. tostring(EntityService:GetBlueprintName(ent)))
-        Insert(controlled, ent)
+		if self.restriction == "defense" then
+			if string.find(bpname, "fire_control_station") then goto continue end
+			if string.find(bpname, "repair_facility")      then goto continue end
+			if string.find(bpname, "short_range_radar")    then goto continue end
+			if string.find(bpname, "ai_hub")               then goto continue end
+			
+			Insert(controlled, ent)
+		elseif self.restriction == "artillery" then
+			if     string.find(bpname, "heavy_artillery") then Insert(controlled, ent)
+			elseif string.find(bpname, "tower_hcm")       then Insert(controlled, ent)
+			elseif string.find(bpname, "tower_water_big") then Insert(controlled, ent)
+			elseif string.find(bpname, "tower_power_rod") then Insert(controlled, ent)
+			end
+		else self.restriction = "defense" -- for compatibility with older saves where the flag was missing
+		end
 		::continue::
     end
+	
+	-- LogService:Log( "FCS ".. self.restriction .." list")
+    --for ent in Iter(controlled ) do
+		--LogService:Log( "FCS ".. self.restriction ..": entity ".. tostring(ent).. " name ".. tostring(EntityService:GetBlueprintName(ent)))
+	--end
 
     return controlled
 end
@@ -145,6 +168,21 @@ function fire_control_station:SwitchPowerState( entities, newStatus )
 	for entity in Iter( entities ) do
 		QueueEvent("ChangeBuildingStatusRequest", entity, newStatus )
 	end
+end
+
+function fire_control_station:Update( newalert )
+	-- LogService:Log( "FCS: Update ".. tostring(self.alert) .."-".. tostring(newalert).. " alert, ".. tostring(self.restriction) .. " restr., ".. tostring(self.updateCooldown).. " cooldown" )
+	
+	if self.working then
+		local entities = self:GetControlledEntities()
+		if newalert == 0 then
+			self:SwitchPowerState( entities, false )
+		elseif newalert == 2 then
+			self:SwitchPowerState( entities, true )
+		end
+	end
+	self.updateCooldown = 30 * (3 + newalert)
+	self.alert = newalert
 end
 
 function fire_control_station:OperateAlertLight( targetLightState )

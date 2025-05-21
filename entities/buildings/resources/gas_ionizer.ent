@@ -93,7 +93,7 @@ EntityBlueprint
 	
 	PipeComponent
 	{
-		attachment		"att_in_1,att_in_3"
+		attachment		"att_in_1,att_in_3,att_out_1"
 	}
 	
 	LuaDesc
@@ -462,5 +462,532 @@ EntityBlueprint
 				}
 			}
 		}	
+	}
+}
+
+EntityBlueprint
+{
+	name			"buildings/resources/gas_ionizer_lvl_2"
+	base_blueprint	"buildings/resources/gas_ionizer"
+
+	BuildingDesc
+	{
+		name 				"gas_ionizer_lvl_2"
+		bp   				"buildings/resources/gas_ionizer_lvl_2"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/gas_ionizer"
+		description			"gui/hud/building_description/gas_ionizer"
+		menu_icon			"gui/hud/building_icons/gas_ionizer_lvl_2"
+		order				"21"
+		upgrade				"buildings/resources/gas_ionizer_lvl_3"		
+		require 			"headquarters"
+		building_group		"ionizer"
+		buildable			"0"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"gas_ionizer,gas_ionizer_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 70
+				building_cost
+				{
+					carbonium 	"500"
+					steel 		"2000"			
+					palladium	"350"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 		"energy"
+				value			"300"
+			}
+			GameplayResource
+			{
+				resource 		"carbonium"
+				value			"2"
+			}		
+			GameplayResource
+			{
+				resource 		"flammable_gas"
+				family			"gas"
+				value 			"50"
+				attachment		"att_in_1|att_in_3"
+			}
+			GameplayResource
+			{
+				resource 		"fluorine"
+				family			"gas"
+				value 			"30"
+				attachment		"att_in_1|att_in_3"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 		"plasma"
+				value 			"75"
+				attachment		"att_out_1"
+			}	
+		}
+		priority 4			
+	}
+	
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource	 	"plasma"
+				max 	 		"200"
+				attachment		"att_out_1"
+			}	
+			Storage
+			{
+				group	 		"local"
+				max 	 		"50"
+				attachment		"att_in_1|att_in_3"
+			}
+		}
+	}	
+	
+	HealthDesc
+	{
+		max_health 					"1500"
+		health 						"1500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+			}			
+		}
+	}
+	
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_3_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_out_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_3_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pump2"
+					bone 		"att_vismod_3"
+					offset		"-0.2 -0.28 0.1"
+					scale		"0.6 0.6 0.6"
+					orientation "0 90 0"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_very_small_white_01"
+					bone 		"att_vismod_4"
+					scale		"0.7 1.05 0.7"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}							
+	}
+}
+
+EntityBlueprint
+{
+	name			"buildings/resources/gas_ionizer_lvl_3"
+	base_blueprint	"buildings/resources/gas_ionizer_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"gas_ionizer_lvl_3"
+		bp   				"buildings/resources/gas_ionizer_lvl_3"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/gas_ionizer"
+		description			"gui/hud/building_description/gas_ionizer"
+		menu_icon			"gui/hud/building_icons/gas_ionizer_lvl_3"
+		order				"22"
+		require 			"headquarters"
+		building_group		"ionizer"
+		buildable			"0"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"gas_ionizer,gas_ionizer_lvl_2,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 80
+				building_cost
+				{
+					carbonium 	"500"
+					steel 		"2000"
+					palladium	"500"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 		"energy"
+				value			"400"
+			}
+			GameplayResource
+			{
+				resource 		"carbonium"
+				value			"2"
+			}
+			GameplayResource
+			{
+				resource 		"palladium"
+				value			"0.2"
+			}		
+			GameplayResource
+			{
+				resource 		"flammable_gas"
+				family			"gas"
+				value 			"50"
+				attachment		"att_in_1|att_in_3"
+			}	
+			GameplayResource
+			{
+				resource 		"fluorine"
+				family			"gas"
+				value 			"30"
+				attachment		"att_in_1|att_in_3"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 		"plasma"
+				value 			"150"
+				attachment		"att_out_1"
+			}	
+		}
+		priority 4			
+	}
+	
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource	 	"plasma"
+				max 	 		"300"
+				attachment		"att_out_1"
+			}	
+			Storage
+			{
+				group	 		"local"
+				max 	 		"50"
+				attachment		"att_in_1|att_in_3"
+			}
+		}
+	}	
+	
+	HealthDesc
+	{
+		max_health 					"1800"
+		health 						"1800"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+		{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+			}			
+		}
+	}
+	
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////	
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_3_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_out_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"	
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_3_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pump3"
+					bone		"att_vismod_3"
+					scale		"0.6 0.6 0.6"
+					orientation "0 90 0"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_very_small_white_01"
+					bone 		"att_vismod_4"
+					scale		"0.7 1.05 0.7"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}							
 	}
 }

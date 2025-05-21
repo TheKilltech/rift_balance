@@ -33,12 +33,30 @@ EntityBlueprint
 					carbonium 	"250"
 					steel 		"1200"
 					uranium		"200"
-					ai			"1"
+					ai			"3"
 				}
 			}
 		}
 	}
 
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"20"
+			}
+		}
+	
+		out
+		{
+		}
+	
+		priority 6
+	}
+	
 	LuaDesc
 	{
 		script "lua/buildings/defense/tower.lua"
