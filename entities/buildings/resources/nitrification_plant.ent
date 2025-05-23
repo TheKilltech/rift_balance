@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // nitrification_plant
 {
 	name  "buildings/resources/nitrification_plant"
 
@@ -6,6 +6,7 @@ EntityBlueprint
 	{
 		name 				"nitrification_plant"
 		bp   				"buildings/resources/nitrification_plant"
+		ghost_bp   			"buildings/resources/nitrification_plant_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/nitrification_plant"
 		description			"gui/hud/building_description/nitrification_plant"
@@ -57,12 +58,6 @@ EntityBlueprint
 				value			 	"10"
 				attachment			"att_in_1"
 			}
-			
-			//GameplayResource
-			//{
-			//	resource 			"rhodonite" //"hazenite"
-			//	value			 	"1"
-			//}
 		}
 		
 		out
@@ -443,12 +438,6 @@ EntityBlueprint
 					bone "att_vismod_3"
 					scale "1.4 1.0 1.0"
 				}
-				//Effect
-				//{
-				//	blueprint "effects/buildings_and_machines/minipipes"
-				//	bone "att_vismod_4"
-				//	scale "0.5 0.5 0.5"
-				//}
 			}
 		}
 		EffectGroup
@@ -467,7 +456,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // nitrification_plant_lvl_2
 {
 	name  "buildings/resources/nitrification_plant_lvl_2"
 
@@ -477,6 +466,7 @@ EntityBlueprint
 	{
 		name 				"nitrification_plant_lvl_2"
 		bp   				"buildings/resources/nitrification_plant_lvl_2"
+		ghost_bp   			"buildings/resources/nitrification_plant_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/nitrification_plant"
 		description			"gui/hud/building_description/nitrification_plant"
@@ -693,12 +683,6 @@ EntityBlueprint
 					bone "att_vismod_3"
 					scale "1.4 1.0 1.0"
 				}
-				//Effect
-				//{
-				//	blueprint "effects/buildings_and_machines/minipipes"
-				//	bone "att_vismod_4"
-				//	scale "0.5 0.5 0.5"
-				//}
 			}
 		}
 		EffectGroup
@@ -730,7 +714,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // nitrification_plant_lvl_3
 {
 	name  "buildings/resources/nitrification_plant_lvl_3"
 
@@ -740,6 +724,7 @@ EntityBlueprint
 	{
 		name 				"nitrification_plant_lvl_3"
 		bp   				"buildings/resources/nitrification_plant_lvl_3"
+		ghost_bp   			"buildings/resources/nitrification_plant_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/nitrification_plant"
 		description			"gui/hud/building_description/nitrification_plant"
@@ -987,6 +972,95 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/level_3"
 					bone "att_level"
+				}
+			}
+		}
+	}
+}
+
+
+EntityBlueprint  // nitrification_plant_ghost
+{
+	name  "buildings/resources/nitrification_plant_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/nitrification_plant.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/nitrification_plant"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"	
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_out_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_02_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.55 0.55"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_2"
+					scale "0.6 0.6 0.6"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_02_ghost"
+					bone "att_vismod_3"
+					scale "1.4 1.0 1.0"
 				}
 			}
 		}
