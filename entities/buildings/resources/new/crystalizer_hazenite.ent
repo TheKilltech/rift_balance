@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // crystalizer_hazenite
 {
 	name  "buildings/resources/crystalizer_hazenite"
 
@@ -6,6 +6,7 @@ EntityBlueprint
 	{
 		name 				"crystalizer_hazenite"
 		bp   				"buildings/resources/crystalizer_hazenite"
+		ghost_bp   			"buildings/resources/crystalizer_hazenite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_hazenite"
 		description			"gui/hud/building_description/crystalizer_hazenite"
@@ -414,7 +415,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // crystalizer_hazenite_lvl_2
 {
 	name			"buildings/resources/crystalizer_hazenite_lvl_2"
 	base_blueprint	"buildings/resources/crystalizer_hazenite"
@@ -423,6 +424,7 @@ EntityBlueprint
 	{
 		name 				"crystalizer_hazenite_lvl_2"
 		bp   				"buildings/resources/crystalizer_hazenite_lvl_2"
+		ghost_bp   			"buildings/resources/crystalizer_hazenite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_hazenite"
 		description			"gui/hud/building_description/crystalizer_hazenite"
@@ -631,7 +633,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // crystalizer_hazenite_lvl_3
 {
 	name			"buildings/resources/crystalizer_hazenite_lvl_3"
 	base_blueprint	"buildings/resources/crystalizer_hazenite_lvl_2"
@@ -640,6 +642,7 @@ EntityBlueprint
 	{
 		name 				"crystalizer_hazenite_lvl_3"
 		bp   				"buildings/resources/crystalizer_hazenite_lvl_3"
+		ghost_bp   			"buildings/resources/crystalizer_hazenite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_hazenite"
 		description			"gui/hud/building_description/crystalizer_hazenite"
@@ -839,6 +842,103 @@ EntityBlueprint
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_03"
+					bone "att_vismod_5"
+					scale "0.9 0.9 0.9"
+				}
+			}
+		}
+	}
+}
+
+
+EntityBlueprint  // crystalizer_hazenite_ghost
+{
+	name  "buildings/resources/crystalizer_hazenite_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/crystal_structure_small_01.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/decorations/scifi_structure_very_small_02"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.8 0.7"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_3"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_4"
+					scale "0.8 0.8 0.8"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_03_ghost"
 					bone "att_vismod_5"
 					scale "0.9 0.9 0.9"
 				}
