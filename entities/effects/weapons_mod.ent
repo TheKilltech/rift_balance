@@ -260,6 +260,22 @@ EntityBlueprint "effects/no_lifetime"		//floating_mines
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//floating_mines_ghost
+{
+	name "effects/weapon_items/floating_mines_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 	 "meshes/items/weapons/floating_mines.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//bouncing_blades
 {
 	name "effects/weapon_items/bouncing_blades"
@@ -324,6 +340,21 @@ EntityBlueprint "effects/no_lifetime"		//corrosive_gun
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//corrosive_gun_ghost
+{
+	name "effects/weapon_items/corrosive_gun_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 	"meshes/items/weapons/corrosive_gun.mesh"
+		material "selector/hologram_blue"
+	}
+}
 
 
 EntityBlueprint "effects/no_lifetime"		//ball_green
