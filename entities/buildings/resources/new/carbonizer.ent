@@ -6,6 +6,7 @@ EntityBlueprint
 	{
 		name 				"carbonizer"
 		bp   				"buildings/resources/carbonizer"
+		ghost_bp			"buildings/resources/carbonizer_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/carbonizer"
 		description			"gui/hud/building_description/carbonizer"
@@ -448,6 +449,7 @@ EntityBlueprint
 	{
 		name 				"carbonizer_lvl_2"
 		bp   				"buildings/resources/carbonizer_lvl_2"
+		ghost_bp			"buildings/resources/carbonizer_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/carbonizer"
 		description			"gui/hud/building_description/carbonizer"
@@ -614,6 +616,110 @@ EntityBlueprint
 
 			Effects
 			{
+			}
+		}
+	}
+}
+
+
+EntityBlueprint  // carbonizer_ghost
+{
+	name  "buildings/resources/carbonizer_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/hyper_particle_condenser.mesh"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "selector/hologram_blue"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+
+			SubMesh
+			{
+				id "2"
+				material "selector/hologram_blue"
+			}
+		}
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/main/hyper_particle_condenser"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/mine3_ghost"
+					bone "att_vismod_3"
+					scale 0.8 0.8 0.8
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/wall_s2_ghost"
+					bone "att_vismod_4"
+					scale 1.8 1.0 1.0
+					offset 0 0 0 
+				}
 			}
 		}
 	}

@@ -647,6 +647,54 @@ EntityBlueprint "effects/no_lifetime"		//mine3
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//mine1_ghost
+{
+	name "effects/buildings_and_machines/mine1_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/carbonium_factory_lvl_1.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//mine2_ghost
+{
+	name "effects/buildings_and_machines/mine2_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/carbonium_factory.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//mine3_ghost
+{
+	name "effects/buildings_and_machines/mine3_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/carbonium_factory_lvl_3.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//pipe
 {
 	name "effects/buildings_and_machines/pipe"
@@ -967,6 +1015,54 @@ EntityBlueprint "effects/no_lifetime"		//wall_s3
 	{
 		mesh "meshes/buildings/defense/wall_small_straight_01_lvl_3.mesh"
 		material "buildings/defense/walls_lvl_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//wall_s1_ghost
+{
+	name "effects/buildings_and_machines/wall_s1_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_straight_01.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//wall_s2_ghost
+{
+	name "effects/buildings_and_machines/wall_s2_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_straight_01_lvl_2.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//wall_s3_ghost
+{
+	name "effects/buildings_and_machines/wall_s3_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_straight_01_lvl_3.mesh"
+		material "selector/hologram_blue"
 	}
 }
 
