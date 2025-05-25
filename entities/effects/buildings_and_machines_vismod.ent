@@ -49,6 +49,22 @@ EntityBlueprint "effects/no_lifetime"		//pylon3
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//connector
+{
+	name "effects/buildings_and_machines/connector"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/energy_connector.mesh"
+		material "buildings/energy/energy_connector"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//lamp
 {
 	name "effects/buildings_and_machines/lamp"
