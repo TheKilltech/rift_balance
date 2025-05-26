@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // petroleum_refinery
 {
 	name  "buildings/resources/petroleum_refinery"
 
@@ -85,11 +85,38 @@ EntityBlueprint
 		}
 	}	
 
-	PipeComponent
+	children
 	{
-		attachment		"att_in_1,att_in_2,att_out_1"
-	}
+		EntityBlueprint
+		{
+			name "buildings/resources/petroleum_refinery_pipeline"
+			
+			PipeComponent
+			{
+				attachment		"att_in_1,att_in_2"
+			}
 
+			ResourceStorageDesc
+			{
+				Storages
+				{
+					Storage
+					{
+						resource 		"petroleum"
+						max 	 		"20"
+						attachment		"att_in_1|att_in_2"
+					}
+
+				}
+			}
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/resources/petroleum_refinery"
+			}
+		}
+	}
+	
 	LuaDesc
 	{
 		script "lua/buildings/building.lua"
@@ -155,13 +182,12 @@ EntityBlueprint
 				destrucion_level_name 				"20"
 			}
 			DestructionLevel
-			{
+ 			{
 				health 								"0"
 				destroy_state_change_effect_group 	"0_transition"
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
 				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
-				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
 	}
@@ -453,7 +479,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // petroleum_refinery_lvl_2
 {
 	name			"buildings/resources/petroleum_refinery_lvl_2"
 	base_blueprint	"buildings/resources/petroleum_refinery"
@@ -553,11 +579,6 @@ EntityBlueprint
 		}
 	}	
 	
-	PipeComponent
-	{
-		attachment		"att_in_1,att_in_2,att_out_1,att_out_2"
-	}
-
 	HealthDesc
 	{
 		max_health 					"1500"
