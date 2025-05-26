@@ -26,10 +26,11 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2
+				building_time 7
 				building_cost
 				{
 					carbonium 	"100"
+					cobalt		"10"
 				}
 			}
 		}
@@ -41,6 +42,11 @@ EntityBlueprint
 	{
 		in
 		{
+			GameplayResource
+			{
+				resource 		"energy"
+				value			"10"
+			}
 			//GameplayResource
 			//{
 			//	group 			"vein"
