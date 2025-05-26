@@ -18,6 +18,24 @@ material loot/resources/shard_ammonium : loot/resources
 	}
 }
 
+material loot/resources/biomass_morphed : loot/resources
+{
+	set_texture_alias albedo			materials/textures/loot/resources/biomass_morphed_albedo.dds
+	set_texture_alias normal			materials/textures/loot/resources/biomass_plant_normal.dds
+	set_texture_alias packed			materials/textures/loot/resources/biomass_plant_packed.dds
+
+	technique
+	{
+		pass
+		{
+			fragment_program_ref deferred_loot_fp
+			{
+				param_named cFresnelColor 	float4 0 2 0 1
+			}
+		}
+	}
+}
+
 material loot/resources/biomass_mycelium : loot/resources
 {
 	set_texture_alias albedo			materials/textures/loot/resources/biomass_mycelium_albedo.dds
