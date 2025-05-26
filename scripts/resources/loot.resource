@@ -9,6 +9,7 @@ GameplayResourceDef
 	hud_visible 	"build_menu"
 	allow_overflow 	"0"
 	specific_type	"rare"
+	order   		"10"
 }
 
 GameplayResourceDef
@@ -33,6 +34,7 @@ GameplayResourceDef
 	hud_visible 	"build_menu"
 	allow_overflow 	"0"
 	specific_type	"rare"
+	order   		"11"
 }
 
 GameplayResourceDef
@@ -54,10 +56,10 @@ GameplayResourceDef
 	type 			"global"
 	icon			"gui/hud/resource_icons/biomas_plant"
 	bigger_icon		"gui/hud/resource_icons/biomas_plant_bigger"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	allow_overflow 	"0"
 	missing_effect "voice_over/announcement/not_enough_plant_biomass"
-	order   		"9"		
+	order   		"21"		
 }
 
 GameplayResourceDef
@@ -68,10 +70,10 @@ GameplayResourceDef
 	type 			"global"
 	icon			"gui/hud/resource_icons/biomas_animal"
 	bigger_icon		"gui/hud/resource_icons/biomas_animal_bigger"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	allow_overflow 	"0"
 	missing_effect "voice_over/announcement/not_enough_animal_biomass"
-	order   		"10"		
+	order   		"20"		
 }
 
 GameplayResourceDef
@@ -82,10 +84,24 @@ GameplayResourceDef
 	type 			"global"
 	icon			"gui/hud/resource_icons/biomass_water"
 	bigger_icon		"gui/hud/resource_icons/biomass_water_bigger"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	allow_overflow 	"0"
 	missing_effect  "voice_over/announcement/not_enough_plant_biomass"
-	order   		"11"		
+	order   		"22"		
+}
+
+GameplayResourceDef
+{
+	id				"biomass_mycelium"
+	localization_id "resource_name/biomass_mycelium"
+	bp  			"items/loot/resources/biomass_mycelium"
+	type 			"global"
+	icon			"gui/hud/resource_icons/biomass_mycelium"
+	bigger_icon		"gui/hud/resource_icons/biomass_mycelium_bigger"
+	hud_visible 	"never"
+	allow_overflow 	"0"
+	missing_effect  "voice_over/announcement/not_enough_plant_biomass"
+	order   		"23"
 }
 
 GameplayResourceDef
@@ -96,8 +112,8 @@ GameplayResourceDef
 	type 			"global"
 	icon			"gui/hud/resource_icons/biomass_morphed"
 	bigger_icon		"gui/hud/resource_icons/biomass_morphed_bigger"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	allow_overflow 	"0"
 	missing_effect  "voice_over/announcement/not_enough_plant_biomass"
-	order   		"11"		
+	order   		"24"
 }
