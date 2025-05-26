@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // ammo_factory_liquid_adv
 {
 	name  "buildings/ammo/ammo_factory_liquid_adv"
 
@@ -393,5 +393,238 @@ EntityBlueprint
 				}
 			}
 		}	
+	}
+}
+
+EntityBlueprint  // ammo_factory_liquid_adv_lvl_2
+{
+	name			"buildings/ammo/ammo_factory_liquid_adv_lvl_2"
+	base_blueprint	"buildings/ammo/ammo_factory_liquid_adv"
+
+	BuildingDesc
+	{
+		name 					"ammo_factory_liquid_adv_lvl_2"
+		bp   					"buildings/ammo/ammo_factory_liquid_adv_lvl_2"
+		category 				"ammo"
+		localization_id			"gui/hud/building_name/ammo_factory_liquid_adv_gas"
+		description				"gui/hud/building_description/ammo_factory_liquid_adv_gas"
+		menu_icon				"gui/hud/building_icons/ammo_factory_liquid_adv_lvl_2"
+		//upgrade					"buildings/ammo/ammo_factory_liquid_adv_lvl_3"
+		require 				"headquarters"
+		order					"36"
+		buildable				"0"
+		building_group			"ammo_factory_liquid_adv"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_liquid_adv,ammo_factory_liquid_adv_gas"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"300"
+					steel 		"800"
+					ai			"1"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"160"
+			}
+			
+			GameplayResource
+			{
+				resource 			"ammo_tower_liquid"
+				value				"10"
+			}
+			
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value				"4"
+			}
+			
+			GameplayResource
+			{
+				resource 			"ferdonite"
+				value				"1"
+			}
+
+			GameplayResource
+			{
+				resource 			"nitric_acid"
+				value 				"5"
+				attachment			"att_in_1"
+				family				"main"
+			}			
+			GameplayResource
+			{
+				resource 			"petroleum"
+				value 				"25"
+				attachment			"att_in_1"
+				family				"main"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"ammo_tower_liquid_lvl2"
+				value				"10"
+			}	
+			GameplayResource
+			{
+				resource 			"ammo_mech_liquid_lvl2"
+				value				"10"
+				optional			"1"
+			}			
+		}	
+		priority 5
+	}
+
+	HealthDesc
+	{
+		max_health 					"1500"
+		health 						"1500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+			}			
+		}
+	}	
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////	
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/geothermal_powerplant_working"
+					delay "1"
+				}	
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint 	"effects/buildings_and_machines/scifi_structure_very_small_white_03"
+					bone 		"att_vismod_2"
+					scale 		"0.7 0.7 0.7"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/level_2"
+					bone		"att_level"
+				}
+			}
+		}
 	}
 }
