@@ -759,6 +759,23 @@ EntityBlueprint "effects/no_lifetime"		//pipe_s
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//pipe_x
+{
+	name "effects/buildings_and_machines/pipe_x"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/pipe_connector_x.mesh"
+		material "buildings/resources/pipe_connector_x"
+	}
+}
+
+
 EntityBlueprint "effects/no_lifetime"		//silo
 {
 	name "effects/buildings_and_machines/silo"
