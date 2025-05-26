@@ -260,6 +260,22 @@ EntityBlueprint "effects/no_lifetime"		//floating_mines
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//floating_mines_green
+{
+	name "effects/weapon_items/floating_mines_green"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/floating_mines.mesh"
+		material 	"items/weapons/floating_mines_acid"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//floating_mines_ghost
 {
 	name "effects/weapon_items/floating_mines_ghost"
