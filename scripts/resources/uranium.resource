@@ -45,3 +45,15 @@ GameplayResourceDef
 	missing_effect 	"voice_over/announcement/uranium_depleted"
 	order   		"6"	
 }
+
+GameplayResourceDef
+{
+	id				"uranium_depleted"
+	localization_id "resource_name/uranium_depleted"
+	bp  			"items/loot/resources/shard_uranium_ore_item"
+	type 			"global"	
+	icon			"gui/hud/resource_icons/uranium_depleted"
+	bigger_icon		"gui/hud/resource_icons/uranium_depleted_bigger"
+	hud_visible 	"never"
+	order   		"8"
+}
