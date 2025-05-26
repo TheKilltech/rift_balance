@@ -30152,7 +30152,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-927.000"
+						x "-882.000"
 						y "-288.000"
 					}
 
@@ -33407,6 +33407,53 @@ Research
 					}
 
 					icon "gui/menu/research/icons/consumable_gravity_granade"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/biomass_morpherd_processing"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/biomass_morpherd_processing_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "analysis"
+							count "3000.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-882.000"
+						y "-144.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/biomass_morphed_press_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/auto_resource_gather"
 				}
 
 			}

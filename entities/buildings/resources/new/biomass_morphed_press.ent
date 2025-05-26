@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // biomass_morphed_press
 {
 	name  "buildings/resources/biomass_morphed_press"
 
@@ -13,7 +13,7 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/biomass_morphed_press"
 		type				"pipe"
 		order				"14"
-		//upgrade				"buildings/resources/biomass_morphed_press_lvl_2"
+		upgrade				"buildings/resources/biomass_morphed_press_lvl_2"
 		require 			"headquarters"
 		//building_group	"biomass_plant_press"
 		buildable			"1"
@@ -58,7 +58,7 @@ EntityBlueprint
 			{
 				resource 			"morphium"
 				value				"50"
-				attachment			"att_out_1"				
+				attachment			"att_out_1"
 			}		
 		}
 		priority 9		
@@ -399,6 +399,93 @@ EntityBlueprint
 				}							
 			}
 		}	
+	}
+}
+
+EntityBlueprint  // biomass_morphed_press_lvl_2
+{
+	name  			"buildings/resources/biomass_morphed_press_lvl_2"
+	base_blueprint	"buildings/resources/biomass_morphed_press"
+
+	BuildingDesc
+	{
+		name 				"biomass_morphed_press_lvl_2"
+		bp   				"buildings/resources/biomass_morphed_press_lvl_2"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/biomass_morphed_press"
+		description			"gui/hud/building_description/biomass_morphed_press"
+		menu_icon			"gui/hud/building_icons/biomass_morphed_press_lvl_2"
+		order				"22"
+		//upgrade				"buildings/energy/biomass_morphed_press_lvl_3"
+		require 			"headquarters"
+		building_group		"biomass_morphed_press"
+		buildable			"0"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 18
+				building_cost
+				{
+					carbonium 	"400"
+					steel 		"800"
+					cobalt		"200"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{	
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"200"
+			}
+			
+			GameplayResource
+			{
+				resource 			"biomass_morphed"
+				value			 	"2"
+			}
+			
+			GameplayResource
+			{
+				resource 			"bio_cobalt"
+				value			 	"0.1"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"morphium"
+				value				"75"
+				attachment			"att_out_1"
+			}		
+		}
+		priority 9		
+		reset_interval 0.5
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "morphium"
+				max 	 "200"
+			}
+			
+		}
 	}
 }
 
