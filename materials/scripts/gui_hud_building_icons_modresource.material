@@ -2,6 +2,49 @@ import * from "materials/scripts/gui.material"
 
 
 
+/////  solid_material_storage
+
+material "gui/hud/building_icons/solid_material_storage_basic" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_basic.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_basic_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_lvl3_disabled.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_other" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_other.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_other_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_lvl2_disabled.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_rare" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_rare.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_basic_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_disabled.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_underground" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_underground.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_underground_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/mining_elevator_disabled.dds"
+}
+
+
 /////  liquid_pumpjack
 
 material "gui/hud/building_icons/liquid_pumpjack" : gui/default
