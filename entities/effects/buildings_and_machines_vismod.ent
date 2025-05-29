@@ -923,6 +923,22 @@ EntityBlueprint "effects/no_lifetime"		//particle_condenser
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//furnace
+{
+	name "effects/buildings_and_machines/furnace"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/carbonium_synthesizer.mesh"
+		material "buildings/resources/carbonium_synthesizer"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//minipipes
 {
 	name "effects/buildings_and_machines/minipipes"
