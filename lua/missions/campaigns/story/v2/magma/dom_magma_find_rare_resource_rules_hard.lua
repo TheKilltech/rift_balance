@@ -1,64 +1,30 @@
 return function()
-    local rules = require("lua/missions/campaigns/story/v2/magma/dom_magma_find_rate_resource_rules_default.lua")()
+    local rules = require("lua/missions/campaigns/story/v2/magma/dom_magma_find_rare_resource_rules_default.lua")()
+	local helper = require( "lua/missions/v2/waves_gen.lua" )
 	
-	rules.idleTime = 
-	{			
-		450,  -- difficulty level 1
-		600,  -- difficulty level 2
-		660,  -- difficulty level 3
-		720,  -- difficulty level 4	
-		780,  -- difficulty level 5	
-		780,  -- difficulty level 6	
-		1200,  -- difficulty level 7
-		1200,  -- difficulty level 8	
-		1380,  -- difficulty level 9	
-	}
-
-	rules.maxAttackCountPerDifficulty = 
-	{			
-		0,  -- difficulty level 1
-		0,  -- difficulty level 2
-		0,  -- difficulty level 3		
-		0,  -- difficulty level 4
-		0,  -- difficulty level 5
-		1,  -- difficulty level 6
-		1,  -- difficulty level 7
-		2,  -- difficulty level 8
-		3,  -- difficulty level 9
-	}
+	rules.prepareSpawnTime          = helper:Default_PrepareSpawnTime(          "scout", "hard", 1)
+	rules.cooldownAfterAttacks      = helper:Default_CooldownAfterAttacks(      "scout", "hard", 1)
+	rules.idleTime                  = helper:Default_IdleTime(                  "scout", "hard", 1)
+	rules.timeToNextDifficultyLevel = helper:Default_TimeToNextDifficultyLevel( "scout", "hard", 1)
 	
-	rules.waveRepeatChances = 
+	rules.attackCountPerDifficulty = 
 	{
-		{},  -- concecutive chances of wave repeating at level 1
-		{},  -- concecutive chances of wave repeating at level 2
-		{},  -- concecutive chances of wave repeating at level 3
-		{},  -- concecutive chances of wave repeating at level 4
-		{},  -- concecutive chances of wave repeating at level 5
-		{},  -- concecutive chances of wave repeating at level 6
-		{50, 30},  -- concecutive chances of wave repeating at level 7
-		{70, 50, 30},  -- concecutive chances of wave repeating at level 8
-		{80, 60, 20, 80, 70},  -- concecutive chances of wave repeating at level 9
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 1
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 2
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 3
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 4
+		{ minCount = 1, maxCount = 1 },  -- difficulty level 5
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 6
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 7
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 8
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 9
 	}
 	
-	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
 	rules.waves = {}
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7,     },  biomes = { "magma" }, levels = { 1 },    ids = { 1, 2 },    suffixes = { "", "alpha"}, },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8   },  biomes = { "magma" }, levels = { 2 },    ids = { 1, 2 },    suffixes = { "", "alpha"}, },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 1 },    ids = { 1, 2 },    suffixes = { "ultra"},     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 6, 7, 8, 9},  biomes = { "magma" }, levels = { 3 },    ids = { 1, 2 },    suffixes = { "", "alpha"}, },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    7, 8, 9},  biomes = { "magma" }, levels = { 4 },    ids = { 1, 2 },    suffixes = { "" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    7, 8, 9},  biomes = { "magma" }, levels = { 2 },    ids = { 1, 2 },    suffixes = { "alpha" },    },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          9},  biomes = { "magma" }, levels = { 5, 6 }, ids = { 1, 2 },    suffixes = { "" },         },   rules.waves)
+	rules.waves = helper:Default_Waves("magma", "scout", "hard", rules.waves)
+
+	rules.waves = helper:Generate({ groups = { "metallic" },   difficulty = {                9}, biomes = { "group" },   levels = { 1, 2 },  suffixes = { "", "", "alpha" }, },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic" },   difficulty = {                9}, biomes = { "group" },   levels = { 2, 3 },  suffixes = { "", "" },          },   rules.waves)
 	
-	rules.extraWaves = 
-	{
-	
-	}
-
-	rules.bosses = 
-	{
-
-	}
-
     return rules;
 end
