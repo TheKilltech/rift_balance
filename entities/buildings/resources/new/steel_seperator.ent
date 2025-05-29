@@ -7,8 +7,8 @@ EntityBlueprint  // steel_seperator
 		name 				"steel_seperator"
 		bp   				"buildings/resources/steel_seperator"
 		category 			"resources"
-		localization_id		"Metal Seperator" //"gui/hud/building_name/steel_seperator"
-		description			"Seperates metals of out lava" //"gui/hud/building_description/steel_seperator"
+		localization_id		"gui/hud/building_name/steel_seperator"
+		description			"gui/hud/building_description/steel_seperator"
 		menu_icon			"gui/hud/building_icons/steel_seperator"
 		order				"20"
 		upgrade				"buildings/resources/steel_seperator_lvl_2"
@@ -39,11 +39,20 @@ EntityBlueprint  // steel_seperator
 				resource 			"energy"
 				value			 	"150"
 			}
+			
 			GameplayResource
 			{
 				resource 			"magma"
-				value 				"100"
+				value 				"200"
 				attachment			"att_in_1"
+				family				"in"
+			}			
+			GameplayResource
+			{
+				resource 			"magma_metal"
+				value 				"20"
+				attachment			"att_in_1"
+				family				"in"
 			}
 		}
 		
@@ -145,7 +154,7 @@ n			{
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/carbonium_synthesizer"
+		name "meshes/buildings/resources/steel_seperator"  // orginal: carbonium_synthesizer
 	}
 
 	AnimationGraphDesc
@@ -345,7 +354,7 @@ n			{
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
@@ -356,12 +365,25 @@ n			{
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
 				}
 			}
 		}	
-		////////////////////////MISC/////////////////////////					
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 	"att_in_1_pipe"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
@@ -371,11 +393,11 @@ n			{
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_chimney"
-				}			
+				}
 			}
-		}			
+		}
 	}
 }
 
@@ -389,8 +411,8 @@ EntityBlueprint  // steel_seperator_lvl_2
 		name 				"steel_seperator_lvl_2"
 		bp   				"buildings/resources/steel_seperator_lvl_2"
 		category 			"resources"
-		localization_id		"Metal Seperator" //"gui/hud/building_name/steel_seperator_lvl_2"
-		description			"Seperates metals of out lava" //"gui/hud/building_description/steel_seperator_lvl_2"
+		localization_id		"gui/hud/building_name/steel_seperator"
+		description			"gui/hud/building_description/steel_seperator_lvl_2"
 		menu_icon			"gui/hud/building_icons/steel_seperator_lvl_2"
 		order				"20"
 		upgrade				"buildings/resources/steel_seperator_lvl_3"		
@@ -428,13 +450,22 @@ EntityBlueprint  // steel_seperator_lvl_2
 			{
 				resource 			"rhodonite"
 				value			 	"0.2"
-			}		
+			}
+			
 			GameplayResource
 			{
 				resource 			"magma"
-				value 				"100"
+				value 				"200"
 				attachment			"att_in_1"
-			}	
+				family				"in"
+			}			
+			GameplayResource
+			{
+				resource 			"magma_metal"
+				value 				"20"
+				attachment			"att_in_1"
+				family				"in"
+			}
 		}
 		
 		out
@@ -522,7 +553,7 @@ EntityBlueprint  // steel_seperator_lvl_2
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
@@ -533,12 +564,30 @@ EntityBlueprint  // steel_seperator_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
 				}
 			}
 		}	
-		////////////////////////MISC/////////////////////////					
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"	
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/rocket_launcher"
+					bone 	"att_vismod_1"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
@@ -548,11 +597,11 @@ EntityBlueprint  // steel_seperator_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_chimney"
-				}			
+				}
 			}
-		}	
+		}
 		EffectGroup
 		{
 			group "level"
@@ -579,8 +628,8 @@ EntityBlueprint  // steel_seperator_lvl_3
 		name 				"steel_seperator_lvl_3"
 		bp   				"buildings/resources/steel_seperator_lvl_3"
 		category 			"resources"
-		localization_id		"Metal Seperator" //"gui/hud/building_name/steel_seperator_lvl_3"
-		description			"Seperates metals of out lava" //"gui/hud/building_description/steel_seperator_lvl_3"
+		localization_id		"gui/hud/building_name/steel_seperator"
+		description			"gui/hud/building_description/steel_seperator_lvl_3"
 		menu_icon			"gui/hud/building_icons/steel_seperator_lvl_3"
 		order				"20"	
 		require 			"headquarters"
@@ -595,8 +644,9 @@ EntityBlueprint  // steel_seperator_lvl_3
 				building_time 30
 				building_cost
 				{
-					steel 	"1500"
-					cobalt	"100"
+					steel		"1500"
+					cobalt		"200"
+					titanium	"150"
 				}
 			}		
 		}
@@ -615,11 +665,12 @@ EntityBlueprint  // steel_seperator_lvl_3
 			{
 				resource 			"rhodonite"
 				value			 	"0.2"
-			}		
+			}
+			
 			GameplayResource
 			{
-				resource 			"magma"
-				value 				"100"
+				resource 			"magma_metal"
+				value 				"20"
 				attachment			"att_in_1"
 			}	
 			GameplayResource
@@ -635,12 +686,12 @@ EntityBlueprint  // steel_seperator_lvl_3
 			GameplayResource
 			{
 				resource 			"steel"
-				value			 	"4"
+				value			 	"3"
 			}
 			GameplayResource
 			{
 				resource 			"titanium"
-				value			 	"0.03"
+				value			 	"0.1"
 				optional			"1"
 			}	
 		}
@@ -716,18 +767,18 @@ EntityBlueprint  // steel_seperator_lvl_3
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
 				}
 			}
@@ -735,33 +786,58 @@ EntityBlueprint  // steel_seperator_lvl_3
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_2_arrow"
 				}
 			}
 		}	
-		////////////////////////MISC/////////////////////////					
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/rocket_launcher"
+					bone 	"att_vismod_2"
+					scale	1.6 1.6 1.6
+					orientation	0 0 180 
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_chimney"
-				}			
+				}
 			}
-		}	
+		}
 		EffectGroup
 		{
 			group "level"
