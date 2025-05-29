@@ -67,7 +67,7 @@ EntityBlueprint  // supercoolant_chem_plant
 				attachment	"att_out_1"
 			}	
 		}
-		priority 4			
+		priority 4
 	}
 
 	ResourceStorageDesc
@@ -80,18 +80,39 @@ EntityBlueprint  // supercoolant_chem_plant
 				max 	 	 "50"
 				attachment	 "att_out_1"
 			}
-			Storage
-			{
-				group	 	"local"
-				max 	 	"20"
-				attachment	"att_in_1|att_in_2"
-			}
 		}
 	}	
 
-	PipeComponent
+	children
 	{
-		attachment		"att_in_1,att_in_2,att_in_3,att_out_1"
+		EntityBlueprint
+		{
+			name "buildings/resources/supercoolant_chem_plant_pipeline"
+			
+			PipeComponent
+			{
+				attachment		"att_in_1,att_in_2"
+			}
+
+			ResourceStorageDesc
+			{
+				Storages
+				{
+					Storage
+					{
+						resource 		"flammable_gas"
+						max 	 		"20"
+						attachment		"att_in_1|att_in_2"
+					}
+
+				}
+			}
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/resources/supercoolant_refinery"
+			}
+		}
 	}
 	
 	LuaDesc
@@ -377,19 +398,19 @@ EntityBlueprint  // supercoolant_chem_plant
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
-		////////////////////////Resources/////////////////////////			
+		}
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_1_arrow"
 				}
 			}
@@ -397,14 +418,14 @@ EntityBlueprint  // supercoolant_chem_plant
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_2_arrow"
 				}
 			}
@@ -412,7 +433,7 @@ EntityBlueprint  // supercoolant_chem_plant
 		EffectGroup
 		{
 			group "att_in_3"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -434,7 +455,7 @@ EntityBlueprint  // supercoolant_chem_plant
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"	
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
@@ -573,17 +594,11 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_2
 				max 	 	 "50"
 				attachment	 "att_out_1"
 			}
-			Storage
-			{
-				group	 	"local"
-				max 	 	"20"
-				attachment	"att_in_1|att_in_2"
-			}
 		}
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -592,14 +607,14 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_2
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_1_arrow"
 				}
 			}
@@ -614,7 +629,7 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_2_arrow"
 				}
 			}
@@ -622,7 +637,7 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_2
 		EffectGroup
 		{
 			group "att_in_3"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -637,7 +652,7 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_2
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -787,12 +802,6 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_3
 				max 	 	 "150"
 				attachment	 "att_out_1"
 			}
-			Storage
-			{
-				group	 	"local"
-				max 	 	"20"
-				attachment	"att_in_1|att_in_2"
-			}
 		}
 	}	
 	
@@ -813,7 +822,7 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_1_arrow"
 				}
 			}
@@ -828,7 +837,7 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_2_arrow"
 				}
 			}
