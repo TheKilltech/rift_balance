@@ -60,37 +60,23 @@ EntityBlueprint
 				resource 	"deuterium"
 				value 		"1"
 				attachment	"att_in_1"
-				family		"fuel"				
+				family		"fuel"
 			}
 			
 			GameplayResource
 			{
 				resource 	"water"
 				value 		"100"
-				attachment	"att_in_2"
+				attachment	"att_in_2|att_in_3"
 				family		"coolant"
 			}				
 			GameplayResource
 			{
 				resource 	"supercoolant"
 				value 		"25"
-				attachment	"att_in_2"
-				family		"coolant"				
-			}		
-			GameplayResource
-			{
-				resource 	"water"
-				value 		"100"
-				attachment	"att_in_3"
+				attachment	"att_in_2|att_in_3"
 				family		"coolant"
-			}				
-			GameplayResource
-			{
-				resource 	"supercoolant"
-				value 		"25"
-				attachment	"att_in_3"
-				family		"coolant"				
-			}	
+			}
 		}
 		
 		out
@@ -131,6 +117,38 @@ EntityBlueprint
 		}
 	}
 
+	children
+	{
+		EntityBlueprint
+		{
+			name "buildings/energy/fusion_powerplant_pipeline"
+			
+			PipeComponent
+			{
+				attachment		"att_in_2,att_in_3"
+			}
+
+			ResourceStorageDesc
+			{
+				Storages
+				{
+					Storage
+					{
+						group	 		"local"
+						max 	 		"100"
+						attachment		"att_in_2|att_in_3"
+					}
+
+				}
+			}
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/energy/fusion_powerplant"
+			}
+		}
+	}
+	
 	LuaDesc
 	{
 		script "lua/buildings/building.lua"
@@ -498,65 +516,65 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_1"
 					delay "0"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_2"
 					delay "0.15"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_3"
 					delay "0.25"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_4"
 					delay "0.3"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_big_random"								
+					blueprint "effects/buildings_generic/explosion_big_random"
 					bone "att_smoke_5"
 					delay "0.4"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_big_random"								
+					blueprint "effects/buildings_generic/explosion_big_random"
 					bone "att_smoke_6"
 					delay "0.45"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_big_random"								
+					blueprint "effects/buildings_generic/explosion_big_random"
 					bone "att_smoke_7"
 					delay "0.5"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_building_nuclear_01"								
+					blueprint "effects/buildings_generic/explosion_building_nuclear_01"
 					delay "0.6"
 				}				
 			}
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
 				}
 			}
@@ -564,14 +582,14 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_2_arrow"
 				}
 			}
@@ -579,14 +597,14 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "att_in_3"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_3_arrow"
 				}
 			}
@@ -595,38 +613,56 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}	
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 	"att_in_3_pipe"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"								
+					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"
 					bone "att_lightning"
 					delay "1"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_energy/fusion_powerplant_working"		
+					blueprint "effects/buildings_energy/fusion_powerplant_working"
 					delay "0.5"
-				}				
+				}
 			}
-		}			
+		}
 	}
 }

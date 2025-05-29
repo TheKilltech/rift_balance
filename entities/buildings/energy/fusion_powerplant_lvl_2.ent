@@ -69,14 +69,7 @@ EntityBlueprint
 			{
 				resource 	"supercoolant"
 				value 		"25"
-				attachment	"att_in_2"
-				family		"coolant"
-			}				
-			GameplayResource
-			{
-				resource 	"supercoolant"
-				value 		"25"
-				attachment	"att_in_3"
+				attachment	"att_in_2|att_in_3"
 				family		"coolant"
 			}
 		}
@@ -287,7 +280,7 @@ EntityBlueprint
 				}				
 			}
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
@@ -298,7 +291,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
 				}
 			}
@@ -313,7 +306,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_2_arrow"
 				}
 			}
@@ -328,7 +321,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_3_arrow"
 				}
 			}
@@ -344,12 +337,30 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}	
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_3_pipe"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
@@ -359,13 +370,13 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"								
+					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"
 					bone "att_lightning"
 					delay "1"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_energy/fusion_powerplant_working"		
+					blueprint "effects/buildings_energy/fusion_powerplant_working"
 					delay "0.5"
 				}					
 			}
