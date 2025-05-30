@@ -223,9 +223,9 @@ EntityBlueprint  // ammo_factory_liquid_adv
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.4"  // r
+			y "0.2"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -406,8 +406,8 @@ EntityBlueprint  // ammo_factory_liquid_adv_lvl_2
 		name 					"ammo_factory_liquid_adv_lvl_2"
 		bp   					"buildings/ammo/ammo_factory_liquid_adv_lvl_2"
 		category 				"ammo"
-		localization_id			"gui/hud/building_name/ammo_factory_liquid_adv_gas"
-		description				"gui/hud/building_description/ammo_factory_liquid_adv_gas"
+		localization_id			"gui/hud/building_name/ammo_factory_liquid_adv"
+		description				"gui/hud/building_description/ammo_factory_liquid_adv"
 		menu_icon				"gui/hud/building_icons/ammo_factory_liquid_adv_lvl_2"
 		//upgrade					"buildings/ammo/ammo_factory_liquid_adv_lvl_3"
 		require 				"headquarters"
