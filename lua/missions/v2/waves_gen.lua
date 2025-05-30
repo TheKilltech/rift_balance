@@ -169,8 +169,54 @@ function wave_gen:Default_Waves(biome, missionType, difficulty,  waves)
 	if waves == nil      then waves = {}          end
 
 	if (missionType == "outpost") then
-	
-		if (difficulty == "brutal")      then
+		if (biome == "swamp") then
+			if (difficulty == "brutal")      then
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { biome },  levels = { 1 },  suffixes = { "", "alpha" },     spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5, 6, 7, 8},    biomes = { biome },  levels = { 1 },  suffixes = { "ultra" },         spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       3, 4, 5, 6, 7, 8},    biomes = { biome },  levels = { 2 },  suffixes = { "", "", "alpha" }, spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8},    biomes = { biome },  levels = { 2 },  suffixes = { "ultra" },         spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8 ,9}, biomes = { biome },  levels = { 3 },  suffixes = { "" },              spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3 },  suffixes = { "", "alpha" },     spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { biome },  levels = { 2 },  suffixes = { "", "", "alpha" }, },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { biome },  levels = { 2 },  suffixes = { "ultra" },         },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 3 },  suffixes = { "ultra" },         },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 4 },  suffixes = { "" },              },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                   7, 8, 9}, biomes = { biome },  levels = { 4 },  suffixes = { "", "alpha" },     },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                      8, 9}, biomes = { biome },  levels = { 4 },  suffixes = { "ultra" },         },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { biome },  levels = { 5 },  suffixes = { "", "alpha" },     },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { biome },  levels = { 6 },  suffixes = { "" },              },   waves)
+				
+			elseif (difficulty == "hard")    then
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { biome },  levels = { 1 },  suffixes = { "", "alpha" },     spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5, 6, 7, 8},    biomes = { biome },  levels = { 1 },  suffixes = { "ultra" },         spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       3, 4, 5, 6, 7, 8},    biomes = { biome },  levels = { 2 },  suffixes = { "", "", "alpha" }, spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8},    biomes = { biome },  levels = { 2 },  suffixes = { "ultra" },         spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8},    biomes = { biome },  levels = { 3 },  suffixes = { "" },              spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3 },  suffixes = { "", "alpha" },     spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { biome },  levels = { 2 },  suffixes = { "", "", "alpha" }, },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { biome },  levels = { 2 },  suffixes = { "ultra" },         },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { biome },  levels = { 3 },  suffixes = { "" },              },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 3 },  suffixes = { "ultra" },         },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 4 },  suffixes = { "" },              },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                   7, 8, 9}, biomes = { biome },  levels = { 4 },  suffixes = { "", "alpha" },     },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                      8, 9}, biomes = { biome },  levels = { 4 },  suffixes = { "ultra" },         },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { biome },  levels = { 5 },  suffixes = { "", "alpha" },     },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { biome },  levels = { 6 },  suffixes = { "" },              },   waves)
+				
+			elseif (difficulty == "default" or difficulty == "easy") then 
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { biome },  levels = { 1 },  suffixes = { "" },           spawn_type = "RandomBorderInDistance", target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5, 6, 7},       biomes = { biome },  levels = { 1 },  suffixes = { "", "alpha" },  spawn_type = "RandomBorderInDistance", target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       3, 4, 5, 6, 7},       biomes = { biome },  levels = { 2 },  suffixes = { "" },           spawn_type = "RandomBorderInDistance", target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8},    biomes = { biome },  levels = { 2 },  suffixes = { "", "alpha" },  spawn_type = "RandomBorderInDistance", target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8},    biomes = { biome },  levels = { 3 },  suffixes = { "" },           spawn_type = "RandomBorderInDistance", target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3 },  suffixes = { "", "alpha" },  spawn_type = "RandomBorderInDistance", target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0 },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                      8, 9}, biomes = { biome },  levels = { 2 },  suffixes = { "", "alpha" },  },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { biome },  levels = { 3 },  suffixes = { "" },           },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 4 },  suffixes = { "" },           },   waves)
+				waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 4 },  suffixes = { "", "alpha" },  },   waves)
+			end	
+		
+		elseif (difficulty == "brutal")      then
 			waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3 },                  biomes = { biome },  levels = { 1, 2 }, suffixes = { "", "alpha" },          },   waves)
 			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5},             biomes = { biome },  levels = { 1, 2 }, suffixes = { "ultra" },              },   waves)
 			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       3, 4, 5, 6},          biomes = { biome },  levels = { 2, 3 }, suffixes = { "", "", "alpha" },      },   waves)
