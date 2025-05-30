@@ -10,7 +10,7 @@ EntityBlueprint
 		category 				"defense"
 		type					"wall"
 		localization_id			"gui/hud/building_name/wall_vine"
-		description				"gui/hud/building_description/wall_vine"
+		description				"gui/hud/building_description/wall_vine_lvl_1"
 		menu_icon				"gui/hud/building_icons/wall_vine"
 		require 				"headquarters"
 		order					"0"
@@ -39,6 +39,16 @@ EntityBlueprint
 		{
 			I		"buildings/defense/wall_vine_straight_02,buildings/defense/wall_vine_straight_03"
 		}
+	}
+	
+	ResistanceComponent
+	{
+		physical		"1.0"
+		fire			"2.5"
+		acid			"0.4"
+		energy			"1.0"
+		cryo			"1.5"
+		area			"0.5"
 	}
 
 	VegetationComponentDesc

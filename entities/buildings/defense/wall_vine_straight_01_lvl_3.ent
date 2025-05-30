@@ -12,7 +12,7 @@ EntityBlueprint
 		category 				"defense"
 		type					"wall"
 		localization_id			"gui/hud/building_name/wall_vine"
-		description				"gui/hud/building_description/wall_vine"
+		description				"gui/hud/building_description/wall_vine_lvl_3"
 		menu_icon				"gui/hud/building_icons/wall_vine_lvl3"
 		require 				"headquarters"
 		order					"1"
@@ -41,6 +41,16 @@ EntityBlueprint
 		{
 			I		"buildings/defense/wall_vine_straight_02_lvl_3,buildings/defense/wall_vine_straight_03_lvl_3"
 		}
+	}
+	
+	ResistanceComponent
+	{
+		physical		"1.0"
+		fire			"2.5"
+		acid			"0.4"
+		energy			"1.0"
+		cryo			"1.5"
+		area			"0.5"
 	}
 	
 	HealthDesc
