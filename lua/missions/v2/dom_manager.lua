@@ -1770,9 +1770,15 @@ function dom_mananger:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, prepare
 end
 
 function dom_mananger:SpawnWave( attackCount, borderSpawnPointGroupName, wavePool, log, shouldAddtoSpawnedAttacks, participants, labelName, participantsPercentageUse, spawnedAttacks, attacks )
+	local newAttacks = {}
+	self:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, 0, newAttacks, nil ) -- workaround to make all attacks go though PrepareWave and SpawnPreparedWave instead of doubling some code
+	self:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, newAttacks, spawnedAttacks )
+	
+	-- attacks must be in saved somewhere to be able to repeat them
 	if (not attacks) then attacks = {} end
-	self:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, 0, attacks, nil )
-	self:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, attacks, spawnedAttacks )
+	for i=1,#newAttacks do
+        attacks[#attacks+1] = newAttacks[i]
+    end
 end
 --------------------------------------------------- spawn -------------------------------------------------
 
@@ -1784,7 +1790,7 @@ function dom_mananger:SpawnWavesForDifficultyLevel( difficultyLevel, shouldAddto
 	else
 		self.WaveRepeatState  = "streaming"
 		self.WaveStateMachine = self.spawner
-		self.preparedAttacks  = {}
+		self.preparedAttacks  = {} -- preparedAttacks are used to determine repeats, hence why they need to be setup despite lack of preparation
 		
 		local wavePool = self:GetWavePool( difficultyLevel )
 		self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Normal attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks, self.preparedAttacks )
