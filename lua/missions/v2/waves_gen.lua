@@ -2,9 +2,10 @@
 class 'wave_gen'
 
 function wave_gen:Generate( wavesSetting, waves )
+	-- e.g. make  { name="logic/missions/survival/attack_level_3_id_1_desert_alpha.logic",   spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0}, 
+	
 	if waves == nil                 then waves = {} end
 	if wavesSetting.groups == nil   then wavesSetting.groups = { "default" } end
-	if wavesSetting.levels == nil   then wavesSetting.levels = wavesSetting.difficulty end
 	if wavesSetting.biomes == nil   then wavesSetting.biomes = { "" } end
 	if wavesSetting.suffixes == nil then wavesSetting.suffixes = { "" } end
 	if wavesSetting.weight == nil   then wavesSetting.weight = 1 end
@@ -15,14 +16,44 @@ function wave_gen:Generate( wavesSetting, waves )
 			if waves[group] == nil then waves[group] = {{}, {}, {}, {}, {}, {}, {}, {}, {}} end
 		elseif waves == nil then        waves        = {{}, {}, {}, {}, {}, {}, {}, {}, {}}
 		end
+		
 		for d in Iter( wavesSetting.difficulty ) do
-			subwaves = waves[group][d]
+			if group == "" then
+				subwaves = waves[d]
+			else subwaves = waves[group][d]
+			end
 			if subwaves == nil then subwaves = {} end
+			
+			local bosses  = wavesSetting.bosses
+			local ids     = wavesSetting.ids
+			if bosses ~= nil then
+				if ids == nil then ids = {} end -- do not generate waves in boss part unless explicity requested
+				
+				for boss in Iter( bosses ) do
+					for w = 1, wavesSetting.weight do
+						local logic = self:GetBossLogic( boss )
+						local wave = { 
+							name              = logic,
+							spawn_type        = wavesSetting.spawn_type,
+							spawn_type_value  = wavesSetting.spawn_type_value,
+							target_type       = wavesSetting.target_type,
+							target_type_value = wavesSetting.target_type_value,
+							target_min_radius = wavesSetting.target_min_radius,
+							target_max_radius = wavesSetting.target_max_radius,
+							maxRepeats        = wavesSetting.maxRepeats or 0
+						}
+						table.insert( subwaves, wave )
+					end
+				end	
+			end
+			
 			for biomeBase in Iter( wavesSetting.biomes ) do 
 				local biome = biomeBase
 				if biomeBase == "group" then biome = group end
-				for level in Iter( wavesSetting.levels ) do 
-					local ids = wavesSetting.ids
+				
+				local levels = wavesSetting.levels
+				if levels == nil  then levels = { d } end
+				for level in Iter( levels ) do
 					if ids == nil then ids = self:GetBiomeWaveIds(biome, level) end
 					for id in Iter( ids ) do 
 						for suffix in Iter( wavesSetting.suffixes ) do 
@@ -35,7 +66,8 @@ function wave_gen:Generate( wavesSetting, waves )
 									target_type       = wavesSetting.target_type,
 									target_type_value = wavesSetting.target_type_value,
 									target_min_radius = wavesSetting.target_min_radius,
-									target_max_radius = wavesSetting.target_max_radius
+									target_max_radius = wavesSetting.target_max_radius,
+									maxRepeats        = wavesSetting.maxRepeats
 								}
 								table.insert( subwaves, wave )
 							end
@@ -82,9 +114,17 @@ function wave_gen:GetBiomeWaveIds(biome, level)
 	return {1, 2}
 end
 
+function wave_gen:GetBossLogic( boss )
+	-- e.g. make  "logic/missions/survival/attack_boss_baxmoth.logic"
+	
+	local waveFile = "logic/missions/survival/attack_boss_" .. boss .. ".logic"
+	return waveFile
+end
+
 function wave_gen:GetWaveLogic( level, id, biome, suffix )
 	-- e.g. make  "logic/missions/survival/attack_level_3_id_1_desert_alpha.logic"
-	-- consider rework to produce e.g  { name="logic/missions/survival/caverns/attack_level_1_id_1_caverns.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+	-- e.g. make  "logic/missions/survival/swamp/attack_level_3_id_3_swamp.logic"
+	
 	if biome == "jungle" then biome = "" end
 	local oldbiomes = {"", "acid", "magma", "desert" }
 	local waveFile = "logic/missions/survival/"

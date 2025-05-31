@@ -26,12 +26,12 @@ return function()
 		{ action = "change_time_of_day",               type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 3 },
 		{ action = "add_resource",                     type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, basePercentage = 30 },
 		{ action = "remove_resource",                  type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, basePercentage = 20 },
-		{ action = "stronger_attack",                  type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 1, amount = 2 },
 		{ action = "cancel_the_attack",                type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 1 },
 		{ action = "unlock_research",                  type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1 },
 		{ action = "full_ammo",                        type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
 		{ action = "remove_ammo",                      type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
-		{ action = "boss_attack",                      type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 4 },
+		{ action = "stronger_attack",                  type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 1, amount = 2 },
+		{ action = "boss_attack",                      type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 4 },
 		{ action = "spawn_blue_hail",                  type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 4, logicFile="logic/weather/blue_hail.logic",     minTime = 30,  maxTime = 60,  weight = 0.25 },
 		{ action = "spawn_thunderstorm",               type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2, logicFile="logic/weather/thunderstorm.logic",  minTime = 60,  maxTime = 120 },
 		{ action = "spawn_blood_moon",                 type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 2, logicFile="logic/weather/blood_moon.logic",    minTime = 60,  maxTime = 120, weight = 2 },
@@ -123,148 +123,19 @@ return function()
 	rules.waves = {}
 	rules.waves = helper:Default_Waves("swamp", "outpost", "default", rules.waves)
 	
-	rules.extraWaves = 
-	{
-		 -- difficulty level 1		
-		{ 
-			"logic/missions/survival/swamp/attack_level_1_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_1_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_1_id_3_swamp.logic",
-		},
+	rules.extraWaves = {}
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 1 },    biomes = { "swamp" }, levels = { 1 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 2 },    biomes = { "swamp" }, levels = { 2 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 3 },    biomes = { "swamp" }, levels = { 3 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 4 },    biomes = { "swamp" }, levels = { 4 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 5 },    biomes = { "swamp" }, levels = { 5 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 6 },    biomes = { "swamp" }, levels = { 6 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 7 },    biomes = { "swamp" }, levels = { 7 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 8, 9 }, biomes = { "swamp" }, levels = { 8 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
 	
-		 -- difficulty level 2
-		{ 			
-			"logic/missions/survival/swamp/attack_level_2_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_2_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_2_id_3_swamp.logic",
-		},
-
-		 -- difficulty level 3
-		{ 
-			"logic/missions/survival/swamp/attack_level_3_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_3_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_3_id_3_swamp.logic",
-		},
-
-		 -- difficulty level 4
-		{ 			
-			"logic/missions/survival/swamp/attack_level_3_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_3_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_3_id_3_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_3_swamp.logic",
-		},
-
-		 -- difficulty level 5
-		{ 
-			"logic/missions/survival/swamp/attack_level_4_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_3_swamp.logic",
-			--"logic/missions/survival/swamp/attack_level_5_id_4_swamp.logic",			
-		},
-
-		 -- difficulty level 6
-		{ 
-			"logic/missions/survival/swamp/attack_level_4_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_3_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_5_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_5_id_2_swamp.logic",			
-			"logic/missions/survival/swamp/attack_level_5_id_3_swamp.logic",
-			--"logic/missions/survival/swamp/attack_level_6_id_5_swamp.logic",
-		},
-
-		 -- difficulty level 7
-		{ 
-			"logic/missions/survival/swamp/attack_level_5_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_5_id_2_swamp.logic",			
-			"logic/missions/survival/swamp/attack_level_5_id_3_swamp.logic",
-			--"logic/missions/survival/swamp/attack_level_7_id_5_swamp.logic",
-		},
-
-		 -- difficulty level 8
-		{ 
-			"logic/missions/survival/swamp/attack_level_5_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_5_id_2_swamp.logic",			
-			"logic/missions/survival/swamp/attack_level_5_id_3_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_3_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_4_swamp.logic",
-			--"logic/missions/survival/swamp/attack_level_8_id_5_swamp.logic",
-		},
-
-		 -- difficulty level 9
-		{ 
-			"logic/missions/survival/swamp/attack_level_5_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_5_id_2_swamp.logic",			
-			"logic/missions/survival/swamp/attack_level_5_id_3_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_3_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_4_swamp.logic",
-			--"logic/missions/survival/swamp/attack_level_8_id_5_swamp.logic",
-		},
-	}
-
-
-	rules.bosses = 
-	{
-		 -- difficulty level 1		
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",			
-			--"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
+	rules.bosses = {}
+	rules.bosses = helper:Generate({ groups = { "" }, difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "baxmoth" },   maxRepeats = 0 },   rules.bosses)
+	rules.bosses = helper:Generate({ groups = { "" }, difficulty = {             5, 6, 7, 8, 9 }, bosses = { "mudroner" },  maxRepeats = 0 },   rules.bosses)
 	
-		 -- difficulty level 2
-		{ 			
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			--"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 3
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			--"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 4
-		{ 			
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 5
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 6
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 7
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 8
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 9
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-	}
-
     return rules;
 end

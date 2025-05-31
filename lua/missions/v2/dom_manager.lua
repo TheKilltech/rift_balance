@@ -1594,6 +1594,20 @@ function dom_mananger:PrepareLabels( labels, labelName, labelsPercentageUse )
 	self.data:SetInt( "labels_percentage_use", labelsPercentageUse )
 end
 
+function dom_mananger:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupName, spawnPointName, maxRepeats)
+	-- waveData: single element from waves definitions setup in the mission lua
+	if maxRepeats == nil then maxRepeats = waveData.maxRepeats
+	else maxRepeats = math.min(maxRepeats, waveData.maxRepeats or 99)
+	end
+	attack = {}
+	attack.waveName       = waveData.name
+	attack.maxRepeats     = maxRepeats
+	attack.spawnGroupName = borderSpawnPointGroupName
+	attack.spawnPointName = spawnPointName
+	attack.originalPool   = wavePool
+	return attack
+end
+
 function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, indicatorTimer, attacks, markers )
 
 	for i = 1, attackCount do
@@ -1604,11 +1618,7 @@ function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, waveP
 		if ( spawnPointName ~= "none" ) then
 			local index = #attacks + 1
 
-			attacks[index] = {}
-			attacks[index].waveName       = waveData.name
-			attacks[index].spawnGroupName = borderSpawnPointGroupName
-			attacks[index].spawnPointName = spawnPointName
-			attacks[index].originalPool   = wavePool
+			attacks[index] = self:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupName, spawnPointName)
 
 			if (markers) then
 				markers[#markers + 1] = self:SpawnWaveIndicator( indicatorTimer, spawnPointName, "effects/messages_and_markers/wave_marker" )
@@ -1623,6 +1633,7 @@ function dom_mananger:ReshuffleWave( index, attacks, reshuffleSwapn, reshuffleSp
 	local borderSpawnPointGroupName = attacks[index].spawnGroupName
 	local spawnPointName            = attacks[index].spawnPointName
 	local wavePool                  = attacks[index].originalPool
+	local maxRepeats                = attacks[index].maxRepeats
 	if (wavePool == nil or #wavePool == 0) then
 		self:VerboseLog( "Wave Reshuffle: attack ".. tostring(index) .." original wavePool is nil. using default pool")
 		wavePool = self:GetWavePool( self.currentDifficultyLevel )
@@ -1642,11 +1653,7 @@ function dom_mananger:ReshuffleWave( index, attacks, reshuffleSwapn, reshuffleSp
 	end
 	
 	if ( spawnPointName ~= "none" ) then
-		attacks[index] = {}
-		attacks[index].waveName       = waveData.name
-		attacks[index].spawnGroupName = borderSpawnPointGroupName
-		attacks[index].spawnPointName = spawnPointName
-		attacks[index].originalPool   = wavePool
+		attacks[index] = self:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupName, spawnPointName, maxRepeats)
 
 		-- markers[index] = self:SpawnWaveIndicator( indicatorTimer, spawnPointName, "effects/messages_and_markers/wave_marker" )
 		
@@ -1667,16 +1674,21 @@ function dom_mananger:RepeatWave(attacks)
 	
 	local newAttacks = {}
 	for i = 1, #attacks, 1 do
-		local rngRoll = RandInt(0, 100)
-		local attackStr = tostring(i) .."/".. tostring(#attacks)
-		self:VerboseLog("RepeatWave: attack ".. attackStr .. " repeat ".. tostring(self.waveRepeated + 1) .." chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll) .. " => " ..  tostring(repeatChance > rngRoll))
-		if ( repeatChance > rngRoll) then
-			rngRoll = RandInt(1, 100)
-			self:VerboseLog("RepeatWave: attack ".. attackStr.. " reshuffle chance ".. tostring(chanceWaveReroll) ..", rolled ".. tostring(rngRoll) .." => " .. tostring(chanceWaveReroll > rngRoll) )
-			if ( chanceWaveReroll > rngRoll) then
-				self:ReshuffleWave( i, attacks, chanceNewSpawnGroup < RandInt(1, 100), chanceNewSpawn < RandInt(1, 100) )
-			end
-			newAttacks[#newAttacks + 1] = attacks[i]
+		local attack = attacks[i]
+		if attack.maxRepeats ~= nil and self.waveRepeated >= attack.maxRepeats then
+			self:VerboseLog("RepeatWave: attack ".. attackStr .. " reached its max repeats of ".. tostring(attack.maxRepeats) .." and will not contine")
+		else
+			local rngRoll = RandInt(0, 100)
+			local attackStr = tostring(i) .."/".. tostring(#attacks)
+			self:VerboseLog("RepeatWave: attack ".. attackStr .. " repeat ".. tostring(self.waveRepeated + 1) .." chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll) .. " => " ..  tostring(repeatChance > rngRoll))
+			if ( repeatChance > rngRoll) then
+				rngRoll = RandInt(1, 100)
+				self:VerboseLog("RepeatWave: attack ".. attackStr.. " reshuffle chance ".. tostring(chanceWaveReroll) ..", rolled ".. tostring(rngRoll) .." => " .. tostring(chanceWaveReroll > rngRoll) )
+				if ( chanceWaveReroll > rngRoll) then
+					self:ReshuffleWave( i, attacks, chanceNewSpawnGroup < RandInt(1, 100), chanceNewSpawn < RandInt(1, 100) )
+				end
+				newAttacks[#newAttacks + 1] = attack
+			end		
 		end
 	end
 	
