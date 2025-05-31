@@ -1527,9 +1527,7 @@ end
 function dom_mananger:OnHqEnterAttackLogic( state )
 	self:VerboseLog("OnHqEnterAttackLogic" )
 
-	if ( self.prepAttacks == true ) then
-		self:SpawnPreparedWave( "dom_mananger:OnHqExitEntryLogic: Spawn attack name : ", true, self.hqPreparedAttacks, self.upgradeHqWaves )
-	else
+	if ( self.prepAttacks == false ) then  -- late attack preperation as a workaround
 		local borderSpawnPointGroupName = self.borderSpawnPointGroupNames[RandInt( 1,#self.borderSpawnPointGroupNames )]
 
 		self:VerboseLog("Border spawn point group :" .. borderSpawnPointGroupName )
@@ -1547,17 +1545,23 @@ function dom_mananger:OnHqEnterAttackLogic( state )
 		self.WaveRepeatState   = "hq_attack_logic"
 		self.WaveStateMachine  = self.upgradeHQ
 		self.hqPreparedAttacks = {}
-		self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves, self.hqPreparedAttacks )
+		
+		self:PrepareWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Fast-prep attack name : ", 0, self.hqPreparedAttacks, nil, "", "label_small", 0)
+		--self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Fast-spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves, self.hqPreparedAttacks )
 
 		if ( self.rules.multiplayerWaves ~= nil ) then
 			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
 
 			if ( multiplayerAttackCount > 0 ) then
 				wavePool = self:GetMultiplayerWavePool( difficultyLevel )
-				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves, self.hqPreparedAttacks )
+				self:PrepareWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Fast-prep multiplayer attack name : ", 0, self.hqPreparedAttacks, nil, "", "label_small", 0)
+				--self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Fast-spawn multiplayer attack name : ", true, "", "label_small", 0, self.upgradeHqWaves, self.hqPreparedAttacks )
 			end
 		end
 	end
+	
+	self:SpawnPreparedWave( "dom_mananger:OnHqExitEntryLogic: Spawn attack name : ", true, self.hqPreparedAttacks, self.upgradeHqWaves )
+	
 	self.hqAttackSafeTimer = self.hqAttackSafeTime
 	self:BeginWaveCooldown( self.hqAttackSafeTimer )
 end
@@ -1608,7 +1612,7 @@ function dom_mananger:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupN
 	return attack
 end
 
-function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, indicatorTimer, attacks, markers )
+function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, indicatorTimer, attacks, markers, participants, labelName, participantsPercentageUse )
 
 	for i = 1, attackCount do
 		local waveData = wavePool[RandInt( 1, #wavePool )]
@@ -1618,6 +1622,10 @@ function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, waveP
 		if ( spawnPointName ~= "none" ) then
 			local index = #attacks + 1
 
+			if ( participants ~= nil ) then
+				self:PrepareLabels( participants, labelName, participantsPercentageUse )
+			end
+			
 			attacks[index] = self:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupName, spawnPointName)
 
 			if (markers) then
@@ -1662,7 +1670,7 @@ function dom_mananger:ReshuffleWave( index, attacks, reshuffleSwapn, reshuffleSp
 end
 
 function dom_mananger:RepeatWave(attacks)
-	if (not attacks or #attacks==0) then return end
+	if (not attacks or #attacks==0) then return attacks end
 	self:VerboseLog("RepeatWave: checking " .. tostring(#attacks) .. " attacks for repeat and reshuffle")
 	
 	if ( self.waveRepeated == nil ) then self.waveRepeated = 0 end
@@ -1709,6 +1717,8 @@ function dom_mananger:RepeatWave(attacks)
 		self.waveRepeatTime = -9999
 		self.prepAttacks = self.rules.prepareAttacks
 	end
+	
+	return attacks
 end
 
 function dom_mananger:BeginWaveCooldown( cooldownTime )
@@ -1753,8 +1763,8 @@ function dom_mananger:DoWaveCooldown( timer, dt )
 	end
 
 	if ( timer < self.waveRepeatTime and self.rules.waveRepeatChances ) then
-		if (#self.hqPreparedAttacks>0)     then self:RepeatWave(self.hqPreparedAttacks)
-		elseif (#self.preparedAttacks>0)   then self:RepeatWave(self.preparedAttacks)
+		if (#self.hqPreparedAttacks>0)     then self.hqPreparedAttacks = self:RepeatWave(self.hqPreparedAttacks)
+		elseif (#self.preparedAttacks>0)   then self.preparedAttacks   = self:RepeatWave(self.preparedAttacks)
 		end
 		if (#self.preparedAttacks + #self.hqPreparedAttacks == 0) then
 			self.waveRepeatTime = -9999
@@ -1783,9 +1793,9 @@ end
 
 function dom_mananger:SpawnWave( attackCount, borderSpawnPointGroupName, wavePool, log, shouldAddtoSpawnedAttacks, participants, labelName, participantsPercentageUse, spawnedAttacks, attacks )
 	local newAttacks = {}
-	self:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, 0, newAttacks, nil ) -- workaround to make all attacks go though PrepareWave and SpawnPreparedWave instead of doubling some code
+	self:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, 0, newAttacks, nil, participants, labelName, participantsPercentageUse ) -- workaround to memorize active accackts in self.preparedAttacks so wave repoeats can rely on that.
 	self:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, newAttacks, spawnedAttacks )
-	
+		
 	-- attacks must be in saved somewhere to be able to repeat them
 	if (not attacks) then attacks = {} end
 	for i=1,#newAttacks do
@@ -1796,39 +1806,51 @@ end
 
 function dom_mananger:SpawnWavesForDifficultyLevel( difficultyLevel, shouldAddtoSpawnedAttacks )
 	local borderSpawnPointGroupName = self.borderSpawnPointGroupNames[RandInt( 1,#self.borderSpawnPointGroupNames )]
+	local wavePool = {}
+	
+	if ((self.waveRepeated or 0) == 0) then -- attack preperation must be done only once
+		if ( not shouldAddtoSpawnedAttacks or #self.preparedAttacks <= 0 ) then  -- late attack preparation
+			self.WaveRepeatState  = "streaming"
+			self.WaveStateMachine = self.spawner
+			self.preparedAttacks  = {} -- preparedAttacks are used to determine repeats, hence why they need to be setup despite lack of preparation
+			
+			wavePool = self:GetWavePool( difficultyLevel )
+			self:PrepareWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Fast-prep normal attack name : ", 0, self.preparedAttacks, nil, "", "label_small", 0)
+			--self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Fast-spawn normal attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks, self.preparedAttacks )
 
-	if ( shouldAddtoSpawnedAttacks and #self.preparedAttacks > 0 ) then
-		self:SpawnPreparedWave( "dom_mananger:OnEnterSpawn: Prepare attack name : ", shouldAddtoSpawnedAttacks, self.preparedAttacks, self.spawnedAttacks )
-	else
-		self.WaveRepeatState  = "streaming"
-		self.WaveStateMachine = self.spawner
-		self.preparedAttacks  = {} -- preparedAttacks are used to determine repeats, hence why they need to be setup despite lack of preparation
-		
-		local wavePool = self:GetWavePool( difficultyLevel )
-		self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Normal attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks, self.preparedAttacks )
+			if ( self.rules.multiplayerWaves ~= nil ) then
+				local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
 
-		if ( self.rules.multiplayerWaves ~= nil ) then
-			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
-
-			if ( multiplayerAttackCount > 0 ) then
-				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( difficultyLevel ), "dom_mananger:OnEnterSpawn: Multiplayer attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks, self.preparedAttacks )
+				if ( multiplayerAttackCount > 0 ) then
+					wavePool = self:GetMultiplayerWavePool( difficultyLevel )
+					self:PrepareWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Fast-prep multiplayer attack name : ", 0, self.preparedAttacks, nil,  "", "label_small", 0)
+					--self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Fast-spawn multiplayer attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks, self.preparedAttacks )
+				end
 			end
 		end
 	end
 
-	self:SpawnWave( self.extraAttacks, borderSpawnPointGroupName, self:GetExtraWavePool(), "dom_mananger:OnEnterSpawn: Extra attack name : ", shouldAddtoSpawnedAttacks, self.participants, "label_small", self.participantsPercentageUse, self.spawnedAttacks, self.preparedAttacks )
-
+	if ( self.extraAttacks > 0) then
+		wavePool = self:GetExtraWavePool()
+		self:PrepareWave( self.extraAttacks, borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Fast-prep extra attack name : ", 0, self.preparedAttacks, nil, self.participants, "label_small", self.participantsPercentageUse)
+		--self:SpawnWave( self.extraAttacks, borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Fast-spawn extra attack name : ", shouldAddtoSpawnedAttacks, self.participants, "label_small", self.participantsPercentageUse, self.spawnedAttacks, self.preparedAttacks )
+	end
 	if ( self.spawnBoss == true ) then
-		self:SpawnWave( 1, borderSpawnPointGroupName, self:GetBossPool(), "dom_mananger:OnEnterSpawn: Boss attack name : ", false, self.participants, "label_medium", self.participantsPercentageUse, self.spawnedAttacks, self.preparedAttacks )
-	end		
-
+		wavePool = self:GetBossPool()
+		self:PrepareWave( 1, borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Boss attack name : ", 0, self.preparedAttacks, nil, self.participants, "label_medium", self.participantsPercentageUse)
+		--self:SpawnWave( 1, borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Boss attack name : ", false, self.participants, "label_medium", self.participantsPercentageUse, self.spawnedAttacks, self.preparedAttacks )
+	end
+	
+	
+	self:SpawnPreparedWave( "dom_mananger:OnEnterSpawn: Spawn papared attack name : ", shouldAddtoSpawnedAttacks, self.preparedAttacks, self.spawnedAttacks )
+	
 	if ( difficultyLevel <= #self.rules.wavesEntryDefinitions ) then
 		MissionService:ActivateMissionFlow( "", self.rules.wavesEntryDefinitions[difficultyLevel].name, "default", self.data )	
 	end
+	
 end
 
 function dom_mananger:OnEnterSpawn( state )
-
 	self:VerboseLog("OnEnterSpawn" )
 	
 	if ( self.cancelTheAttack == true ) then
