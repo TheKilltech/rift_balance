@@ -6,7 +6,7 @@ EntityBlueprint  // biomass_mycelium_press
 	{
 		name 				"biomass_mycelium_press"
 		bp   				"buildings/resources/biomass_mycelium_press"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/biomass_mycelium_press"
 		description			"gui/hud/building_description/biomass_mycelium_press"
 		menu_icon			"gui/hud/building_icons/biomass_mycelium_press"
@@ -156,7 +156,7 @@ EntityBlueprint  // biomass_mycelium_press
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -219,9 +219,9 @@ EntityBlueprint  // biomass_mycelium_press
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -410,7 +410,7 @@ EntityBlueprint
 	{
 		name 				"biomass_mycelium_press_lvl_2"
 		bp   				"buildings/resources/biomass_mycelium_press_lvl_2"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/biomass_mycelium_press"
 		description			"gui/hud/building_description/biomass_mycelium_press"
 		menu_icon			"gui/hud/building_icons/biomass_mycelium_press_lvl_2"

@@ -9,7 +9,7 @@ EntityBlueprint
 		bp   		"buildings/resources/pipe_straight_windowless"
 		ghost_bp 	"buildings/resources/pipe_straight_windowless_ghost"
 		localization_id		"gui/hud/building_name/pipe_straight"
-		category 	"resources"
+		category 	"liquids"
 		type		"pipe"
 		require 	"headquarters"
 		building_mode		"line"
@@ -100,7 +100,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource|not_move_to_target|ignore_as_target"
+		type "building|liquids|not_move_to_target|ignore_as_target"
 	}
 
 	SkeletonDesc

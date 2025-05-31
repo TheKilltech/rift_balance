@@ -7,12 +7,12 @@ EntityBlueprint
 	{
 		name 				"biomass_oil_press"
 		bp   				"buildings/resources/biomass_oil_press"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/biomass_oil_press"
 		description			"gui/hud/building_description/biomass_oil_press"
 		menu_icon			"gui/hud/building_icons/biomass_oil_press"
 		type				"pipe"
-		order				"14"
+		order				"10"
 		upgrade				"buildings/energy/biomass_oil_press_lvl_2"
 		require 			"headquarters"
 		//building_group	"biomass_plant_press"
@@ -158,7 +158,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -221,9 +221,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -412,7 +412,7 @@ EntityBlueprint
 	{
 		name 				"biomass_oil_press_lvl_2"
 		bp   				"buildings/resources/biomass_oil_press_lvl_2"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/biomass_oil_press"
 		description			"gui/hud/building_description/biomass_oil_press"
 		menu_icon			"gui/hud/building_icons/biomass_oil_press_lvl_2"

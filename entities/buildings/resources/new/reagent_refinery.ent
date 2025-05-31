@@ -6,13 +6,13 @@ EntityBlueprint
 	{
 		name 				"reagent_refinery"
 		bp   				"buildings/resources/reagent_refinery"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/reagent_refinery"
 		description			"gui/hud/building_description/reagent_refinery"
 		menu_icon			"gui/hud/building_icons/reagent_refinery"
 		require 			"headquarters"
-		order				"30"	
+		order				"15"
 		upgrade				"buildings/resources/reagent_refinery_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
@@ -168,7 +168,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -231,9 +231,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -441,7 +441,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  //reagent_refinery_lvl_2
 {
 	name  			"buildings/resources/reagent_refinery_lvl_2"
 	base_blueprint	"buildings/resources/reagent_refinery"
@@ -451,7 +451,7 @@ EntityBlueprint
 		buildable			"0"
 		name 				"reagent_refinery_lvl_2"
 		bp   				"buildings/resources/reagent_refinery_lvl_2"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/reagent_refinery"
 		description			"gui/hud/building_description/reagent_refinery"
@@ -507,14 +507,6 @@ EntityBlueprint
 				attachment			"att_in_1"
 				family				"in"
 			}
-			
-			//GameplayResource
-			//{
-			//	resource 			"fluorine"
-			//	value			 	"20"
-			//	attachment			"att_in_1"
-			//	family				"in"
-			//}
 		}
 		
 		out
@@ -688,7 +680,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // reagent_refinery_lvl_3
 {
 	name  			"buildings/resources/reagent_refinery_lvl_3"
 	base_blueprint	"buildings/resources/reagent_refinery_lvl_2"
@@ -698,7 +690,7 @@ EntityBlueprint
 		buildable			"0"
 		name 				"reagent_refinery_lvl_3"
 		bp   				"buildings/resources/reagent_refinery_lvl_3"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/reagent_refinery"
 		description			"gui/hud/building_description/reagent_refinery"

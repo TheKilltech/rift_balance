@@ -1,21 +1,24 @@
-EntityBlueprint
+EntityBlueprint  // pipe_junction
 {
-	name  "buildings/resources/pipe_corner"
+	name  "buildings/resources/pipe_junction"
 
 	BuildingDesc
 	{
-		buildable 	"0"
-		name 		"pipe_corner"
-		bp   		"buildings/resources/pipe_corner"
-		ghost_bp 	"buildings/resources/pipe_corner_ghost"
-		localization_id		"gui/hud/building_name/pipe_straight"
-		category 	"liquids"
-		type		"pipe"
-		require 	"headquarters"
-		building_mode		"line"
-		menu_action			"resource_clear"	
-		check_connect		"1"
-		
+		buildable 			"0"
+		name 				"pipe_junction"
+		bp   				"buildings/resources/pipe_junction"
+		localization_id		"gui/hud/building_name/pipe_junction"
+		description			"gui/hud/building_description/pipe_junction"
+		menu_icon			"gui/hud/building_icons/pipe_junction"
+		category 			"liquids"
+		order				"8"
+		type				"pipe"
+		require 			"headquarters"
+		menu_action			"resource_clear"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		//check_connect		"1"
+		building_group		"pipeline"
+
 		building_functionality	"BUILD_ON_WATER|PIPE_MODE|NO_FOUNDATION"
 
 		costs
@@ -26,33 +29,74 @@ EntityBlueprint
 				building_time 1
 				building_cost
 				{
-					carbonium 	"5"
+					carbonium 	"50"
 				}
-			}		
+			}
 		}
-		
-		connect
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
 		{
-			T 		"buildings/resources/pipe_connector_t"	
-			X		"buildings/resources/pipe_connector_x"
-			L		"buildings/resources/pipe_corner"
-			I		"buildings/resources/pipe_straight,buildings/resources/pipe_straight_windowless"
+			Storage
+			{
+				group	 		"local"
+				max 	 		"1"
+				attachment		"att_in_1|att_in_3"
+			}
+
 		}
 	}
 
 	PipeComponent
 	{
-		
+		attachment		"att_in_1,att_in_3"
 	}
-	
+
+	children
+	{
+		EntityBlueprint
+		{
+			name "buildings/resources/pipe_junction_second"
+			PipeComponent
+			{
+				attachment		"att_in_2,att_in_4"
+			}
+
+			ResourceStorageDesc
+			{
+				Storages
+				{
+					Storage
+					{
+						group	 		"local"
+						max 	 		"1"
+						attachment		"att_in_2|att_in_4"
+					}
+
+				}
+			}
+
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/resources/pipe_junction_second"
+			}
+
+
+		}
+	}
+
 	LuaDesc
 	{
 		script "lua/buildings/resources/pipe_straight.lua"
-		
+
 		database
 		{
 			cone_effect			string:"build_cone_1x1"
 			cone_effect_sell	string:"sell_small"
+			postfix				string:"_storage"
 		}
 	}
 
@@ -62,9 +106,9 @@ EntityBlueprint
 		health 						"200"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
-		is_manual 					1
+		 is_manual 					"1"
 		update_health_uniform 		"1"
-	
+
 
 		DestructionLevels
 		{
@@ -72,7 +116,7 @@ EntityBlueprint
 			{
 				health 								"66"
 				destroy_comp_delay 					"0"
-				destroy_comp_event 					"66_destroy"				
+				destroy_comp_event 					"66_destroy"
 				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"66_state"
 			}
@@ -86,26 +130,40 @@ EntityBlueprint
 			}
 		}
 	}
-	
+
 	ResistanceComponent
 	{
 		magma		"0"
-	}		
+	}
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/pipe_corner.mesh"
-		material "buildings/resources/pipe_corner"
+		mesh "meshes/buildings/resources/pipe_junction.mesh"
+		material "buildings/resources/pipe_junction"
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "buildings/resources/pipe_junction"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "resources/resource_empty_fresnel"
+			}
+		}
 	}
 
 	TypeDesc
 	{
-		type "building|liquids|not_move_to_target|ignore_as_target"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/pipe_corner"
+		name "meshes/buildings/resources/pipe_junction"
 	}
 
 	PhysicsDesc
@@ -121,16 +179,16 @@ EntityBlueprint
 				{
 					PhysicsBoxShape
 					{
-						x "2"
+						x "6"
 						y "2"
 						z "2"
-							
-						position 
+
+						position
 						{
 							x "0.0"
 							y "1"
 							z "0.0"
-						}							
+						}
 					}
 				}
 			}
@@ -143,16 +201,16 @@ EntityBlueprint
 		{
 			min
 			{
-				x "-0.5"
+				x "-3"
 				y "0"
-				z "-0.5"
+				z "-1"
 			}
 			max
 			{
-				x "1"
+				x "3"
 				y "1"
 				z "1"
-			}	
+			}
 		}
 	}
 
@@ -169,7 +227,7 @@ EntityBlueprint
 		{
 			PhysicsBoxShape
 			{
-					x	1.9
+					x	5.9
 					y	1.9
 					z	1.9
 			}
@@ -179,19 +237,19 @@ EntityBlueprint
 	MinimapItemDesc
 	{
 		type	"quad"
-		color 
+		color
 		{
-			x "0.4"
-			y "0.4"
-			z "0.9"
+			x "0.4"  // r
+			y "0.4"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
 		{
-			x "1"
+			x "3"
 			y "1"
 		}
-					
+		big_minimap_scale 	"1.9"
 		visibility			"always"
 	}
 
@@ -203,9 +261,9 @@ EntityBlueprint
 
 	DestroyDesc
 	{
-		
+
 		DestroyPatterns
-		{		
+		{
 			Pair
 			{
 				key "66_destroy"
@@ -215,7 +273,7 @@ EntityBlueprint
 					explosion_max_power 	"6000"
 					explosion_min_power 	"2000"
 					explosion_effect 		"effects/buildings_generic/explosion_building_smoke_medium"
-				}	
+				}
 			}
 			Pair
 			{
@@ -235,16 +293,16 @@ EntityBlueprint
 					explosion_type 			"centered"
 					explosion_max_power 	"6000"
 					explosion_min_power 	"2000"
-					explosion_effect 		"effects/buildings_generic/explosion_building_smoke_medium"	
-					part_physics_material   "debris_heavy"	
+					explosion_effect 		"effects/buildings_generic/explosion_building_smoke_medium"
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					part_prefix 			"meshes/misc/building_small_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_lifetime "3"
 				}
 
 				key "default"
-			}	
+			}
 			Pair
 			{
 				value
@@ -253,23 +311,87 @@ EntityBlueprint
 					explosion_max_power 	"6000"
 					explosion_min_power 	"2000"
 					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
-					part_physics_material   "debris_heavy"	
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_prefix 			"meshes/misc/building_small_parts_generic"
-					part_lifetime "3"	
+					part_lifetime "3"
 				}
 
 				key "quicksand"
-			}				
+			}
 		}
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
-			"buildings/effects_smoke_small_base"
-		}	
-	}	
+			"buildings/effects_small_base"
+		}
+
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_3_arrow"
+				}
+			}
+		}
+
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+
+		EffectGroup
+		{
+			group "att_in_4"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_4_arrow"
+				}
+			}
+		}
+	}
 }

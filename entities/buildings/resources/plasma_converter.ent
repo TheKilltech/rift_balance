@@ -6,14 +6,14 @@ EntityBlueprint
 	{
 		name 				"plasma_converter"
 		bp   				"buildings/resources/plasma_converter"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/plasma_converter"
 		description			"gui/hud/building_description/plasma_converter"
 		menu_icon			"gui/hud/building_icons/plasma_converter"
 		type				"pipe"
 		require 			"headquarters"
 		upgrade				"buildings/resources/plasma_converter_lvl_2"	
-		order				"18"	
+		order				"21"	
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
@@ -174,7 +174,7 @@ EntityBlueprint
 	
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -246,9 +246,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size

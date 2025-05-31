@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // bio_condenser
 {
 	name  "buildings/resources/bio_condenser"
 
@@ -6,14 +6,14 @@ EntityBlueprint
 	{
 		name 				"bio_condenser"
 		bp   				"buildings/resources/bio_condenser"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/bio_condenser"
 		description			"gui/hud/building_description/bio_condenser"
 		menu_icon			"gui/hud/building_icons/bio_condenser"
 		require 			"headquarters"
 		upgrade				"buildings/resources/bio_condenser_lvl_2"
-		order				"15"
+		order				"5"
 		radius_name			"pump"
 		min_radius			"20"
 
@@ -73,6 +73,7 @@ EntityBlueprint
 			}
 		}
 	}
+	
 	LuaDesc
 	{
 		script "lua/buildings/building.lua"
@@ -144,7 +145,6 @@ EntityBlueprint
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
 				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
-				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
 	}
@@ -157,7 +157,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -229,9 +229,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -440,7 +440,7 @@ EntityBlueprint
 
 
 
-EntityBlueprint
+EntityBlueprint  // bio_condenser_ruins
 {
 	name  "buildings/resources/bio_condenser_ruins"
 

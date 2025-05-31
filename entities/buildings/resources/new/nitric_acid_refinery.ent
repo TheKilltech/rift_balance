@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // nitric_acid_refinery
 {
 	name  "buildings/resources/nitric_acid_refinery"
 
@@ -6,11 +6,11 @@ EntityBlueprint
 	{
 		name 				"nitric_acid_refinery"
 		bp   				"buildings/resources/nitric_acid_refinery"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/nitric_acid_refinery"
 		description			"gui/hud/building_description/nitric_acid_refinery"
 		menu_icon			"gui/hud/building_icons/nitric_acid_refinery"
-		order				"11"
+		order				"12"
 		upgrade				"buildings/resources/nitric_acid_refinery_lvl_2"		
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -152,7 +152,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -215,9 +215,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -417,7 +417,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // nitric_acid_refinery_lvl_2
 {
 	name			"buildings/resources/nitric_acid_refinery_lvl_2"
 	base_blueprint	"buildings/resources/nitric_acid_refinery"
@@ -427,12 +427,11 @@ EntityBlueprint
 		buildable			"0"		
 		name 				"nitric_acid_refinery_lvl_2"
 		bp   				"buildings/resources/nitric_acid_refinery_lvl_2"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/nitric_acid_refinery"
 		description			"gui/hud/building_description/nitric_acid_refinery"
 		menu_icon			"gui/hud/building_icons/nitric_acid_refinery_lvl_2"
-		order				"11"
-		upgrade				"buildings/resources/nitric_acid_refinery_lvl_3"		
+		upgrade				"buildings/resources/nitric_acid_refinery_lvl_3"
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
@@ -650,7 +649,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // nitric_acid_refinery_lvl_3
 {
 	name  			"buildings/resources/nitric_acid_refinery_lvl_3"
 	base_blueprint	"buildings/resources/nitric_acid_refinery_lvl_2"
@@ -660,11 +659,10 @@ EntityBlueprint
 		buildable			"0"		
 		name 				"nitric_acid_refinery_lvl_3"
 		bp   				"buildings/resources/nitric_acid_refinery_lvl_3"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/nitric_acid_refinery"
 		description			"gui/hud/building_description/nitric_acid_refinery"
 		menu_icon			"gui/hud/building_icons/nitric_acid_refinery_lvl_3"
-		order				"11"
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		

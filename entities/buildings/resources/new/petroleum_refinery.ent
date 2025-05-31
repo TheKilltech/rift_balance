@@ -6,7 +6,7 @@ EntityBlueprint  // petroleum_refinery
 	{
 		name 				"petroleum_refinery"
 		bp   				"buildings/resources/petroleum_refinery"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/petroleum_refinery"
 		description			"gui/hud/building_description/petroleum_refinery"
@@ -200,7 +200,7 @@ EntityBlueprint  // petroleum_refinery
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -263,9 +263,9 @@ EntityBlueprint  // petroleum_refinery
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -489,7 +489,7 @@ EntityBlueprint  // petroleum_refinery_lvl_2
 		buildable			"0"		
 		name 				"petroleum_refinery_lvl_2"
 		bp   				"buildings/resources/petroleum_refinery_lvl_2"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/petroleum_refinery"
 		description			"gui/hud/building_description/petroleum_refinery_lvl_2"

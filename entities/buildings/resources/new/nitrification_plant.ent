@@ -7,7 +7,7 @@ EntityBlueprint  // nitrification_plant
 		name 				"nitrification_plant"
 		bp   				"buildings/resources/nitrification_plant"
 		ghost_bp   			"buildings/resources/nitrification_plant_ghost"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/nitrification_plant"
 		description			"gui/hud/building_description/nitrification_plant"
 		menu_icon			"gui/hud/building_icons/nitrification_plant"
@@ -165,7 +165,7 @@ EntityBlueprint  // nitrification_plant
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -230,9 +230,9 @@ EntityBlueprint  // nitrification_plant
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -460,14 +460,14 @@ EntityBlueprint  // nitrification_plant_lvl_2
 {
 	name  "buildings/resources/nitrification_plant_lvl_2"
 
-	base_blueprint buildings/resources/nitrification_plant	
+	base_blueprint buildings/resources/nitrification_plant
 
 	BuildingDesc
 	{
 		name 				"nitrification_plant_lvl_2"
 		bp   				"buildings/resources/nitrification_plant_lvl_2"
 		ghost_bp   			"buildings/resources/nitrification_plant_ghost"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/nitrification_plant"
 		description			"gui/hud/building_description/nitrification_plant"
 		menu_icon			"gui/hud/building_icons/nitrification_plant_lvl_2"
@@ -718,14 +718,14 @@ EntityBlueprint  // nitrification_plant_lvl_3
 {
 	name  "buildings/resources/nitrification_plant_lvl_3"
 
-	base_blueprint buildings/resources/nitrification_plant_lvl_2		
+	base_blueprint buildings/resources/nitrification_plant_lvl_2
 
 	BuildingDesc
 	{
 		name 				"nitrification_plant_lvl_3"
 		bp   				"buildings/resources/nitrification_plant_lvl_3"
 		ghost_bp   			"buildings/resources/nitrification_plant_ghost"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/nitrification_plant"
 		description			"gui/hud/building_description/nitrification_plant"
 		menu_icon			"gui/hud/building_icons/nitrification_plant_lvl_3"

@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // bioreactor
 {
 	name  "buildings/resources/bioreactor"
 
@@ -6,7 +6,7 @@ EntityBlueprint
 	{
 		name 				"bioreactor"
 		bp   				"buildings/resources/bioreactor"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/bioreactor"
 		description			"gui/hud/building_description/bioreactor"
@@ -151,7 +151,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -220,9 +220,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -438,7 +438,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // bioreactor_lvl_2
 {
 	name  			"buildings/resources/bioreactor_lvl_2"
 	base_blueprint	"buildings/resources/bioreactor"
@@ -447,7 +447,7 @@ EntityBlueprint
 	{
 		name 				"bioreactor_lvl_2"
 		bp   				"buildings/resources/bioreactor_lvl_2"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/bioreactor"
 		description			"gui/hud/building_description/bioreactor"

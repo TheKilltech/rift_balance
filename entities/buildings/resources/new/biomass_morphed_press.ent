@@ -7,12 +7,12 @@ EntityBlueprint  // biomass_morphed_press
 	{
 		name 				"biomass_morphed_press"
 		bp   				"buildings/resources/biomass_morphed_press"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/biomass_morphed_press"
 		description			"gui/hud/building_description/biomass_morphed_press"
 		menu_icon			"gui/hud/building_icons/biomass_morphed_press"
 		type				"pipe"
-		order				"14"
+		order				"18"
 		upgrade				"buildings/resources/biomass_morphed_press_lvl_2"
 		require 			"headquarters"
 		//building_group	"biomass_plant_press"
@@ -157,7 +157,7 @@ EntityBlueprint  // biomass_morphed_press
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -220,9 +220,9 @@ EntityBlueprint  // biomass_morphed_press
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -415,7 +415,6 @@ EntityBlueprint  // biomass_morphed_press_lvl_2
 		localization_id		"gui/hud/building_name/biomass_morphed_press"
 		description			"gui/hud/building_description/biomass_morphed_press"
 		menu_icon			"gui/hud/building_icons/biomass_morphed_press_lvl_2"
-		order				"22"
 		//upgrade				"buildings/energy/biomass_morphed_press_lvl_3"
 		require 			"headquarters"
 		building_group		"biomass_morphed_press"

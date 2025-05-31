@@ -6,7 +6,7 @@ EntityBlueprint
 	{
 		name 				"water_drill"
 		bp   				"buildings/resources/water_drill"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/water_drill"
 		description			"gui/hud/building_description/water_drill"
@@ -160,7 +160,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -234,9 +234,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size

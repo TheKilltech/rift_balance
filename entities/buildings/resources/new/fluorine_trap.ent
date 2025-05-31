@@ -6,14 +6,14 @@ EntityBlueprint  // fluorine_trap
 	{
 		name 				"fluorine_trap"
 		bp   				"buildings/resources/fluorine_trap"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/fluorine_trap"
 		description			"gui/hud/building_description/fluorine_trap"
 		menu_icon			"gui/hud/building_icons/fluorine_trap"
 		//upgrade				"buildings/resources/fluorine_trap_lvl_2"
 		require 			"headquarters"
-		order				"30"
+		order				"7"
 		radius_name			"atmospheric_trap"
 		min_radius			"31"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -166,7 +166,7 @@ EntityBlueprint  // fluorine_trap
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -231,9 +231,9 @@ EntityBlueprint  // fluorine_trap
 		type	"quad"
 		color
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -423,7 +423,6 @@ EntityBlueprint  // fluorine_trap_lvl_2
 		localization_id		"gui/hud/building_name/fluorine_trap_lvl_2"
 		description			"gui/hud/building_description/fluorine_trap_lvl_2"
 		menu_icon			"gui/hud/building_icons/fluorine_trap_lvl_2"
-		order				"20"
 		radius_name			"atmospheric_trap"
 		min_radius			"31"
 		//upgrade			"buildings/energy/fluorine_trap_lvl_3"
@@ -583,7 +582,7 @@ EntityBlueprint  // fluorine_trap_lvl_2
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc

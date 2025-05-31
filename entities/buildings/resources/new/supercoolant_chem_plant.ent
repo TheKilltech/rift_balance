@@ -6,7 +6,7 @@ EntityBlueprint  // supercoolant_chem_plant
 	{
 		name 				"supercoolant_chem_plant"
 		bp   				"buildings/resources/supercoolant_chem_plant"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/supercoolant_chem_plant"
 		description			"gui/hud/building_description/supercoolant_chem_plant"
@@ -194,7 +194,7 @@ EntityBlueprint  // supercoolant_chem_plant
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -257,9 +257,9 @@ EntityBlueprint  // supercoolant_chem_plant
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -506,7 +506,7 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_2
 	{
 		name 				"supercoolant_chem_plant_lvl_2"
 		bp   				"buildings/resources/supercoolant_chem_plant_lvl_2"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/supercoolant_chem_plant"
 		description			"gui/hud/building_description/supercoolant_chem_plant"
@@ -723,7 +723,7 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_3
 	{
 		name 				"supercoolant_chem_plant_lvl_3"
 		bp   				"buildings/resources/supercoolant_chem_plant_lvl_3"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/supercoolant_chem_plant"
 		description			"gui/hud/building_description/supercoolant_chem_plant"

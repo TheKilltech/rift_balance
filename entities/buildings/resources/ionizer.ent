@@ -6,14 +6,14 @@ EntityBlueprint  // ionizer
 	{
 		name 				"ionizer"
 		bp   				"buildings/resources/ionizer"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/ionizer"
 		description			"gui/hud/building_description/ionizer"
 		menu_icon			"gui/hud/building_icons/ionizer"
 		require 			"headquarters"
 		upgrade				"buildings/resources/ionizer_lvl_2"			
-		order				"17"
+		order				"20"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"ionizer_lvl_2,ionizer_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
@@ -157,7 +157,7 @@ EntityBlueprint  // ionizer
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -220,9 +220,9 @@ EntityBlueprint  // ionizer
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.6"  // g
+			z "1"    // b
 			w "1"
 		}
 		size
@@ -406,7 +406,7 @@ EntityBlueprint  // ionizer_lvl_2
 		buildable			"0"		
 		name 				"ionizer_lvl_2"
 		bp   				"buildings/resources/ionizer_lvl_2"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/ionizer"
 		description			"gui/hud/building_description/ionizer_lvl_2"
 		menu_icon			"gui/hud/building_icons/ionizer_lvl_2"
@@ -627,7 +627,7 @@ EntityBlueprint  // ionizer_lvl_3
 		buildable			"0"		
 		name 				"ionizer_lvl_3"
 		bp   				"buildings/resources/ionizer_lvl_3"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/ionizer"
 		description			"gui/hud/building_description/ionizer_lvl_3"
 		menu_icon			"gui/hud/building_icons/ionizer_lvl_3"

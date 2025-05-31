@@ -6,7 +6,7 @@ EntityBlueprint  // reagent_condenser
 	{
 		name 				"reagent_condenser"
 		bp   				"buildings/resources/reagent_condenser"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/reagent_condenser"
 		description			"gui/hud/building_description/reagent_condenser"
@@ -163,7 +163,7 @@ EntityBlueprint  // reagent_condenser
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -226,9 +226,9 @@ EntityBlueprint  // reagent_condenser
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -412,7 +412,7 @@ EntityBlueprint  // reagent_condenser_lvl_2
 	{
 		name 				"reagent_condenser_lvl_2"
 		bp   				"buildings/resources/reagent_condenser_lvl_2"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/reagent_condenser"
 		description			"gui/hud/building_description/reagent_condenser"
@@ -622,7 +622,7 @@ EntityBlueprint  // reagent_condenser_lvl_3
 	{
 		name 				"reagent_condenser_lvl_3"
 		bp   				"buildings/resources/reagent_condenser_lvl_3"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/reagent_condenser"
 		description			"gui/hud/building_description/reagent_condenser"

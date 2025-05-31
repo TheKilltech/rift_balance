@@ -6,7 +6,7 @@ EntityBlueprint
 	{
 		name 				"liquid_extractor"
 		bp   				"buildings/resources/liquid_extractor"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/liquid_pumpjack"
 		description			"gui/hud/building_description/liquid_pumpjack"
 		menu_icon			"gui/hud/building_icons/liquid_pumpjack"
@@ -261,7 +261,7 @@ EntityBlueprint
 	
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -333,9 +333,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -540,7 +540,7 @@ EntityBlueprint
 		buildable 			"0"	
 		name 				"liquid_extractor_lvl_2"
 		bp   				"buildings/resources/liquid_extractor_lvl_2"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/liquid_pumpjack"
 		description			"gui/hud/building_description/liquid_pumpjack"
 		menu_icon			"gui/hud/building_icons/liquid_pumpjack_lvl2"
@@ -722,6 +722,7 @@ EntityBlueprint
 			}
 		}
 	}	
+	
 	HealthDesc
 	{
 		max_health 					"750"
@@ -846,7 +847,7 @@ EntityBlueprint
 		buildable 			"0"	
 		name 				"liquid_extractor_lvl_3"
 		bp   				"buildings/resources/liquid_extractor_lvl_3"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/liquid_pumpjack"
 		description			"gui/hud/building_description/liquid_pumpjack"
 		menu_icon			"gui/hud/building_icons/liquid_pumpjack_lvl3"

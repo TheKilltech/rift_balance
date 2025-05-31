@@ -6,7 +6,7 @@ EntityBlueprint
 	{
 		name 				"heavy_water_plant"
 		bp   				"buildings/resources/heavy_water_plant"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/heavy_water_plant"
 		description			"gui/hud/building_description/heavy_water_plant"
 		menu_icon			"gui/hud/building_icons/heavy_water_plant"
@@ -203,7 +203,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|main"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -262,9 +262,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.2"
-			y "0.2"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
