@@ -10,6 +10,12 @@ FlowGraphBindings
 				key "resource"
 			}
 
+			StringData
+			{
+				value "weather/comet"
+				key "blueprint"
+			}
+
 		}
 
 		Floats
@@ -57,10 +63,20 @@ FlowGraphBindings
 						value "maxAmount"
 					}
 
+					IntData[4]
+					{
+						value "isInfinite"
+					}
+
 				}
 
 				Strings
 				{
+					StringData[1]
+					{
+						value "blueprint"
+					}
+
 					StringData[4]
 					{
 						value "resource"
@@ -71,25 +87,23 @@ FlowGraphBindings
 			}
 
 			//database@Integers@IntData[1]@value "maxAmount"
+			//database@Integers@IntData[4]@value "isInfinite"
+			//database@Strings@StringData[1]@value "blueprint"
 			//database@Strings@StringData[4]@value "resource"
 		}
 
 		weather_resource_comet_1
 		{
-			//database@Integers@IntData[4]@value "isInfinite"
+			//database@Strings@StringData[1]@value "blueprint"
 			database
 			{
-				Integers
-				{
-					IntData[4]
-					{
-						value "isInfinite"
-					}
-
-				}
-
 				Strings
 				{
+					StringData[1]
+					{
+						value "blueprint"
+					}
+
 					StringData[4]
 					{
 						value "resource"

@@ -314,10 +314,13 @@ function dom_mananger:OnLoad()
 	self:LogicFilesSanityCheck();
 
 	self:FillInitialParamsEventManager()
+	self:FillInitialParamsDomManager()
 end
 
 function dom_mananger:FillInitialParamsDomManager()
-
+	for group in Iter( self.availableAttackGroups ) do 
+		self.availableEventGroups[group] = true
+	end
 end
 
 	-- ======================================== LOGIC ============================================
@@ -754,7 +757,7 @@ function dom_mananger:AddAttackGroup( groupName )
 	else
 		self:VerboseLog( "AddAttackGroup : failed : " .. tostring( groupName ) .. " does not exist in rules.waves" )
 	end
-
+	self.availableEventGroups = self.availableAttackGroups -- ToDo: testing concept. not sure how to update for now
 end
 
 function dom_mananger:RemoveAttackGroup( groupName )
@@ -777,6 +780,7 @@ function dom_mananger:RemoveAttackGroup( groupName )
 	else
 		self:VerboseLog( "RemoveAttackGroup : failed : " .. tostring( groupName ) .. " does not exist in rules.waves" )
 	end
+	self.availableEventGroups = self.availableAttackGroups -- ToDo: testing concept. not sure how to update for now
 end
 
 function dom_mananger:PauseDOM()
