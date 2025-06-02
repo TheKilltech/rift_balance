@@ -19,6 +19,7 @@ function resource_comet:init()
 
 	self.minAmount			= self.data:GetIntOrDefault( "min_amount", 10000 )
 	self.maxAmount			= self.data:GetIntOrDefault( "max_amount", 20000 )
+	self.isInfinite			= self.data:GetIntOrDefault( "is_infinite", 0 )
 	
     self.spawner = self:CreateStateMachine()
     self.spawner:AddState( "spawn", { enter="OnEnterSpawn", execute="OnExecuteSpawn", exit= "OnExitSpawn" } )
@@ -72,7 +73,11 @@ end
 function resource_comet:OnExitSpawn( state )
 
 	if ( self.findMode == "resource") then
-		ResourceService:SpawnResources( self.spaceEnt, "resources/volume_template_resource", self.resource, self.minAmount, self.maxAmount )
+		if self.isInfinite <= 0 then
+			ResourceService:SpawnResources( self.spaceEnt, "resources/volume_template_resource", self.resource, self.minAmount, self.maxAmount )
+		else
+			ResourceService:SpawnResourcesInfinite( self.spaceEnt, "resources/volume_template_resource", self.resource )
+		end
 	end
 
 	--MeteorService:SpawnMeteorInRadius( self.spaceEnt, self.cometDmgBp, 0, 50, 140, 0, 0.0, "" )

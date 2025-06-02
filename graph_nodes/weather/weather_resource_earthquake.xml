@@ -14,6 +14,7 @@
   <value id="database.Integers.IntData[1].key" value="camera_shake_freq"/>
   <value id="database.Integers.IntData[2].key" value="min_amount"/>
   <value id="database.Integers.IntData[3].key" value="max_amount"/>
+  <value id="database.Integers.IntData[10].key" value="is_infinite"/>
   <value id="database.Integers.IntData[4].key" value="min_distance_from_player"/>
   <value id="database.Integers.IntData[5].key" value="max_distance_from_player"/>
   <value id="database.Integers.IntData[6].key" value="marker_color_r" />
@@ -99,6 +100,10 @@
   <row>
       <text value="Max Resource Amount:" width="170" align="left" font_weight="bold" />
       <input text="max_amount" width="200" id="database.Integers.IntData[3].value" value="14000" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+      <text value="Is Infinite Deposit:" width="170" align="left" font_weight="bold" />
+      <input text="is_infinite" width="200" id="database.Integers.IntData[10].value" value="0" font_weight="bold" valid_rule="not_empty" />
   </row>
   <row>
       <text value="Min Distance From Player:" width="170" align="left" font_weight="bold" />

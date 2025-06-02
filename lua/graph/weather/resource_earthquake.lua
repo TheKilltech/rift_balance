@@ -24,6 +24,7 @@ function resource_earthquake:Activated()
 	local resource				= self:PickRandomResource( self.data:GetString( "resource" ) )
 	local minAmount				= self.data:GetInt( "min_amount" )
 	local maxAmount				= self.data:GetInt( "max_amount" )
+	local isInfinite			= self.data:GetInt( "is_infinite" )
 	local minDistanceFromPlayer	= self.data:GetInt( "min_distance_from_player" )
 	local maxDistanceFromPlayer	= self.data:GetInt( "max_distance_from_player" )
 
@@ -33,10 +34,16 @@ function resource_earthquake:Activated()
 	local marker_color_a = self.data:GetInt( "marker_color_a" ) / 255
 
 	local ent = ResourceService:FindEmptySpace( minDistanceFromPlayer, maxDistanceFromPlayer );
-	ResourceService:SpawnResources( ent, "resources/volume_template_resource", resource, minAmount, maxAmount )
+	local resourceTemplate = "resources/volume_template_resource"
+	
+	if isInfinite <= 0 then
+		ResourceService:SpawnResources( ent, resourceTemplate, resource, minAmount, maxAmount )
+	else
+		ResourceService:SpawnResourcesInfinite( ent, resourceTemplate, resource )
+	end
 	local eartquake = EarthquakeService:SpawnEarthquake( ent, earthquakeEffect, timeOfDayPreset, markerBp, damagePerSecond, lifeTime, healthPercentage, radius, localEffectsRandomOffset, minimumDistancePerLocalEffect, cameraShakePower, cameraShakeFreq )
 	EntityService:RemoveEntity( ent )
-
+	
 	local position = EntityService:GetPosition( eartquake )
 	GuiService:AddMinimapCircleMarker( position, tostring( eartquake ), radius, marker_color_r, marker_color_g, marker_color_b, 90 / 255 )
 

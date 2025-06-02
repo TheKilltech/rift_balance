@@ -1,0 +1,109 @@
+FlowGraphBindings
+{
+	Database
+	{
+		Strings
+		{
+			StringData
+			{
+				value "carbon_vein"
+				key "resource"
+			}
+
+		}
+
+		Floats
+		Vectors
+		Integers
+		{
+			IntData
+			{
+				value "8000"
+				key "minAmount"
+			}
+
+			IntData
+			{
+				value "14000"
+				key "maxAmount"
+			}
+
+			IntData
+			{
+				value "0"
+				key "isInfinite"
+			}
+
+		}
+
+	}
+
+	Bindings
+	{
+		weather_resource_comet_0
+		{
+			//database@Integers@IntData[0]@value "minAmount"
+			database
+			{
+				Integers
+				{
+					IntData[0]
+					{
+						value "minAmount"
+					}
+
+					IntData[1]
+					{
+						value "maxAmount"
+					}
+
+				}
+
+				Strings
+				{
+					StringData[4]
+					{
+						value "resource"
+					}
+
+				}
+
+			}
+
+			//database@Integers@IntData[1]@value "maxAmount"
+			//database@Strings@StringData[4]@value "resource"
+		}
+
+		weather_resource_comet_1
+		{
+			//database@Integers@IntData[4]@value "isInfinite"
+			database
+			{
+				Integers
+				{
+					IntData[4]
+					{
+						value "isInfinite"
+					}
+
+				}
+
+				Strings
+				{
+					StringData[4]
+					{
+						value "resource"
+					}
+
+				}
+
+			}
+
+			//database@Strings@StringData[4]@value "resource"
+		}
+
+	}
+
+	DynamicBindings
+}
+
