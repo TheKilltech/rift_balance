@@ -67,7 +67,9 @@ return function()
 	
 	rules.addResourcesOnRunOut = 
 	{
-		{ name = "cobalt_vein", runOutPercentageOnMap = 30, minToSpawn = 10000, maxToSpawn = 20000 },
+		{ name = "cobalt_vein",    runOutPercentageOnMap = 30, minToSpawn = 10000, maxToSpawn = 20000 },
+		{ name = "palladium_vein", runOutPercentageOnMap = 30, minToSpawn =  1000, maxToSpawn =  5000, ignoreChance = 80, eventGroup = "palladium_completed" }
+		{ name = "palladium_vein", runOutPercentageOnMap = 30, minToSpawn =  1000, maxToSpawn =  5000, ignoreChance = 80, eventGroup = "titanium_completed" }
 	}
 
 	rules.majorAttackLogic =

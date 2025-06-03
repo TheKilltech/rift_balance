@@ -44,7 +44,6 @@ return function()
 		{ action = "spawn_meteor_shower",       type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4,                    logicFile="logic/weather/meteor_shower.logic",       minTime = 30, maxTime = 60,   weight = 0.5 },
 		{ action = "spawn_meteor_shower",       type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 4,                    logicFile="logic/weather/meteor_shower.logic",       minTime = 30, maxTime = 60,   weight = 0.25 },	
 		{ action = "spawn_comet_silent",        type = "POSITIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 1,                    logicFile="logic/weather/comet_silent.logic",                                      weight = 2 }
-		--{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 3 },
 	}
 	
 	-- events spawn chance during/after attack (cooldown state). event timing is random ranging from the start of attack to max cooldown time.
@@ -53,6 +52,11 @@ return function()
 
 	rules.addResourcesOnRunOut = 
 	{
+		{ name = "cobalt_vein",        runOutPercentageOnMap =  5, minToSpawn = 2000, maxToSpawn = 3000, ignoreChance = 85,                                     events = { "spawn_resource_comet" } },
+		{ name = "palladium_vein",     runOutPercentageOnMap =  5, minToSpawn = 2000, maxToSpawn = 3000, ignoreChance = 85, eventGroup = "palladium_completed", events = { "spawn_resource_comet" } },
+		{ name = "morphium_deepvein",  runOutPercentageOnMap = 10, isInfinite = 1,                       ignoreChance = 65, eventGroup = "morphium_unlocked",   events = { "spawn_resource_comet" }, blueprint = "weather/alien_comet_flying"  },
+		--{ name = "petroleum_deepvein",   runOutPercentageOnMap = 10,  isInfinite = 1,                                                           events = { "spawn_resource_earthquake" } },
+		--{ name = "uranium_ore_deepvein", runOutPercentageOnMap = 10, minToSpawn = 40000, maxToSpawn = 50000, eventGroup = "uranium_completed",  events = { "spawn_resource_earthquake" } },
 	}
 
 	rules.buildingsUpgradeStartsLogic = {	}

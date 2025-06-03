@@ -24,12 +24,12 @@ return function()
 		{ action = "change_time_of_day",             type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 3 },
 		{ action = "add_resource",                   type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, basePercentage = 30 },
 		{ action = "remove_resource",                type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, basePercentage = 20 },
-		{ action = "stronger_attack",                type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 1, amount = 2 },
 		{ action = "cancel_the_attack",              type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 1 },
 		{ action = "unlock_research",                type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1 },
 		{ action = "full_ammo",                      type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
 		{ action = "remove_ammo",                    type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
-		{ action = "boss_attack",                    type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 4 },
+		{ action = "stronger_attack",                type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 1, amount = 2 },
+		{ action = "boss_attack",                    type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 4 },
 		{ action = "shegret_attack",                 type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 3,                    logicFile="logic/event/shegret_attack.logic",                               weight = 3 },
 		{ action = "shegret_attack_hard",            type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 3,                    logicFile="logic/event/shegret_attack_hard.logic",                          weight = 3 },
 		{ action = "shegret_attack_very_hard",       type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 3,                    logicFile="logic/event/shegret_attack_very_hard.logic",                     weight = 3 },
@@ -70,7 +70,11 @@ return function()
 	
 	rules.addResourcesOnRunOut = 
 	{
-		{ name = "palladium_deepvein", runOutPercentageOnMap = 30, minToSpawn = 40000, maxToSpawn = 60000 },
+		{ name = "palladium_vein",     runOutPercentageOnMap = 30, minToSpawn = 3000,  maxToSpawn = 5000, ignoreChance = 50 },
+		{ name = "palladium_deepvein", runOutPercentageOnMap = 30, minToSpawn = 40000, maxToSpawn = 80000                                                        events = { "spawn_resource_earthquake" } },
+		{ name = "uranium_ore_vein",   runOutPercentageOnMap =  5, minToSpawn = 1000,  maxToSpawn = 2000, ignoreChance = 90, eventGroup = "uranium_completed"  },
+		{ name = "morphium_deepvein",  runOutPercentageOnMap = 10, isInfinite = 1,                        ignoreChance = 65, eventGroup = "morphium_unlocked",   events = { "spawn_resource_comet" },      blueprint = "weather/alien_comet_flying"  },
+		{ name = "magma_deepvein",     runOutPercentageOnMap = 10, isInfinite = 1,                        ignoreChance = 65, eventGroup = "titanium_unlocked",   events = { "spawn_resource_earthquake" }  },
 	}
 
 	rules.majorAttackLogic =
@@ -78,10 +82,7 @@ return function()
 		{ level = 2, minLevel = 5, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },     
 	}
 	
-	rules.buildingsUpgradeStartsLogic = 
-	{			
- 
-	}
+	rules.buildingsUpgradeStartsLogic = {	}
 
 	rules.attackCountPerDifficulty = 
 	{			
@@ -129,103 +130,18 @@ return function()
 	rules.waves = helper:Generate({ groups = { "swamp" },     difficulty = {                6, 7, 8,  }, biomes = { "swamp" }, levels = { 4 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
 	rules.waves = helper:Generate({ groups = { "swamp" },     difficulty = {                   7, 8, 9}, biomes = { "swamp" }, levels = { 4 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
 	
-	rules.extraWaves = 
-	{		 
-		{ -- difficulty level 1		
-			"logic/missions/survival/attack_level_1_id_1_acid.logic",
-			"logic/missions/survival/attack_level_1_id_2_acid.logic",
-		},
-		{ -- difficulty level 2			
-			"logic/missions/survival/attack_level_2_id_1_acid.logic",
-			"logic/missions/survival/attack_level_2_id_2_acid.logic",
-		},
-		{  -- difficulty level 3
-			"logic/missions/survival/attack_level_3_id_1_acid.logic",
-			"logic/missions/survival/attack_level_3_id_2_acid.logic",
-		},
-		{ -- difficulty level 4
-			"logic/missions/survival/attack_level_4_id_1_acid.logic",
-			"logic/missions/survival/attack_level_4_id_2_acid.logic",
-		},
-		{ -- difficulty level 5
-			"logic/missions/survival/attack_level_5_id_1_acid.logic",
-			"logic/missions/survival/attack_level_5_id_2_acid.logic",
-		},
-		{ -- difficulty level 6
-			"logic/missions/survival/attack_level_6_id_1_acid.logic",
-			"logic/missions/survival/attack_level_6_id_2_acid.logic",
-		},
-		{ -- difficulty level 7 
-			"logic/missions/survival/attack_level_7_id_1_acid.logic",
-			"logic/missions/survival/attack_level_7_id_2_acid.logic",
-		},
-		{ -- difficulty level 8 
-			"logic/missions/survival/attack_level_8_id_1_acid.logic",
-			"logic/missions/survival/attack_level_8_id_2_acid.logic",
-		},
-		{ -- difficulty level 9 
-			"logic/missions/survival/attack_level_8_id_1_acid.logic",
-			"logic/missions/survival/attack_level_8_id_2_acid.logic",
-		},
-	}
-
-	rules.bosses = 
-	{
-		{ -- difficulty level 1
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_nurglax.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-		{ -- difficulty level 2
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_nurglax.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-		{ -- difficulty level 3 
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_nurglax.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-		{ -- difficulty level 4
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_nurglax.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-		{ -- difficulty level 5
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_nurglax.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",		
-		},
-		{ -- difficulty level 6
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_nurglax.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",			
-		},
-		{ -- difficulty level 7
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_nurglax.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-		{ -- difficulty level 8
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_nurglax.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-		{ -- difficulty level 9
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_nurglax.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-	}
+	rules.extraWaves = {}
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 1 },    biomes = { "acid" }, levels = { 1 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 2 },    biomes = { "acid" }, levels = { 2 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 3 },    biomes = { "acid" }, levels = { 3 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 4 },    biomes = { "acid" }, levels = { 4 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 5 },    biomes = { "acid" }, levels = { 5 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 6 },    biomes = { "acid" }, levels = { 6 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 7 },    biomes = { "acid" }, levels = { 7 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 8, 9 }, biomes = { "acid" }, levels = { 8 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	
+	rules.bosses = {}
+	rules.bosses = helper:Generate({ groups = { "" }, difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "arachnoid", "nerilian", "nurglax", "krocoon" },   maxRepeats = 0 },   rules.bosses)
 
     return rules;
 end

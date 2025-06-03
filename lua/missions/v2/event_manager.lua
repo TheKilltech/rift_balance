@@ -874,9 +874,17 @@ function event_manager:HasResouceRunout( gameState )
 	local runningOutResources = {}
 	for i = 1, #self.addResourcesOnRunOut, 1 do 
 		local element = self.addResourcesOnRunOut[i]
-		if ( not self.availableEventGroups[ element.eventGroup ]) then
+		if ( element.eventGroup ~= nil and not self.availableEventGroups[ element.eventGroup ]) then
 			LogService:Log( "event_manager:HasResouceRunout - skipping ".. element.name .. " because event group ".. tostring( element.eventGroup) .." missing." )
 			goto continueLoop
+		end
+		local ignoreChance = element.ignoreChance or 0
+		local rngRoll = RandInt(1, 100)
+		if (rngRoll <= ignoreChance) then
+			LogService:Log( "event_manager:HasResouceRunout - ignoring ".. element.name .. " because rng roll ".. tostring(rngRoll) .." <= ".. tostring(ignoreChance) .. " ignore chance." )
+			goto continueLoop
+		elseif ( ignoreChance > 0) then
+			LogService:Log( "event_manager:HasResouceRunout - not ignoring ".. element.name .. " because rng roll ".. tostring(rngRoll) .." > ".. tostring(ignoreChance) .. " ignore chance." )
 		end
 		local currentResourcePercentage = ResourceService:GetPercentOfAvailableResourceByType( element.name )
 
