@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // fire_control_station
 {
 	name "buildings/defense/fire_control_station"
 
@@ -201,9 +201,9 @@ EntityBlueprint
 		type	"quad"
 		color
 		{
-			x "1"
-			y "0.5"
-			z "0"
+			x "0.7" // r
+			y "0.7" // g
+			z "0.7" // b
 			w "1"
 		}
 		size
@@ -476,13 +476,13 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // dummy_projectile
 {
 	name "buildings/defense/dummy_projectile"
 }
 
 
-EntityBlueprint
+EntityBlueprint  // fire_control_station_artillery
 {
 	name "buildings/defense/fire_control_station_artillery"
 	base_blueprint	"buildings/defense/fire_control_station"
@@ -568,9 +568,9 @@ EntityBlueprint
 		type	"quad"
 		color
 		{
-			x "1"
-			y "0.5"
-			z "0"
+			x "0.7" // r
+			y "0.7" // g
+			z "0.7" // b
 			w "1"
 		}
 		size
