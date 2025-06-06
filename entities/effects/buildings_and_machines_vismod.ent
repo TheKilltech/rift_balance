@@ -284,6 +284,66 @@ EntityBlueprint "effects/no_lifetime"		//bins
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//bin_ghost
+{
+	name "effects/buildings_and_machines/bin_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/future_city_bins_01.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "selector/hologram_blue"
+			}
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+		}
+		
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//bins_ghost
+{
+	name "effects/buildings_and_machines/bins_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/future_city_bins_04.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "selector/hologram_blue"
+			}
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+		}
+		
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//pump
 {
 	name "effects/buildings_and_machines/pump"

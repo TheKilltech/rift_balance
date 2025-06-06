@@ -228,6 +228,22 @@ EntityBlueprint "effects/no_lifetime"		//rocket_launcher
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//rocket_launcher_ghost
+{
+	name "effects/weapon_items/rocket_launcher_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 	"meshes/items/weapons/rocket_launcher.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//nuclear_missiles
 {
 	name "effects/weapon_items/nuclear_missiles"

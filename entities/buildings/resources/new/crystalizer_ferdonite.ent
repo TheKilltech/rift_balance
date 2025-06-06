@@ -6,15 +6,14 @@ EntityBlueprint  // crystalizer_ferdonite
 	{
 		name 				"crystalizer_ferdonite"
 		bp   				"buildings/resources/crystalizer_ferdonite"
-		//ghost_bp   			"buildings/resources/crystalizer_ferdonite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_ferdonite"
 		description			"gui/hud/building_description/crystalizer_ferdonite"
-		menu_icon			"gui/hud/building_icons/crystal_structure_small_01"
+		menu_icon			"gui/hud/building_icons/crystalizer_ferdonite"
 		type				"pipe"
 		upgrade				"buildings/resources/crystalizer_ferdonite_lvl_2"
 		require 			"headquarters"
-		order				"53"
+		order				"33"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
@@ -379,7 +378,7 @@ EntityBlueprint  // crystalizer_ferdonite
 					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_03"
 					bone "att_vismod_1"
 					scale "0.7 0.8 0.7"
-					orientation "0 -90 0"
+					orientation 0 -90 0
 				}
 				Effect
 				{
@@ -391,8 +390,8 @@ EntityBlueprint  // crystalizer_ferdonite
 				{
 					blueprint "effects/buildings_and_machines/scifi_structure_small_white_03"
 					bone "att_vismod_4"
-					scale "0.8 0.8 0.8"
-					orientation "0 -90 0"
+					scale 0.8 0.8 0.8
+					orientation 0 -90 0
 				}
 				Effect
 				{
@@ -414,11 +413,10 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_2
 	{
 		name 				"crystalizer_ferdonite_lvl_2"
 		bp   				"buildings/resources/crystalizer_ferdonite_lvl_2"
-		//ghost_bp   			"buildings/resources/crystalizer_ferdonite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_ferdonite"
 		description			"gui/hud/building_description/crystalizer_ferdonite_lvl_2"
-		menu_icon			"gui/hud/building_icons/crystal_structure_small_01"
+		menu_icon			"gui/hud/building_icons/crystalizer_ferdonite_lvl_2"
 		type				"pipe"
 		upgrade				"buildings/resources/crystalizer_ferdonite_lvl_3"
 		buildable 			"0"
@@ -604,9 +602,10 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_2
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_03"
+					blueprint "effects/buildings_and_machines/bins"
 					bone "att_vismod_5"
-					scale "0.9 0.9 0.9"
+					orientation 0 0 0
+					scale 1.5 1.0 1.5
 				}
 			}
 		}		
@@ -622,11 +621,10 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_3
 	{
 		name 				"crystalizer_ferdonite_lvl_3"
 		bp   				"buildings/resources/crystalizer_ferdonite_lvl_3"
-		//ghost_bp   			"buildings/resources/crystalizer_ferdonite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_ferdonite"
 		description			"gui/hud/building_description/crystalizer_ferdonite_lvl_3"
-		menu_icon			"gui/hud/building_icons/crystal_structure_small_01"
+		menu_icon			"gui/hud/building_icons/crystalizer_ferdonite_lvl_3"
 		type				"pipe"
 		buildable 			"0"
 		require 			"headquarters"
@@ -798,9 +796,10 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_3
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_03"
-					bone "att_vismod_3"
-					scale "0.7 0.7 0.7"
+					blueprint "effects/weapon_items/rocket_launcher"
+					bone "att_vismod_2"
+					orientation 0 0 0
+					scale 1.6 2.0 2.0
 				}
 				Effect
 				{
@@ -811,9 +810,10 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_3
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_03"
+					blueprint "effects/buildings_and_machines/bins"
 					bone "att_vismod_5"
-					scale "0.9 0.9 0.9"
+					orientation 0 0 0
+					scale 1.5 1.0 1.5
 				}
 			}
 		}
@@ -868,11 +868,6 @@ EntityBlueprint  // crystalizer_ferdonite_ghost
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/pipe_ghost"
-					bone 	"att_in_2_pipe"
-				}
-				Effect
-				{
 					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
 					bone "att_vismod_1"
 					scale "0.7 0.8 0.7"
@@ -901,7 +896,6 @@ EntityBlueprint  // crystalizer_ferdonite_ghost
 		}
 	}
 }
-
 
 EntityBlueprint  // crystalizer_ferdonite_lvl_2_ghost
 {
@@ -990,9 +984,10 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_2_ghost
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_03_ghost"
+					blueprint "effects/buildings_and_machines/bins_ghost"
 					bone "att_vismod_5"
-					scale "0.9 0.9 0.9"
+					orientation 0 0 0
+					scale 1.5 1.0 1.5
 				}
 			}
 		}
@@ -1073,9 +1068,10 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_3_ghost
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
-					bone "att_vismod_3"
-					scale "0.7 0.7 0.7"
+					blueprint "effects/weapon_items/rocket_launcher_ghost"
+					bone "att_vismod_2"
+					orientation 0 0 0
+					scale 1.6 2.0 2.0
 				}
 				Effect
 				{
@@ -1086,9 +1082,10 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_3_ghost
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_03_ghost"
+					blueprint "effects/buildings_and_machines/bins_ghost"
 					bone "att_vismod_5"
-					scale "0.9 0.9 0.9"
+					orientation 0 0 0
+					scale 1.5 1.0 1.5
 				}
 			}
 		}
