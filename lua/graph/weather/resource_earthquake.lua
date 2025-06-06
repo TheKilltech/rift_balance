@@ -36,6 +36,8 @@ function resource_earthquake:Activated()
 	local ent = ResourceService:FindEmptySpace( minDistanceFromPlayer, maxDistanceFromPlayer );
 	local resourceTemplate = "resources/volume_template_resource"
 	
+	LogService:Log( "resource_earthquake:Activated " .. self.resource .. " min: ".. tostring(self.minAmount).." max: ".. tostring(self.maxAmount).." inf: ".. tostring(self.isInfinite))
+	
 	if isInfinite <= 0 then
 		ResourceService:SpawnResources( ent, resourceTemplate, resource, minAmount, maxAmount )
 	else
@@ -46,7 +48,6 @@ function resource_earthquake:Activated()
 	
 	local position = EntityService:GetPosition( eartquake )
 	GuiService:AddMinimapCircleMarker( position, tostring( eartquake ), radius, marker_color_r, marker_color_g, marker_color_b, 90 / 255 )
-
 
 	self:SetFinished()
 end

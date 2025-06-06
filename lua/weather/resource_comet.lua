@@ -30,6 +30,8 @@ function resource_comet:init()
 	self.spaceEnt = INVALID_ID
 	self.cometEnt = INVALID_ID
 
+	LogService:Log( "resource_comet:init " .. self.resource .. " min: ".. tostring(self.minAmount).." max: ".. tostring(self.maxAmount).." inf: ".. tostring(self.isInfinite).." bpFly: ".. tostring(self.cometFlyingBp)  )
+	
 	if ( self.findMode == "target") then
 		self.removeSpaceEnt = false;
 	else

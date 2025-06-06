@@ -871,6 +871,7 @@ function event_manager:HasResouceRunout( gameState )
 	LogService:Log( "event_manager:HasResouceRunout - checking resources amount on map." )
 
 	-- get all low resources that are unlocked for refill
+	local rngRoll = RandInt(1, 100)
 	local runningOutResources = {}
 	for i = 1, #self.addResourcesOnRunOut, 1 do 
 		local element = self.addResourcesOnRunOut[i]
@@ -878,13 +879,12 @@ function event_manager:HasResouceRunout( gameState )
 			LogService:Log( "event_manager:HasResouceRunout - skipping ".. element.name .. " because event group ".. tostring( element.eventGroup) .." missing." )
 			goto continueLoop
 		end
-		local ignoreChance = element.ignoreChance or 0
-		local rngRoll = RandInt(1, 100)
-		if (rngRoll <= ignoreChance) then
-			LogService:Log( "event_manager:HasResouceRunout - ignoring ".. element.name .. " because rng roll ".. tostring(rngRoll) .." <= ".. tostring(ignoreChance) .. " ignore chance." )
+		local chance = element.chance or (100-(element.ignoreChance or 0)) or 100
+		if (rngRoll <= chance) then
+			LogService:Log( "event_manager:HasResouceRunout - not ignoring ".. element.name .. " because rng roll ".. tostring(rngRoll) .." within ".. tostring(chance) .. " chance." )
+		elseif ( chance > 0) then
+			LogService:Log( "event_manager:HasResouceRunout - ignoring ".. element.name .. " because rng roll ".. tostring(rngRoll) .." outside ".. tostring(chance) .. " chance." )
 			goto continueLoop
-		elseif ( ignoreChance > 0) then
-			LogService:Log( "event_manager:HasResouceRunout - not ignoring ".. element.name .. " because rng roll ".. tostring(rngRoll) .." > ".. tostring(ignoreChance) .. " ignore chance." )
 		end
 		local currentResourcePercentage = ResourceService:GetPercentOfAvailableResourceByType( element.name )
 
@@ -963,7 +963,7 @@ function event_manager:CheckObjectiveLogicFile( logicFile )
 end
 
 function event_manager:SpawnExtraResources( logicFile, resourceName, minAmount, maxAmount, isInfinite, blueprint )
-	LogService:Log( "event_manager:SpawnExtraResources " .. resourceName  )
+	LogService:Log( "event_manager:SpawnExtraResources " .. resourceName .. " min: ".. tostring(minAmount).." max: ".. tostring(maxAmount).." inf: ".. tostring(isInfinite).." bp: ".. tostring(blueprint)  )
 	if (minAmount ~= nil )    then self.data:SetInt( "minAmount", minAmount) end
 	if (maxAmount ~= nil )    then self.data:SetInt( "maxAmount", maxAmount) end
 	if (isInfinite ~= nil )   then self.data:SetInt( "isInfinite", isInfinite) end
