@@ -6,7 +6,7 @@ EntityBlueprint  // crystalizer_hazenite
 	{
 		name 				"crystalizer_hazenite"
 		bp   				"buildings/resources/crystalizer_hazenite"
-		ghost_bp   			"buildings/resources/crystalizer_hazenite_ghost"
+		//ghost_bp   			"buildings/resources/crystalizer_hazenite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_hazenite"
 		description			"gui/hud/building_description/crystalizer_hazenite"
@@ -32,6 +32,7 @@ EntityBlueprint  // crystalizer_hazenite
 				}
 			}		
 		}
+		resource_requirement "iron_vein" 
 	}
 
 	ResourceConverterDesc
@@ -40,8 +41,13 @@ EntityBlueprint  // crystalizer_hazenite
 		{
 			GameplayResource
 			{
-				resource 	"mud"
-				value 		"400"
+				resource 	"iron_vein"
+				value 		"0"
+			}
+			GameplayResource
+			{
+				resource 	"fluorine"
+				value 		"60"
 				attachment	"att_in_1"
 			}
 			GameplayResource
@@ -76,12 +82,6 @@ EntityBlueprint  // crystalizer_hazenite
 	{
 		Storages
 		{
-			Storage
-			{
-				resource	 	"mud"
-				max 	 		"100"
-				attachment		"att_in_1"
-			}
 		}
 	}	
 
@@ -424,10 +424,10 @@ EntityBlueprint  // crystalizer_hazenite_lvl_2
 	{
 		name 				"crystalizer_hazenite_lvl_2"
 		bp   				"buildings/resources/crystalizer_hazenite_lvl_2"
-		ghost_bp   			"buildings/resources/crystalizer_hazenite_ghost"
+		//ghost_bp   			"buildings/resources/crystalizer_hazenite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_hazenite"
-		description			"gui/hud/building_description/crystalizer_hazenite"
+		description			"gui/hud/building_description/crystalizer_hazenite_lvl_2"
 		menu_icon			"gui/hud/building_icons/crystal_structure_small_01_yellow"
 		type				"pipe"
 		upgrade				"buildings/resources/crystalizer_hazenite_lvl_3"
@@ -450,6 +450,7 @@ EntityBlueprint  // crystalizer_hazenite_lvl_2
 				}
 			}		
 		}
+		resource_requirement "iron_vein" 
 	}
 
 	ResourceConverterDesc
@@ -458,8 +459,13 @@ EntityBlueprint  // crystalizer_hazenite_lvl_2
 		{
 			GameplayResource
 			{
-				resource 	"mud"
-				value 		"100"
+				resource 	"iron_vein"
+				value 		"0"
+			}
+			GameplayResource
+			{
+				resource 	"fluorine"
+				value 		"30"
 				attachment	"att_in_1"
 			}
 			GameplayResource
@@ -490,7 +496,7 @@ EntityBlueprint  // crystalizer_hazenite_lvl_2
 			GameplayResource
 			{
 				resource 	"hazenite"
-				value 		"1"
+				value 		"2"
 			}
 		}
 		priority 4
@@ -500,18 +506,6 @@ EntityBlueprint  // crystalizer_hazenite_lvl_2
 	{
 		Storages
 		{
-			Storage
-			{
-				resource	 	"mud"
-				max 	 		"100"
-				attachment		"att_in_1"
-			}
-			Storage
-			{
-				resource	 	"reagent"
-				max 	 		"100"
-				attachment		"att_in_2"
-			}
 		}
 	}	
 
@@ -642,10 +636,10 @@ EntityBlueprint  // crystalizer_hazenite_lvl_3
 	{
 		name 				"crystalizer_hazenite_lvl_3"
 		bp   				"buildings/resources/crystalizer_hazenite_lvl_3"
-		ghost_bp   			"buildings/resources/crystalizer_hazenite_ghost"
+		//ghost_bp   			"buildings/resources/crystalizer_hazenite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_hazenite"
-		description			"gui/hud/building_description/crystalizer_hazenite"
+		description			"gui/hud/building_description/crystalizer_hazenite_lvl_3"
 		menu_icon			"gui/hud/building_icons/crystal_structure_small_01_yellow"
 		type				"pipe"
 		buildable 			"0"
@@ -667,6 +661,7 @@ EntityBlueprint  // crystalizer_hazenite_lvl_3
 				}
 			}		
 		}
+		resource_requirement "iron_vein" 
 	}
 
 	ResourceConverterDesc
@@ -675,8 +670,13 @@ EntityBlueprint  // crystalizer_hazenite_lvl_3
 		{
 			GameplayResource
 			{
-				resource 	"mud"
-				value 		"100"
+				resource 	"iron_vein"
+				value 		"0"
+			}
+			GameplayResource
+			{
+				resource 	"fluorine"
+				value 		"30"
 				attachment	"att_in_1"
 			}
 			GameplayResource
@@ -707,7 +707,7 @@ EntityBlueprint  // crystalizer_hazenite_lvl_3
 			GameplayResource
 			{
 				resource 	"hazenite"
-				value 		"2"
+				value 		"3"
 			}
 		}
 		priority 4
@@ -717,18 +717,6 @@ EntityBlueprint  // crystalizer_hazenite_lvl_3
 	{
 		Storages
 		{
-			Storage
-			{
-				resource	 	"mud"
-				max 	 		"100"
-				attachment		"att_in_1"
-			}
-			Storage
-			{
-				resource	 	"reagent"
-				max 	 		"100"
-				attachment		"att_in_2"
-			}
 		}
 	}	
 
@@ -872,7 +860,88 @@ EntityBlueprint  // crystalizer_hazenite_ghost
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.8 0.7"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_3"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_4"
+					scale "0.8 0.8 0.8"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_03_ghost"
+					bone "att_vismod_5"
+					scale "0.9 0.9 0.9"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // crystalizer_hazenite_lvl_2_ghost
+{
+	name  "buildings/resources/crystalizer_hazenite_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/crystal_structure_small_01.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/decorations/scifi_structure_very_small_02"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
 			delay "0"
 			
 			Effects
@@ -887,7 +956,104 @@ EntityBlueprint  // crystalizer_hazenite_ghost
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.8 0.7"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_3"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_4"
+					scale "0.8 0.8 0.8"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_03_ghost"
+					bone "att_vismod_5"
+					scale "0.9 0.9 0.9"
+				}
+			}
+		}
+	}
+}
+
+
+EntityBlueprint  // crystalizer_hazenite_lvl_3_ghost
+{
+	name  "buildings/resources/crystalizer_hazenite_lvl_3_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/crystal_structure_small_01.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/decorations/scifi_structure_very_small_02"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
 			delay "0"
 			
 			Effects

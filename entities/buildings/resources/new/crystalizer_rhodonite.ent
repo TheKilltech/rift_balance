@@ -6,7 +6,7 @@ EntityBlueprint  // crystalizer_rhodonite
 	{
 		name 				"crystalizer_rhodonite"
 		bp   				"buildings/resources/crystalizer_rhodonite"
-		ghost_bp   			"buildings/resources/crystalizer_rhodonite_ghost"
+		//ghost_bp   			"buildings/resources/crystalizer_rhodonite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_rhodonite"
 		description			"gui/hud/building_description/crystalizer_rhodonite"
@@ -14,7 +14,7 @@ EntityBlueprint  // crystalizer_rhodonite
 		type				"pipe"
 		upgrade				"buildings/resources/crystalizer_rhodonite_lvl_2"
 		require 			"headquarters"
-		order				"52"		
+		order				"52"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
@@ -32,6 +32,7 @@ EntityBlueprint  // crystalizer_rhodonite
 				}
 			}		
 		}
+		resource_requirement "iron_vein" 
 	}
 
 	ResourceConverterDesc
@@ -40,8 +41,13 @@ EntityBlueprint  // crystalizer_rhodonite
 		{
 			GameplayResource
 			{
-				resource 	"sludge"
-				value 		"400"
+				resource 	"iron_vein"
+				value 		"0"
+			}
+			GameplayResource
+			{
+				resource 	"fluorine"
+				value 		"60"
 				attachment	"att_in_1"
 			}
 			GameplayResource
@@ -71,12 +77,6 @@ EntityBlueprint  // crystalizer_rhodonite
 	{
 		Storages
 		{
-			Storage
-			{
-				resource	 	"sludge"
-				max 	 		"100"
-				attachment		"att_in_1"
-			}
 		}
 	}	
 
@@ -434,10 +434,10 @@ EntityBlueprint  // crystalizer_rhodonite_lvl_2
 	{
 		name 				"crystalizer_rhodonite_lvl_2"
 		bp   				"buildings/resources/crystalizer_rhodonite_lvl_2"
-		ghost_bp   			"buildings/resources/crystalizer_rhodonite_ghost"
+		//ghost_bp   			"buildings/resources/crystalizer_rhodonite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_rhodonite"
-		description			"gui/hud/building_description/crystalizer_rhodonite"
+		description			"gui/hud/building_description/crystalizer_rhodonite_lvl_2"
 		menu_icon			"gui/hud/building_icons/crystal_structure_small_02_red"
 		type				"pipe"
 		upgrade				"buildings/resources/crystalizer_rhodonite_lvl_3"
@@ -461,6 +461,7 @@ EntityBlueprint  // crystalizer_rhodonite_lvl_2
 				}
 			}		
 		}
+		resource_requirement "iron_vein" 
 	}
 	
 	ResourceConverterDesc
@@ -469,8 +470,13 @@ EntityBlueprint  // crystalizer_rhodonite_lvl_2
 		{
 			GameplayResource
 			{
-				resource 	"sludge"
-				value 		"100"
+				resource 	"iron_vein"
+				value 		"0"
+			}
+			GameplayResource
+			{
+				resource 	"fluorine"
+				value 		"30"
 				attachment	"att_in_1"
 			}
 			GameplayResource
@@ -496,7 +502,7 @@ EntityBlueprint  // crystalizer_rhodonite_lvl_2
 			GameplayResource
 			{
 				resource 	"rhodonite"
-				value 		"1"
+				value 		"2"
 			}
 		}
 		priority 4
@@ -506,18 +512,6 @@ EntityBlueprint  // crystalizer_rhodonite_lvl_2
 	{
 		Storages
 		{
-			Storage
-			{
-				resource	 	"sludge"
-				max 	 		"100"
-				attachment		"att_in_1"
-			}
-			Storage
-			{
-				resource	 	"nitric_acid"
-				max 	 		"100"
-				attachment		"att_in_2"
-			}
 		}
 	}	
 
@@ -648,10 +642,10 @@ EntityBlueprint  // crystalizer_rhodonite_lvl_3
 	{
 		name 				"crystalizer_rhodonite_lvl_3"
 		bp   				"buildings/resources/crystalizer_rhodonite_lvl_3"
-		ghost_bp   			"buildings/resources/crystalizer_rhodonite_ghost"
+		//ghost_bp   			"buildings/resources/crystalizer_rhodonite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_rhodonite"
-		description			"gui/hud/building_description/crystalizer_rhodonite"
+		description			"gui/hud/building_description/crystalizer_rhodonite_lvl_3"
 		menu_icon			"gui/hud/building_icons/crystal_structure_small_02_red"
 		type				"pipe"
 		buildable 			"0"
@@ -674,6 +668,7 @@ EntityBlueprint  // crystalizer_rhodonite_lvl_3
 				}
 			}		
 		}
+		resource_requirement "iron_vein" 
 	}
 	
 	ResourceConverterDesc
@@ -682,8 +677,13 @@ EntityBlueprint  // crystalizer_rhodonite_lvl_3
 		{
 			GameplayResource
 			{
-				resource 	"sludge"
-				value 		"100"
+				resource 	"iron_vein"
+				value 		"0"
+			}
+			GameplayResource
+			{
+				resource 	"fluorine"
+				value 		"30"
 				attachment	"att_in_1"
 			}
 			GameplayResource
@@ -709,7 +709,7 @@ EntityBlueprint  // crystalizer_rhodonite_lvl_3
 			GameplayResource
 			{
 				resource 	"rhodonite"
-				value 		"2"
+				value 		"3"
 			}
 		}
 		priority 4
@@ -719,18 +719,6 @@ EntityBlueprint  // crystalizer_rhodonite_lvl_3
 	{
 		Storages
 		{
-			Storage
-			{
-				resource	 	"sludge"
-				max 	 		"100"
-				attachment		"att_in_1"
-			}
-			Storage
-			{
-				resource	 	"nitric_acid"
-				max 	 		"100"
-				attachment		"att_in_2"
-			}
 		}
 	}	
 
@@ -874,7 +862,88 @@ EntityBlueprint  // crystalizer_rhodonite_ghost
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.8 0.7"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_3"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_4"
+					scale "0.8 0.8 0.8"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_03_ghost"
+					bone "att_vismod_5"
+					scale "0.9 0.9 0.9"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // crystalizer_rhodonite_lvl_2_ghost
+{
+	name  "buildings/resources/crystalizer_rhodonite_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/crystal_structure_small_02.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/decorations/scifi_structure_very_small_02"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
 			delay "0"
 			
 			Effects
@@ -889,7 +958,103 @@ EntityBlueprint  // crystalizer_rhodonite_ghost
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.8 0.7"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_3"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_4"
+					scale "0.8 0.8 0.8"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_03_ghost"
+					bone "att_vismod_5"
+					scale "0.9 0.9 0.9"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // crystalizer_rhodonite_lvl_3_ghost
+{
+	name  "buildings/resources/crystalizer_rhodonite_lvl_3_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/crystal_structure_small_02.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/decorations/scifi_structure_very_small_02"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
 			delay "0"
 			
 			Effects

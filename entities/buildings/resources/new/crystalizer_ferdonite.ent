@@ -6,7 +6,7 @@ EntityBlueprint  // crystalizer_ferdonite
 	{
 		name 				"crystalizer_ferdonite"
 		bp   				"buildings/resources/crystalizer_ferdonite"
-		ghost_bp   			"buildings/resources/crystalizer_ferdonite_ghost"
+		//ghost_bp   			"buildings/resources/crystalizer_ferdonite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_ferdonite"
 		description			"gui/hud/building_description/crystalizer_ferdonite"
@@ -32,12 +32,18 @@ EntityBlueprint  // crystalizer_ferdonite
 				}
 			}		
 		}
+		resource_requirement "carbon_vein" 
 	}
 
 	ResourceConverterDesc
 	{
 		in
 		{
+			GameplayResource
+			{
+				resource 	"carbon_vein"
+				value 		"0"
+			}
 			GameplayResource
 			{
 				resource 	"water"
@@ -71,12 +77,6 @@ EntityBlueprint  // crystalizer_ferdonite
 	{
 		Storages
 		{
-			Storage
-			{
-				resource	 	"water"
-				max 	 		"100"
-				attachment		"att_in_2"
-			}
 		}
 	}	
 
@@ -414,10 +414,10 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_2
 	{
 		name 				"crystalizer_ferdonite_lvl_2"
 		bp   				"buildings/resources/crystalizer_ferdonite_lvl_2"
-		ghost_bp   			"buildings/resources/crystalizer_ferdonite_ghost"
+		//ghost_bp   			"buildings/resources/crystalizer_ferdonite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_ferdonite"
-		description			"gui/hud/building_description/crystalizer_ferdonite"
+		description			"gui/hud/building_description/crystalizer_ferdonite_lvl_2"
 		menu_icon			"gui/hud/building_icons/crystal_structure_small_01"
 		type				"pipe"
 		upgrade				"buildings/resources/crystalizer_ferdonite_lvl_3"
@@ -441,12 +441,18 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_2
 				}
 			}		
 		}
+		resource_requirement "carbon_vein" 
 	}
 
 	ResourceConverterDesc
 	{
 		in
 		{
+			GameplayResource
+			{
+				resource 	"carbon_vein"
+				value 		"0"
+			}
 			GameplayResource
 			{
 				resource 	"water"
@@ -476,7 +482,7 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_2
 			GameplayResource
 			{
 				resource 	"ferdonite"
-				value 		"1"
+				value 		"2"
 			}
 		}
 		priority 4		
@@ -486,18 +492,6 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_2
 	{
 		Storages
 		{
-			Storage
-			{
-				resource	 	"water"
-				max 	 		"100"
-				attachment		"att_in_1"
-			}
-			Storage
-			{
-				resource	 	"supercoolant"
-				max 	 		"100"
-				attachment		"att_in_2"
-			}
 		}
 	}	
 
@@ -628,10 +622,10 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_3
 	{
 		name 				"crystalizer_ferdonite_lvl_3"
 		bp   				"buildings/resources/crystalizer_ferdonite_lvl_3"
-		ghost_bp   			"buildings/resources/crystalizer_ferdonite_ghost"
+		//ghost_bp   			"buildings/resources/crystalizer_ferdonite_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/crystalizer_ferdonite"
-		description			"gui/hud/building_description/crystalizer_ferdonite"
+		description			"gui/hud/building_description/crystalizer_ferdonite_lvl_3"
 		menu_icon			"gui/hud/building_icons/crystal_structure_small_01"
 		type				"pipe"
 		buildable 			"0"
@@ -654,12 +648,18 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_3
 				}
 			}		
 		}
+		resource_requirement "carbon_vein" 
 	}
 
 	ResourceConverterDesc
 	{
 		in
 		{
+			GameplayResource
+			{
+				resource 	"carbon_vein"
+				value 		"0"
+			}
 			GameplayResource
 			{
 				resource 	"water"
@@ -689,7 +689,7 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_3
 			GameplayResource
 			{
 				resource 	"ferdonite"
-				value 		"2"
+				value 		"3"
 			}
 		}
 		priority 4	
@@ -699,18 +699,6 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_3
 	{
 		Storages
 		{
-			Storage
-			{
-				resource	 	"water"
-				max 	 		"100"
-				attachment		"att_in_1"
-			}
-			Storage
-			{
-				resource	 	"supercoolant"
-				max 	 		"100"
-				attachment		"att_in_2"
-			}
 		}
 	}	
 
@@ -854,7 +842,89 @@ EntityBlueprint  // crystalizer_ferdonite_ghost
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.8 0.7"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_3"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_4"
+					scale "0.8 0.8 0.8"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_03_ghost"
+					bone "att_vismod_5"
+					scale "0.9 0.9 0.9"
+				}
+			}
+		}
+	}
+}
+
+
+EntityBlueprint  // crystalizer_ferdonite_lvl_2_ghost
+{
+	name  "buildings/resources/crystalizer_ferdonite_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/crystal_structure_small_01.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/decorations/scifi_structure_very_small_02"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
 			delay "0"
 			
 			Effects
@@ -869,7 +939,7 @@ EntityBlueprint  // crystalizer_ferdonite_ghost
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "1"
 			delay "0"
 			
 			Effects
@@ -929,3 +999,98 @@ EntityBlueprint  // crystalizer_ferdonite_ghost
 	}
 }
 
+EntityBlueprint  // crystalizer_ferdonite_lvl_3_ghost
+{
+	name  "buildings/resources/crystalizer_ferdonite_lvl_3_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/crystal_structure_small_01.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/decorations/scifi_structure_very_small_02"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.8 0.7"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_3"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_4"
+					scale "0.8 0.8 0.8"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_03_ghost"
+					bone "att_vismod_5"
+					scale "0.9 0.9 0.9"
+				}
+			}
+		}
+	}
+}
