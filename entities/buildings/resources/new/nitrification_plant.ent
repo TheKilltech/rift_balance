@@ -6,7 +6,6 @@ EntityBlueprint  // nitrification_plant
 	{
 		name 				"nitrification_plant"
 		bp   				"buildings/resources/nitrification_plant"
-		ghost_bp   			"buildings/resources/nitrification_plant_ghost"
 		category 			"liquids"
 		localization_id		"gui/hud/building_name/nitrification_plant"
 		description			"gui/hud/building_description/nitrification_plant"
@@ -458,15 +457,13 @@ EntityBlueprint  // nitrification_plant
 
 EntityBlueprint  // nitrification_plant_lvl_2
 {
-	name  "buildings/resources/nitrification_plant_lvl_2"
-
-	base_blueprint buildings/resources/nitrification_plant
+	name           "buildings/resources/nitrification_plant_lvl_2"
+	base_blueprint "buildings/resources/nitrification_plant"
 
 	BuildingDesc
 	{
 		name 				"nitrification_plant_lvl_2"
 		bp   				"buildings/resources/nitrification_plant_lvl_2"
-		ghost_bp   			"buildings/resources/nitrification_plant_ghost"
 		category 			"liquids"
 		localization_id		"gui/hud/building_name/nitrification_plant"
 		description			"gui/hud/building_description/nitrification_plant"
@@ -683,6 +680,13 @@ EntityBlueprint  // nitrification_plant_lvl_2
 					bone "att_vismod_3"
 					scale "1.4 1.0 1.0"
 				}
+				Effect
+				{
+					blueprint "effects/weapon_items/ball_gas"
+					bone "att_vismod_5"
+					orientation 0 -90 0
+					scale "1.2 1.4 1.2"
+				}
 			}
 		}
 		EffectGroup
@@ -716,15 +720,13 @@ EntityBlueprint  // nitrification_plant_lvl_2
 
 EntityBlueprint  // nitrification_plant_lvl_3
 {
-	name  "buildings/resources/nitrification_plant_lvl_3"
-
-	base_blueprint buildings/resources/nitrification_plant_lvl_2
+	name           "buildings/resources/nitrification_plant_lvl_3"
+	base_blueprint "buildings/resources/nitrification_plant_lvl_2"
 
 	BuildingDesc
 	{
 		name 				"nitrification_plant_lvl_3"
 		bp   				"buildings/resources/nitrification_plant_lvl_3"
-		ghost_bp   			"buildings/resources/nitrification_plant_ghost"
 		category 			"liquids"
 		localization_id		"gui/hud/building_name/nitrification_plant"
 		description			"gui/hud/building_description/nitrification_plant"
@@ -947,6 +949,13 @@ EntityBlueprint  // nitrification_plant_lvl_3
 					bone "att_vismod_4"
 					scale "0.5 0.5 0.5"
 				}
+				Effect
+				{
+					blueprint "effects/weapon_items/ball_gas"
+					bone "att_vismod_5"
+					orientation 0 -90 0
+					scale "1.2 1.4 1.2"
+				}
 			}
 		}
 		EffectGroup
@@ -1000,7 +1009,7 @@ EntityBlueprint  // nitrification_plant_ghost
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"
+			enabled "1"
 			delay "0"
 			
 			Effects
@@ -1015,7 +1024,7 @@ EntityBlueprint  // nitrification_plant_ghost
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"	
+			enabled "1"	
 			delay "0"
 			
 			Effects
@@ -1067,3 +1076,178 @@ EntityBlueprint  // nitrification_plant_ghost
 	}
 }
 
+EntityBlueprint  // nitrification_plant_lvl_2_ghost
+{
+	name  "buildings/resources/nitrification_plant_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/nitrification_plant.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/nitrification_plant"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "1"	
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_out_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_02_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.55 0.55"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_2"
+					scale "0.6 0.6 0.6"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_02_ghost"
+					bone "att_vismod_3"
+					scale "1.4 1.0 1.0"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // nitrification_plant_lvl_3_ghost
+{
+	name  "buildings/resources/nitrification_plant_lvl_3_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/nitrification_plant.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/nitrification_plant"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "1"	
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_out_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_02_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.55 0.55"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_2"
+					scale "0.6 0.6 0.6"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_02_ghost"
+					bone "att_vismod_3"
+					scale "1.4 1.0 1.0"
+				}
+			}
+		}
+	}
+}
