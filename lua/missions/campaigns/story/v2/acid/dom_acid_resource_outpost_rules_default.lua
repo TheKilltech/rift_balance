@@ -70,11 +70,11 @@ return function()
 	
 	rules.addResourcesOnRunOut = 
 	{
-		{ name = "palladium_vein",     runOutPercentageOnMap = 30, minToSpawn = 3000,  maxToSpawn = 5000, ignoreChance = 50 },
-		{ name = "palladium_deepvein", runOutPercentageOnMap = 30, minToSpawn = 40000, maxToSpawn = 80000                                                        events = { "spawn_resource_earthquake" } },
-		{ name = "uranium_ore_vein",   runOutPercentageOnMap =  5, minToSpawn = 1000,  maxToSpawn = 2000, ignoreChance = 90, eventGroup = "uranium_completed"  },
-		{ name = "morphium_deepvein",  runOutPercentageOnMap = 10, isInfinite = 1,                        ignoreChance = 65, eventGroup = "morphium_unlocked",   events = { "spawn_resource_comet" },      blueprint = "weather/alien_comet_flying"  },
-		{ name = "magma_deepvein",     runOutPercentageOnMap = 10, isInfinite = 1,                        ignoreChance = 65, eventGroup = "titanium_unlocked",   events = { "spawn_resource_earthquake" }  },
+		{ name = "palladium_vein",     runOutPercentageOnMap = 30, minToSpawn = 3000,  maxToSpawn = 5000, chance = 50 },
+		{ name = "palladium_deepvein", runOutPercentageOnMap = 30, minToSpawn = 40000, maxToSpawn = 80000,                                               events = { "spawn_resource_earthquake" } },
+		{ name = "uranium_ore_vein",   runOutPercentageOnMap =  5, minToSpawn = 1000,  maxToSpawn = 2000, chance = 5,  eventGroup = "uranium_completed"  },
+		{ name = "morphium_deepvein",  runOutPercentageOnMap = 10, isInfinite = 1,                        chance = 25, eventGroup = "morphium_unlocked", events = { "spawn_resource_comet" },      blueprint = "weather/alien_comet_flying"  },
+		{ name = "magma_deepvein",     runOutPercentageOnMap = 10, isInfinite = 1,                        chance = 15, eventGroup = "titanium_unlocked", events = { "spawn_resource_earthquake" }  },
 	}
 
 	rules.majorAttackLogic =

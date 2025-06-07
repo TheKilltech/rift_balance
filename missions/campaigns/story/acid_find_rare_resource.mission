@@ -620,16 +620,6 @@ MissionDef
             max_spawned_volumes "3"
         }
 		
-        ResourceVolume
-        {
-            resource        "geothermal_vent"
-			required_discovery_lvl	"1"
-            
-            is_infinite     "1"
-            min_spawned_volumes "3"
-            max_spawned_volumes "6"
-        }
-		
 		ResourceVolume
         {
             resource        "mud_deepvein"
@@ -657,6 +647,16 @@ MissionDef
 			
             min_spawned_volumes "4"
             max_spawned_volumes "6"
+        }
+
+		ResourceVolume
+        {
+            resource        "nitric_acid_deepvein"
+			
+            is_infinite        "1"
+			
+            min_spawned_volumes "2"
+            max_spawned_volumes "3"
         }
     }
 

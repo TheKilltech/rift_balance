@@ -67,9 +67,11 @@ return function()
 	
 	rules.addResourcesOnRunOut = 
 	{
-		{ name = "uranium_ore_vein",     runOutPercentageOnMap =  5, minToSpawn = 2000,  maxToSpawn = 5000, ignoreChance = 25 },
-		{ name = "uranium_ore_deepvein", runOutPercentageOnMap = 30, minToSpawn = 20000, maxToSpawn = 90000                                                      events = { "spawn_resource_earthquake" }},
-		{ name = "morphium_deepvein",    runOutPercentageOnMap = 10, isInfinite = 1,                        ignoreChance = 65, eventGroup = "morphium_unlocked", events = { "spawn_resource_comet" }, blueprint = "weather/alien_comet_flying"  },
+		{ name = "uranium_ore_vein",     runOutPercentageOnMap =  5, minToSpawn =  2000, maxToSpawn =  5000, chance = 25 },
+		{ name = "uranium_ore_deepvein", runOutPercentageOnMap = 30, minToSpawn = 20000, maxToSpawn = 90000,                                                events = { "spawn_resource_earthquake" }},
+		{ name = "carbon_vein",          runOutPercentageOnMap =  5, minToSpawn =  2000, maxToSpawn =  5000, chance = 25 },
+		{ name = "carbon_deepvein",      runOutPercentageOnMap = 30, minToSpawn = 20000, maxToSpawn = 90000, chance = 15,                                   events = { "spawn_resource_earthquake" }},
+		{ name = "morphium_deepvein",    runOutPercentageOnMap = 10, isInfinite = 1,                         chance = 65, eventGroup = "morphium_unlocked", events = { "spawn_resource_comet" }, blueprint = "weather/alien_comet_flying"  },
 	}
 	
 	rules.majorAttackLogic =
