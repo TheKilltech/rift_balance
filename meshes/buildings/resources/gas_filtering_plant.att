@@ -4,14 +4,14 @@ Attachments
 	{
 		name "att_out_1"
 		offset "-2.50 0.43 -2.00"
-		orientation "180.00 -0.00 0.00"
+		orientation "-180.00 -0.00 0.00"
 	}
 
 	Attachment
 	{
 		name "att_out_arrow"
 		offset "-3.95 0.43 -2.00"
-		orientation "180.00 -0.00 0.00"
+		orientation "-180.00 -0.00 0.00"
 	}
 
 	Attachment
@@ -24,7 +24,7 @@ Attachments
 	{
 		name "att_in_arrow"
 		offset "3.94 0.39 2.00"
-		orientation "-180.00 -0.00 0.00"
+		orientation "180.00 -0.00 0.00"
 	}
 
 	Attachment
@@ -83,15 +83,13 @@ Attachments
 	Attachment
 	{
 		name "att_level"
-		offset "-0.71 2.37 -0.82"
+		offset "2.30 2.37 -1.80"
 	}
 
 	Attachment
 	{
-		name "att_vismod_1"
-		parent "mixer"
-		offset "0.00 -1.80 0.00"
-		orientation "45.00 -0.00 0.00"
+		name "att_vismod_3"
+		offset "1.20 2.00 0.50"
 	}
 
 	Attachment
@@ -99,6 +97,21 @@ Attachments
 		name "att_vismod_2"
 		parent "mixer"
 		offset "0.00 -2.60 0.00"
+	}
+
+	Attachment
+	{
+		name "att_vismod_1"
+		parent "mixer"
+		offset "0.00 -0.30 0.00"
+	}
+
+	Attachment
+	{
+		name "att_vismod_4"
+		parent "mixer"
+		offset "0.00 -1.80 0.00"
+		orientation "45.00 -0.00 0.00"
 	}
 
 }

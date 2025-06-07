@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // bio_palladium_refinery
 {
 	name  "buildings/resources/bio_palladium_refinery"
 
@@ -12,8 +12,9 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/bio_palladium_refinery"
 		type				"pipe"
 		require 			"headquarters"
+		upgrade				"buildings/resources/bio_palladium_refinery_lvl_2"
 		order				"44"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
@@ -21,7 +22,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 120
+				building_time 60
 				building_cost
 				{
 					carbonium 	"3000"
@@ -39,10 +40,26 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 	"plasma"
-				value 		"100"
+				resource 	"resin"
+				value 		"15"
 				attachment	"att_in_1"
+				family		"plasma"
+			} 
+			GameplayResource
+			{
+				resource 	"plasma"
+				value 		"50"
+				attachment	"att_in_1"
+				family		"plasma"
 			}
+			GameplayResource
+			{
+				resource 	"plasma_charged"
+				value 		"25"
+				attachment	"att_in_1"
+				family		"plasma"
+			}
+			
 			GameplayResource
 			{
 				resource 	"palladium_bio"
@@ -51,7 +68,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"50"
+				value 		"200"
 			}
 		}
 		
@@ -60,7 +77,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"palladium"
-				value 		"0.2"
+				value 		"0.3"
 			}	
 			GameplayResource
 			{
@@ -69,7 +86,7 @@ EntityBlueprint
 				attachment	"att_out_1"
 			}	
 		}
-		priority 4		
+		priority 4
 	}
 
 	ResourceStorageDesc
@@ -419,11 +436,12 @@ EntityBlueprint
 					bone "att_smoke_1"
 					delay "0.5"	
 				}
-				//Effect
-				//{
-				//	blueprint "effects/buildings_resources/gas_filtering_plant_working"	
-				//	delay "0.5"					
-				//}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/communications_hub_working"
+					bone "att_vismod_2"
+					delay "0.5"	
+				}
 			}
 		}	
 		EffectGroup
@@ -443,3 +461,523 @@ EntityBlueprint
 	}
 }
 
+EntityBlueprint  // bio_palladium_refinery_lvl_2
+{
+	name           "buildings/resources/bio_palladium_refinery_lvl_2"
+	base_blueprint "buildings/resources/bio_palladium_refinery"
+
+	BuildingDesc
+	{
+		buildable 			"0"	
+		name 				"bio_palladium_refinery_lvl_2"
+		bp   				"buildings/resources/bio_palladium_refinery_lvl_2"
+		category 			"resources"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/bio_palladium_refinery"
+		description			"gui/hud/building_description/bio_palladium_refinery"
+		menu_icon			"gui/hud/building_icons/bio_palladium_refinery_lvl_2"
+		require 			"headquarters"
+		upgrade				"buildings/resources/bio_palladium_refinery_lvl_3"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 75
+				building_cost
+				{
+					carbonium 	"250"
+					steel 		"1000"
+					palladium	"2000"
+					ai			"1"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"resin"
+				value 		"30"
+				attachment	"att_in_1"
+				family		"plasma"
+			}
+			GameplayResource
+			{
+				resource 	"plasma_charged"
+				value 		"50"
+				attachment	"att_in_1"
+				family		"plasma"
+			}
+			
+			GameplayResource
+			{
+				resource 	"palladium_bio"
+				value 		"1"
+			}
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"600"
+			}
+		}
+		
+		out
+		{	
+			GameplayResource
+			{
+				resource 	"palladium"
+				value 		"0.5"
+			}
+			GameplayResource
+			{
+				resource 	"flammable_gas"
+				value 		"50"
+				attachment	"att_out_1"
+			}
+		}
+		priority 4		
+	}
+	
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource	 	"flammable_gas"
+				max 	 		"100"
+				attachment		"att_out_1"
+			}
+		}
+	}	
+
+	HealthDesc
+	{
+		max_health 					"750"
+		health 						"750"
+		is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+			}			
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/lamp_light_yellow"	
+					bone "att_smoke_1" //"att_turbine_light"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/drone_cultivate_plants"
+					bone "att_smoke_1"
+					delay "0.5"	
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/communications_hub_working"
+					bone "att_vismod_2"
+					delay "0.5"	
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level_alt"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/particle_condenser"
+					bone "att_vismod_1"
+					scale "0.6 0.6 0.6"
+				}
+				Effect
+				{ 
+					blueprint "effects/weapon_items/ball_mine"
+					bone "att_vismod_2"
+					scale 1.5 1.5 1.5
+				}
+			}
+		}		
+	}
+}
+
+EntityBlueprint  // bio_palladium_refinery_lvl_3
+{
+	name           "buildings/resources/bio_palladium_refinery_lvl_3"
+	base_blueprint "buildings/resources/bio_palladium_refinery_lvl_2"
+
+	BuildingDesc
+	{
+		buildable 			"0"	
+		name 				"bio_palladium_refinery_lvl_3"
+		bp   				"buildings/resources/bio_palladium_refinery_lvl_3"
+		category 			"resources"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/bio_palladium_refinery"
+		description			"gui/hud/building_description/bio_palladium_refinery"
+		menu_icon			"gui/hud/building_icons/bio_palladium_refinery_lvl_3"
+		require 			"headquarters"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 90
+				building_cost
+				{
+					carbonium 	"250"
+					steel 		"1500"
+					palladium	"3000"
+					ai			"2"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"resin"
+				value 		"50"
+				attachment	"att_in_1"
+				family		"plasma"
+			}
+			GameplayResource
+			{
+				resource 	"plasma_charged"
+				value 		"100"
+				attachment	"att_in_1"
+				family		"plasma"
+			}
+
+			GameplayResource
+			{
+				resource 	"palladium_bio"
+				value 		"1"
+			}
+			GameplayResource
+			{
+				resource 	"rhodonite"
+				value 		"1"
+			}
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"1500"
+			}
+		}
+		
+		out
+		{	
+			GameplayResource
+			{
+				resource 	"palladium"
+				value 		"1"
+			}
+			GameplayResource
+			{
+				resource 	"flammable_gas"
+				value 		"50"
+				attachment	"att_out_1"
+			}
+		}
+		priority 4
+	}
+	
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource	 	"flammable_gas"
+				max 	 		"200"
+				attachment		"att_out_1"
+			}
+		}
+	}	
+
+	HealthDesc
+	{
+		max_health 					"1250"
+		health 						"1250"
+		is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+			}			
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/lamp_light_yellow"	
+					bone "att_smoke_1" //"att_turbine_light"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/drone_cultivate_plants"
+					bone "att_smoke_1"
+					delay "0.5"	
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/communications_hub_working"
+					bone "att_vismod_2"
+					delay "0.5"	
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{ 
+					blueprint "effects/buildings_and_machines/shield_gen" //"effects/buildings_and_machines/particle_condenser"
+					bone "att_vismod_1"
+					scale 0.6 0.6 0.6
+					orientation -45 0 0
+				}
+				Effect
+				{ 
+					blueprint "effects/weapon_items/ball_mine"
+					bone "att_vismod_2"
+					scale 1.5 1.5 1.5
+				}
+			}
+		}		
+	}
+}
