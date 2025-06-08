@@ -837,3 +837,79 @@ EntityBlueprint  // fluorine_trap_lvl_2
 		}
 	}
 }
+
+
+EntityBlueprint  // obsolete fluorine_trap
+{
+	name  			"buildings/main/fluorine_trap"
+	base_blueprint	"buildings/resources/fluorine_trap"
+
+	// maintain this definition to prevent crashes when old viarants of this building exist. they will crash otherwise when attempting to e.g. repair
+	BuildingDesc
+	{
+		name 				"fluorine_trap_obsolete"
+		bp   				"buildings/main/fluorine_trap"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/fluorine_trap"
+		description			"gui/hud/building_description/fluorine_trap"
+		menu_icon			"gui/hud/building_icons/obsolete"
+		radius_name			"atmospheric_trap"
+		min_radius			"31"
+		require 			"headquarters"
+		building_group		"fluorine_trap"
+		buildable			"0"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 18
+				building_cost
+				{
+					carbonium 	"400"
+					steel 		"600"
+					palladium	"150"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"25"
+			}
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				resource 			"fluorine"
+				value				"30"
+				attachment			"att_out_1"
+			}
+		}
+		priority 4
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "fluorine"
+				max 	 "200"
+			}
+			
+		}
+	}
+}
