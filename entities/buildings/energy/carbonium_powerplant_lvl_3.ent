@@ -11,7 +11,7 @@ EntityBlueprint
 		bp   				"buildings/energy/carbonium_powerplant_lvl_3"
 		category 			"energy"
 		localization_id		"gui/hud/building_name/carbonium_powerplant"
-		description			"gui/hud/building_description/carbonium_powerplant"
+		description			"gui/hud/building_description/carbonium_powerplant_renewable"
 		menu_icon			"gui/hud/building_icons/carbonium_powerplant_lvl3"
 		order				"3"
 		//upgrade				"buildings/energy/carbonium_powerplant_lvl_4"		
@@ -45,7 +45,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"carbon_vein"
-				value			 	"0.20"
+				value			 	"0"
 			}	
 			
 			GameplayResource
@@ -61,7 +61,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"800"
+				value			 	"600"
 			}
 		}
 		priority 8
@@ -146,7 +146,7 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}			
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
@@ -157,12 +157,12 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
 		}	
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
@@ -172,25 +172,25 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_chimney"
 					delay "0.5"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/carbonium_powerplant_dig"								
+					blueprint "effects/buildings_and_machines/carbonium_powerplant_dig"
 					bone "att_dig"
 					delay "0.5"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/electric_machinery_big"								
+					blueprint "effects/buildings_and_machines/electric_machinery_big"
 					bone "att_electric_1"
 					delay "0.5"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/electric_machinery_big"								
+					blueprint "effects/buildings_and_machines/electric_machinery_big"
 					bone "att_electric_2"
 					delay "0.5"
 				}	
