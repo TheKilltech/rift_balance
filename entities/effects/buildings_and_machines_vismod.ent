@@ -2304,6 +2304,72 @@ EntityBlueprint "effects/no_lifetime"		//ionized_sphere
 	}
 }
 
+// effects
+
+EntityBlueprint "effects/no_lifetime"		// light_white
+{
+	name  "effects/buildings_and_machines/light_white"
+
+	SceneEditorDesc
+	{
+		mesh 		"meshes/light_point.mesh"
+	}
+
+	LightDesc
+	{
+		type "0"
+		scattering_intensity "0.41"
+		light_color
+		{
+			x "0.8"
+			y "0.8"
+			z "0.8"
+			w "500.0"
+		}
+
+		light_range "8"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		// light_yellow
+{
+	name  "effects/buildings_and_machines/light_yellow"
+
+	SceneEditorDesc
+	{
+		mesh 		"meshes/light_point.mesh"
+	}
+
+	LightDesc
+	{
+		type "0"
+		scattering_intensity "0.41"
+		light_color
+		{
+			x "0.8"
+			y "0.8"
+			z "0"
+			w "500.0"
+		}
+
+		light_range "8"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		// air_flickering
+{
+	name  "effects/buildings_and_machines/air_flickering"
+
+	ParticleDesc
+	{
+		name    "rift/comms_hub_energy"
+	}
+}
+
+											// gas_filtering_plant_working
+											// lamp_light 
+											// lamp_light  _blue _cyan _green _orange _red _violet _yellow
+
 // effects/world
 
 EntityBlueprint "effects/no_lifetime"		//surface_water

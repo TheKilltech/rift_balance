@@ -392,7 +392,31 @@ EntityBlueprint  // ammonium_synthesizer
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_white"
+					bone "att_vismod_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/air_flickering"
+					bone "att_vismod_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/gas_filtering_plant_working"
+					delay "0.5"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "vismod"
@@ -408,14 +432,21 @@ EntityBlueprint  // ammonium_synthesizer
 				{
 					blueprint "effects/buildings_and_machines/scifi_structure_medium_green_02"
 					bone "att_vismod_3"
-					scale "0.6 0.6 0.6"
-					orientation "180 0 0"
+					scale 0.6 0.6 0.6
+					orientation 180 0 0
 				}
 				Effect
 				{
 					blueprint "effects/weapon_items/floating_mines"
 					bone "att_vismod_2"
-					scale "2.4 2.4 2.4"
+					scale 2.4 2.4 2.4
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_x"
+					bone "att_vismod_4"
+					scale 2.1 1.2 2.1
+					orientation 0 0 0
 				}
 			}
 		}
@@ -544,7 +575,31 @@ EntityBlueprint  // ammonium_synthesizer_lvl_2
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_white"
+					bone "att_vismod_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/air_flickering"
+					bone "att_vismod_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/gas_filtering_plant_working"
+					delay "0.5"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "level"
@@ -578,14 +633,21 @@ EntityBlueprint  // ammonium_synthesizer_lvl_2
 				{
 					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_03"
 					bone "att_vismod_1"
-					scale "0.7 0.7 0.7"
-					orientation "0 90 0"
+					scale 0.7 0.7 0.7
+					orientation 0 90 0
 				}
 				Effect
 				{
 					blueprint "effects/weapon_items/floating_mines"
 					bone "att_vismod_2"
-					scale "2.4 2.4 2.4"
+					scale 2.4 2.4 2.4
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_x"
+					bone "att_vismod_4"
+					scale 2.1 1.2 2.1
+					orientation 0 0 0
 				}
 			}
 		}

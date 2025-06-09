@@ -393,6 +393,30 @@ EntityBlueprint  // fluorine_trap
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_yellow"
+					bone "att_vismod_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/air_flickering"
+					bone "att_vismod_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/gas_filtering_plant_working"	
+					delay "0.5"
+				}
+			}
+		}		
+		EffectGroup
+		{
 			group "vismod"
 			enabled "1"
 			Effects
