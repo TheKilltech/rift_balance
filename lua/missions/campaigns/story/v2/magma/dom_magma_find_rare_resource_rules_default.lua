@@ -32,15 +32,26 @@ return function()
 		{ action = "spawn_comet_silent",             type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic",                                     weight = 2 },
 		{ action = "spawn_wind_none",                type = "NEGATIVE", gameStates="ATTACK|IDLE",       minEventLevel = 2, logicFile="logic/weather/wind_none.logic",           minTime = 60, maxTime = 120, weight = 0.8,  weather = "WIND" },
 		{ action = "spawn_firestorm",                type = "NEGATIVE", gameStates="ATTACK|IDLE",       minEventLevel = 2, logicFile="logic/weather/firestorm.logic",           minTime = 60, maxTime = 120,                weather = "WIND" },
-		{ action = "spawn_tornado_fire_near_player", type = "NEGATIVE", gameStates="ATTACK|IDLE",       minEventLevel = 5, logicFile="logic/weather/tornado_fire_near_player.logic",  weight = 0.5  }
+		{ action = "spawn_tornado_fire_near_player", type = "NEGATIVE", gameStates="ATTACK|IDLE",       minEventLevel = 5, logicFile="logic/weather/tornado_fire_near_player.logic",  weight = 0.5  },
+		{ action = "spawn_resource_earthquake",      type = "POSITIVE", gameStates="IDLE",              minEventLevel = 4, logicFile="logic/weather/resource_earthquake.logic",                                    weight = 0.5 },
+		{ action = "spawn_resource_comet",           type = "POSITIVE", gameStates="IDLE",              minEventLevel = 4, logicFile="logic/weather/resource_comet.logic",                                         weight = 0.25 }
 		--{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 3 },
 	}
-
+	
 	-- events spawn chance during/after attack (cooldown state). event timing is random ranging from the start of attack to max cooldown time.
 	-- chances are consecutive, i.e. dice roll for event n+1 may only happen if roll for event n was also succefful
 	rules.spawnCooldownEventChance = { 30, 10 }
 	
-	rules.addResourcesOnRunOut = {	}
+
+	rules.addResourcesOnRunOut = 
+	{
+		{ name = "cobalt_vein",            runOutPercentageOnMap =  5,  minToSpawn =  2000, maxToSpawn =  4000,  chance =  5, },
+		{ name = "iron_vein",              runOutPercentageOnMap = 35,  minToSpawn =  2000, maxToSpawn =  4000,  chance = 20  },
+		{ name = "iron_deepvein",          runOutPercentageOnMap = 35,  minToSpawn = 20000, maxToSpawn = 70000,  chance = 10,                                    events = { "spawn_resource_earthquake" } },
+		{ name = "titanium_vein",          runOutPercentageOnMap =  5,  minToSpawn =  2000, maxToSpawn =  4000,  chance = 15, eventGroup = "titanium_completed"  },
+		{ name = "titanium_deepveinvein",  runOutPercentageOnMap =  5,  minToSpawn = 20000, maxToSpawn = 60000,  chance =  2, eventGroup = "titanium_completed", events = { "spawn_resource_earthquake" } },
+		{ name = "morphium_deepvein",      runOutPercentageOnMap = 10,  isInfinite = 1,                          chance = 65, eventGroup = "morphium_unlocked",  events = { "spawn_resource_comet" }, blueprint = "weather/alien_comet_flying" },
+	}
 
 	rules.buildingsUpgradeStartsLogic = {	}
 
