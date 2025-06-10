@@ -76,19 +76,20 @@ EntityBlueprint  // ammonium_synthesizer
 	
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
+		script "lua/buildings/resources/atmospheric_gas_trap.lua"
 
 		database
 		{
-			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell	string:"sell_big"
-			range				float:"30"
-			display_radius_group	 string:"atmospheric_trap"
-			display_radius_blueprint string:"effects/decals/range_circle_repair"
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
+			range						float:"30"
+			display_radius_group		string:"atmospheric_trap"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+			
+			resource					string:"nitrogen"
 		}
-
 	}
-
+	
 	HealthDesc
 	{
 		max_health 					"2200"
@@ -452,7 +453,6 @@ EntityBlueprint  // ammonium_synthesizer
 		}
 	}
 }
-
 
 EntityBlueprint  // ammonium_synthesizer_lvl_2
 {
