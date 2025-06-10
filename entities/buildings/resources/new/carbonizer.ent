@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // carbonizer
 {
 	name  "buildings/resources/carbonizer"
 
@@ -12,7 +12,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/carbonizer"
 		menu_icon			"gui/hud/building_icons/carbonizer"
 		type				"pipe"
-		order				"20"
+		order				"5"
 		upgrade				"buildings/resources/carbonizer_lvl_2"
 		require 			"headquarters"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
@@ -440,7 +440,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // carbonizer_lvl_2
 {
 	name			"buildings/resources/carbonizer_lvl_2"
 	base_blueprint	"buildings/resources/carbonizer"
@@ -455,7 +455,6 @@ EntityBlueprint
 		description			"gui/hud/building_description/carbonizer"
 		menu_icon			"gui/hud/building_icons/carbonizer_lvl_2"
 		type				"pipe"
-		order				"20"
 		buildable			"0"
 		//upgrade				"buildings/resources/carbonizer_lvl_2"
 		require 			"headquarters"

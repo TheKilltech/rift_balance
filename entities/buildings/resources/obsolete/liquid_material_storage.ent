@@ -1,22 +1,24 @@
 EntityBlueprint
 {
-	name  "buildings/resources/solid_material_storage_basic"
-	
+	name  "buildings/resources/liquid_material_storage"
+
 	BuildingDesc
 	{
-		name 				"solid_material_storage_basic"
-		bp   				"buildings/resources/solid_material_storage_basic"
+		name 				"liquid_material_storage"
+		bp   				"buildings/resources/liquid_material_storage"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/solid_material_storage_basic"
-		description			"gui/hud/building_description/solid_material_storage_basic"
-		menu_icon			"gui/hud/building_icons/solid_material_storage_basic"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/liquid_material_storage"
+		description			"gui/hud/building_description/liquid_material_storage"
+		menu_icon			"gui/hud/building_icons/liquid_material_storage"
 		require 			"headquarters"
-		building_group		"solid_material_storage_basic"
-		buildable			"1"
-		order				"3"
-		difficulty_cost_apply	"0"
+		upgrade				"buildings/resources/liquid_material_storage_lvl_2"			
+		order				100
+		buildable			0
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-						
+		menu_action			"resource_clear"	
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+				
 		costs
 		{
 			BuildingCostInfo
@@ -25,10 +27,11 @@ EntityBlueprint
 				building_time 10
 				building_cost
 				{
-					carbonium 	"250"
+					carbonium 	"100"
+					steel 		"100"	
 				}
 			}		
-		}	
+		}
 	}
 
 	ResourceStorageDesc
@@ -37,18 +40,9 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource		"carbonium"
-				max 	 		"1000"
-			}		
-			Storage
-			{
-				resource		"steel"
-				max 	 		"1000"
-			}		
-			Storage
-			{
-				resource		"ammonium"
-				max 	 		"1000"
+				group	 		"local"
+				max 	 		"3000"
+				attachment		"att_in_1|att_in_2|att_in_3|att_in_4"
 			}
 			Storage
 			{
@@ -58,22 +52,27 @@ EntityBlueprint
 		}
 	}
 
+	PipeComponent
+	{
+		attachment		"att_in_1,att_in_2,att_in_3,att_in_4"
+	}
+
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
+		script "lua/buildings/resources/pipe_straight.lua"
 		
 		database
 		{
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
-			building_time		float:"10"
+			postfix				string:"_storage"
 		}
 	}
 
 	HealthDesc
 	{
-		max_health 					"1200"
-		health 						"1200"
+		max_health 					"1000"
+		health 						"1000"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -87,6 +86,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"80_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
 				destroyed_state_effect_group 		"80_state"
 				destrucion_level_name 				"80"
 
@@ -97,6 +97,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"60_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"60_state"
 				destrucion_level_name 				"60"
 			}
@@ -106,6 +107,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"40_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
 				destroyed_state_effect_group 		"40_state"
 				destrucion_level_name 				"40"
 			}
@@ -115,6 +117,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"20_transition"
 				destroy_comp_delay 					"0.5"
 				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				destroyed_state_effect_group 		"20_state"
 				destrucion_level_name 				"20"
 			}
@@ -124,6 +127,7 @@ EntityBlueprint
 				destroy_state_change_effect_group 	"0_transition"
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
@@ -131,13 +135,8 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/solid_material_storage_lvl_3.mesh"
-		material "buildings/resources/solid_material_storage_lvl_3"
-	}
-
-	SkeletonDesc
-	{
-		name "meshes/buildings/resources/solid_material_storage_lvl_3"
+		mesh 		"meshes/buildings/resources/liquid_material_storage.mesh"
+		material 	"buildings/resources/liquid_material_storage"
 	}
 
 	TypeDesc
@@ -145,16 +144,9 @@ EntityBlueprint
 		type "building|resource"
 	}
 
-	AnimationDesc
+	SkeletonDesc
 	{
-		animations
-		{
-			Anim
-			{
-				animName "working_1"
-				animTime "0.0"
-			}
-		}
+		name "meshes/buildings/resources/liquid_material_storage"
 	}
 
 	PhysicsDesc
@@ -168,15 +160,24 @@ EntityBlueprint
 				physics_material 	"default"
 				Shapes
 				{
-					PhysicsSphereShape
+					PhysicsCapsuleShape
 					{
 						r "2.45"
-	
+						half_height "2"
+
 						position 
 						{
 							x "0.0"
-							y "1.0"
+							y "1.5"
 							z "0.0"
+						}
+
+						orientation
+						{
+							w "0.7"
+							x "0.0"
+							z "0.7"
+							y "0.0"
 						}
 					}		
 				}
@@ -197,7 +198,7 @@ EntityBlueprint
 		{
 			PhysicsMeshShape
 			{
-				mesh "meshes/buildings/resources/solid_material_storage_g1.nxs"
+				mesh "meshes/buildings/resources/liquid_material_storage_g1.nxs"
 			}	
 		}
 	}
@@ -348,6 +349,67 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}
+		}	
+////////////////////////Resources/////////////////////////			
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"								
+					bone "att_in_1_arrow"
+				}
+			}
+		}		
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"								
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"								
+					bone "att_in_3_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_4"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"								
+					bone "att_in_4_arrow"
+				}
+			}
+		}	
 	}
 }

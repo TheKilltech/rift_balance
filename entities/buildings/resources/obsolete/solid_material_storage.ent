@@ -1,19 +1,19 @@
 EntityBlueprint
 {
-	name  "buildings/resources/solid_material_storage_basic"
+	name  "buildings/resources/solid_material_storage"
 	
-	BuildingDesc
+		BuildingDesc
 	{
-		name 				"solid_material_storage_basic"
-		bp   				"buildings/resources/solid_material_storage_basic"
+		name 				"solid_material_storage"
+		bp   				"buildings/resources/solid_material_storage"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/solid_material_storage_basic"
-		description			"gui/hud/building_description/solid_material_storage_basic"
-		menu_icon			"gui/hud/building_icons/solid_material_storage_basic"
+		localization_id		"gui/hud/building_name/solid_material_storage"
+		description			"gui/hud/building_description/solid_material_storage"
+		menu_icon			"gui/hud/building_icons/solid_material_storage"
 		require 			"headquarters"
-		building_group		"solid_material_storage_basic"
-		buildable			"1"
-		order				"3"
+		upgrade				"buildings/resources/solid_material_storage_lvl_2"
+		order				100
+		buildable			0
 		difficulty_cost_apply	"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 						
@@ -25,7 +25,7 @@ EntityBlueprint
 				building_time 10
 				building_cost
 				{
-					carbonium 	"250"
+					carbonium 	"100"
 				}
 			}		
 		}	
@@ -37,19 +37,10 @@ EntityBlueprint
 		{
 			Storage
 			{
-				resource		"carbonium"
-				max 	 		"1000"
-			}		
-			Storage
-			{
-				resource		"steel"
-				max 	 		"1000"
-			}		
-			Storage
-			{
-				resource		"ammonium"
-				max 	 		"1000"
-			}
+				group	 		"global"
+				subgroup		"base"
+				max 	 		"200"
+			}				
 			Storage
 			{
 				resource "energy"
@@ -66,14 +57,13 @@ EntityBlueprint
 		{
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
-			building_time		float:"10"
 		}
 	}
 
 	HealthDesc
 	{
-		max_health 					"1200"
-		health 						"1200"
+		max_health 					"1000"
+		health 						"1000"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -131,18 +121,18 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/solid_material_storage_lvl_3.mesh"
-		material "buildings/resources/solid_material_storage_lvl_3"
-	}
-
-	SkeletonDesc
-	{
-		name "meshes/buildings/resources/solid_material_storage_lvl_3"
+		mesh "meshes/buildings/resources/solid_material_storage_lvl_1.mesh"
+		material "buildings/resources/solid_material_storage_lvl_1"
 	}
 
 	TypeDesc
 	{
 		type "building|resource"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/solid_material_storage_lvl_1"
 	}
 
 	AnimationDesc
