@@ -11,7 +11,7 @@ EntityBlueprint  // fluorine_trap
 		localization_id		"gui/hud/building_name/fluorine_trap"
 		description			"gui/hud/building_description/fluorine_trap"
 		menu_icon			"gui/hud/building_icons/fluorine_trap"
-		//upgrade				"buildings/resources/fluorine_trap_lvl_2"
+		upgrade				"buildings/resources/fluorine_trap_lvl_2"
 		require 			"headquarters"
 		order				"7"
 		radius_name			"atmospheric_trap"
@@ -936,6 +936,72 @@ EntityBlueprint  // obsolete fluorine_trap
 				max 	 "200"
 			}
 			
+		}
+	}
+}
+
+
+EntityBlueprint  // fluorine_trap_ghost
+{
+	name  "buildings/resources/fluorine_trap_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/seismic_laboratory.mesh"
+		material "selector/hologram_blue"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+		}
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/fluorine_trap"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "1"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_x_ghost"
+					bone "att_vismod_1"
+					scale 2.1 1.2 2.1
+					orientation 0 0 0
+				}
+			}
 		}
 	}
 }

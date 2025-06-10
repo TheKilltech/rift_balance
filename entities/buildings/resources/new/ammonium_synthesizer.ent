@@ -6,7 +6,6 @@ EntityBlueprint  // ammonium_synthesizer
 	{
 		name 				"ammonium_synthesizer"
 		bp   				"buildings/resources/ammonium_synthesizer"
-		ghost_bp   			"buildings/resources/ammonium_synthesizer_ghost"
 		category 			"resources"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/ammonium_synthesizer"
@@ -463,7 +462,6 @@ EntityBlueprint  // ammonium_synthesizer_lvl_2
 	{
 		name 				"ammonium_synthesizer_lvl_2"
 		bp   				"buildings/resources/ammonium_synthesizer_lvl_2"
-		ghost_bp   			"buildings/resources/ammonium_synthesizer_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/ammonium_synthesizer"
 		description			"gui/hud/building_description/ammonium_synthesizer_lvl_2"
@@ -684,7 +682,7 @@ EntityBlueprint  // ammonium_synthesizer_ghost
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"
+			enabled "1"
 			delay "0"
 
 			Effects
@@ -699,7 +697,101 @@ EntityBlueprint  // ammonium_synthesizer_ghost
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"
+			enabled "1"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_02_ghost"
+					bone "att_vismod_3"
+					scale 0.6 0.6 0.6
+					orientation 180 0 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/floating_mines_ghost"
+					bone "att_vismod_2"
+					scale 2.4 2.4 2.4
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_x_ghost"
+					bone "att_vismod_4"
+					scale 2.1 1.2 2.1
+					orientation 0 0 0
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // ammonium_synthesizer_lvl_2_ghost
+{
+	name  "buildings/resources/ammonium_synthesizer_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/seismic_laboratory.mesh"
+		material "selector/hologram_blue"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+		}
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/ammonium_synthesizer"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
 			delay "0"
 
 			Effects
@@ -732,14 +824,21 @@ EntityBlueprint  // ammonium_synthesizer_ghost
 				{
 					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
 					bone "att_vismod_1"
-					scale "0.7 0.7 0.7"
-					orientation "0 90 0"
+					scale 0.7 0.7 0.7
+					orientation 0 90 0
 				}
 				Effect
 				{
 					blueprint "effects/weapon_items/floating_mines_ghost"
 					bone "att_vismod_2"
-					scale "2.4 2.4 2.4"
+					scale 2.4 2.4 2.4
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_x_ghost"
+					bone "att_vismod_4"
+					scale 2.1 1.2 2.1
+					orientation 0 0 0
 				}
 			}
 		}
