@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // energy_connector_water
 {
 	name			"buildings/energy/energy_connector_water"
 	base_blueprint	"buildings/energy/energy_connector"
@@ -23,6 +23,7 @@ EntityBlueprint
 		building_functionality	"BUILD_ON_WATER|NO_FOUNDATION"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		resource_requirement "water_vein|sludge_vein|mud_vein|morphium_vein"
+		overrides			"energy_connector,energy_connector_armored"
 
 		costs
 		{
