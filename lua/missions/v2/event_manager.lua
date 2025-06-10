@@ -964,11 +964,11 @@ end
 
 function event_manager:SpawnExtraResources( logicFile, resourceName, minAmount, maxAmount, isInfinite, blueprint )
 	LogService:Log( "event_manager:SpawnExtraResources " .. resourceName .. " min: ".. tostring(minAmount).." max: ".. tostring(maxAmount).." inf: ".. tostring(isInfinite).." bp: ".. tostring(blueprint)  )
-	if (minAmount ~= nil )    then self.data:SetInt( "minAmount", minAmount) end
-	if (maxAmount ~= nil )    then self.data:SetInt( "maxAmount", maxAmount) end
-	if (isInfinite ~= nil )   then self.data:SetInt( "isInfinite", isInfinite) end
-	if (resourceName ~= nil ) then self.data:SetString( "resource", resourceName ) end
-	if (blueprint ~= nil )    then self.data:SetString( "blueprint", blueprint ) end
+	if (minAmount ~= nil )    then self.data:SetInt( "minAmount", minAmount)       else self.data:RemoveKey("minAmount")  end
+	if (maxAmount ~= nil )    then self.data:SetInt( "maxAmount", maxAmount)       else self.data:RemoveKey("maxAmount")  end
+	if (isInfinite ~= nil )   then self.data:SetInt( "isInfinite", isInfinite)     else self.data:RemoveKey("isInfinite") end
+	if (resourceName ~= nil ) then self.data:SetString( "resource", resourceName ) else self.data:RemoveKey("resource")   end
+	if (blueprint ~= nil )    then self.data:SetString( "blueprint", blueprint )   else self.data:RemoveKey("blueprint")  end
 	MissionService:ActivateMissionFlow( "", logicFile, "default", self.data )
 end
 
