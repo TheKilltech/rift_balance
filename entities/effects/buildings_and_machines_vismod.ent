@@ -1792,6 +1792,22 @@ EntityBlueprint "effects/no_lifetime"		//hq1
 
 }
 
+EntityBlueprint "effects/no_lifetime"		//outpost
+{
+	name "effects/buildings_and_machines/outpost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/outpost.mesh"
+		material "buildings/main/outpost"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//ai_hub
 {
 	name "effects/buildings_and_machines/ai_hub"
