@@ -10,9 +10,6 @@ end
 function carbonium_factory:OnInit()
 	self:RegisterHandler( self.entity, "BuffEvent",  "OnBuffEvent" ) 
 	self:RegisterHandler( event_sink, "LuaGlobalEvent", "OnLuaGlobalEvent" )
-	
-	self.resource = "carbonium"
-	self.resourceBp = "items/loot/resources/shard_carbonium"
 end
 
 
@@ -27,14 +24,10 @@ function carbonium_factory:OnBuffEvent( event, arg1, arg2 )
 	--local entityDatabase = EntityService:GetDatabase( buildingEntity )
 end
 
-function carbonium_factory:OnBuildingEnd()
-	LogService:Log( "carbonium_factory: OnBuildingEnd")
-	self:UpdateResource()
-end
-
 function carbonium_factory:OnAnimationMarker( markerName )	
+	if ( self.resource == nil or self.resource == "") then self:UpdateResource() end
+	if ( self.resource == "") then return end
 	if ( markerName == "grab_rocks" ) then
-		if ( self.resourceBp == nil ) then self:UpdateResource() end
 		self.rock = EntityService:SpawnAndAttachEntity(self.resourceBp, self.entity,  "att_grab_rocks", "" )
 		EntityService:SetScale( self.rock, 1.3, 1.3, 1.3 )		
 		EntityService:FadeEntity( self.rock, DD_FADE_IN, 1 )
@@ -63,9 +56,10 @@ function carbonium_factory:UpdateResource()
 	shardBps.uranium_ore = "items/loot/resources/shard_uranium"
 	shardBps.palladium   = "items/loot/resources/shard_palladium"
 	shardBps.titanium    = "items/loot/resources/shard_titanium"
-	if ( sharpalladiumelf.resource] ~= nil) then 
-		self.palladiumceBp = shardBps[self.resource]
-	else self.resourceBp = shardBps.carbonium
+	if ( shardBps[self.resource] ~= nil) then 
+		self.resourceBp = shardBps[self.resource]
+	else
+		self.resourceBp = shardBps.carbonium
 	end
 
 	LogService:Log( "carbonium_factory: UpdateResource: ".. tostring(self.resource) .. ", ".. tostring(self.resourceBp) .. ", ".. tostring(arg2))
