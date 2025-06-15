@@ -453,52 +453,64 @@ function event_manager:PrepareEvents( gameState )
 	-- check configuration/gamestate
 	for i, data in ipairs( events ) do 
 
-		LogService:Log( "event_manager:PrepareEvents() - Checking Action : " .. tostring( data.action ) )
+		--LogService:Log( "event_manager:PrepareEvents() - Checking Action : " .. tostring( data.action ) )
+		local allowed = true
 		
-		if ( ( data.minEventLevel ~= nil ) and ( data.minEventLevel > self.currentEventLevel ) ) then
-			LogService:Log( "event_manager:PrepareEvents() - Current event level " .. tostring( self.currentEventLevel ) .." is not enough. Required : " .. tostring( data.minEventLevel ) )
+		if ( ( data.minEventLevel ~= nil ) and ( data.minEventLevel > self.currentEventLevel ) and allowed ) then
+			LogService:Log( "event_manager:PrepareEvents() - skipping Action : " .. tostring( data.action )..". Current event level " .. tostring( self.currentEventLevel ) .." is not enough. Required : " .. tostring( data.minEventLevel ) )
 			table.insert( tableTmp, data )
+			allowed = false
 		end
 
-		if ( ( data.maxEventLevel ~= nil ) and ( data.maxEventLevel < self.currentEventLevel ) ) then
-			LogService:Log( "event_manager:PrepareEvents() - Current event level " .. tostring( self.currentEventLevel ) .." is to high. Required : " .. tostring( data.maxEventLevel ) )
+		if ( ( data.maxEventLevel ~= nil ) and ( data.maxEventLevel < self.currentEventLevel ) and allowed ) then
+			LogService:Log( "event_manager:PrepareEvents() - skipping Action : " .. tostring( data.action )..". Current event level " .. tostring( self.currentEventLevel ) .." is to high. Required : " .. tostring( data.maxEventLevel ) )
 			table.insert( tableTmp, data )
+			allowed = false
 		end
 	
-		if ( ( data.gameStates ~= nil ) and ( self:HasGameState( data.gameStates, gameState ) == false ) ) then
-			LogService:Log( "event_manager:PrepareEvents() - Current game state is " .. tostring( gameState ) ..". Action : " .. tostring( data.action ) .. " is only allowed in " .. tostring( data.gameStates ) )
+		if ( ( data.gameStates ~= nil ) and ( self:HasGameState( data.gameStates, gameState ) == false ) and allowed ) then
+			LogService:Log( "event_manager:PrepareEvents() - skipping Action : " .. tostring( data.action )..". Current game state is " .. tostring( gameState ) ..". Action : " .. tostring( data.action ) .. " is only allowed in " .. tostring( data.gameStates ) )
 			table.insert( tableTmp, data )
+			allowed = false
 		end
 
-		if ( not streamActive and     self:HasGameState(data.gameStates, "STREAMING") and not self:HasGameState(data.gameStates, "NO_STREAMING")) then
-			LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. " Only allowed with streaming session.")
+		if ( not streamActive and     self:HasGameState(data.gameStates, "STREAMING") and not self:HasGameState(data.gameStates, "NO_STREAMING") and allowed) then
+			LogService:Log( "event_manager:PrepareEvents() - skipping Action : " .. tostring( data.action ) .. " Only allowed with streaming session.")
 			table.insert( tableTmp, data )
-		elseif ( streamActive and not self:HasGameState(data.gameStates, "STREAMING") and     self:HasGameState(data.gameStates, "NO_STREAMING")) then
-			LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. " Only allowed without streaming session.")
+			allowed = false
+		elseif ( streamActive and not self:HasGameState(data.gameStates, "STREAMING") and     self:HasGameState(data.gameStates, "NO_STREAMING") and allowed) then
+			LogService:Log( "event_manager:PrepareEvents() - skipping Action : " .. tostring( data.action ) .. " Only allowed without streaming session.")
 			table.insert( tableTmp, data )
+			allowed = false
 		else 
-			LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. ". Allowed in STREAMING and NO_STREAMING.")
+			--LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. ". Allowed in STREAMING and NO_STREAMING.")
 		end
 
 
-		if ( ( self.areNegativeEventsAllowed == false ) and ( self:HasGameState( data.type, "NEGATIVE" ) == true ) ) then
-			LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. ". Negative events are not allowed." )
+		if ( ( self.areNegativeEventsAllowed == false ) and ( self:HasGameState( data.type, "NEGATIVE" ) == true ) and allowed) then
+			LogService:Log( "event_manager:PrepareEvents() - skipping Action : " .. tostring( data.action ) .. ". Negative events are not allowed." )
 			table.insert( tableTmp, data )
+			allowed = false
 		end
 
-		if ( ( self.arePositiveEventsAllowed == false ) and ( self:HasGameState( data.type, "POSITIVE" ) == true ) ) then
-			LogService:Log( "event_manager:PrepareEvents() - Action : " .. tostring( data.action ) .. ". Positive events are not allowed." )
+		if ( ( self.arePositiveEventsAllowed == false ) and ( self:HasGameState( data.type, "POSITIVE" ) == true ) and allowed) then
+			LogService:Log( "event_manager:PrepareEvents() - skipping Action : " .. tostring( data.action ) .. ". Positive events are not allowed." )
 			table.insert( tableTmp, data )
+			allowed = false
+		end
+		
+		if (allowed) then
+			LogService:Log( "event_manager:PrepareEvents() - added Action : " .. tostring( data.action ) .. ".")
 		end
 	end
 
 
 
-	LogService:Log( "event_manager:PrepareEvents() - Removing events." )
+	LogService:Log( "event_manager:PrepareEvents() - Removing ".. tostring(#tableTmp) .." skipped events." )
 	-- remove not allowed events
 	for data in Iter( tableTmp ) do 
 		Remove( events, data )
-		LogService:Log( "event_manager:PrepareEvents() - Removing : " .. data.action )
+		--LogService:Log( "event_manager:PrepareEvents() - Removing : " .. data.action )
 	end
 
 	local tableTmp = {}
