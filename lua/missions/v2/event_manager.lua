@@ -891,6 +891,10 @@ function event_manager:HasResouceRunout( gameState )
 			LogService:Log( "event_manager:HasResouceRunout - skipping ".. element.name .. " because event group ".. tostring( element.eventGroup) .." missing." )
 			goto continueLoop
 		end
+		if ( element.minEventLevel ~= nil and element.minEventLevel > self.currentEventLevel) then
+			LogService:Log( "event_manager:HasResouceRunout - skipping ".. element.name .. " because event level " .. tostring( self.currentEventLevel ) .." is not enough. Required : " .. tostring( element.minEventLevel ))
+			goto continueLoop
+		end
 		local chance = element.chance or (100-(element.ignoreChance or 0)) or 100
 		if (rngRoll <= chance) then
 			LogService:Log( "event_manager:HasResouceRunout - not ignoring ".. element.name .. " because rng roll ".. tostring(rngRoll) .." within ".. tostring(chance) .. " chance." )
