@@ -9,25 +9,24 @@ EntityBlueprint  // ore_mill
 		category 			"resources"
 		localization_id		"gui/hud/building_name/ore_mill"
 		description			"gui/hud/building_description/ore_mill"
-		menu_icon			"gui/hud/building_icons/placeholder"
+		menu_icon			"gui/hud/building_icons/ore_mill"
 		type				"pipe"
 		require 			"headquarters"
-		//upgrade				"buildings/resources/ore_mill_lvl_2"
+		upgrade				"buildings/resources/ore_mill_lvl_2"
 		order				"4"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ore_mill_lvl_2,ore_mill_lvl_2"
 
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 6
+				building_time 60
 				building_cost
 				{
-					carbonium 	"3000"
-					steel 		"1500"
-					palladium	"1500"
+					carbonium 	"500"
+					steel 		"250"
 					ai			"4"
 				}
 			}		
@@ -41,7 +40,7 @@ EntityBlueprint  // ore_mill
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"175"
+				value 		"100"
 			}
 			
 			GameplayResource
@@ -73,10 +72,10 @@ EntityBlueprint  // ore_mill
 			cone_effect					string:"build_cone_3x3"
 			cone_effect_sell			string:"sell_big"
 			building_time				float:"60"
-			buff_modificator			float:"2.0" //"1.25"
+			buff_modificator			float:"1.5" //"1.25"
 			buff_source_name			string:"ore_mill"
 			buff_source_level			int:"1"
-			range						float:"18"
+			range						float:"20"
 			display_radius_group		string:"ore_mill"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"	
 		}		
@@ -354,14 +353,14 @@ EntityBlueprint  // ore_mill
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
 				}
 			}
@@ -370,10 +369,15 @@ EntityBlueprint  // ore_mill
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
+					bone "att_chimney"
+				}
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/communications_hub_working"
@@ -394,12 +398,6 @@ EntityBlueprint  // ore_mill
 					bone "att_vismod_1"
 					scale 0.9 0.9 0.9
 				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_small_white_01"
-					bone "att_vismod_2"
-					scale 0.7 0.7 0.7
-				}
 			}
 		}		
 	}
@@ -419,10 +417,10 @@ EntityBlueprint  // ore_mill_lvl_2
 		type				"pipe"
 		localization_id		"gui/hud/building_name/ore_mill"
 		description			"gui/hud/building_description/ore_mill"
-		menu_icon			"gui/hud/building_icons/placeholder"
+		menu_icon			"gui/hud/building_icons/ore_mill_lvl_2"
 		require 			"headquarters"
 		upgrade				"buildings/resources/ore_mill_lvl_3"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ore_mill,ore_mill_lvl_3"
 		
 		costs
 		{
@@ -432,9 +430,9 @@ EntityBlueprint  // ore_mill_lvl_2
 				building_time 75
 				building_cost
 				{
-					carbonium 	"250"
-					steel 		"1000"
-					palladium	"2000"
+					carbonium 	"500"
+					steel 		"750"
+					cobalt		"100"
 					ai			"1"
 				}
 			}
@@ -448,7 +446,7 @@ EntityBlueprint  // ore_mill_lvl_2
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"350"
+				value 		"250"
 			}
 			
 			GameplayResource
@@ -479,12 +477,6 @@ EntityBlueprint  // ore_mill_lvl_2
 		}
 		priority 4
 	}
-
-	MeshDesc
-	{
-		mesh "meshes/buildings/resources/plasma_converter.mesh"
-		material "buildings/resources/ore_mill_hazenite"
-	}
 	
 	LuaDesc
 	{
@@ -495,10 +487,10 @@ EntityBlueprint  // ore_mill_lvl_2
 			cone_effect					string:"build_cone_3x3"
 			cone_effect_sell			string:"sell_big"
 			building_time				float:"60"
-			buff_modificator			float:"3.0" //"1.5"
+			buff_modificator			float:"1.75" //"1.5"
 			buff_source_name			string:"ore_mill"
 			buff_source_level			int:"2"
-			range						float:"18"
+			range						float:"20"
 			display_radius_group		string:"ore_mill"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"	
 		}		
@@ -575,14 +567,14 @@ EntityBlueprint  // ore_mill_lvl_2
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
 				}
 			}
@@ -591,20 +583,14 @@ EntityBlueprint  // ore_mill_lvl_2
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/lamp_light_yellow"	
-					bone "att_smoke_1" //"att_turbine_light"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/drone_cultivate_plants"
-					bone "att_smoke_1"
-					delay "0.5"	
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
+					bone "att_chimney"
 				}
 				Effect
 				{
@@ -664,9 +650,9 @@ EntityBlueprint  // ore_mill_lvl_3
 		type				"pipe"
 		localization_id		"gui/hud/building_name/ore_mill"
 		description			"gui/hud/building_description/ore_mill"
-		menu_icon			"gui/hud/building_icons/placeholder"
+		menu_icon			"gui/hud/building_icons/ore_mill_lvl_3"
 		require 			"headquarters"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ore_mill,ore_mill_lvl_2"
 		
 		costs
 		{
@@ -676,9 +662,9 @@ EntityBlueprint  // ore_mill_lvl_3
 				building_time 90
 				building_cost
 				{
-					carbonium 	"250"
+					carbonium 	"1000"
 					steel 		"1500"
-					palladium	"3000"
+					cobalt		"250"
 					ai			"2"
 				}
 			}
@@ -692,7 +678,7 @@ EntityBlueprint  // ore_mill_lvl_3
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"750"
+				value 		"600"
 			}
 			
 			GameplayResource
@@ -705,7 +691,7 @@ EntityBlueprint  // ore_mill_lvl_3
 			GameplayResource
 			{
 				resource 	"flammable_gas"
-				value 		"50"
+				value 		"100"
 				attachment	"att_in_1"
 				family		"fuel"
 			}
@@ -719,8 +705,10 @@ EntityBlueprint  // ore_mill_lvl_3
 			
 			GameplayResource
 			{
-				resource 	"hazenite"
-				value 		"0.5"
+				resource 	"water"
+				value 		"25"
+				attachment	"att_in_2"
+				family		"water"
 			}
 		}
 		
@@ -746,10 +734,10 @@ EntityBlueprint  // ore_mill_lvl_3
 			cone_effect					string:"build_cone_3x3"
 			cone_effect_sell			string:"sell_big"
 			building_time				float:"60"
-			buff_modificator			float:"4.0"
+			buff_modificator			float:"2.0"
 			buff_source_name			string:"ore_mill"
 			buff_source_level			int:"3"
-			range						float:"18"
+			range						float:"20"
 			display_radius_group		string:"ore_mill"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"	
 		}		
@@ -816,6 +804,12 @@ EntityBlueprint  // ore_mill_lvl_3
 		}
 	}
 
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/plasma_converter.mesh"
+		material "buildings/resources/ore_mill_hazenite"
+	}
+	
 	EffectDesc
 	{		
 		EffectBaseBlueprints
@@ -826,30 +820,30 @@ EntityBlueprint  // ore_mill_lvl_3
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
 				}
 			}
 		}	
 		EffectGroup
 		{
-			group "att_out_1"
-			enabled "0"				
+			group "att_in_2"
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_out_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
 				}
 			}
 		}
@@ -857,20 +851,14 @@ EntityBlueprint  // ore_mill_lvl_3
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/lamp_light_yellow"	
-					bone "att_smoke_1" //"att_turbine_light"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/drone_cultivate_plants"
-					bone "att_smoke_1"
-					delay "0.5"	
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
+					bone "att_chimney"
 				}
 				Effect
 				{
@@ -913,5 +901,183 @@ EntityBlueprint  // ore_mill_lvl_3
 				}
 			}
 		}	
+	}
+}
+
+
+
+EntityBlueprint  // ore_mill_ghost
+{
+	name  "buildings/resources/ore_mill_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/plasma_converter.mesh"
+		material "selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/ore_mill"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/furnace_ghost"
+					bone "att_vismod_1"
+					scale 0.9 0.9 0.9
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // ore_mill_lvl_2_ghost
+{
+	name  "buildings/resources/ore_mill_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/plasma_converter.mesh"
+		material "selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/ore_mill"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/furnace_ghost"
+					bone "att_vismod_1"
+					scale 0.9 0.9 0.9
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_01_ghost"
+					bone "att_vismod_2"
+					scale 0.7 0.7 0.7
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // ore_mill_lvl_3_ghost
+{
+	name  "buildings/resources/ore_mill_lvl_3_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/plasma_converter.mesh"
+		material "selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/ore_mill"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/furnace_ghost"
+					bone "att_vismod_1"
+					scale 0.9 0.9 0.9
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_01_ghost"
+					bone "att_vismod_2"
+					scale 0.7 0.7 0.7
+				}
+			}
+		}
 	}
 }

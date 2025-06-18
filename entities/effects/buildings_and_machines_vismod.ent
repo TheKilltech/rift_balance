@@ -948,6 +948,22 @@ EntityBlueprint "effects/no_lifetime"		//reactor_orange
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//reactor_ghost
+{
+	name "effects/buildings_and_machines/reactor_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/uranium_centrifuge.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//gas_reactor
 {
 	name "effects/buildings_and_machines/gas_reactor"
@@ -964,6 +980,22 @@ EntityBlueprint "effects/no_lifetime"		//gas_reactor
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//gas_reactor_ghost
+{
+	name "effects/buildings_and_machines/gas_reactor_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 	"meshes/buildings/energy/gas_powerplant.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//orb_uranium
 {
 	name "effects/buildings_and_machines/orb_uranium"
@@ -977,6 +1009,22 @@ EntityBlueprint "effects/no_lifetime"		//orb_uranium
 	{
 		mesh 		"meshes/buildings/main/fusion_field_accelerator.mesh"
 		material 	"buildings/main/fusion_field_accelerator"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//orb_uranium_ghost
+{
+	name "effects/buildings_and_machines/orb_uranium_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 	"meshes/buildings/main/fusion_field_accelerator.mesh"
+		material "selector/hologram_blue"
 	}
 }
 
@@ -1015,6 +1063,41 @@ EntityBlueprint "effects/no_lifetime"		//particle_condenser
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//particle_condenser_ghost
+{
+	name "effects/buildings_and_machines/particle_condenser_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh	"meshes/buildings/main/hyper_particle_condenser.mesh"
+		material "selector/hologram_blue"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "selector/hologram_blue"
+			}
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+			SubMesh
+			{
+				id "2"
+				material "selector/hologram_blue"
+			}
+		}
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//furnace
 {
 	name "effects/buildings_and_machines/furnace"
@@ -1028,6 +1111,22 @@ EntityBlueprint "effects/no_lifetime"		//furnace
 	{
 		mesh "meshes/buildings/resources/carbonium_synthesizer.mesh"
 		material "buildings/resources/carbonium_synthesizer"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//furnace_ghost
+{
+	name "effects/buildings_and_machines/furnace_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/carbonium_synthesizer.mesh"
+		material "selector/hologram_blue"
 	}
 }
 
