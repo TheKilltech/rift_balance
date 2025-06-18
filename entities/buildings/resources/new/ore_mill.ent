@@ -74,6 +74,8 @@ EntityBlueprint  // ore_mill
 			cone_effect_sell			string:"sell_big"
 			building_time				float:"60"
 			buff_modificator			float:"2.0" //"1.25"
+			buff_source_name			string:"ore_mill"
+			buff_source_level			int:"1"
 			range						float:"18"
 			display_radius_group		string:"ore_mill"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"	
@@ -494,6 +496,8 @@ EntityBlueprint  // ore_mill_lvl_2
 			cone_effect_sell			string:"sell_big"
 			building_time				float:"60"
 			buff_modificator			float:"3.0" //"1.5"
+			buff_source_name			string:"ore_mill"
+			buff_source_level			int:"2"
 			range						float:"18"
 			display_radius_group		string:"ore_mill"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"	
@@ -733,6 +737,24 @@ EntityBlueprint  // ore_mill_lvl_3
 		}
 	}	
 
+	LuaDesc
+	{
+		script "lua/buildings/resources/ore_mill.lua"
+				
+		database
+		{
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
+			building_time				float:"60"
+			buff_modificator			float:"4.0"
+			buff_source_name			string:"ore_mill"
+			buff_source_level			int:"3"
+			range						float:"18"
+			display_radius_group		string:"ore_mill"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"	
+		}		
+	}
+	
 	HealthDesc
 	{
 		max_health 					"1250"

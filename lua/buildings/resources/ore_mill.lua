@@ -11,28 +11,41 @@ function ore_mill:OnInit()
 	self.range   = self.data:GetFloatOrDefault("range", 40)
 	self.buffMod = self.data:GetFloatOrDefault("buff_modificator", 1.5)
 	
+	self.data:SetInt("buff_source_entity", self.entity)
+	
     self.fsm = self:CreateStateMachine()
-    self.fsm:AddState( "buff", { enter="OnEnterBuff", execute="OnExecuteBuff", exit="OnExitBuff",  interval = 30 } )
+    --self.fsm:AddState( "buff", { enter="OnEnterBuff", execute="OnExecuteBuff", exit="OnExitBuff",  interval = 30 } )
+    self.fsm:AddState( "buff", { enter="OnEnterBuff", exit="OnExitBuff" } )
     self.fsm:AddState( "idle", { enter="OnEnterIdle" } )
 end
 
 
 function ore_mill:OnActivate()
-	LogService:Log( "ore_mill: OnActivate" )
-	self.powered = true
+	--LogService:Log( "ore_mill: OnActivate" )
 	self.fsm:ChangeState("buff")
-	if ( AnimationService:HasAnim( self.entity, "working") ) then
-		AnimationService:StartAnim( self.entity, "working", true )
-	end
+	--self.powered = true
+	--if ( AnimationService:HasAnim( self.entity, "working") ) then
+	--	AnimationService:StartAnim( self.entity, "working", true )
+	--end
 end
 
 function ore_mill:OnDeactivate()
-	LogService:Log( "ore_mill: OnDeactivate" )
-	self.powered = false
+	--LogService:Log( "ore_mill: OnDeactivate" )
 	self.fsm:ChangeState("idle")
-	if ( AnimationService:IsAnimActive( self.entity, "working") ) then
-		AnimationService:StopAnim( self.entity, "working")
-	end
+	--self.powered = false
+	--if ( AnimationService:IsAnimActive( self.entity, "working") ) then
+	--	AnimationService:StopAnim( self.entity, "working")
+	--end
+end
+
+function ore_mill:OnDestroy()
+	--LogService:Log( "ore_mill: OnDestroy" )
+	self.fsm:ChangeState("idle")
+end
+
+function ore_mill:OnSell()
+	--LogService:Log( "ore_mill: OnSell" )
+	self.fsm:ChangeState("idle")
 end
 
 function ore_mill:OnBuildingEnd()
@@ -44,15 +57,25 @@ function ore_mill:OnEnterIdle()
 end
 
 function ore_mill:OnEnterBuff()
-	self:UpdateMines( self.buffMod )
+	LogService:Log( "ore_mill: OnEnterBuff" )
+	--self:UpdateMines( self.buffMod )
+	local pos = EntityService:GetPosition( self.entity )
+	self.data:SetInt("buff_source_entity", self.entity)
+	self.data:SetInt("buff_active", 1)
+	QueueEvent("LuaGlobalEvent", event_sink, "BuffEvent", self.data )
 end
 
 function ore_mill:OnExitBuff()
-	self:UpdateMines( )
+	LogService:Log( "ore_mill: OnExitBuff" )
+	--self:UpdateMines( )
+	local pos = EntityService:GetPosition( self.entity )
+	self.data:SetInt("buff_source_entity", self.entity)
+	self.data:SetInt("buff_active", 0)
+	QueueEvent("LuaGlobalEvent", event_sink, "BuffEvent", self.data )
 end
 
 function ore_mill:OnExecuteBuff()
-	self:UpdateMines( self.buffMod )
+	--self:UpdateMines( self.buffMod )
 end
 
 
@@ -88,7 +111,6 @@ function ore_mill:UpdateMines( modificator )
 	LogService:Log( "ore_mill: UpdateMines( modificator ".. tostring(modificator) .. " )" )
 	local entities = self:GetMinesInVicinity()
 	for entity in Iter( entities ) do
-		QueueEvent("LuaGlobalEvent", entity, "BuffEvent", { mod = modificator, source =  self.entitiy } )
 		BuildingService:RemoveResourceConverterEfficientyModificator( entity, "biome" )
 		if ( modificator ~= nil ) then
 			BuildingService:SetResourceConverterEfficientyModificator( entity, modificator, "biome" )
