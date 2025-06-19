@@ -46,7 +46,7 @@ return function()
 	rules.addResourcesOnRunOut = 
 	{
 		{ name = "cobalt_vein",            runOutPercentageOnMap =  5,  minToSpawn =  2000, maxToSpawn =  4000,  chance =  5, minEventLevel = 7, },
-		{ name = "iron_vein",              runOutPercentageOnMap = 35,  minToSpawn =  2000, maxToSpawn =  4000,  chance = 20  minEventLevel = 4, },
+		{ name = "iron_vein",              runOutPercentageOnMap = 35,  minToSpawn =  2000, maxToSpawn =  4000,  chance = 20, minEventLevel = 4, },
 		{ name = "iron_deepvein",          runOutPercentageOnMap = 35,  minToSpawn = 20000, maxToSpawn = 70000,  chance = 10, minEventLevel = 5,                                    events = { "spawn_resource_earthquake" } },
 		{ name = "titanium_vein",          runOutPercentageOnMap =  5,  minToSpawn =  2000, maxToSpawn =  4000,  chance = 15, minEventLevel = 8, eventGroup = "titanium_completed"  },
 		{ name = "titanium_deepveinvein",  runOutPercentageOnMap =  5,  minToSpawn = 20000, maxToSpawn = 60000,  chance =  2, minEventLevel = 8, eventGroup = "titanium_completed", events = { "spawn_resource_earthquake" } },
