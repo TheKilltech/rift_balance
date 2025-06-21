@@ -45,44 +45,44 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"carbon_vein"
-				value			 	"1"
+				value			 	"2"
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"iron_vein"
-				value			 	"1"
+				value			 	"2"
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"ammonium_vein"
-				value			 	"1"
+				value			 	"2"
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"cobalt_vein"
-				value			 	"1"
+				value			 	"2"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium_vein"
-				value			 	"1"
+				value			 	"2"
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"titanium_vein"
-				value			 	"1"
+				value			 	"2"
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"uranium_ore_vein"
-				value			 	"1"
+				value			 	"2"
 				family				"resource"
 			}			
 		}
@@ -143,8 +143,11 @@ EntityBlueprint
 				
 		database
 		{
-			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell	string:"sell_big"
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
+			display_radius_group		string:"ore_mill"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
 				
 	}
@@ -208,12 +211,9 @@ EntityBlueprint
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
 				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
-				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
 	}
-
-
 
 	MeshDesc
 	{

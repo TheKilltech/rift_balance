@@ -9,7 +9,7 @@ EntityBlueprint
 		name 				"rare_element_mine_lvl_3"
 		bp   				"buildings/resources/rare_element_mine_lvl_3"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/mining_drill_lvl_3"
+		localization_id		"gui/hud/building_name/mining_drill"
 		description			"gui/hud/building_description/mining_drill_lvl_3"
 		menu_icon			"gui/hud/building_icons/rare_element_mine_lvl3"
 		order				"3"
@@ -62,54 +62,48 @@ EntityBlueprint
 				family				"in"
 			}
 			
-			//GameplayResource
-			//{
-			//	resource 			"tanzanite"
-			//	value				"0.01"
-			//}
-			
 			
 			GameplayResource
 			{
 				resource 			"carbon_deepvein"
-				value			 	"1.6"
+				value			 	"1.0"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"iron_deepvein"
-				value			 	"1.6"
+				value			 	"1.0"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium_deepvein"
-				value			 	"1.6"
+				value			 	"1.0"
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"uranium_ore_deepvein"
-				value			 	"1.6"
+				value			 	"1.0"
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"titanium_deepvein"
-				value			 	"1.6"
+				value			 	"1.0"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium_deepvein"
-				value			 	"1.6"
+				value			 	"1.0"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"cobalt_deepvein"
-				value			 	"1.6"
+				value			 	"1.0"
 				family				"resource"
 			}
 		}
@@ -119,44 +113,44 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"carbonium"
-				value			 	"2"
+				value			 	"1"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"steel"
-				value			 	"2"
+				value			 	"1"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium"
-				value			 	"2"
+				value			 	"1"
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"uranium_ore"
-				value			 	"2"
+				value			 	"1"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium"
-				value			 	"2"
+				value			 	"1"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"titanium"
-				value			 	"2"
+				value			 	"1"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"cobalt"
-				value			 	"2"
+				value			 	"1"
 				family				"resource"
 			}
 		}
@@ -165,6 +159,22 @@ EntityBlueprint
 		one_vein_mode "1"
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/building_buffable.lua"
+		
+		database
+		{
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
+			buff_required_name			string:"ore_mill"
+			buff_required_level			int:"0"
+			display_radius_group		string:"ore_mill"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+		}
+	}
+	
 	HealthDesc
 	{
 		max_health 					"2250"

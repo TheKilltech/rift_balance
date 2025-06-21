@@ -1891,6 +1891,31 @@ EntityBlueprint "effects/no_lifetime"		//hq1
 
 }
 
+EntityBlueprint "effects/no_lifetime"		//hq1_ghost
+{
+	name "effects/buildings_and_machines/hq1_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/headquarters_lvl_1.mesh"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material 	"selector/hologram_blue"
+			}
+		}	
+	}
+
+}
+
 EntityBlueprint "effects/no_lifetime"		//outpost
 {
 	name "effects/buildings_and_machines/outpost"
@@ -1904,6 +1929,23 @@ EntityBlueprint "effects/no_lifetime"		//outpost
 	{
 		mesh "meshes/buildings/main/outpost.mesh"
 		material "buildings/main/outpost"
+	}
+}
+
+
+EntityBlueprint "effects/no_lifetime"		//outpost_ghost
+{
+	name "effects/buildings_and_machines/outpost_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/outpost.mesh"
+		material 	"selector/hologram_blue"
 	}
 }
 

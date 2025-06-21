@@ -40,13 +40,7 @@ EntityBlueprint  // ore_mill
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"100"
-			}
-			
-			GameplayResource
-			{
-				resource 	"carbonium"
-				value 		"2"
+				value 		"75"
 			}
 		}
 		
@@ -72,9 +66,9 @@ EntityBlueprint  // ore_mill
 			cone_effect					string:"build_cone_3x3"
 			cone_effect_sell			string:"sell_big"
 			building_time				float:"60"
-			buff_modificator			float:"1.5" //"1.25"
+			buff_modificator			float:"1.0" //"1.25"
 			buff_source_name			string:"ore_mill"
-			buff_source_level			int:"1"
+			buff_source_level			int:"0"
 			range						float:"20"
 			display_radius_group		string:"ore_mill"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"	
@@ -349,22 +343,6 @@ EntityBlueprint  // ore_mill
 		{
 			"buildings/effects_medium_base"
 		}
-		////////////////////////Resources/////////////////////////
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_1_arrow"
-				}
-			}
-		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -373,11 +351,6 @@ EntityBlueprint  // ore_mill
 			
 			Effects
 			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"
-					bone "att_chimney"
-				}
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/communications_hub_working"
@@ -394,9 +367,11 @@ EntityBlueprint  // ore_mill
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/furnace"
+					blueprint "effects/buildings_and_machines/hq4"
 					bone "att_vismod_1"
-					scale 0.9 0.9 0.9
+					scale 0.4 0.4 0.4
+					orientation -45 0 0
+					offset -0.8 0 0 
 				}
 			}
 		}		
@@ -416,7 +391,7 @@ EntityBlueprint  // ore_mill_lvl_2
 		category 			"resources"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/ore_mill"
-		description			"gui/hud/building_description/ore_mill"
+		description			"gui/hud/building_description/ore_mill_lvl_2"
 		menu_icon			"gui/hud/building_icons/ore_mill_lvl_2"
 		require 			"headquarters"
 		upgrade				"buildings/resources/ore_mill_lvl_3"
@@ -451,24 +426,8 @@ EntityBlueprint  // ore_mill_lvl_2
 			
 			GameplayResource
 			{
-				resource 	"petroleum"
-				value 		"25"
-				attachment	"att_in_1"
-				family		"fuel"
-			} 
-			GameplayResource
-			{
-				resource 	"flammable_gas"
-				value 		"50"
-				attachment	"att_in_1"
-				family		"fuel"
-			}
-			GameplayResource
-			{
-				resource 	"reagent"
-				value 		"25"
-				attachment	"att_in_1"
-				family		"fuel"
+				resource 	"carbonium"
+				value 		"2"
 			}
 		}
 		
@@ -487,9 +446,9 @@ EntityBlueprint  // ore_mill_lvl_2
 			cone_effect					string:"build_cone_3x3"
 			cone_effect_sell			string:"sell_big"
 			building_time				float:"60"
-			buff_modificator			float:"1.75" //"1.5"
+			buff_modificator			float:"2.0" //"1.5"
 			buff_source_name			string:"ore_mill"
-			buff_source_level			int:"2"
+			buff_source_level			int:"1"
 			range						float:"20"
 			display_radius_group		string:"ore_mill"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"	
@@ -563,6 +522,217 @@ EntityBlueprint  // ore_mill_lvl_2
 		{
 			"buildings/effects_medium_base"
 		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
+					bone "att_chimney"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/communications_hub_working"
+					bone "att_vismod_2"
+					delay "0.5"	
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level_alt"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/furnace"
+					bone "att_vismod_1"
+					scale 0.9 0.9 0.9
+				}
+			}
+		}		
+	}
+}
+
+EntityBlueprint  // ore_mill_lvl_3
+{
+	name           "buildings/resources/ore_mill_lvl_3"
+	base_blueprint "buildings/resources/ore_mill_lvl_2"
+
+	BuildingDesc
+	{
+		buildable 			"0"
+		name 				"ore_mill_lvl_3"
+		bp   				"buildings/resources/ore_mill_lvl_3"
+		category 			"resources"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/ore_mill"
+		description			"gui/hud/building_description/ore_mill_lvl_3"
+		menu_icon			"gui/hud/building_icons/ore_mill_lvl_3"
+		require 			"headquarters"
+		upgrade				"buildings/resources/ore_mill_lvl_4"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ore_mill,ore_mill_lvl_2"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 90
+				building_cost
+				{
+					carbonium 	"1000"
+					steel 		"1500"
+					cobalt		"250"
+					ai			"1"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{			
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"250"
+			}
+			
+			GameplayResource
+			{
+				resource 	"petroleum"
+				value 		"25"
+				attachment	"att_in_1"
+				family		"fuel"
+			} 
+			GameplayResource
+			{
+				resource 	"flammable_gas"
+				value 		"50"
+				attachment	"att_in_1"
+				family		"fuel"
+			}
+			GameplayResource
+			{
+				resource 	"reagent"
+				value 		"25"
+				attachment	"att_in_1"
+				family		"fuel"
+			}
+		}
+		
+		out
+		{
+		}
+		priority 4
+	}
+	
+	LuaDesc
+	{
+		script "lua/buildings/resources/ore_mill.lua"
+				
+		database
+		{
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
+			building_time				float:"60"
+			buff_modificator			float:"2.5" //"1.5"
+			buff_source_name			string:"ore_mill"
+			buff_source_level			int:"2"
+			range						float:"20"
+			display_radius_group		string:"ore_mill"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"	
+		}		
+	}
+	
+	HealthDesc
+	{
+		max_health 					"1250"
+		health 						"1250"
+		is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+			}			
+		}
+	}
+	
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
@@ -608,7 +778,7 @@ EntityBlueprint  // ore_mill_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/level_2"
+					blueprint "effects/buildings_and_machines/level_3"
 					bone "att_level"
 				}
 			}
@@ -636,21 +806,21 @@ EntityBlueprint  // ore_mill_lvl_2
 	}
 }
 
-EntityBlueprint  // ore_mill_lvl_3
+EntityBlueprint  // ore_mill_lvl_4
 {
-	name           "buildings/resources/ore_mill_lvl_3"
-	base_blueprint "buildings/resources/ore_mill_lvl_2"
+	name           "buildings/resources/ore_mill_lvl_4"
+	base_blueprint "buildings/resources/ore_mill_lvl_3"
 
 	BuildingDesc
 	{
 		buildable 			"0"
-		name 				"ore_mill_lvl_3"
-		bp   				"buildings/resources/ore_mill_lvl_3"
+		name 				"ore_mill_lvl_4"
+		bp   				"buildings/resources/ore_mill_lvl_4"
 		category 			"resources"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/ore_mill"
-		description			"gui/hud/building_description/ore_mill"
-		menu_icon			"gui/hud/building_icons/ore_mill_lvl_3"
+		description			"gui/hud/building_description/ore_mill_lvl_4"
+		menu_icon			"gui/hud/building_icons/placeholder"
 		require 			"headquarters"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ore_mill,ore_mill_lvl_2"
 		
@@ -659,13 +829,13 @@ EntityBlueprint  // ore_mill_lvl_3
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 90
+				building_time 100
 				building_cost
 				{
-					carbonium 	"1000"
-					steel 		"1500"
-					cobalt		"250"
-					ai			"2"
+					carbonium 	"500"
+					steel 		"2500"
+					cobalt		"750"
+					ai			"1"
 				}
 			}
 		}
@@ -734,7 +904,7 @@ EntityBlueprint  // ore_mill_lvl_3
 			cone_effect					string:"build_cone_3x3"
 			cone_effect_sell			string:"sell_big"
 			building_time				float:"60"
-			buff_modificator			float:"2.0"
+			buff_modificator			float:"3.0"
 			buff_source_name			string:"ore_mill"
 			buff_source_level			int:"3"
 			range						float:"20"
@@ -745,8 +915,8 @@ EntityBlueprint  // ore_mill_lvl_3
 	
 	HealthDesc
 	{
-		max_health 					"1250"
-		health 						"1250"
+		max_health 					"1500"
+		health 						"1500"
 		is_manual 1
 		update_health_uniform 		"1"
 		
@@ -876,7 +1046,7 @@ EntityBlueprint  // ore_mill_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/level_3"
+					blueprint "effects/buildings_and_machines/level_4"
 					bone "att_level"
 				}
 			}
@@ -936,9 +1106,11 @@ EntityBlueprint  // ore_mill_ghost
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/furnace_ghost"
+					blueprint "effects/buildings_and_machines/hq1_ghost"
 					bone "att_vismod_1"
-					scale 0.9 0.9 0.9
+					scale 0.4 0.4 0.4
+					orientation -45 0 0
+					offset -0.8 0 0 
 				}
 			}
 		}
@@ -948,6 +1120,45 @@ EntityBlueprint  // ore_mill_ghost
 EntityBlueprint  // ore_mill_lvl_2_ghost
 {
 	name  "buildings/resources/ore_mill_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/plasma_converter.mesh"
+		material "selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/ore_mill"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/furnace_ghost"
+					bone "att_vismod_1"
+					scale 0.9 0.9 0.9
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // ore_mill_lvl_3_ghost
+{
+	name  "buildings/resources/ore_mill_lvl_3_ghost"
 
 	MeshDesc
 	{
@@ -1006,9 +1217,9 @@ EntityBlueprint  // ore_mill_lvl_2_ghost
 	}
 }
 
-EntityBlueprint  // ore_mill_lvl_3_ghost
+EntityBlueprint  // ore_mill_lvl_4_ghost
 {
-	name  "buildings/resources/ore_mill_lvl_3_ghost"
+	name  "buildings/resources/ore_mill_lvl_4_ghost"
 
 	MeshDesc
 	{

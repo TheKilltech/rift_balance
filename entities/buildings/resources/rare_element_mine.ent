@@ -43,11 +43,6 @@ EntityBlueprint
 
 		resource_requirement "carbon_deepvein|iron_deepvein|ammonium_deepvein|cobalt_deepvein|palladium_deepvein|titanium_deepvein|uranium_ore_deepvein"
 	}
-
- 	//AnimationGraphDesc
-	//{
-	//	animation_graph_name "building_working"
-	//}	
 	
 	ResourceConverterDesc
 	{
@@ -91,44 +86,44 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"carbon_deepvein"
-				value			 	"0.5"
+				value			 	"2.0"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"iron_deepvein"
-				value			 	"0.5"
+				value			 	"2.0"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium_deepvein"
-				value			 	"0.5"
+				value			 	"2.0"
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"cobalt_deepvein"
-				value			 	"0.5"
+				value			 	"2.0"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium_deepvein"
-				value			 	"0.5"
+				value			 	"2.0"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"titanium_deepvein"
-				value			 	"0.5"
+				value			 	"2.0"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"uranium_ore_deepvein"
-				value			 	"0.5"
+				value			 	"2.0"
 				family				"resource"
 			}			
 		}
@@ -138,44 +133,44 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"carbonium"
-				value			 	"0.5"
+				value			 	"1.0"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"steel"
-				value			 	"0.5"
+				value			 	"1.0"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium"
-				value			 	"0.5"
+				value			 	"1.0"
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"cobalt"
-				value			 	"0.5"
+				value			 	"1.0"
 				family				"resource"
 			}	
 			GameplayResource
 			{
 				resource 			"palladium"
-				value			 	"0.5"
+				value			 	"1.0"
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"titanium"
-				value			 	"0.5"
+				value			 	"1.0"
 				family				"resource"
 			}		
 			GameplayResource
 			{
 				resource 			"uranium_ore"
-				value			 	"0.5"
+				value			 	"1.0"
 				family				"resource"
 			}
 		}
@@ -186,14 +181,16 @@ EntityBlueprint
 
 	LuaDesc
 	{
-		script "lua/buildings/resources/carbonium_factory.lua"
+		script "lua/buildings/building_buffable.lua"
 		
 		database
 		{
-			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell	string:"sell_big"
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
+			display_radius_group		string:"ore_mill"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
-		
 	}
 
 	HealthDesc
