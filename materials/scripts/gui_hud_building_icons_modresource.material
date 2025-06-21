@@ -270,7 +270,7 @@ material "gui/hud/building_icons/resource_converter_titanium_disabled" : gui/def
 
 
 
-/////  ore_mill converters
+/////  ore_mill
 
 material "gui/hud/building_icons/ore_mill" : gui/default
 {
@@ -298,6 +298,16 @@ material "gui/hud/building_icons/ore_mill_lvl_3" : gui/default
 }
 
 material "gui/hud/building_icons/ore_mill_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ore_mill_disabled.dds"
+}
+
+material "gui/hud/building_icons/ore_mill_lvl_4" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ore_mill_lvl_4.dds"
+}
+
+material "gui/hud/building_icons/ore_mill_lvl_4_disabled" : gui/default
 {
 	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ore_mill_disabled.dds"
 }
