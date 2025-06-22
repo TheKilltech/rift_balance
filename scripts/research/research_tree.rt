@@ -840,8 +840,8 @@ Research
 					research_scripts
 					position
 					{
-						x "1278.000"
-						y "162.000"
+						x "1305.000"
+						y "108.000"
 					}
 
 					research_awards
@@ -1622,7 +1622,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1278.000"
+						x "1359.000"
 						y "-162.000"
 					}
 
@@ -1784,8 +1784,8 @@ Research
 					research_scripts
 					position
 					{
-						x "1278.000"
-						y "333.000"
+						x "1305.000"
+						y "288.000"
 					}
 
 					research_awards
@@ -2965,7 +2965,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1386.000"
+						x "1467.000"
 						y "-162.000"
 					}
 
@@ -3072,7 +3072,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1332.000"
+						x "1413.000"
 						y "-162.000"
 					}
 
@@ -3901,7 +3901,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1332.000"
+						x "1413.000"
 						y "-216.000"
 					}
 
@@ -4330,7 +4330,7 @@ Research
 
 					position
 					{
-						x "1278.000"
+						x "1305.000"
 						y "-18.000"
 					}
 
@@ -4468,7 +4468,7 @@ Research
 
 					position
 					{
-						x "1305.000"
+						x "1386.000"
 						y "-108.000"
 					}
 
@@ -4527,7 +4527,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1359.000"
+						x "1440.000"
 						y "-108.000"
 					}
 
@@ -4685,7 +4685,7 @@ Research
 
 					}
 
-					icon "gui/menu/research/icons/resource_handling"
+					icon "gui/menu/research/icons/rare_element_mining"
 				}
 
 				ResearchNode
@@ -10850,7 +10850,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1386.000"
+						x "1359.000"
 						y "36.000"
 					}
 
@@ -10904,8 +10904,8 @@ Research
 					research_scripts
 					position
 					{
-						x "1386.000"
-						y "162.000"
+						x "1359.000"
+						y "108.000"
 					}
 
 					research_awards
@@ -10958,8 +10958,8 @@ Research
 					research_scripts
 					position
 					{
-						x "1386.000"
-						y "333.000"
+						x "1359.000"
+						y "288.000"
 					}
 
 					research_awards
@@ -11073,8 +11073,8 @@ Research
 					research_scripts
 					position
 					{
-						x "1332.000"
-						y "162.000"
+						x "1413.000"
+						y "108.000"
 					}
 
 					research_awards
@@ -11134,8 +11134,8 @@ Research
 					research_scripts
 					position
 					{
-						x "1332.000"
-						y "333.000"
+						x "1413.000"
+						y "288.000"
 					}
 
 					research_awards
@@ -12196,6 +12196,275 @@ Research
 					}
 
 					icon "gui/menu/research/icons/rare_element_mining"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/resource_handling_cobalt"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/metallurgy"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "1500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1251.000"
+						y "-162.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/alloys_factory"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/blast_furnace"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/orbital_laser"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip "gui/menu/research/tooltip_requirement_objective"
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/metallurgy"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/metallurgy_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "2500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1251.000"
+						y "-18.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/blast_furnace_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/orbital_laser"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip "gui/menu/research/tooltip_requirement_objective"
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/metallurgy"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_handling_uranium"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/alloys_uranium"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "3500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1359.000"
+						y "-18.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/alloys_factory_uranium"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/crystal_walls"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip "gui/menu/research/tooltip_requirement_objective"
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/metallurgy"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_handling_palladium"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/alloys_palladium"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "3500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1413.000"
+						y "-18.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/alloys_factory_palladium"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/crystal_walls"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip "gui/menu/research/tooltip_requirement_objective"
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/metallurgy"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_handling_titanium"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/alloys_titanium"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0.000"
+							resource "download"
+							count "3500.000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1467.000"
+						y "-18.000"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/alloys_factory_titanium"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/crystal_walls"
 				}
 
 			}
@@ -34658,6 +34927,6 @@ Research
 
 	type
 	editor "6380"
-	version "176"
+	version "177"
 }
 
