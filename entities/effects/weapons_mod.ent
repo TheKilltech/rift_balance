@@ -276,6 +276,22 @@ EntityBlueprint "effects/no_lifetime"		//nuclear_missiles
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//nuclear_missiles_ghost
+{
+	name "effects/weapon_items/nuclear_missiles_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/nuclear_missiles.mesh"
+		material	"selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//floating_mines
 {
 	name "effects/weapon_items/floating_mines"
