@@ -196,6 +196,22 @@ EntityBlueprint "effects/no_lifetime"		//flamethrower
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//flamethrower_ghost
+{
+	name "effects/weapon_items/flamethrower_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/flamethrower.mesh"
+		material	"selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//grenade_auncher
 {
 	name "effects/weapon_items/grenade_auncher"
@@ -337,6 +353,38 @@ EntityBlueprint "effects/no_lifetime"		//spitter_cryo
 	{
 		mesh 		"meshes/items/weapons/spitter.mesh"
 		material 	"items/weapons/spitter_cryo_basic"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//spitter_fire
+{
+	name "effects/weapon_items/spitter_fire"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/spitter.mesh"
+		material 	"items/weapons/spitter_fire_basic"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//spitter_ghost
+{
+	name "effects/weapon_items/spitter_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/spitter.mesh"
+		material	"selector/hologram_blue"
 	}
 }
 

@@ -867,7 +867,6 @@ EntityBlueprint "effects/no_lifetime"		//pipe_x_ghost
 	}
 }
 
-
 EntityBlueprint "effects/no_lifetime"		//silo
 {
 	name "effects/buildings_and_machines/silo"
@@ -913,6 +912,38 @@ EntityBlueprint "effects/no_lifetime"		//silo_ghost
 	{
 		mesh 		"meshes/buildings/resources/liquid_material_storage.mesh"
 		material 	"selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//magma_pp
+{
+	name "effects/buildings_and_machines/magma_pp"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/energy/magma_powerplant.mesh"
+		material 	"buildings/energy/magma_powerplant"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//magma_pp_ghost
+{
+	name "effects/buildings_and_machines/magma_pp_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/energy/magma_powerplant.mesh"
+		material	"selector/hologram_blue"
 	}
 }
 
