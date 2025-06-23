@@ -875,6 +875,10 @@ function event_manager:HasResouceRunout( gameState )
 	if ( ( self.addResourcesOnRunOut == nil ) or ( #self.addResourcesOnRunOut <= 0 ) )then
 		return false
 	end
+	if ( self.addResourcesOnRunOutTimer > self.eventManagerTimer ) then
+		LogService:Log( "event_manager:HasResouceRunout - timer is not ready to spawn new resources : " .. tostring( self.addResourcesOnRunOutTimer ) .. " current time : " .. tostring( self.eventManagerTimer ) )
+		return false
+	end
 	self:VerboseLog("event_manager:HasResouceRunout - available event groups:")
 	for key,val in pairs(self.availableEventGroups) do 
 		self:VerboseLog( "   ".. tostring( key ) )
@@ -888,24 +892,24 @@ function event_manager:HasResouceRunout( gameState )
 	for i = 1, #self.addResourcesOnRunOut, 1 do 
 		local element = self.addResourcesOnRunOut[i]
 		if ( element.eventGroup ~= nil and not self.availableEventGroups[ element.eventGroup ]) then
-			LogService:Log( "event_manager:HasResouceRunout - skipping ".. element.name .. " because event group ".. tostring( element.eventGroup) .." missing." )
+			LogService:Log( "event_manager:HasResouceRunout - ".. element.name .. " skipping because event group ".. tostring( element.eventGroup) .." missing." )
 			goto continueLoop
 		end
 		if ( element.minEventLevel ~= nil and element.minEventLevel > self.currentEventLevel) then
-			LogService:Log( "event_manager:HasResouceRunout - skipping ".. element.name .. " because event level " .. tostring( self.currentEventLevel ) .." is not enough. Required : " .. tostring( element.minEventLevel ))
+			LogService:Log( "event_manager:HasResouceRunout - ".. element.name .. " skipping because event level " .. tostring( self.currentEventLevel ) .." is not enough. Required : " .. tostring( element.minEventLevel ))
 			goto continueLoop
 		end
 		local chance = element.chance or (100-(element.ignoreChance or 0)) or 100
 		if (rngRoll <= chance) then
-			LogService:Log( "event_manager:HasResouceRunout - not ignoring ".. element.name .. " because rng roll ".. tostring(rngRoll) .." within ".. tostring(chance) .. " chance." )
+			LogService:Log( "event_manager:HasResouceRunout - ".. element.name .. " not ignoring because rng roll ".. tostring(rngRoll) .." within ".. tostring(chance) .. " chance." )
 		elseif ( chance > 0) then
-			LogService:Log( "event_manager:HasResouceRunout - ignoring ".. element.name .. " because rng roll ".. tostring(rngRoll) .." outside ".. tostring(chance) .. " chance." )
+			LogService:Log( "event_manager:HasResouceRunout - ".. element.name .. " ignoring because rng roll ".. tostring(rngRoll) .." outside ".. tostring(chance) .. " chance." )
 			goto continueLoop
 		end
 		local currentResourcePercentage = ResourceService:GetPercentOfAvailableResourceByType( element.name )
 
 		if ( currentResourcePercentage == nil ) then
-			LogService:Log( "event_manager:HasResouceRunout - resource does not exist on this map : " .. element.name )
+			LogService:Log( "event_manager:HasResouceRunout - ".. element.name .. " resource does not exist on this map" )
 			currentResourcePercentage = 0
 		end
 		currentResourcePercentage = currentResourcePercentage * 100;
@@ -914,9 +918,9 @@ function event_manager:HasResouceRunout( gameState )
 			local runningOutResourcesIndex = #runningOutResources + 1
 			runningOutResources[runningOutResourcesIndex] = element
 			runningOutResources[runningOutResourcesIndex].currentResourcePercentage = currentResourcePercentage
-			LogService:Log( "event_manager:HasResouceRunout - resource is running out : " .. element.name .. " amount " ..  tostring( currentResourcePercentage ) .. " adding on below " .. tostring( element.runOutPercentageOnMap ) ) 
+			LogService:Log( "event_manager:HasResouceRunout - " .. element.name .. " resource is running out: amount " ..  tostring( currentResourcePercentage ) .. " adding on below " .. tostring( element.runOutPercentageOnMap ) ) 
 		else
-			LogService:Log( "event_manager:HasResouceRunout - resource is not running out : " .. element.name .. " amount " ..  tostring( currentResourcePercentage ) .. " adding on below " .. tostring( element.runOutPercentageOnMap ) ) 
+			LogService:Log( "event_manager:HasResouceRunout - " .. element.name .. " resource is not running out : amount " ..  tostring( currentResourcePercentage ) .. " adding on below " .. tostring( element.runOutPercentageOnMap ) ) 
 		end
 		::continueLoop::
 	end
@@ -940,28 +944,23 @@ function event_manager:HasResouceRunout( gameState )
 	if ( runOutOnMap ) then
 		LogService:Log( "event_manager:HasResouceRunout - selecting most run out resource : " .. selected.name )	
 	
-		if ( self.addResourcesOnRunOutTimer > self.eventManagerTimer ) then
-			LogService:Log( "event_manager:HasResouceRunout - timer is not ready to spawn new resources : " .. tostring( self.addResourcesOnRunOutTimer ) .. " current time : " .. tostring( self.eventManagerTimer ) )
+		local events = self.resourceEvents
+		if ( selected.events ~= nil ) then events = selected.events end
+		local eventName = events[RandInt( 1, #events )] 
+		local logicFile = self:GetLogicFileFromAction( eventName, self.rules.gameEvents )
+
+		self.addResourcesOnRunOutTimer = self.eventManagerTimer + self.addResourcesOnRunOutTime
+
+		if ( logicFile ~= "" ) then			
+			LogService:Log( "event_manager:HasResouceRunout - spawning resource event : " .. eventName .. " logic file name : " .. logicFile )			
+			LogService:Log( "event_manager:HasResouceRunout - skipping events : " .. gameState )
+
+			self:SpawnExtraResources( logicFile, selected.name, selected.minToSpawn, selected.maxToSpawn, selected.isInfinite, selected.blueprint )
+
+			return true
 		else
-			local events = self.resourceEvents
-			if ( selected.events ~= nil ) then events = selected.events end
-			local eventName = events[RandInt( 1, #events )] 
-			local logicFile = self:GetLogicFileFromAction( eventName, self.rules.gameEvents )
-
-			self.addResourcesOnRunOutTimer = self.eventManagerTimer + self.addResourcesOnRunOutTime
-
-			if ( logicFile ~= "" ) then
-				
-				LogService:Log( "event_manager:HasResouceRunout - spawning resource event : " .. eventName .. " logic file name : " .. logicFile )			
-				LogService:Log( "event_manager:HasResouceRunout - skipping events : " .. gameState )
-
-				self:SpawnExtraResources( logicFile, selected.name, selected.minToSpawn, selected.maxToSpawn, selected.isInfinite, selected.blueprint )
-
-				return true
-			else
-				LogService:Log( "event_manager:HasResouceRunout - spawning resource event " .. eventName .. " does not exist in the rules." )
-			end
-		end		
+			LogService:Log( "event_manager:HasResouceRunout - spawning resource event " .. eventName .. " does not exist in the rules." )
+		end
 	end
 	return false
 end
