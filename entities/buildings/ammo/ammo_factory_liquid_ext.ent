@@ -25,9 +25,9 @@ EntityBlueprint  // ammo_factory_liquid_ext
 				building_time 160
 				building_cost
 				{
-					carbonium 	"8000"
+					carbonium 	"4000"
 					steel 		"1000"
-					palladium	"1000"
+					alloys		"250"
 					ai			"4"
 				}
 			}		
@@ -53,8 +53,8 @@ EntityBlueprint  // ammo_factory_liquid_ext
 			
 			GameplayResource
 			{
-				resource 			"palladium"
-				value				"0.7"
+				resource 			"titanium"
+				value				"1.0"
 			}
 			
 			GameplayResource
@@ -407,9 +407,9 @@ EntityBlueprint  // ammo_factory_liquid_ext_lvl_2
 				building_time 180
 				building_cost
 				{
-					carbonium 	"8000"
-					steel 		"1000"
-					palladium	"1000"
+					carbonium 	"6000"
+					steel 		"3000"
+					alloys		"750"
 					ai			"1"
 				}
 			}		
@@ -435,7 +435,7 @@ EntityBlueprint  // ammo_factory_liquid_ext_lvl_2
 			
 			GameplayResource
 			{
-				resource 			"palladium"
+				resource 			"titanium"
 				value				"1"
 			}	
 
@@ -457,7 +457,7 @@ EntityBlueprint  // ammo_factory_liquid_ext_lvl_2
 			GameplayResource
 			{
 				resource 			"supercoolant"
-				value 				"5"
+				value 				"10"
 				attachment			"att_in_2"
 				familiy				"secondary"
 			}
