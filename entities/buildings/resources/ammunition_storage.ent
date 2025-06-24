@@ -13,7 +13,7 @@ EntityBlueprint
 		require 			"headquarters"
 		upgrade				"buildings/resources/ammunition_storage_lvl_2"
 		order				"6"	
-		limit			    "6"
+		limit			    "2"
 		limit_name			"ammo_storage"			
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
 		
@@ -44,7 +44,7 @@ EntityBlueprint
 			Storage
 			{
 				group		 "ammo_tower"
-				max 	 	 "1"
+				max 	 	 "4"
 			}
 			
 			Storage
@@ -197,9 +197,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.098"
+			y "0.875"
+			z "0.263"
 			w "1"
 		}
 		size
@@ -207,8 +207,9 @@ EntityBlueprint
 			x "3"
 			y "3"
 		}
-					
+
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

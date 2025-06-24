@@ -73,6 +73,7 @@ EntityBlueprint
 		remove_entity 	 "0"
 		remove_component "0"
 		recreate_component "1"
+		priority			"1"
 	}
 
 	HealthDesc
@@ -264,20 +265,11 @@ EntityBlueprint
 
 	MinimapItemDesc
 	{
-		type	"quad"
-		color 
-		{
-			x "0"
-			y "0"
-			z "1"
-			w "1"
-		}
-		size
-		{
-			x "4"
-			y "4"
-		}
+		type				"image"
+		icon_material 		"gui/hud/minimap_icons/comms_hub"
+		additional_z_order 	1
 		visibility			"always"
+		layer_group			"important_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

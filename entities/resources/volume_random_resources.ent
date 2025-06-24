@@ -58,6 +58,22 @@ EntityBlueprint
 		resources "carbon_vein,iron_vein,geothermal_vent,flammable_gas_vent,uranium_ore_vein,palladium_vein,titanium_vein,cobalt_vein"
     }
 
-
+	LocalAabbDesc
+	{
+		local_aabb
+		{
+			min
+			{
+				x "-0.5"
+				y "-0.5"
+				z "-0.5"
+			}
+			max
+			{
+				x "0.5"
+				y "0.5"
+				z "0.5"
+			}	
+		}
+	}
 }
-

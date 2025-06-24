@@ -9,16 +9,25 @@ end
 
 function carbonium_factory:OnAnimationMarker( markerName )
 	if ( markerName == "grab_rocks" ) then
-		self.rock = EntityService:SpawnAndAttachEntity("items/loot/resources/shard_carbonium", self.entity,  "att_grab_rocks", "" )
+		self.rock = EntityService:SpawnAndAttachEntity("buildings/resources/carbonium_factory_shard", self.entity,  "att_grab_rocks", "" )
 		EntityService:SetScale( self.rock, 1.3, 1.3, 1.3 )		
 		EntityService:FadeEntity( self.rock, DD_FADE_IN, 1 )
-	elseif (  markerName =="drop_rocks" and self.rock ~= nil )then
+	elseif (  markerName =="drop_rocks" and self.rock ~= nil and EntityService:IsAlive( self.rock ) )then
 		EntityService:DetachEntity(self.rock)
 		EntityService:CreateLifeTime(self.rock, 5.0, "normal" )
-	elseif (markerName == "hammer" and self.rock ~= nil ) then
+	elseif (markerName == "hammer" and self.rock ~= nil and EntityService:IsAlive( self.rock )) then
 		EntityService:DissolveEntity( self.rock, 3.5 )
 		self.rock = nil;	
 	end 
+end
+
+function carbonium_factory:OnDestroy()
+	if ( self.rock ~= nil ) then
+		if ( EntityService:IsAlive( self.rock ) ) then
+			EntityService:DissolveEntity( self.rock, 3.5 )
+		end
+		self.rock = nil;
+	end
 end
 
 --function carbonium_factory:OnInit()

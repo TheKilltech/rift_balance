@@ -46,7 +46,7 @@ end
 
 function resource_comet:OnEnterSpawn( state )
 	if ( self.findMode == "resource") then
-		self.spaceEnt = ResourceService:FindEmptySpace( 100, 500 );
+		self.spaceEnt = ResourceService:FindEmptySpace( 50, 500 );
 	elseif ( self.findMode == "objective") then
 		self.spaceEnt = MissionService:SpawnMissionObjective( "logic/position_marker", true )
 	elseif ( self.findMode == "target") then
@@ -54,10 +54,10 @@ function resource_comet:OnEnterSpawn( state )
 
 		if ( self.spaceEnt == INVALID_ID ) then
 			LogService:Log( "resource_comet:OnEnterSpawn - There is no entity with name : " .. self.targetName )
-			self.spaceEnt = ResourceService:FindEmptySpace( 100, 500 );
+			self.spaceEnt = ResourceService:FindEmptySpace( 50, 500 );
 		end
 	else
-	 	self.spaceEnt = ResourceService:FindEmptySpace( 100, 500 );
+	 	self.spaceEnt = ResourceService:FindEmptySpace( 50, 500 );
 	end
 
 	self.cometEnt = MeteorService:SpawnComet( self:SelectFlyoverCandidate(), self.spaceEnt, self.cometFlyingBp, 35, 40, false ) --wersja do spadanie ukosem

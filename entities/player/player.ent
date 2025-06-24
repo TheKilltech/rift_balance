@@ -49,27 +49,27 @@ EntityBlueprint
 			Storage
 			{
 				resource	 "ammo_mech_low_caliber"
-				max 	 "4"
+				max 	 "6"
 			}
 			Storage
 			{
 				resource	 "ammo_mech_high_caliber"
-				max 	 "4"
+				max 	 "6"
 			}			
 			Storage
 			{
 				resource	 "ammo_mech_liquid"
-				max 	 "4"
+				max 	 "6"
 			}
 			Storage
 			{
 				resource	 "ammo_mech_explosive"
-				max 	 "4"
+				max 	 "6"
 			}
 			Storage
 			{
 				resource	 "ammo_mech_energy_cell"
-				max 	 "4"
+				max 	 "6"
 			}			
 		}
 	}
@@ -80,205 +80,212 @@ EntityBlueprint
 		{
 			Equipment Equipment
 			{
-		slots
-		{
-			EquipmentSlot
-			{
-				name			"LEFT_HAND"
-				allow_types		"range_weapon|melee_weapon|shield|enemy_range_weapon"
-				bone			"att_l_hand_item"
-				subslots_count	"3"
-				mirror 			"1"
-			}
+				slots
+				{
+					EquipmentSlot
+					{
+						name			"LEFT_HAND"
+						allow_types		"range_weapon|melee_weapon|shield|enemy_range_weapon"
+						bone			"att_l_hand_item"
+						subslots_count	"3"
+						mirror 			"1"
+					}
+				
+					EquipmentSlot
+					{
+						name			"RIGHT_HAND"
+						allow_types		"range_weapon|melee_weapon|shield|enemy_range_weapon"
+						bone			"att_r_hand_item"
+						subslots_count	"3"
+					}
 		
-			EquipmentSlot
-			{
-				name			"RIGHT_HAND"
-				allow_types		"range_weapon|melee_weapon|shield|enemy_range_weapon"
-				bone			"att_r_hand_item"
-				subslots_count	"3"
-			}
-
-			EquipmentSlot
-			{
-				name			"EXCAVATOR"
-				allow_types		"equipment"
-				bone			"att_r_hand_item"
-				subslots_count	"1"
-			}
-
-			EquipmentSlot
-			{
-				name			"DRILL"
-				allow_types		"interactive"
-				bone			"att_r_hand_item"
-				subslots_count	"1"
-			}
-			
-			EquipmentSlot
-			{
-				name			"HARVESTER"
-				allow_types		"interactive"
-				bone			"att_r_hand_item"
-				subslots_count	"1"
-			}
-
-			EquipmentSlot
-			{
-				name			"EXTRACTOR"
-				allow_types		"interactive"
-				bone			"att_r_hand_item"
-				subslots_count	"1"
-			}
-
-			EquipmentSlot
-			{
-				name			"LIFT"
-				allow_types		"interactive|equipment|lift"
-				bone			"att_r_hand_item"
-				subslots_count	"1"
-			}
-			
-			EquipmentSlot
-			{
-				name			"ACTIVATOR"
-				allow_types		"interactive"
-				bone			"att_r_hand_item"
-				subslots_count	"1"
-			}
-
-			EquipmentSlot
-			{
-				name			"FIST_LEFT"
-				allow_types		"range_weapon|melee_weapon|shield|equipment|enemy_range_weapon"
-				bone			"att_l_hand_item"
-				subslots_count	"1"
-				mirror 			"1"
-			}			
-
-			EquipmentSlot
-			{
-				name			"FIST_RIGHT"
-				allow_types		"range_weapon|melee_weapon|shield|equipment|enemy_range_weapon"
-				bone			"att_r_hand_item"
-				subslots_count	"1"
-			}
-
-			EquipmentSlot
-			{
-				name			"GEOSCANNER"
-				allow_types		"equipment"
-				bone			"att_r_hand_item"
-				subslots_count	"1"
-			}
-
-			EquipmentSlot
-			{
-				name			"BIOSCANNER"
-				allow_types		"equipment"
-				bone			"att_r_hand_item"
-				subslots_count	"1"
-			}
-
-			EquipmentSlot
-			{
-				name			"DASH_SKILL"
-				allow_types		"dash_skill|movement_skill"
-				subslots_count	"1"
-			}
-
-			EquipmentSlot
-			{
-				name			"SHIELD"
-				allow_types		"barrier"
-				subslots_count	"1"
-			}
-
-			EquipmentSlot
-			{
-				name			"USABLE_1"
-				allow_types		"skill|consumable"
-				subslots_count	"1"
-			}
-			EquipmentSlot
-			{
-				name			"USABLE_2"
-				allow_types		"skill|consumable"
-				subslots_count	"1"
-			}
-			EquipmentSlot
-			{
-				name			"USABLE_3"
-				allow_types		"skill|consumable"
-				subslots_count	"1"
-			}
-			EquipmentSlot
-			{
-				name			"USABLE_4"
-				allow_types		"skill|consumable"
-				subslots_count	"1"
-			}
-
-			EquipmentSlot
-			{
-				name			"USABLE_5"
-				allow_types		"skill|consumable"
-				subslots_count	"1"
-			}				
-			EquipmentSlot
-			{
-				name			"USABLE_6"
-				allow_types		"skill|consumable"
-				subslots_count	"1"
-			}
-			EquipmentSlot
-			{
-				name			"USABLE_7"
-				allow_types		"skill|consumable"
-				subslots_count	"1"
-			}
-			EquipmentSlot
-			{
-				name			"USABLE_8"
-				allow_types		"skill|consumable"
-				subslots_count	"1"
-			}
-			
-			EquipmentSlot
-			{
-				name			"UPGRADE_1"
-				allow_types		"upgrade"
-				subslots_count	"1"
-			}
-			
-			EquipmentSlot
-			{
-				name			"UPGRADE_2"
-				allow_types		"upgrade"
-				subslots_count	"1"
-			}
-			
-			EquipmentSlot
-			{
-				name			"UPGRADE_3"
-				allow_types		"upgrade"
-				subslots_count	"1"
-			}
-			
-			EquipmentSlot
-			{
-				name			"UPGRADE_4"
-				allow_types		"upgrade"
-				subslots_count	"1"
-			}
-			
-			EquipmentSlot
-			{
-				name			"SKIN_1"
-				allow_types		"skin"
-				subslots_count	"1"
-			}	
-		}
+					EquipmentSlot
+					{
+						name			"EXCAVATOR"
+						allow_types		"equipment"
+						bone			"att_r_hand_item"
+						subslots_count	"1"
+					}
+		
+					EquipmentSlot
+					{
+						name			"DRILL"
+						allow_types		"interactive"
+						bone			"att_r_hand_item"
+						subslots_count	"1"
+					}
+					
+					EquipmentSlot
+					{
+						name			"HARVESTER"
+						allow_types		"interactive"
+						bone			"att_r_hand_item"
+						subslots_count	"1"
+					}
+		
+					EquipmentSlot
+					{
+						name			"EXTRACTOR"
+						allow_types		"interactive"
+						bone			"att_r_hand_item"
+						subslots_count	"1"
+					}
+		
+					EquipmentSlot
+					{
+						name			"LIFT"
+						allow_types		"interactive|equipment|lift"
+						bone			"att_r_hand_item"
+						subslots_count	"1"
+					}
+					
+					EquipmentSlot
+					{
+						name			"ACTIVATOR"
+						allow_types		"interactive"
+						bone			"att_r_hand_item"
+						subslots_count	"1"
+					}
+		
+					EquipmentSlot
+					{
+						name			"FIST_LEFT"
+						allow_types		"range_weapon|melee_weapon|shield|equipment|enemy_range_weapon"
+						bone			"att_l_hand_item"
+						subslots_count	"1"
+						mirror 			"1"
+					}			
+		
+					EquipmentSlot
+					{
+						name			"FIST_RIGHT"
+						allow_types		"range_weapon|melee_weapon|shield|equipment|enemy_range_weapon"
+						bone			"att_r_hand_item"
+						subslots_count	"1"
+					}
+		
+					EquipmentSlot
+					{
+						name			"GEOSCANNER"
+						allow_types		"equipment"
+						bone			"att_r_hand_item"
+						subslots_count	"1"
+					}
+		
+					EquipmentSlot
+					{
+						name			"BIOSCANNER"
+						allow_types		"equipment"
+						bone			"att_r_hand_item"
+						subslots_count	"1"
+					}
+		
+					EquipmentSlot
+					{
+						name			"DASH_SKILL"
+						allow_types		"dash_skill|movement_skill"
+						subslots_count	"1"
+					}
+		
+					EquipmentSlot
+					{
+						name			"SHIELD"
+						allow_types		"barrier"
+						subslots_count	"1"
+					}
+		
+					EquipmentSlot
+					{
+						name			"USABLE_1"
+						allow_types		"skill|consumable"
+						subslots_count	"1"
+					}
+					EquipmentSlot
+					{
+						name			"USABLE_2"
+						allow_types		"skill|consumable"
+						subslots_count	"1"
+					}
+					EquipmentSlot
+					{
+						name			"USABLE_3"
+						allow_types		"skill|consumable"
+						subslots_count	"1"
+					}
+					EquipmentSlot
+					{
+						name			"USABLE_4"
+						allow_types		"skill|consumable"
+						subslots_count	"1"
+					}
+		
+					EquipmentSlot
+					{
+						name			"USABLE_5"
+						allow_types		"skill|consumable"
+						subslots_count	"1"
+					}				
+					EquipmentSlot
+					{
+						name			"USABLE_6"
+						allow_types		"skill|consumable"
+						subslots_count	"1"
+					}
+					EquipmentSlot
+					{
+						name			"USABLE_7"
+						allow_types		"skill|consumable"
+						subslots_count	"1"
+					}
+					EquipmentSlot
+					{
+						name			"USABLE_8"
+						allow_types		"skill|consumable"
+						subslots_count	"1"
+					}
+					
+					EquipmentSlot
+					{
+						name			"UPGRADE_1"
+						allow_types		"upgrade"
+						subslots_count	"1"
+					}
+					
+					EquipmentSlot
+					{
+						name			"UPGRADE_2"
+						allow_types		"upgrade"
+						subslots_count	"1"
+					}
+					
+					EquipmentSlot
+					{
+						name			"UPGRADE_3"
+						allow_types		"upgrade"
+						subslots_count	"1"
+					}
+					
+					EquipmentSlot
+					{
+						name			"UPGRADE_4"
+						allow_types		"upgrade"
+						subslots_count	"1"
+					}
+					
+					EquipmentSlot
+					{
+						name			"SKIN_1"
+						allow_types		"skin"
+						subslots_count	"1"
+					}	
+		
+					EquipmentSlot
+					{
+						name			"SPECIAL"
+						allow_types		"special"
+						subslots_count	"1"
+					}	
+				}
 			}
 		}
 	}
@@ -298,84 +305,21 @@ EntityBlueprint
 
 EntityBlueprint
 {
-	name  "player/player_respawner"
-
-	LuaDesc
-	{
-		script "lua/props/special/player_respawner.lua"
-	}
+	name  			"player/player_reactivator"
+	base_blueprint 	"effects/messages_and_markers/mech_down_marker"
 
 	InteractiveComponent 
 	{
 		slot 			 "ACTIVATOR"
-		radius 			 "4"
+		radius 			 "8"
 		remove_component "1"
+		priority		 "20"
 	}
 
-	MeshDesc
+	DatabaseComponent
 	{
-		mesh "meshes/player/mech.mesh"
-		material "selector/hologram_skinned_blue"
-	}
-
-	SkeletonDesc
-	{
-		name "meshes/player/mech"
-	}
-	
-	AnimationDesc
-	{
-		animations
-		{
-			Anim
-			{
-				animName "inventor_ranged_melee"
-				animTime "0.0"
-			}
-		}
-	}	
-
-	MinimapItemDesc
-	{
-		type			"image"
-		icon_material 	"gui/menu/buttons/journal/journal_death_selected"
-		size
-		{
-			x "0.6"
-			y "0.6"
-		}
-		visibility 		"always"
-		additional_z_order	"100"			
-	}		
-
-	children
-	{
-		EntityBlueprint
-		{
-			MeshDesc
-			{
-				mesh 		"meshes/items/consumables/holo_decoy.mesh"
-				material 	"items/consumables/holo_decoy"
-			}
-		}
-	}
-
-	DestroyDesc
-	{
-		DestroyPatterns
-		{
-			Pair
-			{
-				key "interact"
-				value
-				{
-					explosion_type 			"centered"
-					explosion_max_power 	"6000"
-					explosion_min_power 	"2000"
-					explosion_effect 		"effects/enemies_alien_tower/influence_pylon_dissolve"	
-				}
-			}	
-		}		
+		harvest_duration   float:"0.033"
+		interactive_action string:"gui/hud/tooltip/reanimate"
 	}
 }
 
@@ -398,9 +342,187 @@ EntityBlueprint
 	}
 }
 
+EntityBlueprint 
+{	
+	name "player/player_reactivator_flow_field"
+
+	NetReplicationDisabledComponent
+	{
+	}
+
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"nav_blocker"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "2.5"
+					}
+				}
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type 	"1"
+		cost_type 			"path_blocker"
+		can_build 			"1"
+		flow_field_size		"2.0"
+		repulsor			"1"
+	}	
+
+	NavMeshMovementComponent
+	{
+		angle_turn_speed				"0"
+		unit_soft_radius				"2.5"
+		dominance_group				    "0"
+		can_move						"0"
+	}
+	
+}
+
 EntityBlueprint
 {
-	name  "player/player_marker"
+	name "player/player_reactivator_player_blocker"
+
+	PhysicsDesc
+    {
+        objects
+        {
+            PhysicsObjectDesc
+            {
+                group_id    "player_blocker"
+                type        "static"
+
+				Shapes
+				{
+					PhysicsCapsuleShape
+					{
+						r "3.0"
+						half_height "3"
+
+						position 
+						{
+							x "0.0"
+							y "0.0"
+							z "0.0"
+						}
+
+						orientation
+						{
+							w "0.7"
+							x "0.0"
+							z "0.7"
+							y "0.0"
+						}
+					}		
+				}
+            }
+        }
+    }
+}
+
+
+EntityBlueprint
+{
+	name 			"player/current_marker"
+
+	children
+	{
+		EntityBlueprint
+		{
+			AttachmentDesc
+			{
+				attachment "be_body_lower"
+			}
+
+			MinimapItemDesc
+			{
+				type				"image"
+				icon_material 		"gui/hud/minimap_icons/map_icon_current_player"
+				rotation_mode 		"1"
+				additional_z_order 	"100"
+				visibility			"always"
+				layer_group			"player"
+				big_minimap_scale 	1.5
+			}
+		}
+
+		EntityBlueprint
+		{
+			AttachmentDesc
+			{
+				attachment "be_body_lower"
+			}
+
+			MinimapItemDesc
+			{
+				type				"circle"
+				visibility			"always"
+				layer_group			"player"
+
+				color
+				{
+					x "1.0"
+					y "0.76"
+					z "0.3"
+					w "0.3"
+				}
+
+				size				
+				{
+					x "0"
+					y "0"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name "player/hostile_marker"
+
+	children
+	{
+		EntityBlueprint
+		{
+			AttachmentDesc
+			{
+				attachment "be_body_lower"
+			}
+
+			MinimapItemDesc
+			{
+				type				"image"
+				icon_material 		"gui/hud/minimap_icons/gui_map_icon_player"
+				rotation_mode 		"1"
+				additional_z_order 	"100"
+				visibility			"disovered|radar"
+				layer_group			"player"
+				big_minimap_scale 	1.5
+				color
+				{
+					x "1.0"
+					y "0.0"
+					z "0.0"
+					w "1.0"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name "player/friendly_marker"
 
 	GuiDesc
 	{
@@ -409,4 +531,34 @@ EntityBlueprint
 		mode				"clamp"
 		clamp_in_frustum 	"0"
 	}
+	
+	RiftPointDesc
+	{
+		name 	"player"
+		type 	"main"
+		active 	"1"
+	}
+	
+	children
+	{
+		EntityBlueprint
+		{
+			AttachmentDesc
+			{
+				attachment "be_body_lower"
+			}
+
+			MinimapItemDesc
+			{
+				type				"image"
+				icon_material 		"gui/hud/minimap_icons/gui_map_icon_player"
+				rotation_mode 		"1"
+				additional_z_order 	"100"
+				visibility			"always"
+				layer_group			"player"
+				big_minimap_scale 	1.5
+			}
+		}
+	}
 }
+

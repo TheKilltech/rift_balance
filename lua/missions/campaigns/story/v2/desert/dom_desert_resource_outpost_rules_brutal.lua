@@ -51,53 +51,53 @@ return function()
 		{
 			 -- difficulty level 1		
 			{ 				
-				"logic/missions/survival/attack_level_1_id_1_desert_alpha.logic",
-				"logic/missions/survival/attack_level_1_id_1_desert_ultra.logic",				
-				"logic/missions/survival/attack_level_1_id_2_desert_alpha.logic",
-				"logic/missions/survival/attack_level_1_id_2_desert_ultra.logic",
+				{ name = "logic/missions/survival/attack_level_1_id_1_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+				{ name = "logic/missions/survival/attack_level_1_id_1_desert_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},				
+				{ name = "logic/missions/survival/attack_level_1_id_2_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+				{ name = "logic/missions/survival/attack_level_1_id_2_desert_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
 			},
 	
 			 -- difficulty level 2
 			{ 			
 				
-				"logic/missions/survival/attack_level_2_id_1_desert_alpha.logic",
-				"logic/missions/survival/attack_level_2_id_1_desert_ultra.logic",				
-				"logic/missions/survival/attack_level_2_id_2_desert_alpha.logic",
-				"logic/missions/survival/attack_level_2_id_2_desert_ultra.logic",
+				{ name = "logic/missions/survival/attack_level_2_id_1_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+				{ name = "logic/missions/survival/attack_level_2_id_1_desert_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},				
+				{ name = "logic/missions/survival/attack_level_2_id_2_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+				{ name = "logic/missions/survival/attack_level_2_id_2_desert_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
 			},
 
 			 -- difficulty level 3
 			{ 				
-				"logic/missions/survival/attack_level_3_id_1_desert_alpha.logic",
-				"logic/missions/survival/attack_level_3_id_1_desert_ultra.logic",				
-				"logic/missions/survival/attack_level_3_id_2_desert_alpha.logic",
-				"logic/missions/survival/attack_level_3_id_2_desert_ultra.logic",								
+				{ name = "logic/missions/survival/attack_level_3_id_1_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+				{ name = "logic/missions/survival/attack_level_3_id_1_desert_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},				
+				{ name = "logic/missions/survival/attack_level_3_id_2_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+				{ name = "logic/missions/survival/attack_level_3_id_2_desert_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},								
 			},
 
 			 -- difficulty level 4
 			{				
-				"logic/missions/survival/attack_level_4_id_1_desert_alpha.logic",
-				"logic/missions/survival/attack_level_4_id_1_desert_ultra.logic",			
-				"logic/missions/survival/attack_level_4_id_2_desert_alpha.logic",
-				"logic/missions/survival/attack_level_4_id_2_desert_ultra.logic",												
+				{ name = "logic/missions/survival/attack_level_4_id_1_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+				{ name = "logic/missions/survival/attack_level_4_id_1_desert_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},			
+				{ name = "logic/missions/survival/attack_level_4_id_2_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+				{ name = "logic/missions/survival/attack_level_4_id_2_desert_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},												
 			},
 
 			 -- difficulty level 5
 			{ 				
-				"logic/missions/survival/attack_level_5_id_1_desert_alpha.logic",
-				"logic/missions/survival/attack_level_5_id_1_desert_ultra.logic",				
-				"logic/missions/survival/attack_level_5_id_2_desert_alpha.logic",			
-				"logic/missions/survival/attack_level_5_id_2_desert_ultra.logic",									
+				{ name = "logic/missions/survival/attack_level_5_id_1_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+				{ name = "logic/missions/survival/attack_level_5_id_1_desert_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},				
+				{ name = "logic/missions/survival/attack_level_5_id_2_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},			
+				{ name = "logic/missions/survival/attack_level_5_id_2_desert_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},									
 			},
 
 			 -- difficulty level 6
 			{ 				
-				"logic/missions/survival/attack_level_6_id_1_desert_alpha.logic",
-				"logic/missions/survival/attack_level_6_id_1_desert_alpha.logic",
-				"logic/missions/survival/attack_level_6_id_1_desert_ultra.logic",				
-				"logic/missions/survival/attack_level_6_id_2_desert_alpha.logic",			
-				"logic/missions/survival/attack_level_6_id_2_desert_alpha.logic",			
-				"logic/missions/survival/attack_level_6_id_2_desert_ultra.logic",													
+				{ name = "logic/missions/survival/attack_level_6_id_1_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},
+				{ name = "logic/missions/survival/attack_level_6_id_1_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},
+				{ name = "logic/missions/survival/attack_level_6_id_1_desert_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},				
+				{ name = "logic/missions/survival/attack_level_6_id_2_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},			
+				{ name = "logic/missions/survival/attack_level_6_id_2_desert_alpha.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},			
+				{ name = "logic/missions/survival/attack_level_6_id_2_desert_ultra.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},													
 			},
 
 			 -- difficulty level 7

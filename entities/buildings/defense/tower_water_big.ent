@@ -30,8 +30,8 @@ EntityBlueprint
 				building_time 30
 				building_cost
 				{
-					carbonium 	"250"
-					steel 		"500"
+					carbonium 	"500"
+					steel 		"1000"
 					uranium		"200"
 					ai			"1"
 				}
@@ -51,7 +51,19 @@ EntityBlueprint
 		}
 
 	}
-
+	ResourceConverterDesc // must be here for icons!
+	{
+		in
+		{
+		}
+	
+		out
+		{
+		}
+	
+		priority 6
+	}
+	
 	HealthDesc
 	{
 		max_health 					"2000"
@@ -193,6 +205,7 @@ EntityBlueprint
 			y "3"
 		}
 		visibility			"always"
+		layer_group			"defense_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc
@@ -347,7 +360,7 @@ EntityBlueprint
 					explosion_type 			"centered"
 					explosion_max_power 	"8000"
 					explosion_min_power 	"3000"
-					explosion_effect 		"effects/buildings_generic/explosion_building_nuclear_01"
+					explosion_effect 		"effects/buildings_generic/explosion_building_big_01"
 					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					part_prefix 			"meshes/misc/building_large_parts_generic"

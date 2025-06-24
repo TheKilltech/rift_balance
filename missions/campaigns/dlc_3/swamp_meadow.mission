@@ -305,68 +305,6 @@ MissionDef
             }
         }
 		
-		MarkerBlueprintSpawner
-        {
-			//RESOURCES
-            spawn_pool               "resource_volumes"           
-            spawn_at_marker          "resources/volume_random_resources"            
-            spawn_instances_minmax    30,30
-			spawn_within_destructible_volumes "0"
-			
-			spawn_min_distance_from_pools
-            {
-                resource_volumes  		10				
-				mission_objective   	80
-				player_spawn_point		30
-            }            
-			
-			spawn_blueprints
-            {
-                spawners/resource_spawner
-				{
-					spawn_chance           0.4
-					database
-					{	
-						resource        string:"carbon_vein"
-						min_resources   float:"5000"
-						max_resources   float:"10000"
-					}
-				}
-				
-				spawners/resource_spawner
-				{
-					spawn_chance           0.4
-					database
-					{	
-						resource        string:"iron_vein"
-						min_resources   float:"3000"
-						max_resources   float:"8000"
-					}					
-                }
-				
-				spawners/resource_spawner
-                {
-					spawn_chance           0.15
-					database
-					{	
-						resource        string:"cobalt_vein"
-						min_resources   float:"2000"
-						max_resources   float:"4000"
-					}				
-				}
-				
-				spawners/resource_spawner
-                {
-					spawn_chance           0.05
-					database
-					{	
-						resource        string:"flammable_gas_vent"						
-					}				
-				}
-			}
-			
-        }
-		
         MarkerBlueprintSpawner
         {
             spawn_pool               "loot_containers"

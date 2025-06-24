@@ -30,8 +30,8 @@ EntityBlueprint
 				building_time 30
 				building_cost
 				{
-					carbonium 	"500"
-					steel 		"250"
+					carbonium 	"1000"
+					steel 		"500"
 					titanium	"200"
 					ai			"1"
 				}
@@ -46,7 +46,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"50"
+				value 		"100"
 			}
 		}
 
@@ -228,6 +228,7 @@ EntityBlueprint
 			y "3"
 		}
 		visibility			"always"
+		layer_group			"defense_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc
@@ -263,7 +264,7 @@ EntityBlueprint
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "25"
-			range_max "160"
+			range_max "120"
 			aiming_range "170"
 		}
 
@@ -381,7 +382,7 @@ EntityBlueprint
 					explosion_type 			"centered"
 					explosion_max_power 	"8000"
 					explosion_min_power 	"3000"
-					explosion_effect 		"effects/buildings_generic/explosion_building_nuclear_01"	
+					explosion_effect 		"effects/buildings_generic/explosion_building_big_01"	
 					part_physics_material   "debris_heavy"					
 					part_material 			"misc/building_parts_generic"
 					part_prefix 			"meshes/misc/building_large_parts_generic"
@@ -642,5 +643,9 @@ EntityBlueprint
 				}
 			}
 		}
+	}
+	LifeTimeDesc
+	{
+		time "60.0"
 	}	
 }

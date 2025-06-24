@@ -292,8 +292,7 @@ MissionDef
 	creature_volumes_min_distance   "250.0"
 	creature_volumes_density        "0.35"
 
-    threat  "0.5"
-    block_outpost_remove "1"
+    threat  "0.5"    
 
     ambient_creature_species
     {
@@ -654,7 +653,7 @@ MissionDef
 
             spawn_blueprints
             {
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      0,2
                     spawn_discoverable_level    1
@@ -668,7 +667,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      0,2
                     spawn_discoverable_level    1
@@ -682,7 +681,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -696,7 +695,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -710,7 +709,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -724,7 +723,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -738,7 +737,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -752,7 +751,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -766,7 +765,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -780,7 +779,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -804,8 +803,8 @@ MissionDef
         {
             resource        "cobalt_vein"
 			
-            min_resources   "6000"
-            max_resources   "12000"
+            min_resources   "12000"
+            max_resources   "24000"
 
             min_spawned_volumes "3"
             max_spawned_volumes "5"
@@ -815,8 +814,8 @@ MissionDef
         {
             resource        "carbon_vein"
 
-            min_resources   "14000"
-            max_resources   "18000"
+            min_resources   "28000"
+            max_resources   "36000"
 
             min_spawned_volumes "5"
             max_spawned_volumes "8"
@@ -826,8 +825,8 @@ MissionDef
         {
             resource        "carbon_vein"
 
-            min_resources   "25000"
-            max_resources   "32000"
+            min_resources   "50000"
+            max_resources   "64000"
 
             min_spawned_volumes "10"
             max_spawned_volumes "15"
@@ -837,8 +836,8 @@ MissionDef
         {
             resource        "iron_vein"
 
-            min_resources   "8000"
-            max_resources   "12000"
+            min_resources   "16000"
+            max_resources   "24000"
 
             min_spawned_volumes "4"
             max_spawned_volumes "6"
@@ -848,8 +847,8 @@ MissionDef
         {
             resource        "iron_vein"
 
-            min_resources   "12000"
-            max_resources   "25000"
+            min_resources   "24000"
+            max_resources   "50000"
 
             min_spawned_volumes "8"
             max_spawned_volumes "12"

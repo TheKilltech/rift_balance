@@ -36,6 +36,18 @@ MissionDef
 		{
 			max_instances	1			
 		}
+		biomes/jungle/tiles/jungle_lakes_02/jungle_lakes_02.tile
+		{					
+			max_instances	1			
+		}
+		biomes/jungle/tiles/jungle_lakes_03/jungle_lakes_03.tile
+		{			
+			max_instances	1			
+		}
+		biomes/jungle/tiles/jungle_lakes_04/jungle_lakes_04.tile
+		{			
+			max_instances	1			
+		}
 	}
 
     ambient_creature_species
@@ -210,7 +222,7 @@ MissionDef
 
             spawn_blueprints
             {
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      0,2
                     spawn_discoverable_level    1
@@ -224,7 +236,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      0,2
                     spawn_discoverable_level    1
@@ -238,7 +250,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -252,7 +264,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -266,7 +278,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -280,7 +292,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -294,7 +306,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -308,7 +320,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -322,7 +334,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -336,7 +348,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -372,49 +384,24 @@ MissionDef
             spawn_blueprints
             {
 				spawners/loot_container_small_bulb_standard
-                {
-                    // make a roll to check if blueprint can be spawned
-                    spawn_chance           0.25
-					spawn_culls_entities_around 1
-                }
-				spawners/loot_container_small_pile_standard
-                {
-                    // make a roll to check if blueprint can be spawned
-                    spawn_chance           0.25
-                }
+                {                    
+                    spawn_chance           0.5				
+                }				
 
                 spawners/loot_container_small_bulb_advanced
-                {
-                    //spawn_instances_minmax 3,5
-                    spawn_chance           0.1
-                }
-				spawners/loot_container_small_pile_advanced
-                {
-                    //spawn_instances_minmax 3,5
-                    spawn_chance           0.1
-                }
+                {                    
+                    spawn_chance           0.3
+                }				
 
                 spawners/loot_container_small_bulb_superior
-                {
-                   // spawn_instances_minmax 2,3
-                    spawn_chance           0.1
-                }
-				spawners/loot_container_small_pile_superior
-                {
-                   // spawn_instances_minmax 2,3
-                    spawn_chance           0.1
-                }
+                {                  
+                    spawn_chance           0.15
+                }				
 
                 spawners/loot_container_small_bulb_extreme
-                {
-                    //spawn_instances_minmax 1,2
+                {                 
                     spawn_chance           0.05
-                }
-				spawners/loot_container_small_pile_extreme
-                {
-                    //spawn_instances_minmax 1,2
-                    spawn_chance           0.05
-                }
+                }				
 			}
 		}
 		

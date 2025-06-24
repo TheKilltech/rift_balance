@@ -32,8 +32,8 @@ EntityBlueprint
 				building_time 30
 				building_cost
 				{
-					carbonium 	"2000"
-					steel 		"1000"
+					carbonium 	"4000"
+					steel 		"2000"
 					titanium	"800"
 				}
 			}
@@ -46,7 +46,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"50"
+				value 		"100"
 			}
 		}
 
@@ -180,7 +180,7 @@ EntityBlueprint
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "25"
-			range_max "200"
+			range_max "140"
 			aiming_range "210"
 		}
 
@@ -447,5 +447,9 @@ EntityBlueprint
 				}
 			}
 		}
-	}	
+	}
+	LifeTimeDesc
+	{
+		time "60.0"
+	}		
 }

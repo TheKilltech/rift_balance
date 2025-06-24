@@ -32,14 +32,47 @@ function resource_earthquake:Activated()
 	local marker_color_b = self.data:GetInt( "marker_color_b" ) / 255
 	local marker_color_a = self.data:GetInt( "marker_color_a" ) / 255
 
-	local ent = ResourceService:FindEmptySpace( minDistanceFromPlayer, maxDistanceFromPlayer );
-	ResourceService:SpawnResources( ent, "resources/volume_template_resource", resource, minAmount, maxAmount )
-	local eartquake = EarthquakeService:SpawnEarthquake( ent, earthquakeEffect, timeOfDayPreset, markerBp, damagePerSecond, lifeTime, healthPercentage, radius, localEffectsRandomOffset, minimumDistancePerLocalEffect, cameraShakePower, cameraShakeFreq )
-	EntityService:RemoveEntity( ent )
+	local ent = ResourceService:FindEmptySpace( minDistanceFromPlayer, maxDistanceFromPlayer )
 
-	local position = EntityService:GetPosition( eartquake )
-	GuiService:AddMinimapCircleMarker( position, tostring( eartquake ), radius, marker_color_r, marker_color_g, marker_color_b, 90 / 255 )
+	if ( ent ~= INVALID_ID ) then
+		local spaces = ResourceService:FindEmptySpacesFromEntity( ent, 15, radius, 3 )
 
+		local X, Y, Z = 0, 0, 0
+		local numSpaces = #spaces
+
+		for i = 1, numSpaces do
+			local space = spaces[i]
+
+			local spaceOrigin = EntityService:GetPosition( space )
+
+			X = X + spaceOrigin.x
+			Y = Y + spaceOrigin.y
+			Z = Z + spaceOrigin.z
+
+			ResourceService:SpawnResources( space, "resources/volume_template_resource", resource, minAmount / numSpaces, maxAmount / numSpaces )
+		end
+		
+		local centerEnt = INVALID_ID
+
+		if ( #spaces == 0 ) then
+			ResourceService:SpawnResources( ent, "resources/volume_template_resource", resource, minAmount, maxAmount )
+			centerEnt = ent
+		else
+			local centerOrigin = { x = X / numSpaces, y = Y / numSpaces, z = Z / numSpaces }
+			centerEnt = EntityService:SpawnEntity( "logic/position_marker", centerOrigin.x, centerOrigin.y, centerOrigin.z, "" )			
+		end
+
+		local eartquake = EarthquakeService:SpawnEarthquake( centerEnt, earthquakeEffect, timeOfDayPreset, markerBp, damagePerSecond, lifeTime, healthPercentage, radius, localEffectsRandomOffset, minimumDistancePerLocalEffect, cameraShakePower, cameraShakeFreq )
+		
+		EntityService:RemoveEntity( ent )
+
+		if ( centerEnt ~= INVALID_ID ) then
+			EntityService:RemoveEntity( centerEnt )
+		end
+
+		local position = EntityService:GetPosition( eartquake )
+		GuiService:AddMinimapCircleMarker( position, tostring( eartquake ), radius, marker_color_r, marker_color_g, marker_color_b, 90 / 255 )
+	end
 
 	self:SetFinished()
 end

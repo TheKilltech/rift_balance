@@ -234,6 +234,7 @@ EntityBlueprint
 			y "3"
 		}
 		visibility			"always"
+		layer_group			"defense_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc
@@ -269,7 +270,7 @@ EntityBlueprint
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "25"
-			range_max "160"
+			range_max "120"
 			aiming_range "170"
 		}
 
@@ -629,4 +630,8 @@ EntityBlueprint
 			}
 		}
 	}
+	LifeTimeDesc
+	{
+		time "30.0"
+	}	
 }
