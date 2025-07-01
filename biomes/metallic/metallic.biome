@@ -54,6 +54,7 @@ BiomeDef
 
 	}
 
+	scannable_on_startup "0"
 	default_liquid_resource "morphium_vein"
 	icon "gui/menu/biomes_prev/metallic_prev"
 	icon_with_outpost "gui/menu/biomes_prev/metallic_base_prev"
@@ -153,7 +154,6 @@ BiomeDef
 			BiomeModificatorComponent
 			{
 				solar_power "0.750"
-				wind_power "1.250"
 			}
 
 			DirectionalWindComponent

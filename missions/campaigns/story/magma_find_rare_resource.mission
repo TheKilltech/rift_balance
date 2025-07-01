@@ -150,14 +150,7 @@ MissionDef
             {
                 creature_species    "phirian_magma"
                 volume_spawn_ratio  "1"
-            }				
-			CreatureVolume
-            {
-                creature_species    "hedroner_magma"
-                volume_spawn_ratio  "1"
             }
-            
-                     
         }
         resource_units
         {
@@ -171,102 +164,55 @@ MissionDef
                 creature_species    "krocoon_magma"
                 volume_spawn_ratio  "0.25"
             }
-        }   
+        }
+		liquid_units
+        {
+            CreatureVolume
+            {
+                creature_species    "magmoth"
+                volume_spawn_ratio  "1"
+            }
+			CreatureVolume
+            {
+                creature_species    "hedroner_magma"
+                volume_spawn_ratio  "1"
+            }
+        }  		
 
 		guardian_standard
         {		
             CreatureVolume
             {
-                creature_species    "nerilian_boss_cryo"
+                creature_species    "nerilian"
 				volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_acid"
-                volume_spawn_ratio  "1"
-            }		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_energy"
-                volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_fire"
-                volume_spawn_ratio  "1"
-            }				
+            }           
         }
 
         guardian_advanced
         {				
             CreatureVolume
             {
-                creature_species    "nerilian_boss_cryo"
+                creature_species    "nerilian"
 				volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_acid"
-                volume_spawn_ratio  "1"
-            }		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_energy"
-                volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_fire"
-                volume_spawn_ratio  "1"
-            }			
+            }            
         }
 
         guardian_superior
         {			
             CreatureVolume
             {
-                creature_species    "nerilian_boss_cryo"
+                creature_species    "gnerot_magma"
 				volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_acid"
-                volume_spawn_ratio  "1"
-            }		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_energy"
-                volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_fire"
-                volume_spawn_ratio  "1"
-            }		
+            }            
         }
 
         guardian_extreme
         {		
             CreatureVolume
             {
-                creature_species    "nerilian_boss_cryo"
+                creature_species    "gnerot_magma"
 				volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_acid"
-                volume_spawn_ratio  "1"
-            }		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_energy"
-                volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_fire"
-                volume_spawn_ratio  "1"
-            }	
+            }           
         }
     }
 	
@@ -348,6 +294,7 @@ MissionDef
 				loot_containers     15
                 magnetic_rocks     	10
 				cryo_plants			10
+				resource_volumes	5
             }
 
             // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
@@ -594,7 +541,7 @@ MissionDef
 
             spawn_blueprints
             {  
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      40,50
                     spawn_discoverable_level    1
@@ -627,8 +574,8 @@ MissionDef
         {
             resource        "iron_vein"
 
-            min_resources   "2500"
-            max_resources   "6000"
+            min_resources   "5000"
+            max_resources   "12000"
 
             min_spawned_volumes "5"
             max_spawned_volumes "10"
@@ -684,8 +631,8 @@ MissionDef
         {
             resource        "geothermal_vent"
 
-            min_spawned_volumes "3"
-            max_spawned_volumes "6"
+            min_spawned_volumes "1"
+            max_spawned_volumes "2"
             is_infinite        "1"
         }	
 		
@@ -696,8 +643,8 @@ MissionDef
 			
             is_infinite        "1"
 
-            min_spawned_volumes "3"
-            max_spawned_volumes "6"
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
         }	
         
 		ResourceVolume

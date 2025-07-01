@@ -52,6 +52,19 @@ function carbonium_factory:UpdateResource()
 
 	--LogService:Log( "carbonium_factory: UpdateResource: ".. tostring(self.minedResource) .. ", ".. tostring(self.resourceBp) .. ", ".. tostring(arg2))
 end
+
+function carbonium_factory:OnDestroy()
+	if ( self.rock ~= nil ) then
+		if ( EntityService:IsAlive( self.rock ) ) then
+			EntityService:DissolveEntity( self.rock, 3.5 )
+		end
+		self.rock = nil;
+	end
+end
+
+--function carbonium_factory:OnInit()
+--	self:RegisterHandler( self.entity, "AnimationMarkerReached",  "OnAnimationMarkerReached" ) 
+--end
 --
 --function carbonium_factory:OnAnimationMarkerReached(evt)
 --	if ( evt:GetMarkerName() == "grab_rocks" ) then

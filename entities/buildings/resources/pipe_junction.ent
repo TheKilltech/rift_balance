@@ -63,6 +63,18 @@ EntityBlueprint  // pipe_junction
 			{
 				attachment		"att_in_2,att_in_4"
 			}
+			
+			LuaDesc
+			{
+				script "lua/buildings/resources/pipe_junction_second.lua"
+
+				database
+				{
+					cone_effect			string:"build_cone_1x1"
+					cone_effect_sell	string:"sell_small"
+					postfix				string:"_storage"
+				}
+			}
 
 			ResourceStorageDesc
 			{
@@ -84,7 +96,25 @@ EntityBlueprint  // pipe_junction
 				name "meshes/buildings/resources/pipe_junction_second"
 			}
 
+			MeshDesc
+			{
+				mesh "meshes/buildings/resources/pipe_junction_top.mesh"
+				material "buildings/resources/pipe_junction"
+				SubMeshes
+				{
+					SubMesh
+					{
+						id "0"
+						material "buildings/resources/pipe_junction"
+					}
 
+					SubMesh
+					{
+						id "1"
+						material "resources/resource_empty_fresnel"
+					}
+				}
+			}
 		}
 	}
 
@@ -138,7 +168,7 @@ EntityBlueprint  // pipe_junction
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/pipe_junction.mesh"
+		mesh "meshes/buildings/resources/pipe_junction_bottom.mesh"
 		material "buildings/resources/pipe_junction"
 		SubMeshes
 		{
@@ -181,7 +211,7 @@ EntityBlueprint  // pipe_junction
 					{
 						x "6"
 						y "2"
-						z "2"
+						z "6"
 
 						position
 						{
@@ -203,13 +233,13 @@ EntityBlueprint  // pipe_junction
 			{
 				x "-3"
 				y "0"
-				z "-1"
+				z "-3"
 			}
 			max
 			{
 				x "3"
 				y "1"
-				z "1"
+				z "3"
 			}
 		}
 	}
@@ -229,7 +259,7 @@ EntityBlueprint  // pipe_junction
 			{
 					x	5.9
 					y	1.9
-					z	1.9
+					z	5.9
 			}
 		}
 	}
@@ -247,10 +277,12 @@ EntityBlueprint  // pipe_junction
 		size
 		{
 			x "3"
-			y "1"
+			y "3"
 		}
+		
 		big_minimap_scale 	"1.9"
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	HealthBarDesc

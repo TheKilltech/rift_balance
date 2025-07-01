@@ -79,7 +79,7 @@ return function()
 
 	rules.objectivesLogic = 
 	{
-		{ name = "logic/objectives/kill_elite.logic", minDifficultyLevel = 4 },
+		{ name = "logic/objectives/kill_elite_dynamic.logic", minDifficultyLevel = 4 },
 		{ name = "logic/objectives/destroy_nest_canoptrix_single.logic", minDifficultyLevel = 3, maxDifficultyLevel = 5 },
 		{ name = "logic/objectives/destroy_nest_canoptrix_multiple.logic", minDifficultyLevel = 5 }
 	}
@@ -114,6 +114,90 @@ return function()
 	rules.waveChanceRerollSpawn      = 15
 	rules.waveChanceReroll           = 40
 
+	
+	rules.multiplayerWaves = 
+	{
+		 -- difficulty level 1		
+		{ 
+			additionalWaves = -1, -- Additional Waves count = 1 + additionalWaves - regardless of player number. Multiplayer Additional waves are disabled in single player mode. Check dom_mananger:GetMultiplayerAttackCount for actual code
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+			}
+		},
+	
+		 -- difficulty level 2
+		{ 
+			additionalWaves = 0,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+			}
+		},
+		 -- difficulty level 3
+		{ 
+			additionalWaves = 0,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+			}
+		},
+
+		 -- difficulty level 4
+		{ 
+			additionalWaves = 0,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+			}
+		},
+
+		 -- difficulty level 5
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+			}
+		},
+
+		 -- difficulty level 6
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},
+			}
+		},
+
+		 -- difficulty level 7
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+
+		 -- difficulty level 8
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+
+		 -- difficulty level 9
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+	}
+	
 	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
 	rules.waves = {}
 	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { "" },  levels = { 1 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)
@@ -207,56 +291,47 @@ return function()
 	{
 		 -- difficulty level 1		
 		{ 
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 	
 		 -- difficulty level 2
-		{ 			
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
+		{ 
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 
 		 -- difficulty level 3
 		{ 
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 
 		 -- difficulty level 4
-		{ 			
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
+		{ 
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 
 		 -- difficulty level 5
 		{ 
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",		
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 
 		 -- difficulty level 6
 		{ 
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 
 		 -- difficulty level 7
 		{ 
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 
 		 -- difficulty level 8
 		{ 
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 
 		 -- difficulty level 9
 		{ 
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 	}
 

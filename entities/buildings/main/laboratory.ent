@@ -25,7 +25,7 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 180
+				building_time 90
 				building_cost
 				{
 					carbonium 	"2000"
@@ -87,6 +87,7 @@ EntityBlueprint
 		remove_entity 	 "0"
 		remove_component "0"
 		recreate_component "1"
+		priority			"1"
 	}
 
 	HealthDesc
@@ -257,9 +258,11 @@ EntityBlueprint
 
 	MinimapItemDesc
 	{
-		type			"image"
-		icon_material 	"gui/hud/minimap_icons/laboratory"
-		additional_z_order 1
+		type				"image"
+		icon_material 		"gui/hud/minimap_icons/laboratory"
+		additional_z_order 	1
+		visibility			"always"
+		layer_group			"important_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

@@ -5,7 +5,7 @@ EntityBlueprint
 
 	BuildingDesc
 	{
-		buildable			"0"		
+		buildable			"0"
 		name 				"ai_hub_lvl_2"
 		bp   				"buildings/defense/ai_hub_lvl_2"
 		category 			"main"
@@ -31,8 +31,28 @@ EntityBlueprint
 					steel 		"150"
 					cobalt	 	"10"
 				}
-			}		
-		}		
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/ai_hub_lvl_2.mesh"
+		material 	"buildings/defense/ai_hub"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/defense/ai_hub_screen"
+			}
+		}
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/ai_hub_lvl_2"
 	}
 
 	ResourceConverterDesc
@@ -94,7 +114,7 @@ EntityBlueprint
 		regeneration_cooldown 		"0"
 		 is_manual 1
 		update_health_uniform 		"1"
-		
+
 		DestructionLevels
 		{
 			DestructionLevel
@@ -115,7 +135,7 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
@@ -195,6 +215,7 @@ EntityBlueprint
 				}
 			}
 		}
+
 		EffectGroup
 		{
 			group "vismod"
@@ -226,16 +247,16 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
-			
+			enabled "0"
+
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_defense/ai_hub_working"	
-					delay "0.5"					
-				}				
+					blueprint "effects/buildings_defense/ai_hub_working"
+					delay "0.5"
+				}
 			}
-		}		
+		}
 	}
 }

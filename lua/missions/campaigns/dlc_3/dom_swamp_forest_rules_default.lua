@@ -74,7 +74,7 @@ return function()
 
 	rules.majorAttackLogic =
 	{			
-		{ level = 2, minLevel = 5, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },
+		{ level = 2, minLevel = 6, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },
 	}
 
 	rules.buildingsUpgradeStartsLogic = {	}
@@ -83,7 +83,7 @@ return function()
 	rules.objectivesLogic = 
 	{
 		{ name = "logic/objectives/kill_elite_baxmoth.logic",              minDifficultyLevel = 3 },
-		{ name = "logic/objectives/kill_elite_mudroner.logic",             minDifficultyLevel = 5 },
+		{ name = "logic/objectives/kill_elite_dynamic.logic",              minDifficultyLevel = 6 },
 		{ name = "logic/objectives/destroy_nest_stickrid_single.logic",    minDifficultyLevel = 3 }, 
 		{ name = "logic/objectives/destroy_nest_stickrid_multiple.logic",  minDifficultyLevel = 5 },
 		{ name = "logic/objectives/destroy_nest_plutrodon_single.logic",   minDifficultyLevel = 4 }, 
@@ -125,6 +125,7 @@ return function()
 	rules.waves = {}
 	rules.waves = helper:Default_Waves("swamp", "outpost", "default", rules.waves)
 	
+	
 	rules.extraWaves = {}
 	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 1 },    biomes = { "swamp" }, levels = { 1 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
 	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 2 },    biomes = { "swamp" }, levels = { 2 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
@@ -139,5 +140,87 @@ return function()
 	rules.bosses = helper:Generate({ groups = { "" }, difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "baxmoth" },   maxRepeats = 0 },   rules.bosses)
 	rules.bosses = helper:Generate({ groups = { "" }, difficulty = {             5, 6, 7, 8, 9 }, bosses = { "mudroner" },  maxRepeats = 0 },   rules.bosses)
 	
+	rules.multiplayerWaves = 
+	{
+		 -- difficulty level 1		
+		{ 
+			additionalWaves = -1, -- Additional Waves count = 1 + additionalWaves - regardless of player number. Multiplayer Additional waves are disabled in single player mode. Check dom_mananger:GetMultiplayerAttackCount for actual code
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+			}
+		},
+	
+		 -- difficulty level 2
+		{ 
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+			}
+		},
+		 -- difficulty level 3
+		{ 
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+			}
+		},
+
+		 -- difficulty level 4
+		{ 
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+			}
+		},
+
+		 -- difficulty level 5
+		{ 
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+			}
+		},
+
+		 -- difficulty level 6 - Canceroth attacks start here, boss attacks start here
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},
+			}
+		},
+
+		 -- difficulty level 7
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+
+		 -- difficulty level 8
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+
+		 -- difficulty level 9
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+	}
     return rules;
 end

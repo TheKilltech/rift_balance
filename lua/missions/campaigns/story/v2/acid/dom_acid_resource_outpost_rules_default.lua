@@ -62,7 +62,7 @@ return function()
 	
 	rules.objectivesLogic = 
 	{
-		{ name = "logic/objectives/kill_elite.logic",                   minDifficultyLevel = 3 },
+		{ name = "logic/objectives/kill_elite_dynamic",                 minDifficultyLevel = 3 },
 		{ name = "logic/objectives/destroy_nest_granan_single.logic",   minDifficultyLevel = 4 },
 		{ name = "logic/objectives/destroy_nest_granan_multiple.logic", minDifficultyLevel = 6 },
 		{ name = "logic/objectives/destroy_creeper.logic",              minDifficultyLevel = 3 } 
@@ -113,6 +113,89 @@ return function()
 	rules.waveChanceRerollSpawnGroup = 5
 	rules.waveChanceRerollSpawn      = 10
 	rules.waveChanceReroll           = 40
+	
+	rules.multiplayerWaves = 
+	{
+		 -- difficulty level 1		
+		{ 
+			additionalWaves = -1, -- Additional Waves count = 1 + additionalWaves - regardless of player number. Multiplayer Additional waves are disabled in single player mode. Check dom_mananger:GetMultiplayerAttackCount for actual code
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+			}
+		},
+	
+		 -- difficulty level 2
+		{ 
+			additionalWaves = 0,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+			}
+		},
+		 -- difficulty level 3
+		{ 
+			additionalWaves = 0,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+			}
+		},
+
+		 -- difficulty level 4
+		{ 
+			additionalWaves = 0,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+			}
+		},
+
+		 -- difficulty level 5
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+			}
+		},
+
+		 -- difficulty level 6
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},
+			}
+		},
+
+		 -- difficulty level 7
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+
+		 -- difficulty level 8
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+
+		 -- difficulty level 9
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+	}
 
 	rules.waves = {}
 	rules.waves = helper:Generate({ groups = { "default" },   difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { "acid" },  levels = { 1 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
