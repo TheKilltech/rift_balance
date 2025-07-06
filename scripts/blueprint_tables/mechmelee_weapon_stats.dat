@@ -454,7 +454,7 @@ items/weapons/flame_blade_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "0.7600"
+				default_value "0.760"
 				max_value "0.850"
 				min_value "0.800"
 				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
@@ -855,10 +855,10 @@ items/weapons/hammer_advanced_item
 		{
 			WeaponStatDef
 			{
-				default_value "212.000"
-				max_value "255.000"
-				min_value "230.000"
-				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				default_value "490.000"
+				max_value "625.000"
+				min_value "500.000"
+				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
 
@@ -930,139 +930,9 @@ items/weapons/hammer_advanced_item
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "BEAM_RANGE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "4.500"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "1.050"
-				min_value "1.050"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_SCALE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "1.660"
-				min_value "1.660"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_ANIMATION_SPEED"
-			}
-
-			WeaponStatDef
-			{
-				default_value "6.500"
-				max_value "0.800"
-				min_value "0.700"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
-				stat_type "FIRE_RATE"
-			}
-
-		}
-
-	}
-
-}
-
-items/weapons/hammer_extreme_item
-{
-	WeaponItemDesc
-	{
-		ammo_storage
-		damage_type "area"
-		rarity "EXTREME"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
-				max_value "450.000"
-				min_value "390.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
-				default_value "5.000"
-				max_value "12.000"
-				min_value "10.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "85.000"
-				min_value "78.000"
-				stat_features "MODABLE"
-				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
-				max_value "0.800"
-				min_value "0.700"
-				stat_features "MODABLE"
-				stat_type "DAMAGE_LIFESTEAL"
-			}
-
-			WeaponStatDef
-			{
-				default_value "47.000"
-				max_value "50.000"
-				min_value "48.000"
-				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_STUN"
-			}
-
-			WeaponStatDef
-			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "AMMO_STUN_LENGTH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "300.000"
-				min_value "300.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_CRITICAL_FACTOR"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
-				default_value "5.000"
-				max_value "6.800"
-				min_value "5.800"
+				default_value "5.500"
+				max_value "6.500"
+				min_value "6.000"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -1085,10 +955,10 @@ items/weapons/hammer_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "6.500"
-				max_value "0.800"
-				min_value "0.700"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				default_value "0.650"
+				max_value "0.750"
+				min_value "0.600"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -1109,10 +979,10 @@ items/weapons/hammer_extreme_item
 		{
 			WeaponStatDef
 			{
-				default_value "600.000"
-				max_value "1050.000"
-				min_value "810.000"
-				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				default_value "720.000"
+				max_value "900.000"
+				min_value "750.000"
+				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
 
@@ -1154,7 +1024,7 @@ items/weapons/hammer_extreme_item
 				default_value "35.000"
 				max_value "35.000"
 				min_value "35.000"
-				stat_features "BASE_DEFAULT|STATISTIC"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_STUN"
 			}
 
@@ -1184,17 +1054,10 @@ items/weapons/hammer_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX"
-				stat_type "BEAM_RANGE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "4.500"
-				min_value "4.000"
-				stat_features "BASE_MINMAX|STATISTIC|INITIAL_RANDOMIZABLE"
+				default_value "6.500"
+				max_value "7.300"
+				min_value "6.900"
+				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_SPLASH"
 			}
 
@@ -1216,132 +1079,10 @@ items/weapons/hammer_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "0.700"
-				min_value "0.700"
-				stat_features "BASE_MINMAX"
-				stat_type "FIRE_RATE"
-			}
-
-		}
-
-	}
-
-}
-
-items/weapons/hammer_superior_item
-{
-	WeaponItemDesc
-	{
-		ammo_storage
-		damage_type "area"
-		rarity "SUPERIOR"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
-				max_value "310.000"
-				min_value "290.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
-				default_value "5.000"
-				max_value "10.000"
-				min_value "8.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "68.000"
-				min_value "62.000"
-				stat_features "MODABLE"
-				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
-				max_value "0.700"
+				default_value "0.650"
+				max_value "0.750"
 				min_value "0.600"
-				stat_features "MODABLE"
-				stat_type "DAMAGE_LIFESTEAL"
-			}
-
-			WeaponStatDef
-			{
-				default_value "43.000"
-				max_value "46.000"
-				min_value "44.000"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_STUN"
-			}
-
-			WeaponStatDef
-			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "AMMO_STUN_LENGTH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "300.000"
-				min_value "300.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_CRITICAL_FACTOR"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
-				default_value "6.000"
-				max_value "7.800"
-				min_value "6.800"
-				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "1.150"
-				min_value "1.150"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_SCALE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "1.660"
-				min_value "1.660"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_ANIMATION_SPEED"
-			}
-
-			WeaponStatDef
-			{
-				default_value "6.500"
-				max_value "0.800"
-				min_value "0.700"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -1361,9 +1102,9 @@ items/weapons/hammer_item
 		{
 			WeaponStatDef
 			{
-				default_value "200.000"
-				max_value "290.000"
-				min_value "240.000"
+				default_value "435.000"
+				max_value "500.000"
+				min_value "450.000"
 				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -1436,8 +1177,8 @@ items/weapons/hammer_item
 
 			WeaponStatDef
 			{
-				default_value "4.500"
-				max_value "6.500"
+				default_value "5.000"
+				max_value "6.200"
 				min_value "5.400"
 				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_SPLASH"
@@ -1461,10 +1202,10 @@ items/weapons/hammer_item
 
 			WeaponStatDef
 			{
-				default_value "6.500"
-				max_value "0.800"
-				min_value "0.700"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				default_value "0.650"
+				max_value "0.750"
+				min_value "0.600"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -1485,10 +1226,10 @@ items/weapons/hammer_superior_item
 		{
 			WeaponStatDef
 			{
-				default_value "450.000"
-				max_value "742.000"
-				min_value "585.000"
-				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				default_value "580.000"
+				max_value "750.000"
+				min_value "600.000"
+				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
 
@@ -1560,9 +1301,9 @@ items/weapons/hammer_superior_item
 
 			WeaponStatDef
 			{
-				default_value "5.500"
-				max_value "7.300"
-				min_value "6.300"
+				default_value "6.000"
+				max_value "7.000"
+				min_value "6.400"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -1585,10 +1326,10 @@ items/weapons/hammer_superior_item
 
 			WeaponStatDef
 			{
-				default_value "6.500"
-				max_value "0.800"
-				min_value "0.700"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				default_value "0.650"
+				max_value "0.750"
+				min_value "0.600"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -1612,7 +1353,7 @@ items/weapons/laser_sword_advanced_item
 				default_value "98.000"
 				max_value "125.000"
 				min_value "105.000"
-				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
 
@@ -1702,7 +1443,7 @@ items/weapons/laser_sword_advanced_item
 				default_value "1.250"
 				max_value "1.400"
 				min_value "1.300"
-				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -1726,7 +1467,7 @@ items/weapons/laser_sword_extreme_item
 				default_value "125.000"
 				max_value "170.000"
 				min_value "135.000"
-				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
 
@@ -1816,7 +1557,7 @@ items/weapons/laser_sword_extreme_item
 				default_value "1.250"
 				max_value "1.400"
 				min_value "1.300"
-				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -1929,7 +1670,7 @@ items/weapons/laser_sword_item
 				default_value "1.250"
 				max_value "1.400"
 				min_value "1.300"
-				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -1953,7 +1694,7 @@ items/weapons/laser_sword_superior_item
 				default_value "110.000"
 				max_value "140.000"
 				min_value "120.000"
-				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
 
@@ -2043,7 +1784,7 @@ items/weapons/laser_sword_superior_item
 				default_value "1.500"
 				max_value "1.750"
 				min_value "1.700"
-				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -2064,6 +1805,9 @@ items/weapons/pickaxe_advanced_item
 		{
 			WeaponStatDef
 			{
+				default_value "300.000"
+				max_value "380.000"
+				min_value "320.000"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -2079,165 +1823,33 @@ items/weapons/pickaxe_advanced_item
 			WeaponStatDef
 			{
 				default_value "5.000"
+				max_value "10.000"
+				min_value "8.000"
 				stat_features "BASE_DEFAULT|MODABLE"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
+				max_value "175.000"
+				min_value "95.000"
 				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				stat_type "DAMAGE_LIFESTEAL"
-			}
-
-			WeaponStatDef
-			{
-				default_value "345.000"
-				max_value "534.000"
-				min_value "431.000"
-				max_value "8.000"
-				min_value "6.000"
-				max_value "173.000"
-				min_value "104.000"
-				max_value "1.200"
+				max_value "1.300"
 				min_value "0.900"
-				stat_features "MODABLE"
-				default_value "39.000"
-				max_value "42.000"
-				min_value "40.000"
-				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_STUN"
-			}
-
-			WeaponStatDef
-			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "AMMO_STUN_LENGTH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "300.000"
-				min_value "300.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_CRITICAL_FACTOR"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_OVER_TIME_LENGTH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "BEAM_RANGE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "13.000"
-				min_value "13.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "1.050"
-				min_value "1.050"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_SCALE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "1.660"
-				min_value "1.660"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_ANIMATION_SPEED"
-			}
-
-			WeaponStatDef
-			{
-				max_value "0.800"
-				min_value "0.800"
-				stat_features "BASE_MINMAX"
-				stat_type "FIRE_RATE"
-			}
-
-		}
-
-	}
-
-}
-
-items/weapons/pickaxe_extreme_item
-{
-	WeaponItemDesc
-	{
-		ammo_storage
-		damage_type "area"
-		rarity "EXTREME"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
-				max_value "450.000"
-				min_value "390.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
-				default_value "5.000"
-				max_value "12.000"
-				min_value "10.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "85.000"
-				min_value "78.000"
-				stat_features "MODABLE"
-				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
-				max_value "0.800"
-				min_value "0.700"
-				stat_features "MODABLE"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_LIFESTEAL"
 			}
 
 			WeaponStatDef
 			{
-				default_value "47.000"
-				max_value "50.000"
-				min_value "48.000"
+				default_value "40.000"
+				max_value "60.000"
+				min_value "50.000"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_STUN"
 			}
@@ -2268,9 +1880,9 @@ items/weapons/pickaxe_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "13.000"
-				max_value "15.000"
-				min_value "14.000"
+				default_value "12.000"
+				max_value "14.300"
+				min_value "13.000"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -2293,10 +1905,10 @@ items/weapons/pickaxe_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "0.760"
+				default_value "0.750"
 				max_value "0.900"
 				min_value "0.800"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -2317,9 +1929,9 @@ items/weapons/pickaxe_extreme_item
 		{
 			WeaponStatDef
 			{
-				default_value "690.000"
-				max_value "1205.000"
-				min_value "931.000"
+				default_value "385.000"
+				max_value "500.000"
+				min_value "410.000"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -2334,10 +1946,10 @@ items/weapons/pickaxe_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "5.000"
-				max_value "12.000"
-				min_value "12.000"
-				stat_features "BASE_MINMAX|STATISTIC|INITIAL_RANDOMIZABLE"
+				default_value "12.000"
+				max_value "15.000"
+				min_value "13.000"
+				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_SPLASH"
 			}
 
@@ -2359,91 +1971,11 @@ items/weapons/pickaxe_extreme_item
 
 			WeaponStatDef
 			{
-				max_value "0.800"
+				default_value "0.750"
+				max_value "0.900"
 				min_value "0.800"
-				stat_features "BASE_MINMAX"
-				stat_type "FIRE_RATE"
-			}
-
-		}
-
-	}
-
-}
-
-items/weapons/pickaxe_superior_item
-{
-	WeaponItemDesc
-	{
-		ammo_storage
-		damage_type "area"
-		rarity "SUPERIOR"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
-				max_value "350.000"
-				min_value "312.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_SPREAD"
-			}
-
-			WeaponStatDef
-			{
-				default_value "5.000"
-				max_value "10.000"
-				min_value "8.000"
-				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_CRITICAL_CHANCE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "345.000"
-				min_value "207.000"
-				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_OVER_TIME"
-			}
-
-			WeaponStatDef
-			{
-				max_value "1.800"
-				min_value "1.500"
-				stat_features "MODABLE"
-				stat_type "DAMAGE_LIFESTEAL"
-			}
-
-			WeaponStatDef
-			{
-				default_value "47.000"
-				max_value "80.000"
-				min_value "63.000"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "AMMO_STUN"
-			}
-
-			WeaponStatDef
-			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "AMMO_STUN_LENGTH"
-			}
-
-			WeaponStatDef
-			{
-				max_value "300.000"
-				min_value "300.000"
-				stat_features "BASE_MINMAX|HIDDEN"
-				stat_type "DAMAGE_CRITICAL_FACTOR"
+				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
@@ -2456,36 +1988,52 @@ items/weapons/pickaxe_superior_item
 
 			WeaponStatDef
 			{
-				default_value "15.000"
-				max_value "17.000"
-				min_value "16.000"
+				max_value "255.000"
+				min_value "210.000"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.500"
+				min_value "0.900"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				max_value "300.000"
+				min_value "300.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				default_value "5.000"
+				max_value "10.000"
+				min_value "8.000"
+				stat_features "BASE_DEFAULT|MODABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				default_value "50.000"
+				max_value "83.000"
+				min_value "68.000"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
-				stat_type "DAMAGE_SPLASH"
+				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.150"
-				min_value "1.150"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_SCALE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "1.660"
-				min_value "1.660"
-				stat_features "BASE_MINMAX"
-				stat_type "WEAPON_ANIMATION_SPEED"
-			}
-
-			WeaponStatDef
-			{
-				default_value "1.000"
-				max_value "1.400"
-				min_value "1.300"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
-				stat_type "FIRE_RATE"
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
 			}
 
 		}
@@ -2504,7 +2052,7 @@ items/weapons/pickaxe_item
 		{
 			WeaponStatDef
 			{
-				default_value "230.000"
+				default_value "240.000"
 				max_value "333.000"
 				min_value "276.000"
 				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
@@ -2540,6 +2088,7 @@ items/weapons/pickaxe_item
 			{
 				max_value "1.200"
 				min_value "0.900"
+				stat_features "INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_LIFESTEAL"
 			}
 
@@ -2603,10 +2152,10 @@ items/weapons/pickaxe_item
 
 			WeaponStatDef
 			{
-				default_value "1.000"
-				max_value "1.300"
-				min_value "1.200"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				default_value "0.750"
+				max_value "0.900"
+				min_value "0.800"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -2627,9 +2176,9 @@ items/weapons/pickaxe_superior_item
 		{
 			WeaponStatDef
 			{
-				default_value "518.000"
-				max_value "855.000"
-				min_value "673.000"
+				default_value "330.000"
+				max_value "430.000"
+				min_value "370.000"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -2653,7 +2202,7 @@ items/weapons/pickaxe_superior_item
 
 			WeaponStatDef
 			{
-				max_value "259.000"
+				max_value "215.000"
 				min_value "155.000"
 				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_OVER_TIME"
@@ -2661,17 +2210,17 @@ items/weapons/pickaxe_superior_item
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.200"
-				stat_features "MODABLE"
+				max_value "1.400"
+				min_value "0.900"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_LIFESTEAL"
 			}
 
 			WeaponStatDef
 			{
-				default_value "43.000"
+				default_value "45.000"
 				max_value "70.000"
-				min_value "56.000"
+				min_value "59.000"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "AMMO_STUN"
 			}
@@ -2702,9 +2251,9 @@ items/weapons/pickaxe_superior_item
 
 			WeaponStatDef
 			{
-				default_value "14.000"
-				max_value "16.000"
-				min_value "15.000"
+				default_value "12.000"
+				max_value "14.600"
+				min_value "13.000"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -2727,10 +2276,10 @@ items/weapons/pickaxe_superior_item
 
 			WeaponStatDef
 			{
-				default_value "0.760"
+				default_value "0.750"
 				max_value "0.900"
 				min_value "0.800"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -2953,6 +2502,14 @@ items/weapons/power_fist_basic_item
 				min_value "0.300"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				max_value "22.000"
+				min_value "11.000"
+				stat_features "INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_OVER_TIME"
 			}
 
 		}
@@ -3912,7 +3469,7 @@ items/weapons/spear_advanced_item
 				default_value "1.000"
 				max_value "1.300"
 				min_value "1.200"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -4027,7 +3584,7 @@ items/weapons/spear_extreme_item
 				default_value "1.000"
 				max_value "1.400"
 				min_value "1.300"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -4141,7 +3698,7 @@ items/weapons/spear_item
 				default_value "1.000"
 				max_value "1.300"
 				min_value "1.200"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -4256,7 +3813,7 @@ items/weapons/spear_superior_item
 				default_value "1.000"
 				max_value "1.350"
 				min_value "1.250"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -4818,7 +4375,7 @@ items/weapons/trident_advanced_item
 				default_value "1.300"
 				max_value "1.500"
 				min_value "1.400"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -4933,7 +4490,7 @@ items/weapons/trident_extreme_item
 				default_value "1.300"
 				max_value "1.600"
 				min_value "1.500"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -5047,7 +4604,7 @@ items/weapons/trident_item
 				default_value "1.300"
 				max_value "1.450"
 				min_value "1.350"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
@@ -5162,7 +4719,7 @@ items/weapons/trident_superior_item
 				default_value "1.300"
 				max_value "1.550"
 				min_value "1.450"
-				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
 
