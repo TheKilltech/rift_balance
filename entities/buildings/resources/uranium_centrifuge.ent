@@ -11,7 +11,7 @@ EntityBlueprint
 		description			"gui/hud/building_description/uranium_centrifuge"
 		menu_icon			"gui/hud/building_icons/uranium_centrifuge"
 		require 			"headquarters"
-		order				"20"
+		order				"30"
 		upgrade				"buildings/resources/uranium_centrifuge_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"uranium_centrifuge_lvl_2,uranium_centrifuge_lvl_3"
@@ -54,11 +54,17 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"uranium_ore"
-				value			 	"1"
+				value			 	"2"
 			}			
 		}
 		out
 		{
+			GameplayResource
+			{
+				resource 			"uranium_depleted"
+				value			 	"2"
+				optional			"1"
+			}
 			GameplayResource
 			{
 				resource 			"uranium"
@@ -202,7 +208,9 @@ EntityBlueprint
 			x "2"
 			y "2"
 		}
+		
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

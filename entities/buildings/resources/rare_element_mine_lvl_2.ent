@@ -9,7 +9,7 @@ EntityBlueprint
 		name 				"rare_element_mine_lvl_2"
 		bp   				"buildings/resources/rare_element_mine_lvl_2"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/mining_drill_lvl_2"
+		localization_id		"gui/hud/building_name/mining_drill"
 		description			"gui/hud/building_description/mining_drill_lvl_2"
 		menu_icon			"gui/hud/building_icons/rare_element_mine_lvl2"
 		order				"3"
@@ -29,7 +29,7 @@ EntityBlueprint
 				{
 					carbonium 	"500"
 					steel		"800"
-					cobalt		"200"
+					cobalt		"250"
 				}
 			}	
 			BuildingCostInfo
@@ -38,7 +38,7 @@ EntityBlueprint
 				building_time 60
 				building_cost
 				{
-					carbonium 	"500"
+					carbonium 	"350"
 				}
 			}			
 		}
@@ -52,92 +52,86 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"75"
+				value				75
 			}			
 			GameplayResource
 			{
 				resource 			"mud"
-				value			 	"50"
+				value				50
 				attachment			"att_in_1"
 				family				"in"
 			}
 			GameplayResource
 			{
 				resource 			"sludge"
-				value			 	"50"
+				value				50
 				attachment			"att_in_1"
 				family				"in"
 			}
 			GameplayResource
 			{
 				resource 			"water"
-				value			 	"50"
+				value				50
 				attachment			"att_in_1"
 				family				"in"
 			}
 			GameplayResource
 			{
 				resource 			"morphium"
-				value			 	"50"
+				value			 	50
 				attachment			"att_in_1"
 				family				"in"
 			}
 			GameplayResource
 			{
 				resource 			"reagent"
-				value			 	"10"
+				value				10
 				attachment			"att_in_1"
 				family				"in"
 			}
-			
-			//GameplayResource
-			//{
-			//	resource 			"tanzanite"
-			//	value				"0.01"
-			//}
 			
 			
 			GameplayResource
 			{
 				resource 			"carbon_deepvein"
-				value			 	"0.9"
+				value				1.7
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"iron_deepvein"
-				value			 	"0.9"
+				value			 	1.7
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium_deepvein"
-				value			 	"0.9"
+				value			 	1.7
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"uranium_ore_deepvein"
-				value			 	"0.9"
+				value			 	1.7
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"titanium_deepvein"
-				value			 	"0.9"
+				value			 	1.7
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium_deepvein"
-				value			 	"0.9"
+				value			 	1.7
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"cobalt_deepvein"
-				value			 	"0.9"
+				value			 	1.7
 				family				"resource"
 			}
 		}
@@ -147,44 +141,44 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"carbonium"
-				value			 	"1"
+				value				1.2
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"steel"
-				value			 	"1"
+				value				1.2
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium"
-				value			 	"1"
+				value				1.2
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"uranium_ore"
-				value			 	"1"
+				value				1.2
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium"
-				value			 	"1"
+				value				1.2
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"titanium"
-				value			 	"1"
+				value				1.2
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"cobalt"
-				value			 	"1"
+				value				1.2
 				family				"resource"
 			}
 		}
@@ -193,13 +187,29 @@ EntityBlueprint
 		one_vein_mode "1"
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/building_buffable.lua"
+		
+		database
+		{
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
+			buff_required_name			string:"ore_mill"
+			buff_required_level			int:"0"
+			display_radius_group		string:"ore_mill"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+		}
+	}
+	
 	HealthDesc
 	{
 		max_health 					"1500"
 		health 						"1500"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
-		 is_manual 1
+		is_manual 1
 		update_health_uniform 		"1"
 		
 		DestructionLevels

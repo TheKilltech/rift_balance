@@ -6,14 +6,14 @@ EntityBlueprint
 	{
 		name 				"water_filtering_plant"
 		bp   				"buildings/resources/water_filtering_plant"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/water_filtering_plant"
 		description			"gui/hud/building_description/water_filtering_plant"
 		menu_icon			"gui/hud/building_icons/water_filtering_plant"
 		upgrade				"buildings/resources/water_filtering_plant_lvl_2"
 		require 			"headquarters"
-		order				"10"
+		order				"4"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
 		overrides			"water_filtering_plant_lvl_2,water_filtering_plant_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
@@ -83,7 +83,6 @@ EntityBlueprint
 			}
 		}
 	}	
-
 
 	LuaDesc
 	{
@@ -163,7 +162,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -226,9 +225,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -236,8 +235,10 @@ EntityBlueprint
 			x "3"
 			y "3"
 		}
+		
 		big_minimap_scale 	"1.9"
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

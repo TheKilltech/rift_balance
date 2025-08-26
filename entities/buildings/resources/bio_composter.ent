@@ -6,7 +6,7 @@ EntityBlueprint
 	{
 		name 				"bio_composter"
 		bp   				"buildings/resources/bio_composter"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/bio_composter"
 		description			"gui/hud/building_description/bio_composter"
@@ -160,7 +160,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -232,9 +232,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -242,8 +242,9 @@ EntityBlueprint
 			x "3"
 			y "3"
 		}
-					
+
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

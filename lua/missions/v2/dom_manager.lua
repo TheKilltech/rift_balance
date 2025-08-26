@@ -178,6 +178,14 @@ end
 
 function dom_mananger:Update( dt)
 
+	local playersCounter = self:GetPlayersCounter()
+	if self.playersCounter ~= playersCounter then
+		self.playersCounter = playersCounter
+
+		self:RevertCreaturesBaseDifficulty()
+		self:UpdateCreaturesBaseDifficulty()
+	end
+
 	if ( self.debugVoteMachine == "ENTER") then
 		self:OnDebugVoteStart()
 		self.debugVoteTimer = GameStreamingService:GetVotingTime()
@@ -206,6 +214,13 @@ function dom_mananger:Update( dt)
 
 	local debug = "DEBUG DOM MANAGER:"
 	debug = debug .. "\n"
+
+	debug = debug .. " Current difficulty level: " .. tostring( self.currentDifficultyLevel ) .. "\n"
+	debug = debug .. " Max difficulty level : " .. tostring( self.freezedDifficultyLevel ) .. "\n"
+	debug = debug .. " Creature difficulty level: " .. tostring( CampaignService:GetCreaturesBaseDifficulty() ) .. "\n"
+
+	local playersCounter = self:GetPlayersCounter()
+	debug = debug .. " Players count: " .. tostring( playersCounter ) .. "\n"
 
 	local difficultyState = self.difficultyIncrease:GetCurrentState()
 	if difficultyState ~= "" then
@@ -304,6 +319,7 @@ function dom_mananger:OnLoad()
 		self.version = 1
 	end
 
+	self.playersCounter = 0
 	self.player_death_position 	 = self.player_death_position or {}
 
 	self.rules = ProcessRulesTable( self.rules )
@@ -314,10 +330,13 @@ function dom_mananger:OnLoad()
 	self:LogicFilesSanityCheck();
 
 	self:FillInitialParamsEventManager()
+	self:FillInitialParamsDomManager()
 end
 
 function dom_mananger:FillInitialParamsDomManager()
-
+	for group in Iter( self.availableAttackGroups ) do 
+		self.availableEventGroups[group] = true
+	end
 end
 
 	-- ======================================== LOGIC ============================================
@@ -503,7 +522,7 @@ function dom_mananger:OnDebugVoteExecute( )
 	if ( self.debugVoteStarted ) then
 		local actionIdx = RandInt( 1, #self.currentActions )
 		local action = self.currentActions[actionIdx]
-		QueueEvent("GameStreamingUpdateActionEvent",INVALID_ID, action, "ParticipentDebug_" .. tostring(self.debugVoteParticipent), self.debugVoteParticipent)
+		QueueEvent("GameStreamingUpdateActionEvent",INVALID_ID, action, "ParticipentDebug_" .. tostring(self.debugVoteParticipent), self.debugVoteParticipent, 0)
 		self.debugVoteParticipent = self.debugVoteParticipent + 1
 	end
 end
@@ -754,7 +773,7 @@ function dom_mananger:AddAttackGroup( groupName )
 	else
 		self:VerboseLog( "AddAttackGroup : failed : " .. tostring( groupName ) .. " does not exist in rules.waves" )
 	end
-
+	self.availableEventGroups = self.availableAttackGroups -- ToDo: testing concept. not sure how to update for now
 end
 
 function dom_mananger:RemoveAttackGroup( groupName )
@@ -777,6 +796,7 @@ function dom_mananger:RemoveAttackGroup( groupName )
 	else
 		self:VerboseLog( "RemoveAttackGroup : failed : " .. tostring( groupName ) .. " does not exist in rules.waves" )
 	end
+	self.availableEventGroups = self.availableAttackGroups -- ToDo: testing concept. not sure how to update for now
 end
 
 function dom_mananger:PauseDOM()
@@ -957,6 +977,8 @@ function dom_mananger:OnExitDifficultyIncrease( state )
 		self:VerboseLog("OnExitDifficultyIncrease : Difficulty level is max - " .. tostring( self.currentDifficultyLevel ) )
 	end
 
+	self:IncreaseCreaturesBaseDifficulty()
+
 end
 
 function dom_mananger:RandomizeSpawnPoint( borderSpawnPointGroupName, waveData )
@@ -1124,15 +1146,23 @@ function dom_mananger:GetAttackCount( currentDifficultyLevel )
 end
 
 function dom_mananger:GetMultiplayerAttackCount( currentDifficultyLevel )
-	local playersCount = #PlayerService:GetAllPlayers() - 1
+	local playersCounter = self:GetPlayersCounter()
+	self:VerboseLog("GetMultiplayerAttackCount : " .. tostring( playersCounter ) )
 
-	self:VerboseLog("GetMultiplayerAttackCount : " .. tostring( playersCount ) )
-
-	if ( playersCount > 0 ) then
-		return self.rules.multiplayerWaves[currentDifficultyLevel].additionalWaves + playersCount
+	if ( playersCounter > 1 ) then
+		return Clamp( self.rules.multiplayerWaves[currentDifficultyLevel].additionalWaves + 1, 0, 1 )
 	else
-		return 0
+		return Clamp( self.rules.multiplayerWaves[currentDifficultyLevel].additionalWaves, 0, 1 )
 	end
+end
+
+function dom_mananger:GetPlayersCounter()
+	local playersCount = #PlayerService:GetConnectedPlayers();
+	if playersCount > 4 then
+		return 4
+	end
+
+	return playersCount;
 end
 
 function dom_mananger:GetPrepareSpawnTime()
@@ -1147,7 +1177,23 @@ function dom_mananger:GetPrepareSpawnTime()
 		stateDuration = 10
 		self:VerboseLog("Preparation time modifier: cancelled (down to ".. tostring(stateDuration).. ")")
 	end
+	local playersCounter = self:GetPlayersCounter()
+	if playersCounter > 1 then
+		stateDuration = stateDuration - ( ( playersCounter - 1 ) * DifficultyService:GetWaveIntermissionMultiplier() )
+	end
+
 	return stateDuration
+end
+
+function dom_mananger:GetCooldownAfterAttacksTime()	
+	local factor = 1
+
+	local playersCounter = self:GetPlayersCounter()
+	if ( playersCounter > 1 ) then
+		factor = 1 + playersCounter * DifficultyService:GetWaveCooldownPerPlayerFactor()
+	end
+
+	return ( self.rules.cooldownAfterAttacks[self.currentDifficultyLevel] / factor )
 end
 
 function dom_mananger:GetIdleTime()
@@ -1162,11 +1208,56 @@ function dom_mananger:OnEnterWait( state )
 	self:SetSuspended( true )
 	CampaignService:OperateDOMPlanetaryJump( true )
 
+	self:IncreaseCreaturesBaseDifficulty()
+
 	state:SetDurationLimit( 5 )
 end
 
+
+function dom_mananger:IncreaseCreaturesBaseDifficulty()
+	self:VerboseLog("IncreaseCreaturesBaseDifficulty" )
+
+	if ( self.rules.creatureDifficultyIncrementPerDOMDifficulty ~= nil ) then
+		
+		local playersCounter = self:GetPlayersCounter()
+		local index = Clamp( playersCounter, 1, #self.rules.creatureDifficultyIncrementPerDOMDifficulty )
+
+		CampaignService:IncreaseCreaturesBaseDifficulty( self.rules.creatureDifficultyIncrementPerDOMDifficulty[index][self.currentDifficultyLevel] )
+	end
+end
+
+function dom_mananger:RevertCreaturesBaseDifficulty()
+	self:VerboseLog( "RevertCreaturesBaseDifficulty" )
+
+	if ( self.rules.creatureDifficultyIncrementPerDOMDifficulty ~= nil ) then
+		
+		local playersCounter = self:GetPlayersCounter()
+		local index = Clamp( playersCounter, 1, #self.rules.creatureDifficultyIncrementPerDOMDifficulty )
+
+		for i = 1, self.currentDifficultyLevel do
+			CampaignService:DecreaseCreaturesBaseDifficulty( self.rules.creatureDifficultyIncrementPerDOMDifficulty[index][i] )
+		end	
+	end
+end
+
+function dom_mananger:UpdateCreaturesBaseDifficulty()
+	self:VerboseLog( "UpdateCreaturesBaseDifficulty" )
+
+	if ( self.rules.creatureDifficultyIncrementPerDOMDifficulty ~= nil ) then
+
+		local playersCounter = self:GetPlayersCounter()
+		local index = Clamp( playersCounter, 1, #self.rules.creatureDifficultyIncrementPerDOMDifficulty )
+
+		for i = 1, self.currentDifficultyLevel do
+			CampaignService:IncreaseCreaturesBaseDifficulty( self.rules.creatureDifficultyIncrementPerDOMDifficulty[index][i] )
+		end	
+	end
+end
+
 function dom_mananger:OnExitWait( state )
+
 	self:VerboseLog("OnExitWait" )
+
 
 	--if ( self.wavesDisabled == false ) then
 	--	self.spawner:ChangeState( "streaming" )
@@ -1295,7 +1386,7 @@ end
 
 function dom_mananger:OnEnterCooldownAfterSpawnTime( state )
 	self:VerboseLog("OnEnterCooldownAfterSpawnTime" )
-	self.cooldownTimer  = self.rules.cooldownAfterAttacks[self.currentDifficultyLevel]
+	self.cooldownTimer = self:GetCooldownAfterAttacksTime()
 	
 	self:BeginWaveCooldown( self.cooldownTimer )
 end
@@ -1504,7 +1595,7 @@ function dom_mananger:OnHqEnterEntryLogic( state )
 		self:PrepareWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "OnHqEnterEntryLogic: Prepare attack name : ", self.hqLogicLevel.prepareTime, self.hqPreparedAttacks, self.hqPreparedAttackMarkers )
 
 		if ( self.rules.multiplayerWaves ~= nil ) then
-			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
+			local multiplayerAttackCount = self:GetMultiplayerAttackCount( difficultyLevel )
 
 			if ( multiplayerAttackCount > 0 ) then
 				wavePool = self:GetMultiplayerWavePool( self.currentDifficultyLevel )
@@ -1527,9 +1618,7 @@ end
 function dom_mananger:OnHqEnterAttackLogic( state )
 	self:VerboseLog("OnHqEnterAttackLogic" )
 
-	if ( self.prepAttacks == true ) then
-		self:SpawnPreparedWave( "dom_mananger:OnHqExitEntryLogic: Spawn attack name : ", true, self.hqPreparedAttacks, self.upgradeHqWaves )
-	else
+	if ( self.prepAttacks == false ) then  -- late attack preperation as a workaround
 		local borderSpawnPointGroupName = self.borderSpawnPointGroupNames[RandInt( 1,#self.borderSpawnPointGroupNames )]
 
 		self:VerboseLog("Border spawn point group :" .. borderSpawnPointGroupName )
@@ -1547,17 +1636,23 @@ function dom_mananger:OnHqEnterAttackLogic( state )
 		self.WaveRepeatState   = "hq_attack_logic"
 		self.WaveStateMachine  = self.upgradeHQ
 		self.hqPreparedAttacks = {}
-		self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves, self.hqPreparedAttacks )
+		
+		self:PrepareWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Fast-prep attack name : ", 0, self.hqPreparedAttacks, nil, "", "label_small", 0)
+		--self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Fast-spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves, self.hqPreparedAttacks )
 
 		if ( self.rules.multiplayerWaves ~= nil ) then
 			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
 
 			if ( multiplayerAttackCount > 0 ) then
 				wavePool = self:GetMultiplayerWavePool( difficultyLevel )
-				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Spawn attack name : ", true, "", "label_small", 0, self.upgradeHqWaves, self.hqPreparedAttacks )
+				self:PrepareWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Fast-prep multiplayer attack name : ", 0, self.hqPreparedAttacks, nil, "", "label_small", 0)
+				--self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "OnHqEnterAttackLogic: Fast-spawn multiplayer attack name : ", true, "", "label_small", 0, self.upgradeHqWaves, self.hqPreparedAttacks )
 			end
 		end
 	end
+	
+	self:SpawnPreparedWave( "dom_mananger:OnHqExitEntryLogic: Spawn attack name : ", true, self.hqPreparedAttacks, self.upgradeHqWaves )
+	
 	self.hqAttackSafeTimer = self.hqAttackSafeTime
 	self:BeginWaveCooldown( self.hqAttackSafeTimer )
 end
@@ -1594,7 +1689,21 @@ function dom_mananger:PrepareLabels( labels, labelName, labelsPercentageUse )
 	self.data:SetInt( "labels_percentage_use", labelsPercentageUse )
 end
 
-function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, indicatorTimer, attacks, markers )
+function dom_mananger:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupName, spawnPointName, maxRepeats)
+	-- waveData: single element from waves definitions setup in the mission lua
+	if maxRepeats == nil then maxRepeats = waveData.maxRepeats
+	else maxRepeats = math.min(maxRepeats, waveData.maxRepeats or 99)
+	end
+	attack = {}
+	attack.waveName       = waveData.name
+	attack.maxRepeats     = maxRepeats
+	attack.spawnGroupName = borderSpawnPointGroupName
+	attack.spawnPointName = spawnPointName
+	attack.originalPool   = wavePool
+	return attack
+end
+
+function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, indicatorTimer, attacks, markers, participants, labelName, participantsPercentageUse )
 
 	for i = 1, attackCount do
 		local waveData = wavePool[RandInt( 1, #wavePool )]
@@ -1604,11 +1713,11 @@ function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, waveP
 		if ( spawnPointName ~= "none" ) then
 			local index = #attacks + 1
 
-			attacks[index] = {}
-			attacks[index].waveName       = waveData.name
-			attacks[index].spawnGroupName = borderSpawnPointGroupName
-			attacks[index].spawnPointName = spawnPointName
-			attacks[index].originalPool   = wavePool
+			if ( participants ~= nil ) then
+				self:PrepareLabels( participants, labelName, participantsPercentageUse )
+			end
+			
+			attacks[index] = self:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupName, spawnPointName)
 
 			if (markers) then
 				markers[#markers + 1] = self:SpawnWaveIndicator( indicatorTimer, spawnPointName, "effects/messages_and_markers/wave_marker" )
@@ -1623,6 +1732,7 @@ function dom_mananger:ReshuffleWave( index, attacks, reshuffleSwapn, reshuffleSp
 	local borderSpawnPointGroupName = attacks[index].spawnGroupName
 	local spawnPointName            = attacks[index].spawnPointName
 	local wavePool                  = attacks[index].originalPool
+	local maxRepeats                = attacks[index].maxRepeats
 	if (wavePool == nil or #wavePool == 0) then
 		self:VerboseLog( "Wave Reshuffle: attack ".. tostring(index) .." original wavePool is nil. using default pool")
 		wavePool = self:GetWavePool( self.currentDifficultyLevel )
@@ -1642,11 +1752,7 @@ function dom_mananger:ReshuffleWave( index, attacks, reshuffleSwapn, reshuffleSp
 	end
 	
 	if ( spawnPointName ~= "none" ) then
-		attacks[index] = {}
-		attacks[index].waveName       = waveData.name
-		attacks[index].spawnGroupName = borderSpawnPointGroupName
-		attacks[index].spawnPointName = spawnPointName
-		attacks[index].originalPool   = wavePool
+		attacks[index] = self:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupName, spawnPointName, maxRepeats)
 
 		-- markers[index] = self:SpawnWaveIndicator( indicatorTimer, spawnPointName, "effects/messages_and_markers/wave_marker" )
 		
@@ -1655,7 +1761,7 @@ function dom_mananger:ReshuffleWave( index, attacks, reshuffleSwapn, reshuffleSp
 end
 
 function dom_mananger:RepeatWave(attacks)
-	if (not attacks or #attacks==0) then return end
+	if (not attacks or #attacks==0) then return attacks end
 	self:VerboseLog("RepeatWave: checking " .. tostring(#attacks) .. " attacks for repeat and reshuffle")
 	
 	if ( self.waveRepeated == nil ) then self.waveRepeated = 0 end
@@ -1667,16 +1773,21 @@ function dom_mananger:RepeatWave(attacks)
 	
 	local newAttacks = {}
 	for i = 1, #attacks, 1 do
-		local rngRoll = RandInt(0, 100)
-		local attackStr = tostring(i) .."/".. tostring(#attacks)
-		self:VerboseLog("RepeatWave: attack ".. attackStr .. " repeat ".. tostring(self.waveRepeated + 1) .." chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll) .. " => " ..  tostring(repeatChance > rngRoll))
-		if ( repeatChance > rngRoll) then
-			rngRoll = RandInt(1, 100)
-			self:VerboseLog("RepeatWave: attack ".. attackStr.. " reshuffle chance ".. tostring(chanceWaveReroll) ..", rolled ".. tostring(rngRoll) .." => " .. tostring(chanceWaveReroll > rngRoll) )
-			if ( chanceWaveReroll > rngRoll) then
-				self:ReshuffleWave( i, attacks, chanceNewSpawnGroup < RandInt(1, 100), chanceNewSpawn < RandInt(1, 100) )
-			end
-			newAttacks[#newAttacks + 1] = attacks[i]
+		local attack = attacks[i]
+		if attack.maxRepeats ~= nil and self.waveRepeated >= attack.maxRepeats then
+			self:VerboseLog("RepeatWave: attack ".. attackStr .. " reached its max repeats of ".. tostring(attack.maxRepeats) .." and will not contine")
+		else
+			local rngRoll = RandInt(0, 100)
+			local attackStr = tostring(i) .."/".. tostring(#attacks)
+			self:VerboseLog("RepeatWave: attack ".. attackStr .. " repeat ".. tostring(self.waveRepeated + 1) .." chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll) .. " => " ..  tostring(repeatChance > rngRoll))
+			if ( repeatChance > rngRoll) then
+				rngRoll = RandInt(1, 100)
+				self:VerboseLog("RepeatWave: attack ".. attackStr.. " reshuffle chance ".. tostring(chanceWaveReroll) ..", rolled ".. tostring(rngRoll) .." => " .. tostring(chanceWaveReroll > rngRoll) )
+				if ( chanceWaveReroll > rngRoll) then
+					self:ReshuffleWave( i, attacks, chanceNewSpawnGroup < RandInt(1, 100), chanceNewSpawn < RandInt(1, 100) )
+				end
+				newAttacks[#newAttacks + 1] = attack
+			end		
 		end
 	end
 	
@@ -1697,6 +1808,8 @@ function dom_mananger:RepeatWave(attacks)
 		self.waveRepeatTime = -9999
 		self.prepAttacks = self.rules.prepareAttacks
 	end
+	
+	return attacks
 end
 
 function dom_mananger:BeginWaveCooldown( cooldownTime )
@@ -1741,8 +1854,8 @@ function dom_mananger:DoWaveCooldown( timer, dt )
 	end
 
 	if ( timer < self.waveRepeatTime and self.rules.waveRepeatChances ) then
-		if (#self.hqPreparedAttacks>0)     then self:RepeatWave(self.hqPreparedAttacks)
-		elseif (#self.preparedAttacks>0)   then self:RepeatWave(self.preparedAttacks)
+		if (#self.hqPreparedAttacks>0)     then self.hqPreparedAttacks = self:RepeatWave(self.hqPreparedAttacks)
+		elseif (#self.preparedAttacks>0)   then self.preparedAttacks   = self:RepeatWave(self.preparedAttacks)
 		end
 		if (#self.preparedAttacks + #self.hqPreparedAttacks == 0) then
 			self.waveRepeatTime = -9999
@@ -1770,47 +1883,67 @@ function dom_mananger:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, prepare
 end
 
 function dom_mananger:SpawnWave( attackCount, borderSpawnPointGroupName, wavePool, log, shouldAddtoSpawnedAttacks, participants, labelName, participantsPercentageUse, spawnedAttacks, attacks )
+	local newAttacks = {}
+	self:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, 0, newAttacks, nil, participants, labelName, participantsPercentageUse ) -- workaround to memorize active accackts in self.preparedAttacks so wave repoeats can rely on that.
+	self:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, newAttacks, spawnedAttacks )
+		
+	-- attacks must be in saved somewhere to be able to repeat them
 	if (not attacks) then attacks = {} end
-	self:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, 0, attacks, nil )
-	self:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, attacks, spawnedAttacks )
+	for i=1,#newAttacks do
+        attacks[#attacks+1] = newAttacks[i]
+    end
 end
 --------------------------------------------------- spawn -------------------------------------------------
 
 function dom_mananger:SpawnWavesForDifficultyLevel( difficultyLevel, shouldAddtoSpawnedAttacks )
 	local borderSpawnPointGroupName = self.borderSpawnPointGroupNames[RandInt( 1,#self.borderSpawnPointGroupNames )]
+	local wavePool = {}
+	
+	if ((self.waveRepeated or 0) == 0) then -- attack preperation must be done only once
+		if ( not shouldAddtoSpawnedAttacks or #self.preparedAttacks <= 0 ) then  -- late attack preparation
+			self.WaveRepeatState  = "streaming"
+			self.WaveStateMachine = self.spawner
+			self.preparedAttacks  = {} -- preparedAttacks are used to determine repeats, hence why they need to be setup despite lack of preparation
+			
+			wavePool = self:GetWavePool( difficultyLevel )
+			self:PrepareWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Fast-prep normal attack name : ", 0, self.preparedAttacks, nil, "", "label_small", 0)
+			--self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Fast-spawn normal attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks, self.preparedAttacks )
 
-	if ( shouldAddtoSpawnedAttacks and #self.preparedAttacks > 0 ) then
-		self:SpawnPreparedWave( "dom_mananger:OnEnterSpawn: Prepare attack name : ", shouldAddtoSpawnedAttacks, self.preparedAttacks, self.spawnedAttacks )
-	else
-		self.WaveRepeatState  = "streaming"
-		self.WaveStateMachine = self.spawner
-		self.preparedAttacks  = {}
-		
-		local wavePool = self:GetWavePool( difficultyLevel )
-		self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Normal attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks, self.preparedAttacks )
+			if ( self.rules.multiplayerWaves ~= nil ) then
+				local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
 
-		if ( self.rules.multiplayerWaves ~= nil ) then
-			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
-
-			if ( multiplayerAttackCount > 0 ) then
-				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( difficultyLevel ), "dom_mananger:OnEnterSpawn: Multiplayer attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks, self.preparedAttacks )
+				if ( multiplayerAttackCount > 0 ) then
+					wavePool = self:GetMultiplayerWavePool( difficultyLevel )
+					self:PrepareWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Fast-prep multiplayer attack name : ", 0, self.preparedAttacks, nil,  "", "label_small", 0)
+					--self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Fast-spawn multiplayer attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks, self.preparedAttacks )
+				end
 			end
 		end
 	end
 
-	self:SpawnWave( self.extraAttacks, borderSpawnPointGroupName, self:GetExtraWavePool(), "dom_mananger:OnEnterSpawn: Extra attack name : ", shouldAddtoSpawnedAttacks, self.participants, "label_small", self.participantsPercentageUse, self.spawnedAttacks, self.preparedAttacks )
-
+	if ( self.extraAttacks > 0) then
+		participants  = self.participants
+		percentageUse = self.participantsPercentageUse
+		wavePool = self:GetExtraWavePool()
+		self:PrepareWave( self.extraAttacks, borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Fast-prep extra attack name : ", 0, self.preparedAttacks, nil, self.participants, "label_small", self.participantsPercentageUse)
+		--self:SpawnWave( self.extraAttacks, borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Fast-spawn extra attack name : ", shouldAddtoSpawnedAttacks, self.participants, "label_small", self.participantsPercentageUse, self.spawnedAttacks, self.preparedAttacks )
+	end
 	if ( self.spawnBoss == true ) then
-		self:SpawnWave( 1, borderSpawnPointGroupName, self:GetBossPool(), "dom_mananger:OnEnterSpawn: Boss attack name : ", false, self.participants, "label_medium", self.participantsPercentageUse, self.spawnedAttacks, self.preparedAttacks )
-	end		
-
+		wavePool = self:GetBossPool()
+		self:PrepareWave( 1, borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Boss attack name : ", 0, self.preparedAttacks, nil, self.participants, "label_medium", self.participantsPercentageUse)
+		--self:SpawnWave( 1, borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Boss attack name : ", false, self.participants, "label_medium", self.participantsPercentageUse, self.spawnedAttacks, self.preparedAttacks )
+	end
+	
+	
+	self:SpawnPreparedWave( "dom_mananger:OnEnterSpawn: Spawn papared attack name : ", shouldAddtoSpawnedAttacks, self.preparedAttacks, self.spawnedAttacks )
+	
 	if ( difficultyLevel <= #self.rules.wavesEntryDefinitions ) then
 		MissionService:ActivateMissionFlow( "", self.rules.wavesEntryDefinitions[difficultyLevel].name, "default", self.data )	
 	end
+	
 end
 
 function dom_mananger:OnEnterSpawn( state )
-
 	self:VerboseLog("OnEnterSpawn" )
 	
 	if ( self.cancelTheAttack == true ) then
@@ -1864,48 +1997,17 @@ function dom_mananger:OnEnterStreaming( state )
 end
 
 function dom_mananger:OnExecuteStreaming( state )
-	
 	if ( ( GameStreamingService:IsInStreamEvent() == false ) or ( GameStreamingService:IsStreamingSessionStarted() == false ) ) then
 		self.spawner:ChangeState( "spawn" )
 	end
-
 end
 
 function dom_mananger:OnExitStreaming( state )
 	self:VerboseLog("OnExitStreaming" )
 end
 
-local function HasOtherAlivePlayersInTeam( current_player )
-	local player_team = PlayerService:GetPlayerTeam( current_player )
-
-	local players = PlayerService:GetPlayersFromTeam( player_team )
-	for player_id in Iter(players) do
-		local pawn = PlayerService:GetPlayerControlledEnt( player_id )
-		if current_player ~= player_id and HealthService:IsAlive( pawn ) then
-			return true
-		end
-	end
-
-	return false
-end
-
 function dom_mananger:OnRespawnFailedEvent( evt )
 	self:VerboseLog("Mission failed" )
-
-	local player_id = evt:GetPlayerId()
-	if HasOtherAlivePlayersInTeam( player_id) and self.player_death_position[ player_id ] then
-
-		local position = self.player_death_position[ player_id ]
-		self.player_death_position[ player_id ] = nil;
-
-		local player_team = EntityService:GetTeam(PlayerService:GetPlayerTeam( player_id ))
-		local spawner = EntityService:SpawnEntity("player/player_respawner", position.x, position.y, position.z, "none" )
-
-		local player_reference = reflection_helper(EntityService:CreateComponent(spawner, "PlayerReferenceComponent"))
-		player_reference.player_id = player_id
-		player_reference.reference_type.internal_enum = 4
-		return;
-	end
 
     LampService:ReportGameFailed()
 	MissionService:ShowEndGameHud( 5.0, false )
@@ -1916,75 +2018,14 @@ function dom_mananger:OnRespawnFailedEvent( evt )
 	end
 end
 
-function dom_mananger:DestroyPlayerItems( owner, player )
-	local count = DifficultyService:GetNumberOfItemsRemovedOnDeath();
-
-	if ( count == 0 ) then
-		return
-	end
-	local status = CampaignService:GetMissionStatus( CampaignService:GetCurrentMissionId() )
-	if ( status ~= MISSION_STATUS_IN_PROGRESS and status ~= MISSION_STATUS_NONE ) then
-		return
-	end
-
-	local items = PlayerService:GetAllEquippedItemsInSlot( "LEFT_HAND", player )
-	ConcatUnique( items, PlayerService:GetAllEquippedItemsInSlot( "RIGHT_HAND", player ) )   
-	count = math.min( count, #items )
-
-	local name = ""
-	local lvl = ""
-	for i=1,count,1 do
-		local number = RandInt(1, #items)
-		local entity = items[number];
-		Remove( items, entity)
-		name = ItemService:GetItemName( entity )
-		lvl = ItemService:GetItemLevel( entity )
-		EntityService:RemoveEntity( entity)
-	end
-
-end
-
-function dom_mananger:DropPlayerItems( owner, player )
-	local dropItemsCount = DifficultyService:GetNumberOfItemsDroppedOnDeath();
-	if ( dropItemsCount == 0 ) then
-		return
-	end
-
-	local mech = PlayerService:GetPlayerControlledEnt( player)
-	if ( mech ~= INVALID_ID ) then
-		local mechDatabase = EntityService:GetDatabase( mech )
-		if ( mechDatabase:GetIntOrDefault("disable_drop",0  ) == 1 ) then
-			return
-		end
-	end
-
-	local items = PlayerService:GetAllEquippedItemsInSlot( "LEFT_HAND" , player)
-	ConcatUnique( items, PlayerService:GetAllEquippedItemsInSlot( "RIGHT_HAND", player ) )   
-	dropItemsCount = math.min( dropItemsCount, #items )
-
-	local dropped = {}
-	local name = ""
-	local lvl = ""
-	for i=1,dropItemsCount,1 do
-		local number = RandInt(1, #items)
-		local entity = items[number];
-		Insert(dropped, entity )
-		Remove( items, entity)
-		name = ItemService:GetItemName( entity )
-		lvl = ItemService:GetItemLevel( entity )
-		PlayerService:DropItem( entity, owner, owner )
-	end
-
-	if dropItemsCount >= (#items + #dropped) then
-		CampaignService:UnlockAchievement(ACHIEVEMENT_LEAVING_EMPTY_HANDED);
-	end
-end
-
 function dom_mananger:OnPlayerDiedEvent( evt )
-	self:DestroyPlayerItems(evt:GetEntity(), evt:GetPlayerId())
-	self:DropPlayerItems(evt:GetEntity(), evt:GetPlayerId())
-
 	self.player_death_position[ evt:GetPlayerId() ] = EntityService:GetPosition( evt:GetEntity() )
+end
+
+function dom_mananger:OnPlayerCreateRequest( evt )
+end
+
+function dom_mananger:OnPlayerRemovedEvent( evt )
 end
 
 return dom_mananger

@@ -16,11 +16,11 @@ MissionDef
 
     destructible_volume_texture_patterns
     {
-        materials/textures/logic/caverns_destructible_rocks_mask_edge_1_full.png
+        materials/textures/logic/caverns_destructible_rocks_mask_edge_1_full.png	
 		
 		materials/textures/logic/caverns_destructible_rocks_mask_edge_1_large_hole_1.png
 		{	
-			min_instances	2			
+			min_instances	1
 			max_instances	3
 			tile_coord //excluding edge coordinates
 			{			
@@ -45,7 +45,7 @@ MissionDef
 		
 	    materials/textures/logic/caverns_destructible_rocks_mask_edge_1_large_hole_2.png
 		{	
-			min_instances	2			
+			min_instances	1
 			max_instances	3
 			tile_coord //excluding edge coordinates
 			{			
@@ -69,7 +69,7 @@ MissionDef
 		}
 	    materials/textures/logic/caverns_destructible_rocks_mask_edge_1_large_hole_3.png
 		{	
-			min_instances	2			
+			min_instances	1			
 			max_instances	3
 			tile_coord //excluding edge coordinates
 			{			
@@ -92,7 +92,22 @@ MissionDef
 			}
 		}
 		
-			
+		materials/textures/logic/caverns_destructible_rocks_mask_edge_1_very_large_hole_1.png
+		{	
+			max_instances	1			
+		}		
+		materials/textures/logic/caverns_destructible_rocks_mask_edge_1_very_large_hole_2.png
+		{	
+			max_instances	1			
+		}		
+		materials/textures/logic/caverns_destructible_rocks_mask_edge_1_very_large_hole_3.png
+		{	
+			max_instances	1			
+		}		
+		materials/textures/logic/caverns_destructible_rocks_mask_edge_1_very_large_hole_4.png
+		{	
+			max_instances	1
+		}	
 		
 	    //materials/textures/logic/caverns_destructible_rocks_mask_edge_1_medium_hole_1.png
 		//{	
@@ -131,27 +146,49 @@ MissionDef
 	creature_volumes_density        "0.75"
 	
 	tile_spawn_rules
-	{		
+	{	
+		biomes/caverns/tiles/caverns_canyons_06/caverns_canyons_06.tile
+		{
+			//min_instances	1
+			max_instances	2			
+		}
+		biomes/caverns/tiles/caverns_canyons_07/caverns_canyons_07.tile
+		{
+			//min_instances	1
+			max_instances	2			
+		}
 		biomes/caverns/tiles/caverns_plains_01/caverns_plains_01.tile
 		{	
 			random_weight	1.0
 		}
 		biomes/caverns/tiles/caverns_plains_02/caverns_plains_02.tile
 		{	
-			random_weight	6.0
+			random_weight	2.0
 		}
 		biomes/caverns/tiles/caverns_plains_03/caverns_plains_03.tile
 		{	
-			random_weight	3.0
+			random_weight	2.0
 		}
 		biomes/caverns/tiles/caverns_plains_04/caverns_plains_04.tile
 		{	
-			random_weight	3.0
+			random_weight	2.0
 		}
 		biomes/caverns/tiles/caverns_plains_05/caverns_plains_05.tile
 		{	
-			random_weight	1.0
-		}		
+			random_weight	2.0
+		}
+		biomes/caverns/tiles/caverns_plains_06/caverns_plains_06.tile
+		{	
+			random_weight	3.0
+		}
+		biomes/caverns/tiles/caverns_plains_07/caverns_plains_07.tile
+		{	
+			random_weight	3.0
+		}
+		biomes/caverns/tiles/caverns_plains_08/caverns_plains_08.tile
+		{	
+			random_weight	3.0
+		}
 		biomes/caverns/tiles/caverns_canyons_02/caverns_canyons_02.tile
 		{	
 			max_instances	3			
@@ -167,7 +204,7 @@ MissionDef
 		biomes/caverns/tiles/caverns_canyons_05/caverns_canyons_05.tile
 		{	
 			max_instances	3			
-		}
+		}		
 	}
 
    ambient_creature_species
@@ -333,7 +370,109 @@ MissionDef
                     spawn_chance           0.5
                 }
             }
-        }	
+        }
+		
+		GridSpawner
+        {
+            spawn_pool                  "loot_containers_small"
+			spawn_min_free_cell_margin	2
+			spawn_within_destructible_volumes "0"
+
+            //terrain_types               "mud,floor"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      150
+                loot_containers         70
+                loot_containers_small   100
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+            }
+
+            spawn_blueprints
+            {
+				spawners/loot_container_small_caverns_standard
+                {                    
+                    spawn_chance           0.4				
+                }				
+                spawners/loot_container_small_caverns_advanced
+                {                    
+                    spawn_chance           0.3
+                }				
+                spawners/loot_container_small_caverns_superior
+                {                   
+                    spawn_chance           0.2
+                }				
+                spawners/loot_container_small_caverns_extreme
+                {                    
+                    spawn_chance           0.1
+                }				
+			}
+		}
+		
+		GridSpawner
+        {
+            spawn_pool                  "power_well"
+			spawn_min_free_cell_margin	3
+			spawn_within_destructible_volumes "0"
+
+            spawn_min_distance_from_pools
+            {
+				mission_objective		180
+                player_spawn_point      200
+                loot_containers         70
+                loot_containers_small   60
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+				power_well				250				
+            }
+
+            spawn_blueprints
+            {
+				props/special/power_wells/power_well_source_health
+                {                    
+                    spawn_chance           0.1					
+                }
+				props/special/power_wells/power_well_source_forcefield
+                {                    
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_cooldowns
+                {
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_radar
+                {                 
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_loot
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_reflect_damage
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_drones
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_ammo
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_firerate
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_damage
+                {                 
+                    spawn_chance           0.1
+                }					
+			}
+		}
 		
 		
 	}

@@ -196,6 +196,22 @@ EntityBlueprint "effects/no_lifetime"		//flamethrower
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//flamethrower_ghost
+{
+	name "effects/weapon_items/flamethrower_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/flamethrower.mesh"
+		material	"selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//grenade_auncher
 {
 	name "effects/weapon_items/grenade_auncher"
@@ -228,6 +244,22 @@ EntityBlueprint "effects/no_lifetime"		//rocket_launcher
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//rocket_launcher_ghost
+{
+	name "effects/weapon_items/rocket_launcher_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 	"meshes/items/weapons/rocket_launcher.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//nuclear_missiles
 {
 	name "effects/weapon_items/nuclear_missiles"
@@ -244,6 +276,22 @@ EntityBlueprint "effects/no_lifetime"		//nuclear_missiles
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//nuclear_missiles_ghost
+{
+	name "effects/weapon_items/nuclear_missiles_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/nuclear_missiles.mesh"
+		material	"selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//floating_mines
 {
 	name "effects/weapon_items/floating_mines"
@@ -257,6 +305,38 @@ EntityBlueprint "effects/no_lifetime"		//floating_mines
 	{
 		mesh 		"meshes/items/weapons/floating_mines.mesh"
 		material 	"items/weapons/floating_mines"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//floating_mines_green
+{
+	name "effects/weapon_items/floating_mines_green"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/floating_mines.mesh"
+		material 	"items/weapons/floating_mines_acid"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//floating_mines_ghost
+{
+	name "effects/weapon_items/floating_mines_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 	 "meshes/items/weapons/floating_mines.mesh"
+		material "selector/hologram_blue"
 	}
 }
 
@@ -292,6 +372,38 @@ EntityBlueprint "effects/no_lifetime"		//spitter_cryo
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//spitter_fire
+{
+	name "effects/weapon_items/spitter_fire"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/spitter.mesh"
+		material 	"items/weapons/spitter_fire_basic"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//spitter_ghost
+{
+	name "effects/weapon_items/spitter_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/spitter.mesh"
+		material	"selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//cryogenic_atomizer
 {
 	name "effects/weapon_items/cryogenic_atomizer"
@@ -324,6 +436,21 @@ EntityBlueprint "effects/no_lifetime"		//corrosive_gun
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//corrosive_gun_ghost
+{
+	name "effects/weapon_items/corrosive_gun_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 	"meshes/items/weapons/corrosive_gun.mesh"
+		material "selector/hologram_blue"
+	}
+}
 
 
 EntityBlueprint "effects/no_lifetime"		//ball_green

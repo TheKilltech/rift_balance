@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // liquid_decompressor
 {
 	name  "buildings/resources/liquid_decompressor"
 
@@ -6,7 +6,7 @@ EntityBlueprint
 	{
 		name 					"liquid_decompressor"
 		bp   					"buildings/resources/liquid_decompressor"
-		category 				"resources"
+		category 				"liquids"
 		localization_id			"gui/hud/building_name/liquid_decompressor"
 		description				"gui/hud/building_description/liquid_decompressor"
 		menu_icon				"gui/hud/building_icons/liquid_decompressor"
@@ -15,7 +15,7 @@ EntityBlueprint
 		//buildable				"0"
 		//building_group			"liquid_compressor"
 		upgrade					"buildings/resources/liquid_decompressor_lvl_2"	
-		order					"15"	
+		order					"51"	
 		exclude_terrain_types 	"magma_hot_ground,magma_very_hot_ground"		
 		menu_action				"decompressor"
 		going_green_state		"1"
@@ -248,7 +248,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -313,9 +313,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.6"  // g
+			z "1"    // b
 			w "1"
 		}
 		size
@@ -323,8 +323,9 @@ EntityBlueprint
 			x "4"
 			y "4"
 		}
-					
+
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

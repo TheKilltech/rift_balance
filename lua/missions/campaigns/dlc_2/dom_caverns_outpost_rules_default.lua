@@ -34,9 +34,9 @@ return function()
 		{ action = "boss_attack",               type = "NEGATIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 4 },
 		{ action = "spawn_earthquake",          type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 3, logicFile="logic/weather/earthquake.logic", minTime = 60, maxTime = 60, weight = 0.5 },
 		{ action = "spawn_earthquake",          type = "NEGATIVE", gameStates="ATTACK|IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/earthquake.logic", minTime = 60, maxTime = 60, weight = 0.5 },
-		{ action = "shegret_attack",            type = "NEGATIVE", gameStates="IDLE|ATTACK",              minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",                           weight = 1 },
-		{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="IDLE",                     minEventLevel = 5, logicFile="logic/event/shegret_attack_hard.logic",                      weight = 0.75 },
-		{ action = "shegret_attack_very_hard",  type = "NEGATIVE", gameStates="IDLE",                     minEventLevel = 6, logicFile="logic/event/shegret_attack_very_hard.logic",                 weight = 0.5 },
+		{ action = "shegret_attack",            type = "NEGATIVE", gameStates="IDLE|ATTACK",              minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",                           weight = 1,    bindingParams = { attack_strength = "normal" } },
+		{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="IDLE",                     minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",                           weight = 0.75, bindingParams = { attack_strength = "hard" } },
+		{ action = "shegret_attack_very_hard",  type = "NEGATIVE", gameStates="IDLE",                     minEventLevel = 6, logicFile="logic/event/shegret_attack_hard.logic",                      weight = 0.5,  bindingParams = { attack_strength = "very_hard" } },
 		{ action = "spawn_resource_earthquake", type = "POSITIVE", gameStates="IDLE",                     minEventLevel = 5, logicFile="logic/weather/resource_earthquake.logic",                    weight = 1 },
 	}
 
@@ -61,15 +61,7 @@ return function()
 
 	rules.objectivesLogic = 
 	{
-		--{ name = "logic/objectives/kill_elite_krocoon.logic", minDifficultyLevel = 3 },
-		--{ name = "logic/objectives/destroy_nest_wingmite_single.logic", minDifficultyLevel = 4, maxDifficultyLevel = 6 }, 
-		--{ name = "logic/objectives/destroy_nest_wingmite_multiple.logic", minDifficultyLevel = 6 },
-		--{ name = "logic/objectives/destroy_nest_bradron_single.logic", minDifficultyLevel = 4, maxDifficultyLevel = 6 }, 
-		--{ name = "logic/objectives/destroy_nest_bradron_multiple.logic", minDifficultyLevel = 6 },
-		--{ name = "logic/objectives/destroy_nest_octabit_single.logic", minDifficultyLevel = 5, maxDifficultyLevel = 7 }, 
-		--{ name = "logic/objectives/destroy_nest_octabit_multiple.logic", minDifficultyLevel = 7 },
-		--{ name = "logic/objectives/destroy_nest_flurian_single.logic", minDifficultyLevel = 6, maxDifficultyLevel = 8 }, 
-		--{ name = "logic/objectives/destroy_nest_flurian_multiple.logic", minDifficultyLevel = 8 }
+		{ name = "logic/objectives/kill_elite_dynamic.logic", minDifficultyLevel = 5 },		
 	}
 
 	rules.attackCountPerDifficulty = 
@@ -102,6 +94,89 @@ return function()
 	rules.waveChanceRerollSpawn      = 15
 	rules.waveChanceReroll           = 40
 
+	rules.multiplayerWaves = 
+	{
+		 -- difficulty level 1		
+		{ 
+			additionalWaves = -1, -- Additional Waves count = 1 + additionalWaves - regardless of player number. Multiplayer Additional waves are disabled in single player mode. Check dom_mananger:GetMultiplayerAttackCount for actual code
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+			}
+		},
+	
+		 -- difficulty level 2
+		{ 
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+			}
+		},
+		 -- difficulty level 3
+		{ 
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+			}
+		},
+
+		 -- difficulty level 4
+		{ 
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+			}
+		},
+
+		 -- difficulty level 5 - This is when boss attacks start
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+			}
+		},
+
+		 -- difficulty level 6
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},
+			}
+		},
+
+		 -- difficulty level 7
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+
+		 -- difficulty level 8
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+
+		 -- difficulty level 9
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+	}
+	
 	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
 	rules.waves = {}
 
@@ -235,31 +310,31 @@ return function()
 	rules.bosses = 
 	{
 		{  -- difficulty level 1		
-			"logic/missions/survival/attack_boss_krocoon.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 		{  -- difficulty level 2			
-			"logic/missions/survival/attack_boss_krocoon.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 		{  -- difficulty level 3
-			"logic/missions/survival/attack_boss_krocoon.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 		{  -- difficulty level 4			
-			"logic/missions/survival/attack_boss_krocoon.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 		{  -- difficulty level 5
-			"logic/missions/survival/attack_boss_krocoon.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 		{  -- difficulty level 6
-			"logic/missions/survival/attack_boss_krocoon.logic",				
+			"logic/missions/survival/attack_boss_dynamic.logic",				
 		},
 		{  -- difficulty level 7
-			"logic/missions/survival/attack_boss_krocoon.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 		{  -- difficulty level 8
-			"logic/missions/survival/attack_boss_krocoon.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 		{  -- difficulty level 9
-			"logic/missions/survival/attack_boss_krocoon.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",			
 		},
 	}
 

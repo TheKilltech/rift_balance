@@ -253,14 +253,14 @@ EntityBlueprint
 	}
 
 	SkeletonDesc
-  {
-    name "meshes/buildings/main/headquarters_lvl_1"
-  }
+	{
+		name "meshes/buildings/main/headquarters_lvl_1"
+	}
 
 	AnimationGraphDesc
-  {
-    animation_graph_name "building_working"
-  }
+	{
+		animation_graph_name "building_working"
+	}
 
 	PhysicsDesc
  	{
@@ -319,9 +319,10 @@ EntityBlueprint
 
 	MinimapItemDesc
 	{
-		type			"image"
-		icon_material 	"gui/hud/minimap_icons/headquarters"
-		additional_z_order 1
+		type				"image"
+		icon_material 		"gui/hud/minimap_icons/headquarters"
+		additional_z_order 	1
+		layer_group			"important_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

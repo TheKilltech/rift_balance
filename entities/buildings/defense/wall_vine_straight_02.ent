@@ -1,0 +1,351 @@
+EntityBlueprint
+{
+	name  "buildings/defense/wall_vine_straight_02"
+
+	BuildingDesc
+	{
+		buildable				"0"
+		name 					"wall_vine_straight_02"
+		bp   					"buildings/defense/wall_vine_straight_02"
+		category 				"defense"
+		type					"wall"
+		localization_id			"gui/hud/building_name/wall_vine"
+		description				"gui/hud/building_description/wall_vine_lvl_1"
+		menu_icon				"gui/hud/building_icons/wall_vine"
+		require 				"headquarters"
+		order					"0"
+		upgrade					"buildings/defense/wall_vine_straight_02_lvl_2"
+		building_mode			"line"
+		exclude_terrain_types 	"magma_hot_ground,magma_very_hot_ground"
+		overrides				"wall"
+		foundation_blueprint      "buildings/foundation_vine"		
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name 			"default"
+				building_time 	8
+				building_cost
+				{
+					biomass_plant	"5"
+					carbonium 		"1"
+				}
+			}
+		}
+
+		connect
+		{
+			I		"buildings/defense/wall_vine_straight_01,buildings/defense/wall_vine_straight_03"
+		}
+	}
+	
+	ResistanceComponent
+	{
+		physical		"1.0"
+		fire			"2.5"
+		acid			"0.4"
+		energy			"1.0"
+		cryo			"1.5"
+		area			"0.5"
+	}
+
+	VegetationComponentDesc
+	{
+		bending_wind_scale				"0.1"		// skalowanie sily wiatru
+		bending_object_scale			"0.07"		// skalowanie sily odginania obiektow
+
+		// funkcja wygaszania: https://www.desmos.com/calculator/ypwp8smepf
+		bending_spring_time				"3.7"		// czas wygaszania
+		bending_spring_damping			"30.0"		// wygluszanie oscylacji
+		bending_spring_phases			"3.6"		// ilosc oscylacji
+		bending_spring_slope_factor		"1.1"		// pseudo "sprezystosc"
+
+		breaking_force_threshold		"6000.0"	// sila po przekroczeniu ktorej, roslina lezy zlamana
+		bending_recovery_delay			"15.0"      // czas jaki bedzie lezec po zlamaniu
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/defense/hedge_wall.lua"
+
+		database
+		{
+			cone_effect			string:"build_cone_1x1"
+			cone_effect_sell	string:"sell_small"		
+			random_rotation		int:"1"
+			//remove_lua_after_build int:"1"
+		}
+	}
+	
+	HealthDesc
+	{
+		max_health 					"400"
+		health 						"400"
+		regeneration 				"6"
+		regeneration_cooldown 		"10"
+		is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+	
+	RegenerationComponent
+	{
+		regeneration 				"6"
+		regeneration_cooldown 		"10"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/hedge_wall_2_lvl_1.mesh"
+		material "buildings/defense/hedge_wall_2_lvl_1"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/hedge_wall_1_lvl_1"
+	}
+
+	children
+	{
+		EntityBlueprint
+		{
+		    name "buildings/defense/hedge_wall_1_lvl_1/trigger_2"
+
+			TriggerDesc
+			{
+				owner 		"parent"
+				type		"GRID"
+
+				collision 	"character"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "6"
+					}
+				}
+			}
+		}
+		EntityBlueprint
+		{
+		
+			MeshDesc
+			{
+				mesh "meshes/buildings/defense/hedge_wall_roots.mesh"
+				material "buildings/defense/hedge_wall_roots"
+			}
+		}
+	}
+
+	TypeDesc
+	{
+		type "building"
+	}
+
+	TypeDesc
+	{
+		type "building|defense|wall"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x "2"
+						y "2.6"
+						z "2"
+
+						position
+						{
+							x "0.0"
+							y "1.3"
+							z "0.0"
+						}
+					}
+				}
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+   			PhysicsBoxShape
+   			{
+    				x	2
+    				y	2
+    				z	2
+   			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "1"
+			y "1"
+			z "1"
+			w "1"
+		}
+		size
+		{
+			x "1"
+			y "1"
+		}
+
+		visibility			"always"
+		layer_group			"defense_buildings"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	DestroyDesc
+	{
+
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "66_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/building_vegetation_explosion"
+					part_physics_material   "debris_heavy"
+					part_material 			"buildings/defense/hedge_wall_roots_ruins"
+					part_prefix 			"meshes/props/special/destructible_rocks/swamp_wall_small_03"
+					//part_effect 			"effects/buildings_generic/building_vegetation_trail"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				key "33_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/building_vegetation_explosion"
+					part_physics_material   "debris_heavy"
+					part_material 			"buildings/defense/hedge_wall_roots_ruins"
+					part_prefix 			"meshes/props/special/destructible_rocks/swamp_wall_small_03"
+					//part_effect 			"effects/buildings_generic/building_vegetation_trail"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/building_vegetation_explosion"
+					part_physics_material   "debris_heavy"
+					part_material 			"buildings/defense/hedge_wall_roots_ruins"
+					part_prefix 			"meshes/props/special/destructible_rocks/swamp_wall_medium_03"
+					//part_effect 			"effects/buildings_generic/building_vegetation_trail"
+					part_lifetime "3"
+				}
+
+				key "default"
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"
+					part_material 			"buildings/defense/hedge_wall_roots_ruins"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/props/special/destructible_rocks/swamp_wall_medium_03"
+					part_lifetime "3"
+				}
+
+				key "quicksand"
+			}
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_vegetation_small_base"
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/defense/wall_vine_straight_02_ruins"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/hedge_wall_2_lvl_1_ruins.mesh"
+		material "buildings/defense/hedge_wall_roots_ruins"	
+	}
+
+	children
+	{
+		EntityBlueprint
+		{
+		
+			MeshDesc
+			{
+				mesh "meshes/buildings/defense/hedge_wall_roots.mesh"
+				material "buildings/defense/hedge_wall_roots_ruins"
+			}
+		}
+	}
+}

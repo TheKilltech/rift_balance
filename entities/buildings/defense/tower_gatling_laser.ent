@@ -234,9 +234,9 @@ EntityBlueprint
 		type	"quad"
 		color
 		{
-			x "1"
-			y "0.5"
-			z "0"
+			x "0.6"  // r
+			y "0.25" // g
+			z "0.25" // b
 			w "1"
 		}
 		size
@@ -245,6 +245,7 @@ EntityBlueprint
 			y "3"
 		}
 		visibility			"always"
+		layer_group			"defense_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc
@@ -500,7 +501,7 @@ EntityBlueprint
 	base_blueprints
 	{
 		effects/weapons_elemental/projectile
-		lights/point/blue_small
+		//lights/point/blue_small
 		effects/no_lifetime
 	}
 

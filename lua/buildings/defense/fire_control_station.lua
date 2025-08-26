@@ -142,6 +142,7 @@ function fire_control_station:GetControlledEntities()
 			if string.find(bpname, "repair_facility")      then goto continue end
 			if string.find(bpname, "short_range_radar")    then goto continue end
 			if string.find(bpname, "ai_hub")               then goto continue end
+			if string.find(bpname, "wall")                 then goto continue end
 			
 			Insert(controlled, ent)
 		elseif self.restriction == "artillery" then

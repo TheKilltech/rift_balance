@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // liquid_pump
 {
 	name  "buildings/resources/liquid_pump"
 
@@ -6,7 +6,7 @@ EntityBlueprint
 	{
 		name 				"liquid_pump"
 		bp   				"buildings/resources/liquid_pump"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/liquid_pump"
 		description			"gui/hud/building_description/liquid_pump"
@@ -14,7 +14,7 @@ EntityBlueprint
 		require 			"headquarters"
 		upgrade				"buildings/resources/liquid_pump_lvl_2"
 		min_radius_effect   "voice_over/announcement/pump_too_close"
-		order				"9"
+		order				"1"
 		radius_name			"pump"
 		min_radius			"20"
 
@@ -212,7 +212,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource|not_move_to_target"
+		type "building|liquids|not_move_to_target"
 	}
 
 	SkeletonDesc
@@ -279,9 +279,9 @@ EntityBlueprint
 		type	"quad"
 		color
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -289,8 +289,10 @@ EntityBlueprint
 			x "1"
 			y "1"
 		}
+		
 		additional_z_order	"5"
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	HealthBarDesc

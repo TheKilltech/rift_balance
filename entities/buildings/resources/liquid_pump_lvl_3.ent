@@ -9,7 +9,7 @@ EntityBlueprint
 		buildable 			"0"
 		name 				"liquid_pump_lvl_3"
 		bp   				"buildings/resources/liquid_pump_lvl_3"
-		category 			"resources"
+		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/liquid_pump"
 		description			"gui/hud/building_description/liquid_pump"
@@ -26,10 +26,11 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2
+				building_time 7
 				building_cost
 				{
 					carbonium 	"100"
+					cobalt		"10"
 				}
 			}
 		}
@@ -41,6 +42,11 @@ EntityBlueprint
 	{
 		in
 		{
+			GameplayResource
+			{
+				resource 		"energy"
+				value			"10"
+			}
 			//GameplayResource
 			//{
 			//	group 			"vein"

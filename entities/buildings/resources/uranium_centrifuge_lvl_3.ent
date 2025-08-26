@@ -38,8 +38,8 @@ EntityBlueprint
 				building_time 30
 				building_cost
 				{
-					carbonium 	"2000"
-					steel 		"1400"
+					carbonium 	"1000"
+					steel 		"750"
 					palladium	"200"
 				}
 			}			
@@ -69,6 +69,12 @@ EntityBlueprint
 		}
 		out
 		{
+			GameplayResource
+			{
+				resource 			"uranium_depleted"
+				value			 	"3"
+				optional			"1"
+			}
 			GameplayResource
 			{
 				resource 			"uranium"

@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // gas_filtering_plant
 {
 	name  "buildings/resources/gas_filtering_plant"
 
@@ -6,14 +6,14 @@ EntityBlueprint
 	{
 		name 				"gas_filtering_plant"
 		bp   				"buildings/resources/gas_filtering_plant"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/gas_filtering_plant"
 		description			"gui/hud/building_description/gas_filtering_plant"
 		menu_icon			"gui/hud/building_icons/gas_filtering_plant"
 		type				"pipe"
 		require 			"headquarters"
 		upgrade				"buildings/resources/gas_filtering_plant_lvl_2"	
-		order				"11"		
+		order				"6"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
@@ -146,7 +146,6 @@ EntityBlueprint
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
 				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
-				//destroyed_state_effect_group 		"0_state"
 			}			
 		}
 	}
@@ -159,7 +158,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -222,9 +221,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -232,8 +231,9 @@ EntityBlueprint
 			x "3"
 			y "3"
 		}
-					
+
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

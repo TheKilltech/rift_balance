@@ -24,12 +24,12 @@ return function()
 		{ action = "change_time_of_day",             type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 3 },
 		{ action = "add_resource",                   type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, basePercentage = 30 },
 		{ action = "remove_resource",                type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, basePercentage = 20 },
-		{ action = "stronger_attack",                type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 1, amount = 2 },
 		{ action = "cancel_the_attack",              type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 1 },
 		{ action = "unlock_research",                type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1 },
 		{ action = "full_ammo",                      type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
 		{ action = "remove_ammo",                    type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
-		{ action = "boss_attack",                    type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 4 },
+		{ action = "boss_attack",                    type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 4 },
+		{ action = "stronger_attack",                type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 1, amount = 2 },
 		{ action = "shegret_attack",                 type = "NEGATIVE", gameStates="IDLE|ATTACK",           minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",                                      weight = 0.5 },
 		{ action = "shegret_attack_hard",            type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 5, logicFile="logic/event/shegret_attack_hard.logic",                                 weight = 0.25 },
 		{ action = "shegret_attack_very_hard",       type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 6, logicFile="logic/event/shegret_attack_very_hard.logic",                            weight = 0.15 },
@@ -62,7 +62,12 @@ return function()
 
 	rules.addResourcesOnRunOut = 
 	{
-		{ name = "titanium_deepvein", runOutPercentageOnMap = 30, minToSpawn = 20000, maxToSpawn = 40000 },
+		{ name = "titanium_vein",     runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn =  2000, maxToSpawn =  4000, chance = 75 },
+		{ name = "titanium_deepvein", runOutPercentageOnMap = 30, minEventLevel = 7, minToSpawn = 30000, maxToSpawn = 80000,                                                events = { "spawn_resource_earthquake" }, },
+		{ name = "cobalt_vein",       runOutPercentageOnMap = 10, minEventLevel = 5, minToSpawn =  3000, maxToSpawn =  5000, chance =  5 },
+		{ name = "iron_vein",         runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn =  3000, maxToSpawn =  5000, chance = 15 },
+		{ name = "iron_deepvein",     runOutPercentageOnMap = 20, minEventLevel = 5, minToSpawn = 30000, maxToSpawn = 90000, chance = 15,                                   events = { "spawn_resource_earthquake" }, },
+		{ name = "morphium_deepvein", runOutPercentageOnMap = 10, minEventLevel = 8, isInfinite = 1,                         chance = 25, eventGroup = "morphium_unlocked", events = { "spawn_resource_comet" },   blueprint = "weather/alien_comet_flying"  },
 	}
 
 	rules.majorAttackLogic =
@@ -70,13 +75,11 @@ return function()
 		{ level = 2, minLevel = 5, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },
 	}
 
-	rules.buildingsUpgradeStartsLogic = 
-	{			
-
-	}
+	rules.buildingsUpgradeStartsLogic = {	}
 
 	rules.objectivesLogic = 
 	{
+		{ name = "logic/objectives/kill_elite_dynamic.logic",            minDifficultyLevel = 3 },
 		{ name = "logic/objectives/destroy_nest_morirot_single.logic",   minDifficultyLevel = 3, maxDifficultyLevel = 6 }, 
 		{ name = "logic/objectives/destroy_nest_morirot_multiple.logic", minDifficultyLevel = 6 }
 	}
@@ -107,6 +110,90 @@ return function()
 		{80, 60, 50, 30, 30},  -- consecutive chances of wave repeating at level 9
 	}
 	
+	
+	rules.multiplayerWaves = 
+	{
+		 -- difficulty level 1		
+		{ 
+			additionalWaves = -1, -- Additional Waves count = 1 + additionalWaves - regardless of player number. Multiplayer Additional waves are disabled in single player mode. Check dom_mananger:GetMultiplayerAttackCount for actual code
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+			}
+		},
+	
+		 -- difficulty level 2
+		{ 
+			additionalWaves = 0,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+			}
+		},
+		 -- difficulty level 3
+		{ 
+			additionalWaves = 0,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+			}
+		},
+
+		 -- difficulty level 4
+		{ 
+			additionalWaves = 0,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+			}
+		},
+
+		 -- difficulty level 5
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+			}
+		},
+
+		 -- difficulty level 6
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},
+			}
+		},
+
+		 -- difficulty level 7
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+
+		 -- difficulty level 8
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+
+		 -- difficulty level 9
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+	}
+	
 	rules.waveChanceRerollSpawnGroup = 10
 	rules.waveChanceRerollSpawn      = 15
 	rules.waveChanceReroll           = 40
@@ -128,121 +215,19 @@ return function()
 	rules.waves = wave_gen:Generate({ groups = { "metallic" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },   suffixes = { "alpha" },         },   rules.waves)
 	rules.waves = wave_gen:Generate({ groups = { "metallic" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
 	rules.waves = wave_gen:Generate({ groups = { "metallic" },   difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
+		
+	rules.extraWaves = {}
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 1 },    biomes = { "magma" }, levels = { 1 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 2 },    biomes = { "magma" }, levels = { 2 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 3 },    biomes = { "magma" }, levels = { 3 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 4 },    biomes = { "magma" }, levels = { 4 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 5 },    biomes = { "magma" }, levels = { 5 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 6 },    biomes = { "magma" }, levels = { 6 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 7 },    biomes = { "magma" }, levels = { 7 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 8, 9 }, biomes = { "magma" }, levels = { 8 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
 	
-	rules.extraWaves = 
-	{
-		{  -- difficulty level 1		
-			"logic/missions/survival/attack_level_1_id_1_magma.logic",
-			"logic/missions/survival/attack_level_1_id_2_magma.logic",
-		},
-		{  -- difficulty level 2			
-			"logic/missions/survival/attack_level_2_id_1_magma.logic",
-			"logic/missions/survival/attack_level_2_id_2_magma.logic",
-		},
-		{  -- difficulty level 3
-			"logic/missions/survival/attack_level_3_id_1_magma.logic",
-			"logic/missions/survival/attack_level_3_id_2_magma.logic",
-		},
-		{  -- difficulty level 4			
-			"logic/missions/survival/attack_level_4_id_1_magma.logic",
-			"logic/missions/survival/attack_level_4_id_2_magma.logic",
-		},
-		{  -- difficulty level 5
-			"logic/missions/survival/attack_level_5_id_1_magma.logic",
-			"logic/missions/survival/attack_level_5_id_2_magma.logic",			
-		},
-		{  -- difficulty level 6
-			"logic/missions/survival/attack_level_6_id_1_magma.logic",
-			"logic/missions/survival/attack_level_6_id_2_magma.logic",			
-		},
-		{  -- difficulty level 7
-			"logic/missions/survival/attack_level_7_id_1_magma.logic",
-			"logic/missions/survival/attack_level_7_id_2_magma.logic",
-		},
-		{  -- difficulty level 8
-			"logic/missions/survival/attack_level_8_id_1_magma.logic",
-			"logic/missions/survival/attack_level_8_id_2_magma.logic",
-		},
-		{  -- difficulty level 9
-			"logic/missions/survival/attack_level_8_id_1_magma.logic",
-			"logic/missions/survival/attack_level_8_id_2_magma.logic",
-		},
-	}
-
-	rules.bosses = 
-	{
-		 -- difficulty level 1		
-		{ 
-			"logic/missions/survival/attack_boss_magmoth.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-	
-		 -- difficulty level 2
-		{ 			
-			"logic/missions/survival/attack_boss_magmoth.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-
-		 -- difficulty level 3
-		{ 
-			"logic/missions/survival/attack_boss_magmoth.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-
-		 -- difficulty level 4
-		{ 			
-			"logic/missions/survival/attack_boss_magmoth.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-
-		 -- difficulty level 5
-		{ 
-			"logic/missions/survival/attack_boss_magmoth.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",	
-		},
-
-		 -- difficulty level 6
-		{ 
-			"logic/missions/survival/attack_boss_magmoth.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",		
-		},
-
-		 -- difficulty level 7
-		{ 
-			"logic/missions/survival/attack_boss_magmoth.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-
-		 -- difficulty level 8
-		{ 
-			"logic/missions/survival/attack_boss_magmoth.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-
-		 -- difficulty level 9
-		{ 
-			"logic/missions/survival/attack_boss_magmoth.logic",
-			"logic/missions/survival/attack_boss_gnerot.logic",
-			"logic/missions/survival/attack_boss_nerilian.logic",
-			"logic/missions/survival/attack_boss_krocoon.logic",
-		},
-	}
+	rules.bosses = {}
+	rules.bosses = helper:Generate({ groups = { "" }, difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "magmoth", "gnerot", "nerilian", "krocoon" },   maxRepeats = 0 },   rules.bosses)
 
     return rules;
 end

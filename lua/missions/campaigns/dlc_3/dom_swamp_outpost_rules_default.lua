@@ -24,12 +24,12 @@ return function()
 		{ action = "change_time_of_day",               type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 3 },
 		{ action = "add_resource",                     type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, basePercentage = 30 },
 		{ action = "remove_resource",                  type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, basePercentage = 20 },
-		{ action = "stronger_attack",                  type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 1, amount = 2 },
 		{ action = "cancel_the_attack",                type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 1 },
 		{ action = "unlock_research",                  type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1 },
 		{ action = "full_ammo",                        type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
 		{ action = "remove_ammo",                      type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
-		{ action = "boss_attack",                      type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 4 },		
+		{ action = "boss_attack",                      type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 4 },
+		{ action = "stronger_attack",                  type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 1, amount = 2 },
 		{ action = "spawn_blue_hail",                  type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 4, logicFile="logic/weather/blue_hail.logic",     minTime = 30,  maxTime = 60,  weight = 0.25 },
 		{ action = "spawn_thunderstorm",               type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2, logicFile="logic/weather/thunderstorm.logic",  minTime = 60,  maxTime = 120 },
 		{ action = "spawn_blood_moon",                 type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 2, logicFile="logic/weather/blood_moon.logic",    minTime = 60,  maxTime = 120, weight = 2 },
@@ -65,12 +65,14 @@ return function()
 
 	rules.addResourcesOnRunOut = 
 	{
-		{ name = "cobalt_vein", runOutPercentageOnMap = 30, minToSpawn = 10000, maxToSpawn = 20000 },
+		{ name = "cobalt_vein",    runOutPercentageOnMap = 30, minToSpawn = 10000, maxToSpawn = 20000, chance = 30 },
+		{ name = "palladium_vein", runOutPercentageOnMap = 30, minToSpawn =  1000, maxToSpawn =  5000, chance = 15, eventGroup = "palladium_completed" },
+		{ name = "titanium_vein",  runOutPercentageOnMap = 30, minToSpawn =  1000, maxToSpawn =  5000, chance = 15, eventGroup = "titanium_completed" }
 	}
 	
 	rules.majorAttackLogic =
 	{			
-		{ level = 2, minLevel = 5, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },
+		{ level = 2, minLevel = 6, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },
 	}
 
 	rules.buildingsUpgradeStartsLogic = 
@@ -111,7 +113,7 @@ return function()
 	rules.objectivesLogic = 
 	{
 		{ name = "logic/objectives/kill_elite_baxmoth.logic",              minDifficultyLevel = 3 },
-		{ name = "logic/objectives/kill_elite_mudroner.logic",             minDifficultyLevel = 5 },
+		{ name = "logic/objectives/kill_elite_dynamic.logic",              minDifficultyLevel = 6 },
 		{ name = "logic/objectives/destroy_nest_stickrid_single.logic",    minDifficultyLevel = 3 }, 
 		{ name = "logic/objectives/destroy_nest_stickrid_multiple.logic",  minDifficultyLevel = 5 },
 		{ name = "logic/objectives/destroy_nest_plutrodon_single.logic",   minDifficultyLevel = 4 }, 
@@ -137,145 +139,100 @@ return function()
 	rules.waves = wave_gen:Generate({ groups = { "caverns" },   difficulty = {                6, 7, 8, 9}, biomes = { "jungle" },   levels = { 4 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
 	rules.waves = wave_gen:Generate({ groups = { "caverns" },   difficulty = {                   7, 8, 9}, biomes = { "jungle" },   levels = { 4 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
 	
-	rules.extraWaves = 
+	rules.extraWaves = {}
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 1 },    biomes = { "swamp" }, levels = { 1 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 2 },    biomes = { "swamp" }, levels = { 2 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 3 },    biomes = { "swamp" }, levels = { 3 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 4 },    biomes = { "swamp" }, levels = { 4 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 5 },    biomes = { "swamp" }, levels = { 5 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 6 },    biomes = { "swamp" }, levels = { 6 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 7 },    biomes = { "swamp" }, levels = { 7 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 8, 9 }, biomes = { "swamp" }, levels = { 8 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
+	
+	rules.bosses = {}
+	rules.bosses = helper:Generate({ groups = { "" }, difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "baxmoth" },   maxRepeats = 0 },   rules.bosses)
+	rules.bosses = helper:Generate({ groups = { "" }, difficulty = {             5, 6, 7, 8, 9 }, bosses = { "mudroner" },  maxRepeats = 0 },   rules.bosses)
+		
+	rules.multiplayerWaves = 
 	{
 		 -- difficulty level 1		
 		{ 
-			"logic/missions/survival/swamp/attack_level_1_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_1_id_2_swamp.logic",
+			additionalWaves = -1, -- Additional Waves count = 1 + additionalWaves - regardless of player number. Multiplayer Additional waves are disabled in single player mode. Check dom_mananger:GetMultiplayerAttackCount for actual code
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+			}
 		},
 	
 		 -- difficulty level 2
-		{ 			
-			"logic/missions/survival/swamp/attack_level_2_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_2_id_2_swamp.logic",
+		{ 
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+			}
 		},
-
 		 -- difficulty level 3
 		{ 
-			"logic/missions/survival/swamp/attack_level_3_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_3_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_3_id_3_swamp.logic",
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+			}
 		},
 
 		 -- difficulty level 4
-		{ 			
-			"logic/missions/survival/swamp/attack_level_3_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_3_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_3_id_3_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_3_swamp.logic",
+		{ 
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+			}
 		},
 
 		 -- difficulty level 5
 		{ 
-			"logic/missions/survival/swamp/attack_level_4_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_3_swamp.logic",
-			--"logic/missions/survival/swamp/attack_level_5_id_4_swamp.logic",			
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+			}
 		},
 
-		 -- difficulty level 6
+		 -- difficulty level 6 - start of canceroth waves - this is when boss attacks start
 		{ 
-			"logic/missions/survival/swamp/attack_level_4_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_4_id_3_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_5_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_5_id_2_swamp.logic",			
-			"logic/missions/survival/swamp/attack_level_5_id_3_swamp.logic",
-			--"logic/missions/survival/swamp/attack_level_6_id_5_swamp.logic",
+			additionalWaves = 1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},
+			}
 		},
 
 		 -- difficulty level 7
 		{ 
-			"logic/missions/survival/swamp/attack_level_5_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_5_id_2_swamp.logic",			
-			"logic/missions/survival/swamp/attack_level_5_id_3_swamp.logic",
-			--"logic/missions/survival/swamp/attack_level_7_id_5_swamp.logic",
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
 		},
 
 		 -- difficulty level 8
 		{ 
-			"logic/missions/survival/swamp/attack_level_5_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_5_id_2_swamp.logic",			
-			"logic/missions/survival/swamp/attack_level_5_id_3_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_3_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_4_swamp.logic",
-			--"logic/missions/survival/swamp/attack_level_8_id_5_swamp.logic",
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
 		},
 
 		 -- difficulty level 9
 		{ 
-			"logic/missions/survival/swamp/attack_level_5_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_5_id_2_swamp.logic",			
-			"logic/missions/survival/swamp/attack_level_5_id_3_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_1_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_2_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_3_swamp.logic",
-			"logic/missions/survival/swamp/attack_level_6_id_4_swamp.logic",
-			--"logic/missions/survival/swamp/attack_level_8_id_5_swamp.logic",
-		},
-	}
-
-
-
-	rules.bosses = 
-	{
-		 -- difficulty level 1		
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",			
-			--"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-	
-		 -- difficulty level 2
-		{ 			
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			--"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 3
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			--"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 4
-		{ 			
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 5
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 6
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 7
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 8
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
-		},
-
-		 -- difficulty level 9
-		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
 		},
 	}
 

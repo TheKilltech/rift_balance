@@ -71,7 +71,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"consumables_manufacturing"
-				value				"1"
+				value				"1.5"
 				family				"manufacturing"
 				optional			"1"
 			}	
@@ -82,7 +82,7 @@ EntityBlueprint
 	LuaDesc
 	{
 		script "lua/buildings/main/armory.lua"
-				
+		
 		database
 		{
 			cone_effect			string:"build_cone_5x5"
@@ -98,6 +98,7 @@ EntityBlueprint
 		remove_entity 	 "0"
 		remove_component "0"
 		recreate_component "1"
+		priority			"1"
 	}
 
 	HealthDesc
@@ -106,9 +107,9 @@ EntityBlueprint
 		health 						"2000"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
-		 is_manual 1
+		is_manual 1
 		update_health_uniform 		"1"
-	
+		
 
 		DestructionLevels
 		{
@@ -232,7 +233,7 @@ EntityBlueprint
 	}
 
 	PhysicsDesc
- 	{
+	{
 		objects
 		{
 			PhysicsObjectDesc
@@ -245,7 +246,7 @@ EntityBlueprint
 					PhysicsSphereShape
 					{
 						r "4.45"
-	
+						
 						position 
 						{
 							x "0.0"
@@ -269,32 +270,22 @@ EntityBlueprint
 	{
 		Shapes
 		{
-   			PhysicsBoxShape
-   			{
-    				x	10
-    				y	10
-    				z	10
-   			}			
+			PhysicsBoxShape
+			{
+				x	10
+				y	10
+				z	10
+			}			
 		}
 	}
 
 	MinimapItemDesc
 	{
-		type	"quad"
-		color 
-		{
-			x "0.2"
-			y "0.2"
-			z "1"
-			w "1"
-		}
-		size
-		{
-			x "5"
-			y "5"
-		}
-					
+		type				"image"
+		icon_material 		"gui/hud/minimap_icons/armory"
+		additional_z_order 	1
 		visibility			"always"
+		layer_group			"important_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

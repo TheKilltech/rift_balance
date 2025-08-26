@@ -6,12 +6,12 @@ EntityBlueprint
 	{
 		name 				"gas_extractor"
 		bp   				"buildings/resources/gas_extractor"
-		category 			"resources"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/gas_extractor"
 		description			"gui/hud/building_description/gas_extractor"
 		menu_icon			"gui/hud/building_icons/gas_extractor"
 		require 			"headquarters"
-		order				"15"
+		order				"8"
 		upgrade				"buildings/resources/gas_extractor_lvl_2"	
 		check_connect		"1"
 		type				"pipe"
@@ -197,7 +197,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	SkeletonDesc
@@ -271,9 +271,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -284,6 +284,7 @@ EntityBlueprint
 
 		additional_z_order	"5"
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

@@ -37,6 +37,8 @@ return function()
 		{ action = "spawn_meteor_shower",            type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 8, logicFile="logic/weather/meteor_shower.logic",            minTime = 30, maxTime = 60,   weight = 0.2  },	
 		{ action = "spawn_comet_silent",             type = "POSITIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 2, logicFile="logic/weather/comet_silent.logic",                                           weight = 1.2  },
 		{ action = "spawn_tornado_acid_near_player", type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 3, logicFile="logic/weather/tornado_acid_near_player.logic", minTime = 30, maxTime = 30,   weight = 0.5, weather = "SUN|WIND" },
+		{ action = "spawn_resource_earthquake",      type = "POSITIVE", gameStates="IDLE",                  minEventLevel = 4, logicFile="logic/weather/resource_earthquake.logic",                                    weight = 0.5 },
+		{ action = "spawn_resource_comet",           type = "POSITIVE", gameStates="IDLE",                  minEventLevel = 4, logicFile="logic/weather/resource_comet.logic",                                         weight = 0.25 }
 	}
 
 	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
@@ -47,7 +49,11 @@ return function()
 	
 	rules.addResourcesOnRunOut = 
 	{
-
+		{ name = "carbon_vein",        runOutPercentageOnMap =  5, minToSpawn =  2000, maxToSpawn =  5000,  chance = 25 },
+		{ name = "carbon_deepvein",    runOutPercentageOnMap =  5, minToSpawn = 20000, maxToSpawn = 90000,  chance = 15,                                    events = { "spawn_resource_earthquake" }},
+		{ name = "palladium_vein",     runOutPercentageOnMap =  5, minToSpawn =  2000, maxToSpawn =  5000,  chance = 25, eventGroup = "palladium_unlocked" },
+		{ name = "palladium_deepvein", runOutPercentageOnMap =  5, minToSpawn = 20000, maxToSpawn = 90000,  chance = 2,  eventGroup = "palladium_unlocked", events = { "spawn_resource_earthquake" }},
+		--{ name = "morphium_deepvein",  runOutPercentageOnMap = 10, isInfinite = 1,                         chance = 65, eventGroup = "morphium_unlocked", events = { "spawn_resource_comet" }, blueprint = "weather/alien_comet_flying"  },
 	}
 
 	rules.timeToNextDifficultyLevel = 

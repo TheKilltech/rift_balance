@@ -1,0 +1,97 @@
+EntityBlueprint
+{ 
+	name "items/loot/resources/shard_uranium_depleted"
+
+	MeshDesc
+	{
+		mesh 		"meshes/loot/resources/shard_uranium.mesh"
+		material 	"loot/resources/shard_uranium"
+	}
+}
+
+EntityBlueprint
+{ 
+	name "items/loot/resources/shard_uranium_depleted_item"
+
+	ResourceComponent
+	{
+		type_produced 	uranium_depleted
+		initial_amount	1
+	}
+
+	InventoryItemDesc
+	{
+		type 			"misc"
+		name 			"resource_name/uranium_depleted"
+		item_bp			"items/loot/resources/shard_uranium_depleted"
+		icon			"gui/hud/resource_icons/uranium_depleted"
+		bigger_icon 	"gui/hud/resource_icons/uranium_depleted_bigger"
+	}
+
+	LuaDesc
+	{
+		script "lua/items/misc/resource_giver.lua"
+	}
+
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"dynamic"
+				group_id 			"loot"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x 	"1.0"
+						y 	"0.75"
+						z 	"1.0"
+						
+						position 
+						{
+							x "0.0"
+							y "0.4"
+							z "0.0"
+						}							
+					}				
+				}
+				mass 		"380"				
+			}
+		}
+	}
+
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "loot_collect"
+			enabled "0"		
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/loot/loot_collect_metallic"
+				}
+			}
+		}
+
+		EffectGroup
+		{
+			group "loot_max"
+			enabled "0"		
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/loot/loot_max"
+				}
+			}
+		}
+	}
+}
+

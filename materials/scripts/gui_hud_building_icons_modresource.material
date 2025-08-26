@@ -2,6 +2,74 @@ import * from "materials/scripts/gui.material"
 
 
 
+/////  solid_material_storage
+
+material "gui/hud/building_icons/solid_material_storage_basic" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_basic.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_basic_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_lvl3_disabled.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_other" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_other.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_other_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_lvl2_disabled.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_rare" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_rare.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_basic_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_disabled.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_underground" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_underground.dds"
+}
+
+material "gui/hud/building_icons/solid_material_storage_underground_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/mining_elevator_disabled.dds"
+}
+
+
+
+/////  liquid_material_storage
+
+material "gui/hud/building_icons/liquid_material_storage_small" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/liquid_material_storage_small.dds"
+}
+
+material "gui/hud/building_icons/liquid_material_storage_small_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/liquid_material_storage_disabled.dds"
+}
+
+material "gui/hud/building_icons/liquid_material_storage_large" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/liquid_material_storage_large.dds"
+}
+
+material "gui/hud/building_icons/liquid_material_storage_large_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/liquid_material_storage_disabled.dds"
+}
+
+
+
 /////  liquid_pumpjack
 
 material "gui/hud/building_icons/liquid_pumpjack" : gui/default
@@ -34,7 +102,11 @@ material "gui/hud/building_icons/liquid_pumpjack_lvl3_disabled" : gui/default
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bio_condenser_lvl3_disabled.dds"
 }
 
+
+
 /////  bio-metal refineries
+
+/////  bio_cobalt_refinery
 
 material "gui/hud/building_icons/bio_cobalt_refinery" : gui/default
 {
@@ -46,6 +118,27 @@ material "gui/hud/building_icons/bio_cobalt_refinery_disabled" : gui/default
 	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/gas_filtering_plant_disabled.dds"
 }
 
+material "gui/hud/building_icons/bio_cobalt_refinery_lvl_2" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/bio_cobalt_refinery_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/bio_cobalt_refinery_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/gas_filtering_plant_disabled.dds"
+}
+
+material "gui/hud/building_icons/bio_cobalt_refinery_lvl_3" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/bio_cobalt_refinery_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/bio_cobalt_refinery_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/gas_filtering_plant_disabled.dds"
+}
+
+/////  bio_titanium_refinery
 
 material "gui/hud/building_icons/bio_titanium_refinery" : gui/default
 {
@@ -57,6 +150,27 @@ material "gui/hud/building_icons/bio_titanium_refinery_disabled" : gui/default
 	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/gas_filtering_plant_disabled.dds"
 }
 
+material "gui/hud/building_icons/bio_titanium_refinery_lvl_2" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/bio_titanium_refinery_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/bio_titanium_refinery_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/gas_filtering_plant_disabled.dds"
+}
+
+material "gui/hud/building_icons/bio_titanium_refinery_lvl_3" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/bio_titanium_refinery_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/bio_titanium_refinery_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/gas_filtering_plant_disabled.dds"
+}
+
+/////  bio_uranium_refinery
 
 material "gui/hud/building_icons/bio_uranium_refinery" : gui/default
 {
@@ -68,6 +182,27 @@ material "gui/hud/building_icons/bio_uranium_refinery_disabled" : gui/default
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bio_composter_disabled.dds"
 }
 
+material "gui/hud/building_icons/bio_uranium_refinery_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bio_uranium_refinery_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/bio_uranium_refinery_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bio_composter_disabled.dds"
+}
+
+material "gui/hud/building_icons/bio_uranium_refinery_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bio_uranium_refinery_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/bio_uranium_refinery_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bio_composter_disabled.dds"
+}
+
+/////  bio_palladium_refinery
 
 material "gui/hud/building_icons/bio_palladium_refinery" : gui/default
 {
@@ -78,6 +213,27 @@ material "gui/hud/building_icons/bio_palladium_refinery_disabled" : gui/default
 {
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/plasma_converter_disabled.dds"
 }
+
+material "gui/hud/building_icons/bio_palladium_refinery_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bio_palladium_refinery_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/bio_palladium_refinery_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/plasma_converter_disabled.dds"
+}
+
+material "gui/hud/building_icons/bio_palladium_refinery_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bio_palladium_refinery_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/bio_palladium_refinery_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/plasma_converter_disabled.dds"
+}
+
 
 
 /////  resource converters
@@ -110,6 +266,116 @@ material "gui/hud/building_icons/resource_converter_titanium" : gui/default
 material "gui/hud/building_icons/resource_converter_titanium_disabled" : gui/default
 {
 	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/resource_converter_disabled.dds"
+}
+
+
+
+/////  blast_furnace
+
+material "gui/hud/building_icons/blast_furnace" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/blast_furnace.dds"
+}
+
+material "gui/hud/building_icons/blast_furnace_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/blast_furnace.dds"
+}
+
+material "gui/hud/building_icons/blast_furnace_lvl_2" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/blast_furnace_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/blast_furnace_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/blast_furnace_lvl_2.dds"
+}
+
+
+/////  alloys_factory
+
+material "gui/hud/building_icons/alloys_factory_cobalt" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/alloys_factory_cobalt.dds"
+}
+
+material "gui/hud/building_icons/alloys_factory_cobalt_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/alloys_factory_cobalt.dds"
+}
+
+material "gui/hud/building_icons/alloys_factory_palladium" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/alloys_factory_palladium.dds"
+}
+
+material "gui/hud/building_icons/resource_converter_palladium_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/alloys_factory_palladium.dds"
+}
+
+material "gui/hud/building_icons/alloys_factory_titanium" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/alloys_factory_titanium.dds"
+}
+
+material "gui/hud/building_icons/alloys_factory_titanium_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/alloys_factory_titanium.dds"
+}
+
+material "gui/hud/building_icons/alloys_factory_uranium" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/alloys_factory_uranium.dds"
+}
+
+material "gui/hud/building_icons/alloys_factory_uranium_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/alloys_factory_uranium.dds"
+}
+
+
+/////  ore_mill
+
+material "gui/hud/building_icons/ore_mill" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ore_mill.dds"
+}
+
+material "gui/hud/building_icons/ore_mill_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ore_mill_disabled.dds"
+}
+
+material "gui/hud/building_icons/ore_mill_lvl_2" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ore_mill_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/ore_mill_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ore_mill_disabled.dds"
+}
+
+material "gui/hud/building_icons/ore_mill_lvl_3" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ore_mill_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/ore_mill_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ore_mill_disabled.dds"
+}
+
+material "gui/hud/building_icons/ore_mill_lvl_4" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ore_mill_lvl_4.dds"
+}
+
+material "gui/hud/building_icons/ore_mill_lvl_4_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ore_mill_disabled.dds"
 }
 
 
@@ -415,6 +681,17 @@ material "gui/hud/building_icons/fluorine_trap_disabled" : gui/default
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/fluorine_trap_disabled.dds"
 }
 
+material "gui/hud/building_icons/fluorine_trap_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/fluorine_trap_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/fluorine_trap_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/fluorine_trap_disabled.dds"
+}
+
+
 
 /////  reagent_condenser
 
@@ -539,6 +816,139 @@ material "gui/hud/building_icons/steel_seperator_lvl_3_disabled" : gui/default
 }
 
 
+
+/////  crystalizers
+
+/////  crystalizer_hazenite
+
+material "gui/hud/building_icons/crystalizer_hazenite" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystalizer_hazenite.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_hazenite_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystal_structure_small_01_yellow_disabled.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_hazenite_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystalizer_hazenite_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_hazenite_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystal_structure_small_01_yellow_disabled.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_hazenite_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystalizer_hazenite_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_hazenite_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystal_structure_small_01_yellow_disabled.dds"
+}
+
+/////  crystalizer_ferdonite
+
+material "gui/hud/building_icons/crystalizer_ferdonite" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystalizer_ferdonite.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_ferdonite_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystal_structure_small_01_disabled.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_ferdonite_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystalizer_ferdonite_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_ferdonite_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystal_structure_small_01_disabled.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_ferdonite_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystalizer_ferdonite_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_ferdonite_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystal_structure_small_01_disabled.dds"
+}
+
+/////  crystalizer_tanzanite
+
+material "gui/hud/building_icons/crystalizer_tanzanite" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystalizer_tanzanite.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_tanzanite_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystal_structure_small_03_violet_disabled.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_tanzanite_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystalizer_tanzanite_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_tanzanite_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystal_structure_small_03_violet_disabled.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_tanzanite_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystalizer_tanzanite_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_tanzanite_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystal_structure_small_03_violet_disabled.dds"
+}
+
+/////  crystalizer_rhodonite
+
+material "gui/hud/building_icons/crystalizer_rhodonite" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystalizer_rhodonite.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_rhodonite_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystal_structure_small_02_red_disabled.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_rhodonite_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystalizer_rhodonite_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_rhodonite_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystal_structure_small_02_red_disabled.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_rhodonite_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystalizer_rhodonite_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/crystalizer_rhodonite_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/crystal_structure_small_02_red_disabled.dds"
+}
+
+
+
 /////  heavy_water_plant
 
 material "gui/hud/building_icons/heavy_water_plant" : gui/default
@@ -574,6 +984,7 @@ material "gui/hud/building_icons/biomass_plant_press_lvl_2_disabled" : gui/defau
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
 }
 
+
 material "gui/hud/building_icons/biomass_morphed_press" : gui/default
 {
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_morphed_press.dds"
@@ -583,6 +994,17 @@ material "gui/hud/building_icons/biomass_morphed_press_disabled" : gui/default
 {
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
 }
+
+material "gui/hud/building_icons/biomass_morphed_press_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_morphed_press_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/biomass_morphed_press_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
+}
+
 
 material "gui/hud/building_icons/biomass_water_press" : gui/default
 {
@@ -604,6 +1026,7 @@ material "gui/hud/building_icons/biomass_water_press_lvl_2_disabled" : gui/defau
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
 }
 
+
 material "gui/hud/building_icons/biomass_oil_press" : gui/default
 {
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_oil_press.dds"
@@ -620,6 +1043,27 @@ material "gui/hud/building_icons/biomass_oil_press_lvl_2" : gui/default
 }
 
 material "gui/hud/building_icons/biomass_oil_press_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
+}
+
+
+material "gui/hud/building_icons/biomass_mycelium_press" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_mycelium_press.dds"
+}
+
+material "gui/hud/building_icons/biomass_mycelium_press_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
+}
+
+material "gui/hud/building_icons/biomass_mycelium_press_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/biomass_mycelium_press_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/biomass_mycelium_press_lvl_2_disabled" : gui/default
 {
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/animal_biomass_powerplant_disabled.dds"
 }

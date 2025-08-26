@@ -623,6 +623,14 @@ buildings/defense/tower_artillery
 				stat_type "AMMO_COST"
 			}
 
+			WeaponStatDef
+			{
+				max_value "4.000"
+				min_value "4.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPREAD"
+			}
+
 		}
 
 	}
@@ -807,6 +815,14 @@ buildings/defense/tower_artillery_lvl_2
 				min_value "1.200"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "4.000"
+				min_value "4.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPREAD"
 			}
 
 		}
@@ -1161,6 +1177,14 @@ buildings/defense/tower_artillery_propelled_lvl_2
 				min_value "1.500"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "4.000"
+				min_value "4.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPREAD"
 			}
 
 		}
@@ -2448,8 +2472,8 @@ buildings/defense/tower_flamer_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "110.000"
-				min_value "110.000"
+				max_value "100.000"
+				min_value "100.000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -3090,6 +3114,14 @@ buildings/defense/tower_heavy_artillery
 				stat_type "AMMO_SPEED"
 			}
 
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPREAD"
+			}
+
 		}
 
 	}
@@ -3175,6 +3207,14 @@ buildings/defense/tower_heavy_artillery_lvl_2
 				stat_type "WEAPON_SCALE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPREAD"
+			}
+
 		}
 
 	}
@@ -3258,6 +3298,14 @@ buildings/defense/tower_heavy_artillery_lvl_3
 				min_value "1.300"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3.000"
+				min_value "3.000"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPREAD"
 			}
 
 		}
@@ -4525,6 +4573,14 @@ buildings/defense/tower_power_rod
 				stat_type "AMMO_STUN"
 			}
 
+			WeaponStatDef
+			{
+				max_value "1.500"
+				min_value "1.500"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPREAD"
+			}
+
 		}
 
 	}
@@ -4634,6 +4690,14 @@ buildings/defense/tower_power_rod_lvl_2
 				stat_type "AMMO_STUN"
 			}
 
+			WeaponStatDef
+			{
+				max_value "1.500"
+				min_value "1.500"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPREAD"
+			}
+
 		}
 
 	}
@@ -4741,6 +4805,14 @@ buildings/defense/tower_power_rod_lvl_3
 				min_value "0.500"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.500"
+				min_value "1.500"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPREAD"
 			}
 
 		}

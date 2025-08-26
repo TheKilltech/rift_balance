@@ -267,9 +267,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0"
-			y "0"
-			z "1"
+			x "0"  // r
+			y "1"  // g
+			z "1"  // b
 			w "1"
 		}
 		sizes
@@ -278,6 +278,7 @@ EntityBlueprint
 			y "4"
 		}
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

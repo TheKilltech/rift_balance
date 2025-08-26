@@ -1,0 +1,116 @@
+<node_layout id="LuaBehaviourNode">
+  <value id="script" value="lua/graph/weather/resource_earthquake.lua"/>
+  <value id="database.Strings.StringData[0].key" value="time_of_day_preset"/>
+  <value id="database.Strings.StringData[1].key" value="earthquake_effect"/>
+  <value id="database.Strings.StringData[2].key" value="marker_bp"/>
+  <value id="database.Strings.StringData[3].key" value="resource"/>
+  <value id="database.Floats.FloatData[0].key" value="damage_per_second"/>
+  <value id="database.Floats.FloatData[1].key" value="health_percentage"/>
+  <value id="database.Floats.FloatData[2].key" value="local_effects_random_offset"/>
+  <value id="database.Floats.FloatData[3].key" value="minimum_distance_per_local_effect"/>
+  <value id="database.Floats.FloatData[4].key" value="radius"/>
+  <value id="database.Floats.FloatData[5].key" value="camera_shake_power"/> 
+  <value id="database.Integers.IntData[0].key" value="life_time"/>
+  <value id="database.Integers.IntData[1].key" value="camera_shake_freq"/>
+  <value id="database.Integers.IntData[2].key" value="min_amount"/>
+  <value id="database.Integers.IntData[3].key" value="max_amount"/>
+  <value id="database.Integers.IntData[10].key" value="is_infinite"/>
+  <value id="database.Integers.IntData[4].key" value="min_distance_from_player"/>
+  <value id="database.Integers.IntData[5].key" value="max_distance_from_player"/>
+  <value id="database.Integers.IntData[6].key" value="marker_color_r" />
+  <value id="database.Integers.IntData[7].key" value="marker_color_g" />
+  <value id="database.Integers.IntData[8].key" value="marker_color_b" />
+  <value id="database.Integers.IntData[9].key" value="marker_color_a" />   
+    
+  <row bgcolor="#42f4f4">
+    <text value="WEATHER RESOURCE EARTHQUAKE" width="400" align="center" font_weight="extra_bold"  />
+  </row>
+  <row bgcolor="#42f4f4">
+    <text value="Id:" width="30" align="left" font_weight="bold" />
+    <input id="self_id" width="370" font_weight="bold" />
+  </row>
+  <row bgcolor="#FFFFFF" height="1"/>
+  <row bgcolor="#000000" height="3"/>
+  <row bgcolor="#FFFFFF" height="1"/>
+
+  <row>
+    <text value="Weather Preset:" width="170" align="left" font_weight="bold" />
+    <input text="time_of_day_preset" width="200" id="database.Strings.StringData[0].value"  value="scripts/scene_params/earthquake.td" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+    <text value="Earthquake:" width="170" align="left" font_weight="bold" />
+    <input text="earthquake_effect" width="200" id="database.Strings.StringData[1].value"  value="effects/world/earthquake" font_weight="bold" valid_rule="not_empty" />
+  </row> 
+  <row>
+    <text value="Marker:" width="170" align="left" font_weight="bold" />
+    <input text="marker_bp" width="200" id="database.Strings.StringData[2].value"  value="effects/messages_and_markers/objective_marker" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+    <text value="Marker color:" width="170" font_weight="bold" />
+    <input type="int" min="0" max="255" width="66" text="marker_color_r" id="database.Integers.IntData[6].value" value="255" font_weight="bold" />
+    <input type="int" min="0" max="255" width="66" text="marker_color_g" id="database.Integers.IntData[7].value" value="0" font_weight="bold" />
+    <input type="int" min="0" max="255" width="66" text="marker_color_b" id="database.Integers.IntData[8].value" value="0" font_weight="bold" />
+  </row>
+    <row>
+    <text value="Damage Per Second:" width="170" align="left" font_weight="bold" />
+    <input text="damage_per_second" width="200" id="database.Floats.FloatData[0].value" value="0.1" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+    <text value="Min Health % For Damage:" width="170" align="left" font_weight="bold" />
+    <input text="health_percentage" width="200" id="database.Floats.FloatData[1].value" value="33" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+    <text value="Random Effect Offset:" width="170" align="left" font_weight="bold" />
+    <input text="local_effects_random_offset" width="200" id="database.Floats.FloatData[2].value" value="15" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+    <text value="Min Distance Per Effect:" width="170" align="left" font_weight="bold" />
+    <input text="minimum_distance_per_local_effect" width="200" id="database.Floats.FloatData[3].value" value="5" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+    <text value="Radius:" width="170" font_weight="bold"/>
+    <input text="radius" id="database.Floats.FloatData[4].value" width="200" valid_rule="not_empty" value="150" font_weight="bold"/>
+  </row>    
+  <row>
+    <text value="Life Time:" width="170" font_weight="bold"/>
+    <input text="life_time" id="database.Integers.IntData[0].value" width="200" valid_rule="not_empty" value="60" font_weight="bold"/>
+  </row>
+  <row bgcolor="#FFFFFF" height="1"/>
+  <row bgcolor="#000000" height="3"/>
+  <row bgcolor="#FFFFFF" height="1"/>
+  <row>
+      <text value="Camera Shake Power:" width="170" font_weight="bold"/>
+      <input text="camera_shake_power" id="database.Floats.FloatData[5].value" width="200" valid_rule="not_empty" value="0.5" font_weight="bold"/>
+  </row>
+  <row>
+      <text value="Camera Shake Freq:" width="170" font_weight="bold"/>
+      <input text="camera_shake_freq" id="database.Integers.IntData[1].value" width="200" valid_rule="not_empty" value="20" font_weight="bold"/>
+  </row>
+  <row bgcolor="#FFFFFF" height="1"/>
+  <row bgcolor="#000000" height="3"/>
+  <row bgcolor="#FFFFFF" height="1"/>
+  <row>
+      <text value="Resource:" width="170" align="left" font_weight="bold" />
+      <list type="multi" text="resource" width="200" source="resource_comet" id="database.Strings.StringData[3].value" font_weight="bold" />
+  </row>
+    <row>
+      <text value="Min Resource Amount:" width="170" align="left" font_weight="bold" />
+      <input text="min_amount" width="200" id="database.Integers.IntData[2].value" value="8000" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+      <text value="Max Resource Amount:" width="170" align="left" font_weight="bold" />
+      <input text="max_amount" width="200" id="database.Integers.IntData[3].value" value="14000" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+      <text value="Is Infinite Deposit:" width="170" align="left" font_weight="bold" />
+      <input text="is_infinite" width="200" id="database.Integers.IntData[10].value" value="0" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+      <text value="Min Distance From Player:" width="170" align="left" font_weight="bold" />
+      <input text="min_distance_from_player" width="200" id="database.Integers.IntData[4].value" value="100" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+      <text value="Max Distance From Player:" width="170" align="left" font_weight="bold" />
+      <input text="max_distance_from_player" width="200" id="database.Integers.IntData[5].value" value="300" font_weight="bold" valid_rule="not_empty" />
+  </row>
+</node_layout>

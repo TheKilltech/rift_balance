@@ -160,102 +160,6 @@ MissionDef
                 volume_spawn_ratio  "0.5"
             }
         }
-		
-		guardian_standard
-        {		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_cryo"
-				volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_acid"
-                volume_spawn_ratio  "1"
-            }		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_energy"
-                volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_fire"
-                volume_spawn_ratio  "1"
-            }				
-        }
-
-        guardian_advanced
-        {				
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_cryo"
-				volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_acid"
-                volume_spawn_ratio  "1"
-            }		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_energy"
-                volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_fire"
-                volume_spawn_ratio  "1"
-            }			
-        }
-
-        guardian_superior
-        {			
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_cryo"
-				volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_acid"
-                volume_spawn_ratio  "1"
-            }		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_energy"
-                volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_fire"
-                volume_spawn_ratio  "1"
-            }		
-        }
-
-        guardian_extreme
-        {		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_cryo"
-				volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_acid"
-                volume_spawn_ratio  "1"
-            }		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_energy"
-                volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_fire"
-                volume_spawn_ratio  "1"
-            }	
-        }
     }
 	
 	mission_object_spawners
@@ -316,7 +220,7 @@ MissionDef
 
             spawn_blueprints
             {
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      0,2
                     spawn_discoverable_level    1
@@ -330,7 +234,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      0,2
                     spawn_discoverable_level    1
@@ -344,7 +248,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -358,7 +262,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -372,7 +276,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -386,7 +290,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -400,7 +304,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -414,7 +318,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -428,7 +332,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -442,7 +346,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -502,26 +406,26 @@ MissionDef
 
             spawn_blueprints
             {
-				spawners/loot_container_small_bulb_standard
+				spawners/loot_container_small_acid_standard
                 {
                     // make a roll to check if blueprint can be spawned
                     spawn_chance           0.25
 					spawn_culls_entities_around 1
                 }				
 
-                spawners/loot_container_small_bulb_advanced
+                spawners/loot_container_small_acid_advanced
                 {
                     //spawn_instances_minmax 3,5
                     spawn_chance           0.1
                 }				
 
-                spawners/loot_container_small_bulb_superior
+                spawners/loot_container_small_acid_superior
                 {
                    // spawn_instances_minmax 2,3
                     spawn_chance           0.1
                 }				
 
-                spawners/loot_container_small_bulb_extreme
+                spawners/loot_container_small_acid_extreme
                 {
                     //spawn_instances_minmax 1,2
                     spawn_chance           0.05

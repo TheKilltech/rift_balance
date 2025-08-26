@@ -62,21 +62,72 @@ return function()
 	
 	rules.buildingsUpgradeStartsLogic = 
 	{			
-		{ name = "headquarters_lvl_2", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_1_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_1_exit.logic" },   
-		{ name = "headquarters_lvl_3", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_2_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_2_exit.logic" },   
-		{ name = "headquarters_lvl_4", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
-		{ name = "headquarters_lvl_5", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
-		{ name = "headquarters_lvl_6", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
-		{ name = "headquarters_lvl_7", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },    
+		--{ name = "headquarters_lvl_2", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_1_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_1_exit.logic" },   
+		--{ name = "headquarters_lvl_3", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_2_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_2_exit.logic" },   
+		--{ name = "headquarters_lvl_4", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
+		--{ name = "headquarters_lvl_5", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
+		--{ name = "headquarters_lvl_6", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
+		--{ name = "headquarters_lvl_7", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },    
 	}
 	
 	rules.objectivesLogic = 
 	{
-		{ name = "logic/objectives/kill_elite.logic",                    minDifficultyLevel = 3 },
+		{ name = "logic/objectives/kill_elite_dynamic.logic",            minDifficultyLevel = 3 },
 		{ name = "logic/objectives/destroy_nest_canoptrix_single.logic", minDifficultyLevel = 3 },
 		{ name = "logic/objectives/destroy_creeper.logic",               minDifficultyLevel = 5 } 
 	}
 	
+	rules.creatureDifficultyIncrementPerDOMDifficulty =
+	{
+		[1] =
+		{	
+			0,	 -- initial difficulty
+			0, -- difficulty level 2
+			0, -- difficulty level 3	
+			0.5, -- difficulty level 4
+			0.5, -- difficulty level 5
+			0.5, -- difficulty level 6
+			0.5, -- difficulty level 7
+			0.5, -- difficulty level 8
+			1.5, -- difficulty level 9
+		},
+		[2] =
+		{	
+			2, -- initial difficulty
+			0, -- difficulty level 2
+			1, -- difficulty level 3	
+			1, -- difficulty level 4
+			0, -- difficulty level 5
+			1, -- difficulty level 6
+			0, -- difficulty level 7
+			1, -- difficulty level 8
+			1, -- difficulty level 9
+		},
+		[3] =
+		{	
+			3,	 -- initial difficulty
+			0, -- difficulty level 2
+			1, -- difficulty level 3	
+			0, -- difficulty level 4
+			1, -- difficulty level 5
+			0, -- difficulty level 6
+			1, -- difficulty level 7
+			1, -- difficulty level 8
+			1, -- difficulty level 9
+		},
+		[4] =
+		{	
+			3,	 -- initial difficulty
+			0, -- difficulty level 2
+			1, -- difficulty level 3	
+			1, -- difficulty level 4
+			1, -- difficulty level 5
+			0, -- difficulty level 6
+			1, -- difficulty level 7
+			1, -- difficulty level 8
+			1, -- difficulty level 9
+		},
+	}
 	rules.extraWaves = 
 	{
 		 -- difficulty level 1		
@@ -113,8 +164,7 @@ return function()
 			"logic/missions/survival/attack_level_5_id_1_alpha.logic",
 			"logic/missions/survival/attack_level_5_id_2_alpha.logic",
 			"logic/missions/survival/attack_level_4_id_3_alpha.logic",
-			"logic/missions/survival/attack_level_5_id_4_alpha.logic",
-			"logic/missions/survival/attack_boss_arachnoid.logic",
+			"logic/missions/survival/attack_level_5_id_4_alpha.logic",			
 			--"logic/missions/survival/attack_level_5_id_1_ultra.logic",
 			--"logic/missions/survival/attack_level_5_id_2_ultra.logic",	
 			--"logic/missions/survival/attack_level_5_id_3_ultra.logic",	
@@ -127,8 +177,7 @@ return function()
 			"logic/missions/survival/attack_level_6_id_2_alpha.logic",
 			"logic/missions/survival/attack_level_5_id_3_alpha.logic",
 			"logic/missions/survival/attack_level_6_id_4_alpha.logic",
-			"logic/missions/survival/attack_level_6_id_5_alpha.logic",
-			"logic/missions/survival/attack_boss_arachnoid.logic",
+			"logic/missions/survival/attack_level_6_id_5_alpha.logic",			
 			--"logic/missions/survival/attack_level_6_id_1_ultra.logic",
 			--"logic/missions/survival/attack_level_6_id_2_ultra.logic",		
 			--"logic/missions/survival/attack_level_6_id_3_ultra.logic",		
@@ -141,8 +190,7 @@ return function()
 			"logic/missions/survival/attack_level_7_id_2_alpha.logic",
 			"logic/missions/survival/attack_level_6_id_3_alpha.logic",
 			"logic/missions/survival/attack_level_7_id_4_alpha.logic",
-			"logic/missions/survival/attack_level_7_id_5_alpha.logic",
-			"logic/missions/survival/attack_boss_arachnoid.logic",
+			"logic/missions/survival/attack_level_7_id_5_alpha.logic",			
 			--"logic/missions/survival/attack_level_7_id_1_ultra.logic",
 			--"logic/missions/survival/attack_level_7_id_2_ultra.logic",		
 			--"logic/missions/survival/attack_level_7_id_3_ultra.logic",		
@@ -155,8 +203,7 @@ return function()
 			"logic/missions/survival/attack_level_8_id_2_alpha.logic",
 			"logic/missions/survival/attack_level_7_id_3_alpha.logic",
 			"logic/missions/survival/attack_level_8_id_4_alpha.logic",
-			"logic/missions/survival/attack_level_8_id_5_alpha.logic",
-			"logic/missions/survival/attack_boss_arachnoid.logic",
+			"logic/missions/survival/attack_level_8_id_5_alpha.logic",			
 			--"logic/missions/survival/attack_level_8_id_1_ultra.logic",
 			--"logic/missions/survival/attack_level_8_id_2_ultra.logic",		
 			--"logic/missions/survival/attack_level_8_id_3_ultra.logic",		
@@ -169,8 +216,7 @@ return function()
 			"logic/missions/survival/attack_level_8_id_2_alpha.logic",
 			"logic/missions/survival/attack_level_8_id_3_alpha.logic",
 			"logic/missions/survival/attack_level_8_id_4_alpha.logic",
-			"logic/missions/survival/attack_level_8_id_5_alpha.logic",
-			"logic/missions/survival/attack_boss_arachnoid.logic",
+			"logic/missions/survival/attack_level_8_id_5_alpha.logic",			
 			--"logic/missions/survival/attack_level_8_id_1_ultra.logic",
 			--"logic/missions/survival/attack_level_8_id_2_ultra.logic",
 			--"logic/missions/survival/attack_level_8_id_3_ultra.logic",

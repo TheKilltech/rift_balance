@@ -1,5 +1,6 @@
 return function()
-    local rules = {}
+	local helper = require( "lua/missions/v2/waves_gen.lua" )
+	local rules  = helper:PrepareDefaultRules( {}, "scout", "default")
 
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 2
@@ -43,82 +44,27 @@ return function()
 		{ action = "spawn_meteor_shower",       type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4,                    logicFile="logic/weather/meteor_shower.logic",       minTime = 30, maxTime = 60,   weight = 0.5 },
 		{ action = "spawn_meteor_shower",       type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 4,                    logicFile="logic/weather/meteor_shower.logic",       minTime = 30, maxTime = 60,   weight = 0.25 },	
 		{ action = "spawn_comet_silent",        type = "POSITIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 1,                    logicFile="logic/weather/comet_silent.logic",                                      weight = 2 }
-		--{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 3 },
 	}
 	
-	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
-	{
-		20,  -- 1st event probability in percent
-		10,  -- 2nd event probability in percent
-		5,  -- 3rd event probability in percent
-	}
+	-- events spawn chance during/after attack (cooldown state). event timing is random ranging from the start of attack to max cooldown time.
+	-- chances are consecutive, i.e. dice roll for event n+1 may only happen if roll for event n was also succefful
+	rules.spawnCooldownEventChance = { 20, 10, 5 }
 
 	rules.addResourcesOnRunOut = 
 	{
-
+		{ name = "cobalt_vein",        runOutPercentageOnMap =  5, minToSpawn = 2000, maxToSpawn = 3000, chance = 5,                                      events = { "spawn_resource_comet" } },
+		{ name = "palladium_vein",     runOutPercentageOnMap =  5, minToSpawn = 2000, maxToSpawn = 3000, chance = 5,  eventGroup = "palladium_completed", events = { "spawn_resource_comet" } },
+		{ name = "morphium_deepvein",  runOutPercentageOnMap = 10, isInfinite = 1,                       chance = 20, eventGroup = "morphium_unlocked",   events = { "spawn_resource_comet" }, blueprint = "weather/alien_comet_flying"  },
+		--{ name = "petroleum_deepvein",   runOutPercentageOnMap = 10,  isInfinite = 1,                                                           events = { "spawn_resource_earthquake" } },
+		--{ name = "uranium_ore_deepvein", runOutPercentageOnMap = 10, minToSpawn = 40000, maxToSpawn = 50000, eventGroup = "uranium_completed",  events = { "spawn_resource_earthquake" } },
 	}
 
-	rules.timeToNextDifficultyLevel = 
-	{			
-		600, -- difficulty level 1
-		600, -- difficulty level 2
-		600, -- difficulty level 3	
-		600, -- difficulty level 4
-		1200, -- difficulty level 5
-		1800, -- difficulty level 6
-		3600, -- difficulty level 7
-		3600, -- difficulty level 8
-		7200, -- difficulty level 9
-	}
-
-	rules.prepareSpawnTime = 
-	{			
-		60,  -- difficulty level 1
-		60,  -- difficulty level 2
-		60,  -- difficulty level 3
-		60,  -- difficulty level 4	
-		60,  -- difficulty level 5	
-		60,  -- difficulty level 6	
-		60,  -- difficulty level 7
-		60,  -- difficulty level 8	
-		60,  -- difficulty level 9	
-	}
-
-	rules.buildingsUpgradeStartsLogic = 
-	{			
-  
-	}
+	rules.buildingsUpgradeStartsLogic = {	}
 
 	rules.objectivesLogic = 
 	{
 		{ name = "logic/objectives/kill_elite.logic",                      minDifficultyLevel = 4 },
 		{ name = "logic/objectives/destroy_nest_canoptrix_single.logic",   minDifficultyLevel = 3 },
-	}
-
-	rules.cooldownAfterAttacks = 
-	{			
-		60,  -- difficulty level 1
-		60,  -- difficulty level 2
-		90,  -- difficulty level 3
-		120,  -- difficulty level 4	
-		120,  -- difficulty level 5	
-		180,  -- difficulty level 6	
-		180,  -- difficulty level 7
-		240,  -- difficulty level 8	
-		240,  -- difficulty level 9	
-	}
-
-	rules.idleTime = 
-	{			
-		450,  -- difficulty level 1
-		600,  -- difficulty level 2
-		660,  -- difficulty level 3
-		720,  -- difficulty level 4	
-		1200,  -- difficulty level 5	
-		1800,  -- difficulty level 6	
-		2400,  -- difficulty level 7
-		2400,  -- difficulty level 8	
-		2400,  -- difficulty level 9	
 	}
 
 	rules.maxAttackCountPerDifficulty = 
@@ -132,32 +78,6 @@ return function()
 		1,  -- difficulty level 7
 		2,  -- difficulty level 8
 		2,  -- difficulty level 9
-	}
-	
-	rules.prepareAttackDefinitions =
-	{		
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 1	
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 2	
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 3	
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 4	
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 5	
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 6	
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 7	
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 8	
-		"logic/dom/attack_level_1_prepare.logic", -- difficulty level 9	
-	}
-
-	rules.wavesEntryDefinitions =
-	{		 
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 1
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 2
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 3
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 4
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 5
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 6
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 7
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 8
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 9
 	}
 	
 	rules.waveRepeatChances = 
@@ -183,16 +103,8 @@ return function()
 	
 	rules.waves = wave_gen:Generate({ groups = { "acid" },    difficulty = {       8, 9 },  biomes = { "" }, levels = { 1, 2 }, ids = { 2 },    suffixes = { "" },          },   rules.waves)
 	
-
-	rules.extraWaves = 
-	{
-	
-	}
-
-	rules.bosses = 
-	{
-
-	}
+	rules.extraWaves = 	{	}
+	rules.bosses = 	{	}
 
     return rules;
 end

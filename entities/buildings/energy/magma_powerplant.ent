@@ -41,7 +41,7 @@ EntityBlueprint
 			{
 				resource 	"magma"
 				value 		"300"
-				attachment	"att_in_1"
+				attachment	"att_in_1|att_in_3"
 			}
 		}
 		
@@ -68,6 +68,39 @@ EntityBlueprint
 		}
 	}
 
+	children
+	{
+		EntityBlueprint
+		{
+			name "buildings/resources/magma_powerplant_pipeline"
+			
+			PipeComponent
+			{
+				attachment		"att_in_1,att_in_3"
+			}
+
+			ResourceStorageDesc
+			{
+				Storages
+				{
+					Storage
+					{
+						group	 		"local"
+						max 	 		"100"
+						attachment		"att_in_1|att_in_3"
+					}
+
+				}
+			}
+
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/energy/magma_powerplant"
+			}
+		}
+	}
+	
 	LuaDesc
 	{
 		script "lua/buildings/building.lua"
@@ -257,9 +290,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0"
-			y "0"
-			z "1"
+			x "0"  // r
+			y "1"  // g
+			z "1"  // b
 			w "1"
 		}
 		sizes
@@ -268,6 +301,7 @@ EntityBlueprint
 			y "4"
 		}
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc
@@ -414,59 +448,87 @@ EntityBlueprint
 		{
 			"buildings/effects_big_base"
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_arrow"
 				}
 			}
-		}		
-////////////////////////MISC/////////////////////////			
+		}	
 		EffectGroup
 		{
-			group "working"
-			enabled "0"				
+			group "att_in_3"
+			enabled "0"
+			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/magma_powerplant_pool"								
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_3_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_3_pipe"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/magma_powerplant_pool"
 					bone "att_magma_1"
 					delay "1"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/magma_powerplant_pool"								
+					blueprint "effects/buildings_and_machines/magma_powerplant_pool"
 					bone "att_magma_2"
 					delay "1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/magma_powerplant_pool"								
+					blueprint "effects/buildings_and_machines/magma_powerplant_pool"
 					bone "att_magma_3"
 					delay "1"
 				}		
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/magma_powerplant_flow"								
+					blueprint "effects/buildings_and_machines/magma_powerplant_flow"
 					bone "att_magma_flow"
 					delay "1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_energy/magma_powerplant_working"		
+					blueprint "effects/buildings_energy/magma_powerplant_working"
 					delay "0.5"
-				}				
+				}
 			}
 		}	
 	}
