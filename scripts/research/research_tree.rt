@@ -16,7 +16,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl4"
+							research_name "gui/menu/research/name/headquarters_lvl3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -29,21 +29,21 @@ Research
 						{
 							amount "0.000"
 							resource "carbonium"
-							count "3500.000"
+							count "1500.000"
 						}
 
 						ResearchCost
 						{
 							amount "0.000"
 							resource "download"
-							count "1000.000"
+							count "400.000"
 						}
 
 						ResearchCost
 						{
 							amount "0.000"
 							resource "steel"
-							count "1500.000"
+							count "1000.000"
 						}
 
 					}
@@ -52,7 +52,7 @@ Research
 					position
 					{
 						x "207.000"
-						y "-72.000"
+						y "-180.000"
 					}
 
 					research_awards
@@ -2550,7 +2550,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl3"
+							research_name "gui/menu/research/name/solid_materials_storage_lvl2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -2563,21 +2563,21 @@ Research
 						{
 							amount "0.000"
 							resource "carbonium"
-							count "2500.000"
+							count "3500.000"
 						}
 
 						ResearchCost
 						{
 							amount "0.000"
 							resource "download"
-							count "400.000"
+							count "1000.000"
 						}
 
 						ResearchCost
 						{
 							amount "0.000"
 							resource "steel"
-							count "1250.000"
+							count "1750.000"
 						}
 
 					}
@@ -2586,7 +2586,7 @@ Research
 					position
 					{
 						x "207.000"
-						y "-180.000"
+						y "-72.000"
 					}
 
 					research_awards
@@ -11284,13 +11284,6 @@ Research
 					requirement_tooltip
 					requirements
 					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/solid_materials_storage_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
 						ResearchNodeRequirement
 						{
 							render_line "1"
@@ -46246,6 +46239,6 @@ Research
 
 	type
 	editor "6380"
-	version "185"
+	version "186"
 }
 

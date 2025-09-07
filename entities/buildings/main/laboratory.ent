@@ -55,6 +55,14 @@ EntityBlueprint
 				resource 			"biomass_animal"
 				value			 	"2"
 			}
+			
+			GameplayResource
+			{
+				resource 			"water"
+				value			 	"50"
+				attachment			"att_in_1"
+				family				"chem_in_1"
+			}
 		}
 		
 		out
@@ -411,6 +419,21 @@ EntityBlueprint
 			"buildings/effects_big_base"
 		}
 		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
