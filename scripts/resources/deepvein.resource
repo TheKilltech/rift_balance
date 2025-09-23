@@ -126,7 +126,6 @@ GameplayResourceDef
 	localization_id 	"resource_name/mud_deepvein"
 	bp  				"resources/resource_mud_deepvein"
 	type 				"vein"
-	specific_type		"local"
 	ore					"mud"
 	random_rotation 	"1"
 	icon				"gui/hud/resource_icons/mud_pool"
