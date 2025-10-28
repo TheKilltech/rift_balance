@@ -1,13 +1,13 @@
-//editor "scroll(829.22,-614.99)|zoom(0.33)"
+//editor "scroll(-178.99,-735.36)|zoom(0.13)"
 FlowGraphTemplate
 {
-	version "24"
-	editor "6415"
+	version "25"
+	editor "6627"
 	GraphNodes
 	{
 		LuaBehaviourNode
 		{
-			//editor "layout(event_start.xml)|pos(-1543,579)"
+			//editor "layout(event_start.xml)|pos(-1693,692)"
 			database
 			{
 				Integers
@@ -28,14 +28,14 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(entity_spawn_player.xml)|pos(-1295,576)"
+			//editor "layout(entity_spawn_player.xml)|pos(-1445,689)"
 			script "lua/graph/entity/entity_spawn_player.lua"
 			self_id "entity_spawn_player_0"
 		}
 
 		LuaBehaviourNode
 		{
-			//editor "layout(mission_end.xml)|pos(9139,517)"
+			//editor "layout(mission_end.xml)|pos(10929,543)"
 			database
 			{
 				Strings
@@ -56,7 +56,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_wait.xml)|pos(7622,547)"
+			//editor "layout(logic_wait.xml)|pos(9412,573)"
 			database
 			{
 				Floats
@@ -77,7 +77,7 @@ FlowGraphTemplate
 
 		NodeSelectorNode
 		{
-			//editor "layout(objective_exist.xml)|pos(1566,1171)"
+			//editor "layout(objective_exist.xml)|pos(1016,1744)"
 			database
 			{
 				Integers
@@ -108,7 +108,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_true.xml)|pos(1566,1275)"
+			//editor "layout(condition_true.xml)|pos(1016,1849)"
 			key "true"
 			self_id "objective_exist_0###true"
 			value "objective_exist_0###true"
@@ -116,7 +116,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_disable_node.xml)|pos(693,1273)"
+			//editor "layout(logic_disable_node.xml)|pos(143,1846)"
 			database
 			{
 				Strings
@@ -137,7 +137,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_disable_node.xml)|pos(647,2068)"
+			//editor "layout(logic_disable_node.xml)|pos(97,2641)"
 			database
 			{
 				Strings
@@ -158,7 +158,7 @@ FlowGraphTemplate
 
 		NodeSelectorNode
 		{
-			//editor "layout(objective_exist.xml)|pos(1541,1766)"
+			//editor "layout(objective_exist.xml)|pos(991,2339)"
 			database
 			{
 				Integers
@@ -189,7 +189,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_true.xml)|pos(1541,1871)"
+			//editor "layout(condition_true.xml)|pos(991,2444)"
 			key "true"
 			self_id "objective_exist_1###true"
 			value "objective_exist_1###true"
@@ -197,7 +197,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_wait_on_dissolve.xml)|pos(1594,766)"
+			//editor "layout(logic_wait_on_dissolve.xml)|pos(1044,1339)"
 			database
 			{
 				Integers
@@ -228,7 +228,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(campaign_objective_finish.xml)|pos(-289,-94)"
+			//editor "layout(campaign_objective_finish.xml)|pos(-439,19)"
 			database
 			{
 				Integers
@@ -265,7 +265,7 @@ FlowGraphTemplate
 
 		NodeSelectorNode
 		{
-			//editor "layout(objective_exist.xml)|pos(-853,-162)"
+			//editor "layout(objective_exist.xml)|pos(-1003,-49)"
 			database
 			{
 				Integers
@@ -296,7 +296,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_true.xml)|pos(-853,-52)"
+			//editor "layout(condition_true.xml)|pos(-1003,58)"
 			key "true"
 			self_id "objective_exist_2###true"
 			value "objective_exist_2###true"
@@ -304,7 +304,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(objective_generic.xml)|pos(8027,873)"
+			//editor "layout(objective_generic.xml)|pos(11245,899)"
 			database
 			{
 				Integers
@@ -330,6 +330,12 @@ FlowGraphTemplate
 					IntData
 					{
 						key "generate_type"
+						value "0"
+					}
+
+					IntData
+					{
+						key "always_visible"
 						value "0"
 					}
 
@@ -411,6 +417,12 @@ FlowGraphTemplate
 						value "1"
 					}
 
+					IntData
+					{
+						key "always_visible"
+						value "0"
+					}
+
 				}
 
 				Strings
@@ -460,7 +472,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(objective_generic.xml)|pos(662,526)"
+			//editor "layout(objective_generic.xml)|pos(652,688)"
 			database
 			{
 				Integers
@@ -486,6 +498,12 @@ FlowGraphTemplate
 					IntData
 					{
 						key "generate_type"
+						value "0"
+					}
+
+					IntData
+					{
+						key "always_visible"
 						value "0"
 					}
 
@@ -538,7 +556,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(objective_finish.xml)|pos(5769,379)"
+			//editor "layout(objective_finish.xml)|pos(7559,405)"
 			database
 			{
 				Integers
@@ -575,7 +593,7 @@ FlowGraphTemplate
 
 		NodeSelectorNode
 		{
-			//editor "layout(objective_exist.xml)|pos(5351,219)"
+			//editor "layout(objective_exist.xml)|pos(7141,245)"
 			database
 			{
 				Integers
@@ -606,7 +624,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_true.xml)|pos(5351,324)"
+			//editor "layout(condition_true.xml)|pos(7141,350)"
 			key "true"
 			self_id "objective_exist_3###true"
 			value "objective_exist_3###true"
@@ -614,7 +632,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_false.xml)|pos(5351,352)"
+			//editor "layout(condition_false.xml)|pos(7141,378)"
 			key "false"
 			self_id "objective_exist_3###false"
 			value "objective_exist_3###false"
@@ -622,7 +640,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(objective_finish.xml)|pos(7035,537)"
+			//editor "layout(objective_finish.xml)|pos(8825,563)"
 			database
 			{
 				Integers
@@ -659,13 +677,13 @@ FlowGraphTemplate
 
 		OrBehaviourNode
 		{
-			//editor "layout(logic_or.xml)|pos(6494,339)"
+			//editor "layout(logic_or.xml)|pos(8284,365)"
 			self_id "logic_or_0"
 		}
 
 		LuaBehaviourNode
 		{
-			//editor "layout(mission_change_creature_difficulty.xml)|pos(8024,643)"
+			//editor "layout(mission_change_creature_difficulty.xml)|pos(9814,669)"
 			database
 			{
 				Floats
@@ -696,7 +714,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_wait.xml)|pos(-862,-393)"
+			//editor "layout(logic_wait.xml)|pos(-1012,-279)"
 			database
 			{
 				Floats
@@ -717,7 +735,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_event_send.xml)|pos(8028,369)"
+			//editor "layout(logic_event_send.xml)|pos(9818,395)"
 			database
 			{
 				Integers
@@ -748,7 +766,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_event_send.xml)|pos(8635,207)"
+			//editor "layout(logic_event_send.xml)|pos(10425,233)"
 			database
 			{
 				Integers
@@ -779,7 +797,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(mission_enable_research.xml)|pos(8033,221)"
+			//editor "layout(mission_enable_research.xml)|pos(9823,247)"
 			database
 			{
 				Strings
@@ -800,7 +818,7 @@ FlowGraphTemplate
 
 		BehaviourGraphNode
 		{
-			//editor "layout(event_graph.xml)|pos(-927,-640)"
+			//editor "layout(event_graph.xml)|pos(-1012,-529)"
 			graph "logic/utility/music_adventure.logic"
 			self_id "event_graph_2"
 			start_point "default"
@@ -828,7 +846,7 @@ FlowGraphTemplate
 
 		DialogGroupNode
 		{
-			//editor "layout(interface_dialogue_show_group.xml)|pos(24,85)"
+			//editor "layout(interface_dialogue_show_group.xml)|pos(-126,198)"
 			global "0"
 			interrupt "0"
 			priority "0"
@@ -898,7 +916,7 @@ FlowGraphTemplate
 
 		DialogGroupNode
 		{
-			//editor "layout(interface_dialogue_show_group.xml)|pos(5376,819)"
+			//editor "layout(interface_dialogue_show_group.xml)|pos(7166,845)"
 			global "0"
 			interrupt "0"
 			priority "0"
@@ -929,7 +947,7 @@ FlowGraphTemplate
 
 		DialogGroupNode
 		{
-			//editor "layout(interface_dialogue_show_group.xml)|pos(922,974)"
+			//editor "layout(interface_dialogue_show_group.xml)|pos(372,1547)"
 			global "0"
 			interrupt "0"
 			priority "1.00"
@@ -952,7 +970,7 @@ FlowGraphTemplate
 
 		DialogGroupNode
 		{
-			//editor "layout(interface_dialogue_show_group.xml)|pos(893,1713)"
+			//editor "layout(interface_dialogue_show_group.xml)|pos(343,2286)"
 			global "0"
 			interrupt "0"
 			priority "1.00"
@@ -975,7 +993,7 @@ FlowGraphTemplate
 
 		DialogGroupNode
 		{
-			//editor "layout(interface_dialogue_show_group.xml)|pos(1564,899)"
+			//editor "layout(interface_dialogue_show_group.xml)|pos(1014,1472)"
 			global "0"
 			interrupt "0"
 			priority "1.00"
@@ -1019,7 +1037,7 @@ FlowGraphTemplate
 
 		NodeSelectorNode
 		{
-			//editor "layout(logic_if_exist_entity_new.xml)|pos(1546,-711)"
+			//editor "layout(logic_if_exist_entity_new.xml)|pos(1546,-737)"
 			database
 			{
 				Floats
@@ -1102,7 +1120,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_true.xml)|pos(1546,-389)"
+			//editor "layout(condition_true.xml)|pos(1546,-415)"
 			key "true"
 			self_id "logic_if_exist_entity_new_1###true"
 			value "logic_if_exist_entity_new_1###true"
@@ -1110,7 +1128,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_wait_on_event.xml)|pos(-771,553)"
+			//editor "layout(logic_wait_on_event.xml)|pos(-921,666)"
 			database
 			{
 				Integers
@@ -1141,7 +1159,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_wait.xml)|pos(119,575)"
+			//editor "layout(logic_wait.xml)|pos(-31,688)"
 			database
 			{
 				Floats
@@ -1342,7 +1360,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(entity_remove.xml)|pos(5739,-438)"
+			//editor "layout(entity_remove.xml)|pos(7529,-411)"
 			database
 			{
 				Floats
@@ -1529,7 +1547,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(interface_minimap_hide_zone.xml)|pos(5313,-841)"
+			//editor "layout(interface_minimap_hide_zone.xml)|pos(7103,-814)"
 			database
 			{
 				Integers
@@ -1560,7 +1578,7 @@ FlowGraphTemplate
 
 		NodeSelectorNode
 		{
-			//editor "layout(logic_if_exist_entity_new.xml)|pos(5313,-683)"
+			//editor "layout(logic_if_exist_entity_new.xml)|pos(7103,-656)"
 			database
 			{
 				Floats
@@ -1643,7 +1661,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_true.xml)|pos(5313,-361)"
+			//editor "layout(condition_true.xml)|pos(7103,-334)"
 			key "true"
 			self_id "logic_if_exist_entity_new_2###true"
 			value "logic_if_exist_entity_new_2###true"
@@ -1698,7 +1716,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_wait.xml)|pos(6822,327)"
+			//editor "layout(logic_wait.xml)|pos(8612,353)"
 			database
 			{
 				Floats
@@ -1719,7 +1737,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(mission_dom_resume.xml)|pos(-587,-395)"
+			//editor "layout(mission_dom_resume.xml)|pos(-737,-281)"
 			database
 			{
 				Integers
@@ -1749,7 +1767,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(objective_gather_resource.xml)|pos(4023,450)"
+			//editor "layout(objective_gather_resource.xml)|pos(4881,423)"
 			database
 			{
 				Integers
@@ -1794,6 +1812,11 @@ FlowGraphTemplate
 					{
 						key "finish_objective"
 						value "1"
+					}
+
+					IntData
+					{
+						key "always_visible"
 					}
 
 				}
@@ -1851,7 +1874,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_wait_on_event.xml)|pos(269,1187)"
+			//editor "layout(logic_wait_on_event.xml)|pos(-281,1760)"
 			database
 			{
 				Integers
@@ -1882,7 +1905,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_wait_on_event.xml)|pos(225,1787)"
+			//editor "layout(logic_wait_on_event.xml)|pos(-325,2360)"
 			database
 			{
 				Integers
@@ -1913,7 +1936,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_wait_on_event.xml)|pos(9365,879)"
+			//editor "layout(logic_wait_on_event.xml)|pos(12583,905)"
 			database
 			{
 				Integers
@@ -1944,7 +1967,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(objective_finish.xml)|pos(9714,875)"
+			//editor "layout(objective_finish.xml)|pos(12933,901)"
 			database
 			{
 				Integers
@@ -1981,7 +2004,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(objective_status_change.xml)|pos(8880,877)"
+			//editor "layout(objective_status_change.xml)|pos(12099,903)"
 			database
 			{
 				Integers
@@ -2018,7 +2041,7 @@ FlowGraphTemplate
 
 		OrBehaviourNode
 		{
-			//editor "layout(logic_or.xml)|pos(4817,-237)"
+			//editor "layout(logic_or.xml)|pos(6607,-210)"
 			self_id "logic_or_3"
 		}
 
@@ -2115,7 +2138,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(objective_finish.xml)|pos(5760,79)"
+			//editor "layout(objective_finish.xml)|pos(7550,105)"
 			database
 			{
 				Integers
@@ -2152,7 +2175,7 @@ FlowGraphTemplate
 
 		NodeSelectorNode
 		{
-			//editor "layout(objective_exist.xml)|pos(5351,-92)"
+			//editor "layout(objective_exist.xml)|pos(7141,-65)"
 			database
 			{
 				Integers
@@ -2183,7 +2206,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_false.xml)|pos(5351,17)"
+			//editor "layout(condition_false.xml)|pos(7141,43)"
 			key "false"
 			self_id "objective_exist_7###false"
 			value "objective_exist_7###false"
@@ -2191,7 +2214,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_true.xml)|pos(5351,45)"
+			//editor "layout(condition_true.xml)|pos(7141,71)"
 			key "true"
 			self_id "objective_exist_7###true"
 			value "objective_exist_7###true"
@@ -2199,7 +2222,7 @@ FlowGraphTemplate
 
 		OrBehaviourNode
 		{
-			//editor "layout(logic_or.xml)|pos(6480,23)"
+			//editor "layout(logic_or.xml)|pos(8270,49)"
 			self_id "logic_or_2"
 		}
 
@@ -2275,16 +2298,501 @@ FlowGraphTemplate
 			self_id "interface_minimap_show_zone_objective_1"
 		}
 
+		LuaBehaviourNode
+		{
+			//editor "layout(df_logic_player_list.xml)|pos(2073,699)"
+			script "lua/graph/logic/df_logic_player_list.lua"
+			self_id "df_logic_player_list_2"
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(df_entity_array_compare.xml)|pos(3267,723)"
+			database
+			{
+				compare_type "string:'equal'"
+				compare_value "int:'2'"
+			}
+
+			script "lua/graph/entity/df_entity_array_compare.lua"
+			self_id "df_entity_array_compare_2"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_true.xml)|pos(3267,875)"
+			key "true"
+			self_id "df_entity_array_compare_2###true"
+			value
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_false.xml)|pos(3267,903)"
+			key "false"
+			self_id "df_entity_array_compare_2###false"
+			value
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(df_entity_array_compare.xml)|pos(2805,373)"
+			database
+			{
+				compare_type "string:'equal'"
+				compare_value "int:'1'"
+			}
+
+			script "lua/graph/entity/df_entity_array_compare.lua"
+			self_id "df_entity_array_compare_1"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_true.xml)|pos(2805,525)"
+			key "true"
+			self_id "df_entity_array_compare_1###true"
+			value
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_false.xml)|pos(2805,553)"
+			key "false"
+			self_id "df_entity_array_compare_1###false"
+			value
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(df_entity_array_compare.xml)|pos(3766,1015)"
+			database
+			{
+				compare_type "string:'equal'"
+				compare_value "int:'3'"
+			}
+
+			script "lua/graph/entity/df_entity_array_compare.lua"
+			self_id "df_entity_array_compare_3"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_true.xml)|pos(3766,1167)"
+			key "true"
+			self_id "df_entity_array_compare_3###true"
+			value
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_false.xml)|pos(3766,1195)"
+			key "false"
+			self_id "df_entity_array_compare_3###false"
+			value
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(df_entity_array_compare.xml)|pos(4215,1306)"
+			database
+			{
+				compare_type "string:'equal'"
+				compare_value "int:'4'"
+			}
+
+			script "lua/graph/entity/df_entity_array_compare.lua"
+			self_id "df_entity_array_compare_4"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_true.xml)|pos(4215,1459)"
+			key "true"
+			self_id "df_entity_array_compare_4###true"
+			value
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_false.xml)|pos(4215,1487)"
+			key "false"
+			self_id "df_entity_array_compare_4###false"
+			value
+		}
+
+		OrBehaviourNode
+		{
+			//editor "layout(logic_or.xml)|pos(4667,518)"
+			self_id "logic_or_4"
+		}
+
+		OrBehaviourNode
+		{
+			//editor "layout(logic_or.xml)|pos(5755,847)"
+			self_id "logic_or_5"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(df_logic_player_to_entity.xml)|pos(2363,697)"
+			script "lua/graph/logic/df_logic_player_to_entity.lua"
+			self_id "df_logic_player_to_entity_2"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_and.xml)|pos(6280,557)"
+			script "lua/graph/logic/logic_and.lua"
+			self_id "logic_and_1"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_gather_resource.xml)|pos(4883,752)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "progress_max"
+						value "650"
+					}
+
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "is_additional"
+						value "1"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "0"
+					}
+
+					IntData
+					{
+						key "finish_objective"
+						value "1"
+					}
+
+					IntData
+					{
+						key "always_visible"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value "lua/objectives/gather_resource.lua"
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/story/acid_find_new_resource/main.gather_palladium"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "main.gather_palladium"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value "main"
+					}
+
+					StringData
+					{
+						key "resource_name"
+						value "palladium"
+					}
+
+					StringData
+					{
+						key "wait"
+						value "true"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_gather_resource_5"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_gather_resource.xml)|pos(4883,1055)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "progress_max"
+						value "800"
+					}
+
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "is_additional"
+						value "1"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "0"
+					}
+
+					IntData
+					{
+						key "finish_objective"
+						value "1"
+					}
+
+					IntData
+					{
+						key "always_visible"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value "lua/objectives/gather_resource.lua"
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/story/acid_find_new_resource/main.gather_palladium"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "main.gather_palladium"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value "main"
+					}
+
+					StringData
+					{
+						key "resource_name"
+						value "palladium"
+					}
+
+					StringData
+					{
+						key "wait"
+						value "true"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_gather_resource_6"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_gather_resource.xml)|pos(4877,1349)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "progress_max"
+						value "1000"
+					}
+
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "is_additional"
+						value "1"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "0"
+					}
+
+					IntData
+					{
+						key "finish_objective"
+						value "1"
+					}
+
+					IntData
+					{
+						key "always_visible"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value "lua/objectives/gather_resource.lua"
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/story/acid_find_new_resource/main.gather_palladium"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "main.gather_palladium"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value "main"
+					}
+
+					StringData
+					{
+						key "resource_name"
+						value "palladium"
+					}
+
+					StringData
+					{
+						key "wait"
+						value "true"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_gather_resource_7"
+		}
+
 	}
 
 	GraphConnections
 	{
 		default "entity_spawn_player_0"
+		df_entity_array_compare_1 "df_entity_array_compare_1###false|df_entity_array_compare_1###true"
+		df_entity_array_compare_1###false "df_entity_array_compare_2"
+		df_entity_array_compare_1###true "logic_or_4"
+		df_entity_array_compare_2 "df_entity_array_compare_2###false|df_entity_array_compare_2###true"
+		df_entity_array_compare_2###false "df_entity_array_compare_3"
+		df_entity_array_compare_2###true "objective_gather_resource_5"
+		df_entity_array_compare_3 "df_entity_array_compare_3###false|df_entity_array_compare_3###true"
+		df_entity_array_compare_3###false "df_entity_array_compare_4"
+		df_entity_array_compare_3###true "objective_gather_resource_6"
+		df_entity_array_compare_4 "df_entity_array_compare_4###false|df_entity_array_compare_4###true"
+		df_entity_array_compare_4###false "logic_or_4"
+		df_entity_array_compare_4###true "objective_gather_resource_7"
+		df_logic_player_list_2 "df_logic_player_to_entity_2"
+		df_logic_player_to_entity_2 "df_entity_array_compare_1"
 		entity_spawn_player_0 "event_graph_2|logic_wait_2|logic_wait_on_event_0|objective_exist_2"
 		interface_dialogue_show_group_2 "objective_generic_0"
 		interface_dialogue_show_group_3 "interface_dialogue_show_group_5|objective_exist_0"
 		interface_dialogue_show_group_4 "objective_exist_1"
 		interface_minimap_show_zone_objective_1 "interface_minimap_hide_zone_1"
+		logic_and_1 "interface_dialogue_show_group_2|logic_or_3|objective_exist_3|objective_finish_2"
 		logic_event_send_0 "mission_end_0"
 		logic_event_send_1 "mission_end_0"
 		logic_if_exist_entity_new_0 "logic_if_exist_entity_new_0###true"
@@ -2299,7 +2807,9 @@ FlowGraphTemplate
 		logic_or_1 "interface_dialogue_show_group_1|objective_exist_6"
 		logic_or_2 "logic_wait_5"
 		logic_or_3 "interface_minimap_hide_zone_1|logic_if_exist_entity_new_2|objective_exist_7"
-		logic_wait_0 "logic_event_send_0|mission_change_creature_difficulty_0|mission_enable_research_0|objective_generic_0"
+		logic_or_4 "objective_gather_resource_1"
+		logic_or_5 "logic_and_1"
+		logic_wait_0 "logic_event_send_0|mission_change_creature_difficulty_0|mission_enable_research_0"
 		logic_wait_1 "objective_generic_2"
 		logic_wait_2 "mission_dom_resume_0"
 		logic_wait_3 "logic_or_1"
@@ -2311,6 +2821,7 @@ FlowGraphTemplate
 		logic_wait_on_event_3 "objective_finish_3"
 		mission_change_creature_difficulty_0 "mission_end_0"
 		mission_enable_research_0 "logic_event_send_1"
+		mission_end_0 "objective_generic_0"
 		objective_exist_0 "objective_exist_0###true"
 		objective_exist_1 "objective_exist_1###true"
 		objective_exist_2 "objective_exist_2###true"
@@ -2328,10 +2839,13 @@ FlowGraphTemplate
 		objective_finish_1 "logic_or_0"
 		objective_finish_2 "logic_wait_0"
 		objective_finish_4 "logic_or_2"
-		objective_gather_resource_1 "interface_dialogue_show_group_2|logic_or_3|objective_exist_3|objective_finish_2"
+		objective_gather_resource_1 "logic_or_5"
+		objective_gather_resource_5 "logic_or_5"
+		objective_gather_resource_6 "logic_or_5"
+		objective_gather_resource_7 "logic_or_5"
 		objective_generic_0 "objective_status_change_0"
 		objective_generic_1 "interface_minimap_show_zone_objective_1|logic_if_exist_entity_new_3"
-		objective_generic_2 "logic_if_exist_entity_new_1|logic_wait_3|objective_gather_resource_1"
+		objective_generic_2 "df_logic_player_list_2|logic_if_exist_entity_new_1|logic_wait_3"
 		objective_status_change_0 "logic_wait_on_event_3"
 	}
 

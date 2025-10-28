@@ -38,6 +38,8 @@ return function()
 		{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="IDLE",                     minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",                           weight = 0.75, bindingParams = { attack_strength = "hard" } },
 		{ action = "shegret_attack_very_hard",  type = "NEGATIVE", gameStates="IDLE",                     minEventLevel = 6, logicFile="logic/event/shegret_attack_hard.logic",                      weight = 0.5,  bindingParams = { attack_strength = "very_hard" } },
 		{ action = "spawn_resource_earthquake", type = "POSITIVE", gameStates="IDLE",                     minEventLevel = 5, logicFile="logic/weather/resource_earthquake.logic",                    weight = 1 },
+        { action = "spawn_cave_in",             type = "POSITIVE", gameStates="ATTACK|IDLE",              minEventLevel = 5, logicFile="logic/weather/cave_in.logic",                                weight = 1 },
+        { action = "spawn_falling_stalactites", type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 4, logicFile="logic/weather/falling_stalactites.logic",                    weight = 1 },
 	}
 
 	-- events spawn chance during/after attack (cooldown state). event timing is random ranging from the start of attack to max cooldown time.
