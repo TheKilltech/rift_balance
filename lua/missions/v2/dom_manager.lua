@@ -174,6 +174,14 @@ end
 
 function dom_mananger:Update( dt)
 
+	local playersCounter = self:GetPlayersCounter()
+	if self.playersCounter ~= playersCounter then
+		self.playersCounter = playersCounter
+
+		self:RevertCreaturesBaseDifficulty()
+		self:UpdateCreaturesBaseDifficulty()
+	end
+
 	if ( self.debugVoteMachine == "ENTER") then
 		self:OnDebugVoteStart()
 		self.debugVoteTimer = GameStreamingService:GetVotingTime()
@@ -203,12 +211,16 @@ function dom_mananger:Update( dt)
 	local debug = "DEBUG DOM MANAGER:"
 	debug = debug .. "\n"
 
+	debug = debug .. " Current difficulty level: " .. tostring( self.currentDifficultyLevel ) .. "\n"
+	debug = debug .. " Max difficulty level : " .. tostring( self.freezedDifficultyLevel ) .. "\n"
+	debug = debug .. " Creature difficulty level: " .. tostring( CampaignService:GetCreaturesBaseDifficulty() ) .. "\n"
+
+	local playersCounter = self:GetPlayersCounter()
+	debug = debug .. " Players count: " .. tostring( playersCounter ) .. "\n"
+
 	local difficultyState = self.difficultyIncrease:GetCurrentState()
 	if difficultyState ~= "" then
 		local state = self.difficultyIncrease:GetState( difficultyState )
-
-		debug = debug .. " Current difficulty level: " .. tostring( self.currentDifficultyLevel ) .. "\n"
-		debug = debug .. " Max difficulty level : " .. tostring( self.freezedDifficultyLevel ) .. "\n"
 		debug = debug .. " Time to next difficulty level : " .. tostring( state:GetDurationLimit() - state:GetDuration() )
 	end
 
@@ -283,6 +295,7 @@ function dom_mananger:OnLoad()
 		self.version = 1
 	end
 
+	self.playersCounter = 0
 	self.player_death_position 	 = self.player_death_position or {}
 
 	self.rules = ProcessRulesTable( self.rules )
@@ -296,7 +309,6 @@ function dom_mananger:OnLoad()
 end
 
 function dom_mananger:FillInitialParamsDomManager()
-
 end
 
 	-- ======================================== LOGIC ============================================
@@ -479,7 +491,7 @@ function dom_mananger:OnDebugVoteExecute( )
 	if ( self.debugVoteStarted ) then
 		local actionIdx = RandInt( 1, #self.currentActions )
 		local action = self.currentActions[actionIdx]
-		QueueEvent("GameStreamingUpdateActionEvent",INVALID_ID, action, "ParticipentDebug_" .. tostring(self.debugVoteParticipent), self.debugVoteParticipent)
+		QueueEvent("GameStreamingUpdateActionEvent",INVALID_ID, action, "ParticipentDebug_" .. tostring(self.debugVoteParticipent), self.debugVoteParticipent, 0)
 		self.debugVoteParticipent = self.debugVoteParticipent + 1
 	end
 end
@@ -933,6 +945,8 @@ function dom_mananger:OnExitDifficultyIncrease( state )
 		self:VerboseLog("OnExitDifficultyIncrease : Difficulty level is max - " .. tostring( self.currentDifficultyLevel ) )
 	end
 
+	self:IncreaseCreaturesBaseDifficulty()
+
 end
 
 function dom_mananger:RandomizeSpawnPoint( borderSpawnPointGroupName, waveData )
@@ -1082,19 +1096,48 @@ function dom_mananger:GetAttackCount( currentDifficultyLevel )
 end
 
 function dom_mananger:GetMultiplayerAttackCount( currentDifficultyLevel )
-	local playersCount = #PlayerService:GetAllPlayers() - 1
+	local playersCounter = self:GetPlayersCounter()
+	self:VerboseLog("GetMultiplayerAttackCount : " .. tostring( playersCounter ) )
 
-	self:VerboseLog("GetMultiplayerAttackCount : " .. tostring( playersCount ) )
-
-	if ( playersCount > 0 ) then
-		return self.rules.multiplayerWaves[currentDifficultyLevel].additionalWaves + playersCount
+	if ( playersCounter > 1 ) then
+		return Clamp( self.rules.multiplayerWaves[currentDifficultyLevel].additionalWaves + 1, 0, 1 )
 	else
-		return 0
+		return Clamp( self.rules.multiplayerWaves[currentDifficultyLevel].additionalWaves, 0, 1 )
 	end
 end
 
+function dom_mananger:GetPlayersCounter()
+	local playersCount = #PlayerService:GetConnectedPlayers();
+	if playersCount > 4 then
+		return 4
+	end
+
+	return playersCount;
+end
+
 function dom_mananger:GetPrepareSpawnTime()
-	return self.rules.prepareSpawnTime[self.currentDifficultyLevel]
+	--return self.rules.prepareSpawnTime[self.currentDifficultyLevel]
+
+	local playersCounter = self:GetPlayersCounter()
+
+	local intermissionTimer = self.rules.prepareSpawnTime[self.currentDifficultyLevel]
+	if playersCounter > 1 then
+		intermissionTimer = intermissionTimer - ( ( playersCounter - 1 ) * DifficultyService:GetWaveIntermissionMultiplier() )
+	end
+
+	return intermissionTimer
+end
+
+function dom_mananger:GetCooldownAfterAttacksTime()
+	
+	local factor = 1
+
+	local playersCounter = self:GetPlayersCounter()
+	if ( playersCounter > 1 ) then
+		factor = 1 + playersCounter * DifficultyService:GetWaveCooldownPerPlayerFactor()
+	end
+
+	return ( self.rules.cooldownAfterAttacks[self.currentDifficultyLevel] / factor )
 end
 
 function dom_mananger:GetIdleTime()
@@ -1109,11 +1152,56 @@ function dom_mananger:OnEnterWait( state )
 	self:SetSuspended( true )
 	CampaignService:OperateDOMPlanetaryJump( true )
 
+	self:IncreaseCreaturesBaseDifficulty()
+
 	state:SetDurationLimit( 5 )
 end
 
+
+function dom_mananger:IncreaseCreaturesBaseDifficulty()
+	self:VerboseLog("IncreaseCreaturesBaseDifficulty" )
+
+	if ( self.rules.creatureDifficultyIncrementPerDOMDifficulty ~= nil ) then
+		
+		local playersCounter = self:GetPlayersCounter()
+		local index = Clamp( playersCounter, 1, #self.rules.creatureDifficultyIncrementPerDOMDifficulty )
+
+		CampaignService:IncreaseCreaturesBaseDifficulty( self.rules.creatureDifficultyIncrementPerDOMDifficulty[index][self.currentDifficultyLevel] )
+	end
+end
+
+function dom_mananger:RevertCreaturesBaseDifficulty()
+	self:VerboseLog( "RevertCreaturesBaseDifficulty" )
+
+	if ( self.rules.creatureDifficultyIncrementPerDOMDifficulty ~= nil ) then
+		
+		local playersCounter = self:GetPlayersCounter()
+		local index = Clamp( playersCounter, 1, #self.rules.creatureDifficultyIncrementPerDOMDifficulty )
+
+		for i = 1, self.currentDifficultyLevel do
+			CampaignService:DecreaseCreaturesBaseDifficulty( self.rules.creatureDifficultyIncrementPerDOMDifficulty[index][i] )
+		end	
+	end
+end
+
+function dom_mananger:UpdateCreaturesBaseDifficulty()
+	self:VerboseLog( "UpdateCreaturesBaseDifficulty" )
+
+	if ( self.rules.creatureDifficultyIncrementPerDOMDifficulty ~= nil ) then
+
+		local playersCounter = self:GetPlayersCounter()
+		local index = Clamp( playersCounter, 1, #self.rules.creatureDifficultyIncrementPerDOMDifficulty )
+
+		for i = 1, self.currentDifficultyLevel do
+			CampaignService:IncreaseCreaturesBaseDifficulty( self.rules.creatureDifficultyIncrementPerDOMDifficulty[index][i] )
+		end	
+	end
+end
+
 function dom_mananger:OnExitWait( state )
+
 	self:VerboseLog("OnExitWait" )
+
 
 	--if ( self.wavesDisabled == false ) then
 	--	self.spawner:ChangeState( "streaming" )
@@ -1225,7 +1313,7 @@ end
 
 function dom_mananger:OnEnterCooldownAfterSpawnTime( state )
 	self:VerboseLog("OnEnterCooldownAfterSpawnTime" )
-	self.cooldownTimer = self.rules.cooldownAfterAttacks[self.currentDifficultyLevel]
+	self.cooldownTimer = self:GetCooldownAfterAttacksTime()
 end
 
 function dom_mananger:OnExecuteCooldownAfterSpawnTime( state, dt )
@@ -1419,10 +1507,10 @@ function dom_mananger:OnHqEnterEntryLogic( state )
 		self:PrepareWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "OnHqEnterEntryLogic: Prepare attack name : ", self.hqLogicLevel.prepareTime, self.hqPreparedAttacks, self.hqPreparedAttackMarkers )
 
 		if ( self.rules.multiplayerWaves ~= nil ) then
-			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
+			local multiplayerAttackCount = self:GetMultiplayerAttackCount( difficultyLevel )
 
 			if ( multiplayerAttackCount > 0 ) then
-				self:PrepareWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( self.currentDifficultyLevel ), "OnHqEnterEntryLogic: Prepare attack name : ", self.hqLogicLevel.prepareTime, self.hqPreparedAttacks, self.hqPreparedAttackMarkers )
+				self:PrepareWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( difficultyLevel ), "OnHqEnterEntryLogic: Prepare attack name : ", self.hqLogicLevel.prepareTime, self.hqPreparedAttacks, self.hqPreparedAttackMarkers )
 			end
 		end
 	end
@@ -1566,17 +1654,25 @@ end
 function dom_mananger:SpawnWavesForDifficultyLevel( difficultyLevel, shouldAddtoSpawnedAttacks )
 	local borderSpawnPointGroupName = self.borderSpawnPointGroupNames[RandInt( 1,#self.borderSpawnPointGroupNames )]
 
+	local participants = ""
+	local percentageUse = 0
+
+	if self.extraAttacks > 0 then
+		participants = self.participants
+		percentageUse = self.participantsPercentageUse
+	end
+
 	if ( shouldAddtoSpawnedAttacks and #self.preparedAttacks > 0 ) then
 		self:SpawnPreparedWave( "dom_mananger:OnEnterSpawn: Prepare attack name : ", shouldAddtoSpawnedAttacks, self.preparedAttacks, self.spawnedAttacks )
 	else
 		local wavePool = self:GetWavePool( difficultyLevel )
-		self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Normal attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks )
+		self:SpawnWave( self:GetAttackCount( difficultyLevel ), borderSpawnPointGroupName, wavePool, "dom_mananger:OnEnterSpawn: Normal attack name : ", shouldAddtoSpawnedAttacks, participants, "label_small", percentageUse, self.spawnedAttacks )
 
 		if ( self.rules.multiplayerWaves ~= nil ) then
 			local multiplayerAttackCount = self:GetMultiplayerAttackCount( self.currentDifficultyLevel )
 
 			if ( multiplayerAttackCount > 0 ) then
-				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( difficultyLevel ), "dom_mananger:OnEnterSpawn: Multiplayer attack name : ", shouldAddtoSpawnedAttacks, "", "label_small", 0, self.spawnedAttacks )
+				self:SpawnWave( multiplayerAttackCount, borderSpawnPointGroupName, self:GetMultiplayerWavePool( difficultyLevel ), "dom_mananger:OnEnterSpawn: Multiplayer attack name : ", shouldAddtoSpawnedAttacks, participants, "label_small", percentageUse, self.spawnedAttacks )
 			end
 		end
 	end
@@ -1647,48 +1743,17 @@ function dom_mananger:OnEnterStreaming( state )
 end
 
 function dom_mananger:OnExecuteStreaming( state )
-	
 	if ( ( GameStreamingService:IsInStreamEvent() == false ) or ( GameStreamingService:IsStreamingSessionStarted() == false ) ) then
 		self.spawner:ChangeState( "spawn" )
 	end
-
 end
 
 function dom_mananger:OnExitStreaming( state )
 	self:VerboseLog("OnExitStreaming" )
 end
 
-local function HasOtherAlivePlayersInTeam( current_player )
-	local player_team = PlayerService:GetPlayerTeam( current_player )
-
-	local players = PlayerService:GetPlayersFromTeam( player_team )
-	for player_id in Iter(players) do
-		local pawn = PlayerService:GetPlayerControlledEnt( player_id )
-		if current_player ~= player_id and HealthService:IsAlive( pawn ) then
-			return true
-		end
-	end
-
-	return false
-end
-
 function dom_mananger:OnRespawnFailedEvent( evt )
 	self:VerboseLog("Mission failed" )
-
-	local player_id = evt:GetPlayerId()
-	if HasOtherAlivePlayersInTeam( player_id) and self.player_death_position[ player_id ] then
-
-		local position = self.player_death_position[ player_id ]
-		self.player_death_position[ player_id ] = nil;
-
-		local player_team = EntityService:GetTeam(PlayerService:GetPlayerTeam( player_id ))
-		local spawner = EntityService:SpawnEntity("player/player_respawner", position.x, position.y, position.z, "none" )
-
-		local player_reference = reflection_helper(EntityService:CreateComponent(spawner, "PlayerReferenceComponent"))
-		player_reference.player_id = player_id
-		player_reference.reference_type.internal_enum = 4
-		return;
-	end
 
     LampService:ReportGameFailed()
 	MissionService:ShowEndGameHud( 5.0, false )
@@ -1699,75 +1764,14 @@ function dom_mananger:OnRespawnFailedEvent( evt )
 	end
 end
 
-function dom_mananger:DestroyPlayerItems( owner, player )
-	local count = DifficultyService:GetNumberOfItemsRemovedOnDeath();
-
-	if ( count == 0 ) then
-		return
-	end
-	local status = CampaignService:GetMissionStatus( CampaignService:GetCurrentMissionId() )
-	if ( status ~= MISSION_STATUS_IN_PROGRESS and status ~= MISSION_STATUS_NONE ) then
-		return
-	end
-
-	local items = PlayerService:GetAllEquippedItemsInSlot( "LEFT_HAND", player )
-	ConcatUnique( items, PlayerService:GetAllEquippedItemsInSlot( "RIGHT_HAND", player ) )   
-	count = math.min( count, #items )
-
-	local name = ""
-	local lvl = ""
-	for i=1,count,1 do
-		local number = RandInt(1, #items)
-		local entity = items[number];
-		Remove( items, entity)
-		name = ItemService:GetItemName( entity )
-		lvl = ItemService:GetItemLevel( entity )
-		EntityService:RemoveEntity( entity)
-	end
-
-end
-
-function dom_mananger:DropPlayerItems( owner, player )
-	local dropItemsCount = DifficultyService:GetNumberOfItemsDroppedOnDeath();
-	if ( dropItemsCount == 0 ) then
-		return
-	end
-
-	local mech = PlayerService:GetPlayerControlledEnt( player)
-	if ( mech ~= INVALID_ID ) then
-		local mechDatabase = EntityService:GetDatabase( mech )
-		if ( mechDatabase:GetIntOrDefault("disable_drop",0  ) == 1 ) then
-			return
-		end
-	end
-
-	local items = PlayerService:GetAllEquippedItemsInSlot( "LEFT_HAND" , player)
-	ConcatUnique( items, PlayerService:GetAllEquippedItemsInSlot( "RIGHT_HAND", player ) )   
-	dropItemsCount = math.min( dropItemsCount, #items )
-
-	local dropped = {}
-	local name = ""
-	local lvl = ""
-	for i=1,dropItemsCount,1 do
-		local number = RandInt(1, #items)
-		local entity = items[number];
-		Insert(dropped, entity )
-		Remove( items, entity)
-		name = ItemService:GetItemName( entity )
-		lvl = ItemService:GetItemLevel( entity )
-		PlayerService:DropItem( entity, owner, owner )
-	end
-
-	if dropItemsCount >= (#items + #dropped) then
-		CampaignService:UnlockAchievement(ACHIEVEMENT_LEAVING_EMPTY_HANDED);
-	end
-end
-
 function dom_mananger:OnPlayerDiedEvent( evt )
-	self:DestroyPlayerItems(evt:GetEntity(), evt:GetPlayerId())
-	self:DropPlayerItems(evt:GetEntity(), evt:GetPlayerId())
-
 	self.player_death_position[ evt:GetPlayerId() ] = EntityService:GetPosition( evt:GetEntity() )
+end
+
+function dom_mananger:OnPlayerCreateRequest( evt )
+end
+
+function dom_mananger:OnPlayerRemovedEvent( evt )
 end
 
 return dom_mananger

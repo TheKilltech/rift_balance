@@ -159,28 +159,6 @@ MissionDef
             spawn_blueprints
             {
                 spawners/swamp_spawner_standard
-                {
-                    // make a roll to check if blueprint can be spawned
-                    spawn_chance           0.5
-                }
-
-                spawners/swamp_spawner_advanced
-                {
-                    spawn_instances_minmax 3,5
-                    spawn_chance           0.2
-                }
-
-                spawners/swamp_spawner_superior
-                {
-                    spawn_instances_minmax 2,3
-                    spawn_chance           0.2
-                }
-
-                spawners/swamp_spawner_extreme
-                {
-                    spawn_instances_minmax 1,2
-                    spawn_chance           0.1
-                }
             }
         }
 		
@@ -311,7 +289,7 @@ MissionDef
 
             spawn_blueprints
             {
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      0,2
                     spawn_discoverable_level    1
@@ -325,7 +303,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      0,2
                     spawn_discoverable_level    1
@@ -339,7 +317,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -353,7 +331,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -367,7 +345,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -381,7 +359,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -395,7 +373,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -409,7 +387,7 @@ MissionDef
                     }
                 }
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -423,7 +401,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1
@@ -437,7 +415,7 @@ MissionDef
                     }
                 }
 				
-				spawners/loot_spawner
+				spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      3,5
                     spawn_discoverable_level    1

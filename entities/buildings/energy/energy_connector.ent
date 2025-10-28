@@ -51,6 +51,7 @@ EntityBlueprint
 		{
 			cone_effect			string:"build_cone_1x1"
 			cone_effect_sell	string:"sell_small"
+			remove_lua_after_build int:"1"
 		}
 
 	}
@@ -94,7 +95,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|energy|not_move_to_target"
+		type "building|energy|not_move_to_target|energy_connector"
 	}
 
 	SkeletonDesc
@@ -182,6 +183,7 @@ EntityBlueprint
 		}
 			
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	HealthBarDesc

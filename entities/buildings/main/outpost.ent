@@ -18,7 +18,7 @@ EntityBlueprint
 		order				"1"
 		map_limit			"LOCAL_ANG_GLOBAL"
 	#ifdef win
-		limit			    "12"
+		limit			    "15"
 	#else
 		limit			    "10"
 	#endif
@@ -75,34 +75,10 @@ EntityBlueprint
 			}
 			Storage
 			{
-				resource	 "carbonium"
-				max 		 "50"
-			}
-			Storage
-			{
-				resource	 "steel"
-				max 		 "50"
-			}
-			Storage
-			{
-				resource	 "cobalt"
-				max 		 "50"
-			}	
-			Storage
-			{
-				resource	 "uranium"
-				max 		 "50"
-			}	
-			Storage
-			{
-				resource	 "palladium"
-				max 		 "50"
-			}	
-			Storage
-			{
-				resource	 "titanium"
-				max 	 	 "50"
-			}			
+				group	 		"global"
+				subgroup		"base"
+				max 	 		"50"
+			}		
 			Storage
 			{
 				resource	 "ammo_tower_explosive"
@@ -323,9 +299,10 @@ EntityBlueprint
 
 	MinimapItemDesc
 	{
-		type			"image"
-		icon_material 	"gui/hud/minimap_icons/headquarters"
-		additional_z_order 1
+		type				"image"
+		icon_material 		"gui/hud/minimap_icons/headquarters"
+		additional_z_order 	1
+		layer_group			"important_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

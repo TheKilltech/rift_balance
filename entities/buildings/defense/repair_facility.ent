@@ -14,7 +14,7 @@ EntityBlueprint
 		order				"4"
 		upgrade				"buildings/defense/repair_facility_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		
+
 		costs
 		{
 			BuildingCostInfo
@@ -24,12 +24,12 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"100"
-					steel 		"75"			
-					ai			"1"			
+					steel 		"75"
+					ai			"1"
 					cobalt 		"25"
 				}
-			}		
-		}		
+			}
+		}
 	}
 
 	ResourceConverterDesc
@@ -41,7 +41,7 @@ EntityBlueprint
 				resource 			"energy"
 				value			 	"1"
 			}
-			
+
 		}
 		priority 5
 	}
@@ -49,7 +49,7 @@ EntityBlueprint
 	LuaDesc
 	{
 		script "lua/buildings/defense/repair_facility_drone.lua"
-		
+
 		database
 		{
 			cone_effect				string:"build_cone_3x3"
@@ -75,14 +75,14 @@ EntityBlueprint
 		regeneration_cooldown 		"0"
 		 is_manual 1
 		update_health_uniform 		"1"
-		
+
 		DestructionLevels
 		{
 			DestructionLevel
 			{
 				health 								"66"
 				destroy_comp_delay 					"0"
-				destroy_comp_event 					"66_destroy"				
+				destroy_comp_event 					"66_destroy"
 				destroyed_state_effect_group 		"66_state"
 			}
 			DestructionLevel
@@ -97,17 +97,17 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/defense/repair_facility.mesh"
-		material "buildings/defense/repair_facility"
-	
+		mesh "meshes/buildings/defense/repair_facility_lvl_1.mesh"
+		material "buildings/defense/repair_facility_lvl_1"
+
 		SubMeshes
 		{
 			SubMesh
 			{
 				id "1"
-				material "buildings/defense/repair_facility_energy"
+				material "buildings/defense/repair_facility_lvl_1_energy"
 			}
-		}		
+		}
 	}
 
 	TypeDesc
@@ -117,7 +117,7 @@ EntityBlueprint
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/defense/repair_facility"
+		name "meshes/buildings/defense/repair_facility_lvl_1"
 	}
 
 	AnimationGraphDesc
@@ -141,7 +141,7 @@ EntityBlueprint
 						r "1.45"
 						half_height "2"
 
-						position 
+						position
 						{
 							x "0.0"
 							y "1.45"
@@ -155,7 +155,7 @@ EntityBlueprint
 							z "0.7"
 							y "0.0"
 						}
-					}	
+					}
 				}
 			}
 		}
@@ -177,14 +177,14 @@ EntityBlueprint
     				x	4
     				y	4
     				z	4
-   			}			
+   			}
 		}
 	}
 
 	MinimapItemDesc
 	{
 		type	"quad"
-		color 
+		color
 		{
 			x "0.7"
 			y "0.7"
@@ -197,6 +197,7 @@ EntityBlueprint
 			y "2"
 		}
 		visibility			"always"
+		layer_group			"defense_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc
@@ -213,14 +214,14 @@ EntityBlueprint
 	LootDesc
 	{
 		explosion_max_power 	"2000"
-		explosion_min_power 	"1000"	
+		explosion_min_power 	"1000"
 	}
 
 	DestroyDesc
 	{
-		
+
 		DestroyPatterns
-		{		
+		{
 			Pair
 			{
 				key "66_destroy"
@@ -230,12 +231,12 @@ EntityBlueprint
 					explosion_max_power 	"6000"
 					explosion_min_power 	"2000"
 					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
-					part_physics_material   "debris_heavy"								
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					part_prefix 			"meshes/misc/building_medium_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_lifetime "3"
-				}	
+				}
 			}
 			Pair
 			{
@@ -246,10 +247,10 @@ EntityBlueprint
 					explosion_max_power 	"6000"
 					explosion_min_power 	"2000"
 					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
-					part_physics_material   "debris_heavy"	
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					part_prefix 			"meshes/misc/building_medium_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_lifetime "3"
 				}
 			}
@@ -261,15 +262,15 @@ EntityBlueprint
 					explosion_max_power 	"6000"
 					explosion_min_power 	"2000"
 					explosion_effect 		"effects/buildings_generic/explosion_big_random"
-					part_physics_material   "debris_heavy"	
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_prefix 			"meshes/misc/building_large_parts_generic"
-					part_lifetime "3"	
+					part_lifetime "3"
 				}
 
 				key "default"
-			}		
+			}
 			Pair
 			{
 				value
@@ -278,24 +279,24 @@ EntityBlueprint
 					explosion_max_power 	"6000"
 					explosion_min_power 	"2000"
 					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
-					part_physics_material   "debris_heavy"	
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_prefix 			"meshes/misc/building_large_parts_generic"
-					part_lifetime "3"	
+					part_lifetime "3"
 				}
 
 				key "quicksand"
-			}				
+			}
 		}
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
+		}
 		EffectGroup
 		{
 			group "working"
@@ -308,8 +309,8 @@ EntityBlueprint
 					bone "att_healing_energy"
 				}
 			}
-		}	
-		
+		}
+
 		EffectGroup
 		{
 			group "drones"
@@ -322,7 +323,7 @@ EntityBlueprint
 
 				}
 			}
-		}		
+		}
 	}
 }
 
@@ -339,7 +340,7 @@ EntityBlueprint
 				resource 			"energy"
 				value			 	"20"
 			}
-			
+
 		}
 		priority 5
 	}

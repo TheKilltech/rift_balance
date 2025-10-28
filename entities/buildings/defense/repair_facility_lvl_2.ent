@@ -6,7 +6,7 @@ EntityBlueprint
 
 	BuildingDesc
 	{
-		buildable			"0"		
+		buildable			"0"
 		name 				"repair_facility_lvl_2"
 		bp   				"buildings/defense/repair_facility_lvl_2"
 		category 			"defense"
@@ -16,8 +16,8 @@ EntityBlueprint
 		require 			"headquarters"
 		order				"4"
 		upgrade				"buildings/defense/repair_facility_lvl_3"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"			
-		
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
 		costs
 		{
 			BuildingCostInfo
@@ -27,17 +27,48 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"200"
-					steel 		"150"						
+					steel 		"150"
 					cobalt 		"50"
 				}
-			}		
-		}		
+			}
+		}
 	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/repair_facility.mesh"
+		material "buildings/defense/repair_facility"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/defense/repair_facility_energy"
+			}
+		}
+	}
+
+	TypeDesc
+	{
+		type "building|defense"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/repair_facility"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "building_working"
+	}
+
 
 	LuaDesc
 	{
 		script "lua/buildings/defense/repair_facility_drone.lua"
-		
+
 		database
 		{
 			cone_effect				string:"build_cone_3x3"
@@ -63,14 +94,14 @@ EntityBlueprint
 		regeneration_cooldown 		"0"
 		 is_manual 1
 		update_health_uniform 		"1"
-		
+
 		DestructionLevels
 		{
 			DestructionLevel
 			{
 				health 								"66"
 				destroy_comp_delay 					"0"
-				destroy_comp_event 					"66_destroy"				
+				destroy_comp_event 					"66_destroy"
 				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"66_state"
 			}
@@ -86,11 +117,11 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
+		}
 
 		EffectGroup
 		{
@@ -104,20 +135,8 @@ EntityBlueprint
 					bone "att_healing_energy"
 				}
 			}
-		}	
-		EffectGroup
-		{
-			group "level"
-			enabled "1"
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/level_2"
-					bone "att_level"
-				}
-			}
-		}	
+		}
+
 		EffectGroup
 		{
 			group "drones"
@@ -130,7 +149,6 @@ EntityBlueprint
 
 				}
 			}
-		}			
+		}
 	}
 }
-

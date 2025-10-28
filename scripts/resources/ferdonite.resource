@@ -19,8 +19,8 @@ GameplayResourceDef
 	localization_id "resource_name/ferdonite_crystal"
 	bp  			""
 	type 			"vein"
-	icon			"gui/hud/resource_icons/ferdonite_vein"
-	bigger_icon		"gui/hud/resource_icons/ferdonite_vein_bigger"
+	icon			"gui/hud/resource_icons/ferdonite"
+	bigger_icon		"gui/hud/resource_icons/ferdonite_bigger"
 	ore				"ferdonite"
 
 	//missing_effect "voice_over/announcement/not_enough_ferdonite"		

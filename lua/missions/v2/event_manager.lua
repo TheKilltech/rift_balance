@@ -194,6 +194,32 @@ function event_manager:GetResearchNameFromAction( actionName )
 	return ""
 end
 
+function event_manager:GetBindingsFromObjectiveParams( name )
+	local bindingParams = {}
+
+		for data in Iter( self.rules.objectivesLogic ) do 
+		
+		if ( data.name == name ) and ( data.bindingParams ~= nil ) then
+			bindingParams = data.bindingParams
+		end
+	end
+
+	return bindingParams
+end
+
+function event_manager:GetBindingsFromActionParams( name )
+	local bindingParams = {}
+	
+	for data in Iter( self.currentStreamingData ) do 
+		
+		if ( data.action == name ) and ( data.bindingParams ~= nil ) then
+			bindingParams = data.bindingParams
+		end
+	end
+
+	return bindingParams;
+end
+
 function event_manager:GetLogicFileFromAction( actionName, currentStreamingData )
 	for data in Iter( currentStreamingData ) do 
 		
@@ -247,7 +273,7 @@ function event_manager:AddAmmo( percentage )
 
 	for i = 1, #players, 1 do
 		for j = 1, #ammoList, 1 do 
-			PlayerService:AddResourceAmount( players[i], ammoList[j], PlayerService:GetResourceLimit( ammoList[j] ) * ( percentage / 100 ), false )
+			PlayerService:AddResourceAmount( players[i], ammoList[j], PlayerService:GetResourceLimit(players[i], ammoList[j] ) * ( percentage / 100 ), false )
 		end
 	end
 end
@@ -260,7 +286,8 @@ function event_manager:SpawnObjective()
 		local random = RandInt( 1, #self.objectiveAvailableList )
 		local objectiveName = self.objectiveAvailableList[random]
 
-		local missionName = MissionService:ActivateMissionFlow( "", objectiveName, "default", self.data )
+		local bindingParams = self:GetBindingsFromObjectiveParams( objectiveName )
+		local missionName = MissionService:ActivateMissionFlow( "", objectiveName, "default", bindingParams )
 
 		self.objectiveLastLogicFile				= objectiveName
 		self.objectiveLastSpawnTime				= self.eventManagerTimer
@@ -585,12 +612,12 @@ function event_manager:CheckResourceToAdd( data, addResourceList )
 
 	LogService:Log( "event_manager:CheckResourceToAdd()" )
 
-	local resourceList = PlayerService:GetGlobalResourcesList()
+	local leadingPlayer = PlayerService:GetLeadingPlayer()
+	local resourceList = PlayerService:GetGlobalResourcesList(leadingPlayer)
 
 	local availableResurces = {}
-
 	for i = 1, #resourceList, 1 do 
-		local resourcePercentage = ( PlayerService:GetResourceAmount( resourceList[i] ) / PlayerService:GetResourceLimit( resourceList[i] ) ) * 100
+		local resourcePercentage = ( PlayerService:GetResourceAmount(leadingPlayer, resourceList[i] ) / PlayerService:GetResourceLimit(leadingPlayer, resourceList[i] ) ) * 100
 
 		LogService:Log( "event_manager:Checking resource " .. resourceList[i] .. " - current percentage : " .. tostring( resourcePercentage ) )
 
@@ -627,7 +654,7 @@ function event_manager:CheckResourceToAdd( data, addResourceList )
 
 		data.originalAction = data.action	
 		data.action			= "add_" ..  resourceName
-		data.amount			= PlayerService:GetResourceLimit( resourceName ) * ( ( data.basePercentage + ( self.resourcePercentageStep * ( self.currentEventLevel - 1 ) ) ) / 100 )
+		data.amount			= PlayerService:GetResourceLimit(leadingPlayer, resourceName ) * ( ( data.basePercentage + ( self.resourcePercentageStep * ( self.currentEventLevel - 1 ) ) ) / 100 )
 		data.passValue		= true
 		data.resourceName	= resourceName	
 
@@ -694,7 +721,7 @@ function event_manager:CheckResearch( data )
 
 	LogService:Log( "event_manager:CheckResearch()" )
 	
-	local researchList = PlayerService:GetResearchesAvailableToUnlockList( true )
+	local researchList = PlayerService:GetResearchesAvailableToUnlockList(PlayerService:GetLeadingPlayer(), true )
 
 	if ( #researchList > 0 ) then
 		local researchName = researchList[RandInt( 1, #researchList )]
@@ -714,12 +741,13 @@ function event_manager:CheckResourceToRemove( data, removeResourceList )
 
 	LogService:Log( "event_manager:CheckResourceToRemove()" )
 
-	local resourceList = PlayerService:GetGlobalResourcesList()
+	local leadingPlayer = PlayerService:GetLeadingPlayer()
+	local resourceList = PlayerService:GetGlobalResourcesList(leadingPlayer)
 
 	local availableResurces = {}
 
 	for i = 1, #resourceList, 1 do 
-		local resourcePercentage = ( PlayerService:GetResourceAmount( resourceList[i] ) / PlayerService:GetResourceLimit( resourceList[i] ) ) * 100
+		local resourcePercentage = ( PlayerService:GetResourceAmount(leadingPlayer, resourceList[i] ) / PlayerService:GetResourceLimit(leadingPlayer, resourceList[i] ) ) * 100
 
 		LogService:Log( "event_manager:Checking resource " .. resourceList[i] .. " - current percentage : " .. tostring( resourcePercentage ) )
 
@@ -756,7 +784,7 @@ function event_manager:CheckResourceToRemove( data, removeResourceList )
 
 		data.originalAction = data.action
 		data.action			= "remove_" ..  resourceName
-		data.amount			= PlayerService:GetResourceLimit( resourceName ) * ( ( data.basePercentage + ( self.resourcePercentageStep * ( self.currentEventLevel - 1 ) ) ) / 100 )
+		data.amount			= PlayerService:GetResourceLimit(leadingPlayer, resourceName ) * ( ( data.basePercentage + ( self.resourcePercentageStep * ( self.currentEventLevel - 1 ) ) ) / 100 )
 		data.passValue		= true
 		data.resourceName	= resourceName
 
@@ -772,12 +800,13 @@ function event_manager:CheckAmmoRefill( data )
 	LogService:Log( "event_manager:CheckAmmoRefill() " .. tostring( self.streamActionAmmoGivePercentage ) )
 
 	local ammoList = PlayerService:GetAmmoList()
+	local leadingPlayer = PlayerService:GetLeadingPlayer()
 
 	for i = 1, #ammoList, 1 do 
 
-		if ( PlayerService:GetResourceAmount( ammoList[i] ) > 0 ) then
+		if ( PlayerService:GetResourceAmount(leadingPlayer, ammoList[i] ) > 0 ) then
 	
-			local ammoPercentage = ( PlayerService:GetResourceAmount( ammoList[i] ) / PlayerService:GetResourceLimit( ammoList[i] ) ) * 100
+			local ammoPercentage = ( PlayerService:GetResourceAmount(leadingPlayer, ammoList[i] ) / PlayerService:GetResourceLimit(leadingPlayer, ammoList[i] ) ) * 100
 
 			LogService:Log( "event_manager:Checking action " .. tostring( data.action ) .. " for " .. ammoList[i] .. " - current percentage : " .. tostring( ammoPercentage ) )
 
@@ -797,11 +826,12 @@ function event_manager:CheckAmmoRemove( data )
 	LogService:Log( "event_manager:CheckAmmoRemove() " .. tostring( self.streamActionAmmoTakeAwayPercentage ) )
 
 	local ammoList = PlayerService:GetAmmoList()
+	local leadingPlayer = PlayerService:GetLeadingPlayer()
 
 	for i = 1, #ammoList, 1 do 
 
-		if ( PlayerService:GetResourceAmount( ammoList[i] ) > 0 ) then
-			local ammoPercentage = ( PlayerService:GetResourceAmount( ammoList[i] ) / PlayerService:GetResourceLimit( ammoList[i] ) ) * 100
+		if ( PlayerService:GetResourceAmount(leadingPlayer,ammoList[i] ) > 0 ) then
+			local ammoPercentage = ( PlayerService:GetResourceAmount(leadingPlayer, ammoList[i] ) / PlayerService:GetResourceLimit(leadingPlayer, ammoList[i] ) ) * 100
 
 			LogService:Log( "Checking action " .. tostring( data.action ) .. " for " .. ammoList[i] .. " - current percentage : " .. tostring( ammoPercentage ) )
 
@@ -1176,24 +1206,37 @@ function event_manager:SpawnEvent( action, participants )
 		( translatedEventName == "spawn_crystal_growth" ) or
 		--CAVERNS EVENTS END
 		( translatedEventName == "spawn_rain" ) then
+
 		local timeMin		= self:GetMinTimeFromAction( action )
 		local timeMax		= self:GetMaxTimeFromAction( action )
 		local randomTime    = RandInt( timeMin, timeMax )
+
 		LogService:Log( "event_manager:SpawnEvent - min time " .. tostring( timeMin ) )
 		LogService:Log( "event_manager:SpawnEvent - max time " .. tostring( timeMax ) )
 		LogService:Log( "event_manager:SpawnEvent - time set to " .. tostring( randomTime ) )
-		self.data:SetInt( "time", randomTime )
-		MissionService:ActivateMissionFlow( "", self.eventLogicFile, "default", self.data )
+		--self.data:SetInt( "time", randomTime )
+
+		local bindingParams = self:GetBindingsFromActionParams( translatedEventName )
+		bindingParams.time = randomTime
+
+		if ( GameStreamingService:IsInStreamEvent() == true ) then
+			bindingParams.labels = participants
+			bindingParams.label_name = "label_small"
+			bindingParams.labels_percentage_use = 33
+		end
+
+		MissionService:ActivateMissionFlow( "", self.eventLogicFile, "default", bindingParams )
+
 	elseif ( translatedEventName == "add_resource" ) then
-		PlayerService:AddResourceAmount( self:GetResourceNameFromAction( action ), amount )
+		PlayerService:AddResourceAmount(PlayerService:GetLeadingPlayer(), self:GetResourceNameFromAction( action ), amount, false )
 	elseif ( translatedEventName == "remove_resource" ) then
-		PlayerService:AddResourceAmount( self:GetResourceNameFromAction( action ), -amount )
+		PlayerService:AddResourceAmount(PlayerService:GetLeadingPlayer(), self:GetResourceNameFromAction( action ), -amount, false )
 	elseif ( translatedEventName == "cancel_the_attack" ) then
 		self.cancelTheAttack = true
 	elseif ( translatedEventName == "stronger_attack" ) then
 		self.extraAttacks = amount
 		self.participants = participants
-		self.participantsPercentageUse = 33
+		self.participantsPercentageUse = 10
 	elseif ( translatedEventName == "full_ammo" ) then
 		self:AddAmmo( 100 )
 	elseif ( translatedEventName == "remove_ammo" ) then

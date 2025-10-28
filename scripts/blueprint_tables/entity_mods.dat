@@ -2,33 +2,52 @@ items/upgrades/anti_corrosive_armor_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_acid "17,20"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			resistance_all "2.000%"
-			resistance_physical "8.000%"
-			resistance_fire "8.000%"
-			resistance_energy "8.000%"
-			resistance_acid "8.000%"
-			resistance_cryo "8.000%"
-			resistance_area "8.000%"
+			health "15.000"
+			health_regen "2.500"
+			forcefield "22.000"
+			forcefield_regen_cooldown "-10.000%"
+			reflect_damage "6.000%"
+			resistance_all "6.000%"
+			resistance_physical "10.000%"
+			resistance_fire "10.000%"
+			resistance_energy "10.000%"
+			resistance_acid "15.000%"
+			resistance_cryo "10.000%"
+			resistance_area "10.000%"
 		}
 
 		mod_flags
 		{
 			health_regen "random"
-			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
+			reflect_damage "random"
+			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "3.5"
+			forcefield_regen_cooldown "0.819999993"
+			reflect_damage "1.08000004"
+			resistance_all "1.09000003"
+			resistance_physical "1.13999999"
+			resistance_fire "1.13999999"
+			resistance_energy "1.13999999"
+			resistance_cryo "1.13999999"
+			resistance_area "1.13999999"
 		}
 
 		rarity "ADVANCED"
@@ -40,33 +59,52 @@ items/upgrades/anti_corrosive_armor_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_acid "27,30"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			resistance_all "4.000%"
-			resistance_physical "16.000%"
-			resistance_fire "16.000%"
-			resistance_energy "16.000%"
-			resistance_acid "16.000%"
-			resistance_cryo "16.000%"
-			resistance_area "16.000%"
+			health "25.000"
+			health_regen "3.500"
+			forcefield "37.000"
+			forcefield_regen_cooldown "-12.000%"
+			reflect_damage "8.000%"
+			resistance_all "10.000%"
+			resistance_physical "15.000%"
+			resistance_fire "15.000%"
+			resistance_energy "15.000%"
+			resistance_acid "25.000%"
+			resistance_cryo "15.000%"
+			resistance_area "15.000%"
 		}
 
 		mod_flags
 		{
 			health_regen "random"
-			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
+			reflect_damage "random"
+			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "4.5"
+			forcefield_regen_cooldown "0.779999971"
+			reflect_damage "1.10000002"
+			resistance_all "1.13"
+			resistance_physical "1.24000001"
+			resistance_fire "1.24000001"
+			resistance_energy "1.24000001"
+			resistance_cryo "1.24000001"
+			resistance_area "1.24000001"
 		}
 
 		rarity "EXTREME"
@@ -78,33 +116,52 @@ items/upgrades/anti_corrosive_armor_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_acid "12,15"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			resistance_all "1.000%"
-			resistance_physical "4.000%"
-			resistance_fire "4.000%"
-			resistance_energy "4.000%"
-			resistance_acid "4.000%"
-			resistance_cryo "4.000%"
-			resistance_area "4.000%"
+			health "10.000"
+			health_regen "2.000"
+			forcefield "15.000"
+			forcefield_regen_cooldown "-9.000%"
+			reflect_damage "5.000%"
+			resistance_all "4.000%"
+			resistance_physical "7.000%"
+			resistance_fire "7.000%"
+			resistance_energy "7.000%"
+			resistance_acid "10.000%"
+			resistance_cryo "7.000%"
+			resistance_area "7.000%"
 		}
 
 		mod_flags
 		{
 			health_regen "random"
-			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
+			reflect_damage "random"
+			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "3"
+			forcefield_regen_cooldown "0.840000033"
+			reflect_damage "1.07000005"
+			resistance_all "1.07000005"
+			resistance_physical "1.09000003"
+			resistance_fire "1.09000003"
+			resistance_energy "1.09000003"
+			resistance_cryo "1.09000003"
+			resistance_area "1.09000003"
 		}
 
 	}
@@ -115,18 +172,23 @@ items/upgrades/anti_corrosive_armor_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_acid "22,25"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			resistance_all "3.000%"
+			health "20.000"
+			health_regen "3.000"
+			forcefield "30.000"
+			forcefield_regen_cooldown "-11.000%"
+			reflect_damage "7.000%"
+			resistance_all "8.000%"
 			resistance_physical "12.000%"
 			resistance_fire "12.000%"
 			resistance_energy "12.000%"
-			resistance_acid "12.000%"
+			resistance_acid "20.000%"
 			resistance_cryo "12.000%"
 			resistance_area "12.000%"
 		}
@@ -134,14 +196,28 @@ items/upgrades/anti_corrosive_armor_superior_item
 		mod_flags
 		{
 			health_regen "random"
-			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
+			reflect_damage "random"
+			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "4"
+			forcefield_regen_cooldown "0.800000012"
+			reflect_damage "1.09000003"
+			resistance_all "1.11000001"
+			resistance_physical "1.19000006"
+			resistance_fire "1.19000006"
+			resistance_energy "1.19000006"
+			resistance_cryo "1.19000006"
+			resistance_area "1.19000006"
 		}
 
 		rarity "SUPERIOR"
@@ -153,35 +229,52 @@ items/upgrades/armor_plating_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			health "35,45"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			reflect_damage "11.000%"
-			resistance_all "2.000%"
-			resistance_physical "8.000%"
-			resistance_fire "8.000%"
-			resistance_energy "8.000%"
-			resistance_acid "8.000%"
-			resistance_cryo "8.000%"
-			resistance_area "8.000%"
+			health "30.000"
+			health_regen "2.500"
+			forcefield "22.000"
+			forcefield_regen_cooldown "-10.000%"
+			reflect_damage "6.000%"
+			resistance_all "4.000%"
+			resistance_physical "10.000%"
+			resistance_fire "10.000%"
+			resistance_energy "10.000%"
+			resistance_acid "10.000%"
+			resistance_cryo "10.000%"
+			resistance_area "10.000%"
 		}
 
 		mod_flags
 		{
 			health_regen "random"
-			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			reflect_damage "random"
+			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "3.5"
+			forcefield_regen_cooldown "0.819999993"
+			reflect_damage "1.08000004"
+			resistance_physical "1.13999999"
+			resistance_fire "1.13999999"
+			resistance_energy "1.13999999"
+			resistance_acid "1.13999999"
+			resistance_cryo "1.13999999"
+			resistance_area "1.13999999"
 		}
 
 		rarity "ADVANCED"
@@ -193,35 +286,52 @@ items/upgrades/armor_plating_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			health "55,70"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			reflect_damage "13.000%"
-			resistance_all "4.000%"
-			resistance_physical "16.000%"
-			resistance_fire "16.000%"
-			resistance_energy "16.000%"
-			resistance_acid "16.000%"
-			resistance_cryo "16.000%"
-			resistance_area "16.000%"
+			health "50.000"
+			health_regen "3.500"
+			forcefield "37.000"
+			forcefield_regen_cooldown "-12.000%"
+			reflect_damage "8.000%"
+			resistance_all "8.000%"
+			resistance_physical "15.000%"
+			resistance_fire "15.000%"
+			resistance_energy "15.000%"
+			resistance_acid "15.000%"
+			resistance_cryo "15.000%"
+			resistance_area "15.000%"
 		}
 
 		mod_flags
 		{
 			health_regen "random"
-			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			reflect_damage "random"
+			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "4.5"
+			forcefield_regen_cooldown "0.779999971"
+			reflect_damage "1.10000002"
+			resistance_physical "1.24000001"
+			resistance_fire "1.24000001"
+			resistance_energy "1.24000001"
+			resistance_acid "1.24000001"
+			resistance_cryo "1.24000001"
+			resistance_area "1.24000001"
 		}
 
 		rarity "EXTREME"
@@ -233,35 +343,52 @@ items/upgrades/armor_plating_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			health "25,35"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			reflect_damage "10.000%"
-			resistance_all "1.000%"
-			resistance_physical "4.000%"
-			resistance_fire "4.000%"
-			resistance_energy "4.000%"
-			resistance_acid "4.000%"
-			resistance_cryo "4.000%"
-			resistance_area "4.000%"
+			health "20.000"
+			health_regen "2.000"
+			forcefield "15.000"
+			forcefield_regen_cooldown "-9.000%"
+			reflect_damage "5.000%"
+			resistance_all "3.000%"
+			resistance_physical "7.000%"
+			resistance_fire "7.000%"
+			resistance_energy "7.000%"
+			resistance_acid "7.000%"
+			resistance_cryo "7.000%"
+			resistance_area "7.000%"
 		}
 
 		mod_flags
 		{
 			health_regen "random"
-			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			reflect_damage "random"
+			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "3"
+			forcefield_regen_cooldown "0.840000033"
+			reflect_damage "1.07000005"
+			resistance_physical "1.09000003"
+			resistance_fire "1.09000003"
+			resistance_energy "1.09000003"
+			resistance_acid "1.09000003"
+			resistance_cryo "1.09000003"
+			resistance_area "1.09000003"
 		}
 
 	}
@@ -272,15 +399,19 @@ items/upgrades/armor_plating_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			health "45,55"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			reflect_damage "12.000%"
-			resistance_all "3.000%"
+			health "40.000"
+			health_regen "3.000"
+			forcefield "30.000"
+			forcefield_regen_cooldown "-11.000%"
+			reflect_damage "7.000%"
+			resistance_all "6.000%"
 			resistance_physical "12.000%"
 			resistance_fire "12.000%"
 			resistance_energy "12.000%"
@@ -292,15 +423,28 @@ items/upgrades/armor_plating_superior_item
 		mod_flags
 		{
 			health_regen "random"
-			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			reflect_damage "random"
+			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "4"
+			forcefield_regen_cooldown "0.800000012"
+			reflect_damage "1.09000003"
+			resistance_physical "1.19000006"
+			resistance_fire "1.19000006"
+			resistance_energy "1.19000006"
+			resistance_acid "1.19000006"
+			resistance_cryo "1.19000006"
+			resistance_area "1.19000006"
 		}
 
 		rarity "SUPERIOR"
@@ -312,19 +456,25 @@ items/upgrades/attack_gear_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			item_cooldowns "-12,-16"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			loot_mods_chance "30.000%"
-			loot_resources_chance "30.000%"
-			movement_speed "15.000%"
-			item_cooldowns "-8.000%"
-			reflect_damage "11.000%"
+			health "19.000"
+			health_regen "2.500"
+			forcefield "29.000"
+			radar_range "40.000%"
+			loot_mods_chance "11.000%"
+			loot_resources_chance "15.000%"
+			movement_speed "9.000%"
+			item_cooldowns "-10.000%"
+			reflect_damage "6.000%"
+			resistance_all "6.000%"
 			attack_drone "1.000"
+			loot_equipment_chance "15.000%"
 		}
 
 		mod_flags
@@ -334,9 +484,25 @@ items/upgrades/attack_gear_advanced_item
 			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
+			radar_range "random"
 			loot_resources_chance "random"
 			movement_speed "random"
 			reflect_damage "random"
+			resistance_all "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			health "29"
+			health_regen "3.5"
+			forcefield "44"
+			radar_range "1.64999998"
+			loot_resources_chance "1.28999996"
+			movement_speed "1.12"
+			reflect_damage "1.08000004"
+			resistance_all "1.09000003"
+			loot_equipment_chance "1.28999996"
 		}
 
 		rarity "ADVANCED"
@@ -348,19 +514,25 @@ items/upgrades/attack_gear_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			item_cooldowns "-16,-20"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			loot_mods_chance "50.000%"
-			loot_resources_chance "50.000%"
-			movement_speed "25.000%"
-			item_cooldowns "-16.000%"
-			reflect_damage "13.000%"
+			health "30.000"
+			health_regen "3.500"
+			forcefield "45.000"
+			radar_range "60.000%"
+			loot_mods_chance "21.000%"
+			loot_resources_chance "25.000%"
+			movement_speed "13.000%"
+			item_cooldowns "-14.000%"
+			reflect_damage "8.000%"
+			resistance_all "10.000%"
 			attack_drone "1.000"
+			loot_equipment_chance "25.000%"
 		}
 
 		mod_flags
@@ -370,9 +542,25 @@ items/upgrades/attack_gear_extreme_item
 			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
+			radar_range "random"
 			loot_resources_chance "random"
 			movement_speed "random"
 			reflect_damage "random"
+			resistance_all "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			health "49"
+			health_regen "4.5"
+			forcefield "74"
+			radar_range "1.89999998"
+			loot_resources_chance "1.49000001"
+			movement_speed "1.19000006"
+			reflect_damage "1.10000002"
+			resistance_all "1.13"
+			loot_equipment_chance "1.49000001"
 		}
 
 		rarity "EXTREME"
@@ -384,19 +572,25 @@ items/upgrades/attack_gear_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			item_cooldowns "-10,-14"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			loot_mods_chance "20.000%"
-			loot_resources_chance "20.000%"
-			movement_speed "10.000%"
-			item_cooldowns "-4.000%"
-			reflect_damage "10.000%"
+			health "14.000"
+			health_regen "2.000"
+			forcefield "21.000"
+			radar_range "30.000%"
+			loot_mods_chance "7.000%"
+			loot_resources_chance "10.000%"
+			movement_speed "7.000%"
+			item_cooldowns "-8.000%"
+			reflect_damage "5.000%"
+			resistance_all "4.000%"
 			attack_drone "1.000"
+			loot_equipment_chance "10.000%"
 		}
 
 		mod_flags
@@ -406,9 +600,25 @@ items/upgrades/attack_gear_standard_item
 			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
+			radar_range "random"
 			loot_resources_chance "random"
 			movement_speed "random"
 			reflect_damage "random"
+			resistance_all "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			health "19"
+			health_regen "3"
+			forcefield "29"
+			radar_range "1.45000005"
+			loot_resources_chance "1.19000006"
+			movement_speed "1.09000003"
+			reflect_damage "1.07000005"
+			resistance_all "1.07000005"
+			loot_equipment_chance "1.19000006"
 		}
 
 	}
@@ -419,19 +629,25 @@ items/upgrades/attack_gear_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			item_cooldowns "-14,-18"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			loot_mods_chance "40.000%"
-			loot_resources_chance "40.000%"
-			movement_speed "20.000%"
+			health "24.000"
+			health_regen "3.000"
+			forcefield "36.000"
+			radar_range "50.000%"
+			loot_mods_chance "16.000%"
+			loot_resources_chance "20.000%"
+			movement_speed "11.000%"
 			item_cooldowns "-12.000%"
-			reflect_damage "12.000%"
+			reflect_damage "7.000%"
+			resistance_all "8.000%"
 			attack_drone "1.000"
+			loot_equipment_chance "20.000%"
 		}
 
 		mod_flags
@@ -441,9 +657,25 @@ items/upgrades/attack_gear_superior_item
 			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
+			radar_range "random"
 			loot_resources_chance "random"
 			movement_speed "random"
 			reflect_damage "random"
+			resistance_all "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			health "39"
+			health_regen "4"
+			forcefield "59"
+			radar_range "1.75"
+			loot_resources_chance "1.38999999"
+			movement_speed "1.15999997"
+			reflect_damage "1.09000003"
+			resistance_all "1.11000001"
+			loot_equipment_chance "1.38999999"
 		}
 
 		rarity "SUPERIOR"
@@ -455,25 +687,28 @@ items/upgrades/defense_gear_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_all "12,14"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			radar_range "15.000%"
-			movement_speed "15.000%"
-			item_cooldowns "-8.000%"
-			reflect_damage "11.000%"
-			resistance_all "2.000%"
+			health "15.000"
+			health_regen "2.500"
+			forcefield "29.000"
+			radar_range "40.000%"
+			movement_speed "9.000%"
+			item_cooldowns "-7.000%"
+			reflect_damage "6.000%"
+			resistance_all "10.000%"
 			defense_drone "1.000"
-			resistance_physical "8.000%"
-			resistance_fire "8.000%"
-			resistance_energy "8.000%"
-			resistance_acid "8.000%"
-			resistance_cryo "8.000%"
-			resistance_area "8.000%"
+			resistance_physical "10.000%"
+			resistance_fire "10.000%"
+			resistance_energy "10.000%"
+			resistance_acid "10.000%"
+			resistance_cryo "10.000%"
+			resistance_area "10.000%"
 		}
 
 		mod_flags
@@ -483,15 +718,31 @@ items/upgrades/defense_gear_advanced_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			movement_speed "random"
 			item_cooldowns "random"
 			reflect_damage "random"
-			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "3.5"
+			forcefield "44"
+			radar_range "1.64999998"
+			movement_speed "1.12"
+			item_cooldowns "0.904999971"
+			reflect_damage "1.08000004"
+			resistance_physical "1.13999999"
+			resistance_fire "1.13999999"
+			resistance_energy "1.13999999"
+			resistance_acid "1.13999999"
+			resistance_cryo "1.13999999"
+			resistance_area "1.13999999"
 		}
 
 		rarity "ADVANCED"
@@ -503,25 +754,28 @@ items/upgrades/defense_gear_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_all "16,18"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			radar_range "25.000%"
-			movement_speed "25.000%"
-			item_cooldowns "-16.000%"
-			reflect_damage "13.000%"
-			resistance_all "4.000%"
+			health "25.000"
+			health_regen "3.500"
+			forcefield "45.000"
+			radar_range "60.000%"
+			movement_speed "13.000%"
+			item_cooldowns "-9.000%"
+			reflect_damage "8.000%"
+			resistance_all "14.000%"
 			defense_drone "1.000"
-			resistance_physical "16.000%"
-			resistance_fire "16.000%"
-			resistance_energy "16.000%"
-			resistance_acid "16.000%"
-			resistance_cryo "16.000%"
-			resistance_area "16.000%"
+			resistance_physical "15.000%"
+			resistance_fire "15.000%"
+			resistance_energy "15.000%"
+			resistance_acid "15.000%"
+			resistance_cryo "15.000%"
+			resistance_area "15.000%"
 		}
 
 		mod_flags
@@ -531,15 +785,31 @@ items/upgrades/defense_gear_extreme_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			movement_speed "random"
 			item_cooldowns "random"
 			reflect_damage "random"
-			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "4.5"
+			forcefield "74"
+			radar_range "1.89999998"
+			movement_speed "1.19000006"
+			item_cooldowns "0.870000005"
+			reflect_damage "1.10000002"
+			resistance_physical "1.24000001"
+			resistance_fire "1.24000001"
+			resistance_energy "1.24000001"
+			resistance_acid "1.24000001"
+			resistance_cryo "1.24000001"
+			resistance_area "1.24000001"
 		}
 
 		rarity "EXTREME"
@@ -551,25 +821,28 @@ items/upgrades/defense_gear_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_all "10,12"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			radar_range "10.000%"
-			movement_speed "10.000%"
-			item_cooldowns "-4.000%"
-			reflect_damage "10.000%"
-			resistance_all "1.000%"
+			health "10.000"
+			health_regen "2.000"
+			forcefield "21.000"
+			radar_range "30.000%"
+			movement_speed "7.000%"
+			item_cooldowns "-6.000%"
+			reflect_damage "5.000%"
+			resistance_all "8.000%"
 			defense_drone "1.000"
-			resistance_physical "4.000%"
-			resistance_fire "4.000%"
-			resistance_energy "4.000%"
-			resistance_acid "4.000%"
-			resistance_cryo "4.000%"
-			resistance_area "4.000%"
+			resistance_physical "7.000%"
+			resistance_fire "7.000%"
+			resistance_energy "7.000%"
+			resistance_acid "7.000%"
+			resistance_cryo "7.000%"
+			resistance_area "7.000%"
 		}
 
 		mod_flags
@@ -579,15 +852,31 @@ items/upgrades/defense_gear_standard_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			movement_speed "random"
 			item_cooldowns "random"
 			reflect_damage "random"
-			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "3"
+			forcefield "29"
+			radar_range "1.39999998"
+			movement_speed "1.09000003"
+			item_cooldowns "0.925000012"
+			reflect_damage "1.07000005"
+			resistance_physical "1.09000003"
+			resistance_fire "1.09000003"
+			resistance_energy "1.09000003"
+			resistance_acid "1.09000003"
+			resistance_cryo "1.09000003"
+			resistance_area "1.09000003"
 		}
 
 	}
@@ -598,18 +887,21 @@ items/upgrades/defense_gear_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_all "14,16"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			radar_range "20.000%"
-			movement_speed "20.000%"
-			item_cooldowns "-12.000%"
-			reflect_damage "12.000%"
-			resistance_all "3.000%"
+			health "20.000"
+			health_regen "3.000"
+			forcefield "36.000"
+			radar_range "50.000%"
+			movement_speed "11.000%"
+			item_cooldowns "-8.000%"
+			reflect_damage "7.000%"
+			resistance_all "12.000%"
 			defense_drone "1.000"
 			resistance_physical "12.000%"
 			resistance_fire "12.000%"
@@ -626,15 +918,31 @@ items/upgrades/defense_gear_superior_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			movement_speed "random"
 			item_cooldowns "random"
 			reflect_damage "random"
-			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "4"
+			forcefield "59"
+			radar_range "1.75"
+			movement_speed "1.15999997"
+			item_cooldowns "0.889999986"
+			reflect_damage "1.09000003"
+			resistance_physical "1.19000006"
+			resistance_fire "1.19000006"
+			resistance_energy "1.19000006"
+			resistance_acid "1.19000006"
+			resistance_cryo "1.19000006"
+			resistance_area "1.19000006"
 		}
 
 		rarity "SUPERIOR"
@@ -646,25 +954,32 @@ items/upgrades/defensive_equipment_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			forcefield "55,65"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			radar_range "15.000%"
-			loot_mods_chance "30.000%"
-			loot_resources_chance "30.000%"
-			reflect_damage "11.000%"
-			resistance_all "2.000%"
+			health "19.000"
+			health_regen "2.500"
+			forcefield "45.000"
+			forcefield_regen_cooldown "-20.000%"
+			radar_range "40.000%"
+			loot_mods_chance "15.000%"
+			loot_resources_chance "15.000%"
+			movement_speed "9.000%"
+			item_cooldowns "-7.000%"
+			reflect_damage "6.000%"
+			resistance_all "6.000%"
 			defense_drone "1.000"
-			resistance_physical "8.000%"
-			resistance_fire "8.000%"
-			resistance_energy "8.000%"
-			resistance_acid "8.000%"
-			resistance_cryo "8.000%"
-			resistance_area "8.000%"
+			resistance_physical "10.000%"
+			resistance_fire "10.000%"
+			resistance_energy "10.000%"
+			resistance_acid "10.000%"
+			resistance_cryo "10.000%"
+			resistance_area "10.000%"
+			loot_equipment_chance "15.000%"
 		}
 
 		mod_flags
@@ -672,17 +987,40 @@ items/upgrades/defensive_equipment_advanced_item
 			health "random"
 			health_regen "random"
 			forcefield_regen "random"
-			forcefield_regen_cooldown "random"
 			radar_range "random"
 			loot_mods_chance "random"
 			loot_resources_chance "random"
+			movement_speed "random"
+			item_cooldowns "random"
 			reflect_damage "random"
+			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			health "29"
+			health_regen "3.5"
+			radar_range "1.64999998"
+			loot_mods_chance "1.28999996"
+			loot_resources_chance "1.28999996"
+			movement_speed "1.12"
+			item_cooldowns "0.904999971"
+			reflect_damage "1.08000004"
+			resistance_all "1.09000003"
+			resistance_physical "1.13999999"
+			resistance_fire "1.13999999"
+			resistance_energy "1.13999999"
+			resistance_acid "1.13999999"
+			resistance_cryo "1.13999999"
+			resistance_area "1.13999999"
+			loot_equipment_chance "1.28999996"
 		}
 
 		rarity "ADVANCED"
@@ -694,25 +1032,32 @@ items/upgrades/defensive_equipment_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			forcefield "85,95"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			radar_range "25.000%"
-			loot_mods_chance "50.000%"
-			loot_resources_chance "50.000%"
-			reflect_damage "13.000%"
-			resistance_all "4.000%"
+			health "30.000"
+			health_regen "3.500"
+			forcefield "75.000"
+			forcefield_regen_cooldown "-24.000%"
+			radar_range "60.000%"
+			loot_mods_chance "25.000%"
+			loot_resources_chance "25.000%"
+			movement_speed "13.000%"
+			item_cooldowns "-9.000%"
+			reflect_damage "8.000%"
+			resistance_all "10.000%"
 			defense_drone "1.000"
-			resistance_physical "16.000%"
-			resistance_fire "16.000%"
-			resistance_energy "16.000%"
-			resistance_acid "16.000%"
-			resistance_cryo "16.000%"
-			resistance_area "16.000%"
+			resistance_physical "15.000%"
+			resistance_fire "15.000%"
+			resistance_energy "15.000%"
+			resistance_acid "15.000%"
+			resistance_cryo "15.000%"
+			resistance_area "15.000%"
+			loot_equipment_chance "25.000%"
 		}
 
 		mod_flags
@@ -720,17 +1065,40 @@ items/upgrades/defensive_equipment_extreme_item
 			health "random"
 			health_regen "random"
 			forcefield_regen "random"
-			forcefield_regen_cooldown "random"
 			radar_range "random"
 			loot_mods_chance "random"
 			loot_resources_chance "random"
+			movement_speed "random"
+			item_cooldowns "random"
 			reflect_damage "random"
+			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			health "49"
+			health_regen "4.5"
+			radar_range "1.89999998"
+			loot_mods_chance "1.49000001"
+			loot_resources_chance "1.49000001"
+			movement_speed "1.19000006"
+			item_cooldowns "0.870000005"
+			reflect_damage "1.10000002"
+			resistance_all "1.13"
+			resistance_physical "1.24000001"
+			resistance_fire "1.24000001"
+			resistance_energy "1.24000001"
+			resistance_acid "1.24000001"
+			resistance_cryo "1.24000001"
+			resistance_area "1.24000001"
+			loot_equipment_chance "1.49000001"
 		}
 
 		rarity "EXTREME"
@@ -742,25 +1110,32 @@ items/upgrades/defensive_equipment_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			forcefield "40,50"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			radar_range "10.000%"
-			loot_mods_chance "20.000%"
-			loot_resources_chance "20.000%"
-			reflect_damage "10.000%"
-			resistance_all "1.000%"
+			health "14.000"
+			health_regen "2.000"
+			forcefield "30.000"
+			forcefield_regen_cooldown "-18.000%"
+			radar_range "30.000%"
+			loot_mods_chance "10.000%"
+			loot_resources_chance "10.000%"
+			movement_speed "7.000%"
+			item_cooldowns "-6.000%"
+			reflect_damage "5.000%"
+			resistance_all "4.000%"
 			defense_drone "1.000"
-			resistance_physical "4.000%"
-			resistance_fire "4.000%"
-			resistance_energy "4.000%"
-			resistance_acid "4.000%"
-			resistance_cryo "4.000%"
-			resistance_area "4.000%"
+			resistance_physical "7.000%"
+			resistance_fire "7.000%"
+			resistance_energy "7.000%"
+			resistance_acid "7.000%"
+			resistance_cryo "7.000%"
+			resistance_area "7.000%"
+			loot_equipment_chance "10.000%"
 		}
 
 		mod_flags
@@ -768,17 +1143,40 @@ items/upgrades/defensive_equipment_standard_item
 			health "random"
 			health_regen "random"
 			forcefield_regen "random"
-			forcefield_regen_cooldown "random"
 			radar_range "random"
 			loot_mods_chance "random"
 			loot_resources_chance "random"
+			movement_speed "random"
+			item_cooldowns "random"
 			reflect_damage "random"
+			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			health "19"
+			health_regen "3"
+			radar_range "1.45000005"
+			loot_mods_chance "1.19000006"
+			loot_resources_chance "1.19000006"
+			movement_speed "1.09000003"
+			item_cooldowns "0.925000012"
+			reflect_damage "1.07000005"
+			resistance_all "1.07000005"
+			resistance_physical "1.09000003"
+			resistance_fire "1.09000003"
+			resistance_energy "1.09000003"
+			resistance_acid "1.09000003"
+			resistance_cryo "1.09000003"
+			resistance_area "1.09000003"
+			loot_equipment_chance "1.19000006"
 		}
 
 	}
@@ -789,18 +1187,24 @@ items/upgrades/defensive_equipment_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			forcefield "70,80"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			radar_range "20.000%"
-			loot_mods_chance "40.000%"
-			loot_resources_chance "40.000%"
-			reflect_damage "12.000%"
-			resistance_all "3.000%"
+			health "24.000"
+			health_regen "3.000"
+			forcefield "60.000"
+			forcefield_regen_cooldown "-22.000%"
+			radar_range "50.000%"
+			loot_mods_chance "20.000%"
+			loot_resources_chance "20.000%"
+			movement_speed "11.000%"
+			item_cooldowns "-8.000%"
+			reflect_damage "7.000%"
+			resistance_all "8.000%"
 			defense_drone "1.000"
 			resistance_physical "12.000%"
 			resistance_fire "12.000%"
@@ -808,6 +1212,7 @@ items/upgrades/defensive_equipment_superior_item
 			resistance_acid "12.000%"
 			resistance_cryo "12.000%"
 			resistance_area "12.000%"
+			loot_equipment_chance "20.000%"
 		}
 
 		mod_flags
@@ -815,17 +1220,40 @@ items/upgrades/defensive_equipment_superior_item
 			health "random"
 			health_regen "random"
 			forcefield_regen "random"
-			forcefield_regen_cooldown "random"
 			radar_range "random"
 			loot_mods_chance "random"
 			loot_resources_chance "random"
+			movement_speed "random"
+			item_cooldowns "random"
 			reflect_damage "random"
+			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			health "39"
+			health_regen "4"
+			radar_range "1.75"
+			loot_mods_chance "1.38999999"
+			loot_resources_chance "1.38999999"
+			movement_speed "1.15999997"
+			item_cooldowns "0.889999986"
+			reflect_damage "1.09000003"
+			resistance_all "1.11000001"
+			resistance_physical "1.19000006"
+			resistance_fire "1.19000006"
+			resistance_energy "1.19000006"
+			resistance_acid "1.19000006"
+			resistance_cryo "1.19000006"
+			resistance_area "1.19000006"
+			loot_equipment_chance "1.38999999"
 		}
 
 		rarity "SUPERIOR"
@@ -837,25 +1265,27 @@ items/upgrades/discovery_tools_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			movement_speed "14,18"
+		}
+
 		entity_mods
 		{
-			radar_range "15.000%"
-			loot_mods_chance "30.000%"
-			loot_resources_chance "30.000%"
-			movement_speed "15.000%"
-			item_cooldowns "0.000%"
-			resistance_all "2.000%"
-			resistance_physical "8.000%"
-			resistance_fire "8.000%"
-			resistance_energy "8.000%"
-			resistance_acid "8.000%"
-			resistance_cryo "8.000%"
-			resistance_area "8.000%"
+			forcefield "29.000"
+			radar_range "35.000%"
+			loot_mods_chance "15.000%"
+			loot_resources_chance "15.000%"
+			movement_speed "13.000%"
+			item_cooldowns "-7.000%"
+			resistance_all "6.000%"
 			loot_drone "1.000"
+			loot_equipment_chance "15.000%"
 		}
 
 		mod_flags
 		{
+			forcefield "random"
 			loot_mods_chance "random"
 			loot_resources_chance "random"
 			item_cooldowns "random"
@@ -866,6 +1296,17 @@ items/upgrades/discovery_tools_advanced_item
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			forcefield "44"
+			loot_mods_chance "1.28999996"
+			loot_resources_chance "1.28999996"
+			item_cooldowns "0.904999971"
+			resistance_all "1.09000003"
+			loot_equipment_chance "1.28999996"
 		}
 
 		rarity "ADVANCED"
@@ -877,25 +1318,27 @@ items/upgrades/discovery_tools_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			movement_speed "23,25"
+		}
+
 		entity_mods
 		{
-			radar_range "25.000%"
-			loot_mods_chance "50.000%"
-			loot_resources_chance "50.000%"
-			movement_speed "25.000%"
-			item_cooldowns "0.000%"
-			resistance_all "4.000%"
-			resistance_physical "16.000%"
-			resistance_fire "16.000%"
-			resistance_energy "16.000%"
-			resistance_acid "16.000%"
-			resistance_cryo "16.000%"
-			resistance_area "16.000%"
+			forcefield "45.000"
+			radar_range "55.000%"
+			loot_mods_chance "25.000%"
+			loot_resources_chance "25.000%"
+			movement_speed "20.000%"
+			item_cooldowns "-9.000%"
+			resistance_all "10.000%"
 			loot_drone "1.000"
+			loot_equipment_chance "25.000%"
 		}
 
 		mod_flags
 		{
+			forcefield "random"
 			loot_mods_chance "random"
 			loot_resources_chance "random"
 			item_cooldowns "random"
@@ -906,6 +1349,17 @@ items/upgrades/discovery_tools_extreme_item
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			forcefield "74"
+			loot_mods_chance "1.49000001"
+			loot_resources_chance "1.49000001"
+			item_cooldowns "0.870000005"
+			resistance_all "1.13"
+			loot_equipment_chance "1.49000001"
 		}
 
 		rarity "EXTREME"
@@ -917,25 +1371,27 @@ items/upgrades/discovery_tools_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			movement_speed "11,15"
+		}
+
 		entity_mods
 		{
-			radar_range "10.000%"
-			loot_mods_chance "20.000%"
-			loot_resources_chance "20.000%"
+			forcefield "21.000"
+			radar_range "25.000%"
+			loot_mods_chance "10.000%"
+			loot_resources_chance "10.000%"
 			movement_speed "10.000%"
-			item_cooldowns "0.000%"
-			resistance_all "1.000%"
-			resistance_physical "4.000%"
-			resistance_fire "4.000%"
-			resistance_energy "4.000%"
-			resistance_acid "4.000%"
-			resistance_cryo "4.000%"
-			resistance_area "4.000%"
+			item_cooldowns "-6.000%"
+			resistance_all "4.000%"
 			loot_drone "1.000"
+			loot_equipment_chance "10.000%"
 		}
 
 		mod_flags
 		{
+			forcefield "random"
 			loot_mods_chance "random"
 			loot_resources_chance "random"
 			item_cooldowns "random"
@@ -946,6 +1402,17 @@ items/upgrades/discovery_tools_standard_item
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			forcefield "29"
+			loot_mods_chance "1.19000006"
+			loot_resources_chance "1.19000006"
+			item_cooldowns "0.925000012"
+			resistance_all "1.07000005"
+			loot_equipment_chance "1.19000006"
 		}
 
 	}
@@ -956,25 +1423,27 @@ items/upgrades/discovery_tools_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			movement_speed "18,22"
+		}
+
 		entity_mods
 		{
-			radar_range "20.000%"
-			loot_mods_chance "40.000%"
-			loot_resources_chance "40.000%"
-			movement_speed "20.000%"
-			item_cooldowns "0.000%"
-			resistance_all "3.000%"
-			resistance_physical "12.000%"
-			resistance_fire "12.000%"
-			resistance_energy "12.000%"
-			resistance_acid "12.000%"
-			resistance_cryo "12.000%"
-			resistance_area "12.000%"
+			forcefield "36.000"
+			radar_range "45.000%"
+			loot_mods_chance "20.000%"
+			loot_resources_chance "20.000%"
+			movement_speed "17.000%"
+			item_cooldowns "-8.000%"
+			resistance_all "8.000%"
 			loot_drone "1.000"
+			loot_equipment_chance "20.000%"
 		}
 
 		mod_flags
 		{
+			forcefield "random"
 			loot_mods_chance "random"
 			loot_resources_chance "random"
 			item_cooldowns "random"
@@ -985,6 +1454,17 @@ items/upgrades/discovery_tools_superior_item
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			forcefield "59"
+			loot_mods_chance "1.38999999"
+			loot_resources_chance "1.38999999"
+			item_cooldowns "0.889999986"
+			resistance_all "1.11000001"
+			loot_equipment_chance "1.38999999"
 		}
 
 		rarity "SUPERIOR"
@@ -996,21 +1476,25 @@ items/upgrades/energy_armor_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_energy "17,20"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			reflect_damage "11.000%"
-			resistance_all "2.000%"
-			resistance_physical "8.000%"
-			resistance_fire "8.000%"
-			resistance_energy "8.000%"
-			resistance_acid "8.000%"
-			resistance_cryo "8.000%"
-			resistance_area "8.000%"
+			health "19.000"
+			health_regen "2.500"
+			forcefield "22.000"
+			forcefield_regen_cooldown "-10.000%"
+			reflect_damage "6.000%"
+			resistance_all "4.000%"
+			resistance_physical "10.000%"
+			resistance_fire "10.000%"
+			resistance_energy "15.000%"
+			resistance_acid "10.000%"
+			resistance_cryo "10.000%"
+			resistance_area "10.000%"
 		}
 
 		mod_flags
@@ -1025,6 +1509,19 @@ items/upgrades/energy_armor_advanced_item
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health "29"
+			health_regen "3.5"
+			forcefield_regen_cooldown "0.819999993"
+			reflect_damage "1.08000004"
+			resistance_physical "1.13999999"
+			resistance_fire "1.13999999"
+			resistance_acid "1.13999999"
+			resistance_cryo "1.13999999"
+			resistance_area "1.13999999"
 		}
 
 		rarity "ADVANCED"
@@ -1036,21 +1533,25 @@ items/upgrades/energy_armor_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_energy "27,30"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			reflect_damage "13.000%"
-			resistance_all "4.000%"
-			resistance_physical "16.000%"
-			resistance_fire "16.000%"
-			resistance_energy "16.000%"
-			resistance_acid "16.000%"
-			resistance_cryo "16.000%"
-			resistance_area "16.000%"
+			health "30.000"
+			health_regen "3.500"
+			forcefield "37.000"
+			forcefield_regen_cooldown "-12.000%"
+			reflect_damage "8.000%"
+			resistance_all "8.000%"
+			resistance_physical "15.000%"
+			resistance_fire "15.000%"
+			resistance_energy "25.000%"
+			resistance_acid "15.000%"
+			resistance_cryo "15.000%"
+			resistance_area "15.000%"
 		}
 
 		mod_flags
@@ -1065,6 +1566,19 @@ items/upgrades/energy_armor_extreme_item
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health "49"
+			health_regen "4.5"
+			forcefield_regen_cooldown "0.779999971"
+			reflect_damage "1.10000002"
+			resistance_physical "1.24000001"
+			resistance_fire "1.24000001"
+			resistance_acid "1.24000001"
+			resistance_cryo "1.24000001"
+			resistance_area "1.24000001"
 		}
 
 		rarity "EXTREME"
@@ -1076,21 +1590,25 @@ items/upgrades/energy_armor_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_energy "12,15"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			reflect_damage "10.000%"
-			resistance_all "1.000%"
-			resistance_physical "4.000%"
-			resistance_fire "4.000%"
-			resistance_energy "4.000%"
-			resistance_acid "4.000%"
-			resistance_cryo "4.000%"
-			resistance_area "4.000%"
+			health "14.000"
+			health_regen "2.000"
+			forcefield "15.000"
+			forcefield_regen_cooldown "-9.000%"
+			reflect_damage "5.000%"
+			resistance_all "3.000%"
+			resistance_physical "7.000%"
+			resistance_fire "7.000%"
+			resistance_energy "10.000%"
+			resistance_acid "7.000%"
+			resistance_cryo "7.000%"
+			resistance_area "7.000%"
 		}
 
 		mod_flags
@@ -1107,6 +1625,19 @@ items/upgrades/energy_armor_standard_item
 			resistance_area "random"
 		}
 
+		random_max_values
+		{
+			health "19"
+			health_regen "3"
+			forcefield_regen_cooldown "0.840000033"
+			reflect_damage "1.07000005"
+			resistance_physical "1.09000003"
+			resistance_fire "1.09000003"
+			resistance_acid "1.09000003"
+			resistance_cryo "1.09000003"
+			resistance_area "1.09000003"
+		}
+
 	}
 
 }
@@ -1115,18 +1646,22 @@ items/upgrades/energy_armor_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_energy "22,25"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			reflect_damage "12.000%"
-			resistance_all "3.000%"
+			health "24.000"
+			health_regen "3.000"
+			forcefield "30.000"
+			forcefield_regen_cooldown "-11.000%"
+			reflect_damage "7.000%"
+			resistance_all "6.000%"
 			resistance_physical "12.000%"
 			resistance_fire "12.000%"
-			resistance_energy "12.000%"
+			resistance_energy "20.000%"
 			resistance_acid "12.000%"
 			resistance_cryo "12.000%"
 			resistance_area "12.000%"
@@ -1144,6 +1679,19 @@ items/upgrades/energy_armor_superior_item
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health "39"
+			health_regen "4"
+			forcefield_regen_cooldown "0.800000012"
+			reflect_damage "1.09000003"
+			resistance_physical "1.19000006"
+			resistance_fire "1.19000006"
+			resistance_acid "1.19000006"
+			resistance_cryo "1.19000006"
+			resistance_area "1.19000006"
 		}
 
 		rarity "SUPERIOR"
@@ -1155,23 +1703,38 @@ items/upgrades/energy_sensors_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			loot_mods_chance "35,42"
+		}
+
 		entity_mods
 		{
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			radar_range "15.000%"
+			forcefield "29.000"
+			radar_range "40.000%"
 			loot_mods_chance "30.000%"
-			loot_resources_chance "30.000%"
-			item_cooldowns "-8.000%"
+			loot_resources_chance "11.000%"
+			movement_speed "9.000%"
+			item_cooldowns "-7.000%"
+			loot_equipment_chance "11.000%"
 		}
 
 		mod_flags
 		{
+			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			movement_speed "random"
 			item_cooldowns "random"
+		}
+
+		random_max_values
+		{
+			forcefield "44"
+			radar_range "1.64999998"
+			movement_speed "1.12"
+			item_cooldowns "0.904999971"
 		}
 
 		rarity "ADVANCED"
@@ -1183,23 +1746,38 @@ items/upgrades/energy_sensors_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			loot_mods_chance "55,62"
+		}
+
 		entity_mods
 		{
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			radar_range "25.000%"
+			forcefield "45.000"
+			radar_range "60.000%"
 			loot_mods_chance "50.000%"
-			loot_resources_chance "50.000%"
-			item_cooldowns "-16.000%"
+			loot_resources_chance "21.000%"
+			movement_speed "13.000%"
+			item_cooldowns "-9.000%"
+			loot_equipment_chance "21.000%"
 		}
 
 		mod_flags
 		{
+			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			movement_speed "random"
 			item_cooldowns "random"
+		}
+
+		random_max_values
+		{
+			forcefield "74"
+			radar_range "1.89999998"
+			movement_speed "1.19000006"
+			item_cooldowns "0.870000005"
 		}
 
 		rarity "EXTREME"
@@ -1211,23 +1789,38 @@ items/upgrades/energy_sensors_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			loot_mods_chance "25,32"
+		}
+
 		entity_mods
 		{
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			radar_range "10.000%"
+			forcefield "21.000"
+			radar_range "30.000%"
 			loot_mods_chance "20.000%"
-			loot_resources_chance "20.000%"
-			item_cooldowns "-4.000%"
+			loot_resources_chance "7.000%"
+			movement_speed "7.000%"
+			item_cooldowns "-6.000%"
+			loot_equipment_chance "7.000%"
 		}
 
 		mod_flags
 		{
+			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			movement_speed "random"
 			item_cooldowns "random"
+		}
+
+		random_max_values
+		{
+			forcefield "29"
+			radar_range "1.45000005"
+			movement_speed "1.09000003"
+			item_cooldowns "0.925000012"
 		}
 
 	}
@@ -1238,23 +1831,38 @@ items/upgrades/energy_sensors_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			loot_mods_chance "45,52"
+		}
+
 		entity_mods
 		{
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			radar_range "20.000%"
+			forcefield "36.000"
+			radar_range "50.000%"
 			loot_mods_chance "40.000%"
-			loot_resources_chance "40.000%"
-			item_cooldowns "-12.000%"
+			loot_resources_chance "16.000%"
+			movement_speed "11.000%"
+			item_cooldowns "-8.000%"
+			loot_equipment_chance "16.000%"
 		}
 
 		mod_flags
 		{
+			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			movement_speed "random"
 			item_cooldowns "random"
+		}
+
+		random_max_values
+		{
+			forcefield "59"
+			radar_range "1.75"
+			movement_speed "1.15999997"
+			item_cooldowns "0.889999986"
 		}
 
 		rarity "SUPERIOR"
@@ -1266,33 +1874,50 @@ items/upgrades/fireproof_armor_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_fire "17,20"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			resistance_all "2.000%"
-			resistance_physical "8.000%"
-			resistance_fire "8.000%"
-			resistance_energy "8.000%"
-			resistance_acid "8.000%"
-			resistance_cryo "8.000%"
-			resistance_area "8.000%"
+			health "15.000"
+			health_regen "2.000"
+			forcefield "29.000"
+			reflect_damage "6.000%"
+			resistance_all "6.000%"
+			resistance_physical "10.000%"
+			resistance_fire "15.000%"
+			resistance_energy "10.000%"
+			resistance_acid "10.000%"
+			resistance_cryo "10.000%"
+			resistance_area "10.000%"
 		}
 
 		mod_flags
 		{
-			health_regen "random"
 			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
+			reflect_damage "random"
+			resistance_all "random"
 			resistance_physical "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			forcefield "44"
+			reflect_damage "1.08000004"
+			resistance_all "1.09000003"
+			resistance_physical "1.13999999"
+			resistance_energy "1.13999999"
+			resistance_acid "1.13999999"
+			resistance_cryo "1.13999999"
+			resistance_area "1.13999999"
 		}
 
 		rarity "ADVANCED"
@@ -1304,33 +1929,50 @@ items/upgrades/fireproof_armor_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_fire "27,30"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			resistance_all "4.000%"
-			resistance_physical "16.000%"
-			resistance_fire "16.000%"
-			resistance_energy "16.000%"
-			resistance_acid "16.000%"
-			resistance_cryo "16.000%"
-			resistance_area "16.000%"
+			health "25.000"
+			health_regen "3.000"
+			forcefield "45.000"
+			reflect_damage "8.000%"
+			resistance_all "10.000%"
+			resistance_physical "15.000%"
+			resistance_fire "25.000%"
+			resistance_energy "15.000%"
+			resistance_acid "15.000%"
+			resistance_cryo "15.000%"
+			resistance_area "15.000%"
 		}
 
 		mod_flags
 		{
-			health_regen "random"
 			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
+			reflect_damage "random"
+			resistance_all "random"
 			resistance_physical "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			forcefield "74"
+			reflect_damage "1.10000002"
+			resistance_all "1.13"
+			resistance_physical "1.24000001"
+			resistance_energy "1.24000001"
+			resistance_acid "1.24000001"
+			resistance_cryo "1.24000001"
+			resistance_area "1.24000001"
 		}
 
 		rarity "EXTREME"
@@ -1342,33 +1984,50 @@ items/upgrades/fireproof_armor_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_fire "12,15"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			resistance_all "1.000%"
-			resistance_physical "4.000%"
-			resistance_fire "4.000%"
-			resistance_energy "4.000%"
-			resistance_acid "4.000%"
-			resistance_cryo "4.000%"
-			resistance_area "4.000%"
+			health "10.000"
+			health_regen "1.500"
+			forcefield "21.000"
+			reflect_damage "5.000%"
+			resistance_all "4.000%"
+			resistance_physical "7.000%"
+			resistance_fire "10.000%"
+			resistance_energy "7.000%"
+			resistance_acid "7.000%"
+			resistance_cryo "7.000%"
+			resistance_area "7.000%"
 		}
 
 		mod_flags
 		{
-			health_regen "random"
 			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
+			reflect_damage "random"
+			resistance_all "random"
 			resistance_physical "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			forcefield "29"
+			reflect_damage "1.07000005"
+			resistance_all "1.07000005"
+			resistance_physical "1.09000003"
+			resistance_energy "1.09000003"
+			resistance_acid "1.09000003"
+			resistance_cryo "1.09000003"
+			resistance_area "1.09000003"
 		}
 
 	}
@@ -1379,16 +2038,20 @@ items/upgrades/fireproof_armor_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			resistance_fire "22,25"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			resistance_all "3.000%"
+			health "20.000"
+			health_regen "2.500"
+			forcefield "36.000"
+			reflect_damage "7.000%"
+			resistance_all "8.000%"
 			resistance_physical "12.000%"
-			resistance_fire "12.000%"
+			resistance_fire "20.000%"
 			resistance_energy "12.000%"
 			resistance_acid "12.000%"
 			resistance_cryo "12.000%"
@@ -1397,15 +2060,28 @@ items/upgrades/fireproof_armor_superior_item
 
 		mod_flags
 		{
-			health_regen "random"
 			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
+			reflect_damage "random"
+			resistance_all "random"
 			resistance_physical "random"
 			resistance_energy "random"
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			forcefield "59"
+			reflect_damage "1.09000003"
+			resistance_all "1.11000001"
+			resistance_physical "1.19000006"
+			resistance_energy "1.19000006"
+			resistance_acid "1.19000006"
+			resistance_cryo "1.19000006"
+			resistance_area "1.19000006"
 		}
 
 		rarity "SUPERIOR"
@@ -1417,18 +2093,22 @@ items/upgrades/fusion_core_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			building_cost "-12,-16"
+		}
+
 		entity_mods
 		{
-			health_regen "1.500"
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			radar_range "15.000%"
-			movement_speed "15.000%"
-			building_time "-8.000%"
-			item_cooldowns "-8.000%"
-			building_cost "-8.000%"
-			resistance_energy "8.000%"
+			forcefield "29.000"
+			radar_range "40.000%"
+			movement_speed "7.000%"
+			building_time "-6.000%"
+			item_cooldowns "-7.000%"
+			building_cost "-10.000%"
+			resistance_all "6.000%"
+			repair_drone "1.000"
+			resistance_energy "10.000%"
 		}
 
 		mod_flags
@@ -1437,9 +2117,20 @@ items/upgrades/fusion_core_advanced_item
 			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
-			movement_speed "random"
+			radar_range "random"
 			item_cooldowns "random"
+			resistance_all "random"
+			repair_drone "random"
 			resistance_energy "random"
+		}
+
+		random_max_values
+		{
+			forcefield "44"
+			radar_range "1.64999998"
+			item_cooldowns "0.904999971"
+			resistance_all "1.09000003"
+			resistance_energy "1.13999999"
 		}
 
 		rarity "ADVANCED"
@@ -1451,18 +2142,22 @@ items/upgrades/fusion_core_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			building_cost "-16,-20"
+		}
+
 		entity_mods
 		{
-			health_regen "2.500"
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			radar_range "25.000%"
-			movement_speed "25.000%"
-			building_time "-16.000%"
-			item_cooldowns "-16.000%"
-			building_cost "-16.000%"
-			resistance_energy "16.000%"
+			forcefield "45.000"
+			radar_range "60.000%"
+			movement_speed "11.000%"
+			building_time "-8.000%"
+			item_cooldowns "-9.000%"
+			building_cost "-14.000%"
+			resistance_all "10.000%"
+			repair_drone "1.000"
+			resistance_energy "15.000%"
 		}
 
 		mod_flags
@@ -1471,9 +2166,20 @@ items/upgrades/fusion_core_extreme_item
 			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
-			movement_speed "random"
+			radar_range "random"
 			item_cooldowns "random"
+			resistance_all "random"
+			repair_drone "random"
 			resistance_energy "random"
+		}
+
+		random_max_values
+		{
+			forcefield "74"
+			radar_range "1.89999998"
+			item_cooldowns "0.870000005"
+			resistance_all "1.13"
+			resistance_energy "1.24000001"
 		}
 
 		rarity "EXTREME"
@@ -1485,18 +2191,22 @@ items/upgrades/fusion_core_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			building_cost "-10,-14"
+		}
+
 		entity_mods
 		{
-			health_regen "1.000"
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			radar_range "10.000%"
-			movement_speed "10.000%"
-			building_time "-4.000%"
-			item_cooldowns "-4.000%"
-			building_cost "-4.000%"
-			resistance_energy "4.000%"
+			forcefield "21.000"
+			radar_range "30.000%"
+			movement_speed "5.000%"
+			building_time "-5.000%"
+			item_cooldowns "-6.000%"
+			building_cost "-8.000%"
+			resistance_all "4.000%"
+			repair_drone "1.000"
+			resistance_energy "7.000%"
 		}
 
 		mod_flags
@@ -1505,9 +2215,20 @@ items/upgrades/fusion_core_standard_item
 			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
-			movement_speed "random"
+			radar_range "random"
 			item_cooldowns "random"
+			resistance_all "random"
+			repair_drone "random"
 			resistance_energy "random"
+		}
+
+		random_max_values
+		{
+			forcefield "29"
+			radar_range "1.45000005"
+			item_cooldowns "0.925000012"
+			resistance_all "1.07000005"
+			resistance_energy "1.09000003"
 		}
 
 	}
@@ -1518,17 +2239,21 @@ items/upgrades/fusion_core_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			building_cost "-14,-18"
+		}
+
 		entity_mods
 		{
-			health_regen "2.000"
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			radar_range "20.000%"
-			movement_speed "20.000%"
-			building_time "-12.000%"
-			item_cooldowns "-12.000%"
+			forcefield "36.000"
+			radar_range "50.000%"
+			movement_speed "9.000%"
+			building_time "-7.000%"
+			item_cooldowns "-8.000%"
 			building_cost "-12.000%"
+			resistance_all "8.000%"
+			repair_drone "1.000"
 			resistance_energy "12.000%"
 		}
 
@@ -1538,9 +2263,20 @@ items/upgrades/fusion_core_superior_item
 			forcefield "random"
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
-			movement_speed "random"
+			radar_range "random"
 			item_cooldowns "random"
+			resistance_all "random"
+			repair_drone "random"
 			resistance_energy "random"
+		}
+
+		random_max_values
+		{
+			forcefield "59"
+			radar_range "1.75"
+			item_cooldowns "0.889999986"
+			resistance_all "1.11000001"
+			resistance_energy "1.19000006"
 		}
 
 		rarity "SUPERIOR"
@@ -1552,19 +2288,23 @@ items/upgrades/gathering_tools_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			loot_resources_chance "35,42"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			forcefield "1.500"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "0.000%"
-			radar_range "15.000%"
-			loot_mods_chance "30.000%"
+			health "19.000"
+			health_regen "2.500"
+			radar_range "40.000%"
+			loot_mods_chance "15.000%"
 			loot_resources_chance "30.000%"
-			movement_speed "15.000%"
-			item_cooldowns "0.000%"
+			movement_speed "9.000%"
+			item_cooldowns "-7.000%"
+			resistance_all "6.000%"
 			loot_drone "1.000"
+			loot_equipment_chance "11.000%"
 		}
 
 		mod_flags
@@ -1575,8 +2315,21 @@ items/upgrades/gathering_tools_advanced_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			loot_mods_chance "random"
 			movement_speed "random"
 			item_cooldowns "random"
+			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			health "29"
+			health_regen "3.5"
+			radar_range "1.64999998"
+			loot_mods_chance "1.28999996"
+			movement_speed "1.12"
+			item_cooldowns "0.904999971"
+			resistance_all "1.09000003"
 		}
 
 		rarity "ADVANCED"
@@ -1588,19 +2341,23 @@ items/upgrades/gathering_tools_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			loot_resources_chance "55,62"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			forcefield "2.500"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "0.000%"
-			radar_range "25.000%"
-			loot_mods_chance "50.000%"
+			health "30.000"
+			health_regen "3.500"
+			radar_range "60.000%"
+			loot_mods_chance "25.000%"
 			loot_resources_chance "50.000%"
-			movement_speed "25.000%"
-			item_cooldowns "0.000%"
+			movement_speed "13.000%"
+			item_cooldowns "-9.000%"
+			resistance_all "10.000%"
 			loot_drone "1.000"
+			loot_equipment_chance "21.000%"
 		}
 
 		mod_flags
@@ -1611,8 +2368,21 @@ items/upgrades/gathering_tools_extreme_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			loot_mods_chance "random"
 			movement_speed "random"
 			item_cooldowns "random"
+			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			health "49"
+			health_regen "4.5"
+			radar_range "1.89999998"
+			loot_mods_chance "1.49000001"
+			movement_speed "1.19000006"
+			item_cooldowns "0.870000005"
+			resistance_all "1.13"
 		}
 
 		rarity "EXTREME"
@@ -1624,19 +2394,23 @@ items/upgrades/gathering_tools_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			loot_resources_chance "25,32"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
-			forcefield "1.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "0.000%"
-			radar_range "10.000%"
-			loot_mods_chance "20.000%"
+			health "14.000"
+			health_regen "2.000"
+			radar_range "30.000%"
+			loot_mods_chance "10.000%"
 			loot_resources_chance "20.000%"
-			movement_speed "10.000%"
-			item_cooldowns "0.000%"
+			movement_speed "7.000%"
+			item_cooldowns "-6.000%"
+			resistance_all "4.000%"
 			loot_drone "1.000"
+			loot_equipment_chance "7.000%"
 		}
 
 		mod_flags
@@ -1647,8 +2421,21 @@ items/upgrades/gathering_tools_standard_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			loot_mods_chance "random"
 			movement_speed "random"
 			item_cooldowns "random"
+			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			health "19"
+			health_regen "3"
+			radar_range "1.45000005"
+			loot_mods_chance "1.19000006"
+			movement_speed "1.09000003"
+			item_cooldowns "0.925000012"
+			resistance_all "1.07000005"
 		}
 
 	}
@@ -1659,19 +2446,23 @@ items/upgrades/gathering_tools_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			loot_resources_chance "45,52"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			forcefield "2.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "0.000%"
-			radar_range "20.000%"
-			loot_mods_chance "40.000%"
+			health "24.000"
+			health_regen "3.000"
+			radar_range "50.000%"
+			loot_mods_chance "20.000%"
 			loot_resources_chance "40.000%"
-			movement_speed "20.000%"
-			item_cooldowns "0.000%"
+			movement_speed "11.000%"
+			item_cooldowns "-8.000%"
+			resistance_all "8.000%"
 			loot_drone "1.000"
+			loot_equipment_chance "16.000%"
 		}
 
 		mod_flags
@@ -1682,8 +2473,21 @@ items/upgrades/gathering_tools_superior_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			loot_mods_chance "random"
 			movement_speed "random"
 			item_cooldowns "random"
+			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			health "39"
+			health_regen "4"
+			radar_range "1.75"
+			loot_mods_chance "1.38999999"
+			movement_speed "1.15999997"
+			item_cooldowns "0.889999986"
+			resistance_all "1.11000001"
 		}
 
 		rarity "SUPERIOR"
@@ -1695,17 +2499,22 @@ items/upgrades/magnetic_pistons_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			movement_speed "14,18"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			movement_speed "15.000%"
+			health "19.000"
+			health_regen "2.000"
+			movement_speed "13.000%"
 			building_time "-8.000%"
-			item_cooldowns "-8.000%"
-			reflect_damage "11.000%"
-			building_cost "-8.000%"
-			resistance_all "2.000%"
-			resistance_physical "8.000%"
+			item_cooldowns "-5.000%"
+			reflect_damage "6.000%"
+			building_cost "-6.000%"
+			resistance_all "6.000%"
+			resistance_physical "10.000%"
 		}
 
 		mod_flags
@@ -1716,6 +2525,16 @@ items/upgrades/magnetic_pistons_advanced_item
 			building_cost "random"
 			resistance_all "random"
 			resistance_physical "random"
+		}
+
+		random_max_values
+		{
+			health "29"
+			building_time "0.879999995"
+			reflect_damage "1.08000004"
+			building_cost "0.910000026"
+			resistance_all "1.09000003"
+			resistance_physical "1.13999999"
 		}
 
 		rarity "ADVANCED"
@@ -1727,17 +2546,22 @@ items/upgrades/magnetic_pistons_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			movement_speed "23,25"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			movement_speed "25.000%"
-			building_time "-16.000%"
-			item_cooldowns "-16.000%"
-			reflect_damage "13.000%"
-			building_cost "-16.000%"
-			resistance_all "4.000%"
-			resistance_physical "16.000%"
+			health "30.000"
+			health_regen "3.000"
+			movement_speed "20.000%"
+			building_time "-10.000%"
+			item_cooldowns "-7.000%"
+			reflect_damage "8.000%"
+			building_cost "-9.000%"
+			resistance_all "10.000%"
+			resistance_physical "15.000%"
 		}
 
 		mod_flags
@@ -1748,6 +2572,16 @@ items/upgrades/magnetic_pistons_extreme_item
 			building_cost "random"
 			resistance_all "random"
 			resistance_physical "random"
+		}
+
+		random_max_values
+		{
+			health "49"
+			building_time "0.840000033"
+			reflect_damage "1.10000002"
+			building_cost "0.870000005"
+			resistance_all "1.13"
+			resistance_physical "1.24000001"
 		}
 
 		rarity "EXTREME"
@@ -1759,17 +2593,22 @@ items/upgrades/magnetic_pistons_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			movement_speed "11,15"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
+			health "14.000"
+			health_regen "1.500"
 			movement_speed "10.000%"
-			building_time "-4.000%"
+			building_time "-7.000%"
 			item_cooldowns "-4.000%"
-			reflect_damage "10.000%"
-			building_cost "-4.000%"
-			resistance_all "1.000%"
-			resistance_physical "4.000%"
+			reflect_damage "5.000%"
+			building_cost "-5.000%"
+			resistance_all "4.000%"
+			resistance_physical "7.000%"
 		}
 
 		mod_flags
@@ -1782,6 +2621,16 @@ items/upgrades/magnetic_pistons_standard_item
 			resistance_physical "random"
 		}
 
+		random_max_values
+		{
+			health "19"
+			building_time "0.899999976"
+			reflect_damage "1.07000005"
+			building_cost "0.930000007"
+			resistance_all "1.07000005"
+			resistance_physical "1.09000003"
+		}
+
 	}
 
 }
@@ -1790,16 +2639,21 @@ items/upgrades/magnetic_pistons_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			movement_speed "18,22"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			movement_speed "20.000%"
-			building_time "-12.000%"
-			item_cooldowns "-12.000%"
-			reflect_damage "12.000%"
-			building_cost "-12.000%"
-			resistance_all "3.000%"
+			health "24.000"
+			health_regen "2.500"
+			movement_speed "17.000%"
+			building_time "-9.000%"
+			item_cooldowns "-6.000%"
+			reflect_damage "7.000%"
+			building_cost "-8.000%"
+			resistance_all "8.000%"
 			resistance_physical "12.000%"
 		}
 
@@ -1811,6 +2665,16 @@ items/upgrades/magnetic_pistons_superior_item
 			building_cost "random"
 			resistance_all "random"
 			resistance_physical "random"
+		}
+
+		random_max_values
+		{
+			health "39"
+			building_time "0.860000014"
+			reflect_damage "1.09000003"
+			building_cost "0.889999986"
+			resistance_all "1.11000001"
+			resistance_physical "1.19000006"
 		}
 
 		rarity "SUPERIOR"
@@ -1822,18 +2686,21 @@ items/upgrades/maintenance_tools_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			building_cost "-12,-16"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			movement_speed "15.000%"
-			building_time "-8.000%"
-			item_cooldowns "-8.000%"
-			building_cost "-8.000%"
-			resistance_all "2.000%"
+			health "19.000"
+			health_regen "2.500"
+			forcefield "29.000"
+			movement_speed "9.000%"
+			building_time "-6.000%"
+			item_cooldowns "-7.000%"
+			building_cost "-5.000%"
+			resistance_all "6.000%"
 			repair_drone "1.000"
 		}
 
@@ -1847,6 +2714,16 @@ items/upgrades/maintenance_tools_advanced_item
 			movement_speed "random"
 			item_cooldowns "random"
 			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			health "29"
+			health_regen "3.5"
+			forcefield "44"
+			movement_speed "1.12"
+			item_cooldowns "0.904999971"
+			resistance_all "1.09000003"
 		}
 
 		rarity "ADVANCED"
@@ -1858,18 +2735,21 @@ items/upgrades/maintenance_tools_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			building_cost "-16,-20"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			movement_speed "25.000%"
-			building_time "-16.000%"
-			item_cooldowns "-16.000%"
-			building_cost "-16.000%"
-			resistance_all "4.000%"
+			health "30.000"
+			health_regen "3.500"
+			forcefield "45.000"
+			movement_speed "13.000%"
+			building_time "-8.000%"
+			item_cooldowns "-9.000%"
+			building_cost "-7.000%"
+			resistance_all "10.000%"
 			repair_drone "1.000"
 		}
 
@@ -1883,6 +2763,16 @@ items/upgrades/maintenance_tools_extreme_item
 			movement_speed "random"
 			item_cooldowns "random"
 			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			health "49"
+			health_regen "4.5"
+			forcefield "74"
+			movement_speed "1.19000006"
+			item_cooldowns "0.870000005"
+			resistance_all "1.13"
 		}
 
 		rarity "EXTREME"
@@ -1894,18 +2784,21 @@ items/upgrades/maintenance_tools_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			building_cost "-10,-14"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			movement_speed "10.000%"
-			building_time "-4.000%"
-			item_cooldowns "-4.000%"
+			health "14.000"
+			health_regen "2.000"
+			forcefield "21.000"
+			movement_speed "7.000%"
+			building_time "-5.000%"
+			item_cooldowns "-6.000%"
 			building_cost "-4.000%"
-			resistance_all "1.000%"
+			resistance_all "4.000%"
 			repair_drone "1.000"
 		}
 
@@ -1919,6 +2812,16 @@ items/upgrades/maintenance_tools_standard_item
 			movement_speed "random"
 			item_cooldowns "random"
 			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			health "19"
+			health_regen "3"
+			forcefield "29"
+			movement_speed "1.09000003"
+			item_cooldowns "0.925000012"
+			resistance_all "1.07000005"
 		}
 
 	}
@@ -1929,18 +2832,21 @@ items/upgrades/maintenance_tools_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			building_cost "-14,-18"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			movement_speed "20.000%"
-			building_time "-12.000%"
-			item_cooldowns "-12.000%"
-			building_cost "-12.000%"
-			resistance_all "3.000%"
+			health "24.000"
+			health_regen "3.000"
+			forcefield "36.000"
+			movement_speed "11.000%"
+			building_time "-7.000%"
+			item_cooldowns "-8.000%"
+			building_cost "-6.000%"
+			resistance_all "8.000%"
 			repair_drone "1.000"
 		}
 
@@ -1954,6 +2860,16 @@ items/upgrades/maintenance_tools_superior_item
 			movement_speed "random"
 			item_cooldowns "random"
 			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			health "39"
+			health_regen "4"
+			forcefield "59"
+			movement_speed "1.15999997"
+			item_cooldowns "0.889999986"
+			resistance_all "1.11000001"
 		}
 
 		rarity "SUPERIOR"
@@ -1965,24 +2881,23 @@ items/upgrades/offensive_equipment_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			radar_range "75,85"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			movement_speed "15.000%"
-			item_cooldowns "-8.000%"
-			reflect_damage "11.000%"
-			resistance_all "2.000%"
+			health "19.000"
+			health_regen "2.500"
+			forcefield "29.000"
+			radar_range "65.000%"
+			movement_speed "7.000%"
+			item_cooldowns "-7.000%"
+			reflect_damage "6.000%"
+			resistance_all "6.000%"
 			attack_drone "1.000"
-			resistance_physical "8.000%"
-			resistance_fire "8.000%"
-			resistance_energy "8.000%"
-			resistance_acid "8.000%"
-			resistance_cryo "8.000%"
-			resistance_area "8.000%"
+			resistance_physical "10.000%"
 		}
 
 		mod_flags
@@ -1993,6 +2908,7 @@ items/upgrades/offensive_equipment_advanced_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			item_cooldowns "random"
+			reflect_damage "random"
 			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
@@ -2000,6 +2916,17 @@ items/upgrades/offensive_equipment_advanced_item
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health "29"
+			health_regen "3.5"
+			forcefield "44"
+			item_cooldowns "0.904999971"
+			reflect_damage "1.08000004"
+			resistance_all "1.09000003"
+			resistance_physical "1.13999999"
 		}
 
 		rarity "ADVANCED"
@@ -2011,24 +2938,23 @@ items/upgrades/offensive_equipment_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			radar_range "105,115"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			movement_speed "25.000%"
-			item_cooldowns "-16.000%"
-			reflect_damage "13.000%"
-			resistance_all "4.000%"
+			health "30.000"
+			health_regen "3.500"
+			forcefield "45.000"
+			radar_range "95.000%"
+			movement_speed "11.000%"
+			item_cooldowns "-9.000%"
+			reflect_damage "8.000%"
+			resistance_all "10.000%"
 			attack_drone "1.000"
-			resistance_physical "16.000%"
-			resistance_fire "16.000%"
-			resistance_energy "16.000%"
-			resistance_acid "16.000%"
-			resistance_cryo "16.000%"
-			resistance_area "16.000%"
+			resistance_physical "15.000%"
 		}
 
 		mod_flags
@@ -2039,6 +2965,7 @@ items/upgrades/offensive_equipment_extreme_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			item_cooldowns "random"
+			reflect_damage "random"
 			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
@@ -2046,6 +2973,17 @@ items/upgrades/offensive_equipment_extreme_item
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health "49"
+			health_regen "4.5"
+			forcefield "74"
+			item_cooldowns "0.870000005"
+			reflect_damage "1.10000002"
+			resistance_all "1.13"
+			resistance_physical "1.24000001"
 		}
 
 		rarity "EXTREME"
@@ -2057,24 +2995,23 @@ items/upgrades/offensive_equipment_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			radar_range "60,70"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			movement_speed "10.000%"
-			item_cooldowns "-4.000%"
-			reflect_damage "10.000%"
-			resistance_all "1.000%"
+			health "14.000"
+			health_regen "2.000"
+			forcefield "21.000"
+			radar_range "50.000%"
+			movement_speed "5.000%"
+			item_cooldowns "-6.000%"
+			reflect_damage "5.000%"
+			resistance_all "4.000%"
 			attack_drone "1.000"
-			resistance_physical "4.000%"
-			resistance_fire "4.000%"
-			resistance_energy "4.000%"
-			resistance_acid "4.000%"
-			resistance_cryo "4.000%"
-			resistance_area "4.000%"
+			resistance_physical "7.000%"
 		}
 
 		mod_flags
@@ -2085,6 +3022,7 @@ items/upgrades/offensive_equipment_standard_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			item_cooldowns "random"
+			reflect_damage "random"
 			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
@@ -2092,6 +3030,17 @@ items/upgrades/offensive_equipment_standard_item
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health "19"
+			health_regen "3"
+			forcefield "29"
+			item_cooldowns "0.925000012"
+			reflect_damage "1.07000005"
+			resistance_all "1.07000005"
+			resistance_physical "1.09000003"
 		}
 
 	}
@@ -2102,24 +3051,23 @@ items/upgrades/offensive_equipment_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			radar_range "90,100"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			movement_speed "20.000%"
-			item_cooldowns "-12.000%"
-			reflect_damage "12.000%"
-			resistance_all "3.000%"
+			health "24.000"
+			health_regen "3.000"
+			forcefield "36.000"
+			radar_range "80.000%"
+			movement_speed "9.000%"
+			item_cooldowns "-8.000%"
+			reflect_damage "7.000%"
+			resistance_all "8.000%"
 			attack_drone "1.000"
 			resistance_physical "12.000%"
-			resistance_fire "12.000%"
-			resistance_energy "12.000%"
-			resistance_acid "12.000%"
-			resistance_cryo "12.000%"
-			resistance_area "12.000%"
 		}
 
 		mod_flags
@@ -2130,6 +3078,7 @@ items/upgrades/offensive_equipment_superior_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			item_cooldowns "random"
+			reflect_damage "random"
 			resistance_all "random"
 			resistance_physical "random"
 			resistance_fire "random"
@@ -2137,6 +3086,17 @@ items/upgrades/offensive_equipment_superior_item
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health "39"
+			health_regen "4"
+			forcefield "59"
+			item_cooldowns "0.889999986"
+			reflect_damage "1.09000003"
+			resistance_all "1.11000001"
+			resistance_physical "1.19000006"
 		}
 
 		rarity "SUPERIOR"
@@ -2148,17 +3108,21 @@ items/upgrades/plasma_engine_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			item_cooldowns "-12,-16"
+		}
+
 		entity_mods
 		{
-			health_regen "1.500"
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			radar_range "15.000%"
-			movement_speed "15.000%"
-			building_time "-8.000%"
-			item_cooldowns "-8.000%"
-			resistance_energy "8.000%"
+			health_regen "2.500"
+			forcefield "29.000"
+			radar_range "40.000%"
+			movement_speed "7.000%"
+			building_time "-6.000%"
+			item_cooldowns "-10.000%"
+			building_cost "-6.000%"
+			resistance_all "6.000%"
 		}
 
 		mod_flags
@@ -2168,7 +3132,18 @@ items/upgrades/plasma_engine_advanced_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			building_cost "random"
+			resistance_all "random"
 			resistance_energy "random"
+		}
+
+		random_max_values
+		{
+			health_regen "3.5"
+			forcefield "44"
+			radar_range "1.64999998"
+			building_cost "0.910000026"
+			resistance_all "1.09000003"
 		}
 
 		rarity "ADVANCED"
@@ -2180,17 +3155,21 @@ items/upgrades/plasma_engine_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			item_cooldowns "-16,-20"
+		}
+
 		entity_mods
 		{
-			health_regen "2.500"
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			radar_range "25.000%"
-			movement_speed "25.000%"
-			building_time "-16.000%"
-			item_cooldowns "-16.000%"
-			resistance_energy "16.000%"
+			health_regen "3.500"
+			forcefield "45.000"
+			radar_range "60.000%"
+			movement_speed "11.000%"
+			building_time "-8.000%"
+			item_cooldowns "-14.000%"
+			building_cost "-9.000%"
+			resistance_all "10.000%"
 		}
 
 		mod_flags
@@ -2200,7 +3179,18 @@ items/upgrades/plasma_engine_extreme_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			building_cost "random"
+			resistance_all "random"
 			resistance_energy "random"
+		}
+
+		random_max_values
+		{
+			health_regen "4.5"
+			forcefield "74"
+			radar_range "1.89999998"
+			building_cost "0.870000005"
+			resistance_all "1.13"
 		}
 
 		rarity "EXTREME"
@@ -2212,17 +3202,21 @@ items/upgrades/plasma_engine_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			item_cooldowns "-10,-14"
+		}
+
 		entity_mods
 		{
-			health_regen "1.000"
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			radar_range "10.000%"
-			movement_speed "10.000%"
-			building_time "-4.000%"
-			item_cooldowns "-4.000%"
-			resistance_energy "4.000%"
+			health_regen "2.000"
+			forcefield "21.000"
+			radar_range "30.000%"
+			movement_speed "5.000%"
+			building_time "-5.000%"
+			item_cooldowns "-8.000%"
+			building_cost "-5.000%"
+			resistance_all "4.000%"
 		}
 
 		mod_flags
@@ -2232,7 +3226,18 @@ items/upgrades/plasma_engine_standard_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			building_cost "random"
+			resistance_all "random"
 			resistance_energy "random"
+		}
+
+		random_max_values
+		{
+			health_regen "3"
+			forcefield "29"
+			radar_range "1.45000005"
+			building_cost "0.930000007"
+			resistance_all "1.07000005"
 		}
 
 	}
@@ -2243,17 +3248,21 @@ items/upgrades/plasma_engine_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			item_cooldowns "-14,-18"
+		}
+
 		entity_mods
 		{
-			health_regen "2.000"
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			radar_range "20.000%"
-			movement_speed "20.000%"
-			building_time "-12.000%"
+			health_regen "3.000"
+			forcefield "36.000"
+			radar_range "50.000%"
+			movement_speed "9.000%"
+			building_time "-7.000%"
 			item_cooldowns "-12.000%"
-			resistance_energy "12.000%"
+			building_cost "-8.000%"
+			resistance_all "8.000%"
 		}
 
 		mod_flags
@@ -2263,7 +3272,18 @@ items/upgrades/plasma_engine_superior_item
 			forcefield_regen "random"
 			forcefield_regen_cooldown "random"
 			radar_range "random"
+			building_cost "random"
+			resistance_all "random"
 			resistance_energy "random"
+		}
+
+		random_max_values
+		{
+			health_regen "4"
+			forcefield "59"
+			radar_range "1.75"
+			building_cost "0.889999986"
+			resistance_all "1.11000001"
 		}
 
 		rarity "SUPERIOR"
@@ -2275,21 +3295,24 @@ items/upgrades/reflective_armor_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			reflect_damage "10,12"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			reflect_damage "11.000%"
-			resistance_all "2.000%"
-			resistance_physical "8.000%"
-			resistance_fire "8.000%"
-			resistance_energy "8.000%"
-			resistance_acid "8.000%"
-			resistance_cryo "8.000%"
-			resistance_area "8.000%"
+			health "15.000"
+			health_regen "2.500"
+			forcefield "29.000"
+			reflect_damage "9.000%"
+			resistance_all "6.000%"
+			resistance_physical "7.000%"
+			resistance_fire "10.000%"
+			resistance_energy "10.000%"
+			resistance_acid "10.000%"
+			resistance_cryo "10.000%"
+			resistance_area "10.000%"
 		}
 
 		mod_flags
@@ -2304,6 +3327,18 @@ items/upgrades/reflective_armor_advanced_item
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "3.5"
+			forcefield "44"
+			resistance_all "1.09000003"
+			resistance_fire "1.13999999"
+			resistance_energy "1.13999999"
+			resistance_acid "1.13999999"
+			resistance_cryo "1.13999999"
+			resistance_area "1.13999999"
 		}
 
 		rarity "ADVANCED"
@@ -2315,21 +3350,24 @@ items/upgrades/reflective_armor_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			reflect_damage "12,14"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			reflect_damage "13.000%"
-			resistance_all "4.000%"
-			resistance_physical "16.000%"
-			resistance_fire "16.000%"
-			resistance_energy "16.000%"
-			resistance_acid "16.000%"
-			resistance_cryo "16.000%"
-			resistance_area "16.000%"
+			health "25.000"
+			health_regen "3.500"
+			forcefield "45.000"
+			reflect_damage "11.000%"
+			resistance_all "10.000%"
+			resistance_physical "12.000%"
+			resistance_fire "15.000%"
+			resistance_energy "15.000%"
+			resistance_acid "15.000%"
+			resistance_cryo "15.000%"
+			resistance_area "15.000%"
 		}
 
 		mod_flags
@@ -2344,6 +3382,18 @@ items/upgrades/reflective_armor_extreme_item
 			resistance_acid "random"
 			resistance_cryo "random"
 			resistance_area "random"
+		}
+
+		random_max_values
+		{
+			health_regen "4.5"
+			forcefield "74"
+			resistance_all "1.13"
+			resistance_fire "1.24000001"
+			resistance_energy "1.24000001"
+			resistance_acid "1.24000001"
+			resistance_cryo "1.24000001"
+			resistance_area "1.24000001"
 		}
 
 		rarity "EXTREME"
@@ -2355,21 +3405,24 @@ items/upgrades/reflective_armor_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			reflect_damage "9,11"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			reflect_damage "10.000%"
-			resistance_all "1.000%"
-			resistance_physical "4.000%"
-			resistance_fire "4.000%"
-			resistance_energy "4.000%"
-			resistance_acid "4.000%"
-			resistance_cryo "4.000%"
-			resistance_area "4.000%"
+			health "10.000"
+			health_regen "2.000"
+			forcefield "21.000"
+			reflect_damage "8.000%"
+			resistance_all "4.000%"
+			resistance_physical "5.000%"
+			resistance_fire "7.000%"
+			resistance_energy "7.000%"
+			resistance_acid "7.000%"
+			resistance_cryo "7.000%"
+			resistance_area "7.000%"
 		}
 
 		mod_flags
@@ -2386,6 +3439,18 @@ items/upgrades/reflective_armor_standard_item
 			resistance_area "random"
 		}
 
+		random_max_values
+		{
+			health_regen "3"
+			forcefield "29"
+			resistance_all "1.07000005"
+			resistance_fire "1.09000003"
+			resistance_energy "1.09000003"
+			resistance_acid "1.09000003"
+			resistance_cryo "1.09000003"
+			resistance_area "1.09000003"
+		}
+
 	}
 
 }
@@ -2394,16 +3459,19 @@ items/upgrades/reflective_armor_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			reflect_damage "11,13"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			reflect_damage "12.000%"
-			resistance_all "3.000%"
-			resistance_physical "12.000%"
+			health "20.000"
+			health_regen "3.000"
+			forcefield "36.000"
+			reflect_damage "10.000%"
+			resistance_all "8.000%"
+			resistance_physical "10.000%"
 			resistance_fire "12.000%"
 			resistance_energy "12.000%"
 			resistance_acid "12.000%"
@@ -2425,6 +3493,18 @@ items/upgrades/reflective_armor_superior_item
 			resistance_area "random"
 		}
 
+		random_max_values
+		{
+			health_regen "4"
+			forcefield "59"
+			resistance_all "1.11000001"
+			resistance_fire "1.19000006"
+			resistance_energy "1.19000006"
+			resistance_acid "1.19000006"
+			resistance_cryo "1.19000006"
+			resistance_area "1.19000006"
+		}
+
 		rarity "SUPERIOR"
 	}
 
@@ -2434,24 +3514,26 @@ items/upgrades/repair_tools_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			health_regen "4,5"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			forcefield "40.000"
-			forcefield_regen "1.500"
-			forcefield_regen_cooldown "-8.000%"
-			movement_speed "15.000%"
+			health "15.000"
+			health_regen "3.500"
+			forcefield "29.000"
+			movement_speed "9.000%"
 			building_time "-8.000%"
-			item_cooldowns "-8.000%"
-			building_cost "-8.000%"
-			resistance_all "2.000%"
+			item_cooldowns "-7.000%"
+			building_cost "-6.000%"
+			resistance_all "6.000%"
 			repair_drone "1.000"
 		}
 
 		mod_flags
 		{
-			health "random"
 			forcefield "random"
 			forcefield_regen_cooldown "random"
 			movement_speed "random"
@@ -2459,6 +3541,16 @@ items/upgrades/repair_tools_advanced_item
 			item_cooldowns "random"
 			building_cost "random"
 			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			forcefield "44"
+			movement_speed "1.12"
+			building_time "0.879999995"
+			item_cooldowns "0.904999971"
+			building_cost "0.910000026"
+			resistance_all "1.09000003"
 		}
 
 		rarity "ADVANCED"
@@ -2470,24 +3562,26 @@ items/upgrades/repair_tools_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			health_regen "5,6"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			forcefield "50.000"
-			forcefield_regen "2.500"
-			forcefield_regen_cooldown "-16.000%"
-			movement_speed "25.000%"
-			building_time "-16.000%"
-			item_cooldowns "-16.000%"
-			building_cost "-16.000%"
-			resistance_all "4.000%"
+			health "25.000"
+			health_regen "4.500"
+			forcefield "45.000"
+			movement_speed "13.000%"
+			building_time "-10.000%"
+			item_cooldowns "-9.000%"
+			building_cost "-9.000%"
+			resistance_all "10.000%"
 			repair_drone "1.000"
 		}
 
 		mod_flags
 		{
-			health "random"
 			forcefield "random"
 			forcefield_regen_cooldown "random"
 			movement_speed "random"
@@ -2495,6 +3589,16 @@ items/upgrades/repair_tools_extreme_item
 			item_cooldowns "random"
 			building_cost "random"
 			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			forcefield "74"
+			movement_speed "1.19000006"
+			building_time "0.840000033"
+			item_cooldowns "0.870000005"
+			building_cost "0.870000005"
+			resistance_all "1.13"
 		}
 
 		rarity "EXTREME"
@@ -2506,24 +3610,26 @@ items/upgrades/repair_tools_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			health_regen "3.5,4.5"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
-			forcefield "35.000"
-			forcefield_regen "1.000"
-			forcefield_regen_cooldown "-4.000%"
-			movement_speed "10.000%"
-			building_time "-4.000%"
-			item_cooldowns "-4.000%"
-			building_cost "-4.000%"
-			resistance_all "1.000%"
+			health "10.000"
+			health_regen "3.000"
+			forcefield "21.000"
+			movement_speed "7.000%"
+			building_time "-7.000%"
+			item_cooldowns "-6.000%"
+			building_cost "-5.000%"
+			resistance_all "4.000%"
 			repair_drone "1.000"
 		}
 
 		mod_flags
 		{
-			health "random"
 			forcefield "random"
 			forcefield_regen_cooldown "random"
 			movement_speed "random"
@@ -2531,6 +3637,16 @@ items/upgrades/repair_tools_standard_item
 			item_cooldowns "random"
 			building_cost "random"
 			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			forcefield "29"
+			movement_speed "1.09000003"
+			building_time "0.899999976"
+			item_cooldowns "0.925000012"
+			building_cost "0.930000007"
+			resistance_all "1.07000005"
 		}
 
 	}
@@ -2541,24 +3657,26 @@ items/upgrades/repair_tools_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			health_regen "4.5,5.5"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			forcefield "45.000"
-			forcefield_regen "2.000"
-			forcefield_regen_cooldown "-12.000%"
-			movement_speed "20.000%"
-			building_time "-12.000%"
-			item_cooldowns "-12.000%"
-			building_cost "-12.000%"
-			resistance_all "3.000%"
+			health "20.000"
+			health_regen "4.000"
+			forcefield "36.000"
+			movement_speed "11.000%"
+			building_time "-9.000%"
+			item_cooldowns "-8.000%"
+			building_cost "-8.000%"
+			resistance_all "8.000%"
 			repair_drone "1.000"
 		}
 
 		mod_flags
 		{
-			health "random"
 			forcefield "random"
 			forcefield_regen_cooldown "random"
 			movement_speed "random"
@@ -2566,6 +3684,16 @@ items/upgrades/repair_tools_superior_item
 			item_cooldowns "random"
 			building_cost "random"
 			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			forcefield "59"
+			movement_speed "1.15999997"
+			building_time "0.860000014"
+			item_cooldowns "0.889999986"
+			building_cost "0.889999986"
+			resistance_all "1.11000001"
 		}
 
 		rarity "SUPERIOR"
@@ -2577,19 +3705,43 @@ items/upgrades/sonic_sensors_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			loot_equipment_chance "35,42"
+		}
+
 		entity_mods
 		{
-			forcefield_regen_cooldown "-8.000%"
-			radar_range "15.000%"
-			loot_mods_chance "30.000%"
-			loot_resources_chance "30.000%"
-			item_cooldowns "-8.000%"
+			forcefield "29.000"
+			radar_range "40.000%"
+			loot_mods_chance "11.000%"
+			loot_resources_chance "11.000%"
+			movement_speed "9.000%"
+			item_cooldowns "-7.000%"
+			reflect_damage "6.000%"
+			resistance_all "6.000%"
+			loot_equipment_chance "30.000%"
 		}
 
 		mod_flags
 		{
+			forcefield "random"
 			forcefield_regen_cooldown "random"
-			loot_mods_chance "random"
+			radar_range "random"
+			movement_speed "random"
+			item_cooldowns "random"
+			reflect_damage "random"
+			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			forcefield "44"
+			radar_range "1.64999998"
+			movement_speed "1.12"
+			item_cooldowns "0.904999971"
+			reflect_damage "1.08000004"
+			resistance_all "1.09000003"
 		}
 
 		rarity "ADVANCED"
@@ -2601,19 +3753,43 @@ items/upgrades/sonic_sensors_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			loot_equipment_chance "55,62"
+		}
+
 		entity_mods
 		{
-			forcefield_regen_cooldown "-16.000%"
-			radar_range "25.000%"
-			loot_mods_chance "50.000%"
-			loot_resources_chance "50.000%"
-			item_cooldowns "-16.000%"
+			forcefield "45.000"
+			radar_range "60.000%"
+			loot_mods_chance "21.000%"
+			loot_resources_chance "21.000%"
+			movement_speed "13.000%"
+			item_cooldowns "-9.000%"
+			reflect_damage "8.000%"
+			resistance_all "10.000%"
+			loot_equipment_chance "50.000%"
 		}
 
 		mod_flags
 		{
+			forcefield "random"
 			forcefield_regen_cooldown "random"
-			loot_mods_chance "random"
+			radar_range "random"
+			movement_speed "random"
+			item_cooldowns "random"
+			reflect_damage "random"
+			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			forcefield "74"
+			radar_range "1.89999998"
+			movement_speed "1.19000006"
+			item_cooldowns "0.870000005"
+			reflect_damage "1.10000002"
+			resistance_all "1.13"
 		}
 
 		rarity "EXTREME"
@@ -2625,19 +3801,43 @@ items/upgrades/sonic_sensors_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			loot_equipment_chance "25,32"
+		}
+
 		entity_mods
 		{
-			forcefield_regen_cooldown "-4.000%"
-			radar_range "10.000%"
-			loot_mods_chance "20.000%"
-			loot_resources_chance "20.000%"
-			item_cooldowns "-4.000%"
+			forcefield "21.000"
+			radar_range "30.000%"
+			loot_mods_chance "7.000%"
+			loot_resources_chance "7.000%"
+			movement_speed "7.000%"
+			item_cooldowns "-6.000%"
+			reflect_damage "5.000%"
+			resistance_all "4.000%"
+			loot_equipment_chance "20.000%"
 		}
 
 		mod_flags
 		{
+			forcefield "random"
 			forcefield_regen_cooldown "random"
-			loot_mods_chance "random"
+			radar_range "random"
+			movement_speed "random"
+			item_cooldowns "random"
+			reflect_damage "random"
+			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			forcefield "29"
+			radar_range "1.45000005"
+			movement_speed "1.09000003"
+			item_cooldowns "0.925000012"
+			reflect_damage "1.07000005"
+			resistance_all "1.07000005"
 		}
 
 	}
@@ -2648,19 +3848,43 @@ items/upgrades/sonic_sensors_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			loot_equipment_chance "45,52"
+		}
+
 		entity_mods
 		{
-			forcefield_regen_cooldown "-12.000%"
-			radar_range "20.000%"
-			loot_mods_chance "40.000%"
-			loot_resources_chance "40.000%"
-			item_cooldowns "-12.000%"
+			forcefield "36.000"
+			radar_range "50.000%"
+			loot_mods_chance "16.000%"
+			loot_resources_chance "16.000%"
+			movement_speed "11.000%"
+			item_cooldowns "-8.000%"
+			reflect_damage "7.000%"
+			resistance_all "8.000%"
+			loot_equipment_chance "40.000%"
 		}
 
 		mod_flags
 		{
+			forcefield "random"
 			forcefield_regen_cooldown "random"
-			loot_mods_chance "random"
+			radar_range "random"
+			movement_speed "random"
+			item_cooldowns "random"
+			reflect_damage "random"
+			resistance_all "random"
+		}
+
+		random_max_values
+		{
+			forcefield "59"
+			radar_range "1.75"
+			movement_speed "1.15999997"
+			item_cooldowns "0.889999986"
+			reflect_damage "1.09000003"
+			resistance_all "1.11000001"
 		}
 
 		rarity "SUPERIOR"
@@ -2672,25 +3896,48 @@ items/upgrades/titanium_machinery_advanced_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			building_time "-14,-18"
+		}
+
 		entity_mods
 		{
-			health "15.000%"
-			health_regen "1.500"
-			movement_speed "15.000%"
-			building_time "-8.000%"
-			item_cooldowns "-8.000%"
-			building_cost "-8.000%"
-			resistance_all "2.000%"
-			resistance_physical "8.000%"
+			health "19.000"
+			health_regen "2.500"
+			loot_mods_chance "15.000%"
+			loot_resources_chance "15.000%"
+			movement_speed "7.000%"
+			building_time "-13.000%"
+			item_cooldowns "-7.000%"
+			building_cost "-5.000%"
+			resistance_all "6.000%"
+			resistance_physical "10.000%"
+			loot_equipment_chance "15.000%"
 		}
 
 		mod_flags
 		{
 			health "random"
 			health_regen "random"
-			building_cost "random"
+			loot_mods_chance "random"
+			loot_resources_chance "random"
+			item_cooldowns "random"
 			resistance_all "random"
 			resistance_physical "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			health "29"
+			health_regen "3.5"
+			loot_mods_chance "1.28999996"
+			loot_resources_chance "1.28999996"
+			item_cooldowns "0.904999971"
+			resistance_all "1.09000003"
+			resistance_physical "1.13999999"
+			loot_equipment_chance "1.28999996"
 		}
 
 		rarity "ADVANCED"
@@ -2702,25 +3949,48 @@ items/upgrades/titanium_machinery_extreme_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			building_time "-18,-22"
+		}
+
 		entity_mods
 		{
-			health "25.000%"
-			health_regen "2.500"
-			movement_speed "25.000%"
-			building_time "-16.000%"
-			item_cooldowns "-16.000%"
-			building_cost "-16.000%"
-			resistance_all "4.000%"
-			resistance_physical "16.000%"
+			health "30.000"
+			health_regen "3.500"
+			loot_mods_chance "25.000%"
+			loot_resources_chance "25.000%"
+			movement_speed "11.000%"
+			building_time "-17.000%"
+			item_cooldowns "-9.000%"
+			building_cost "-7.000%"
+			resistance_all "10.000%"
+			resistance_physical "15.000%"
+			loot_equipment_chance "25.000%"
 		}
 
 		mod_flags
 		{
 			health "random"
 			health_regen "random"
-			building_cost "random"
+			loot_mods_chance "random"
+			loot_resources_chance "random"
+			item_cooldowns "random"
 			resistance_all "random"
 			resistance_physical "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			health "49"
+			health_regen "4.5"
+			loot_mods_chance "1.49000001"
+			loot_resources_chance "1.49000001"
+			item_cooldowns "0.870000005"
+			resistance_all "1.13"
+			resistance_physical "1.24000001"
+			loot_equipment_chance "1.49000001"
 		}
 
 		rarity "EXTREME"
@@ -2732,25 +4002,48 @@ items/upgrades/titanium_machinery_standard_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			building_time "-12,-16"
+		}
+
 		entity_mods
 		{
-			health "10.000%"
-			health_regen "1.000"
-			movement_speed "10.000%"
-			building_time "-4.000%"
-			item_cooldowns "-4.000%"
+			health "14.000"
+			health_regen "2.000"
+			loot_mods_chance "10.000%"
+			loot_resources_chance "10.000%"
+			movement_speed "5.000%"
+			building_time "-11.000%"
+			item_cooldowns "-6.000%"
 			building_cost "-4.000%"
-			resistance_all "1.000%"
-			resistance_physical "4.000%"
+			resistance_all "4.000%"
+			resistance_physical "7.000%"
+			loot_equipment_chance "10.000%"
 		}
 
 		mod_flags
 		{
 			health "random"
 			health_regen "random"
-			building_cost "random"
+			loot_mods_chance "random"
+			loot_resources_chance "random"
+			item_cooldowns "random"
 			resistance_all "random"
 			resistance_physical "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			health "19"
+			health_regen "3"
+			loot_mods_chance "1.19000006"
+			loot_resources_chance "1.19000006"
+			item_cooldowns "0.925000012"
+			resistance_all "1.07000005"
+			resistance_physical "1.09000003"
+			loot_equipment_chance "1.19000006"
 		}
 
 	}
@@ -2761,25 +4054,48 @@ items/upgrades/titanium_machinery_superior_item
 {
 	EntityModDesc
 	{
+		boost_values
+		{
+			building_time "-16,-20"
+		}
+
 		entity_mods
 		{
-			health "20.000%"
-			health_regen "2.000"
-			movement_speed "20.000%"
-			building_time "-12.000%"
-			item_cooldowns "-12.000%"
-			building_cost "-12.000%"
-			resistance_all "3.000%"
+			health "24.000"
+			health_regen "3.000"
+			loot_mods_chance "20.000%"
+			loot_resources_chance "20.000%"
+			movement_speed "9.000%"
+			building_time "-15.000%"
+			item_cooldowns "-8.000%"
+			building_cost "-6.000%"
+			resistance_all "8.000%"
 			resistance_physical "12.000%"
+			loot_equipment_chance "20.000%"
 		}
 
 		mod_flags
 		{
 			health "random"
 			health_regen "random"
-			building_cost "random"
+			loot_mods_chance "random"
+			loot_resources_chance "random"
+			item_cooldowns "random"
 			resistance_all "random"
 			resistance_physical "random"
+			loot_equipment_chance "random"
+		}
+
+		random_max_values
+		{
+			health "39"
+			health_regen "4"
+			loot_mods_chance "1.38999999"
+			loot_resources_chance "1.38999999"
+			item_cooldowns "0.889999986"
+			resistance_all "1.11000001"
+			resistance_physical "1.19000006"
+			loot_equipment_chance "1.38999999"
 		}
 
 		rarity "SUPERIOR"

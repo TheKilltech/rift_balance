@@ -277,8 +277,7 @@ MissionDef
 	creature_volumes_min_distance   "128.0"
 	creature_volumes_density        "0.35"
 
-    threat  "0.5"
-    block_outpost_remove "1"
+    threat  "0.5"    
 
     ambient_creature_species
     {
@@ -385,8 +384,8 @@ MissionDef
 					database
 					{	
 						resource        string:"carbon_vein"
-						min_resources   float:"20000"
-						max_resources   float:"25000"
+						min_resources   float:"40000"
+						max_resources   float:"50000"
 					}
 				}
 				
@@ -396,8 +395,8 @@ MissionDef
 					database
 					{	
 						resource        string:"iron_vein"
-						min_resources   float:"10000"
-						max_resources   float:"15000"
+						min_resources   float:"20000"
+						max_resources   float:"30000"
 					}					
                 }
 				
@@ -407,8 +406,8 @@ MissionDef
 					database
 					{	
 						resource        string:"cobalt_vein"
-						min_resources   float:"6000"
-						max_resources   float:"12000"
+						min_resources   float:"12000"
+						max_resources   float:"24000"
 					}				
 				}
 			}
@@ -473,7 +472,47 @@ MissionDef
                     spawn_chance           0.25
                 }
             }
-        }		
+        }
+
+		GridSpawner
+        {
+            spawn_pool                  "loot_containers_small"
+			spawn_min_free_cell_margin	2
+			spawn_within_destructible_volumes "0"
+
+            //terrain_types               "mud,floor"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      100
+                loot_containers         40
+                loot_containers_small   70
+                underground_treasures   10
+				resource_volumes		8
+				enemy					5
+            }
+
+            spawn_blueprints
+            {
+				spawners/loot_container_small_caverns_standard
+                {                    
+                    spawn_chance           0.4				
+                }				
+                spawners/loot_container_small_caverns_advanced
+                {                    
+                    spawn_chance           0.3
+                }				
+                spawners/loot_container_small_caverns_superior
+                {                   
+                    spawn_chance           0.2
+                }				
+                spawners/loot_container_small_caverns_extreme
+                {                    
+                    spawn_chance           0.1
+                }				
+			}
+		}	
+			
 	}
 
 	random_resources
@@ -482,8 +521,8 @@ MissionDef
         {
             resource        "cobalt_vein"
 			
-            min_resources   "6000"
-            max_resources   "12000"
+            min_resources   "12000"
+            max_resources   "24000"
 
             min_spawned_volumes "15"
             max_spawned_volumes "20"
@@ -493,8 +532,8 @@ MissionDef
         {
             resource        "carbon_vein"
 
-            min_resources   "4000"
-            max_resources   "8000"
+            min_resources   "8000"
+            max_resources   "16000"
 
             min_spawned_volumes "5"
             max_spawned_volumes "8"
@@ -504,8 +543,8 @@ MissionDef
         {
             resource        "carbon_vein"
 
-            min_resources   "8000"
-            max_resources   "15000"
+            min_resources   "16000"
+            max_resources   "30000"
 
             min_spawned_volumes "10"
             max_spawned_volumes "15"
@@ -515,8 +554,8 @@ MissionDef
         {
             resource        "iron_vein"
 
-            min_resources   "8000"
-            max_resources   "12000"
+            min_resources   "16000"
+            max_resources   "24000"
 
             min_spawned_volumes "4"
             max_spawned_volumes "6"
@@ -526,8 +565,8 @@ MissionDef
         {
             resource        "iron_vein"
 
-            min_resources   "12000"
-            max_resources   "25000"
+            min_resources   "24000"
+            max_resources   "50000"
 
             min_spawned_volumes "20"
             max_spawned_volumes "25"
@@ -536,10 +575,6 @@ MissionDef
         ResourceVolume
         {
             resource        "geothermal_vent"
-
-            min_resources   "6000"
-            max_resources   "10000"
-            
             is_infinite     "1"
             
             min_spawned_volumes "12"

@@ -65,6 +65,18 @@ EntityBlueprint
 			{
 				attachment		"att_in_2,att_in_4"
 			}
+			
+			LuaDesc
+			{
+				script "lua/buildings/resources/pipe_junction_second.lua"
+
+				database
+				{
+					cone_effect			string:"build_cone_1x1"
+					cone_effect_sell	string:"sell_small"
+					postfix				string:"_storage"
+				}
+			}
 
 			ResourceStorageDesc
 			{
@@ -86,7 +98,25 @@ EntityBlueprint
 				name "meshes/buildings/resources/pipe_junction_second"
 			}
 
+			MeshDesc
+			{
+				mesh "meshes/buildings/resources/pipe_junction_top.mesh"
+				material "buildings/resources/pipe_junction"
+				SubMeshes
+				{
+					SubMesh
+					{
+						id "0"
+						material "buildings/resources/pipe_junction"
+					}
 
+					SubMesh
+					{
+						id "1"
+						material "resources/resource_empty_fresnel"
+					}
+				}
+			}
 		}
 	}
 
@@ -140,7 +170,7 @@ EntityBlueprint
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/pipe_junction.mesh"
+		mesh "meshes/buildings/resources/pipe_junction_bottom.mesh"
 		material "buildings/resources/pipe_junction"
 		SubMeshes
 		{
@@ -183,7 +213,7 @@ EntityBlueprint
 					{
 						x "6"
 						y "2"
-						z "2"
+						z "6"
 
 						position
 						{
@@ -205,13 +235,13 @@ EntityBlueprint
 			{
 				x "-3"
 				y "0"
-				z "-1"
+				z "-3"
 			}
 			max
 			{
 				x "3"
 				y "1"
-				z "1"
+				z "3"
 			}
 		}
 	}
@@ -231,7 +261,7 @@ EntityBlueprint
 			{
 					x	5.9
 					y	1.9
-					z	1.9
+					z	5.9
 			}
 		}
 	}
@@ -248,11 +278,13 @@ EntityBlueprint
 		}
 		size
 		{
-			x "1"
-			y "1"
+			x "3"
+			y "3"
 		}
+		
 		big_minimap_scale 	"1.9"
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	HealthBarDesc
@@ -395,43 +427,5 @@ EntityBlueprint
 				}
 			}
 		}
-
-		//EffectGroup
-		//{
-		//	group "working"
-		//	enabled "1"
-		//	delay "0"
-		//
-		//	Effects
-		//	{
-		//		Effect
-		//		{
-		//			blueprint "effects/buildings_and_machines/building_arrow"
-		//			bone "att_in_1"
-		//			scale	"0.4 0.4 0.4"
-		//		}
-		//
-		//		Effect
-		//		{
-		//			blueprint "effects/buildings_and_machines/building_arrow"
-		//			bone "att_in_2"
-		//			scale	"0.4 0.4 0.4"
-		//		}
-		//
-		//		Effect
-		//		{
-		//			blueprint "effects/buildings_and_machines/building_arrow"
-		//			bone "att_in_3"
-		//			scale	"0.4 0.4 0.4"
-		//		}
-		//
-		//		Effect
-		//		{
-		//			blueprint "effects/buildings_and_machines/building_arrow"
-		//			bone "att_in_4"
-		//			scale	"0.4 0.4 0.4"
-		//		}
-		//	}
-		//}
 	}
 }

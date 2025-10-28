@@ -224,102 +224,6 @@ MissionDef
                 volume_spawn_ratio  "0.5"
             }
         }
-		
-		guardian_standard
-        {		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_cryo"
-				volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_acid"
-                volume_spawn_ratio  "1"
-            }		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_energy"
-                volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_fire"
-                volume_spawn_ratio  "1"
-            }				
-        }
-
-        guardian_advanced
-        {				
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_cryo"
-				volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_acid"
-                volume_spawn_ratio  "1"
-            }		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_energy"
-                volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_fire"
-                volume_spawn_ratio  "1"
-            }			
-        }
-
-        guardian_superior
-        {			
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_cryo"
-				volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_acid"
-                volume_spawn_ratio  "1"
-            }		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_energy"
-                volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_fire"
-                volume_spawn_ratio  "1"
-            }		
-        }
-
-        guardian_extreme
-        {		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_cryo"
-				volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_acid"
-                volume_spawn_ratio  "1"
-            }		
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_energy"
-                volume_spawn_ratio  "1"
-            }
-            CreatureVolume
-            {
-                creature_species    "nerilian_boss_fire"
-                volume_spawn_ratio  "1"
-            }	
-        }
     }
 	
 	mission_object_spawners
@@ -328,11 +232,7 @@ MissionDef
         {
             spawn_pool               "mission_objective"
             spawn_at_marker          "logic/mission_objective_marker"
-
-            spawn_min_distance_from_pools
-            {
-                player_spawn_point  10.0                
-            }
+			ignore_excluded_cells_check	"1"           
 
             spawn_instances_minmax    1,1
 
@@ -343,7 +243,36 @@ MissionDef
                     spawn_chance           1
                 }                
             }
-        }
+        }		
+				
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "factory"
+			spawn_team               "enemy"
+
+            // find all entities on map with this blueprint as possible spawn point
+            spawn_at_marker          "logic/spawn_alien_factory"
+			spawn_required			1
+
+            // min distance from objects in other pools
+            spawn_min_distance_from_pools
+            {
+                //player_spawn_point  250.0  
+				//factory				250
+            }
+
+            // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
+            spawn_instances_minmax    4,4
+
+            spawn_blueprints
+            {
+                spawner_granan_elite 
+				{
+					spawn_type				"creature_species"					
+				}
+			}
+        }	
+		
 		
         MarkerBlueprintSpawner
         {
@@ -518,7 +447,7 @@ MissionDef
             spawn_blueprints
             {              
 
-                spawners/loot_spawner
+                spawners/underground_treasure_spawner
                 {
                     spawn_instances_minmax      20,20
                     spawn_discoverable_level    1
@@ -567,8 +496,8 @@ MissionDef
         {
             resource        "carbon_vein"
 
-            min_resources   "3000"
-            max_resources   "10000"
+            min_resources   "6000"
+            max_resources   "20000"
 
             min_spawned_volumes "10"
             max_spawned_volumes "15"
@@ -578,8 +507,8 @@ MissionDef
         {
             resource        "iron_vein"
 
-            min_resources   "2000"
-            max_resources   "8000"
+            min_resources   "4000"
+            max_resources   "16000"
 
             min_spawned_volumes "5"
             max_spawned_volumes "15"
@@ -610,8 +539,8 @@ MissionDef
         {
             resource        "carbon_vein"
 		
-            min_resources   "5000"
-            max_resources   "10000"
+            min_resources   "10000"
+            max_resources   "20000"
 		
             min_spawned_volumes "2"
             max_spawned_volumes "2"
@@ -621,8 +550,8 @@ MissionDef
         {
             resource        "iron_vein"
 		
-            min_resources   "4000"
-            max_resources   "8000"
+            min_resources   "8000"
+            max_resources   "16000"
 		
             min_spawned_volumes "2"
             max_spawned_volumes "2"

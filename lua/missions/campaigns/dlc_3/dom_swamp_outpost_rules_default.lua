@@ -35,11 +35,7 @@ return function()
 		{ action = "spawn_fog", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/fog.logic", minTime = 60, maxTime = 120, weight = 0.5  },
 		{ action = "spawn_fog", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/fog.logic", minTime = 60, maxTime = 120, weight = 0.5  },		
 		{ action = "phirian_attack", type = "NEGATIVE", gameStates="IDLE|STREAMING", minEventLevel = 3, maxEventLevel = 9, logicFile="logic/event/phirian_attack.logic", weight = 1 },
-		{ action = "phirian_attack", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 3, maxEventLevel = 9, logicFile="logic/event/phirian_attack.logic", weight = 1 },
-		--{ action = "phirian_attack_hard", type = "NEGATIVE", gameStates="IDLE|STREAMING", minEventLevel = 5, maxEventLevel = 7, logicFile="logic/event/phirian_attack_hard.logic", weight = 3 },
-		--{ action = "phirian_attack_hard", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 5, maxEventLevel = 7, logicFile="logic/event/phirian_attack_hard.logic", weight = 3 },
-		--{ action = "phirian_attack_very_hard", type = "NEGATIVE", gameStates="IDLE|STREAMING", minEventLevel = 8, maxEventLevel = 9, logicFile="logic/event/phirian_attack_very_hard.logic", weight = 3 },
-		--{ action = "phirian_attack_very_hard", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 8, maxEventLevel = 9, logicFile="logic/event/phirian_attack_very_hard.logic", weight = 3 },
+		{ action = "phirian_attack", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 3, maxEventLevel = 9, logicFile="logic/event/phirian_attack.logic", weight = 1 },		
 		{ action = "spawn_rain", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/rain.logic", minTime = 120, maxTime = 120, weight = 0.5 },
 		{ action = "spawn_rain", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/rain.logic", minTime = 120, maxTime = 120, weight = 0.5 },
 		{ action = "spawn_wind_weak", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 2, logicFile="logic/weather/wind_weak.logic", minTime = 120, maxTime = 180, weight = 1 },
@@ -64,14 +60,14 @@ return function()
 		{ action = "spawn_tornado_acid_near_player", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 3, maxEventLevel = 4, logicFile="logic/weather/tornado_acid_near_player.logic", weight = 0.5 },
 		{ action = "spawn_tornado_acid_near_base", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4, logicFile="logic/weather/tornado_acid_near_base.logic", weight = 0.5 },
 		{ action = "spawn_tornado_acid_near_base", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/tornado_acid_near_base.logic", weight = 0.5 },				
-		{ action = "spawn_comet_boss_mudroner_acid", type = "NEGATIVE", gameStates = "IDLE|STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_acid.logic"  },
-		{ action = "spawn_comet_boss_mudroner_acid", type = "NEGATIVE", gameStates = "IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_acid.logic"  },
-		{ action = "spawn_comet_boss_mudroner_cryo", type = "NEGATIVE", gameStates = "IDLE|STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_cryo.logic"  },
-		{ action = "spawn_comet_boss_mudroner_cryo", type = "NEGATIVE", gameStates = "IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_cryo.logic"  },
-		{ action = "spawn_comet_boss_mudroner_energy", type = "NEGATIVE", gameStates = "IDLE|STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_energy.logic"  },
-		{ action = "spawn_comet_boss_mudroner_energy", type = "NEGATIVE", gameStates = "IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_energy.logic"  },
-		{ action = "spawn_comet_boss_mudroner_fire", type = "NEGATIVE", gameStates = "IDLE|STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_fire.logic"  },
-		{ action = "spawn_comet_boss_mudroner_fire", type = "NEGATIVE", gameStates = "IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_fire.logic"  },
+		--{ action = "spawn_comet_boss_mudroner_acid", type = "NEGATIVE", gameStates = "IDLE|STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_acid.logic"  },
+		--{ action = "spawn_comet_boss_mudroner_acid", type = "NEGATIVE", gameStates = "IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_acid.logic"  },
+		--{ action = "spawn_comet_boss_mudroner_cryo", type = "NEGATIVE", gameStates = "IDLE|STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_cryo.logic"  },
+		--{ action = "spawn_comet_boss_mudroner_cryo", type = "NEGATIVE", gameStates = "IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_cryo.logic"  },
+		--{ action = "spawn_comet_boss_mudroner_energy", type = "NEGATIVE", gameStates = "IDLE|STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_energy.logic"  },
+		--{ action = "spawn_comet_boss_mudroner_energy", type = "NEGATIVE", gameStates = "IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_energy.logic"  },
+		--{ action = "spawn_comet_boss_mudroner_fire", type = "NEGATIVE", gameStates = "IDLE|STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_fire.logic"  },
+		--{ action = "spawn_comet_boss_mudroner_fire", type = "NEGATIVE", gameStates = "IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/event/comet_boss_mudroner_fire.logic"  },
 		{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/comet_silent.logic", weight = 1 },
 	}
 
@@ -82,7 +78,7 @@ return function()
 
 	rules.majorAttackLogic =
 	{			
-		{ level = 2, minLevel = 5, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },
+		{ level = 2, minLevel = 6, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },
 	}
 
 	rules.timeToNextDifficultyLevel = 
@@ -118,8 +114,7 @@ return function()
 
 	rules.objectivesLogic = 
 	{
-		{ name = "logic/objectives/kill_elite_baxmoth.logic", minDifficultyLevel = 3 },
-		{ name = "logic/objectives/kill_elite_mudroner.logic", minDifficultyLevel = 5 },
+		{ name = "logic/objectives/kill_elite_dynamic.logic", minDifficultyLevel = 6 },		
 		{ name = "logic/objectives/destroy_nest_stickrid_single.logic", minDifficultyLevel = 3, maxDifficultyLevel = 5 }, 
 		{ name = "logic/objectives/destroy_nest_stickrid_multiple.logic", minDifficultyLevel = 5 },
 		{ name = "logic/objectives/destroy_nest_plutrodon_single.logic", minDifficultyLevel = 4, maxDifficultyLevel = 6 }, 
@@ -208,6 +203,89 @@ return function()
 			"logic/dom/attack_level_2_entry.logic",
 		 -- difficulty level 9		
 			"logic/dom/attack_level_2_entry.logic",		
+	}
+	
+	rules.multiplayerWaves = 
+	{
+		 -- difficulty level 1		
+		{ 
+			additionalWaves = -1, -- Additional Waves count = 1 + additionalWaves - regardless of player number. Multiplayer Additional waves are disabled in single player mode. Check dom_mananger:GetMultiplayerAttackCount for actual code
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
+			}
+		},
+	
+		 -- difficulty level 2
+		{ 
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
+			}
+		},
+		 -- difficulty level 3
+		{ 
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
+			}
+		},
+
+		 -- difficulty level 4
+		{ 
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
+			}
+		},
+
+		 -- difficulty level 5
+		{ 
+			additionalWaves = -1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
+			}
+		},
+
+		 -- difficulty level 6 - start of canceroth waves - this is when boss attacks start
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},
+			}
+		},
+
+		 -- difficulty level 7
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+
+		 -- difficulty level 8
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
+
+		 -- difficulty level 9
+		{ 
+			additionalWaves = 1,
+			waves = 
+			{
+				"logic/missions/survival/attack_boss_dynamic.logic"
+			}
+		},
 	}
 
 	rules.waves = 
@@ -368,56 +446,47 @@ return function()
 	{
 		 -- difficulty level 1		
 		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",			
-			--"logic/missions/survival/attack_boss_mudroner.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",						
 		},
 	
 		 -- difficulty level 2
-		{ 			
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			--"logic/missions/survival/attack_boss_mudroner.logic",			
+		{ 
+			"logic/missions/survival/attack_boss_dynamic.logic",						
 		},
 
 		 -- difficulty level 3
 		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			--"logic/missions/survival/attack_boss_mudroner.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",						
 		},
 
 		 -- difficulty level 4
-		{ 			
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
+		{ 
+			"logic/missions/survival/attack_boss_dynamic.logic",						
 		},
 
 		 -- difficulty level 5
 		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",						
 		},
 
 		 -- difficulty level 6
 		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",						
 		},
 
 		 -- difficulty level 7
 		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",						
 		},
 
 		 -- difficulty level 8
 		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",						
 		},
 
 		 -- difficulty level 9
 		{ 
-			"logic/missions/survival/attack_boss_baxmoth.logic",
-			"logic/missions/survival/attack_boss_mudroner.logic",			
+			"logic/missions/survival/attack_boss_dynamic.logic",						
 		},
 	}
 

@@ -40,23 +40,18 @@ EntityBlueprint
 		}
 	}
 
-	//ResourceConverterDesc // must be here for AI
-	//{
-	//	in
-	//	{
-	//		GameplayResource
-	//		{
-	//			resource 	"energy"
-	//			value 		"1"
-	//		}
-	//	}
-	//
-	//	out
-	//	{
-	//	}
-	//
-	//	priority 6
-	//}
+	ResourceConverterDesc // must be here for icons!
+	{
+		in
+		{
+		}
+	
+		out
+		{
+		}
+	
+		priority 6
+	}
 
 	LuaDesc
 	{
@@ -186,6 +181,7 @@ EntityBlueprint
 			y "1"
 		}
 		visibility			"always"
+		layer_group			"defense_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

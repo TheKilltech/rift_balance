@@ -176,6 +176,7 @@ EntityBlueprint
 			y "1"
 		}
 		visibility			"always"
+		layer_group			"defense_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc
@@ -452,5 +453,9 @@ EntityBlueprint
 				}
 			}
 		}
+	}	
+	LifeTimeDesc
+	{
+		time "5.0"
 	}	
 }

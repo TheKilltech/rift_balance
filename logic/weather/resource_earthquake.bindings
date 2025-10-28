@@ -1,0 +1,74 @@
+FlowGraphBindings
+{
+	Database
+	{
+		Strings
+		{
+			StringData
+			{
+				value "carbon_vein"
+				key "resource"
+			}
+
+		}
+
+		Floats
+		Vectors
+		Integers
+		{
+			IntData
+			{
+				value "8000"
+				key "minAmount"
+			}
+
+			IntData
+			{
+				value "14000"
+				key "maxAmount"
+			}
+
+		}
+
+	}
+
+	Bindings
+	{
+		weather_resource_earthquake_0
+		{
+			//database@Integers@IntData[2]@value "minAmount"
+			database
+			{
+				Integers
+				{
+					IntData[2]
+					{
+						value "minAmount"
+					}
+
+					IntData[3]
+					{
+						value "maxAmount"
+					}
+
+				}
+
+				Strings
+				{
+					StringData[3]
+					{
+						value "resource"
+					}
+
+				}
+
+			}
+
+			//database@Integers@IntData[3]@value "maxAmount"
+			//database@Strings@StringData[3]@value "resource"
+		}
+
+	}
+
+}
+
