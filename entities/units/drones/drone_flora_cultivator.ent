@@ -101,6 +101,21 @@ EntityBlueprint
 		
 		EffectGroup
 		{
+			group "fly"
+
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/drone_trail_cultivator"								
+				}
+			}
+		}		
+		
+		EffectGroup
+		{
 			group "work"
 			enabled "0"	
 			

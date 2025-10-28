@@ -32,8 +32,8 @@ return function()
 		{ action = "spawn_resource_earthquake", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/weather/resource_earthquake.logic" },
 		{ action = "spawn_cave_in", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 5, logicFile="logic/weather/cave_in.logic" },
 		{ action = "spawn_cave_in", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/weather/cave_in.logic" },
-		{ action = "spawn_crystal_growth", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 5, logicFile="logic/weather/crystal_growth.logic" },
-		{ action = "spawn_crystal_growth", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/weather/crystal_growth.logic" },
+		--{ action = "spawn_crystal_growth", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 5, logicFile="logic/weather/crystal_growth.logic" },
+		--{ action = "spawn_crystal_growth", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/weather/crystal_growth.logic" },
 		{ action = "spawn_falling_stalactites", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4, logicFile="logic/weather/falling_stalactites.logic" },
 		{ action = "spawn_falling_stalactites", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/falling_stalactites.logic" }		
 	}

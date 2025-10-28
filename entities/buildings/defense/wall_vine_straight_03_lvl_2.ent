@@ -183,3 +183,27 @@ EntityBlueprint
 		}
 	}
 }
+EntityBlueprint
+{
+	name  "buildings/defense/wall_vine_straight_03_lvl_2_ghost"
+
+	BuildingDesc
+	{
+		name		"wall_vine_straight_03_lvl_2_ghost"
+		buildable 	"0"
+		category 	"defense"
+		type		"wall"
+	}
+
+	LuaDesc
+	{
+		script "lua/misc/ghost_building_line.lua"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/hedge_wall_3_lvl_2.mesh"
+		material "selector/hologram_blue"
+		
+	}
+}

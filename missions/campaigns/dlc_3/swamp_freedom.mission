@@ -11,8 +11,23 @@ MissionDef
     creature_volumes_min_distance   "128.0"
 	creature_volumes_density        "0.5"	
 	
+	failed_action   "remain"
+	success_action  "remove"
+	
 	tile_spawn_rules
 	{
+		biomes/swamp/tiles/swamp_custom_resin_01/swamp_custom_resin_01.tile
+		{			
+			min_instances	1	
+			max_instances	2
+			min_distance_from_edge  1
+		}	
+		biomes/swamp/tiles/swamp_custom_resin_02/swamp_custom_resin_02.tile
+		{			
+			min_instances	2	
+			max_instances	3
+			min_distance_from_edge  1
+		}	
 		biomes/swamp/tiles/swamp_plains_07/swamp_plains_07.tile
 		{			
 			min_instances	5	

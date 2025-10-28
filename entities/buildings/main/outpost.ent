@@ -17,11 +17,7 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/outpost"
 		order				"1"
 		map_limit			"LOCAL_ANG_GLOBAL"
-	#ifdef win
-		limit			    "15"
-	#else
-		limit			    "10"
-	#endif
+		limit			    "15" 					// overriden on XBOX/PS5/WINSTORE with config variable: g_buildings_override_outpost_limit
 		sellable 			"1"
 		mission_mode		"2"
 		radius_name			"portal"
@@ -29,6 +25,8 @@ EntityBlueprint
 		min_radius_effect   "voice_over/announcement/portal_too_close"
 		menu_action			"inventory"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		hide_treasures 		"1"
+		disableable 		"0"
 
 		costs
 		{
@@ -60,8 +58,6 @@ EntityBlueprint
 
 			}			
 		}
-		
-		disableable 0
 	}
 
 	ResourceStorageDesc

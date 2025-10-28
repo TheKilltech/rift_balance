@@ -150,11 +150,6 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building"
-	}
-
-	TypeDesc
-	{
 		type "building|defense|wall"
 	}
 
@@ -337,5 +332,29 @@ EntityBlueprint
 				material "buildings/defense/hedge_wall_roots_ruins"
 			}
 		}
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/defense/wall_vine_straight_03_ghost"
+	BuildingDesc
+	{
+		name		"wall_vine_straight_03_ghost"
+		buildable 	"0"
+		category 	"defense"
+		type		"wall"
+	}
+
+	LuaDesc
+	{
+		script "lua/misc/ghost_building_line.lua"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/hedge_wall_3_lvl_1.mesh"
+		material "selector/hologram_blue"
+		
 	}
 }
