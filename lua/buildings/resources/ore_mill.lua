@@ -48,7 +48,11 @@ function ore_mill:OnRelease()
 end
 
 function ore_mill:OnBuildingEnd()
-	--self.fsm:ChangeState("buff")
+	--LogService:Log( "ore_mill: OnBuildingEnd ".. self.buildingName.. " ".. tostring(self.entity) )
+	if self.working == true then
+		self.fsm:ChangeState("buff")
+	else self.fsm:ChangeState("idle")
+	end
 end
 
 function ore_mill:OnUpgradingStart()
@@ -57,6 +61,7 @@ function ore_mill:OnUpgradingStart()
 end
 
 function ore_mill:OnEnterIdle()
+	--LogService:Log( "ore_mill: OnEnterIdle" )
 end
 
 
