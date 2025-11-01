@@ -4361,23 +4361,40 @@ end
 function template_universal:Activated()
 	MissionService:ActivateMissionFlow("", "logic/missions/campaigns/story/template_jungle_resource.logic", "default" )
 	
-	local rulesPath = nil
-	if self.mission_params.biome_name == "metallic" then
-		rulesPath = GetRulesForDifficulty( "lua/missions/campaigns/dlc_1/dom_template_metallic_resource_rules_" )
-	elseif self.mission_params.biome_name == "caverns" then
-		rulesPath = GetRulesForDifficulty( "lua/missions/campaigns/dlc_2/dom_template_caverns_resource_rules_" )		
-	elseif self.mission_params.biome_name == "swamp" then
-		rulesPath = GetRulesForDifficulty( "lua/missions/campaigns/dlc_3/dom_template_swamp_resource_rules_" )
+	local biomeName = self.mission_params.biome_name
+	local templateMap  = nil
+	if biomeName == "metallic" or biomeName == "caverns" or biomeName == "swamp" then
+		templateMap = "outpost"
 	else
-		rulesPath = GetRulesForDifficulty( "lua/missions/campaigns/story/v2/" .. self.mission_params.biome_name .. "/dom_template_" .. self.mission_params.biome_name .. "_resource_rules_" )
+		if self.mission_params.mission_type == "exploration" then
+			templateMap = "find_rare_resource"
+		else
+			templateMap = "resource_outpost"
+		end
 	end
 	
+	local rulesBiomePath = self:GetRulesPathForBiome(self.mission_params.biome_name)
+	local rulesPath = GetRulesForDifficulty( rulesBiomePath .. "dom_" .. self.mission_params.biome_name .. "_".. templateMap.. "_rules_" )
+		
     MissionService:AddGameRule( "lua/missions/v2/dom_manager.lua", rulesPath )
 	local campaignData = CampaignService:GetCampaignData();
 	local tiles =  self.mission_params:GetEncounterTiles()
 	for encounterTile in Iter( tiles) do
 		campaignData:SetInt(encounterTile, campaignData:GetIntOrDefault(encounterTile, 0) + 1)
 	end
+end
+
+--- ToDo: move to rules_utils
+function template_universal:GetRulesPathForBiome(biomeName)
+	local biomeSubdir  = nil
+	if biomeName == "metallic"    then  biomeSubdir = "dlc_1"
+	elseif biomeName == "caverns" then  biomeSubdir = "dlc_2"
+	elseif biomeName == "swamp"   then  biomeSubdir = "dlc_3"
+	else 
+		biomeSubdir = "story/v2/" .. self.mission_params.biome_name
+	end
+	
+	return "lua/missions/campaigns/".. biomeSubdir .. "/"
 end
 
 return template_universal
