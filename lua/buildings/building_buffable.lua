@@ -80,12 +80,12 @@ end
 
 function building_buffable:FindBestBuffSource( ) 
 	--LogService:Log( "building_buffable: FindBestBuffSource" )   
+	local best = nil
 	local buffBps = Split( self.data:GetStringOrDefault("buff_buildings",  "buildings/resources/ore_mill"), "," )
 	for bp in Iter(buffBps) do
 		local entities = FindService:FindEntitiesByBlueprintInRadius( self.entity, bp, self.maxBuffDistance )
 		--LogService:Log( "building_buffable: by bp ".. tostring(#entities) .. " in range ".. tostring(self.maxBuffDistance))
 		
-		local best = nil
 		for ent in Iter(entities ) do
 			if ( not BuildingService:IsBuildingFinished( ent ))		then goto continue end
 			
@@ -101,11 +101,13 @@ function building_buffable:FindBestBuffSource( )
 			source.bp          = EntityService:GetBlueprintName( ent )
 			
 			if (self:IsValidBuffSource( source )) then
-				self.buffSource = source
+				best = source
+		        --LogService:Log( "building_buffable: new current best ".. tostring(best))
 			end
 			::continue::
 		end
 	end
+	--LogService:Log( "building_buffable: best found ".. tostring(best))
 	
 	self:UpdateBuffState( best ) 
 	return best

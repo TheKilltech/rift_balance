@@ -29,6 +29,8 @@ EntityBlueprint
 		min_radius_effect   "voice_over/announcement/portal_too_close"
 		menu_action			"inventory"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		hide_treasures 		"1"
+		disableable 		"0"
 
 		costs
 		{
@@ -60,8 +62,6 @@ EntityBlueprint
 
 			}			
 		}
-		
-		disableable 0
 	}
 
 	ResourceStorageDesc
