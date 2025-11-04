@@ -90,7 +90,6 @@ EntityBlueprint  // pipe_junction
 				}
 			}
 
-
 			SkeletonDesc
 			{
 				name "meshes/buildings/resources/pipe_junction_second"
@@ -112,6 +111,19 @@ EntityBlueprint  // pipe_junction
 					{
 						id "1"
 						material "resources/resource_empty_fresnel"
+					}
+				}
+			}
+		
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	1.9
+						y	1.9
+						z	5.9
 					}
 				}
 			}
@@ -259,8 +271,8 @@ EntityBlueprint  // pipe_junction
 			{
 					x	5.9
 					y	1.9
-					z	5.9
-			}
+					z	1.9
+			}	
 		}
 	}
 
