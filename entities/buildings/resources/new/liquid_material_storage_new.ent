@@ -6,12 +6,11 @@ EntityBlueprint  // liquid_material_storage_small
 	{
 		name 				"liquid_material_storage_small"
 		bp   				"buildings/resources/liquid_material_storage_small"
-		//ghost_bp			"liquid_material_storage_small_ghost"
 		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/liquid_material_storage_small"
 		description			"gui/hud/building_description/liquid_material_storage_small"
-		menu_icon			"gui/hud/building_icons/liquid_material_storage_small"
+		menu_icon			"gui/hud/building_icons/liquid_material_storage"
 		require 			"headquarters"
 		order				"3"
 		buildable			"1"
@@ -135,8 +134,17 @@ EntityBlueprint  // liquid_material_storage_small
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/energy/energy_storage_lvl_1.mesh"
-		material "buildings/energy/energy_storage_lvl_1"
+		mesh 		"meshes/buildings/resources/liquid_material_storage_lvl_1.mesh"
+		material 	"buildings/resources/liquid_material_storage_lvl_1"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "resources/resource_empty_fresnel"
+			}
+		}
 	}
 
 	TypeDesc
@@ -146,7 +154,7 @@ EntityBlueprint  // liquid_material_storage_small
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/liquid_material_storage_small"
+		name "meshes/buildings/resources/liquid_material_storage_lvl_1"
 	}
 
 	PhysicsDesc
@@ -408,7 +416,7 @@ EntityBlueprint  // liquid_material_storage_small
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -423,12 +431,6 @@ EntityBlueprint  // liquid_material_storage_small
 					bone 		"att_pipe_2"
 					scale		2 1 1
 				}
-				Effect
-				{
-					blueprint 	"effects/buildings_and_machines/silo"
-					bone 		"att_vismod_1"
-					scale 		"0.6 0.8 0.6"
-				}
 			}
 		}	
 	}
@@ -442,7 +444,6 @@ EntityBlueprint  // liquid_material_storage_medium
 	{
 		name 				"liquid_material_storage_medium"
 		bp   				"buildings/resources/liquid_material_storage_medium"
-		//ghost_bp			"liquid_material_storage_small_ghost"
 		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/liquid_material_storage"
@@ -859,12 +860,11 @@ EntityBlueprint  // liquid_material_storage_large
 	{
 		name 				"liquid_material_storage_large"
 		bp   				"buildings/resources/liquid_material_storage_large"
-		//ghost_bp			"liquid_material_storage_large_ghost"
 		category 			"liquids"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/liquid_material_storage_large"
 		description			"gui/hud/building_description/liquid_material_storage_large"
-		menu_icon			"gui/hud/building_icons/liquid_material_storage_large"
+		menu_icon			"gui/hud/building_icons/liquid_material_storage_lvl3"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"liquid_material_storage_small"
@@ -988,8 +988,17 @@ EntityBlueprint  // liquid_material_storage_large
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/energy/energy_storage_lvl_1.mesh"
-		material "buildings/energy/energy_storage_lvl_1"
+		mesh 		"meshes/buildings/resources/liquid_material_storage_lvl_3.mesh"
+		material 	"buildings/resources/liquid_material_storage_lvl_3"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "resources/resource_empty_fresnel"
+			}
+		}
 	}
 
 	TypeDesc
@@ -999,7 +1008,7 @@ EntityBlueprint  // liquid_material_storage_large
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/liquid_material_storage_large"
+		name "meshes/buildings/resources/liquid_material_storage_lvl_3"
 	}
 
 	PhysicsDesc
@@ -1290,12 +1299,6 @@ EntityBlueprint  // liquid_material_storage_large
 					bone 		"att_vismod_1"
 					scale 		"1.5 1.5 1.5"
 				}
-				Effect
-				{
-					blueprint 	"effects/buildings_and_machines/silo"
-					bone 		"att_vismod_2"
-					scale 		"1.25 1.25 1.25"
-				}
 			}
 		}	
 	}
@@ -1309,13 +1312,13 @@ EntityBlueprint  // liquid_material_storage_small_ghost
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/energy/energy_storage_lvl_1.mesh"
+		mesh 		"meshes/buildings/resources/liquid_material_storage_lvl_1.mesh"
 		material 	"selector/hologram_blue"
 	}
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/liquid_material_storage_small"
+		name "meshes/buildings/resources/liquid_material_storage_lvl_1"
 	}
 
 	EffectDesc
@@ -1380,21 +1383,6 @@ EntityBlueprint  // liquid_material_storage_small_ghost
 					bone "att_in_4_arrow"
 				}
 			}
-		}	
-		////////////////////////MISC/////////////////////////
-		EffectGroup
-		{
-			group "vismod"
-			enabled "1"
-			Effects
-			{
-				Effect
-				{
-					blueprint 	"effects/buildings_and_machines/silo_ghost"
-					bone 		"att_vismod_1"
-					scale 		"0.6 0.8 0.6"
-				}
-			}
 		}
 	}
 }
@@ -1405,13 +1393,13 @@ EntityBlueprint  // liquid_material_storage_large_ghost
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/energy/energy_storage_lvl_1.mesh"
+		mesh 		"meshes/buildings/resources/liquid_material_storage_lvl_3.mesh"
 		material 	"selector/hologram_blue"
 	}
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/liquid_material_storage_large"
+		name "meshes/buildings/resources/liquid_material_storage_lvl_3"
 	}
 
 	EffectDesc
@@ -1420,7 +1408,7 @@ EntityBlueprint  // liquid_material_storage_large_ghost
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "1"				
+			enabled "1"
 			delay "0"
 			
 			Effects
@@ -1489,12 +1477,6 @@ EntityBlueprint  // liquid_material_storage_large_ghost
 					blueprint 	"effects/buildings_and_machines/silo_ghost"
 					bone 		"att_vismod_1"
 					scale 		"1.5 1.5 1.5"
-				}
-				Effect
-				{
-					blueprint 	"effects/buildings_and_machines/silo_ghost"
-					bone 		"att_vismod_2"
-					scale 		"1.25 1.25 1.25"
 				}
 			}
 		}
