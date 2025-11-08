@@ -46,7 +46,7 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"250"
-			}			
+			}
 			
 			GameplayResource
 			{
@@ -66,15 +66,24 @@ EntityBlueprint
 			
 			GameplayResource
 			{
-				resource 	"morphium"
-				value		"25"
+				resource 	"resin"
+				value		"6"
 				family		"charge"
 				attachment	"att_in_1"
 			}
+			
 			GameplayResource
 			{
-				resource 	"resin"
-				value		"6"
+				resource 	"flammable_gas"
+				value		"30"
+				family		"charge"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"fluorine"
+				value		"30"
 				family		"charge"
 				attachment	"att_in_1"
 			}

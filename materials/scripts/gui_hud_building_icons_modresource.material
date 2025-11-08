@@ -46,30 +46,6 @@ material "gui/hud/building_icons/solid_material_storage_underground_disabled" : 
 
 
 
-/////  liquid_material_storage
-
-material "gui/hud/building_icons/liquid_material_storage_small" : gui/default
-{
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/liquid_material_storage_small.dds"
-}
-
-material "gui/hud/building_icons/liquid_material_storage_small_disabled" : gui/default
-{
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/liquid_material_storage_disabled.dds"
-}
-
-material "gui/hud/building_icons/liquid_material_storage_large" : gui/default
-{
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/liquid_material_storage_large.dds"
-}
-
-material "gui/hud/building_icons/liquid_material_storage_large_disabled" : gui/default
-{
-	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/liquid_material_storage_disabled.dds"
-}
-
-
-
 /////  liquid_pumpjack
 
 material "gui/hud/building_icons/liquid_pumpjack" : gui/default
@@ -102,6 +78,39 @@ material "gui/hud/building_icons/liquid_pumpjack_lvl3_disabled" : gui/default
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/bio_condenser_lvl3_disabled.dds"
 }
 
+
+
+/////  regenerating_extractior
+
+material "gui/hud/building_icons/regenerating_extractor" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/regenerating_extractor.dds"
+}
+
+material "gui/hud/building_icons/liquid_pumpjack_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/regenerating_extractor_disabled.dds"
+}
+
+material "gui/hud/building_icons/regenerating_extractor_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/regenerating_extractor_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/liquid_pumpjack_lvl2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/regenerating_extractor_disabled.dds"
+}
+
+material "gui/hud/building_icons/regenerating_extractor_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/regenerating_extractor_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/liquid_pumpjack_lvl3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/regenerating_extractor_disabled.dds"
+}
 
 
 /////  bio-metal refineries
