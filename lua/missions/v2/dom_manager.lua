@@ -1774,11 +1774,11 @@ function dom_mananger:RepeatWave(attacks)
 	local newAttacks = {}
 	for i = 1, #attacks, 1 do
 		local attack = attacks[i]
+		local attackStr = tostring(i) .."/".. tostring(#attacks)
 		if attack.maxRepeats ~= nil and self.waveRepeated >= attack.maxRepeats then
 			self:VerboseLog("RepeatWave: attack ".. attackStr .. " reached its max repeats of ".. tostring(attack.maxRepeats) .." and will not contine")
 		else
 			local rngRoll = RandInt(0, 100)
-			local attackStr = tostring(i) .."/".. tostring(#attacks)
 			self:VerboseLog("RepeatWave: attack ".. attackStr .. " repeat ".. tostring(self.waveRepeated + 1) .." chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll) .. " => " ..  tostring(repeatChance > rngRoll))
 			if ( repeatChance > rngRoll) then
 				rngRoll = RandInt(1, 100)
