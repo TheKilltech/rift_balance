@@ -51,7 +51,9 @@ local function ProcessRulesTable( rules )
 
 	if data.multiplayerWaves then
 		for _,data in pairs( data.multiplayerWaves ) do
-			ConvertLogicEntries( data.waves )
+			if data.waves then
+				ConvertLogicEntries( data.waves )
+			end
 		end
 	end
 
@@ -407,7 +409,7 @@ function dom_mananger:LogicFilesSanityCheck()
 						if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.name ) ) then
 							local log = "rules.waves" .. " " .. tostring( i ) .. " : " .. data.name
 							table.insert( failedLogicFileTable, log )
-							log = log .. " NOT EXIST"			
+							log = log .. " NOT EXIST"
 							LogService:Log( log )
 						end
 					end
@@ -416,10 +418,14 @@ function dom_mananger:LogicFilesSanityCheck()
 		end
 	end
 
+	LogService:Log( "----- bosses waves -----")
+	--LogService:Log( self:tprint(self.rules.bosses, 3))
+	
 	self:LogicTableCheck( self.rules.extraWaves, "rules.extraWaves", failedLogicFileTable )
 	self:LogicTableCheck( self.rules.bosses, "rules.bosses", failedLogicFileTable )
+	
 
-	if ( self.rules.multiplayerWaves ~= nil ) then		
+	if ( self.rules.multiplayerWaves ~= nil ) then
 		if ( #self.rules.multiplayerWaves ~= self.maxDifficultyLevel ) then
 			Assert( false, "rules.multiplayerWaves size must equal " .. tostring( self.maxDifficultyLevel ) )
 		end
