@@ -12,11 +12,11 @@ return function()
 		{ minCount = 2, maxCount = 3 },  -- difficulty level 2
 		{ minCount = 2, maxCount = 4 },  -- difficulty level 3
 		{ minCount = 2, maxCount = 4 },  -- difficulty level 4
-		{ minCount = 3, maxCount = 4 },  -- difficulty level 5
-		{ minCount = 3, maxCount = 5 },  -- difficulty level 6
+		{ minCount = 2, maxCount = 4 },  -- difficulty level 5
+		{ minCount = 2, maxCount = 5 },  -- difficulty level 6
 		{ minCount = 3, maxCount = 5 },  -- difficulty level 7
-		{ minCount = 4, maxCount = 5 },  -- difficulty level 8
-		{ minCount = 4, maxCount = 6 },  -- difficulty level 9
+		{ minCount = 3, maxCount = 5 },  -- difficulty level 8
+		{ minCount = 3, maxCount = 5 },  -- difficulty level 9
 	}
 	
 	rules.waveRepeatChances = 

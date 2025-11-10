@@ -28,7 +28,7 @@ return function()
 		{ action = "unlock_research",                type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1 },
 		{ action = "full_ammo",                      type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
 		{ action = "remove_ammo",                    type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
-		{ action = "stronger_attack",                type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 1, amount = 2 },
+		{ action = "stronger_attack",                type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 1, amount = 1 },
 		{ action = "shegret_attack",                 type = "NEGATIVE", gameStates="IDLE|ATTACK",           minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",                                      weight = 0.5 },
 		{ action = "shegret_attack_hard",            type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 5, logicFile="logic/event/shegret_attack_hard.logic",                                 weight = 0.25 },
 		{ action = "shegret_attack_very_hard",       type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 6, logicFile="logic/event/shegret_attack_very_hard.logic",                            weight = 0.15 },
@@ -93,7 +93,7 @@ return function()
 		{ minCount = 1, maxCount = 3 },  -- difficulty level 6
 		{ minCount = 2, maxCount = 3 },  -- difficulty level 7
 		{ minCount = 2, maxCount = 3 },  -- difficulty level 8
-		{ minCount = 2, maxCount = 4 },  -- difficulty level 9
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 9
 	}
 	
 	rules.waveRepeatChances = 

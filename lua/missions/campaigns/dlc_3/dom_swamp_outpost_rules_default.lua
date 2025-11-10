@@ -28,7 +28,7 @@ return function()
 		{ action = "unlock_research",                  type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1 },
 		{ action = "full_ammo",                        type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
 		{ action = "remove_ammo",                      type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
-		{ action = "stronger_attack",                  type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 1, amount = 2 },
+		{ action = "stronger_attack",                  type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 1, amount = 1 },
 		{ action = "spawn_blue_hail",                  type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 4, logicFile="logic/weather/blue_hail.logic",     minTime = 30,  maxTime = 60,  weight = 0.25 },
 		{ action = "spawn_thunderstorm",               type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2, logicFile="logic/weather/thunderstorm.logic",  minTime = 60,  maxTime = 120 },
 		{ action = "spawn_blood_moon",                 type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 2, logicFile="logic/weather/blood_moon.logic",    minTime = 60,  maxTime = 120, weight = 2 },
@@ -79,14 +79,14 @@ return function()
 	rules.attackCountPerDifficulty = 
 	{			
 		{ minCount = 1, maxCount = 2 },  -- difficulty level 1
-		{ minCount = 1, maxCount = 3 },  -- difficulty level 2
-		{ minCount = 2, maxCount = 3 },  -- difficulty level 3
-		{ minCount = 2, maxCount = 4 },  -- difficulty level 4
-		{ minCount = 3, maxCount = 4 },  -- difficulty level 5
-		{ minCount = 3, maxCount = 4 },  -- difficulty level 6
-		{ minCount = 3, maxCount = 5 },  -- difficulty level 7
-		{ minCount = 3, maxCount = 5 },  -- difficulty level 8
-		{ minCount = 4, maxCount = 5 },  -- difficulty level 9
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 2
+		{ minCount = 1, maxCount = 3 },  -- difficulty level 3
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 4
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 5
+		{ minCount = 2, maxCount = 4 },  -- difficulty level 6
+		{ minCount = 2, maxCount = 4 },  -- difficulty level 7
+		{ minCount = 2, maxCount = 4 },  -- difficulty level 8
+		{ minCount = 3, maxCount = 4 },  -- difficulty level 9
 	}
 	
 	rules.waveRepeatChances = 
