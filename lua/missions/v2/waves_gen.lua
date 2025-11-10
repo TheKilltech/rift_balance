@@ -388,15 +388,14 @@ function wave_gen:Default_MpWaves(biome, missionType, difficulty,  waves)
 	if (missionType == "outpost") then
 		if (difficulty == "brutal")      then
 			waves = wave_gen:Generate({ groups = { "" }, mpAdditionalWaves = 1, difficulty = {    5, 6, 7,      }, bosses = { "dynamic" },   repeatInterval = 2.5, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "" }, mpAdditionalWaves = 1, difficulty = {             8, 9 }, bosses = { "dynamic" },   repeatInterval = 3,   diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ groups = { "" }, mpAdditionalWaves = 1, difficulty = {             8, 9 }, bosses = { "dynamic" },   repeatInterval = 2,   diffSettings = ds},   waves)
 	
 		elseif (difficulty == "hard")    then
-			waves = wave_gen:Generate({ groups = { "" }, mpAdditionalWaves = 1, difficulty = { 4, 5, 6          }, bosses = { "baxmoth" },   repeatInterval = 3,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "" }, mpAdditionalWaves = 1, difficulty = {       6, 7, 8,   }, bosses = { "dynamic" },   repeatInterval = 2.5, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "" }, mpAdditionalWaves = 1, difficulty = {                9 }, bosses = { "dynamic" },   repeatInterval = 3,   diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ groups = { "" }, mpAdditionalWaves = 1, difficulty = {       6, 7, 8,   }, bosses = { "dynamic" },   repeatInterval = 3,   diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ groups = { "" }, mpAdditionalWaves = 1, difficulty = {                9 }, bosses = { "dynamic" },   repeatInterval = 2.5, diffSettings = ds},   waves)
 			
 		elseif (difficulty == "default" or difficulty == "easy") then 
-			waves = wave_gen:Generate({ groups = { "" }, mpAdditionalWaves = 1, difficulty = {          7, 8, 9 }, bosses = { "dynamic" },   repeatInterval = 5,   diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ groups = { "" }, mpAdditionalWaves = 1, difficulty = {          7, 8, 9 }, bosses = { "dynamic" },   repeatInterval = 4,   diffSettings = ds},   waves)
 		end
 		
 	elseif (missionType == "scout" or missionType == "temp") then

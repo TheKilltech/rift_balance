@@ -1692,7 +1692,7 @@ end
 function dom_mananger:IsAttackPaused( attack )
 	local currentRepeat = (self.waveRepeated or 1)
 	local nextRepeatVal = (attack.nextRepeatVal or 0)
-	return math.ceil(currentRepeat - nextRepeatVal - 0.5) < 0
+	return currentRepeat <= nextRepeatVal - 0.5
 end
 
 function dom_mananger:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupName, spawnPointName, maxRepeats, repeatInterval, nextRepeatVal)
@@ -1803,9 +1803,9 @@ function dom_mananger:RepeatWave(attacks)
 		end
 	end
 	
+	attacks = newAttacks
 	if (#newAttacks > 0) then
 		self:VerboseLog("RepeatWave: repeat ".. tostring(self.waveRepeated + 1) .." is set up with ".. tostring(#newAttacks).. "/".. tostring(#self.preparedAttacks) .." attacks continuing")
-		attacks = newAttacks
 		
 		if (not self.WaveStateMachine) then -- for downwards compatibility with some saves
 			self.WaveStateMachine = self.spawner
@@ -1813,7 +1813,7 @@ function dom_mananger:RepeatWave(attacks)
 		end
 		self.WaveStateMachine:ChangeState( self.WaveRepeatState ) 
 		
-		self.waveRepeated = self.waveRepeated + 1
+		--self.waveRepeated = self.waveRepeated + 1
 		self.eventsPerPrepareState = 0
 	else 
 		self:VerboseLog("RepeatWave: no attacks remaining, wave is completed.")
@@ -1864,11 +1864,11 @@ function dom_mananger:DoWaveCooldown( timer, dt )
 			self.coolEventSpawnTime[i] = -9999
 		end
 	end
-
 	if ( timer < self.waveRepeatTime and self.rules.waveRepeatChances ) then
-		if (#self.hqPreparedAttacks>0)     then self.hqPreparedAttacks = self:RepeatWave(self.hqPreparedAttacks)
-		elseif (#self.preparedAttacks>0)   then self.preparedAttacks   = self:RepeatWave(self.preparedAttacks)
-		end
+		if (#self.hqPreparedAttacks>0)  then self.hqPreparedAttacks = self:RepeatWave(self.hqPreparedAttacks) end
+		if (#self.preparedAttacks>0)    then self.preparedAttacks   = self:RepeatWave(self.preparedAttacks)   end
+		self.waveRepeated = self.waveRepeated + 1
+		
 		if (#self.preparedAttacks + #self.hqPreparedAttacks == 0) then
 			self.waveRepeatTime = -9999
 			self:VerboseLog("DoWaveCooldown: no attack definitions to repeat")
@@ -1876,7 +1876,7 @@ function dom_mananger:DoWaveCooldown( timer, dt )
 	end
 end
 
-function dom_mananger:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, preparedAttacks, spawnedAttacks )
+function dom_mananger:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, preparedAttacks, spawnedAttacks )	
 	for preparedWave in Iter( preparedAttacks ) do 
 		self.data:SetString( "spawn_point", preparedWave.spawnPointName )
 		local currentRepeat = (self.waveRepeated or 1)
