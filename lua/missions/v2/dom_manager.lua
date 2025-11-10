@@ -1695,16 +1695,13 @@ function dom_mananger:IsAttackPaused( attack )
 	return currentRepeat <= nextRepeatVal - 0.5
 end
 
-function dom_mananger:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupName, spawnPointName, maxRepeats, repeatInterval, nextRepeatVal)
+function dom_mananger:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupName, spawnPointName, repeatInterval, originalAttack)
 	-- waveData: single element from waves definitions setup in the mission lua
-	if maxRepeats == nil then maxRepeats = waveData.maxRepeats
-	else maxRepeats = math.min(maxRepeats, waveData.maxRepeats or 99)
-	end
+	if not originalAttack then originalAttack = {} end
 	attack = {}
 	attack.waveName       = waveData.name
-	attack.maxRepeats     = maxRepeats
-	attack.nextRepeatVal  = nextRepeatVal or 0
-	attack.repeatInterval = repeatInterval or waveData.repeatInterval or 1
+	attack.nextRepeatVal  = originalAttack.nextRepeatVal  or 0
+	attack.repeatInterval = originalAttack.repeatInterval or waveData.repeatInterval or 1
 	attack.spawnGroupName = borderSpawnPointGroupName
 	attack.spawnPointName = spawnPointName
 	attack.originalPool   = wavePool
@@ -1739,8 +1736,6 @@ function dom_mananger:ReshuffleWave( index, attacks, reshuffleSwapn, reshuffleSp
 	local borderSpawnPointGroupName = attacks[index].spawnGroupName
 	local spawnPointName            = attacks[index].spawnPointName
 	local wavePool                  = attacks[index].originalPool
-	local maxRepeats                = attacks[index].maxRepeats
-	local repeatInterval            = attacks[index].repeatInterval or 1
 	local nextRepeatVal             = attacks[index].nextRepeatVal or 0
 	if (wavePool == nil or #wavePool == 0) then
 		self:VerboseLog( "Wave Reshuffle: attack ".. tostring(index) .." original wavePool is nil. using default pool")
@@ -1761,7 +1756,7 @@ function dom_mananger:ReshuffleWave( index, attacks, reshuffleSwapn, reshuffleSp
 	end
 	
 	if ( spawnPointName ~= "none" ) then
-		attacks[index] = self:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupName, spawnPointName, maxRepeats, nextRepeatVal)
+		attacks[index] = self:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupName, spawnPointName, attacks[index])
 
 		-- markers[index] = self:SpawnWaveIndicator( indicatorTimer, spawnPointName, "effects/messages_and_markers/wave_marker" )
 		
@@ -1784,22 +1779,20 @@ function dom_mananger:RepeatWave(attacks)
 	for i = 1, #attacks, 1 do
 		local attack = attacks[i]
 		local attackStr = tostring(i) .."/".. tostring(#attacks)
-		if attack.maxRepeats ~= nil and self.waveRepeated >= attack.maxRepeats then
-			self:VerboseLog("RepeatWave: attack ".. attackStr .. " reached its max repeats of ".. tostring(attack.maxRepeats) .." and will not contine")
-		else
-			local rngRoll = RandInt(0, 100)
-			self:VerboseLog("RepeatWave: attack ".. attackStr .. " repeat ".. tostring(self.waveRepeated + 1) .." chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll) .. " => " ..  tostring(repeatChance > rngRoll))
-			if ( repeatChance > rngRoll) then
-				rngRoll = RandInt(1, 100)
-				self:VerboseLog("RepeatWave: attack ".. attackStr.. " reshuffle chance ".. tostring(chanceWaveReroll) ..", rolled ".. tostring(rngRoll) .." => " .. tostring(chanceWaveReroll > rngRoll) )
-				if ( chanceWaveReroll > rngRoll) then
-					self:ReshuffleWave( i, attacks, chanceNewSpawnGroup < RandInt(1, 100), chanceNewSpawn < RandInt(1, 100) )
-				end
-				if not self:IsAttackPaused( attack) then
-					attack.nextRepeatVal = (attack.nextRepeatVal or 0) + (attack.repeatInterval or 1)
-				end
-				newAttacks[#newAttacks + 1] = attack
+		
+		local rngRoll = RandInt(0, 100)
+		self:VerboseLog("RepeatWave: attack ".. attackStr .. " repeat ".. tostring(self.waveRepeated + 1) .." chance " .. tostring(repeatChance) .. ", rolled " .. tostring(rngRoll) .. " => " ..  tostring(repeatChance > rngRoll))
+		if ( repeatChance > rngRoll) then
+			rngRoll = RandInt(1, 100)
+			self:VerboseLog("RepeatWave: attack ".. attackStr.. " reshuffle chance ".. tostring(chanceWaveReroll) ..", rolled ".. tostring(rngRoll) .." => " .. tostring(chanceWaveReroll > rngRoll) )
+			if ( chanceWaveReroll > rngRoll) then
+				self:ReshuffleWave( i, attacks, chanceNewSpawnGroup < RandInt(1, 100), chanceNewSpawn < RandInt(1, 100) )
 			end
+			if not self:IsAttackPaused( attack) then
+				local repeatInterval = attack.repeatInterval or 5 / ((attack.maxRepeats or 0)+1)  -- downwards compatibilty - maxRepeats was used before repeatInterval
+				attack.nextRepeatVal = (attack.nextRepeatVal or 0) + repeatInterval
+			end
+			newAttacks[#newAttacks + 1] = attack
 		end
 	end
 	
