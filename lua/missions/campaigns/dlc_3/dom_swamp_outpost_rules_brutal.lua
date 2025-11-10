@@ -36,10 +36,10 @@ return function()
 	rules.waveChanceRerollSpawn      = 25
 	rules.waveChanceReroll           = 80
 	
-	rules.waves            = helper:Default_Waves("swamp", "outpost", "brutal")
+	rules.waves            = helper:Default_Waves(     "swamp", "outpost", "brutal")
 	rules.extraWaves       = helper:Default_ExtraWaves("swamp", "outpost", "brutal")
-	rules.multiplayerWaves = helper:Default_MpWaves("swamp", "outpost", "brutal")
-	rules.bosses           = helper:Default_Bosses("swamp", "outpost", "brutal")
+	rules.multiplayerWaves = helper:Default_MpWaves(   "swamp", "outpost", "brutal")
+	rules.bosses           = {} -- bosses via mp waves
 	
     return rules;
 end

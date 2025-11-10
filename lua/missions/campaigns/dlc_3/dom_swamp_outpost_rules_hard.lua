@@ -41,7 +41,7 @@ return function()
 	rules.waves            = helper:Default_Waves(     "swamp", "outpost", "hard", nil)
 	rules.extraWaves       = helper:Default_ExtraWaves("swamp", "outpost", "hard", nil)
 	rules.multiplayerWaves = helper:Default_MpWaves(   "swamp", "outpost", "hard", nil)
-	rules.bosses           = helper:Default_Bosses(    "swamp", "outpost", "hard", nil)
+	rules.bosses           = {} -- bosses via mp waves
 	
     return rules;
 end

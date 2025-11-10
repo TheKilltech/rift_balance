@@ -28,7 +28,6 @@ return function()
 		{ action = "unlock_research",                  type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1 },
 		{ action = "full_ammo",                        type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
 		{ action = "remove_ammo",                      type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
-		{ action = "boss_attack",                      type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 4 },
 		{ action = "stronger_attack",                  type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 1, amount = 2 },
 		{ action = "spawn_blue_hail",                  type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 4, logicFile="logic/weather/blue_hail.logic",     minTime = 30,  maxTime = 60,  weight = 0.25 },
 		{ action = "spawn_thunderstorm",               type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2, logicFile="logic/weather/thunderstorm.logic",  minTime = 60,  maxTime = 120 },
@@ -110,7 +109,7 @@ return function()
 	rules.waves            = helper:Default_Waves(     "swamp", "outpost", "default", nil)
 	rules.extraWaves       = helper:Default_ExtraWaves("swamp", "outpost", "default", nil)
 	rules.multiplayerWaves = helper:Default_MpWaves(   "swamp", "outpost", "default", nil)
-	rules.bosses           = helper:Default_Bosses(    "swamp", "outpost", "default", nil)
+	rules.bosses           = {} -- bosses via mp waves
 	
 	rules.objectivesLogic = 
 	{
