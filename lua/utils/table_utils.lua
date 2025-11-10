@@ -123,10 +123,14 @@ function SortedIter(t, order)
     end
 end
 
-function PrintTable(t, indent)
+function PrintTable(t, maxDepth, indent)
 	if not indent then indent = 0 end
-	local toprint = string.rep(" ", indent) .. "{\r\n"
-	indent = indent + 2 
+	if t == nil  then 
+		return string.rep(" ", indent) .. "nil"
+	end
+	local toprint = string.rep(" ", indent) .. tostring(t) .. " = {\r\n"
+	indent = indent + 2
+	
 	for k, v in pairs(t) do
 		toprint = toprint .. string.rep(" ", indent)
 		if (type(k) == "number") then
@@ -139,7 +143,10 @@ function PrintTable(t, indent)
 		elseif (type(v) == "string") then
 			toprint = toprint .. "\"" .. v .. "\",\r\n"
 		elseif (type(v) == "table") then
-			toprint = toprint .. PrintTable(v, indent + 2) .. ",\r\n"
+			if (maxDepth or 99) > 0 then
+				toprint = toprint .. PrintTable(v, maxDepth - 1, indent + 2) .. ",\r\n"
+			else toprint = toprint  .. "table ".. tostring(v).. ",\r\n"
+			end
 		else
 			toprint = toprint .. "\"" .. tostring(v) .. "\",\r\n"
 		end
