@@ -1040,7 +1040,7 @@ function event_manager:StartStreamingVoting()
 	end
 
 	while #currentStreamingData ~= optionsAtOnce do
-		local event = self:GetEventByWeight( tempStreamingData )
+		local event = GetRandomFormWeightedTable( tempStreamingData ).action
 
 		for i = 1, #tempStreamingData, 1 do 
 			if ( event == tempStreamingData[i].action ) then
@@ -1129,7 +1129,7 @@ function event_manager:StartAnEvent( gameState )
 			end
 
 			if ( #self.currentStreamingData > 0 ) then
-				local event = self:GetEventByWeight( self.currentStreamingData )
+				local event = GetRandomFormWeightedTable( self.currentStreamingData ).action
 				self.lastNonStreamEvent	= event
 				self:SpawnEvent( event, "" )
 			end

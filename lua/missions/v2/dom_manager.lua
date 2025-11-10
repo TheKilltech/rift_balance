@@ -1076,7 +1076,7 @@ function dom_mananger:GetWavePool( currentDifficultyLevel, silent )
 
 		if ( currentDifficultyLevel > 0 ) then
 			for data in Iter( waves[currentDifficultyLevel] ) do 
-				if (not silent) then self:VerboseLog("Adding wave to the wave pool : " .. data.name) end
+				if (not silent) then self:VerboseLog("Adding wave to the wave pool : " .. string.format("%6.3f", data.weight or 1) .. " " .. data.name) end
 				availableWaves[#availableWaves + 1] = data
 			end
 		end
@@ -1108,7 +1108,7 @@ function dom_mananger:GetMultiplayerWavePool()
 
 	if ( pool ~= nil ) then	
 		for data in Iter( pool.waves ) do 
-			self:VerboseLog( "Adding multiplayer wave to the wave pool : " .. data.name )
+			self:VerboseLog( "Adding multiplayer wave to the wave pool : " .. string.format("%6.3f", data.weight or 1) .. " ".. data.name )
 		end
 
 		return pool.waves
@@ -1710,7 +1710,7 @@ end
 
 function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, indicatorTimer, attacks, markers, participants, labelName, participantsPercentageUse )
 	for i = 1, attackCount do
-		local waveData = wavePool[RandInt( 1, #wavePool )]
+		local waveData = GetRandomFormWeightedTable( wavePool )
 		self:VerboseLog( "PrepareWave: wave_logic='" .. waveData.name .. "'")
 
 		local spawnPointName = self:RandomizeSpawnPoint( borderSpawnPointGroupName, waveData )
@@ -1741,7 +1741,7 @@ function dom_mananger:ReshuffleWave( index, attacks, reshuffleSwapn, reshuffleSp
 		self:VerboseLog( "Wave Reshuffle: attack ".. tostring(index) .." original wavePool is nil. using default pool")
 		wavePool = self:GetWavePool( self.currentDifficultyLevel )
 	end
-	local waveData  = wavePool[RandInt( 1, #wavePool )]
+	local waveData  = GetRandomFormWeightedTable( wavePool )
 	local textSpawn = ""
 	
 	if (reshuffleSpawnGroup ) then

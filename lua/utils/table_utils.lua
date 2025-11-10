@@ -154,3 +154,25 @@ function PrintTable(t, maxDepth, indent)
 	toprint = toprint .. string.rep(" ", indent-2) .. "}"
 	return toprint
 end
+
+function GetRandomFormWeightedTable( weightedTable ) 
+	local totalWeight = 0.0
+    local events = {}
+    for i = 1, #weightedTable, 1 do	
+        totalWeight = totalWeight + (weightedTable[i].weight or 1.0)
+        --events[i] = { min = rangeStart, max = rangeEnd, action = weightedTable[i].action }
+    end
+
+    local roll = math.random() * totalWeight
+    LogService:Log("GetRandomFormWeightedTable - #elm: ".. #weightedTable .. ", weight sum: ".. totalWeight.. " rolled: " .. roll )
+
+	local weight = 0.0
+    for i = 1, #weightedTable, 1 do	
+        weight = weight + (weightedTable[i].weight or 1.0)
+        if roll <= weight then
+			LogService:Log("GetRandomFormWeightedTable - Choosing element ".. i .. " " .. tostring( weightedTable[i].name or weightedTable[i].action or weightedTable[i]) )
+            return weightedTable[i];
+        end
+    end
+	return {}
+end
