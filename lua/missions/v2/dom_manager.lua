@@ -1699,12 +1699,12 @@ function dom_mananger:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupN
 	-- waveData: single element from waves definitions setup in the mission lua
 	if not originalAttack then originalAttack = {} end
 	attack = {}
-	attack.waveName       = waveData.name
-	attack.nextRepeatVal  = originalAttack.nextRepeatVal  or 0
-	attack.repeatInterval = originalAttack.repeatInterval or waveData.repeatInterval or 1
-	attack.spawnGroupName = borderSpawnPointGroupName
-	attack.spawnPointName = spawnPointName
-	attack.originalPool   = wavePool
+	attack.waveName       = waveData.name													-- logic file to run doing the actual mob spawning
+	attack.nextRepeatVal  = originalAttack.nextRepeatVal  or waveData.spawnDelay or 0		-- for the wave repeat system. determines the next repeat interaction at which this attack is spawned
+	attack.repeatInterval = originalAttack.repeatInterval or waveData.repeatInterval or 1	-- for the wave repeat system. determines in how many repeat interactions this attack is spawned (or paused)
+	attack.spawnGroupName = borderSpawnPointGroupName										-- vanilla setting
+	attack.spawnPointName = spawnPointName													-- vanilla setting
+	attack.originalPool   = wavePool														-- wave pool if wave is reshuffled
 	return attack
 end
 
