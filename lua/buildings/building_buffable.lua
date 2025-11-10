@@ -83,7 +83,7 @@ function building_buffable:FindBestBuffSource( )
 	local best = nil
 	local buffBps = Split( self.data:GetStringOrDefault("buff_buildings",  "buildings/resources/ore_mill"), "," )
 	for bp in Iter(buffBps) do
-		local entities = FindService:FindEntitiesByBlueprintInRadius( self.entity, bp, self.maxBuffDistance )
+		local entities = FindService:FindEntitiesByBlueprintInRadius( self.entity, bp, self.maxBuffDistance or 30)
 		--LogService:Log( "building_buffable: by bp ".. tostring(#entities) .. " in range ".. tostring(self.maxBuffDistance))
 		
 		for ent in Iter(entities ) do
