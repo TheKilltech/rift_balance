@@ -44,29 +44,18 @@ return function()
 	rules.waveChanceRerollSpawn      = 45
 	rules.waveChanceReroll           = 40
 	
-	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
-	rules.waves = {}
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { "magma" },  levels = { 1 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5, 6, 7, 8},    biomes = { "magma" },  levels = { 1 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       3, 4, 5, 6, 7, 8, 9}, biomes = { "magma" },  levels = { 2 },   ids = { 1, 2 },   suffixes = { "", "", "alpha" }, },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "magma" },  levels = { 2 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8 ,9}, biomes = { "magma" },  levels = { 3 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             5, 6, 7, 8, 9}, biomes = { "magma" },  levels = { 3 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { "magma" },  levels = { 3 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { "magma" },  levels = { 4 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                   7, 8, 9}, biomes = { "magma" },  levels = { 4 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                      8, 9}, biomes = { "magma" },  levels = { 4 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { "magma" },  levels = { 5 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { "magma" },  levels = { 6 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
+	rules.waves            = helper:Default_Waves(     "magma", "outpost", "hard", nil)
+	rules.extraWaves       = helper:Default_ExtraWaves("magma", "outpost", "hard", nil)
+	rules.multiplayerWaves = helper:Default_MpWaves(   "magma", "outpost", "hard", nil)
 	
-	rules.waves = wave_gen:Generate({ groups = { "metallic" },  difficulty = {          4, 5, 6, 7, 8},    biomes = { "group" }, levels = { 2 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "metallic" },  difficulty = {          4, 5, 6, 7, 8},    biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "metallic" },  difficulty = {             5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "metallic" },  difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "metallic" },  difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "metallic" },  difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "metallic" },  difficulty = {                      8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "metallic" },  difficulty = {                         9}, biomes = { "group" }, levels = { 5 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {          4, 5, 6, 7, 8},    biomes = { "group" }, levels = { 2 },   ids = { 1, 2 },   suffixes = { "ultra" },       repeatInterval = 1,   },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {          4, 5, 6, 7, 8},    biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },   suffixes = { "" },            repeatInterval = 1,   },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {             5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },   suffixes = { "", "alpha" },   repeatInterval = 1,   },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },   suffixes = { "ultra" },       repeatInterval = 1,   },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },   suffixes = { "" },            repeatInterval = 1.2, },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },   suffixes = { "", "alpha" },   repeatInterval = 1.2, },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {                      8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },   suffixes = { "ultra" },       repeatInterval = 1.4, },   rules.waves)
+	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {                         9}, biomes = { "group" }, levels = { 5 },   ids = { 1, 2 },   suffixes = { "", "alpha" },   repeatInterval = 1.5, },   rules.waves)
 	
     return rules;
 end
