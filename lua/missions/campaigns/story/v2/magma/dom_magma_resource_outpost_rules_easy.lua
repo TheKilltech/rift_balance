@@ -1,5 +1,5 @@
-return function()
-    local rules = require("lua/missions/campaigns/story/v2/magma/dom_magma_resource_outpost_rules_default.lua")()
+return function(params)
+    local rules = require("lua/missions/campaigns/story/v2/magma/dom_magma_resource_outpost_rules_default.lua")(params)
 	
 	rules.idleTime = 
 	{			

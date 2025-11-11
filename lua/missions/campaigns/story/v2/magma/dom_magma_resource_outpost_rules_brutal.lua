@@ -1,5 +1,5 @@
-return function()
-    local rules  = require("lua/missions/campaigns/story/v2/magma/dom_magma_resource_outpost_rules_hard.lua")()
+return function(params)
+    local rules  = require("lua/missions/campaigns/story/v2/magma/dom_magma_resource_outpost_rules_hard.lua")(params)
 	local helper = require("lua/missions/v2/waves_gen.lua" )
 	
 	rules.timeToNextDifficultyLevel = helper:Default_TimeToNextDifficultyLevel( "outpost", "brutal", 1)
@@ -21,7 +21,7 @@ return function()
 	
 	rules.majorAttackLogic =
 	{			
-		{ level = 2, minLevel = 7, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },     
+		{ level = 2, minLevel = 7, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },
 	}
 	
 	rules.waveRepeatChances = 

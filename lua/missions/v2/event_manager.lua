@@ -78,7 +78,14 @@ function event_manager:Activated()
 end
 
 function event_manager:InitRules()
-    if ( type( self.rules ) == "string" ) then
+	
+    if ( type( self.rules ) == "table" ) then
+        self.rulesFile = self.rules.rulesPath
+		LogService:Log( "event_manager:InitRules() : rules given as table")
+		LogService:Log( "event_manager:InitRules() : rules file path : " .. tostring( self.rulesFile ) )
+		LogService:Log( "event_manager:InitRules() : difficulty : " .. tostring( DifficultyService:GetCurrentDifficultyName() ) )
+        self.rules = require( self.rulesFile )( self.rules.rulesParam )
+    elseif ( type( self.rules ) == "string" ) then
         self.rulesFile = self.rules
 		LogService:Log( "event_manager:InitRules() : rules file path : " .. tostring( self.rulesFile ) )
 		LogService:Log( "event_manager:InitRules() : difficulty : " .. tostring( DifficultyService:GetCurrentDifficultyName() ) )

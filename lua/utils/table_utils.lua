@@ -123,8 +123,19 @@ function SortedIter(t, order)
     end
 end
 
+function Contains(t, value)
+    for index, val in ipairs(t) do
+        if value == val then
+            return true
+        end
+    end
+
+    return false
+end
+
 function PrintTable(t, maxDepth, indent)
-	if not indent then indent = 0 end
+	if not indent   then indent = 0    end
+	if not maxDepth then maxDepth = 20 end
 	if t == nil  then 
 		return string.rep(" ", indent) .. "nil"
 	end
@@ -143,7 +154,7 @@ function PrintTable(t, maxDepth, indent)
 		elseif (type(v) == "string") then
 			toprint = toprint .. "\"" .. v .. "\",\r\n"
 		elseif (type(v) == "table") then
-			if (maxDepth or 99) > 0 then
+			if maxDepth > 0 then
 				toprint = toprint .. PrintTable(v, maxDepth - 1, indent + 2) .. ",\r\n"
 			else toprint = toprint  .. "table ".. tostring(v).. ",\r\n"
 			end

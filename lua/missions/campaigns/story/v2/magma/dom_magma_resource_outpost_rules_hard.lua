@@ -1,5 +1,5 @@
-return function()
-    local rules  = require("lua/missions/campaigns/story/v2/magma/dom_magma_resource_outpost_rules_default.lua")()
+return function(params)
+    local rules  = require("lua/missions/campaigns/story/v2/magma/dom_magma_resource_outpost_rules_default.lua")(params)
 	local helper = require( "lua/missions/v2/waves_gen.lua" )
 	
 	rules.timeToNextDifficultyLevel = helper:Default_TimeToNextDifficultyLevel( "outpost", "hard", 1)

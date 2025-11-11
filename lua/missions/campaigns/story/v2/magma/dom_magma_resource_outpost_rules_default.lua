@@ -1,11 +1,11 @@
-return function()
+return function(params)
 	-- the following sets up to default values for the given mission and difficulty type:
 	-- prepareAttackDefinitions, wavesEntryDefinitions, prepareSpawnTime, timeToNextDifficultyLevel, cooldownAfterAttacks
 	-- param missionType: { "outpost", "survival", "scout", "temp" }
 	-- param difficulty:  { "easy", "default", "hard", "brutal" }
 	local helper = require( "lua/missions/v2/waves_gen.lua" )
-	local rules  = helper:PrepareDefaultRules( {}, "outpost", "default")
-
+	local rules  = helper:PrepareDefaultRules( {}, "outpost", "default", params)
+	
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 2
 	rules.eventsPerPrepareState = 0 -- [0,1]

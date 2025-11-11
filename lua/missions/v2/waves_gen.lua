@@ -1,3 +1,4 @@
+require("lua/utils/table_utils.lua")
 
 class 'wave_gen'
 
@@ -194,10 +195,18 @@ function wave_gen:GetWaveLogic( level, id, biome, suffix )
 	return waveFile
 end
 
-function wave_gen:PrepareDefaultRules(rules, missionType, difficulty)
-	-- missionType: { "hq", "outpost", "survival", "scout", "temp" }
+function wave_gen:PrepareDefaultRules(rules, missionType, difficulty, params)
+	-- missionType: { "hq", "outpost", "resource", "survival", "scout", "exploration","temp" }
 	-- difficulty:  { "easy", "default", "hard", "brutal" }
-
+	
+	rules.params = params or {}
+	if not rules.params.difficulty	then rules.params.difficulty  = difficulty or DifficultyService:GetDomRulesScriptPostfix() end
+	if not rules.params.threat		then rules.params.threat      = 10 end
+	if not rules.params.missionType	then rules.params.missionType = missionType or "temp" end
+	
+	missionType = rules.params.missionType
+	difficulty  = rules.params.difficulty
+	
 	rules.prepareAttackDefinitions = self:Default_PrepareAttackDefinitions(   missionType, difficulty )
 	rules.wavesEntryDefinitions    = self:Default_WavesEntryDefinitions(      missionType, difficulty )
 	
@@ -217,6 +226,7 @@ function wave_gen:PrepareDefaultRules(rules, missionType, difficulty)
 	rules.waves = {}
 	rules.extraWaves = { }
 	rules.bosses = { }
+	
 	
 	return rules
 end
@@ -272,7 +282,7 @@ function wave_gen:Default_Waves(biome, missionType, difficulty,  waves)
 	if waves == nil        then waves = wave_gen:EmptyWaves( false ) end
 	local ds = wave_gen:DefaultWaveDiffSettings( biome, missionType)
 
-	if (missionType == "outpost") then
+	if Contains({"outpost","resource"}, missionType) then
 		if (difficulty == "brutal")      then
 			waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3, 4 },               biomes = { biome },  levels = { 1, 2 }, suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
 			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5, 6},          biomes = { biome },  levels = { 1, 2 }, suffixes = { "ultra" },      repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
@@ -311,7 +321,7 @@ function wave_gen:Default_Waves(biome, missionType, difficulty,  waves)
 			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                   7, 8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "", "alpha" },  repeatInterval = 1.5, weightDyn = 1.0,   diffSettings = ds},   waves)
 		end
 		
-	elseif (missionType == "scout" or missionType == "temp") then
+	elseif Contains({"scout","exploration","temp"}, missionType) then
 		if (difficulty == "brutal")      then
 			waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 4, 5, 6, 7, 8   }, biomes = { biome },  levels = { 1, 2 },   suffixes = { "" },               repeatInterval = 1,   diffSettings = ds},   waves)
 			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    5, 6, 7, 8   }, biomes = { biome },  levels = { 1 },      suffixes = { "", "alpha" },      repeatInterval = 1,   diffSettings = ds},   waves)
@@ -350,7 +360,7 @@ function wave_gen:Default_ExtraWaves(biome, missionType, difficulty,  waves)
 	if waves == nil      then waves = wave_gen:EmptyWaves( false ) end
 	local ds = wave_gen:DefaultWaveDiffSettings( biome, missionType)
 
-	if (missionType == "outpost") then
+	if Contains({"outpost","resource"}, missionType) then
 		if (difficulty == "brutal")      then
 			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
@@ -383,7 +393,7 @@ function wave_gen:Default_ExtraWaves(biome, missionType, difficulty,  waves)
 			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 8, 9 }, biomes = { biome }, levels = { 8 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 		end
 		
-	elseif (missionType == "scout" or missionType == "temp") then
+	elseif Contains({"scout","exploration","temp"}, missionType) then
 		if (difficulty == "brutal")      then
 			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
@@ -406,7 +416,7 @@ function wave_gen:Default_MpWaves(biome, missionType, difficulty,  waves)
 	if waves == nil      then waves = wave_gen:EmptyWaves( true ) end
 	local ds = wave_gen:DefaultWaveDiffSettings( biome, missionType)
 		
-	if (missionType == "outpost") then
+	if Contains({"outpost","resource"}, missionType) then
 		if (difficulty == "brutal")      then
 			waves = wave_gen:Generate({ groups = { "" }, difficulty = {  5, 6, 7       }, bosses = { "dynamic" },                                      repeatInterval = 2.5, spawnDelay = 1, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = wave_gen:Generate({ groups = { "" }, difficulty = {     6, 7, 8    }, bosses = { "dynamic" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
@@ -426,7 +436,7 @@ function wave_gen:Default_MpWaves(biome, missionType, difficulty,  waves)
 			waves = wave_gen:Generate({ groups = { "" }, difficulty = {        7, 8, 9 }, biomes = { biome }, levels = { 5 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDyn = 1.0,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
 		end
 		
-	elseif (missionType == "scout" or missionType == "temp") then
+	elseif Contains({"scout","exploration","temp"}, missionType) then
 		if (difficulty == "brutal")      then
 			waves = wave_gen:Generate({ groups = { "" }, difficulty = {     6, 7, 8,   }, bosses = { "dynamic" },                                      repeatInterval = 3,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = wave_gen:Generate({ groups = { "" }, difficulty = {              9 }, bosses = { "dynamic" },                                      repeatInterval = 2.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
@@ -446,7 +456,7 @@ function wave_gen:Default_Bosses(biome, missionType, difficulty,  waves)
 	if waves == nil      then waves = wave_gen:EmptyWaves( false ) end
 	local ds = wave_gen:DefaultWaveDiffSettings( biome, missionType)
 
-	if (missionType == "outpost") then
+	if Contains({"outpost","resource"}, missionType) then
 		if (difficulty == "brutal")      then
 			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 4,    diffSettings = ds },   waves)
 			waves = wave_gen:Generate({ groups = { "" }, difficulty = {             5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 2.5,  diffSettings = ds },   waves)
@@ -456,7 +466,7 @@ function wave_gen:Default_Bosses(biome, missionType, difficulty,  waves)
 		elseif (difficulty == "default" or difficulty == "easy") then 
 		end
 		
-	elseif (missionType == "scout" or missionType == "temp") then
+	elseif Contains({"scout","exploration","temp"}, missionType) then
 		if (difficulty == "brutal")      then
 			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 4,  diffSettings = ds },   waves)
 
@@ -511,7 +521,7 @@ function wave_gen:Default_TimeToNextDifficultyLevel(missionType, difficulty, fac
 			720, -- difficulty level 8
 			720, -- difficulty level 9
 		}
-	elseif (missionType == "outpost") then
+	elseif Contains({"outpost","resource"}, missionType) then
 		times = {			
 			600, -- difficulty level 1
 			780, -- difficulty level 2
@@ -523,7 +533,7 @@ function wave_gen:Default_TimeToNextDifficultyLevel(missionType, difficulty, fac
 			2400, -- difficulty level 8
 			3600, -- difficulty level 9
 		}
-	elseif (missionType == "scout" or missionType == "temp") then
+	elseif Contains({"scout","exploration","temp"}, missionType) then
 		times = {
 			1200, -- difficulty level 1
 			1200, -- difficulty level 2
@@ -561,10 +571,10 @@ end
 
 function wave_gen:Default_PrepareSpawnTime(missionType, difficulty, factor)
 	local times = {}
-	if (missionType == "survival") then								times = self:RepeatingValueTable(360, 9)
-	elseif (missionType == "outpost" or missionType == "hq") then	times = self:RepeatingValueTable(120, 9)
-	elseif (missionType == "scout" or missionType == "temp") then	times = self:RepeatingValueTable(60, 9)
-	else 															times = self:RepeatingValueTable(60, 9)
+	if (missionType == "survival") then									times = self:RepeatingValueTable(360, 9)
+	elseif Contains({"outpost","resource","hq"}, missionType) then		times = self:RepeatingValueTable(120, 9)
+	elseif Contains({"scout","exploration","temp"}, missionType) then	times = self:RepeatingValueTable(60, 9)
+	else 																times = self:RepeatingValueTable(60, 9)
 	end
 	
 	if factor == nil then factor = 1 end
@@ -604,7 +614,7 @@ function wave_gen:Default_IdleTime(missionType, difficulty, factor)
 	local times = {}
 	if (missionType == "survival") then	
 		times = self:RepeatingValueTable(0, 9)
-	elseif (missionType == "outpost") then
+	elseif Contains({"outpost","resource"}, missionType) then
 		times = {
 			 450,  -- difficulty level 1
 			 600,  -- difficulty level 2
@@ -616,7 +626,7 @@ function wave_gen:Default_IdleTime(missionType, difficulty, factor)
 			1200,  -- difficulty level 8
 			1200,  -- difficulty level 9
 		}
-	elseif (missionType == "scout" or missionType == "temp") then
+	elseif Contains({"scout","exploration","temp"}, missionType) then
 		times  = self:RepeatingValueTable(1200, 9)
 	else times = self:RepeatingValueTable(1200, 9)
 	end
