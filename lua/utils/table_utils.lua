@@ -133,13 +133,22 @@ function Contains(t, value)
     return false
 end
 
+function Replace(t, oldVal, newVal)
+	for i, v in ipairs(t) do
+		if v == oldVal then
+			t[i] = newVal
+			return
+		end
+	end
+end
+
 function PrintTable(t, maxDepth, indent)
 	if not indent   then indent = 0    end
 	if not maxDepth then maxDepth = 20 end
 	if t == nil  then 
 		return string.rep(" ", indent) .. "nil"
 	end
-	local toprint = string.rep(" ", indent) .. tostring(t) .. " = {\r\n"
+	local toprint = tostring(t) .. " = {\r\n"
 	indent = indent + 2
 	
 	for k, v in pairs(t) do

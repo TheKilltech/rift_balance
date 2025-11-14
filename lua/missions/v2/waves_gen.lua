@@ -19,15 +19,34 @@ function wave_gen:EmptyWaves( isMultiplayer )
 	return {{}, {}, {}, {}, {}, {}, {}, {}, {}}
 end
 
-function wave_gen:Generate( wavesSetting, waves )
+function wave_gen:GenerateGrouped( wavesSetting, waves )
+	if wavesSetting.groups == nil       then wavesSetting.groups = { "default" } end
+	if wavesSetting.biomes == nil       then wavesSetting.biomes = { "" } end
+	
+	local idxReplaceGroup = IndexOf( wavesSetting.biomes, "group")
+	
+	for group in Iter( wavesSetting.groups ) do	
+		if idxReplaceGroup then wavesSetting.biomes[idxReplaceGroup] = group end
+		
+		if waves[group] == nil then waves[group] = wave_gen:EmptyWaves( wavesSetting.mpAdditionalWaves~=nil ) end
+		waves[group] = wave_gen:Generate(wavesSetting, waves[group], true)
+	end
+	if idxReplaceGroup then wavesSetting.biomes[idxReplaceGroup] = "group" end
+	return waves
+end
+
+function wave_gen:Generate( wavesSetting, waves, ignoreGroup )
 	-- e.g. make  { name="logic/missions/survival/attack_level_3_id_1_desert_alpha.logic",   spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0}, 
 	
 	if waves == nil                     then waves = {} end
-	if wavesSetting.groups == nil       then wavesSetting.groups = { "default" } end
 	if wavesSetting.biomes == nil       then wavesSetting.biomes = { "" } end
 	if wavesSetting.suffixes == nil     then wavesSetting.suffixes = { "" } end
 	if wavesSetting.weight == nil       then wavesSetting.weight = 1 end
 	if wavesSetting.diffSettings == nil then wavesSetting.diffSettings = {{}, {}, {}, {}, {}, {}, {}, {}, {}} end
+	
+	if (wavesSetting.groups ~= nil) and wavesSetting.groups[1] ~= "" and (not ignoreGroup) then -- this is just temporary for compatiblity until the splitting Generate and GenerateGrouped is not cleaned up
+		return self:GenerateGrouped( wavesSetting, waves )
+	end
 	
 	function getWeight( tdiff, level, suffix, elmCount, wavesSetting, logicFile ) -- option to calculate wave weight adjusted to parameters
 		local dfactorWave = 1.0
@@ -74,62 +93,46 @@ function wave_gen:Generate( wavesSetting, waves )
 			weight            = getWeight( tdiff, level, suffix, elmCount, wavesSetting, logicFile),                  -- weight for the random roll that picks out random waves from the pool
 		}
 	end
-	
-	for group in Iter( wavesSetting.groups ) do	
-		if group ~= "" then
-			if waves[group] == nil then waves[group] = wave_gen:EmptyWaves( wavesSetting.mpAdditionalWaves~=nil ) end
-		elseif waves == nil then        waves        = wave_gen:EmptyWaves( wavesSetting.mpAdditionalWaves~=nil )
+		
+	local subwaves
+	for d in Iter( wavesSetting.difficulty ) do
+		subwaves = waves[d]
+		if subwaves == nil then subwaves = {} end
+		if subwaves.additionalWaves then subwaves = subwaves.waves end
+		
+		local bosses  = wavesSetting.bosses
+		local ids     = wavesSetting.ids
+		if bosses ~= nil then
+			if ids == nil then ids = {} end -- do not generate waves in boss part unless explicity requested
+			
+			for boss in Iter( bosses ) do
+				local logic = self:GetBossLogic( boss )
+				local wave  = createWaveData(d, d, "omega", 1, wavesSetting, logic)
+				table.insert( subwaves, wave )
+			end	
 		end
 		
-		local subwaves
-		for d in Iter( wavesSetting.difficulty ) do
-			if group == "" then
-				subwaves = waves[d]
-			else subwaves = waves[group][d]
-			end
-			if subwaves == nil then subwaves = {} end
-			if subwaves.additionalWaves then subwaves = subwaves.waves end
-			
-			local bosses  = wavesSetting.bosses
-			local ids     = wavesSetting.ids
-			if bosses ~= nil then
-				if ids == nil then ids = {} end -- do not generate waves in boss part unless explicity requested
-				
-				for boss in Iter( bosses ) do
-					local logic = self:GetBossLogic( boss )
-					local wave  = createWaveData(d, 8, "omega", 1, wavesSetting, logic)
-					table.insert( subwaves, wave )
+		for biome in Iter( wavesSetting.biomes ) do
+			local levels = wavesSetting.levels
+			if levels == nil  then levels = { d } end
+			for level in Iter( levels ) do
+				if ids == nil then ids = self:GetBiomeWaveIds(biome, level) end
+				for id in Iter( ids ) do 
+					for suffix in Iter( wavesSetting.suffixes ) do
+						local logic = self:GetWaveLogic(level, id, biome, suffix)
+						local wave  = createWaveData(d, level, suffix, #ids, wavesSetting, logic)
+						table.insert( subwaves, wave )
+					end
 				end	
 			end
-			
-			for biomeBase in Iter( wavesSetting.biomes ) do 
-				local biome = biomeBase
-				if biomeBase == "group" then biome = group end
-				
-				local levels = wavesSetting.levels
-				if levels == nil  then levels = { d } end
-				for level in Iter( levels ) do
-					if ids == nil then ids = self:GetBiomeWaveIds(biome, level) end
-					for id in Iter( ids ) do 
-						for suffix in Iter( wavesSetting.suffixes ) do
-							local logic = self:GetWaveLogic(level, id, biome, suffix)
-							local wave  = createWaveData(d, level, suffix, #ids, wavesSetting, logic)
-							table.insert( subwaves, wave )
-						end
-					end	
-				end
-			end
-			
-			if wavesSetting.mpAdditionalWaves then -- structure for multiplayer waves
-				subwaves = {
-					additionalWaves = wavesSetting.mpAdditionalWaves,
-					waves           = subwaves
-				}
-			end
-			if group == "" then
-				waves[d] = subwaves
-			else waves[group][d] = subwaves
-			end
+		end
+		
+		if wavesSetting.mpAdditionalWaves then -- structure for multiplayer waves
+			waves[d] = {
+				additionalWaves = wavesSetting.mpAdditionalWaves,
+				waves           = subwaves
+			}
+		else waves[d] = subwaves
 		end
 	end
 	
@@ -167,8 +170,14 @@ end
 
 function wave_gen:GetBossLogic( boss )
 	-- e.g. make  "logic/missions/survival/attack_boss_baxmoth.logic"
+	-- e.g. make  "logic/missions/campaigns/story/headquarters_boss_attack.logic"
 	
-	local waveFile = "logic/missions/survival/attack_boss_" .. boss .. ".logic"
+	local waveFile = ""
+	if Contains({"hq","hq_boss"}, boss) then
+		waveFile = "logic/missions/campaigns/story/headquarters_boss_attack.logic"
+	else
+		waveFile = "logic/missions/survival/attack_boss_" .. boss .. ".logic"
+	end
 	return waveFile
 end
 
@@ -179,7 +188,7 @@ function wave_gen:GetWaveLogic( level, id, biome, suffix )
 	if biome == "jungle" then biome = "" end
 	local oldbiomes = {"", "acid", "magma", "desert" }
 	local waveFile = "logic/missions/survival/"
-	if table.contains(oldbiomes, biome) then
+	if Contains(oldbiomes, biome) then
 		waveFile = waveFile .. "attack"
 	else waveFile = waveFile .. biome .. "/attack"
 	end
@@ -200,7 +209,7 @@ function wave_gen:PrepareDefaultRules(rules, missionType, difficulty, params)
 	-- difficulty:  { "easy", "default", "hard", "brutal" }
 	
 	rules.params = params or {}
-	if not rules.params.difficulty	then rules.params.difficulty  = difficulty or DifficultyService:GetDomRulesScriptPostfix() end
+	if not rules.params.difficulty	then rules.params.difficulty  = difficulty or DifficultyService:GetCurrentDifficultyName() end
 	if not rules.params.threat		then rules.params.threat      = 10 end
 	if not rules.params.missionType	then rules.params.missionType = missionType or "temp" end
 	
@@ -226,7 +235,6 @@ function wave_gen:PrepareDefaultRules(rules, missionType, difficulty, params)
 	rules.waves = {}
 	rules.extraWaves = { }
 	rules.bosses = { }
-	
 	
 	return rules
 end
@@ -279,76 +287,76 @@ end
 
 function wave_gen:Default_Waves(biome, missionType, difficulty,  waves)
 	if difficulty == nil   then default = "default" end
-	if waves == nil        then waves = wave_gen:EmptyWaves( false ) end
+	if waves == nil        then waves = {["default"] = wave_gen:EmptyWaves( false )} end
 	local ds = wave_gen:DefaultWaveDiffSettings( biome, missionType)
-
+	
 	if Contains({"outpost","resource"}, missionType) then
 		if (difficulty == "brutal")      then
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3, 4 },               biomes = { biome },  levels = { 1, 2 }, suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5, 6},          biomes = { biome },  levels = { 1, 2 }, suffixes = { "ultra" },      repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       3, 4, 5, 6, 7},       biomes = { biome },  levels = { 2, 3 }, suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8},    biomes = { biome },  levels = { 2, 3 }, suffixes = { "ultra" },      repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8},    biomes = { biome },  levels = { 3, 4 }, suffixes = { "" },           repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3, 4 }, suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 3, 4 }, suffixes = { "ultra" },      repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8,  }, biomes = { biome },  levels = { 4, 5 }, suffixes = { "" },           repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                   7, 8, 9}, biomes = { biome },  levels = { 4, 5 }, suffixes = { "", "alpha" },  repeatInterval = 1.3, weightDynBr = 1.0, diffSettings = ds},    waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                      8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "ultra" },      repeatInterval = 1.8, weightDynBr = 1.0, diffSettings = ds},    waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { biome },  levels = { 5 },    suffixes = { "",  },         repeatInterval = 1.8, weightDynBr = 1.0, diffSettings = ds},    waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { biome },  levels = { 5 },    suffixes = { "alpha" },      repeatInterval = 2.0, weightDynBr = 1.0, diffSettings = ds},    waves)
+			waves = self:GenerateGrouped({ difficulty = { 1, 2, 3, 4 },               biomes = { biome },  levels = { 1, 2 }, suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
+			waves = self:GenerateGrouped({ difficulty = {    2, 3, 4, 5, 6},          biomes = { biome },  levels = { 1, 2 }, suffixes = { "ultra" },      repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
+			waves = self:GenerateGrouped({ difficulty = {       3, 4, 5, 6, 7},       biomes = { biome },  levels = { 2, 3 }, suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
+			waves = self:GenerateGrouped({ difficulty = {          4, 5, 6, 7, 8},    biomes = { biome },  levels = { 2, 3 }, suffixes = { "ultra" },      repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
+			waves = self:GenerateGrouped({ difficulty = {          4, 5, 6, 7, 8},    biomes = { biome },  levels = { 3, 4 }, suffixes = { "" },           repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
+			waves = self:GenerateGrouped({ difficulty = {             5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3, 4 }, suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
+			waves = self:GenerateGrouped({ difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 3, 4 }, suffixes = { "ultra" },      repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
+			waves = self:GenerateGrouped({ difficulty = {                6, 7, 8,  }, biomes = { biome },  levels = { 4, 5 }, suffixes = { "" },           repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves)
+			waves = self:GenerateGrouped({ difficulty = {                   7, 8, 9}, biomes = { biome },  levels = { 4, 5 }, suffixes = { "", "alpha" },  repeatInterval = 1.3, weightDynBr = 1.0, diffSettings = ds},    waves)
+			waves = self:GenerateGrouped({ difficulty = {                      8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "ultra" },      repeatInterval = 1.8, weightDynBr = 1.0, diffSettings = ds},    waves)
+			waves = self:GenerateGrouped({ difficulty = {                         9}, biomes = { biome },  levels = { 5 },    suffixes = { "",  },         repeatInterval = 1.8, weightDynBr = 1.0, diffSettings = ds},    waves)
+			waves = self:GenerateGrouped({ difficulty = {                         9}, biomes = { biome },  levels = { 5 },    suffixes = { "alpha" },      repeatInterval = 2.0, weightDynBr = 1.0, diffSettings = ds},    waves)
 			
 		elseif (difficulty == "hard")    then
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { biome },  levels = { 1 },    suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5, 6, 7, 8},    biomes = { biome },  levels = { 1 },    suffixes = { "ultra" },      repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       3, 4, 5, 6, 7, 8, 9}, biomes = { biome },  levels = { 2 },    suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { biome },  levels = { 2 },    suffixes = { "ultra" },      repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8 ,9}, biomes = { biome },  levels = { 3 },    suffixes = { "" },           repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3 },    suffixes = { "", "alpha" },  repeatInterval = 1.2, weightDynHd = 1.5, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 3 },    suffixes = { "ultra" },      repeatInterval = 1.5, weightDynHd = 1.5, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "" },           repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                   7, 8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "", "alpha" },  repeatInterval = 1.5, weightDynHd = 1.0, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                      8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "ultra" },      repeatInterval = 2,   weightDynHd = 1.0, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                         9}, biomes = { biome },  levels = { 5 },    suffixes = { "" },           repeatInterval = 2,   weightDynHd = 1.0, diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { biome },  levels = { 1 },    suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {    2, 3, 4, 5, 6, 7, 8},    biomes = { biome },  levels = { 1 },    suffixes = { "ultra" },      repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {       3, 4, 5, 6, 7, 8, 9}, biomes = { biome },  levels = { 2 },    suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { biome },  levels = { 2 },    suffixes = { "ultra" },      repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {          4, 5, 6, 7, 8 ,9}, biomes = { biome },  levels = { 3 },    suffixes = { "" },           repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {             5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3 },    suffixes = { "", "alpha" },  repeatInterval = 1.2, weightDynHd = 1.5, diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 3 },    suffixes = { "ultra" },      repeatInterval = 1.5, weightDynHd = 1.5, diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "" },           repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {                   7, 8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "", "alpha" },  repeatInterval = 1.5, weightDynHd = 1.0, diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {                      8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "ultra" },      repeatInterval = 2,   weightDynHd = 1.0, diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {                         9}, biomes = { biome },  levels = { 5 },    suffixes = { "" },           repeatInterval = 2,   weightDynHd = 1.0, diffSettings = ds},   waves)
 			
 		elseif (difficulty == "default" or difficulty == "easy") then 
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { biome },  levels = { 1 },    suffixes = { "" },           repeatInterval = 1,   weightDyn = 1.0,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5, 6, 7},       biomes = { biome },  levels = { 1 },    suffixes = { "", "alpha" },  repeatInterval = 1,   weightDyn = 1.0,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       3, 4, 5, 6, 7, 8},    biomes = { biome },  levels = { 2 },    suffixes = { "" },           repeatInterval = 1,   weightDyn = 1.0,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { biome },  levels = { 2 },    suffixes = { "", "alpha" },  repeatInterval = 1,   weightDyn = 1.0,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3 },    suffixes = { "" },           repeatInterval = 1,   weightDyn = 1.0,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3 },    suffixes = { "", "alpha" },  repeatInterval = 1.2, weightDyn = 1.0,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "" },           repeatInterval = 1.3, weightDyn = 1.0,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                   7, 8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "", "alpha" },  repeatInterval = 1.5, weightDyn = 1.0,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { biome },  levels = { 1 },    suffixes = { "" },           repeatInterval = 1,   weightDyn = 1.0,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {    2, 3, 4, 5, 6, 7},       biomes = { biome },  levels = { 1 },    suffixes = { "", "alpha" },  repeatInterval = 1,   weightDyn = 1.0,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {       3, 4, 5, 6, 7, 8},    biomes = { biome },  levels = { 2 },    suffixes = { "" },           repeatInterval = 1,   weightDyn = 1.0,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { biome },  levels = { 2 },    suffixes = { "", "alpha" },  repeatInterval = 1,   weightDyn = 1.0,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3 },    suffixes = { "" },           repeatInterval = 1,   weightDyn = 1.0,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {             5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3 },    suffixes = { "", "alpha" },  repeatInterval = 1.2, weightDyn = 1.0,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {                6, 7, 8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "" },           repeatInterval = 1.3, weightDyn = 1.0,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {                   7, 8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "", "alpha" },  repeatInterval = 1.5, weightDyn = 1.0,   diffSettings = ds},   waves)
 		end
 		
 	elseif Contains({"scout","exploration","temp"}, missionType) then
 		if (difficulty == "brutal")      then
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 4, 5, 6, 7, 8   }, biomes = { biome },  levels = { 1, 2 },   suffixes = { "" },               repeatInterval = 1,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    5, 6, 7, 8   }, biomes = { biome },  levels = { 1 },      suffixes = { "", "alpha" },      repeatInterval = 1,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       6, 7, 8, 9}, biomes = { biome },  levels = { 2 },      suffixes = { "", "alpha" },      repeatInterval = 1,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       6, 7, 8, 9}, biomes = { biome },  levels = { 1, 2 },   suffixes = { "ultra" },          repeatInterval = 1,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          7, 8, 9}, biomes = { biome },  levels = { 3 },      suffixes = { "", "alpha" },      repeatInterval = 1,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             8, 9}, biomes = { biome },  levels = { 3, 4 },   suffixes = { "", "alpha" },      repeatInterval = 1,   diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                9}, biomes = { biome },  levels = { 3, 4 },   suffixes = { "alpha", "ultra" }, repeatInterval = 1,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = { 4, 5, 6, 7, 8   }, biomes = { biome },  levels = { 1, 2 },   suffixes = { "" },               repeatInterval = 1,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {    5, 6, 7, 8   }, biomes = { biome },  levels = { 1 },      suffixes = { "", "alpha" },      repeatInterval = 1,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {       6, 7, 8, 9}, biomes = { biome },  levels = { 2 },      suffixes = { "", "alpha" },      repeatInterval = 1,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {       6, 7, 8, 9}, biomes = { biome },  levels = { 1, 2 },   suffixes = { "ultra" },          repeatInterval = 1,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {          7, 8, 9}, biomes = { biome },  levels = { 3 },      suffixes = { "", "alpha" },      repeatInterval = 1,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {             8, 9}, biomes = { biome },  levels = { 3, 4 },   suffixes = { "", "alpha" },      repeatInterval = 1,   diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {                9}, biomes = { biome },  levels = { 3, 4 },   suffixes = { "alpha", "ultra" }, repeatInterval = 1,   diffSettings = ds},   waves)
 		
 		elseif (difficulty == "hard")    then
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 4, 5, 6, 7, 8   }, biomes = { biome },  levels = { 1 },      suffixes = { "" },               repeatInterval = 1,  diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    5, 6, 7, 8, 9}, biomes = { biome },  levels = { 2 },      suffixes = { "" },               repeatInterval = 1,  diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       6, 7, 8   }, biomes = { biome },  levels = { 1 },      suffixes = { "", "alpha" },      repeatInterval = 1,  diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          7, 8, 9}, biomes = { biome },  levels = { 2 },      suffixes = { "", "alpha" },      repeatInterval = 1,  diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          7, 8, 9}, biomes = { biome },  levels = { 1, 2 },   suffixes = { "ultra" },          repeatInterval = 1,  diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             8, 9}, biomes = { biome },  levels = { 3, 4 },   suffixes = { "", "alpha" },      repeatInterval = 1,  diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                9}, biomes = { biome },  levels = { 3, 4 },   suffixes = { "ultra" },          repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = { 4, 5, 6, 7, 8   }, biomes = { biome },  levels = { 1 },      suffixes = { "" },               repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {    5, 6, 7, 8, 9}, biomes = { biome },  levels = { 2 },      suffixes = { "" },               repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {       6, 7, 8   }, biomes = { biome },  levels = { 1 },      suffixes = { "", "alpha" },      repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {          7, 8, 9}, biomes = { biome },  levels = { 2 },      suffixes = { "", "alpha" },      repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {          7, 8, 9}, biomes = { biome },  levels = { 1, 2 },   suffixes = { "ultra" },          repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {             8, 9}, biomes = { biome },  levels = { 3, 4 },   suffixes = { "", "alpha" },      repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {                9}, biomes = { biome },  levels = { 3, 4 },   suffixes = { "ultra" },          repeatInterval = 1,  diffSettings = ds},   waves)
 			
 		elseif (difficulty == "default" or difficulty == "easy") then 
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 4, 5, 6, 7, 8, 9}, biomes = { biome },  levels = { 1 },      suffixes = { "" },               repeatInterval = 1,  diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    5, 6, 7, 8, 9}, biomes = { biome },  levels = { 2 },      suffixes = { "" },               repeatInterval = 1,  diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       6, 7, 8, 9}, biomes = { biome },  levels = { 1 },      suffixes = { "", "alpha" },      repeatInterval = 1,  diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          7, 8, 9}, biomes = { biome },  levels = { 2 },      suffixes = { "", "alpha" },      repeatInterval = 1,  diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             8, 9}, biomes = { biome },  levels = { 1 },      suffixes = { "ultra" },          repeatInterval = 1,  diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             8, 9}, biomes = { biome },  levels = { 3 },      suffixes = { "" },               repeatInterval = 1,  diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                9}, biomes = { biome },  levels = { 3 },      suffixes = { "", "alpha" },      repeatInterval = 1,  diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                9}, biomes = { biome },  levels = { 4 },      suffixes = { "" },               repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = { 4, 5, 6, 7, 8, 9}, biomes = { biome },  levels = { 1 },      suffixes = { "" },               repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {    5, 6, 7, 8, 9}, biomes = { biome },  levels = { 2 },      suffixes = { "" },               repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {       6, 7, 8, 9}, biomes = { biome },  levels = { 1 },      suffixes = { "", "alpha" },      repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {          7, 8, 9}, biomes = { biome },  levels = { 2 },      suffixes = { "", "alpha" },      repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {             8, 9}, biomes = { biome },  levels = { 1 },      suffixes = { "ultra" },          repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {             8, 9}, biomes = { biome },  levels = { 3 },      suffixes = { "" },               repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {                9}, biomes = { biome },  levels = { 3 },      suffixes = { "", "alpha" },      repeatInterval = 1,  diffSettings = ds},   waves)
+			waves = self:GenerateGrouped({ difficulty = {                9}, biomes = { biome },  levels = { 4 },      suffixes = { "" },               repeatInterval = 1,  diffSettings = ds},   waves)
 		end
 	end
 	
@@ -362,47 +370,47 @@ function wave_gen:Default_ExtraWaves(biome, missionType, difficulty,  waves)
 
 	if Contains({"outpost","resource"}, missionType) then
 		if (difficulty == "brutal")      then
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 3 },    biomes = { biome }, levels = { 3 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 4 },    biomes = { biome }, levels = { 4 },  suffixes = { "", "alpha" },          repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 5 },    biomes = { biome }, levels = { 5 },  suffixes = { "", "alpha" },          repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 6 },    biomes = { biome }, levels = { 6 },  suffixes = { "", "alpha", "ultra" }, repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 7 },    biomes = { biome }, levels = { 7 },  suffixes = { "", "alpha", "ultra" }, repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 8, 9 }, biomes = { biome }, levels = { 8 },  suffixes = { "", "alpha", "ultra" }, repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 3 },    biomes = { biome }, levels = { 3 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 4 },    biomes = { biome }, levels = { 4 },  suffixes = { "", "alpha" },          repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 5 },    biomes = { biome }, levels = { 5 },  suffixes = { "", "alpha" },          repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 6 },    biomes = { biome }, levels = { 6 },  suffixes = { "", "alpha", "ultra" }, repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 7 },    biomes = { biome }, levels = { 7 },  suffixes = { "", "alpha", "ultra" }, repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 8, 9 }, biomes = { biome }, levels = { 8 },  suffixes = { "", "alpha", "ultra" }, repeatInterval = 9, diffSettings = ds },   waves)
 	
 		elseif (difficulty == "hard")    then
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 3 },    biomes = { biome }, levels = { 3 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 4 },    biomes = { biome }, levels = { 4 },  suffixes = { "", "", "alpha" },      repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 5 },    biomes = { biome }, levels = { 5 },  suffixes = { "", "", "alpha" },      repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 6 },    biomes = { biome }, levels = { 6 },  suffixes = { "", "", "alpha" },      repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 7 },    biomes = { biome }, levels = { 7 },  suffixes = { "", "", "alpha" },      repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 8 },    biomes = { biome }, levels = { 7 },  suffixes = { "", "", "alpha" },      repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 9 },    biomes = { biome }, levels = { 8 },  suffixes = { "", "alpha" },          repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 3 },    biomes = { biome }, levels = { 3 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 4 },    biomes = { biome }, levels = { 4 },  suffixes = { "", "", "alpha" },      repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 5 },    biomes = { biome }, levels = { 5 },  suffixes = { "", "", "alpha" },      repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 6 },    biomes = { biome }, levels = { 6 },  suffixes = { "", "", "alpha" },      repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 7 },    biomes = { biome }, levels = { 7 },  suffixes = { "", "", "alpha" },      repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 8 },    biomes = { biome }, levels = { 7 },  suffixes = { "", "", "alpha" },      repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 9 },    biomes = { biome }, levels = { 8 },  suffixes = { "", "alpha" },          repeatInterval = 9, diffSettings = ds },   waves)
 			
 		elseif (difficulty == "default" or difficulty == "easy") then 
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 3 },    biomes = { biome }, levels = { 3 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 4 },    biomes = { biome }, levels = { 4 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 5 },    biomes = { biome }, levels = { 5 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 6 },    biomes = { biome }, levels = { 6 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 7 },    biomes = { biome }, levels = { 7 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 8, 9 }, biomes = { biome }, levels = { 8 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 3 },    biomes = { biome }, levels = { 3 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 4 },    biomes = { biome }, levels = { 4 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 5 },    biomes = { biome }, levels = { 5 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 6 },    biomes = { biome }, levels = { 6 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 7 },    biomes = { biome }, levels = { 7 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 8, 9 }, biomes = { biome }, levels = { 8 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 		end
 		
 	elseif Contains({"scout","exploration","temp"}, missionType) then
 		if (difficulty == "brutal")      then
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 3 },    biomes = { biome }, levels = { 3 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 4 },    biomes = { biome }, levels = { 4 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 5 },    biomes = { biome }, levels = { 5 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 6 },    biomes = { biome }, levels = { 6 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 7 },    biomes = { biome }, levels = { 7 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 8, 9 }, biomes = { biome }, levels = { 8 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 3 },    biomes = { biome }, levels = { 3 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 4 },    biomes = { biome }, levels = { 4 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 5 },    biomes = { biome }, levels = { 5 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 6 },    biomes = { biome }, levels = { 6 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 7 },    biomes = { biome }, levels = { 7 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			waves = self:Generate({ difficulty = { 8, 9 }, biomes = { biome }, levels = { 8 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 	
 		elseif (difficulty == "hard")    then
 		elseif (difficulty == "default" or difficulty == "easy") then
@@ -415,37 +423,57 @@ function wave_gen:Default_MpWaves(biome, missionType, difficulty,  waves)
 	if difficulty == nil then default = "default" end
 	if waves == nil      then waves = wave_gen:EmptyWaves( true ) end
 	local ds = wave_gen:DefaultWaveDiffSettings( biome, missionType)
-		
-	if Contains({"outpost","resource"}, missionType) then
+	
+	if Contains({"hq"}, missionType) then
 		if (difficulty == "brutal")      then
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {  5, 6, 7       }, bosses = { "dynamic" },                                      repeatInterval = 2.5, spawnDelay = 1, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {     6, 7, 8    }, bosses = { "dynamic" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {           8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 2,   spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {        7, 8, 9 }, biomes = { biome }, levels = { 6 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {              9 }, biomes = { biome }, levels = { 7 }, suffixes = { "ultra" },  repeatInterval = 2.1, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = { 4, 5, 6, 7       }, bosses = { "hq_boss" },                                      repeatInterval = 2.5, spawnDelay = 1, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {       6, 7, 8    }, bosses = { "hq_boss" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {             8, 9 }, bosses = { "hq_boss" },                                      repeatInterval = 2,   spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 6 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {                9 }, biomes = { biome }, levels = { 7 }, suffixes = { "ultra" },  repeatInterval = 2.1, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 	
 		elseif (difficulty == "hard")    then
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {     6, 7, 8    }, bosses = { "dynamic" },                                      repeatInterval = 3,   spawnDelay = 1, weightDynHd = 1.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {        7, 8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 3,   spawnDelay = 0, weightDynHd = 1.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {              9 }, bosses = { "dynamic" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {        7, 8, 9 }, biomes = { biome }, levels = { 5 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {              9 }, biomes = { biome }, levels = { 6 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {    5, 6, 7, 8    }, bosses = { "hq_boss" },                                      repeatInterval = 3,   spawnDelay = 1, weightDynHd = 1.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {          7, 8, 9 }, bosses = { "hq_boss" },                                      repeatInterval = 3,   spawnDelay = 0, weightDynHd = 1.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {                9 }, bosses = { "hq_boss" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 5 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {                9 }, biomes = { biome }, levels = { 6 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			
 		elseif (difficulty == "default" or difficulty == "easy") then 
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {        7, 8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 4,   spawnDelay = 0, weightDyn = 2.0,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {        7, 8, 9 }, biomes = { biome }, levels = { 5 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDyn = 1.0,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {       6, 7, 8, 9 }, bosses = { "hq-boss" },                                      repeatInterval = 4,   spawnDelay = 0, weightDyn = 2.0,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 5 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDyn = 1.0,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
+		end
+		
+	elseif Contains({"outpost","resource"}, missionType) then
+		if (difficulty == "brutal")      then
+			waves = wave_gen:Generate({ difficulty = { 4, 5, 6, 7       }, bosses = { "dynamic" },                                      repeatInterval = 2.5, spawnDelay = 1, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {       6, 7, 8    }, bosses = { "dynamic" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {             8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 2,   spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 6 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {                9 }, biomes = { biome }, levels = { 7 }, suffixes = { "ultra" },  repeatInterval = 2.1, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+	
+		elseif (difficulty == "hard")    then
+			waves = wave_gen:Generate({ difficulty = {    5, 6, 7, 8    }, bosses = { "dynamic" },                                      repeatInterval = 3,   spawnDelay = 1, weightDynHd = 1.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {          7, 8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 3,   spawnDelay = 0, weightDynHd = 1.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {                9 }, bosses = { "dynamic" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 5 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {                9 }, biomes = { biome }, levels = { 6 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			
+		elseif (difficulty == "default" or difficulty == "easy") then 
+			waves = wave_gen:Generate({ difficulty = {       6, 7, 8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 4,   spawnDelay = 0, weightDyn = 2.0,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 5 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDyn = 1.0,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
 		end
 		
 	elseif Contains({"scout","exploration","temp"}, missionType) then
 		if (difficulty == "brutal")      then
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {     6, 7, 8,   }, bosses = { "dynamic" },                                      repeatInterval = 3,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {              9 }, bosses = { "dynamic" },                                      repeatInterval = 2.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {       6, 7, 8,   }, bosses = { "dynamic" },                                      repeatInterval = 3,   spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {                9 }, bosses = { "dynamic" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 	
 		elseif (difficulty == "hard")    then
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {        7, 8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 3,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {          7, 8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 3,   spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			
 		elseif (difficulty == "default" or difficulty == "easy") then 
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {           8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 4,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = wave_gen:Generate({ difficulty = {             8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 4,   spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 		end
 	end
 	return waves
@@ -456,19 +484,30 @@ function wave_gen:Default_Bosses(biome, missionType, difficulty,  waves)
 	if waves == nil      then waves = wave_gen:EmptyWaves( false ) end
 	local ds = wave_gen:DefaultWaveDiffSettings( biome, missionType)
 
-	if Contains({"outpost","resource"}, missionType) then
+	if Contains({"hq"}, missionType) then
 		if (difficulty == "brutal")      then
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 4,    diffSettings = ds },   waves)
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = {             5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 2.5,  diffSettings = ds },   waves)
+			waves = wave_gen:Generate({ difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "hq_boss" },  repeatInterval = 4,    diffSettings = ds },   waves)
+			waves = wave_gen:Generate({ difficulty = {             5, 6, 7, 8, 9 }, bosses = { "hq_boss" },  repeatInterval = 2.5,  diffSettings = ds },   waves)
 		elseif (difficulty == "hard")    then
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 4,    diffSettings = ds },   waves)
+			waves = wave_gen:Generate({ difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "hq_boss" },  repeatInterval = 3.3,  diffSettings = ds },   waves)
+	
+		elseif (difficulty == "default" or difficulty == "easy") then 
+			waves = wave_gen:Generate({ difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "hq_boss" },  repeatInterval = 4,    diffSettings = ds },   waves)
+		end
+		
+	elseif Contains({"outpost","resource"}, missionType) then
+		if (difficulty == "brutal")      then
+			waves = wave_gen:Generate({ difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 4,    diffSettings = ds },   waves)
+			waves = wave_gen:Generate({ difficulty = {             5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 2.5,  diffSettings = ds },   waves)
+		elseif (difficulty == "hard")    then
+			waves = wave_gen:Generate({ difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 4,    diffSettings = ds },   waves)
 	
 		elseif (difficulty == "default" or difficulty == "easy") then 
 		end
 		
 	elseif Contains({"scout","exploration","temp"}, missionType) then
 		if (difficulty == "brutal")      then
-			waves = wave_gen:Generate({ groups = { "" }, difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 4,  diffSettings = ds },   waves)
+			waves = wave_gen:Generate({ difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 4,  diffSettings = ds },   waves)
 
 		elseif (difficulty == "hard")    then
 		elseif (difficulty == "default" or difficulty == "easy") then 
@@ -520,6 +559,18 @@ function wave_gen:Default_TimeToNextDifficultyLevel(missionType, difficulty, fac
 			720, -- difficulty level 7
 			720, -- difficulty level 8
 			720, -- difficulty level 9
+		}
+	elseif Contains({"hq"}, missionType) then
+		times = {
+			1800, -- difficulty level 1
+			1800, -- difficulty level 2
+			2400, -- difficulty level 3	
+			2400, -- difficulty level 4
+			2400, -- difficulty level 5
+			2400, -- difficulty level 6
+			3600, -- difficulty level 7
+			3600, -- difficulty level 8
+			3600, -- difficulty level 9
 		}
 	elseif Contains({"outpost","resource"}, missionType) then
 		times = {			
@@ -642,7 +693,6 @@ function wave_gen:Default_IdleTime(missionType, difficulty, factor)
 	return times
 end
 
-
 function wave_gen:ScaleTable(array, factor)
 	if array then
 		for i = 1, #array, 1 do
@@ -660,15 +710,6 @@ function wave_gen:RepeatingValueTable(value, repeats)
 		array[i] = value;
 	end
 	return array
-end
-
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
 end
 
 return wave_gen
