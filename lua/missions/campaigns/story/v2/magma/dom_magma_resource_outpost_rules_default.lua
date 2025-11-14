@@ -4,7 +4,7 @@ return function(params)
 	-- param missionType: { "outpost", "survival", "scout", "temp" }
 	-- param difficulty:  { "easy", "default", "hard", "brutal" }
 	local helper = require( "lua/missions/v2/waves_gen.lua" )
-	local rules  = helper:PrepareDefaultRules( {}, "outpost", "default", params)
+	local rules  = helper:PrepareDefaultRules( {}, "outpost", nil, params)
 	
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 2
@@ -28,6 +28,7 @@ return function(params)
 		{ action = "unlock_research",                type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1 },
 		{ action = "full_ammo",                      type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
 		{ action = "remove_ammo",                    type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
+		{ action = "boss_attack",                    type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 4 },
 		{ action = "stronger_attack",                type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 1, amount = 1 },
 		{ action = "shegret_attack",                 type = "NEGATIVE", gameStates="IDLE|ATTACK",           minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",                                      weight = 0.5 },
 		{ action = "shegret_attack_hard",            type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 5, logicFile="logic/event/shegret_attack_hard.logic",                                 weight = 0.25 },
@@ -35,7 +36,7 @@ return function(params)
 		{ action = "kermon_attack",                  type = "NEGATIVE", gameStates="IDLE|ATTACK",           minEventLevel = 8, logicFile="logic/event/kermon_attack.logic",                                       weight = 1 },
 		{ action = "kermon_attack_hard",             type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 6, logicFile="logic/event/kermon_attack_hard.logic",                                  weight = 0.75 },
 		{ action = "kermon_attack_very_hard",        type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 8, logicFile="logic/event/kermon_attack_very_hard.logic",                             weight = 0.5 },
-		{ action = "phirian_attack",                 type = "NEGATIVE", gameStates="IDLE|ATTACK",           minEventLevel = 3, logicFile="logic/event/phirian_attack.logic",                                      weight = 0.3 },		
+		{ action = "phirian_attack",                 type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 3, logicFile="logic/event/phirian_attack.logic",                                      weight = 0.3 },		
 		{ action = "spawn_earthquake",               type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2, logicFile="logic/weather/earthquake.logic",          minTime = 60, maxTime = 60,   weight = 0.75 },
 		{ action = "spawn_blood_moon",               type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 4, logicFile="logic/weather/blood_moon.logic",          minTime = 60, maxTime = 120,  weight = 0.5,  weather = "SUN" },
 		{ action = "spawn_blue_moon",                type = "POSITIVE", gameStates="IDLE",                  minEventLevel = 4, logicFile="logic/weather/blue_moon.logic",           minTime = 60, maxTime = 120,  weight = 0.5,  weather = "SUN" },
@@ -113,16 +114,28 @@ return function(params)
 	rules.waveChanceRerollSpawn      = 15
 	rules.waveChanceReroll           = 40
 	
-	rules.waves            = helper:Default_Waves(     "magma", "outpost", "default", nil)
-	rules.extraWaves       = helper:Default_ExtraWaves("magma", "outpost", "default", nil)
-	rules.multiplayerWaves = helper:Default_MpWaves(   "magma", "outpost", "default", nil)
-	rules.bosses           = {} -- bosses via mp waves
+	rules.waves            = helper:Default_Waves(     "magma", "outpost", rules.params.difficulty, nil)
+	rules.extraWaves       = helper:Default_ExtraWaves("magma", "outpost", rules.params.difficulty, nil)
+	rules.multiplayerWaves = helper:Default_MpWaves(   "magma", "outpost", rules.params.difficulty, nil)
+	rules.bosses           = helper:Default_Bosses(    "magma", "outpost", rules.params.difficulty, nil)
 		
-	rules.waves = helper:Generate({ groups = { "metallic" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 2 },   suffixes = { "ultra" },      repeatInterval = 1,   weightDyn = 1.0, },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "", "" },       repeatInterval = 1,   weightDyn = 1.0, },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "alpha" },      repeatInterval = 1,   weightDyn = 1.0, },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "" },           repeatInterval = 1.5, weightDyn = 1.0, },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic" },   difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "", "alpha" },  repeatInterval = 1.5, weightDyn = 1.0, },   rules.waves)
+	rules.waves = helper:GenerateGrouped({ groups = { "metallic" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 2 },   suffixes = { "ultra" },         repeatInterval = 1,   weightDyn = 1.0, },   rules.waves)
+	rules.waves = helper:GenerateGrouped({ groups = { "metallic" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "" },              repeatInterval = 1,   weightDyn = 2.0, },   rules.waves)
+	rules.waves = helper:GenerateGrouped({ groups = { "metallic" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "alpha" },         repeatInterval = 1,   weightDyn = 1.0, },   rules.waves)
+	rules.waves = helper:GenerateGrouped({ groups = { "metallic" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "" },              repeatInterval = 1.5, weightDyn = 1.5, },   rules.waves)
+	rules.waves = helper:GenerateGrouped({ groups = { "metallic" },   difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "alpha" },         repeatInterval = 1.5, weightDyn = 1.0, },   rules.waves)
+	
+	if Contains({"hard", "brutal"}, rules.params.difficulty) then
+		rules.waves = helper:GenerateGrouped({ groups = { "metallic" },  difficulty = {          4, 5, },           biomes = { "group" }, levels = { 2 },   suffixes = { "ultra" },      repeatInterval = 1,    weightDynHd = 1.0, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "metallic" },  difficulty = {             5, },           biomes = { "group" }, levels = { 3 },   suffixes = { "alpha" },      repeatInterval = 1,    weightDynHd = 1.0, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "metallic" },  difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "ultra" },      repeatInterval = 1,    weightDynHd = 1.0, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "metallic" },  difficulty = {                      8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "ultra" },      repeatInterval = 1.5,  weightDynHd = 1.0, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "metallic" },  difficulty = {                         9}, biomes = { "group" }, levels = { 5 },   suffixes = { "", "alpha" },  repeatInterval = 1.5,  weightDynHd = 1.0, },   rules.waves)
 		
+	elseif Contains({"brutal"}, rules.params.difficulty) then
+		rules.waves = helper:GenerateGrouped({ groups = { "metallic" },  difficulty = {                      8, 9}, biomes = { "group" }, levels = { 4 },  suffixes = { "ultra" },       repeatInterval = 1.2,  weightDynBr = 1.5, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "metallic" },  difficulty = {                         9}, biomes = { "group" }, levels = { 5 },  suffixes = { "", "alpha" },   repeatInterval = 1.4,  weightDynBr = 1.0, },   rules.waves)
+	end
+	
     return rules;
 end

@@ -1,11 +1,11 @@
-return function()
-    local rules  = require("lua/missions/campaigns/dlc_3/dom_swamp_outpost_rules_default.lua")()
+return function(params)
+    local rules  = require("lua/missions/campaigns/dlc_3/dom_swamp_outpost_rules_default.lua")(params)
 	local helper = require("lua/missions/v2/waves_gen.lua" )
 	
-	rules.timeToNextDifficultyLevel = helper:Default_TimeToNextDifficultyLevel( "outpost", "brutal", 1)
-	rules.prepareSpawnTime          = helper:Default_PrepareSpawnTime(          "outpost", "brutal", 1)
-	rules.idleTime                  = helper:Default_IdleTime(                  "outpost", "brutal", 1)
-	
+	Concat( rules.gameEvents, {
+		{ action = "phirian_attack_very_hard",         type = "NEGATIVE", gameStates="ATTACK",                  minEventLevel = 5, logicFile="logic/event/phirian_attack_very_hard.logic",         weight = 3 },
+	})
+
 	rules.attackCountPerDifficulty = 
 	{			
 		{ minCount = 2, maxCount = 3 },  -- difficulty level 1
@@ -35,10 +35,6 @@ return function()
 	rules.waveChanceRerollSpawnGroup = 60
 	rules.waveChanceRerollSpawn      = 25
 	rules.waveChanceReroll           = 80
-	
-	rules.waves            = helper:Default_Waves(     "swamp", "outpost", "brutal")
-	rules.extraWaves       = helper:Default_ExtraWaves("swamp", "outpost", "brutal")
-	rules.multiplayerWaves = helper:Default_MpWaves(   "swamp", "outpost", "brutal")
 	
     return rules;
 end

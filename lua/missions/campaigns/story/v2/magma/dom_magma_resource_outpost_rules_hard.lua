@@ -1,10 +1,16 @@
 return function(params)
     local rules  = require("lua/missions/campaigns/story/v2/magma/dom_magma_resource_outpost_rules_default.lua")(params)
 	local helper = require( "lua/missions/v2/waves_gen.lua" )
-	
-	rules.timeToNextDifficultyLevel = helper:Default_TimeToNextDifficultyLevel( "outpost", "hard", 1)
-	rules.prepareSpawnTime          = helper:Default_PrepareSpawnTime(          "outpost", "hard", 1)
-	rules.idleTime                  = helper:Default_IdleTime(                  "outpost", "hard", 1)
+
+	Concat( rules.gameEvents, {
+		{ action = "shegret_attack_hard",            type = "NEGATIVE", gameStates="ATTACK",           minEventLevel = 5,                    logicFile="logic/event/shegret_attack_hard.logic",                          weight = 0.75 },
+		{ action = "kermon_attack_hard",             type = "NEGATIVE", gameStates="ATTACK",           minEventLevel = 6,                    logicFile="logic/event/kermon_attack_hard.logic",                           weight = 0.75 },
+		{ action = "phirian_attack",                 type = "NEGATIVE", gameStates="ATTACK",           minEventLevel = 3,                    logicFile="logic/event/phirian_attack.logic",                               weight = 0.3 },
+	})
+
+	-- rules.timeToNextDifficultyLevel = helper:Default_TimeToNextDifficultyLevel( "outpost", rules.params.difficulty, 1)
+	-- rules.prepareSpawnTime          = helper:Default_PrepareSpawnTime(          "outpost", rules.params.difficulty, 1)
+	-- rules.idleTime                  = helper:Default_IdleTime(                  "outpost", rules.params.difficulty, 1)
 	
 	rules.spawnCooldownEventChance = { 35, 60, 20 }
 	
@@ -43,19 +49,6 @@ return function(params)
 	rules.waveChanceRerollSpawnGroup = 25
 	rules.waveChanceRerollSpawn      = 45
 	rules.waveChanceReroll           = 40
-	
-	rules.waves            = helper:Default_Waves(     "magma", "outpost", "hard", nil)
-	rules.extraWaves       = helper:Default_ExtraWaves("magma", "outpost", "hard", nil)
-	rules.multiplayerWaves = helper:Default_MpWaves(   "magma", "outpost", "hard", nil)
-	
-	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {          4, 5, 6, 7, 8},    biomes = { "group" }, levels = { 2 },   suffixes = { "ultra" },       repeatInterval = 1,    weightDynHd = 1.0, },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {          4, 5, 6, 7, 8},    biomes = { "group" }, levels = { 3 },   suffixes = { "" },            repeatInterval = 1,    weightDynHd = 1.0, },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {             5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "", "alpha" },   repeatInterval = 1,    weightDynHd = 1.0, },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "ultra" },       repeatInterval = 1,    weightDynHd = 1.0, },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "" },            repeatInterval = 1.2,  weightDynHd = 1.0, },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "", "alpha" },   repeatInterval = 1.2,  weightDynHd = 1.0, },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {                      8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "ultra" },       repeatInterval = 1.4,  weightDynHd = 1.0, },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic" },  difficulty = {                         9}, biomes = { "group" }, levels = { 5 },   suffixes = { "", "alpha" },   repeatInterval = 1.5,  weightDynHd = 1.0, },   rules.waves)
 	
     return rules;
 end

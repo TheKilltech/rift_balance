@@ -1,10 +1,10 @@
-return function()
+return function(params)
 	-- the following sets up to default values for the given mission and difficulty type:
 	-- prepareAttackDefinitions, wavesEntryDefinitions, prepareSpawnTime, timeToNextDifficultyLevel, cooldownAfterAttacks
 	-- param missionType: { "outpost", "survival", "scout", "temp" }
 	-- param difficulty:  { "easy", "default", "hard", "brutal" }
 	local helper = require( "lua/missions/v2/waves_gen.lua" )
-	local rules  = helper:PrepareDefaultRules( {}, "outpost", "default")
+	local rules  = helper:PrepareDefaultRules( {}, "outpost", nil, params)
 
 	rules.maxObjectivesAtOnce = 0
 	rules.eventsPerIdleState = 1
@@ -28,6 +28,7 @@ return function()
 		{ action = "unlock_research",                  type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1 },
 		{ action = "full_ammo",                        type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
 		{ action = "remove_ammo",                      type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
+		{ action = "boss_attack",                      type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 4 },
 		{ action = "stronger_attack",                  type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 1, amount = 1 },
 		{ action = "spawn_blue_hail",                  type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 4, logicFile="logic/weather/blue_hail.logic",     minTime = 30,  maxTime = 60,  weight = 0.25 },
 		{ action = "spawn_thunderstorm",               type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2, logicFile="logic/weather/thunderstorm.logic",  minTime = 60,  maxTime = 120 },
@@ -61,6 +62,18 @@ return function()
 	-- events spawn chance during/after attack (cooldown state). event timing is random ranging from the start of attack to max cooldown time.
 	-- chances are consecutive, i.e. dice roll for event n+1 may only happen if roll for event n was also succefful
 	rules.spawnCooldownEventChance = { 25, 5 }
+	
+	rules.objectivesLogic = 
+	{
+		{ name = "logic/objectives/kill_elite_baxmoth.logic",              minDifficultyLevel = 3 },
+		{ name = "logic/objectives/kill_elite_dynamic.logic",              minDifficultyLevel = 6 },
+		{ name = "logic/objectives/destroy_nest_stickrid_single.logic",    minDifficultyLevel = 3 }, 
+		{ name = "logic/objectives/destroy_nest_stickrid_multiple.logic",  minDifficultyLevel = 5 },
+		{ name = "logic/objectives/destroy_nest_plutrodon_single.logic",   minDifficultyLevel = 4 }, 
+		{ name = "logic/objectives/destroy_nest_plutrodon_multiple.logic", minDifficultyLevel = 6 },
+		{ name = "logic/objectives/destroy_nest_fungor_single.logic",      minDifficultyLevel = 5 }, 
+		{ name = "logic/objectives/destroy_nest_fungor_multiple.logic",    minDifficultyLevel = 7 }		
+	}
 
 	rules.addResourcesOnRunOut = 
 	{
@@ -106,22 +119,10 @@ return function()
 	rules.waveChanceRerollSpawn      = 25
 	rules.waveChanceReroll           = 80
 
-	rules.waves            = helper:Default_Waves(     "swamp", "outpost", "default", nil)
-	rules.extraWaves       = helper:Default_ExtraWaves("swamp", "outpost", "default", nil)
-	rules.multiplayerWaves = helper:Default_MpWaves(   "swamp", "outpost", "default", nil)
-	rules.bosses           = {} -- bosses via mp waves
-	
-	rules.objectivesLogic = 
-	{
-		{ name = "logic/objectives/kill_elite_baxmoth.logic",              minDifficultyLevel = 3 },
-		{ name = "logic/objectives/kill_elite_dynamic.logic",              minDifficultyLevel = 6 },
-		{ name = "logic/objectives/destroy_nest_stickrid_single.logic",    minDifficultyLevel = 3 }, 
-		{ name = "logic/objectives/destroy_nest_stickrid_multiple.logic",  minDifficultyLevel = 5 },
-		{ name = "logic/objectives/destroy_nest_plutrodon_single.logic",   minDifficultyLevel = 4 }, 
-		{ name = "logic/objectives/destroy_nest_plutrodon_multiple.logic", minDifficultyLevel = 6 },
-		{ name = "logic/objectives/destroy_nest_fungor_single.logic",      minDifficultyLevel = 5 }, 
-		{ name = "logic/objectives/destroy_nest_fungor_multiple.logic",    minDifficultyLevel = 7 }		
-	}
+	rules.waves            = helper:Default_Waves(     "swamp", "outpost", rules.params.difficulty, nil)
+	rules.extraWaves       = helper:Default_ExtraWaves("swamp", "outpost", rules.params.difficulty, nil)
+	rules.multiplayerWaves = helper:Default_MpWaves(   "swamp", "outpost", rules.params.difficulty, nil)
+	rules.bosses           = helper:Default_Bosses(    "swamp", "outpost", rules.params.difficulty, nil)
 	
     return rules;
 end
