@@ -78,19 +78,20 @@ function event_manager:Activated()
 end
 
 function event_manager:InitRules()
-	
-    if ( type( self.rules ) == "table" ) then
-        self.rulesFile = self.rules.rulesPath
+	if ( type( self.rules ) == "table" ) then
+		self.rulesFile  = self.rules.rulesPath
+		self.rulesParam = self.rules.rulesParam
 		LogService:Log( "event_manager:InitRules() : rules given as table")
 		LogService:Log( "event_manager:InitRules() : rules file path : " .. tostring( self.rulesFile ) )
 		LogService:Log( "event_manager:InitRules() : difficulty : " .. tostring( DifficultyService:GetCurrentDifficultyName() ) )
-        self.rules = require( self.rulesFile )( self.rules.rulesParam )
-    elseif ( type( self.rules ) == "string" ) then
-        self.rulesFile = self.rules
+		self.rules = require( self.rulesFile )( self.rulesParam )
+	elseif ( type( self.rules ) == "string" ) then
+		self.rulesFile = self.rules
 		LogService:Log( "event_manager:InitRules() : rules file path : " .. tostring( self.rulesFile ) )
 		LogService:Log( "event_manager:InitRules() : difficulty : " .. tostring( DifficultyService:GetCurrentDifficultyName() ) )
-        self.rules = require( self.rulesFile )()
-    end
+		self.rules = require( self.rulesFile )()
+		self.rulesParam = self.rules.rulesParam
+	end
 	
 	-- make sure mod rule variables are available and valid
 	if (self.rules.eventsPerPrepareStateChance == nil      or type(self.rules.eventsPerPrepareStateChance) ~= "number")      then  self.rules.eventsPerPrepareStateChance = 75        end

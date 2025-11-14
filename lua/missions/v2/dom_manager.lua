@@ -299,7 +299,6 @@ function dom_mananger:OnLoad()
 		rulesCheckNewPath = rulesCheckNewPath .. currentDifficultyName .. ".lua"
 
 		self:VerboseLog("OnLoad - checking if there is a new rule : " .. rulesCheckNewPath )
-
 		if ( rulesCheckNewPath ~= rulesOldPath ) then
 			self:VerboseLog("OnLoad - old rules don't match difficulty level. Searching if new one exist" )
 			if ( script_exists( rulesCheckNewPath ) == true ) then
@@ -312,9 +311,9 @@ function dom_mananger:OnLoad()
 			self:VerboseLog("OnLoad - old rules match. Nothing to load." )
 		end
 		
-		self.rules = ProcessRulesTable( require( self.rulesFile )() )
+		self.rules = ProcessRulesTable( require( self.rulesFile )( self.rulesParam ) )
 	end
-
+	
 	if ( self.version == nil ) then
 		self:RegisterHandler( event_sink, "StartUpgradingEvent",        	   "OnStartUpgradingEvent" )
 		self:UnregisterHandler( event_sink, "BuildingStartEvent",        	   "OnBuildingStartEvent" )
@@ -1070,7 +1069,7 @@ function dom_mananger:GetWavePool( currentDifficultyLevel, silent )
 	end
 		
 	for group in Iter ( availableAttackPool )  do
-		local waves = self.rules.waves[ group ]
+		local waves = self.rules.waves[ group ] or {}
 		
 		currentDifficultyLevel = Clamp( currentDifficultyLevel, 0, #waves )
 
