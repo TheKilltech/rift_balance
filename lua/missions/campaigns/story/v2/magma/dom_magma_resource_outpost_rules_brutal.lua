@@ -2,10 +2,6 @@ return function(params)
     local rules  = require("lua/missions/campaigns/story/v2/magma/dom_magma_resource_outpost_rules_hard.lua")(params)
 	local helper = require("lua/missions/v2/waves_gen.lua" )
 	
-	rules.timeToNextDifficultyLevel = helper:Default_TimeToNextDifficultyLevel( "outpost", rules.params.difficulty, 1)
-	rules.prepareSpawnTime          = helper:Default_PrepareSpawnTime(          "outpost", rules.params.difficulty, 1)
-	rules.idleTime                  = helper:Default_IdleTime(                  "outpost", rules.params.difficulty, 1)
-	
 	rules.attackCountPerDifficulty = 
 	{			
 		{ minCount = 1, maxCount = 2 },  -- difficulty level 1
