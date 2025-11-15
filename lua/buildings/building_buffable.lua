@@ -127,6 +127,7 @@ function building_buffable:UpdateBuffState( source )
 		BuildingService:EnableBuilding( self.entity )
 		--LogService:Log( "building_buffable: new buff source ".. source.bp .. " " ..tostring(source.entity) .. ", level ".. tostring(source.level))
 		BuildingService:SetResourceConverterEfficientyModificator( self.entity, source.modificator , "buff" )
+		--BuildingService:AddConverterCostModifier( self.entity, 0.001, "" )
 	end
 end
 
