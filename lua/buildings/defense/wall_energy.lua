@@ -45,13 +45,7 @@ end
 --Runs when the building turns on, including initial power on.
 function wall_energy:OnActivate()
 	--Verify the shield component exists. Create it if missing.
-	if self.healthChild == nil then
-		--Create and attatch the Shield as a child object.
-		self.healthChild = EntityService:SpawnAndAttachEntity(self.shieldBp, self.entity)
-		--Add self to the shield.
-		--This makes the shield feel snappy when placing the building, despite the long interval between scans.
-		ItemService:AddHealthLink(self.entity, self.healthChild)
-	end
+	if self.healthChild == nil then self:MakeShield() end
 	
 	self:EnableDamage()
 	self:ChargeShield()
@@ -62,6 +56,9 @@ end
 
 --Runs when the building turns off, loses power, or is removed.
 function wall_energy:OnDeactivate()
+	--Verify the shield component exists. Create it if missing.
+	if self.healthChild == nil then self:MakeShield() end
+	
 	--Shut down Shield
 	local state = self.fsm:GetState("working")
 	if (state ~= nil) then
@@ -116,6 +113,14 @@ end
 -----------------------------------------------------------------------------------------------------------
 --SUBFUNCTIONS     SUBFUNCTIONS     SUBFUNCTIONS     SUBFUNCTIONS     SUBFUNCTIONS     SUBFUNCTIONS
 -----------------------------------------------------------------------------------------------------------
+function wall_energy:MakeShield()
+	--Create and attatch the Shield as a child object.
+	self.healthChild = EntityService:SpawnAndAttachEntity(self.shieldBp, self.entity)
+	--Add self to the shield.
+	--This makes the shield feel snappy when placing the building, despite the long interval between scans.
+	ItemService:AddHealthLink(self.entity, self.healthChild)
+end
+
 --Enables Damage Reflection
 function wall_energy:EnableDamage()
 	--Check that Damage Reflection amount is stored, then enable it
