@@ -16,13 +16,7 @@ GameplayResourceDef
 	spawn_type			"deposit"
 	order   			"29"
 
-	volume_minimap_color
-	{
-		r "1.5"
-		g "1.4"
-		b "1.2"
-		a "1"
-	}
+	volume_unpack_blueprint "resources/volume_resource_ammonium"
 }
 
 GameplayResourceDef
