@@ -1,12 +1,12 @@
-return function()
+return function(params)
 	-- the following sets up to default values for the given mission and difficulty type:
 	-- prepareAttackDefinitions, wavesEntryDefinitions, prepareSpawnTime, timeToNextDifficultyLevel, cooldownAfterAttacks
 	-- param missionType: { "outpost", "survival", "scout", "temp" }
 	-- param difficulty:  { "easy", "default", "hard", "brutal" }
 	local helper = require( "lua/missions/v2/waves_gen.lua" )
-	local rules  = helper:PrepareDefaultRules( {}, "outpost", "default")
+	local rules  = helper:PrepareDefaultRules( {}, "outpost", nil, params)
 	
-	rules.timeToNextDifficultyLevel = helper:Default_TimeToNextDifficultyLevel( "outpost", "default", 1.2)
+	rules.timeToNextDifficultyLevel = helper:Default_TimeToNextDifficultyLevel( "outpost", rules.params.difficulty, 1.2)
 
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 1
@@ -77,9 +77,6 @@ return function()
 		{ level = 2, minLevel = 6, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },
 	}
 
-	rules.buildingsUpgradeStartsLogic = {	}
-
-
 	rules.objectivesLogic = 
 	{
 		{ name = "logic/objectives/kill_elite_baxmoth.logic",              minDifficultyLevel = 3 },
@@ -95,14 +92,14 @@ return function()
 	rules.attackCountPerDifficulty = 
 	{			
 		{ minCount = 1, maxCount = 2 },  -- difficulty level 1
-		{ minCount = 1, maxCount = 3 },  -- difficulty level 2
+		{ minCount = 1, maxCount = 2 },  -- difficulty level 2
 		{ minCount = 2, maxCount = 3 },  -- difficulty level 3
-		{ minCount = 2, maxCount = 4 },  -- difficulty level 4
-		{ minCount = 3, maxCount = 4 },  -- difficulty level 5
-		{ minCount = 3, maxCount = 4 },  -- difficulty level 6
-		{ minCount = 3, maxCount = 5 },  -- difficulty level 7
-		{ minCount = 3, maxCount = 5 },  -- difficulty level 8
-		{ minCount = 4, maxCount = 5 },  -- difficulty level 9
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 4
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 5
+		{ minCount = 2, maxCount = 4 },  -- difficulty level 6
+		{ minCount = 3, maxCount = 4 },  -- difficulty level 7
+		{ minCount = 3, maxCount = 4 },  -- difficulty level 8
+		{ minCount = 3, maxCount = 4 },  -- difficulty level 9
 	}
 	
 	rules.waveRepeatChances = 
@@ -115,112 +112,17 @@ return function()
 		{60, 40, 10},          -- consecutive chances of wave repeating at level 6
 		{60, 40, 20},          -- consecutive chances of wave repeating at level 7
 		{70, 50, 40, 10},      -- consecutive chances of wave repeating at level 8
-		{80, 60, 50, 30, 30},  -- consecutive chances of wave repeating at level 9
+		{80, 60, 50, 30, 10},  -- consecutive chances of wave repeating at level 9
 	}
 	
 	rules.waveChanceRerollSpawnGroup = 0
 	rules.waveChanceRerollSpawn      = 25
 	rules.waveChanceReroll           = 30
 
-	rules.waves = {}
-	rules.waves = helper:Default_Waves("swamp", "outpost", "default", rules.waves)
+	rules.waves            = helper:Default_Waves(     "swamp", "outpost", rules.params.difficulty, nil)
+	rules.extraWaves       = helper:Default_ExtraWaves("swamp", "outpost", rules.params.difficulty, nil)
+	rules.multiplayerWaves = helper:Default_MpWaves(   "swamp", "outpost", rules.params.difficulty, nil)
+	rules.bosses           = helper:Default_Bosses(    "swamp", "outpost", rules.params.difficulty, nil)
 	
-	
-	rules.extraWaves = {}
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 1 },    biomes = { "swamp" }, levels = { 1 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 2 },    biomes = { "swamp" }, levels = { 2 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 3 },    biomes = { "swamp" }, levels = { 3 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 4 },    biomes = { "swamp" }, levels = { 4 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 5 },    biomes = { "swamp" }, levels = { 5 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 6 },    biomes = { "swamp" }, levels = { 6 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 7 },    biomes = { "swamp" }, levels = { 7 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 8, 9 }, biomes = { "swamp" }, levels = { 8 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	
-	rules.bosses = {}
-	rules.bosses = helper:Generate({ groups = { "" }, difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "baxmoth" },   maxRepeats = 0 },   rules.bosses)
-	rules.bosses = helper:Generate({ groups = { "" }, difficulty = {             5, 6, 7, 8, 9 }, bosses = { "mudroner" },  maxRepeats = 0 },   rules.bosses)
-	
-	rules.multiplayerWaves = 
-	{
-		 -- difficulty level 1		
-		{ 
-			additionalWaves = -1, -- Additional Waves count = 1 + additionalWaves - regardless of player number. Multiplayer Additional waves are disabled in single player mode. Check dom_mananger:GetMultiplayerAttackCount for actual code
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
-			}
-		},
-	
-		 -- difficulty level 2
-		{ 
-			additionalWaves = -1,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
-			}
-		},
-		 -- difficulty level 3
-		{ 
-			additionalWaves = -1,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
-			}
-		},
-
-		 -- difficulty level 4
-		{ 
-			additionalWaves = -1,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
-			}
-		},
-
-		 -- difficulty level 5
-		{ 
-			additionalWaves = -1,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
-			}
-		},
-
-		 -- difficulty level 6 - Canceroth attacks start here, boss attacks start here
-		{ 
-			additionalWaves = 1,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},
-			}
-		},
-
-		 -- difficulty level 7
-		{ 
-			additionalWaves = 1,
-			waves = 
-			{
-				"logic/missions/survival/attack_boss_dynamic.logic"
-			}
-		},
-
-		 -- difficulty level 8
-		{ 
-			additionalWaves = 1,
-			waves = 
-			{
-				"logic/missions/survival/attack_boss_dynamic.logic"
-			}
-		},
-
-		 -- difficulty level 9
-		{ 
-			additionalWaves = 1,
-			waves = 
-			{
-				"logic/missions/survival/attack_boss_dynamic.logic"
-			}
-		},
-	}
     return rules;
 end
