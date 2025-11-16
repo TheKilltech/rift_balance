@@ -1,6 +1,7 @@
-return function()
-    local rules = {}
-
+return function(params)
+	local helper = require( "lua/missions/v2/waves_gen.lua" )
+	local rules  = helper:PrepareDefaultRules( {}, "outpost", nil, params)
+	
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 2
 	rules.eventsPerPrepareState = 1 -- [0,1]
@@ -13,9 +14,6 @@ return function()
 	rules.preparationTimeRelativeVariation = 0.35 -- X factor of idle time that may randomly vary: +/- X * prep_time
 	rules.preparationTimeCancelChance = 15        -- chance in percent
 
-	local helper = require( "lua/missions/v2/waves_gen.lua" )
-	rules = helper:PrepareDefaultRules( rules, "outpost", "default")
-
 	rules.gameEvents = 
 	{
 		{ action = "new_objective",             type = "POSITIVE", gameStates="IDLE|STREAMING",           minEventLevel = 3 }, -- new_objective is only an option in the streaming mode; do not try to pass it as NO_STREAMING
@@ -23,12 +21,11 @@ return function()
 		{ action = "add_resource",              type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, basePercentage = 30 },
 		{ action = "remove_resource",           type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1, basePercentage = 20 },
 		{ action = "stronger_attack",           type = "NEGATIVE", gameStates="ATTACK",                   minEventLevel = 1, amount = 2 },
-		{ action = "stronger_attack",           type = "NEGATIVE", gameStates="ATTACK",                   minEventLevel = 1, amount = 2 },
 		{ action = "cancel_the_attack",         type = "POSITIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 1 },
 		{ action = "unlock_research",           type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING",    minEventLevel = 1 },
 		{ action = "full_ammo",                 type = "POSITIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 2 },
 		{ action = "remove_ammo",               type = "NEGATIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 2 },
-		{ action = "boss_attack",               type = "NEGATIVE", gameStates="ATTACK",                   minEventLevel = 4 },
+		{ action = "boss_attack",               type = "NEGATIVE", gameStates="ATTACK|STREAMING",         minEventLevel = 4 },
 		{ action = "spawn_earthquake",          type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 3, logicFile="logic/weather/earthquake.logic",    minTime = 60, maxTime = 60, weight = 0.5 },
 		{ action = "spawn_blue_hail",           type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 4, logicFile="logic/weather/blue_hail.logic",     minTime = 30, maxTime = 60, weight = 0.25 },
 		{ action = "spawn_thunderstorm",        type = "NEGATIVE", gameStates="ATTACK|IDLE",              minEventLevel = 2, logicFile="logic/weather/thunderstorm.logic",  minTime = 60, maxTime = 120 },
@@ -61,6 +58,17 @@ return function()
 	-- chances are consecutive, i.e. dice roll for event n+1 may only happen if roll for event n was also succefful
 	rules.spawnCooldownEventChance = { 25, 50, 20 }
 
+	rules.addResourcesOnRunOut = 
+	{
+		{ name = "cobalt_vein",        runOutPercentageOnMap = 10, minEventLevel = 5, minToSpawn =  3000, maxToSpawn =  5000, chance =  5 },
+		{ name = "cobalt_vein",        runOutPercentageOnMap = 10, minEventLevel = 4, minToSpawn =  2000, maxToSpawn =  4000, chance = 75, events = { "spawn_resource_comet" }, },
+		{ name = "cobalt_deepvein",    runOutPercentageOnMap = 10, minEventLevel = 7, minToSpawn = 30000, maxToSpawn = 80000,              events = { "spawn_resource_earthquake" }, },
+		{ name = "iron_vein",          runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn =  3000, maxToSpawn =  5000, chance = 15 },
+		{ name = "iron_deepvein",      runOutPercentageOnMap = 20, minEventLevel = 5, minToSpawn = 30000, maxToSpawn = 90000, chance = 15, events = { "spawn_resource_earthquake" }, },
+		{ name = "titanium_deepvein",  runOutPercentageOnMap = 20, minEventLevel = 6, minToSpawn = 30000, maxToSpawn = 90000, chance = 25, events = { "spawn_resource_earthquake" }, eventGroup = "titanium_unlocked", },
+		{ name = "titanium_deepvein",  runOutPercentageOnMap = 20, minEventLevel = 6, isInfinite = 1,                         chance =  5, events = { "spawn_resource_earthquake" }, eventGroup = "titanium_unlocked", },
+	}
+	
 	rules.objectivesLogic = 
 	{
 		{ name = "logic/objectives/kill_elite_dynamic.logic",             minDifficultyLevel = 3 },
@@ -73,19 +81,10 @@ return function()
 		{ name = "logic/objectives/destroy_nest_flurian_single.logic",    minDifficultyLevel = 6 }, 
 		{ name = "logic/objectives/destroy_nest_flurian_multiple.logic",  minDifficultyLevel = 8 }
 	}
-	rules.addResourcesOnRunOut = 
-	{
-		{ name = "cobalt_deepvein", runOutPercentageOnMap = 10, minToSpawn = 10000, maxToSpawn = 20000 },
-	}
 
 	rules.majorAttackLogic =
 	{			
 		{ level = 2, minLevel = 6, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },
-	}
-
-	rules.buildingsUpgradeStartsLogic = 
-	{			
-   
 	}
 
 	rules.attackCountPerDifficulty = 
@@ -98,7 +97,7 @@ return function()
 		{ minCount = 1, maxCount = 3 },  -- difficulty level 6
 		{ minCount = 2, maxCount = 3 },  -- difficulty level 7
 		{ minCount = 2, maxCount = 3 },  -- difficulty level 8
-		{ minCount = 2, maxCount = 4 },  -- difficulty level 9
+		{ minCount = 2, maxCount = 3 },  -- difficulty level 9
 	}
 	
 	rules.waveRepeatChances = 
@@ -114,188 +113,33 @@ return function()
 		{85, 70, 80, 35, 90},     -- concecutive chances of wave repeating at level 9
 	}
 	
-	
-	rules.multiplayerWaves = 
-	{
-		 -- difficulty level 1		
-		{ 
-			additionalWaves = -1, -- Additional Waves count = 1 + additionalWaves - regardless of player number. Multiplayer Additional waves are disabled in single player mode. Check dom_mananger:GetMultiplayerAttackCount for actual code
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
-			}
-		},
-	
-		 -- difficulty level 2
-		{ 
-			additionalWaves = -1,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
-			}
-		},
-		 -- difficulty level 3
-		{ 
-			additionalWaves = -1,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
-			}
-		},
-
-		 -- difficulty level 4
-		{ 
-			additionalWaves = -1,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
-			}
-		},
-
-		 -- difficulty level 5
-		{ 
-			additionalWaves = -1,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
-			}
-		},
-
-		 -- difficulty level 6 -- this is when FLurians start to spawn and when boss attacks can start
-		{ 
-			additionalWaves = 1,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},
-			}
-		},
-
-		 -- difficulty level 7
-		{ 
-			additionalWaves = 1,
-			waves = 
-			{
-				"logic/missions/survival/attack_boss_dynamic.logic"
-			}
-		},
-
-		 -- difficulty level 8
-		{ 
-			additionalWaves = 1,
-			waves = 
-			{
-				"logic/missions/survival/attack_boss_dynamic.logic"
-			}
-		},
-
-		 -- difficulty level 9
-		{ 
-			additionalWaves = 1,
-			waves = 
-			{
-				"logic/missions/survival/attack_boss_dynamic.logic"
-			}
-		},
-	}
-	
 	rules.waveChanceRerollSpawnGroup = 0
 	rules.waveChanceRerollSpawn      = 15
 	rules.waveChanceReroll           = 30
 	
-	rules.waves = {}
-	rules.waves = helper:Generate({ groups = { "default" },   difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { "metallic" }, levels = { 1 },   ids = { 1, 2 },      suffixes = { "" },              },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5, 6, 7},       biomes = { "metallic" }, levels = { 1 },   ids = { 1, 2 },      suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {       3, 4, 5, 6, 7, 8},    biomes = { "metallic" }, levels = { 2 },   ids = { 1, 2 },      suffixes = { "" },              },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "metallic" }, levels = { 2 },   ids = { 1, 2 },      suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "metallic" }, levels = { 3 },   ids = { 1, 2, 3 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {             5, 6, 7, 8, 9}, biomes = { "metallic" }, levels = { 3 },   ids = { 1, 2, 3 },   suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { "metallic" }, levels = { 4 },   ids = { 1, 2, 3 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { "metallic" }, levels = { 4 },   ids = { 1, 2, 3 },   suffixes = { "", "alpha" },     },   rules.waves)
 
-	rules.waves = helper:Generate({ groups = { "magma" },     difficulty = {                6, 7, 8, 9}, biomes = { "group" },    levels = { 2 },   ids = { 1, 2 },      suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "magma" },     difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "group" },    levels = { 3 },   ids = { 1, 2 },      suffixes = { "", "" },          },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "magma" },     difficulty = {                6, 7, 8, 9}, biomes = { "group" },    levels = { 3 },   ids = { 1, 2 },      suffixes = { "alpha" },         },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "magma" },     difficulty = {                6, 7, 8, 9}, biomes = { "group" },    levels = { 4 },   ids = { 1, 2 },      suffixes = { "" },              },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "magma" },     difficulty = {                   7, 8, 9}, biomes = { "group" },    levels = { 4 },   ids = { 1, 2 },      suffixes = { "", "alpha" },     },   rules.waves)
+	rules.waves            = helper:Default_Waves(     "metallic", "outpost", rules.params.difficulty, nil)
+	rules.extraWaves       = helper:Default_ExtraWaves("metallic", "outpost", rules.params.difficulty, nil)
+	rules.multiplayerWaves = helper:Default_MpWaves(   "metallic", "outpost", rules.params.difficulty, nil)
+	rules.bosses           = helper:Default_Bosses(    "metallic", "outpost", rules.params.difficulty, nil)
+
+	rules.waves = helper:GenerateGrouped({ groups = { "magma" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 2 },   suffixes = { "ultra" },         repeatInterval = 1,   weightDyn = 1.0, },   rules.waves)
+	rules.waves = helper:GenerateGrouped({ groups = { "magma" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "" },              repeatInterval = 1,   weightDyn = 2.0, },   rules.waves)
+	rules.waves = helper:GenerateGrouped({ groups = { "magma" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "alpha" },         repeatInterval = 1,   weightDyn = 1.0, },   rules.waves)
+	rules.waves = helper:GenerateGrouped({ groups = { "magma" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "" },              repeatInterval = 1.5, weightDyn = 1.5, },   rules.waves)
+	rules.waves = helper:GenerateGrouped({ groups = { "magma" },   difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "alpha" },         repeatInterval = 1.5, weightDyn = 1.0, },   rules.waves)
 	
-
-	rules.extraWaves = 
-	{
-		{  -- difficulty level 1		
-			"logic/missions/survival/metallic/attack_level_1_id_1_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_1_id_2_metallic.logic",
-		},
-		{  -- difficulty level 2			
-			"logic/missions/survival/metallic/attack_level_2_id_1_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_2_id_2_metallic.logic",
-		},
-		{  -- difficulty level 3
-			"logic/missions/survival/metallic/attack_level_3_id_1_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_3_id_2_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_3_id_3_metallic.logic",
-		},
-		{  -- difficulty level 4			
-			"logic/missions/survival/metallic/attack_level_4_id_1_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_4_id_2_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_4_id_3_metallic.logic",
-		},
-		{  -- difficulty level 5
-			"logic/missions/survival/metallic/attack_level_5_id_1_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_5_id_2_metallic.logic",			
-			"logic/missions/survival/metallic/attack_level_5_id_3_metallic.logic",								
-		},
-		{  -- difficulty level 6
-			"logic/missions/survival/metallic/attack_level_6_id_1_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_6_id_2_metallic.logic",			
-			"logic/missions/survival/metallic/attack_level_6_id_3_metallic.logic",								
-		},
-		{  -- difficulty level 7
-			"logic/missions/survival/metallic/attack_level_7_id_1_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_7_id_2_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_7_id_3_metallic.logic",			
-		},
-		{  -- difficulty level 8
-			"logic/missions/survival/metallic/attack_level_8_id_1_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_8_id_2_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_8_id_3_metallic.logic",			
-		},
-		{  -- difficulty level 9
-			"logic/missions/survival/metallic/attack_level_8_id_1_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_8_id_2_metallic.logic",
-			"logic/missions/survival/metallic/attack_level_8_id_3_metallic.logic",			
-		},
-	}
-
-	rules.bosses = 
-	{
-		{  -- difficulty level 1		
-			"logic/missions/survival/attack_boss_dynamic.logic",			
-		},
-		{  -- difficulty level 2			
-			"logic/missions/survival/attack_boss_dynamic.logic",			
-		},
-		{  -- difficulty level 3
-			"logic/missions/survival/attack_boss_dynamic.logic",			
-		},
-		{  -- difficulty level 4			
-			"logic/missions/survival/attack_boss_dynamic.logic",			
-		},
-		{  -- difficulty level 5
-			"logic/missions/survival/attack_boss_dynamic.logic",			
-		},
-		{  -- difficulty level 6
-			"logic/missions/survival/attack_boss_dynamic.logic",				
-		},
-		{  -- difficulty level 7
-			"logic/missions/survival/attack_boss_dynamic.logic",			
-		},
-		{  -- difficulty level 8
-			"logic/missions/survival/attack_boss_dynamic.logic",			
-		},
-		{  -- difficulty level 9
-			"logic/missions/survival/attack_boss_dynamic.logic",			
-		},
-	}
-
+	if Contains({"hard", "brutal"}, rules.params.difficulty) then
+		rules.waves = helper:GenerateGrouped({ groups = { "magma" },  difficulty = {          4, 5, },           biomes = { "group" }, levels = { 2 },   suffixes = { "ultra" },      repeatInterval = 1,    weightDynHd = 1.0, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "magma" },  difficulty = {             5, },           biomes = { "group" }, levels = { 3 },   suffixes = { "alpha" },      repeatInterval = 1,    weightDynHd = 1.0, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "magma" },  difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "ultra" },      repeatInterval = 1,    weightDynHd = 1.0, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "magma" },  difficulty = {                      8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "ultra" },      repeatInterval = 1.5,  weightDynHd = 1.0, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "magma" },  difficulty = {                         9}, biomes = { "group" }, levels = { 5 },   suffixes = { "", "alpha" },  repeatInterval = 1.5,  weightDynHd = 1.0, },   rules.waves)
+		
+	elseif Contains({"brutal"}, rules.params.difficulty) then
+		rules.waves = helper:GenerateGrouped({ groups = { "magma" },  difficulty = {                      8, 9}, biomes = { "group" }, levels = { 4 },  suffixes = { "ultra" },       repeatInterval = 1.2,  weightDynBr = 1.5, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "magma" },  difficulty = {                         9}, biomes = { "group" }, levels = { 5 },  suffixes = { "", "alpha" },   repeatInterval = 1.4,  weightDynBr = 1.0, },   rules.waves)
+	end
+	
     return rules;
 end

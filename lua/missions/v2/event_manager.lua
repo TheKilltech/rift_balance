@@ -252,7 +252,7 @@ end
 function event_manager:GetBindingsFromObjectiveParams( name )
 	local bindingParams = {}
 
-		for data in Iter( self.rules.objectivesLogic ) do 
+	for data in Iter( self.rules.objectivesLogic ) do 
 		
 		if ( data.name == name ) and ( data.bindingParams ~= nil ) then
 			bindingParams = data.bindingParams
