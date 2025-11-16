@@ -59,7 +59,8 @@ GameplayResourceDef
 	hud_visible 	"never"
 	allow_overflow 	"0"
 	missing_effect "voice_over/announcement/not_enough_plant_biomass"
-	order   		"21"		
+	order   		"21"
+	specific_type	"biomass"
 }
 
 GameplayResourceDef
@@ -73,7 +74,8 @@ GameplayResourceDef
 	hud_visible 	"never"
 	allow_overflow 	"0"
 	missing_effect "voice_over/announcement/not_enough_animal_biomass"
-	order   		"20"		
+	order   		"20"
+	specific_type	"biomass"
 }
 
 GameplayResourceDef
@@ -87,7 +89,8 @@ GameplayResourceDef
 	hud_visible 	"never"
 	allow_overflow 	"0"
 	missing_effect  "voice_over/announcement/not_enough_plant_biomass"
-	order   		"22"		
+	order   		"22"
+	specific_type	"biomass"
 }
 
 GameplayResourceDef
@@ -102,6 +105,7 @@ GameplayResourceDef
 	allow_overflow 	"0"
 	missing_effect  "voice_over/announcement/not_enough_plant_biomass"
 	order   		"23"
+	specific_type	"biomass"
 }
 
 GameplayResourceDef
@@ -116,4 +120,5 @@ GameplayResourceDef
 	allow_overflow 	"0"
 	missing_effect  "voice_over/announcement/not_enough_plant_biomass"
 	order   		"24"
+	specific_type	"biomass"
 }

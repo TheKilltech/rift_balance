@@ -26,6 +26,7 @@ GameplayResourceDef
 	bigger_icon		"gui/hud/resource_icons/uranium_ore_bigger"
 	hud_visible 	"never"
 	order   		"7"
+	specific_type	"metals"
 }
 
 GameplayResourceDef
@@ -39,6 +40,7 @@ GameplayResourceDef
 	hud_visible 	"build_menu"
 	missing_effect 	"voice_over/announcement/uranium_depleted"
 	order   		"6"	
+	specific_type	"metals"
 }
 
 GameplayResourceDef
@@ -51,4 +53,5 @@ GameplayResourceDef
 	bigger_icon		"gui/hud/resource_icons/uranium_depleted_bigger"
 	hud_visible 	"never"
 	order   		"8"
+	specific_type	"metals"
 }
