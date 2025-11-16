@@ -63,7 +63,7 @@ if you like this mod, you can always contribute by reporting any issues: crashes
 furthermore as you can see the page for this mod lacks any media - i woudn't mind contributions in this departament showing off some interesting features of this mod i could add here :)
 
 ## Links
-github:     	https://github.com/TheKilltech/rift_balance
-mod.io page:	https://mod.io/g/riftbreaker/m/rift-exploration-defense-industry
-steam page: 	https://steamcommunity.com/workshop/filedetails/?id=3598485480
-discord:    	https://discord.com/channels/423424585954754565/1134827658530803753
+github:		https://github.com/TheKilltech/rift_balance
+mod.io:		https://mod.io/g/riftbreaker/m/rift-exploration-defense-industry
+steam:		https://steamcommunity.com/workshop/filedetails/?id=3598485480
+discord:	https://discord.com/channels/423424585954754565/1134827658530803753
