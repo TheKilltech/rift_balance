@@ -14,7 +14,6 @@ EntityBlueprint  // liquid_material_storage_small
 		require 			"headquarters"
 		order				"3"
 		buildable			"1"
-		building_group		"liquid_material_storage"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		menu_action			"resource_clear"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,liquid_material_storage_medium,liquid_material_storage_large,liquid_material_storage,liquid_material_storage_lvl_2,liquid_material_storage_lvl_3"
@@ -1469,7 +1468,7 @@ EntityBlueprint  // liquid_material_storage_large_ghost
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"
+			enabled "0"
 			Effects
 			{
 				Effect
