@@ -1,10 +1,10 @@
-return function()
+return function(params)
 	-- the following sets up to default values for the given mission and difficulty type:
 	-- prepareAttackDefinitions, wavesEntryDefinitions, prepareSpawnTime, timeToNextDifficultyLevel, cooldownAfterAttacks
 	-- param missionType: { "outpost", "survival", "scout", "temp" }
 	-- param difficulty:  { "easy", "default", "hard", "brutal" }
 	local helper = require( "lua/missions/v2/waves_gen.lua" )
-	local rules  = helper:PrepareDefaultRules( {}, "outpost", "default")
+	local rules  = helper:PrepareDefaultRules( {}, "outpost", nil, params)
 
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 1
@@ -28,7 +28,7 @@ return function()
 		{ action = "unlock_research",           type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1 },
 		{ action = "full_ammo",                 type = "POSITIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
 		{ action = "remove_ammo",               type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 2 },
-		{ action = "boss_attack",               type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 4 },
+		{ action = "boss_attack",               type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 4 },
 		{ action = "stronger_attack",           type = "NEGATIVE", gameStates="ATTACK",                minEventLevel = 1, amount = 2 },
 		{ action = "shegret_attack",            type = "NEGATIVE", gameStates="IDLE|ATTACK",           minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",                                      weight = 1 },
 		{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 5, logicFile="logic/event/shegret_attack_hard.logic",                                 weight = 0.75 },
@@ -99,133 +99,44 @@ return function()
 	
 	rules.waveRepeatChances = 
 	{
-		{},                    -- consecutive chances of wave repeating at level 1
-		{},                    -- consecutive chances of wave repeating at level 2
-		{15},                  -- consecutive chances of wave repeating at level 3
-		{50},                  -- consecutive chances of wave repeating at level 4
-		{50, 20},              -- consecutive chances of wave repeating at level 5
-		{60, 40, 10},          -- consecutive chances of wave repeating at level 6
-		{60, 40, 20},          -- consecutive chances of wave repeating at level 7
-		{70, 50, 40, 10},      -- consecutive chances of wave repeating at level 8
-		{80, 60, 50, 30, 30},  -- consecutive chances of wave repeating at level 9
+		{},                -- consecutive chances of wave repeating at level 1
+		{},                -- consecutive chances of wave repeating at level 2
+		{15},              -- consecutive chances of wave repeating at level 3
+		{50},              -- consecutive chances of wave repeating at level 4
+		{50, 20},          -- consecutive chances of wave repeating at level 5
+		{60, 40, 10},      -- consecutive chances of wave repeating at level 6
+		{60, 40, 20},      -- consecutive chances of wave repeating at level 7
+		{70, 50, 40, 10},  -- consecutive chances of wave repeating at level 8
+		{75, 55, 45, 20},  -- consecutive chances of wave repeating at level 9
 	}
 	
 	rules.waveChanceRerollSpawnGroup = 10
 	rules.waveChanceRerollSpawn      = 15
 	rules.waveChanceReroll           = 40
 	
-	rules.multiplayerWaves = 
-	{
-		 -- difficulty level 1		
-		{ 
-			additionalWaves = -1, -- Additional Waves count = 1 + additionalWaves - regardless of player number. Multiplayer Additional waves are disabled in single player mode. Check dom_mananger:GetMultiplayerAttackCount for actual code
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=350.0},
-			}
-		},
+	rules.waves            = helper:Default_Waves(     "desert", "outpost", rules.params.difficulty, nil)
+	rules.extraWaves       = helper:Default_ExtraWaves("desert", "outpost", rules.params.difficulty, nil)
+	rules.multiplayerWaves = helper:Default_MpWaves(   "desert", "outpost", rules.params.difficulty, nil)
+	--rules.bosses           = helper:Default_Bosses(    "desert", "outpost", rules.params.difficulty, nil)
+	rules.bosses = helper:Generate({ difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "stregaros", "gnerot", "krocoon" },   repeatInterval = 3,   weightDyn = 1.0, },   rules.bosses)
+
+	rules.waves = helper:GenerateGrouped({ groups = { "caverns" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 2 },   suffixes = { "ultra" },         repeatInterval = 1,   weightDyn = 1.0, },   rules.waves)
+	rules.waves = helper:GenerateGrouped({ groups = { "caverns" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "" },              repeatInterval = 1,   weightDyn = 2.0, },   rules.waves)
+	rules.waves = helper:GenerateGrouped({ groups = { "caverns" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "alpha" },         repeatInterval = 1,   weightDyn = 1.0, },   rules.waves)
+	rules.waves = helper:GenerateGrouped({ groups = { "caverns" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "" },              repeatInterval = 1.5, weightDyn = 1.5, },   rules.waves)
+	rules.waves = helper:GenerateGrouped({ groups = { "caverns" },   difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "alpha" },         repeatInterval = 1.5, weightDyn = 1.0, },   rules.waves)
 	
-		 -- difficulty level 2
-		{ 
-			additionalWaves = 0,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=384.0},
-			}
-		},
-		 -- difficulty level 3
-		{ 
-			additionalWaves = 0,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=420.0},
-			}
-		},
-
-		 -- difficulty level 4
-		{ 
-			additionalWaves = 0,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=500.0},
-			}
-		},
-
-		 -- difficulty level 5
-		{ 
-			additionalWaves = 1,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=600.0},
-			}
-		},
-
-		 -- difficulty level 6
-		{ 
-			additionalWaves = 1,
-			waves = 
-			{
-				{ name="logic/missions/survival/attack_boss_dynamic.logic", spawn_type="RandomBorderInDistance", spawn_type_value=nil, target_type="Type", target_type_value="headquarters", target_min_radius=180.0, target_max_radius=700.0},
-			}
-		},
-
-		 -- difficulty level 7
-		{ 
-			additionalWaves = 1,
-			waves = 
-			{
-				"logic/missions/survival/attack_boss_dynamic.logic"
-			}
-		},
-
-		 -- difficulty level 8
-		{ 
-			additionalWaves = 1,
-			waves = 
-			{
-				"logic/missions/survival/attack_boss_dynamic.logic"
-			}
-		},
-
-		 -- difficulty level 9
-		{ 
-			additionalWaves = 1,
-			waves = 
-			{
-				"logic/missions/survival/attack_boss_dynamic.logic"
-			}
-		},
-	}
+	if Contains({"hard", "brutal"}, rules.params.difficulty) then
+		rules.waves = helper:GenerateGrouped({ groups = { "caverns" },  difficulty = {          4, 5, },           biomes = { "group" }, levels = { 2 },   suffixes = { "ultra" },      repeatInterval = 1,    weightDynHd = 1.0, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "caverns" },  difficulty = {             5, },           biomes = { "group" }, levels = { 3 },   suffixes = { "alpha" },      repeatInterval = 1,    weightDynHd = 1.0, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "caverns" },  difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "ultra" },      repeatInterval = 1,    weightDynHd = 1.0, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "caverns" },  difficulty = {                      8, 9}, biomes = { "group" }, levels = { 4 },   suffixes = { "ultra" },      repeatInterval = 1.5,  weightDynHd = 1.0, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "caverns" },  difficulty = {                         9}, biomes = { "group" }, levels = { 5 },   suffixes = { "", "alpha" },  repeatInterval = 1.5,  weightDynHd = 1.0, },   rules.waves)
+		
+	elseif Contains({"brutal"}, rules.params.difficulty) then
+		rules.waves = helper:GenerateGrouped({ groups = { "caverns" },  difficulty = {                      8, 9}, biomes = { "group" }, levels = { 4 },  suffixes = { "ultra" },       repeatInterval = 1.2,  weightDynBr = 1.5, },   rules.waves)
+		rules.waves = helper:GenerateGrouped({ groups = { "caverns" },  difficulty = {                         9}, biomes = { "group" }, levels = { 5 },  suffixes = { "", "alpha" },   repeatInterval = 1.4,  weightDynBr = 1.0, },   rules.waves)
+	end
 	
-	local waves_gen = require( "lua/missions/v2/waves_gen.lua" )
-	rules.waves = {}
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { "desert" },  levels = { 1 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {    2, 3, 4, 5, 6, 7},       biomes = { "desert" },  levels = { 1 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {       3, 4, 5, 6, 7, 8},    biomes = { "desert" },  levels = { 2 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "desert" },  levels = { 2 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "desert" },  levels = { 3 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {             5, 6, 7, 8, 9}, biomes = { "desert" },  levels = { 3 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { "desert" },  levels = { 4 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "default" },   difficulty = {                6, 7, 8, 9}, biomes = { "desert" },  levels = { 4 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
-	
-	rules.waves = wave_gen:Generate({ groups = { "caverns" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" },   levels = { 2 },   ids = { 1, 2 },   suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "caverns" },   difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "group" },   levels = { 3 },   ids = { 1, 2 },   suffixes = { "", "" },          },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "caverns" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" },   levels = { 3 },   ids = { 1, 2 },   suffixes = { "alpha" },         },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "caverns" },   difficulty = {                6, 7, 8, 9}, biomes = { "group" },   levels = { 4 },   ids = { 1, 2 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = wave_gen:Generate({ groups = { "caverns" },   difficulty = {                   7, 8, 9}, biomes = { "group" },   levels = { 4 },   ids = { 1, 2 },   suffixes = { "", "alpha" },     },   rules.waves)
-	
-	rules.extraWaves = {}
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 1 },    biomes = { "desert" }, levels = { 1 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 2 },    biomes = { "desert" }, levels = { 2 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 3 },    biomes = { "desert" }, levels = { 3 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 4 },    biomes = { "desert" }, levels = { 4 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 5 },    biomes = { "desert" }, levels = { 5 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 6 },    biomes = { "desert" }, levels = { 6 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 7 },    biomes = { "desert" }, levels = { 7 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	rules.extraWaves = helper:Generate({ groups = { "" }, difficulty = { 8, 9 }, biomes = { "desert" }, levels = { 8 },  suffixes = { "" },    maxRepeats = 0 },   rules.extraWaves)
-	
-	rules.bosses = {}
-	rules.bosses = helper:Generate({ groups = { "" }, difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "stregaros", "gnerot", "krocoon" },   maxRepeats = 0 },   rules.bosses)
-
     return rules;
 end

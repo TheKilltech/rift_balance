@@ -8,6 +8,7 @@ GameplayResourceDef {
 	bigger_icon		"gui/hud/resource_icons/cobalt_bio_bigger"
 	hud_visible 	"never"
 	order   		"8"
+	specific_type	"biomass"
 }
 
 GameplayResourceDef {
@@ -19,6 +20,7 @@ GameplayResourceDef {
 	bigger_icon		"gui/hud/resource_icons/palladium_bio_bigger"
 	hud_visible 	"never"
 	order   		"8"
+	specific_type	"biomass"
 }
 
 GameplayResourceDef {
@@ -30,6 +32,7 @@ GameplayResourceDef {
 	bigger_icon		"gui/hud/resource_icons/titanium_bio_bigger"
 	hud_visible 	"never"
 	order   		"8"
+	specific_type	"biomass"
 }
 
 GameplayResourceDef {
@@ -41,5 +44,6 @@ GameplayResourceDef {
 	bigger_icon		"gui/hud/resource_icons/uranium_bio_bigger"
 	hud_visible 	"never"
 	order   		"8"
+	specific_type	"biomass"
 }
 

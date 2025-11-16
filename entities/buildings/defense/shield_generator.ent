@@ -26,8 +26,7 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"500"
-					steel 		"2500"					
-					palladium	"100"
+					steel 		"2500"
 				}
 			}		
 		}		
@@ -40,33 +39,15 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"energy"
-				value			"100"
+				value			"125"
 			}
 			
 			GameplayResource
 			{
-				resource 		"plasma"
-				value 			"50"
-				attachment		"att_in_1"
+				resource 		"carbonium"
+				value 			"3"
 				family			"charge"
 			}
-			
-			GameplayResource
-			{
-				resource 		"resin"
-				value 			"10"
-				attachment		"att_in_1"
-				family			"charge"
-			}			
-			
-			GameplayResource
-			{
-				resource 		"plasma_charged"
-				value 			"15"
-				attachment		"att_in_1"
-				family			"charge"
-			}
-			
 		}
 		priority 6
 	}
@@ -322,21 +303,6 @@ EntityBlueprint
 		//		}
 		//	}
 		//}	
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_arrow"
-				}
-			}
-		}		
 	}
 	
 }

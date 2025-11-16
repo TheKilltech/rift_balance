@@ -10,4 +10,5 @@ GameplayResourceDef
 	hud_visible 	"build_menu"
 	missing_effect 	"voice_over/announcement/steel_depleted"
 	order   		"6"	
+	specific_type	"metals"
 }

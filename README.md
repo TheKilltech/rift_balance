@@ -49,18 +49,21 @@ Playing Riftbreaker is a greata game but the original campaign previous to 2.0 w
  - i am experimenting with events that add new resources types (like morphium) to a map that didn't have it before after it is unlocked
   
 ## ToDo
+ - post 2.0 patch cleanup: the vanilla game update introduced a lot of new features that need to be incorporated into the mod
+ - post 2.0 stability and difficulty fixes
  - balancing: a never ending, ongoing task. weapons, towers, attack waves, resource economy all that is on the agenda, especially after vanilla game changed many stats.
- - test friendly fire. hope the devs implement it is as a custom game setting though
 
 ## Remarks
 you are free to modify the mod to your own liking for personal use, but please don't republish it under your name. If you want to reuse some of the assets from this mod in your own, feel free but make sure to mention me and this mod as the source.
-
 You can contact me about issues/feedback the mod on Discord. i am usually watching https://discord.com/channels/423424585954754565/736688063362891860. if you have bugs or other issues to report, the best way is to do that is via github.
-
 Please note, that due to the extensive changes this mod does to the base game, it will collide with any other mods that change the same files. 
+
+## Help
+if you like this mod, you can always contribute by reporting any issues: crashes, balancing, weird behavior or just if something is unclear. i try to fix these things.
+furthermore as you can see the page for this mod lacks any media - i woudn't mind contributions in this departament showing off some interesting features of this mod i could add here :)
 
 ## Links
 github:     	https://github.com/TheKilltech/rift_balance
 mod.io page:	https://mod.io/g/riftbreaker/m/rift-exploration-defense-industry
 steam page: 	https://steamcommunity.com/workshop/filedetails/?id=3598485480
-discord:    	https://discord.com/channels/423424585954754565/1020353928476508210/threads/1134827658530803753
+discord:    	https://discord.com/channels/423424585954754565/1134827658530803753

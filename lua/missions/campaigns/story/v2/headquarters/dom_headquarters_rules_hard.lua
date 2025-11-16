@@ -1,20 +1,14 @@
-return function()
-    local rules  = require("lua/missions/campaigns/story/v2/headquarters/dom_headquarters_rules_default.lua")()	
+return function(params)
+    local rules  = require("lua/missions/campaigns/story/v2/headquarters/dom_headquarters_rules_default.lua")(params)
 	local helper = require( "lua/missions/v2/waves_gen.lua" )
 	
-	rules.timeToNextDifficultyLevel = 
-	{			
-		900, -- difficulty level 1
-		1500, -- difficulty level 2
-		1500, -- difficulty level 3	
-		1500, -- difficulty level 4
-		1800, -- difficulty level 5
-		1800, -- difficulty level 6
-		2100, -- difficulty level 7
-		2100, -- difficulty level 8
-		2400, -- difficulty level 9
-	}
-	
+	Concat( rules.gameEvents, {
+		{ action = "shegret_attack",                 type = "NEGATIVE", gameStates="ATTACK",           minEventLevel = 5,                    logicFile="logic/event/shegret_attack.logic",                               weight = 1 },
+		{ action = "shegret_attack_hard",            type = "NEGATIVE", gameStates="ATTACK",           minEventLevel = 5,                    logicFile="logic/event/shegret_attack_hard.logic",                          weight = 0.75 },
+		{ action = "kermon_attack",                  type = "NEGATIVE", gameStates="ATTACK",           minEventLevel = 8,                    logicFile="logic/event/kermon_attack.logic",                                weight = 1 },
+		{ action = "kermon_attack_hard",             type = "NEGATIVE", gameStates="ATTACK",           minEventLevel = 6,                    logicFile="logic/event/kermon_attack_hard.logic",                           weight = 0.75 },
+	})
+
 	rules.idleTime  = helper:RepeatingValueTable( 900, 9)
 	
 	rules.attackCountPerDifficulty = 
@@ -47,137 +41,5 @@ return function()
 	rules.waveChanceRerollSpawn      = 25
 	rules.waveChanceReroll           = 30
 	
-	rules.waves = {}
-	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { "" },      levels = { 1 },   ids = { 1, 2 },         suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {    2, 3, 4, 5, 6, 7},       biomes = { "" },      levels = { 1 },   ids = { 1, 2 },         suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {       3, 4, 5, 6, 7, 8},    biomes = { "" },      levels = { 2 },   ids = { 1, 2 },         suffixes = { "", "", "alpha" }, },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "" },      levels = { 2 },   ids = { 1, 2 },         suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "" },      levels = { 3 },   ids = { 1, 2, 3 },      suffixes = { "" },              },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {             5, 6, 7, 8, 9}, biomes = { "" },      levels = { 3 },   ids = { 1, 2, 3 },      suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {                6, 7, 8, 9}, biomes = { "" },      levels = { 3 },   ids = { 1, 2 },         suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {                6, 7, 8, 9}, biomes = { "" },      levels = { 4 },   ids = { 1, 2, 3, 4 },   suffixes = { "" },              },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {                   7, 8, 9}, biomes = { "" },      levels = { 4 },   ids = { 1, 2, 3, 4 },   suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {                      8, 9}, biomes = { "" },      levels = { 4 },   ids = { 1, 2, 3, 4 },   suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "default" },                      difficulty = {                         9}, biomes = { "" },      levels = { 5 },   ids = { 1, 2, 3, 4 },   suffixes = { "" },              },   rules.waves)
-	
-	rules.waves = helper:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 2 },   ids = { 1, 2 },         suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {             5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },         suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {                      8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2 },         suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "desert", "acid", "magma" },      difficulty = {                         9}, biomes = { "group" }, levels = { 5 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)
-	
-	rules.waves = helper:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 2 },   ids = { 1, 2 },         suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "" },              },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {             5, 6, 7, 8, 8}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   ids = { 1, 2 },         suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {                6, 7, 8,  }, biomes = { "group" }, levels = { 4 },   ids = { 1, 2, 3 },      suffixes = { "" },              },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {                   7, 8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2, 3 },      suffixes = { "", "alpha" },     },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {                      8, 9}, biomes = { "group" }, levels = { 4 },   ids = { 1, 2, 3 },      suffixes = { "ultra" },         },   rules.waves)
-	rules.waves = helper:Generate({ groups = { "metallic", "caverns", "swamp" }, difficulty = {                         9}, biomes = { "group" }, levels = { 5 },   ids = { 1, 2, 3 },      suffixes = { "" },              },   rules.waves)
-	
-	rules.extraWaves = 
-	{
-		 -- difficulty level 1		
-		{ 
-			"logic/missions/survival/attack_level_1_id_1_alpha.logic",
-			"logic/missions/survival/attack_level_1_id_2_alpha.logic",
-		},
-	
-		 -- difficulty level 2
-		{ 			
-			"logic/missions/survival/attack_level_2_id_1_alpha.logic",
-			"logic/missions/survival/attack_level_2_id_2_alpha.logic",
-		},
-
-		 -- difficulty level 3
-		{ 
-			"logic/missions/survival/attack_level_3_id_1_alpha.logic",
-			"logic/missions/survival/attack_level_3_id_2_alpha.logic",
-		},
-
-		 -- difficulty level 4
-		{ 			
-			"logic/missions/survival/attack_level_4_id_1_alpha.logic",
-			"logic/missions/survival/attack_level_4_id_2_alpha.logic",
-			--"logic/missions/survival/attack_level_4_id_3_alpha.logic",
-			"logic/missions/survival/attack_level_4_id_4_alpha.logic",
-			--"logic/missions/survival/attack_level_4_id_1_ultra.logic",
-			--"logic/missions/survival/attack_level_4_id_2_ultra.logic",
-			--"logic/missions/survival/attack_level_4_id_3_ultra.logic",
-		},
-
-		 -- difficulty level 5
-		{ 
-			"logic/missions/survival/attack_level_5_id_1_alpha.logic",
-			"logic/missions/survival/attack_level_5_id_2_alpha.logic",
-			"logic/missions/survival/attack_level_4_id_3_alpha.logic",
-			"logic/missions/survival/attack_level_5_id_4_alpha.logic",
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			--"logic/missions/survival/attack_level_5_id_1_ultra.logic",
-			--"logic/missions/survival/attack_level_5_id_2_ultra.logic",	
-			--"logic/missions/survival/attack_level_5_id_3_ultra.logic",	
-			--"logic/missions/survival/attack_level_5_id_4_ultra.logic",	
-		},
-
-		 -- difficulty level 6
-		{ 
-			"logic/missions/survival/attack_level_6_id_1_alpha.logic",
-			"logic/missions/survival/attack_level_6_id_2_alpha.logic",
-			"logic/missions/survival/attack_level_5_id_3_alpha.logic",
-			"logic/missions/survival/attack_level_6_id_4_alpha.logic",
-			"logic/missions/survival/attack_level_6_id_5_alpha.logic",
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			--"logic/missions/survival/attack_level_6_id_1_ultra.logic",
-			--"logic/missions/survival/attack_level_6_id_2_ultra.logic",		
-			--"logic/missions/survival/attack_level_6_id_3_ultra.logic",		
-			--"logic/missions/survival/attack_level_6_id_4_ultra.logic",		
-		},
-
-		 -- difficulty level 7
-		{ 
-			"logic/missions/survival/attack_level_7_id_1_alpha.logic",
-			"logic/missions/survival/attack_level_7_id_2_alpha.logic",
-			"logic/missions/survival/attack_level_6_id_3_alpha.logic",
-			"logic/missions/survival/attack_level_7_id_4_alpha.logic",
-			"logic/missions/survival/attack_level_7_id_5_alpha.logic",
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			--"logic/missions/survival/attack_level_7_id_1_ultra.logic",
-			--"logic/missions/survival/attack_level_7_id_2_ultra.logic",		
-			--"logic/missions/survival/attack_level_7_id_3_ultra.logic",		
-			--"logic/missions/survival/attack_level_7_id_4_ultra.logic",		
-		},
-
-		 -- difficulty level 8
-		{ 
-			"logic/missions/survival/attack_level_8_id_1_alpha.logic",
-			"logic/missions/survival/attack_level_8_id_2_alpha.logic",
-			"logic/missions/survival/attack_level_7_id_3_alpha.logic",
-			"logic/missions/survival/attack_level_8_id_4_alpha.logic",
-			"logic/missions/survival/attack_level_8_id_5_alpha.logic",
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			--"logic/missions/survival/attack_level_8_id_1_ultra.logic",
-			--"logic/missions/survival/attack_level_8_id_2_ultra.logic",		
-			--"logic/missions/survival/attack_level_8_id_3_ultra.logic",		
-			--"logic/missions/survival/attack_level_8_id_4_ultra.logic",		
-		},
-
-		 -- difficulty level 9
-		{ 
-			"logic/missions/survival/attack_level_8_id_1_alpha.logic",
-			"logic/missions/survival/attack_level_8_id_2_alpha.logic",
-			"logic/missions/survival/attack_level_8_id_3_alpha.logic",
-			"logic/missions/survival/attack_level_8_id_4_alpha.logic",
-			"logic/missions/survival/attack_level_8_id_5_alpha.logic",
-			"logic/missions/survival/attack_boss_arachnoid.logic",
-			--"logic/missions/survival/attack_level_8_id_1_ultra.logic",
-			--"logic/missions/survival/attack_level_8_id_2_ultra.logic",
-			--"logic/missions/survival/attack_level_8_id_3_ultra.logic",
-			--"logic/missions/survival/attack_level_8_id_4_ultra.logic",
-		},
-	}
-
     return rules;
 end

@@ -11,7 +11,7 @@ EntityBlueprint  // solid_material_storage_basic
 		description			"gui/hud/building_description/solid_material_storage_basic"
 		menu_icon			"gui/hud/building_icons/solid_material_storage_basic"
 		require 			"headquarters"
-		building_group		"solid_material_storage_basic"
+		//building_group		"solid_material_storage_basic"
 		buildable			"1"
 		order				"3"
 		difficulty_cost_apply	"0"
@@ -391,69 +391,38 @@ EntityBlueprint  // solid_material_storage_other
 		{
 			Storage
 			{
-				resource		"ferdonite"
-				max 	 		"1000"
-			}		
-			Storage
-			{
-				resource		"rhodonite"
-				max 	 		"1000"
-			}		
-			Storage
-			{
-				resource		"tanzanite"
-				max 	 		"1000"
-			}		
-			Storage
-			{
-				resource		"hazenite"
+				group	 		"global"
+				subgroup		"rare"
 				max 	 		"1000"
 			}
+			
 			Storage
 			{
-				resource		"biomass_plant"
+				group	 		"global"
+				subgroup		"biomass"
 				max 	 		"1000"
-			}	
-			Storage
-			{
-				resource		"biomass_animal"
-				max 	 		"1000"
-			}		
-			Storage
-			{
-				resource		"biomass_morphed"
-				max 	 		"1000"
-			}		
-			Storage
-			{
-				resource		"biomass_mycelium"
-				max 	 		"1000"
-			}			
-			Storage
-			{
-				resource		"biomass_water"
-				max 	 		"1000"
-			}		
-			Storage
-			{
-				resource		"cobalt_bio"
-				max 	 		"500"
-			}		
-			Storage
-			{
-				resource		"palladium_bio"
-				max 	 		"500"
-			}		
-			Storage
-			{
-				resource		"titanium_bio"
-				max 	 		"500"
-			}		
-			Storage
-			{
-				resource		"uranium_bio"
-				max 	 		"500"
 			}
+			
+			//Storage
+			//{
+			//	resource		"cobalt_bio"
+			//	max 	 		"500"
+			//}		
+			//Storage
+			//{
+			//	resource		"palladium_bio"
+			//	max 	 		"500"
+			//}		
+			//Storage
+			//{
+			//	resource		"titanium_bio"
+			//	max 	 		"500"
+			//}		
+			//Storage
+			//{
+			//	resource		"uranium_bio"
+			//	max 	 		"500"
+			//}
 		}
 	}
 

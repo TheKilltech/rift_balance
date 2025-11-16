@@ -4399,9 +4399,20 @@ function template_universal:Activated()
 	end
 	
 	local rulesBiomePath = self:GetRulesPathForBiome(self.mission_params.biome_name)
-	local rulesPath = GetRulesForDifficulty( rulesBiomePath .. "dom_" .. self.mission_params.biome_name .. "_".. templateMap.. "_rules_" )
-		
-    MissionService:AddGameRule( "lua/missions/v2/dom_manager.lua", rulesPath )
+	local params = {
+		rulesPath  = GetRulesForDifficulty( rulesBiomePath .. "dom_" .. self.mission_params.biome_name .. "_".. templateMap.. "_rules_" ),
+		rulesParam = {
+			biome       = self.mission_params.biome_name,
+			missionType = self.mission_params.mission_type,
+			terrainType = self.mission_params.terrain_type,
+			mapSize     = self.mission_params.mission_size,
+			threat      = self.mission_params.threat_level,
+			--self.mission_params.bioanomalies,
+			--self.mission_params.underground_deposits,
+		}
+	}
+	
+    MissionService:AddGameRule( "lua/missions/v2/dom_manager.lua", params )
 	local campaignData = CampaignService:GetCampaignData();
 	local tiles =  self.mission_params:GetEncounterTiles()
 	for encounterTile in Iter( tiles) do

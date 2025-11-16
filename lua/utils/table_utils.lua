@@ -1,0 +1,198 @@
+function IndexOf( t, key )
+    for index, value in ipairs( t ) do
+        if type(key) == 'function' then
+            if key( t[index] ) then
+                return index
+            end
+        elseif value == key then
+            return index
+        end
+    end
+    return nil
+end
+
+function Copy( t )
+    local result = {}
+
+    for key, value in pairs( t ) do
+        result[ key ] = value
+    end
+
+    return result
+end
+
+function DeepCopy( orig )
+    local origType = type( orig )
+    local copy
+    if origType == 'table' then
+        copy = {}
+        for key, value in next, orig, nil do
+            copy[DeepCopy( key )] = DeepCopy( value )
+        end
+        setmetatable( copy, DeepCopy( getmetatable( orig ) ) )
+    else 
+        copy = orig
+    end
+    return copy
+end
+
+function Insert( t, item )
+    local count = #t
+    t[ count + 1 ] = item
+end
+
+function Remove( t, item )
+    local index = IndexOf( t, item )
+    if index == nil then
+        return
+    end
+
+    table.remove( t, index )
+end
+
+function Size( t )
+    local count = 0
+    for _,_ in pairs( t ) do
+        count = count + 1
+    end
+
+    return count
+end
+
+function Concat(t1,t2)
+    for _,v in ipairs(t2) do 
+        Insert(t1, v)
+    end
+end
+
+function ConcatUnique(t1,t2)
+    for _,v in ipairs(t2) do 
+        if ( IndexOf( t1,v) == nil ) then
+           Insert(t1, v)
+        end
+    end
+end
+
+function Clear( t )
+	count = #t
+	for i=0, count do 
+		t[i] = nil 
+	end
+end
+
+function Iter( t, count )
+    if not Assert( type(t) == "table", "ERROR: calling Iter on non table type: `" .. type(t) .. "`" ) then
+        return nil
+    end
+
+    local index = 0
+    if count == nil then
+        count = #t
+    end
+
+    return function()
+        index = index + 1
+
+        if index <= count then
+            return t[index]
+        end
+
+    end
+end
+
+function SortedIter(t, order)
+    -- collect the keys
+    local keys = {}
+    for _,k in pairs(t) do keys[#keys+1] = k end
+
+    -- if order function given, sort by it by passing the table and keys a, b,
+    -- otherwise just sort the keys 
+    if order then
+        table.sort(keys, function(a,b) return order(t, a, b) end)
+    else
+        table.sort(keys)
+    end
+
+    -- return the iterator function
+    local i = 0
+    return function()
+        i = i + 1
+        if keys[i] then
+            return keys[i], t[keys[i]]
+        end
+    end
+end
+
+function Contains(t, value)
+    for index, val in ipairs(t) do
+        if value == val then
+            return true
+        end
+    end
+
+    return false
+end
+
+function Replace(t, oldVal, newVal)
+	for i, v in ipairs(t) do
+		if v == oldVal then
+			t[i] = newVal
+			return
+		end
+	end
+end
+
+function PrintTable(t, maxDepth, indent)
+	if not indent   then indent = 0    end
+	if not maxDepth then maxDepth = 20 end
+	if t == nil  then 
+		return string.rep(" ", indent) .. "nil"
+	end
+	local toprint = tostring(t) .. " = {\r\n"
+	indent = indent + 2
+	
+	for k, v in pairs(t) do
+		toprint = toprint .. string.rep(" ", indent)
+		if (type(k) == "number") then
+			toprint = toprint .. "[" .. k .. "] = "
+		elseif (type(k) == "string") then
+			toprint = toprint  .. k ..  "= "   
+		end
+		if (type(v) == "number") then
+			toprint = toprint .. v .. ",\r\n"
+		elseif (type(v) == "string") then
+			toprint = toprint .. "\"" .. v .. "\",\r\n"
+		elseif (type(v) == "table") then
+			if maxDepth > 0 then
+				toprint = toprint .. PrintTable(v, maxDepth - 1, indent + 2) .. ",\r\n"
+			else toprint = toprint  .. "table ".. tostring(v).. ",\r\n"
+			end
+		else
+			toprint = toprint .. "\"" .. tostring(v) .. "\",\r\n"
+		end
+	end
+	toprint = toprint .. string.rep(" ", indent-2) .. "}"
+	return toprint
+end
+
+function GetRandomFormWeightedTable( weightedTable ) 
+	local totalWeight = 0.0
+    local events = {}
+    for i = 1, #weightedTable, 1 do	
+        totalWeight = totalWeight + (weightedTable[i].weight or 1.0)
+        --events[i] = { min = rangeStart, max = rangeEnd, action = weightedTable[i].action }
+    end
+
+    local roll = math.random() * totalWeight
+    LogService:Log("GetRandomFormWeightedTable - #elm: ".. #weightedTable .. ", weight sum: ".. totalWeight.. " rolled: " .. roll )
+
+	local weight = 0.0
+    for i = 1, #weightedTable, 1 do	
+        weight = weight + (weightedTable[i].weight or 1.0)
+        if roll <= weight then
+			LogService:Log("GetRandomFormWeightedTable - Choosing element ".. i .. " " .. tostring( weightedTable[i].name or weightedTable[i].action or weightedTable[i]) )
+            return weightedTable[i];
+        end
+    end
+	return {}
+end

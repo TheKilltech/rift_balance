@@ -78,12 +78,20 @@ function event_manager:Activated()
 end
 
 function event_manager:InitRules()
-    if ( type( self.rules ) == "string" ) then
-        self.rulesFile = self.rules
+	if ( type( self.rules ) == "table" ) then
+		self.rulesFile  = self.rules.rulesPath
+		self.rulesParam = self.rules.rulesParam
+		LogService:Log( "event_manager:InitRules() : rules given as table")
 		LogService:Log( "event_manager:InitRules() : rules file path : " .. tostring( self.rulesFile ) )
 		LogService:Log( "event_manager:InitRules() : difficulty : " .. tostring( DifficultyService:GetCurrentDifficultyName() ) )
-        self.rules = require( self.rulesFile )()
-    end
+		self.rules = require( self.rulesFile )( self.rulesParam )
+	elseif ( type( self.rules ) == "string" ) then
+		self.rulesFile = self.rules
+		LogService:Log( "event_manager:InitRules() : rules file path : " .. tostring( self.rulesFile ) )
+		LogService:Log( "event_manager:InitRules() : difficulty : " .. tostring( DifficultyService:GetCurrentDifficultyName() ) )
+		self.rules = require( self.rulesFile )()
+		self.rulesParam = self.rules.rulesParam
+	end
 	
 	-- make sure mod rule variables are available and valid
 	if (self.rules.eventsPerPrepareStateChance == nil      or type(self.rules.eventsPerPrepareStateChance) ~= "number")      then  self.rules.eventsPerPrepareStateChance = 75        end
@@ -244,7 +252,7 @@ end
 function event_manager:GetBindingsFromObjectiveParams( name )
 	local bindingParams = {}
 
-		for data in Iter( self.rules.objectivesLogic ) do 
+	for data in Iter( self.rules.objectivesLogic ) do 
 		
 		if ( data.name == name ) and ( data.bindingParams ~= nil ) then
 			bindingParams = data.bindingParams
@@ -1040,7 +1048,7 @@ function event_manager:StartStreamingVoting()
 	end
 
 	while #currentStreamingData ~= optionsAtOnce do
-		local event = self:GetEventByWeight( tempStreamingData )
+		local event = GetRandomFormWeightedTable( tempStreamingData ).action
 
 		for i = 1, #tempStreamingData, 1 do 
 			if ( event == tempStreamingData[i].action ) then
@@ -1129,7 +1137,7 @@ function event_manager:StartAnEvent( gameState )
 			end
 
 			if ( #self.currentStreamingData > 0 ) then
-				local event = self:GetEventByWeight( self.currentStreamingData )
+				local event = GetRandomFormWeightedTable( self.currentStreamingData ).action
 				self.lastNonStreamEvent	= event
 				self:SpawnEvent( event, "" )
 			end
