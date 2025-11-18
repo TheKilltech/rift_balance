@@ -28,9 +28,9 @@ EntityBlueprint  // liquid_decompressor
 				building_time 	30
 				building_cost
 				{
-					carbonium 	"350"		
-					steel 		"350"
-					ai			"2"
+					carbonium 	"250"		
+					steel 		"50"
+					ai			"1"
 				}
 			}		
 		}
@@ -43,14 +43,14 @@ EntityBlueprint  // liquid_decompressor
 			GameplayResource
 			{
 				group 			"local_compressed"
-				value			"100"
+				value			"25"
 				family			"production"
 			}
 
 			GameplayResource
 			{
 				resource 		"energy"
-				value			"50"
+				value			"20"
 			}
 		}
 		
@@ -60,7 +60,7 @@ EntityBlueprint  // liquid_decompressor
 			{
 				group 			"local"
 				family			"production"
-				value			"100"
+				value			"25"
 				attachment		"att_out_1"
 
 			}
