@@ -29,7 +29,7 @@ EntityBlueprint
 					carbonium 	"400"
 					steel 		"1000"
 					cobalt 		"750"
-					ai			"2"
+					ai			"1"
 				}
 			}
 		}
@@ -105,7 +105,7 @@ EntityBlueprint
 			cone_effect_sell		string:"sell_big"
 			energy_cost				float:"10"
 
-			drone_search_radius 	float:"40"
+			drone_search_radius 	float:"45"
 			drone_blueprint			string:"units/drones/drone_repair_facility_lvl_3"
 			drone_attachments		string:"att_landing"
 			drone_per_spot			int:"5"
@@ -246,7 +246,7 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_and_machines/gas_reactor"
 					bone  "att_vismod_1"
-					scale "0.9 1.0 0.9"
+					scale 1.0 1.0 1.0
 				}
 				Effect
 				{
