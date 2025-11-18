@@ -1,0 +1,335 @@
+EntityBlueprint
+{
+	name  "buildings/resources/liquid_decompressor_lvl_2"
+	
+	base_blueprint buildings/resources/liquid_decompressor
+
+	BuildingDesc
+	{
+		buildable				"0"	
+		name 					"liquid_decompressor_lvl_2"
+		bp   					"buildings/resources/liquid_decompressor_lvl_2"
+		category 				"resources"
+		localization_id			"gui/hud/building_name/liquid_decompressor"
+		description				"gui/hud/building_description/liquid_decompressor"
+		menu_icon				"gui/hud/building_icons/liquid_decompressor_lvl2"
+		type					"pipe"
+		require 				"headquarters"
+		upgrade					"buildings/resources/liquid_decompressor_lvl_3"	
+		order					"9"	
+		exclude_terrain_types 	"magma_hot_ground,magma_very_hot_ground"		
+		menu_action				"decompressor"
+		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name 			"default"
+				building_time 	30
+				building_cost
+				{
+					carbonium 	"500"		
+					steel 		"500"
+					uranium		"100"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				group 			"local_compressed"
+				value			"150"
+				family			"production"
+			}
+			
+			GameplayResource
+			{
+				resource 		"energy"
+				value			"75"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				group 			"local"
+				family			"production"
+				value			"150"
+				attachment		"att_out_1"
+
+			}
+		}
+		priority 4
+		continous_local_production "1"
+	}
+
+	
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				group	 		"local"
+				max 	 		"0"
+				attachment		"att_out_1"
+			}
+		}
+	}
+
+	EquipmentComponent
+	{
+		equipment
+		{
+			Equipment Equipment
+			{
+				slots
+				{		
+					EquipmentSlot
+					{
+						name			"MOD_1"
+						allow_types		"compressed_resource"
+						subslots_count	"1"
+					}							
+				}
+			}
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/resources/liquid_decompressor.lua"
+				
+		database
+		{
+			cone_effect			string:	"build_cone_4x4"
+			cone_effect_sell	string:	"sell_big"
+			attachment			string:	"att_out_1"
+			production			float:	"150"
+			consumption			float:	"150"
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"2500"
+		health 						"2500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 					1
+		update_health_uniform 		"1"
+	
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health "90"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "90"
+			}
+			DestructionLevel
+			{
+				health "80"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "80_destroy"
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "80"
+			}
+			DestructionLevel
+			{
+				health "70"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "70"
+			}
+			DestructionLevel
+			{
+				health "60"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "60_destroy"
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "60"
+			}
+			DestructionLevel
+			{
+				health "50"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "50"
+			}
+			DestructionLevel
+			{
+				health "40"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "40_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "40"
+			}
+			DestructionLevel
+			{
+				health "30"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "30"
+			}
+			DestructionLevel
+			{
+				health "20"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "20_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "20"
+			}
+			DestructionLevel
+			{
+				health "10"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "10"
+			}
+			DestructionLevel
+			{
+				health "0"
+				destroy_state_change_effect_group "0_transition"
+				destroy_comp_delay "0.7"
+				destroy_comp_event "default"
+				destrucion_level_name "0"
+			}			
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+////////////////////////Resources/////////////////////////			
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_out_arrow"
+				}
+			}
+		}	
+////////////////////////MISC/////////////////////////			
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_compressor_working"
+					delay "0.5"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "teleport"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_teleport"
+					bone "att_teleport"
+				}
+			}
+		}		
+		EffectGroup
+		{
+			group "rings_energy"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_1_part_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_1_part_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_1_part_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_1_part_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_2_part_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_2_part_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_2_part_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_2_part_4"
+				}
+			}
+		}				
+	}
+}
