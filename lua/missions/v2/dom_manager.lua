@@ -431,7 +431,7 @@ function dom_mananger:LogicFilesSanityCheck()
 				for wave in Iter( self.rules.multiplayerWaves[i].waves ) do 
 					if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", wave.name ) ) then
 						local log = "rules.multiplayerWaves " .. tostring( i ) .. " : " .. wave.name
-						table.insert( failedLogicFile, log )
+						table.insert( failedLogicFileTable, log )
 						log = log .. " NOT EXIST"			
 						LogService:Log( log )
 					end
@@ -1708,6 +1708,11 @@ function dom_mananger:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupN
 end
 
 function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, indicatorTimer, attacks, markers, participants, labelName, participantsPercentageUse )
+	if not wavePool or #wavePool == 0 then 
+		self:VerboseLog( "PrepareWave: WARNING: cannot prepare wave, wave-pool was empty!")
+		return
+	end
+
 	for i = 1, attackCount do
 		local waveData = GetRandomFormWeightedTable( wavePool )
 		self:VerboseLog( "PrepareWave: wave_logic='" .. waveData.name .. "'")

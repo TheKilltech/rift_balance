@@ -138,7 +138,7 @@ return function(params)
 	rules.multiplayerWaves = helper:Default_MpWaves(   "jungle", "hq", rules.params.difficulty, nil)
 	rules.bosses           = helper:Default_Bosses(    "jungle", "hq", rules.params.difficulty, nil)
 	
-	if rules.params.difficulty == "default" then
+	if Contains({"normal","default"}, rules.params.difficulty) then
 		rules.waves = helper:GenerateGrouped({ groups = { "desert", "acid", "magma" },      difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 2 },   suffixes = { "ultra" },     repeatInterval = 1,   weightDyn = 1.0,  },   rules.waves)
 		rules.waves = helper:GenerateGrouped({ groups = { "desert", "acid", "magma" },      difficulty = {          4, 5, 6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "" },          repeatInterval = 1,   weightDyn = 2.0,  },   rules.waves)
 		rules.waves = helper:GenerateGrouped({ groups = { "desert", "acid", "magma" },      difficulty = {                6, 7, 8, 9}, biomes = { "group" }, levels = { 3 },   suffixes = { "alpha" },     repeatInterval = 1,   weightDyn = 1.0,  },   rules.waves)
