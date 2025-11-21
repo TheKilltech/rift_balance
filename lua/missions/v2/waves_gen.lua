@@ -622,10 +622,21 @@ end
 
 function wave_gen:Default_PrepareSpawnTime(missionType, difficulty, factor)
 	local times = {}
-	if (missionType == "survival") then									times = self:RepeatingValueTable(360, 9)
-	elseif Contains({"outpost","resource","hq"}, missionType) then		times = self:RepeatingValueTable(120, 9)
+	if (missionType == "survival") then									times = self:RepeatingValueTable(120, 9)
 	elseif Contains({"scout","exploration","temp"}, missionType) then	times = self:RepeatingValueTable(60, 9)
-	else 																times = self:RepeatingValueTable(60, 9)
+	elseif Contains({"outpost","resource","hq"}, missionType) then
+		times =  {
+			 60, -- difficulty level 1
+			 72, -- difficulty level 2
+			 84, -- difficulty level 3
+			 96, -- difficulty level 4
+			108, -- difficulty level 5
+			114, -- difficulty level 6
+			120, -- difficulty level 7
+			120, -- difficulty level 8
+			120, -- difficulty level 9
+		}
+	else times = self:RepeatingValueTable(60, 9)
 	end
 	
 	if factor == nil then factor = 1 end
