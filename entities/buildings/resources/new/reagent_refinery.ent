@@ -47,7 +47,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"biomass_plant"
-				value			 	"4"
+				value			 	"3"
 			}
 			
 			//GameplayResource
@@ -491,7 +491,7 @@ EntityBlueprint  //reagent_refinery_lvl_2
 			GameplayResource
 			{
 				resource 			"biomass_plant"
-				value			 	"4"
+				value			 	"3"
 			}
 			
 			GameplayResource
@@ -599,7 +599,7 @@ EntityBlueprint  //reagent_refinery_lvl_2
 		{
 			"buildings/effects_medium_base"
 		}	
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
@@ -610,7 +610,7 @@ EntityBlueprint  //reagent_refinery_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
@@ -625,12 +625,12 @@ EntityBlueprint  //reagent_refinery_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
@@ -640,12 +640,12 @@ EntityBlueprint  //reagent_refinery_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"				
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_water"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_resources/water_filtering_plant_working"	
+					blueprint "effects/buildings_resources/water_filtering_plant_working"
 					delay "0.5"					
 				}	
 			}
@@ -660,7 +660,15 @@ EntityBlueprint  //reagent_refinery_lvl_2
 				{
 					blueprint "effects/buildings_and_machines/reactor_orange"
 					bone  "att_vismod_1"
-					scale "0.8 0.8 0.8"
+					scale 0.8 0.8 0.8
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/ai_hub"
+					bone  "att_vismod_4"
+					scale 0.7 1.0 0.7
+					orientation 135 0 0
+					offset 0.2 -1.0 0
 				}
 			}
 		}		
@@ -673,10 +681,10 @@ EntityBlueprint  //reagent_refinery_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/level_2"
-					bone "att_level"
+					bone "att_level_2"
 				}
 			}
-		}			
+		}
 	}
 }
 
@@ -729,7 +737,7 @@ EntityBlueprint  // reagent_refinery_lvl_3
 			GameplayResource
 			{
 				resource 			"biomass_plant"
-				value			 	"4"
+				value			 	"3"
 			}
 			
 			GameplayResource
@@ -842,7 +850,7 @@ EntityBlueprint  // reagent_refinery_lvl_3
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
@@ -853,7 +861,7 @@ EntityBlueprint  // reagent_refinery_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
@@ -868,12 +876,12 @@ EntityBlueprint  // reagent_refinery_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
@@ -883,7 +891,7 @@ EntityBlueprint  // reagent_refinery_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"				
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_water"
 				}
 				Effect
@@ -905,6 +913,13 @@ EntityBlueprint  // reagent_refinery_lvl_3
 					bone  "att_vismod_1"
 					scale "0.8 0.8 0.8"
 				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/ai_hub1"
+					bone  "att_vismod_4"
+					scale 0.8 1.1 0.8
+					orientation -45 0 0
+				}
 			}
 		}	
 		EffectGroup
@@ -916,7 +931,7 @@ EntityBlueprint  // reagent_refinery_lvl_3
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/level_3"
-					bone "att_level"
+					bone "att_level_2"
 				}
 			}
 		}				
