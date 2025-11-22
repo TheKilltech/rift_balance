@@ -899,6 +899,38 @@ EntityBlueprint "effects/no_lifetime"		//silo_grey
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//silo_s
+{
+	name "effects/buildings_and_machines/silo_s"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/resources/liquid_material_storage_lvl_1.mesh"
+		material 	"buildings/resources/liquid_material_storage_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//silo_l
+{
+	name "effects/buildings_and_machines/silo_l"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/resources/liquid_material_storage_lvl_3.mesh"
+		material 	"buildings/resources/liquid_material_storage_lvl_3"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//silo_ghost
 {
 	name "effects/buildings_and_machines/silo_ghost"
@@ -911,6 +943,38 @@ EntityBlueprint "effects/no_lifetime"		//silo_ghost
 	MeshDesc
 	{
 		mesh 		"meshes/buildings/resources/liquid_material_storage.mesh"
+		material 	"selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//silo_s_ghost
+{
+	name "effects/buildings_and_machines/silo_s_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/resources/liquid_material_storage_lvl_1.mesh"
+		material 	"selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//silo_l_ghost
+{
+	name "effects/buildings_and_machines/silo_l_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/resources/liquid_material_storage_lvl_3.mesh"
 		material 	"selector/hologram_blue"
 	}
 }
@@ -1126,6 +1190,70 @@ EntityBlueprint "effects/no_lifetime"		//particle_condenser_ghost
 				material "selector/hologram_blue"
 			}
 		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//biogas
+{
+	name "effects/buildings_and_machines/biogas"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/plant_biomass_powerplant.mesh"
+		material "buildings/energy/plant_biomass_powerplant"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//biogas_ghost
+{
+	name "effects/buildings_and_machines/biogas_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/plant_biomass_powerplant.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//biopress
+{
+	name "effects/buildings_and_machines/biopress"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/animal_biomass_powerplant.mesh"
+		material "buildings/energy/animal_biomass_powerplant"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//biopress_ghost
+{
+	name "effects/buildings_and_machines/biopress_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/animal_biomass_powerplant.mesh"
+		material "selector/hologram_blue"
 	}
 }
 
@@ -1995,6 +2123,86 @@ EntityBlueprint "effects/no_lifetime"		//ai_hub
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//ai_hub1
+{
+	name "effects/buildings_and_machines/ai_hub1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/ai_hub_lvl_1.mesh"
+		material 	"buildings/defense/ai_hub_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//ai_hub3
+{
+	name "effects/buildings_and_machines/ai_hub3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/ai_hub_lvl_3.mesh"
+		material 	"buildings/defense/ai_hub_lvl_3_base"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//ai_hub_ghost
+{
+	name "effects/buildings_and_machines/ai_hub_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/ai_hub.mesh"
+		material 	"buildings/defense/ai_hub"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//ai_hub1_ghost
+{
+	name "effects/buildings_and_machines/ai_hub1_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/ai_hub_lvl_1.mesh"
+		material 	"buildings/defense/ai_hub_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//ai_hub3_ghost
+{
+	name "effects/buildings_and_machines/ai_hub3_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/ai_hub_lvl_3.mesh"
+		material 	"buildings/defense/ai_hub_lvl_3_base"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_01
 {
 	name "effects/buildings_and_machines/scifi_structure_medium_white_01"
@@ -2522,6 +2730,787 @@ EntityBlueprint "effects/no_lifetime"		//hitech_small_clamp
 		material 	"props/special/alien_structures_small_01"
 	}
 }
+
+EntityBlueprint "effects/no_lifetime"		//arcws_ring
+{
+	name "effects/buildings_and_machines/arc_ring"
+	
+	IdDesc
+	{
+		name "##vismod##"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/arcology_workshop_4.mesh"
+		material 	"buildings/megastructures/metal_grey"
+		
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+			
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+			
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/metal_yellow"
+			}
+			
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+			
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/metal_black"
+			}
+			
+			SubMesh
+			{
+				id "7"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+			
+			SubMesh
+			{
+				id "8"
+				material "buildings/megastructures/glass"
+			}
+
+			SubMesh
+			{
+				id "9"
+				material "buildings/megastructures/metal_white"
+			}
+		}
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/megastructures/arcology_workshop_4"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//arcws_arm
+{
+	name "effects/buildings_and_machines/arcws_arm"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/arcology_workshop_5.mesh"
+		material 	"buildings/megastructures/metal_grey"
+		
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+			
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+			
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/metal_yellow"
+			}
+			
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+			
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/metal_black"
+			}
+			
+			SubMesh
+			{
+				id "7"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+			
+			SubMesh
+			{
+				id "8"
+				material "buildings/megastructures/glass"
+			}
+
+			SubMesh
+			{
+				id "9"
+				material "buildings/megastructures/metal_white"
+			}
+			
+			
+		}
+
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/megastructures/arcology_workshop_5"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//arcws_reactor
+{
+	name "effects/buildings_and_machines/arcws_reactor"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/arcology_workshop_2.mesh"
+		material 	"buildings/megastructures/metal_grey"
+		
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+			
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+			
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/metal_yellow"
+			}
+			
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+			
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/metal_black"
+			}
+			
+			SubMesh
+			{
+				id "7"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+			
+			SubMesh
+			{
+				id "8"
+				material "buildings/megastructures/glass"
+			}
+
+			SubMesh
+			{
+				id "9"
+				material "buildings/megastructures/metal_white"
+			}
+
+			SubMesh
+			{
+				id "10"
+				material "buildings/megastructures/trimsheet_01_grey_move"
+			}
+			
+			
+		}
+
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/megastructures/arcology_workshop_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//arcws_engine
+{
+	name "effects/buildings_and_machines/arcws_engine"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/arcology_workshop_3.mesh"
+		material 	"buildings/megastructures/metal_grey"
+		
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+			
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+			
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/metal_yellow"
+			}
+			
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+			
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/metal_black"
+			}
+			
+			SubMesh
+			{
+				id "7"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+			
+			SubMesh
+			{
+				id "8"
+				material "buildings/megastructures/glass"
+			}
+
+			SubMesh
+			{
+				id "9"
+				material "buildings/megastructures/metal_white"
+			}
+
+			SubMesh
+			{
+				id "10"
+				material "buildings/megastructures/trimsheet_01_grey_move"
+			}
+			
+			
+		}
+
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/megastructures/arcology_workshop_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//glens_base
+{
+	name "effects/buildings_and_machines/glens_base"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/gravitational_hyper_lens_3_foundation.mesh"
+		SubMeshes
+		{
+			
+			SubMesh
+			{
+				id "0"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+			
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+			
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_01_black"
+			}		
+			
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/metal_grey"
+			}		
+
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/metal_black"
+			}	
+
+			SubMesh
+			{
+				id "7"
+				material "buildings/megastructures/metal_yellow"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//glens_lens
+{
+	name "effects/buildings_and_machines/glens_lens"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/gravitational_hyper_lens_3.mesh"
+		SubMeshes
+		{
+			
+			SubMesh
+			{
+				id "0"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_01_black"
+			}		
+			
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/metal_yellow"
+			}		
+
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/metal_grey"
+			}								
+		}
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/megastructures/gravitational_hyper_lens_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//nanocenter
+{
+	name "effects/buildings_and_machines/nanocenter"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/nanobot_center_1.mesh"
+		material 	"buildings/megastructures/glass"
+		
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+			
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+			
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/metal_black"
+			}
+			
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/metal_white"
+			}
+			
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/metal_yellow"
+			}
+			
+			SubMesh
+			{
+				id "7"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+			
+			SubMesh
+			{
+				id "8"
+				material "buildings/megastructures/metal_grey"
+			}
+
+			SubMesh
+			{
+				id "9"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+		}
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/megastructures/nanobot_center_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//qlab_base2
+{
+	name "effects/buildings_and_machines/qlab_base2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/quantum_cortex_laboratory_foundation_2.mesh"
+
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/metal_grey"
+			}
+
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/metal_black"
+			}
+
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+
+			SubMesh
+			{
+				id "7"
+				material "buildings/megastructures/metal_yellow"
+			}
+
+			SubMesh
+			{
+				id "8"
+				material "buildings/megastructures/metal_white"
+			}
+
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//qlab_base1
+{
+	name "effects/buildings_and_machines/qlab_base1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/quantum_cortex_laboratory_foundation_1.mesh"
+
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/megastructures/metal_black"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/metal_white"
+			}
+
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/metal_grey"
+			}
+
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/metal_yellow"
+			}
+
+			SubMesh
+			{
+				id "7"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+
+			SubMesh
+			{
+				id "8"
+				material "buildings/megastructures/glass"
+			}
+
+			SubMesh
+			{
+				id "9"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+
+		}
+
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//qlab_coils
+{
+	name "effects/buildings_and_machines/qlab_coils"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/quantum_cortex_laboratory_2.mesh"
+
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/megastructures/metal_grey"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+
+
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/metal_black"
+			}
+
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/metal_yellow"
+			}
+
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+
+			SubMesh
+			{
+				id "7"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+
+			SubMesh
+			{
+				id "8"
+				material "buildings/megastructures/metal_white"
+			}
+
+			SubMesh
+			{
+				id "9"
+				material "buildings/megastructures/screen"
+			}
+
+		}
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/megastructures/quantum_cortex_laboratory_2"
+	}
+}
+
+
+
 
 EntityBlueprint "effects/no_lifetime"		//morphium_power
 {
