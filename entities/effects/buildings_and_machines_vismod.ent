@@ -3510,6 +3510,116 @@ EntityBlueprint "effects/no_lifetime"		//qlab_coils
 }
 
 
+EntityBlueprint "effects/no_lifetime"		//hlab_base
+{
+	name "effects/buildings_and_machines/hlab_base"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/hydroponic_lab_4_foundation.mesh"
+		SubMeshes
+		{
+			
+			SubMesh
+			{
+				id "0"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/metal_black"
+			}
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/metal_grey"
+			}
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hlab_pipebase
+{
+	name "effects/buildings_and_machines/hlab_pipebase"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/hydroponic_lab_5_foundation.mesh"
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/metal_black"
+			}
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/metal_grey"
+			}
+			SubMesh
+			{
+				id "7"
+				material "buildings/defense/ai_hub_lvl_3_screen"
+			}
+	}
+}
 
 
 EntityBlueprint "effects/no_lifetime"		//morphium_power
