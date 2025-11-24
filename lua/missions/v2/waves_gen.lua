@@ -80,6 +80,11 @@ function wave_gen:Generate( wavesSetting, waves, ignoreGroup )
 	end
 	
 	function createWaveData( tdiff, level, suffix, elmCount, wavesSetting, logicFile ) -- setup of wave attack metadata to use for the spawn system in dom_manager
+		local repeatInterval = wavesSetting.repeatInterval
+		if not repeatInterval and wavesSetting.maxRepeats then repeatInterval = 5 / ((wavesSetting.maxRepeats or 1)+0.1)
+		elseif suffix == "omega" then repeatInterval = 5 
+		else repeatInterval = 1
+		end
 		return { 
 			name              = logicFile,                                                                            -- logic file to execute doing the mobs spawning
 			spawn_type        = wavesSetting.spawn_type        or wavesSetting.diffSettings[tdiff].spawn_type,        -- vanilla wave setting
@@ -88,8 +93,8 @@ function wave_gen:Generate( wavesSetting, waves, ignoreGroup )
 			target_type_value = wavesSetting.target_type_value or wavesSetting.diffSettings[tdiff].target_type_value, -- vanilla wave setting
 			target_min_radius = wavesSetting.target_min_radius or wavesSetting.diffSettings[tdiff].target_min_radius, -- vanilla wave setting
 			target_max_radius = wavesSetting.target_max_radius or wavesSetting.diffSettings[tdiff].target_max_radius, -- vanilla wave setting
-			repeatInterval    = wavesSetting.repeatInterval    or 5 / ((wavesSetting.maxRepeats or 0)+1),             -- count interval at which wave is spawned during repeats.maxRepeats is for downwards compatibility, now replaced by repeatInterval
 			spawnDelay        = wavesSetting.spawnDelay        or 0,                                                  -- repeat count at which the wave is spawned first
+			repeatInterval    = repeatInterval,                                                                       -- count interval at which wave is spawned during repeats.maxRepeats is for downwards compatibility, now replaced by repeatInterval
 			weight            = getWeight( tdiff, level, suffix, elmCount, wavesSetting, logicFile),                  -- weight for the random roll that picks out random waves from the pool
 		}
 	end
