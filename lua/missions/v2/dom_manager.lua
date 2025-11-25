@@ -431,7 +431,7 @@ function dom_mananger:LogicFilesSanityCheck()
 				for wave in Iter( self.rules.multiplayerWaves[i].waves ) do 
 					if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", wave.name ) ) then
 						local log = "rules.multiplayerWaves " .. tostring( i ) .. " : " .. wave.name
-						table.insert( failedLogicFile, log )
+						table.insert( failedLogicFileTable, log )
 						log = log .. " NOT EXIST"			
 						LogService:Log( log )
 					end
@@ -1409,6 +1409,8 @@ function dom_mananger:OnEnterIdle( state )
 	self:VerboseLog("OnEnterIdle" )
 	CampaignService:OperateDOMPlanetaryJump( true ) -- just in case, planetary travel is stuck due to a bug
 	
+	self:ClearPreparedAttacks() -- for compatibility: clear any outdated stuff from saves
+		
 	local stateDuration = self.rules.idleTime[self.currentDifficultyLevel]
 	self:VerboseLog("Idle time base ".. tostring(stateDuration))
 	
@@ -1708,6 +1710,11 @@ function dom_mananger:NewAttackSetup( waveData, wavePool, borderSpawnPointGroupN
 end
 
 function dom_mananger:PrepareWave( attackCount, borderSpawnPointGroupName, wavePool, log, indicatorTimer, attacks, markers, participants, labelName, participantsPercentageUse )
+	if not wavePool or #wavePool == 0 then 
+		self:VerboseLog( "PrepareWave: WARNING: cannot prepare wave, wave-pool was empty!")
+		return
+	end
+
 	for i = 1, attackCount do
 		local waveData = GetRandomFormWeightedTable( wavePool )
 		self:VerboseLog( "PrepareWave: wave_logic='" .. waveData.name .. "'")
@@ -1844,6 +1851,7 @@ function dom_mananger:BeginWaveCooldown( cooldownTime )
 end
 
 function dom_mananger:DoWaveCooldown( timer, dt )
+	-- function is called by OnExecuteAttackLogic and OnExecuteCooldownAfterSpawnTime
 	if  (not self.waveEventsTimer) then self.waveEventsTimer = 1000 end -- line for downwards compatibility (property may not be set in older saves)
 	
 	self.waveEventsTimer = self.waveEventsTimer - dt
@@ -1864,8 +1872,16 @@ function dom_mananger:DoWaveCooldown( timer, dt )
 		if (#self.preparedAttacks + #self.hqPreparedAttacks == 0) then
 			self.waveRepeatTime = -9999
 			self:VerboseLog("DoWaveCooldown: no attack definitions to repeat")
+		else self:VerboseLog("DoWaveCooldown: ".. #self.preparedAttacks .." + ".. #self.hqPreparedAttacks .. " prepared attacks remaining")
 		end
 	end
+end
+
+function dom_mananger:ClearPreparedAttacks()
+	self.preparedAttacks = {}
+	self.hqPreparedAttacks = {}
+	
+	self.waveRepeatTime = -9999
 end
 
 function dom_mananger:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, preparedAttacks, spawnedAttacks )	
@@ -1992,7 +2008,7 @@ end
 
 function dom_mananger:OnEnterStreaming( state )
 	self:VerboseLog("OnEnterStreaming" )
-	self:VerboseLog("Current attacks count : " .. tostring( #self.spawnedAttacks ) )
+	self:VerboseLog("Current spawned attacks : " .. tostring( #self.spawnedAttacks ) )
 
 	while ( #self.spawnedAttacks >= 2 ) do
 

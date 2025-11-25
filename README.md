@@ -10,7 +10,19 @@ Playing Riftbreaker is a greata game but the original campaign previous to 2.0 w
 
 **Disclaimer**: this is a mod i am making for myself and it is still in a early development stage. please understand if you find stuff is not yet working properly. currently not all tech is in the tech tree and **survival tech tree is broken**. localization is missing, so this is only english for now. 
 
+an old mod spotlight article on steam:
+https://store.steampowered.com/news/app/780310/view/4441205936032317627
+
 ## Resources
+- Mines, Regular, Rare and Special Resources:
+   - in vanilla different extractor buildings (mines) are needed per resource. this mod changes that. there are now strip mines for surface deposits and drill mines for underground veins. note that some underground deposit are infinite
+   - In vanilla cultivators are an infinite entierly automated infinite source and they are very powerful compared to mines. added bio-resources replacing the direct rare resource yield from cultivators. those bio resources require additional processing steps to refine them into palladium, titanium, uranium ore or cobalt.
+   - the refining of bio-rare resourses involves a new pipe-resource reagent. it is refined from plant biomass mostly.
+   - new crystalizer buildings offer an alternative to obtain special resources as an alternative to cultivators
+   - new resources: ammonium (mostly for ammo), nitic acid fluid (advanced ammo production), fluorine gas (basic resource processing catalyst), reagent (higher tier fluid for resource processing), petroleum (carbon and energy source), alloys (top end resource produced from rare metals)
+   - DLC1 morphium resource opens a new extremely energy intensive alternative of obtain rare resources by converting metals
+   - DLC3 resin resource has an additional use for a slow ableit infinite extraction of surface deposits
+    
 - Ammo: this mod changes massively how ammo works. All better mech and tower weapons now need hier tier ammunutions.
    - There are now 3 ammo tiers and 5 ammo categories: low caliber, high caliber, explosive, energy and liquid. Each of those has dedicated production facilities to produce that ammo.
    - Furthermore tier 2 ammo needs special resources for production: fedronite, hazenitem, rhodenite or tanzanite depending on the category. now stockpling these is important.
@@ -20,14 +32,6 @@ Playing Riftbreaker is a greata game but the original campaign previous to 2.0 w
    - split ammo storages into one for each category. not sure yet, if they should share the same building limit.
    - moved all ammo related buildings (production and storage into an own new category. currently it reuses the ^ upgrade symbol).
    
-- Regular, Rare and Special Resources:
-   - in vanilla different extractor buildings are needed per resource. this mod changes that there are now strip mines for surface deposits and drill mines for underground vein. some underground deposit are infinite
-   - In vanilla cultivators are an infinite entierly automated infinite source and they are very powerful compared to mines. added bio-resources replacing the direct rare resource yield from cultivators. those bio resources require additional processing steps to refine them into palladium, titanium, uranium ore or cobalt.
-   - the refining of bio-rare resourses involves a new pipe-resource reagent. it is refined from plant biomass mostly.
-   - new crystalizer buildings offer an alternative to obtain special resources in other way then cultivators
-   - morphium opens a new extremely energy intensive alternative of obtain rare resources by converting metals
-   - new resources: ammonium (mostly for ammo), nitic acid fluid (advanced ammo production), fluorine gas (basic resource processing catalyst), reagent (higher tier fluid for resource processing), petroleum (carbon and energy source), alloys (top end resource produced from rare metals)
-    
  - AI: originally only used by towers, this mod makes coplex industrial production also require ai resource. on the other hand, higher level ai hubs offer significatly more ai, but require cooling. 
 	  
  - Building Updates  
@@ -63,7 +67,7 @@ if you like this mod, you can always contribute by reporting any issues: crashes
 furthermore as you can see the page for this mod lacks any media - i woudn't mind contributions in this departament showing off some interesting features of this mod i could add here :)
 
 ## Links
-github:     	https://github.com/TheKilltech/rift_balance
-mod.io page:	https://mod.io/g/riftbreaker/m/rift-exploration-defense-industry
-steam page: 	https://steamcommunity.com/workshop/filedetails/?id=3598485480
-discord:    	https://discord.com/channels/423424585954754565/1134827658530803753
+github:		https://github.com/TheKilltech/rift_balance
+mod.io:		https://mod.io/g/riftbreaker/m/rift-exploration-defense-industry
+steam:		https://steamcommunity.com/workshop/filedetails/?id=3598485480
+discord:	https://discord.com/channels/423424585954754565/1134827658530803753
