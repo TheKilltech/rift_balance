@@ -1,6 +1,20 @@
 import * from "materials/scripts/gui.material"
 
-/////  base factory
+
+/////  cryo station
+
+material "gui/hud/building_icons/cryo_station_lvl_2" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/cryo_station_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/cryo_station_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/cryo_station_disabled.dds"
+}
+
+
+/////  obsolete icon
 
 material "gui/hud/building_icons/obsolete_building" : gui/default
 {
@@ -13,6 +27,7 @@ material "gui/hud/building_icons/obsolete_building_disabled" : gui/default
 }
 
 
+/////  placeholder icon
 
 material "gui/hud/building_icons/placeholder" : gui/default
 {
