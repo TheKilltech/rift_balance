@@ -398,31 +398,49 @@ EntityBlueprint  // solid_material_storage_other
 			
 			Storage
 			{
-				group	 		"global"
-				subgroup		"biomass"
+				resource		"biomass_plant"
+				max 	 		"1000"
+			}	
+			Storage
+			{
+				resource		"biomass_animal"
+				max 	 		"1000"
+			}		
+			Storage
+			{
+				resource		"biomass_morphed"
+				max 	 		"1000"
+			}		
+			Storage
+			{
+				resource		"biomass_mycelium"
+				max 	 		"1000"
+			}			
+			Storage
+			{
+				resource		"biomass_water"
+				max 	 		"1000"
+			}		
+			Storage
+			{
+				resource		"cobalt_bio"
+				max 	 		"1000"
+			}		
+			Storage
+			{
+				resource		"palladium_bio"
+				max 	 		"1000"
+			}		
+			Storage
+			{
+				resource		"titanium_bio"
+				max 	 		"1000"
+			}		
+			Storage
+			{
+				resource		"uranium_bio"
 				max 	 		"1000"
 			}
-			
-			//Storage
-			//{
-			//	resource		"cobalt_bio"
-			//	max 	 		"500"
-			//}		
-			//Storage
-			//{
-			//	resource		"palladium_bio"
-			//	max 	 		"500"
-			//}		
-			//Storage
-			//{
-			//	resource		"titanium_bio"
-			//	max 	 		"500"
-			//}		
-			//Storage
-			//{
-			//	resource		"uranium_bio"
-			//	max 	 		"500"
-			//}
 		}
 	}
 
