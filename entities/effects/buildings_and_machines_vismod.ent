@@ -1300,8 +1300,24 @@ EntityBlueprint "effects/no_lifetime"		//minipipes
 
 	MeshDesc
 	{
-		material "props/special/hitech_structure_very_small_01_03"
 		mesh "meshes/buildings/decorations/hitech_structure_very_small_02.mesh"
+		material "props/special/hitech_structure_very_small_01_03"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//minipipes_ghost
+{
+	name "effects/buildings_and_machines/minipipes_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/hitech_structure_very_small_02.mesh"
+		material "selector/hologram_blue"
 	}
 }
 
@@ -3618,6 +3634,7 @@ EntityBlueprint "effects/no_lifetime"		//hlab_pipebase
 				id "7"
 				material "buildings/defense/ai_hub_lvl_3_screen"
 			}
+		}
 	}
 }
 
@@ -3651,6 +3668,38 @@ EntityBlueprint "effects/no_lifetime"		//morphium_tower2
 	{
 		mesh "meshes/buildings/defense/tower_alien_influence_lvl_2.mesh" 
 		material 	"buildings/defense/tower_alien_influence_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//morphium_power_ghost
+{
+	name "effects/buildings_and_machines/morphium_power_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/morphium_powerplant.mesh"
+		material 	"selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//morphium_tower2_ghost
+{
+	name "effects/buildings_and_machines/morphium_tower2_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_alien_influence_lvl_2.mesh" 
+		material 	"selector/hologram_blue"
 	}
 }
 
