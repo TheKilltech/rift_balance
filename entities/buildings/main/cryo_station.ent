@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // cryo_station
 {
 	name "buildings/main/cryo_station"
 
@@ -12,12 +12,10 @@ EntityBlueprint
 		name 				"cryo_station"
 		bp   				"buildings/main/cryo_station"
 		category 			"main"
-		//type				"pipe"
 		localization_id		"gui/hud/building_name/cryo_station"
 		description			"gui/hud/building_description/cryo_station"
 		menu_icon			"gui/hud/building_icons/cryo_station"
-		//require 			"headquarters"
-		//upgrade				"buildings/main/research_station_lvl_2"
+		//upgrade				"buildings/main/cryo_station_lvl_2"
 		order				"6"
 		condition			"BIOME"	
 		condition_value		"magma"
@@ -68,12 +66,12 @@ EntityBlueprint
 
 		database
 		{
-			range				float:"26.0"
+			range				float:"22.0" // actual effect radius is set via effect
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
 			
 			display_radius_blueprint string:"effects/decals/range_circle_shield"
-			display_radius_group	 string:"cryo_station"			
+			display_radius_group	 string:"cryo_station"
 		}
 	}
 
@@ -319,25 +317,289 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_main/cryo_station_energy"
+					blueprint "buildings/main/effect_cryo_station_energy_lvl_1"  // this is not just visual - effect defines chage of terrein in grid to allow building on it
 					offset "0 1 0"
-					scale "1.2 1.2 1.2"
+					scale 1.1 1 1.1 // this part only govern how much ground changes visually to white, but not gameplay wise
 				}
 			}
 		}
 		EffectGroup
 		{
 			group "working"
-			enabled "1"				
+			enabled "1"
 			
 			Effects
 			{
 				Effect
 				{
 					blueprint "effects/buildings_main/cryo_station_working"	
-					delay "0.5"					
-				}				
+					delay "0.5"
+				}
 			}
 		}
+	}
+}
+
+EntityBlueprint  // cryo_station_lvl_2
+{
+	name  "buildings/main/cryo_station_lvl_2"
+
+	base_blueprint "buildings/main/cryo_station"
+
+	BuildingDesc
+	{
+		buildable 			"0"			
+		name 				"cryo_station_lvl_2"
+		bp   				"buildings/main/cryo_station_lvl_2"
+		category 			"main"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/cryo_station"
+		description			"gui/hud/building_description/cryo_station"
+		menu_icon			"gui/hud/building_icons/cryo_station_lvl_2"
+		//upgrade				"buildings/main/cryo_station_lvl_3"
+		building_group		"cryo_station"
+		condition			"BIOME"	
+		condition_value		"magma"
+		hide_treasures 		"1"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 20
+				building_cost
+				{
+					carbonium 	"200"
+					steel 		"300"
+					ferdonite	"50"
+				}
+			}
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 3
+				building_cost
+				{
+					carbonium 	"35"
+					steel 		"50"
+					ferdonite	"10"
+				}
+			}	
+		}		
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"supercoolant"
+				value			 	"1"
+				attachment			"att_in_2"
+			}
+		}
+		
+		out
+		{
+		}
+		priority 5
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/building.lua"
+
+		database
+		{
+			range				float:"42.0"
+			cone_effect			string:"build_cone_3x3"
+			cone_effect_sell	string:"sell_big"
+			
+			display_radius_blueprint string:"effects/decals/range_circle_shield"
+			display_radius_group	 string:"cryo_station"
+		}
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsBoxShape
+			{
+				x	6
+				y	6
+				z	6
+			}
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"1500"
+		health 						"1500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 1
+		update_health_uniform 		"1"
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"				
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/hlab_base"
+					bone		"att_vismod_1"
+					scale		0.7 1.3 0.7
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "buildings/main/effect_cryo_station_energy_lvl_2"  // this is not just visual - effect defines chage of terrain in grid to allow building on it
+					offset "0 0 0"
+					scale 1.85 1.85 1.85 // this part only govern how much ground changes visually to white, but not gameplay wise
+				}
+				Effect
+				{
+					blueprint "effects/buildings_main/cryo_station_working"
+					delay "0.5"
+				}
+			}
+		}
+	}
+}
+
+
+
+
+EntityBlueprint  // effect_cryo_station_energy_lvl_1
+{
+	base_blueprints
+	{
+		lights/point/blue_small
+		effects/no_lifetime
+	}
+
+	name "buildings/main/effect_cryo_station_energy_lvl_1"
+
+	GridMarkerComponent
+	{
+		mode			"origin"
+		terrain_type  	"cryo_ground"
+		extend  		"24"
+	}
+
+	ParticleDesc
+	{
+		name    "rift/cryo_plant_energy"
+	}
+
+	DecalDesc
+	{	
+		blueprint "effects/decals/ice_crater_01"
+		scale
+		{
+			x		6.2
+			y		6.2
+			z		6.2
+			
+		}
+		attach "1"
+	}
+}
+
+EntityBlueprint  // effect_cryo_station_energy_lvl_2
+{
+	base_blueprints
+	{
+		lights/point/blue_small
+		effects/no_lifetime
+	}
+
+	name "buildings/main/effect_cryo_station_energy_lvl_2"
+
+	GridMarkerComponent
+	{
+		mode			"origin"
+		terrain_type  	"cryo_ground"
+		extend  		"44"
+	}
+
+	ParticleDesc
+	{
+		name    "rift/cryo_plant_energy"
+	}
+
+	DecalDesc
+	{	
+		blueprint "effects/decals/ice_crater_01"
+		scale
+		{
+			x		6.2
+			y		6.2
+			z		6.2
+			
+		}
+		attach "1"
 	}
 }

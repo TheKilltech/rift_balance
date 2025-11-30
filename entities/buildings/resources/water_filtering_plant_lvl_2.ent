@@ -158,7 +158,7 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
@@ -169,7 +169,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
@@ -184,12 +184,26 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/biogas"
+					bone		"att_vismod_3"
+					scale		0.6 0.6 0.6
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
@@ -199,13 +213,13 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/water_filtering_pool"								
+					blueprint "effects/buildings_and_machines/water_filtering_pool"
 					bone "att_water"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_resources/water_filtering_plant_working"	
-					delay "0.5"					
+					blueprint "effects/buildings_resources/water_filtering_plant_working"
+					delay "0.5"
 				}	
 			}
 		}
