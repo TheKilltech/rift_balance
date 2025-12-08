@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // liquid_decompressor_lvl_2
 {
 	name  "buildings/resources/liquid_decompressor_lvl_2"
 	
@@ -71,7 +71,6 @@ EntityBlueprint
 		continous_local_production "1"
 	}
 
-	
 	ResourceStorageDesc
 	{
 		Storages
@@ -113,8 +112,8 @@ EntityBlueprint
 			cone_effect			string:	"build_cone_4x4"
 			cone_effect_sell	string:	"sell_big"
 			attachment			string:	"att_out_1"
-			production			float:	"150"
-			consumption			float:	"150"
+			production			float:	"100"
+			consumption			float:	"100"
 		}
 	}
 
@@ -228,23 +227,23 @@ EntityBlueprint
 		{
 			"buildings/effects_big_base"
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}	
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
@@ -331,6 +330,6 @@ EntityBlueprint
 					bone "be_ring_2_part_4"
 				}
 			}
-		}				
+		}
 	}
 }
