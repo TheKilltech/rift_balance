@@ -10,7 +10,7 @@ EntityBlueprint  // heat_charger
 		type				"pipe"
 		localization_id		"gui/hud/building_name/heat_charger"
 		description			"gui/hud/building_description/heat_charger"
-		menu_icon			"gui/hud/building_icons/placeholder"
+		menu_icon			"gui/hud/building_icons/heat_charger"
 		require 			"headquarters"
 		order				"20"
 		buildable			"0"
@@ -379,7 +379,7 @@ EntityBlueprint  // heat_charger_lvl_2
 		category 			"liquids"
 		localization_id		"gui/hud/building_name/heat_charger"
 		description			"gui/hud/building_description/heat_charger"
-		menu_icon			"gui/hud/building_icons/placeholder"
+		menu_icon			"gui/hud/building_icons/heat_charger_lvl_2"
 		type				"pipe"
 		require 			"headquarters"
 		upgrade				"buildings/resources/heat_charger_lvl_3"
@@ -619,7 +619,7 @@ EntityBlueprint  // heat_charger_lvl_3
 		category 			"liquids"
 		localization_id		"gui/hud/building_name/heat_charger"
 		description			"gui/hud/building_description/heat_charger"
-		menu_icon			"gui/hud/building_icons/placeholder"
+		menu_icon			"gui/hud/building_icons/heat_charger_lvl_3"
 		type				"pipe"
 		require 			"headquarters"
 		buildable			"0"
@@ -679,7 +679,7 @@ EntityBlueprint  // heat_charger_lvl_3
 				attachment	"att_out_1"
 			}
 		}
-		priority 4		
+		priority 4
 	}
 	
 	ResourceStorageDesc
