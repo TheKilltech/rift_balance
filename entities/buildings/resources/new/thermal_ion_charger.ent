@@ -1,27 +1,22 @@
-EntityBlueprint  // heat_charger
+EntityBlueprint  // thermal_ion_charger
 {
-	name  "buildings/resources/heat_charger"
+	name  "buildings/resources/thermal_ion_charger"
 
 	BuildingDesc
 	{
-		name 				"heat_charger"
-		bp   				"buildings/resources/heat_charger"
+		name 				"thermal_ion_charger"
+		bp   				"buildings/resources/thermal_ion_charger"
 		category 			"liquids"
 		type				"pipe"
-		localization_id		"gui/hud/building_name/heat_charger"
-		description			"gui/hud/building_description/heat_charger"
+		localization_id		"gui/hud/building_name/thermal_ion_charger"
+		description			"gui/hud/building_description/thermal_ion_charger"
 		menu_icon			"gui/hud/building_icons/placeholder"
 		require 			"headquarters"
 		order				"20"
 		buildable			"0"
 		building_group		"plasma_converter"
-		upgrade				"buildings/resources/heat_charger_lvl_2"
-		min_radius_effect   "voice_over/announcement/pump_too_close"
-		min_radius			"20"
-		radius_name			"pump"
+		upgrade				"buildings/resources/thermal_ion_charger_lvl_2"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
-
-		building_functionality	"BUILD_ON_WATER|NO_FOUNDATION"
 
 		costs
 		{
@@ -32,12 +27,10 @@ EntityBlueprint  // heat_charger
 				building_cost
 				{
 					carbonium	"1250"
-					titanium	"250"
+					titanium	"150"
 				}
 			}
 		}
-
-		resource_requirement "magma_vein"
 	}
 
 	ResourceConverterDesc
@@ -46,8 +39,21 @@ EntityBlueprint  // heat_charger
 		{
 			GameplayResource
 			{
-				resource 			"magma_vein"
-				value			 	"1"
+				resource 		"energy"
+				value			"100"
+			}
+			
+			GameplayResource
+			{
+				resource 		"magma"
+				value 			"100"
+				attachment		"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 		"carbonium"
+				value 			"1"
 			}
 		}
 
@@ -57,7 +63,7 @@ EntityBlueprint  // heat_charger
 			{
 				resource 		"plasma_charged"
 				value 			"5"
-				attachment		"att_out_1"
+				attachment		"att_out_2"
 			}
 		}
 
@@ -72,7 +78,7 @@ EntityBlueprint  // heat_charger
 			{
 				resource	"plasma_charged"
 				max 		"10"
-				attachment	"att_out_1"
+				attachment	"att_out_2"
 			}
 		}
 	}	
@@ -83,11 +89,8 @@ EntityBlueprint  // heat_charger
 
 		database
 		{
-			cone_effect			string:"build_cone_1x1"
+			cone_effect			string:"build_cone_2x2"
 			cone_effect_sell	string:"sell_small"
-			range				float:"20"
-			display_radius_group	 string:"liquid_pump"
-			display_radius_blueprint string:"effects/decals/range_circle_repair"
 		}
 	}
 
@@ -188,7 +191,7 @@ EntityBlueprint  // heat_charger
 			{
 					x	4
 					y	4
-					z	4
+					z	8
 			}
 		}
 	}
@@ -309,7 +312,7 @@ EntityBlueprint  // heat_charger
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
-			group "att_out_1"
+			group "att_in_1"
 			enabled "0"
 			delay "0"
 
@@ -318,7 +321,22 @@ EntityBlueprint  // heat_charger
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_1_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_2"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_2_arrow"
 				}
 			}
 		}
@@ -346,7 +364,20 @@ EntityBlueprint  // heat_charger
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_out_1_pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_out_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/spitter_fire"
+					bone  "att_vismod_4"
+					scale 1.7 1.7 1.7
+					orientation 90 0 0
+					offset 0 0.3 0
 				}
 				Effect
 				{
@@ -367,30 +398,25 @@ EntityBlueprint  // heat_charger
 	}
 }
 
-EntityBlueprint  // heat_charger_lvl_2
+EntityBlueprint  // thermal_ion_charger_lvl_2
 {
-	name  					"buildings/resources/heat_charger_lvl_2"
-	base_blueprint 			"buildings/resources/heat_charger"
+	name  					"buildings/resources/thermal_ion_charger_lvl_2"
+	base_blueprint 			"buildings/resources/thermal_ion_charger"
 
 	BuildingDesc
 	{
-		name 				"heat_charger_lvl_2"
-		bp   				"buildings/resources/heat_charger_lvl_2"
+		name 				"thermal_ion_charger_lvl_2"
+		bp   				"buildings/resources/thermal_ion_charger_lvl_2"
 		category 			"liquids"
-		localization_id		"gui/hud/building_name/heat_charger"
-		description			"gui/hud/building_description/heat_charger"
+		localization_id		"gui/hud/building_name/thermal_ion_charger"
+		description			"gui/hud/building_description/thermal_ion_charger"
 		menu_icon			"gui/hud/building_icons/placeholder"
 		type				"pipe"
 		require 			"headquarters"
-		upgrade				"buildings/resources/heat_charger_lvl_3"
+		upgrade				"buildings/resources/thermal_ion_charger_lvl_3"
 		buildable			"0"
 		building_group		"plasma_converter"
-		min_radius_effect   "voice_over/announcement/pump_too_close"
-		min_radius			"20"
-		radius_name			"pump"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
-		
-		building_functionality	"BUILD_ON_WATER|NO_FOUNDATION"
 		
 		costs
 		{
@@ -401,12 +427,10 @@ EntityBlueprint  // heat_charger_lvl_2
 				{
 					carbonium 	"250"
 					steel 		"500"
-					titanium	"750"
+					titanium	"350"
 				}
 			}
 		}
-		
-		resource_requirement "magma_vein"
 	}
 
 	ResourceConverterDesc
@@ -416,15 +440,21 @@ EntityBlueprint  // heat_charger_lvl_2
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"500"
+				value 		"600"
 			}
 			
 			GameplayResource
 			{
-				resource 	"magma_vein"
-				value		"1"
+				resource 		"magma"
+				value 			"200"
+				attachment		"att_in_1"
 			}
 			
+			GameplayResource
+			{
+				resource 	"carbonium"
+				value		"1"
+			}
 			GameplayResource
 			{
 				resource 	"rhodonite"
@@ -438,7 +468,7 @@ EntityBlueprint  // heat_charger_lvl_2
 			{
 				resource 	"plasma_charged"
 				value 		"15"
-				attachment	"att_out_1"
+				attachment	"att_out_2"
 			}
 		}
 		priority 4		
@@ -452,7 +482,7 @@ EntityBlueprint  // heat_charger_lvl_2
 			{
 				resource	 	"plasma_charged"
 				max 	 		"200"
-				attachment		"att_out_1"
+				attachment		"att_out_2"
 			}
 		}
 	}	
@@ -528,7 +558,7 @@ EntityBlueprint  // heat_charger_lvl_2
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
-			group "att_out_1"
+			group "att_in_1"
 			enabled "0"
 			delay "0"
 
@@ -537,7 +567,22 @@ EntityBlueprint  // heat_charger_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_1_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_2"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_2_arrow"
 				}
 			}
 		}
@@ -565,7 +610,20 @@ EntityBlueprint  // heat_charger_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_out_1_pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_out_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/spitter_fire"
+					bone  "att_vismod_4"
+					scale 1.7 1.7 1.7
+					orientation 90 0 0
+					offset 0 0.3 0
 				}
 				Effect
 				{
@@ -607,29 +665,24 @@ EntityBlueprint  // heat_charger_lvl_2
 	}	
 }
 
-EntityBlueprint  // heat_charger_lvl_3
+EntityBlueprint  // thermal_ion_charger_lvl_3
 {
-	name  					"buildings/resources/heat_charger_lvl_3"
-	base_blueprint 			"buildings/resources/heat_charger_lvl_2"
+	name  					"buildings/resources/thermal_ion_charger_lvl_3"
+	base_blueprint 			"buildings/resources/thermal_ion_charger_lvl_2"
 
 	BuildingDesc
 	{
-		name 				"heat_charger_lvl_3"
-		bp   				"buildings/resources/heat_charger_lvl_3"
+		name 				"thermal_ion_charger_lvl_3"
+		bp   				"buildings/resources/thermal_ion_charger_lvl_3"
 		category 			"liquids"
-		localization_id		"gui/hud/building_name/heat_charger"
-		description			"gui/hud/building_description/heat_charger"
+		localization_id		"gui/hud/building_name/thermal_ion_charger"
+		description			"gui/hud/building_description/thermal_ion_charger"
 		menu_icon			"gui/hud/building_icons/placeholder"
 		type				"pipe"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"plasma_converter"
-		min_radius_effect   "voice_over/announcement/pump_too_close"
-		min_radius			"20"
-		radius_name			"pump"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
-		
-		building_functionality	"BUILD_ON_WATER|NO_FOUNDATION"
 		
 		costs
 		{
@@ -643,8 +696,6 @@ EntityBlueprint  // heat_charger_lvl_3
 				}
 			}
 		}
-		
-		resource_requirement "magma_vein"
 	}
 
 	ResourceConverterDesc
@@ -654,15 +705,21 @@ EntityBlueprint  // heat_charger_lvl_3
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"750"
+				value 		"850"
 			}
 			
 			GameplayResource
 			{
-				resource 	"magma_vein"
-				value		"1"
+				resource 		"magma"
+				value 			"300"
+				attachment		"att_in_1"
 			}
 			
+			GameplayResource
+			{
+				resource 	"carbonium"
+				value		"1"
+			}
 			GameplayResource
 			{
 				resource 	"rhodonite"
@@ -676,10 +733,10 @@ EntityBlueprint  // heat_charger_lvl_3
 			{
 				resource 	"plasma_charged"
 				value 		"30"
-				attachment	"att_out_1"
+				attachment	"att_out_2"
 			}
 		}
-		priority 4		
+		priority 4
 	}
 	
 	ResourceStorageDesc
@@ -690,7 +747,7 @@ EntityBlueprint  // heat_charger_lvl_3
 			{
 				resource	 	"plasma_charged"
 				max 	 		"200"
-				attachment		"att_out_1"
+				attachment		"att_out_2"
 			}
 		}
 	}	
@@ -767,7 +824,7 @@ EntityBlueprint  // heat_charger_lvl_3
 	{
 		name "meshes/buildings/resources/heat_charger_lvl_3"
 	}
-	
+
 	EffectDesc
 	{
 		EffectBaseBlueprints
@@ -777,7 +834,7 @@ EntityBlueprint  // heat_charger_lvl_3
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
-			group "att_out_1"
+			group "att_in_1"
 			enabled "0"
 			delay "0"
 
@@ -786,7 +843,22 @@ EntityBlueprint  // heat_charger_lvl_3
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_1_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_2"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_2_arrow"
 				}
 			}
 		}
@@ -814,7 +886,20 @@ EntityBlueprint  // heat_charger_lvl_3
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_out_1_pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_out_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/spitter_fire"
+					bone  "att_vismod_4"
+					scale 1.7 1.7 1.7
+					orientation 90 0 0
+					offset 0 0.3 0
 				}
 				Effect
 				{
