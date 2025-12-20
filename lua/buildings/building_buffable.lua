@@ -123,7 +123,6 @@ function building_buffable:UpdateBuffState( source )
 			BuildingService:DisableBuilding( self.entity )
 			
 			self.missing_effect = EntityService:SpawnAndAttachEntity( "buildings/resources/ore_mill_missing_icon", self.entity, "att_missing_buff", "" )
-			--self.missing_effect = EntityService:SpawnAndAttachEntity( "effects/buildings_and_machines/level_3_simple", self.entity, "att_level", "" )
 		end
 		--LogService:Log( "building_buffable: no buff source")
 	else 
