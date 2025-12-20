@@ -1,0 +1,140 @@
+Attachments
+{
+	Attachment
+	{
+		name "att_out_1"
+		offset "-2.60 0.43 -2.00"
+		orientation "180.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_in_1"
+		offset "2.47 0.39 2.00"
+	}
+
+	Attachment
+	{
+		name "att_hammer"
+		parent "be_hammer"
+		offset "0.72 0.01 0.02"
+		orientation "0.00 90.00 -0.00"
+	}
+
+	Attachment
+	{
+		name "att_smoke_5"
+		offset "-1.95 0.60 0.98"
+		orientation "90.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_smoke_4"
+		offset "1.65 1.94 -1.91"
+		orientation "90.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_smoke_3"
+		parent "Skeleton_be_l_hand (5)"
+		offset "0.15 0.14 -0.20"
+		orientation "90.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_smoke_2"
+		parent "be_bigl_arm_p2"
+		offset "0.07 0.07 -0.02"
+	}
+
+	Attachment
+	{
+		name "att_smoke_1"
+		parent "be_small_arm_p1"
+		offset "-0.00 1.20 -0.11"
+		orientation "90.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_dig"
+		offset "-0.92 0.35 0.96"
+	}
+
+	Attachment
+	{
+		name "att_level"
+		offset "1.58 1.83 -1.47"
+	}
+
+	Attachment
+	{
+		name "att_hatch"
+		offset "-0.98 0.35 -0.08"
+	}
+
+	Attachment
+	{
+		name "att_grab_rocks"
+		parent "be_rotator"
+		offset "0.81 -0.00 -0.02"
+		orientation "167.08 57.73 170.41"
+	}
+
+	Attachment
+	{
+		name "att_missing_buff"
+		offset "0.00 5.00 0.00"
+	}
+
+}
+
+AnimationEvents
+{
+	Animation
+	{
+		animation_name "working"
+		Tracks
+		{
+			Track
+			{
+				name "default"
+				Events
+				{
+					Event
+					{
+						name "hammer"
+						time "0.920015514"
+					}
+
+					Event
+					{
+						name "grab_rocks"
+						time "1.01273119"
+					}
+
+					Event
+					{
+						name "hatch"
+						time "3.04976773"
+					}
+
+					Event
+					{
+						name "drop_rocks"
+						time "5.89520502"
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+

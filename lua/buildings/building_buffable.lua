@@ -121,9 +121,15 @@ function building_buffable:UpdateBuffState( source )
 	if ( self.buffSource == nil ) then
 		if ( self.buffRequiredName ~= "" ) then
 			BuildingService:DisableBuilding( self.entity )
+			
+			self.missing_effect = EntityService:SpawnAndAttachEntity( "buildings/resources/ore_mill_missing_icon", self.entity, "att_missing_buff", "" )
+			--self.missing_effect = EntityService:SpawnAndAttachEntity( "effects/buildings_and_machines/level_3_simple", self.entity, "att_level", "" )
 		end
 		--LogService:Log( "building_buffable: no buff source")
 	else 
+		if (self.missing_effect or INVALID_ID) ~= INVALID_ID then
+			EntityService:RemoveEntity( self.missing_effect )
+		end
 		BuildingService:EnableBuilding( self.entity )
 		--LogService:Log( "building_buffable: new buff source ".. source.bp .. " " ..tostring(source.entity) .. ", level ".. tostring(source.level))
 		BuildingService:SetResourceConverterEfficientyModificator( self.entity, source.modificator , "buff" )

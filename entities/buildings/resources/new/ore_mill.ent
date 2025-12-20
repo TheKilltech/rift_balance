@@ -1306,3 +1306,19 @@ EntityBlueprint  // ore_mill_lvl_4_ghost
 		}
 	}
 }
+
+
+EntityBlueprint "effects/no_lifetime"  // ore_mill_missing_icon
+{
+	name  "buildings/resources/ore_mill_missing_icon"
+
+	IdDesc
+	{
+		name "##buff##"
+	}
+	
+	ParticleDesc
+	{
+		name    "rift/missing_ore_mill_icon"
+	}
+}
