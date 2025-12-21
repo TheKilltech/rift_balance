@@ -1,0 +1,126 @@
+Attachments
+{
+	Attachment
+	{
+		name "att_chimney"
+		offset "2.27 5.65 -2.34"
+	}
+
+	Attachment
+	{
+		name "att_hammer"
+		parent "be_hammer"
+		offset "-0.04 0.98 -0.06"
+		orientation "0.00 -0.00 -180.00"
+	}
+
+	Attachment
+	{
+		name "att_smoke_5"
+		offset "-1.95 0.60 0.98"
+		orientation "90.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_smoke_4"
+		offset "2.13 2.46 -0.63"
+		orientation "90.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_smoke_3"
+		offset "0.25 0.58 1.42"
+		orientation "90.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_smoke_2"
+		parent "be_bigl_arm_p2"
+		offset "0.07 0.07 -0.02"
+	}
+
+	Attachment
+	{
+		name "att_smoke_1"
+		parent "be_small_arm_p1"
+		offset "-0.00 1.20 -0.11"
+		orientation "90.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_dig"
+		offset "-1.16 0.35 2.53"
+	}
+
+	Attachment
+	{
+		name "att_level"
+		offset "1.58 1.83 -1.47"
+	}
+
+	Attachment
+	{
+		name "att_hatch"
+		offset "-1.42 0.35 -0.09"
+	}
+
+	Attachment
+	{
+		name "att_grab_rocks"
+		parent "be_rotator"
+		offset "-0.02 1.59 -0.09"
+		orientation "-0.00 15.00 180.00"
+	}
+
+}
+
+AnimationEvents
+{
+	Animation
+	{
+		animation_name "working"
+		Tracks
+		{
+			Track
+			{
+				name "default"
+				Events
+				{
+					Event
+					{
+						name "hammer"
+						time "0.920015514"
+					}
+
+					Event
+					{
+						name "grab_rocks"
+						time "1.01273119"
+					}
+
+					Event
+					{
+						name "hatch"
+						time "3.04976773"
+					}
+
+					Event
+					{
+						name "drop_rocks"
+						time "5.89520502"
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
