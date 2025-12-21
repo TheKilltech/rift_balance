@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // plasma_converter
 {
 	name  "buildings/resources/plasma_converter"
 
@@ -12,9 +12,9 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/plasma_converter"
 		type				"pipe"
 		require 			"headquarters"
-		upgrade				"buildings/resources/plasma_converter_lvl_2"	
-		order				"21"	
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		upgrade				"buildings/resources/plasma_converter_lvl_2"
+		order				"21"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
@@ -54,7 +54,7 @@ EntityBlueprint
 				resource 	"plasma"
 				value 		"100"
 				attachment	"att_in_1"
-				family		"plasma"				
+				family		"plasma"
 			}
 			GameplayResource
 			{

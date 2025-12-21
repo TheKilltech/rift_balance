@@ -92,6 +92,7 @@ function building_buffable:FindBestBuffSource( )
 			local data = EntityService:GetDatabase( ent )
 			local source = {}
 			source.entity      = ent
+			source.reqIconBp   = data:GetStringOrDefault("buff_required_bp", "buildings/resources/ore_mill_missing_icon")
 			source.buffName    = data:GetStringOrDefault("buff_source_name", "")
 			source.modificator = data:GetFloatOrDefault("buff_modificator", 1.0) 
 			source.level       = data:GetIntOrDefault("buff_source_level", -1)
@@ -121,13 +122,25 @@ function building_buffable:UpdateBuffState( source )
 	if ( self.buffSource == nil ) then
 		if ( self.buffRequiredName ~= "" ) then
 			BuildingService:DisableBuilding( self.entity )
+			
+			self.missing_effect = EntityService:SpawnAndAttachEntity( self.reqIconBp, self.entity, "att_missing_buff", "" )
 		end
 		--LogService:Log( "building_buffable: no buff source")
 	else 
+		if (self.missing_effect or INVALID_ID) ~= INVALID_ID then
+			EntityService:RemoveEntity( self.missing_effect )
+		end
 		BuildingService:EnableBuilding( self.entity )
 		--LogService:Log( "building_buffable: new buff source ".. source.bp .. " " ..tostring(source.entity) .. ", level ".. tostring(source.level))
 		BuildingService:SetResourceConverterEfficientyModificator( self.entity, source.modificator , "buff" )
 		--BuildingService:AddConverterCostModifier( self.entity, 0.001, "" )
+	end
+end
+
+function building_buffable:OnLoad()
+	building.OnLoad(self)
+	if ( self.reqIconBp == nil ) then
+		self.reqIconBp = "buildings/resources/ore_mill_missing_icon"
 	end
 end
 
