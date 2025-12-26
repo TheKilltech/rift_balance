@@ -8,128 +8,34 @@ buildings/defense/fire_control_station
 		{
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.100"
-				min_value "0.100"
+				max_value "0.1"
+				min_value "0.1"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_PER_SHOT"
-			}
-
-		}
-
-	}
-
-}
-
-buildings/main/planet_scanner_lvl_2
-{
-	WeaponItemDesc
-	{
-		ammo_storage "energy"
-		damage_type "fire"
-		rarity "ADVANCED"
-		stat_def_vec
-		{
-			WeaponStatDef
-			{
-				max_value "0.025"
-				min_value "0.025"
-				stat_features "BASE_MINMAX|MODABLE"
-				stat_type "FIRE_RATE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
-				stat_type "FIRE_PER_BURST"
-			}
-
-			WeaponStatDef
-			{
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
-				stat_type "FIRE_PER_SHOT"
-			}
-
-			WeaponStatDef
-			{
-				max_value "500.000"
-				min_value "500.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
-				stat_type "DAMAGE_VALUE"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5.000"
-				min_value "5.000"
-				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
-				stat_type "DAMAGE_SPLASH"
-			}
-
-			WeaponStatDef
-			{
-				stat_features "BASE_MINMAX|MODABLE"
-				stat_type "DAMAGE_PENETRATION"
-			}
-
-			WeaponStatDef
-			{
-				max_value "5000"
-				min_value "5000"
-				stat_features "BASE_MINMAX|MODABLE"
-				stat_type "AMMO_COST"
-			}
-
-			WeaponStatDef
-			{
-				max_value "25.000"
-				min_value "25.000"
-				stat_features "BASE_MINMAX"
-				stat_type "AMMO_SPEED"
-			}
-
-			WeaponStatDef
-			{
-				max_value "10.000"
-				min_value "10.000"
-				stat_features "BASE_MINMAX"
-				stat_type "AMMO_SPREAD"
-			}
-
-			WeaponStatDef
-			{
-				default_value "0.100"
-				max_value "3.000"
-				min_value "3.000"
-				stat_features "BASE_MINMAX"
-				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 		}
@@ -149,24 +55,24 @@ buildings/defense/tower_acid_spitter
 		{
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
@@ -179,48 +85,48 @@ buildings/defense/tower_acid_spitter
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
 
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.100"
-				min_value "0.100"
+				max_value "0.1"
+				min_value "0.1"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
@@ -242,24 +148,24 @@ buildings/defense/tower_acid_spitter_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "11.000"
-				min_value "11.000"
+				max_value "11"
+				min_value "11"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
@@ -272,56 +178,56 @@ buildings/defense/tower_acid_spitter_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
 
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.100"
-				min_value "0.100"
+				max_value "0.1"
+				min_value "0.1"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "70.000"
-				min_value "70.000"
+				max_value "70"
+				min_value "70"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
@@ -343,24 +249,24 @@ buildings/defense/tower_acid_spitter_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "11.000"
-				min_value "11.000"
+				max_value "11"
+				min_value "11"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
@@ -373,56 +279,56 @@ buildings/defense/tower_acid_spitter_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.500"
+				max_value "1.5"
+				min_value "1.5"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.100"
-				min_value "0.100"
+				max_value "0.1"
+				min_value "0.1"
 				stat_features "BASE_MINMAX|HIDDEN"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "160.000"
-				min_value "160.000"
+				max_value "160"
+				min_value "160"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
@@ -444,56 +350,56 @@ buildings/defense/tower_alien_influence
 		{
 			WeaponStatDef
 			{
-				max_value "0.600"
-				min_value "0.600"
+				max_value "0.6"
+				min_value "0.6"
 				stat_features "MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "30.000"
-				min_value "30.000"
+				max_value "30"
+				min_value "30"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "26.000"
-				min_value "26.000"
+				max_value "26"
+				min_value "26"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
 			}
@@ -515,56 +421,56 @@ buildings/defense/tower_alien_influence_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "0.650"
-				min_value "0.650"
+				max_value "0.65"
+				min_value "0.65"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "55.000"
-				min_value "55.000"
+				max_value "55"
+				min_value "55"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "30.000"
-				min_value "30.000"
+				max_value "30"
+				min_value "30"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "26.000"
-				min_value "26.000"
+				max_value "26"
+				min_value "26"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
 			}
@@ -586,56 +492,56 @@ buildings/defense/tower_alien_influence_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "0.700"
-				min_value "0.700"
+				max_value "0.7"
+				min_value "0.7"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "60.000"
-				min_value "60.000"
+				max_value "60"
+				min_value "60"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "30.000"
-				min_value "30.000"
+				max_value "30"
+				min_value "30"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "26.000"
-				min_value "26.000"
+				max_value "26"
+				min_value "26"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
 			}
@@ -657,48 +563,48 @@ buildings/defense/tower_artillery
 		{
 			WeaponStatDef
 			{
-				max_value "90.000"
-				min_value "90.000"
+				max_value "90"
+				min_value "90"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "6.500"
-				min_value "6.500"
+				max_value "6.5"
+				min_value "6.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.250"
-				min_value "0.250"
+				max_value "0.25"
+				min_value "0.25"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
@@ -711,16 +617,16 @@ buildings/defense/tower_artillery
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
@@ -742,56 +648,56 @@ buildings/defense/tower_artillery_acid
 		{
 			WeaponStatDef
 			{
-				max_value "0.250"
-				min_value "0.250"
+				max_value "0.25"
+				min_value "0.25"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "90.000"
-				min_value "90.000"
+				max_value "90"
+				min_value "90"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "30.000"
-				min_value "30.000"
+				max_value "30"
+				min_value "30"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -804,24 +710,24 @@ buildings/defense/tower_artillery_acid
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "23.000"
-				min_value "23.000"
+				max_value "23"
+				min_value "23"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -843,48 +749,48 @@ buildings/defense/tower_artillery_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "120.000"
-				min_value "120.000"
+				max_value "120"
+				min_value "120"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "6.500"
-				min_value "6.500"
+				max_value "6.5"
+				min_value "6.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.250"
-				min_value "0.250"
+				max_value "0.25"
+				min_value "0.25"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
@@ -897,24 +803,24 @@ buildings/defense/tower_artillery_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
@@ -936,48 +842,48 @@ buildings/defense/tower_artillery_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "260.000"
-				min_value "260.000"
+				max_value "260"
+				min_value "260"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "6.500"
-				min_value "6.500"
+				max_value "6.5"
+				min_value "6.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.250"
-				min_value "0.250"
+				max_value "0.25"
+				min_value "0.25"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
@@ -990,16 +896,16 @@ buildings/defense/tower_artillery_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.500"
+				max_value "1.5"
+				min_value "1.5"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -1021,56 +927,56 @@ buildings/defense/tower_artillery_napalm
 		{
 			WeaponStatDef
 			{
-				max_value "0.250"
-				min_value "0.250"
+				max_value "0.25"
+				min_value "0.25"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "80.000"
-				min_value "80.000"
+				max_value "80"
+				min_value "80"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -1083,24 +989,24 @@ buildings/defense/tower_artillery_napalm
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "24.000"
-				min_value "24.000"
+				max_value "24"
+				min_value "24"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -1121,40 +1027,40 @@ buildings/defense/tower_artillery_propelled
 		{
 			WeaponStatDef
 			{
-				max_value "0.250"
-				min_value "0.250"
+				max_value "0.25"
+				min_value "0.25"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "120.000"
-				min_value "120.000"
+				max_value "120"
+				min_value "120"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "6.500"
-				min_value "6.500"
+				max_value "6.5"
+				min_value "6.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -1167,24 +1073,24 @@ buildings/defense/tower_artillery_propelled
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "28.000"
-				min_value "28.000"
+				max_value "28"
+				min_value "28"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -1205,40 +1111,40 @@ buildings/defense/tower_artillery_propelled_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "0.250"
-				min_value "0.250"
+				max_value "0.25"
+				min_value "0.25"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "260.000"
-				min_value "260.000"
+				max_value "260"
+				min_value "260"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "6.500"
-				min_value "6.500"
+				max_value "6.5"
+				min_value "6.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -1251,32 +1157,32 @@ buildings/defense/tower_artillery_propelled_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "28.000"
-				min_value "28.000"
+				max_value "28"
+				min_value "28"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.500"
+				max_value "1.5"
+				min_value "1.5"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
@@ -1298,40 +1204,40 @@ buildings/defense/tower_basic
 		{
 			WeaponStatDef
 			{
-				max_value "15.000"
-				min_value "15.000"
+				max_value "15"
+				min_value "15"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
@@ -1359,40 +1265,40 @@ buildings/defense/tower_basic_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "30.000"
-				min_value "30.000"
+				max_value "30"
+				min_value "30"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
@@ -1405,8 +1311,8 @@ buildings/defense/tower_basic_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "1.100"
-				min_value "1.100"
+				max_value "1.1"
+				min_value "1.1"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -1428,40 +1334,40 @@ buildings/defense/tower_basic_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "45.000"
-				min_value "45.000"
+				max_value "45"
+				min_value "45"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
@@ -1474,8 +1380,8 @@ buildings/defense/tower_basic_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -1497,96 +1403,96 @@ buildings/defense/tower_cannon
 		{
 			WeaponStatDef
 			{
-				max_value "200.000"
-				min_value "200.000"
+				max_value "200"
+				min_value "200"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "130.000"
-				min_value "130.000"
+				max_value "130"
+				min_value "130"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.800"
-				min_value "0.800"
+				max_value "0.8"
+				min_value "0.8"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_STUN_LENGTH"
 			}
@@ -1608,112 +1514,112 @@ buildings/defense/tower_cannon_acid
 		{
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "220.000"
-				min_value "220.000"
+				max_value "220"
+				min_value "220"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "60.000"
-				min_value "60.000"
+				max_value "60"
+				min_value "60"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.500"
-				min_value "2.500"
+				max_value "2.5"
+				min_value "2.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "130.000"
-				min_value "130.000"
+				max_value "130"
+				min_value "130"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_STUN_LENGTH"
 			}
@@ -1735,104 +1641,104 @@ buildings/defense/tower_cannon_cooled_lvl_1
 		{
 			WeaponStatDef
 			{
-				max_value "300.000"
-				min_value "300.000"
+				max_value "300"
+				min_value "300"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.750"
-				min_value "0.750"
+				max_value "0.75"
+				min_value "0.75"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "130.000"
-				min_value "130.000"
+				max_value "130"
+				min_value "130"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_STUN_LENGTH"
 			}
@@ -1854,112 +1760,112 @@ buildings/defense/tower_cannon_cooled_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "380.000"
-				min_value "380.000"
+				max_value "380"
+				min_value "380"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.900"
-				min_value "0.900"
+				max_value "0.9"
+				min_value "0.9"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "130.000"
-				min_value "130.000"
+				max_value "130"
+				min_value "130"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_STUN_LENGTH"
 			}
@@ -1981,112 +1887,112 @@ buildings/defense/tower_cannon_incindiary
 		{
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "250.000"
-				min_value "250.000"
+				max_value "250"
+				min_value "250"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "130.000"
-				min_value "130.000"
+				max_value "130"
+				min_value "130"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_STUN_LENGTH"
 			}
@@ -2108,96 +2014,96 @@ buildings/defense/tower_cannon_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "300.000"
-				min_value "300.000"
+				max_value "300"
+				min_value "300"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "130.000"
-				min_value "130.000"
+				max_value "130"
+				min_value "130"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.900"
-				min_value "0.900"
+				max_value "0.9"
+				min_value "0.9"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "15.000"
-				min_value "15.000"
+				max_value "15"
+				min_value "15"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.500"
-				min_value "2.500"
+				max_value "2.5"
+				min_value "2.5"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_STUN_LENGTH"
 			}
@@ -2219,112 +2125,112 @@ buildings/defense/tower_cannon_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "450.000"
-				min_value "450.000"
+				max_value "450"
+				min_value "450"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "130.000"
-				min_value "130.000"
+				max_value "130"
+				min_value "130"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_CHANCE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_CRITICAL_FACTOR"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_STUN_LENGTH"
 			}
@@ -2345,64 +2251,64 @@ buildings/defense/tower_cannon_small
 		{
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "130.000"
-				min_value "130.000"
+				max_value "130"
+				min_value "130"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.300"
-				min_value "0.300"
+				max_value "0.3"
+				min_value "0.3"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
@@ -2424,48 +2330,48 @@ buildings/defense/tower_flamer
 		{
 			WeaponStatDef
 			{
-				max_value "30.000"
-				min_value "30.000"
+				max_value "30"
+				min_value "30"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "32.000"
-				min_value "32.000"
+				max_value "32"
+				min_value "32"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "16.000"
-				min_value "16.000"
+				max_value "16"
+				min_value "16"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.500"
-				min_value "2.500"
+				max_value "2.5"
+				min_value "2.5"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
 			}
@@ -2487,64 +2393,64 @@ buildings/defense/tower_flamer_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "40.000"
-				min_value "40.000"
+				max_value "40"
+				min_value "40"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "32.000"
-				min_value "32.000"
+				max_value "32"
+				min_value "32"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "18.000"
-				min_value "18.000"
+				max_value "18"
+				min_value "18"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -2566,64 +2472,64 @@ buildings/defense/tower_flamer_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "55.000"
-				min_value "55.000"
+				max_value "55"
+				min_value "55"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "32.000"
-				min_value "32.000"
+				max_value "32"
+				min_value "32"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "4.500"
-				min_value "4.500"
+				max_value "4.5"
+				min_value "4.5"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.500"
+				max_value "1.5"
+				min_value "1.5"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -2645,32 +2551,32 @@ buildings/defense/tower_gatling_laser
 		{
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "60.000"
-				min_value "60.000"
+				max_value "60"
+				min_value "60"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -2683,16 +2589,16 @@ buildings/defense/tower_gatling_laser
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
@@ -2714,32 +2620,32 @@ buildings/defense/tower_gatling_laser_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "80.000"
-				min_value "80.000"
+				max_value "80"
+				min_value "80"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -2752,24 +2658,24 @@ buildings/defense/tower_gatling_laser_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "200.000"
-				min_value "200.000"
+				max_value "200"
+				min_value "200"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
@@ -2791,32 +2697,32 @@ buildings/defense/tower_gatling_laser_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "120.000"
-				min_value "120.000"
+				max_value "120"
+				min_value "120"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -2829,24 +2735,24 @@ buildings/defense/tower_gatling_laser_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.300"
-				min_value "1.300"
+				max_value "1.3"
+				min_value "1.3"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "450.000"
-				min_value "450.000"
+				max_value "450"
+				min_value "450"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
@@ -2876,32 +2782,32 @@ buildings/defense/tower_hcm
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "500.000"
-				min_value "500.000"
+				max_value "500"
+				min_value "500"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -2914,33 +2820,33 @@ buildings/defense/tower_hcm
 
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
 
 			WeaponStatDef
 			{
-				default_value "0.100"
-				max_value "3.000"
-				min_value "3.000"
+				default_value "0.1"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -2970,32 +2876,32 @@ buildings/defense/tower_hcm_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1000.000"
-				min_value "1000.000"
+				max_value "1000"
+				min_value "1000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -3008,32 +2914,32 @@ buildings/defense/tower_hcm_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -3055,40 +2961,40 @@ buildings/defense/tower_hcm_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "0.030"
-				min_value "0.030"
+				max_value "0.03"
+				min_value "0.03"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1100.000"
-				min_value "1100.000"
+				max_value "1100"
+				min_value "1100"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -3101,32 +3007,32 @@ buildings/defense/tower_hcm_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -3148,40 +3054,40 @@ buildings/defense/tower_heavy_artillery
 		{
 			WeaponStatDef
 			{
-				max_value "0.070"
-				min_value "0.070"
+				max_value "0.07"
+				min_value "0.07"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1000.000"
-				min_value "1000.000"
+				max_value "1000"
+				min_value "1000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -3194,24 +3100,24 @@ buildings/defense/tower_heavy_artillery
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
@@ -3233,40 +3139,40 @@ buildings/defense/tower_heavy_artillery_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "0.100"
-				min_value "0.100"
+				max_value "0.1"
+				min_value "0.1"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1000.000"
-				min_value "1000.000"
+				max_value "1000"
+				min_value "1000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -3279,32 +3185,32 @@ buildings/defense/tower_heavy_artillery_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
@@ -3326,40 +3232,40 @@ buildings/defense/tower_heavy_artillery_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "0.100"
-				min_value "0.100"
+				max_value "0.1"
+				min_value "0.1"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2000.000"
-				min_value "2000.000"
+				max_value "2000"
+				min_value "2000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -3372,32 +3278,32 @@ buildings/defense/tower_heavy_artillery_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "15.000"
-				min_value "15.000"
+				max_value "15"
+				min_value "15"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.300"
-				min_value "1.300"
+				max_value "1.3"
+				min_value "1.3"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
@@ -3419,40 +3325,40 @@ buildings/defense/tower_laser
 		{
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "33.000"
-				min_value "33.000"
+				max_value "33"
+				min_value "33"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "AMMO_COST"
 			}
@@ -3474,48 +3380,48 @@ buildings/defense/tower_laser_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "33.000"
-				min_value "33.000"
+				max_value "33"
+				min_value "33"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "8.000"
-				min_value "8.000"
+				max_value "8"
+				min_value "8"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "35.000"
-				min_value "35.000"
+				max_value "35"
+				min_value "35"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.100"
-				min_value "1.100"
+				max_value "1.1"
+				min_value "1.1"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "40.000"
-				min_value "40.000"
+				max_value "40"
+				min_value "40"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "AMMO_COST"
 			}
@@ -3537,48 +3443,48 @@ buildings/defense/tower_laser_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "75.000"
-				min_value "75.000"
+				max_value "75"
+				min_value "75"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "15.000"
-				min_value "15.000"
+				max_value "15"
+				min_value "15"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "33.000"
-				min_value "33.000"
+				max_value "33"
+				min_value "33"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "125.000"
-				min_value "125.000"
+				max_value "125"
+				min_value "125"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "AMMO_COST"
 			}
@@ -3600,48 +3506,48 @@ buildings/defense/tower_lightning
 		{
 			WeaponStatDef
 			{
-				max_value "38.000"
-				min_value "38.000"
+				max_value "38"
+				min_value "38"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "MODABLE"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "33.000"
-				min_value "33.000"
+				max_value "33"
+				min_value "33"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "6.000"
-				min_value "6.000"
+				max_value "6"
+				min_value "6"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "150.000"
-				min_value "150.000"
+				max_value "150"
+				min_value "150"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
@@ -3663,48 +3569,48 @@ buildings/defense/tower_lightning_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "55.000"
-				min_value "55.000"
+				max_value "55"
+				min_value "55"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "MODABLE"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "33.000"
-				min_value "33.000"
+				max_value "33"
+				min_value "33"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "8.000"
-				min_value "8.000"
+				max_value "8"
+				min_value "8"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "250.000"
-				min_value "250.000"
+				max_value "250"
+				min_value "250"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
@@ -3726,48 +3632,48 @@ buildings/defense/tower_lightning_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "67.000"
-				min_value "67.000"
+				max_value "67"
+				min_value "67"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "MODABLE"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "33.000"
-				min_value "33.000"
+				max_value "33"
+				min_value "33"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "450.000"
-				min_value "450.000"
+				max_value "450"
+				min_value "450"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
@@ -3789,32 +3695,32 @@ buildings/defense/tower_minigun
 		{
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -3827,16 +3733,16 @@ buildings/defense/tower_minigun
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "75.000"
-				min_value "75.000"
+				max_value "75"
+				min_value "75"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
@@ -3858,32 +3764,32 @@ buildings/defense/tower_minigun_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "30.000"
-				min_value "30.000"
+				max_value "30"
+				min_value "30"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "11.000"
-				min_value "11.000"
+				max_value "11"
+				min_value "11"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
@@ -3896,24 +3802,24 @@ buildings/defense/tower_minigun_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "75.000"
-				min_value "75.000"
+				max_value "75"
+				min_value "75"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.100"
-				min_value "1.100"
+				max_value "1.1"
+				min_value "1.1"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -3935,32 +3841,32 @@ buildings/defense/tower_minigun_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "45.000"
-				min_value "45.000"
+				max_value "45"
+				min_value "45"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "15.000"
-				min_value "15.000"
+				max_value "15"
+				min_value "15"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
@@ -3973,32 +3879,32 @@ buildings/defense/tower_minigun_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "75.000"
-				min_value "75.000"
+				max_value "75"
+				min_value "75"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.400"
-				min_value "1.400"
+				max_value "1.4"
+				min_value "1.4"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_CLUSTER"
 			}
@@ -4020,32 +3926,32 @@ buildings/defense/tower_minigun_platform
 		{
 			WeaponStatDef
 			{
-				max_value "11.000"
-				min_value "11.000"
+				max_value "11"
+				min_value "11"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -4058,24 +3964,24 @@ buildings/defense/tower_minigun_platform
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "75.000"
-				min_value "75.000"
+				max_value "75"
+				min_value "75"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.100"
-				min_value "1.100"
+				max_value "1.1"
+				min_value "1.1"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
@@ -4097,40 +4003,40 @@ buildings/defense/tower_plasma
 		{
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "66.000"
-				min_value "66.000"
+				max_value "66"
+				min_value "66"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.100"
-				min_value "1.100"
+				max_value "1.1"
+				min_value "1.1"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -4143,16 +4049,16 @@ buildings/defense/tower_plasma
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "40.000"
-				min_value "40.000"
+				max_value "40"
+				min_value "40"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "AMMO_COST"
 			}
@@ -4174,40 +4080,40 @@ buildings/defense/tower_plasma_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "90.000"
-				min_value "90.000"
+				max_value "90"
+				min_value "90"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.300"
-				min_value "1.300"
+				max_value "1.3"
+				min_value "1.3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -4220,24 +4126,24 @@ buildings/defense/tower_plasma_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "40.000"
-				min_value "40.000"
+				max_value "40"
+				min_value "40"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "AMMO_COST"
 			}
@@ -4259,40 +4165,40 @@ buildings/defense/tower_plasma_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "4.000"
-				min_value "4.000"
+				max_value "4"
+				min_value "4"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "132.000"
-				min_value "132.000"
+				max_value "132"
+				min_value "132"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.500"
+				max_value "1.5"
+				min_value "1.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -4305,24 +4211,24 @@ buildings/defense/tower_plasma_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "40.000"
-				min_value "40.000"
+				max_value "40"
+				min_value "40"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "AMMO_COST"
 			}
@@ -4344,40 +4250,40 @@ buildings/defense/tower_portal
 		{
 			WeaponStatDef
 			{
-				max_value "0.070"
-				min_value "0.070"
+				max_value "0.07"
+				min_value "0.07"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "800.000"
-				min_value "800.000"
+				max_value "800"
+				min_value "800"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "7.000"
-				min_value "7.000"
+				max_value "7"
+				min_value "7"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -4390,16 +4296,16 @@ buildings/defense/tower_portal
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "200.000"
-				min_value "200.000"
+				max_value "200"
+				min_value "200"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
@@ -4421,40 +4327,40 @@ buildings/defense/tower_portal_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "0.100"
-				min_value "0.100"
+				max_value "0.1"
+				min_value "0.1"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "800.000"
-				min_value "800.000"
+				max_value "800"
+				min_value "800"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "7.000"
-				min_value "7.000"
+				max_value "7"
+				min_value "7"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -4467,16 +4373,16 @@ buildings/defense/tower_portal_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "200.000"
-				min_value "200.000"
+				max_value "200"
+				min_value "200"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
@@ -4498,40 +4404,40 @@ buildings/defense/tower_portal_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "0.100"
-				min_value "0.100"
+				max_value "0.1"
+				min_value "0.1"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1500.000"
-				min_value "1500.000"
+				max_value "1500"
+				min_value "1500"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "8.000"
-				min_value "8.000"
+				max_value "8"
+				min_value "8"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -4544,16 +4450,16 @@ buildings/defense/tower_portal_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "200.000"
-				min_value "200.000"
+				max_value "200"
+				min_value "200"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
@@ -4575,40 +4481,40 @@ buildings/defense/tower_power_rod
 		{
 			WeaponStatDef
 			{
-				max_value "0.030"
-				min_value "0.030"
+				max_value "0.03"
+				min_value "0.03"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "400.000"
-				min_value "400.000"
+				max_value "400"
+				min_value "400"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -4621,56 +4527,56 @@ buildings/defense/tower_power_rod
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "75.000"
-				min_value "75.000"
+				max_value "75"
+				min_value "75"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_STUN_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.500"
+				max_value "1.5"
+				min_value "1.5"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
@@ -4692,40 +4598,40 @@ buildings/defense/tower_power_rod_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "0.030"
-				min_value "0.030"
+				max_value "0.03"
+				min_value "0.03"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "750.000"
-				min_value "750.000"
+				max_value "750"
+				min_value "750"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -4738,56 +4644,56 @@ buildings/defense/tower_power_rod_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "75.000"
-				min_value "75.000"
+				max_value "75"
+				min_value "75"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_STUN_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.500"
+				max_value "1.5"
+				min_value "1.5"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
@@ -4809,40 +4715,40 @@ buildings/defense/tower_power_rod_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "0.040"
-				min_value "0.040"
+				max_value "0.04"
+				min_value "0.04"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "750.000"
-				min_value "750.000"
+				max_value "750"
+				min_value "750"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -4855,56 +4761,56 @@ buildings/defense/tower_power_rod_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "75.000"
-				min_value "75.000"
+				max_value "75"
+				min_value "75"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "40.000"
-				min_value "40.000"
+				max_value "40"
+				min_value "40"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_STUN_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.500"
+				max_value "1.5"
+				min_value "1.5"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
@@ -4926,64 +4832,64 @@ buildings/defense/tower_railgun
 		{
 			WeaponStatDef
 			{
-				max_value "300.000"
-				min_value "300.000"
+				max_value "300"
+				min_value "300"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.200"
-				min_value "0.200"
+				max_value "0.2"
+				min_value "0.2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "32.000"
-				min_value "32.000"
+				max_value "32"
+				min_value "32"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "33.000"
-				min_value "33.000"
+				max_value "33"
+				min_value "33"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "450.000"
-				min_value "450.000"
+				max_value "450"
+				min_value "450"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "AMMO_COST"
 			}
@@ -5005,72 +4911,72 @@ buildings/defense/tower_railgun_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "450.000"
-				min_value "450.000"
+				max_value "450"
+				min_value "450"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.250"
-				min_value "0.250"
+				max_value "0.25"
+				min_value "0.25"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "32.000"
-				min_value "32.000"
+				max_value "32"
+				min_value "32"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "33.000"
-				min_value "33.000"
+				max_value "33"
+				min_value "33"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.100"
-				min_value "1.100"
+				max_value "1.1"
+				min_value "1.1"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1200.000"
-				min_value "1200.000"
+				max_value "1200"
+				min_value "1200"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "AMMO_COST"
 			}
@@ -5092,72 +4998,72 @@ buildings/defense/tower_railgun_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "800.000"
-				min_value "800.000"
+				max_value "800"
+				min_value "800"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.250"
-				min_value "0.250"
+				max_value "0.25"
+				min_value "0.25"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "32.000"
-				min_value "32.000"
+				max_value "32"
+				min_value "32"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "33.000"
-				min_value "33.000"
+				max_value "33"
+				min_value "33"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "BEAM_RANGE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.500"
-				min_value "3.500"
+				max_value "3.5"
+				min_value "3.5"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.400"
-				min_value "1.400"
+				max_value "1.4"
+				min_value "1.4"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "4500.000"
-				min_value "4500.000"
+				max_value "4500"
+				min_value "4500"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "AMMO_COST"
 			}
@@ -5179,40 +5085,40 @@ buildings/defense/tower_rockets
 		{
 			WeaponStatDef
 			{
-				max_value "0.700"
-				min_value "0.700"
+				max_value "0.7"
+				min_value "0.7"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -5225,32 +5131,32 @@ buildings/defense/tower_rockets
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "35.000"
-				min_value "35.000"
+				max_value "35"
+				min_value "35"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN_LENGTH"
 			}
@@ -5272,40 +5178,40 @@ buildings/defense/tower_rockets_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "0.700"
-				min_value "0.700"
+				max_value "0.7"
+				min_value "0.7"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "140.000"
-				min_value "140.000"
+				max_value "140"
+				min_value "140"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.300"
-				min_value "5.300"
+				max_value "5.3"
+				min_value "5.3"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -5318,48 +5224,48 @@ buildings/defense/tower_rockets_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "35.000"
-				min_value "35.000"
+				max_value "35"
+				min_value "35"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "15.000"
-				min_value "15.000"
+				max_value "15"
+				min_value "15"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_HOMING"
 			}
@@ -5381,40 +5287,40 @@ buildings/defense/tower_rockets_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "0.700"
-				min_value "0.700"
+				max_value "0.7"
+				min_value "0.7"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "250.000"
-				min_value "250.000"
+				max_value "250"
+				min_value "250"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.800"
-				min_value "5.800"
+				max_value "5.8"
+				min_value "5.8"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -5427,48 +5333,48 @@ buildings/defense/tower_rockets_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "35.000"
-				min_value "35.000"
+				max_value "35"
+				min_value "35"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.300"
-				min_value "1.300"
+				max_value "1.3"
+				min_value "1.3"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.500"
+				max_value "1.5"
+				min_value "1.5"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.500"
+				max_value "1.5"
+				min_value "1.5"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_HOMING"
 			}
@@ -5490,88 +5396,88 @@ buildings/defense/tower_shockwave
 		{
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "16.000"
-				min_value "16.000"
+				max_value "16"
+				min_value "16"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "60.000"
-				min_value "60.000"
+				max_value "60"
+				min_value "60"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -5593,88 +5499,88 @@ buildings/defense/tower_shockwave_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "60.000"
-				min_value "60.000"
+				max_value "60"
+				min_value "60"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "16.000"
-				min_value "16.000"
+				max_value "16"
+				min_value "16"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "20.000"
-				min_value "20.000"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "40.000"
-				min_value "40.000"
+				max_value "40"
+				min_value "40"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.500"
+				max_value "1.5"
+				min_value "1.5"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN_LENGTH"
 			}
@@ -5696,88 +5602,88 @@ buildings/defense/tower_shockwave_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "0.500"
-				min_value "0.500"
+				max_value "0.5"
+				min_value "0.5"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "35.000"
-				min_value "35.000"
+				max_value "35"
+				min_value "35"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "16.000"
-				min_value "16.000"
+				max_value "16"
+				min_value "16"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "45.000"
-				min_value "45.000"
+				max_value "45"
+				min_value "45"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.500"
-				min_value "1.500"
+				max_value "1.5"
+				min_value "1.5"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "40.000"
-				min_value "40.000"
+				max_value "40"
+				min_value "40"
 				stat_features "BASE_MINMAX|STATISTIC"
 				stat_type "AMMO_STUN"
 			}
@@ -5799,64 +5705,64 @@ buildings/defense/tower_shotgun
 		{
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "30.000"
-				min_value "30.000"
+				max_value "30"
+				min_value "30"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_RANGE"
 			}
@@ -5878,72 +5784,72 @@ buildings/defense/tower_shotgun_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "40.000"
-				min_value "40.000"
+				max_value "40"
+				min_value "40"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.100"
-				min_value "1.100"
+				max_value "1.1"
+				min_value "1.1"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_RANGE"
 			}
@@ -5965,72 +5871,72 @@ buildings/defense/tower_shotgun_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "52.000"
-				min_value "52.000"
+				max_value "52"
+				min_value "52"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPREAD"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_RANGE"
 			}
@@ -6052,72 +5958,72 @@ buildings/defense/tower_water_basic
 		{
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "30.000"
-				min_value "30.000"
+				max_value "30"
+				min_value "30"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "12.000"
-				min_value "12.000"
+				max_value "12"
+				min_value "12"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -6139,80 +6045,80 @@ buildings/defense/tower_water_basic_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "45.000"
-				min_value "45.000"
+				max_value "45"
+				min_value "45"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "24.000"
-				min_value "24.000"
+				max_value "24"
+				min_value "24"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.100"
-				min_value "1.100"
+				max_value "1.1"
+				min_value "1.1"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -6234,80 +6140,80 @@ buildings/defense/tower_water_basic_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "60.000"
-				min_value "60.000"
+				max_value "60"
+				min_value "60"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "48.000"
-				min_value "48.000"
+				max_value "48"
+				min_value "48"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "25.000"
-				min_value "25.000"
+				max_value "25"
+				min_value "25"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "50.000"
-				min_value "50.000"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.200"
-				min_value "1.200"
+				max_value "1.2"
+				min_value "1.2"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -6329,80 +6235,80 @@ buildings/defense/tower_water_big
 		{
 			WeaponStatDef
 			{
-				max_value "1000.000"
-				min_value "1000.000"
+				max_value "1000"
+				min_value "1000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.100"
-				min_value "0.100"
+				max_value "0.1"
+				min_value "0.1"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "200.000"
-				min_value "200.000"
+				max_value "200"
+				min_value "200"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -6424,80 +6330,80 @@ buildings/defense/tower_water_big_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "1333.000"
-				min_value "1333.000"
+				max_value "1333"
+				min_value "1333"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.100"
-				min_value "0.100"
+				max_value "0.1"
+				min_value "0.1"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "400.000"
-				min_value "400.000"
+				max_value "400"
+				min_value "400"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
@@ -6519,82 +6425,159 @@ buildings/defense/tower_water_big_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "2000.000"
-				min_value "2000.000"
+				max_value "2000"
+				min_value "2000"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "0.100"
-				min_value "0.100"
+				max_value "0.1"
+				min_value "0.1"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_PENETRATION"
 			}
 
 			WeaponStatDef
 			{
-				max_value "100.000"
-				min_value "100.000"
+				max_value "100"
+				min_value "100"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_SPLASH"
 			}
 
 			WeaponStatDef
 			{
-				max_value "800.000"
-				min_value "800.000"
+				max_value "800"
+				min_value "800"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+		}
+
+	}
+
+}
+
+buildings/main/planet_scanner_lvl_2
+{
+	WeaponItemDesc
+	{
+		ammo_storage "energy"
+		damage_type "energy"
+		rarity "ADVANCED"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "0.025"
+				min_value "0.025"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				max_value "500"
+				min_value "500"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "8"
+				min_value "8"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5000"
+				min_value "5000"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "200"
+				min_value "200"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
 			}
 
 		}
@@ -6613,48 +6596,48 @@ units/drones/drone_attack
 		{
 			WeaponStatDef
 			{
-				max_value "5.000"
-				min_value "5.000"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "15.000"
-				min_value "15.000"
+				max_value "15"
+				min_value "15"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "60.000"
-				min_value "60.000"
+				max_value "60"
+				min_value "60"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}
 
 			WeaponStatDef
 			{
-				max_value "2.000"
-				min_value "2.000"
+				max_value "2"
+				min_value "2"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_SPLASH"
 			}
@@ -6675,40 +6658,40 @@ units/drones/drone_attack_physical
 		{
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3.000"
-				min_value "3.000"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_PER_BURST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "1.000"
-				min_value "1.000"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10.000"
-				min_value "10.000"
+				max_value "10"
+				min_value "10"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "85.000"
-				min_value "85.000"
+				max_value "85"
+				min_value "85"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
 			}

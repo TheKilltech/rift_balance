@@ -29,7 +29,7 @@ EntityBlueprint  // planet_scanner
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 5
+				building_time 120
 				building_cost
 				{
 					carbonium 	"2000"
@@ -603,9 +603,10 @@ EntityBlueprint  // planet_scanner_lvl_2
 		}
 
 		ammo_blueprint 			"buildings/main/planetary_defense_projectile"
+		muzzle_flash_effect 	"effects/weapons_energy/plasma_gun_fire_red"
 
 		burst_column_angle 			"0"
-		burst_rate 					"0.1"
+		burst_rate 					"0"
 		use_accuracy				"0"
 	}
 	
@@ -722,8 +723,23 @@ EntityBlueprint  // planet_scanner_lvl_2
 		//////////////////////////////// MISC /////////////////////////////////////////
 		EffectGroup
 		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapon_items/heavy_plasma_gun"
+					bone "att_antenna_5"
+					orientation 0 90 0
+					offset -0.4 -2.1 0
+				}
+			}
+		}
+		EffectGroup
+		{
 			group "target"
-			enabled "0"
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -796,13 +812,13 @@ EntityBlueprint  // planetary_defense_projectile
 
 	MeshDesc
 	{
-		mesh 		"meshes/projectiles/tower_hcm_rocket_grenade_lvl_1.mesh"
-		material 	"projectiles/tower_hcm_rocket_lvl_1"
+		mesh		"meshes/projectiles/tower_portal_bomb.mesh"
+		material	"projectiles/laser_blue"
 	}
-
+	
 	SkeletonDesc
 	{
-		name "meshes/projectiles/tower_hcm_rocket_grenade_lvl_1"
+		name "meshes/projectiles/tower_portal_bomb"
 	}
 
 	MinimapItemDesc
@@ -820,6 +836,7 @@ EntityBlueprint  // planetary_defense_projectile
 			x "2"
 			y "2"
 		}
+
 		visibility			"radar"
 	}
 
@@ -837,53 +854,69 @@ EntityBlueprint  // planetary_defense_projectile
 			{
 				Effect
 				{
-					blueprint "effects/weapons_explosive/hcm_projectile_small"
-					bone "att_exhaust"
+					blueprint "effects/projectiles_and_trails/tower_portal_bomb_projectile"
 				}
 			}
 		}
-	}
-
-	ProjectileAmmoComponent
-	{
-		on_enemy_hit_effect 	"effects/weapon_hit/hcm_projectile_explosion"
-		on_world_hit_effect 	"effects/weapon_hit/hcm_projectile_explosion"
-		on_resisted_hit_effect 	"effects/weapon_hit/hcm_projectile_explosion"
-		collision_3d 			"world|world_blocker"
-	}
-	
-	children
-	{
-		EntityBlueprint
+		EffectGroup
 		{
-			RibbonComponent
+			group "vismod"
+			enabled "1"
+			Effects
 			{
-				material 			"ribbon/drone_trail_gold"
-				update_bounds 		1
-				fade_out_time		1.9
-				tesselation_step 	0.1
-				manual_fade 		1				
-
-				Ribbons
+				Effect
 				{
-					Ribbon
-					{
-						parent_attachment "att_exhaust"
-						offset "0 0 0.6"
-					}
-
-					Ribbon
-					{
-						parent_attachment "att_exhaust"
-						offset "0 0 -0.6"
-					}
+					blueprint "items/skills/orbital_laser_beam"
+					bone "att_vismod_1"
+					orientation 0 90 0
+					scale 5 1 1
+					offset 0 1 0
+					delay 1.2
 				}
 			}
 		}
 	}
-	
-	LifeTimeDesc
+
+	FlakAmmoComponent
 	{
-		time "30.0"
-	}	
+		explosion_effect 		"effects/weapons_explosive/tower_portal_bomb_explosion"
+		explosion_delay 		"1.5"
+
+		DamagePattern
+		{
+			area_damage_speed	"30"
+		}
+	}
+
+	LaserBeamComponent
+	{
+		range 					"50"
+
+		on_enemy_hit_effect 	"effects/items/orbital_laser"
+		on_world_hit_effect 	"effects/items/orbital_laser"
+		on_resisted_hit_effect 	"effects/items/orbital_laser"
+		hit_effect_direction	"up"
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|hitbox|shield"
+
+        damage_factor_max       "1"
+        damage_factor_increase  "1"
+        damage_factor_decrease  "1"
+        damage_max_beam_scale 	"1"
+		damage_max_beam_glow 	"1"
+	}
+	
+	LuaDesc
+	{
+		script "lua/items/skills/orbital_laser.lua"
+		
+		database
+		{
+			bp				string:"items/skills/orbital_laser_advanced"
+			delay 			float:"2"
+			crosshair_bp	string:"effects/messages_and_markers/danger_marker_blue"
+			crosshair_radius float:"8.4"
+			att				string:"be_body_upper"
+			stat_bp			string:"items/skills/orbital_laser_advanced"
+		}
+	}
 }
