@@ -494,7 +494,7 @@ EntityBlueprint  // planet_scanner_lvl_2
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 5
+				building_time 140
 				building_cost
 				{
 					carbonium 	"4000"
@@ -730,6 +730,7 @@ EntityBlueprint  // planet_scanner_lvl_2
 					bone "att_vismod_1"
 					orientation 0 0 0
 					offset 0 0.4 0
+					scale 1 0.8 0.8
 				}
 			}
 		}
@@ -832,7 +833,7 @@ EntityBlueprint  // planet_scanner_lvl_3
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 5
+				building_time 160
 				building_cost
 				{
 					carbonium 	"4000"
@@ -975,7 +976,24 @@ EntityBlueprint  // planet_scanner_lvl_3
 					blueprint "effects/weapon_items/heavy_plasma_gun"
 					bone "att_vismod_1"
 					orientation 0 0 0
-					offset 0 0.4 0
+					offset -0.6 0.4 0
+					scale 1.3 1 1
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/grenade_launcher"
+					bone "att_antenna_1"
+					orientation 90 0 0
+					offset 0 0 -4
+					scale 1.4 1.2 1.2
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/grenade_launcher"
+					bone "att_antenna_3"
+					orientation 90 180 0
+					offset 0 0 -4
+					scale 1.4 1.2 1.2
 				}
 				Effect
 				{
@@ -1082,10 +1100,11 @@ EntityBlueprint  // planet_scanner_lvl_4
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 5
+				building_time 180
 				building_cost
 				{
-					carbonium 	"1000"
+					carbonium 	"6000"
+					palladium	"1500"
 					alloys 		"2500"
 				}
 			}
@@ -1216,7 +1235,40 @@ EntityBlueprint  // planet_scanner_lvl_4
 					blueprint "effects/weapon_items/heavy_plasma_gun"
 					bone "att_vismod_1"
 					orientation 0 0 0
-					offset 0 0.4 0
+					offset -0.6 0.4 0
+					scale 1.3 1 1
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/grenade_launcher"
+					bone "att_antenna_1"
+					orientation 90 0 0
+					offset 0 0 -4.3
+					scale 1.8 1.2 1.2
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/grenade_launcher"
+					bone "att_antenna_2"
+					orientation 90 90 0
+					offset 0 0 -4.3
+					scale 1.8 1.2 1.2
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/grenade_launcher"
+					bone "att_antenna_3"
+					orientation 90 180 0
+					offset 0 0 -4.3
+					scale 1.8 1.3 1.3
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/grenade_launcher"
+					bone "att_antenna_4"
+					orientation 90 -90 0
+					offset 0 0 -4.3
+					scale 1.8 1.3 1.3
 				}
 				Effect
 				{
