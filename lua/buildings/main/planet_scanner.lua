@@ -25,4 +25,9 @@ function planet_scanner:OnLoad()
     end
 end
 
+function planet_scanner:OnBuildingEnd()
+	local range = self.data:GetFloat("radar_range")
+	BuildingService:CreateRadarComponent( self.entity, range );	
+end
+
 return planet_scanner

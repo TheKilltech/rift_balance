@@ -65,6 +65,7 @@ EntityBlueprint  // planet_scanner
 		{
 			cone_effect			string:"build_cone_5x5"
 			cone_effect_sell	string:"sell_big"
+			radar_range			float:"180"
 		}
 
 	}
@@ -424,44 +425,38 @@ EntityBlueprint  // planet_scanner
 			"buildings/effects_big_base"
 		}
 
-//////////////////////////////// MISC /////////////////////////////////////////		
-
+		//////////////////////////////// MISC /////////////////////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/light_blue_blinking"								
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
 					bone "att_antenna_1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/light_blue_blinking"								
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
 					bone "att_antenna_2"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/light_blue_blinking"								
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
 					bone "att_antenna_3"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/light_blue_blinking"								
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
 					bone "att_antenna_4"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/planet_scanner_energy"								
+					blueprint "effects/buildings_and_machines/planet_scanner_energy"
 					bone "att_antenna_5"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_main/planet_scanner_working"	
-					delay "0.5"					
 				}
 			}
 		}	
@@ -544,6 +539,7 @@ EntityBlueprint  // planet_scanner_lvl_2
 		{
 			cone_effect				string:"build_cone_5x5"
 			cone_effect_sell		string:"sell_big"
+			radar_range				float:"180"
 			time_machine			int:"0"
 			rocket_radius 			float:"10"
 			rocket_height 			float:"100"

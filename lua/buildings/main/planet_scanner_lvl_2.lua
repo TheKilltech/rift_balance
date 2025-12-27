@@ -32,6 +32,11 @@ function planet_scanner_lvl_2:OnInit()
     self.prepareStrike = nil
 end
 
+function planet_scanner_lvl_2:OnBuildingEnd()
+	planet_scanner.OnBuildingEnd(self)
+	tower.OnBuildingEnd(self)
+end
+
 
 function planet_scanner_lvl_2:OnActivate()
 	planet_scanner.OnActivate(self)
