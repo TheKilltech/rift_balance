@@ -176,6 +176,9 @@ function dom_mananger:init()
 	self.player_death_position 	 = {}
 
 	self.version = 1
+
+	self:FillInitialParamsEventManager()
+	self:FillInitialParamsDomManager()
 end
 
 function dom_mananger:Update( dt)
@@ -245,7 +248,7 @@ function dom_mananger:Update( dt)
 			debug = debug .. " Time left: " .. tostring( state:GetDurationLimit() - state:GetDuration() )
 		elseif ( currentSpawnerState == "cooldown_after_spawn" ) then
 			debug = debug .. " Time left: " .. tostring( self.cooldownTimer )
-			if (self.rules.waveRepeatChances) then 
+			if (self.rules.waveRepeatChances) then
 				local repeatChances = self.rules.waveRepeatChances[self.currentDifficultyLevel]
 				local repeatChance  = repeatChances[self.waveRepeated+1] or 0
 				debug = debug .. " wave repeat chance: " .. tostring( repeatChance ) .. "%,"
@@ -338,6 +341,7 @@ function dom_mananger:FillInitialParamsDomManager()
 	for group in Iter( self.availableAttackGroups ) do 
 		self.availableEventGroups[group] = true
 	end
+	if ( self.waveRepeated == nil ) then self.waveRepeated = 0 end
 end
 
 	-- ======================================== LOGIC ============================================
