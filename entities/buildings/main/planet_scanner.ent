@@ -473,10 +473,11 @@ EntityBlueprint  // planet_scanner_lvl_2
 		name 				"planet_scanner_lvl_2"
 		bp   				"buildings/main/planet_scanner_lvl_2"
 		category 			"main"
-		localization_id		"gui/hud/building_name/planet_scanner"
-		description			"gui/hud/building_description/planet_scanner"
+		localization_id		"gui/hud/building_name/planet_defense"
+		description			"gui/hud/building_description/planet_defense"
 		menu_icon			"gui/hud/building_icons/placeholder"
 		require 			"headquarters"
+		upgrade				"buildings/main/planet_scanner_lvl_3"
 		buildable			"0"
 		map_limit			"LOCAL"
 		limit_name			"planet_scanner"
@@ -497,7 +498,7 @@ EntityBlueprint  // planet_scanner_lvl_2
 				building_cost
 				{
 					carbonium 	"4000"
-					alloys 		"2500"
+					cobalt 		"2500"
 					ai			"5"
 				}
 			}
@@ -511,7 +512,7 @@ EntityBlueprint  // planet_scanner_lvl_2
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"2500"
+				value			 	"2000"
 			}
 		}
 		
@@ -715,7 +716,7 @@ EntityBlueprint  // planet_scanner_lvl_2
 		{
 			"buildings/effects_big_base"
 		}
-
+		
 		//////////////////////////////// MISC /////////////////////////////////////////
 		EffectGroup
 		{
@@ -726,9 +727,9 @@ EntityBlueprint  // planet_scanner_lvl_2
 				Effect
 				{
 					blueprint "effects/weapon_items/heavy_plasma_gun"
-					bone "att_antenna_5"
-					orientation 0 90 0
-					offset -0.4 -2.1 0
+					bone "att_vismod_1"
+					orientation 0 0 0
+					offset 0 0.4 0
 				}
 			}
 		}
@@ -793,6 +794,498 @@ EntityBlueprint  // planet_scanner_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // planet_scanner_lvl_3
+{
+	name  					"buildings/main/planet_scanner_lvl_3"
+	base_blueprint 			"buildings/main/planet_scanner_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"planet_scanner_lvl_3"
+		bp   				"buildings/main/planet_scanner_lvl_3"
+		category 			"main"
+		localization_id		"gui/hud/building_name/planet_defense"
+		description			"gui/hud/building_description/planet_defense"
+		menu_icon			"gui/hud/building_icons/placeholder"
+		require 			"headquarters"
+		upgrade				"buildings/main/planet_scanner_lvl_4"
+		buildable			"0"
+		map_limit			"LOCAL"
+		limit_name			"planet_scanner"
+		limit			    "1"
+		mission_mode		"1"
+		menu_action			"planetary_scanner"
+		condition			"NOT_BIOME"
+		condition_value		"caverns"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		hide_treasures 		"1"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"4000"
+					palladium	"500"
+					alloys 		"1500"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"2000"
+			}
+			
+			GameplayResource
+			{
+				resource 			"plasma"
+				value			 	"100"
+				attachment			"att_in_1"
+				family				"charge"
+			}
+			
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				value			 	"25"
+				attachment			"att_in_1"
+				family				"charge"
+			}
+		}
+		
+		out
+		{
+		}
+		priority 2
+	}
+
+	TypeDesc
+	{
+		type "building|main"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "building_working"
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/main/planet_scanner_lvl_2.lua"
+
+		database
+		{
+			cone_effect				string:"build_cone_5x5"
+			cone_effect_sell		string:"sell_big"
+			radar_range				float:"180"
+			time_machine			int:"0"
+			rocket_radius 			float:"10"
+			rocket_height 			float:"100"
+			rocket_initial_height	float:"10"
+			rocket_bp				string:"buildings/defense/tower_hcm_rocket"
+			crosshair_bp			string:"effects/messages_and_markers/target_laser_marker"
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	TowerDesc
+	{
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_target"
+				recoil_bone  "att_target"
+				recoil_time   "0.35"
+				recoil_offset   "1.0"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "10"
+			submesh_idx "1"
+		}
+
+		ammo_blueprint 			"buildings/main/planetary_defense_projectile"
+		muzzle_flash_effect 	"effects/weapons_energy/plasma_gun_fire_red"
+
+		burst_column_angle 			"0"
+		burst_rate 					"0"
+		use_accuracy				"0"
+	}
+	
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		//////////////////////////////// MISC /////////////////////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapon_items/heavy_plasma_gun"
+					bone "att_vismod_1"
+					orientation 0 0 0
+					offset 0 0.4 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "target"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/mech/laser_pointer"
+					bone "att_target"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/planet_scanner_energy"
+					bone "att_antenna_5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_main/planet_scanner_working"
+					delay "0.5"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // planet_scanner_lvl_4
+{
+	name  					"buildings/main/planet_scanner_lvl_4"
+	base_blueprint 			"buildings/main/planet_scanner_lvl_3"
+
+	BuildingDesc
+	{
+		name 				"planet_scanner_lvl_3"
+		bp   				"buildings/main/planet_scanner_lvl_3"
+		category 			"main"
+		localization_id		"gui/hud/building_name/planet_defense"
+		description			"gui/hud/building_description/planet_defense"
+		menu_icon			"gui/hud/building_icons/placeholder"
+		require 			"headquarters"
+		buildable			"0"
+		map_limit			"LOCAL"
+		limit_name			"planet_scanner"
+		limit			    "1"
+		mission_mode		"1"
+		menu_action			"planetary_scanner"
+		condition			"NOT_BIOME"
+		condition_value		"caverns"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		hide_treasures 		"1"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"1000"
+					alloys 		"2500"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"3000"
+			}
+			
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				value			 	"25"
+				attachment			"att_in_1"
+				family				"charge"
+			}
+		}
+		
+		out
+		{
+		}
+		priority 2
+	}
+
+	TypeDesc
+	{
+		type "building|main"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "building_working"
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/main/planet_scanner_lvl_2.lua"
+
+		database
+		{
+			cone_effect				string:"build_cone_5x5"
+			cone_effect_sell		string:"sell_big"
+			radar_range				float:"180"
+			time_machine			int:"0"
+			rocket_radius 			float:"10"
+			rocket_height 			float:"100"
+			rocket_initial_height	float:"10"
+			rocket_bp				string:"buildings/defense/tower_hcm_rocket"
+			crosshair_bp			string:"effects/messages_and_markers/target_laser_marker"
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	TowerDesc
+	{
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_target"
+				recoil_bone  "att_target"
+				recoil_time   "0.35"
+				recoil_offset   "1.0"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "10"
+			submesh_idx "1"
+		}
+
+		ammo_blueprint 			"buildings/main/planetary_defense_projectile"
+		muzzle_flash_effect 	"effects/weapons_energy/plasma_gun_fire_red"
+
+		burst_column_angle 			"0"
+		burst_rate 					"0"
+		use_accuracy				"0"
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		//////////////////////////////// MISC /////////////////////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapon_items/heavy_plasma_gun"
+					bone "att_vismod_1"
+					orientation 0 0 0
+					offset 0 0.4 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "target"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/mech/laser_pointer"
+					bone "att_target"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/planet_scanner_energy"
+					bone "att_antenna_5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_main/planet_scanner_working"
+					delay "0.5"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_4"
 					bone "att_level"
 				}
 			}
