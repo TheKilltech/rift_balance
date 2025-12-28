@@ -21,11 +21,6 @@ return function(params)
 		{ minCount = 3, maxCount = 5 },  -- difficulty level 9
 	}
 	
-	rules.majorAttackLogic =
-	{			
-		{ level = 2, minLevel = 7, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },     
-	}	
-	
 	rules.waveRepeatChances = 
 	{
 		{},                    -- concecutive chances of wave repeating at level 1
