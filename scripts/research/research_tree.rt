@@ -5297,7 +5297,7 @@ Research
 						{
 							amount "0"
 							resource "steel"
-							count "1000"
+							count "2000"
 						}
 
 					}
@@ -15103,6 +15103,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/alloys_uranium"
@@ -15168,6 +15175,13 @@ Research
 						{
 							render_line "1"
 							research_name "gui/menu/research/name/resource_handling_palladium"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -15239,6 +15253,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/alloys_titanium"
@@ -15285,6 +15306,210 @@ Research
 					}
 
 					icon "gui/menu/research/icons/crystal_walls"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/orbital_scanning"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/planet_defense"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "5000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "1500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1521"
+						y "-18"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/main/planet_scanner_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/orbital_scanning"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/planet_defense"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/planet_defense_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "cobalt"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "8000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "6000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1521"
+						y "108"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/main/planet_scanner_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/orbital_scanning"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/planet_defense_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_5"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/planet_defense_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "5000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "15000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "palladium"
+							count "2500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1521"
+						y "288"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/main/planet_scanner_lvl_4"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/orbital_scanning"
 				}
 
 			}
@@ -22380,6 +22605,31 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/requirements/building_exists.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "buildings/main/planet_scanner"
+										key "building_blueprint"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "-135"
@@ -22448,6 +22698,31 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/requirements/building_exists.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "buildings/main/planet_scanner_lvl_2"
+										key "building_blueprint"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "-135"
@@ -22523,6 +22798,31 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/requirements/building_exists.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "buildings/main/planet_scanner_lvl_3"
+										key "building_blueprint"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "-135"
@@ -22598,6 +22898,31 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/requirements/building_exists.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "buildings/main/planet_scanner_lvl_4"
+										key "building_blueprint"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "-135"
@@ -46725,6 +47050,6 @@ Research
 
 	type
 	editor "6643"
-	version "191"
+	version "192"
 }
 

@@ -260,9 +260,10 @@ function wave_gen:PrepareCustomRules(rules, missionType)
 				counts.minCount = counts.minCount * attackCountMultiplier
 				counts.maxCount = counts.maxCount * attackCountMultiplier
 			end
+			rules.attackCountPerDifficulty[i] = counts
 		end
 	end
-
+	
 	for i = 1, #rules.idleTime, 1 do
 		rules.idleTime[i] = rules.idleTime[i] * idleTimeMultiplier * (1 + (progressionMultiplier-1)*(9-i)/8.0)
 	end
