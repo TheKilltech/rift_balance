@@ -834,9 +834,18 @@ function dom_mananger:ResumeAttacks()
 end
 
 function dom_mananger:SetMaxDifficultyLevel( maxDifficultyLevel )
-	maxDifficultyLevel = Clamp( maxDifficultyLevel, 1, self.maxDifficultyLevel )
-
 	self:VerboseLog( "OnLuaGlobalEvent: changing max difficulty level" )
+	self:VerboseLog( "OnLuaGlobalEvent: target max difficulty level - " .. tostring( maxDifficultyLevel ) )
+	
+	local progressLimit = 9
+	if self.campaignProgressLevel or 10 <= 1.5 then
+		progressLimit = 7
+	elseif self.campaignProgressLevel or 10 <= 3.5 then
+		progressLimit = 8
+	end	
+	maxDifficultyLevel = Clamp( maxDifficultyLevel, 1, math.min( self.maxDifficultyLevel, progressLimit) )
+
+	self:VerboseLog( "OnLuaGlobalEvent: current campaign progress level - " .. tostring( self.campaignProgressLevel ).. " -> difficulty limit - ".. tostring( progressLimit ))
 	self:VerboseLog( "OnLuaGlobalEvent: current freezed difficulty level - " .. tostring( self.freezedDifficultyLevel ) )
 	self:VerboseLog( "OnLuaGlobalEvent: current difficulty level - " .. tostring( self.currentDifficultyLevel ) )
 

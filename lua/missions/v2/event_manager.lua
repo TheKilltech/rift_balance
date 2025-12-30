@@ -14,6 +14,7 @@ function event_manager:init()
 	self:InitRules()
 
 	self.currentEventLevel = 1
+	self.campaignProgressLevel = 0
 
 	self.streamActionResourceGiveBelowPercentage		= 80
 	self.streamActionResourceTakeAwayAbovePercentage	= 10
@@ -136,25 +137,58 @@ function event_manager:FillInitialParamsEventManager()
 	if ( self.availableEventGroups == nil ) then
 		self.availableEventGroups = {}
 	end	
+	local progress = 0
+	local cobaltAccess = false
 	local campaignData = CampaignService:GetCampaignData()
 	if ( campaignData:GetStringOrDefault("global.uranium_outpost_complete", "" ) == "true" ) then 
 		self.availableEventGroups.uranium_completed = true
 		self.availableEventGroups.desert            = true
+		progress = progress + 1
 	end  
 	if ( campaignData:GetStringOrDefault("global.titanium_outpost_complete", "" ) == "true" ) then 
 		self.availableEventGroups.titanium_completed = true
 		self.availableEventGroups.magma              = true
+		progress = progress + 1
 	end 
 	if ( campaignData:GetStringOrDefault("global.palladium_outpost_complete", "" ) == "true" ) then 
 		self.availableEventGroups.palladium_completed = true
 		self.availableEventGroups.acid                = true
+		progress = progress + 1
+	end
+	if ( campaignData:GetStringOrDefault("global.cobalt_outpost_complete", "" ) == "true" ) then 
+		self.availableEventGroups.cobalt_completed = true
+		self.availableEventGroups.jungle           = true
+		cobaltAccess = true
 	end
 	if ( campaignData:GetStringOrDefault("global.metallic_outpost_stage_1", "" ) == "true" ) then 
 		self.availableEventGroups.morphium_unlocked = true
+		progress = progress + 0.1
+		cobaltAccess = true
 	end
 	if ( campaignData:GetStringOrDefault("global.alien_core_destroyed", "" ) == "true" or campaignData:GetStringOrDefault("global.alien_core_destroyed", "" ) == "true") then 
 		self.availableEventGroups.metallic = true
+		progress = progress + 0.4
 	end
+	if ( campaignData:GetStringOrDefault("global.caverns_outpost_stage_2_complete", "" ) == "true" ) then 
+		self.availableEventGroups.resin_unlocked = true
+		progress = progress + 0.1
+		cobaltAccess = true
+	end
+	if ( campaignData:GetStringOrDefault("global.caverns_end", "" ) == "true" ) then
+		self.availableEventGroups.caverns = true
+		progress = progress + 0.4
+	end
+	if ( campaignData:GetStringOrDefault("global.swamp_outpost_stage_3_complete", "" ) == "true" ) then 
+		self.availableEventGroups.resin_unlocked = true
+		progress = progress + 0.1
+		cobaltAccess = true
+	end
+	if ( campaignData:GetStringOrDefault("global.swamp_end", "" ) == "true" ) then
+		self.availableEventGroups.swamp = true
+		progress = progress + 0.4
+	end
+	if cobaltAccess then progress = progress + 0.5 end
+	self.campaignProgressLevel = progress
 	--if ( campaignData:GetStringOrDefault("global.metallic_start", "" ) == "true" ) then end
 	--if ( campaignData:GetStringOrDefault("global.metallic_outpost_stage_2_complete", "" ) == "true" ) then  end
 	--if ( campaignData:GetStringOrDefault("global.metallic_outpost_stage_3_complete", "" ) == "true" ) then end
@@ -165,9 +199,13 @@ function event_manager:FillInitialParamsEventManager()
 	--if ( campaignData:GetStringOrDefault("global.caverns_outpost_stage_1_complete", "" ) == "true" ) then  end
 	--if ( campaignData:GetStringOrDefault("global.caverns_outpost_stage_2_start", "" ) == "true" ) then end
 	--if ( campaignData:GetStringOrDefault("global.caverns_outpost_stage_2_complete", "" ) == "true" ) then  end
-	--if ( campaignData:GetStringOrDefault("global.caverns_end", "" ) == "true" ) then  end
 	--if ( campaignData:GetStringOrDefault("global.swamp_start", "" ) == "true" ) then  end
+	--if ( campaignData:GetStringOrDefault("global.great_tree_saved", "" ) == "true" ) then  end
+	--if ( campaignData:GetStringOrDefault("global.great_tree_destroyed", "" ) == "true" ) then  end
 	--if ( campaignData:GetStringOrDefault("global.swamp_outpost_stage_1_complete", "" ) == "true" ) then  end
+	--if ( campaignData:GetStringOrDefault("global.swamp_outpost_stage_2_complete", "" ) == "true" ) then  end
+	--if ( campaignData:GetStringOrDefault("global.swamp_outpost_stage_3_complete", "" ) == "true" ) then  end
+	--if ( campaignData:GetStringOrDefault("global.swamp_outpost_stage_4_complete", "" ) == "true" ) then  end
 end
 
 function event_manager:IncreamentEventLevel( freezedDifficultyLevel )
