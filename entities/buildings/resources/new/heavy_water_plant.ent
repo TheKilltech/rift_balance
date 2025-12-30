@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // heavy_water_plant
 {
 	name  "buildings/resources/heavy_water_plant"
 
@@ -59,7 +59,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 		"deuterium"
-				value			"5"
+				value			"25"
 				attachment		"att_out_1"
 			}
 		}
@@ -421,18 +421,18 @@ EntityBlueprint
 		{
 			"buildings/effects_big_base"
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
@@ -440,31 +440,41 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}	
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
-			group "working"
-			enabled "0"				
-			
+			group "vismod"
+			enabled "1"
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_main/research_lab_energy"
-					bone "be_sphere"
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_01"
+					bone 	"att_vismod_1"
+					scale	0.6 0.6 0.6
+					offset	-0.4 0 0
 				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
 			}
 		}	
 	}
