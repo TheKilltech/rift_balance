@@ -3993,8 +3993,19 @@ EntityBlueprint "effects/no_lifetime"		//iron_vein_vl1
 	
 	MeshDesc
 	{
-		mesh 		"meshes/resources/resource_iron_very_large_01.mesh"
-		material 	"resources/resource_iron"
+		mesh 		"meshes/resources/resource_carbonium_very_large_03.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//ammonium_vein_vl3
+{
+	name effects/world/ammonium_vein_vl3
+	
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_very_large_03.mesh"
+		material 	"resources/resource_ammonium"
 	}
 }
 
