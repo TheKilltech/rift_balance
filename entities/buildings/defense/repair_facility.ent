@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // repair_facility
 {
 	name  "buildings/defense/repair_facility"
 
@@ -14,6 +14,7 @@ EntityBlueprint
 		order				"4"
 		upgrade				"buildings/defense/repair_facility_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"repair_facility_lvl_2,repair_facility_lvl_3"
 
 		costs
 		{
