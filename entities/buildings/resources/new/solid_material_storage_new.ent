@@ -54,7 +54,7 @@ EntityBlueprint  // solid_material_storage_basic
 			{
 				resource "energy"
 				max 	 "0"
-			}				
+			}
 		}
 	}
 
@@ -440,6 +440,11 @@ EntityBlueprint  // solid_material_storage_other
 			{
 				resource		"uranium_bio"
 				max 	 		"1000"
+			}
+			Storage
+			{
+				resource "energy"
+				max 	 "0"
 			}
 		}
 	}
@@ -829,7 +834,7 @@ EntityBlueprint  // solid_material_storage_rare
 			{
 				resource "energy"
 				max 	 "0"
-			}				
+			}
 		}
 	}
 
