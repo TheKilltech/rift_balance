@@ -253,6 +253,34 @@ EntityBlueprint  // laboratory_lvl_4
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_2_pipe"
 				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/ai_hub"
+					bone 	"att_vismod_5"
+					orientation 135 0 0
+					scale	1 1 1
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/hlab_base"
+					bone 	"att_vismod_3"
+					orientation 0 0 0
+					scale	0.7 0.7 0.7
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_02"
+					bone 	"att_vismod_4"
+					orientation 0 0 0
+					scale	0.9 0.9 0.9
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/crystal_vs3_violet"
+					bone 	"att_vismod_2"
+					orientation 0 0 0
+					scale	0.8 0.8 0.8
+				}
 			}
 		}
 		EffectGroup
@@ -278,7 +306,7 @@ EntityBlueprint  // laboratory_lvl_4
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/level_4"
-					bone "att_level"
+					bone "att_level_a"
 				}
 			}
 		}		
