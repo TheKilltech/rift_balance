@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // ammonium_extractor
 {
 	name  "buildings/resources/ammonium_extractor"
 
@@ -11,9 +11,10 @@ EntityBlueprint
 		description			"gui/hud/building_description/ammonium_extractor"
 		menu_icon			"gui/hud/building_icons/ammonium_extractor"
 		order				"6"
-		upgrade				"buildings/resources/ammonium_extractor_lvl_2"		
+		upgrade				"buildings/resources/ammonium_extractor_lvl_2"
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammonium_extractor_lvl_2"
 
 		costs
 		{
@@ -382,23 +383,23 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////		
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
@@ -412,9 +413,9 @@ EntityBlueprint
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/silo"
+					blueprint "effects/buildings_and_machines/silo_s"
 					bone "att_vismod_1"
-					scale "0.5 0.6 0.5"
+					scale "0.75 0.75 0.75"
 				}
 				Effect
 				{
@@ -436,7 +437,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // ammonium_extractor_lvl_2
 {
 	name  					"buildings/resources/ammonium_extractor_lvl_2"
 	base_blueprint 			"buildings/resources/ammonium_extractor"
@@ -454,6 +455,7 @@ EntityBlueprint
 		//upgrade				"buildings/resources/ammonium_extractor_lvl_2"
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammonium_extractor"
 
 		costs
 		{
@@ -492,7 +494,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"sludge"
-				value			 	"600"
+				value			 	"300"
 				attachment			"att_in_1"
 				family				"in"
 			}
@@ -523,11 +525,11 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////		
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -542,7 +544,7 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -573,9 +575,9 @@ EntityBlueprint
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/silo"
+					blueprint "effects/buildings_and_machines/silo_s"
 					bone "att_vismod_1"
-					scale "0.5 0.6 0.5"
+					scale "0.75 0.75 0.75"
 				}
 				Effect
 				{
@@ -610,3 +612,135 @@ EntityBlueprint
 	}
 }
 
+
+EntityBlueprint  // ammonium_extractor_ghost
+{
+	name  "buildings/resources/ammonium_extractor_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/hyper_particle_condenser.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/main/hyper_particle_condenser"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/silo_s_ghost"
+					bone "att_vismod_1"
+					scale "0.75 0.75 0.75"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // ammonium_extractor_lvl_2_ghost
+{
+	name  "buildings/resources/ammonium_extractor_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/hyper_particle_condenser.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/main/hyper_particle_condenser"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/silo_s_ghost"
+					bone "att_vismod_1"
+					scale "0.75 0.75 0.75"
+				}
+			}
+		}
+	}
+}
