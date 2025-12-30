@@ -12,10 +12,10 @@ EntityBlueprint  // supercoolant_refinery
 		description			"gui/hud/building_description/supercoolant_refinery"
 		menu_icon			"gui/hud/building_icons/supercoolant_refinery"
 		require 			"headquarters"
-		upgrade				"buildings/resources/supercoolant_refinery_lvl_2"			
+		upgrade				"buildings/resources/supercoolant_refinery_lvl_2"
 		order				"25"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,supercoolant_refinery_lvl_2,supercoolant_refinery_lvl_3"
 		
 		costs
 		{
@@ -412,9 +412,10 @@ EntityBlueprint  // supercoolant_refinery_lvl_2
 		description			"gui/hud/building_description/supercoolant_refinery_lvl_2"
 		menu_icon			"gui/hud/building_icons/supercoolant_refinery_lvl_2"
 		order				"16"
-		upgrade				"buildings/resources/supercoolant_refinery_lvl_3"		
+		upgrade				"buildings/resources/supercoolant_refinery_lvl_3"
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,supercoolant_refinery,supercoolant_refinery_lvl_3"
 		
 		costs
 		{
@@ -549,18 +550,18 @@ EntityBlueprint  // supercoolant_refinery_lvl_2
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
 				}
 			}
@@ -575,7 +576,7 @@ EntityBlueprint  // supercoolant_refinery_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
@@ -634,6 +635,7 @@ EntityBlueprint  // supercoolant_refinery_lvl_3
 		order				"16"	
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,supercoolant_refinery,supercoolant_refinery_lvl_2"
 		
 		costs
 		{
