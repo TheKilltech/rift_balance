@@ -3833,6 +3833,70 @@ EntityBlueprint "effects/no_lifetime"		// air_flickering
 											// lamp_light 
 											// lamp_light  _blue _cyan _green _orange _red _violet _yellow
 
+EntityBlueprint								// spark_ball_blue
+{
+	name "effects/buildings_and_machines/spark_ball_blue"
+
+	base_blueprints
+	{
+		 lights/point/fire_blue_small
+		 effects/no_lifetime
+	}
+
+	ParticleDesc
+	{
+		name    "rift/spark_ball_blue"
+	}	
+}
+
+EntityBlueprint								// spark_ball_violet
+{
+	name "effects/buildings_and_machines/spark_ball_violet"
+
+	base_blueprints
+	{
+		 lights/point/fire_violet_small
+		 effects/no_lifetime
+	}
+
+	ParticleDesc
+	{
+		name    "rift/spark_ball_violet"
+	}	
+}
+
+EntityBlueprint								// spark_ball_orange
+{
+	name "effects/buildings_and_machines/spark_ball_orange"
+
+	base_blueprints
+	{
+		 lights/point/fire_orange_small
+		 effects/no_lifetime
+	}
+
+	ParticleDesc
+	{
+		name    "rift/spark_ball_orange"
+	}	
+}
+
+EntityBlueprint								// spark_ball_green
+{
+	name "effects/buildings_and_machines/spark_ball_green"
+
+	base_blueprints
+	{
+		 lights/point/fire_green_small
+		 effects/no_lifetime
+	}
+
+	ParticleDesc
+	{
+		name    "rift/spark_ball_green"
+	}	
+}
+
 // effects/world
 
 EntityBlueprint "effects/no_lifetime"		//surface_water
