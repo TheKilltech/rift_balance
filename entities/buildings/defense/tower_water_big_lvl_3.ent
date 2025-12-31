@@ -15,14 +15,12 @@ EntityBlueprint
 		require 			"headquarters"
 		order				"30"
 		type				"tower"
-		overrides			"tower,wall"
-		//upgrade				"buildings/defense/tower_water_big_lvl_4"
-		//exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		building_functionality	"BUILD_ON_WATER|NO_FOUNDATION"
 		resource_requirement "water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein"
 		radius_name				"water_tower"
 		min_radius				"15"
-		min_radius_effect   	"voice_over/announcement/building_too_close"		
+		min_radius_effect   	"voice_over/announcement/building_too_close"
 
 		costs
 		{
@@ -33,13 +31,70 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"500"
-					steel 		"6000"
-					uranium		"800"
+					alloys		"2000"
 				}
 			}
 		}
 	}
 
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"500"
+			}
+			
+			GameplayResource
+			{
+				resource 		"supercoolant"
+				value 			"25"
+				attachment		"att_in_1|att_in_2"
+			}
+		}
+		
+		out
+		{
+		}
+	
+		priority 6
+	}
+	
+	children
+	{
+		EntityBlueprint
+		{
+			name "buildings/defense/tower_water_big_lvl_3_pipeline"
+			
+			PipeComponent
+			{
+				attachment		"att_in_1,att_in_2"
+			}
+
+			ResourceStorageDesc
+			{
+				Storages
+				{
+					Storage
+					{
+						group	 		"local"
+						max 	 		"20"
+						attachment		"att_in_1|att_in_2"
+					}
+
+				}
+			}
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/defense/tower_water_big_lvl_3"
+			}
+
+		}
+	}
+	
 	HealthDesc
 	{
 		max_health 					"3000"
@@ -113,5 +168,252 @@ EntityBlueprint
 
 	WeaponItemDesc
 	{
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+		
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		//////////////////////////////// MISC /////////////////////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+			}
+		}
+		EffectGroup
+		{
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapons_elemental/tower_water_big_vent"
+					bone "att_frost"
+					random_delay "1"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // tower_ice_big_lvl_3
+{
+	name  "buildings/defense/tower_ice_big_lvl_3"
+	base_blueprint "buildings/defense/tower_water_big_lvl_3"
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"tower_ice_big_lvl_3"
+		bp   				"buildings/defense/tower_ice_big_lvl_3"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_ice_big"
+		description			"gui/hud/building_description/tower_ice_big"
+		menu_icon			"gui/hud/building_icons/tower_water_big_lvl3"
+		require 			"headquarters"
+		building_group		"tower_water_big"
+		order				"30"
+		type				"tower"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		radius_name				"water_tower"
+		min_radius				"15"
+		min_radius_effect   	"voice_over/announcement/building_too_close"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 40
+				building_cost
+				{
+					alloys 	"1000"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"650"
+			}
+			
+			GameplayResource
+			{
+				resource 		"supercoolant"
+				value 			"35"
+				attachment		"att_in_1|att_in_2"
+			}
+		}
+		
+		out
+		{
+		}
+	
+		priority 6
+	}
+	
+	WeaponItemDesc
+	{
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		//////////////////////////////// MISC /////////////////////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/ai_hub3"
+					bone 	"att_vismod_1"
+					orientation 45 0 0
+					scale		1.3 0.7 1.3
+				}
+			}
+		}
+		EffectGroup
+		{
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapons_elemental/tower_water_big_vent"
+					bone "att_frost"
+					random_delay "1"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
 	}
 }
