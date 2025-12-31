@@ -40576,6 +40576,13 @@ Research
 						ResearchCost
 						{
 							amount "0"
+							resource "ferdonite"
+							count "1500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
 							resource "steel"
 							count "2500"
 						}
@@ -40645,6 +40652,13 @@ Research
 							amount "0"
 							resource "analysis"
 							count "7500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "ferdonite"
+							count "3000"
 						}
 
 						ResearchCost
@@ -42201,8 +42215,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-1557"
-						y "-144"
+						x "-1620"
+						y "-153"
 					}
 
 					research_awards
@@ -42262,8 +42276,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-1557"
-						y "-99"
+						x "-1620"
+						y "-108"
 					}
 
 					research_awards
@@ -42778,8 +42792,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-1503"
-						y "-144"
+						x "-1566"
+						y "-153"
 					}
 
 					research_awards
@@ -42839,8 +42853,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-1503"
-						y "-99"
+						x "-1566"
+						y "-108"
 					}
 
 					research_awards
@@ -45501,6 +45515,203 @@ Research
 					icon "gui/menu/research/icons/ionizer"
 				}
 
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_water_big_lvl1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_ice_big"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "1000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "uranium_depleted"
+							count "500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1494"
+						y "-234"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_ice_big"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_water_big"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_ice_big"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_water_big_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_ice_big_lvl2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "2500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "2000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "uranium_depleted"
+							count "1000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1494"
+						y "72"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_ice_big_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_water_big"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_water_big_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_ice_big_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_ice_big_lvl3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "2500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "uranium_depleted"
+							count "2000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1494"
+						y "441"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_water_big_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_water_big"
+				}
+
 			}
 
 		}
@@ -47050,6 +47261,6 @@ Research
 
 	type
 	editor "6643"
-	version "192"
+	version "193"
 }
 

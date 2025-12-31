@@ -449,7 +449,7 @@ EntityBlueprint  // tower_ice_big
 		category 			"defense"
 		localization_id		"gui/hud/building_name/tower_ice_big"
 		description			"gui/hud/building_description/tower_ice_big"
-		menu_icon			"gui/hud/building_icons/tower_water_big"
+		menu_icon			"gui/hud/building_icons/tower_ice_big"
 		require 			"headquarters"
 		building_group		"tower_water_big"
 		order				"30"
@@ -751,7 +751,7 @@ EntityBlueprint  // tower_water_big_projectile
 		on_world_hit_effect 	"effects/weapons_elemental/tower_water_big_hit"
 		on_resisted_hit_effect 	"effects/weapons_elemental/tower_water_big_hit"
 
-		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield"
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield|building"
 	}
 
 	LifeTimeDesc

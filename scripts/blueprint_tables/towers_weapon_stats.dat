@@ -3314,6 +3314,291 @@ buildings/defense/tower_heavy_artillery_lvl_3
 
 }
 
+buildings/defense/tower_ice_big
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_tower_high_caliber_lvl2"
+		damage_type "cryo"
+		rarity "ADVANCED"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "1000"
+				min_value "1000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.1"
+				min_value "0.1"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100"
+				min_value "100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "10"
+				min_value "10"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100"
+				min_value "100"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2"
+				min_value "2"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "200"
+				min_value "200"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5"
+				min_value "5"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+		}
+
+	}
+
+}
+
+buildings/defense/tower_ice_big_lvl_2
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_tower_high_caliber_lvl3"
+		damage_type "cryo"
+		rarity "SUPERIOR"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "1750"
+				min_value "1750"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.1"
+				min_value "0.1"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100"
+				min_value "100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "10"
+				min_value "10"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100"
+				min_value "100"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2"
+				min_value "2"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "500"
+				min_value "500"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5"
+				min_value "5"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+		}
+
+	}
+
+}
+
+buildings/defense/tower_ice_big_lvl_3
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_tower_high_caliber_lvl3"
+		damage_type "cryo"
+		rarity "EXTREME"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "2000"
+				min_value "2000"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.1"
+				min_value "0.1"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100"
+				min_value "100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "10"
+				min_value "10"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100"
+				min_value "100"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2"
+				min_value "2"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "800"
+				min_value "800"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5"
+				min_value "5"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+		}
+
+	}
+
+}
+
 buildings/defense/tower_laser
 {
 	WeaponItemDesc
@@ -6157,7 +6442,7 @@ buildings/defense/tower_water_basic_lvl_3
 			WeaponStatDef
 			{
 				max_value "1"
-				min_value "1"
+				min_value "1.1"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "FIRE_PER_SHOT"
 			}
@@ -6330,8 +6615,8 @@ buildings/defense/tower_water_big_lvl_2
 		{
 			WeaponStatDef
 			{
-				max_value "1333"
-				min_value "1333"
+				max_value "1750"
+				min_value "1750"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -6394,8 +6679,8 @@ buildings/defense/tower_water_big_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "400"
-				min_value "400"
+				max_value "500"
+				min_value "500"
 				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
 				stat_type "DAMAGE_OVER_TIME"
 			}
