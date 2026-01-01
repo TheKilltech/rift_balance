@@ -3780,6 +3780,69 @@ buildings/defense/tower_laser_lvl_3
 
 }
 
+buildings/defense/tower_laser_water
+{
+	WeaponItemDesc
+	{
+		ammo_storage "energy"
+		damage_type "energy"
+		rarity "SUPERIOR"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "33"
+				min_value "33"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "8"
+				min_value "8"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "35"
+				min_value "35"
+				stat_features "BASE_MINMAX"
+				stat_type "BEAM_RANGE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX"
+				stat_type "BEAM_WIDTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.1"
+				min_value "1.1"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "40"
+				min_value "40"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "AMMO_COST"
+			}
+
+		}
+
+	}
+
+}
+
 buildings/defense/tower_lightning
 {
 	WeaponItemDesc

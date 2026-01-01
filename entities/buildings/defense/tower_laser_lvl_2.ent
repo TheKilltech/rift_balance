@@ -1,7 +1,6 @@
-EntityBlueprint
+EntityBlueprint  // tower_laser_lvl_2
 {
 	name  					"buildings/defense/tower_laser_lvl_2"
-
 	base_blueprint 			"buildings/defense/tower_laser"
 
 	BuildingDesc
@@ -15,7 +14,6 @@ EntityBlueprint
 		require 			"headquarters"
 		building_group		"tower_laser"
 		buildable			"0"
-		order				"11"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		//upgrade				"buildings/defense/tower_laser_lvl_3"
@@ -200,6 +198,195 @@ EntityBlueprint
 					blueprint	"effects/buildings_and_machines/minipipes"
 					bone 		"att_vismod_2"
 					scale		"0.6 0.6 0.6"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // tower_laser_water
+{
+	name  					"buildings/defense/tower_laser_water"
+	base_blueprint 			"buildings/defense/tower_laser_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"tower_laser_water"
+		bp   				"buildings/defense/tower_laser_water"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_laser_water"
+		description			"gui/hud/building_description/tower_laser_water"
+		menu_icon			"gui/hud/building_icons/tower_laser_water"
+		require 			"headquarters"
+		buildable			"0"
+		building_group		"tower_laser"
+		radius_name			"water_tower"
+		min_radius			"8"
+		type				"tower"
+		overrides			"tower"
+		building_functionality	"BUILD_ON_WATER|NO_FOUNDATION"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		resource_requirement "water_vein|sludge_vein|mud_vein|morphium_vein"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 20
+				building_cost
+				{
+					carbonium 	"500"
+					steel 		"650"
+					palladium	"100"
+				}
+			}		
+		}			
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"75"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsBoxShape
+			{
+				x	4
+				y	4
+				z	4
+			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "0.6"  // r
+			y "0.25" // g
+			z "0.25" // b
+			w "1"
+		}
+		size
+		{
+			x "2"
+			y "2"
+		}
+		visibility			"always"
+	}
+
+	HealthDesc
+	{
+		max_health 					"950"
+		health 						"950"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	TurretDesc
+	{
+		target "ground_unit_large|ground_unit_medium|ground_unit"
+		target_ignore "invisible"
+		speed "150"
+		aim_volume "SphericalAimVolume"
+		{
+			range_min "0"
+			range_max "35"
+			aiming_range "40"
+		}
+
+		aiming_cooldown "1"
+		aiming_target_time "2"
+		aiming_idle_angle "20"
+		pitch "be_barrel"
+		yaw "be_turret"
+		check_target_visibility "1"
+		fog_of_war_filtering "1"
+	}
+
+	TowerDesc
+	{
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_small_white_03"
+					bone 		"att_vismod_1"
+					scale		"0.9 1.05 0.9"
+					orientation "0 90 0"
 				}
 			}
 		}
