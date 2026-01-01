@@ -1,7 +1,6 @@
-EntityBlueprint
+EntityBlueprint  // tower_minigun_platform
 {
 	name 					"buildings/defense/tower_minigun_platform"
-
 	base_blueprint 			"buildings/defense/tower_minigun_lvl_2"
 
 	BuildingDesc
@@ -11,16 +10,15 @@ EntityBlueprint
 		category 			"defense"
 		localization_id		"gui/hud/building_name/tower_minigun_platform"
 		description			"gui/hud/building_description/tower_minigun_platform"
-		menu_icon			"gui/hud/building_icons/tower_minigun_lvl2"
+		menu_icon			"gui/hud/building_icons/tower_minigun_water"
 		require 			"headquarters"
 		building_group		"tower_minigun"
 		order				"12"
 		buildable			"0"
-		radius_name			"platform"
+		radius_name			"water_tower"
 		min_radius			"8"
 		type				"tower"
 		overrides			"tower"
-		//upgrade				"buildings/defense/tower_minigun_lvl_3"
 		building_functionality	"BUILD_ON_WATER|NO_FOUNDATION"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		resource_requirement "water_vein|sludge_vein|mud_vein|morphium_vein"
@@ -103,22 +101,6 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
-		////////////////////////Resources/////////////////////////
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_arrow"
-				}
-			}
 		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
