@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // tower_portal
 {
 	name "buildings/defense/tower_portal"
 
@@ -11,7 +11,9 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_portal"
 		menu_icon			"gui/hud/building_icons/tower_portal"
 		require 			"headquarters"
-		order				"35"
+		building_group		"tower_heavy_artillery"
+		buildable			"0"
+		//order				"35"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		upgrade				"buildings/defense/tower_portal_lvl_2"
@@ -136,11 +138,6 @@ EntityBlueprint
 		name "meshes/buildings/defense/tower_portal_lvl_1"
 	}
 	
-	//AnimationGraphDesc
-	//{
-	//	animation_graph_name "building_working"
-	//}	
-
 	TypeDesc
 	{
 		type "building|defense|tower"
@@ -449,7 +446,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_portal_projectile
 {
 	name "buildings/defense/tower_portal_projectile"
 

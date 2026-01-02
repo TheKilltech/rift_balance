@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // tower_plasma_lvl_3
 {
 	name "buildings/defense/tower_plasma_lvl_3"
 
@@ -13,14 +13,12 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_plasma"
 		menu_icon			"gui/hud/building_icons/tower_plasma_lvl3"
 		require 			"headquarters"
-		building_group		"tower_basic"
-		order				"14"
+		//building_group		"tower_plasma"
 		check_connect		"0"
 		buildable			"0"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		//upgrade				"buildings/defense/tower_plasma_lvl_4"
 
 		costs
 		{

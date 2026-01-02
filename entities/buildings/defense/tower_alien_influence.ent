@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // tower_alien_influence
 {
 	name "buildings/defense/tower_alien_influence"
 
@@ -12,6 +12,8 @@ EntityBlueprint
 		menu_icon				"gui/hud/building_icons/tower_alien_influence"
 		building_functionality	"BUILD_ON_WATER|NO_FOUNDATION"
 		require 				"headquarters"
+		building_group			"tower_basic"
+		buildable				"0"
 		order					"23"
 		type					"tower"
 		overrides				"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
@@ -55,11 +57,10 @@ EntityBlueprint
 		priority 6
 	}
 
-		PipeComponent
+	PipeComponent
 	{
 		
 	}
-
 
 	LuaDesc
 	{
@@ -469,7 +470,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_alien_influence/spawner
 {
 	name "buildings/defense/tower_alien_influence/spawner"
 
@@ -482,7 +483,7 @@ EntityBlueprint
 	}	
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_alien_influence/spikes
 {
 	name "buildings/defense/tower_alien_influence/spikes"
 
@@ -517,7 +518,7 @@ EntityBlueprint
 	}	
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_alien_influence/shield
 {
 	name  "buildings/defense/tower_alien_influence/shield"
 
