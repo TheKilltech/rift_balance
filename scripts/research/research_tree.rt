@@ -6368,203 +6368,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/ammo_explosive_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/tower_portal_lvl1"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0"
-							resource "cobalt"
-							count "750"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "download"
-							count "1000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "steel"
-							count "2500"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "-738"
-						y "36"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/defense/tower_portal"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/towers_portal_bomb"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/tower_portal_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/ammo_explosive_lvl3"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/tower_portal_lvl2"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0"
-							resource "cobalt"
-							count "2500"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "download"
-							count "2000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "steel"
-							count "5000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "-738"
-						y "333"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/defense/tower_portal_lvl_2"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/towers_portal_bomb"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/tower_portal_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/ammo_explosive_lvl4"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/tower_portal_lvl3"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0"
-							resource "alloys"
-							count "7500"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "cobalt"
-							count "5000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "download"
-							count "7000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "-738"
-						y "522"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/defense/tower_portal_lvl_3"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/towers_portal_bomb"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/towers_flamer_lvl1"
 							research_category "gui/menu/research/category_base_buildings"
 						}
@@ -28836,7 +28639,7 @@ Research
 					research_scripts
 					position
 					{
-						x "873"
+						x "891"
 						y "531"
 					}
 
@@ -29367,7 +29170,7 @@ Research
 					research_scripts
 					position
 					{
-						x "873"
+						x "891"
 						y "153"
 					}
 
@@ -29523,7 +29326,7 @@ Research
 
 					position
 					{
-						x "873"
+						x "891"
 						y "-288"
 					}
 
@@ -29952,7 +29755,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-819"
+						x "-855"
 						y "72"
 					}
 
@@ -30674,81 +30477,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/towers_shockwave_lvl1"
-							research_category "gui/menu/research/category_alien"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/ammo_liquid_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/crystalizer_tanzanite"
-							research_category "gui/menu/research/category_alien"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/towers_shockwave_lvl2"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0"
-							resource "analysis"
-							count "3000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "carbonium"
-							count "2000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "uranium"
-							count "500"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "1035"
-						y "-18"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/defense/tower_shockwave_lvl_2"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/towers_shockwave"
-				}
-
-				ResearchNode
-				{
-					research_flags "hidden"
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/mech_weapons_laser_standard"
 							research_category "gui/menu/research/category_alien"
 						}
@@ -30987,74 +30715,6 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/towers_shockwave_lvl2"
-							research_category "gui/menu/research/category_alien"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl3"
-							research_category "gui/menu/research/category_alien"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/towers_shockwave_lvl3"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0"
-							resource "analysis"
-							count "8000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "carbonium"
-							count "4000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "uranium"
-							count "1000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "1035"
-						y "441"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/defense/tower_shockwave_lvl_3"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/towers_shockwave"
-				}
-
-				ResearchNode
-				{
 					research_flags "hidden|hidden_requirements_visible"
 					requirement_tooltip
 					requirements
@@ -31219,7 +30879,7 @@ Research
 					research_scripts
 					position
 					{
-						x "963"
+						x "981"
 						y "531"
 					}
 
@@ -31294,7 +30954,7 @@ Research
 					research_scripts
 					position
 					{
-						x "963"
+						x "981"
 						y "315"
 					}
 
@@ -31437,8 +31097,8 @@ Research
 					research_scripts
 					position
 					{
-						x "963"
-						y "72"
+						x "981"
+						y "144"
 					}
 
 					research_awards
@@ -31525,8 +31185,8 @@ Research
 
 					position
 					{
-						x "1035"
-						y "-234"
+						x "1044"
+						y "-288"
 					}
 
 					research_awards
@@ -31586,7 +31246,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-819"
+						x "-855"
 						y "-396"
 					}
 
@@ -31869,7 +31529,7 @@ Research
 
 					position
 					{
-						x "909"
+						x "927"
 						y "-396"
 					}
 
@@ -32066,7 +31726,7 @@ Research
 					research_scripts
 					position
 					{
-						x "846"
+						x "864"
 						y "-72"
 					}
 
@@ -32271,7 +31931,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-819"
+						x "-855"
 						y "-153"
 					}
 
@@ -32872,7 +32532,7 @@ Research
 					research_scripts
 					position
 					{
-						x "873"
+						x "891"
 						y "396"
 					}
 
@@ -34071,7 +33731,7 @@ Research
 
 					position
 					{
-						x "963"
+						x "981"
 						y "-288"
 					}
 
@@ -35163,7 +34823,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1134"
+						x "-1170"
 						y "-342"
 					}
 
@@ -35244,7 +34904,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1134"
+						x "-1170"
 						y "72"
 					}
 
@@ -35319,7 +34979,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1134"
+						x "-1170"
 						y "315"
 					}
 
@@ -35373,7 +35033,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1170"
+						x "-1206"
 						y "-234"
 					}
 
@@ -35441,7 +35101,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1170"
+						x "-1206"
 						y "162"
 					}
 
@@ -35509,7 +35169,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1170"
+						x "-1206"
 						y "441"
 					}
 
@@ -35570,7 +35230,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1197"
+						x "-1233"
 						y "-288"
 					}
 
@@ -35669,7 +35329,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1197"
+						x "-1233"
 						y "108"
 					}
 
@@ -35768,7 +35428,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1197"
+						x "-1233"
 						y "351"
 					}
 
@@ -36064,7 +35724,7 @@ Research
 					research_scripts
 					position
 					{
-						x "990"
+						x "1008"
 						y "-234"
 					}
 
@@ -36132,7 +35792,7 @@ Research
 					research_scripts
 					position
 					{
-						x "990"
+						x "1008"
 						y "-72"
 					}
 
@@ -36207,8 +35867,8 @@ Research
 					research_scripts
 					position
 					{
-						x "990"
-						y "153"
+						x "1008"
+						y "198"
 					}
 
 					research_awards
@@ -36282,7 +35942,7 @@ Research
 					research_scripts
 					position
 					{
-						x "990"
+						x "1008"
 						y "396"
 					}
 
@@ -36343,7 +36003,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1296"
+						x "-1332"
 						y "-342"
 					}
 
@@ -36449,7 +36109,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1296"
+						x "-1332"
 						y "72"
 					}
 
@@ -36555,7 +36215,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1296"
+						x "-1332"
 						y "315"
 					}
 
@@ -37580,7 +37240,7 @@ Research
 					research_scripts
 					position
 					{
-						x "846"
+						x "864"
 						y "198"
 					}
 
@@ -37648,7 +37308,7 @@ Research
 					research_scripts
 					position
 					{
-						x "846"
+						x "864"
 						y "441"
 					}
 
@@ -37845,7 +37505,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-873"
+						x "-909"
 						y "-288"
 					}
 
@@ -37913,7 +37573,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-873"
+						x "-909"
 						y "-18"
 					}
 
@@ -38028,7 +37688,7 @@ Research
 
 					position
 					{
-						x "-918"
+						x "-954"
 						y "216"
 					}
 
@@ -38149,7 +37809,7 @@ Research
 
 					position
 					{
-						x "-963"
+						x "-999"
 						y "216"
 					}
 
@@ -38270,7 +37930,7 @@ Research
 
 					position
 					{
-						x "-1008"
+						x "-1044"
 						y "216"
 					}
 
@@ -38351,7 +38011,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-873"
+						x "-909"
 						y "216"
 					}
 
@@ -38466,7 +38126,7 @@ Research
 
 					position
 					{
-						x "-918"
+						x "-954"
 						y "-108"
 					}
 
@@ -39765,7 +39425,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-738"
+						x "-774"
 						y "-342"
 					}
 
@@ -39852,7 +39512,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-738"
+						x "-774"
 						y "-108"
 					}
 
@@ -39912,7 +39572,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1053"
+						x "-1089"
 						y "-288"
 					}
 
@@ -39979,7 +39639,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-783"
+						x "-819"
 						y "-342"
 					}
 
@@ -40047,7 +39707,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-783"
+						x "-819"
 						y "-63"
 					}
 
@@ -40115,7 +39775,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-783"
+						x "-819"
 						y "216"
 					}
 
@@ -40176,7 +39836,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1350"
+						x "-1386"
 						y "-342"
 					}
 
@@ -40270,7 +39930,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1350"
+						x "-1386"
 						y "72"
 					}
 
@@ -40364,7 +40024,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1350"
+						x "-1386"
 						y "315"
 					}
 
@@ -40430,7 +40090,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1458"
+						x "-1494"
 						y "-342"
 					}
 
@@ -40517,7 +40177,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1458"
+						x "-1494"
 						y "-108"
 					}
 
@@ -40592,7 +40252,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1458"
+						x "-1494"
 						y "315"
 					}
 
@@ -40660,7 +40320,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1503"
+						x "-1539"
 						y "-288"
 					}
 
@@ -40741,7 +40401,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1503"
+						x "-1539"
 						y "-18"
 					}
 
@@ -40809,7 +40469,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1503"
+						x "-1539"
 						y "369"
 					}
 
@@ -41725,7 +41385,7 @@ Research
 					research_scripts
 					position
 					{
-						x "819"
+						x "837"
 						y "-288"
 					}
 
@@ -41793,7 +41453,7 @@ Research
 					research_scripts
 					position
 					{
-						x "819"
+						x "837"
 						y "153"
 					}
 
@@ -41868,7 +41528,7 @@ Research
 					research_scripts
 					position
 					{
-						x "819"
+						x "837"
 						y "396"
 					}
 
@@ -41943,7 +41603,7 @@ Research
 					research_scripts
 					position
 					{
-						x "819"
+						x "837"
 						y "531"
 					}
 
@@ -41997,7 +41657,7 @@ Research
 					research_scripts
 					position
 					{
-						x "936"
+						x "954"
 						y "-234"
 					}
 
@@ -42065,7 +41725,7 @@ Research
 					research_scripts
 					position
 					{
-						x "936"
+						x "954"
 						y "-72"
 					}
 
@@ -42140,8 +41800,8 @@ Research
 					research_scripts
 					position
 					{
-						x "936"
-						y "153"
+						x "954"
+						y "198"
 					}
 
 					research_awards
@@ -42215,7 +41875,7 @@ Research
 					research_scripts
 					position
 					{
-						x "936"
+						x "954"
 						y "396"
 					}
 
@@ -42276,7 +41936,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1665"
+						x "-1701"
 						y "-153"
 					}
 
@@ -42337,7 +41997,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1665"
+						x "-1701"
 						y "-108"
 					}
 
@@ -42792,7 +42452,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1611"
+						x "-1647"
 						y "-153"
 					}
 
@@ -42853,7 +42513,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1611"
+						x "-1647"
 						y "-108"
 					}
 
@@ -43153,7 +42813,7 @@ Research
 					research_scripts
 					position
 					{
-						x "909"
+						x "927"
 						y "-153"
 					}
 
@@ -43228,7 +42888,7 @@ Research
 					research_scripts
 					position
 					{
-						x "909"
+						x "927"
 						y "72"
 					}
 
@@ -43296,7 +42956,7 @@ Research
 					research_scripts
 					position
 					{
-						x "909"
+						x "927"
 						y "315"
 					}
 
@@ -43814,7 +43474,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1098"
+						x "-1134"
 						y "-108"
 					}
 
@@ -43882,7 +43542,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1098"
+						x "-1134"
 						y "-18"
 					}
 
@@ -43950,7 +43610,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1053"
+						x "-1089"
 						y "-18"
 					}
 
@@ -44011,7 +43671,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-693"
+						x "-729"
 						y "-342"
 					}
 
@@ -44085,7 +43745,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-693"
+						x "-729"
 						y "-108"
 					}
 
@@ -44139,7 +43799,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1053"
+						x "-1089"
 						y "-108"
 					}
 
@@ -44200,7 +43860,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-918"
+						x "-954"
 						y "-18"
 					}
 
@@ -44268,7 +43928,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-918"
+						x "-954"
 						y "108"
 					}
 
@@ -44343,7 +44003,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1008"
+						x "-1044"
 						y "396"
 					}
 
@@ -44418,7 +44078,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1008"
+						x "-1044"
 						y "531"
 					}
 
@@ -44493,7 +44153,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-963"
+						x "-999"
 						y "396"
 					}
 
@@ -44568,7 +44228,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-963"
+						x "-999"
 						y "531"
 					}
 
@@ -44643,7 +44303,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-918"
+						x "-954"
 						y "396"
 					}
 
@@ -44718,7 +44378,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-918"
+						x "-954"
 						y "531"
 					}
 
@@ -45079,7 +44739,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1404"
+						x "-1440"
 						y "-288"
 					}
 
@@ -45147,7 +44807,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1404"
+						x "-1440"
 						y "72"
 					}
 
@@ -45208,7 +44868,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1404"
+						x "-1440"
 						y "315"
 					}
 
@@ -45559,7 +45219,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1539"
+						x "-1575"
 						y "-234"
 					}
 
@@ -45598,7 +45258,7 @@ Research
 
 					}
 
-					research_name "gui/menu/research/name/tower_ice_big_lvl2"
+					research_name "gui/menu/research/name/tower_ice_big_lvl_2"
 					research_costs
 					{
 						ResearchCost
@@ -45627,7 +45287,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1539"
+						x "-1575"
 						y "72"
 					}
 
@@ -45660,13 +45320,13 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/tower_ice_big_lvl2"
+							research_name "gui/menu/research/name/tower_ice_big_lvl_2"
 							research_category "gui/menu/research/category_alien"
 						}
 
 					}
 
-					research_name "gui/menu/research/name/tower_ice_big_lvl3"
+					research_name "gui/menu/research/name/tower_ice_big_lvl_3"
 					research_costs
 					{
 						ResearchCost
@@ -45695,7 +45355,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1539"
+						x "-1575"
 						y "441"
 					}
 
@@ -45771,6 +45431,510 @@ Research
 					}
 
 					icon "gui/menu/research/icons/towers_water_basic"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/reactive_substances_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/towers_shockwave_lvl1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_liquid_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_shockwave_acid"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "hazenite"
+							count "1000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-675"
+						y "-18"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_shockwave_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_shockwave"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/towers_shockwave_acid"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/reactive_substances_lvl_3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_shockwave_acid_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "6000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "8000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "hazenite"
+							count "3000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-675"
+						y "189"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_shockwave_acid_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_shockwave"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_liquid_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_ferdonite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/towers_shockwave_lvl1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_shockwave_cryo"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "ferdonite"
+							count "1000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "774"
+						y "-72"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_shockwave_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_shockwave"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/towers_shockwave_cryo"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_ferdonite_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_shockwave_cryo_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "6000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "8000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "ferdonite"
+							count "4000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "774"
+						y "198"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_shockwave_cryo_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_shockwave"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_explosive_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_handling_tanzanite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_portal_lvl1"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "cobalt"
+							count "750"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "1000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "2500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1080"
+						y "-234"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_portal"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_portal_bomb"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_explosive_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_portal_lvl1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_tanzanite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_portal_lvl2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "cobalt"
+							count "2500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "2000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "5000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1080"
+						y "-18"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_portal_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_portal_bomb"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_explosive_lvl4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_portal_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_tanzanite_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_portal_lvl3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "7500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "cobalt"
+							count "5000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "7000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1080"
+						y "198"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_portal_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_portal_bomb"
 				}
 
 			}
@@ -47322,6 +47486,6 @@ Research
 
 	type
 	editor "6643"
-	version "195"
+	version "196"
 }
 
