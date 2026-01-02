@@ -388,6 +388,22 @@ EntityBlueprint "effects/no_lifetime"		//spitter_fire
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//spitter_acid
+{
+	name "effects/weapon_items/spitter_acid"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/spitter.mesh"
+		material 	"items/weapons/spitter_acid_basic"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//spitter_ghost
 {
 	name "effects/weapon_items/spitter_ghost"
@@ -796,4 +812,54 @@ EntityBlueprint		// cannon_small_fire
 		name "items/weapons/fluid/lava_gun_fire"
 		//name "items/weapons/bullet/burst_rifle_fire"
 	}	
+}
+
+EntityBlueprint		// tower_shockwave_acid_blast
+{
+	name effects/weapons_explosive/tower_shockwave_acid_blast
+
+	base_blueprints
+	{
+		effects/weapons_elemental/hit
+		lights/point/explosion_green_big
+		effects/default
+	}
+
+	ShockWaveDesc
+	{
+		power 	"15000"
+		speed 	"30"
+		radius 	"20"
+	}
+
+	ParticleDesc
+	{
+		name    "rift/tower_shockwave_acid_fire"
+	}
+
+	CameraShakeDesc
+	{
+		duration 		"0.2"
+		power   		"0.5"
+		falloff_radius 	"25"
+		radius   		"40"
+		frequency 		"20"
+		group			"explosion_medium"
+	}
+
+	SoundDesc
+	{
+		name "items/weapons/explosive/tower_shockwave_blast"
+	}
+
+	DecalDesc
+	{	
+		blueprint "effects/decals/explosion_hole_random"
+		scale
+		{
+			x		4.0
+			y		4.0
+			z		4.0
+		}
+	}		
 }

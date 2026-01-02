@@ -16,6 +16,7 @@ EntityBlueprint  //resource_converter
 		require 			"headquarters"
 		//upgrade				"buildings/resources/resource_converter_cobalt_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{
@@ -459,7 +460,7 @@ EntityBlueprint  //resource_converter
 				}
 				Effect
 				{
-					blueprint "effects/buildings_main/rift_ball"
+					blueprint "effects/buildings_and_machines/spark_ball_blue"
 					bone "ball"
 				}
 			}
@@ -486,6 +487,7 @@ EntityBlueprint  //resource_converter_cobalt
 		require 			"headquarters"
 		//upgrade				"buildings/resources/resource_converter_cobalt_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{
@@ -524,7 +526,7 @@ EntityBlueprint  //resource_converter_cobalt
 			GameplayResource
 			{
 				resource 		"morphium"
-				value 			"200"
+				value 			"100"
 				attachment		"att_in_1"
 			}
 			
@@ -841,11 +843,11 @@ EntityBlueprint  //resource_converter_cobalt
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////		
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -860,7 +862,7 @@ EntityBlueprint  //resource_converter_cobalt
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -872,7 +874,7 @@ EntityBlueprint  //resource_converter_cobalt
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
@@ -930,13 +932,8 @@ EntityBlueprint  //resource_converter_cobalt
 				}
 				Effect
 				{
-					blueprint "effects/buildings_main/rift_ball"
+					blueprint "effects/buildings_and_machines/spark_ball_blue"
 					bone "ball"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/ionized_sphere"
-					bone "att_vismod_top"
 				}
 			}
 		}
@@ -1406,7 +1403,7 @@ EntityBlueprint  //resource_converter_palladium
 				}
 				Effect
 				{
-					blueprint "effects/buildings_main/rift_ball"
+					blueprint "effects/buildings_and_machines/spark_ball_orange"
 					bone "ball"
 				}
 			}
@@ -1433,6 +1430,7 @@ EntityBlueprint  //resource_converter_titanium
 		require 			"headquarters"
 		//upgrade				"buildings/resources/resource_converter_cobalt_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{
@@ -1819,7 +1817,7 @@ EntityBlueprint  //resource_converter_titanium
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
@@ -1877,7 +1875,7 @@ EntityBlueprint  //resource_converter_titanium
 				}
 				Effect
 				{
-					blueprint "effects/buildings_main/rift_ball"
+					blueprint "effects/buildings_and_machines/spark_ball_violet"
 					bone "ball"
 				}
 			}

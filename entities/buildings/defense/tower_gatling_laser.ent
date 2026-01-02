@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // tower_gatling_laser
 {
 	name "buildings/defense/tower_gatling_laser"
 
@@ -11,7 +11,9 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_gatling_laser"
 		menu_icon			"gui/hud/building_icons/tower_gatling_laser"
 		require 			"headquarters"
-		order				"32"
+		building_group		"tower_plasma"
+		buildable			"0"
+		//order				"32"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		upgrade				"buildings/defense/tower_gatling_laser_lvl_2"
@@ -494,7 +496,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_gatling_laser_projectile
 {
 	name "buildings/defense/tower_gatling_laser_projectile"
 
@@ -528,11 +530,6 @@ EntityBlueprint
 		}
 		visibility		"discovered"
 	}
-
-	//ParticleDesc
-	//{
-	//	name    "rift/mech_minigun_projectile"
-	//}
 
 	ProjectileAmmoComponent
 	{

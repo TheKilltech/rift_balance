@@ -1,0 +1,1340 @@
+EntityBlueprint  // planet_defense
+{
+	name  					"buildings/main/planet_defense"
+	//base_blueprint 			"buildings/main/planet_scanner"
+
+	BuildingDesc
+	{
+		name 				"planet_defense"
+		bp   				"buildings/main/planet_defense"
+		category 			"main"
+		localization_id		"gui/hud/building_name/planet_defense"
+		description			"gui/hud/building_description/planet_defense"
+		menu_icon			"gui/hud/building_icons/planet_scanner_lvl_2"
+		require 			"headquarters_lvl_2"
+		upgrade				"buildings/main/planet_defense_lvl_2"
+		order				"4"
+		//buildable			"1"
+		map_limit			"LOCAL"
+		limit_name			"planet_defense"
+		limit			    "1"
+		//mission_mode		"1"
+		menu_action			"planetary_scanner"
+		condition			"NOT_BIOME"
+		condition_value		"caverns"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"planet_defense_lvl_2,planet_defense_lvl_3"
+		hide_treasures 		"1"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 140
+				building_cost
+				{
+					carbonium 	"4000"
+					cobalt 		"2500"
+					ai			"5"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"2000"
+			}
+		}
+		
+		out
+		{
+		}
+		priority 2
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/main/planet_scanner_lvl_2.lua"
+
+		database
+		{
+			cone_effect				string:"build_cone_5x5"
+			cone_effect_sell		string:"sell_big"
+			radar_range				float:"180"
+			time_machine			int:"0"
+			rocket_radius 			float:"10"
+			rocket_height 			float:"100"
+			rocket_initial_height	float:"10"
+			rocket_bp				string:"buildings/defense/tower_hcm_rocket"
+			crosshair_bp			string:"effects/messages_and_markers/target_laser_marker"
+		}
+	}
+
+	InteractiveComponent 
+	{
+		slot 			"ACTIVATOR"
+		radius 			"6"
+		remove_entity 	 "0"
+		remove_component "0"
+		recreate_component "1"
+		priority			"1"
+	}
+
+	HealthDesc
+	{
+		max_health 					"2600"
+		health 						"2600"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 1
+		update_health_uniform 		"1"
+	
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health "90"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "90"
+			}
+			DestructionLevel
+			{
+				health "80"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "80_destroy"
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "80"
+			}
+			DestructionLevel
+			{
+				health "70"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "70"
+			}
+			DestructionLevel
+			{
+				health "60"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "60_destroy"
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "60"
+			}
+			DestructionLevel
+			{
+				health "50"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "50"
+			}
+			DestructionLevel
+			{
+				health "40"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "40_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "40"
+			}
+			DestructionLevel
+			{
+				health "30"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "30"
+			}
+			DestructionLevel
+			{
+				health "20"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "20_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "20"
+			}
+			DestructionLevel
+			{
+				health "10"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "10"
+			}
+			DestructionLevel
+			{
+				health "0"
+				destroy_state_change_effect_group "0_transition"
+				destroy_comp_delay "0.7"
+				destroy_comp_event "default"
+				destrucion_level_name "0"
+			}			
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/planet_scanner.mesh"
+		material "buildings/main/planet_scanner"
+	}
+
+	TypeDesc
+	{
+		type "building|main"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/main/planet_scanner"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "building_working"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsCapsuleShape
+					{
+						r "4.45"
+						half_height "2"
+
+						position 
+						{
+							x "0.0"
+							y "1.5"
+							z "0.0"
+						}
+
+						orientation
+						{
+							w "0.7"
+							x "0.0"
+							z "0.7"
+							y "0.0"
+						}
+					}	
+				}
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+   			PhysicsBoxShape
+   			{
+    				x	10
+    				y	10
+    				z	10
+   			}			
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color 
+		{
+			x "0.2"
+			y "0.2"
+			z "1"
+			w "1"
+		}
+		size
+		{
+			x "5"
+			y "5"
+		}
+					
+		visibility			"always"
+		layer_group			"common_buildings"
+	}
+
+	FogOfWarRevealerComponentDesc
+	{
+		radius "16"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	LootDesc
+	{
+		explosion_max_power 	"2000"
+		explosion_min_power 	"1000"	
+	}
+
+	DestroyDesc
+	{
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "generic_destroy"				
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"
+				}				
+			}
+			
+			Pair
+			{
+				key "80_destroy"				
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"			
+				}				
+			}
+			
+			Pair
+			{
+				key "60_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"			
+				}				
+			}
+			Pair
+			{
+				key "40_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"			
+				}				
+			}
+			Pair
+			{
+				key "20_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"			
+				}				
+			}			
+			Pair
+			{
+				key "default"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"5000"
+					//explosion_effect 		"effects/buildings_generic/explosion_building_big_01"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_very_large_parts_generic"			
+				}				
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"5000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"	
+					part_material 			"misc/building_parts_generic"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_very_large_parts_generic"
+					part_lifetime "3"	
+				}
+
+				key "quicksand"
+			}				
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	TowerDesc
+	{
+	}
+
+	TurretDesc
+	{
+		target "ground_unit_artillery|ground_unit_large|ground_unit_medium|ground_unit"
+		target_ignore "invisible"
+		speed "300"
+		aim_volume "SphericalAimVolume"
+		{
+			range_min "5"
+			range_max "800"
+			aiming_range "810"
+		}
+
+		aiming_cooldown "1"
+		aiming_target_time "2"
+		aiming_idle_angle "20"
+		pitch "att_target"
+		yaw "att_target"
+		check_target_visibility "0"
+		fog_of_war_filtering "1"
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_target"
+				recoil_bone  "att_target"
+				recoil_time   "0.35"
+				recoil_offset   "1.0"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "10"
+			submesh_idx "1"
+		}
+
+		ammo_blueprint 			"buildings/main/planetary_defense_projectile"
+		muzzle_flash_effect 	"effects/weapons_energy/plasma_gun_fire_red"
+
+		burst_column_angle 			"0"
+		burst_rate 					"0"
+		use_accuracy				"0"
+	}
+	
+	HealthDesc
+	{
+		max_health 					"2500"
+		health 						"2500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+	
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health "90"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "90"
+			}
+			DestructionLevel
+			{
+				health "80"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "80_destroy"
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "80"
+			}
+			DestructionLevel
+			{
+				health "70"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "70"
+			}
+			DestructionLevel
+			{
+				health "60"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "60_destroy"
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "60"
+			}
+			DestructionLevel
+			{
+				health "50"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "50"
+			}
+			DestructionLevel
+			{
+				health "40"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "40_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "40"
+			}
+			DestructionLevel
+			{
+				health "30"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "30"
+			}
+			DestructionLevel
+			{
+				health "20"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "20_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "20"
+			}
+			DestructionLevel
+			{
+				health "10"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "10"
+			}
+			DestructionLevel
+			{
+				health "0"
+				destroy_state_change_effect_group "0_transition"
+				destroy_comp_delay "0.7"
+				destroy_comp_event "default"
+				destrucion_level_name "0"
+			}			
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+		
+		//////////////////////////////// MISC /////////////////////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapon_items/heavy_plasma_gun"
+					bone "att_vismod_1"
+					orientation 0 0 0
+					offset 0 0.4 0
+					scale 1 0.8 0.8
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "target"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/mech/laser_pointer"
+					bone "att_target"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/planet_scanner_energy"
+					bone "att_antenna_5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_main/planet_scanner_working"
+					delay "0.5"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // planet_defense_lvl_2
+{
+	name  					"buildings/main/planet_defense_lvl_2"
+	base_blueprint 			"buildings/main/planet_defense"
+
+	BuildingDesc
+	{
+		name 				"planet_defense_lvl_2"
+		bp   				"buildings/main/planet_defense_lvl_2"
+		category 			"main"
+		localization_id		"gui/hud/building_name/planet_defense"
+		description			"gui/hud/building_description/planet_defense"
+		menu_icon			"gui/hud/building_icons/planet_scanner_lvl_3"
+		require 			"headquarters_lvl_2"
+		upgrade				"buildings/main/planet_defense_lvl_3"
+		buildable			"0"
+		map_limit			"LOCAL"
+		limit_name			"planet_defense"
+		limit			    "1"
+		//mission_mode		"1"
+		menu_action			"planetary_scanner"
+		condition			"NOT_BIOME"
+		condition_value		"caverns"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,planet_defense,planet_defense_lvl_3"
+		hide_treasures 		"1"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 160
+				building_cost
+				{
+					carbonium 	"4000"
+					palladium	"500"
+					alloys 		"1500"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"2000"
+			}
+			
+			GameplayResource
+			{
+				resource 			"plasma"
+				value			 	"100"
+				attachment			"att_in_1"
+				family				"charge"
+			}
+			
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				value			 	"25"
+				attachment			"att_in_1"
+				family				"charge"
+			}
+		}
+		
+		out
+		{
+		}
+		priority 2
+	}
+
+	TypeDesc
+	{
+		type "building|main"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "building_working"
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/main/planet_scanner_lvl_2.lua"
+
+		database
+		{
+			cone_effect				string:"build_cone_5x5"
+			cone_effect_sell		string:"sell_big"
+			radar_range				float:"180"
+			time_machine			int:"0"
+			rocket_radius 			float:"10"
+			rocket_height 			float:"100"
+			rocket_initial_height	float:"10"
+			rocket_bp				string:"buildings/defense/tower_hcm_rocket"
+			crosshair_bp			string:"effects/messages_and_markers/target_laser_marker"
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	TowerDesc
+	{
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_target"
+				recoil_bone  "att_target"
+				recoil_time   "0.35"
+				recoil_offset   "1.0"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "10"
+			submesh_idx "1"
+		}
+
+		ammo_blueprint 			"buildings/main/planetary_defense_projectile"
+		muzzle_flash_effect 	"effects/weapons_energy/plasma_gun_fire_red"
+
+		burst_column_angle 			"0"
+		burst_rate 					"0"
+		use_accuracy				"0"
+	}
+	
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		//////////////////////////////// MISC /////////////////////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapon_items/heavy_plasma_gun"
+					bone "att_vismod_1"
+					orientation 0 0 0
+					offset -0.6 0.4 0
+					scale 1.3 1 1
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/grenade_launcher"
+					bone "att_antenna_1"
+					orientation 90 0 0
+					offset 0 0 -4
+					scale 1.4 1.2 1.2
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/grenade_launcher"
+					bone "att_antenna_3"
+					orientation 90 180 0
+					offset 0 0 -4
+					scale 1.4 1.2 1.2
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "target"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/mech/laser_pointer"
+					bone "att_target"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/planet_scanner_energy"
+					bone "att_antenna_5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_main/planet_scanner_working"
+					delay "0.5"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // planet_defense_lvl_3
+{
+	name  					"buildings/main/planet_defense_lvl_3"
+	base_blueprint 			"buildings/main/planet_defense_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"planet_defense_lvl_3"
+		bp   				"buildings/main/planet_defense_lvl_3"
+		category 			"main"
+		localization_id		"gui/hud/building_name/planet_defense"
+		description			"gui/hud/building_description/planet_defense"
+		menu_icon			"gui/hud/building_icons/planet_scanner_lvl_4"
+		require 			"headquarters_lvl_2"
+		buildable			"0"
+		map_limit			"LOCAL"
+		limit_name			"planet_defense"
+		limit			    "1"
+		//mission_mode		"1"
+		menu_action			"planetary_scanner"
+		condition			"NOT_BIOME"
+		condition_value		"caverns"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,planet_scanner_lvl_2,planet_scanner_lvl_3"
+		hide_treasures 		"1"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 180
+				building_cost
+				{
+					carbonium 	"6000"
+					palladium	"1500"
+					alloys 		"2500"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"3000"
+			}
+			
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				value			 	"25"
+				attachment			"att_in_1"
+				family				"charge"
+			}
+		}
+		
+		out
+		{
+		}
+		priority 2
+	}
+
+	TypeDesc
+	{
+		type "building|main"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "building_working"
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/main/planet_scanner_lvl_2.lua"
+
+		database
+		{
+			cone_effect				string:"build_cone_5x5"
+			cone_effect_sell		string:"sell_big"
+			radar_range				float:"180"
+			time_machine			int:"0"
+			rocket_radius 			float:"10"
+			rocket_height 			float:"100"
+			rocket_initial_height	float:"10"
+			rocket_bp				string:"buildings/defense/tower_hcm_rocket"
+			crosshair_bp			string:"effects/messages_and_markers/target_laser_marker"
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	TowerDesc
+	{
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_target"
+				recoil_bone  "att_target"
+				recoil_time   "0.35"
+				recoil_offset   "1.0"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "10"
+			submesh_idx "1"
+		}
+
+		ammo_blueprint 			"buildings/main/planetary_defense_projectile"
+		muzzle_flash_effect 	"effects/weapons_energy/plasma_gun_fire_red"
+
+		burst_column_angle 			"0"
+		burst_rate 					"0"
+		use_accuracy				"0"
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		//////////////////////////////// MISC /////////////////////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapon_items/heavy_plasma_gun"
+					bone "att_vismod_1"
+					orientation 0 0 0
+					offset -0.6 0.4 0
+					scale 1.3 1 1
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/grenade_launcher"
+					bone "att_antenna_1"
+					orientation 90 0 0
+					offset 0 0 -4.3
+					scale 1.8 1.2 1.2
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/grenade_launcher"
+					bone "att_antenna_2"
+					orientation 90 90 0
+					offset 0 0 -4.3
+					scale 1.8 1.2 1.2
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/grenade_launcher"
+					bone "att_antenna_3"
+					orientation 90 180 0
+					offset 0 0 -4.3
+					scale 1.8 1.3 1.3
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/grenade_launcher"
+					bone "att_antenna_4"
+					orientation 90 -90 0
+					offset 0 0 -4.3
+					scale 1.8 1.3 1.3
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "target"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/mech/laser_pointer"
+					bone "att_target"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/light_blue_blinking"
+					bone "att_antenna_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/planet_scanner_energy"
+					bone "att_antenna_5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_main/planet_scanner_working"
+					delay "0.5"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_4"
+					bone "att_level"
+				}
+			}
+		}
+	}
+}
+
+
+
+EntityBlueprint  // planetary_defense_projectile
+{
+	name "buildings/main/planetary_defense_projectile"
+
+	MeshDesc
+	{
+		mesh		"meshes/projectiles/tower_portal_bomb.mesh"
+		material	"projectiles/laser_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/projectiles/tower_portal_bomb"
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "1"
+			y "1"
+			z "0"
+			w "1"
+		}
+		size
+		{
+			x "2"
+			y "2"
+		}
+
+		visibility			"radar"
+	}
+
+	VegetationBendingComponentDesc
+	{
+		bending_power	"5000.0"
+		bending_radius	"5.0"
+	}
+
+	EffectDesc
+	{
+		EffectGroup
+		{
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/projectiles_and_trails/tower_portal_bomb_projectile"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "items/skills/orbital_laser_beam"
+					bone "att_vismod_1"
+					orientation 0 90 0
+					scale 5 1 1
+					offset 0 1 0
+					delay 1.2
+				}
+			}
+		}
+	}
+
+	FlakAmmoComponent
+	{
+		explosion_effect 		"effects/weapons_explosive/tower_portal_bomb_explosion"
+		explosion_delay 		"1.5"
+
+		DamagePattern
+		{
+			area_damage_speed	"30"
+		}
+	}
+
+	LaserBeamComponent
+	{
+		range 					"50"
+
+		on_enemy_hit_effect 	"effects/items/orbital_laser"
+		on_world_hit_effect 	"effects/items/orbital_laser"
+		on_resisted_hit_effect 	"effects/items/orbital_laser"
+		hit_effect_direction	"up"
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|hitbox|shield"
+
+        damage_factor_max       "1"
+        damage_factor_increase  "1"
+        damage_factor_decrease  "1"
+        damage_max_beam_scale 	"1"
+		damage_max_beam_glow 	"1"
+	}
+	
+	LuaDesc
+	{
+		script "lua/items/skills/orbital_laser.lua"
+		
+		database
+		{
+			bp				string:"items/skills/orbital_laser_advanced"
+			delay 			float:"2"
+			crosshair_bp	string:"effects/messages_and_markers/danger_marker_blue"
+			crosshair_radius float:"8.4"
+			att				string:"be_body_upper"
+			stat_bp			string:"items/skills/orbital_laser_advanced"
+		}
+	}
+}

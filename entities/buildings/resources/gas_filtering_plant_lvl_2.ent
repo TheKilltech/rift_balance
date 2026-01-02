@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // gas_filtering_plant_lvl_2
 {
 	name  					"buildings/resources/gas_filtering_plant_lvl_2"
 	base_blueprint 			"buildings/resources/gas_filtering_plant"
@@ -16,7 +16,7 @@ EntityBlueprint
 		require 			"headquarters"
 		upgrade				"buildings/resources/gas_filtering_plant_lvl_3"	
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,gas_filtering_plant,gas_filtering_plant_lvl_3"
 				
 		costs
 		{
@@ -46,7 +46,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"rhodonite"
-				value 		"0.04"
+				value 		"0.1"
 			}
 			
 			GameplayResource

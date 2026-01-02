@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // fusion_powerplant_lvl_2
 {
 	name  					"buildings/energy/fusion_powerplant_lvl_2"
 	base_blueprint 			"buildings/energy/fusion_powerplant"
@@ -18,7 +18,7 @@ EntityBlueprint
 		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"1"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,fusion_powerplant,fusion_powerplant_lvl_3"
 		
 		costs
 		{
@@ -28,7 +28,7 @@ EntityBlueprint
 				building_time 300
 				building_cost
 				{
-					carbonium 	"10000"		
+					carbonium 	"10000"
 					steel 		"20000"
 					uranium		"2000"
 					titanium	"2000"
@@ -45,7 +45,7 @@ EntityBlueprint
 				building_time 150
 				building_cost
 				{
-					carbonium 	"2500"		
+					carbonium 	"2500"
 					steel 		"5000"
 					palladium	"100"
 					cobalt		"500"
@@ -61,7 +61,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"deuterium"
-				value 		"1.3"
+				value 		"6"
 				attachment	"att_in_1"
 				family		"fuel"
 			}

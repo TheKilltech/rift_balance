@@ -222,8 +222,30 @@ EntityBlueprint  // laboratory_lvl_2
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/ai_hub"
+					bone 	"att_vismod_5"
+					orientation 135 0 0
+					scale	1 1 1
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/hlab_base"
+					bone 	"att_vismod_3"
+					orientation 0 0 0
+					scale	0.7 0.7 0.7
+				}
+			}
+		}
+		EffectGroup
+		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
@@ -243,7 +265,7 @@ EntityBlueprint  // laboratory_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/level_2"
-					bone "att_level"
+					bone "att_level_a"
 				}
 			}
 		}		

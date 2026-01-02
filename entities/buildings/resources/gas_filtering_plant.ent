@@ -15,7 +15,7 @@ EntityBlueprint  // gas_filtering_plant
 		upgrade				"buildings/resources/gas_filtering_plant_lvl_2"	
 		order				"6"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,gas_filtering_plant_lvl_3,gas_filtering_plant_lvl_2"
 		
 		costs
 		{
@@ -26,7 +26,7 @@ EntityBlueprint  // gas_filtering_plant
 				building_cost
 				{
 					carbonium 	"200"
-					steel 		"200"		
+					steel 		"200"
 				}
 			}		
 		}

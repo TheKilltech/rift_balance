@@ -447,8 +447,15 @@ EntityBlueprint
 			enabled "1"
 			Effects
 			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/ai_hub"
+					bone 	"att_vismod_5"
+					orientation 135 0 0
+					scale	1 1 1
+				}
 			}
-		}		
+		}
 		EffectGroup
 		{
 			group "working"

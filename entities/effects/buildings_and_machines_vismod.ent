@@ -2749,7 +2749,7 @@ EntityBlueprint "effects/no_lifetime"		//hitech_small_clamp
 
 EntityBlueprint "effects/no_lifetime"		//arcws_ring
 {
-	name "effects/buildings_and_machines/arc_ring"
+	name "effects/buildings_and_machines/arcws_ring"
 	
 	IdDesc
 	{
@@ -3833,6 +3833,70 @@ EntityBlueprint "effects/no_lifetime"		// air_flickering
 											// lamp_light 
 											// lamp_light  _blue _cyan _green _orange _red _violet _yellow
 
+EntityBlueprint								// spark_ball_blue
+{
+	name "effects/buildings_and_machines/spark_ball_blue"
+
+	base_blueprints
+	{
+		 lights/point/fire_blue_small
+		 effects/no_lifetime
+	}
+
+	ParticleDesc
+	{
+		name    "rift/spark_ball_blue"
+	}	
+}
+
+EntityBlueprint								// spark_ball_violet
+{
+	name "effects/buildings_and_machines/spark_ball_violet"
+
+	base_blueprints
+	{
+		 lights/point/fire_violet_small
+		 effects/no_lifetime
+	}
+
+	ParticleDesc
+	{
+		name    "rift/spark_ball_violet"
+	}	
+}
+
+EntityBlueprint								// spark_ball_orange
+{
+	name "effects/buildings_and_machines/spark_ball_orange"
+
+	base_blueprints
+	{
+		 lights/point/fire_orange_small
+		 effects/no_lifetime
+	}
+
+	ParticleDesc
+	{
+		name    "rift/spark_ball_orange"
+	}	
+}
+
+EntityBlueprint								// spark_ball_green
+{
+	name "effects/buildings_and_machines/spark_ball_green"
+
+	base_blueprints
+	{
+		 lights/point/fire_green_small
+		 effects/no_lifetime
+	}
+
+	ParticleDesc
+	{
+		name    "rift/spark_ball_green"
+	}	
+}
+
 // effects/world
 
 EntityBlueprint "effects/no_lifetime"		//surface_water
@@ -3929,8 +3993,19 @@ EntityBlueprint "effects/no_lifetime"		//iron_vein_vl1
 	
 	MeshDesc
 	{
-		mesh 		"meshes/resources/resource_iron_very_large_01.mesh"
-		material 	"resources/resource_iron"
+		mesh 		"meshes/resources/resource_carbonium_very_large_03.mesh"
+		material 	"resources/resource_ammonium"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//ammonium_vein_vl3
+{
+	name effects/world/ammonium_vein_vl3
+	
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_carbonium_very_large_03.mesh"
+		material 	"resources/resource_ammonium"
 	}
 }
 

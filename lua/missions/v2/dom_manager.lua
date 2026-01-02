@@ -834,9 +834,18 @@ function dom_mananger:ResumeAttacks()
 end
 
 function dom_mananger:SetMaxDifficultyLevel( maxDifficultyLevel )
-	maxDifficultyLevel = Clamp( maxDifficultyLevel, 1, self.maxDifficultyLevel )
-
 	self:VerboseLog( "OnLuaGlobalEvent: changing max difficulty level" )
+	self:VerboseLog( "OnLuaGlobalEvent: target max difficulty level - " .. tostring( maxDifficultyLevel ) )
+	
+	local progressLimit = 9
+	if self.campaignProgressLevel or 10 <= 1.5 then
+		progressLimit = 7
+	elseif self.campaignProgressLevel or 10 <= 3.5 then
+		progressLimit = 8
+	end	
+	maxDifficultyLevel = Clamp( maxDifficultyLevel, 1, math.min( self.maxDifficultyLevel, progressLimit) )
+
+	self:VerboseLog( "OnLuaGlobalEvent: current campaign progress level - " .. tostring( self.campaignProgressLevel ).. " -> difficulty limit - ".. tostring( progressLimit ))
 	self:VerboseLog( "OnLuaGlobalEvent: current freezed difficulty level - " .. tostring( self.freezedDifficultyLevel ) )
 	self:VerboseLog( "OnLuaGlobalEvent: current difficulty level - " .. tostring( self.currentDifficultyLevel ) )
 
@@ -1623,6 +1632,8 @@ function dom_mananger:OnHqEnterAttackLogic( state )
 	self:VerboseLog("OnHqEnterAttackLogic" )
 
 	if ( self.prepAttacks == false ) then  -- late attack preperation as a workaround
+		self.data:SetFloat( "time_max", self:GetPrepareSpawnTime() )
+		
 		local borderSpawnPointGroupName = self.borderSpawnPointGroupNames[RandInt( 1,#self.borderSpawnPointGroupNames )]
 
 		self:VerboseLog("Border spawn point group :" .. borderSpawnPointGroupName )
@@ -1905,7 +1916,7 @@ function dom_mananger:SpawnPreparedWave( log, shouldAddtoSpawnedAttacks, prepare
 
 		local currentLogicFile = MissionService:ActivateMissionFlow( "", preparedWave.waveName, "default", self.data )
 		self:SpawnWaveIndicator( 45, preparedWave.spawnPointName, "effects/messages_and_markers/wave_marker" )
-
+		
 		if ( shouldAddtoSpawnedAttacks == true ) then
 			spawnedAttacks[#spawnedAttacks + 1] = currentLogicFile
 		end
@@ -1931,6 +1942,8 @@ function dom_mananger:SpawnWavesForDifficultyLevel( difficultyLevel, shouldAddto
 	local wavePool = {}
 	
 	if ((self.waveRepeated or 0) == 0) then -- attack preperation must be done only once
+		self.data:SetFloat( "time_max", self:GetPrepareSpawnTime() )
+		
 		if ( not shouldAddtoSpawnedAttacks or #self.preparedAttacks <= 0 ) then  -- late attack preparation
 			self.WaveRepeatState  = "streaming"
 			self.WaveStateMachine = self.spawner

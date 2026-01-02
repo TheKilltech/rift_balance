@@ -12,7 +12,7 @@ EntityBlueprint  // planet_scanner
 		menu_icon			"gui/hud/building_icons/planet_scanner"
 		order				"4"
 		require 			"headquarters"
-		upgrade				"buildings/main/planet_scanner_lvl_2"
+		//upgrade				"buildings/main/planet_scanner_lvl_2"
 		map_limit			"LOCAL"
 		limit_name			"planet_scanner"
 		limit			    "1"
@@ -474,19 +474,21 @@ EntityBlueprint  // planet_scanner_lvl_2
 		bp   				"buildings/main/planet_scanner_lvl_2"
 		category 			"main"
 		localization_id		"gui/hud/building_name/planet_defense"
-		description			"gui/hud/building_description/planet_defense"
-		menu_icon			"gui/hud/building_icons/planet_scanner_lvl_2"
-		require 			"headquarters"
+		description			"gui/hud/building_description/planet_defense_"
+		menu_icon			"gui/hud/building_icons/obsolete"
+		require 			"headquarters_lvl_2"
 		upgrade				"buildings/main/planet_scanner_lvl_3"
+		order				"4"
 		buildable			"0"
 		map_limit			"LOCAL"
-		limit_name			"planet_scanner"
+		limit_name			"planet_defense"
 		limit			    "1"
 		mission_mode		"1"
 		menu_action			"planetary_scanner"
 		condition			"NOT_BIOME"
 		condition_value		"caverns"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"planet_scanner_lvl_3,planet_scanner_lvl_3"
 		hide_treasures 		"1"
 
 		costs
@@ -522,16 +524,6 @@ EntityBlueprint  // planet_scanner_lvl_2
 		priority 2
 	}
 
-	TypeDesc
-	{
-		type "building|main"
-	}
-
-	AnimationGraphDesc
-	{
-		animation_graph_name "building_working"
-	}
-
 	LuaDesc
 	{
 		script "lua/buildings/main/planet_scanner_lvl_2.lua"
@@ -547,6 +539,109 @@ EntityBlueprint  // planet_scanner_lvl_2
 			rocket_initial_height	float:"10"
 			rocket_bp				string:"buildings/defense/tower_hcm_rocket"
 			crosshair_bp			string:"effects/messages_and_markers/target_laser_marker"
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"2600"
+		health 						"2600"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 1
+		update_health_uniform 		"1"
+	
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health "90"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "90"
+			}
+			DestructionLevel
+			{
+				health "80"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "80_destroy"
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "80"
+			}
+			DestructionLevel
+			{
+				health "70"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "70"
+			}
+			DestructionLevel
+			{
+				health "60"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "60_destroy"
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "60"
+			}
+			DestructionLevel
+			{
+				health "50"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "50"
+			}
+			DestructionLevel
+			{
+				health "40"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "40_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "40"
+			}
+			DestructionLevel
+			{
+				health "30"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "30"
+			}
+			DestructionLevel
+			{
+				health "20"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "20_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "20"
+			}
+			DestructionLevel
+			{
+				health "10"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "10"
+			}
+			DestructionLevel
+			{
+				health "0"
+				destroy_state_change_effect_group "0_transition"
+				destroy_comp_delay "0.7"
+				destroy_comp_event "default"
+				destrucion_level_name "0"
+			}			
 		}
 	}
 
@@ -566,8 +661,8 @@ EntityBlueprint  // planet_scanner_lvl_2
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "5"
-			range_max "500"
-			aiming_range "510"
+			range_max "800"
+			aiming_range "810"
 		}
 
 		aiming_cooldown "1"
@@ -813,19 +908,20 @@ EntityBlueprint  // planet_scanner_lvl_3
 		bp   				"buildings/main/planet_scanner_lvl_3"
 		category 			"main"
 		localization_id		"gui/hud/building_name/planet_defense"
-		description			"gui/hud/building_description/planet_defense"
-		menu_icon			"gui/hud/building_icons/planet_scanner_lvl_3"
-		require 			"headquarters"
+		description			"gui/hud/building_description/planet_defense_"
+		menu_icon			"gui/hud/building_icons/obsolete"
+		require 			"headquarters_lvl_2"
 		upgrade				"buildings/main/planet_scanner_lvl_4"
 		buildable			"0"
 		map_limit			"LOCAL"
-		limit_name			"planet_scanner"
+		limit_name			"planet_defense"
 		limit			    "1"
 		mission_mode		"1"
 		menu_action			"planetary_scanner"
 		condition			"NOT_BIOME"
 		condition_value		"caverns"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,planet_scanner_lvl_2,planet_scanner_lvl_4"
 		hide_treasures 		"1"
 
 		costs
@@ -875,16 +971,6 @@ EntityBlueprint  // planet_scanner_lvl_3
 		{
 		}
 		priority 2
-	}
-
-	TypeDesc
-	{
-		type "building|main"
-	}
-
-	AnimationGraphDesc
-	{
-		animation_graph_name "building_working"
 	}
 
 	LuaDesc
@@ -1081,18 +1167,19 @@ EntityBlueprint  // planet_scanner_lvl_4
 		bp   				"buildings/main/planet_scanner_lvl_4"
 		category 			"main"
 		localization_id		"gui/hud/building_name/planet_defense"
-		description			"gui/hud/building_description/planet_defense"
-		menu_icon			"gui/hud/building_icons/planet_scanner_lvl_4"
-		require 			"headquarters"
+		description			"gui/hud/building_description/planet_defense_"
+		menu_icon			"gui/hud/building_icons/obsolete"
+		require 			"headquarters_lvl_2"
 		buildable			"0"
 		map_limit			"LOCAL"
-		limit_name			"planet_scanner"
+		limit_name			"planet_defense"
 		limit			    "1"
 		mission_mode		"1"
 		menu_action			"planetary_scanner"
 		condition			"NOT_BIOME"
 		condition_value		"caverns"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,planet_scanner_lvl_2,planet_scanner_lvl_3"
 		hide_treasures 		"1"
 
 		costs
@@ -1134,16 +1221,6 @@ EntityBlueprint  // planet_scanner_lvl_4
 		{
 		}
 		priority 2
-	}
-
-	TypeDesc
-	{
-		type "building|main"
-	}
-
-	AnimationGraphDesc
-	{
-		animation_graph_name "building_working"
 	}
 
 	LuaDesc
