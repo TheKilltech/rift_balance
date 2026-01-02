@@ -132,6 +132,33 @@ EntityBlueprint  // tower_shockwave_lvl_3
 	{
 	}
 
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+				recoil_bone  "animation"
+				recoil_time   "1.00"
+				recoil_offset   "3.5"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "10" // "60"
+			submesh_idx "0"
+		}
+
+		ammo_blueprint 				"buildings/defense/tower_shockwave_acid_projectile"
+
+		burst_column_spacing 		"0"
+		burst_rate 					"0"
+		burst_column_angle 			"0"
+	}
+	
 	EffectDesc
 	{		
 		EffectBaseBlueprints
@@ -377,4 +404,26 @@ EntityBlueprint  // tower_shockwave_acid_lvl_3
 			}
 		}
 	}
+}
+
+
+EntityBlueprint  // tower_shockwave_acid_projectile
+{
+	name "buildings/defense/tower_shockwave_acid_projectile"
+	
+	BombAmmoComponent
+	{			
+		explosion_effect 		"effects/weapons_explosive/tower_shockwave_acid_blast"
+
+		DamagePattern
+		{
+			area_damage_speed 		"30"
+		}
+	}	
+
+	LifeTimeDesc
+	{
+		time 		2
+		//type 		"camera"
+	}	
 }
