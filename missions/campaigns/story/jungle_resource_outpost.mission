@@ -523,6 +523,17 @@ MissionDef
             min_resources   "16000"
             max_resources   "34000"
 
+            min_spawned_volumes "4"
+            max_spawned_volumes "6"
+        }
+		
+        ResourceVolume
+        {
+            resource        "ammonium_deepvein"
+			required_discovery_lvl	"1"
+
+            is_infinite        "1"
+
             min_spawned_volumes "3"
             max_spawned_volumes "5"
         }
