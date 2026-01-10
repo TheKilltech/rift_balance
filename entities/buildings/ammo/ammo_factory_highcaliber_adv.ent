@@ -1,6 +1,6 @@
 EntityBlueprint  // ammo_factory_highcaliber_adv
 {
-	name  					"buildings/ammo/ammo_factory_highcaliber_adv"	
+	name  					"buildings/ammo/ammo_factory_highcaliber_adv"
 	
 	BuildingDesc
 	{
@@ -14,7 +14,7 @@ EntityBlueprint  // ammo_factory_highcaliber_adv
 		require 				"headquarters"
 		order					"31"	
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"ammo_factory_highcaliber_adv_lvl_2,ammo_factory_highcaliber_adv_uranium"
+		overrides				"ammo_factory_highcaliber_adv,ammo_factory_highcaliber_adv_lvl_2,ammo_factory_highcaliber_adv_molt,ammo_factory_highcaliber_adv_molt_lvl_2,ammo_factory_highcaliber_adv_uranium,ammo_factory_highcaliber_adv_uranium_molt"
 
 		costs
 		{
@@ -50,7 +50,7 @@ EntityBlueprint  // ammo_factory_highcaliber_adv
 			GameplayResource
 			{
 				resource 			"ammo_tower_high_caliber"
-				value				"0.6"
+				value				"0.4"
 			}
 			
 			GameplayResource
@@ -66,13 +66,13 @@ EntityBlueprint  // ammo_factory_highcaliber_adv
 			GameplayResource
 			{
 				resource 			"ammo_tower_high_caliber_lvl2"
-				value				"0.6"
+				value				"0.4"
 			}		
 			
 			GameplayResource
 			{
 				resource 			"ammo_mech_high_caliber_lvl2"
-				value				"0.6"
+				value				"0.4"
 				optional			"1"
 			}		
 		}
@@ -365,7 +365,7 @@ EntityBlueprint  // ammo_factory_highcaliber_adv
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
@@ -375,40 +375,40 @@ EntityBlueprint  // ammo_factory_highcaliber_adv
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_furnace_1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
 					bone "att_furnace_2"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
 					bone "att_furnace_3"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
 					bone "att_furnace_4"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"								
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
 					bone "att_furnace_5"
 				}				
 				Effect
 				{
-					blueprint "effects/buildings_resources/steel_factory_working"	
-					delay "0.5"					
+					blueprint "effects/buildings_resources/steel_factory_working"
+					delay "0.5"
 				}	
 			}
 		}		
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "0"
 			Effects
 			{
 				Effect
@@ -446,7 +446,7 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_lvl_2
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 30
+				building_time 40
 				building_cost
 				{
 					carbonium 	"200"
@@ -475,7 +475,7 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_lvl_2
 			GameplayResource
 			{
 				resource 			"ammo_tower_high_caliber"
-				value				"1.2"
+				value				"0.8"
 			}
 			
 			GameplayResource
@@ -487,7 +487,7 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_lvl_2
 			GameplayResource
 			{
 				resource 			"nitric_acid"
-				value 				"5"
+				value 				"10"
 				attachment			"att_in_1"
 				family				"main"
 			}
@@ -498,17 +498,17 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_lvl_2
 			GameplayResource
 			{
 				resource 			"ammo_tower_high_caliber_lvl2"
-				value				"1.2"
+				value				"0.8"
 			}		
 			
 			GameplayResource
 			{
 				resource 			"ammo_mech_high_caliber_lvl2"
-				value				"1.2"
+				value				"0.8"
 				optional			"1"
 			}		
 		}
-		priority 5		
+		priority 5
 	}
 
 	HealthDesc
@@ -663,6 +663,502 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_lvl_2
 	}
 }
 
+EntityBlueprint  // ammo_factory_highcaliber_adv_molt
+{
+	name			"buildings/ammo/ammo_factory_highcaliber_adv_molt"
+	base_blueprint	"buildings/ammo/ammo_factory_highcaliber_adv"
+	
+	BuildingDesc
+	{
+		name 					"ammo_factory_highcaliber_adv_molt"
+		bp   					"buildings/ammo/ammo_factory_highcaliber_adv_molt"
+		category 				"ammo"
+		localization_id			"gui/hud/building_name/ammo_factory_highcaliber_adv_molt"
+		description				"gui/hud/building_description/ammo_factory_highcaliber_adv_molt"
+		menu_icon				"gui/hud/building_icons/ammo_factory_highcaliber_adv_molt"
+		upgrade					"buildings/ammo/ammo_factory_highcaliber_adv_molt_lvl_2"
+		require 				"headquarters"
+		order					"31"
+		buildable				"0"
+		building_group			"ammo_factory_highcaliber_adv"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_highcaliber_adv,ammo_factory_highcaliber_adv_uranium"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 35
+				building_cost
+				{
+					carbonium 	"200"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"200"
+			}
+			
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value				"2.0"
+			}
+			
+			GameplayResource
+			{
+				resource 			"hazenite"
+				value				"1.5"
+			}
+			
+			GameplayResource
+			{
+				resource 			"magma_metal"
+				value 				"40"
+				attachment			"att_in_2"
+				family				"metal"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"ammo_tower_high_caliber_lvl2"
+				value				"0.8"
+			}		
+			
+			GameplayResource
+			{
+				resource 			"ammo_mech_high_caliber_lvl2"
+				value				"0.8"
+				optional			"1"
+			}		
+		}
+		priority 5		
+	}
+
+	HealthDesc
+	{
+		max_health 					"1800"
+		health 						"1800"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_effect_group 		"0_state"
+			}			
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
+					bone "att_furnace_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_furnace_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_furnace_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_furnace_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_furnace_5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/steel_factory_working"
+					delay "0.5"
+				}	
+			}
+		}	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone		"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/furnace"
+					bone		"att_vismod_4"
+					scale		0.72 0.8 0.72
+					orientation	90 0 0
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // ammo_factory_highcaliber_adv_molt_lvl_2
+{
+	name			"buildings/ammo/ammo_factory_highcaliber_adv_molt_lvl_2"
+	base_blueprint	"buildings/ammo/ammo_factory_highcaliber_adv_molt"
+	
+	BuildingDesc
+	{
+		name 					"ammo_factory_highcaliber_adv_molt_lvl_2"
+		bp   					"buildings/ammo/ammo_factory_highcaliber_adv_molt_lvl_2"
+		category 				"ammo"
+		localization_id			"gui/hud/building_name/ammo_factory_highcaliber_adv_molt"
+		description				"gui/hud/building_description/ammo_factory_highcaliber_adv_molt"
+		menu_icon				"gui/hud/building_icons/ammo_factory_highcaliber_adv_molt_lvl_2"
+		//upgrade					"buildings/ammo/ammo_factory_highcaliber_adv_uranium_molt"
+		require 				"headquarters"
+		order					"31"
+		buildable				"0"
+		building_group			"ammo_factory_highcaliber_adv"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_highcaliber_adv,ammo_factory_highcaliber_adv_uranium"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 45
+				building_cost
+				{
+					carbonium 	"500"
+					steel 		"2800"
+					ai			"1"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"220"
+			}
+			
+			GameplayResource
+			{
+				resource 			"hazenite"
+				value				"1.5"
+			}
+			
+			GameplayResource
+			{
+				resource 			"magma_metal"
+				value 				"30"
+				attachment			"att_in_2"
+				family				"metal"
+			}
+
+			GameplayResource
+			{
+				resource 			"nitric_acid"
+				value 				"15"
+				attachment			"att_in_1"
+				family				"main"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"ammo_tower_high_caliber_lvl2"
+				value				"1.2"
+			}		
+			
+			GameplayResource
+			{
+				resource 			"ammo_mech_high_caliber_lvl2"
+				value				"1.2"
+				optional			"1"
+			}		
+		}
+		priority 5
+	}
+
+	HealthDesc
+	{
+		max_health 					"2200"
+		health 						"2200"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_effect_group 		"0_state"
+			}			
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
+					bone "att_furnace_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_furnace_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_furnace_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_furnace_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_furnace_5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/steel_factory_working"
+					delay "0.5"
+				}	
+			}
+		}	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone		"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone		"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/furnace"
+					bone		"att_vismod_4"
+					scale		0.72 0.8 0.72
+					orientation	90 0 0
+				}
+			}
+		}
+	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/level_2"
+					bone		"att_level"
+				}
+			}
+		}		
+	}
+}
+
 EntityBlueprint  // ammo_factory_highcaliber_adv_uranium
 {
 	name			"buildings/ammo/ammo_factory_highcaliber_adv_uranium"
@@ -676,9 +1172,9 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_uranium
 		localization_id			"gui/hud/building_name/ammo_factory_highcaliber_adv"
 		description				"gui/hud/building_description/ammo_factory_highcaliber_adv"
 		menu_icon				"gui/hud/building_icons/ammo_factory_highcaliber_adv_uranium"
-		//upgrade					"buildings/ammo/ammo_factory_highcaliber_adv_lvl_3"
+		upgrade					"buildings/ammo/ammo_factory_highcaliber_adv_molt_uranium"
 		require 				"headquarters"
-		order					"31"	
+		order					"31"
 		buildable				"0"
 		building_group			"ammo_factory_highcaliber_adv"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
@@ -689,7 +1185,7 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_uranium
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 30
+				building_time 40
 				building_cost
 				{
 					carbonium 	"200"
@@ -731,7 +1227,7 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_uranium
 			GameplayResource
 			{
 				resource 			"nitric_acid"
-				value 				"5"
+				value 				"10"
 				attachment			"att_in_1"
 				family				"main"
 			}
@@ -820,11 +1316,11 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_uranium
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////	
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -841,7 +1337,283 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_uranium
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
+					bone "att_furnace_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_furnace_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_furnace_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_furnace_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_furnace_5"
+				}				
+				Effect
+				{
+					blueprint "effects/buildings_resources/steel_factory_working"
+					delay "0.5"
+				}	
+			}
+		}	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/floating_mines_green"
+					bone 	"att_vismod_2"
+					orientation 0 0 180
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/floating_mines_green"
+					bone 	"att_vismod_1"
+					scale	1.0 1.0 1.0
+					orientation 0 0 180 
+				}
+			}
+		}
+	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/level_2"
+					bone		"att_level"
+				}
+			}
+		}		
+	}
+}
+
+EntityBlueprint  // ammo_factory_highcaliber_adv_uranium_molt
+{
+	name			"buildings/ammo/ammo_factory_highcaliber_adv_uranium_molt"
+	base_blueprint	"buildings/ammo/ammo_factory_highcaliber_adv_uranium"
+	
+	BuildingDesc
+	{
+		name 					"ammo_factory_highcaliber_adv_uranium_molt"
+		bp   					"buildings/ammo/ammo_factory_highcaliber_adv_uranium_molt"
+		category 				"ammo"
+		localization_id			"gui/hud/building_name/ammo_factory_highcaliber_adv_molt_uranium"
+		description				"gui/hud/building_description/ammo_factory_highcaliber_adv_molt_uranium"
+		menu_icon				"gui/hud/building_icons/ammo_factory_highcaliber_adv_molt_uranium"
+		require 				"headquarters"
+		order					"31"
+		buildable				"0"
+		building_group			"ammo_factory_highcaliber_adv"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_highcaliber_adv,ammo_factory_highcaliber_adv_lvl_2"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 50
+				building_cost
+				{
+					steel 		"1000"
+					uranium		"500"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"250"
+			}
+			GameplayResource
+			{
+				resource 			"uranium_depleted"
+				value				"3"
+			}
+			
+			GameplayResource
+			{
+				resource 			"hazenite"
+				value				"1.5"
+			}
+			
+			GameplayResource
+			{
+				resource 			"magma_metal"
+				value 				"20"
+				attachment			"att_in_2"
+				family				"metal"
+			}
+
+			GameplayResource
+			{
+				resource 			"nitric_acid"
+				value 				"15"
+				attachment			"att_in_1"
+				family				"main"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"ammo_tower_high_caliber_lvl2"
+				value				"1.6"
+			}		
+			
+			GameplayResource
+			{
+				resource 			"ammo_mech_high_caliber_lvl2"
+				value				"1.6"
+				optional			"1"
+			}		
+		}
+		priority 5
+	}
+
+	HealthDesc
+	{
+		max_health 					"2200"
+		health 						"2200"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_effect_group 		"0_state"
+			}			
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////	
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
 			
 			Effects
 			{
@@ -891,7 +1663,7 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_uranium
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_1_pipe"
+					bone 	"att_in_2_pipe"
 				}
 				Effect
 				{
@@ -906,6 +1678,13 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_uranium
 					scale	1.0 1.0 1.0
 					orientation 0 0 180 
 				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/furnace"
+					bone		"att_vismod_4"
+					scale		0.72 0.8 0.72
+					orientation	90 0 0
+				}
 			}
 		}
 	
@@ -917,7 +1696,7 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_uranium
 			{
 				Effect
 				{
-					blueprint	"effects/buildings_and_machines/level_2"
+					blueprint	"effects/buildings_and_machines/level_3"
 					bone		"att_level"
 				}
 			}
