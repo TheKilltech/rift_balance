@@ -7858,6 +7858,12 @@ Research
 
 						ResearchAward
 						{
+							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_molt"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/main/armory_lvl_2"
 							is_visible "1"
 						}
@@ -13939,6 +13945,18 @@ Research
 
 						ResearchAward
 						{
+							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_molt_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_molt_uranium"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_uranium"
 							is_visible "1"
 						}
@@ -15317,7 +15335,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -47486,6 +47504,6 @@ Research
 
 	type
 	editor "6643"
-	version "196"
+	version "197"
 }
 
