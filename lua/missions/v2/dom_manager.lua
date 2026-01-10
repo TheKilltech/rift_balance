@@ -851,22 +851,22 @@ function dom_mananger:SetMaxDifficultyLevel( maxDifficultyLevel )
 
 	self.freezedDifficultyLevel = maxDifficultyLevel
 
-	self:VerboseLog( "OnLuaGlobalEvent : changed freezed difficulty level - " .. tostring( self.freezedDifficultyLevel ) )
+	self:VerboseLog( "OnLuaGlobalEvent: changed freezed difficulty level - " .. tostring( self.freezedDifficultyLevel ) )
 
 	if ( self.currentDifficultyLevel > self.freezedDifficultyLevel ) then
-		self:VerboseLog("OnLuaGlobalEvent : current difficulty level is higher than freezed one." )
+		self:VerboseLog("OnLuaGlobalEvent: current difficulty level is higher than freezed one." )
 
 		self.currentDifficultyLevel = self.freezedDifficultyLevel
 
-		self:VerboseLog("OnLuaGlobalEvent : current difficulty level is - " .. tostring( self.currentDifficultyLevel ) )
+		self:VerboseLog("OnLuaGlobalEvent: current difficulty level is - " .. tostring( self.currentDifficultyLevel ) )
 	end
 
 	if ( self.currentEventLevel > self.freezedDifficultyLevel ) then
-		self:VerboseLog("OnLuaGlobalEvent : current event level is higher than freezed one." )
+		self:VerboseLog("OnLuaGlobalEvent: current event level is higher than freezed one." )
 
 		self.currentEventLevel = self.freezedDifficultyLevel
 
-		self:VerboseLog("OnLuaGlobalEvent : current event level is - " .. tostring( self.currentEventLevel ) )
+		self:VerboseLog("OnLuaGlobalEvent: current event level is - " .. tostring( self.currentEventLevel ) )
 	end
 end
 

@@ -1,7 +1,6 @@
-EntityBlueprint
+EntityBlueprint  // headquarters_lvl_4
 {
 	name  					"buildings/main/headquarters_lvl_4"
-
 	base_blueprint 			"buildings/main/headquarters_lvl_3"
 
 	BuildingDesc
@@ -59,6 +58,52 @@ EntityBlueprint
 		}
 	}
 
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "energy"
+				max 	 "2200"
+				distribution_radius	"2"
+			}
+			
+			Storage
+			{
+				group		"global"
+				subgroup	"base"
+				max			"1000"
+			}
+
+			Storage
+			{
+				resource	"ammo_tower_explosive"
+				max			"1"
+			}
+			Storage
+			{
+				resource	"ammo_tower_liquid"
+				max			"1"
+			}
+			Storage
+			{
+				resource	"ammo_tower_low_caliber"
+				max			"1"
+			}
+			Storage
+			{
+				resource	"ammo_tower_high_caliber"
+				max			"1"
+			}
+			Storage
+			{
+				resource	"ai"
+				max			"40"
+			}
+		}
+	}
+	
 	LuaDesc
 	{
 		script "lua/buildings/main/headquarters.lua"

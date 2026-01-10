@@ -1,7 +1,6 @@
-EntityBlueprint
+EntityBlueprint  // headquarters_lvl_6
 {
 	name  					"buildings/main/headquarters_lvl_6"
-
 	base_blueprint 			"buildings/main/headquarters_lvl_5"
 
 	BuildingDesc
@@ -72,35 +71,35 @@ EntityBlueprint
 			
 			Storage
 			{
-				group	 		"global"
-				subgroup		"base"
-				max 	 		"50"
+				group		"global"
+				subgroup	"base"
+				max			"1000"
 			}
 
 			Storage
 			{
-				resource	 "ammo_tower_explosive"
-				max 	 	"1"
+				resource	"ammo_tower_explosive"
+				max			"1"
 			}
 			Storage
 			{
-				resource	 "ammo_tower_liquid"
-				max 	 	"1"
+				resource	"ammo_tower_liquid"
+				max			"1"
 			}
 			Storage
 			{
-				resource	 "ammo_tower_low_caliber"
-				max 	 	"1"
+				resource	"ammo_tower_low_caliber"
+				max			"1"
 			}
 			Storage
 			{
-				resource	 "ammo_tower_high_caliber"
-				max 	 	"1"
+				resource	"ammo_tower_high_caliber"
+				max			"1"
 			}
 			Storage
 			{
 				resource	"ai"
-				max			"60"
+				max			"66"
 			}
 		}
 	}

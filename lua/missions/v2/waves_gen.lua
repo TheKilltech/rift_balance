@@ -214,9 +214,11 @@ function wave_gen:PrepareDefaultRules(rules, missionType, difficulty, params)
 	-- difficulty:  { "easy", "default", "hard", "brutal" }
 	
 	rules.params = params or {}
+	if not rules.params.rulesPosfix	then rules.params.rulesPosfix = difficulty or DifficultyService:GetWaveStrength() end
 	if not rules.params.difficulty	then rules.params.difficulty  = difficulty or DifficultyService:GetCurrentDifficultyName() end
 	if not rules.params.threat		then rules.params.threat      = 10 end
 	if not rules.params.missionType	then rules.params.missionType = missionType or "temp" end
+	if rules.params.difficulty == "custom"	then rules.params.difficulty  = DifficultyService:GetWaveStrength() end
 	
 	missionType = rules.params.missionType
 	difficulty  = rules.params.difficulty
@@ -292,7 +294,7 @@ function wave_gen:DefaultWaveDiffSettings( biome, missionType)
 end
 
 function wave_gen:Default_Waves(biome, missionType, difficulty,  waves)
-	if difficulty == nil   then default = "default" end
+	if difficulty == nil or difficulty == "custom" then difficulty = DifficultyService:GetWaveStrength() end
 	if waves == nil        then waves = {["default"] = wave_gen:EmptyWaves( false )} end
 	local ds = wave_gen:DefaultWaveDiffSettings( biome, missionType)
 	
@@ -370,7 +372,7 @@ function wave_gen:Default_Waves(biome, missionType, difficulty,  waves)
 end
 
 function wave_gen:Default_ExtraWaves(biome, missionType, difficulty,  waves)
-	if difficulty == nil then default = "default" end
+	if difficulty == nil or difficulty == "custom" then difficulty = DifficultyService:GetWaveStrength() end
 	if waves == nil      then waves = wave_gen:EmptyWaves( false ) end
 	local ds = wave_gen:DefaultWaveDiffSettings( biome, missionType)
 
@@ -426,7 +428,7 @@ function wave_gen:Default_ExtraWaves(biome, missionType, difficulty,  waves)
 end
 
 function wave_gen:Default_MpWaves(biome, missionType, difficulty,  waves)
-	if difficulty == nil then default = "default" end
+	if difficulty == nil or difficulty == "custom" then difficulty = DifficultyService:GetWaveStrength() end
 	if waves == nil      then waves = wave_gen:EmptyWaves( true ) end
 	local ds = wave_gen:DefaultWaveDiffSettings( biome, missionType)
 	
@@ -486,7 +488,7 @@ function wave_gen:Default_MpWaves(biome, missionType, difficulty,  waves)
 end
 
 function wave_gen:Default_Bosses(biome, missionType, difficulty,  waves)
-	if difficulty == nil then default = "default" end
+	if difficulty == nil or difficulty == "custom" then difficulty = DifficultyService:GetWaveStrength() end
 	if waves == nil      then waves = wave_gen:EmptyWaves( false ) end
 	local ds = wave_gen:DefaultWaveDiffSettings( biome, missionType)
 
