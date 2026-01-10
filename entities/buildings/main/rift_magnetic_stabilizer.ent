@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // rift_magnetic_stabilizer
 {
 	name  "buildings/main/rift_magnetic_stabilizer"
 
@@ -6,19 +6,19 @@ EntityBlueprint
 	{
 		name 				"rift_magnetic_stabilizer"
 		bp   				"buildings/main/rift_magnetic_stabilizer"
-		category 			"main"
+		category 			"resources"
 		type				"pipe"
-		localization_id		"gui/hud/building_name/rift_magnetic_stabilizer"
-		description			"gui/hud/building_description/rift_magnetic_stabilizer"
+		localization_id		"gui/hud/building_name/magnetic_stabilizer"
+		description			"gui/hud/building_description/magnetic_stabilizer"
 		menu_icon			"gui/hud/building_icons/rift_magnetic_stabilizer"
 		require 			"headquarters"
 		//upgrade				"buildings/main/rift_magnetic_stabilizer_lvl_2"
-		order				"7"
+		order				"40"
 		min_radius_effect   "voice_over/announcement/magnetic_stabilizer_too_close"
 		radius_name			"magnetic_stabilizer"
 		min_radius			"30"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,rift_magnetic_stabilizer,rift_magnetic_stabilizer_alien"
 		is_shortcut_bindable	"0"
 		hide_treasures 		"1"
 		
@@ -45,50 +45,36 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				resource 			"energy"
-				value			 	"50"
+				resource 		"energy"
+				value			"500"
 			}
 
 			GameplayResource
 			{
-				resource 	"water"
-				value 		"25"
-				attachment	"att_in_1"
-				family		"coolant"
-			}				
-			GameplayResource
-			{
-				resource 	"supercoolant"
-				value 		"25"
-				attachment	"att_in_1"
-				family		"coolant"				
+				resource 		"supercoolant"
+				value 			"50"
+				attachment		"att_in_1"
+				family			"coolant"
 			}
 		}
-
-		//out
-		//{
-		//	GameplayResource
-		//	{
-		//		resource 			"download"
-		//		value			 	"3"
-		//	}
-		//}
 		priority 8
 	}
 
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
+		script "lua/buildings/buff_source.lua"
 
 		database
 		{
-			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell	string:"sell_big"
-			radius				float:"35"
-			range				float:"35"
-			
-			display_radius_blueprint string:"effects/decals/range_circle_repair"
-			display_radius_group	 string:"magnetic_stabilizer"			
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
+			radius						float:"35"
+			range						float:"35"
+			buff_modificator			float:"1.25"
+			buff_source_name			string:"magnetic_stabilizer"
+			buff_source_level			int:"1"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+			display_radius_group		string:"magnetic_stabilizer"
 		}
 	}
 
