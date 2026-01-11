@@ -51,8 +51,8 @@ EntityBlueprint  // rift_magnetic_stabilizer
 
 			GameplayResource
 			{
-				resource 		"supercoolant"
-				value 			"50"
+				resource 		"plasma_charged"
+				value 			"25"
 				attachment		"att_in_1"
 				family			"coolant"
 			}
@@ -392,5 +392,21 @@ EntityBlueprint  // rift_magnetic_stabilizer
 				}	
 			}
 		}	
+	}
+}
+
+
+EntityBlueprint "effects/no_lifetime"  // magnetic_stabilizer_missing_icon
+{
+	name  "buildings/resources/magnetic_stabilizer_missing_icon"
+
+	IdDesc
+	{
+		name "##buff##"
+	}
+	
+	ParticleDesc
+	{
+		name    "rift/missing_magnetic_stabilizer_icon"
 	}
 }

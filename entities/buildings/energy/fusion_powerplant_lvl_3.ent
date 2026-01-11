@@ -109,6 +109,24 @@ EntityBlueprint  // fusion_powerplant_lvl_3
 		}
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/building_buffable.lua"
+				
+		database
+		{
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/main/rift_magnetic_stabilizer,buildings/main/rift_magnetic_stabilizer_alien"
+			buff_required_bp			string:"buildings/resources/magnetic_stabilizer_missing_icon"
+			buff_required_name			string:"magnetic_stabilizer"
+			buff_required_level			int:"0"
+			display_radius_group		string:"magnetic_stabilizer"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+		}
+		
+	}
+	
 	HealthDesc
 	{
 		max_health 					"4500"
