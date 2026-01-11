@@ -1037,7 +1037,7 @@ GuiRootGroupDef
 										margin
 										{
 											x "20"
-											y "60"
+											y "50"
 											z "20"
 										}
 
@@ -1114,7 +1114,17 @@ GuiRootGroupDef
 											margin
 											{
 												w "5"
-												y "5"
+												y "-8"
+											}
+
+											max_size
+											{
+												y "700"
+											}
+
+											size
+											{
+												y "700"
 											}
 
 											size_mode_x "2"
@@ -1126,8 +1136,14 @@ GuiRootGroupDef
 										{
 											w "20"
 											x "20"
-											y "90"
+											y "95"
 											z "20"
+										}
+
+										max_size
+										{
+											x "1000"
+											y "100"
 										}
 
 										model_source_solver
@@ -1151,12 +1167,18 @@ GuiRootGroupDef
 							id "top_frame"
 							margin
 							{
-								y "-2.5"
+								y "-12.5"
+							}
+
+							max_size
+							{
+								y "700"
 							}
 
 							size
 							{
-								y "500"
+								x "612"
+								y "700"
 							}
 
 							size_mode_x "2"
@@ -1438,6 +1460,7 @@ GuiRootGroupDef
 										id "bar_group"
 										margin
 										{
+											y "-5"
 											z "5"
 										}
 
@@ -1636,6 +1659,11 @@ GuiRootGroupDef
 
 										container_type "1"
 										id "bg"
+										scale
+										{
+											y "0.5999999"
+										}
+
 										size_mode_x "2"
 										size_mode_y "1"
 									}
@@ -1676,9 +1704,16 @@ GuiRootGroupDef
 											x "-7"
 										}
 
+										scale
+										{
+											x "0.6999999"
+											y "0.7"
+										}
+
 										size
 										{
 											x "5"
+											y "5"
 										}
 
 										size_mode_y "2"
@@ -1708,6 +1743,13 @@ GuiRootGroupDef
 										margin
 										{
 											x "5"
+											y "-5"
+										}
+
+										scale
+										{
+											x "0.79999995"
+											y "0.79999995"
 										}
 
 										z_order "2"
@@ -1739,6 +1781,7 @@ GuiRootGroupDef
 										margin
 										{
 											x "45"
+											y "-5"
 										}
 
 										z_order "2"
@@ -1786,6 +1829,7 @@ GuiRootGroupDef
 										margin
 										{
 											x "300"
+											y "-5"
 										}
 
 										z_order "2"
@@ -1810,6 +1854,12 @@ GuiRootGroupDef
 													alignment "left"
 													anchor "left"
 													id "warning"
+													scale
+													{
+														x "0.79999995"
+														y "0.79999995"
+													}
+
 													size
 													{
 														x "30"
@@ -1867,6 +1917,7 @@ GuiRootGroupDef
 										margin
 										{
 											x "155"
+											y "-5"
 										}
 
 										size_mode_x "1"

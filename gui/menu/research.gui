@@ -5782,8 +5782,17 @@ GuiRootGroupDef
 							}
 
 							id "quad"
-							size_mode_x "2"
-							size_mode_y "2"
+							margin
+							{
+								z "5"
+							}
+
+							size
+							{
+								x "100"
+								y "779"
+							}
+
 						}
 
 					}
@@ -5793,6 +5802,7 @@ GuiRootGroupDef
 						key "resources"
 						value "GuiStackPanelDef"
 						{
+							stack_type "1"
 							template_reference
 							{
 								path "templates.resource"
@@ -5800,6 +5810,7 @@ GuiRootGroupDef
 								container_type "1"
 								margin
 								{
+									w "-10"
 									x "5"
 									z "5"
 								}
@@ -5808,9 +5819,12 @@ GuiRootGroupDef
 								size_mode_y "1"
 							}
 
-							alignment "center"
-							anchor "center"
 							id "resources"
+							margin
+							{
+								y "35"
+							}
+
 							model_source "resources_list"
 							offset
 							{
