@@ -9,6 +9,7 @@ GameplayResourceDef
 	bigger_icon		"gui/hud/resource_icons/rhodonite_bigger"
 	allow_overflow 	"0"
 	hud_visible 	"build_menu"
+	order   		"17"
 	
 	//missing_effect "voice_over/announcement/not_enough_rhodonite"	
 }

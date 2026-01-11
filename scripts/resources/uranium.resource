@@ -21,11 +21,11 @@ GameplayResourceDef
 	id				"uranium_ore"
 	localization_id "resource_name/uranium_ore"
 	bp  			"items/loot/resources/shard_uranium_ore_item"
-	type 			"ammo_tower"
+	type 			"global"
 	icon			"gui/hud/resource_icons/uranium_ore"
 	bigger_icon		"gui/hud/resource_icons/uranium_ore_bigger"
 	hud_visible 	"never"
-	order   		"7"
+	order   		"11"
 	specific_type	"metals"
 }
 
@@ -39,7 +39,7 @@ GameplayResourceDef
 	bigger_icon		"gui/hud/resource_icons/uranium_bigger"
 	hud_visible 	"build_menu"
 	missing_effect 	"voice_over/announcement/uranium_depleted"
-	order   		"6"	
+	order   		"9"
 	specific_type	"metals"
 }
 
@@ -52,6 +52,6 @@ GameplayResourceDef
 	icon			"gui/hud/resource_icons/uranium_depleted"
 	bigger_icon		"gui/hud/resource_icons/uranium_depleted_bigger"
 	hud_visible 	"never"
-	order   		"8"
+	order   		"10"
 	specific_type	"metals"
 }
