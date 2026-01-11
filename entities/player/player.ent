@@ -1,9 +1,9 @@
-EntityBlueprint
+EntityBlueprint  // inventory_camera
 {
-	name  "player/inventory_camera"	
+	name  "player/inventory_camera"
 }
 
-EntityBlueprint
+EntityBlueprint  // player
 {
 	name  "player/player"
 
@@ -61,29 +61,48 @@ EntityBlueprint
 				resource	"cobalt"
 				max 		"300"
 			}
+			
 			Storage
 			{
-				group		"global"
-				subgroup	"rare"
+				resource	"hazenite"
+				max 		"300"
+			}
+			Storage
+			{
+				resource	"tanzanite"
+				max 		"300"
+			}
+			Storage
+			{
+				resource	"rhodonite"
+				max 		"300"
+			}
+			Storage
+			{
+				resource	"ferdonite"
 				max 		"300"
 			}
 			
 			Storage
 			{
-				group		"global"
-				subgroup	"biomass"
+				resource	"biomass_plant"
 				max 		"300"
-			}
+			}	
 			Storage
 			{
 				resource	"biomass_animal"
 				max 		"300"
-			}
+			}		
 			Storage
 			{
 				resource	"biomass_morphed"
 				max 		"300"
-			}
+			}		
+			Storage
+			{
+				resource	"biomass_mycelium"
+				max 		"300"
+			}			
 			Storage
 			{
 				resource	"biomass_water"
@@ -397,7 +416,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // player_reactivator
 {
 	name  			"player/player_reactivator"
 	base_blueprint 	"effects/messages_and_markers/mech_down_marker"
@@ -417,7 +436,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // player_label
 {
 	name  "player/player_label"
 
@@ -436,7 +455,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint 
+EntityBlueprint  // player_reactivator_flow_field
 {	
 	name "player/player_reactivator_flow_field"
 
@@ -482,7 +501,7 @@ EntityBlueprint
 	
 }
 
-EntityBlueprint
+EntityBlueprint  // player_reactivator_player_blocker
 {
 	name "player/player_reactivator_player_blocker"
 
@@ -524,7 +543,7 @@ EntityBlueprint
 }
 
 
-EntityBlueprint
+EntityBlueprint  // current_marker
 {
 	name 			"player/current_marker"
 
@@ -580,7 +599,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // hostile_marker
 {
 	name "player/hostile_marker"
 
@@ -614,7 +633,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // friendly_marker
 {
 	name "player/friendly_marker"
 
