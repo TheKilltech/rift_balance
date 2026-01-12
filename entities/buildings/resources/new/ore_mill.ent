@@ -59,7 +59,7 @@ EntityBlueprint  // ore_mill
 	
 	LuaDesc
 	{
-		script "lua/buildings/resources/ore_mill.lua"
+		script "lua/buildings/buff_source.lua"
 				
 		database
 		{
@@ -71,7 +71,7 @@ EntityBlueprint  // ore_mill
 			buff_source_level			int:"0"
 			range						float:"20"
 			display_radius_group		string:"ore_mill"
-			display_radius_blueprint	string:"effects/decals/range_circle_repair"	
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}		
 	}
 

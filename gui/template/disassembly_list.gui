@@ -1,0 +1,3321 @@
+GuiRootGroupDef
+{
+	children
+	{
+		Pair_String_GuiDef2
+		{
+			key "group"
+			value "GuiGroupDef"
+			{
+				children
+				{
+					Pair_String_GuiDef2
+					{
+						key "bottom_frame"
+						value "GuiGroupDef"
+						{
+							children
+							{
+								Pair_String_GuiDef2
+								{
+									key "bg"
+									value "GuiImageDef"
+									{
+										error_material "gui/default"
+										material "gui/frames/simple_frame_opacity_bg"
+										texture_border
+										{
+											w "0.152"
+											x "0.077"
+											y "0.117"
+											z "0.092"
+										}
+
+										id "bg"
+										size_mode_x "2"
+										size_mode_y "2"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "darken"
+									value "GuiQuadDef"
+									{
+										alignment "bottom_left"
+										anchor "bottom_left"
+										color
+										{
+											w "0.594"
+											x "0"
+											y "0"
+											z "0"
+										}
+
+										id "darken"
+										margin
+										{
+											w "1"
+											x "2"
+											z "2"
+										}
+
+										size
+										{
+											y "35"
+										}
+
+										size_mode_x "2"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "scrollviewer"
+									value "GuiScrollViewerDef"
+									{
+										content
+										{
+											children
+											{
+												Pair_String_GuiDef2
+												{
+													key "items"
+													value "GuiStackPanelDef"
+													{
+														template_reference
+														{
+															path "templates.select_button"
+															ref_gui_id "gui/template/disassembly_list"
+															ref_model
+															{
+																bindings_proxy
+																{
+																	active
+																	{
+																		model_field "active"
+																	}
+
+																	enabled
+																	{
+																		model_field "max"
+																		converter "GuiModelCompareConverter"
+																		{
+																			compare_operator "gt"
+																			ref_value "0"
+																		}
+
+																	}
+
+																	select
+																	{
+																		model_field "type"
+																		converter "GuiModelPostfixConverter"
+																		{
+																			prefix "select:"
+																		}
+
+																	}
+
+																}
+
+																database
+																{
+																	Strings
+																	Floats
+																	Vectors
+																	Integers
+																}
+
+															}
+
+															margin
+															{
+																w "45"
+																x "20"
+																y "20"
+																z "20"
+															}
+
+															size_mode_x "2"
+															size_mode_y "1"
+															tooltip_def
+															{
+																path "subroot"
+																ref_gui_id "gui/template/text_label_2"
+																ref_model
+																{
+																	bindings_proxy
+																	{
+																		tooltip_content
+																		{
+																			model_field "type"
+																			converter "GuiModelMapConverter"
+																			{
+																				fallback_value "gui/menu/inventory/disassembly/select_deselect_rarity"
+																				map
+																				{
+																					4 "gui/menu/inventory/disassembly/select_deselect_all"
+																				}
+
+																			}
+
+																		}
+
+																	}
+
+																	database
+																	{
+																		Strings
+																		{
+																			StringData
+																			{
+																				key "tooltip_content"
+																				value "gui/menu/inventory/disassembly/select_deselect_rarity"
+																			}
+
+																		}
+
+																		Floats
+																		Vectors
+																		Integers
+																	}
+
+																}
+
+																tooltip_def
+															}
+
+														}
+
+														id "items"
+														model_source_solver
+														{
+															GuiModelSourceFindModelField "GuiModelSourceFindModelField"
+															{
+																field_name "sorters"
+															}
+
+														}
+
+														size_mode_x "2"
+														size_mode_y "1"
+													}
+
+												}
+
+											}
+
+											size_mode_x "2"
+										}
+
+										horizontal_scroll_bar
+										{
+											path "simple_horizontal"
+											ref_gui_id "gui/template/scroll_bars"
+											alignment "bottom_left"
+											anchor "bottom_left"
+											offset
+											{
+												y "14"
+											}
+
+											size
+											{
+												y "12"
+											}
+
+											size_mode_x "2"
+										}
+
+										zoom_enabled "0"
+										vertical_scroll_bar_visibility "2"
+										id "scrollviewer"
+										size_mode_x "2"
+										size_mode_y "1"
+									}
+
+								}
+
+							}
+
+							id "bottom_frame"
+							margin
+							{
+								y "5"
+							}
+
+							size_mode_x "2"
+							size_mode_y "1"
+							z_order "1"
+						}
+
+					}
+
+					Pair_String_GuiDef2
+					{
+						key "disassembly"
+						value "GuiButtonItemDef"
+						{
+							on_click_action "disassembly"
+							children
+							{
+								Pair_String_GuiDef2
+								{
+									key "active"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bar"
+												value "GuiBarDef"
+												{
+													rawData "0 1"
+													error_material "default_bar_1x2"
+													material "gui/menu/bars/disassembly"
+													bindings
+													{
+														data
+														{
+															model_field "disassembly_progress"
+														}
+
+													}
+
+													id "bar"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "label"
+												value "GuiTextDef"
+												{
+													line_breaking "0"
+													capitals "1"
+													content "gui/menu/inventory/disassembly"
+													style_name "active_white"
+													translate "1"
+													alignment "center"
+													anchor "center"
+													id "label"
+													offset
+													{
+														y "-3"
+													}
+
+												}
+
+											}
+
+										}
+
+										id "active"
+										size_mode_x "1"
+										size_mode_y "1"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "active_selected"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bar"
+												value "GuiBarDef"
+												{
+													rawData "0 1"
+													error_material "default_bar_1x2"
+													material "gui/menu/bars/disassembly"
+													bindings
+													{
+														data
+														{
+															model_field "disassembly_progress"
+														}
+
+													}
+
+													id "bar"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "label"
+												value "GuiTextDef"
+												{
+													line_breaking "0"
+													capitals "1"
+													content "gui/menu/inventory/disassembly"
+													style_name "selected"
+													translate "1"
+													alignment "center"
+													anchor "center"
+													id "label"
+													offset
+													{
+														y "-3"
+													}
+
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "select"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_selected"
+													alignment "center"
+													anchor "center"
+													id "select"
+												}
+
+											}
+
+										}
+
+										id "active_selected"
+										size_mode_x "1"
+										size_mode_y "1"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "blink"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bar"
+												value "GuiBarDef"
+												{
+													rawData "1 0"
+													error_material "default_bar_1x2"
+													material "gui/menu/bars/disassembly"
+													id "bar"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "label"
+												value "GuiTextDef"
+												{
+													line_breaking "0"
+													content "gui/menu/inventory/disassembly"
+													style_name "active_white"
+													translate "1"
+													alignment "center"
+													anchor "center"
+													id "label"
+													offset
+													{
+														y "-3"
+													}
+
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "select"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_selected"
+													alignment "center"
+													anchor "center"
+													id "select"
+												}
+
+											}
+
+										}
+
+										alignment "center"
+										anchor "center"
+										animations
+										{
+											items
+											{
+												GuiAnimationDef
+												{
+													frames
+													{
+														GuiAnimationFrame
+														{
+															mask "32"
+														}
+
+														GuiAnimationFrame
+														{
+															color
+															{
+																w "1"
+															}
+
+															frame_number "10"
+															mask "44"
+															scale
+															{
+																x "1.2"
+																y "1.2"
+															}
+
+														}
+
+														GuiAnimationFrame
+														{
+															frame_number "30"
+															mask "12"
+														}
+
+													}
+
+													name "Blink"
+												}
+
+											}
+
+										}
+
+										color
+										{
+											w "0"
+										}
+
+										id "blink"
+										item_scripts
+										{
+											scripts
+											{
+												Pair_IdString_GuiScriptDef2
+												{
+													key "Blink"
+													value
+													{
+														script
+														{
+															children
+															{
+																GuiScriptNodeDef
+																{
+																	cmd "GuiScriptCommandAnimStartDef"
+																	{
+																		anim_info
+																		{
+																			loop "1"
+																			multiplier "0.3"
+																			stay_at_end "0"
+																		}
+
+																		animations
+																		{
+																			Blink
+																			{
+																				String
+																			}
+
+																		}
+
+																	}
+
+																}
+
+															}
+
+														}
+
+													}
+
+												}
+
+											}
+
+										}
+
+										size_mode_x "1"
+										size_mode_y "1"
+										z_order "10"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "disabled"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bar"
+												value "GuiBarDef"
+												{
+													rawData "0 1"
+													error_material "default_bar_1x2"
+													material "gui/menu/bars/disassembly"
+													saturate "0"
+													bindings
+													{
+														data
+														{
+															model_field "disassembly_progress"
+														}
+
+													}
+
+													id "bar"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "label"
+												value "GuiTextDef"
+												{
+													line_breaking "0"
+													capitals "1"
+													content "gui/menu/inventory/disassembly"
+													style_name "disabled"
+													translate "1"
+													alignment "center"
+													anchor "center"
+													id "label"
+													offset
+													{
+														y "-3"
+													}
+
+												}
+
+											}
+
+										}
+
+										id "disabled"
+										size_mode_x "1"
+										size_mode_y "1"
+										z_order "5"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "disabled_selected"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bar"
+												value "GuiBarDef"
+												{
+													rawData "0 1"
+													error_material "default_bar_1x2"
+													material "gui/menu/bars/disassembly"
+													saturate "0"
+													bindings
+													{
+														data
+														{
+															model_field "disassembly_progress"
+														}
+
+													}
+
+													id "bar"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "label"
+												value "GuiTextDef"
+												{
+													line_breaking "0"
+													capitals "1"
+													content "gui/menu/inventory/disassembly"
+													style_name "disabled"
+													translate "1"
+													alignment "center"
+													anchor "center"
+													id "label"
+													offset
+													{
+														y "-3"
+													}
+
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "select"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_selected"
+													alignment "center"
+													anchor "center"
+													id "select"
+												}
+
+											}
+
+										}
+
+										id "disabled_selected"
+										size_mode_x "1"
+										size_mode_y "1"
+										z_order "5"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "neutral"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bar"
+												value "GuiBarDef"
+												{
+													rawData "0 1"
+													error_material "default_bar_1x2"
+													material "gui/menu/bars/disassembly"
+													bindings
+													{
+														data
+														{
+															model_field "disassembly_progress"
+														}
+
+													}
+
+													id "bar"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "label"
+												value "GuiTextDef"
+												{
+													capitals "1"
+													content "gui/menu/inventory/disassembly"
+													style_name "neutral"
+													translate "1"
+													alignment "center"
+													anchor "center"
+													id "label"
+													offset
+													{
+														y "-3"
+													}
+
+												}
+
+											}
+
+										}
+
+										id "neutral"
+										size_mode_x "1"
+										size_mode_y "1"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "neutral_selected"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bar"
+												value "GuiBarDef"
+												{
+													rawData "0 1"
+													error_material "default_bar_1x2"
+													material "gui/menu/bars/disassembly"
+													bindings
+													{
+														data
+														{
+															model_field "disassembly_progress"
+														}
+
+													}
+
+													id "bar"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "label"
+												value "GuiTextDef"
+												{
+													line_breaking "0"
+													capitals "1"
+													content "gui/menu/inventory/disassembly"
+													style_name "selected"
+													translate "1"
+													alignment "center"
+													anchor "center"
+													id "label"
+													offset
+													{
+														y "-3"
+													}
+
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "select"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_selected"
+													alignment "center"
+													anchor "center"
+													id "select"
+												}
+
+											}
+
+										}
+
+										id "neutral_selected"
+										size_mode_x "1"
+										size_mode_y "1"
+									}
+
+								}
+
+							}
+
+							alignment "top"
+							anchor "top"
+							bindings
+							{
+								is_enabled
+								{
+									model_field "selected_count"
+								}
+
+							}
+
+							id "disassembly"
+							margin
+							{
+								y "5"
+							}
+
+							size_mode_x "1"
+							size_mode_y "1"
+						}
+
+					}
+
+					Pair_String_GuiDef2
+					{
+						key "header"
+						value "GuiReferenceDef"
+						{
+							path "frame_header"
+							ref_gui_id "gui/template/headers"
+							ref_model
+							{
+								database
+								{
+									Strings
+									{
+										StringData
+										{
+											key "header"
+											value "gui/menu/inventory/disassembly"
+										}
+
+										StringData
+										{
+											key "capitals"
+											value "1"
+										}
+
+									}
+
+									Floats
+									Vectors
+									Integers
+								}
+
+							}
+
+							id "header"
+							margin
+							{
+								x "20"
+							}
+
+							model_source_solver
+							{
+								GuiModelThisItem "GuiModelThisItem"
+							}
+
+							size_mode_x "2"
+							size_mode_y "1"
+							z_order "2"
+						}
+
+					}
+
+					Pair_String_GuiDef2
+					{
+						key "top_frame"
+						value "GuiGroupDef"
+						{
+							children
+							{
+								Pair_String_GuiDef2
+								{
+									key "bg"
+									value "GuiImageDef"
+									{
+										error_material "gui/default"
+										material "gui/menu/inventory/inventory_list_frame"
+										texture_border
+										{
+											w "0.04"
+											x "0.043"
+											y "0.033"
+											z "0.018"
+										}
+
+										id "bg"
+										size_mode_x "2"
+										size_mode_y "2"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "limit_group"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "image"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/warning_icon"
+													alignment "left"
+													anchor "left"
+													id "image"
+													size
+													{
+														x "30"
+														y "30"
+													}
+
+													size_mode_x "0"
+													size_mode_y "0"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "limit"
+												value "GuiTextLineDef"
+												{
+													content "gui/menu/inventory/storage_limit_exceeded"
+													style
+													{
+														char_height "21"
+														color
+														{
+															y "0.286"
+															z "0.286"
+														}
+
+														df "1"
+														font "Exo2_Bold_sdf"
+														glow_color
+														{
+															w "0"
+														}
+
+														glow_size "0"
+														glow_spread "0"
+														shadow_angle "135"
+														shadow_color
+														{
+															w "0.85"
+														}
+
+														shadow_distance "2"
+														shadow_enabled "1"
+														shadow_spread "0"
+														space_size "7"
+														stroke_position "0"
+														stroke_size "0"
+													}
+
+													style_name "resource_red"
+													translate "1"
+													alignment "left"
+													anchor "left"
+													hitbox_visible "0"
+													id "limit"
+													margin
+													{
+														x "34"
+													}
+
+													z_order "43"
+												}
+
+											}
+
+										}
+
+										bindings
+										{
+											visible
+											{
+												model_field "limit"
+											}
+
+										}
+
+										id "limit_group"
+										margin
+										{
+											x "20"
+											y "50"
+											z "20"
+										}
+
+										size_mode_x "1"
+										size_mode_y "1"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "reference"
+									value "GuiReferenceDef"
+									{
+										path "group_header_lighter"
+										ref_gui_id "gui/template/headers"
+										ref_model
+										{
+											database
+											{
+												Strings
+												{
+													StringData
+													{
+														key "header_content"
+														value "gui/menu/inventory/you_receive"
+													}
+
+													StringData
+													{
+														key "capitals"
+														value "0"
+													}
+
+												}
+
+												Floats
+												Vectors
+												Integers
+											}
+
+										}
+
+										id "reference"
+										margin
+										{
+											x "20"
+											y "20"
+											z "20"
+										}
+
+										size
+										{
+											y "36"
+										}
+
+										size_mode_x "2"
+										size_mode_y "1"
+										z_order "1"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "resources"
+									value "GuiStackPanelDef"
+									{
+										stack_type "1"
+										template_reference
+										{
+											path "templates.row"
+											ref_gui_id "gui/template/disassembly_list"
+											margin
+											{
+												w "5"
+												y "-8"
+											}
+
+											max_size
+											{
+												y "700"
+											}
+
+											size
+											{
+												y "700"
+											}
+
+											size_mode_x "2"
+											size_mode_y "1"
+										}
+
+										id "resources"
+										margin
+										{
+											w "20"
+											x "20"
+											y "95"
+											z "20"
+										}
+
+										max_size
+										{
+											x "1000"
+											y "100"
+										}
+
+										model_source_solver
+										{
+											GuiModelSourceFindModelField "GuiModelSourceFindModelField"
+											{
+												field_name "resources"
+											}
+
+										}
+
+										size_mode_x "2"
+										size_mode_y "1"
+										z_order "2"
+									}
+
+								}
+
+							}
+
+							id "top_frame"
+							margin
+							{
+								y "-12.5"
+							}
+
+							max_size
+							{
+								y "700"
+							}
+
+							size
+							{
+								x "612"
+								y "700"
+							}
+
+							size_mode_x "2"
+							size_mode_y "1"
+							z_order "1"
+						}
+
+					}
+
+				}
+
+				container_type "2"
+				alignment "center"
+				anchor "center"
+				animations
+				{
+					items
+					{
+						GuiAnimationDef
+						{
+							frames
+							{
+								GuiAnimationFrame
+								{
+									color
+									{
+										w "-1"
+									}
+
+									mask "32"
+								}
+
+								GuiAnimationFrame
+								{
+									frame_number "30"
+									mask "32"
+								}
+
+							}
+
+							name "Show"
+						}
+
+					}
+
+				}
+
+				id "group"
+				item_scripts
+				{
+					scripts
+					{
+						Pair_IdString_GuiScriptDef2
+						{
+							key "OnHide"
+							value
+							{
+								script
+								{
+									children
+									{
+										GuiScriptNodeDef
+										{
+											cmd "GuiScriptCommandAnimStartDef"
+											{
+												anim_info
+												{
+													loop "1"
+													multiplier "0.2"
+													reverse "1"
+												}
+
+												animations
+												{
+													Show
+													{
+														String "this"
+													}
+
+												}
+
+											}
+
+										}
+
+									}
+
+								}
+
+							}
+
+						}
+
+						Pair_IdString_GuiScriptDef2
+						{
+							key "OnShow"
+							value
+							{
+								script
+								{
+									children
+									{
+										GuiScriptNodeDef
+										{
+											cmd "GuiScriptCommandAnimStartDef"
+											{
+												anim_info
+												{
+													loop "1"
+													multiplier "0.2"
+												}
+
+												animations
+												{
+													Show
+													{
+														String
+													}
+
+												}
+
+											}
+
+										}
+
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+				}
+
+				size
+				{
+					x "612"
+				}
+
+				size_mode_y "1"
+			}
+
+		}
+
+		Pair_String_GuiDef2
+		{
+			key "templates"
+			value "GuiGroupDef"
+			{
+				children
+				{
+					Pair_String_GuiDef2
+					{
+						key "row"
+						value "GuiGroupDef"
+						{
+							children
+							{
+								Pair_String_GuiDef2
+								{
+									key "bar_group"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bar"
+												value "GuiBarDef"
+												{
+													direction "left"
+													rawData "0.5 0.5 0"
+													error_material "default_bar_1x2"
+													material "gui/menu/bars/disassembly_resource"
+													bindings
+													{
+														data
+														{
+															model_field "data"
+														}
+
+														visible
+														{
+															model_field "infinite"
+															converter "GuiModelCompareConverter"
+															{
+																ref_value "0"
+															}
+
+														}
+
+													}
+
+													id "bar"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "infinite"
+												value "GuiTextDef"
+												{
+													text_alignment "1"
+													content "VARIABLE_infinity"
+													style_name "inventory_orange_36"
+													translate "1"
+													alignment "center"
+													anchor "center"
+													bindings
+													{
+														visible
+														{
+															model_field "infinite"
+															converter "GuiModelCompareConverter"
+															{
+																compare_operator "neq"
+																ref_value "0"
+															}
+
+														}
+
+													}
+
+													id "infinite"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "overflow"
+												value "GuiBarDef"
+												{
+													direction "left"
+													rawData "0.5 0.5"
+													error_material "default_bar_1x2"
+													material "gui/menu/bars/disassembly_resource_full"
+													anchor "bottom_left"
+													bindings
+													{
+														data
+														{
+															model_field "overflow_data"
+														}
+
+														visible
+														{
+															model_field "warning"
+														}
+
+													}
+
+													id "overflow"
+													margin
+													{
+														x "1"
+														z "1"
+													}
+
+													size
+													{
+														y "3"
+													}
+
+													size_mode_x "2"
+													size_mode_y "0"
+												}
+
+											}
+
+										}
+
+										alignment "right"
+										anchor "right"
+										id "bar_group"
+										margin
+										{
+											y "-5"
+											z "5"
+										}
+
+										size
+										{
+											x "160"
+											y "12"
+										}
+
+										z_order "3"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "bg"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bg_left"
+												value "GuiGroupDef"
+												{
+													children
+													{
+														Pair_String_GuiDef2
+														{
+															key "bg"
+															value "GuiImageDef"
+															{
+																error_material "gui/default"
+																material "gui/menu/inventory/inventory_item_stat_frame"
+																texture_border
+																{
+																	w "0.222"
+																	x "0.008"
+																	y "0.133"
+																	z "0.012"
+																}
+
+																texture_coords
+																{
+																	width "0.773"
+																}
+
+																id "bg"
+																size
+																{
+																	x "150"
+																}
+
+																size_mode_x "0"
+															}
+
+														}
+
+														Pair_String_GuiDef2
+														{
+															key "bg_warning"
+															value "GuiQuadDef"
+															{
+																border_color
+																{
+																	x "0.992"
+																}
+
+																border_width "1"
+																bindings
+																{
+																	visible
+																	{
+																		model_field "warning"
+																	}
+
+																}
+
+																color
+																{
+																	w "0.507"
+																	y "0.014"
+																	z "0.014"
+																}
+
+																id "bg_warning"
+																size_mode_x "2"
+																size_mode_y "2"
+															}
+
+														}
+
+													}
+
+													id "bg_left"
+													size
+													{
+														x "200"
+													}
+
+													size_mode_x "1"
+													size_mode_y "1"
+													z_order "1"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "bg_right"
+												value "GuiGroupDef"
+												{
+													children
+													{
+														Pair_String_GuiDef2
+														{
+															key "bg"
+															value "GuiImageDef"
+															{
+																error_material "gui/default"
+																material "gui/menu/inventory/inventory_item_stat_frame"
+																texture_border
+																{
+																	w "0.222"
+																	x "0.008"
+																	y "0.133"
+																	z "0.012"
+																}
+
+																texture_coords
+																{
+																	width "0.773"
+																}
+
+																id "bg"
+																size
+																{
+																	x "400"
+																}
+
+																size_mode_x "2"
+															}
+
+														}
+
+														Pair_String_GuiDef2
+														{
+															key "bg_warning"
+															value "GuiQuadDef"
+															{
+																border_color
+																{
+																	x "0.992"
+																}
+
+																border_width "1"
+																bindings
+																{
+																	visible
+																	{
+																		model_field "warning"
+																	}
+
+																}
+
+																color
+																{
+																	w "0.507"
+																	y "0.014"
+																	z "0.014"
+																}
+
+																id "bg_warning"
+																size_mode_x "2"
+																size_mode_y "2"
+															}
+
+														}
+
+													}
+
+													id "bg_right"
+													margin
+													{
+														x "-1"
+													}
+
+													size_mode_x "2"
+													size_mode_y "1"
+												}
+
+											}
+
+										}
+
+										container_type "1"
+										id "bg"
+										scale
+										{
+											y "0.5999999"
+										}
+
+										size_mode_x "2"
+										size_mode_y "1"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "bg_warning"
+									value "GuiQuadDef"
+									{
+										border_color
+										{
+											x "0.553"
+											y "0.129"
+											z "1"
+										}
+
+										bindings
+										{
+											visible
+											{
+												model_field "warning"
+											}
+
+										}
+
+										color
+										{
+											w "0.8"
+											y "0.014"
+											z "0.014"
+										}
+
+										id "bg_warning"
+										margin
+										{
+											x "-7"
+										}
+
+										scale
+										{
+											x "0.6999999"
+											y "0.7"
+										}
+
+										size
+										{
+											x "5"
+											y "5"
+										}
+
+										size_mode_y "2"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "icon"
+									value "GuiImageDef"
+									{
+										error_material "gui/default"
+										material "gui/hud/resource_icons/carbonium"
+										alignment "left"
+										anchor "left"
+										bindings
+										{
+											material
+											{
+												model_field "icon"
+											}
+
+										}
+
+										id "icon"
+										margin
+										{
+											x "5"
+											y "-5"
+										}
+
+										scale
+										{
+											x "0.79999995"
+											y "0.79999995"
+										}
+
+										z_order "2"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "label"
+									value "GuiTextDef"
+									{
+										line_breaking "0"
+										content "Carbonium"
+										style_name "resource_white"
+										translate "1"
+										alignment "left"
+										anchor "left"
+										bindings
+										{
+											content
+											{
+												model_field "localization_id"
+											}
+
+										}
+
+										id "label"
+										margin
+										{
+											x "45"
+											y "-5"
+										}
+
+										z_order "2"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "value"
+									value "GuiTextDef"
+									{
+										line_breaking "0"
+										content "+8888"
+										style_name "resource_green"
+										translate "1"
+										alignment "left"
+										anchor "left"
+										bindings
+										{
+											content
+											{
+												model_field "value"
+												converter "GuiModelPostfixConverter"
+												{
+													prefix "+"
+												}
+
+											}
+
+											visible
+											{
+												model_field "value"
+												converter "GuiModelCompareConverter"
+												{
+													compare_operator "neq"
+													ref_value "0"
+												}
+
+											}
+
+										}
+
+										id "value"
+										margin
+										{
+											x "300"
+											y "-5"
+										}
+
+										z_order "2"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "warning_group"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "warning"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/warning_icon"
+													alignment "left"
+													anchor "left"
+													id "warning"
+													scale
+													{
+														x "0.79999995"
+														y "0.79999995"
+													}
+
+													size
+													{
+														x "30"
+														y "30"
+													}
+
+													size_mode_x "0"
+													size_mode_y "0"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "warning_amount"
+												value "GuiTextDef"
+												{
+													content "888881"
+													style_name "resource_red"
+													alignment "left"
+													anchor "left"
+													bindings
+													{
+														content
+														{
+															model_field "overflow"
+														}
+
+													}
+
+													id "warning_amount"
+													margin
+													{
+														x "35"
+													}
+
+												}
+
+											}
+
+										}
+
+										alignment "left"
+										anchor "left"
+										bindings
+										{
+											visible
+											{
+												model_field "warning"
+											}
+
+										}
+
+										id "warning_group"
+										margin
+										{
+											x "155"
+											y "-5"
+										}
+
+										size_mode_x "1"
+										size_mode_y "1"
+										z_order "3"
+									}
+
+								}
+
+							}
+
+							id "row"
+							offset
+							{
+								y "200"
+							}
+
+							size
+							{
+								x "1000"
+							}
+
+							size_mode_y "1"
+						}
+
+					}
+
+					Pair_String_GuiDef2
+					{
+						key "select_button"
+						value "GuiToggleButtonItemDef"
+						{
+							children
+							{
+								Pair_String_GuiDef2
+								{
+									key "active"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bg"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_group_active"
+													bindings
+													{
+														color
+														{
+															model_field "type"
+															converter "GuiModelMapConverter"
+															{
+																fallback_value "0.28,0.62,0.88,1.00"
+																map
+																{
+																	1 "0.00,0.62,0.71,1.00"
+																	0 "0.64,0.64,0.64,1.00"
+																	3 "0.80,0.11,0.06,1.00"
+																	2 "0.64,0.00,1.00,1.00"
+																}
+
+															}
+
+														}
+
+													}
+
+													id "bg"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "image"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_all_icon_neutral"
+													alignment "center"
+													anchor "center"
+													bindings
+													{
+														color
+														{
+															model_field "type"
+															converter "GuiModelMapConverter"
+															{
+																fallback_value "0.28,0.62,0.88,1.00"
+																map
+																{
+																	1 "0.00,0.62,0.71,1.00"
+																	0 "0.64,0.64,0.64,1.00"
+																	3 "0.80,0.11,0.06,1.00"
+																	2 "0.64,0.00,1.00,1.00"
+																}
+
+															}
+
+														}
+
+														material
+														{
+															model_field "icon_active"
+														}
+
+													}
+
+													id "image"
+													z_order "1"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "label"
+												value "GuiTextDef"
+												{
+													text_alignment "1"
+													content "${selected}/${max}"
+													style_name "active_20_orange"
+													alignment "top"
+													anchor "top"
+													id "label"
+													margin
+													{
+														y "100"
+													}
+
+												}
+
+											}
+
+										}
+
+										id "active"
+										size
+										{
+											x "84"
+											y "84"
+										}
+
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "active_selected"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bg"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_group_active"
+													bindings
+													{
+														color
+														{
+															model_field "type"
+															converter "GuiModelMapConverter"
+															{
+																fallback_value "0.28,0.62,0.88,1.00"
+																map
+																{
+																	1 "0.00,0.62,0.71,1.00"
+																	0 "0.64,0.64,0.64,1.00"
+																	3 "0.80,0.11,0.06,1.00"
+																	2 "0.64,0.00,1.00,1.00"
+																}
+
+															}
+
+														}
+
+													}
+
+													id "bg"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "image"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_all_icon_neutral"
+													alignment "center"
+													anchor "center"
+													bindings
+													{
+														color
+														{
+															model_field "type"
+															converter "GuiModelMapConverter"
+															{
+																fallback_value "0.28,0.62,0.88,1.00"
+																map
+																{
+																	1 "0.00,0.62,0.71,1.00"
+																	0 "0.64,0.64,0.64,1.00"
+																	3 "0.80,0.11,0.06,1.00"
+																	2 "0.64,0.00,1.00,1.00"
+																}
+
+															}
+
+														}
+
+														material
+														{
+															model_field "icon_active"
+														}
+
+													}
+
+													id "image"
+													z_order "1"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "label"
+												value "GuiTextDef"
+												{
+													text_alignment "1"
+													content "${selected}/${max}"
+													style_name "active_20_orange"
+													alignment "top"
+													anchor "top"
+													id "label"
+													margin
+													{
+														y "100"
+													}
+
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "select"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_group_selection"
+													id "select"
+													z_order "2"
+												}
+
+											}
+
+										}
+
+										id "active_selected"
+										size
+										{
+											x "84"
+											y "84"
+										}
+
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "disabled"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bg"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_group_neutral"
+													saturate "0"
+													bindings
+													{
+														color
+														{
+															model_field "type"
+															converter "GuiModelMapConverter"
+															{
+																fallback_value "0.28,0.74,1.00,0.75"
+																map
+																{
+																	1 "0.00,0.77,0.89,0.75"
+																	0 "0.55,0.55,0.55,0.75"
+																	3 "0.91,0.17,0.00,0.75"
+																	2 "0.52,0.28,0.94,0.75"
+																}
+
+															}
+
+														}
+
+													}
+
+													id "bg"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "image"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_all_icon_neutral"
+													saturate "0"
+													alignment "center"
+													anchor "center"
+													bindings
+													{
+														color
+														{
+															model_field "type"
+															converter "GuiModelMapConverter"
+															{
+																fallback_value "0.28,0.74,1.00,0.75"
+																map
+																{
+																	1 "0.00,0.77,0.89,0.75"
+																	0 "0.55,0.55,0.55,0.75"
+																	3 "0.91,0.17,0.00,0.75"
+																	2 "0.52,0.28,0.94,0.75"
+																}
+
+															}
+
+														}
+
+														material
+														{
+															model_field "icon"
+														}
+
+													}
+
+													id "image"
+													z_order "1"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "label"
+												value "GuiTextDef"
+												{
+													text_alignment "1"
+													content "${selected}/${max}"
+													style_name "disabled_20"
+													alignment "top"
+													anchor "top"
+													id "label"
+													margin
+													{
+														y "100"
+													}
+
+												}
+
+											}
+
+										}
+
+										id "disabled"
+										size
+										{
+											x "84"
+											y "84"
+										}
+
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "disabled_selected"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bg"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_group_neutral"
+													saturate "0"
+													bindings
+													{
+														color
+														{
+															model_field "type"
+															converter "GuiModelMapConverter"
+															{
+																fallback_value "0.28,0.74,1.00,0.75"
+																map
+																{
+																	1 "0.00,0.77,0.89,0.75"
+																	0 "0.55,0.55,0.55,0.75"
+																	3 "0.91,0.17,0.00,0.75"
+																	2 "0.52,0.28,0.94,0.75"
+																}
+
+															}
+
+														}
+
+													}
+
+													id "bg"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "image"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_all_icon_neutral"
+													saturate "0"
+													alignment "center"
+													anchor "center"
+													bindings
+													{
+														color
+														{
+															model_field "type"
+															converter "GuiModelMapConverter"
+															{
+																fallback_value "0.28,0.74,1.00,0.75"
+																map
+																{
+																	1 "0.00,0.77,0.89,0.75"
+																	0 "0.55,0.55,0.55,0.75"
+																	3 "0.91,0.17,0.00,0.75"
+																	2 "0.52,0.28,0.94,0.75"
+																}
+
+															}
+
+														}
+
+														material
+														{
+															model_field "icon"
+														}
+
+													}
+
+													id "image"
+													z_order "1"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "label"
+												value "GuiTextDef"
+												{
+													text_alignment "1"
+													content "${selected}/${max}"
+													style_name "disabled_20"
+													alignment "top"
+													anchor "top"
+													id "label"
+													margin
+													{
+														y "100"
+													}
+
+												}
+
+											}
+
+										}
+
+										id "disabled_selected"
+										size
+										{
+											x "84"
+											y "84"
+										}
+
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "neutral"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bg"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_group_neutral"
+													bindings
+													{
+														color
+														{
+															model_field "type"
+															converter "GuiModelMapConverter"
+															{
+																fallback_value "0.28,0.74,1.00,1.00"
+																map
+																{
+																	1 "0.00,0.77,0.89,1.00"
+																	0 "0.55,0.55,0.55,1.00"
+																	3 "0.91,0.17,0.00,1.00"
+																	2 "0.52,0.28,0.94,1.00"
+																}
+
+															}
+
+														}
+
+													}
+
+													id "bg"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "image"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_all_icon_neutral"
+													alignment "center"
+													anchor "center"
+													bindings
+													{
+														color
+														{
+															model_field "type"
+															converter "GuiModelMapConverter"
+															{
+																fallback_value "0.28,0.74,1.00,1.00"
+																map
+																{
+																	1 "0.00,0.77,0.89,1.00"
+																	0 "0.55,0.55,0.55,1.00"
+																	3 "0.91,0.17,0.00,1.00"
+																	2 "0.52,0.28,0.94,1.00"
+																}
+
+															}
+
+														}
+
+														material
+														{
+															model_field "icon"
+														}
+
+													}
+
+													id "image"
+													z_order "1"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "label"
+												value "GuiTextDef"
+												{
+													text_alignment "1"
+													content "${selected}/${max}"
+													style_name "active_20"
+													alignment "top"
+													anchor "top"
+													id "label"
+													margin
+													{
+														y "100"
+													}
+
+												}
+
+											}
+
+										}
+
+										id "neutral"
+										size
+										{
+											x "84"
+											y "84"
+										}
+
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "neutral_selected"
+									value "GuiGroupDef"
+									{
+										children
+										{
+											Pair_String_GuiDef2
+											{
+												key "bg"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_group_neutral"
+													bindings
+													{
+														color
+														{
+															model_field "type"
+															converter "GuiModelMapConverter"
+															{
+																fallback_value "0.28,0.74,1.00,1.00"
+																map
+																{
+																	1 "0.00,0.77,0.89,1.00"
+																	0 "0.55,0.55,0.55,1.00"
+																	3 "0.91,0.17,0.00,1.00"
+																	2 "0.52,0.28,0.94,1.00"
+																}
+
+															}
+
+														}
+
+													}
+
+													id "bg"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "image"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_all_icon_neutral"
+													alignment "center"
+													anchor "center"
+													bindings
+													{
+														color
+														{
+															model_field "type"
+															converter "GuiModelMapConverter"
+															{
+																fallback_value "0.28,0.74,1.00,1.00"
+																map
+																{
+																	1 "0.00,0.77,0.89,1.00"
+																	0 "0.55,0.55,0.55,1.00"
+																	3 "0.91,0.17,0.00,1.00"
+																	2 "0.52,0.28,0.94,1.00"
+																}
+
+															}
+
+														}
+
+														material
+														{
+															model_field "icon"
+														}
+
+													}
+
+													id "image"
+													z_order "1"
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "label"
+												value "GuiTextDef"
+												{
+													text_alignment "1"
+													content "${selected}/${max}"
+													style_name "active_20"
+													alignment "top"
+													anchor "top"
+													id "label"
+													margin
+													{
+														y "100"
+													}
+
+												}
+
+											}
+
+											Pair_String_GuiDef2
+											{
+												key "select"
+												value "GuiImageDef"
+												{
+													error_material "gui/default"
+													material "gui/menu/buttons/disassembly_group_selection"
+													id "select"
+													z_order "2"
+												}
+
+											}
+
+										}
+
+										id "neutral_selected"
+										size
+										{
+											x "84"
+											y "84"
+										}
+
+									}
+
+								}
+
+							}
+
+							bindings
+							{
+								is_activated
+								{
+									model_field "active"
+								}
+
+								is_enabled
+								{
+									model_field "enabled"
+								}
+
+								on_click_action
+								{
+									model_field "select"
+								}
+
+							}
+
+							id "select_button"
+							size_mode_x "1"
+							size_mode_y "1"
+							tooltip_def
+							{
+								path "subroot"
+								ref_gui_id "gui/template/text_label_2"
+								ref_model
+								{
+									bindings_proxy
+									{
+										tooltip_content
+										{
+											model_field "type"
+											converter "GuiModelMapConverter"
+											{
+												fallback_value "gui/menu/inventory/disassembly/select_deselect_rarity"
+												map
+												{
+													4 "gui/menu/inventory/disassembly/select_deselect_all"
+												}
+
+											}
+
+										}
+
+									}
+
+									database
+									{
+										Strings
+										{
+											StringData
+											{
+												key "tooltip_content"
+												value "gui/menu/inventory/disassembly/select_deselect_rarity"
+											}
+
+										}
+
+										Floats
+										Vectors
+										Integers
+									}
+
+								}
+
+								size_mode_x "1"
+								size_mode_y "1"
+							}
+
+						}
+
+					}
+
+				}
+
+				id "templates"
+				offset
+				{
+					x "1920"
+				}
+
+			}
+
+		}
+
+	}
+
+	id "gui/template/disassembly_list"
+	size
+	{
+		x "1920"
+		y "1080"
+	}
+
+}
+
+GuiDataDefinitions
+{
+	GuiDataTypeDefinition
+	{
+		name "ScreenModel"
+		base_type
+		{
+			typehash "0"
+		}
+
+		fields
+		{
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "Vector_float"
+					default_value
+					{
+						typehash "3744762499"
+						Vector_float
+						{
+							float "0"
+							float "1"
+						}
+
+					}
+
+				}
+
+				key "disassembly_progress"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "bool"
+					default_value
+					{
+						typehash "3365180733"
+						bool "0"
+					}
+
+				}
+
+				key "limit"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "Vector_[DB129BF9-B6FD-4CBC-AA40-55F73AD65BBD]/resource4"
+					default_value
+					{
+						typehash "2004926073"
+						Vector_[DB129BF9-B6FD-4CBC-AA40-55F73AD65BBD]/resource4
+						{
+							[DB129BF9-B6FD-4CBC-AA40-55F73AD65BBD]/resource
+							{
+								localization_id "resource_name/carbonium"
+								data
+								{
+									float "0.1"
+									float "0.3"
+									float "0.6"
+								}
+
+								overflow "0"
+								overflow_data
+								warning "0"
+								value "0"
+								infinite "0"
+								icon "gui/hud/resource_icons/carbonium"
+							}
+
+							[DB129BF9-B6FD-4CBC-AA40-55F73AD65BBD]/resource
+							{
+								localization_id "resource_name/carbonium"
+								data
+								{
+									float "0.25"
+									float "0.25"
+									float "0.5"
+								}
+
+								overflow "0"
+								overflow_data
+								warning "0"
+								value "0"
+								infinite "0"
+								icon "gui/hud/resource_icons/carbonium"
+							}
+
+							[DB129BF9-B6FD-4CBC-AA40-55F73AD65BBD]/resource
+							{
+								localization_id "resource_name/carbonium"
+								data
+								{
+									float "0.25"
+									float "0.25"
+									float "0.5"
+								}
+
+								overflow "5"
+								overflow_data
+								{
+									float "0.75"
+									float "0.25"
+								}
+
+								warning "1"
+								value "100"
+								infinite "0"
+								icon "gui/hud/resource_icons/carbonium"
+							}
+
+							[DB129BF9-B6FD-4CBC-AA40-55F73AD65BBD]/resource
+							{
+								localization_id "resource_name/carbonium"
+								data
+								{
+									float "0.25"
+									float "0.25"
+									float "0.5"
+								}
+
+								overflow "0"
+								overflow_data
+								warning "0"
+								value "0"
+								infinite "0"
+								icon "gui/hud/resource_icons/carbonium"
+							}
+
+							[DB129BF9-B6FD-4CBC-AA40-55F73AD65BBD]/resource
+							{
+								localization_id "resource_name/carbonium"
+								data
+								{
+									float "0.25"
+									float "0.25"
+									float "0.5"
+								}
+
+								overflow "0"
+								overflow_data
+								warning "0"
+								value "0"
+								infinite "0"
+								icon "gui/hud/resource_icons/carbonium"
+							}
+
+							[DB129BF9-B6FD-4CBC-AA40-55F73AD65BBD]/resource
+							{
+								localization_id "resource_name/carbonium"
+								data
+								{
+									float "0.25"
+									float "0.25"
+									float "0.5"
+								}
+
+								overflow "0"
+								overflow_data
+								warning "0"
+								value "0"
+								infinite "0"
+								icon "gui/hud/resource_icons/carbonium"
+							}
+
+							[DB129BF9-B6FD-4CBC-AA40-55F73AD65BBD]/resource
+							{
+								localization_id "resource_name/carbonium"
+								data
+								{
+									float "0.25"
+									float "0.25"
+									float "0.5"
+								}
+
+								overflow "0"
+								overflow_data
+								warning "0"
+								value "0"
+								infinite "0"
+								icon "gui/hud/resource_icons/carbonium"
+							}
+
+							[DB129BF9-B6FD-4CBC-AA40-55F73AD65BBD]/resource
+							{
+								localization_id "resource_name/carbonium"
+								data
+								{
+									float "0.25"
+									float "0.25"
+									float "0.5"
+								}
+
+								overflow "0"
+								overflow_data
+								{
+									float "0.5"
+									float "0.5"
+								}
+
+								warning "0"
+								value "0"
+								infinite "1"
+								icon "gui/hud/resource_icons/carbonium"
+							}
+
+						}
+
+					}
+
+				}
+
+				key "resources"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "Vector_[47990F60-AACE-41AE-B646-B9532B85D5E7]/sorters4"
+					default_value
+					{
+						typehash "874684955"
+						Vector_[47990F60-AACE-41AE-B646-B9532B85D5E7]/sorters4
+						{
+							[47990F60-AACE-41AE-B646-B9532B85D5E7]/sorters
+							{
+								max "100"
+								selected "23"
+								type "-1"
+								icon_active "gui/menu/buttons/disassembly_all_icon_active"
+								icon "gui/menu/buttons/disassembly_all_icon_neutral"
+							}
+
+							[47990F60-AACE-41AE-B646-B9532B85D5E7]/sorters
+							{
+								max "50"
+								selected "25"
+								type "0"
+								icon_active "gui/menu/buttons/disassembly_group_icon_active"
+								icon "gui/menu/buttons/disassembly_group_icon_neutral"
+							}
+
+							[47990F60-AACE-41AE-B646-B9532B85D5E7]/sorters
+							{
+								max "100"
+								selected "100"
+								type "1"
+								icon_active "gui/menu/buttons/disassembly_group_icon_active"
+								icon "gui/menu/buttons/disassembly_group_icon_neutral"
+							}
+
+							[47990F60-AACE-41AE-B646-B9532B85D5E7]/sorters
+							{
+								max "100"
+								selected "100"
+								type "2"
+								icon_active "gui/menu/buttons/disassembly_group_icon_active"
+								icon "gui/menu/buttons/disassembly_group_icon_neutral"
+							}
+
+							[47990F60-AACE-41AE-B646-B9532B85D5E7]/sorters
+							{
+								max "100"
+								selected "100"
+								type "3"
+								icon_active "gui/menu/buttons/disassembly_group_icon_active"
+								icon "gui/menu/buttons/disassembly_group_icon_neutral"
+							}
+
+						}
+
+					}
+
+				}
+
+				key "sorters"
+			}
+
+		}
+
+		handle "[9B945D68-0475-4225-A5CC-039FD800793E]"
+	}
+
+	GuiDataTypeDefinition
+	{
+		name "resource"
+		base_type
+		{
+			typehash "0"
+		}
+
+		fields
+		{
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "Vector_float"
+					default_value
+					{
+						typehash "3744762499"
+						Vector_float
+						{
+							float "0.1"
+							float "0.4"
+							float "0.5"
+						}
+
+					}
+
+				}
+
+				key "data"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "String"
+					default_value
+					{
+						typehash "1615808600"
+						String "gui/hud/resource_icons/carbonium"
+					}
+
+				}
+
+				key "icon"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "bool"
+					default_value
+					{
+						typehash "3365180733"
+						bool "0"
+					}
+
+				}
+
+				key "infinite"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "String"
+					default_value
+					{
+						typehash "1615808600"
+						String "resource_name/carbonium"
+					}
+
+				}
+
+				key "localization_id"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "int"
+					default_value
+					{
+						typehash "2515107422"
+						int "0"
+					}
+
+				}
+
+				key "overflow"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "Vector_float"
+					default_value
+					{
+						typehash "3744762499"
+						Vector_float
+						{
+							float "0.5"
+							float "0.5"
+						}
+
+					}
+
+				}
+
+				key "overflow_data"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "int"
+					default_value
+					{
+						typehash "2515107422"
+						int "0"
+					}
+
+				}
+
+				key "value"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "bool"
+					default_value
+					{
+						typehash "3365180733"
+						bool "0"
+					}
+
+				}
+
+				key "warning"
+			}
+
+		}
+
+		handle "[DB129BF9-B6FD-4CBC-AA40-55F73AD65BBD]"
+	}
+
+	GuiDataTypeDefinition
+	{
+		name "sorters"
+		base_type
+		{
+			typehash "0"
+		}
+
+		fields
+		{
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "String"
+					default_value
+					{
+						typehash "1615808600"
+						String
+					}
+
+				}
+
+				key "icon"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "String"
+					default_value
+					{
+						typehash "1615808600"
+						String
+					}
+
+				}
+
+				key "icon_active"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "int"
+					default_value
+					{
+						typehash "2515107422"
+						int "0"
+					}
+
+				}
+
+				key "max"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "int"
+					default_value
+					{
+						typehash "2515107422"
+						int "7"
+					}
+
+				}
+
+				key "selected"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "int"
+					default_value
+					{
+						typehash "2515107422"
+						int "7"
+					}
+
+				}
+
+				key "type"
+			}
+
+		}
+
+		handle "[47990F60-AACE-41AE-B646-B9532B85D5E7]"
+	}
+
+}
+

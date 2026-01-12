@@ -1,7 +1,6 @@
-EntityBlueprint
+EntityBlueprint  // plasma_converter_lvl_2
 {
 	name  					"buildings/resources/plasma_converter_lvl_2"
-
 	base_blueprint 			"buildings/resources/plasma_converter"
 
 	BuildingDesc
@@ -14,7 +13,7 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/plasma_converter_lvl2"
 		type				"pipe"
 		require 			"headquarters"
-		upgrade				"buildings/resources/plasma_converter_lvl_3"	
+		upgrade				"buildings/resources/plasma_converter_lvl_3"
 		order				"9"		
 		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -56,7 +55,7 @@ EntityBlueprint
 				resource 	"plasma"
 				value 		"100"
 				attachment	"att_in_1"
-				family		"plasma"				
+				family		"plasma"
 			}
 			GameplayResource
 			{

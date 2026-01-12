@@ -151,12 +151,15 @@ EntityBlueprint  // fusion_powerplant
 	
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
+		script "lua/buildings/building_buffable.lua"
 				
 		database
 		{
-			cone_effect			string:"build_cone_4x4"
-			cone_effect_sell	string:"sell_big"
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/main/rift_magnetic_stabilizer,buildings/main/rift_magnetic_stabilizer_alien"
+			display_radius_group		string:"magnetic_stabilizer"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
 		
 	}

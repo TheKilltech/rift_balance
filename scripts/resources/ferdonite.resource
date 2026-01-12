@@ -4,11 +4,12 @@ GameplayResourceDef
 	localization_id "resource_name/ferdonite"
 	bp  			"items/loot/resources/shard_ferdonite_item"
 	type 			"global"
+	specific_type	"rare"
 	icon			"gui/hud/resource_icons/ferdonite"
 	bigger_icon		"gui/hud/resource_icons/ferdonite_bigger"
 	allow_overflow 	"0"
 	hud_visible 	"build_menu"
-	specific_type	"rare"
+	order   		"18"
 	
 	//missing_effect "voice_over/announcement/not_enough_ferdonite"	
 }

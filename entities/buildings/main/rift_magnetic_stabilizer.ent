@@ -1,48 +1,42 @@
-EntityBlueprint  // plasma_converter
+EntityBlueprint  // rift_magnetic_stabilizer
 {
-	name  "buildings/resources/plasma_converter"
+	name  "buildings/main/rift_magnetic_stabilizer"
 
 	BuildingDesc
 	{
-		name 				"plasma_converter"
-		bp   				"buildings/resources/plasma_converter"
-		category 			"liquids"
-		localization_id		"gui/hud/building_name/plasma_converter"
-		description			"gui/hud/building_description/plasma_converter"
-		menu_icon			"gui/hud/building_icons/plasma_converter"
+		name 				"rift_magnetic_stabilizer"
+		bp   				"buildings/main/rift_magnetic_stabilizer"
+		category 			"resources"
 		type				"pipe"
+		localization_id		"gui/hud/building_name/magnetic_stabilizer"
+		description			"gui/hud/building_description/magnetic_stabilizer"
+		menu_icon			"gui/hud/building_icons/rift_magnetic_stabilizer"
 		require 			"headquarters"
-		upgrade				"buildings/resources/plasma_converter_lvl_2"
-		order				"21"
+		//upgrade				"buildings/main/rift_magnetic_stabilizer_lvl_2"
+		order				"40"
+		min_radius_effect   "voice_over/announcement/magnetic_stabilizer_too_close"
+		radius_name			"magnetic_stabilizer"
+		min_radius			"30"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,plasma_converter_lvl_2,plasma_converter_lvl_3"
-
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,rift_magnetic_stabilizer,rift_magnetic_stabilizer_alien"
+		is_shortcut_bindable	"0"
+		hide_treasures 		"1"
+		
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 120
+				building_time 180
 				building_cost
 				{
-					carbonium 	"1000"
-					steel 		"2000"
-					palladium	"500"
-					ai			"2"
+					carbonium 	"5000"
+					steel 		"10000"
+					palladium	"2500"
+					uranium		"2500"
 				}
-			}	
-			BuildingCostInfo
-			{
-				name "survival"
-				building_time 30
-				building_cost
-				{
-					carbonium 	"250"
-					steel 		"500"
-					palladium	"125"
-				}
-			}			
-		}
+			}		
+		}		
 	}
 
 	ResourceConverterDesc
@@ -51,63 +45,36 @@ EntityBlueprint  // plasma_converter
 		{
 			GameplayResource
 			{
-				resource 	"plasma"
-				value 		"100"
-				attachment	"att_in_1"
-				family		"plasma"
+				resource 		"energy"
+				value			"500"
 			}
+
 			GameplayResource
 			{
-				resource 	"resin"
-				value 		"12"
-				attachment	"att_in_1"
-				family		"plasma"
-			}				
-			
-			GameplayResource
-			{
-				resource 	"energy"
-				value 		"50"
+				resource 		"plasma_charged"
+				value 			"25"
+				attachment		"att_in_1"
+				family			"coolant"
 			}
 		}
-		
-		out
-		{
-			GameplayResource
-			{
-				resource 	"plasma_charged"
-				value 		"25"
-				attachment	"att_out_1"
-			}
-		}
-		priority 4		
+		priority 8
 	}
 
-	ResourceStorageDesc
-	{
-		Storages
-		{
-			Storage
-			{
-				resource	 	"plasma_charged"
-				max 	 		"100"
-				attachment		"att_out_1"
-			}
-		}
-	}	
-	
 	LuaDesc
 	{
-		script "lua/buildings/building_buffable.lua"
-		
-		
+		script "lua/buildings/buff_source.lua"
+
 		database
 		{
 			cone_effect					string:"build_cone_3x3"
 			cone_effect_sell			string:"sell_big"
-			buff_buildings				string:"buildings/main/rift_magnetic_stabilizer,buildings/main/rift_magnetic_stabilizer_alien"
-			display_radius_group		string:"magnetic_stabilizer"
+			radius						float:"35"
+			range						float:"35"
+			buff_modificator			float:"1.25"
+			buff_source_name			string:"magnetic_stabilizer"
+			buff_source_level			int:"1"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+			display_radius_group		string:"magnetic_stabilizer"
 		}
 	}
 
@@ -119,7 +86,7 @@ EntityBlueprint  // plasma_converter
 		regeneration_cooldown 		"0"
 		 is_manual 1
 		update_health_uniform 		"1"
-		
+
 		DestructionLevels
 		{
 			DestructionLevel
@@ -130,6 +97,7 @@ EntityBlueprint  // plasma_converter
 				destroy_comp_event 					"80_destroy"
 				destroyed_state_effect_group 		"80_state"
 				destrucion_level_name 				"80"
+
 			}
 			DestructionLevel
 			{
@@ -165,24 +133,24 @@ EntityBlueprint  // plasma_converter
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
 				//destroyed_state_effect_group 		"0_state"
-			}			
+			}
 		}
 	}
 
 	MeshDesc
 	{
-		mesh 		"meshes/buildings/main/quantum_gate_stabilizer.mesh"
-		material 	"buildings/main/quantum_gate_stabilizer"
+		mesh 		"meshes/buildings/main/rift_magnetic_stabilizer.mesh"
+		material 	"buildings/resources/magnetic_stabilizer"
 	}
-	
+
 	TypeDesc
 	{
-		type "building|liquids"
+		type "building|resource"
 	}
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/reagent_condenser"
+		name "meshes/buildings/main/rift_magnetic_stabilizer"
 	}
 
 	AnimationGraphDesc
@@ -191,7 +159,7 @@ EntityBlueprint  // plasma_converter
 	}
 
 	PhysicsDesc
-	{
+ 	{
 		objects
 		{
 			PhysicsObjectDesc
@@ -206,10 +174,10 @@ EntityBlueprint  // plasma_converter
 						r "1.45"
 						half_height "2"
 
-						position
+						position 
 						{
 							x "0.0"
-							y "2"
+							y "1.45"
 							z "0.0"
 						}
 
@@ -220,7 +188,7 @@ EntityBlueprint  // plasma_converter
 							z "0.7"
 							y "0.0"
 						}
-					}
+					}	
 				}
 			}
 		}
@@ -237,21 +205,23 @@ EntityBlueprint  // plasma_converter
 	{
 		Shapes
 		{
-			PhysicsMeshShape
-			{
-				mesh "meshes/buildings/resources/water_filtering_plant_g1.nxs"
-			}	
+   			PhysicsBoxShape
+   			{
+    				x	4
+    				y	4
+    				z	4
+   			}			
 		}
 	}
 
 	MinimapItemDesc
 	{
 		type	"quad"
-		color 
+		color
 		{
-			x "0.3"  // r
-			y "0.5"  // g
-			z "0.9"  // b
+			x "0.5"
+			y "0.5"
+			z "1"
 			w "1"
 		}
 		size
@@ -278,14 +248,14 @@ EntityBlueprint  // plasma_converter
 	LootDesc
 	{
 		explosion_max_power 	"2000"
-		explosion_min_power 	"1000"	
+		explosion_min_power 	"1000"
 	}
 
 	DestroyDesc
 	{
-		
+
 		DestroyPatterns
-		{		
+		{
 			Pair
 			{
 				key "80_destroy"
@@ -295,12 +265,12 @@ EntityBlueprint  // plasma_converter
 					explosion_max_power 	"8000"
 					explosion_min_power 	"3000"
 					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
-					part_physics_material   "debris_heavy"					
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					part_prefix 			"meshes/misc/building_medium_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_lifetime "3"
-				}	
+				}
 			}
 			Pair
 			{
@@ -311,12 +281,12 @@ EntityBlueprint  // plasma_converter
 					explosion_max_power 	"8000"
 					explosion_min_power 	"3000"
 					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
-					part_physics_material   "debris_heavy"					
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					part_prefix 			"meshes/misc/building_medium_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_lifetime "3"
-				}	
+				}
 			}
 			Pair
 			{
@@ -327,13 +297,13 @@ EntityBlueprint  // plasma_converter
 					explosion_max_power 	"8000"
 					explosion_min_power 	"3000"
 					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
-					part_physics_material   "debris_heavy"					
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					part_prefix 			"meshes/misc/building_medium_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_lifetime "3"
-				}	
-			}			
+				}
+			}
 			Pair
 			{
 				key "20_destroy"
@@ -343,29 +313,29 @@ EntityBlueprint  // plasma_converter
 					explosion_max_power 	"8000"
 					explosion_min_power 	"3000"
 					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
-					part_physics_material   "debris_heavy"					
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					part_prefix 			"meshes/misc/building_medium_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_lifetime "3"
 				}
-			}		
+			}
 			Pair
 			{
-				key "default"			
+				key "default"
 				value
 				{
 					explosion_type 			"centered"
 					explosion_max_power 	"8000"
 					explosion_min_power 	"3000"
-					//explosion_effect 		"effects/buildings_generic/explosion_building_small_01"	
-					part_physics_material   "debris_heavy"					
+					//explosion_effect 		"effects/buildings_generic/explosion_building_small_01"
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					part_prefix 			"meshes/misc/building_large_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_lifetime "3"
 				}
-			}	
+			}
 			Pair
 			{
 				value
@@ -374,56 +344,40 @@ EntityBlueprint  // plasma_converter
 					explosion_max_power 	"8000"
 					explosion_min_power 	"3000"
 					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
-					part_physics_material   "debris_heavy"	
+					part_physics_material   "debris_heavy"
 					part_material 			"misc/building_parts_generic"
 					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
 					part_prefix 			"meshes/misc/building_large_parts_generic"
-					part_lifetime "3"	
+					part_lifetime "3"
 				}
 
 				key "quicksand"
-			}				
+			}
 		}
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
-		////////////////////////Resources/////////////////////////			
+		}
+////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"	
-					bone "att_in_arrow"
-				}
-			}
-		}	
-		EffectGroup
-		{
-			group "att_out_1"
-			enabled "0"				
-			delay "0"
-			
+
 			Effects
 			{
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_arrow"
+					bone "att_in_1_arrow"
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////	
 		EffectGroup
 		{
 			group "working"
@@ -433,35 +387,26 @@ EntityBlueprint  // plasma_converter
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_cube_trail"
-					bone "att_working"
-				}
+					blueprint "effects/buildings_main/rift_magnetic_stabilizer_working"	
+					delay "0.5"					
+				}	
 			}
-		}
-		EffectGroup
-		{
-			group "vismod"
-			enabled "1"
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_out_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_02"
-					bone  "att_vismod_2"
-					scale "0.86 0.7 1.2"
-				}
-			}
-		}			
+		}	
 	}
 }
 
+
+EntityBlueprint "effects/no_lifetime"  // magnetic_stabilizer_missing_icon
+{
+	name  "buildings/resources/magnetic_stabilizer_missing_icon"
+
+	IdDesc
+	{
+		name "##buff##"
+	}
+	
+	ParticleDesc
+	{
+		name    "rift/missing_magnetic_stabilizer_icon"
+	}
+}

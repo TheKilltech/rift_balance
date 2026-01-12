@@ -27,6 +27,6 @@ GameplayResourceDef
 	type 			"global"
 	icon			"gui/hud/resource_icons/ammonium"
 	bigger_icon		"gui/hud/resource_icons/ammonium_bigger"
-	order   		"2"
 	hud_visible 	"always"
+	order   		"3"
 }

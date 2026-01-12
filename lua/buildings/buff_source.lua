@@ -1,15 +1,13 @@
--- renamed to buff_source for other buildings to reuse. this file may still be used by save files from 0.3.11 or earlier versions
-
 local building = require("lua/buildings/building.lua")
 require("lua/utils/table_utils.lua")
 
-class 'ore_mill' ( building )
+class 'buff_source' ( building )
 
-function ore_mill:__init()
+function buff_source:__init()
 	building.__init(self,self)
 end
 
-function ore_mill:OnInit()	
+function buff_source:OnInit()	
 	self:RegisterHandler( self.entity, "StartUpgradingEvent", "OnUpgradingStart" )
 	
 	self.range   = self.data:GetFloatOrDefault("range", 40)
@@ -24,61 +22,61 @@ function ore_mill:OnInit()
 end
 
 
-function ore_mill:OnActivate()
-	--LogService:Log( "ore_mill: OnActivate ".. self.buildingName.. " ".. tostring(self.entity) )
+function buff_source:OnActivate()
+	--LogService:Log( "buff_source: OnActivate ".. self.buildingName.. " ".. tostring(self.entity) )
 	self.fsm:ChangeState("buff")
 end
 
-function ore_mill:OnDeactivate()
-	--LogService:Log( "ore_mill: OnDeactivate ".. self.buildingName.. " ".. tostring(self.entity) )
+function buff_source:OnDeactivate()
+	--LogService:Log( "buff_source: OnDeactivate ".. self.buildingName.. " ".. tostring(self.entity) )
 	self.fsm:ChangeState("idle")
 end
 
-function ore_mill:OnDestroy()
-	--LogService:Log( "ore_mill: OnDestroy ".. self.buildingName.. " ".. tostring(self.entity) )
+function buff_source:OnDestroy()
+	--LogService:Log( "buff_source: OnDestroy ".. self.buildingName.. " ".. tostring(self.entity) )
 	self.fsm:ChangeState("idle")
 end
 
-function ore_mill:OnSell()
-	--LogService:Log( "ore_mill: OnSell ".. self.buildingName.. " ".. tostring(self.entity) )
+function buff_source:OnSell()
+	--LogService:Log( "buff_source: OnSell ".. self.buildingName.. " ".. tostring(self.entity) )
 	self.fsm:ChangeState("idle")
 end
 
-function ore_mill:OnRelease()
-	--LogService:Log( "ore_mill: OnRelease ".. self.buildingName.. " ".. tostring(self.entity) )
+function buff_source:OnRelease()
+	--LogService:Log( "buff_source: OnRelease ".. self.buildingName.. " ".. tostring(self.entity) )
 	QueueEvent("LuaGlobalEvent", event_sink, "BuffEvent", {} )
 end
 
-function ore_mill:OnBuildingEnd()
-	--LogService:Log( "ore_mill: OnBuildingEnd ".. self.buildingName.. " ".. tostring(self.entity) )
+function buff_source:OnBuildingEnd()
+	--LogService:Log( "buff_source: OnBuildingEnd ".. self.buildingName.. " ".. tostring(self.entity) )
 	if self.working == true then
 		self.fsm:ChangeState("buff")
 	else self.fsm:ChangeState("idle")
 	end
 end
 
-function ore_mill:OnUpgradingStart()
-	--LogService:Log( "ore_mill: OnUpgradingStart ".. self.buildingName.. " ".. tostring(self.entity) )
+function buff_source:OnUpgradingStart()
+	--LogService:Log( "buff_source: OnUpgradingStart ".. self.buildingName.. " ".. tostring(self.entity) )
 	self.fsm:ChangeState("idle")
 end
 
-function ore_mill:OnEnterIdle()
-	--LogService:Log( "ore_mill: OnEnterIdle" )
+function buff_source:OnEnterIdle()
+	--LogService:Log( "buff_source: OnEnterIdle" )
 end
 
 
-function ore_mill:OnEnterBuff()
-	--LogService:Log( "ore_mill: OnEnterBuff" )
+function buff_source:OnEnterBuff()
+	--LogService:Log( "buff_source: OnEnterBuff" )
 	self.data:SetInt("buff_source_entity", self.entity)
 	self.data:SetInt("buff_active", 1)
 	QueueEvent("LuaGlobalEvent", event_sink, "BuffEvent", self.data )
 end
 
-function ore_mill:OnExitBuff()
-	--LogService:Log( "ore_mill: OnExitBuff" )
+function buff_source:OnExitBuff()
+	--LogService:Log( "buff_source: OnExitBuff" )
 	self.data:SetInt("buff_source_entity", self.entity)
 	self.data:SetInt("buff_active", 0)
 	QueueEvent("LuaGlobalEvent", event_sink, "BuffEvent", self.data )
 end
 
-return ore_mill
+return buff_source
