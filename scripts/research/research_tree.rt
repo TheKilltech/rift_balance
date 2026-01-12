@@ -1064,7 +1064,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1305"
+						x "1350"
 						y "108"
 					}
 
@@ -2028,7 +2028,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1359"
+						x "1431"
 						y "-162"
 					}
 
@@ -2232,7 +2232,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1305"
+						x "1350"
 						y "288"
 					}
 
@@ -3609,7 +3609,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1467"
+						x "1539"
 						y "-162"
 					}
 
@@ -3744,7 +3744,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1413"
+						x "1485"
 						y "-162"
 					}
 
@@ -4810,7 +4810,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1413"
+						x "1485"
 						y "-216"
 					}
 
@@ -5330,7 +5330,7 @@ Research
 
 					position
 					{
-						x "1305"
+						x "1350"
 						y "-18"
 					}
 
@@ -5476,7 +5476,7 @@ Research
 
 					position
 					{
-						x "1386"
+						x "1458"
 						y "-108"
 					}
 
@@ -5556,7 +5556,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1440"
+						x "1512"
 						y "-108"
 					}
 
@@ -7859,12 +7859,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_molt"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/main/armory_lvl_2"
 							is_visible "1"
 						}
 
@@ -13115,7 +13109,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1359"
+						x "1431"
 						y "36"
 					}
 
@@ -13183,7 +13177,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1359"
+						x "1431"
 						y "108"
 					}
 
@@ -13251,7 +13245,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1359"
+						x "1431"
 						y "288"
 					}
 
@@ -13387,7 +13381,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1413"
+						x "1485"
 						y "108"
 					}
 
@@ -13455,7 +13449,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1413"
+						x "1485"
 						y "288"
 					}
 
@@ -13955,18 +13949,6 @@ Research
 							is_visible "1"
 						}
 
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_molt_uranium"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_uranium"
-							is_visible "1"
-						}
-
 					}
 
 					icon "gui/menu/research/icons/tower_ammunition_handling"
@@ -14072,18 +14054,6 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_molt_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_uranium"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_uranium_molt"
 							is_visible "1"
 						}
 
@@ -14980,7 +14950,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1359"
+						x "1431"
 						y "-18"
 					}
 
@@ -15055,7 +15025,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1413"
+						x "1485"
 						y "-18"
 					}
 
@@ -15130,7 +15100,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1467"
+						x "1539"
 						y "-18"
 					}
 
@@ -15198,7 +15168,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1521"
+						x "1593"
 						y "-18"
 					}
 
@@ -15266,7 +15236,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1521"
+						x "1593"
 						y "108"
 					}
 
@@ -15334,7 +15304,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1521"
+						x "1593"
 						y "288"
 					}
 
@@ -15410,6 +15380,278 @@ Research
 					}
 
 					icon "gui/menu/research/icons/towers_water_basic"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/nuclear_energy_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/depleted_uranium_high_caliber_shells"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "ammonium"
+							count "2000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "2000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "uranium_depleted"
+							count "3000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1314"
+						y "36"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_uranium"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_spear"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/depleted_uranium_high_caliber_shells"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/depleted_uranium_high_caliber_shells_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "ammonium"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "uranium_depleted"
+							count "6000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1314"
+						y "162"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_uranium_molt"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_weapons_spear"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/nuclear_energy_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_low_caliber_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/depleted_uranium_low_caliber_shells"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "ammonium"
+							count "2000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "2000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "uranium_depleted"
+							count "3000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1386"
+						y "36"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_uranium"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/tower_ammunition_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/depleted_uranium_low_caliber_shells"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/depleted_uranium_low_caliber_shells_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "ammonium"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "uranium_depleted"
+							count "6000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1386"
+						y "162"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_uranium"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/tower_ammunition_handling"
 				}
 
 			}
@@ -47522,6 +47764,6 @@ Research
 
 	type
 	editor "6643"
-	version "198"
+	version "199"
 }
 
