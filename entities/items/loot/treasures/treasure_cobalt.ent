@@ -1,0 +1,62 @@
+EntityBlueprint
+{
+	name  "items/loot/treasures/treasure_cobalt_medium_lvl1"
+
+	TreasureComponent
+    {
+        bp      "spawners/loot_spawner"
+        lvl	    "1"
+
+        database
+        {	
+            blueprint 	    string:"items/loot/resources/shard_cobalt_item"
+            min   	 	    int:"100"
+            max   	 	    int:"200"
+            package_size    int:"2"
+        }
+    }
+
+
+}
+
+EntityBlueprint
+{
+	name  "items/loot/treasures/treasure_cobalt_planetary_scanner_quest"
+
+    TreasureComponent
+    {
+        bp                  "spawners/resource_spawner"
+        lvl	                "1"
+
+        database
+        {	
+            resource        string:"cobalt_vein"
+            min_resources   float:"4000"
+            max_resources   float:"10000"
+
+            blueprint 	    string:"items/loot/resources/shard_cobalt_item"
+            min   	 	    int:"500"
+            max   	 	    int:"600"
+            package_size    int:"6"
+        }
+    }
+}
+
+EntityBlueprint
+{
+	name  "items/loot/treasures/treasure_cobalt_small_lvl1"
+
+	TreasureComponent
+    {
+        bp      "spawners/loot_spawner"
+        lvl	    "1"
+
+        database
+        {	
+            blueprint 	    string:"items/loot/resources/shard_cobalt_item"
+            min   	 	    int:"20"
+            max   	 	    int:"50"
+        }
+    }
+}
+
