@@ -1,8 +1,8 @@
-//editor "scroll(6743.87,280.01)|zoom(0.67)"
+//editor "scroll(922.04,74.84)|zoom(0.60)"
 FlowGraphTemplate
 {
-	version "23"
-	editor "6445"
+	version "24"
+	editor "6643"
 	GraphNodes
 	{
 		LuaBehaviourNode
@@ -80,6 +80,11 @@ FlowGraphTemplate
 					{
 						key "finish_objective"
 						value "1"
+					}
+
+					IntData
+					{
+						key "always_visible"
 					}
 
 				}
@@ -628,6 +633,12 @@ FlowGraphTemplate
 						value "0"
 					}
 
+					IntData
+					{
+						key "always_visible"
+						value "0"
+					}
+
 				}
 
 				Strings
@@ -913,7 +924,7 @@ FlowGraphTemplate
 
 		DialogGroupNode
 		{
-			//editor "layout(interface_dialogue_show_group.xml)|pos(3108,155)"
+			//editor "layout(interface_dialogue_show_group.xml)|pos(3361,89)"
 			global "0"
 			interrupt "0"
 			priority "0"
@@ -1143,7 +1154,7 @@ FlowGraphTemplate
 					FloatData
 					{
 						key "duration"
-						value "3.00"
+						value "30"
 					}
 
 				}
@@ -1323,7 +1334,7 @@ FlowGraphTemplate
 					StringData
 					{
 						key "display_name"
-						value "gui/hud/objective_name/story/desert_resource_outpost/build.rare_element_mine"
+						value "gui/hud/objective_name/story/build_uranium_deepvein_mine"
 					}
 
 					StringData
@@ -1426,7 +1437,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_difficulty.xml)|pos(2127,-116)"
+			//editor "layout(condition_difficulty.xml)|pos(2128,-116)"
 			key "easy"
 			self_id "logic_if_difficulty_wave_1###easy"
 			value
@@ -1434,7 +1445,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_difficulty.xml)|pos(2127,-87)"
+			//editor "layout(condition_difficulty.xml)|pos(2128,-87)"
 			key "normal"
 			self_id "logic_if_difficulty_wave_1###normal"
 			value
@@ -1442,7 +1453,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_difficulty.xml)|pos(2127,-57)"
+			//editor "layout(condition_difficulty.xml)|pos(2128,-57)"
 			key "hard"
 			self_id "logic_if_difficulty_wave_1###hard"
 			value
@@ -1450,7 +1461,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_difficulty.xml)|pos(2127,-28)"
+			//editor "layout(condition_difficulty.xml)|pos(2128,-28)"
 			key "brutal"
 			self_id "logic_if_difficulty_wave_1###brutal"
 			value
@@ -1458,7 +1469,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_difficulty.xml)|pos(2127,1)"
+			//editor "layout(condition_difficulty.xml)|pos(2128,1)"
 			key "sandbox"
 			self_id "logic_if_difficulty_wave_1###sandbox"
 			value
@@ -1644,12 +1655,149 @@ FlowGraphTemplate
 			self_id "mission_dom_max_difficulty_level_6"
 		}
 
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_gather_resource.xml)|pos(2467,859)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "progress_max"
+						value "500"
+					}
+
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "is_additional"
+						value "0"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "1"
+					}
+
+					IntData
+					{
+						key "finish_objective"
+						value "1"
+					}
+
+					IntData
+					{
+						key "always_visible"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value "lua/objectives/gather_resource.lua"
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/story/find_uranium_deepvein"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "find.uranium_deepvein"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value
+					}
+
+					StringData
+					{
+						key "resource_name"
+						value "uranium_ore"
+					}
+
+					StringData
+					{
+						key "wait"
+						value "true"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_gather_resource_1"
+		}
+
+		DialogGroupNode
+		{
+			//editor "layout(interface_dialogue_show_group.xml)|pos(1879,877)"
+			global "0"
+			interrupt "0"
+			priority "0"
+			self_id "interface_dialogue_show_group_3"
+			timeout "0"
+			dialogs
+			{
+				//editor "expanded(1)"
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/mech"
+					sound_name "voice_over/story/headquarters/mech_orbital_scanner_03"
+				}
+
+			}
+
+		}
+
+		OrBehaviourNode
+		{
+			//editor "layout(logic_or.xml)|pos(3141,608)"
+			self_id "logic_or_1"
+		}
+
 	}
 
 	GraphConnections
 	{
 		default "entity_spawn_player_0"
 		entity_spawn_player_0 "event_graph_2|logic_wait_on_event_0"
+		interface_dialogue_show_group_3 "objective_gather_resource_1"
 		logic_event_send_0 "logic_if_difficulty_wave_1"
 		logic_if_difficulty_wave_1 "logic_if_difficulty_wave_1###brutal|logic_if_difficulty_wave_1###easy|logic_if_difficulty_wave_1###hard|logic_if_difficulty_wave_1###normal|logic_if_difficulty_wave_1###sandbox"
 		logic_if_difficulty_wave_1###brutal "mission_dom_max_difficulty_level_4"
@@ -1660,6 +1808,7 @@ FlowGraphTemplate
 		logic_if_resource_0 "logic_if_resource_0###true"
 		logic_if_resource_0###true "interface_dialogue_show_group_4"
 		logic_or_0 "logic_wait_1"
+		logic_or_1 "interface_dialogue_show_group_2|logic_wait_4"
 		logic_or_3 "logic_event_send_0"
 		logic_set_global_variable_0 "mission_end_0"
 		logic_wait_1 "objective_construct_building_0"
@@ -1667,7 +1816,7 @@ FlowGraphTemplate
 		logic_wait_12 "logic_or_3"
 		logic_wait_13 "interface_dialogue_show_group_6|logic_set_global_variable_0|mission_change_creature_difficulty_0|mission_dom_max_difficulty_level_6|objective_finish_1"
 		logic_wait_2 "objective_exist_0"
-		logic_wait_3 "objective_construct_building_1"
+		logic_wait_3 "interface_dialogue_show_group_3|objective_construct_building_1"
 		logic_wait_4 "objective_construct_building_2"
 		logic_wait_5 "logic_if_resource_0|objective_gather_resource_0"
 		logic_wait_6 "interface_dialogue_show_group_5|objective_generic_0"
@@ -1677,7 +1826,7 @@ FlowGraphTemplate
 		mission_dom_max_difficulty_level_6 "mission_end_0"
 		mission_dom_send_major_attack_0 "logic_wait_on_event_1"
 		objective_construct_building_0 "interface_dialogue_show_group_1|logic_wait_12|logic_wait_3"
-		objective_construct_building_1 "interface_dialogue_show_group_2|logic_wait_4"
+		objective_construct_building_1 "logic_or_1"
 		objective_construct_building_2 "logic_wait_5"
 		objective_exist_0 "objective_exist_0###false|objective_exist_0###true"
 		objective_exist_0###false "logic_or_0"
@@ -1685,6 +1834,7 @@ FlowGraphTemplate
 		objective_finish_0 "logic_or_0"
 		objective_finish_1 "mission_end_0"
 		objective_gather_resource_0 "logic_wait_6"
+		objective_gather_resource_1 "logic_or_1"
 		objective_generic_0 "mission_dom_send_major_attack_0"
 	}
 

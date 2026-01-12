@@ -1,8 +1,8 @@
-//editor "scroll(4294.75,-239.03)|zoom(1.00)"
+//editor "scroll(609.99,-345.58)|zoom(0.40)"
 FlowGraphTemplate
 {
-	version "13"
-	editor "5250"
+	version "14"
+	editor "6643"
 	GraphNodes
 	{
 		LuaBehaviourNode
@@ -314,7 +314,7 @@ FlowGraphTemplate
 					FloatData
 					{
 						key "duration"
-						value "3.00"
+						value "30"
 					}
 
 				}
@@ -358,7 +358,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_false.xml)|pos(4794,484)"
+			//editor "layout(condition_false.xml)|pos(4794,475)"
 			key "false"
 			self_id "objective_exist_0###false"
 			value "objective_exist_0###false"
@@ -366,7 +366,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_true.xml)|pos(4794,514)"
+			//editor "layout(condition_true.xml)|pos(4794,503)"
 			key "true"
 			self_id "objective_exist_0###true"
 			value "objective_exist_0###true"
@@ -444,6 +444,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "0"
 			self_id "interface_dialogue_show_group_0"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -474,6 +475,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "0"
 			self_id "interface_dialogue_show_group_1"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -504,6 +506,7 @@ FlowGraphTemplate
 			interrupt "0"
 			priority "0"
 			self_id "interface_dialogue_show_group_2"
+			timeout "0"
 			dialogs
 			{
 				//editor "expanded(1)"
@@ -644,7 +647,7 @@ FlowGraphTemplate
 					StringData
 					{
 						key "display_name"
-						value "gui/hud/objective_name/story/jungle_resource_outpost/build.rare_element_mine"
+						value "gui/hud/objective_name/story/build_cobalt_deepvein_mine"
 					}
 
 					StringData
@@ -702,24 +705,163 @@ FlowGraphTemplate
 			self_id "objective_construct_building_1"
 		}
 
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_gather_resource.xml)|pos(3805,903)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "progress_max"
+						value "500"
+					}
+
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "is_additional"
+						value "0"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "1"
+					}
+
+					IntData
+					{
+						key "finish_objective"
+						value "1"
+					}
+
+					IntData
+					{
+						key "always_visible"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value "lua/objectives/gather_resource.lua"
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/story/find_cobalt_deepvein"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "find.cobalt_deepvein"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value
+					}
+
+					StringData
+					{
+						key "resource_name"
+						value "cobalt"
+					}
+
+					StringData
+					{
+						key "wait"
+						value "true"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_gather_resource_0"
+		}
+
+		DialogGroupNode
+		{
+			//editor "layout(interface_dialogue_show_group.xml)|pos(3233,919)"
+			global "0"
+			interrupt "0"
+			priority "0"
+			self_id "interface_dialogue_show_group_3"
+			timeout "0"
+			dialogs
+			{
+				//editor "expanded(1)"
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/mech"
+					sound_name "voice_over/story/headquarters/mech_orbital_scanner_03"
+				}
+
+			}
+
+		}
+
+		OrBehaviourNode
+		{
+			//editor "layout(logic_or.xml)|pos(4487,519)"
+			self_id "logic_or_2"
+		}
+
 	}
 
 	GraphConnections
 	{
 		default "entity_spawn_player_0"
 		entity_spawn_player_0 "event_graph_0|logic_wait_on_event_0"
+		interface_dialogue_show_group_3 "objective_gather_resource_0"
 		logic_or_1 "mission_dom_resume_0"
+		logic_or_2 "interface_dialogue_show_group_2|logic_set_global_variable_0|mission_change_creature_difficulty_0|objective_exist_0"
 		logic_set_global_variable_0 "mission_end_0"
 		logic_wait_0 "logic_or_1"
 		logic_wait_1 "objective_construct_building_0"
-		logic_wait_2 "objective_construct_building_1"
+		logic_wait_2 "interface_dialogue_show_group_3|objective_construct_building_1"
 		logic_wait_3 "logic_or_1"
 		logic_wait_on_event_0 "interface_dialogue_show_group_0|logic_wait_1|logic_wait_3"
 		mission_change_creature_difficulty_0 "mission_end_0"
 		objective_construct_building_0 "interface_dialogue_show_group_1|logic_wait_0|logic_wait_2"
-		objective_construct_building_1 "interface_dialogue_show_group_2|logic_set_global_variable_0|mission_change_creature_difficulty_0|objective_exist_0"
+		objective_construct_building_1 "logic_or_2"
 		objective_exist_0 "objective_exist_0###false|objective_exist_0###true"
 		objective_exist_0###true "objective_finish_1"
+		objective_gather_resource_0 "logic_or_2"
 	}
 
 	GraphComments
