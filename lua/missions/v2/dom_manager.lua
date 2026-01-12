@@ -317,6 +317,9 @@ function dom_mananger:OnLoad()
 		self.rules = ProcessRulesTable( require( self.rulesFile )( self.rulesParam ) )
 	end
 	
+	--self:VerboseLog( PrintTable( self.rules))
+	--self:VerboseLog( PrintTable( self.rules.multiplayerWaves))   -- waves extraWaves
+	
 	if ( self.version == nil ) then
 		self:RegisterHandler( event_sink, "StartUpgradingEvent",        	   "OnStartUpgradingEvent" )
 		self:UnregisterHandler( event_sink, "BuildingStartEvent",        	   "OnBuildingStartEvent" )
@@ -1351,7 +1354,9 @@ function dom_mananger:OnEnterPrepareSpawn( state )
 				if ( multiplayerAttackCount > 0 ) then
 					wavePool = self:GetMultiplayerWavePool( self.currentDifficultyLevel )
 					self:PrepareWave( multiplayerAttackCount, borderSpawnPointGroupName, wavePool, "OnEnterPrepareSpawn: Prepare attack name : ", self.waitForSpawnTimer, self.preparedAttacks, self.preparedAttackMarkers )
+				else self:VerboseLog("Multiplayer attack count too low, skipping")
 				end
+			else self:VerboseLog("No multiplayer-waves available for current difficulty, skipping")
 			end
 		end
 	end
