@@ -357,12 +357,12 @@ EntityBlueprint  // biomass_morphed_press
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////		
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_out_1"
@@ -373,30 +373,46 @@ EntityBlueprint  // biomass_morphed_press
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////					
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapon_items/mine_gravity"
+					bone "att_vismod_1"
+					scale		1.4 1.4 1.4
+					orientation 0 0 0
+					offset		0 -1.1 0
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/water_filtering_pool"								
+					blueprint "effects/buildings_and_machines/nuclear_powerplant_rods"
 					bone "att_chimney"
 					delay "1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"	
-					delay "1"					
-				}							
+					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"
+					delay "1"
+				}
 			}
 		}	
 	}
@@ -562,8 +578,8 @@ EntityBlueprint  // biomass_morphed_press_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
 				}
 			}
 		}
@@ -577,8 +593,8 @@ EntityBlueprint  // biomass_morphed_press_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
 				}
 			}
 		}
@@ -594,6 +610,14 @@ EntityBlueprint  // biomass_morphed_press_lvl_2
 					blueprint "effects/buildings_and_machines/pipe_s"
 					bone 	"att_in_pipe_mid"
 					scale	3.1 1 1
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/mine_gravity"
+					bone "att_vismod_1"
+					scale		1.4 1.4 1.4
+					orientation 0 0 0
+					offset		0 -1.1 0
 				}
 				Effect
 				{
@@ -613,7 +637,7 @@ EntityBlueprint  // biomass_morphed_press_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"
+					blueprint "effects/buildings_and_machines/nuclear_powerplant_rods"
 					bone "att_chimney"
 					delay "1"
 				}
@@ -772,8 +796,8 @@ EntityBlueprint  // biomass_morphed_press_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
 				}
 			}
 		}
@@ -787,8 +811,8 @@ EntityBlueprint  // biomass_morphed_press_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
 				}
 			}
 		}
@@ -804,6 +828,14 @@ EntityBlueprint  // biomass_morphed_press_lvl_3
 					blueprint "effects/buildings_and_machines/pipe_s"
 					bone 	"att_in_pipe_mid"
 					scale	3.1 1 1
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/mine_gravity"
+					bone "att_vismod_1"
+					scale		1.4 1.4 1.4
+					orientation 0 0 0
+					offset		0 -1.1 0
 				}
 				Effect
 				{
@@ -830,7 +862,7 @@ EntityBlueprint  // biomass_morphed_press_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"
+					blueprint "effects/buildings_and_machines/nuclear_powerplant_rods"
 					bone "att_chimney"
 					delay "1"
 				}

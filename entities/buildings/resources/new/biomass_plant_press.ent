@@ -356,16 +356,16 @@ EntityBlueprint  // biomass_plant_press
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////		
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -380,8 +380,24 @@ EntityBlueprint  // biomass_plant_press
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapon_items/ball_green"
+					bone "att_vismod_1"
+					scale		1.8 1.8 1.8
+					orientation 0 0 0
+					offset		0 0.2 0
+				}
+			}
+		}
+		EffectGroup
+		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
@@ -393,11 +409,11 @@ EntityBlueprint  // biomass_plant_press
 				}
 				Effect
 				{
-					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"	
-					delay "1"					
-				}							
+					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"
+					delay "1"
+				}
 			}
-		}	
+		}
 	}
 }
 
@@ -568,6 +584,14 @@ EntityBlueprint  // biomass_plant_press_lvl_2
 			enabled "1"
 			Effects
 			{
+				Effect
+				{
+					blueprint "effects/weapon_items/ball_green"
+					bone "att_vismod_1"
+					scale		1.8 1.8 1.8
+					orientation 0 0 0
+					offset		0 0.2 0
+				}
 				Effect
 				{
 					blueprint "effects/weapon_items/spitter_acid"
@@ -773,8 +797,8 @@ EntityBlueprint  // biomass_plant_press_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
 				}
 			}
 		}
@@ -788,8 +812,8 @@ EntityBlueprint  // biomass_plant_press_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
 				}
 			}
 		}
@@ -805,6 +829,14 @@ EntityBlueprint  // biomass_plant_press_lvl_3
 					blueprint "effects/buildings_and_machines/pipe_s"
 					bone 	"att_in_pipe_mid"
 					scale	3 1 1
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/ball_green"
+					bone "att_vismod_1"
+					scale		1.8 1.8 1.8
+					orientation 0 0 0
+					offset		0 0.2 0
 				}
 				Effect
 				{

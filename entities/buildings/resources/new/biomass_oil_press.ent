@@ -363,11 +363,11 @@ EntityBlueprint  // biomass_oil_press
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////		
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -383,21 +383,21 @@ EntityBlueprint  // biomass_oil_press
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_chimney"
 					delay "1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"	
-					delay "1"					
-				}							
+					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"
+					delay "1"
+				}
 			}
 		}	
 	}
@@ -530,7 +530,7 @@ EntityBlueprint  // biomass_oil_press_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_chimney"
 					delay "1"
 				}
@@ -715,8 +715,8 @@ EntityBlueprint  // biomass_oil_press_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
 				}
 			}
 		}
@@ -730,8 +730,8 @@ EntityBlueprint  // biomass_oil_press_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
 				}
 			}
 		}
@@ -762,6 +762,7 @@ EntityBlueprint  // biomass_oil_press_lvl_3
 					bone "att_vismod_4"
 					scale		2 2 2
 					orientation 0 -90 180
+					offset		-0.2 0 0
 				}
 			}
 		}
@@ -774,7 +775,7 @@ EntityBlueprint  // biomass_oil_press_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_chimney"
 					delay "1"
 				}
@@ -784,7 +785,7 @@ EntityBlueprint  // biomass_oil_press_lvl_3
 					delay "1"
 				}
 			}
-		}	
+		}
 		EffectGroup
 		{
 			group "level"
