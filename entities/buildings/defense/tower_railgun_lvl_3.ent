@@ -1,26 +1,22 @@
-EntityBlueprint
+EntityBlueprint  // tower_railgun_lvl_3
 {
-	name  "buildings/defense/tower_railgun_lvl_3"
-
-	base_blueprint 			buildings/defense/tower_railgun_lvl_2
+	name			"buildings/defense/tower_railgun_lvl_3"
+	base_blueprint 	"buildings/defense/tower_railgun_lvl_2"
 
 	BuildingDesc
 	{
-		buildable			"0"
 		name 				"tower_railgun_lvl_3"
 		bp   				"buildings/defense/tower_railgun_lvl_3"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_railgun"
+		localization_id		"gui/hud/building_name/tower_railgun_large"
 		description			"gui/hud/building_description/tower_railgun"
 		menu_icon			"gui/hud/building_icons/tower_railgun_lvl3"
 		require 			"headquarters"
 		building_group		"tower_laser"
-		order				"13"
 		buildable			"0"
-		check_connect		"1"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
-		//upgrade				"buildings/defense/tower_railgun_lvl_4"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
 		{
@@ -34,8 +30,8 @@ EntityBlueprint
 					steel 		"4500"
 					cobalt		"300"
 				}
-			}		
-		}			
+			}
+		}
 	}
 
 	ResourceConverterDesc // must be here for AI
@@ -142,6 +138,10 @@ EntityBlueprint
 	{
 	}
 
+	TowerDesc
+	{
+	}
+	
 	TurretDesc
 	{
 		target "ground_unit"
@@ -171,9 +171,6 @@ EntityBlueprint
 			WeaponMuzzle
 			{
 				attachment "att_muzzle"
-				//recoil_bone  "recoil"
-				//recoil_time   "0.45"
-				//recoil_offset   "1.6"
 			}
 		}
 
@@ -254,7 +251,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_railgun_projectile_lvl3
 {
 	name  "buildings/defense/tower_railgun_projectile_lvl3"
 
