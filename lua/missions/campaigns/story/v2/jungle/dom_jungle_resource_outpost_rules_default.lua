@@ -78,7 +78,7 @@ return function(params)
 	rules.objectivesLogic = 
 	{
 		{ name = "logic/objectives/kill_elite_dynamic.logic",              minDifficultyLevel = 5 },
-		{ name = "logic/objectives/destroy_nest_canoptrix_single.logic",   minDifficultyLevel = 3, maxDifficultyLevel = 5 },
+		{ name = "logic/objectives/destroy_nest_canoptrix_single.logic",   minDifficultyLevel = 3, maxDifficultyLevel = 8 },
 		{ name = "logic/objectives/destroy_nest_canoptrix_multiple.logic", minDifficultyLevel = 5 }
 	}
 
