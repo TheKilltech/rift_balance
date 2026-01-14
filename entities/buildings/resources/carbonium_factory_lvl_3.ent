@@ -1,21 +1,18 @@
-EntityBlueprint
+EntityBlueprint  // carbonium_factory_lvl_3
 {
-	name  "buildings/resources/carbonium_factory_lvl_3"
-
-	base_blueprint buildings/resources/carbonium_factory_lvl_2
+	name			"buildings/resources/carbonium_factory_lvl_3"
+	base_blueprint	"buildings/resources/carbonium_factory_lvl_2"
 
 	BuildingDesc
 	{
-		buildable 			"0"		
+		buildable 			"0"
 		name 				"carbonium_factory_lvl_3"
 		bp   				"buildings/resources/carbonium_factory_lvl_3"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/strip_mine"
 		description			"gui/hud/building_description/strip_mine_lvl_3"
 		menu_icon			"gui/hud/building_icons/carbonium_factory_lvl3"
-		order				"1"
-		//upgrade				"buildings/resources/carbonium_factory_lvl_4"
-		require 			"headquarters"
+		//require 			"headquarters"    // removed to save screen space
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
@@ -238,41 +235,41 @@ EntityBlueprint
 	}	
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}
-////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_chimney"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_resources/carbonium_factory_working"	
-					delay "0.5"					
-				}				
+					blueprint "effects/buildings_resources/carbonium_factory_working"
+					delay "0.5"
+				}
 			}
 		}	
 		EffectGroup
 		{
 			group "grab_rocks"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/carbonium_factory_grab_rocks"								
+					blueprint "effects/buildings_and_machines/carbonium_factory_grab_rocks"
 					bone "att_grab_rocks"
 				}
 			}
@@ -280,13 +277,13 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "hammer"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/carbonium_factory_hammer"								
+					blueprint "effects/buildings_and_machines/carbonium_factory_hammer"
 					bone "att_hammer"
 				}
 			}
@@ -294,16 +291,16 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "hatch"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/carbonium_factory_hatch"								
+					blueprint "effects/buildings_and_machines/carbonium_factory_hatch"
 					bone "att_hatch"
 				}
 			}
-		}				
+		}
 	}
 }
