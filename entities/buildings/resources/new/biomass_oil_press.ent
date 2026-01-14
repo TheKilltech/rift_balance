@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // biomass_oil_press
 {
 	name  			"buildings/resources/biomass_oil_press"
 	
@@ -17,7 +17,7 @@ EntityBlueprint
 		require 			"headquarters"
 		//building_group	"biomass_plant_press"
 		buildable			"1"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,biomass_oil_press,biomass_oil_press_lvl_2,biomass_oil_press_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -153,7 +153,7 @@ EntityBlueprint
 	MeshDesc
 	{
 		mesh "meshes/buildings/energy/animal_biomass_powerplant.mesh"
-		material "buildings/energy/animal_biomass_powerplant"
+		material "buildings/resources/biomass_oil_press"
 	}
 
 	TypeDesc
@@ -403,7 +403,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // biomass_oil_press_lvl_2
 {
 	name  			"buildings/resources/biomass_oil_press_lvl_2"
 	base_blueprint	"buildings/resources/biomass_oil_press"
@@ -416,12 +416,11 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/biomass_oil_press"
 		description			"gui/hud/building_description/biomass_oil_press"
 		menu_icon			"gui/hud/building_icons/biomass_oil_press_lvl_2"
-		order				"22"
-		//upgrade				"buildings/energy/biomass_oil_press_lvl_3"		
+		upgrade				"buildings/energy/biomass_oil_press_lvl_3"
 		require 			"headquarters"
 		building_group		"biomass_oil_press"
 		buildable			"0"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,biomass_oil_press,biomass_oil_press_lvl_2,biomass_oil_press_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -429,12 +428,12 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 18
+				building_time 25
 				building_cost
 				{
 					carbonium 	"400"
 					steel 		"800"
-					cobalt		"200"
+					cobalt		"300"
 				}
 			}		
 		}
@@ -462,7 +461,175 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"petroleum"
-				value				"110"
+				value				"75"
+				attachment			"att_out_1"
+			}		
+		}
+		priority 9
+		reset_interval 0.5
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "petroleum"
+				max 	 "200"
+			}
+			
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{				
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_01"
+					bone "att_vismod_3"
+					scale 		1.20 1 1.3
+					orientation 180 0 0
+					offset		0 -5.3 0
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_chimney_small"
+					bone "att_chimney"
+					delay "1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"
+					delay "1"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // biomass_oil_press_lvl_3
+{
+	name  			"buildings/resources/biomass_oil_press_lvl_3"
+	base_blueprint	"buildings/resources/biomass_oil_press_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"biomass_oil_press_lvl_3"
+		bp   				"buildings/resources/biomass_oil_press_lvl_3"
+		category 			"liquids"
+		localization_id		"gui/hud/building_name/biomass_oil_press"
+		description			"gui/hud/building_description/biomass_oil_press"
+		menu_icon			"gui/hud/building_icons/biomass_oil_press_lvl_3"
+		require 			"headquarters"
+		building_group		"biomass_oil_press"
+		buildable			"0"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,biomass_oil_press,biomass_oil_press_lvl_2,biomass_oil_press_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 40
+				building_cost
+				{
+					carbonium 	"500"
+					alloys 		"800"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{	
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"300"
+			}
+			
+			GameplayResource
+			{
+				resource 			"biomass_water"
+				value			 	"2"
+			}
+			
+			GameplayResource
+			{
+				resource 			"water"
+				family				"coolant"
+				value 				"10"
+				attachment			"att_in_1|att_in_2"
+			}
+			
+			GameplayResource
+			{
+				resource 			"fluorine"
+				family				"coolant"
+				value 				"10"
+				attachment			"att_in_1|att_in_2"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"petroleum"
+				value				"100"
 				attachment			"att_out_1"
 			}		
 		}
@@ -482,5 +649,154 @@ EntityBlueprint
 			
 		}
 	}
-}
 
+	children
+	{
+		EntityBlueprint
+		{
+			name "buildings/resources/biomass_oil_press_pipeline"
+			
+			PipeComponent
+			{
+				attachment		"att_in_1,att_in_2"
+			}
+
+			ResourceStorageDesc
+			{
+				Storages
+				{
+					Storage
+					{
+						group	 		"local"
+						max 	 		"20"
+						attachment		"att_in_1|att_in_2"
+					}
+
+				}
+			}
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/energy/animal_biomass_powerplant"
+			}
+
+		}
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 	"att_in_pipe_mid"
+					scale	3.1 1 1
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_01"
+					bone "att_vismod_3"
+					scale 		1.20 1 1.3
+					orientation 180 0 0
+					offset		0 -5.3 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/rocket_launcher"
+					bone "att_vismod_4"
+					scale		2 2 2
+					orientation 0 -90 180
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_chimney_small"
+					bone "att_chimney"
+					delay "1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"
+					delay "1"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}
+	}
+}
