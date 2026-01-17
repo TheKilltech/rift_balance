@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // mini_miner_advanced_item
 {
 	name "items/consumables/mini_miner_advanced_item"
 
@@ -33,7 +33,7 @@ EntityBlueprint
 	CostDesc
 }
 
-EntityBlueprint
+EntityBlueprint  // mini_miner_extreme_item
 {
 	name "items/consumables/mini_miner_extreme_item"
 
@@ -68,7 +68,7 @@ EntityBlueprint
 	CostDesc
 }
 
-EntityBlueprint
+EntityBlueprint  // mini_miner_standard_item
 {
 	name "items/consumables/mini_miner_standard_item"
 
@@ -103,7 +103,7 @@ EntityBlueprint
 	CostDesc
 }
 
-EntityBlueprint
+EntityBlueprint // mini_miner_superior_item
 {
 	name "items/consumables/mini_miner_superior_item"
 
@@ -138,7 +138,8 @@ EntityBlueprint
 	CostDesc
 }
 
-EntityBlueprint
+
+EntityBlueprint  // mini_miner
 {
 	name "items/consumables/mini_miner"
 
@@ -146,13 +147,27 @@ EntityBlueprint
 	{
 		name 				"mini_miner"
 		bp   				"items/consumables/mini_miner"
-		category 			"consumable"
+		category 			"deployable"
 		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
-		description			"gui/menu/inventory/consumable_name/mini_miner"
-		menu_icon			"gui/hud/building_icons/tower_basic"
-		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
+		description			"gui/menu/research/description/mini_miner"
+		menu_icon			"gui/hud/building_icons/placeholder"
+		resource_requirement "carbon_vein|iron_vein|ammonium_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
 		sellable 			"0"
-        buildable           "0"
+        buildable			"1"
+		upgrade				"buildings/consumables/mini_miner_advanced"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"10"
+				}
+			}
+		}
 	}
 
 	ResourceConverterDesc
@@ -161,9 +176,46 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				group 			"vein"
-				value			"5"
-				family			"production"
+				resource 			"carbon_vein"
+				value				2.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"iron_vein"
+				value				2.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"ammonium_vein"
+				value				2.0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt_vein"
+				value				2.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"palladium_vein"
+				value				2.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"titanium_vein"
+				value				2.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"uranium_ore_vein"
+				value				2.0
+				family				"resource"
 			}
 		}
 
@@ -171,13 +223,50 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				group 			"global"
-				family			"production"
-				value			"5"
+				resource 			"carbonium"
+				value				1.5
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value				1.5
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value				1.5
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt"
+				value				1.5
+				family				"resource"
+			}		
+			GameplayResource
+			{
+				resource 			"palladium"
+				value				1.5
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"titanium"
+				value				1.5
+				family				"resource"
+			}	
+			GameplayResource
+			{
+				resource 			"uranium_ore"
+				value				1.5
+				family				"resource"
 			}
 		}
 		
-		priority 4		
+		priority 4
 		one_vein_mode "1"
 	}
 
@@ -243,11 +332,6 @@ EntityBlueprint
 	{
 		name "meshes/items/consumables/mini_miner_lvl_1"
 	}
-	
-	//AnimationGraphDesc
-	//{
-	//	animation_graph_name "building_working"
-	//}	
 	
 	AnimationDesc
 	{
@@ -453,29 +537,44 @@ EntityBlueprint
 			}
 		}
 	}
+	
 	LifeTimeDesc
 	{
 		time	60
 	}	
 }
 
-
-EntityBlueprint
+EntityBlueprint  // mini_miner_advanced
 {
-	name "items/consumables/mini_miner_advanced"
-		base_blueprint "items/consumables/mini_miner"
+	name			"items/consumables/mini_miner_advanced"
+	base_blueprint	"items/consumables/mini_miner"
 
 	BuildingDesc
 	{
 		name 				"mini_miner_advanced"
 		bp   				"items/consumables/mini_miner_advanced"
-		category 			"consumable"
+		category 			"deployable"
 		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
-		description			"gui/menu/inventory/consumable_name/mini_miner"
-		menu_icon			"gui/hud/building_icons/tower_basic"
+		description			"gui/menu/research/description/mini_miner_lvl_2"
+		menu_icon			"gui/hud/building_icons/placeholder"
 		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
 
-        buildable           "0"
+        buildable			"0"
+		building_group		"mini_miner"
+		upgrade				"buildings/consumables/mini_miner_superior"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"2"
+				}
+			}
+		}
 	}
 	
 	LuaDesc
@@ -531,9 +630,46 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				group 			"vein"
-				value			"5"
-				family			"production"
+				resource 			"carbon_vein"
+				value				3.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"iron_vein"
+				value				3.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"ammonium_vein"
+				value				3.0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt_vein"
+				value				3.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"palladium_vein"
+				value				3.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"titanium_vein"
+				value				3.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"uranium_ore_vein"
+				value				3.0
+				family				"resource"
 			}
 		}
 
@@ -541,13 +677,50 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				group 			"global"
-				family			"production"
-				value			"6"
+				resource 			"carbonium"
+				value				2.25
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value				2.25
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value				2.25
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt"
+				value				2.25
+				family				"resource"
+			}		
+			GameplayResource
+			{
+				resource 			"palladium"
+				value				2.25
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"titanium"
+				value				2.25
+				family				"resource"
+			}	
+			GameplayResource
+			{
+				resource 			"uranium_ore"
+				value				2.25
+				family				"resource"
 			}
 		}
 		
-		priority 4		
+		priority 4
 		one_vein_mode "1"
 	}
 	
@@ -561,28 +734,45 @@ EntityBlueprint
 	{
 		name "meshes/items/consumables/mini_miner_lvl_2"
 	}	
+	
 	LifeTimeDesc
 	{
-		time	70
+		time	90
 	}	
 }
 
-EntityBlueprint
+EntityBlueprint  // mini_miner_superior
 {
-	name "items/consumables/mini_miner_superior"
-		base_blueprint "items/consumables/mini_miner"
+	name			"items/consumables/mini_miner_superior"
+	base_blueprint	"items/consumables/mini_miner_advanced"
 
 	BuildingDesc
 	{
 		name 				"mini_miner_superior"
 		bp   				"items/consumables/mini_miner_superior"
-		category 			"consumable"
+		category 			"deployable"
 		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
-		description			"gui/menu/inventory/consumable_name/mini_miner"
-		menu_icon			"gui/hud/building_icons/tower_basic"
-		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
+		description			"gui/menu/research/description/mini_miner_lvl_3"
+		menu_icon			"gui/hud/building_icons/placeholder"
+		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein"
 
-        buildable           "0"
+        buildable			"0"
+		building_group		"mini_miner"
+		upgrade				"buildings/consumables/mini_miner_extreme"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"2"
+					"items/consumables/mini_miner_superior_item"	"1"
+				}
+			}
+		}
 	}
 	
 	LuaDesc
@@ -638,9 +828,46 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				group 			"vein"
-				value			"4"
-				family			"production"
+				resource 			"carbon_vein"
+				value				4.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"iron_vein"
+				value				4.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"ammonium_vein"
+				value				4.0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt_vein"
+				value				4.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"palladium_vein"
+				value				4.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"titanium_vein"
+				value				4.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"uranium_ore_vein"
+				value				4.0
+				family				"resource"
 			}
 		}
 
@@ -648,15 +875,53 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				group 			"global"
-				family			"production"
-				value			"7"
+				resource 			"carbonium"
+				value				3.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value				3.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value				3.0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt"
+				value				3.0
+				family				"resource"
+			}		
+			GameplayResource
+			{
+				resource 			"palladium"
+				value				3.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"titanium"
+				value				3.0
+				family				"resource"
+			}	
+			GameplayResource
+			{
+				resource 			"uranium_ore"
+				value				3.0
+				family				"resource"
 			}
 		}
 		
-		priority 4		
+		priority 4
 		one_vein_mode "1"
 	}
+	
 	MeshDesc
 	{
 		mesh "meshes/items/consumables/mini_miner_lvl_3.mesh"
@@ -667,28 +932,43 @@ EntityBlueprint
 	{
 		name "meshes/items/consumables/mini_miner_lvl_3"
 	}	
+	
 	LifeTimeDesc
 	{
-		time	80
+		time	120
 	}	
 }
 
-EntityBlueprint
+EntityBlueprint  // mini_miner_extreme
 {
 	name "items/consumables/mini_miner_extreme"
-		base_blueprint "items/consumables/mini_miner"
+	base_blueprint "items/consumables/mini_miner_superior"
 
 	BuildingDesc
 	{
 		name 				"mini_miner_extreme"
 		bp   				"items/consumables/mini_miner_extreme"
-		category 			"consumable"
+		category 			"deployable"
 		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
-		description			"gui/menu/inventory/consumable_name/mini_miner"
-		menu_icon			"gui/hud/building_icons/tower_basic"
-		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
+		description			"gui/menu/research/description/mini_miner_lvl_4"
+		menu_icon			"gui/hud/building_icons/placeholder"
+		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein"
 
-        buildable           "0"
+        buildable			"0"
+		building_group		"mini_miner"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"2"
+				}
+			}
+		}
 	}
 	
 	LuaDesc
@@ -744,9 +1024,46 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				group 			"vein"
-				value			"3"
-				family			"production"
+				resource 			"carbon_vein"
+				value				5.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"iron_vein"
+				value				5.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"ammonium_vein"
+				value				5.0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt_vein"
+				value				5.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"palladium_vein"
+				value				5.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"titanium_vein"
+				value				5.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"uranium_ore_vein"
+				value				5.0
+				family				"resource"
 			}
 		}
 
@@ -754,15 +1071,53 @@ EntityBlueprint
 		{
 			GameplayResource
 			{
-				group 			"global"
-				family			"production"
-				value			"8"
+				resource 			"carbonium"
+				value				3.75
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value				3.75
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value				3.75
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt"
+				value				3.75
+				family				"resource"
+			}		
+			GameplayResource
+			{
+				resource 			"palladium"
+				value				3.75
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"titanium"
+				value				3.75
+				family				"resource"
+			}	
+			GameplayResource
+			{
+				resource 			"uranium_ore"
+				value				3.75
+				family				"resource"
 			}
 		}
 		
-		priority 4		
+		priority 4
 		one_vein_mode "1"
 	}
+	
 	MeshDesc
 	{
 		mesh "meshes/items/consumables/mini_miner_lvl_4.mesh"
@@ -773,8 +1128,9 @@ EntityBlueprint
 	{
 		name "meshes/items/consumables/mini_miner_lvl_4"
 	}
+	
 	LifeTimeDesc
 	{
-		time	90
+		time	180
 	}	
 }
