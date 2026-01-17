@@ -1146,3 +1146,22 @@ EntityBlueprint  // mini_miner_xtreme
 		time	180
 	}	
 }
+
+
+EntityBlueprint  // mini_miner_extreme (obsolete, only for compatibility)
+{
+	name			"items/consumables/mini_miner_extreme"
+	base_blueprint	"items/consumables/mini_miner_xtreme"
+	
+	BuildingDesc
+	{
+		name 				"mini_miner_extreme"
+		bp   				"items/consumables/mini_miner_extreme"
+		category 			"deployable"
+		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
+		description			"gui/menu/research/description/mini_miner_lvl_4"
+		menu_icon			"gui/hud/items_icons/consumables/mini_miner_extreme"
+		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein"
+		buildable			"0"
+	}
+}
