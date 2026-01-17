@@ -1,0 +1,481 @@
+EntityBlueprint
+{
+	name "items/consumables/proximity_mine_cryogenic"
+	base_blueprint "items/consumables/proximity_mine_cryogenic_base"
+	LuaDesc
+	{
+		script "lua/items/consumables/proximity_mine.lua"
+
+		database
+		{
+			bp					string:"items/consumables/proximity_mine_cryogenic_explosion"
+			delay				float:"1.0"
+			delay_before_armed	float:"2.0"
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name "items/consumables/proximity_mine_cryogenic_advanced"
+	base_blueprint "items/consumables/proximity_mine_cryogenic_base"
+	LuaDesc
+	{
+		script "lua/items/consumables/proximity_mine.lua"
+
+		database
+		{
+			bp					string:"items/consumables/proximity_mine_cryogenic_advanced_explosion"
+			delay				float:"1.0"
+			delay_before_armed	float:"2.0"
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name "items/consumables/proximity_mine_cryogenic_superior"
+	base_blueprint "items/consumables/proximity_mine_cryogenic_base"
+	LuaDesc
+	{
+		script "lua/items/consumables/proximity_mine.lua"
+
+		database
+		{
+			bp					string:"items/consumables/proximity_mine_cryogenic_superior_explosion"
+			delay				float:"1.0"
+			delay_before_armed	float:"2.0"
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name "items/consumables/proximity_mine_cryogenic_extreme"
+	base_blueprint "items/consumables/proximity_mine_cryogenic_base"
+	LuaDesc
+	{
+		script "lua/items/consumables/proximity_mine.lua"
+
+		database
+		{
+			bp					string:"items/consumables/proximity_mine_cryogenic_extreme_explosion"
+			delay				float:"1.0"
+			delay_before_armed	float:"2.0"
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name "items/consumables/proximity_mine_cryogenic_base"
+
+	HealthDesc
+	{
+		max_health 					"5"
+		health 						"5"
+		is_manual					"1"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/items/consumables/proximity_mine_cryogenic.mesh"
+		material "items/consumables/proximity_mine_cryogenic"
+	}
+
+	TypeDesc
+	{
+		type "prop"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/projectiles/mine"
+	}
+
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building_small"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "1"
+					}
+				}
+			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color 
+		{
+			x "1"
+			y "1"
+			z "0"
+			w "1"
+		}
+		size
+		{
+			x "2"
+			y "2"
+		}
+		visibility		"discovered"
+		layer_group		"player"
+	}
+
+	TriggerDesc
+	{
+		owner 		"self"
+		collision 	"ground_unit"
+		type		"GRID"
+
+		Filters
+		{
+			TeamRelationTriggerFilter
+			{
+				relation_name     "hostility"
+				check_parent "0"
+			}
+		}
+
+		Shapes
+		{
+			PhysicsSphereShape
+			{
+				r "5"
+			}
+		}
+	}
+	
+	TerrainAffectedComponent
+	{
+		name "mine"
+	}	
+
+	EffectDesc
+	{
+		EffectGroup
+		{
+			enabled "1"
+			group "mine_unarmed"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/items/mech_mine_placed"
+					bone "att_light"
+				}
+				Effect
+				{
+					blueprint "effects/items/mech_mine_beacon_cryo_armed"
+					bone "att_light"
+					delay "2"
+				}
+			}
+		}
+		EffectGroup
+		{
+			enabled "0"
+			group	"mine_armed"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/items/mech_mine_beacon_activated"
+					bone "att_light"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+		name "items/consumables/proximity_mine_cryogenic_advanced_item"
+
+	InventoryItemDesc
+	{
+		type 					"consumable"
+		name 					"gui/menu/inventory/consumable_name/proximity_mine_cryogenic"
+		use_count				"1"
+		cooldown				"1"
+		//cooldown_category		"proximity_mine"
+		icon					"gui/hud/items_icons/consumables/proximity_mine_cryogenic"
+		bigger_icon 			"gui/menu/items_icons/consumables/proximity_mine_cryogenic"
+		storage_limit 			"10"
+		description 			"gui/menu/inventory/consumable_description/proximity_mine_cryogenic_advanced"
+		rarity					"ADVANCED"
+		replace_lower_quality		"1"
+		add_after_obtaining 		"1"	
+	}
+
+	LuaDesc
+	{
+		script "lua/items/consumables/item_creator.lua"
+
+		database
+		{
+			bp					string:"items/consumables/proximity_mine_cryogenic_advanced"
+			season_christmas	string:"items/consumables/present"
+			stat_bp				string:"items/consumables/proximity_mine_cryogenic_advanced_explosion"
+		}
+	}
+
+	CostDesc
+}
+
+EntityBlueprint
+{
+		name "items/consumables/proximity_mine_cryogenic_extreme_item"
+
+	InventoryItemDesc
+	{
+		type 					"consumable"
+		name 					"gui/menu/inventory/consumable_name/proximity_mine_cryogenic"
+		use_count				"1"
+		cooldown				"1"
+		//cooldown_category		"proximity_mine"
+		icon					"gui/hud/items_icons/consumables/proximity_mine_cryogenic"
+		bigger_icon 			"gui/menu/items_icons/consumables/proximity_mine_cryogenic"
+		storage_limit 			"10"
+		description 			"gui/menu/inventory/consumable_description/proximity_mine_cryogenic_extreme"
+		rarity					"EXTREME"
+		replace_lower_quality		"1"
+		add_after_obtaining 		"1"	
+	}
+
+	LuaDesc
+	{
+		script "lua/items/consumables/item_creator.lua"
+
+		database
+		{
+			bp					string:"items/consumables/proximity_mine_cryogenic_extreme"
+			season_christmas	string:"items/consumables/present"
+			stat_bp				string:"items/consumables/proximity_mine_cryogenic_extreme_explosion"
+		}
+	}
+
+	CostDesc
+}
+
+EntityBlueprint
+{
+		name "items/consumables/proximity_mine_cryogenic_standard_item"
+
+	InventoryItemDesc
+	{
+		type 					"consumable"
+		name 					"gui/menu/inventory/consumable_name/proximity_mine_cryogenic"
+		use_count				"1"
+		cooldown				"1"
+		//cooldown_category		"proximity_mine"
+		icon					"gui/hud/items_icons/consumables/proximity_mine_cryogenic"
+		bigger_icon 			"gui/menu/items_icons/consumables/proximity_mine_cryogenic"
+		storage_limit 			"10"
+		description 			"gui/menu/inventory/consumable_description/proximity_mine_cryogenic_standard"
+		rarity					"STANDARD"
+		replace_lower_quality		"1"
+		add_after_obtaining 		"1"	
+	}
+
+	LuaDesc
+	{
+		script "lua/items/consumables/item_creator.lua"
+
+		database
+		{
+			bp					string:"items/consumables/proximity_mine_cryogenic"
+			season_christmas	string:"items/consumables/present"
+			stat_bp				string:"items/consumables/proximity_mine_cryogenic_explosion"
+		}
+	}
+
+	CostDesc
+}
+
+EntityBlueprint
+{
+		name "items/consumables/proximity_mine_cryogenic_superior_item"
+
+	InventoryItemDesc
+	{
+		type 					"consumable"
+		name 					"gui/menu/inventory/consumable_name/proximity_mine_cryogenic"
+		use_count				"1"
+		cooldown				"1"
+		//cooldown_category		"proximity_mine"
+		icon					"gui/hud/items_icons/consumables/proximity_mine_cryogenic"
+		bigger_icon 			"gui/menu/items_icons/consumables/proximity_mine_cryogenic"
+		storage_limit 			"10"
+		description 			"gui/menu/inventory/consumable_description/proximity_mine_cryogenic_superior"
+		rarity					"SUPERIOR"
+		replace_lower_quality		"1"
+		add_after_obtaining 		"1"	
+	}
+
+	LuaDesc
+	{
+		script "lua/items/consumables/item_creator.lua"
+
+		database
+		{
+			bp					string:"items/consumables/proximity_mine_cryogenic_superior"
+			season_christmas	string:"items/consumables/present"
+			stat_bp				string:"items/consumables/proximity_mine_cryogenic_superior_explosion"
+		}
+	}
+
+	CostDesc
+}
+
+EntityBlueprint
+{
+	name "items/consumables/proximity_mine_cryogenic_explosion"
+
+	BombAmmoComponent
+	{
+		//explosion_delay 		"0.4"
+		explosion_effect 		"effects/weapon_hit/cryo_mine_explosion"
+
+		DamagePattern
+		{
+			area_damage_radius	"8"
+
+			Damages
+			{
+				Damage
+				{
+					value 			"20"
+					type			"cryo"
+				}
+			}
+
+			TimeDamages
+			{
+				TimeDamage
+				{
+					value			"10"
+					duration		"10"
+					type			"cryo"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name "items/consumables/proximity_mine_cryogenic_advanced_explosion"
+
+	BombAmmoComponent
+	{
+		//explosion_delay 		"0.4"
+		explosion_effect 		"effects/weapon_hit/cryo_mine_explosion"
+
+		DamagePattern
+		{
+			area_damage_radius	"8.3"
+
+			Damages
+			{
+				Damage
+				{
+					value 			"40"
+					type			"cryo"
+				}
+			}
+
+			TimeDamages
+			{
+				TimeDamage
+				{
+					value			"20"
+					duration		"12"
+					type			"cryo"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name "items/consumables/proximity_mine_cryogenic_superior_explosion"
+
+	BombAmmoComponent
+	{
+		//explosion_delay 		"0.4"
+		explosion_effect 		"effects/weapon_hit/cryo_mine_explosion"
+
+		DamagePattern
+		{
+			area_damage_radius	"8.6"
+
+			Damages
+			{
+				Damage
+				{
+					value 			"80"
+					type			"cryo"
+				}
+			}
+
+			TimeDamages
+			{
+				TimeDamage
+				{
+					value			"40"
+					duration		"14"
+					type			"cryo"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name "items/consumables/proximity_mine_cryogenic_extreme_explosion"
+
+	BombAmmoComponent
+	{
+		//explosion_delay 		"0.4"
+		explosion_effect 		"effects/weapon_hit/cryo_mine_explosion"
+
+		DamagePattern
+		{
+			area_damage_radius	"8.9"
+
+			Damages
+			{
+				Damage
+				{
+					value 			"160"
+					type			"cryo"
+				}
+			}
+
+			TimeDamages
+			{
+				TimeDamage
+				{
+					value			"80"
+					duration		"16"
+					type			"cryo"
+				}
+			}
+		}
+	}
+}
