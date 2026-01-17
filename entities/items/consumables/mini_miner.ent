@@ -60,8 +60,8 @@ EntityBlueprint  // mini_miner_extreme_item
         database
         {
             timeout     float:"90"
-			blueprint	string:"items/consumables/mini_miner_extreme"
-			stat_bp		string:"items/consumables/mini_miner_extreme"
+			blueprint	string:"items/consumables/mini_miner_xtreme"
+			stat_bp		string:"items/consumables/mini_miner_xtreme"
         }
 	}
 
@@ -103,7 +103,7 @@ EntityBlueprint  // mini_miner_standard_item
 	CostDesc
 }
 
-EntityBlueprint // mini_miner_superior_item
+EntityBlueprint  // mini_miner_superior_item
 {
 	name "items/consumables/mini_miner_superior_item"
 
@@ -150,10 +150,14 @@ EntityBlueprint  // mini_miner
 		category 			"deployable"
 		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
 		description			"gui/menu/research/description/mini_miner"
-		menu_icon			"gui/hud/building_icons/placeholder"
+		menu_icon			"gui/hud/items_icons/consumables/mini_miner_standard"
 		resource_requirement "carbon_vein|iron_vein|ammonium_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
 		sellable 			"0"
         buildable			"1"
+		order				"1"
+		limit			    "3"
+		limit_name			"mini_miner"
+		map_limit			"LOCAL"
 		upgrade				"buildings/consumables/mini_miner_advanced"
 		
 		costs
@@ -556,9 +560,12 @@ EntityBlueprint  // mini_miner_advanced
 		category 			"deployable"
 		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
 		description			"gui/menu/research/description/mini_miner_lvl_2"
-		menu_icon			"gui/hud/building_icons/placeholder"
+		menu_icon			"gui/hud/items_icons/consumables/mini_miner_advanced"
 		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
 
+		limit			    "3"
+		limit_name			"mini_miner"
+		map_limit			"LOCAL"
         buildable			"0"
 		building_group		"mini_miner"
 		upgrade				"buildings/consumables/mini_miner_superior"
@@ -753,9 +760,12 @@ EntityBlueprint  // mini_miner_superior
 		category 			"deployable"
 		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
 		description			"gui/menu/research/description/mini_miner_lvl_3"
-		menu_icon			"gui/hud/building_icons/placeholder"
+		menu_icon			"gui/hud/items_icons/consumables/mini_miner_superior"
 		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein"
 
+		limit			    "3"
+		limit_name			"mini_miner"
+		map_limit			"LOCAL"
         buildable			"0"
 		building_group		"mini_miner"
 		upgrade				"buildings/consumables/mini_miner_extreme"
@@ -769,7 +779,6 @@ EntityBlueprint  // mini_miner_superior
 				building_cost
 				{
 					carbonium 	"2"
-					"items/consumables/mini_miner_superior_item"	"1"
 				}
 			}
 		}
@@ -939,22 +948,25 @@ EntityBlueprint  // mini_miner_superior
 	}	
 }
 
-EntityBlueprint  // mini_miner_extreme
+EntityBlueprint  // mini_miner_xtreme
 {
-	name "items/consumables/mini_miner_extreme"
-	base_blueprint "items/consumables/mini_miner_superior"
+	name			"items/consumables/mini_miner_xtreme"
+	base_blueprint	"items/consumables/mini_miner_superior"
 
 	BuildingDesc
 	{
-		name 				"mini_miner_extreme"
-		bp   				"items/consumables/mini_miner_extreme"
+		name 				"mini_miner_xtreme"
+		bp   				"items/consumables/mini_miner_xtreme"
 		category 			"deployable"
 		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
 		description			"gui/menu/research/description/mini_miner_lvl_4"
-		menu_icon			"gui/hud/building_icons/placeholder"
+		menu_icon			"gui/hud/items_icons/consumables/mini_miner_extreme"
 		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein"
 
-        buildable			"0"
+		limit			    "3"
+		limit_name			"mini_miner"
+		map_limit			"LOCAL"
+		buildable			"0"
 		building_group		"mini_miner"
 		
 		costs
