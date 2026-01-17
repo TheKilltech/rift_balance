@@ -184,23 +184,23 @@ EntityBlueprint  // plasma_converter_lvl_3
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
@@ -208,23 +208,23 @@ EntityBlueprint  // plasma_converter_lvl_3
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
@@ -253,9 +253,19 @@ EntityBlueprint  // plasma_converter_lvl_3
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_02"
-					bone  "att_vismod_2"
-					scale "0.86 0.7 1.2"
+					blueprint "effects/weapon_items/nuclear_missiles"
+					bone	"att_vismod_1"
+					scale	1.5 1.5 1.5
+					offset	1 0 0
+					orientation	180 0 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/nuclear_missiles"
+					bone	"att_vismod_3"
+					scale	1.5 1.5 1.5
+					offset	-1 0 0
+					orientation	0 0 0
 				}
 			}
 		}

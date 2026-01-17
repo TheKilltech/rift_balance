@@ -5,7 +5,7 @@ Attachments
 		name "att_small_rotor_1"
 		parent "rotation_4"
 		offset "0.29 0.50 -0.53"
-		orientation "180.00 -0.00 0.00"
+		orientation "-180.00 -0.00 0.00"
 	}
 
 	Attachment
@@ -13,7 +13,7 @@ Attachments
 		name "att_small_rotor_2"
 		parent "rotation_4"
 		offset "0.22 0.18 0.72"
-		orientation "180.00 -0.00 0.00"
+		orientation "-180.00 -0.00 0.00"
 	}
 
 	Attachment
@@ -21,7 +21,7 @@ Attachments
 		name "att_small_rotor_3"
 		parent "rotation_4"
 		offset "0.22 -0.71 -0.18"
-		orientation "180.00 -0.00 0.00"
+		orientation "-180.00 -0.00 0.00"
 	}
 
 	Attachment
@@ -50,14 +50,7 @@ Attachments
 	{
 		name "att_out_pipe"
 		offset "-2.00 0.00 0.00"
-		orientation "-180.00 -0.00 0.00"
-	}
-
-	Attachment
-	{
-		name "att_vismod_1"
-		offset "-2.14 0.00 -0.50"
-		orientation "45.00 -0.00 0.00"
+		orientation "180.00 -0.00 0.00"
 	}
 
 	Attachment
@@ -76,21 +69,21 @@ Attachments
 	{
 		name "att_out_1"
 		offset "-2.00 0.50 0.00"
-		orientation "-180.00 -0.00 0.00"
+		orientation "180.00 -0.00 0.00"
 	}
 
 	Attachment
 	{
 		name "att_in_arrow"
 		offset "3.90 0.40 0.00"
-		orientation "180.00 -0.00 0.00"
+		orientation "-180.00 -0.00 0.00"
 	}
 
 	Attachment
 	{
 		name "att_out_arrow"
 		offset "-3.90 0.40 0.00"
-		orientation "180.00 -0.00 0.00"
+		orientation "-180.00 -0.00 0.00"
 	}
 
 	Attachment
@@ -102,8 +95,28 @@ Attachments
 
 	Attachment
 	{
+		name "att_missing_buff"
+		offset "0.00 5.00 0.00"
+	}
+
+	Attachment
+	{
+		name "att_vismod_1"
+		offset "-1.00 0.90 -1.50"
+		orientation "45.00 -0.00 0.00"
+	}
+
+	Attachment
+	{
 		name "att_level"
-		offset "-1.60 0.20 -1.60"
+		offset "-0.30 1.00 -2.30"
+	}
+
+	Attachment
+	{
+		name "att_vismod_3"
+		offset "1.00 0.90 1.50"
+		orientation "45.00 -0.00 0.00"
 	}
 
 }
