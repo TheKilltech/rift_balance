@@ -440,6 +440,54 @@ EntityBlueprint "effects/no_lifetime"		//tower3
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//shocktower1
+{
+	name "effects/buildings_and_machines/shocktower1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/tower_shockwave_lvl_1.mesh"
+		material 	"buildings/defense/tower_shockwave_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//shocktower2
+{
+	name "effects/buildings_and_machines/shocktower2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/tower_shockwave_lvl_2.mesh"
+		material 	"buildings/defense/tower_shockwave_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//shocktower3
+{
+	name "effects/buildings_and_machines/shocktower3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/defense/tower_shockwave_lvl_3.mesh"
+		material 	"buildings/defense/tower_shockwave_lvl_3"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//loot_tower1
 {
 	name "effects/buildings_and_machines/loot_tower1"
@@ -2233,7 +2281,7 @@ EntityBlueprint "effects/no_lifetime"		//ai_hub_ghost
 	MeshDesc
 	{
 		mesh 		"meshes/buildings/defense/ai_hub.mesh"
-		material 	"buildings/defense/ai_hub"
+		material 	"selector/hologram_blue"
 	}
 }
 
@@ -2249,7 +2297,7 @@ EntityBlueprint "effects/no_lifetime"		//ai_hub1_ghost
 	MeshDesc
 	{
 		mesh 		"meshes/buildings/defense/ai_hub_lvl_1.mesh"
-		material 	"buildings/defense/ai_hub_lvl_1"
+		material 	"selector/hologram_blue"
 	}
 }
 
@@ -2265,7 +2313,103 @@ EntityBlueprint "effects/no_lifetime"		//ai_hub3_ghost
 	MeshDesc
 	{
 		mesh 		"meshes/buildings/defense/ai_hub_lvl_3.mesh"
-		material 	"buildings/defense/ai_hub_lvl_3_base"
+		material 	"selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//storage1
+{
+	name "effects/buildings_and_machines/storage1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh		"meshes/buildings/resources/solid_material_storage_lvl_1.mesh"
+		material	"buildings/resources/solid_material_storage_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//storage2
+{
+	name "effects/buildings_and_machines/storage2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh		"meshes/buildings/resources/solid_material_storage.mesh"
+		material	"buildings/resources/solid_material_storage"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//storage3
+{
+	name "effects/buildings_and_machines/storage3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh		"meshes/buildings/resources/solid_material_storage_lvl_3.mesh"
+		material	"buildings/resources/solid_material_storage_lvl_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//storage1_ghost
+{
+	name "effects/buildings_and_machines/storage1_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh		"meshes/buildings/resources/solid_material_storage_lvl_1.mesh"
+		material	"selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//storage2_ghost
+{
+	name "effects/buildings_and_machines/storage2_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh		"meshes/buildings/resources/solid_material_storage.mesh"
+		material	"selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//storage3_ghost
+{
+	name "effects/buildings_and_machines/storage3_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh		"meshes/buildings/resources/solid_material_storage_lvl_3.mesh"
+		material	"selector/hologram_blue"
 	}
 }
 
@@ -4043,8 +4187,8 @@ EntityBlueprint "effects/no_lifetime"		//iron_vein_vl1
 	
 	MeshDesc
 	{
-		mesh 		"meshes/resources/resource_carbonium_very_large_03.mesh"
-		material 	"resources/resource_ammonium"
+		mesh 		"meshes/resources/resource_iron_large_01.mesh"
+		material 	"resources/resource_iron"
 	}
 }
 
