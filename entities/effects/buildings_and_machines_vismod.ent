@@ -2231,7 +2231,7 @@ EntityBlueprint "effects/no_lifetime"		//ai_hub_ghost
 	MeshDesc
 	{
 		mesh 		"meshes/buildings/defense/ai_hub.mesh"
-		material 	"buildings/defense/ai_hub"
+		material 	"selector/hologram_blue"
 	}
 }
 
@@ -2247,7 +2247,7 @@ EntityBlueprint "effects/no_lifetime"		//ai_hub1_ghost
 	MeshDesc
 	{
 		mesh 		"meshes/buildings/defense/ai_hub_lvl_1.mesh"
-		material 	"buildings/defense/ai_hub_lvl_1"
+		material 	"selector/hologram_blue"
 	}
 }
 
@@ -2263,7 +2263,103 @@ EntityBlueprint "effects/no_lifetime"		//ai_hub3_ghost
 	MeshDesc
 	{
 		mesh 		"meshes/buildings/defense/ai_hub_lvl_3.mesh"
-		material 	"buildings/defense/ai_hub_lvl_3_base"
+		material 	"selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//storage1
+{
+	name "effects/buildings_and_machines/storage1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh		"meshes/buildings/resources/solid_material_storage_lvl_1.mesh"
+		material	"buildings/resources/solid_material_storage_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//storage2
+{
+	name "effects/buildings_and_machines/storage2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh		"meshes/buildings/resources/solid_material_storage.mesh"
+		material	"buildings/resources/solid_material_storage"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//storage3
+{
+	name "effects/buildings_and_machines/storage3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh		"meshes/buildings/resources/solid_material_storage_lvl_3.mesh"
+		material	"buildings/resources/solid_material_storage_lvl_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//storage1_ghost
+{
+	name "effects/buildings_and_machines/storage1_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh		"meshes/buildings/resources/solid_material_storage_lvl_1.mesh"
+		material	"selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//storage2_ghost
+{
+	name "effects/buildings_and_machines/storage2_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh		"meshes/buildings/resources/solid_material_storage.mesh"
+		material	"selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//storage3_ghost
+{
+	name "effects/buildings_and_machines/storage3_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh		"meshes/buildings/resources/solid_material_storage_lvl_3.mesh"
+		material	"selector/hologram_blue"
 	}
 }
 
