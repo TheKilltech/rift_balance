@@ -27,6 +27,7 @@ local function GetParent( entity )
 
 	return GetParent( parent )
 end
+
 function base_drone:UpdateInitialState()
 	local owner = self:GetDroneOwnerTarget();
 	if not EntityService:GetComponent( owner, "BuildingComponent") or BuildingService:IsWorking( owner ) then
@@ -88,7 +89,9 @@ end
 function base_drone:OnLoad()
 	self:UpdateInitialState()
 
-	for item, i in IterReverse( self.locked_targets ) do
+	if not self.locked_targets then self.locked_targets = {} end
+	for i = #self.locked_targets, 1, -1 do
+		local item = self.locked_targets[i]
 		UnlockAlive( item.entity, item.type )
 		self.locked_targets[i] = nil
 	end
