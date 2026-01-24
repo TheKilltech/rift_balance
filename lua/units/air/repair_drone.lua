@@ -22,6 +22,25 @@ function FindMostDestroyedEntity( entities )
 	return lowest_entity
 end
 
+function FindBestDestroyedEntity( source, entities )
+    local best = {
+        entity = INVALID_ID,
+        distance = nil
+    };
+
+    for entity in Iter( entities ) do
+		local distHp    = HealthService:GetHealthInPercentage( entity );
+        local distMeter = EntityService:GetDistanceBetween( source, entity ) * (distHp*distHp);
+        local distance  = distMeter * (distHp*distHp);
+        if best.entity == INVALID_ID or distance < best.distance then
+            best.entity   = entity;
+            best.distance = distance;
+        end
+    end
+
+    return best.entity;
+end
+
 function repair_drone:__init()
 	base_drone.__init(self,self)
 end
@@ -32,11 +51,13 @@ function repair_drone:FillInitialParams()
     else
         self.search_radius = self.data:GetFloat("search_radius")
     end
+    self.own_search_radius = self.data:GetFloatOrDefault("drone_own_search_radius", 0)
+    self.full_search_interval = self.data:GetFloatOrDefault("drone_full_search_interval", 10)
+    self.full_search = 1
 
     self.heal_amount_player =  self.data:GetFloatOrDefault("heal_amount_player", 0.0);
     self.heal_amount = self.data:GetFloat("heal_amount");
     self.heal_interval = self.data:GetFloat("heal_interval");
-	self.most_destroyed_interval = 1
 end
 
 function repair_drone:OnInit()
@@ -122,15 +143,18 @@ function repair_drone:FindActionTarget()
         return INVALID_ID
     end
 
-    local entities = FindService:FindEntitiesByPredicateInRadius( owner, self.search_radius, self.predicate );
+	local entities = {}
+	if self.own_search_radius > 0 and self.full_search ~= 1 then
+		entities  = FindService:FindEntitiesByPredicateInRadius( self.entity, self.own_search_radius, self.predicate )
+	else entities = FindService:FindEntitiesByPredicateInRadius( owner,       self.search_radius,     self.predicate )
+	end
+	self.full_search = (self.full_search % self.full_search_interval) + 1
 
 	if #entities == 0 then
 		return INVALID_ID
 	end
 
-	local most_destroyed_interval = self.most_destroyed_interval
-	local target = most_destroyed_interval == 1 and FindMostDestroyedEntity( entities ) or FindClosestEntity( self.entity, entities )
-	self.most_destroyed_interval = (most_destroyed_interval % 5) + 1
+	local target = FindBestDestroyedEntity( self.entity, entities )
 
 	self:LockTarget( target, LOCK_TYPE_REPAIR );
 	self.target_last_position = EntityService:GetPosition( target )

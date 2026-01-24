@@ -70,11 +70,13 @@ EntityBlueprint  // repair_central
 			cone_effect_sell		string:"sell_big"
 			energy_cost				float:"10"
 
-			drone_search_radius		float:"800"
-			drone_blueprint			string:"units/drones/drone_repair_facility_lvl_1"
-			drone_attachments		string:"att_landing"
-			drone_per_spot			int:"4"
-			drone_visible_on_spot 	int:"0"
+			drone_search_radius			float:"800"
+			drone_own_search_radius		float:"15"
+			drone_full_search_interval	int:"25"
+			drone_blueprint				string:"units/drones/drone_repair_facility_lvl_1"
+			drone_attachments			string:"att_landing"
+			drone_per_spot				int:"4"
+			drone_visible_on_spot 		int:"0"
 
 			//display_radius_blueprint string:"effects/decals/range_circle_repair"  //			display_radius_group	 string:"repair_tower"
 		}
