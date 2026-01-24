@@ -618,6 +618,31 @@ EntityBlueprint "effects/no_lifetime"		//mine_tower3
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//repair_tower1
+{
+	name "effects/buildings_and_machines/repair_tower1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/repair_facility_lvl_1.mesh"
+		material "buildings/defense/repair_facility_lvl_1"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/defense/repair_facility_lvl_1_energy"
+			}
+		}
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//repair_tower
 {
 	name "effects/buildings_and_machines/repair_tower"
@@ -640,6 +665,106 @@ EntityBlueprint "effects/no_lifetime"		//repair_tower
 				material "buildings/defense/repair_facility_energy"
 			}
 		}		
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//repair_tower3
+{
+	name "effects/buildings_and_machines/repair_tower3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/repair_facility_lvl_3.mesh"
+		material "buildings/defense/repair_facility_lvl_3"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/defense/repair_facility_lvl_3_energy"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//repair_tower1_ghost
+{
+	name "effects/buildings_and_machines/repair_tower1_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/repair_facility_lvl_1.mesh"
+		material "selector/hologram_blue"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//repair_tower_ghost
+{
+	name "effects/buildings_and_machines/repair_tower_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/repair_facility.mesh"
+		material "selector/hologram_blue"
+	
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+		}		
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//repair_tower3_ghost
+{
+	name "effects/buildings_and_machines/repair_tower3_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/repair_facility_lvl_3.mesh"
+		material "selector/hologram_blue"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+		}
 	}
 }
 

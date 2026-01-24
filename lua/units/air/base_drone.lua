@@ -13,6 +13,21 @@ local function GetLockName(lock_type)
 	return lock_type .. "_lock"
 end
 
+local function UnlockAlive( target, lock_type )
+	if EntityService:IsAlive( target ) then
+		UnitService:SetCurrentTarget( target, GetLockName( lock_type ), INVALID_ID )
+	end
+end
+
+local function GetParent( entity )
+	local parent = EntityService:GetParent( entity )
+	if parent == INVALID_ID then
+		return entity
+	end
+
+	return GetParent( parent )
+end
+
 function base_drone:UpdateInitialState()
 	local owner = self:GetDroneOwnerTarget();
 	if not EntityService:GetComponent( owner, "BuildingComponent") or BuildingService:IsWorking( owner ) then
@@ -73,6 +88,13 @@ end
 
 function base_drone:OnLoad()
 	self:UpdateInitialState()
+
+	if not self.locked_targets then self.locked_targets = {} end
+	for i = #self.locked_targets, 1, -1 do
+		local item = self.locked_targets[i]
+		UnlockAlive( item.entity, item.type )
+		self.locked_targets[i] = nil
+	end
 
 	self:UnlockAllTargets();
 	self:SetEnabled(false)
@@ -137,35 +159,39 @@ end
 
 function base_drone:LockTarget( target, lock_type )
 	if Assert( not self:IsTargetLocked( target, lock_type ), "ERROR: target has already lock of type: " .. lock_type ) then
-		Insert(self.locked_targets, { entity = target, type = lock_type });
-		UnitService:SetCurrentTarget( target, GetLockName( lock_type ), self.entity );
-	end
-end
+		local locks = self.locked_targets[target]
+		if not locks then
+			locks = {}
+			self.locked_targets[target] = locks
+		end
+		-- locks[lock_type] = true
 
-function base_drone:GetTargetLockOwner( target, lock_type )
-	return UnitService:GetCurrentTarget( target, GetLockName( lock_type ) );
+		locks[#locks + 1] = lock_type
+		UnitService:SetCurrentTarget( target, GetLockName( lock_type ), self.entity );
+
+	end
 end
 
 function base_drone:IsTargetLocked( target, lock_type )
-	return self:GetTargetLockOwner( target, lock_type ) ~= INVALID_ID;
+	return UnitService:GetCurrentTarget( target, GetLockName( lock_type ) ) ~= INVALID_ID
 end
 
 function base_drone:UnlockTarget( target, lock_type )
-	local IsThisTarget = function( item )
-		return item.entity == target and item.type == lock_type;
-	end
+	local target_locks = self.locked_targets[target]
+	if target_locks ~= nil then
+		local index = IndexOf( target_locks, lock_type )
+		if index ~= nil then
+			UnlockAlive( target, lock_type )
+			table.remove( target_locks, index )
+			if next( target_locks ) == nil then
+				self.locked_targets[target] = nil
+			end
 
-	local index = IndexOf(self.locked_targets, IsThisTarget);
-	if Assert( index ~= nil, "ERROR: target was not locked by this entity!" ) then
-		if EntityService:IsAlive( target ) then
-			UnitService:SetCurrentTarget( target, GetLockName( lock_type ), INVALID_ID );
+			return true
 		end
-
-		table.remove( self.locked_targets, index )
-		return true
 	end
 
-	return false
+	return Assert( false, "ERROR: target was not locked by this entity!" )
 end
 
 function base_drone:HandlePartiallyWorkingPenalty()
@@ -225,6 +251,17 @@ function base_drone:_OnDroneFindTargetRequest(evt)
 	end
 end
 
+function base_drone:SetDroneTarget()
+	local target = self:FindActionTarget()
+	if target ~= INVALID_ID then
+		UnitService:SetCurrentTarget( self.entity, "action", target )
+		UnitService:SetStateMachineParam( self.entity, "action_target_valid", 1 )
+		UnitService:EmitStateMachineParam( self.entity, "action_target_found" )
+		return true
+	end
+	return false
+end
+
 function base_drone:SetOwnerActionFinished()
 	UnitService:SetStateMachineParam(self.entity, "owner_action_finished", 1)
 end
@@ -255,22 +292,17 @@ function base_drone:GetDroneActionTarget()
 end
 
 function base_drone:GetDroneOwnerTarget()
-	local function GetParent( entity )
-		local parent = EntityService:GetParent( entity )
-		if ( parent == INVALID_ID ) then
-			return entity
-		end
-
-		return GetParent( parent );
-	end
-
 	return GetParent( UnitService:GetCurrentTarget( self.entity, "owner" ) );
 end
 
 function base_drone:UnlockAllTargets()
-	local copy = DeepCopy(self.locked_targets);
-	for target in Iter(copy) do
-		self:UnlockTarget( target.entity, target.type );
+	local ref_locked_targets = self.locked_targets
+	for target, locks in pairs( ref_locked_targets ) do
+		for _, lock_type in ipairs( locks ) do
+			UnlockAlive( target, lock_type )
+			-- self:UnlockTarget( target, lock_type )
+		end
+		ref_locked_targets[target] = nil
 	end
 end
 

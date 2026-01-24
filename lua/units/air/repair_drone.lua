@@ -5,23 +5,40 @@ local base_drone = require("lua/units/air/base_drone.lua")
 class 'repair_drone' ( base_drone )
 
 local LOCK_TYPE_REPAIR = "repair";
-SetTargetFinderThrottler(LOCK_TYPE_REPAIR, 3)
+SetTargetFinderThrottler( LOCK_TYPE_REPAIR, 5 )
 
-function FindMostDestroyedEntity( source, entities )
-    local find = {
+function FindMostDestroyedEntity( entities )
+	local lowest_entity = INVALID_ID
+	local lowest_pct = 1.0
+
+	for entity in Iter( entities ) do
+		local healthPct = HealthService:GetHealthInPercentage( entity );
+		if healthPct < lowest_pct then
+			lowest_entity = entity;
+			lowest_pct = healthPct;
+		end
+	end
+
+	return lowest_entity
+end
+
+function FindBestDestroyedEntity( source, entities )
+    local best = {
         entity = INVALID_ID,
-        healthPct = nil
+        distance = nil
     };
 
     for entity in Iter( entities ) do
-        local healthPct = HealthService:GetHealthInPercentage( entity );
-        if healthPct < 1.0 and (find.entity == INVALID_ID or healthPct < find.healthPct) then
-            find.entity = entity;
-            find.healthPct = healthPct;
+		local distHp    = HealthService:GetHealthInPercentage( entity );
+        local distMeter = EntityService:GetDistanceBetween( source, entity ) * (distHp*distHp);
+        local distance  = distMeter * (distHp*distHp);
+        if best.entity == INVALID_ID or distance < best.distance then
+            best.entity   = entity;
+            best.distance = distance;
         end
     end
 
-    return find.entity;
+    return best.entity;
 end
 
 function repair_drone:__init()
@@ -34,6 +51,9 @@ function repair_drone:FillInitialParams()
     else
         self.search_radius = self.data:GetFloat("search_radius")
     end
+    self.own_search_radius = self.data:GetFloatOrDefault("drone_own_search_radius", 0)
+    self.full_search_interval = self.data:GetFloatOrDefault("drone_full_search_interval", 10)
+    self.full_search = 1
 
     self.heal_amount_player =  self.data:GetFloatOrDefault("heal_amount_player", 0.0);
     self.heal_amount = self.data:GetFloat("heal_amount");
@@ -70,9 +90,10 @@ function repair_drone:FindActionTarget()
 
     local owner = self:GetDroneOwnerTarget();
     self.temp_predicate_owner = owner;
-    if not EntityService:IsAlive( owner ) then
-        return INVALID_ID
-    end
+    -- if not EntityService:IsAlive( owner ) then
+    --     return INVALID_ID
+    -- end
+
 
     self.predicate = self.predicate or {
         signature="HealthComponent,BuildingComponent",
@@ -122,13 +143,21 @@ function repair_drone:FindActionTarget()
         return INVALID_ID
     end
 
-    local entities = FindService:FindEntitiesByPredicateInRadius( owner, self.search_radius, self.predicate );
-    
-    local target = FindMostDestroyedEntity( owner, entities );
-    if target ~= INVALID_ID then
-        self:LockTarget( target, LOCK_TYPE_REPAIR);
-        self.target_last_position = EntityService:GetPosition(target)
-    end
+	local entities = {}
+	if self.own_search_radius > 0 and self.full_search ~= 1 then
+		entities  = FindService:FindEntitiesByPredicateInRadius( self.entity, self.own_search_radius, self.predicate )
+	else entities = FindService:FindEntitiesByPredicateInRadius( owner,       self.search_radius,     self.predicate )
+	end
+	self.full_search = (self.full_search % self.full_search_interval) + 1
+
+	if #entities == 0 then
+		return INVALID_ID
+	end
+
+	local target = FindBestDestroyedEntity( self.entity, entities )
+
+	self:LockTarget( target, LOCK_TYPE_REPAIR );
+	self.target_last_position = EntityService:GetPosition( target )
 
     self.fsm:ChangeState("follow")
 
@@ -197,11 +226,7 @@ function repair_drone:OnRepairExecute( state )
     local health = HealthService:GetHealth(target);
     local maxHealth = HealthService:GetMaxHealth(target);
 
-	if self.heal_amount_player > 0 and target == owner then
-		health = health + self.heal_amount_player
-	else
-		health = health + self.heal_amount
-	end
+	health = health + (target == owner and self.heal_amount_player or self.heal_amount)
 
     HealthService:SetHealth(target, math.min( health, maxHealth ));
 	if state:GetDuration() < self.heal_interval then return end
@@ -211,7 +236,9 @@ function repair_drone:OnRepairExecute( state )
 end
 
 function repair_drone:OnRepairExit()
-    self:FinishTargetAction()
+	if not self:SetDroneTarget() then
+		self:FinishTargetAction()
+	end
 end
 
 return repair_drone;

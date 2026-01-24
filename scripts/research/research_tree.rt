@@ -3848,6 +3848,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl6"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/towers_repair_lvl3"
@@ -3857,7 +3864,7 @@ Research
 						{
 							amount "0"
 							resource "alloys"
-							count "9000"
+							count "5000"
 						}
 
 						ResearchCost
@@ -3880,7 +3887,7 @@ Research
 					position
 					{
 						x "63"
-						y "576"
+						y "369"
 					}
 
 					research_awards
@@ -15643,6 +15650,74 @@ Research
 					}
 
 					icon "gui/menu/research/icons/tower_ammunition_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl7"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/towers_repair_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/repair_central"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "15000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "10000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "63"
+						y "576"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/main/repair_central"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_repair"
 				}
 
 			}
