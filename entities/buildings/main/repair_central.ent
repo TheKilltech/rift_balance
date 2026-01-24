@@ -412,3 +412,76 @@ EntityBlueprint  // repair_central
 		}
 	}
 }
+
+
+EntityBlueprint  // repair_central_ghost
+{
+	name  "buildings/main/repair_central_ghost"
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/main/repellent_drone_hub.mesh"
+		material	"selector/hologram_blue"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+		}
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/main/repair_center"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		//////////////////////////////// MISC /////////////////////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/repair_tower3_ghost"
+					bone "att_vismod_1"
+					orientation	0 0 0
+					scale		1 1 1
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/repair_tower3_ghost"
+					bone "att_vismod_2"
+					orientation	0 0 0
+					scale		1 1 1
+				}
+			}
+		}
+	}
+}
