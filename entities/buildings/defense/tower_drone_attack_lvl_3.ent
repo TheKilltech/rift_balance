@@ -1,8 +1,7 @@
 EntityBlueprint  // tower_drone_attack_lvl_3
 {
-	name "buildings/defense/tower_drone_attack_lvl_3"
-	
-	base_blueprint 			buildings/defense/tower_drone_attack_lvl_2
+	name				"buildings/defense/tower_drone_attack_lvl_3"
+	base_blueprint 		"buildings/defense/tower_drone_attack_lvl_2"
 
 	BuildingDesc
 	{
@@ -15,7 +14,6 @@ EntityBlueprint  // tower_drone_attack_lvl_3
 		menu_icon			"gui/hud/building_icons/tower_drone_attack_lvl3"
 		require 			"headquarters"
 		building_group		"tower_drone_attack"
-		order				"18"
 		buildable			"0"
 		check_connect		"1"
 		type				"tower"
@@ -48,16 +46,16 @@ EntityBlueprint  // tower_drone_attack_lvl_3
 				value 		"40"
 			}
 			
-			GameplayResource // only for display, but the drone itself consumes ammo, not the tower
+			GameplayResource // for display, and temporary workaround until drones consume ammo
 			{
 				resource 	"ammo_tower_low_caliber_lvl2" 
-				value 		"0"
+				value 		"0.2"
 			}
 			
 			GameplayResource
 			{
 				resource 	"flammable_gas"
-				value 		"20"
+				value 		"5"
 				family		"fuel"
 				attachment	"att_in_1"
 			}
@@ -65,7 +63,7 @@ EntityBlueprint  // tower_drone_attack_lvl_3
 			GameplayResource
 			{
 				resource 	"reagent"
-				value 		"7"
+				value 		"2"
 				family		"fuel"
 				attachment	"att_in_1"
 			}
@@ -73,7 +71,7 @@ EntityBlueprint  // tower_drone_attack_lvl_3
 			GameplayResource
 			{
 				resource 	"sludge"
-				value 		"10"
+				value 		"5"
 				family		"weapons"
 				attachment	"att_in_2"
 			}
@@ -103,11 +101,14 @@ EntityBlueprint  // tower_drone_attack_lvl_3
 			cone_effect				string:"build_cone_3x3"
 			cone_effect_sell 		string:"sell_big"
 
-			drone_search_radius		float:"50"
-			drone_blueprint			string:"units/drones/drone_attack"
-			drone_attachments		string:"att_landing,att_landing_1,att_landing_2"
-			drone_per_spot			int:"2"
-			drone_visible_on_spot 	int:"0"
+			drone_upkeep_modifier		float:"8.0"
+			drone_full_search_interval	int:"5"
+			drone_own_search_radius		float:"10"
+			drone_search_radius			float:"60"
+			drone_blueprint				string:"units/drones/drone_attack"
+			drone_attachments			string:"att_landing,att_landing_1,att_landing_2"
+			drone_per_spot				int:"2"
+			drone_visible_on_spot		int:"0"
 		}
 	}
 	

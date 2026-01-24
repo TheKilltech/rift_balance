@@ -15,11 +15,13 @@ end
 
 function drone_spawner_building:FillInitialParams()
 	local database = EntityService:GetBlueprintDatabase( self.entity ) or self.data;
-	self.drone_search_radius = database:GetFloatOrDefault("drone_search_radius", database:GetFloatOrDefault("radius", 25.0));
-	self.drone_attachments = database:GetStringOrDefault( "drone_attachments", "att_landing" )
+	self.drone_search_radius  = database:GetFloatOrDefault("drone_search_radius", database:GetFloatOrDefault("radius", 25.0));
+	self.drone_attachments    = database:GetStringOrDefault( "drone_attachments", "att_landing" )
 	self.drone_per_attachment = database:GetIntOrDefault( "drone_per_spot", 2 )
-	self.drones_visible = database:GetIntOrDefault( "drone_visible_on_spot", 1 ) == 1
-	self.drone_blueprint = database:GetStringOrDefault( "drone_blueprint", "error" )
+	self.drones_visible       = database:GetIntOrDefault( "drone_visible_on_spot", 1 ) == 1
+	self.drone_blueprint      = database:GetStringOrDefault( "drone_blueprint", "error" )
+	self.upkeep_modifier      = database:GetFloatOrDefault("drone_upkeep_modifier", database:GetFloatOrDefault("energy_cost", 1.0));
+	if not self.working_drones then self.working_drones = 0 end	
 end
 
 function drone_spawner_building:OnInit()
@@ -27,6 +29,7 @@ function drone_spawner_building:OnInit()
 	self.drones_visible = true
 	self.version = DRONE_SPAWNER_BUILDING_CURRENT_VERSION
 	self:FillInitialParams();
+	self.working_drones = 0
 end
 
 function drone_spawner_building:SpawnLandingSpots()
@@ -194,10 +197,30 @@ function drone_spawner_building:_OnDroneLandingEndedEvent(evt)
 	self:OnDroneLandingEnded(evt:GetEntity())
 end
 
+function drone_spawner_building:UpdateUpkeepCost(isDroneActive)
+	if (self.upkeep_modifier or 1) == 1 then return end
+	
+	if isDroneActive then
+		self.working_drones = self.working_drones + 1
+
+		if self.working_drones == 1 then
+			BuildingService:AddConverterCostModifier( self.entity, self.upkeep_modifier, "drones" )
+		end
+	else
+		self.working_drones = self.working_drones - 1
+
+		if self.working_drones == 0 then
+			BuildingService:RemoveConverterCostModifier( self.entity, "drones" )
+		end
+	end
+end
+
 function drone_spawner_building:OnDroneLiftingStarted( )
+	self:UpdateUpkeepCost(true)
 end
 
 function drone_spawner_building:OnDroneLandingStarted( )
+	self:UpdateUpkeepCost(false)
 end
 
 function drone_spawner_building:DroneSpawned( drone )
