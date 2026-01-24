@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // gas_extractor
 {
 	name  "buildings/resources/gas_extractor"
 
@@ -10,13 +10,13 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/gas_extractor"
 		description			"gui/hud/building_description/gas_extractor"
 		menu_icon			"gui/hud/building_icons/gas_extractor"
-		require 			"headquarters"
+		//require 			"headquarters"  // removed to save screen space
 		order				"8"
-		upgrade				"buildings/resources/gas_extractor_lvl_2"	
+		upgrade				"buildings/resources/gas_extractor_lvl_2"
 		check_connect		"1"
 		type				"pipe"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,gas_extractor,gas_extractor_lvl_2,gas_extractor_lvl_3"
 		
 		costs
 		{

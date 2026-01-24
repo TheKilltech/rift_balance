@@ -35,12 +35,16 @@ function building_buffable:OnBuffEvent( event )
 	local source = {}
 	source.buffName    = event:GetDatabase():GetStringOrDefault("buff_source_name", "")
 	source.entity      = event:GetDatabase():GetIntOrDefault("buff_source_entity", 0)
-	source.modificator = event:GetDatabase():GetFloatOrDefault("buff_modificator", 1.0) 
+	source.modificator = event:GetDatabase():GetFloatOrDefault("buff_modificator", -1.0)
+	source.modUpkeep   = event:GetDatabase():GetFloatOrDefault("buff_mod_upkeep", -1.0)
 	source.level       = event:GetDatabase():GetIntOrDefault("buff_source_level", -1)
 	source.isActive    = event:GetDatabase():GetIntOrDefault("buff_active", -1)
 	source.buffRange   = event:GetDatabase():GetFloatOrDefault("range", 0)
 	source.pos         = EntityService:GetPosition( source.entity )
 	source.bp          = EntityService:GetBlueprintName( source.entity )
+	
+	if source.modificator < 0 then source.modificator = nil end
+	if source.modUpkeep < 0   then source.modUpkeep = nil   end
 	
 	if self.buffSource ~= nil and (self.buffSource.entity == source.entity or source.entity == 0) then
 		if source.isActive <= 0 then
@@ -93,13 +97,16 @@ function building_buffable:FindBestBuffSource( )
 			local source = {}
 			source.entity      = ent
 			source.buffName    = data:GetStringOrDefault("buff_source_name", "")
-			source.modificator = data:GetFloatOrDefault("buff_modificator", 1.0) 
+			source.modificator = data:GetFloatOrDefault("buff_modificator", -1.0)
+			source.modUpkeep   = data:GetFloatOrDefault("buff_mod_upkeep", -1.0)
 			source.level       = data:GetIntOrDefault("buff_source_level", -1)
 			source.isActive    = data:GetIntOrDefault("buff_active", -1)
 			source.buffRange   = data:GetFloatOrDefault("range", 0)
 			source.pos         = EntityService:GetPosition( ent )
 			source.bp          = EntityService:GetBlueprintName( ent )
 			
+			if source.modificator < 0 then source.modificator = nil end
+			if source.modUpkeep < 0   then source.modUpkeep = nil   end
 			if (self:IsValidBuffSource( source )) then
 				best = source
 		        --LogService:Log( "building_buffable: new current best ".. tostring(best))
@@ -118,6 +125,8 @@ function building_buffable:UpdateBuffState( source )
 	self.buffSource = source
 	
 	BuildingService:RemoveResourceConverterEfficientyModificator( self.entity, "buff" )
+	BuildingService:RemoveConverterCostModifier( self.entity, "buff" )
+	
 	if ( self.buffSource == nil ) then
 		if ( self.buffRequiredName ~= "" ) then
 			BuildingService:DisableBuilding( self.entity )
@@ -135,8 +144,12 @@ function building_buffable:UpdateBuffState( source )
 		end
 		BuildingService:EnableBuilding( self.entity )
 		--LogService:Log( "building_buffable: new buff source ".. source.bp .. " " ..tostring(source.entity) .. ", level ".. tostring(source.level))
-		BuildingService:SetResourceConverterEfficientyModificator( self.entity, source.modificator , "buff" )
-		--BuildingService:AddConverterCostModifier( self.entity, 0.001, "" )
+		if source.modificator then
+			BuildingService:SetResourceConverterEfficientyModificator( self.entity, source.modificator , "buff" )
+		end
+		if source.modUpkeep then
+			BuildingService:AddConverterCostModifier( self.entity, source.modUpkeep , "buff" )
+		end
 	end
 end
 

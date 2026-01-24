@@ -10,14 +10,13 @@ EntityBlueprint  // liquid_extractor
 		localization_id		"gui/hud/building_name/liquid_pumpjack"
 		description			"gui/hud/building_description/liquid_pumpjack"
 		menu_icon			"gui/hud/building_icons/liquid_pumpjack"
-		require 			"headquarters"
 		type				"pipe"
 		buildable			"0"
 		building_group		"liquid_pump"
 		upgrade				"buildings/resources/liquid_extractor_lvl_2"
 		check_connect		"1"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,liquid_extractor_lvl_2,liquid_extractor_lvl_3"
 		order				"9"
 
 		costs
@@ -537,21 +536,19 @@ EntityBlueprint  // liquid_extractor_lvl_2
 
 	BuildingDesc
 	{
-		buildable 			"0"	
 		name 				"liquid_extractor_lvl_2"
 		bp   				"buildings/resources/liquid_extractor_lvl_2"
 		category 			"liquids"
 		localization_id		"gui/hud/building_name/liquid_pumpjack"
 		description			"gui/hud/building_description/liquid_pumpjack"
 		menu_icon			"gui/hud/building_icons/liquid_pumpjack_lvl2"
-		require 			"headquarters"
 		type				"pipe"
 		buildable			"0"
 		building_group		"liquid_pump"
 		upgrade				"buildings/resources/liquid_extractor_lvl_3"
 		check_connect		"1"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,liquid_extractor_lvl_2,liquid_extractor_lvl_3"
 		order				"9"
 
 		costs
@@ -844,21 +841,18 @@ EntityBlueprint  // liquid_extractor_lvl_3
 
 	BuildingDesc
 	{
-		buildable 			"0"	
 		name 				"liquid_extractor_lvl_3"
 		bp   				"buildings/resources/liquid_extractor_lvl_3"
 		category 			"liquids"
 		localization_id		"gui/hud/building_name/liquid_pumpjack"
 		description			"gui/hud/building_description/liquid_pumpjack"
 		menu_icon			"gui/hud/building_icons/liquid_pumpjack_lvl3"
-		require 			"headquarters"
 		type				"pipe"
 		buildable			"0"
 		building_group		"liquid_pump"
-		//upgrade				"buildings/resources/liquid_pumpjack_lvl_4"
 		check_connect		"1"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,liquid_extractor,liquid_extractor_lvl_2,liquid_extractor_lvl_3"
 		order				"9"
 
 		costs

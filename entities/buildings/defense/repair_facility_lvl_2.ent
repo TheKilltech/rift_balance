@@ -35,6 +35,25 @@ EntityBlueprint  // repair_facility_lvl_2
 		}
 	}
 
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"20"
+			}
+			
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value			 	"0.1"
+			}
+		}
+		priority 5
+	}
+	
 	MeshDesc
 	{
 		mesh "meshes/buildings/defense/repair_facility.mesh"
@@ -75,7 +94,7 @@ EntityBlueprint  // repair_facility_lvl_2
 			cone_effect_sell		string:"sell_big"
 			energy_cost				float:"10"
 
-			drone_search_radius		float:"30"
+			drone_search_radius		float:"32"
 			drone_blueprint			string:"units/drones/drone_repair_facility_lvl_2"
 			drone_attachments		string:"att_landing"
 			drone_per_spot			int:"3"

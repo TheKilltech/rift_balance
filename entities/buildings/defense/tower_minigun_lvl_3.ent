@@ -1,8 +1,7 @@
-EntityBlueprint
+EntityBlueprint  // tower_minigun_lvl_3
 {
-	name 					"buildings/defense/tower_minigun_lvl_3"
-
-	base_blueprint 			"buildings/defense/tower_minigun_lvl_2"
+	name 			"buildings/defense/tower_minigun_lvl_3"
+	base_blueprint 	"buildings/defense/tower_minigun_lvl_2"
 
 	BuildingDesc
 	{
@@ -14,12 +13,10 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/tower_minigun_lvl3"
 		require 			"headquarters"
 		building_group		"tower_minigun"
-		order				"14"
 		buildable			"0"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		//upgrade				"buildings/defense/tower_minigun_lvl_4"
 
 		costs
 		{
@@ -33,8 +30,8 @@ EntityBlueprint
 					steel 		"1250"
 					titanium	"200"
 				}
-			}		
-		}			
+			}
+		}
 	}
 
 	ResourceConverterDesc

@@ -1,0 +1,1813 @@
+//editor "scroll(794.05,-164.69)|zoom(0.47)"
+FlowGraphTemplate
+{
+	version "27"
+	editor "6643"
+	GraphNodes
+	{
+		LuaBehaviourNode
+		{
+			//editor "layout(event_start.xml)|pos(-1088,529)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "rule_headquarters_survive"
+						value "1"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/mission_state/event_start.lua"
+			self_id "default"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(entity_spawn_player.xml)|pos(-839,526)"
+			script "lua/graph/entity/entity_spawn_player.lua"
+			self_id "entity_spawn_player_0"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(entity_spawn_world_random.xml)|pos(-837,654)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "min_spawn_radius"
+						value "250.00"
+					}
+
+					FloatData
+					{
+						key "max_spawn_radius"
+						value "5000.00"
+					}
+
+					FloatData
+					{
+						key "min_border_distance"
+						value "50.00"
+					}
+
+					FloatData
+					{
+						key "max_border_distance"
+						value "3000.00"
+					}
+
+				}
+
+				Integers
+				{
+					IntData
+					{
+						key "count"
+						value "50"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "blueprint"
+						value "units/ground/creeper_root_acid_singular"
+					}
+
+					StringData
+					{
+						key "team"
+						value "enemy"
+					}
+
+					StringData
+					{
+						key "entity_name"
+						value
+					}
+
+					StringData
+					{
+						key "entity_group"
+						value
+					}
+
+					StringData
+					{
+						key "spawn_target"
+						value
+					}
+
+				}
+
+			}
+
+			script "lua/graph/entity/entity_spawn_world_random.lua"
+			self_id "entity_spawn_world_random_0"
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(objective_exist.xml)|pos(-302,26)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "is_objective_local"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "unique_name_id"
+						value "global.acid_build_outpost"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_exist.lua"
+			self_id "objective_exist_0"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_true.xml)|pos(-302,131)"
+			key "true"
+			self_id "objective_exist_0###true"
+			value "objective_exist_0###true"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(campaign_objective_finish.xml)|pos(67,93)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "is_objective_local"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "unique_name_id"
+						value "global.acid_build_outpost"
+					}
+
+					StringData
+					{
+						key "success"
+						value "true"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_finish.lua"
+			self_id "campaign_objective_finish_0"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_wait.xml)|pos(1709,544)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "duration"
+						value "30"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_wait.lua"
+			self_id "logic_wait_3"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_construct_building.xml)|pos(1098,379)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "search_radius"
+						value "0"
+					}
+
+				}
+
+				Integers
+				{
+					IntData
+					{
+						key "progress_max"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value "lua/objectives/construct_building.lua"
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/story/acid_resource_outpost/build.outpost"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "build.outpost"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value
+					}
+
+					StringData
+					{
+						key "type"
+						value
+					}
+
+					StringData
+					{
+						key "blueprint"
+						value "buildings/main/outpost"
+					}
+
+					StringData
+					{
+						key "name"
+						value
+					}
+
+					StringData
+					{
+						key "wait"
+						value "true"
+					}
+
+					StringData
+					{
+						key "search_target"
+						value
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_construct_building_3"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_wait.xml)|pos(1013,23)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "duration"
+						value "300.00"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_wait.lua"
+			self_id "logic_wait_4"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_wait.xml)|pos(3845,547)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "duration"
+						value "3.00"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_wait.lua"
+			self_id "logic_wait_5"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_gather_resource.xml)|pos(4110,466)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "progress_max"
+						value "10000"
+					}
+
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "is_additional"
+						value "0"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "0"
+					}
+
+					IntData
+					{
+						key "finish_objective"
+						value "1"
+					}
+
+					IntData
+					{
+						key "always_visible"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value "lua/objectives/gather_resource.lua"
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/story/acid_find_new_resource/main.gather_palladium"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "gather_palladium"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value
+					}
+
+					StringData
+					{
+						key "resource_name"
+						value "palladium"
+					}
+
+					StringData
+					{
+						key "wait"
+						value "true"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_gather_resource_1"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_wait.xml)|pos(4853,539)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "duration"
+						value "2.00"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_wait.lua"
+			self_id "logic_wait_7"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_generic.xml)|pos(5314,499)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "0"
+					}
+
+					IntData
+					{
+						key "always_visible"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/demo/steel_factory_defend"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "survive_final_attack"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value
+					}
+
+					StringData
+					{
+						key "wait"
+						value "false"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_generic_1"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(mission_end.xml)|pos(7635,566)"
+			database
+			{
+				Strings
+				{
+					StringData
+					{
+						key "mission_result"
+						value "win"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/mission_state/mission_end.lua"
+			self_id "mission_end_0"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_finish.xml)|pos(7077,551)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "unique_name_id"
+						value "survive_final_attack"
+					}
+
+					StringData
+					{
+						key "success"
+						value "true"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_finish.lua"
+			self_id "objective_finish_1"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(mission_change_creature_difficulty.xml)|pos(7080,687)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "value"
+						value "0.75"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "mode"
+						value "increment"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/mission_state/mission_change_creature_difficulty.lua"
+			self_id "mission_change_creature_difficulty_0"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(entity_spawn_world_random.xml)|pos(-838,1001)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "min_spawn_radius"
+						value "250.00"
+					}
+
+					FloatData
+					{
+						key "max_spawn_radius"
+						value "700.00"
+					}
+
+					FloatData
+					{
+						key "min_border_distance"
+						value "50.00"
+					}
+
+					FloatData
+					{
+						key "max_border_distance"
+						value "3000.00"
+					}
+
+				}
+
+				Integers
+				{
+					IntData
+					{
+						key "count"
+						value "1"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "blueprint"
+						value "units/ground/creeper_root_origin"
+					}
+
+					StringData
+					{
+						key "team"
+						value "enemy"
+					}
+
+					StringData
+					{
+						key "entity_name"
+						value
+					}
+
+					StringData
+					{
+						key "entity_group"
+						value
+					}
+
+					StringData
+					{
+						key "spawn_target"
+						value
+					}
+
+				}
+
+			}
+
+			script "lua/graph/entity/entity_spawn_world_random.lua"
+			self_id "entity_spawn_world_random_1"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_set_global_variable.xml)|pos(7071,1012)"
+			script "lua/graph/logic/logic_set_global_variable.lua"
+			self_id "logic_set_global_variable_0"
+			database
+			{
+				Floats
+				{
+					//editor "expanded(1)"
+				}
+
+				Strings
+				{
+					//editor "expanded(1)"
+					StringData
+					{
+						//editor "layout(data_block_string.xml)|pos(0,0)"
+						key "global.palladium_outpost_complete"
+						value "true"
+					}
+
+				}
+
+			}
+
+		}
+
+		BehaviourGraphNode
+		{
+			//editor "layout(event_graph.xml)|pos(-338,-240)"
+			graph "logic/utility/music_adventure.logic"
+			self_id "event_graph_1"
+			start_point "default"
+			validate_graph_resource "1"
+			database
+			{
+				Floats
+				{
+					//editor "expanded(1)"
+				}
+
+				Integers
+				{
+					//editor "expanded(1)"
+				}
+
+				Strings
+				{
+					//editor "expanded(1)"
+				}
+
+			}
+
+		}
+
+		DialogGroupNode
+		{
+			//editor "layout(interface_dialogue_show_group.xml)|pos(-24,666)"
+			global "0"
+			interrupt "0"
+			priority "0"
+			self_id "interface_dialogue_show_group_0"
+			timeout "0"
+			dialogs
+			{
+				//editor "expanded(1)"
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/mech"
+					sound_name "voice_over/story/acid/mech_resource_outpost_01"
+				}
+
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/ashley"
+					sound_name "voice_over/story/acid/ashley_resource_outpost_01"
+				}
+
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/mech"
+					sound_name "voice_over/story/acid/mech_resource_outpost_02"
+				}
+
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/ashley"
+					sound_name "voice_over/story/acid/ashley_resource_outpost_02"
+				}
+
+			}
+
+		}
+
+		DialogGroupNode
+		{
+			//editor "layout(interface_dialogue_show_group.xml)|pos(1805,763)"
+			global "0"
+			interrupt "0"
+			priority "0"
+			self_id "interface_dialogue_show_group_1"
+			timeout "0"
+			dialogs
+			{
+				//editor "expanded(1)"
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/mech"
+					sound_name "voice_over/story/acid/mech_resource_outpost_03"
+				}
+
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/ashley"
+					sound_name "voice_over/story/acid/ashley_resource_outpost_03"
+				}
+
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/mech"
+					sound_name "voice_over/story/acid/mech_resource_outpost_04"
+				}
+
+			}
+
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(logic_if_resource.xml)|pos(4152,-168)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "quantity"
+						value "5000"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "comparison_type"
+						value "greater_or_equal"
+					}
+
+					StringData
+					{
+						key "resource_name"
+						value "palladium"
+					}
+
+					StringData
+					{
+						key "wait_until_true"
+						value "true"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_if_resource.lua"
+			self_id "logic_if_resource_0"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_true.xml)|pos(4152,22)"
+			key "true"
+			self_id "logic_if_resource_0###true"
+			value "logic_if_resource_0###true"
+		}
+
+		DialogGroupNode
+		{
+			//editor "layout(interface_dialogue_show_group.xml)|pos(4534,-117)"
+			global "0"
+			interrupt "0"
+			priority "0"
+			self_id "interface_dialogue_show_group_2"
+			timeout "0"
+			dialogs
+			{
+				//editor "expanded(1)"
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/mech"
+					sound_name "voice_over/story/acid/mech_resource_outpost_05"
+				}
+
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/ashley"
+					sound_name "voice_over/story/acid/ashley_resource_outpost_05"
+				}
+
+			}
+
+		}
+
+		DialogGroupNode
+		{
+			//editor "layout(interface_dialogue_show_group.xml)|pos(5403,734)"
+			global "0"
+			interrupt "0"
+			priority "0"
+			self_id "interface_dialogue_show_group_3"
+			timeout "0"
+			dialogs
+			{
+				//editor "expanded(1)"
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/mech"
+					sound_name "voice_over/story/acid/mech_resource_outpost_06"
+				}
+
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/ashley"
+					sound_name "voice_over/story/acid/ashley_resource_outpost_06"
+				}
+
+			}
+
+		}
+
+		DialogGroupNode
+		{
+			//editor "layout(interface_dialogue_show_group.xml)|pos(7067,-81)"
+			global "0"
+			interrupt "0"
+			priority "0"
+			self_id "interface_dialogue_show_group_4"
+			timeout "0"
+			dialogs
+			{
+				//editor "expanded(1)"
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/mech"
+					sound_name "voice_over/story/acid/mech_resource_outpost_07"
+				}
+
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/ashley"
+					sound_name "voice_over/story/acid/ashley_resource_outpost_07"
+				}
+
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/mech"
+					sound_name "voice_over/story/acid/mech_resource_outpost_08"
+				}
+
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/ashley"
+					sound_name "voice_over/story/acid/ashley_resource_outpost_08"
+				}
+
+			}
+
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_wait_on_event.xml)|pos(-404,488)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "is_event_local"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "event_name"
+						value "InitialSpawnEnded"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_wait_on_event.lua"
+			self_id "logic_wait_on_event_0"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_wait.xml)|pos(-18,503)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "duration"
+						value "8.00"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_wait.lua"
+			self_id "logic_wait_0"
+		}
+
+		OrBehaviourNode
+		{
+			//editor "layout(logic_or.xml)|pos(1924,-79)"
+			self_id "logic_or_2"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_wait.xml)|pos(1682,131)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "duration"
+						value "120.00"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_wait.lua"
+			self_id "logic_wait_1"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(mission_dom_resume.xml)|pos(2108,-95)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "is_event_local"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "event_name"
+						value "ResumeDOM"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_event_send.lua"
+			self_id "mission_dom_resume_0"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(mission_dom_send_major_attack.xml)|pos(5903,559)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "event_name"
+						value "DOMSendMajorAttack"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_event_send.lua"
+			self_id "mission_dom_send_major_attack_0"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_wait_on_event.xml)|pos(6243,532)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "is_event_local"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "event_name"
+						value "OnMajorAttackEnd"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_wait_on_event.lua"
+			self_id "logic_wait_on_event_1"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_wait.xml)|pos(6605,543)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "duration"
+						value "5.00"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_wait.lua"
+			self_id "logic_wait_2"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(mission_dom_max_difficulty_level.xml)|pos(3008,-278)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "0"
+					}
+
+					IntData
+					{
+						key "max_dom_difficulty_level"
+						value "6"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "event_name"
+						value "DOMMaxDifficultyLevel"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_event_send.lua"
+			self_id "mission_dom_max_difficulty_level_0"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_construct_building.xml)|pos(2599,412)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "search_radius"
+						value "0"
+					}
+
+				}
+
+				Integers
+				{
+					IntData
+					{
+						key "progress_max"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value "lua/objectives/construct_building.lua"
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/story/build_palladium_deepvein_mine"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "build.rare_element_mine"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value
+					}
+
+					StringData
+					{
+						key "type"
+						value
+					}
+
+					StringData
+					{
+						key "blueprint"
+						value "buildings/resources/rare_element_mine"
+					}
+
+					StringData
+					{
+						key "name"
+						value
+					}
+
+					StringData
+					{
+						key "wait"
+						value "true"
+					}
+
+					StringData
+					{
+						key "search_target"
+						value
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_construct_building_0"
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(logic_if_difficulty_wave.xml)|pos(2451,-240)"
+			script "lua/graph/logic/logic_if_difficulty_wave.lua"
+			self_id "logic_if_difficulty_wave_1"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_difficulty.xml)|pos(2451,-155)"
+			key "easy"
+			self_id "logic_if_difficulty_wave_1###easy"
+			value
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_difficulty.xml)|pos(2451,-126)"
+			key "normal"
+			self_id "logic_if_difficulty_wave_1###normal"
+			value
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_difficulty.xml)|pos(2451,-97)"
+			key "hard"
+			self_id "logic_if_difficulty_wave_1###hard"
+			value
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_difficulty.xml)|pos(2451,-67)"
+			key "brutal"
+			self_id "logic_if_difficulty_wave_1###brutal"
+			value
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_difficulty.xml)|pos(2451,-38)"
+			key "sandbox"
+			self_id "logic_if_difficulty_wave_1###sandbox"
+			value
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(mission_dom_max_difficulty_level.xml)|pos(3008,-410)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "0"
+					}
+
+					IntData
+					{
+						key "max_dom_difficulty_level"
+						value "5"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "event_name"
+						value "DOMMaxDifficultyLevel"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_event_send.lua"
+			self_id "mission_dom_max_difficulty_level_1"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(mission_dom_max_difficulty_level.xml)|pos(3007,-163)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "0"
+					}
+
+					IntData
+					{
+						key "max_dom_difficulty_level"
+						value "8"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "event_name"
+						value "DOMMaxDifficultyLevel"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_event_send.lua"
+			self_id "mission_dom_max_difficulty_level_2"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(mission_dom_max_difficulty_level.xml)|pos(3010,-59)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "0"
+					}
+
+					IntData
+					{
+						key "max_dom_difficulty_level"
+						value "9"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "event_name"
+						value "DOMMaxDifficultyLevel"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_event_send.lua"
+			self_id "mission_dom_max_difficulty_level_3"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(mission_dom_max_difficulty_level.xml)|pos(3010,52)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "0"
+					}
+
+					IntData
+					{
+						key "max_dom_difficulty_level"
+						value "1"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "event_name"
+						value "DOMMaxDifficultyLevel"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_event_send.lua"
+			self_id "mission_dom_max_difficulty_level_4"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(mission_dom_max_difficulty_level.xml)|pos(7075,855)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "0"
+					}
+
+					IntData
+					{
+						key "max_dom_difficulty_level"
+						value "9"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "event_name"
+						value "DOMMaxDifficultyLevel"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_event_send.lua"
+			self_id "mission_dom_max_difficulty_level_5"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_gather_resource.xml)|pos(3078,727)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "progress_max"
+						value "500"
+					}
+
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "is_additional"
+						value "0"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "1"
+					}
+
+					IntData
+					{
+						key "finish_objective"
+						value "1"
+					}
+
+					IntData
+					{
+						key "always_visible"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value "lua/objectives/gather_resource.lua"
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/story/find_palladium_deepvein"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "find.palladium_deepvein"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value
+					}
+
+					StringData
+					{
+						key "resource_name"
+						value "palladium"
+					}
+
+					StringData
+					{
+						key "wait"
+						value "true"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_gather_resource_0"
+		}
+
+		DialogGroupNode
+		{
+			//editor "layout(interface_dialogue_show_group.xml)|pos(2520,729)"
+			global "0"
+			interrupt "0"
+			priority "0"
+			self_id "interface_dialogue_show_group_5"
+			timeout "0"
+			dialogs
+			{
+				//editor "expanded(1)"
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "gui/hud/dialogs/mech"
+					sound_name "voice_over/story/headquarters/mech_orbital_scanner_03"
+				}
+
+			}
+
+		}
+
+		OrBehaviourNode
+		{
+			//editor "layout(logic_or.xml)|pos(3672,639)"
+			self_id "logic_or_1"
+		}
+
+	}
+
+	GraphConnections
+	{
+		default "entity_spawn_player_0"
+		entity_spawn_player_0 "event_graph_1|logic_wait_on_event_0|objective_exist_0"
+		interface_dialogue_show_group_5 "objective_gather_resource_0"
+		logic_if_difficulty_wave_1 "logic_if_difficulty_wave_1###brutal|logic_if_difficulty_wave_1###easy|logic_if_difficulty_wave_1###hard|logic_if_difficulty_wave_1###normal|logic_if_difficulty_wave_1###sandbox"
+		logic_if_difficulty_wave_1###brutal "mission_dom_max_difficulty_level_3"
+		logic_if_difficulty_wave_1###easy "mission_dom_max_difficulty_level_1"
+		logic_if_difficulty_wave_1###hard "mission_dom_max_difficulty_level_2"
+		logic_if_difficulty_wave_1###normal "mission_dom_max_difficulty_level_0"
+		logic_if_difficulty_wave_1###sandbox "mission_dom_max_difficulty_level_4"
+		logic_if_resource_0 "logic_if_resource_0###true"
+		logic_if_resource_0###true "interface_dialogue_show_group_2"
+		logic_or_1 "logic_wait_5"
+		logic_or_2 "mission_dom_resume_0"
+		logic_set_global_variable_0 "mission_end_0"
+		logic_wait_0 "objective_construct_building_3"
+		logic_wait_1 "logic_or_2"
+		logic_wait_2 "interface_dialogue_show_group_4|logic_set_global_variable_0|mission_change_creature_difficulty_0|mission_dom_max_difficulty_level_5|objective_finish_1"
+		logic_wait_3 "interface_dialogue_show_group_5|objective_construct_building_0"
+		logic_wait_4 "logic_or_2"
+		logic_wait_5 "logic_if_resource_0|objective_gather_resource_1"
+		logic_wait_7 "interface_dialogue_show_group_3|objective_generic_1"
+		logic_wait_on_event_0 "interface_dialogue_show_group_0|logic_wait_0|logic_wait_4"
+		logic_wait_on_event_1 "logic_wait_2"
+		mission_change_creature_difficulty_0 "mission_end_0"
+		mission_dom_max_difficulty_level_5 "mission_end_0"
+		mission_dom_resume_0 "logic_if_difficulty_wave_1"
+		mission_dom_send_major_attack_0 "logic_wait_on_event_1"
+		objective_construct_building_0 "logic_or_1"
+		objective_construct_building_3 "interface_dialogue_show_group_1|logic_wait_1|logic_wait_3"
+		objective_exist_0 "objective_exist_0###true"
+		objective_exist_0###true "campaign_objective_finish_0"
+		objective_finish_1 "mission_end_0"
+		objective_gather_resource_0 "logic_or_1"
+		objective_gather_resource_1 "logic_wait_7"
+		objective_generic_1 "mission_dom_send_major_attack_0"
+	}
+
+	GraphComments
+}
+

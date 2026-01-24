@@ -15,9 +15,9 @@ EntityBlueprint  // biomass_morphed_press
 		order				"18"
 		upgrade				"buildings/resources/biomass_morphed_press_lvl_2"
 		require 			"headquarters"
-		//building_group	"biomass_plant_press"
+		//building_group	"biomass_morphed_press"
 		buildable			"1"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,biomass_morphed_press,biomass_morphed_press_lvl_2,biomass_morphed_press_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -31,7 +31,7 @@ EntityBlueprint  // biomass_morphed_press
 					carbonium 	"400"
 					steel 		"600"
 				}
-			}		
+			}
 		}
 	}
 
@@ -357,12 +357,12 @@ EntityBlueprint  // biomass_morphed_press
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////		
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_out_1"
@@ -373,30 +373,46 @@ EntityBlueprint  // biomass_morphed_press
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////					
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapon_items/mine_gravity"
+					bone "att_vismod_1"
+					scale		1.4 1.4 1.4
+					orientation 0 0 0
+					offset		0 -1.1 0
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/water_filtering_pool"								
+					blueprint "effects/buildings_and_machines/nuclear_powerplant_rods"
 					bone "att_chimney"
 					delay "1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"	
-					delay "1"					
-				}							
+					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"
+					delay "1"
+				}
 			}
 		}	
 	}
@@ -415,11 +431,11 @@ EntityBlueprint  // biomass_morphed_press_lvl_2
 		localization_id		"gui/hud/building_name/biomass_morphed_press"
 		description			"gui/hud/building_description/biomass_morphed_press"
 		menu_icon			"gui/hud/building_icons/biomass_morphed_press_lvl_2"
-		//upgrade				"buildings/energy/biomass_morphed_press_lvl_3"
+		upgrade				"buildings/resources/biomass_morphed_press_lvl_3"
 		require 			"headquarters"
 		building_group		"biomass_morphed_press"
 		buildable			"0"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,biomass_morphed_press,biomass_morphed_press_lvl_2,biomass_morphed_press_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -427,12 +443,12 @@ EntityBlueprint  // biomass_morphed_press_lvl_2
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 18
+				building_time 25
 				building_cost
 				{
 					carbonium 	"400"
 					steel 		"800"
-					cobalt		"200"
+					titanium	"300"
 				}
 			}		
 		}
@@ -456,8 +472,18 @@ EntityBlueprint  // biomass_morphed_press_lvl_2
 			
 			GameplayResource
 			{
-				resource 			"cobalt_bio"
-				value			 	"0.1"
+				resource 			"plasma"
+				family				"purifier"
+				value 				"25"
+				attachment			"att_in_1|att_in_2"
+			}
+			
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				family				"purifier"
+				value 				"10"
+				attachment			"att_in_1|att_in_2"
 			}
 		}
 		
@@ -486,5 +512,379 @@ EntityBlueprint  // biomass_morphed_press_lvl_2
 			
 		}
 	}
+
+	children
+	{
+		EntityBlueprint
+		{
+			name "buildings/resources/biomass_morphed_press_pipeline"
+			
+			PipeComponent
+			{
+				attachment		"att_in_1,att_in_2"
+			}
+
+			ResourceStorageDesc
+			{
+				Storages
+				{
+					Storage
+					{
+						group	 		"local"
+						max 	 		"20"
+						attachment		"att_in_1|att_in_2"
+					}
+
+				}
+			}
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/energy/animal_biomass_powerplant"
+			}
+
+		}
+	}
+	
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 	"att_in_pipe_mid"
+					scale	3.1 1 1
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/mine_gravity"
+					bone "att_vismod_1"
+					scale		1.4 1.4 1.4
+					orientation 0 0 0
+					offset		0 -1.1 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/glens_base"
+					bone "att_vismod_3"
+					scale "0.5 0.5 0.5"
+					orientation -90 0 0
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/nuclear_powerplant_rods"
+					bone "att_chimney"
+					delay "1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"
+					delay "1"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}
+	}
 }
 
+
+EntityBlueprint  // biomass_morphed_press_lvl_3
+{
+	name  			"buildings/resources/biomass_morphed_press_lvl_3"
+	base_blueprint	"buildings/resources/biomass_morphed_press_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"biomass_morphed_press_lvl_3"
+		bp   				"buildings/resources/biomass_morphed_press_lvl_3"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/biomass_morphed_press"
+		description			"gui/hud/building_description/biomass_morphed_press"
+		menu_icon			"gui/hud/building_icons/biomass_morphed_press_lvl_3"
+		require 			"headquarters"
+		building_group		"biomass_morphed_press"
+		buildable			"0"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,biomass_morphed_press,biomass_morphed_press_lvl_2,biomass_morphed_press_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 40
+				building_cost
+				{
+					carbonium 	"400"
+					alloys		"1000"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{	
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"200"
+			}
+			
+			GameplayResource
+			{
+				resource 			"biomass_morphed"
+				value			 	"2"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt_bio"
+				value			 	"0.1"
+			}
+			
+			GameplayResource
+			{
+				resource 			"plasma"
+				family				"purifier"
+				value 				"25"
+				attachment			"att_in_1|att_in_2"
+			}
+			
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				family				"purifier"
+				value 				"10"
+				attachment			"att_in_1|att_in_2"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"morphium"
+				value				"100"
+				attachment			"att_out_1"
+			}		
+		}
+		priority 9		
+		reset_interval 0.5
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "morphium"
+				max 	 "200"
+			}
+			
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 	"att_in_pipe_mid"
+					scale	3.1 1 1
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/mine_gravity"
+					bone "att_vismod_1"
+					scale		1.4 1.4 1.4
+					orientation 0 0 0
+					offset		0 -1.1 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/glens_base"
+					bone "att_vismod_3"
+					scale "0.5 0.5 0.5"
+					orientation -90 0 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/rocket_launcher"
+					bone "att_vismod_4"
+					scale		2 2 2
+					orientation 0 -90 180
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/nuclear_powerplant_rods"
+					bone "att_chimney"
+					delay "1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"
+					delay "1"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+	}
+}

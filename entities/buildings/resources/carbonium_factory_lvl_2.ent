@@ -1,11 +1,11 @@
-EntityBlueprint
+EntityBlueprint  // carbonium_factory_lvl_2
 {
 	name  					"buildings/resources/carbonium_factory_lvl_2"
 	base_blueprint			"buildings/resources/carbonium_factory"
 
 	BuildingDesc
 	{
-		buildable 			"0"		
+		buildable 			"0"
 		name 				"carbonium_factory_lvl_2"
 		bp   				"buildings/resources/carbonium_factory_lvl_2"
 		category 			"resources"
@@ -14,7 +14,7 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/carbonium_factory_lvl2"
 		order				"1"
 		upgrade				"buildings/resources/carbonium_factory_lvl_3"
-		require 			"headquarters"
+		//require 			"headquarters"  // removed to save screen space
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs

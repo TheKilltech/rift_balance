@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // rare_element_mine_lvl_3
 {
 	name  "buildings/resources/rare_element_mine_lvl_3"
 
@@ -13,7 +13,6 @@ EntityBlueprint
 		description			"gui/hud/building_description/mining_drill_lvl_3"
 		menu_icon			"gui/hud/building_icons/rare_element_mine_lvl3"
 		order				"3"
-		//upgrade				"buildings/resources/rare_element_mine_lvl_4"		
 		//require 			"headquarters"
 		buildable			"0"
 		building_group		"carbonium_factory"
@@ -275,7 +274,7 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -283,38 +282,38 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
 		}	
-		////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"								
+					blueprint "effects/buildings_and_machines/gas_chimney_small"
 					bone "att_chimney_1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_resources/rare_element_mine_working"	
-					delay "0.5"					
-				}				
+					blueprint "effects/buildings_resources/rare_element_mine_working"
+					delay "0.5"
+				}
 			}
-		}		
+		}
 		EffectGroup
 		{
 			group "vismod"
@@ -339,6 +338,6 @@ EntityBlueprint
 				//	scale 0.7 0.7 0.7
 				//}
 			}
-		}		
-	}		
+		}
+	}
 }

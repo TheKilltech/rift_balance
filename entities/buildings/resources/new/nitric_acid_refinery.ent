@@ -147,7 +147,7 @@ EntityBlueprint  // nitric_acid_refinery
 	MeshDesc
 	{
 		mesh "meshes/buildings/energy/animal_biomass_powerplant.mesh"
-		material "buildings/energy/animal_biomass_powerplant"
+		material "buildings/resources/nitric_acid_refinery"
 	}
 
 	TypeDesc
@@ -368,7 +368,7 @@ EntityBlueprint  // nitric_acid_refinery
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
@@ -384,13 +384,7 @@ EntityBlueprint  // nitric_acid_refinery
 				{
 					blueprint "effects/buildings_and_machines/reactor_green"
 					bone "att_vismod_1"
-					scale "0.5 0.8 0.5"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/minipipes"
-					bone "att_vismod_2"
-					scale "0.8 0.8 0.8"
+					scale "0.5 0.6 0.5"
 				}
 			}
 		}		
@@ -403,15 +397,15 @@ EntityBlueprint  // nitric_acid_refinery
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"								
+					blueprint "effects/buildings_and_machines/gas_chimney_small"
 					bone "att_chimney"
 					delay "1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"	
-					delay "1"					
-				}							
+					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"
+					delay "1"
+				}
 			}
 		}	
 	}
@@ -613,7 +607,7 @@ EntityBlueprint  // nitric_acid_refinery_lvl_2
 				{
 					blueprint "effects/buildings_and_machines/reactor_green"
 					bone "att_vismod_1"
-					scale "0.5 0.8 0.5"
+					scale "0.5 0.6 0.5"
 				}
 				Effect
 				{
@@ -797,41 +791,41 @@ EntityBlueprint  // nitric_acid_refinery_lvl_3
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////		
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////					
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"								
+					blueprint "effects/buildings_and_machines/gas_chimney_small"
 					bone "att_chimney"
 					delay "1"
 				}	
 				Effect
 				{
 					blueprint "effects/buildings_energy/animal_biomass_powerplant_working"	
-					delay "1"			
-				}							
+					delay "1"
+				}
 			}
 		}
 		EffectGroup
@@ -844,13 +838,21 @@ EntityBlueprint  // nitric_acid_refinery_lvl_3
 				{
 					blueprint "effects/buildings_and_machines/reactor_green"
 					bone "att_vismod_1"
-					scale "0.5 0.8 0.5"
+					scale "0.5 0.6 0.5"
 				}
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/minipipes"
 					bone "att_vismod_2"
 					scale "0.8 0.8 0.8"
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/corrosive_gun"
+					bone "att_vismod_4"
+					scale		2 2 2
+					orientation 0 -90 180
+					offset		0 -1.1 0 
 				}
 			}
 		}		

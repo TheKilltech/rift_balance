@@ -448,7 +448,7 @@ EntityBlueprint  // heavy_water_plant
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_arrow"
+					bone "att_out_1_arrow"
 				}
 			}
 		}	
@@ -461,10 +461,22 @@ EntityBlueprint  // heavy_water_plant
 			{
 				Effect
 				{
+					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 	"att_out_1_pipe"
+				}
+				Effect
+				{
 					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_01"
 					bone 	"att_vismod_1"
 					scale	0.6 0.6 0.6
 					offset	-0.4 0 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/shocktower3"
+					bone 	"att_vismod_6"
+					scale	1.4 1.4 1.4
+					offset	0 0 0
 				}
 			}
 		}

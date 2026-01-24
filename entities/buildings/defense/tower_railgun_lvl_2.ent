@@ -1,12 +1,10 @@
-EntityBlueprint
+EntityBlueprint  // tower_railgun_lvl_2
 {
-	name  "buildings/defense/tower_railgun_lvl_2"
-
-	base_blueprint 			buildings/defense/tower_railgun
+	name			"buildings/defense/tower_railgun_lvl_2"
+	base_blueprint 	"buildings/defense/tower_railgun"
 
 	BuildingDesc
 	{
-		buildable			"0"
 		name 				"tower_railgun_lvl_2"
 		bp   				"buildings/defense/tower_railgun_lvl_2"
 		category 			"defense"
@@ -15,9 +13,7 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/tower_railgun_lvl2"
 		require 			"headquarters"
 		building_group		"tower_laser"
-		order				"11"
 		buildable			"0"
-		check_connect		"1"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		//upgrade				"buildings/defense/tower_railgun_lvl_3"
@@ -35,8 +31,8 @@ EntityBlueprint
 					steel 		"1500"
 					cobalt		"100"
 				}
-			}		
-		}		
+			}
+		}
 	}
 
 	ResourceConverterDesc
@@ -127,6 +123,10 @@ EntityBlueprint
 	{
 	}
 
+	TowerDesc
+	{
+	}
+	
 	TurretDesc
 	{
 		target "ground_unit"
@@ -156,9 +156,6 @@ EntityBlueprint
 			WeaponMuzzle
 			{
 				attachment "att_muzzle"
-				//recoil_bone  "recoil"
-				//recoil_time   "0.45"
-				//recoil_offset   "1.6"
 			}
 		}
 
@@ -179,7 +176,7 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
@@ -188,7 +185,7 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -233,7 +230,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_railgun_projectile_lvl2
 {
 	name  "buildings/defense/tower_railgun_projectile_lvl2"
 

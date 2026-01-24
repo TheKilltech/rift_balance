@@ -80,7 +80,7 @@ return function(params)
 	rules.objectivesLogic = 
 	{
 		{ name = "logic/objectives/kill_elite_dynamic.logic",            minDifficultyLevel = 3 },
-		{ name = "logic/objectives/destroy_nest_morirot_single.logic",   minDifficultyLevel = 3, maxDifficultyLevel = 6 }, 
+		{ name = "logic/objectives/destroy_nest_morirot_single.logic",   minDifficultyLevel = 3, maxDifficultyLevel = 8 }, 
 		{ name = "logic/objectives/destroy_nest_morirot_multiple.logic", minDifficultyLevel = 6 }
 	}
 

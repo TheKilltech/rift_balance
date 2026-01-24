@@ -1,6 +1,7 @@
-EntityBlueprint
+EntityBlueprint  // tower_railgun
 {
 	name  "buildings/defense/tower_railgun"
+
 
 	BuildingDesc
 	{
@@ -11,13 +12,12 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_railgun"
 		menu_icon			"gui/hud/building_icons/tower_railgun"
 		require 			"headquarters"
+		upgrade				"buildings/defense/tower_railgun_lvl_2"
 		building_group		"tower_laser"
 		order				"10"
 		buildable			"0"
-		check_connect		"1"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
-		upgrade				"buildings/defense/tower_railgun_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -278,9 +278,6 @@ EntityBlueprint
 			WeaponMuzzle
 			{
 				attachment "att_muzzle"
-				//recoil_bone  "recoil"
-				//recoil_time   "0.45"
-				//recoil_offset   "1.6"
 			}
 		}
 
@@ -429,7 +426,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_railgun_projectile
 {
 	name  "buildings/defense/tower_railgun_projectile"
 

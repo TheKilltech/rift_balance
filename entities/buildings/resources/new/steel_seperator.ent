@@ -541,7 +541,7 @@ EntityBlueprint  // steel_seperator_lvl_2
 	}
     
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -550,7 +550,7 @@ EntityBlueprint  // steel_seperator_lvl_2
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -584,7 +584,7 @@ EntityBlueprint  // steel_seperator_lvl_2
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
@@ -592,6 +592,13 @@ EntityBlueprint  // steel_seperator_lvl_2
 				{
 					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_chimney"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
+					bone "att_chimney_2"
+					scale 0.7 1 0.7
+					offset 0 -0.5 0
 				}
 			}
 		}
@@ -748,7 +755,7 @@ EntityBlueprint  // steel_seperator_lvl_3
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -821,6 +828,11 @@ EntityBlueprint  // steel_seperator_lvl_3
 				{
 					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_chimney"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
+					bone "att_chimney_2"
 				}
 			}
 		}

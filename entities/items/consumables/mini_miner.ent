@@ -1,0 +1,1167 @@
+EntityBlueprint  // mini_miner_advanced_item
+{
+	name "items/consumables/mini_miner_advanced_item"
+
+	InventoryItemDesc
+	{
+		type 					"consumable"
+		name 					"gui/menu/inventory/consumable_name/mini_miner"
+		use_count				"1"
+		cooldown				"2"
+		//cooldown_category		"mini_miner"
+		icon					"gui/hud/items_icons/consumables/mini_miner_advanced"
+		bigger_icon 			"gui/menu/items_icons/consumables/mini_miner_advanced"
+		storage_limit 			"3"
+		description 			"gui/menu/inventory/consumable_description/mini_miner_upgraded"
+		rarity					"ADVANCED"
+		replace_lower_quality		"1"
+		add_after_obtaining 		"1"	
+	}
+
+	LuaDesc
+	{
+		script "lua/items/consumables/mini_miner.lua"
+
+        database
+        {
+            timeout     float:"70"
+			blueprint	string:"items/consumables/mini_miner_advanced"
+			stat_bp		string:"items/consumables/mini_miner_advanced"
+        }
+	}
+
+	CostDesc
+}
+
+EntityBlueprint  // mini_miner_extreme_item
+{
+	name "items/consumables/mini_miner_extreme_item"
+
+	InventoryItemDesc
+	{
+		type 					"consumable"
+		name 					"gui/menu/inventory/consumable_name/mini_miner"
+		use_count				"1"
+		cooldown				"2"
+		//cooldown_category		"mini_miner"
+		icon					"gui/hud/items_icons/consumables/mini_miner_extreme"
+		bigger_icon 			"gui/menu/items_icons/consumables/mini_miner_extreme"
+		storage_limit 			"3"
+		description 			"gui/menu/inventory/consumable_description/mini_miner_upgraded"
+		rarity					"EXTREME"
+		replace_lower_quality		"1"
+		add_after_obtaining 		"1"	
+	}
+
+	LuaDesc
+	{
+		script "lua/items/consumables/mini_miner.lua"
+
+        database
+        {
+            timeout     float:"90"
+			blueprint	string:"items/consumables/mini_miner_xtreme"
+			stat_bp		string:"items/consumables/mini_miner_xtreme"
+        }
+	}
+
+	CostDesc
+}
+
+EntityBlueprint  // mini_miner_standard_item
+{
+	name "items/consumables/mini_miner_standard_item"
+
+	InventoryItemDesc
+	{
+		type 					"consumable"
+		name 					"gui/menu/inventory/consumable_name/mini_miner"
+		use_count				"1"
+		cooldown				"2"
+		//cooldown_category		"mini_miner"
+		icon					"gui/hud/items_icons/consumables/mini_miner_standard"
+		bigger_icon 			"gui/menu/items_icons/consumables/mini_miner_standard"
+		storage_limit 			"3"
+		description 			"gui/menu/inventory/consumable_description/mini_miner_standard"
+		rarity					"STANDARD"
+		replace_lower_quality		"1"
+		add_after_obtaining 		"1"	
+	}
+
+	LuaDesc
+	{
+		script "lua/items/consumables/mini_miner.lua"
+
+        database
+        {
+            timeout     float:"60"
+			blueprint	string:"items/consumables/mini_miner"
+			stat_bp		string:"items/consumables/mini_miner"
+        }
+	}
+
+	CostDesc
+}
+
+EntityBlueprint  // mini_miner_superior_item
+{
+	name "items/consumables/mini_miner_superior_item"
+
+	InventoryItemDesc
+	{
+		type 					"consumable"
+		name 					"gui/menu/inventory/consumable_name/mini_miner"
+		use_count				"1"
+		cooldown				"2"
+		//cooldown_category		"mini_miner"
+		icon					"gui/hud/items_icons/consumables/mini_miner_superior"
+		bigger_icon 			"gui/menu/items_icons/consumables/mini_miner_superior"
+		storage_limit 			"3"
+		description 			"gui/menu/inventory/consumable_description/mini_miner_upgraded"
+		rarity					"SUPERIOR"
+		replace_lower_quality		"1"
+		add_after_obtaining 		"1"	
+	}
+
+	LuaDesc
+	{
+		script "lua/items/consumables/mini_miner.lua"
+
+        database
+        {
+            timeout     float:"80"
+			blueprint	string:"items/consumables/mini_miner_superior"
+			stat_bp		string:"items/consumables/mini_miner_superior"
+        }
+	}
+
+	CostDesc
+}
+
+
+EntityBlueprint  // mini_miner
+{
+	name "items/consumables/mini_miner"
+
+	BuildingDesc
+	{
+		name 				"mini_miner"
+		bp   				"items/consumables/mini_miner"
+		category 			"deployable"
+		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
+		description			"gui/menu/research/description/mini_miner"
+		menu_icon			"gui/hud/items_icons/consumables/mini_miner_standard"
+		resource_requirement "carbon_vein|iron_vein|ammonium_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
+		sellable 			"0"
+        buildable			"1"
+		order				"1"
+		limit			    "3"
+		limit_name			"mini_miner"
+		map_limit			"LOCAL"
+		upgrade				"buildings/consumables/mini_miner_advanced"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"10"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"carbon_vein"
+				value				2.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"iron_vein"
+				value				2.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"ammonium_vein"
+				value				2.0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt_vein"
+				value				2.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"palladium_vein"
+				value				2.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"titanium_vein"
+				value				2.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"uranium_ore_vein"
+				value				2.0
+				family				"resource"
+			}
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value				1.5
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value				1.5
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value				1.5
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt"
+				value				1.5
+				family				"resource"
+			}		
+			GameplayResource
+			{
+				resource 			"palladium"
+				value				1.5
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"titanium"
+				value				1.5
+				family				"resource"
+			}	
+			GameplayResource
+			{
+				resource 			"uranium_ore"
+				value				1.5
+				family				"resource"
+			}
+		}
+		
+		priority 4
+		one_vein_mode "1"
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/consumable_buildings/mini_miner.lua"
+
+		database
+		{
+			cone_effect			string:"build_cone_1x1"
+			cone_effect_sell	string:"sell_small"
+			building_time		float:"0.1"
+			time_machine		int:"0"
+            check_collison      int:"0"
+			spawn_interval		float:"0.4"
+		}
+
+	}
+
+	HealthDesc
+	{
+		max_health 					"250"
+		health 						"250"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual                   0
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+	
+	ResistanceComponent
+	{
+		quicksand		"12"
+	}		
+
+	MeshDesc
+	{
+		mesh "meshes/items/consumables/mini_miner_lvl_1.mesh"
+		material "items/consumables/mini_miner_lvl_1"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/items/consumables/mini_miner_lvl_1"
+	}
+	
+	AnimationDesc
+	{
+		animations
+		{
+			Anim
+			{
+				animName "working"
+				animTime "0.0"
+			}
+		}
+	}	
+
+	TypeDesc
+	{
+		type "building|defense|wall"
+	}
+
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building_small"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x "2"
+						y "2"
+						z "2"
+
+						position
+						{
+							x "0.0"
+							y "2"
+							z "0.0"
+						}
+					}
+				}
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsBoxShape
+			{
+				x	2
+				y	2
+				z	2
+			}
+		}
+	}
+	
+	SelectableDesc
+	{
+		can_activate 0
+	}	
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "1"
+			y "0.5"
+			z "0"
+			w "1"
+		}
+		size
+		{
+			x "2"
+			y "2"
+		}
+		visibility		"discovered"
+		layer_group		"player"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	DestroyDesc
+	{
+
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "66_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					//part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				key "33_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					//part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_lifetime "3"
+				}
+
+				key "default"
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_lifetime "3"
+				}
+
+				key "quicksand"
+			}
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "lights/point/orange_very_small"
+					bone "att_omni_light"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/mini_miner_dig"
+				}			
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/mini_miner_dig_2nd_layer"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/mini_miner_dig_3rd_layer"
+				}
+			}
+		}
+	}
+	
+	LifeTimeDesc
+	{
+		time	60
+	}	
+}
+
+EntityBlueprint  // mini_miner_advanced
+{
+	name			"items/consumables/mini_miner_advanced"
+	base_blueprint	"items/consumables/mini_miner"
+
+	BuildingDesc
+	{
+		name 				"mini_miner_advanced"
+		bp   				"items/consumables/mini_miner_advanced"
+		category 			"deployable"
+		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
+		description			"gui/menu/research/description/mini_miner_lvl_2"
+		menu_icon			"gui/hud/items_icons/consumables/mini_miner_advanced"
+		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
+
+		limit			    "3"
+		limit_name			"mini_miner"
+		map_limit			"LOCAL"
+        buildable			"0"
+		building_group		"mini_miner"
+		upgrade				"buildings/consumables/mini_miner_superior"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"2"
+				}
+			}
+		}
+	}
+	
+	LuaDesc
+	{
+		script "lua/buildings/consumable_buildings/mini_miner.lua"
+
+		database
+		{
+			cone_effect			string:"build_cone_1x1"
+			cone_effect_sell	string:"sell_small"
+			building_time		float:"0.1"
+			time_machine		int:"0"
+            check_collison      int:"0"
+			spawn_interval		float:"0.25"
+		}
+
+	}	
+	
+	HealthDesc
+	{
+		max_health 					"300"
+		health 						"300"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual                   0
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}	
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"carbon_vein"
+				value				3.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"iron_vein"
+				value				3.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"ammonium_vein"
+				value				3.0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt_vein"
+				value				3.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"palladium_vein"
+				value				3.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"titanium_vein"
+				value				3.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"uranium_ore_vein"
+				value				3.0
+				family				"resource"
+			}
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value				2.25
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value				2.25
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value				2.25
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt"
+				value				2.25
+				family				"resource"
+			}		
+			GameplayResource
+			{
+				resource 			"palladium"
+				value				2.25
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"titanium"
+				value				2.25
+				family				"resource"
+			}	
+			GameplayResource
+			{
+				resource 			"uranium_ore"
+				value				2.25
+				family				"resource"
+			}
+		}
+		
+		priority 4
+		one_vein_mode "1"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/items/consumables/mini_miner_lvl_2.mesh"
+		material "items/consumables/mini_miner_lvl_2"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/items/consumables/mini_miner_lvl_2"
+	}	
+	
+	LifeTimeDesc
+	{
+		time	90
+	}	
+}
+
+EntityBlueprint  // mini_miner_superior
+{
+	name			"items/consumables/mini_miner_superior"
+	base_blueprint	"items/consumables/mini_miner_advanced"
+
+	BuildingDesc
+	{
+		name 				"mini_miner_superior"
+		bp   				"items/consumables/mini_miner_superior"
+		category 			"deployable"
+		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
+		description			"gui/menu/research/description/mini_miner_lvl_3"
+		menu_icon			"gui/hud/items_icons/consumables/mini_miner_superior"
+		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein"
+
+		limit			    "3"
+		limit_name			"mini_miner"
+		map_limit			"LOCAL"
+        buildable			"0"
+		building_group		"mini_miner"
+		upgrade				"buildings/consumables/mini_miner_extreme"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"2"
+				}
+			}
+		}
+	}
+	
+	LuaDesc
+	{
+		script "lua/buildings/consumable_buildings/mini_miner.lua"
+
+		database
+		{
+			cone_effect			string:"build_cone_1x1"
+			cone_effect_sell	string:"sell_small"
+			building_time		float:"0.1"
+			time_machine		int:"0"
+            check_collison      int:"0"
+			spawn_interval		float:"0.19"
+		}
+
+	}	
+	
+	HealthDesc
+	{
+		max_health 					"350"
+		health 						"350"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual                   0
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}	
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"carbon_vein"
+				value				4.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"iron_vein"
+				value				4.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"ammonium_vein"
+				value				4.0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt_vein"
+				value				4.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"palladium_vein"
+				value				4.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"titanium_vein"
+				value				4.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"uranium_ore_vein"
+				value				4.0
+				family				"resource"
+			}
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value				3.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value				3.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value				3.0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt"
+				value				3.0
+				family				"resource"
+			}		
+			GameplayResource
+			{
+				resource 			"palladium"
+				value				3.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"titanium"
+				value				3.0
+				family				"resource"
+			}	
+			GameplayResource
+			{
+				resource 			"uranium_ore"
+				value				3.0
+				family				"resource"
+			}
+		}
+		
+		priority 4
+		one_vein_mode "1"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/items/consumables/mini_miner_lvl_3.mesh"
+		material "items/consumables/mini_miner_lvl_3"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/items/consumables/mini_miner_lvl_3"
+	}	
+	
+	LifeTimeDesc
+	{
+		time	120
+	}	
+}
+
+EntityBlueprint  // mini_miner_xtreme
+{
+	name			"items/consumables/mini_miner_xtreme"
+	base_blueprint	"items/consumables/mini_miner_superior"
+
+	BuildingDesc
+	{
+		name 				"mini_miner_xtreme"
+		bp   				"items/consumables/mini_miner_xtreme"
+		category 			"deployable"
+		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
+		description			"gui/menu/research/description/mini_miner_lvl_4"
+		menu_icon			"gui/hud/items_icons/consumables/mini_miner_extreme"
+		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein"
+
+		limit			    "3"
+		limit_name			"mini_miner"
+		map_limit			"LOCAL"
+		buildable			"0"
+		building_group		"mini_miner"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"2"
+				}
+			}
+		}
+	}
+	
+	LuaDesc
+	{
+		script "lua/buildings/consumable_buildings/mini_miner.lua"
+
+		database
+		{
+			cone_effect			string:"build_cone_1x1"
+			cone_effect_sell	string:"sell_small"
+			building_time		float:"0.1"
+			time_machine		int:"0"
+            check_collison      int:"0"
+			spawn_interval		float:"0.15"
+		}
+
+	}	
+	
+	HealthDesc
+	{
+		max_health 					"400"
+		health 						"400"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual                   0
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}	
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"carbon_vein"
+				value				5.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"iron_vein"
+				value				5.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"ammonium_vein"
+				value				5.0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt_vein"
+				value				5.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"palladium_vein"
+				value				5.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"titanium_vein"
+				value				5.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"uranium_ore_vein"
+				value				5.0
+				family				"resource"
+			}
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value				3.75
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value				3.75
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value				3.75
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt"
+				value				3.75
+				family				"resource"
+			}		
+			GameplayResource
+			{
+				resource 			"palladium"
+				value				3.75
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"titanium"
+				value				3.75
+				family				"resource"
+			}	
+			GameplayResource
+			{
+				resource 			"uranium_ore"
+				value				3.75
+				family				"resource"
+			}
+		}
+		
+		priority 4
+		one_vein_mode "1"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/items/consumables/mini_miner_lvl_4.mesh"
+		material "items/consumables/mini_miner_lvl_4"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/items/consumables/mini_miner_lvl_4"
+	}
+	
+	LifeTimeDesc
+	{
+		time	180
+	}	
+}
+
+
+EntityBlueprint  // mini_miner_extreme (obsolete, only for compatibility)
+{
+	name			"items/consumables/mini_miner_extreme"
+	base_blueprint	"items/consumables/mini_miner_xtreme"
+	
+	BuildingDesc
+	{
+		name 				"mini_miner_extreme"
+		bp   				"items/consumables/mini_miner_extreme"
+		category 			"deployable"
+		localization_id		"gui/menu/inventory/consumable_name/mini_miner"
+		description			"gui/menu/research/description/mini_miner_lvl_4"
+		menu_icon			"gui/hud/items_icons/consumables/mini_miner_extreme"
+		resource_requirement "carbon_vein|iron_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein"
+		buildable			"0"
+	}
+}
