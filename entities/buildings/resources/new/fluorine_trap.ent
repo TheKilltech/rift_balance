@@ -443,20 +443,16 @@ EntityBlueprint  // fluorine_trap_lvl_2
 	{
 		name 				"fluorine_trap_lvl_2"
 		bp   				"buildings/resources/fluorine_trap_lvl_2"
-		category 			"resources"
-		localization_id		"gui/hud/building_name/fluorine_trap_lvl_2"
-		description			"gui/hud/building_description/fluorine_trap_lvl_2"
+		category 			"liquids"
+		localization_id		"gui/hud/building_name/fluorine_trap"
+		description			"gui/hud/building_description/fluorine_trap"
 		menu_icon			"gui/hud/building_icons/fluorine_trap_lvl_2"
 		radius_name			"atmospheric_trap"
-		min_radius			"31"
 		//upgrade			"buildings/energy/fluorine_trap_lvl_3"
 		require 			"headquarters"
 		building_group		"fluorine_trap"
 		buildable			"0"
-		//condition			"NOT_BIOME"
-		condition			"BIOME"	
-		condition_value		"acid,swamp"
-		//condition_value		"magma,jungle,caverns,desert,metallic,legacy_maps"
+		min_radius			"31"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,fluorine_trap"
 
@@ -517,11 +513,6 @@ EntityBlueprint  // fluorine_trap_lvl_2
 			
 		}
 	}
-	
-	SkeletonDesc
-	{
-		name "meshes/buildings/resources/fluorine_trap"
-	}
 
 	EffectDesc
 	{
@@ -565,7 +556,7 @@ EntityBlueprint  // fluorine_trap_lvl_2
 				}
 				Effect
 				{
-					blueprint "effects/buildings_resources/gas_filtering_plant_working"	
+					blueprint "effects/buildings_resources/gas_filtering_plant_working"
 					delay "0.5"
 				}
 			}
