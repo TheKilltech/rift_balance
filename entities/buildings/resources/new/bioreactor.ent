@@ -145,7 +145,7 @@ EntityBlueprint  // bioreactor
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/bioreactor.mesh"  // does not exist
+		mesh "meshes/buildings/resources/bioreactor.mesh"
 		material "buildings/resources/liquid_pump_lvl_2"
 	}
 
@@ -159,6 +159,11 @@ EntityBlueprint  // bioreactor
 		name "meshes/buildings/resources/bioreactor"
 	}
 	
+	AnimationGraphDesc
+	{
+		animation_graph_name "building_working"
+	}
+
 	PhysicsDesc
  	{
 		objects
@@ -357,7 +362,7 @@ EntityBlueprint  // bioreactor
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -433,6 +438,11 @@ EntityBlueprint  // bioreactor
 			
 			Effects
 			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/gas_filtering_plant_working"
+					delay "0.5"
+				}
 			}
 		}
 	}
@@ -519,7 +529,7 @@ EntityBlueprint  // bioreactor_lvl_2
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -578,6 +588,13 @@ EntityBlueprint  // bioreactor_lvl_2
 				}
 				Effect
 				{
+					blueprint "effects/weapon_items/ball_gas"
+					bone "att_vismod_3"
+					scale 1.6 1.6 1.6
+					orientation 90 90 0
+				}
+				Effect
+				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_1_pipe"
 				}
@@ -586,12 +603,13 @@ EntityBlueprint  // bioreactor_lvl_2
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_out_1_pipe"
 				}
+				
 			}
 		}
 		EffectGroup
 		{
 			group "level"
-			enabled "1"
+			enabled "0"
 			Effects
 			{
 				Effect
@@ -608,7 +626,198 @@ EntityBlueprint  // bioreactor_lvl_2
 			
 			Effects
 			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/gas_filtering_plant_working"
+					delay "0.5"
+				}
 			}
+		}
+	}
+}
+
+
+EntityBlueprint  // bioreactor_ghost
+{
+	name  "buildings/resources/bioreactor_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/seismic_laboratory.mesh"
+		material "selector/hologram_blue"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+		}
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/bioreactor.mesh"
+		material "selector/hologram_blue"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/bioreactor"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/reactor_ghost"
+					bone "att_vismod_2"
+					scale 1.0 1.4 1.0
+					orientation 0 0 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/corrosive_gun_ghost"
+					bone "att_vismod_1"
+					scale 1.8 2.3 2.3
+					orientation 90 90 0
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // bioreactor_lvl_2_ghost
+{
+	name  "buildings/resources/bioreactor_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/seismic_laboratory.mesh"
+		material "selector/hologram_blue"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+		}
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/bioreactor.mesh"
+		material "selector/hologram_blue"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/bioreactor"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/reactor_ghost"
+					bone "att_vismod_2"
+					scale 1.0 1.4 1.0
+					orientation 0 0 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/corrosive_gun_ghost"
+					bone "att_vismod_1"
+					scale 1.8 2.3 2.3
+					orientation 90 90 0
+				}
 		}
 	}
 }
