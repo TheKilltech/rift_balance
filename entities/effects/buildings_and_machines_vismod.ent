@@ -1088,6 +1088,22 @@ EntityBlueprint "effects/no_lifetime"		//silo_s
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//silo_s_grey
+{
+	name "effects/buildings_and_machines/silo_s_grey"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/resources/liquid_material_storage_lvl_1.mesh"
+		material 	"buildings/resources/liquid_material_storage_lvl_1_grey"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//silo_l
 {
 	name "effects/buildings_and_machines/silo_l"

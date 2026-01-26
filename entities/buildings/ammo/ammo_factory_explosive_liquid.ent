@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // ammo_factory_explosive_liquid
 {
 	name  "buildings/ammo/ammo_factory_explosive_liquid"
 	
@@ -10,10 +10,11 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/ammo_factory_explosive_liquid"
 		description			"gui/hud/building_description/ammo_factory_explosive_liquid"
 		menu_icon			"gui/hud/building_icons/ammo_factory_explosive_liquid"
-		//upgrade				"buildings/ammo/ammo_factory_explosive_adv_lvl_2"
+		upgrade				"buildings/ammo/ammo_factory_explosive_liquid_lvl_2"
 		require 			"headquarters"
 		order				"2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_explosive_liquid,ammo_factory_explosive_liquid_lvl_2"
 		
 		costs
 		{
@@ -80,11 +81,11 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"ammo_mech_energy_cell"
-				value				"0.2"
+				value				"0.15"
 				optional			"1"
 			}
 		}
-		priority 5		
+		priority 5
 	}
 
 	LuaDesc
@@ -369,12 +370,12 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
@@ -383,15 +384,16 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_03"
-					bone 	"att_vismod_1"
-					scale "0.8 0.8 0.8"
+					blueprint	"effects/buildings_and_machines/scifi_structure_medium_white_03"
+					bone		"att_vismod_1"
+					scale		0.8 0.8 0.8
+					offset		0 -1.2 0
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/scifi_structure_small_white_03"
-					bone 	"att_vismod_2"
-					scale "0.6 0.6 0.6"
+					blueprint	"effects/buildings_and_machines/scifi_structure_small_white_03"
+					bone		"att_vismod_2"
+					scale		0.6 0.6 0.6"
 				}
 			}
 		}
@@ -399,16 +401,192 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
 					blueprint "effects/buildings_resources/tower_ammunition_factory_working"
-					delay "0.5"	
+					delay "0.5"
 				}	
 			}
 		}	
+	}
+}
+
+
+EntityBlueprint  // ammo_factory_explosive_liquid_lvl_2
+{
+	name  			"buildings/ammo/ammo_factory_explosive_liquid_lvl_2"
+	base_blueprint	"buildings/ammo/ammo_factory_explosive_liquid"
+	
+	BuildingDesc
+	{
+		name 				"ammo_factory_explosive_liquid_lvl_2"
+		bp   				"buildings/ammo/ammo_factory_explosive_liquid_lvl_2"
+		category 			"ammo"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/ammo_factory_explosive_liquid"
+		description			"gui/hud/building_description/ammo_factory_explosive_liquid"
+		menu_icon			"gui/hud/building_icons/ammo_factory_explosive_liquid"
+		//upgrade				"buildings/ammo/ammo_factory_explosive_liquid_lvl_3"
+		require 			"headquarters"
+		buildable			"0"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_explosive_liquid,ammo_factory_explosive_liquid_lvl_2"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 35
+				building_cost
+				{
+					carbonium 	"1000"
+					steel 		"725"
+					ai			"1"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"60"
+			}
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value				"1.4"
+			}
+			
+			GameplayResource
+			{
+				resource 			"nitric_acid"
+				value 				"80"
+				attachment			"att_in_2"
+				family				"nitrogen"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"ammo_tower_explosive"
+				value				"0.4"
+			}
+			GameplayResource
+			{
+				resource 			"ammo_mech_explosive"
+				value				"0.4"
+				optional			"1"
+			}
+			GameplayResource
+			{
+				resource 			"ammo_tower_liquid"
+				value				"10"
+			}	
+			GameplayResource
+			{
+				resource 			"ammo_mech_liquid"
+				value				"10"
+				optional			"1"
+			}
+			GameplayResource
+			{
+				resource 			"ammo_mech_energy_cell"
+				value				"0.25"
+				optional			"1"
+			}
+		}
+		priority 5
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_medium_white_03"
+					bone		"att_vismod_1"
+					scale		0.8 0.8 0.8
+					offset		0 -1.2 0
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/silo_s_grey"
+					bone		"att_vismod_2"
+					scale		0.9 1.1 0.9
+					offset		0 -1.3 0
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone		"att_in_2_pipe"
+				}
+			}
+		}
+		
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/tower_ammunition_factory_working"
+					delay "0.5"
+				}	
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}
 	}
 }
