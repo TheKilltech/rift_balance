@@ -11,12 +11,12 @@ EntityBlueprint  // nitrification_plant
 		description			"gui/hud/building_description/nitrification_plant"
 		menu_icon			"gui/hud/building_icons/nitrification_plant"
 		order				"11"
-		upgrade				"buildings/resources/nitrification_plant_lvl_2"		
+		upgrade				"buildings/resources/nitrification_plant_lvl_2"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"nitric_acid_refinery"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		going_green_state	"1"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,nitrification_plant,nitrification_plant_lvl_2,nitrification_plant_lvl_3"
 
 		costs
 		{
@@ -468,13 +468,12 @@ EntityBlueprint  // nitrification_plant_lvl_2
 		localization_id		"gui/hud/building_name/nitrification_plant"
 		description			"gui/hud/building_description/nitrification_plant"
 		menu_icon			"gui/hud/building_icons/nitrification_plant_lvl_2"
-		order				"11"
-		upgrade				"buildings/resources/nitrification_plant_lvl_3"		
+		upgrade				"buildings/resources/nitrification_plant_lvl_3"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"nitric_acid_refinery"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		going_green_state	"1"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,nitrification_plant,nitrification_plant_lvl_2,nitrification_plant_lvl_3"
 		
 		costs
 		{
@@ -609,11 +608,11 @@ EntityBlueprint  // nitrification_plant_lvl_2
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
+		}
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
@@ -633,14 +632,14 @@ EntityBlueprint  // nitrification_plant_lvl_2
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
@@ -682,10 +681,17 @@ EntityBlueprint  // nitrification_plant_lvl_2
 				}
 				Effect
 				{
+					blueprint "effects/buildings_and_machines/minipipes"
+					bone "att_vismod_4"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
 					blueprint "effects/weapon_items/ball_gas"
 					bone "att_vismod_5"
 					orientation 0 -90 0
-					scale "1.2 1.4 1.2"
+					scale "1.1 1.4 1.1"
+					offset 0 -0.1 -0.02
 				}
 			}
 		}
@@ -731,13 +737,11 @@ EntityBlueprint  // nitrification_plant_lvl_3
 		localization_id		"gui/hud/building_name/nitrification_plant"
 		description			"gui/hud/building_description/nitrification_plant"
 		menu_icon			"gui/hud/building_icons/nitrification_plant_lvl_3"
-		order				"11"
-		//upgrade				"buildings/energy/nitrification_plant_lvl_4"		
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"nitric_acid_refinery"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		going_green_state	"1"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,nitrification_plant,nitrification_plant_lvl_2,nitrification_plant_lvl_3"
 		
 		costs
 		{
@@ -896,14 +900,14 @@ EntityBlueprint  // nitrification_plant_lvl_3
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
@@ -933,9 +937,9 @@ EntityBlueprint  // nitrification_plant_lvl_3
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/scifi_structure_small_white_03"
-					bone "att_vismod_2"
-					scale "0.6 0.6 0.6"
+					blueprint "effects/buildings_and_machines/silo_s"
+					bone "att_vismod_6"
+					scale "1.3 0.7 1.3"
 				}
 				Effect
 				{
@@ -947,27 +951,28 @@ EntityBlueprint  // nitrification_plant_lvl_3
 				{
 					blueprint "effects/buildings_and_machines/minipipes"
 					bone "att_vismod_4"
-					scale "0.5 0.5 0.5"
+					scale "0.7 0.7 0.7"
 				}
 				Effect
 				{
 					blueprint "effects/weapon_items/ball_gas"
 					bone "att_vismod_5"
 					orientation 0 -90 0
-					scale "1.2 1.4 1.2"
+					scale "1.4 1.5 1.4"
+					offset 0 -0.1 0
 				}
 			}
 		}
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_resources/liquid_pump_working"								
+					blueprint "effects/buildings_resources/liquid_pump_working"
 				}		
 			}
 		}		

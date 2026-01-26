@@ -15,7 +15,7 @@ EntityBlueprint  // bio_uranium_refinery
 		upgrade				"buildings/resources/bio_uranium_refinery_lvl_2"
 		order				"36"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,bio_uranium_refinery,bio_uranium_refinery_lvl_2,bio_uranium_refinery_lvl_3"
 		
 		costs
 		{
@@ -390,7 +390,7 @@ EntityBlueprint  // bio_uranium_refinery
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -405,7 +405,7 @@ EntityBlueprint  // bio_uranium_refinery
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -487,7 +487,7 @@ EntityBlueprint  // bio_uranium_refinery_lvl_2
 		menu_icon			"gui/hud/building_icons/bio_uranium_refinery_lvl_2"
 		require 			"headquarters"
 		upgrade				"buildings/resources/bio_uranium_refinery_lvl_3"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,bio_uranium_refinery,bio_uranium_refinery_lvl_2,bio_uranium_refinery_lvl_3"
 		
 		costs
 		{
@@ -637,7 +637,7 @@ EntityBlueprint  // bio_uranium_refinery_lvl_2
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -652,7 +652,7 @@ EntityBlueprint  // bio_uranium_refinery_lvl_2
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -668,13 +668,13 @@ EntityBlueprint  // bio_uranium_refinery_lvl_2
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_filtering_sludge"								
+					blueprint "effects/buildings_and_machines/gas_filtering_sludge"
 				}
 				Effect
 				{
@@ -690,6 +690,7 @@ EntityBlueprint  // bio_uranium_refinery_lvl_2
 				{
 					blueprint "effects/buildings_main/rift_under_ball_energy"
 					bone "att_vismod_1"
+					offset	0 1.2 0
 				}
 				Effect
 				{
@@ -701,7 +702,7 @@ EntityBlueprint  // bio_uranium_refinery_lvl_2
 		EffectGroup
 		{
 			group "level"
-			enabled "1"
+			enabled "0"
 			Effects
 			{
 				Effect
@@ -720,10 +721,18 @@ EntityBlueprint  // bio_uranium_refinery_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/weapon_items/ball_green"
-					bone "att_vismod_1"
-					scale 1.6 2.0 1.6
-					orientation 0 0 0
+					blueprint "effects/buildings_and_machines/shocktower2"
+					bone		"att_vismod_1"
+					scale		1.0 0.6 1.0
+					offset		0 -2 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/drone3"
+					bone		"att_vismod_1"
+					scale		1.8 1.8 1.8
+					orientation	0 0 0
+					offset		0 0.6 0
 				}
 			}
 		}				
@@ -746,7 +755,7 @@ EntityBlueprint  // bio_uranium_refinery_lvl_3
 		description			"gui/hud/building_description/bio_uranium_ore_refinery"
 		menu_icon			"gui/hud/building_icons/bio_uranium_refinery_lvl_3"
 		require 			"headquarters"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,bio_uranium_refinery,bio_uranium_refinery_lvl_2,bio_uranium_refinery_lvl_3"
 		
 		costs
 		{
@@ -895,7 +904,7 @@ EntityBlueprint  // bio_uranium_refinery_lvl_3
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -910,7 +919,7 @@ EntityBlueprint  // bio_uranium_refinery_lvl_3
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -926,7 +935,7 @@ EntityBlueprint  // bio_uranium_refinery_lvl_3
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
@@ -948,6 +957,7 @@ EntityBlueprint  // bio_uranium_refinery_lvl_3
 				{
 					blueprint "effects/buildings_main/rift_under_ball_energy"
 					bone "att_vismod_1"
+					offset	0 1.0 0
 				}
 				Effect
 				{
@@ -965,10 +975,11 @@ EntityBlueprint  // bio_uranium_refinery_lvl_3
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/orb_uranium"
-					bone "att_vismod_1"
-					scale "0.3 0.3 0.3"
+					bone	"att_vismod_1"
+					scale	0.55 0.55 0.55
+					offset	0 -1.0 0
 				}
 			}
-		}				
+		}
 	}
 }
