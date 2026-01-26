@@ -895,3 +895,61 @@ EntityBlueprint		// cannon_acid_fire
 		name "items/weapons/bullet/sniper_rifle_fire"
 	}
 }
+
+EntityBlueprint		// cannon_cryo_fire
+{
+	base_blueprints
+	{
+		effects/weapons_elemental/muzzle
+		lights/point/muzzle_blue_small
+		effects/default
+	}
+
+	name effects/weapons_elemental/cannon_cryo_fire
+
+	ParticleDesc
+	{
+		name    "rift/mech_elemental_muzzle_cryo"
+	}
+
+	CameraFeedbackShakeDesc
+	{
+		duration 		"0.066"
+		power   		"0.2"
+		group			"weapon_muzzle"
+	}
+
+	SoundDesc
+	{
+		name "items/weapons/bullet/sniper_rifle_fire"
+	}
+}
+
+EntityBlueprint		// cannon_pyro_fire
+{
+	base_blueprints
+	{
+		effects/weapons_elemental/muzzle
+		lights/point/muzzle_red_small
+		effects/default
+	}
+
+	name effects/weapons_elemental/cannon_pyro_fire
+
+	ParticleDesc
+	{
+		name    "rift/mech_elemental_muzzle_fire"
+	}
+
+	CameraFeedbackShakeDesc
+	{
+		duration 		"0.066"
+		power   		"0.2"
+		group			"weapon_muzzle"
+	}
+
+	SoundDesc
+	{
+		name "items/weapons/bullet/sniper_rifle_fire"
+	}
+}
