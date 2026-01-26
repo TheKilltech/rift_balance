@@ -1,7 +1,6 @@
-EntityBlueprint
+EntityBlueprint  // short_range_radar_lvl_2
 {
 	name  					"buildings/defense/short_range_radar_lvl_2"
-
 	base_blueprint 			"buildings/defense/short_range_radar"
 
 	BuildingDesc
@@ -43,6 +42,12 @@ EntityBlueprint
 				resource 			"energy"
 				value			 	"45"
 			}
+			
+			GameplayResource
+			{
+				resource 		"carbonium"
+				value 			"0.2"
+			}
 		}
 		priority 5	
 		out
@@ -77,7 +82,7 @@ EntityBlueprint
 			{
 				health 								"66"
 				destroy_comp_delay 					"0"
-				destroy_comp_event 					"66_destroy"				
+				destroy_comp_event 					"66_destroy"
 				destroyed_state_effect_group 		"66_state"
 			}
 			DestructionLevel

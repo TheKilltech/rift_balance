@@ -1,7 +1,6 @@
-EntityBlueprint
+EntityBlueprint  // short_range_radar_lvl_3
 {
 	name  					"buildings/defense/short_range_radar_lvl_3"
-
 	base_blueprint 			"buildings/defense/short_range_radar_lvl_2"
 
 	BuildingDesc
@@ -41,13 +40,56 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"140"
+				value			 	"100"
+			}
+			
+			GameplayResource
+			{
+				resource 		"carbonium"
+				value 			"0.2"
+			}
+			
+			GameplayResource
+			{
+				resource 		"mud"
+				value			"10"
+				family			"coolant"
+				attachment		"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 		"sludge"
+				value			"10"
+				family			"coolant"
+				attachment		"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 		"morphium"
+				value			"10"
+				family			"coolant"
+				attachment		"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 		"water"
+				value 			"5"
+				family			"coolant"
+				attachment		"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 		"supercoolant"
+				value 			"1"
+				family			"coolant"
+				attachment		"att_in_1"
 			}
 		}
-		priority 5		
+		
 		out
 		{
 		}
+		priority 5
 	}
 
 	LuaDesc

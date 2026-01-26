@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // short_range_radar
 {
 	name  "buildings/defense/short_range_radar"
 
@@ -267,29 +267,29 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
 		}	
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/radar_energy"								
+					blueprint "effects/buildings_and_machines/radar_energy"
 					bone "att_radar_energy"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_defense/short_range_radar_working"	
-					delay "0.5"					
-				}					
+					blueprint "effects/buildings_defense/short_range_radar_working"
+					delay "0.5"
+				}
 			}
 		}	
 	}
