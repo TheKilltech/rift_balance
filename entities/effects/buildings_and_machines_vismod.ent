@@ -1478,6 +1478,22 @@ EntityBlueprint "effects/no_lifetime"		//minipipes
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//minipipes_green
+{
+	name "effects/buildings_and_machines/minipipes_green"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/hitech_structure_very_small_02.mesh"
+		material "buildings/special/hitech_structure_very_small_01_03_green"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//minipipes_ghost
 {
 	name "effects/buildings_and_machines/minipipes_ghost"

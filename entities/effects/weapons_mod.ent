@@ -863,3 +863,35 @@ EntityBlueprint		// tower_shockwave_acid_blast
 		}
 	}		
 }
+
+
+// effects/weapons_elemental
+
+EntityBlueprint		// cannon_acid_fire
+{
+	base_blueprints
+	{
+		effects/weapons_elemental/muzzle
+		lights/point/muzzle_green_small
+		effects/default
+	}
+
+	name effects/weapons_elemental/cannon_acid_fire
+
+	ParticleDesc
+	{
+		name    "rift/mech_elemental_muzzle_acid"
+	}
+
+	CameraFeedbackShakeDesc
+	{
+		duration 		"0.066"
+		power   		"0.2"
+		group			"weapon_muzzle"
+	}
+
+	SoundDesc
+	{
+		name "items/weapons/bullet/sniper_rifle_fire"
+	}
+}
