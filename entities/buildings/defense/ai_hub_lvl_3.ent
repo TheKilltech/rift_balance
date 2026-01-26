@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // ai_hub_lvl_3
 {
 	name  					"buildings/defense/ai_hub_lvl_3"
 	base_blueprint 			"buildings/defense/ai_hub_lvl_2"
@@ -15,8 +15,7 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/ai_hub_lvl3"
 		require 			"headquarters"
 		order				"4"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"			
-		//upgrade				"buildings/defense/ai_hub_lvl_4"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"ai_hub,ai_hub_lvl_2,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
@@ -192,11 +191,11 @@ EntityBlueprint
 				}
 			}
 		}
-		////////////////////////Misc/////////////////////////		
+		////////////////////////Misc/////////////////////////
 		EffectGroup
 		{
 			group "level"
-			enabled "1"
+			enabled "0"
 			Effects
 			{
 				Effect
