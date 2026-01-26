@@ -404,6 +404,22 @@ EntityBlueprint "effects/no_lifetime"		//spitter_acid
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//spitter_yellow
+{
+	name "effects/weapon_items/spitter_yellow"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/spitter.mesh"
+		material 	"buildings/special/spitter_forge_tanks"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//spitter_ghost
 {
 	name "effects/weapon_items/spitter_ghost"

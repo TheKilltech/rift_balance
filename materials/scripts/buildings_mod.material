@@ -530,4 +530,17 @@ material buildings/special/hitech_structure_very_small_01_03_blue_dissolve : pbr
 	set_texture_alias packed			materials/textures/props/special/alien_structures/hitech_structure_very_small_01_03_packed.dds
 	set_texture_alias emissive			materials/textures/buildings/special/hitech_structure_very_small_01_03_blue_emissive.dds
 }
+
+
+
+material buildings/special/spitter_yellow_tanks : pbr/default
+{
+	dissolve 0 10 20 1
+
+	set_texture_alias albedo			materials/textures/items/weapons/spitter_acid_basic_albedo.dds
+	set_texture_alias normal			materials/textures/items/weapons/spitter_acid_basic_normal.dds
+	set_texture_alias packed			materials/textures/items/weapons/spitter_acid_basic_packed.dds
+	set_texture_alias emissive			materials/textures/buildings/special/spitter_yellow_tanks_emissive.dds
+
+	glow 3
 }
