@@ -4166,6 +4166,39 @@ EntityBlueprint								// spark_ball_green
 	}	
 }
 
+EntityBlueprint								// spark_ball_green
+{
+	name "effects/buildings_and_machines/spark_ball_green"
+
+	base_blueprints
+	{
+		 lights/point/fire_green_small
+		 effects/no_lifetime
+	}
+
+	ParticleDesc
+	{
+		name    "rift/spark_ball_green"
+	}	
+}
+
+EntityBlueprint								// spark_ball_bottom_rotor
+{
+	name effects/buildings_and_machines/spark_ball_bottom_rotor
+
+	base_blueprints
+	{
+		 //lights/point/fire_blue_small
+		 effects/no_lifetime
+	}
+
+	ParticleDesc
+	{
+		//name    "rift/tower_shockwave_acid_fire"
+		name    "rift/spark_ball_bottom_rotor"
+	}
+}
+
 // effects/world
 
 EntityBlueprint "effects/no_lifetime"		//surface_water
