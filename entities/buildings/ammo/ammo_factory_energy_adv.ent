@@ -315,6 +315,31 @@ EntityBlueprint  // ammo_factory_energy_adv
 				}
 			}
 		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"
+					bone "att_vismod_2"
+					delay "1"
+				}	
+				Effect
+				{
+					blueprint "effects/buildings_energy/energy_storage_working"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/nuclear_powerplant_working"
+					delay "0.5"
+				}
+			}
+		}
 	}
 }
 
@@ -477,6 +502,31 @@ EntityBlueprint  // ammo_factory_energy_adv_lvl_2
 					bone		"att_vismod_2"
 					scale		0.8 1 0.8
 					orientation	0 -90 0
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"
+					bone "att_vismod_2"
+					delay "1"
+				}	
+				Effect
+				{
+					blueprint "effects/buildings_energy/energy_storage_working"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/nuclear_powerplant_working"
+					delay "0.5"
 				}
 			}
 		}
@@ -676,6 +726,31 @@ EntityBlueprint  // ammo_factory_energy_adv_lvl_3
 					bone		"att_vismod_2"
 					scale		0.8 1 0.8
 					orientation	0 -90 0
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"
+					bone "att_vismod_2"
+					delay "1"
+				}	
+				Effect
+				{
+					blueprint "effects/buildings_energy/energy_storage_working"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/nuclear_powerplant_working"
+					delay "0.5"
 				}
 			}
 		}
