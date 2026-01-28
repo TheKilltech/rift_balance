@@ -1,4 +1,6 @@
-GameplayResourceDef
+// --------- mech ammo ---------
+
+GameplayResourceDef  // ammo_mech_low_caliber
 {
 	id				"ammo_mech_low_caliber"
 	localization_id "resource_name/ammo_mech_low_caliber"
@@ -14,7 +16,7 @@ GameplayResourceDef
 	manufacture_cost "1"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_mech_high_caliber
 {
 	id				"ammo_mech_high_caliber"
 	localization_id "resource_name/ammo_mech_high_caliber"
@@ -30,7 +32,7 @@ GameplayResourceDef
 	manufacture_cost "1"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_mech_liquid
 {
 	id				"ammo_mech_liquid"
 	localization_id "resource_name/ammo_mech_liquid"
@@ -46,7 +48,7 @@ GameplayResourceDef
 	manufacture_cost "1"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_mech_explosive
 {
 	id				"ammo_mech_explosive"
 	localization_id "resource_name/ammo_mech_explosive"
@@ -62,7 +64,7 @@ GameplayResourceDef
 	manufacture_cost "1"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_mech_energy_cell
 {
 	id				"ammo_mech_energy_cell"
 	localization_id "resource_name/ammo_mech_energy"
@@ -78,7 +80,10 @@ GameplayResourceDef
 	manufacture_cost "1"
 }
 
-GameplayResourceDef
+
+// --------- tower ammo ---------
+
+GameplayResourceDef  // ammo_tower_liquid
 {
 	id				"ammo_tower_liquid"
 	localization_id "resource_name/ammo_tower_liquid"
@@ -91,11 +96,10 @@ GameplayResourceDef
 	hud_visible 	"build_menu"
 	order			"14"
 	
-		
 	manufacture_cost "1"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_tower_explosive
 {
 	id				"ammo_tower_explosive"
 	localization_id "resource_name/ammo_tower_explosive"
@@ -112,7 +116,7 @@ GameplayResourceDef
 	manufacture_cost "1"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_tower_low_caliber
 {
 	id				"ammo_tower_low_caliber"
 	localization_id "resource_name/ammo_tower_low_caliber"
@@ -128,7 +132,7 @@ GameplayResourceDef
 	manufacture_cost "1"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_tower_high_caliber
 {
 	id				"ammo_tower_high_caliber"
 	localization_id "resource_name/ammo_tower_high_caliber"
@@ -144,4 +148,18 @@ GameplayResourceDef
 	manufacture_cost "1"
 }
 
-
+GameplayResourceDef  // ammo_tower_energy_cell
+{
+	id				"ammo_tower_energy_cell"
+	localization_id "resource_name/ammo_tower_energy_cell"
+	bp  			""
+	type 			"ammo_tower"
+	icon			"gui/hud/resource_icons/ammo_tower_energy_icon"
+	bigger_icon		"gui/hud/resource_icons/ammo_tower_energy_icon_bigger"
+	base_storage	"200"
+	production		"30"
+	hud_visible 	"never"
+	order			"13"
+	
+	manufacture_cost "1"
+}
