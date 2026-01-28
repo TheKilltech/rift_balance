@@ -1192,9 +1192,25 @@ EntityBlueprint  // solid_material_storage_underground
 		{
 			Storage
 			{
-				resource "energy"
-				max 	 "0"
+				resource	 "energy"
+				max 		 "0"
 			}	
+			
+			Storage
+			{
+				resource		"carbonium"
+				max 			"12000"
+			}
+			Storage
+			{
+				resource		"steel"
+				max 			"12000"
+			}
+			Storage
+			{
+				resource		"ammonium"
+				max 			"12000"
+			}
 			
 			Storage
 			{
