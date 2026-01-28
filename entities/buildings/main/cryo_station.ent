@@ -310,7 +310,21 @@ EntityBlueprint  // cryo_station
 			"buildings/effects_small_base"
 		}
 		//////////////////////////////// MISC /////////////////////////////////////////
-
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/weapon_items/mine_cryo"
+					bone		"att_vismod_2"
+					scale		0.8 1 0.8
+					orientation	0 -90 0
+				}
+			}
+		}
 		EffectGroup
 		{
 			Effects
@@ -342,9 +356,8 @@ EntityBlueprint  // cryo_station
 
 EntityBlueprint  // cryo_station_lvl_2
 {
-	name  "buildings/main/cryo_station_lvl_2"
-
-	base_blueprint "buildings/main/cryo_station"
+	name			"buildings/main/cryo_station_lvl_2"
+	base_blueprint	"buildings/main/cryo_station"
 
 	BuildingDesc
 	{
@@ -493,6 +506,13 @@ EntityBlueprint  // cryo_station_lvl_2
 			enabled "1"
 			Effects
 			{
+				Effect
+				{
+					blueprint	"effects/weapon_items/mine_cryo"
+					bone		"att_vismod_2"
+					scale		0.8 1 0.8
+					orientation	0 -90 0
+				}
 				Effect
 				{
 					blueprint	"effects/buildings_and_machines/hlab_base"
