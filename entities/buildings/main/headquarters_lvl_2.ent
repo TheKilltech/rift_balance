@@ -1,7 +1,6 @@
-EntityBlueprint
+EntityBlueprint  // headquarters_lvl_2
 {
 	name  					"buildings/main/headquarters_lvl_2"
-
 	base_blueprint 			"buildings/main/headquarters"
 
 	BuildingDesc
@@ -77,6 +76,11 @@ EntityBlueprint
 				max			"1000"
 			}
 
+			Storage
+			{
+				resource	"ammo_tower_energy_cell"
+				max 		"1"
+			}
 			Storage
 			{
 				resource	"ammo_tower_explosive"
