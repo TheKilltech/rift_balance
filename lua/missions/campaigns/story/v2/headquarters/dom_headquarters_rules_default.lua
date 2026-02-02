@@ -84,8 +84,8 @@ return function()
 
 	rules.addResourcesOnRunOut = 
 	{
-		{ name = "carbon_vein", runOutPercentageOnMap = 45, minToSpawn = 20000, maxToSpawn = 30000 },
-		{ name = "iron_vein", runOutPercentageOnMap = 45, minToSpawn = 20000, maxToSpawn = 30000 },
+		{ name = "carbon_vein", runOutPercentageOnMap = 25, minToSpawn = 50000, maxToSpawn = 80000 },
+		{ name = "iron_vein", runOutPercentageOnMap = 25, minToSpawn = 50000, maxToSpawn = 80000 },
 	}
 
 	rules.timeToNextDifficultyLevel = 

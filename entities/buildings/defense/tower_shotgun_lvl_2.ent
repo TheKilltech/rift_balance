@@ -1,0 +1,100 @@
+EntityBlueprint
+{
+	name  "buildings/defense/tower_shotgun_lvl_2"
+	base_blueprint "buildings/defense/tower_shotgun"
+	
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"tower_shotgun_lvl_2"
+		bp   				"buildings/defense/tower_shotgun_lvl_2"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_shotgun"
+		description			"gui/hud/building_description/tower_shotgun"
+		menu_icon			"gui/hud/building_icons/tower_shotgun_lvl2"
+		require 			"headquarters"
+		order				"11"
+		type				"tower"
+		overrides			"tower,wall"
+		upgrade				"buildings/defense/tower_shotgun_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"	
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 10
+				building_cost
+				{
+					carbonium 	"300"
+					steel 		"150"
+					palladium	"25"
+				}
+			}
+		}
+	}
+	ResourceConverterDesc // must be here for AI
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"10"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
+	}
+
+	HealthDesc
+	{
+		max_health 					"750"
+		health 						"750"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_shotgun_lvl_2.mesh"
+		material "buildings/defense/tower_shotgun_lvl_2"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/tower_shotgun_lvl_2"
+	}
+
+	WeaponItemDesc
+	{
+	}
+}

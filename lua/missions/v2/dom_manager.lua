@@ -257,6 +257,18 @@ function dom_mananger:OnLoad()
 	if ( self.rulesFile ~= nil ) then
 		self:VerboseLog("OnLoad - reloading rules." )
 
+		if string.find( self.rulesFile, "/campaigns/dlc_1/dom_template_" ) ~= nil then
+			self.rulesFile = string.gsub( self.rulesFile, "/campaigns/dlc_1/", "/campaigns/story/v2/metallic/" )
+		end
+
+		if string.find( self.rulesFile, "/campaigns/dlc_2/dom_template_" ) ~= nil then
+			self.rulesFile = string.gsub( self.rulesFile, "/campaigns/dlc_2/", "/campaigns/story/v2/caverns/" )
+		end
+
+		if string.find( self.rulesFile, "/campaigns/dlc_3/dom_template_" ) ~= nil then
+			self.rulesFile = string.gsub( self.rulesFile, "/campaigns/dlc_3/", "/campaigns/story/v2/swamp/" )
+		end
+
 		local rulesOldPath = self.rulesFile
 		local currentDifficultyName = DifficultyService:GetCurrentDifficultyName() 
 

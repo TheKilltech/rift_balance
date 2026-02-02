@@ -99,8 +99,8 @@ return function()
 
 	rules.addResourcesOnRunOut = 
 	{
-		{ name = "carbon_vein", runOutPercentageOnMap = 45, minToSpawn = 10000, maxToSpawn = 20000 },
-		{ name = "iron_vein", runOutPercentageOnMap = 45, minToSpawn = 10000, maxToSpawn = 20000 },
+		{ name = "carbon_vein", runOutPercentageOnMap = 45, minToSpawn = 30000, maxToSpawn = 45000 },
+		{ name = "iron_vein", runOutPercentageOnMap = 45, minToSpawn = 30000, maxToSpawn = 45000 },
 	}
 
 	rules.creatureDifficultyIncrementPerDOMDifficulty =
@@ -241,23 +241,23 @@ return function()
 	rules.wavesEntryDefinitions =
 	{
 		 -- difficulty level 1
-			"logic/missions/survival/attack_level_1_entry.logic",
+			"logic/dom/attack_level_1_entry.logic",
 		 -- difficulty level 2
-			"logic/missions/survival/attack_level_2_entry.logic",
+			"logic/dom/attack_level_2_entry.logic",
 		 -- difficulty level 3		
-			"logic/missions/survival/attack_level_2_entry.logic",
+			"logic/dom/attack_level_2_entry.logic",
 		 -- difficulty level 4		
-			"logic/missions/survival/attack_level_2_entry.logic",
+			"logic/dom/attack_level_2_entry.logic",
 		 -- difficulty level 5		
-			"logic/missions/survival/attack_level_2_entry.logic",
+			"logic/dom/attack_level_2_entry.logic",
 		 -- difficulty level 6		
-			"logic/missions/survival/attack_level_2_entry.logic",
+			"logic/dom/attack_level_2_entry.logic",
 		 -- difficulty level 7		
-			"logic/missions/survival/attack_level_2_entry.logic",
+			"logic/dom/attack_level_2_entry.logic",
 		 -- difficulty level 8		
-			"logic/missions/survival/attack_level_2_entry.logic",
+			"logic/dom/attack_level_2_entry.logic",
 		 -- difficulty level 9		
-			"logic/missions/survival/attack_level_2_entry.logic",		
+			"logic/dom/attack_level_2_entry.logic",
 	}
 
 	rules.waves = 

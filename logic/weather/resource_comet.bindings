@@ -6,24 +6,26 @@ FlowGraphBindings
 		{
 			StringData
 			{
-				key "resource"
 				value "carbon_vein"
+				key "resource"
 			}
 
 		}
 
+		Floats
+		Vectors
 		Integers
 		{
 			IntData
 			{
+				value "30000"
 				key "minAmount"
-				value "8000"
 			}
 
 			IntData
 			{
+				value "50000"
 				key "maxAmount"
-				value "14000"
 			}
 
 		}
@@ -34,18 +36,9 @@ FlowGraphBindings
 	{
 		weather_resource_comet_0
 		{
-			//database@Strings@StringData[4]@value "resource"
+			//database@Integers@IntData[0]@value "minAmount"
 			database
 			{
-				Strings
-				{
-					StringData[4]
-					{
-						value "resource"
-					}
-
-				}
-
 				Integers
 				{
 					IntData[0]
@@ -60,10 +53,19 @@ FlowGraphBindings
 
 				}
 
+				Strings
+				{
+					StringData[4]
+					{
+						value "resource"
+					}
+
+				}
+
 			}
 
-			//database@Integers@IntData[0]@value "minAmount"
 			//database@Integers@IntData[1]@value "maxAmount"
+			//database@Strings@StringData[4]@value "resource"
 		}
 
 		weather_resource_comet_1
@@ -86,5 +88,6 @@ FlowGraphBindings
 
 	}
 
+	DynamicBindings
 }
 

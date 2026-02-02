@@ -2320,6 +2320,115 @@ GuiRootGroupDef
 
 		Pair_String_GuiDef2
 		{
+			key "frame_over"
+			value "GuiGroupDef"
+			{
+				children
+				{
+					Pair_String_GuiDef2
+					{
+						key "missing_analysis"
+						value "GuiGroupDef"
+						{
+							children
+							{
+								Pair_String_GuiDef2
+								{
+									key "background"
+									value "GuiQuadDef"
+									{
+										border_color
+										{
+											x "0.5137255"
+											y "0.7568629"
+											z "0.94509816"
+										}
+
+										border_width "1"
+										color
+										{
+											w "0.90000004"
+											x "0.03137255"
+											y "0.28235295"
+											z "0.45490646"
+										}
+
+										id "background"
+										size_mode_x "2"
+										size_mode_y "2"
+									}
+
+								}
+
+								Pair_String_GuiDef2
+								{
+									key "label"
+									value "GuiTextDef"
+									{
+										text_alignment "1"
+										capitals "1"
+										content "gui/menu/research/popup/laboratory_warning"
+										style_name "popups_content"
+										translate "1"
+										alignment "center"
+										anchor "center"
+										id "label"
+										max_size
+										{
+											x "900"
+										}
+
+									}
+
+								}
+
+							}
+
+							alignment "center"
+							anchor "center"
+							bindings
+							{
+								visible
+								{
+									model_field "have_analysis"
+								}
+
+							}
+
+							id "missing_analysis"
+							size
+							{
+								x "1000"
+								y "200"
+							}
+
+							z_order "1e+24"
+						}
+
+					}
+
+				}
+
+				id "frame_over"
+				offset
+				{
+					x "30"
+					y "205"
+				}
+
+				size
+				{
+					x "1306"
+					y "790"
+				}
+
+				z_order "92"
+			}
+
+		}
+
+		Pair_String_GuiDef2
+		{
 			key "gui/menu/inventory_placeholder_background_0"
 			value "GuiImageDef"
 			{
@@ -9645,6 +9754,22 @@ GuiDataDefinitions
 				}
 
 				key "filter_active"
+			}
+
+			Pair_String_GuiDataTypeField
+			{
+				value
+				{
+					type_name "bool"
+					default_value
+					{
+						typehash "3365180733"
+						bool "1"
+					}
+
+				}
+
+				key "have_analysis"
 			}
 
 			Pair_String_GuiDataTypeField

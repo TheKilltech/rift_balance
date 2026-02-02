@@ -16,6 +16,7 @@ function template_universal:Prepare()
 		acid = "palladium_vein",
 		caverns = "cobalt_vein",
 		desert = "uranium_ore_vein",
+		ice = "palladium_vein",
 		jungle = "cobalt_vein",
 		magma = "titanium_vein",
 		metallic = "titanium_vein",
@@ -26,6 +27,7 @@ function template_universal:Prepare()
 		acid = "rhodonite",
 		caverns = "ferdonite",
 		desert = "tanzanite",
+		ice = "tanzanite",
 		jungle = "hazenite",
 		magma = "ferdonite",
 		metallic = "rhodonite",
@@ -36,6 +38,7 @@ function template_universal:Prepare()
 		acid = "sludge_vein",
 		caverns = "",
 		desert = "",
+		ice = "supercoolant_vein",
 		jungle = "sludge_vein",
 		magma = "magma_vein",
 		metallic = "morphium_vein",
@@ -47,6 +50,7 @@ function template_universal:Prepare()
 		acid = "spawners/loot_container_small_acid",
 		caverns = "spawners/loot_container_small_caverns",
 		desert = "spawners/loot_container_small_desert",
+		ice = "spawners/loot_container_small_ice",
 		jungle = "spawners/loot_container_small_bulb",
 		magma = "spawners/loot_container_small_pile",
 		metallic = "spawners/loot_container_small_metallic",
@@ -58,6 +62,7 @@ function template_universal:Prepare()
 		acid = { "open", "dense", "lakes" },
 		caverns = { "open", "dense" },
 		desert = { "open", "dense" },
+		ice = { "open", "dense" },
 		jungle = { "open", "dense", "lakes" },
 		magma = { "open", "dense", "lakes" },
 		metallic = { "open", "dense", "lakes" },
@@ -120,6 +125,7 @@ function template_universal:PrepareMissionGeneratorParams( params )
 			end
 		end		
 	end	
+	--params:SetMissionDimension( 8, 8)
 	params:SetMissionDimension( mapSizeX, mapSizeY)
 
 	local advanceResource =self.missionAdvancedResource[params.biome_name];
@@ -168,7 +174,7 @@ function template_universal:PrepareMapGenerator(params)
 	self.mission_params = params
 
 	if self.mission_params.biome_name == "" then
-		self.mission_params.biome_name = "jungle"
+		self.mission_params.biome_name = "ice"
 
 		self.mission_params.mission_type = self.data:GetStringOrDefault("mission_type", "exploration")
 		self:PrepareMissionGeneratorParams(self.mission_params)
@@ -229,6 +235,7 @@ function template_universal:PrepareMissionTilesPool()
 		acid = {},
 		caverns = {},
 		desert = {},
+		ice = {},
 		jungle = {},
 		magma = {},
 		metallic = {},
@@ -262,10 +269,10 @@ function template_universal:PrepareMissionTilesPool()
 	--end
 	
 	--CAVERNS	
-	--if campaignData:GetStringOrDefault( "global.uranium_outpost_complete", "" ) == "true" then -- REQUIREMENT: Finished Uranium Outpost
-	--	table.insert( encounterTilePool.caverns, 1, "biomes/caverns/tiles/caverns_encounter_green_energy/caverns_encounter_green_energy.tile" )
-	--end	
-	if campaignData:GetStringOrDefault( "global.titanium_outpost_complete", "" ) == "true" then -- REQUIREMENT: Finished Titanium Outpost
+	if campaignData:GetStringOrDefault( "global.uranium_outpost_complete", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Uranium Outpost
+		table.insert( encounterTilePool.caverns, 1, "biomes/caverns/tiles/caverns_encounter_green_energy/caverns_encounter_green_energy.tile" )
+	end	
+	if campaignData:GetStringOrDefault( "global.titanium_outpost_complete", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Titanium Outpost
 		table.insert( encounterTilePool.caverns, 1, "biomes/caverns/tiles/caverns_encounter_magnet/caverns_encounter_magnet.tile" )
 	end
 	
@@ -277,7 +284,7 @@ function template_universal:PrepareMissionTilesPool()
 		
 	--DESERT	
 	table.insert( encounterTilePool.desert, 1, "biomes/desert/tiles/desert_encounter_hands/desert_encounter_hands.tile" )		
-	if campaignData:GetStringOrDefault( "global.titanium_outpost_complete", "" ) == "true" then -- REQUIREMENT: Finished Titanium Outpost
+	if campaignData:GetStringOrDefault( "global.titanium_outpost_complete", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Titanium Outpost
 		table.insert( encounterTilePool.desert, 1, "biomes/desert/tiles/desert_encounter_iceberg/desert_encounter_iceberg.tile" )		
 	end
 	
@@ -290,10 +297,10 @@ function template_universal:PrepareMissionTilesPool()
 	--end
 		
 	--MAGMA	
-	if campaignData:GetStringOrDefault( "global.palladium_outpost_complete", "" ) == "true" then -- REQUIREMENT: Finished Palladium Outpost
+	if campaignData:GetStringOrDefault( "global.palladium_outpost_complete", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Palladium Outpost
 		table.insert( encounterTilePool.magma, 1, "biomes/magma/tiles/magma_encounter_acid/magma_encounter_acid.tile" )				
 	end
-	if campaignData:GetStringOrDefault( "global.metallic_outpost_stage_3_complete", "" ) == "true" then -- REQUIREMENT: Finished Metallic Outpost
+	if campaignData:GetStringOrDefault( "global.metallic_outpost_stage_3_complete", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Metallic Outpost
 		table.insert( encounterTilePool.magma, 1, "biomes/magma/tiles/magma_encounter_morphium/magma_encounter_morphium.tile" )			
 	end
 	
@@ -313,6 +320,10 @@ function template_universal:PrepareMissionTilesPool()
 
 	--SWAMP LAKES
 	--table.insert( encounterTilePool.swamp, 1, "biomes/swamp/tiles/swamp_encounter_tentacles/swamp_encounter_tentacles.tile" ) -- SWAMP LAKES ONLY
+	
+	--ICE	
+	table.insert( encounterTilePool.ice, 1, "biomes/ice/tiles/ice_encounter_cave/ice_encounter_cave.tile" )	
+	table.insert( encounterTilePool.ice, 1, "biomes/ice/tiles/ice_encounter_skull/ice_encounter_skull.tile" )
 	
 	--PICK RANDOM ENCOUNTER TILE
 	self.random_encounter_tile_spawn_rules = {}	
@@ -954,6 +965,117 @@ function template_universal:PrepareMissionTilesPool()
 					max_instances = 2,
 					random_weight =	1
 				},
+			},
+			
+			["lakesTilePool"] = 
+			{
+			},
+		},
+		
+		["ice"] = 
+		{
+			["openTilePool"] = 
+			{	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_01/ice_canyons_01.tile",
+					max_instances = 6,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_02/ice_canyons_02.tile",										
+					max_instances = 8,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_03/ice_canyons_03.tile",
+					max_instances = 4,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_04/ice_canyons_04.tile",
+					max_instances = 2,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_lakes_01/ice_lakes_01.tile",	
+					max_instances = 8,
+					min_instances = 4,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_lakes_02/ice_lakes_02.tile",
+					max_instances = 8,
+					min_instances = 4,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_01/ice_plains_01.tile",					
+					random_weight =	2
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_02/ice_plains_02.tile",					
+					random_weight =	1
+				},
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_03/ice_plains_03.tile",
+					random_weight =	3
+				},		
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_04/ice_plains_04.tile",
+					random_weight =	2
+				},
+			},
+			
+			["denseTilePool"] = 
+			{	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_01/ice_canyons_01.tile",					
+					random_weight =	2
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_02/ice_canyons_02.tile",															
+					random_weight =	2
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_03/ice_canyons_03.tile",
+					max_instances = 6,
+					min_instances = 2,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_04/ice_canyons_04.tile",
+					max_instances = 4,
+					min_instances = 1,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_lakes_01/ice_lakes_01.tile",	
+					max_instances = 6,
+					min_instances = 2,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_lakes_02/ice_lakes_02.tile",
+					max_instances = 6,
+					min_instances = 2,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_01/ice_plains_01.tile",					
+					random_weight =	0.5
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_02/ice_plains_02.tile",					
+					random_weight =	1
+				},
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_03/ice_plains_03.tile",
+					random_weight =	0.5
+				},		
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_04/ice_plains_04.tile",
+					random_weight =	0.5
+				},	
 			},
 			
 			["lakesTilePool"] = 
@@ -1933,14 +2055,14 @@ function template_universal:PrepareMissionTilesPool()
 	}
 	--===============GUEST TILES
 	if self.mission_params.biome_name == "jungle" then
-		--if campaignData:GetStringOrDefault( "global.caverns_end", "" ) == "true" then -- REQUIREMENT: Finished Into The Dark DLC
-			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["openTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_01/jungle_custom_caverns_01.tile", random_weight = 10 } )
-			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["openTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_02/jungle_custom_caverns_02.tile", random_weight = 10 } )
-			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["denseTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_01/jungle_custom_caverns_01.tile", random_weight = 20 } )
-			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["denseTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_02/jungle_custom_caverns_02.tile", random_weight =	20 } )
-			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["lakesTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_01/jungle_custom_caverns_01.tile", random_weight =	10 } )
-			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["lakesTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_02/jungle_custom_caverns_02.tile", random_weight =	10 } )
-		--end
+		if campaignData:GetStringOrDefault( "global.caverns_end", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Into The Dark DLC
+			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["openTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_01/jungle_custom_caverns_01.tile", random_weight = 1 } )
+			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["openTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_02/jungle_custom_caverns_02.tile", random_weight = 1 } )
+			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["denseTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_01/jungle_custom_caverns_01.tile", random_weight = 2 } )
+			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["denseTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_02/jungle_custom_caverns_02.tile", random_weight =	2 } )
+			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["lakesTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_01/jungle_custom_caverns_01.tile", random_weight =	1 } )
+			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["lakesTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_02/jungle_custom_caverns_02.tile", random_weight =	1 } )
+		end
 	end
 
     self:CreateTileSpawnRules( self.random_encounter_tile_spawn_rules )
@@ -1977,6 +2099,22 @@ function template_universal:PrepareMissionTilesPool()
 		{
 			{
 				tile_name = "materials/textures/logic/caverns_destructible_rocks_mask_edge_1_full.png",		
+			},
+			{
+				tile_name = "materials/textures/logic/caverns_destructible_rocks_mask_edge_1_very_large_hole_1.png",																
+				max_instances =	2,
+			},
+			{
+				tile_name = "materials/textures/logic/caverns_destructible_rocks_mask_edge_1_very_large_hole_2.png",																
+				max_instances =	2,
+			},
+			{
+				tile_name = "materials/textures/logic/caverns_destructible_rocks_mask_edge_1_very_large_hole_3.png",																
+				max_instances =	2,
+			},
+			{
+				tile_name = "materials/textures/logic/caverns_destructible_rocks_mask_edge_1_very_large_hole_4.png",																
+				max_instances =	2,
 			},
 			{
 				tile_name = "materials/textures/logic/caverns_destructible_rocks_mask_edge_1_large_hole_1.png",												
@@ -2093,6 +2231,29 @@ function template_universal:PrepareMissionObjects()
 				{
 					{
 						creature_species = "mothray"
+					}
+				}
+			}
+		},
+		
+		["ice"] =
+		{
+			ground =
+			{     
+				species =
+				{
+					{
+						creature_species = "iceder"
+					}
+				}
+			},
+	
+			air =
+			{
+				species =
+				{
+					{
+						creature_species = "mantnice"
 					}
 				}
 			}
@@ -2371,6 +2532,51 @@ function template_universal:PrepareMissionObjects()
 			},        
 		},
 		
+		["ice"] =
+		{        
+			neutral_units = 
+			{
+				{
+					creature_species = "brabit_ice",					
+				},
+				
+			},
+			regular_units = 
+			{
+				{
+					creature_species = "granan_ice",
+					volume_spawn_ratio = 2
+				},
+				{
+					creature_species = "magmoth_ice",
+					volume_spawn_ratio = 1
+				},
+				{
+					creature_species = "plutrodon_ice",
+					volume_spawn_ratio = 0.75
+				},
+				{
+					creature_species = "kafferroceros_ice",
+					volume_spawn_ratio = 1
+				},
+				{
+					creature_species = "bomogan_ice",
+					volume_spawn_ratio = 0.75
+				},
+				{
+					creature_species = "kermon_ice",
+					volume_spawn_ratio = 1
+				},				
+			},			
+			resource_units = 
+			{				
+				{
+					creature_species = "krocoon_ice",
+					volume_spawn_ratio = 0.25
+				}
+			}        
+		},
+		
 		["jungle"] =
 		{        
 			neutral_units = 
@@ -2430,6 +2636,7 @@ function template_universal:PrepareMissionObjects()
 				}
 			}        
 		},
+		
 		["magma"] =
 		{        
 			neutral_units = 
@@ -2660,7 +2867,7 @@ function template_universal:PrepareMissionObjects()
 	--GUEST UNITS
 	-- Add Drexolians after completing Heart of the Swamp DLC
 	if self.mission_params.biome_name == "magma" then
-		if campaignData:GetStringOrDefault( "global.swamp_end", "" ) == "true" then -- REQUIREMENT: Finished Heart of the Swamp DLC
+		if campaignData:GetStringOrDefault( "global.swamp_end", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Heart of the Swamp DLC
 			table.insert( biome_creatures[self.mission_params.biome_name].liquid_units, 1, { creature_species = "drexolian_magma", volume_spawn_ratio = 1 } )
 		end	
 	end
@@ -2693,7 +2900,7 @@ function template_universal:PrepareMissionObjects()
 		[10]	= {1.00, 40}
 	}
 	
-	MapGenerator:SetCreatureVolumesDensity( threat_multipliers[self.mission_params.threat_level][1] or 5 )
+	MapGenerator:SetCreatureVolumesDensity( threat_multipliers[self.mission_params.threat_level][1] or 0.5 )
 	MapGenerator:SetCreatureVolumesDistanceFromPlayerSpawn( threat_multipliers[self.mission_params.threat_level][2] or 90 )	
 
     self:CreateAmbientCreatureSpawnRules( biome_ambient_creatures[self.mission_params.biome_name] )
@@ -3935,6 +4142,89 @@ function template_universal:PrepareMissionObjects()
             },
         }	
 	}
+	--==ICE
+	-- Carnicinth Ice around bioanomalies
+	local carnicinth_ice_bioanomaly = 
+	{
+		spawner_type                    = "GridSpawner",
+		spawn_pool                      = { "tower_plant", "enemy" },		
+		spawn_team               		= "enemy",
+		spawn_min_free_cell_margin		= 1,
+		spawn_within_destructible_volumes = false,
+		
+		spawn_min_distance_from_pools   = 
+		{
+			player_spawn_point          = 150,
+			mission_objective	        = 70,			
+			loot_containers             = 8,			
+			loot_containers_small       = 8,			
+			underground_treasures	    = 5,						
+			power_well				    = 10,			
+			tower_plant				    = 8,			
+			enemy					    = 5,			
+			resource_volumes   	        = 5			
+		},
+		spawn_max_distance_from_pools   = 
+		{						
+			loot_containers				= 30,						
+		},	
+		spawn_blueprints =
+		{
+			{
+				spawn_blueprint         = "units/ground/carnicinth_ice",
+				--spawn_blueprint         = "carnicinth_ice",	
+				spawn_chance			= 0.2,
+				spawn_culls_entities_around	= false,
+				--spawn_type				= "creature_species"
+			},
+			{
+				spawn_blueprint         = "logic/position_marker_temporary",
+				spawn_chance			= 0.8,
+				spawn_culls_entities_around	= false
+			},
+		}		
+	}
+	-- Carnicinth Ice around power wells
+	local carnicinth_ice_power_well = 
+	{
+		spawner_type                    = "GridSpawner",
+		spawn_pool                      = { "tower_plant", "enemy" },		
+		spawn_team               		= "enemy",
+		spawn_min_free_cell_margin		= 1,
+		spawn_within_destructible_volumes = false,
+		
+		spawn_min_distance_from_pools   = 
+		{
+			player_spawn_point          = 150,
+			mission_objective	        = 70,			
+			loot_containers             = 8,			
+			loot_containers_small       = 8,			
+			underground_treasures	    = 5,						
+			power_well				    = 10,			
+			tower_plant				    = 8,			
+			enemy					    = 5,			
+			resource_volumes   	        = 5			
+		},
+		spawn_max_distance_from_pools   = 
+		{						
+			power_well				= 30,						
+		},	
+		spawn_blueprints =
+		{
+			{
+				spawn_blueprint         = "units/ground/carnicinth_ice",
+				--spawn_blueprint         = "carnicinth_ice",	
+				spawn_chance			= 0.2,
+				spawn_culls_entities_around	= false,
+				--spawn_type				= "creature_species"
+			},
+			{
+				spawn_blueprint         = "logic/position_marker_temporary",
+				spawn_chance			= 0.8,
+				spawn_culls_entities_around	= false
+			},
+		}		
+	}
 	
 	-- CREATE BASE MISSION OBJECT SPAWNERS TABLE
 	table.insert(mission_object_spawners, 1, mission_objective_marker )
@@ -3965,7 +4255,10 @@ function template_universal:PrepareMissionObjects()
 		table.insert(mission_object_spawners, #mission_object_spawners + 1, carnicinth )			
 		table.insert(mission_object_spawners, #mission_object_spawners + 1, carnicinth_alpha )			
 		table.insert(mission_object_spawners, #mission_object_spawners + 1, drexolian )			
-		table.insert(mission_object_spawners, #mission_object_spawners + 1, drexolian_alpha )		
+		table.insert(mission_object_spawners, #mission_object_spawners + 1, drexolian_alpha )
+	elseif self.mission_params.biome_name == "ice" then
+		table.insert(mission_object_spawners, #mission_object_spawners + 1, carnicinth_ice_bioanomaly )
+		table.insert(mission_object_spawners, #mission_object_spawners + 1, carnicinth_ice_power_well )
 	end
 	if self.missionBioanomaliesMultiplier ~= 0 then		
 		table.insert(mission_object_spawners, #mission_object_spawners + 1, power_well )
@@ -4181,6 +4474,38 @@ function template_universal:PrepareMissionObjects()
 			}	
 		},
 		
+		["ice"] =
+		{
+			regular_large_resources =
+			{
+				ResourceVolume( "carbon_vein", 7, 10, 48000, 100000, nil),
+				ResourceVolume( "iron_vein", 4, 7, 32000, 64000, nil ),
+				ResourceVolume( advanceResourceName, 3, 5, 18000, 36000, nil ),
+				ResourceVolume( "geothermal_vent", 10, 12, nil, nil, { is_infinite = true } ),					
+			},			
+			regular_small_resources =
+			{
+				ResourceVolume( "carbon_vein", 2, 4, 16000, 36000, nil),
+				ResourceVolume( "iron_vein", 2, 4, 12000, 24000, nil )				
+			},			
+			underground_resources =
+			{
+				ResourceVolume( "carbon_vein", 1, 3, 100000, 200000, { required_discovery_lvl = 1 } ),
+				ResourceVolume( "iron_vein", 2, 3, 80000, 120000, { required_discovery_lvl = 1 }),
+				ResourceVolume( advanceResourceName, 1, 2, 24000, 40000, { required_discovery_lvl = 1 } ),
+				ResourceVolume( "geothermal_vent", 2, 4, nil, nil, { required_discovery_lvl = 1, is_infinite = true } ),				
+			},			
+			liquid_resources =
+			{			
+			},
+			starting_resources = 
+			{
+				ResourceVolume( "carbon_vein", 1, 1, 80000, 140000, nil ),
+				ResourceVolume( "iron_vein", 1, 1, 48000, 80000, nil ),
+				ResourceVolume( "geothermal_vent", 1, 1, nil, nil, { required_discovery_lvl = 1, is_infinite = true }),
+			}	
+		},	
+		
 		["jungle"] =
 		{
 			regular_large_resources =
@@ -4333,44 +4658,12 @@ function template_universal:PrepareMissionObjects()
 	--================ STARTING RESOURCE ENHANCEMENT
 
     self:CreateStartupResourcesSpawnRules( biome_resources[self.mission_params.biome_name].starting_resources )
-
-	
-	-- AMBIENT CREATURES
-	local ambient_creatures_species =
-	{
-		["caverns"] =
-		{        
-			ground =
-        	{     
-				max_count = 50,
-				spawn_rate = 6,
-				search_to_spawn_radius = "2",
-
-        	    species =
-        	    {
-        	        {
-        	            creature_species  =  "crysder"
-        	        }
-        	    }
-        	}
-		}
-	}
-
 end
 
 function template_universal:Activated()
 	MissionService:ActivateMissionFlow("", "logic/missions/campaigns/story/template_jungle_resource.logic", "default" )
 	
-	local rulesPath = nil
-	if self.mission_params.biome_name == "metallic" then
-		rulesPath = GetRulesForDifficulty( "lua/missions/campaigns/dlc_1/dom_template_metallic_resource_rules_" )
-	elseif self.mission_params.biome_name == "caverns" then
-		rulesPath = GetRulesForDifficulty( "lua/missions/campaigns/dlc_2/dom_template_caverns_resource_rules_" )		
-	elseif self.mission_params.biome_name == "swamp" then
-		rulesPath = GetRulesForDifficulty( "lua/missions/campaigns/dlc_3/dom_template_swamp_resource_rules_" )
-	else
-		rulesPath = GetRulesForDifficulty( "lua/missions/campaigns/story/v2/" .. self.mission_params.biome_name .. "/dom_template_" .. self.mission_params.biome_name .. "_resource_rules_" )
-	end
+	local rulesPath = GetRulesForDifficulty( "lua/missions/campaigns/story/v2/" .. self.mission_params.biome_name .. "/dom_template_" .. self.mission_params.biome_name .. "_resource_rules_" )
 	
     MissionService:AddGameRule( "lua/missions/v2/dom_manager.lua", rulesPath )
 	local campaignData = CampaignService:GetCampaignData();

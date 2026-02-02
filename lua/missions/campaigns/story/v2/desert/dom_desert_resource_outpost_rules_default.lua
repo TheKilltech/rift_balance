@@ -66,7 +66,7 @@ return function()
 
 	rules.addResourcesOnRunOut = 
 	{
-		{ name = "uranium_ore_vein", runOutPercentageOnMap = 30, minToSpawn = 10000, maxToSpawn = 20000 },
+		{ name = "uranium_ore_vein", runOutPercentageOnMap = 20, minToSpawn = 10000, maxToSpawn = 20000 },
 	}
 
 	rules.majorAttackLogic =
