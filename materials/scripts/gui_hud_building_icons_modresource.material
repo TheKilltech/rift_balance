@@ -678,6 +678,29 @@ material "gui/hud/building_icons/supercoolant_chem_plant_lvl_3_disabled" : gui/d
 }
 
 
+/////  moisture_trap
+
+material "gui/hud/building_icons/moisture_trap" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/moisture_trap.dds"
+}
+
+material "gui/hud/building_icons/moisture_trap_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/fluorine_trap_disabled.dds"
+}
+
+material "gui/hud/building_icons/moisture_trap_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/moisture_trap_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/moisture_trap_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/fluorine_trap_disabled.dds"
+}
+
+
 /////  fluorine_trap
 
 material "gui/hud/building_icons/fluorine_trap" : gui/default
