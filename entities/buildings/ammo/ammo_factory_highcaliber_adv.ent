@@ -1706,3 +1706,217 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_uranium_molt
 		}		
 	}
 }
+
+
+
+
+EntityBlueprint  // ammo_factory_highcaliber_adv_molt_ghost
+{
+	name  "buildings/ammo/ammo_factory_highcaliber_adv_molt_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/steel_factory.mesh"
+		material "selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/steel_factory"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/furnace_ghost"
+					bone		"att_vismod_4"
+					scale		0.72 0.8 0.72
+					orientation	90 0 0
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // ammo_factory_highcaliber_adv_molt_lvl_2_ghost
+{
+	name  "buildings/ammo/ammo_factory_highcaliber_adv_molt_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/steel_factory.mesh"
+		material "selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/steel_factory"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/furnace_ghost"
+					bone		"att_vismod_4"
+					scale		0.72 0.8 0.72
+					orientation	90 0 0
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // ammo_factory_highcaliber_adv_uranium_molt_ghost
+{
+	name  "buildings/ammo/ammo_factory_highcaliber_adv_uranium_molt_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/steel_factory.mesh"
+		material "selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/steel_factory"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/furnace_ghost"
+					bone		"att_vismod_4"
+					scale		0.72 0.8 0.72
+					orientation	90 0 0
+				}
+			}
+		}
+	}
+}
