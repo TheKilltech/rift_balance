@@ -81,13 +81,16 @@ EntityBlueprint  // ammo_factory_highcaliber_ext
 		}
 		priority 6		
 	}
-		
+	
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
+		script "lua/buildings/building_regulated.lua"
 		
 		database
 		{
+			watched_resource	string:"ammo_tower_high_caliber_lvl3"
+			watched_level_high	float:"200.0"
+			
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
 		}
