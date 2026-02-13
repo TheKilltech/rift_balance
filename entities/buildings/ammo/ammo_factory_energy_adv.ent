@@ -59,6 +59,11 @@ EntityBlueprint  // ammo_factory_energy_adv
 		{
 			GameplayResource
 			{
+				resource 		"ammo_tower_energy_cell_lvl2"
+				value			"0.3"
+			}
+			GameplayResource
+			{
 				resource 		"ammo_mech_energy_cell_lvl2"
 				value			"0.3"
 			}
@@ -68,14 +73,17 @@ EntityBlueprint  // ammo_factory_energy_adv
 
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
-
+		script "lua/buildings/building_regulated.lua"
+		
 		database
 		{
+			watched_resource	string:"ammo_tower_energy_cell_lvl2"
+			watched_level_high	float:"200.0"
+			
 			range				float:"26.0"
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
-			building_time		float:"10"		
+			building_time		float:"10"
 		}
 	}
 
@@ -622,6 +630,11 @@ EntityBlueprint  // ammo_factory_energy_adv_lvl_3
 		
 		out
 		{
+			GameplayResource
+			{
+				resource 		"ammo_tower_energy_cell_lvl2"
+				value			"0.9"
+			}
 			GameplayResource
 			{
 				resource 		"ammo_mech_energy_cell_lvl2"
