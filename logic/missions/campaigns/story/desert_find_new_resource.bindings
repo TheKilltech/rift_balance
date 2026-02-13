@@ -10,5 +10,29 @@ FlowGraphBindings
 
 	Bindings
 	DynamicBindings
+	{
+		df_logic_player_list_2
+		{
+			out_players
+			{
+				df_logic_player_to_entity_2 "in_players"
+			}
+
+		}
+
+		df_logic_player_to_entity_2
+		{
+			out_entities
+			{
+				df_entity_array_compare_1 "in_entities"
+				df_entity_array_compare_2 "in_entities"
+				df_entity_array_compare_3 "in_entities"
+				df_entity_array_compare_4 "in_entities"
+			}
+
+		}
+
+	}
+
 }
 

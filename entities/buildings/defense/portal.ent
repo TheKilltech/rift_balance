@@ -1,0 +1,342 @@
+EntityBlueprint
+{
+	name  "buildings/defense/portal"
+
+	BuildingDesc
+	{
+		name 				"portal"
+		bp   				"buildings/defense/portal"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/portal"
+		description			"gui/hud/building_description/portal"
+		menu_icon			"gui/hud/building_icons/portal"
+		require 			"headquarters"
+		order				"3"
+		min_radius			"40"
+		radius_name			"portal"
+		min_radius_effect   "voice_over/announcement/portal_too_close" 
+		building_mode		"radius"
+		type				"portal"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 0.5
+				building_cost
+				{
+					carbonium 	"25"		
+				}
+			}		
+		}
+		
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/defense/portal.lua"
+		
+		database
+		{
+			range						float:"40"
+			display_radius_group		string:"portal"
+			display_radius_blueprint 	string:"effects/decals/aim_circle"	
+			harvest_duration			float:"0.1"	
+		}	
+	}
+
+	InteractiveComponent 
+	{
+		slot 			"ACTIVATOR"
+		radius 			"4"
+		remove_entity 	 "0"
+		remove_component "0"
+		recreate_component "1"
+		priority			"1"
+	}
+
+	HealthDesc
+	{
+		max_health 					"250"
+		health 						"250"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 1
+		update_health_uniform 		"1"
+		
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"				
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/skills/rift_base.mesh"
+		material 	"items/skills/rift_base"
+	}
+
+	TypeDesc
+	{
+		type "building|defense"
+	}
+
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building_small"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "1.6"
+					}	
+				}
+			}
+		}
+	}
+
+	LocalAabbDesc
+	{
+		local_aabb
+		{
+			min
+			{
+				x "-2"
+				y "0"
+				z "-2"
+			}
+			max
+			{
+				x "2"
+				y "1"
+				z "2"
+			}	
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsBoxShape
+			{
+				x	4
+				y	4
+				z	4
+			}			
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type			"image"
+		icon_material 	"gui/hud/minimap_icons/portal"
+		visibility		"always"
+		layer_group		"important_buildings"		
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	DestroyDesc
+	{
+		
+		DestroyPatterns
+		{		
+			Pair
+			{
+				key "66_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"								
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}	
+			}
+			Pair
+			{
+				key "33_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"	
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"					
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"	
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_large_parts_generic"
+					part_lifetime "3"	
+				}
+
+				key "default"
+			}	
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"	
+					part_material 			"misc/building_parts_generic"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_large_parts_generic"
+					part_lifetime "3"	
+				}
+
+				key "quicksand"
+			}				
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+	}
+}
+
+EntityBlueprint
+{
+	name "buildings/defense/rift_portal"
+
+	base_blueprints
+	{
+		effects/no_lifetime
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/skills/rift_energy.mesh"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "items/skills/rift_portal_energy"
+			}
+			SubMesh
+			{
+				id "0"
+				material "items/skills/rift_portal_barrier"
+			}
+			SubMesh
+			{
+				id "2"
+				material "items/skills/rift_portal_energy_2"
+			}
+		}		
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/items/skills/rift_portal"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "rift_portal"
+	}
+
+	MinimapItemDesc
+	{
+		type			"image"
+		icon_material 	"gui/hud/minimap_icons/portal"
+		visibility		"always"		
+	}
+
+	DatabaseDesc
+	{
+	}
+
+	SoundDesc
+	{
+		name "items/portal/mech_portal_idle"
+	}
+	
+	EffectDesc
+	{
+		EffectGroup
+		{						
+			enabled "1"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "lights/point/blue_big"								
+					offset "0 4 0"
+				}
+			}
+		}			
+	}
+
+	RiftPointDesc
+	{
+		name 	"rift"
+		type 	"main"
+		active 	"1"
+	}
+
+	
+}
+

@@ -76,9 +76,18 @@ items/weapons/chainsaw_advanced_item
 
 			WeaponStatDef
 			{
+				max_value "3"
+				min_value "3"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+			
+			WeaponStatDef
+			{
 				max_value "25"
 				min_value "20"
 				stat_type "AMMO_STUN"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
 			}
 
 		}
@@ -165,9 +174,18 @@ items/weapons/chainsaw_extreme_item
 
 			WeaponStatDef
 			{
+				max_value "3"
+				min_value "3"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
 				max_value "35"
 				min_value "30"
 				stat_type "AMMO_STUN"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
 			}
 
 		}
@@ -253,9 +271,18 @@ items/weapons/chainsaw_item
 
 			WeaponStatDef
 			{
+				max_value "3"
+				min_value "3"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
 				max_value "20"
 				min_value "15"
 				stat_type "AMMO_STUN"
+				stat_features "INITIAL_RANDOMIZABLE"
 			}
 
 		}
@@ -342,9 +369,18 @@ items/weapons/chainsaw_superior_item
 
 			WeaponStatDef
 			{
+				max_value "3"
+				min_value "3"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
 				max_value "30"
 				min_value "25"
 				stat_type "AMMO_STUN"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
 			}
 
 		}
@@ -352,6 +388,7 @@ items/weapons/chainsaw_superior_item
 	}
 
 }
+
 
 items/weapons/flame_blade_advanced_item
 {
@@ -843,6 +880,7 @@ items/weapons/flame_blade_superior_item
 	}
 
 }
+
 
 items/weapons/hammer_advanced_item
 {
@@ -1339,6 +1377,7 @@ items/weapons/hammer_superior_item
 
 }
 
+
 items/weapons/laser_sword_advanced_item
 {
 	WeaponItemDesc
@@ -1793,6 +1832,7 @@ items/weapons/laser_sword_superior_item
 	}
 
 }
+
 
 items/weapons/pickaxe_advanced_item
 {
@@ -2288,6 +2328,7 @@ items/weapons/pickaxe_superior_item
 	}
 
 }
+
 
 items/weapons/power_fist_advanced_item
 {
@@ -2865,6 +2906,7 @@ items/weapons/power_fist_superior_item
 
 }
 
+
 items/weapons/sonic_fist_advanced_item
 {
 	WeaponItemDesc
@@ -3364,6 +3406,7 @@ items/weapons/sonic_fist_superior_item
 
 }
 
+
 items/weapons/spear_advanced_item
 {
 	WeaponItemDesc
@@ -3823,6 +3866,7 @@ items/weapons/spear_superior_item
 
 }
 
+
 items/weapons/sword_advanced_item
 {
 	WeaponItemDesc
@@ -4277,6 +4321,7 @@ items/weapons/sword_superior_item
 	}
 
 }
+
 
 items/weapons/trident_advanced_item
 {
