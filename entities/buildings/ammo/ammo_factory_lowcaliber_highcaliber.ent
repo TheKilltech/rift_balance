@@ -612,3 +612,113 @@ EntityBlueprint  // ammo_factory_lowcaliber_highcaliber_lvl_2
 		}
 	}
 }
+
+
+
+
+EntityBlueprint  // ammo_factory_lowcaliber_highcaliber_ghost
+{
+	name  "buildings/ammo/ammo_factory_lowcaliber_highcaliber_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/tower_ammunition_factory.mesh"
+		material "selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/ammo/ammo_factory_lowcaliber_highcaliber"
+	}
+
+	EffectDesc
+	{
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_medium_01_ghost"
+					bone 		"att_vismod_1"
+					scale		0.40 0.40 0.40 //"0.63 0.63 0.63"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/particle_condenser_ghost"
+					bone		"att_vismod_2"
+					scale		0.63 0.63 0.63
+					orientation	0 0 90
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // ammo_factory_lowcaliber_highcaliber_lvl_2_ghost
+{
+	name  "buildings/ammo/ammo_factory_lowcaliber_highcaliber_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/tower_ammunition_factory.mesh"
+		material "selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/ammo/ammo_factory_lowcaliber_highcaliber"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_medium_01_ghost"
+					bone 		"att_vismod_1"
+					scale		0.40 0.40 0.40
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/particle_condenser_ghost"
+					bone		"att_vismod_2"
+					scale		0.63 0.63 0.63
+					orientation	0 0 90
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe_s_ghost"
+					bone		"att_in_2_pipe"
+					scale		1.2 1 1
+					offset		-0.1 0 0
+				}
+			}
+		}
+	}
+}

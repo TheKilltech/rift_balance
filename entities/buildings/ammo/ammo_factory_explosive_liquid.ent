@@ -605,3 +605,112 @@ EntityBlueprint  // ammo_factory_explosive_liquid_lvl_2
 		}
 	}
 }
+
+
+
+
+EntityBlueprint  // ammo_factory_explosive_liquid_ghost
+{
+	name  "buildings/ammo/ammo_factory_explosive_liquid_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/tower_ammunition_factory.mesh"
+		material "selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/ammo/ammo_factory_explosive_liquid"
+	}
+
+	EffectDesc
+	{
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone		"att_vismod_1"
+					scale		0.8 0.8 0.8
+					offset		0 -1.2 0
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone		"att_vismod_2"
+					scale		0.6 0.6 0.6"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // ammo_factory_explosive_liquid_lvl_2_ghost
+{
+	name  "buildings/ammo/ammo_factory_explosive_liquid_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/tower_ammunition_factory.mesh"
+		material "selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/ammo/ammo_factory_explosive_liquid"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone		"att_vismod_1"
+					scale		0.8 0.8 0.8
+					offset		0 -1.2 0
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/silo_s_ghost"
+					bone		"att_vismod_2"
+					scale		0.9 1.1 0.9
+					offset		0 -1.3 0
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe_ghost"
+					bone		"att_in_2_pipe"
+				}
+			}
+		}
+	}
+}
