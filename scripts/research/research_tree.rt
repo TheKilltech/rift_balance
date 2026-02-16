@@ -11102,21 +11102,21 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl5"
+							research_name "gui/menu/research/name/headquarters_lvl7"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/solid_materials_storage_lvl3"
+							research_name "gui/menu/research/name/large_solid_materials_storage_lvl3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/solid_materials_storage_lvl2"
+							research_name "gui/menu/research/name/large_solid_materials_storage_lvl2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -11152,7 +11152,7 @@ Research
 					position
 					{
 						x "252"
-						y "126"
+						y "522"
 					}
 
 					research_awards
@@ -16209,6 +16209,20 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl5"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/solid_materials_storage_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/large_solid_materials_storage_lvl1"
@@ -16247,7 +16261,7 @@ Research
 					research_scripts
 					position
 					{
-						x "297"
+						x "252"
 						y "126"
 					}
 
@@ -16255,7 +16269,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/large_solid_material_storage"
+							blueprint "buildings/resources/large_solid_material_storage_basic"
 							is_visible "1"
 						}
 
@@ -16323,14 +16337,14 @@ Research
 					position
 					{
 						x "297"
-						y "270"
+						y "369"
 					}
 
 					research_awards
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/large_solid_material_storage_lvl_2"
+							blueprint "buildings/resources/large_solid_material_storage_other"
 							is_visible "1"
 						}
 
@@ -16348,14 +16362,14 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/large_solid_materials_storage_lvl2"
+							research_name "gui/menu/research/name/large_solid_materials_storage_lvl1"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl7"
+							research_name "gui/menu/research/name/headquarters_lvl6"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -16397,15 +16411,15 @@ Research
 					research_scripts
 					position
 					{
-						x "297"
-						y "522"
+						x "252"
+						y "369"
 					}
 
 					research_awards
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/large_solid_material_storage_lvl_3"
+							blueprint "buildings/resources/large_solid_material_storage_rare"
 							is_visible "1"
 						}
 
@@ -49939,6 +49953,6 @@ Research
 
 	type
 	editor "6643"
-	version "209"
+	version "210"
 }
 
