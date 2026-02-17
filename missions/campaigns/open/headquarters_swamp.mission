@@ -776,7 +776,7 @@ MissionDef
             resource        "carbon_vein"
 
             min_resources   "24000"
-            max_resources   "50000"
+            max_resources   "60000"
 
             min_spawned_volumes "15"
             max_spawned_volumes "20"
@@ -784,36 +784,35 @@ MissionDef
 		
 		ResourceVolume
         {
-            resource        "carbon_vein"
+            resource        "carbon_deepvein"
+			required_discovery_lvl	"1"
 
             min_resources   "90000"
             max_resources   "120000"
 
-            min_spawned_volumes "4"
-            max_spawned_volumes "6"
+            min_spawned_volumes "6"
+            max_spawned_volumes "9"
         }
 		
 		ResourceVolume
         {
-            resource        "carbon_vein"
+            resource        "ammonium_vein"
+
+            min_resources   "52000"
+            max_resources   "80000"
+
+            min_spawned_volumes "8"
+            max_spawned_volumes "12"
+        }
+		
+		ResourceVolume
+        {
+            resource        "ammonium_deepvein"
 			required_discovery_lvl	"1"
 
-            min_resources   "50000"
-            max_resources   "100000"
-
-            min_spawned_volumes "3"
-            max_spawned_volumes "5"
-        }
-
-        ResourceVolume
-        {
-            resource        "iron_vein"
-
-            min_resources   "6000"
-            max_resources   "12000"
-
-            min_spawned_volumes "4"
-            max_spawned_volumes "6"
+            is_infinite        "1"
+            min_spawned_volumes "8"
+            max_spawned_volumes "12"
         }
 		
 		ResourceVolume
@@ -823,31 +822,20 @@ MissionDef
             min_resources   "16000"
             max_resources   "32000"
 
+            min_spawned_volumes "9"
+            max_spawned_volumes "14"
+        }
+		
+		ResourceVolume
+        {
+            resource        "iron_deepvein"
+			required_discovery_lvl	"1"
+
+            min_resources   "50000"
+            max_resources   "90000"
+
             min_spawned_volumes "5"
-            max_spawned_volumes "10"
-        }
-		
-		ResourceVolume
-        {
-            resource        "iron_vein"
-
-            min_resources   "40000"
-            max_resources   "60000"
-
-            min_spawned_volumes "4"
-            max_spawned_volumes "6"
-        }
-		
-		ResourceVolume
-        {
-            resource        "iron_vein"
-			required_discovery_lvl	"1"
-
-            min_resources   "30000"
-            max_resources   "60000"
-
-            min_spawned_volumes "3"
-            max_spawned_volumes "5"
+            max_spawned_volumes "7"
         }
 
 		ResourceVolume
@@ -855,8 +843,8 @@ MissionDef
             resource        "flammable_gas_vent"
 
             min_spawned_volumes "3"
-            max_spawned_volumes "6"			
-            is_infinite        "1"			
+            max_spawned_volumes "6"
+            is_infinite        "1"
         }	
 		
         ResourceVolume
@@ -865,32 +853,31 @@ MissionDef
 			
 			required_discovery_lvl	"1"
             min_spawned_volumes "3"
-            max_spawned_volumes "6"			
-            is_infinite        "1"			
-        }		
+            max_spawned_volumes "6"
+            is_infinite        "1"
+        }
 
         ResourceVolume
         {
             resource        "uranium_ore_vein"
 			
             min_resources   "6000"
-            max_resources   "16000"
+            max_resources   "10000"
 
-            min_spawned_volumes "4"
-            max_spawned_volumes "6"
+            min_spawned_volumes "2"
+            max_spawned_volumes "2"
         }	
 
         ResourceVolume
         {
-            resource        "uranium_ore_vein"
-			
+            resource        "uranium_ore_deepvein"
 			required_discovery_lvl	"1"
 			
-            min_resources   "8000"
-            max_resources   "20000"
+            min_resources   "22000"
+            max_resources   "35000"
 
-            min_spawned_volumes "2"
-            max_spawned_volumes "4"
+            min_spawned_volumes "1"
+            max_spawned_volumes "1"
         }	
 		
 		ResourceVolume
@@ -898,23 +885,22 @@ MissionDef
             resource        "titanium_vein"
 			
             min_resources   "6000"
-            max_resources   "16000"
+            max_resources   "10000"
 
-            min_spawned_volumes "4"
-            max_spawned_volumes "6"
+            min_spawned_volumes "2"
+            max_spawned_volumes "2"
         }	
 
         ResourceVolume
         {
             resource        "titanium_vein"
-			
 			required_discovery_lvl	"1"
 			
-            min_resources   "8000"
-            max_resources   "20000"
+            min_resources   "22000"
+            max_resources   "35000"
 
-            min_spawned_volumes "2"
-            max_spawned_volumes "4"
+            min_spawned_volumes "1"
+            max_spawned_volumes "1"
         }	
 		
 		ResourceVolume
@@ -924,8 +910,8 @@ MissionDef
             min_resources   "6000"
             max_resources   "16000"
 
-            min_spawned_volumes "4"
-            max_spawned_volumes "6"
+            min_spawned_volumes "2"
+            max_spawned_volumes "2"
         }	
 
         ResourceVolume
@@ -934,11 +920,11 @@ MissionDef
 			
 			required_discovery_lvl	"1"
 			
-            min_resources   "8000"
-            max_resources   "20000"
+            min_resources   "20000"
+            max_resources   "30000"
 
-            min_spawned_volumes "2"
-            max_spawned_volumes "4"
+            min_spawned_volumes "1"
+            max_spawned_volumes "1"
         }	
 		
 		ResourceVolume
@@ -954,15 +940,15 @@ MissionDef
 
         ResourceVolume
         {
-            resource        "cobalt_vein"
+            resource        "cobalt_deepvein"
 			
 			required_discovery_lvl	"1"
 			
-            min_resources   "8000"
-            max_resources   "20000"
+            min_resources   "10000"
+            max_resources   "23000"
 
             min_spawned_volumes "2"
-            max_spawned_volumes "4"
+            max_spawned_volumes "3"
         }			
 
     }
@@ -973,8 +959,19 @@ MissionDef
         {
             resource        "carbon_vein"
 
-            min_resources   "90000"
-            max_resources   "120000"
+            min_resources   "120000"
+            max_resources   "180000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "2"
+        }
+		
+        ResourceVolume
+        {
+            resource        "ammonium_vein"
+
+            min_resources   "30000"
+            max_resources   "56000"
 
             min_spawned_volumes "2"
             max_spawned_volumes "2"
@@ -987,8 +984,8 @@ MissionDef
             min_resources   "40000"
             max_resources   "60000"
 
-            min_spawned_volumes "2"
-            max_spawned_volumes "2"
+            min_spawned_volumes "1"
+            max_spawned_volumes "1"
         }
     }
 }
