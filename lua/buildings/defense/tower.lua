@@ -10,13 +10,18 @@ function tower:OnInit()
 	self:RegisterHandler( event_sink , "DayStartedEvent", "_OnDayCycleDayStartedEvent")	
 	self:RegisterHandler( event_sink , "NightStartedEvent", "_OnDayCycleNightStartedEvent")	
 	self:RegisterHandler( event_sink , "SunriseStartedEvent", "_OnDayCycleSunriseStartedEvent")	
-	self:RegisterHandler( event_sink , "SunsetStartedEvent", "_OnDayCycleSunsetStartedEvent")	
+	self:RegisterHandler( event_sink , "SunsetStartedEvent", "_OnDayCycleSunsetStartedEvent")
 	self:RegisterHandler( self.entity, "ResourceMissingEvent", "OnResourceMissingEvent" ) 
-
+	self:RegisterHandler( self.entity, "TurretEvent", "_OnTurretEvent")
+	
 	self.lightStatus = false
 	
+	self.factorStandbyUpkeep = self.data:GetFloatOrDefault("standby_upkeep_factor", 0.5)
+	
+		
 	self.data:SetFloat( "shooting", 0 )
 	local timeOfDay = EnvironmentService:GetTimeOfDay()
+	BuildingService:AddConverterCostModifier( self.entity, self.factorStandbyUpkeep , "standby" )
 end
 
 function tower:OnDestroy()
@@ -47,7 +52,17 @@ function tower:OnDeactivate()
 	self:OperateLight(EnvironmentService:GetTimeOfDay())
 end
 
-function tower:OnTurretEvent( evt )
+local noTargetId = "4294967295" -- max uint: 2^32 - 1 or (uint)(-1)
+
+function tower:_OnTurretEvent( evt )
+	local target  = evt:GetTargetEntity()
+	local tstatus = evt:GetTurretStatus()
+	
+	if tostring(target) ~= noTargetId then
+		BuildingService:RemoveConverterCostModifier( self.entity, "standby" )
+	elseif tstatus == 0 then
+		BuildingService:AddConverterCostModifier( self.entity, self.factorStandbyUpkeep , "standby" )
+	end
 end
 
 function tower:OperateLight( time )
