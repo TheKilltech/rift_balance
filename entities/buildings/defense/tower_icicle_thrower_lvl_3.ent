@@ -1,11 +1,10 @@
-EntityBlueprint
+EntityBlueprint  // tower_icicle_thrower_lvl_3
 {
 	name "buildings/defense/tower_icicle_thrower_lvl_3"
 	base_blueprint "buildings/defense/tower_icicle_thrower_lvl_2"
 
 	BuildingDesc
 	{
-		buildable			"0"
 		name 				"tower_icicle_thrower_lvl_3"
 		bp   				"buildings/defense/tower_icicle_thrower_lvl_3"
 		category 			"defense"
@@ -13,25 +12,25 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_icicle_thrower"
 		menu_icon			"gui/hud/building_icons/tower_icicle_thrower_lvl3"
 		require 			"headquarters"
-		order				"16"
+		building_group		"tower_water_big"
+		buildable			"0"
 		type				"tower"
 		overrides			"tower,wall"
-		//upgrade				"buildings/defense/tower_icicle_thrower_lvl_4"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		radius_name			"icicle"
 		min_radius			"10"
-		min_radius_effect   "voice_over/announcement/building_too_close"		
+		min_radius_effect   "voice_over/announcement/building_too_close"
 
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 20
+				building_time 30
 				building_cost
 				{
 					carbonium 	"2000"
-					steel 		"1000"
+					alloys 		"1000"
 					titanium	"800"
 				}
 			}		
@@ -45,7 +44,13 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"25"
+				value 		"50"
+			}
+			
+			GameplayResource
+			{
+				resource 	"ferdonite"
+				value 		"1"
 			}
 		}
 

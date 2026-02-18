@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // tower_icicle_thrower
 {
 	name "buildings/defense/tower_icicle_thrower"
 
@@ -11,6 +11,8 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_icicle_thrower"
 		menu_icon			"gui/hud/building_icons/tower_icicle_thrower"
 		require 			"headquarters"
+		building_group		"tower_water_big"
+		buildable			"0"
 		order				"16"
 		type				"tower"
 		overrides			"tower,wall"
@@ -37,7 +39,7 @@ EntityBlueprint
 		}			
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
@@ -45,6 +47,12 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"25"
+			}
+			
+			GameplayResource
+			{
+				resource 	"ferdonite"
+				value 		"1"
 			}
 		}
 
@@ -394,11 +402,10 @@ EntityBlueprint
 
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_icicle_thrower_projectile
 {
 	name "buildings/defense/tower_icicle_thrower_projectile"
-
-	base_blueprint "buildings/defense/cryo_sentry_projectile"	
+	base_blueprint "buildings/defense/cryo_sentry_projectile"
 	
 	MeshDesc
 	{
@@ -457,9 +464,9 @@ EntityBlueprint
 		on_enemy_hit_effect 	"effects/weapons_elemental/icicle_thrower_projectile_explosion"
 		on_world_hit_effect 	"effects/weapons_elemental/icicle_thrower_projectile_explosion"
 		on_resisted_hit_effect 	"effects/weapons_elemental/icicle_thrower_projectile_explosion"
-		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield"
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield|building"
 		hit_effect_direction 	"up"
-		destroy_pattern					"default"
+		destroy_pattern			"default"
 	}
 	
 	DestroyDesc
