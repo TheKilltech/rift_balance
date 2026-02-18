@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // tower_acid_shredder
 {
 	name "buildings/defense/tower_acid_shredder"
 
@@ -11,6 +11,8 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_acid_shredder"
 		menu_icon			"gui/hud/building_icons/tower_acid_shredder"
 		require 			"headquarters"
+		building_group		"tower_minigun"
+		buildable			"0"
 		order				"10"
 		type				"tower"
 		overrides			"tower,wall"
@@ -34,14 +36,62 @@ EntityBlueprint
 		}		
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"1"
+				value 		"10"
+			}
+			
+			GameplayResource
+			{
+				resource 	"mud"
+				value 		"20"
+				family		"coolant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"water"
+				value 		"20"
+				family		"coolant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"sludge"
+				value		"10"
+				family		"coolant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"nitric_acid"
+				value		"2"
+				family		"coolant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"reagent"
+				value		"2"
+				family		"coolant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"morphium"
+				value		"20"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -346,11 +396,27 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -384,10 +450,9 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_acid_shredder_projectile
 {
 	name "buildings/defense/tower_acid_shredder_projectile"
-
 	base_blueprint "effects/weapons_bullet/minigun_bullet"
 	
 	MeshDesc
@@ -406,7 +471,7 @@ EntityBlueprint
 		on_enemy_hit_effect 	"effects/weapons_bullet/tower_acid_shredder_hit"
 		on_world_hit_effect 	"effects/weapons_bullet/tower_acid_shredder_hit"
 		on_resisted_hit_effect 	"effects/weapons_generic/projectile_hit_resisted"
-		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield"
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield|building"
 		
 		cluster_enemy_spread    "360"
 		cluster_world_spread	"360"

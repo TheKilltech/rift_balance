@@ -1,11 +1,11 @@
-EntityBlueprint
+EntityBlueprint  // tower_acid_shredder_lvl_2
 {
 	name "buildings/defense/tower_acid_shredder_lvl_2"
 	base_blueprint "buildings/defense/tower_acid_shredder"
 
 	BuildingDesc
 	{
-		buildable			"0"		
+		buildable			"0"
 		name 				"tower_acid_shredder_lvl_2"
 		bp   				"buildings/defense/tower_acid_shredder_lvl_2"
 		category 			"defense"
@@ -13,10 +13,11 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_acid_shredder"
 		menu_icon			"gui/hud/building_icons/tower_acid_shredder_lvl2"
 		require 			"headquarters"
+		building_group		"tower_minigun"
 		order				"10"
 		type				"tower"
 		overrides			"tower,wall"
-		upgrade				"buildings/defense/tower_acid_shredder_lvl_3"
+		//upgrade				"buildings/defense/tower_acid_shredder_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -24,25 +25,49 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 10
+				building_time 15
 				building_cost
 				{
 					carbonium 	"300"
 					steel 		"150"
 					palladium	"100"
 				}
-			}		
-		}		
+			}
+		}
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"1"
+				value 		"25"
+			}
+			
+			GameplayResource
+			{
+				resource 	"sludge"
+				value		"15"
+				family		"coolant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"nitric_acid"
+				value		"3"
+				family		"coolant"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"reagent"
+				value		"3"
+				family		"coolant"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -102,5 +127,58 @@ EntityBlueprint
 	TowerDesc
 	{
 	}
-}
 
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "shooting"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapons_bullet/tower_minigun_fire_loop"
+					bone "att_muzzle"
+				}
+			}
+		}		
+	}
+}
