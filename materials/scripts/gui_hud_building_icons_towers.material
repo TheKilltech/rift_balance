@@ -1,6 +1,24 @@
 import * from "materials/scripts/gui.material"
 
 
+/////  tower_acid_shredder
+
+material "gui/hud/building_icons/tower_acid_shredder" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_acid_shredder.dds"
+}
+
+material "gui/hud/building_icons/tower_acid_shredder_lvl2" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_acid_shredder_lvl2.dds"
+}
+
+material "gui/hud/building_icons/tower_acid_shredder_lvl3" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/defense/tower_acid_shredder_lvl3.dds"
+}
+
+
 /////  tower_acid_spitter
 
 material "gui/hud/building_icons/tower_acid_spitter" : gui/default
