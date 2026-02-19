@@ -23,18 +23,18 @@ EntityBlueprint  // tower_cannon
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 2.5
+				building_time 10
 				building_cost
-				{					
+				{
 					carbonium 	"100"
-					steel 		"125"
+					steel 		"150"
 					ai			"1"
 				}
-			}		
-		}		
+			}
+		}
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
@@ -58,9 +58,10 @@ EntityBlueprint  // tower_cannon
 
 		database
 		{
-			cone_effect			string:"build_cone_1x1"
-			cone_effect_sell	string:"sell_small"
-			time_machine		int:"0"
+			standby_upkeep_factor	float:"0.2"
+			cone_effect				string:"build_cone_1x1"
+			cone_effect_sell		string:"sell_small"
+			time_machine			int:"0"
 		}
 
 	}
@@ -392,7 +393,7 @@ EntityBlueprint  // tower_cannon_lvl_2
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 8
+				building_time 20
 				building_cost
 				{
 					carbonium 	"150"
@@ -518,11 +519,11 @@ EntityBlueprint  // tower_cannon_lvl_3
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 15
+				building_time 25
 				building_cost
 				{
 					carbonium 	"150"
-					steel 		"200"
+					alloys		"400"
 					cobalt		"150"
 				}
 			}		
@@ -673,7 +674,7 @@ EntityBlueprint  // tower_cannon_cooled_lvl_1
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 8
+				building_time 20
 				building_cost
 				{
 					carbonium 	"150"
@@ -845,15 +846,15 @@ EntityBlueprint  // tower_cannon_cooled_lvl_2
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 15
+				building_time 25
 				building_cost
 				{
 					carbonium 	"150"
-					steel 		"1750"
+					alloys		"1000"
 					cobalt		"150"
 				}
-			}		
-		}		
+			}
+		}
 	}
 
 	ResourceConverterDesc
@@ -1035,7 +1036,6 @@ EntityBlueprint  // tower_cannon_acid
 		menu_icon			"gui/hud/building_icons/tower_cannon_acid"
 		require 			"headquarters"
 		building_group		"tower_cannon"
-		order				"10"
 		check_connect		"1"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
@@ -1047,11 +1047,11 @@ EntityBlueprint  // tower_cannon_acid
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 8
+				building_time 25
 				building_cost
 				{
 					carbonium 	"150"
-					steel 		"350"
+					alloys		"350"
 					cobalt 		"150"
 				}
 			}		
@@ -1070,24 +1070,9 @@ EntityBlueprint  // tower_cannon_acid
 			
 			GameplayResource
 			{
-				resource 	"sludge"
-				value 		"15"
+				resource 	"hazenite"
+				value 		"2"
 				family		"coating"
-				attachment	"att_in_1"
-			}
-			GameplayResource
-			{
-				resource 	"nitric_acid"
-				value 		"4"
-				family		"coating"
-				attachment	"att_in_1"
-			}
-			GameplayResource
-			{
-				resource 	"reagent"
-				value 		"5"
-				family		"coating"
-				attachment	"att_in_1"
 			}
 		}
 
@@ -1172,26 +1157,10 @@ EntityBlueprint  // tower_cannon_acid
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
-		////////////////////////Resources/////////////////////////
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_arrow"
-				}
-			}
 		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
@@ -1254,18 +1223,18 @@ EntityBlueprint  // tower_cannon_incindiary
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 15
+				building_time 25
 				building_cost
 				{
 					carbonium 	"150"
-					steel 		"300"
+					alloys		"300"
 					cobalt		"50"
 				}
 			}		
 		}		
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
@@ -1277,25 +1246,9 @@ EntityBlueprint  // tower_cannon_incindiary
 			
 			GameplayResource
 			{
-				resource 	"plasma"
-				value 		"5"
-				family		"plasma"
-				attachment	"att_in_1"
-			}
-			GameplayResource
-			{
-				resource 	"plasma_charged"
+				resource 	"rhodonite"
 				value 		"2"
-				family		"plasma"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"reagent"
-				value 		"5"
-				family		"plasma"
-				attachment	"att_in_1"
+				family		"coating"
 			}
 		}
 
@@ -1380,26 +1333,10 @@ EntityBlueprint  // tower_cannon_incindiary
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
-		////////////////////////Resources/////////////////////////
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_arrow"
-				}
-			}
 		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup

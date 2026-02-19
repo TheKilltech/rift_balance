@@ -1,8 +1,7 @@
-EntityBlueprint
+EntityBlueprint  // tower_artillery_acid
 {
 	name "buildings/defense/tower_artillery_acid"
-
-	base_blueprint 			"buildings/defense/tower_artillery_lvl_2"
+	base_blueprint 	"buildings/defense/tower_artillery_lvl_2"
 
 	BuildingDesc
 	{
@@ -15,13 +14,12 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/tower_artillery_lvl2_acid"
 		require 			"headquarters"
 		building_group		"tower_artillery"
-		order				"12"
 		check_connect		"1"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		condition			"NOT_BIOME"	
-		condition_value		"caverns"	
+		condition			"NOT_BIOME"
+		condition_value		"caverns"
 
 		costs
 		{
@@ -32,7 +30,7 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"350"
-					steel 		"75"
+					alloys		"100"
 				}
 			}
 		}
@@ -50,25 +48,9 @@ EntityBlueprint
 			
 			GameplayResource
 			{
-				resource 	"sludge"
-				value 		"20"
+				resource 	"hazenite"
+				value 		"2"
 				family		"warhead"
-			}
-			
-			GameplayResource
-			{
-				resource 	"nitric_acid"
-				value 		"5"
-				family		"warhead"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"reagent"
-				value 		"5"
-				family		"warhead"
-				attachment	"att_in_1"
 			}
 		}
 
@@ -134,26 +116,10 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
-		////////////////////////Resources/////////////////////////
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_arrow"
-				}
-			}
 		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
@@ -164,7 +130,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint	"effects/buildings_and_machines/minipipes"
+					blueprint	"effects/buildings_and_machines/minipipes_green"
 					bone 		"att_vismod_2"
 					orientation	"0 0 -40"
 					scale		"0.6 0.6 0.6"
@@ -189,7 +155,8 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+
+EntityBlueprint  // tower_artillery_projectile_acid
 {
 	name "buildings/defense/tower_artillery_projectile_acid"
 	base_blueprint buildings/defense/tower_artillery_projectile_lvl2
