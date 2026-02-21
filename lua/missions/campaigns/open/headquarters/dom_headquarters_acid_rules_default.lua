@@ -1,5 +1,3 @@
-require("lua/utils/table_utils.lua")
-
 return function(params)
 	-- the following sets up to default values for the given mission and difficulty type:
 	-- prepareAttackDefinitions, wavesEntryDefinitions, prepareSpawnTime, timeToNextDifficultyLevel, cooldownAfterAttacks
@@ -34,10 +32,8 @@ return function(params)
 		{ action = "boss_attack",                    type = "NEGATIVE", gameStates="ATTACK|STREAMING",      minEventLevel = 4 },
 		{ action = "shegret_attack",                 type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 3,                    logicFile="logic/event/shegret_attack.logic",                               weight = 3 },
 		{ action = "shegret_attack_hard",            type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 3,                    logicFile="logic/event/shegret_attack_hard.logic",                          weight = 3 },
-		--{ action = "shegret_attack_very_hard",       type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 3,                    logicFile="logic/event/shegret_attack_very_hard.logic",                     weight = 3 },
 		{ action = "kermon_attack",                  type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 4,                    logicFile="logic/event/kermon_attack.logic",                                weight = 0.5 },
 		{ action = "kermon_attack_hard",             type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 6,                    logicFile="logic/event/kermon_attack_hard.logic",                           weight = 0.5 },
-		--{ action = "kermon_attack_very_hard",        type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 8,                    logicFile="logic/event/kermon_attack_very_hard.logic",                      weight = 0.5 },
 		{ action = "phirian_attack",                 type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 3,                    logicFile="logic/event/phirian_attack.logic",                               weight = 0.5 },
 		{ action = "spawn_earthquake",               type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2,                    logicFile="logic/weather/earthquake.logic",    minTime = 30, maxTime = 60,  weight = 0.5 },	
 		{ action = "spawn_blood_moon",               type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 4,                    logicFile="logic/weather/blood_moon.logic",    minTime = 60, maxTime = 120, weight = 0.5 },
@@ -87,31 +83,8 @@ return function(params)
 		{ name = "logic/objectives/destroy_creeper.logic",              minDifficultyLevel = 3 } 
 	}
 
-	rules.attackCountPerDifficulty = 
-	{			
-		{ minCount = 1, maxCount = 1 },  -- difficulty level 1
-		{ minCount = 1, maxCount = 1 },  -- difficulty level 2
-		{ minCount = 1, maxCount = 2 },  -- difficulty level 3
-		{ minCount = 1, maxCount = 2 },  -- difficulty level 4
-		{ minCount = 2, maxCount = 2 },  -- difficulty level 5
-		{ minCount = 2, maxCount = 3 },  -- difficulty level 6
-		{ minCount = 2, maxCount = 3 },  -- difficulty level 7
-		{ minCount = 2, maxCount = 3 },  -- difficulty level 8
-		{ minCount = 3, maxCount = 4 },  -- difficulty level 9
-	}
-
-	rules.waveRepeatChances = 
-	{
-		{},                 -- consecutive chances of wave repeating at level 1
-		{},                 -- consecutive chances of wave repeating at level 2
-		{25},               -- consecutive chances of wave repeating at level 3
-		{50},               -- consecutive chances of wave repeating at level 4
-		{60, 15},           -- consecutive chances of wave repeating at level 5
-		{70, 25},           -- consecutive chances of wave repeating at level 6
-		{80, 50, 20},       -- consecutive chances of wave repeating at level 7
-		{90, 60, 40},       -- consecutive chances of wave repeating at level 8
-		{100, 60, 50, 25},  -- consecutive chances of wave repeating at level 9
-	}
+	--rules.waveRepeatChances        = helper:Default_WaveRepeatChances("hq", rules.params.difficulty)
+	--rules.attackCountPerDifficulty = helper:Default_AttackCountPerDifficulty("hq", rules.params.difficulty)
 	
 	rules.waveChanceRerollSpawnGroup = 0
 	rules.waveChanceRerollSpawn      = 15
