@@ -235,6 +235,9 @@ function wave_gen:PrepareDefaultRules(rules, missionType, difficulty, params)
 	rules.idleTime                  = self:Default_IdleTime(                  missionType, difficulty, 1)
 	rules.timeToNextDifficultyLevel = self:Default_TimeToNextDifficultyLevel( missionType, difficulty, 1)
 
+	rules.attackCountPerDifficulty  = self:Default_AttackCountPerDifficulty(  missionType, difficulty)
+	rules.attackCountPerDifficulty  = self:Default_WaveRepeatChances(         missionType, difficulty)
+	
 	rules.waveChanceRerollSpawnGroup =  0  -- chance for rerolled attack wave to change its map border spawn direction (N/W/S/E)
 	rules.waveChanceRerollSpawn      = 15  -- chance for rerolled attack wave to change its spawning point
 	rules.waveChanceReroll           = 30  -- chance to reroll and replace an attack wave from its original wave pool
@@ -457,7 +460,7 @@ function wave_gen:Default_ExtraWaves(biome, missionType, difficulty,  waves)
 	if waves == nil      then waves = wave_gen:EmptyWaves( false ) end
 	local ds = wave_gen:DefaultWaveDiffSettings( biome, missionType)
 
-	if Contains({"outpost","resource"}, missionType) then
+	if Contains({"outpost","resource","hq"}, missionType) then
 		if (difficulty == "brutal")      then
 			waves = self:Generate({ difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = self:Generate({ difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
@@ -621,18 +624,235 @@ function wave_gen:Default_PrepareAttackDefinitions( missionType, difficulty )
 end
 
 function wave_gen:Default_WavesEntryDefinitions( missionType, difficulty )
-	local defs = {
-		"logic/dom/attack_level_1_entry.logic", -- difficulty level 1
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 2
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 3
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 4
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 5
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 6
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 7
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 8
-		"logic/dom/attack_level_2_entry.logic", -- difficulty level 9
-	}
+	local defs = {}
+	if Contains({"caverns"}, missionType) then  -- ToDo: no biome paramter!!
+		defs = {
+			"logic/missions/survival/caverns/attack_level_1_caverns_entry.logic", -- difficulty level 1
+			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic", -- difficulty level 2
+			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic", -- difficulty level 3
+			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic", -- difficulty level 4
+			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic", -- difficulty level 5
+			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic", -- difficulty level 6
+			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic", -- difficulty level 7
+			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic", -- difficulty level 8
+			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic", -- difficulty level 9
+		}
+	else 
+		defs = {
+			"logic/dom/attack_level_1_entry.logic", -- difficulty level 1
+			"logic/dom/attack_level_2_entry.logic", -- difficulty level 2
+			"logic/dom/attack_level_2_entry.logic", -- difficulty level 3
+			"logic/dom/attack_level_2_entry.logic", -- difficulty level 4
+			"logic/dom/attack_level_2_entry.logic", -- difficulty level 5
+			"logic/dom/attack_level_2_entry.logic", -- difficulty level 6
+			"logic/dom/attack_level_2_entry.logic", -- difficulty level 7
+			"logic/dom/attack_level_2_entry.logic", -- difficulty level 8
+			"logic/dom/attack_level_2_entry.logic", -- difficulty level 9
+		}
+	end
+	
 	return defs
+end
+
+function wave_gen:Default_WaveRepeatChances(missionType, difficulty)
+	local waveRepeatChances = {}
+	if Contains({"hq","outpost","resource","survival"}, missionType) then
+		if (difficulty == "brutal")      then
+			waveRepeatChances = {
+				{10},                   -- consecutive chances of wave repeating at level 1
+				{25},                   -- consecutive chances of wave repeating at level 2
+				{50, 50},               -- consecutive chances of wave repeating at level 3
+				{50, 50},               -- consecutive chances of wave repeating at level 4
+				{60, 50},               -- consecutive chances of wave repeating at level 5
+				{75, 60, 20},           -- consecutive chances of wave repeating at level 6
+				{90, 60, 40},           -- consecutive chances of wave repeating at level 7
+				{100, 70, 60, 20},      -- consecutive chances of wave repeating at level 8
+				{100, 70, 65, 35, 30},  -- consecutive chances of wave repeating at level 9
+			}
+		elseif (difficulty == "hard")    then
+			waveRepeatChances = {
+				{10},                   -- consecutive chances of wave repeating at level 1
+				{25},                   -- consecutive chances of wave repeating at level 2
+				{35},                   -- consecutive chances of wave repeating at level 3
+				{45,  25},              -- consecutive chances of wave repeating at level 4
+				{60,  45},              -- consecutive chances of wave repeating at level 5
+				{75,  50, 20},          -- consecutive chances of wave repeating at level 6
+				{90,  60, 40},          -- consecutive chances of wave repeating at level 7
+				{100, 70, 50, 20},      -- consecutive chances of wave repeating at level 8
+				{100, 70, 55, 25, 15},  -- consecutive chances of wave repeating at level 9
+			}
+		elseif (difficulty == "easy")    then 
+			waveRepeatChances = {
+				{},                 -- consecutive chances of wave repeating at level 1
+				{},                 -- consecutive chances of wave repeating at level 2
+				{15},               -- consecutive chances of wave repeating at level 3
+				{40},               -- consecutive chances of wave repeating at level 4
+				{50,  10},          -- consecutive chances of wave repeating at level 5
+				{60,  20},          -- consecutive chances of wave repeating at level 6
+				{70,  40, 20},      -- consecutive chances of wave repeating at level 7
+				{80,  50, 40},      -- consecutive chances of wave repeating at level 8
+				{100, 60, 50, 25},  -- consecutive chances of wave repeating at level 9
+			}
+		else  -- including difficulty: normal, default
+			waveRepeatChances = {
+				{},                 -- consecutive chances of wave repeating at level 1
+				{},                 -- consecutive chances of wave repeating at level 2
+				{25},               -- consecutive chances of wave repeating at level 3
+				{50},               -- consecutive chances of wave repeating at level 4
+				{60, 15},           -- consecutive chances of wave repeating at level 5
+				{70, 25},           -- consecutive chances of wave repeating at level 6
+				{80, 50, 20},       -- consecutive chances of wave repeating at level 7
+				{90, 60, 40},       -- consecutive chances of wave repeating at level 8
+				{100, 60, 50, 25},  -- consecutive chances of wave repeating at level 9
+			}
+		end
+	else -- including missionType: scout, exploration, temp
+		if (difficulty == "brutal")      then
+			waveRepeatChances = {
+				{},                    -- concecutive chances of wave repeating at level 1
+				{},                    -- concecutive chances of wave repeating at level 2
+				{},                    -- concecutive chances of wave repeating at level 3
+				{10},                  -- concecutive chances of wave repeating at level 4
+				{20},                  -- concecutive chances of wave repeating at level 5
+				{30},                  -- concecutive chances of wave repeating at level 6
+				{60, 20},              -- concecutive chances of wave repeating at level 7
+				{70, 50, 15},          -- concecutive chances of wave repeating at level 8
+				{80, 30, 80, 50, 20},  -- concecutive chances of wave repeating at level 9
+			}
+		elseif (difficulty == "hard")    then
+			waveRepeatChances = {
+				{},                -- concecutive chances of wave repeating at level 1
+				{},                -- concecutive chances of wave repeating at level 2
+				{},                -- concecutive chances of wave repeating at level 3
+				{},                -- concecutive chances of wave repeating at level 4
+				{10},              -- concecutive chances of wave repeating at level 5
+				{20},              -- concecutive chances of wave repeating at level 6
+				{60, 5},           -- concecutive chances of wave repeating at level 7
+				{70, 50, 10},      -- concecutive chances of wave repeating at level 8
+				{80, 20, 80, 50},  -- concecutive chances of wave repeating at level 9
+
+			}
+		else  -- including difficulty: normal, default, easy
+			waveRepeatChances = {
+				{},                -- concecutive chances of wave repeating at level 1
+				{},                -- concecutive chances of wave repeating at level 2
+				{},                -- concecutive chances of wave repeating at level 3
+				{},                -- concecutive chances of wave repeating at level 4
+				{},                -- concecutive chances of wave repeating at level 5
+				{10},              -- concecutive chances of wave repeating at level 6
+				{30},              -- concecutive chances of wave repeating at level 7
+				{40, 50},          -- concecutive chances of wave repeating at level 8
+				{60, 40, 20, 35},  -- concecutive chances of wave repeating at level 9
+			}
+		end
+	end
+	return waveRepeatChances
+end
+
+function wave_gen:Default_AttackCountPerDifficulty(missionType, difficulty)
+	local attackCountPerDifficulty = {}
+	if Contains({"hq","outpost","resource","survival"}, missionType) then
+		if (difficulty == "brutal")      then
+			attackCountPerDifficulty =  {
+				{ minCount = 1, maxCount = 2 },  -- difficulty level 1
+				{ minCount = 1, maxCount = 2 },  -- difficulty level 2
+				{ minCount = 2, maxCount = 2 },  -- difficulty level 3
+				{ minCount = 2, maxCount = 3 },  -- difficulty level 4
+				{ minCount = 2, maxCount = 3 },  -- difficulty level 5
+				{ minCount = 2, maxCount = 3 },  -- difficulty level 6
+				{ minCount = 3, maxCount = 3 },  -- difficulty level 7
+				{ minCount = 3, maxCount = 4 },  -- difficulty level 8
+				{ minCount = 3, maxCount = 5 },  -- difficulty level 9
+			}
+		elseif (difficulty == "hard")    then
+			attackCountPerDifficulty = {
+				{ minCount = 1, maxCount = 2 },  -- difficulty level 1
+				{ minCount = 1, maxCount = 2 },  -- difficulty level 2
+				{ minCount = 2, maxCount = 2 },  -- difficulty level 3
+				{ minCount = 2, maxCount = 2 },  -- difficulty level 4
+				{ minCount = 2, maxCount = 3 },  -- difficulty level 5
+				{ minCount = 2, maxCount = 3 },  -- difficulty level 6
+				{ minCount = 3, maxCount = 3 },  -- difficulty level 7
+				{ minCount = 3, maxCount = 4 },  -- difficulty level 8
+				{ minCount = 3, maxCount = 4 },  -- difficulty level 9
+			}
+		elseif (difficulty == "easy")    then 
+			attackCountPerDifficulty =  {
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 1
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 2
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 3
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 4
+				{ minCount = 1, maxCount = 2 },  -- difficulty level 5
+				{ minCount = 1, maxCount = 2 },  -- difficulty level 6
+				{ minCount = 2, maxCount = 2 },  -- difficulty level 7
+				{ minCount = 2, maxCount = 3 },  -- difficulty level 8
+				{ minCount = 2, maxCount = 3 },  -- difficulty level 9
+			}
+		else -- including difficulty: normal, default
+			attackCountPerDifficulty =  {
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 1
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 2
+				{ minCount = 1, maxCount = 2 },  -- difficulty level 3
+				{ minCount = 1, maxCount = 2 },  -- difficulty level 4
+				{ minCount = 2, maxCount = 2 },  -- difficulty level 5
+				{ minCount = 2, maxCount = 3 },  -- difficulty level 6
+				{ minCount = 2, maxCount = 3 },  -- difficulty level 7
+				{ minCount = 2, maxCount = 3 },  -- difficulty level 8
+				{ minCount = 3, maxCount = 4 },  -- difficulty level 9
+			}
+		end
+	else -- including missionType: scout, exploration, temp
+		if (difficulty == "brutal")      then
+			attackCountPerDifficulty =  {
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 1
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 2
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 3
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 4
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 5
+				{ minCount = 1, maxCount = 2 },  -- difficulty level 6
+				{ minCount = 2, maxCount = 2 },  -- difficulty level 7
+				{ minCount = 2, maxCount = 3 },  -- difficulty level 8
+				{ minCount = 2, maxCount = 4 },  -- difficulty level 9
+			}
+		elseif (difficulty == "hard")    then
+			attackCountPerDifficulty = {
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 1
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 2
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 3
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 4
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 5
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 6
+				{ minCount = 1, maxCount = 2 },  -- difficulty level 7
+				{ minCount = 2, maxCount = 2 },  -- difficulty level 8
+				{ minCount = 2, maxCount = 3 },  -- difficulty level 9
+			}
+		elseif (difficulty == "easy")    then 
+			attackCountPerDifficulty =  {
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 1
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 2
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 3
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 4
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 5
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 6
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 7
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 8
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 9
+			}
+		else -- including difficulty: normal, default
+			attackCountPerDifficulty =  {
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 1
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 2
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 3
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 4
+				{ minCount = 0, maxCount = 0 },  -- difficulty level 5
+				{ minCount = 1, maxCount = 1 },  -- difficulty level 6
+				{ minCount = 1, maxCount = 2 },  -- difficulty level 7
+				{ minCount = 1, maxCount = 2 },  -- difficulty level 8
+				{ minCount = 1, maxCount = 2 },  -- difficulty level 9
+			}
+		end
+	end
+	return attackCountPerDifficulty
 end
 
 function wave_gen:Default_TimeToNextDifficultyLevel(missionType, difficulty, factor)
