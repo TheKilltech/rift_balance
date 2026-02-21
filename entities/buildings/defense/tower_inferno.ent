@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // tower_inferno
 {
 	name "buildings/defense/tower_inferno"
 
@@ -11,13 +11,15 @@ EntityBlueprint
 		description			"gui/hud/building_description/tower_inferno"
 		menu_icon			"gui/hud/building_icons/tower_inferno"
 		require 			"headquarters"
+		building_group		"tower_artillery" //"tower_hcm"
+		buildable			"0"
 		order				"7"
 		type				"tower"
 		overrides			"tower,wall"
 		upgrade				"buildings/defense/tower_inferno_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		condition			"NOT_BIOME"	
-		condition_value		"caverns"	
+		condition			"NOT_BIOME"
+		condition_value		"caverns"
 		radius_name			"inferno"
 		min_radius			"10"
 		min_radius_effect   "voice_over/announcement/building_too_close"
@@ -27,26 +29,69 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 20
+				building_time 30
 				building_cost
 				{
 					carbonium 	"500"
 					steel 		"250"
 					ai			"1"
-					titanium	"200"
+					titanium	"100"
 				}
 			}		
 		}	
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
+				value 		"30"
+			}
+			
+			GameplayResource
+			{
+				resource 	"flammable_gas"
 				value 		"25"
+				family		"charge"
+				attachment	"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 	"petroleum"
+				value 		"10"
+				family		"charge"
+				attachment	"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 	"magma"
+				value 		"30"
+				family		"charge"
+				attachment	"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 	"plasma"
+				value 		"25"
+				family		"charge"
+				attachment	"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 	"plasma_charged"
+				value 		"15"
+				family		"charge"
+				attachment	"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 	"resin"
+				value 		"5"
+				family		"charge"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -344,7 +389,36 @@ EntityBlueprint
 		{
 			"buildings/effects_medium_base"
 		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone 		"att_in_pipe"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "lamp"
@@ -363,7 +437,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_inferno_projectile
 {
 	name "buildings/defense/tower_inferno_projectile"
 
