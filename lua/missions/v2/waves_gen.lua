@@ -217,18 +217,25 @@ function wave_gen:PrepareDefaultRules(rules, missionType, difficulty, params)
 	-- missionType: { "hq", "outpost", "resource", "survival", "scout", "exploration","temp" }
 	-- difficulty:  { "easy", "default", "hard", "brutal" }
 	
+	local biome = "unknown"
+	if type( missionType ) == "table" then
+		biome		= missionType.biome or MissionService:GetCurrentBiomeName()
+		missionType	= missionType.missionType or "temp"
+	end
+	
 	rules.params = params or {}
-	if not rules.params.rulesPosfix	then rules.params.rulesPosfix = difficulty or DifficultyService:GetWaveStrength() end
-	if not rules.params.difficulty	then rules.params.difficulty  = difficulty or DifficultyService:GetCurrentDifficultyName() end
-	if not rules.params.threat		then rules.params.threat      = 10 end
-	if not rules.params.missionType	then rules.params.missionType = missionType or "temp" end
+	if not rules.params.rulesPosfix		then rules.params.rulesPosfix = difficulty or DifficultyService:GetWaveStrength() end
+	if not rules.params.difficulty		then rules.params.difficulty  = difficulty or DifficultyService:GetCurrentDifficultyName() end
+	if not rules.params.threat			then rules.params.threat      = 10 end
+	if not rules.params.missionType		then rules.params.missionType = missionType or "temp" end
+	if not rules.params.biome 			then rules.params.biome       = MissionService:GetCurrentBiomeName() end
 	if rules.params.difficulty == "custom"	then rules.params.difficulty  = DifficultyService:GetWaveStrength() end
 	
 	missionType = rules.params.missionType
 	difficulty  = rules.params.difficulty
 	
 	rules.prepareAttackDefinitions = self:Default_PrepareAttackDefinitions(   missionType, difficulty )
-	rules.wavesEntryDefinitions    = self:Default_WavesEntryDefinitions(      missionType, difficulty )
+	rules.wavesEntryDefinitions    = self:Default_WavesEntryDefinitions(      missionType, difficulty, biome )
 	
 	rules.prepareSpawnTime          = self:Default_PrepareSpawnTime(          missionType, difficulty, 1)
 	rules.cooldownAfterAttacks      = self:Default_CooldownAfterAttacks(      missionType, difficulty, 1)
@@ -623,9 +630,9 @@ function wave_gen:Default_PrepareAttackDefinitions( missionType, difficulty )
 	return defs
 end
 
-function wave_gen:Default_WavesEntryDefinitions( missionType, difficulty )
+function wave_gen:Default_WavesEntryDefinitions( missionType, difficulty, biome )
 	local defs = {}
-	if Contains({"caverns"}, missionType) then  -- ToDo: no biome paramter!!
+	if Contains({"caverns"}, biome) then 
 		defs = {
 			"logic/missions/survival/caverns/attack_level_1_caverns_entry.logic", -- difficulty level 1
 			"logic/missions/survival/caverns/attack_level_2_caverns_entry.logic", -- difficulty level 2
