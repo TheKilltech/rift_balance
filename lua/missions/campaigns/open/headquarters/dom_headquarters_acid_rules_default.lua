@@ -60,9 +60,10 @@ return function(params)
 	
 	rules.addResourcesOnRunOut = 
 	{
-		{ name = "carbon_vein", runOutPercentageOnMap = 25, minToSpawn = 50000, maxToSpawn = 80000 },
-		{ name = "iron_vein",   runOutPercentageOnMap = 25, minToSpawn = 50000, maxToSpawn = 80000 },
-		{ name = "cobalt_vein", runOutPercentageOnMap = 10, minToSpawn = 10000, maxToSpawn = 20000 },
+		{ name = "carbon_vein",   runOutPercentageOnMap = 25, minToSpawn = 50000, maxToSpawn = 80000 },
+		{ name = "iron_vein",     runOutPercentageOnMap = 25, minToSpawn = 50000, maxToSpawn = 80000 },
+		{ name = "ammonium_vein", runOutPercentageOnMap = 30, minToSpawn = 20000, maxToSpawn = 30000, chance = 45,    events = { "spawn_resource_earthquake" }},
+		{ name = "cobalt_vein",   runOutPercentageOnMap = 10, minToSpawn = 10000, maxToSpawn = 20000 },
 	}
 
 	rules.buildingsUpgradeStartsLogic = 
