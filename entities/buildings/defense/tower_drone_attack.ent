@@ -42,13 +42,18 @@ EntityBlueprint  // tower_drone_attack
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"60"
+				value 		"10"
 			}
 			
-			GameplayResource // for display, and temporary workaround until drones consume ammo
+			GameplayResource
 			{
 				resource 	"ammo_tower_low_caliber" 
-				value 		"0.2"
+				value 		"0.3"
+			}
+			GameplayResource
+			{
+				resource 	"ammo_tower_energy_cell" 
+				value 		"0.1"
 			}
 		}
 
@@ -68,13 +73,13 @@ EntityBlueprint  // tower_drone_attack
 			cone_effect				string:"build_cone_3x3"
 			cone_effect_sell 		string:"sell_big"
 
-			drone_upkeep_modifier		float:"5.0"
+			drone_upkeep_modifier		float:"10.0"
 			drone_full_search_interval	int:"5"
 			drone_own_search_radius		float:"10"
 			drone_search_radius			float:"40"
 			drone_blueprint				string:"units/drones/drone_attack_physical"
 			drone_attachments			string:"att_landing"
-			drone_per_spot				int:"2"
+			drone_per_spot				int:"3"
 			drone_visible_on_spot		int:"0"
 		}
 	}

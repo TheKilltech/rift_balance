@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // drone_attack_physical
 {
 	name  "units/drones/drone_attack_physical"
 	base_blueprint 	"units/drones/drone_base"
@@ -77,7 +77,286 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // drone_attack_physical_lvl_2
+{
+	name  "units/drones/drone_attack_physical_lvl_2"
+	base_blueprint 	"units/drones/drone_attack_physical"
+
+	LuaDesc
+	{
+		script "lua/units/air/attack_drone.lua"
+
+		database
+		{
+			search_radius float:"50.0" // if spawned by building this param will be overriden by buildings `drone_search_radius`
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+			}
+			WeaponMuzzle
+			{
+				attachment "att_muzzle_2"
+			}			
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "60"
+			submesh_idx "1"
+		}
+		
+		muzzles_per_fire 			"1"
+		ammo_blueprint 				"items/weapons_enemy/drone_projectile_physical"
+		muzzle_flash_effect 		"effects/weapons_bullet/small_machinegun_muzzle"
+
+
+		
+		burst_column_spacing 		"1"
+		burst_rate 					"0.1"
+		burst_column_angle 			"0"
+	}
+}
+
+EntityBlueprint  // drone_attack_fire_lvl_2
+{
+	name  "units/drones/drone_attack_fire_lvl_2"
+	base_blueprint 	"units/drones/drone_attack_physical"
+
+	LuaDesc
+	{
+		script "lua/units/air/attack_drone.lua"
+
+		database
+		{
+			search_radius float:"50.0" // if spawned by building this param will be overriden by buildings `drone_search_radius`
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+			}
+			WeaponMuzzle
+			{
+				attachment "att_muzzle_2"
+			}			
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "5"
+			submesh_idx "1"
+		}
+		
+		muzzles_per_fire 			"1"
+		ammo_blueprint 				"items/weapons_enemy/drone_projectile_fire"
+		muzzle_flash_effect 		"effects/weapons_fluid/tower_water_basic_muzzle"
+
+		burst_column_spacing 		"0"
+		burst_rate 					"0"
+		burst_column_angle 			"0"
+	}
+}
+
+EntityBlueprint  // drone_attack_explosive_lvl_2
+{
+	name  "units/drones/drone_attack_explosive_lvl_2"
+	base_blueprint 	"units/drones/drone_attack_physical"
+
+	LuaDesc
+	{
+		script "lua/units/air/attack_drone.lua"
+
+		database
+		{
+			search_radius float:"50.0" // if spawned by building this param will be overriden by buildings `drone_search_radius`
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+			}
+			WeaponMuzzle
+			{
+				attachment "att_muzzle_2"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "60"
+			submesh_idx "1"
+		}
+		
+		muzzles_per_fire 			"1"
+		ammo_blueprint 				"items/weapons_enemy/drone_projectile_explosive"
+		muzzle_flash_effect 		"effects/weapons_explosive/tower_rocket_fire_medium"
+
+		burst_column_spacing 		"0"
+		burst_rate 					"0"
+		burst_column_angle 			"0"
+	}
+}
+
+EntityBlueprint  // drone_attack_cryo_lvl_3
+{
+	name  "units/drones/drone_attack_cryo_lvl_3"
+	base_blueprint 	"units/drones/drone_attack_physical_lvl_2"
+
+	LuaDesc
+	{
+		script "lua/units/air/attack_drone.lua"
+
+		database
+		{
+			search_radius float:"60.0" // if spawned by building this param will be overriden by buildings `drone_search_radius`
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+			}
+			WeaponMuzzle
+			{
+				attachment "att_muzzle_2"
+			}			
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "60"
+			submesh_idx "1"
+		}
+		
+		muzzles_per_fire 			"1"
+		ammo_blueprint 				"items/weapons_enemy/drone_projectile_cryo"
+		muzzle_flash_effect 		"effects/weapons_bullet/small_machinegun_muzzle"
+
+		burst_column_spacing 		"1"
+		burst_rate 					"0.1"
+		burst_column_angle 			"0"
+	}
+}
+
+EntityBlueprint  // drone_attack_energy_lvl_3
+{
+	name  "units/drones/drone_attack_energy_lvl_3"
+	base_blueprint 	"units/drones/drone_base"
+
+	StateMachineDesc
+	{
+		template_name "drone"
+		params
+		{
+			hover_height			float:"1"
+			hover_min_height		float:"7"
+
+			owner_movement			string:"land"
+
+			target_movement			string:"follow"
+			target_manual_rotation	int:"1"
+			target_search_mode  	string:"always"
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/units/air/attack_drone.lua"
+
+		database
+		{
+			search_radius float:"60.0" // if spawned by building this param will be overriden by buildings `drone_search_radius`
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/units/drones/drone_attack.mesh"
+		material "units/drones/drone_attack"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/units/drones/drone_attack"
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	BeamWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+			}
+			WeaponMuzzle
+			{
+				attachment "att_muzzle_2"
+			}			
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "4"
+			submesh_idx "0"
+		}
+
+		ammo_blueprint				"items/weapons_enemy/drone_projectile_energy"
+
+		burst_column_spacing 		"0"
+		burst_rate 					"0"
+		burst_column_angle 			"0"
+	}
+}
+
+
+
+EntityBlueprint  // drone_projectile_physical
 {
 	name "items/weapons_enemy/drone_projectile_physical"
 	base_blueprint "effects/weapons_bullet/minigun_bullet"
@@ -90,5 +369,75 @@ EntityBlueprint
 		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield|building"
 		
 		friendly_fire			"pass"
+	}
+}
+
+EntityBlueprint  // drone_projectile_explosive
+{
+	name "items/weapons_enemy/drone_projectile_explosive"
+	base_blueprint "buildings/defense/tower_rockets_projectile"
+
+	ProjectileAmmoComponent
+	{
+		on_enemy_hit_effect 	"effects/weapons_explosive/explosion_small"
+		on_world_hit_effect 	"effects/weapons_explosive/explosion_small"
+		on_resisted_hit_effect 	"effects/weapons_explosive/explosion_small"
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield|building"
+		
+		friendly_fire			"pass"
+	}
+}
+
+EntityBlueprint  // drone_projectile_fire
+{
+	name "items/weapons_enemy/drone_projectile_fire"
+	base_blueprint "buildings/defense/tower_water_basic_projectile"
+
+	ProjectileAmmoComponent
+	{
+		on_enemy_hit_effect 	"effects/weapons_fluid/tower_water_basic_projectile_hit"
+		on_world_hit_effect 	"effects/weapons_fluid/tower_water_basic_projectile_hit"
+		on_resisted_hit_effect 	"effects/weapons_generic/projectile_hit_resisted"
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield"
+		hit_effect_direction 	"up"
+	}
+}
+
+EntityBlueprint  // drone_projectile_energy
+{
+	name "items/weapons_enemy/drone_projectile_energy"
+	base_blueprint "buildings/defense/tower_lightning_beam"
+
+	LightningBeamComponent
+	{
+		range 					"16"
+
+		on_enemy_hit_effect 	"effects/weapons_energy/lightning_gun_hit"
+
+		type_mask				"ground_unit"
+		aiming_angle			"360"
+
+		idle_attachments
+		{	
+			IdString "att_lightning_1"
+			IdString "att_lightning_2"
+			IdString "att_lightning_3"
+		}
+	}
+}
+
+EntityBlueprint  // drone_projectile_cryo
+{
+	name "items/weapons_enemy/drone_projectile_cryo"
+	base_blueprint "buildings/defense/tower_icicle_thrower_projectile"
+
+	ProjectileAmmoComponent
+	{
+		on_enemy_hit_effect 	"effects/weapons_elemental/icicle_thrower_projectile_explosion"
+		on_world_hit_effect 	"effects/weapons_elemental/icicle_thrower_projectile_explosion"
+		on_resisted_hit_effect 	"effects/weapons_elemental/icicle_thrower_projectile_explosion"
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield|building"
+		hit_effect_direction 	"up"
+		destroy_pattern			"default"
 	}
 }
