@@ -325,7 +325,7 @@ EntityBlueprint  // drone_attack_energy_lvl_3
 	{
 	}
 
-	BeamWeaponComponent
+	BurstWeaponComponent
 	{
 		WeaponMuzzles
 		{
@@ -336,17 +336,19 @@ EntityBlueprint  // drone_attack_energy_lvl_3
 			WeaponMuzzle
 			{
 				attachment "att_muzzle_2"
-			}			
+			}
 		}
 
 		WeaponAffector
 		{
 			emissive_time "0.35"
-			emissive_factor "4"
-			submesh_idx "0"
+			emissive_factor "4" // "6"
+			submesh_idx "1"
 		}
 
-		ammo_blueprint				"items/weapons_enemy/drone_projectile_energy"
+		ammo_blueprint 				"buildings/defense/tower_plasma_projectile"
+
+		muzzle_flash_effect 		"effects/weapons_energy/plasma_gun_fire_blue"
 
 		burst_column_spacing 		"0"
 		burst_rate 					"0"
@@ -406,23 +408,14 @@ EntityBlueprint  // drone_projectile_fire
 EntityBlueprint  // drone_projectile_energy
 {
 	name "items/weapons_enemy/drone_projectile_energy"
-	base_blueprint "buildings/defense/tower_lightning_beam"
+	base_blueprint "buildings/defense/tower_plasma_projectile"
 
-	LightningBeamComponent
+	ProjectileAmmoComponent
 	{
-		range 					"16"
-
-		on_enemy_hit_effect 	"effects/weapons_energy/lightning_gun_hit"
-
-		type_mask				"ground_unit"
-		aiming_angle			"360"
-
-		idle_attachments
-		{	
-			IdString "att_lightning_1"
-			IdString "att_lightning_2"
-			IdString "att_lightning_3"
-		}
+		on_enemy_hit_effect 	"effects/weapon_hit/tower_projectile_hit"
+		on_world_hit_effect 	"effects/weapon_hit/tower_projectile_hit"
+		on_resisted_hit_effect 	"effects/weapons_generic/projectile_hit_resisted"
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield|building"
 	}
 }
 

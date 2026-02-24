@@ -8444,8 +8444,8 @@ units/drones/drone_attack
 
 			WeaponStatDef
 			{
-				max_value "15"
-				min_value "15"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_VALUE"
 			}
@@ -8468,10 +8468,18 @@ units/drones/drone_attack
 
 			WeaponStatDef
 			{
-				max_value "1"
-				min_value "1"
+				max_value "3"
+				min_value "3"
 				stat_features "BASE_MINMAX"
-				stat_type "AMMO_COST"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "15"
+				min_value "15"
+				stat_features "BASE_MINMAX"
+				stat_type "DAMAGE_OVER_TIME"
 			}
 
 		}
@@ -8498,14 +8506,6 @@ units/drones/drone_attack_cryo_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "3"
-				min_value "3"
-				stat_features "BASE_MINMAX"
-				stat_type "FIRE_PER_BURST"
-			}
-
-			WeaponStatDef
-			{
 				max_value "1"
 				min_value "1"
 				stat_features "BASE_MINMAX"
@@ -8514,18 +8514,42 @@ units/drones/drone_attack_cryo_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "10"
-				min_value "10"
+				max_value "45"
+				min_value "45"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "85"
-				min_value "85"
+				max_value "50"
+				min_value "50"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2"
+				min_value "2"
+				stat_features "BASE_MINMAX"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "4"
+				min_value "4"
+				stat_features "BASE_MINMAX"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5"
+				min_value "5"
+				stat_features "BASE_MINMAX"
+				stat_type "DAMAGE_OVER_TIME"
 			}
 
 		}
@@ -8544,42 +8568,57 @@ units/drones/drone_attack_energy_lvl_3
 		{
 			WeaponStatDef
 			{
-				max_value "3"
-				min_value "3"
+				max_value "1"
+				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_RATE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "3"
-				min_value "3"
-				stat_features "BASE_MINMAX"
-				stat_type "FIRE_PER_BURST"
-			}
-
-			WeaponStatDef
-			{
-				max_value "1"
-				min_value "1"
+				max_value "5"
+				min_value "5"
 				stat_features "BASE_MINMAX"
 				stat_type "FIRE_PER_SHOT"
 			}
 
 			WeaponStatDef
 			{
-				max_value "10"
-				min_value "10"
+				max_value "30"
+				min_value "30"
 				stat_features "BASE_MINMAX"
 				stat_type "DAMAGE_VALUE"
 			}
 
 			WeaponStatDef
 			{
-				max_value "85"
-				min_value "85"
+				max_value "1"
+				min_value "1"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "12"
+				min_value "12"
+				stat_features "BASE_MINMAX"
+				stat_type "BEAM_RANGE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "60"
+				min_value "60"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.5"
+				min_value "1.5"
+				stat_features "BASE_MINMAX"
+				stat_type "DAMAGE_SPLASH"
 			}
 
 		}
