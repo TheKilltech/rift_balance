@@ -166,13 +166,15 @@ EntityBlueprint  // tower_drone_attack_lvl_2
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"
+			enabled "0"
 			Effects
 			{
 				Effect
 				{
-					blueprint	"effects/buildings_and_machines/pipe"
-					bone 		"att_in_pipe"
+					blueprint	"effects/weapon_items/ball_shiny"
+					bone 		"att_vismod_2"
+					orientation 0 90 0
+					scale		1.5 1.5 1.5
 				}
 			}
 		}
@@ -386,6 +388,21 @@ EntityBlueprint  // tower_drone_attack_lvl_2_fire
 					blueprint	"effects/buildings_and_machines/pipe"
 					bone 		"att_in_pipe"
 				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/flamethrower"
+					bone 		"att_vismod_1"
+					orientation 0 90 0
+					scale		2 2 2
+					offset		-1.8 -0.7 -0.1
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/mine_nuclear"
+					bone 		"att_vismod_2"
+					orientation 0 90 0
+					scale		1.2 1.2 1.2
+				}
 			}
 		}
 	}
@@ -570,8 +587,18 @@ EntityBlueprint  // tower_drone_attack_lvl_2_explosive
 			{
 				Effect
 				{
-					blueprint	"effects/buildings_and_machines/pipe"
-					bone 		"att_in_pipe"
+					blueprint	"effects/weapon_items/swarm_missiles"
+					bone 		"att_vismod_1"
+					orientation 0 90 0
+					scale		2.2 2.2 2.2
+					offset		-1.8 -0.7 1.2
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/mine_simple"
+					bone 		"att_vismod_2"
+					orientation 0 90 0
+					scale		1.2 1.2 1.2
 				}
 			}
 		}

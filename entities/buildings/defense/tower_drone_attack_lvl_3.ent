@@ -70,7 +70,7 @@ EntityBlueprint  // tower_drone_attack_lvl_3
 				resource 	"sludge"
 				value 		"15"
 				family		"acid"
-				attachment	"att_in_2"
+				attachment	"att_in_1"
 			}
 			
 			GameplayResource
@@ -78,7 +78,7 @@ EntityBlueprint  // tower_drone_attack_lvl_3
 				resource 	"nitric_acid"
 				value 		"1"
 				family		"acid"
-				attachment	"att_in_2"
+				attachment	"att_in_1"
 			}
 		}
 
@@ -212,6 +212,20 @@ EntityBlueprint  // tower_drone_attack_lvl_3
 				{
 					blueprint	"effects/buildings_and_machines/pipe"
 					bone 		"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/corrosive_gun"
+					bone 		"att_vismod_1"
+					orientation 0 -90 0
+					scale		2 2 2
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/ball_gas"
+					bone 		"att_vismod_2"
+					orientation 0 -90 0
+					scale		1.5 1.5 1.5
 				}
 			}
 		}
@@ -417,6 +431,21 @@ EntityBlueprint  // tower_drone_attack_lvl_3_cryo
 				{
 					blueprint	"effects/buildings_and_machines/pipe"
 					bone 		"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/cryogenic_atomizer"
+					bone 		"att_vismod_1"
+					orientation 0 90 0
+					scale		2 2 2
+					offset		-2 0 -0.1
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/mine_cryo"
+					bone 		"att_vismod_2"
+					orientation 0 90 0
+					scale		1.5 1.2 1.2
 				}
 			}
 		}
@@ -629,6 +658,21 @@ EntityBlueprint  // tower_drone_attack_lvl_3_energy
 				{
 					blueprint	"effects/buildings_and_machines/pipe"
 					bone 		"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/heavy_plasma_gun"
+					bone 		"att_vismod_1"
+					orientation 0 90 0
+					scale		1.6 1.6 1.6
+					offset		-1.8 -0.7 -0.1
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/ball_shiny"
+					bone 		"att_vismod_2"
+					orientation 0 90 0
+					scale		1.5 1.5 1.5
 				}
 			}
 		}

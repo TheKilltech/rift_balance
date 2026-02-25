@@ -180,6 +180,22 @@ EntityBlueprint "effects/no_lifetime"		//heavy_plasma_gun
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//lightning_gun
+{
+	name "effects/weapon_items/lightning_gun"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/lightning_gun.mesh"
+		material 	"items/weapons/lightning_gun"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//flamethrower
 {
 	name "effects/weapon_items/flamethrower"
@@ -257,6 +273,22 @@ EntityBlueprint "effects/no_lifetime"		//rocket_launcher_ghost
 	{
 		mesh 	"meshes/items/weapons/rocket_launcher.mesh"
 		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//swarm_missiles
+{
+	name "effects/weapon_items/swarm_missiles"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/swarm_missiles.mesh"
+		material 	"items/weapons/swarm_missiles"
 	}
 }
 
