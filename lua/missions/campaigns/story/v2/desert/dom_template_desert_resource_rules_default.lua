@@ -1,5 +1,6 @@
 require("lua/missions/v2/waves_gen.lua" )
 require("lua/utils/rules_utils.lua")
+require("lua/utils/table_utils.lua")
 	
 return function(params)
 	-- the following sets up to default values for the given mission and difficulty type:

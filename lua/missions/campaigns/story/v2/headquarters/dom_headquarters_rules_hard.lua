@@ -1,3 +1,6 @@
+require("lua/utils/rules_utils.lua")
+require("lua/utils/table_utils.lua")
+
 return function(params)
     local rules  = require("lua/missions/campaigns/story/v2/headquarters/dom_headquarters_rules_default.lua")(params)
 	local helper = require( "lua/missions/v2/waves_gen.lua" )
@@ -9,7 +12,7 @@ return function(params)
 		{ action = "kermon_attack_hard",             type = "NEGATIVE", gameStates="ATTACK",           minEventLevel = 6,                    logicFile="logic/event/kermon_attack_hard.logic",                           weight = 0.75 },
 	})
 
-	rules.idleTime  = helper:RepeatingValueTable( 900, 9)
+	rules.idleTime  = RepeatingValueTable( 900, 9)
 	
 	rules.attackCountPerDifficulty = 
 	{			

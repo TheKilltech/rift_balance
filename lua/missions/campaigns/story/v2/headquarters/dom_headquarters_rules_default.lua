@@ -1,3 +1,6 @@
+require("lua/utils/rules_utils.lua")
+require("lua/utils/table_utils.lua")
+
 return function(params)
 	local helper = require( "lua/missions/v2/waves_gen.lua" )
 	local rules  = helper:PrepareDefaultRules( {}, "hq", nil, params)
@@ -100,8 +103,8 @@ return function(params)
 		--{ name = "logic/objectives/destroy_creeper.logic",                 minDifficultyLevel = 6 } 
 	}
 
-	rules.prepareSpawnTime         = helper:RepeatingValueTable( 120, 9)
-	rules.idleTime                 = helper:RepeatingValueTable( 900, 9)
+	rules.prepareSpawnTime         = RepeatingValueTable( 120, 9)
+	rules.idleTime                 = RepeatingValueTable( 900, 9)
 	
 	rules.attackCountPerDifficulty = 
 	{			

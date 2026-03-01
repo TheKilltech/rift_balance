@@ -1377,24 +1377,4 @@ end
 
 
 
-
-function wave_gen:ScaleTable(array, factor)
-	if array then
-		for i = 1, #array, 1 do
-			if array[i] then
-				array[i] = array[i] * factor;
-			end
-		end
-	end
-	return array
-end
-
-function wave_gen:RepeatingValueTable(value, repeats)
-	local array = {}
-	for i = repeats, 1, -1 do
-		array[i] = value;
-	end
-	return array
-end
-
 return wave_gen

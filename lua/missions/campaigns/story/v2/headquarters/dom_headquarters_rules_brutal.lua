@@ -1,3 +1,6 @@
+require("lua/utils/rules_utils.lua")
+require("lua/utils/table_utils.lua")
+
 return function(params)
     local rules  = require("lua/missions/campaigns/story/v2/headquarters/dom_headquarters_rules_hard.lua")(params)
 	local helper = require( "lua/missions/v2/waves_gen.lua" )
@@ -8,7 +11,7 @@ return function(params)
 		{ action = "phirian_attack",                 type = "NEGATIVE", gameStates="ATTACK",           minEventLevel = 7,                    logicFile="logic/event/phirian_attack.logic",				 weight = 0.5 },
 	})
 	
-	rules.idleTime = helper:RepeatingValueTable( 720, 9)
+	rules.idleTime = RepeatingValueTable( 720, 9)
 	
 	rules.attackCountPerDifficulty = 
 	{			
