@@ -282,7 +282,7 @@ function PrepareDefaultRules(rules, missionType, difficulty, params)
 		{ level = 1, minLevel = 5, prepareTime = 120, entryLogic = "logic/hq_upgrade/upgrade_entry_lvl1.logic", exitLogic = "logic/hq_upgrade/upgrade_exit_lvl1.logic" },
 	}
 	
-	LogService:Log( PrintTable( rules ))
+	--LogService:Log( PrintTable( rules ))
 	
 	return rules
 end
