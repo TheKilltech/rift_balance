@@ -42,3 +42,42 @@ function GetRulesForCustomDifficulty( name )
 
 	return name .. "default.lua";
 end
+
+function GetShiftedDifficulty( difficulty, shiftDiff )
+	local effDiff = difficulty
+	
+	while shiftDiff ~= 0 do
+		if shiftDiff > 0 then
+			if difficulty     == "brutal"  then difficulty = "extreme"
+			elseif difficulty == "hard"    then difficulty = "brutal"
+			elseif difficulty == "normal"  then difficulty = "hard"
+			elseif difficulty == "default" then difficulty = "hard"
+			elseif difficulty == "easy"    then difficulty = "normal"
+			end
+			shiftDiff = shiftDiff - 1
+		else 
+			if difficulty     == "brutal"  then difficulty = "hard"
+			elseif difficulty == "hard"    then difficulty = "normal"
+			elseif difficulty == "normal"  then difficulty = "easy"
+			elseif difficulty == "default" then difficulty = "easy"
+			elseif difficulty == "easy"    then difficulty = "none"
+			end
+			shiftDiff = shiftDiff + 1
+		end
+	end
+	
+	return difficulty
+end
+
+function GetEffectiveDifficulty( difficulty, threat )
+	if not threat then threat = 8 end
+	
+	local shiftDiff = 0
+	if threat > 8  then     shiftDiff =  1
+	elseif threat < 6 then  shiftDiff = -1
+	elseif threat < 4 then  shiftDiff = -2
+	elseif threat < 2 then  shiftDiff = -3
+	end
+	
+	return GetShiftedDifficulty( difficulty, shiftDiff)
+end
