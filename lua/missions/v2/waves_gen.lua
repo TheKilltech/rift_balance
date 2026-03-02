@@ -264,7 +264,7 @@ function PrepareDefaultRules(rules, missionType, difficulty, params)
 	rules.timeToNextDifficultyLevel = Default_TimeToNextDifficultyLevel( missionType, difficulty, 1)
 
 	rules.attackCountPerDifficulty  = Default_AttackCountPerDifficulty(  rules.params)
-	rules.attackCountPerDifficulty  = Default_WaveRepeatChances(         rules.params)
+	rules.waveRepeatChances         = Default_WaveRepeatChances(         rules.params)
 	
 	rules.waveChanceRerollSpawnGroup =  0  -- chance for rerolled attack wave to change its map border spawn direction (N/W/S/E)
 	rules.waveChanceRerollSpawn      = 15  -- chance for rerolled attack wave to change its spawning point
@@ -353,22 +353,22 @@ function Default_Waves(biomeOrParam, missionType, difficulty,  waves)
 	
 	local mainWaves = Default_UnboxedWaves(biome, missionType, difficulty, nil)
 	if (biomeVisitors1 or "none") ~= "none" then
-		mainWaves = Default_UnboxedWaves(rules.params.biomeVisitors1, "late", difficulty, mainWaves)
+		mainWaves = Default_UnboxedWaves( biomeVisitors1, "scout", difficulty, mainWaves )
 	end
 	if (biomeVisitors2 or "none") ~= "none" then
-		mainWaves = Default_UnboxedWaves(rules.params.biomeVisitors1, "late", difficulty, mainWaves)
+		mainWaves = Default_UnboxedWaves( biomeVisitors2, "scout", difficulty, mainWaves )
 	end
 	
 	waves = {
 		default	= mainWaves,
-		--acid		= helper:Default_UnboxedWaves("acid",          "late", difficulty, nil),
-		--caverns		= helper:Default_UnboxedWaves("caverns",       "late", difficulty, nil),
-		--desert		= helper:Default_UnboxedWaves("desert",        "late", difficulty, nil),
-		--ice			= helper:Default_UnboxedWaves("ice",           "late", difficulty, nil),
-		--jungle		= helper:Default_UnboxedWaves("jungle",        "late", difficulty, nil),
-		--magma		= helper:Default_UnboxedWaves("magma",         "late", difficulty, nil),
-		--metallic	= helper:Default_UnboxedWaves("metallic",      "late", difficulty, nil),
-		--swamp		= helper:Default_UnboxedWaves("swamp",         "late", difficulty, nil),
+		--acid		= Default_UnboxedWaves("acid",          "late", difficulty, nil),
+		--caverns		= Default_UnboxedWaves("caverns",       "late", difficulty, nil),
+		--desert		= Default_UnboxedWaves("desert",        "late", difficulty, nil),
+		--ice			= Default_UnboxedWaves("ice",           "late", difficulty, nil),
+		--jungle		= Default_UnboxedWaves("jungle",        "late", difficulty, nil),
+		--magma		= Default_UnboxedWaves("magma",         "late", difficulty, nil),
+		--metallic	= Default_UnboxedWaves("metallic",      "late", difficulty, nil),
+		--swamp		= Default_UnboxedWaves("swamp",         "late", difficulty, nil),
 	}
 	
 	return waves

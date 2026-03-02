@@ -163,8 +163,8 @@ function template_universal:Prepare()
 		},
 		desert = { 
 			{ biome = "none",     weight = 100 },
-			{ biome = "caverns",  weight = 10 },
-			{ biome = "magma",    weight = 5 },
+			{ biome = "caverns",  weight = 20 },
+			{ biome = "magma",    weight = 10 },
 			{ biome = "metallic", weight = 5 },
 		},
 		ice =  {
@@ -4764,11 +4764,14 @@ function template_universal:Activated()
 	local biomeName = self.mission_params.biome_name
 	local templateMap  = "resource"
 	local prefix       = "template_"
+	local postfix      = "default"
 	if Contains({"metallic", "caverns","swamp"}, biomeName) then
 		templateMap = "outpost"
 		prefix      = ""
+		postfix     = nil
 	elseif Contains({"acid", "jungle","magma"}, biomeName) then
 		prefix      = ""
+		postfix     = nil
 		if self.mission_params.mission_type == "exploration" then
 			templateMap = "find_rare_resource"
 		else
@@ -4776,9 +4779,14 @@ function template_universal:Activated()
 		end
 	end
 	
-	local rulesBiomePath = self:GetRulesPathForBiome(self.mission_params.biome_name)
+	local rulesPath = self:GetRulesPathForBiome(self.mission_params.biome_name)
+	if postfix then
+		rulesPath = rulesPath .. "dom_" .. prefix .. self.mission_params.biome_name .. "_".. templateMap.. "_rules_" .. postfix  .. ".lua"
+	else rulesPath = GetRulesForDifficulty( rulesPath .. "dom_" .. prefix .. self.mission_params.biome_name .. "_".. templateMap.. "_rules_" )
+	end
+	
 	local params = {
-		rulesPath  = GetRulesForDifficulty( rulesBiomePath .. "dom_" .. prefix .. self.mission_params.biome_name .. "_".. templateMap.. "_rules_" ),
+		rulesPath  = rulesPath,
 		rulesParam = {
 			biome          = self.mission_params.biome_name,
 			missionType    = self.mission_params.mission_type,
