@@ -144,35 +144,57 @@ function Replace(t, oldVal, newVal)
 end
 
 function PrintTable(t, maxDepth, indent)
+	local function CanInline(t)
+		if Size(t) > 6 then return false end
+		for k, v in pairs(t) do
+			if (type(v) == "table") then
+				if Size(v) > 0 then return false end
+			end
+		end
+		return true
+	end
+	
 	if not indent   then indent = 0    end
 	if not maxDepth then maxDepth = 20 end
 	if t == nil  then 
 		return string.rep(" ", indent) .. "nil"
 	end
-	local toprint = tostring(t) .. " = {\r\n"
+	local inline = false
+	local eop = "\r\n" -- end of property chracter
+	if CanInline(t) then
+	   eop = " "
+	   inline = true
+	end
+	local toprint = tostring(t) .. " = {" .. eop
 	indent = indent + 2
 	
 	for k, v in pairs(t) do
-		toprint = toprint .. string.rep(" ", indent)
+	  if not inline then
+		  toprint = toprint .. string.rep(" ", indent)
+		end
 		if (type(k) == "number") then
 			toprint = toprint .. "[" .. k .. "] = "
 		elseif (type(k) == "string") then
 			toprint = toprint  .. k ..  "= "   
 		end
 		if (type(v) == "number") then
-			toprint = toprint .. v .. ",\r\n"
+			toprint = toprint .. v .. "," .. eop
 		elseif (type(v) == "string") then
-			toprint = toprint .. "\"" .. v .. "\",\r\n"
+			toprint = toprint .. "\"" .. v .. "\"," .. eop
 		elseif (type(v) == "table") then
 			if maxDepth > 0 then
-				toprint = toprint .. PrintTable(v, maxDepth - 1, indent + 2) .. ",\r\n"
-			else toprint = toprint  .. "table ".. tostring(v).. ",\r\n"
+				toprint = toprint .. PrintTable(v, maxDepth - 1, indent) .. "," .. eop
+			else toprint = toprint  .. "table ".. tostring(v).. "," .. eop
 			end
 		else
-			toprint = toprint .. "\"" .. tostring(v) .. "\",\r\n"
+			toprint = toprint .. "\"" .. tostring(v) .. "\"," .. eop
 		end
 	end
-	toprint = toprint .. string.rep(" ", indent-2) .. "}"
+	
+	if not inline then
+	  toprint = toprint .. string.rep(" ", indent - 2) .. "}"
+	else toprint = toprint .. "}"
+	end
 	return toprint
 end
 
