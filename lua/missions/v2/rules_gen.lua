@@ -4,25 +4,22 @@ waves_gen_lock = waves_gen_lock or require("lua/missions/v2/waves_gen.lua")
 --require("lua/utils/rules_utils.lua")
 
 
-function PrepareDefaultRules(rules, missionType, difficulty, params)
+function PrepareDefaultRules(rules, params, missionType, difficulty)
 	-- missionType: { "hq", "outpost", "resource", "survival", "scout", "exploration","temp" }
 	-- difficulty:  { "easy", "default", "hard", "brutal" }
 	
-	local biome = "unknown"
-	if type( missionType ) == "table" then
-		biome		= missionType.biome or MissionService:GetCurrentBiomeName()
-		missionType	= missionType.missionType or "temp"
-	end
-	
+	params = params or rules.params or {}
+	if not params.rulesPosfix		 then params.rulesPosfix = difficulty or DifficultyService:GetWaveStrength() end
+	if not params.difficulty		 then params.difficulty  = difficulty or DifficultyService:GetCurrentDifficultyName() end
+	if not params.threat			 then params.threat      = 8 end
+	if not params.missionType		 then params.missionType = missionType or "exploration" end
+	if not params.biome 			 then params.biome       = MissionService:GetCurrentBiomeName() end
+	if params.difficulty == "custom" then params.difficulty  = DifficultyService:GetWaveStrength() end
 	rules.params = params or {}
-	if not rules.params.rulesPosfix		then rules.params.rulesPosfix = difficulty or DifficultyService:GetWaveStrength() end
-	if not rules.params.difficulty		then rules.params.difficulty  = difficulty or DifficultyService:GetCurrentDifficultyName() end
-	if not rules.params.threat			then rules.params.threat      = 8 end
-	if not rules.params.missionType		then rules.params.missionType = missionType or "temp" end
-	if not rules.params.biome 			then rules.params.biome       = MissionService:GetCurrentBiomeName() end
-	if rules.params.difficulty == "custom"	then rules.params.difficulty  = DifficultyService:GetWaveStrength() end
 	
 	local effectiveDiff = GetEffectiveDifficulty( rules.params.difficulty, rules.params.threat )
+	local missionType   = rules.params.missionType
+	local difficulty    = rules.params.difficulty
 	
 	rules.maxObjectivesAtOnce = 1
 	rules.eventsPerIdleState = 1
@@ -44,11 +41,9 @@ function PrepareDefaultRules(rules, missionType, difficulty, params)
 	-- chances are consecutive, i.e. dice roll for event n+1 may only happen if roll for event n was also succefful
 	rules.spawnCooldownEventChance = { 35, 20, 20 }
 	
-	missionType = rules.params.missionType
-	difficulty  = rules.params.difficulty
 	
-	rules.prepareAttackDefinitions  = Default_PrepareAttackDefinitions(   missionType, difficulty )
-	rules.wavesEntryDefinitions     = Default_WavesEntryDefinitions(      missionType, difficulty, biome )
+	rules.prepareAttackDefinitions  = Default_PrepareAttackDefinitions(  missionType, difficulty )
+	rules.wavesEntryDefinitions     = Default_WavesEntryDefinitions(     missionType, difficulty, biome )
 	
 	rules.prepareSpawnTime          = Default_PrepareSpawnTime(          missionType, difficulty, 1)
 	rules.cooldownAfterAttacks      = Default_CooldownAfterAttacks(      missionType, difficulty, 1)
@@ -76,7 +71,13 @@ function PrepareDefaultRules(rules, missionType, difficulty, params)
 	return rules
 end
 
-function PrepareCustomRules(rules, missionType)
+function PrepareCustomRules(rules, missionTypeOrParam)
+	local missionType = missionTypeOrParam or rules.params
+	if type (missionTypeOrParam) == "table" then 
+		local params = missionTypeOrParam
+		missionType  = params.missionType
+	end
+	
 	local attackCountMultiplier			= DifficultyService:GetAttacksCountMultiplier()
 	local prepareAttackTimeMultiplier	= DifficultyService:GetPrepareAttackTimeMultiplier()
 	local idleTimeMultiplier			= DifficultyService:IdleTimeMultiplier()
@@ -776,7 +777,7 @@ function Default_ObjectivesLogic(params)
 			{ name = "logic/objectives/kill_elite_dynamic",                     minDifficultyLevel = 3 },
 			{ name = "logic/objectives/destroy_nest_granan_single.logic",       minDifficultyLevel = 4 },
 			{ name = "logic/objectives/destroy_nest_granan_multiple.logic",     minDifficultyLevel = 6 },
-			{ name = "logic/objectives/destroy_creeper.logic",                  minDifficultyLevel = 3 } 
+			{ name = "logic/objectives/destroy_creeper.logic",                  minDifficultyLevel = 3 },
 		}
 	elseif params.biome == "caverns" then
 		return {
@@ -786,7 +787,7 @@ function Default_ObjectivesLogic(params)
 		return {
 			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 3 },
 			{ name = "logic/objectives/destroy_nest_mushbit_single.logic",      minDifficultyLevel = 3, maxDifficultyLevel = 8 },
-			{ name = "logic/objectives/destroy_nest_mushbit_multiple.logic",    minDifficultyLevel = 6 } 
+			{ name = "logic/objectives/destroy_nest_mushbit_multiple.logic",    minDifficultyLevel = 6 },
 		}
 	elseif params.biome == "ice" then
 		return {
@@ -798,13 +799,16 @@ function Default_ObjectivesLogic(params)
 		return {
 			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 5 },
 			{ name = "logic/objectives/destroy_nest_canoptrix_single.logic",    minDifficultyLevel = 3, maxDifficultyLevel = 8 },
-			{ name = "logic/objectives/destroy_nest_canoptrix_multiple.logic",  minDifficultyLevel = 5 }
+			{ name = "logic/objectives/destroy_nest_canoptrix_multiple.logic",  minDifficultyLevel = 5 },
+			{ name = "logic/objectives/destroy_creeper.logic",                  minDifficultyLevel = 8 }, 
+			{ name = "logic/objectives/destroy_fire_gnerot.logic",              minDifficultyLevel = 7 },
 		}
 	elseif params.biome == "magma" then
 		return {
 			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 3 },
 			{ name = "logic/objectives/destroy_nest_morirot_single.logic",      minDifficultyLevel = 3, maxDifficultyLevel = 8 }, 
-			{ name = "logic/objectives/destroy_nest_morirot_multiple.logic",    minDifficultyLevel = 6 }
+			{ name = "logic/objectives/destroy_nest_morirot_multiple.logic",    minDifficultyLevel = 6 },
+			{ name = "logic/objectives/destroy_fire_gnerot.logic",              minDifficultyLevel = 7 },
 		}
 	elseif params.biome == "metallic" then
 		return {
@@ -816,7 +820,7 @@ function Default_ObjectivesLogic(params)
 			{ name = "logic/objectives/destroy_nest_octabit_single.logic",      minDifficultyLevel = 5 }, 
 			{ name = "logic/objectives/destroy_nest_octabit_multiple.logic",    minDifficultyLevel = 7 },
 			{ name = "logic/objectives/destroy_nest_flurian_single.logic",      minDifficultyLevel = 6 }, 
-			{ name = "logic/objectives/destroy_nest_flurian_multiple.logic",    minDifficultyLevel = 8 }
+			{ name = "logic/objectives/destroy_nest_flurian_multiple.logic",    minDifficultyLevel = 8 },
 		}
 	elseif params.biome == "swamp" then
 		return {
@@ -827,7 +831,7 @@ function Default_ObjectivesLogic(params)
 			{ name = "logic/objectives/destroy_nest_plutrodon_single.logic",    minDifficultyLevel = 4 }, 
 			{ name = "logic/objectives/destroy_nest_plutrodon_multiple.logic",  minDifficultyLevel = 6 },
 			{ name = "logic/objectives/destroy_nest_fungor_single.logic",       minDifficultyLevel = 5 }, 
-			{ name = "logic/objectives/destroy_nest_fungor_multiple.logic",     minDifficultyLevel = 7 }
+			{ name = "logic/objectives/destroy_nest_fungor_multiple.logic",     minDifficultyLevel = 7 },
 		}
 	else
 		return {

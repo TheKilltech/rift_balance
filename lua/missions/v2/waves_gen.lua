@@ -607,7 +607,7 @@ end
 
 
 function wave_gen:PrepareDefaultRules(rules, missionType, difficulty, params)
-	return PrepareDefaultRules( rules, missionType, difficulty, params)
+	return PrepareDefaultRules( rules, params, missionType, difficulty)
 end
 
 function wave_gen:PrepareCustomRules(rules, missionType)
