@@ -43,6 +43,18 @@ function GetRulesForCustomDifficulty( name )
 	return name .. "default.lua";
 end
 
+function GetRulesPathForBiome(biomeName)
+	local biomeSubdir  = nil
+	if biomeName == "metallic"    then  biomeSubdir = "dlc_1"
+	elseif biomeName == "caverns" then  biomeSubdir = "dlc_2"
+	elseif biomeName == "swamp"   then  biomeSubdir = "dlc_3"
+	else 
+		biomeSubdir = "story/v2/" .. biomeName
+	end
+	
+	return "lua/missions/campaigns/".. biomeSubdir .. "/"
+end
+
 function GetShiftedDifficulty( difficulty, shiftDiff )
 	local effDiff = difficulty
 	

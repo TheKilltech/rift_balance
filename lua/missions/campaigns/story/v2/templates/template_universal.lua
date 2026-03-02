@@ -4761,30 +4761,7 @@ end
 function template_universal:Activated()
 	MissionService:ActivateMissionFlow("", "logic/missions/campaigns/story/template_jungle_resource.logic", "default" )
 	
-	local biomeName = self.mission_params.biome_name
-	local templateMap  = "resource"
-	local prefix       = "template_"
-	local postfix      = "default"
-	if Contains({"metallic", "caverns","swamp"}, biomeName) then
-		templateMap = "outpost"
-		prefix      = ""
-		postfix     = nil
-	elseif Contains({"acid", "jungle","magma"}, biomeName) then
-		prefix      = ""
-		postfix     = nil
-		if self.mission_params.mission_type == "exploration" then
-			templateMap = "find_rare_resource"
-		else
-			templateMap = "resource_outpost"
-		end
-	end
-	
-	local rulesPath = self:GetRulesPathForBiome(self.mission_params.biome_name)
-	if postfix then
-		rulesPath = rulesPath .. "dom_" .. prefix .. self.mission_params.biome_name .. "_".. templateMap.. "_rules_" .. postfix  .. ".lua"
-	else rulesPath = GetRulesForDifficulty( rulesPath .. "dom_" .. prefix .. self.mission_params.biome_name .. "_".. templateMap.. "_rules_" )
-	end
-	
+	local rulesPath = GetRulesForDifficulty( "lua/missions/campaigns/story/v2/templates/dom_template_universal_resource_rules_" )	
 	local params = {
 		rulesPath  = rulesPath,
 		rulesParam = {
@@ -4810,16 +4787,30 @@ function template_universal:Activated()
 end
 
 --- ToDo: move to rules_utils
-function template_universal:GetRulesPathForBiome(biomeName)
-	local biomeSubdir  = nil
-	if biomeName == "metallic"    then  biomeSubdir = "dlc_1"
-	elseif biomeName == "caverns" then  biomeSubdir = "dlc_2"
-	elseif biomeName == "swamp"   then  biomeSubdir = "dlc_3"
-	else 
-		biomeSubdir = "story/v2/" .. self.mission_params.biome_name
+function GetTemplateRulesForBiome(biomeName)
+	local templateMap  = "resource"
+	local prefix       = "template_"
+	local postfix      = "default"
+	if Contains({"metallic", "caverns","swamp"}, biomeName) then
+		templateMap = "outpost"
+		prefix      = ""
+		postfix     = nil
+	elseif Contains({"acid", "jungle","magma"}, biomeName) then
+		prefix      = ""
+		postfix     = nil
+		if self.mission_params.mission_type == "exploration" then
+			templateMap = "find_rare_resource"
+		else
+			templateMap = "resource_outpost"
+		end
 	end
 	
-	return "lua/missions/campaigns/".. biomeSubdir .. "/"
+	local rulesPath = self:GetRulesPathForBiome(self.mission_params.biome_name)
+	if postfix then
+		rulesPath = rulesPath .. "dom_" .. prefix .. self.mission_params.biome_name .. "_".. templateMap.. "_rules_" .. postfix  .. ".lua"
+	else rulesPath = GetRulesForDifficulty( rulesPath .. "dom_" .. prefix .. self.mission_params.biome_name .. "_".. templateMap.. "_rules_" )
+	end
+	return rulesPath
 end
 
 return template_universal

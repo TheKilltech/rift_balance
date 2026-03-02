@@ -1,4 +1,4 @@
-require("lua/missions/v2/waves_gen.lua" )
+require("lua/missions/v2/rules_gen.lua" )
 require("lua/utils/rules_utils.lua")
 require("lua/utils/table_utils.lua")
 	

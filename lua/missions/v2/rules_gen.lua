@@ -36,7 +36,9 @@ function PrepareDefaultRules(rules, missionType, difficulty, params)
 	rules.preparationTimeRelativeVariation = 0.55 -- X factor of idle time that may randomly vary: +/- X * prep_time
 	rules.preparationTimeCancelChance = 25        -- chance in percent
 
-	rules.gameEvents = Default_GameEvents( rules.params )
+	rules.gameEvents                = Default_GameEvents(           rules.params )
+	rules.objectivesLogic           = Default_ObjectivesLogic(      rules.params )
+	rules.addResourcesOnRunOut      = Default_AddResourcesOnRunOut( rules.params )
 	
 	-- events spawn chance during/after attack (cooldown state). event timing is random ranging from the start of attack to max cooldown time.
 	-- chances are consecutive, i.e. dice roll for event n+1 may only happen if roll for event n was also succefful
@@ -55,10 +57,7 @@ function PrepareDefaultRules(rules, missionType, difficulty, params)
 
 	rules.attackCountPerDifficulty  = Default_AttackCountPerDifficulty(  rules.params)
 	rules.waveRepeatChances         = Default_WaveRepeatChances(         rules.params)
-	
-	rules.waveChanceRerollSpawnGroup =  0  -- chance for rerolled attack wave to change its map border spawn direction (N/W/S/E)
-	rules.waveChanceRerollSpawn      = 15  -- chance for rerolled attack wave to change its spawning point
-	rules.waveChanceReroll           = 30  -- chance to reroll and replace an attack wave from its original wave pool
+	rules                           = Default_WaveChanceReroll( rules,   rules.params )
 	
 	rules.addResourcesOnRunOut = { }
 	rules.buildingsUpgradeStartsLogic = { }
@@ -624,6 +623,7 @@ function Default_GameEvents(missionTypeOrParam, difficulty, threat, biome, part)
 				{ action = "kermon_attack",             type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 7, logicFile="logic/event/kermon_attack.logic",               weight = weights[biome].kermon  * 1 },
 				{ action = "kermon_attack_hard",        type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 8, logicFile="logic/event/kermon_attack_hard.logic",          weight = weights[biome].kermon  * 0.75 },
 				{ action = "phirian_attack",            type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 5, logicFile="logic/event/phirian_attack.logic",              weight = weights[biome].phirian * 0.5 },
+				{ action = "phirian_attack_hard",       type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 5, logicFile="logic/event/phirian_attack_hard.logic",         weight = weights[biome].phirian * 0.25 },
 			}
 		elseif difficulty == "hard" then
 			return {
@@ -636,6 +636,7 @@ function Default_GameEvents(missionTypeOrParam, difficulty, threat, biome, part)
 				{ action = "kermon_attack_hard",        type = "NEGATIVE", gameStates="ATTACK",        minEventLevel = 9, logicFile="logic/event/kermon_attack_hard.logic",          weight = weights[biome].kermon  * 0.75 },
 				{ action = "kermon_attack_very_hard",   type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 8, logicFile="logic/event/kermon_attack_very_hard.logic",     weight = weights[biome].kermon  * 0.5 },
 				{ action = "phirian_attack",            type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 4, logicFile="logic/event/phirian_attack.logic",              weight = weights[biome].phirian * 0.5 },
+				{ action = "phirian_attack_hard",       type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 5, logicFile="logic/event/phirian_attack_hard.logic",         weight = weights[biome].phirian * 0.5 },
 			}
 		elseif Contains({"brutal", "extreme"}, difficulty) then
 			return {
@@ -648,6 +649,8 @@ function Default_GameEvents(missionTypeOrParam, difficulty, threat, biome, part)
 				{ action = "kermon_attack_very_hard",   type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 7, logicFile="logic/event/kermon_attack_very_hard.logic",     weight = weights[biome].kermon  * 0.5 },
 				{ action = "kermon_attack_very_hard",   type = "NEGATIVE", gameStates="ATTACK",        minEventLevel = 9, logicFile="logic/event/kermon_attack_very_hard.logic",     weight = weights[biome].kermon  * 0.5 },
 				{ action = "phirian_attack",            type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 3, logicFile="logic/event/phirian_attack.logic",              weight = weights[biome].phirian * 0.5 },
+				{ action = "phirian_attack_hard",       type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 5, logicFile="logic/event/phirian_attack_hard.logic",         weight = weights[biome].phirian * 0.5 },
+				{ action = "phirian_attack_very_hard",  type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 8, logicFile="logic/event/phirian_attack_very_hard.logic",    weight = weights[biome].phirian * 0.5 },
 		}
 		else --if difficulty == "easy" then
 			return {
@@ -714,11 +717,28 @@ function Default_GameEvents(missionTypeOrParam, difficulty, threat, biome, part)
 			}
 		elseif biome == "metallic" then
 			return {
-				{ action = "spawn_blue_hail",                type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 4,                    logicFile="logic/weather/blue_hail.logic",     minTime = 30, maxTime = 60, weight = 0.25 },
-				{ action = "spawn_thunderstorm",             type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 2,                    logicFile="logic/weather/thunderstorm.logic",  minTime = 60, maxTime = 120 },
-				{ action = "spawn_wind_strong",              type = "POSITIVE", gameStates="ATTACK|IDLE",    minEventLevel = 1,                    logicFile="logic/weather/wind_strong.logic",   minTime = 60,  maxTime = 120, weight = 1 },
+				{ action = "spawn_blue_hail",                type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 4,                    logicFile="logic/weather/blue_hail.logic",        minTime = 30, maxTime = 60,   weight = 0.25 },
+				{ action = "spawn_thunderstorm",             type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 2,                    logicFile="logic/weather/thunderstorm.logic",     minTime = 60, maxTime = 120 },
+				{ action = "spawn_wind_strong",              type = "POSITIVE", gameStates="ATTACK|IDLE",    minEventLevel = 1,                    logicFile="logic/weather/wind_strong.logic",      minTime = 60,  maxTime = 120, weight = 1 },
 			}
 		elseif biome == "swamp" then
+			return {
+				{ action = "spawn_blue_hail",                  type = "NEGATIVE", gameStates="ATTACK|IDLE",  minEventLevel = 4,                    logicFile="logic/weather/blue_hail.logic",        minTime = 30,  maxTime = 60,  weight = 0.25 },
+				{ action = "spawn_thunderstorm",               type = "NEGATIVE", gameStates="ATTACK|IDLE",  minEventLevel = 2,                    logicFile="logic/weather/thunderstorm.logic",     minTime = 60,  maxTime = 120 },
+				{ action = "spawn_fog",                        type = "NEGATIVE", gameStates="IDLE",         minEventLevel = 1,                    logicFile="logic/weather/fog.logic",              minTime = 60,  maxTime = 120, weight = 0.5  },
+				{ action = "spawn_rain",                       type = "NEGATIVE", gameStates="ATTACK|IDLE",  minEventLevel = 1,                    logicFile="logic/weather/rain.logic",             minTime = 120, maxTime = 120, weight = 0.5 },
+				{ action = "spawn_wind_strong",                type = "POSITIVE", gameStates="ATTACK|IDLE",  minEventLevel = 1,                    logicFile="logic/weather/wind_strong.logic",      minTime = 60,  maxTime = 120 },
+				{ action = "spawn_meteor_shower",              type = "NEGATIVE", gameStates="ATTACK|IDLE",  minEventLevel = 2,                    logicFile="logic/weather/meteor_shower.logic",    minTime = 30,  maxTime = 60,  weight = 0.5 },
+				{ action = "spawn_fireflies",                  type = "POSITIVE", gameStates="IDLE",         minEventLevel = 1,                    logicFile="logic/weather/fireflies.logic",        minTime = 60,  maxTime = 120, weight = 4 },
+				{ action = "spawn_blooming_air",               type = "POSITIVE", gameStates="IDLE",         minEventLevel = 5,                    logicFile="logic/weather/blooming_air.logic",     minTime = 120, maxTime = 180, weight = 4 },
+				{ action = "spawn_monsoon",                    type = "NEGATIVE", gameStates="ATTACK|IDLE",  minEventLevel = 1,                    logicFile="logic/weather/monsoon.logic",          minTime = 60,  maxTime = 120, weight = 2 },
+				{ action = "spawn_tornado_acid_near_player",   type = "NEGATIVE", gameStates="ATTACK|IDLE",  minEventLevel = 3, maxEventLevel = 4, logicFile="logic/weather/tornado_acid_near_player.logic", weight = 0.5 },
+				{ action = "spawn_tornado_acid_near_base",     type = "NEGATIVE", gameStates="IDLE",         minEventLevel = 4,                    logicFile="logic/weather/tornado_acid_near_base.logic",                         weight = 0.5 },
+				{ action = "spawn_comet_boss_mudroner_acid",   type = "NEGATIVE", gameStates="IDLE",         minEventLevel = 5,                    logicFile="logic/event/comet_boss_mudroner_acid.logic"  },
+				{ action = "spawn_comet_boss_mudroner_cryo",   type = "NEGATIVE", gameStates="IDLE",         minEventLevel = 5,                    logicFile="logic/event/comet_boss_mudroner_cryo.logic"  },
+				{ action = "spawn_comet_boss_mudroner_energy", type = "NEGATIVE", gameStates="IDLE",         minEventLevel = 5,                    logicFile="logic/event/comet_boss_mudroner_energy.logic"  },
+				{ action = "spawn_comet_boss_mudroner_fire",   type = "NEGATIVE", gameStates="IDLE",         minEventLevel = 5,                    logicFile="logic/event/comet_boss_mudroner_fire.logic"  },
+			}
 		else
 			return {
 				{ action = "spawn_earthquake",               type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 2,                    logicFile="logic/weather/earthquake.logic",        minTime = 30, maxTime = 60,  weight = 0.5 },
@@ -750,3 +770,166 @@ function Default_GameEvents(missionTypeOrParam, difficulty, threat, biome, part)
 	return gameEvents
 end
 
+function Default_ObjectivesLogic(params)
+	if params.biome == "acid" then
+		return {
+			{ name = "logic/objectives/kill_elite_dynamic",                     minDifficultyLevel = 3 },
+			{ name = "logic/objectives/destroy_nest_granan_single.logic",       minDifficultyLevel = 4 },
+			{ name = "logic/objectives/destroy_nest_granan_multiple.logic",     minDifficultyLevel = 6 },
+			{ name = "logic/objectives/destroy_creeper.logic",                  minDifficultyLevel = 3 } 
+		}
+	elseif params.biome == "caverns" then
+		return {
+			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 5 },
+		}
+	elseif params.biome == "desert" then
+		return {
+			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 3 },
+			{ name = "logic/objectives/destroy_nest_mushbit_single.logic",      minDifficultyLevel = 3, maxDifficultyLevel = 8 },
+			{ name = "logic/objectives/destroy_nest_mushbit_multiple.logic",    minDifficultyLevel = 6 } 
+		}
+	elseif params.biome == "ice" then
+		return {
+			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 4 },
+			{ name = "logic/objectives/destroy_nest_granan_ice_single.logic",   minDifficultyLevel = 3, maxDifficultyLevel = 8 },
+			{ name = "logic/objectives/destroy_nest_granan_ice_multiple.logic", minDifficultyLevel = 6 },
+		}
+	elseif params.biome == "jungle" then
+		return {
+			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 5 },
+			{ name = "logic/objectives/destroy_nest_canoptrix_single.logic",    minDifficultyLevel = 3, maxDifficultyLevel = 8 },
+			{ name = "logic/objectives/destroy_nest_canoptrix_multiple.logic",  minDifficultyLevel = 5 }
+		}
+	elseif params.biome == "magma" then
+		return {
+			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 3 },
+			{ name = "logic/objectives/destroy_nest_morirot_single.logic",      minDifficultyLevel = 3, maxDifficultyLevel = 8 }, 
+			{ name = "logic/objectives/destroy_nest_morirot_multiple.logic",    minDifficultyLevel = 6 }
+		}
+	elseif params.biome == "metallic" then
+		return {
+			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 3 },
+			{ name = "logic/objectives/destroy_nest_wingmite_single.logic",     minDifficultyLevel = 4 }, 
+			{ name = "logic/objectives/destroy_nest_wingmite_multiple.logic",   minDifficultyLevel = 6 },
+			{ name = "logic/objectives/destroy_nest_bradron_single.logic",      minDifficultyLevel = 4 }, 
+			{ name = "logic/objectives/destroy_nest_bradron_multiple.logic",    minDifficultyLevel = 6 },
+			{ name = "logic/objectives/destroy_nest_octabit_single.logic",      minDifficultyLevel = 5 }, 
+			{ name = "logic/objectives/destroy_nest_octabit_multiple.logic",    minDifficultyLevel = 7 },
+			{ name = "logic/objectives/destroy_nest_flurian_single.logic",      minDifficultyLevel = 6 }, 
+			{ name = "logic/objectives/destroy_nest_flurian_multiple.logic",    minDifficultyLevel = 8 }
+		}
+	elseif params.biome == "swamp" then
+		return {
+			{ name = "logic/objectives/kill_elite_baxmoth.logic",               minDifficultyLevel = 3 },
+			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 6 },
+			{ name = "logic/objectives/destroy_nest_stickrid_single.logic",     minDifficultyLevel = 3 }, 
+			{ name = "logic/objectives/destroy_nest_stickrid_multiple.logic",   minDifficultyLevel = 5 },
+			{ name = "logic/objectives/destroy_nest_plutrodon_single.logic",    minDifficultyLevel = 4 }, 
+			{ name = "logic/objectives/destroy_nest_plutrodon_multiple.logic",  minDifficultyLevel = 6 },
+			{ name = "logic/objectives/destroy_nest_fungor_single.logic",       minDifficultyLevel = 5 }, 
+			{ name = "logic/objectives/destroy_nest_fungor_multiple.logic",     minDifficultyLevel = 7 }
+		}
+	else
+		return {
+			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 3 },
+		}
+	end
+end
+	
+function Default_AddResourcesOnRunOut(params)
+	if params.biome == "acid" then
+		return {
+			{ name = "palladium_vein",       runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn = 3000,  maxToSpawn = 5000,  chance = 50 },
+			{ name = "palladium_deepvein",   runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn = 40000, maxToSpawn = 80000,                                                events = { "spawn_resource_earthquake" } },
+			{ name = "uranium_ore_vein",     runOutPercentageOnMap =  5, minEventLevel = 4, minToSpawn = 1000,  maxToSpawn = 2000,  chance = 5,  eventGroup = "uranium_completed"  },
+			{ name = "morphium_deepvein",    runOutPercentageOnMap = 10, minEventLevel = 4, isInfinite = 1,                         chance = 25, eventGroup = "morphium_unlocked", events = { "spawn_resource_comet" },      blueprint = "weather/alien_comet_flying"  },
+			{ name = "magma_deepvein",       runOutPercentageOnMap = 10, minEventLevel = 4, isInfinite = 1,                         chance = 15, eventGroup = "titanium_unlocked", events = { "spawn_resource_earthquake" }  },
+		}
+	elseif params.biome == "caverns" then
+		return {
+			{ name = "cobalt_vein",          runOutPercentageOnMap = 20, minEventLevel = 4, minToSpawn = 20000, maxToSpawn = 40000, chance = 35 },
+			{ name = "carbon_vein",          runOutPercentageOnMap = 20, minEventLevel = 4, minToSpawn = 30000, maxToSpawn = 60000, chance = 45 },
+			{ name = "ammonium_vein",        runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn = 10000, maxToSpawn = 20000, chance = 45,                                   events = { "spawn_resource_earthquake" }},
+			--{ name = "morphium_deepvein",    runOutPercentageOnMap = 10, minEventLevel = 4, isInfinite = 1,                         chance = 65, eventGroup = "morphium_unlocked", events = { "spawn_resource_comet" }, blueprint = "weather/alien_comet_flying"  },
+		}
+	elseif params.biome == "desert" then
+		return {
+			{ name = "uranium_ore_vein",     runOutPercentageOnMap =  5, minEventLevel = 4, minToSpawn =  2000, maxToSpawn =  5000, chance = 35 },
+			{ name = "uranium_ore_deepvein", runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn = 20000, maxToSpawn = 90000,                                                events = { "spawn_resource_earthquake" }},
+			{ name = "carbon_vein",          runOutPercentageOnMap =  5, minEventLevel = 4, minToSpawn =  2000, maxToSpawn =  5000, chance = 45 },
+			{ name = "carbon_deepvein",      runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn = 20000, maxToSpawn = 90000, chance = 15,                                   events = { "spawn_resource_earthquake" }},
+			{ name = "ammonium_vein",        runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn = 10000, maxToSpawn = 20000, chance = 45,                                   events = { "spawn_resource_earthquake" }},
+			{ name = "ammonium_deepvein",    runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn = 20000, maxToSpawn = 90000, chance = 15,                                   events = { "spawn_resource_earthquake" }},
+			{ name = "morphium_deepvein",    runOutPercentageOnMap = 10, minEventLevel = 4, isInfinite = 1,                         chance = 65, eventGroup = "morphium_unlocked", events = { "spawn_resource_comet" }, blueprint = "weather/alien_comet_flying"  },
+		}
+	elseif params.biome == "ice" then
+		return {
+			{ name = "palladium_vein",       runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn = 3000,  maxToSpawn = 5000, chance = 50 },
+			{ name = "palladium_deepvein",   runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn = 40000, maxToSpawn = 80000,                                                events = { "spawn_resource_earthquake" } },
+			{ name = "titanium_vein",        runOutPercentageOnMap =  5, minEventLevel = 4, minToSpawn = 1000,  maxToSpawn = 2000, chance = 5,   eventGroup = "titanium_completed"  },
+			{ name = "morphium_deepvein",    runOutPercentageOnMap = 10, minEventLevel = 4, isInfinite = 1,                        chance = 25,  eventGroup = "morphium_unlocked", events = { "spawn_resource_comet" },      blueprint = "weather/alien_comet_flying"  },
+		}
+	elseif params.biome == "jungle" then
+		return {
+			{ name = "cobalt_vein",          runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn =  2000, maxToSpawn =  4000, chance = 75,                                   events = { "spawn_resource_comet" }, },
+			{ name = "cobalt_deepvein",      runOutPercentageOnMap = 30, minEventLevel = 7, minToSpawn = 30000, maxToSpawn = 80000,                                                events = { "spawn_resource_earthquake" }, },
+			{ name = "cobalt_vein",          runOutPercentageOnMap = 10, minEventLevel = 5, minToSpawn =  3000, maxToSpawn =  5000, chance =  5 },
+			{ name = "iron_vein",            runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn =  3000, maxToSpawn =  5000, chance = 15 },
+			{ name = "iron_deepvein",        runOutPercentageOnMap = 20, minEventLevel = 5, minToSpawn = 30000, maxToSpawn = 90000, chance = 15,                                   events = { "spawn_resource_earthquake" }, },
+			{ name = "petroleum_deepvein",   runOutPercentageOnMap = 10, minEventLevel = 6, isInfinite = 1,                         chance = 10, eventGroup = "uranium_unlocked",  events = { "spawn_resource_earthquake" }, },
+		}
+	elseif params.biome == "magma" then
+		return {
+			{ name = "titanium_vein",        runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn =  2000, maxToSpawn =  4000, chance = 75 },
+			{ name = "titanium_deepvein",    runOutPercentageOnMap = 30, minEventLevel = 7, minToSpawn = 30000, maxToSpawn = 80000,                                                events = { "spawn_resource_earthquake" }, },
+			{ name = "cobalt_vein",          runOutPercentageOnMap = 10, minEventLevel = 5, minToSpawn =  3000, maxToSpawn =  5000, chance =  5 },
+			{ name = "iron_vein",            runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn =  3000, maxToSpawn =  5000, chance = 15 },
+			{ name = "iron_deepvein",        runOutPercentageOnMap = 20, minEventLevel = 5, minToSpawn = 30000, maxToSpawn = 90000, chance = 15,                                   events = { "spawn_resource_earthquake" }, },
+			{ name = "morphium_deepvein",    runOutPercentageOnMap = 10, minEventLevel = 8, isInfinite = 1,                         chance = 25, eventGroup = "morphium_unlocked", events = { "spawn_resource_comet" },   blueprint = "weather/alien_comet_flying"  },
+		}
+	elseif params.biome == "metallic" then
+		return {
+			{ name = "cobalt_vein",          runOutPercentageOnMap = 10, minEventLevel = 5, minToSpawn =  3000, maxToSpawn =  5000, chance =  5 },
+			{ name = "cobalt_vein",          runOutPercentageOnMap = 10, minEventLevel = 4, minToSpawn =  2000, maxToSpawn =  4000, chance = 75,                                   events = { "spawn_resource_comet" }, },
+			{ name = "cobalt_deepvein",      runOutPercentageOnMap = 10, minEventLevel = 7, minToSpawn = 30000, maxToSpawn = 80000,                                                events = { "spawn_resource_earthquake" }, },
+			{ name = "iron_vein",            runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn =  3000, maxToSpawn =  5000, chance = 15 },
+			{ name = "iron_deepvein",        runOutPercentageOnMap = 20, minEventLevel = 5, minToSpawn = 30000, maxToSpawn = 90000, chance = 15,                                   events = { "spawn_resource_earthquake" }, },
+			{ name = "titanium_deepvein",    runOutPercentageOnMap = 20, minEventLevel = 6, minToSpawn = 30000, maxToSpawn = 90000, chance = 25, eventGroup = "titanium_unlocked", events = { "spawn_resource_earthquake" }, },
+			{ name = "titanium_deepvein",    runOutPercentageOnMap = 20, minEventLevel = 6, isInfinite = 1,                         chance =  5, eventGroup = "titanium_unlocked", events = { "spawn_resource_earthquake" }, },
+		}
+	elseif params.biome == "swamp" then
+		return {
+			{ name = "cobalt_vein",          runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn = 10000, maxToSpawn = 20000, chance = 30 },
+			{ name = "palladium_vein",       runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn =  1000, maxToSpawn =  5000, chance = 15, eventGroup = "palladium_completed" },
+			{ name = "titanium_vein",        runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn =  1000, maxToSpawn =  5000, chance = 15, eventGroup = "titanium_completed" },
+		}
+	else
+		return {
+			{ name = "carbon_vein",          runOutPercentageOnMap =  5, minEventLevel = 4, minToSpawn =  2000, maxToSpawn =  5000, chance = 45 },
+			{ name = "carbon_deepvein",      runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn = 20000, maxToSpawn = 90000, chance = 15,                                   events = { "spawn_resource_earthquake" }},
+			{ name = "ammonium_vein",        runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn = 10000, maxToSpawn = 20000, chance = 45,                                   events = { "spawn_resource_earthquake" }},
+			{ name = "ammonium_deepvein",    runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn = 20000, maxToSpawn = 90000, chance = 15,                                   events = { "spawn_resource_earthquake" }},
+			{ name = "iron_vein",            runOutPercentageOnMap = 30, minEventLevel = 4, minToSpawn =  3000, maxToSpawn =  5000, chance = 15 },
+			{ name = "iron_deepvein",        runOutPercentageOnMap = 20, minEventLevel = 5, minToSpawn = 30000, maxToSpawn = 90000, chance = 15,                                   events = { "spawn_resource_earthquake" }, },
+		}
+	end
+end
+
+function Default_WaveChanceReroll(rules, params)
+	local chances = {
+		acid     = { waveChanceReroll = 40, waveChanceRerollSpawn = 10, waveChanceRerollSpawnGroup =  5 },
+		caverns  = { waveChanceReroll = 40, waveChanceRerollSpawn = 20, waveChanceRerollSpawnGroup =  0 },
+		desert   = { waveChanceReroll = 30, waveChanceRerollSpawn = 25, waveChanceRerollSpawnGroup = 20 },
+		ice      = { waveChanceReroll = 30, waveChanceRerollSpawn = 20, waveChanceRerollSpawnGroup = 10 },
+		jungle   = { waveChanceReroll = 40, waveChanceRerollSpawn = 25, waveChanceRerollSpawnGroup = 10 },
+		magma    = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup =  0 },
+		metallic = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup =  0 },
+		swamp    = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup =  0 },
+		general  = { waveChanceReroll = 30, waveChanceRerollSpawn = 20, waveChanceRerollSpawnGroup =  0 },
+	}
+
+	rules.waveChanceRerollSpawnGroup = chances[params.biome].waveChanceRerollSpawnGroup -- chance for rerolled attack wave to change its map border spawn direction (N/W/S/E)
+	rules.waveChanceRerollSpawn      = chances[params.biome].waveChanceRerollSpawn      -- chance for rerolled attack wave to change its spawning point
+	rules.waveChanceReroll           = chances[params.biome].waveChanceReroll           -- chance to reroll and replace an attack wave from its original wave pool
+	return rules
+end
