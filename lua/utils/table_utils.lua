@@ -63,6 +63,7 @@ function Concat(t1,t2)
     for _,v in ipairs(t2) do 
         Insert(t1, v)
     end
+	return t1
 end
 
 function ConcatUnique(t1,t2)

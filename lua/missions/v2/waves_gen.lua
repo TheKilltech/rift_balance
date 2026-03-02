@@ -213,6 +213,27 @@ function GetWaveLogic( level, id, biome, suffix )
 	return waveFile
 end
 
+function ApplyDifficultyOffsetToWaves( waves, offset )
+	
+	local offsetWaves = {}
+	for i = 1, 9 do
+		offsetWaves[i] = Copy( waves[i-offset] or {})
+	end
+
+    return offsetWaves
+end
+
+function ConcatWaves( waves, waves2 )
+	if waves.default or waves2.default then
+		return ConcatWaves( waves.default or {}, waves2.default or {})
+	end
+	
+	for i = 1, 9 do
+		Concat( waves[i], waves2[i] )
+	end
+    return waves
+end
+
 
 function PrepareDefaultRules(rules, missionType, difficulty, params)
 	-- missionType: { "hq", "outpost", "resource", "survival", "scout", "exploration","temp" }
@@ -349,6 +370,8 @@ function Default_Waves(biomeOrParam, missionType, difficulty,  waves)
 		biomeVisitors2 = params.biomeVisitors2
 	end
 	
+	LogService:Log("Default_Waves (biome '"..tostring(biome).. "' missionType '"..tostring(missionType).. "' difficulty '"..tostring(difficulty).."' threat '"..tostring(threat).. "')")
+	
 	if not waves then waves = {["default"] = GetEmptyWaves( false )} end
 	
 	local mainWaves = Default_UnboxedWaves(biome, missionType, difficulty, nil)
@@ -375,7 +398,7 @@ function Default_Waves(biomeOrParam, missionType, difficulty,  waves)
 end
 
 function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
-	local threat = 8
+	local threat = nil
 	local biome  = biomeOrParam
 	if type (biomeOrParam) == "table" then 
 		local params   = biomeOrParam
@@ -389,7 +412,9 @@ function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
 	local ds = DefaultWaveDiffSettings( biome, missionType)
 	difficulty = GetEffectiveDifficulty( difficulty, threat )
 	
-	if Contains({"outpost","resource", "hq"}, missionType) then
+	LogService:Log("Default_UnboxedWaves (biome '"..tostring(biome).. "' missionType '"..tostring(missionType).. "' difficulty '"..tostring(difficulty).."' threat '"..tostring(threat).. "')")
+	
+	if Contains({"outpost","resource", "hq", "survival"}, missionType) then
 		if Contains({"brutal", "extreme"}, difficulty)    then
 			waves = GenerateWavesBlock({ difficulty = { 1, 2, 3, 4 },               biomes = { biome },  levels = { 1, 2 }, suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves, true)
 			waves = GenerateWavesBlock({ difficulty = {    2, 3, 4, 5, 6},          biomes = { biome },  levels = { 1, 2 }, suffixes = { "ultra" },      repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves, true)
@@ -428,7 +453,7 @@ function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
 			waves = GenerateWavesBlock({ difficulty = {                   7, 8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "", "alpha" },  repeatInterval = 1.5, weightDyn = 1.0,   diffSettings = ds},   waves, true)
 		end
 		
-	elseif Contains({"late"}, missionType) then
+	elseif Contains({"exploration"}, missionType) then
 		if (difficulty == "brutal")      then
 			waves = GenerateWavesBlock({ difficulty = { 4, 5, 6, 7},       biomes = { biome },  levels = { 2 },      suffixes = { "ultra" },          repeatInterval = 1,   weightDynBr = 1.0, },  waves, true)
 			waves = GenerateWavesBlock({ difficulty = { 4, 5, 6, 7},       biomes = { biome },  levels = { 3 },      suffixes = { "" },               repeatInterval = 1,   weightDynBr = 1.0, },  waves, true)
@@ -437,6 +462,7 @@ function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
 			waves = GenerateWavesBlock({ difficulty = {       6, 7, 8,  }, biomes = { biome },  levels = { 4 },      suffixes = { "" },               repeatInterval = 1,   weightDynBr = 1.0, },  waves, true)
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9}, biomes = { biome },  levels = { 4 },      suffixes = { "alpha" },          repeatInterval = 1.2, weightDynBr = 1.0, },  waves, true)
 			waves = GenerateWavesBlock({ difficulty = {             8, 9}, biomes = { biome },  levels = { 4 },      suffixes = { "ultra" },          repeatInterval = 1.2, weightDynBr = 1.0, },  waves, true)
+			waves = GenerateWavesBlock({ difficulty = {                9}, biomes = { biome },  levels = { 5 },      suffixes = { "" },               repeatInterval = 1.2, weightDynBr = 1.0, },  waves, true)
 			waves = GenerateWavesBlock({ difficulty = {                9}, biomes = { biome },  levels = { 5 },      suffixes = { "alpha" },          repeatInterval = 1.5, weightDynBr = 1.0, },  waves, true)
 		
 		elseif (difficulty == "hard")    then
@@ -456,6 +482,16 @@ function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
 			waves = GenerateWavesBlock({ difficulty = {       6, 7, 8, 9}, biomes = { biome },  levels = { 4 },      suffixes = { "" },               repeatInterval = 1,   weightDyn = 1.5,   },  waves, true)
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9}, biomes = { biome },  levels = { 4 },      suffixes = { "alpha" },          repeatInterval = 1,   weightDyn = 1.0,   },  waves, true)
 		end
+		
+	elseif Contains({"late"}, missionType) then
+		ConcatWaves(waves, ApplyDifficultyOffsetToWaves( Default_UnboxedWaves(biome, "outpost", difficulty, nil), 3))
+	
+	elseif Contains({"scout"}, missionType) then
+		ConcatWaves(waves, ApplyDifficultyOffsetToWaves( Default_UnboxedWaves(biome, "outpost", difficulty, nil), 4))
+		
+	elseif Contains({"peaceful"}, missionType) then
+		ConcatWaves(waves, ApplyDifficultyOffsetToWaves( Default_UnboxedWaves(biome, "outpost", difficulty, nil), 5))
+		
 	end
 	
 	return waves
@@ -1117,8 +1153,8 @@ function Default_GameEvents(missionTypeOrParam, difficulty, threat, biome, part)
 		Concat( gameEvents, Default_GameEvents( missionType, difficulty, threat, biome, "general"))
 		Concat( gameEvents, Default_GameEvents( missionType, difficulty, threat, biome, "attacks"))
 		Concat( gameEvents, Default_GameEvents( missionType, difficulty, threat, biome, "biome"))
-		if (biomeVisit1 or "none") ~= "none" then
-			Concat( gameEvents, Default_GameEvents( missionType, difficulty, threat, biomeVisit1, "biome"))
+		if ((biomeVisit1 or "none") ~= "none") and biome ~= "caverns" then
+			Concat( gameEvents, Default_GameEvents( missionType, difficulty, threat, biomeVisit1, "biome_core"))
 		end
 		
 	elseif part == "general" then
@@ -1270,10 +1306,10 @@ function Default_GameEvents(missionTypeOrParam, difficulty, threat, biome, part)
 		
 	elseif part == "biome" then
 		if biome == "caverns" then
-			return Default_GameEvents(missionType, difficulty, threat, "general", "biome_core")
+			return Default_GameEvents( missionType, difficulty, threat, "general", "biome_core")
 		else
-			Concat( gameEvents, Default_GameEvents(missionType, difficulty, threat, "general", "biome_core"))
-			Concat( gameEvents, Default_GameEvents(missionType, difficulty, threat, biome,    "biome_core"))
+			Concat( gameEvents, Default_GameEvents( missionType, difficulty, threat, "general", "biome_core"))
+			Concat( gameEvents, Default_GameEvents( missionType, difficulty, threat, biome,     "biome_core"))
 		end
 		
 	else
