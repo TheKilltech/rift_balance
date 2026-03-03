@@ -9,12 +9,14 @@ function PrepareDefaultRules(rules, params, missionType, difficulty)
 	-- difficulty:  { "easy", "default", "hard", "brutal" }
 	
 	params = params or rules.params or {}
-	if not params.rulesPosfix		 then params.rulesPosfix = difficulty or DifficultyService:GetWaveStrength() end
-	if not params.difficulty		 then params.difficulty  = difficulty or DifficultyService:GetCurrentDifficultyName() end
-	if not params.threat			 then params.threat      = 8 end
-	if not params.missionType		 then params.missionType = missionType or "exploration" end
-	if not params.biome 			 then params.biome       = MissionService:GetCurrentBiomeName() end
-	if params.difficulty == "custom" then params.difficulty  = DifficultyService:GetWaveStrength() end
+	if not params.rulesPosfix		 then params.rulesPosfix    = difficulty or DifficultyService:GetWaveStrength() end
+	if not params.difficulty		 then params.difficulty     = difficulty or DifficultyService:GetCurrentDifficultyName() end
+	if not params.threat			 then params.threat         = 8 end
+	if not params.missionType		 then params.missionType    = missionType or "exploration" end
+	if not params.biome 			 then params.biome          = MissionService:GetCurrentBiomeName() end
+	if not params.biomeVisitors1	 then params.biomeVisitors1 = "none"
+	if not params.biomeVisitors2	 then params.biomeVisitors2 = "none"
+	if params.difficulty == "custom" then params.difficulty     = DifficultyService:GetWaveStrength() end
 	rules.params = params or {}
 	
 	local effectiveDiff = GetEffectiveDifficulty( rules.params.difficulty, rules.params.threat )
@@ -42,29 +44,25 @@ function PrepareDefaultRules(rules, params, missionType, difficulty)
 	rules.spawnCooldownEventChance = { 35, 20, 20 }
 	
 	
-	rules.prepareAttackDefinitions  = Default_PrepareAttackDefinitions(  missionType, difficulty )
-	rules.wavesEntryDefinitions     = Default_WavesEntryDefinitions(     missionType, difficulty, biome )
+	rules.buildingsUpgradeStartsLogic = Default_BuildingsUpgradeStartsLogic(missionType, difficulty )
+	rules.majorAttackLogic            = Default_MajorAttackLogic(           missionType, difficulty )
+	rules.prepareAttackDefinitions    = Default_PrepareAttackDefinitions(   missionType, difficulty )
+	rules.wavesEntryDefinitions       = Default_WavesEntryDefinitions(      missionType, difficulty, biome )
 	
-	rules.prepareSpawnTime          = Default_PrepareSpawnTime(          missionType, difficulty, 1)
-	rules.cooldownAfterAttacks      = Default_CooldownAfterAttacks(      missionType, difficulty, 1)
-	rules.idleTime                  = Default_IdleTime(                  missionType, difficulty, 1)
-	rules.timeToNextDifficultyLevel = Default_TimeToNextDifficultyLevel( missionType, difficulty, 1)
+	rules.prepareSpawnTime            = Default_PrepareSpawnTime(           missionType, difficulty, 1)
+	rules.cooldownAfterAttacks        = Default_CooldownAfterAttacks(       missionType, difficulty, 1)
+	rules.idleTime                    = Default_IdleTime(                   missionType, difficulty, 1)
+	rules.timeToNextDifficultyLevel   = Default_TimeToNextDifficultyLevel(  missionType, difficulty, 1)
 
-	rules.attackCountPerDifficulty  = Default_AttackCountPerDifficulty(  rules.params)
-	rules.waveRepeatChances         = Default_WaveRepeatChances(         rules.params)
-	rules                           = Default_WaveChanceReroll( rules,   rules.params )
+	rules.attackCountPerDifficulty    = Default_AttackCountPerDifficulty(   rules.params)
+	rules.waveRepeatChances           = Default_WaveRepeatChances(          rules.params)
+	rules                             = Default_WaveChanceReroll( rules,    rules.params )
 	
-	rules.addResourcesOnRunOut = { }
-	rules.buildingsUpgradeStartsLogic = { }
 	rules.maxAttackCountPerDifficulty = { } -- outdated by this mod, but _custom map scrips scale this
 	
 	rules.waves      = {}
 	rules.extraWaves = {}
 	rules.bosses     = {}
-	
-	rules.majorAttackLogic = {
-		{ level = 1, minLevel = 5, prepareTime = 120, entryLogic = "logic/hq_upgrade/upgrade_entry_lvl1.logic", exitLogic = "logic/hq_upgrade/upgrade_exit_lvl1.logic" },
-	}
 	
 	--LogService:Log( PrintTable( rules ))
 	
@@ -109,6 +107,46 @@ function PrepareCustomRules(rules, missionTypeOrParam)
 		rules.timeToNextDifficultyLevel[i] = rules.timeToNextDifficultyLevel[i] * (1 + (progressionMultiplier-1)*(9-i)/8.0)
 	end
 	return rules
+end
+
+function Default_BuildingsUpgradeStartsLogic(missionTypeOrParam, difficulty)
+	local missionType = missionTypeOrParam
+	if type (missionTypeOrParam) == "table" then 
+		local params = missionTypeOrParam
+		missionType  = params.missionType
+	end
+	
+	if Contains({"hq"}, missionType) then
+		return {
+			{ name = "headquarters_lvl_2", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_1_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_1_exit.logic" },   
+			{ name = "headquarters_lvl_3", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_2_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_2_exit.logic" },   
+			{ name = "headquarters_lvl_4", level = 2, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
+			{ name = "headquarters_lvl_5", level = 2, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
+			{ name = "headquarters_lvl_6", level = 2, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
+			{ name = "headquarters_lvl_7", level = 2, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
+		}
+	rules.majorAttackLogic = {
+		{ minLevel = 5, level = 1, prepareTime = 120, entryLogic = "logic/hq_upgrade/upgrade_entry_lvl1.logic", exitLogic = "logic/hq_upgrade/upgrade_exit_lvl1.logic" },
+	}
+	else
+		return { }
+	end
+end
+
+function Default_MajorAttackLogic(missionTypeOrParam, difficulty)
+	local missionType = missionTypeOrParam
+	if type (missionTypeOrParam) == "table" then 
+		local params = missionTypeOrParam
+		missionType  = params.missionType
+	end
+	
+	if Contains({"outpost"}, missionType) then
+		return {
+			{ minLevel = 5, level = 1, prepareTime = 120, entryLogic = "logic/hq_upgrade/upgrade_entry_lvl1.logic", exitLogic = "logic/hq_upgrade/upgrade_exit_lvl1.logic" },
+		}
+	else
+		return { }
+	end
 end
 
 function Default_PrepareAttackDefinitions( missionType, difficulty )
