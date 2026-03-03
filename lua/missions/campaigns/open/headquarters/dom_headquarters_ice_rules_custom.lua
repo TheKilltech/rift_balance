@@ -1,11 +1,9 @@
-require("lua/utils/rules_utils.lua")
+require("lua/missions/v2/rules_gen.lua" )
 
 return function(params)
-	local helper    = require( "lua/missions/v2/waves_gen.lua" )
-	local rulesName = GetRulesForCustomDifficulty( "lua/missions/campaigns/open/headquarters/dom_headquarters_ice_rules_" )
+	local rulesName = GetRulesForCustomDifficulty( "lua/missions/campaigns/open/headquarters/dom_headquarters_ice_rules_")
 	rules = require( rulesName )(params)
+	rules = PrepareCustomRules( rules )
 	
-	rules = helper:PrepareCustomRules( rules, "hq")
-	
-	return rules
+    return rules
 end
