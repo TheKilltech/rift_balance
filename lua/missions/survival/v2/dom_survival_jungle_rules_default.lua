@@ -1,6 +1,4 @@
 require("lua/missions/v2/rules_gen.lua" )
-require("lua/utils/rules_utils.lua")
-require("lua/utils/table_utils.lua")
 	
 return function(params)
 	-- param missionType: { "hq", "resource", "outpost", "survival", "scout", "exploration" }
@@ -73,7 +71,7 @@ return function(params)
 		},
 	}
 	
-	LogService:Log( PrintTable ( rules ))
+	--LogService:Log( PrintTable ( rules ))
 	
     return rules
 end

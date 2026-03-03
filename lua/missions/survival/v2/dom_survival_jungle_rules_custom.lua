@@ -1,6 +1,4 @@
 require("lua/missions/v2/rules_gen.lua" )
-require("lua/utils/rules_utils.lua")
-require("lua/utils/table_utils.lua")
 
 return function(params)
 	local rulesName = GetRulesForCustomDifficulty( "lua/missions/survival/v2/dom_survival_jungle_rules_")
