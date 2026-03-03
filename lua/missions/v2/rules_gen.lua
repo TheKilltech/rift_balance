@@ -1,8 +1,5 @@
 rules_gen_lock = {}
 waves_gen_lock = waves_gen_lock or require("lua/missions/v2/waves_gen.lua")
---require("lua/utils/table_utils.lua")
---require("lua/utils/rules_utils.lua")
-
 
 function PrepareDefaultRules(rules, params, missionType, difficulty)
 	-- missionType: { "hq", "outpost", "resource", "survival", "scout", "exploration","temp" }
@@ -14,8 +11,8 @@ function PrepareDefaultRules(rules, params, missionType, difficulty)
 	if not params.threat			 then params.threat         = 8 end
 	if not params.missionType		 then params.missionType    = missionType or "exploration" end
 	if not params.biome 			 then params.biome          = MissionService:GetCurrentBiomeName() end
-	if not params.biomeVisitors1	 then params.biomeVisitors1 = "none"
-	if not params.biomeVisitors2	 then params.biomeVisitors2 = "none"
+	if not params.biomeVisitors1	 then params.biomeVisitors1 = "none" end
+	if not params.biomeVisitors2	 then params.biomeVisitors2 = "none" end
 	if params.difficulty == "custom" then params.difficulty     = DifficultyService:GetWaveStrength() end
 	rules.params = params or {}
 	
