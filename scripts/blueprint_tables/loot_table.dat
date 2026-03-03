@@ -33389,6 +33389,42 @@ Blueprints
 
 	}
 
+	LootItems "props/mushrooms/frospore_big_01"
+	LootItems "props/mushrooms/frospore_big_01_skin1"
+	LootItems "props/mushrooms/frospore_big_01_skin2"
+	LootItems "props/mushrooms/frospore_big_02"
+	LootItems "props/mushrooms/frospore_big_02_skin1"
+	LootItems "props/mushrooms/frospore_big_02_skin2"
+	LootItems "props/mushrooms/frospore_big_03"
+	LootItems "props/mushrooms/frospore_big_03_skin1"
+	LootItems "props/mushrooms/frospore_big_03_skin2"
+	LootItems "props/mushrooms/frospore_medium_01"
+	LootItems "props/mushrooms/frospore_medium_01_skin1"
+	LootItems "props/mushrooms/frospore_medium_01_skin2"
+	LootItems "props/mushrooms/frospore_medium_02"
+	LootItems "props/mushrooms/frospore_medium_02_skin1"
+	LootItems "props/mushrooms/frospore_medium_02_skin2"
+	LootItems "props/mushrooms/frospore_medium_03"
+	LootItems "props/mushrooms/frospore_medium_03_skin1"
+	LootItems "props/mushrooms/frospore_medium_03_skin2"
+	LootItems "props/mushrooms/frospore_small_01"
+	LootItems "props/mushrooms/frospore_small_01_skin1"
+	LootItems "props/mushrooms/frospore_small_01_skin2"
+	LootItems "props/mushrooms/frospore_small_02"
+	LootItems "props/mushrooms/frospore_small_02_skin1"
+	LootItems "props/mushrooms/frospore_small_02_skin2"
+	LootItems "props/mushrooms/frospore_small_03"
+	LootItems "props/mushrooms/frospore_small_03_skin1"
+	LootItems "props/mushrooms/frospore_small_03_skin2"
+	LootItems "props/mushrooms/frospore_very_small_01"
+	LootItems "props/mushrooms/frospore_very_small_01_skin1"
+	LootItems "props/mushrooms/frospore_very_small_01_skin2"
+	LootItems "props/mushrooms/frospore_very_small_02"
+	LootItems "props/mushrooms/frospore_very_small_02_skin1"
+	LootItems "props/mushrooms/frospore_very_small_02_skin2"
+	LootItems "props/mushrooms/frospore_very_small_03"
+	LootItems "props/mushrooms/frospore_very_small_03_skin1"
+	LootItems "props/mushrooms/frospore_very_small_03_skin2"
 	LootItems "props/mushrooms/lumio_big_01"
 	{
 		LootItem "items/loot/resources/biomass_plant_item"
@@ -48603,6 +48639,46 @@ Blueprints
 
 	}
 
+	LootItems "props/special/loot_containers/loot_container_ice_advanced"
+	{
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "500"
+			max "1000"
+			package_size "20"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "500"
+			max "1000"
+			package_size "20"
+		}
+
+	}
+
+	LootItems "props/special/loot_containers/loot_container_ice_extreme"
+	{
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "2000"
+			max "4000"
+			package_size "80"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "2000"
+			max "4000"
+			package_size "80"
+		}
+
+	}
+
 	LootItems "props/special/loot_containers/loot_container_ice_small_bulb"
 	{
 		LootItem "items/loot/resources/shard_carbonium_item"
@@ -48679,6 +48755,46 @@ Blueprints
 			min "375"
 			max "750"
 			package_size "20"
+		}
+
+	}
+
+	LootItems "props/special/loot_containers/loot_container_ice_standard"
+	{
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "10"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "10"
+		}
+
+	}
+
+	LootItems "props/special/loot_containers/loot_container_ice_superior"
+	{
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "1000"
+			max "2000"
+			package_size "40"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "1000"
+			max "2000"
+			package_size "40"
 		}
 
 	}
@@ -71519,6 +71635,81 @@ Blueprints
 
 	}
 
+	LootItems "units/ground/egg_bradron"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+	}
+
+	LootItems "units/ground/egg_bradron_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+	}
+
+	LootItems "units/ground/egg_bradron_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+	}
+
 	LootItems "units/ground/egg_canoptrix"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -72167,6 +72358,81 @@ Blueprints
 
 	}
 
+	LootItems "units/ground/egg_octabit"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+	}
+
+	LootItems "units/ground/egg_octabit_alpha"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+	}
+
+	LootItems "units/ground/egg_octabit_ultra"
+	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "0.0500"
+			min "2"
+			max "7"
+			package_size "20"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+	}
+
 	LootItems "units/ground/egg_phirian"
 	LootItems "units/ground/egg_phirian_alpha"
 	LootItems "units/ground/egg_phirian_ultra"
@@ -72471,7 +72737,297 @@ Blueprints
 	}
 
 	LootItems "units/ground/elite_alien_tower_artillery_elite_base"
+	{
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0300"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0100"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0200"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
 	LootItems "units/ground/elite_alien_tower_plasma_elite_base"
+	{
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "0.5000"
+			min "25"
+			max "50"
+			gather_amount "50"
+			package_size "5"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
+		LootItem "mods_advanced"
+		{
+			chance "0.0300"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "2"
+		}
+
+		LootItem "mods_extreme"
+		{
+			chance "0.0100"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "4"
+		}
+
+		LootItem "mods_standard"
+		{
+			chance "0.0400"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "1"
+		}
+
+		LootItem "mods_superior"
+		{
+			chance "0.0200"
+			min "1"
+			max "1"
+			condition "familiarity_level"
+			condition_value "3"
+		}
+
+	}
+
 	LootItems "units/ground/elite_base"
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
@@ -72786,6 +73342,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_bradron_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -72826,6 +73498,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_canceroth_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -72866,6 +73654,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_canoptrix_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -72906,6 +73810,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_flurian_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -72946,6 +73966,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_fungor_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -72986,6 +74122,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_granan_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -73026,6 +74278,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_granan_ice_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -73066,6 +74434,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_morirot_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -73106,6 +74590,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_morirot_mega_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -73146,6 +74746,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_mushbit_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -73186,6 +74902,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_octabit_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -73226,6 +75058,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_plutrodon_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -73266,6 +75214,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_stickrid_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -73306,6 +75370,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_wingmite_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -73346,6 +75526,122 @@ Blueprints
 
 	LootItems "units/ground/elite_spawner_wingmite_mega_elite_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_cobalt_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
+		LootItem "items/loot/resources/shard_hazenite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_hazenite"
+		}
+
+		LootItem "items/loot/resources/shard_palladium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_palladium"
+		}
+
+		LootItem "items/loot/resources/shard_rhodonite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_rhodonite"
+		}
+
+		LootItem "items/loot/resources/shard_steel_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+		}
+
+		LootItem "items/loot/resources/shard_tanzanite_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_tanzanite"
+		}
+
+		LootItem "items/loot/resources/shard_titanium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_titanium"
+		}
+
+		LootItem "items/loot/resources/shard_uranium_item"
+		{
+			chance "1.0000"
+			min "250"
+			max "500"
+			gather_amount "500"
+			package_size "50"
+			condition "has_research"
+			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+		}
+
 		LootItem "mods_advanced"
 		{
 			chance "0.4000"
@@ -85592,20 +87888,20 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
 		{
-			chance "0.1500"
-			min "5"
-			max "10"
-			package_size "20"
+			chance "1.0000"
+			min "20"
+			max "40"
+			package_size "10"
 			condition "has_research"
 			condition_value "gui/menu/research/name/biomass_energy_lvl1"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
-			chance "0.1500"
-			min "2"
-			max "4"
-			gather_amount "8"
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
 			package_size "5"
 		}
 
@@ -85622,7 +87918,7 @@ Blueprints
 
 		LootItem "mods_advanced"
 		{
-			chance "0.0008"
+			chance "0.0300"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85631,7 +87927,7 @@ Blueprints
 
 		LootItem "mods_extreme"
 		{
-			chance "0.0004"
+			chance "0.0100"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85640,7 +87936,7 @@ Blueprints
 
 		LootItem "mods_standard"
 		{
-			chance "0.0010"
+			chance "0.0400"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85649,7 +87945,7 @@ Blueprints
 
 		LootItem "mods_superior"
 		{
-			chance "0.0006"
+			chance "0.0200"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85662,20 +87958,20 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
 		{
-			chance "0.1500"
-			min "5"
-			max "10"
-			package_size "20"
+			chance "1.0000"
+			min "20"
+			max "40"
+			package_size "10"
 			condition "has_research"
 			condition_value "gui/menu/research/name/biomass_energy_lvl1"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
-			chance "0.1500"
-			min "2"
-			max "4"
-			gather_amount "8"
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
 			package_size "5"
 		}
 
@@ -85692,7 +87988,7 @@ Blueprints
 
 		LootItem "mods_advanced"
 		{
-			chance "0.0008"
+			chance "0.0300"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85701,7 +87997,7 @@ Blueprints
 
 		LootItem "mods_extreme"
 		{
-			chance "0.0004"
+			chance "0.0100"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85710,7 +88006,7 @@ Blueprints
 
 		LootItem "mods_standard"
 		{
-			chance "0.0010"
+			chance "0.0400"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85719,7 +88015,7 @@ Blueprints
 
 		LootItem "mods_superior"
 		{
-			chance "0.0006"
+			chance "0.0200"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85730,9 +88026,39 @@ Blueprints
 
 	LootItems "units/ground/shegret_base"
 	{
+		LootItem "items/loot/resources/biomass_animal_item"
+		{
+			chance "1.0000"
+			min "20"
+			max "40"
+			package_size "10"
+			condition "has_research"
+			condition_value "gui/menu/research/name/biomass_energy_lvl1"
+		}
+
+		LootItem "items/loot/resources/shard_carbonium_item"
+		{
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
+			package_size "5"
+		}
+
+		LootItem "items/loot/resources/shard_ferdonite_item"
+		{
+			chance "0.5000"
+			min "3"
+			max "6"
+			gather_amount "5"
+			package_size "3"
+			condition "has_research"
+			condition_value "gui/menu/research/name/resource_handling_ferdonite"
+		}
+
 		LootItem "mods_advanced"
 		{
-			chance "0.0008"
+			chance "0.0300"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85741,7 +88067,7 @@ Blueprints
 
 		LootItem "mods_extreme"
 		{
-			chance "0.0004"
+			chance "0.0100"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85750,7 +88076,7 @@ Blueprints
 
 		LootItem "mods_standard"
 		{
-			chance "0.0010"
+			chance "0.0400"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85759,7 +88085,7 @@ Blueprints
 
 		LootItem "mods_superior"
 		{
-			chance "0.0006"
+			chance "0.0200"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85772,20 +88098,20 @@ Blueprints
 	{
 		LootItem "items/loot/resources/biomass_animal_item"
 		{
-			chance "0.1500"
-			min "5"
-			max "10"
-			package_size "20"
+			chance "1.0000"
+			min "20"
+			max "40"
+			package_size "10"
 			condition "has_research"
 			condition_value "gui/menu/research/name/biomass_energy_lvl1"
 		}
 
 		LootItem "items/loot/resources/shard_carbonium_item"
 		{
-			chance "0.1500"
-			min "2"
-			max "4"
-			gather_amount "8"
+			chance "0.3000"
+			min "3"
+			max "6"
+			gather_amount "12"
 			package_size "5"
 		}
 
@@ -85802,7 +88128,7 @@ Blueprints
 
 		LootItem "mods_advanced"
 		{
-			chance "0.0008"
+			chance "0.0300"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85811,7 +88137,7 @@ Blueprints
 
 		LootItem "mods_extreme"
 		{
-			chance "0.0004"
+			chance "0.0100"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85820,7 +88146,7 @@ Blueprints
 
 		LootItem "mods_standard"
 		{
-			chance "0.0010"
+			chance "0.0400"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -85829,7 +88155,7 @@ Blueprints
 
 		LootItem "mods_superior"
 		{
-			chance "0.0006"
+			chance "0.0200"
 			min "1"
 			max "1"
 			condition "familiarity_level"
@@ -90096,6 +92422,7 @@ ColumnGroups
 		items/loot/resources/specimen_arachnoid_crystal_item
 		items/loot/resources/specimen_artigian_item
 		items/loot/resources/specimen_bomogan_ice_item
+		items/loot/resources/specimen_brabit_ice_item
 		items/loot/resources/specimen_brabit_item
 		items/loot/resources/specimen_bradron_item
 		items/loot/resources/specimen_bush_cibarium_blue_item
@@ -90173,6 +92500,7 @@ ColumnGroups
 		items/loot/resources/specimen_plutrodon_item
 		items/loot/resources/specimen_poogret_item
 		items/loot/resources/specimen_spawner_alien_item
+		items/loot/resources/specimen_spawner_ice_item
 		items/loot/resources/specimen_spawner_swamp_canceroth_item
 		items/loot/resources/specimen_spawner_swamp_item
 		items/loot/resources/specimen_stickrid_item
@@ -117689,6 +120017,36 @@ BlueprintOverrides
 
 	}
 
+	Blueprint "units/ground/egg_bradron"
+	{
+		Items
+		{
+			ferdonite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_bradron_alpha"
+	{
+		Items
+		{
+			ferdonite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_bradron_ultra"
+	{
+		Items
+		{
+			ferdonite_big
+			biomass_animal_small
+		}
+
+	}
+
 	Blueprint "units/ground/egg_canoptrix"
 	{
 		Items
@@ -117962,6 +120320,36 @@ BlueprintOverrides
 
 	}
 
+	Blueprint "units/ground/egg_octabit"
+	{
+		Items
+		{
+			ferdonite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_octabit_alpha"
+	{
+		Items
+		{
+			ferdonite_big
+			biomass_animal_small
+		}
+
+	}
+
+	Blueprint "units/ground/egg_octabit_ultra"
+	{
+		Items
+		{
+			ferdonite_big
+			biomass_animal_small
+		}
+
+	}
+
 	Blueprint "units/ground/egg_plutrodon"
 	{
 		Items
@@ -118078,6 +120466,30 @@ BlueprintOverrides
 		{
 			biomass_animal_small
 			ferdonite_big
+		}
+
+	}
+
+	Blueprint "units/ground/elite_alien_tower_artillery_elite_base"
+	{
+		Items
+		{
+			mods_ext_very_big
+			mods_std_very_big
+			mods_adv_very_big
+			mods_sup_very_big
+		}
+
+	}
+
+	Blueprint "units/ground/elite_alien_tower_plasma_elite_base"
+	{
+		Items
+		{
+			mods_ext_very_big
+			mods_std_very_big
+			mods_adv_very_big
+			mods_sup_very_big
 		}
 
 	}
@@ -120760,12 +123172,12 @@ BlueprintOverrides
 	{
 		Items
 		{
-			mods_ext_medium
-			mods_std_medium
-			mods_adv_medium
-			mods_sup_medium
-			carbonium_medium
-			biomass_animal_medium
+			mods_ext_very_big
+			mods_std_very_big
+			mods_adv_very_big
+			mods_sup_very_big
+			carbonium_big
+			biomass_animal_very_big
 			ferdonite_big
 		}
 
@@ -120775,12 +123187,12 @@ BlueprintOverrides
 	{
 		Items
 		{
-			mods_ext_medium
-			mods_std_medium
-			mods_adv_medium
-			mods_sup_medium
-			carbonium_medium
-			biomass_animal_medium
+			mods_ext_very_big
+			mods_std_very_big
+			mods_adv_very_big
+			mods_sup_very_big
+			carbonium_big
+			biomass_animal_very_big
 			ferdonite_big
 		}
 
@@ -120790,10 +123202,13 @@ BlueprintOverrides
 	{
 		Items
 		{
-			mods_ext_medium
-			mods_std_medium
-			mods_adv_medium
-			mods_sup_medium
+			mods_ext_very_big
+			mods_std_very_big
+			mods_adv_very_big
+			mods_sup_very_big
+			carbonium_big
+			ferdonite_big
+			biomass_animal_very_big
 		}
 
 	}
@@ -120802,12 +123217,12 @@ BlueprintOverrides
 	{
 		Items
 		{
-			mods_ext_medium
-			mods_std_medium
-			mods_adv_medium
-			mods_sup_medium
-			carbonium_medium
-			biomass_animal_medium
+			mods_ext_very_big
+			mods_std_very_big
+			mods_adv_very_big
+			mods_sup_very_big
+			carbonium_big
+			biomass_animal_very_big
 			ferdonite_big
 		}
 

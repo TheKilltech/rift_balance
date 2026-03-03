@@ -236,35 +236,6 @@ EntityBlueprint
 		fog_of_war_filtering "1"
 	}
 
-	BurstWeaponComponent
-	{
-		WeaponMuzzles
-		{
-			WeaponMuzzle
-			{
-				attachment "att_muzzle"
-				recoil_bone  "be_recoil"
-				recoil_time   "0.2"
-				recoil_offset   "0.4"
-			}
-		}
-
-		WeaponAffector
-		{
-			emissive_time "0.35"
-			emissive_factor "4" // "6"
-			submesh_idx "1"
-		}
-
-		ammo_blueprint 				"buildings/defense/tower_icicle_thrower_projectile"
-
-		muzzle_flash_effect 		"effects/weapons_elemental/cryo_sentry_muzzle"
-
-		burst_column_spacing 		"0"
-		burst_rate 					"0"
-		burst_column_angle 			"0"
-	}
-
 	DestroyDesc
 	{
 
@@ -363,7 +334,7 @@ EntityBlueprint
 		}
 	}
 
-		BurstWeaponComponent
+	BurstWeaponComponent
 	{
 		WeaponMuzzles
 		{
@@ -378,8 +349,8 @@ EntityBlueprint
 
 		WeaponAffector
 		{
-			emissive_time "0.35"
-			emissive_factor "3"
+			emissive_time "0.3"
+			emissive_factor "10"
 			submesh_idx "0"
 		}
 			
