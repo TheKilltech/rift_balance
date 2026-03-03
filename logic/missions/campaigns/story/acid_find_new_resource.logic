@@ -1,8 +1,8 @@
-//editor "scroll(2673.40,-15.40)|zoom(0.80)"
+//editor "scroll(450.36,-331.06)|zoom(0.67)"
 FlowGraphTemplate
 {
-	version "25"
-	editor "6380"
+	version "26"
+	editor "6723"
 	GraphNodes
 	{
 		LuaBehaviourNode
@@ -931,7 +931,7 @@ FlowGraphTemplate
 		{
 			//editor "layout(interface_dialogue_show_group.xml)|pos(922,974)"
 			global "0"
-			interrupt "0"
+			interrupt "1"
 			priority "1.00"
 			self_id "interface_dialogue_show_group_3"
 			timeout "0"
@@ -954,7 +954,7 @@ FlowGraphTemplate
 		{
 			//editor "layout(interface_dialogue_show_group.xml)|pos(893,1713)"
 			global "0"
-			interrupt "0"
+			interrupt "1"
 			priority "1.00"
 			self_id "interface_dialogue_show_group_4"
 			timeout "0"
@@ -1006,7 +1006,7 @@ FlowGraphTemplate
 					FloatData
 					{
 						key "duration"
-						value "300"
+						value "240"
 					}
 
 				}
@@ -1796,6 +1796,12 @@ FlowGraphTemplate
 						value "1"
 					}
 
+					IntData
+					{
+						key "always_visible"
+						value "0"
+					}
+
 				}
 
 				Strings
@@ -2273,6 +2279,479 @@ FlowGraphTemplate
 
 			script "lua/graph/interface/interface_minimap_show_zone_objective.lua"
 			self_id "interface_minimap_show_zone_objective_1"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(df_logic_player_list.xml)|pos(2073,699)"
+			script "lua/graph/logic/df_logic_player_list.lua"
+			self_id "df_logic_player_list_2"
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(df_entity_array_compare.xml)|pos(3267,723)"
+			database
+			{
+				compare_type "string:'equal'"
+				compare_value "int:'2'"
+			}
+
+			script "lua/graph/entity/df_entity_array_compare.lua"
+			self_id "df_entity_array_compare_2"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_true.xml)|pos(3267,875)"
+			key "true"
+			self_id "df_entity_array_compare_2###true"
+			value
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_false.xml)|pos(3267,903)"
+			key "false"
+			self_id "df_entity_array_compare_2###false"
+			value
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(df_entity_array_compare.xml)|pos(2805,373)"
+			database
+			{
+				compare_type "string:'equal'"
+				compare_value "int:'1'"
+			}
+
+			script "lua/graph/entity/df_entity_array_compare.lua"
+			self_id "df_entity_array_compare_1"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_true.xml)|pos(2805,525)"
+			key "true"
+			self_id "df_entity_array_compare_1###true"
+			value
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_false.xml)|pos(2805,553)"
+			key "false"
+			self_id "df_entity_array_compare_1###false"
+			value
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(df_entity_array_compare.xml)|pos(3766,1015)"
+			database
+			{
+				compare_type "string:'equal'"
+				compare_value "int:'3'"
+			}
+
+			script "lua/graph/entity/df_entity_array_compare.lua"
+			self_id "df_entity_array_compare_3"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_true.xml)|pos(3766,1167)"
+			key "true"
+			self_id "df_entity_array_compare_3###true"
+			value
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_false.xml)|pos(3766,1195)"
+			key "false"
+			self_id "df_entity_array_compare_3###false"
+			value
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(df_entity_array_compare.xml)|pos(4215,1306)"
+			database
+			{
+				compare_type "string:'equal'"
+				compare_value "int:'4'"
+			}
+
+			script "lua/graph/entity/df_entity_array_compare.lua"
+			self_id "df_entity_array_compare_4"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_true.xml)|pos(4215,1459)"
+			key "true"
+			self_id "df_entity_array_compare_4###true"
+			value
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_false.xml)|pos(4215,1487)"
+			key "false"
+			self_id "df_entity_array_compare_4###false"
+			value
+		}
+
+		OrBehaviourNode
+		{
+			//editor "layout(logic_or.xml)|pos(4667,518)"
+			self_id "logic_or_4"
+		}
+
+		OrBehaviourNode
+		{
+			//editor "layout(logic_or.xml)|pos(5755,847)"
+			self_id "logic_or_5"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(df_logic_player_to_entity.xml)|pos(2363,697)"
+			script "lua/graph/logic/df_logic_player_to_entity.lua"
+			self_id "df_logic_player_to_entity_2"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_and.xml)|pos(6280,557)"
+			script "lua/graph/logic/logic_and.lua"
+			self_id "logic_and_1"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_gather_resource.xml)|pos(4883,752)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "progress_max"
+						value "650"
+					}
+
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "is_additional"
+						value "1"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "0"
+					}
+
+					IntData
+					{
+						key "finish_objective"
+						value "1"
+					}
+
+					IntData
+					{
+						key "always_visible"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value "lua/objectives/gather_resource.lua"
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/story/acid_find_new_resource/main.gather_palladium"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "main.gather_palladium"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value "main"
+					}
+
+					StringData
+					{
+						key "resource_name"
+						value "palladium"
+					}
+
+					StringData
+					{
+						key "wait"
+						value "true"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_gather_resource_5"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_gather_resource.xml)|pos(4883,1055)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "progress_max"
+						value "800"
+					}
+
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "is_additional"
+						value "1"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "0"
+					}
+
+					IntData
+					{
+						key "finish_objective"
+						value "1"
+					}
+
+					IntData
+					{
+						key "always_visible"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value "lua/objectives/gather_resource.lua"
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/story/acid_find_new_resource/main.gather_palladium"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "main.gather_palladium"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value "main"
+					}
+
+					StringData
+					{
+						key "resource_name"
+						value "palladium"
+					}
+
+					StringData
+					{
+						key "wait"
+						value "true"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_gather_resource_6"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_gather_resource.xml)|pos(4877,1349)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "progress_max"
+						value "1000"
+					}
+
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "is_additional"
+						value "1"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "0"
+					}
+
+					IntData
+					{
+						key "finish_objective"
+						value "1"
+					}
+
+					IntData
+					{
+						key "always_visible"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value "lua/objectives/gather_resource.lua"
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/story/acid_find_new_resource/main.gather_palladium"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "main.gather_palladium"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value "main"
+					}
+
+					StringData
+					{
+						key "resource_name"
+						value "palladium"
+					}
+
+					StringData
+					{
+						key "wait"
+						value "true"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_gather_resource_7"
 		}
 
 	}

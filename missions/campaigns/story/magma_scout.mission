@@ -57,8 +57,8 @@ MissionDef
 	min_starting_distance "16.0"
     max_starting_distance "96.0"
     
-    creature_volumes_min_distance   "90.0"
-	creature_volumes_density        "0.7"
+    creature_volumes_min_distance   "128.0"
+	creature_volumes_density        "0.6"
 
     threat  "0.25"
     ambient_creature_species
@@ -207,24 +207,7 @@ MissionDef
                     // make a roll to check if blueprint can be spawned
                     spawn_chance           0.5
                 }
-
-                spawners/magma_spawner_advanced
-                {
-                    spawn_instances_minmax 3,5
-                    spawn_chance           0.2
-                }
-
-                spawners/magma_spawner_superior
-                {
-                    spawn_instances_minmax 2,3
-                    spawn_chance           0.2
-                }
-
-                spawners/magma_spawner_extreme
-                {
-                    spawn_instances_minmax 1,2
-                    spawn_chance           0.1
-                }
+                
             }
         }
 		

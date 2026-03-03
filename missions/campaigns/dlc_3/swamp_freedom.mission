@@ -254,6 +254,35 @@ MissionDef
             }
         }
 		
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "nest,enemy"
+			spawn_team               "enemy"
+            spawn_at_marker          "logic/spawn_objective"			
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  200
+				mission_objective   100
+				loot_containers     30
+				nest				50
+            }
+            
+            spawn_instances_minmax    4,8
+
+            spawn_blueprints
+            {
+                spawner_stickrid_elite 
+				{
+					spawn_type				"creature_species"
+					database
+					{	
+						ambient_spawner        string:"true"						
+					}
+				}
+			}
+        }	
+		
 		GridSpawner
         {
             spawn_pool               "poogret_plants"            		
@@ -262,11 +291,12 @@ MissionDef
 			
 			spawn_min_distance_from_pools
             {
-                player_spawn_point 		 150
-                loot_containers    		 30
-                loot_containers_small    20
-				poogret_plants			 200
-				resource_volumes		 20
+                player_spawn_point 		 	150
+                loot_containers    		 	30
+                loot_containers_small    	20
+				poogret_plants			 	200
+				resource_volumes		 	20
+				nest						10
             }
             
             spawn_blueprints
@@ -291,6 +321,7 @@ MissionDef
 				resource_volumes		5
 				poogret_plants			5
 				tower_plant				15
+				nest					10
             }
 			spawn_max_distance_from_pools
             {                
@@ -361,6 +392,7 @@ MissionDef
                 loot_containers     5.0
 				resource_volumes	2
 				poogret_plants		5
+				nest				5
             }
             
             spawn_blueprints
@@ -389,6 +421,7 @@ MissionDef
                 loot_containers     5.0
 				resource_volumes	2
 				poogret_plants		5
+				nest				5
             }
             
             spawn_blueprints
@@ -417,6 +450,7 @@ MissionDef
                 loot_containers     5.0
 				resource_volumes	2
 				poogret_plants		5
+				nest				5
             }
             
             spawn_blueprints
@@ -445,6 +479,7 @@ MissionDef
                 loot_containers     5.0
 				resource_volumes	2
 				poogret_plants		5
+				nest				5
             }
             
             spawn_blueprints

@@ -111,6 +111,18 @@ function template_universal:Prepare()
 		swamp    = "resin"
 	}
 	
+	self.missionNestSpecies =
+	{
+		acid = "spawner_granan_elite",
+		caverns = "",
+		desert = "spawner_mushbit_elite",
+		ice = "spawner_granan_ice_elite",
+		jungle = "spawner_canoptrix_elite",
+		magma = "spawner_morirot_elite",
+		metallic = "spawner_wingmite_elite",
+		swamp = "spawner_stickrid_elite"
+	}
+	
 	self.missionBiocacheName =
 	{
 		acid     = "spawners/loot_container_small_acid",
@@ -198,6 +210,7 @@ function template_universal:Prepare()
 	}
 end
 
+-- This method is ran by the map generator UI to establish initial map generator parameters
 function template_universal:PrepareMissionGeneratorParams( params )	
 	--local mission_params = 
 	--{
@@ -307,9 +320,10 @@ end
 function template_universal:PrepareMapGenerator(params)
     --MapGenerator:SetGeneratorSeed( 9001 )
 	self.mission_params = params
-
+	
+	-- LAUNCH FROM CONSOLE SAFEGUARD - if the map generator is not ran from the Planetary Scanner screen then initialize map generator parameters here
 	if self.mission_params.biome_name == "" then
-		self.mission_params.biome_name = "ice"
+		self.mission_params.biome_name = "jungle"
 
 		self.mission_params.mission_type = self.data:GetStringOrDefault("mission_type", "exploration")
 		self:PrepareMissionGeneratorParams(self.mission_params)
@@ -3143,6 +3157,71 @@ function template_universal:PrepareMissionObjects()
             }
         }
     }
+	-- AMBIENT NEST
+	-- THREAT LEVEL MULTIPLIERS	
+	local nest_map_size_count = 
+	{
+		[1]		= {4},
+		[2]		= {5},
+		[3]		= {6},
+		[4]		= {7},
+		[5]		= {8},
+		[6]		= {9},
+		[7]		= {10},
+		[8]		= {11},
+		[9]		= {12},
+		[10]	= {14}
+	}
+	
+	local nest_threat_multiplier = 
+	{
+		[1]		= {0.25},
+		[2]		= {0.30},
+		[3]		= {0.35},
+		[4]		= {0.40},
+		[5]		= {0.50},
+		[6]		= {0.60},
+		[7]		= {0.70},
+		[8]		= {0.80},
+		[9]		= {0.90},
+		[10]	= {1.00}
+	}	
+	
+	local nestCount = nest_map_size_count[self.mission_params.mission_size][1] or 8
+	local nestMultiplier = nest_threat_multiplier[self.mission_params.threat_level][1] or 0.5
+	self.missionNestCount = nestCount * nestMultiplier
+	
+	local nest = 
+    {
+        spawner_type                    = "MarkerBlueprintSpawner",
+
+        spawn_pool                      = { "nest", "enemy" },
+        spawn_at_marker                 = "logic/spawn_objective",
+
+        spawn_min_distance_from_pools = 
+        {
+            mission_objective   	    = 100,
+			player_spawn_point          = 200,
+            loot_containers             = 30,
+            loot_containers_small       = 15,
+			underground_treasures       = 15,
+			nest						= 50,
+			resource_volumes            = 10
+        },
+		
+		spawn_instances_minmax = { min = self.missionNestCount, max = self.missionNestCount},
+
+        spawn_blueprints =
+        {
+            {
+                spawn_species         	= self.missionNestSpecies[self.mission_params.biome_name],   
+				database =
+                {	
+                    ambient_spawner		= "true",
+                }
+            }            
+        }
+    }
     -- BIOCACHE
 	local biocache = 
     {
@@ -3159,6 +3238,7 @@ function template_universal:PrepareMissionObjects()
             underground_treasures       = 10,
 			resource_volumes		    = 10,
 			enemy					    = 5,
+			nest					    = 10,
 			cryo_plants				    = 25,
 			magnetic_rocks			    = 25
         },
@@ -3199,6 +3279,7 @@ function template_universal:PrepareMissionObjects()
             underground_treasures       = 10,
 			resource_volumes		    = 10,
 			enemy					    = 5,
+			nest					    = 10,
 			power_well				    = 450,
 			cryo_plants				    = 25,
 			magnetic_rocks			    = 25,
@@ -3268,6 +3349,7 @@ function template_universal:PrepareMissionObjects()
             loot_containers_small       = 50,
             underground_treasures       = self.missionUndergroundTreasureDistance,
             resource_volumes		    = 10,
+            nest					    = 10,
             enemy					    = 5,
             power_well				    = 15,
             cryo_plants				    = 15,
@@ -3561,6 +3643,7 @@ function template_universal:PrepareMissionObjects()
             loot_containers_small       = 50,
             underground_treasures       = 100,
             resource_volumes		    = 10,
+            nest					    = 10,
             enemy					    = 5,
             power_well				    = 15,
             cryo_plants				    = 15,
@@ -3598,6 +3681,7 @@ function template_universal:PrepareMissionObjects()
             loot_containers             = 50,
             loot_containers_small       = 50,            
             resource_volumes		    = 10,
+            nest					    = 10,
             enemy					    = 5,
             power_well				    = 15,
             cryo_plants				    = 15,
@@ -3687,6 +3771,7 @@ function template_universal:PrepareMissionObjects()
             loot_containers             = 15.0,
             magnetic_rocks  	        = 10.0,
             cryo_plants		            = 10.0,
+            nest			            = 10.0,
             resource_volumes	        = 5,
         },
 
@@ -3746,6 +3831,7 @@ function template_universal:PrepareMissionObjects()
 			loot_containers             = 15.0,
 			cryo_plants     	        = 10.0,
 			magnetic_rocks     	        = 20.0,
+			nest		     	        = 20.0,
 			resource_volumes   	        = 10.0
 		},
 
@@ -3806,6 +3892,7 @@ function template_universal:PrepareMissionObjects()
 		{
 			player_spawn_point          = 250,
 			loot_containers             = 50,			
+			nest			            = 50,			
 			resource_volumes   	        = 10
 		},		
 		
@@ -3841,6 +3928,7 @@ function template_universal:PrepareMissionObjects()
 			underground_treasures	    = 70,			
 			underground_mushrooms	    = 70,			
 			power_well				    = 30,			
+			nest					    = 30,			
 			resource_volumes   	        = 5
 		},	
 		spawn_blueprints =
@@ -3869,6 +3957,7 @@ function template_universal:PrepareMissionObjects()
 			underground_treasures	    = 70,			
 			underground_mushrooms	    = 180,			
 			power_well				    = 30,			
+			nest					    = 30,			
 			resource_volumes   	        = 5
 		},	
 		spawn_blueprints =
@@ -3900,6 +3989,7 @@ function template_universal:PrepareMissionObjects()
 			loot_containers_small       = 20,			
 			underground_treasures       = 10,			
 			power_well					= 10,			
+			nest						= 10,			
 			resource_volumes   	        = 10
 		},		
 		
@@ -3932,6 +4022,7 @@ function template_universal:PrepareMissionObjects()
 			loot_containers_small       = 20,			
 			underground_treasures       = 10,			
 			power_well					= 10,			
+			nest						= 10,			
 			resource_volumes   	        = 10
 		},		
 
@@ -3960,6 +4051,7 @@ function template_universal:PrepareMissionObjects()
 			underground_treasures	    = 5,						
 			power_well				    = 30,			
 			tower_alien				    = 10,			
+			nest					    = 10,			
 			enemy					    = 5,			
 			resource_volumes   	        = 5
 		},
@@ -3998,6 +4090,7 @@ function template_universal:PrepareMissionObjects()
 			underground_treasures	    = 5,						
 			power_well				    = 30,			
 			tower_alien				    = 10,			
+			nest					    = 10,			
 			enemy					    = 5,			
 			resource_volumes   	        = 5
 		},
@@ -4037,6 +4130,7 @@ function template_universal:PrepareMissionObjects()
 			loot_containers_small       = 20,			
 			underground_treasures	    = 5,						
 			power_well				    = 30,						
+			nest					    = 10,
 			resource_volumes   	        = 10
 		},		
 		spawn_blueprints =
@@ -4063,7 +4157,8 @@ function template_universal:PrepareMissionObjects()
 			loot_containers_small       = 5,			
 			underground_treasures	    = 5,						
 			power_well				    = 10,			
-			tower_plant				    = 15,			
+			tower_plant				    = 15,
+			nest					    = 10,			
 			enemy					    = 5,			
 			resource_volumes   	        = 5
 		},
@@ -4104,7 +4199,8 @@ function template_universal:PrepareMissionObjects()
 			underground_treasures	    = 5,						
 			power_well				    = 10,			
 			tower_plant				    = 12,			
-			enemy					    = 5,			
+			enemy					    = 5,
+			nest					    = 10,
 			resource_volumes   	        = 5,
 			poogret_plants				= 5
 		},
@@ -4143,7 +4239,8 @@ function template_universal:PrepareMissionObjects()
 			underground_treasures	    = 2,						
 			power_well				    = 5,			
 			tower_plant				    = 5,			
-			enemy					    = 5,			
+			enemy					    = 5,
+			nest					    = 10,
 			resource_volumes   	        = 2,
 			poogret_plants				= 5
         },
@@ -4179,7 +4276,8 @@ function template_universal:PrepareMissionObjects()
 			loot_containers_small       = 5,			
 			underground_treasures	    = 2,						
 			power_well				    = 5,			
-			tower_plant				    = 5,									
+			tower_plant				    = 5,
+			nest					    = 10,
 			resource_volumes   	        = 2,
 			poogret_plants				= 5
         },
@@ -4215,7 +4313,8 @@ function template_universal:PrepareMissionObjects()
 			loot_containers_small       = 5,			
 			underground_treasures	    = 2,						
 			power_well				    = 5,			
-			tower_plant				    = 5,									
+			tower_plant				    = 5,
+			nest					    = 10,
 			resource_volumes   	        = 2,
 			poogret_plants				= 5
         },
@@ -4250,7 +4349,8 @@ function template_universal:PrepareMissionObjects()
 			loot_containers             = 5,			
 			loot_containers_small       = 5,			
 			underground_treasures	    = 2,						
-			power_well				    = 5,														
+			power_well				    = 5,
+			nest					    = 10,
 			resource_volumes   	        = 2,
 			poogret_plants				= 5
         },
@@ -4289,7 +4389,8 @@ function template_universal:PrepareMissionObjects()
 			loot_containers_small       = 8,			
 			underground_treasures	    = 5,						
 			power_well				    = 10,			
-			tower_plant				    = 8,			
+			tower_plant				    = 8,
+			nest					    = 10,
 			enemy					    = 5,			
 			resource_volumes   	        = 5			
 		},
@@ -4300,11 +4401,9 @@ function template_universal:PrepareMissionObjects()
 		spawn_blueprints =
 		{
 			{
-				spawn_blueprint         = "units/ground/carnicinth_ice",
-				--spawn_blueprint         = "carnicinth_ice",	
+				spawn_species         = "carnicinth_ice",				
 				spawn_chance			= 0.2,
-				spawn_culls_entities_around	= false,
-				--spawn_type				= "creature_species"
+				spawn_culls_entities_around	= false,				
 			},
 			{
 				spawn_blueprint         = "logic/position_marker_temporary",
@@ -4329,7 +4428,8 @@ function template_universal:PrepareMissionObjects()
 			loot_containers             = 8,			
 			loot_containers_small       = 8,			
 			underground_treasures	    = 5,						
-			power_well				    = 10,			
+			power_well				    = 10,
+			nest					    = 10,
 			tower_plant				    = 8,			
 			enemy					    = 5,			
 			resource_volumes   	        = 5			
@@ -4340,12 +4440,10 @@ function template_universal:PrepareMissionObjects()
 		},	
 		spawn_blueprints =
 		{
-			{
-				spawn_blueprint         = "units/ground/carnicinth_ice",
-				--spawn_blueprint         = "carnicinth_ice",	
+			{				
+				spawn_species         = "carnicinth_ice",	
 				spawn_chance			= 0.2,
-				spawn_culls_entities_around	= false,
-				--spawn_type				= "creature_species"
+				spawn_culls_entities_around	= false,				
 			},
 			{
 				spawn_blueprint         = "logic/position_marker_temporary",
@@ -4359,6 +4457,11 @@ function template_universal:PrepareMissionObjects()
 	table.insert(mission_object_spawners, 1, mission_objective_marker )
 	if self.missionBioanomaliesMultiplier ~= 0 then
 		table.insert(mission_object_spawners, #mission_object_spawners + 1, bioanomaly )
+	end
+	if self.missionNestSpecies[self.mission_params.biome_name] ~= "" then
+		table.insert(mission_object_spawners, #mission_object_spawners + 1, nest )
+	end
+	if self.missionBioanomaliesMultiplier ~= 0 then
 		table.insert(mission_object_spawners, #mission_object_spawners + 1, biocache )		
 	end
 	
