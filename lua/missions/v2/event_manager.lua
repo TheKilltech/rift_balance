@@ -187,6 +187,47 @@ function event_manager:FillInitialParamsEventManager()
 		self.availableEventGroups.swamp = true
 		progress = progress + 0.4
 	end
+	if ( campaignData:GetStringOrDefault("global.acid_outpost_complete", "" ) == "true" ) then 
+		self.availableEventGroups.palladium_completed = true
+		self.availableEventGroups.acid                = true
+		progress = progress + 1
+	end  
+	if ( campaignData:GetStringOrDefault("global.caverns_outpost_complete", "" ) == "true" ) then 
+		self.availableEventGroups.cobalt_completed    = true
+		self.availableEventGroups.caverns             = true
+		progress = progress + 1
+	end  
+	if ( campaignData:GetStringOrDefault("global.desert_outpost_complete", "" ) == "true" ) then 
+		self.availableEventGroups.uranium_completed   = true
+		self.availableEventGroups.desert              = true
+		progress = progress + 1
+	end  
+	if ( campaignData:GetStringOrDefault("global.ice_outpost_complete", "" ) == "true" ) then 
+		self.availableEventGroups.palladium_completed = true
+		self.availableEventGroups.ice                 = true
+		progress = progress + 1
+	end  
+	if ( campaignData:GetStringOrDefault("global.jungle_outpost_complete", "" ) == "true" ) then 
+		self.availableEventGroups.cobalt_completed    = true
+		self.availableEventGroups.jungle              = true
+		progress = progress + 1
+	end  
+	if ( campaignData:GetStringOrDefault("global.magma_outpost_complete", "" ) == "true" ) then 
+		self.availableEventGroups.titanium_completed  = true
+		self.availableEventGroups.magma               = true
+		progress = progress + 1
+	end  
+	if ( campaignData:GetStringOrDefault("global.metallic_outpost_complete", "" ) == "true" ) then 
+		self.availableEventGroups.titanium_completed  = true
+		self.availableEventGroups.morphium_unlocked   = true
+		self.availableEventGroups.metallic            = true
+		progress = progress + 1
+	end  
+	if ( campaignData:GetStringOrDefault("global.swamp_outpost_complete", "" ) == "true" ) then 
+		self.availableEventGroups.palladium_completed = true
+		self.availableEventGroups.swamp               = true
+		progress = progress + 1
+	end  
 	if cobaltAccess then progress = progress + 0.5 end
 	self.campaignProgressLevel = progress
 	--if ( campaignData:GetStringOrDefault("global.metallic_start", "" ) == "true" ) then end
@@ -1332,6 +1373,16 @@ function event_manager:SpawnEvent( action, participants )
 		( translatedEventName == "spawn_comet_boss_mudroner_energy" ) or
 		( translatedEventName == "spawn_comet_boss_mudroner_fire" ) or
 		--SWAMP EVENTS END
+		--ICE EVENTS START
+		( translatedEventName == "spawn_blizzard" ) or
+		( translatedEventName == "spawn_heavy_snow" ) or
+		( translatedEventName == "spawn_heavy_hail" ) or
+		( translatedEventName == "spawn_tornado_ice_near_base" ) or
+		( translatedEventName == "spawn_tornado_ice_near_player" ) or
+		( translatedEventName == "spawn_ice_meteor_shower" ) or
+		( translatedEventName == "spawn_ice_rock_rain" ) or
+		( translatedEventName == "spawn_ice_falling_rocks" ) or		
+		--ICE EVENTS END
 		--CAVERNS EVENTS START
 		( translatedEventName == "spawn_cave_in" ) or
 		( translatedEventName == "spawn_falling_stalactites" ) or

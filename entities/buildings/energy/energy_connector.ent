@@ -13,7 +13,6 @@ EntityBlueprint  // energy_connector
 		order				"1"
 		building_mode		"radius"
 		type				"energy"
-		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"energy_connector_water,energy_connector_armored"
 
@@ -349,7 +348,6 @@ EntityBlueprint  // energy_connector_armored
 		order				"1"
 		building_mode		"radius"
 		type				"energy"
-		require 			"headquarters"
 		buildable			"0"
 		building_group		"energy_connector"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"

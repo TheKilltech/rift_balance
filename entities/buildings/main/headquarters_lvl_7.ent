@@ -19,7 +19,6 @@ EntityBlueprint  // headquarters_lvl_7
 		min_radius			"50"
 		radius_name			"portal"
 		mission_mode		"1"
-		//upgrade				"buildings/main/headquarters_lvl_7"
 		menu_action			"inventory"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		difficulty_cost_apply	"0"
@@ -70,6 +69,11 @@ EntityBlueprint  // headquarters_lvl_7
 				max			"1000"
 			}
 
+			Storage
+			{
+				resource	"ammo_tower_energy_cell"
+				max			"1"
+			}
 			Storage
 			{
 				resource	"ammo_tower_explosive"

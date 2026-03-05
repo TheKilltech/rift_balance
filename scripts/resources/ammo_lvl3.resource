@@ -1,4 +1,6 @@
-GameplayResourceDef
+// --------- mech ammo ---------
+
+GameplayResourceDef  // ammo_mech_low_caliber_lvl3
 {
 	id				"ammo_mech_low_caliber_lvl3"
 	localization_id "resource_name/ammo_mech_low_caliber_lvl3"
@@ -11,7 +13,7 @@ GameplayResourceDef
 	order			"35"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_mech_high_caliber_lvl3
 {
 	id				"ammo_mech_high_caliber_lvl3"
 	localization_id "resource_name/ammo_mech_high_caliber_lvl3"
@@ -24,7 +26,7 @@ GameplayResourceDef
 	order			"36"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_mech_liquid_lvl3
 {
 	id				"ammo_mech_liquid_lvl3"
 	localization_id "resource_name/ammo_mech_liquid_lvl3"
@@ -37,7 +39,7 @@ GameplayResourceDef
 	order			"37"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_mech_explosive_lvl3
 {
 	id				"ammo_mech_explosive_lvl3"
 	localization_id "resource_name/ammo_mech_explosive_lvl3"
@@ -50,7 +52,7 @@ GameplayResourceDef
 	order			"38"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_mech_energy_cell_lvl3
 {
 	id				"ammo_mech_energy_cell_lvl3"
 	localization_id "resource_name/ammo_mech_energy_cell_lvl3"
@@ -63,9 +65,10 @@ GameplayResourceDef
 	order			"39"
 }
 
+
 // --------- tower ammo ---------
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_tower_liquid_lvl3
 {
 	id				"ammo_tower_liquid_lvl3"
 	localization_id "resource_name/ammo_tower_liquid_lvl3"
@@ -79,7 +82,7 @@ GameplayResourceDef
 	order			"14"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_tower_explosive_lvl3
 {
 	id				"ammo_tower_explosive_lvl3"
 	localization_id "resource_name/ammo_tower_explosive_lvl3"
@@ -94,7 +97,7 @@ GameplayResourceDef
 	order			"13"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_tower_low_caliber_lvl3
 {
 	id				"ammo_tower_low_caliber_lvl3"
 	localization_id "resource_name/ammo_tower_low_caliber_lvl3"
@@ -108,7 +111,7 @@ GameplayResourceDef
 	order			"11"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammo_tower_high_caliber_lvl3
 {
 	id				"ammo_tower_high_caliber_lvl3"
 	localization_id "resource_name/ammo_tower_high_caliber_lvl3"
@@ -121,3 +124,20 @@ GameplayResourceDef
 	hud_visible 	"build_menu"
 	order			"12"
 }
+
+GameplayResourceDef  // ammo_tower_energy_cell_lvl3
+{
+	id				"ammo_tower_energy_cell_lvl3"
+	localization_id "resource_name/ammo_tower_energy_cell_lvl3"
+	bp  			""
+	type 			"ammo_tower"
+	icon			"gui/hud/resource_icons/ammo_tower_energy_lvl3_icon"
+	bigger_icon		"gui/hud/resource_icons/ammo_tower_energy_lvl3_icon_bigger"
+	base_storage	"200"
+	production		"30"
+	hud_visible 	"never"
+	order			"13"
+	
+	manufacture_cost "1"
+}
+

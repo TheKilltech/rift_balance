@@ -13,13 +13,14 @@ function template_universal:Prepare()
 	
 	self.missionAdvancedResource = 
 	{
-		acid = "palladium_vein",
-		caverns = "cobalt_vein",
-		desert = "uranium_ore_vein",
-		jungle = "cobalt_vein",
-		magma = "titanium_vein",
+		acid     = "palladium_vein",
+		caverns  = "cobalt_vein",
+		desert   = "uranium_ore_vein",
+		ice      = "palladium_vein",
+		jungle   = "cobalt_vein",
+		magma    = "titanium_vein",
 		metallic = "titanium_vein",
-		swamp = "palladium_vein"
+		swamp    = "palladium_vein"
 	}
 	
 	self.missionAdvDeepResource = 
@@ -27,6 +28,7 @@ function template_universal:Prepare()
 		acid     = "palladium_deepvein",
 		caverns  = "cobalt_deepvein",
 		desert   = "uranium_ore_deepvein",
+		ice      = "palladium_deepvein",
 		jungle   = "cobalt_deepvein",
 		magma    = "titanium_deepvein",
 		metallic = "titanium_deepvein",
@@ -35,13 +37,14 @@ function template_universal:Prepare()
 	
 	self.missionRareResource = 
 	{
-		acid = "rhodonite",
-		caverns = "ferdonite",
-		desert = "tanzanite",
-		jungle = "hazenite",
-		magma = "ferdonite",
+		acid     = "rhodonite",
+		caverns  = "ferdonite",
+		desert   = "tanzanite",
+		ice      = "tanzanite",
+		jungle   = "hazenite",
+		magma    = "ferdonite",
 		metallic = "rhodonite",
-		swamp = "tanzanite"
+		swamp    = "tanzanite"
 	}
 	
 	self.missionBonusResources =
@@ -70,9 +73,15 @@ function template_universal:Prepare()
 			[3] = { "flammable_gas_vent", "" },
 			[4] = { "petroleum_deepvein", "" },
 		},
+		ice = { 
+			[1] = { "ammonium_vein" },
+			[2] = { "fluorine_deepvein" },
+			[3] = { "geothermal_vent", "flammable_gas_vent", "", "" },
+			[4] = { "magma_deepvein", "", "" },
+		},
 		magma = {
 			[1] = { "geothermal_vent" },
-			[2] = { "flammable_gas_vent" },
+			[2] = { "flammable_gas_vent", "sludge_deepvein" },
 			[3] = { "ammonium_vein", "" },
 			[4] = { "nitric_acid_deepvein", "fluorine_deepvein", "" },
 		},
@@ -92,35 +101,50 @@ function template_universal:Prepare()
 	
 	self.missionLiquidResource = 
 	{
-		acid = "sludge_vein",
-		caverns = "",
-		desert = "",
-		jungle = "sludge_vein",
-		magma = "magma_vein",
+		acid     = "sludge_vein",
+		caverns  = "",
+		desert   = "",
+		ice      = "supercoolant_vein",
+		jungle   = "sludge_vein",
+		magma    = "magma_vein",
 		metallic = "morphium_vein",
-		swamp = "resin"
+		swamp    = "resin"
+	}
+	
+	self.missionNestSpecies =
+	{
+		acid = "spawner_granan_elite",
+		caverns = "",
+		desert = "spawner_mushbit_elite",
+		ice = "spawner_granan_ice_elite",
+		jungle = "spawner_canoptrix_elite",
+		magma = "spawner_morirot_elite",
+		metallic = "spawner_wingmite_elite",
+		swamp = "spawner_stickrid_elite"
 	}
 	
 	self.missionBiocacheName =
 	{
-		acid = "spawners/loot_container_small_acid",
-		caverns = "spawners/loot_container_small_caverns",
-		desert = "spawners/loot_container_small_desert",
-		jungle = "spawners/loot_container_small_bulb",
-		magma = "spawners/loot_container_small_pile",
+		acid     = "spawners/loot_container_small_acid",
+		caverns  = "spawners/loot_container_small_caverns",
+		desert   = "spawners/loot_container_small_desert",
+		ice      = "spawners/loot_container_small_ice",
+		jungle   = "spawners/loot_container_small_bulb",
+		magma    = "spawners/loot_container_small_pile",
 		metallic = "spawners/loot_container_small_metallic",
-		swamp = "spawners/loot_container_small_swamp"
+		swamp    = "spawners/loot_container_small_swamp"
 	}
 	
 	self.possibleTerrainTypes =
 	{
-		acid = { "open", "dense", "lakes" },
-		caverns = { "open", "dense" },
-		desert = { "open", "dense" },
-		jungle = { "open", "dense", "lakes" },
-		magma = { "open", "dense", "lakes" },
+		acid     = { "open", "dense", "lakes" },
+		caverns  = { "open", "dense" },
+		desert   = { "open", "dense" },
+		ice      = { "open", "dense" },
+		jungle   = { "open", "dense", "lakes" },
+		magma    = { "open", "dense", "lakes" },
 		metallic = { "open", "dense", "lakes" },
-		swamp = { "open", "dense", "lakes" },
+		swamp    = { "open", "dense", "lakes" },
 	}
 
 	self.resource_multipliers = 
@@ -137,8 +161,56 @@ function template_universal:Prepare()
 		[9]  = 2.00,
 		[10] = 2.50
 	}
+	
+	self.biomeVisitors = {
+		acid = {
+			{ biome = "none",     weight = 100 },
+			{ biome = "jungle",   weight = 10 },
+			{ biome = "swamp",    weight = 20 },
+		},
+		caverns = {
+			{ biome = "none",     weight = 100 },
+			{ biome = "jungle",   weight = 10 },
+			{ biome = "desert",   weight = 5 },
+		},
+		desert = { 
+			{ biome = "none",     weight = 100 },
+			{ biome = "caverns",  weight = 20 },
+			{ biome = "magma",    weight = 10 },
+			{ biome = "metallic", weight = 5 },
+		},
+		ice =  {
+			{ biome = "none",     weight = 100 },
+			{ biome = "metallic", weight = 10 },
+			{ biome = "desert",   weight = 5 },
+			{ biome = "caverns",  weight = 5 },
+		},
+		jungle = { 
+			{ biome = "none",     weight = 100 },
+			{ biome = "swamp",    weight = 5 },
+			{ biome = "magma",    weight = 10 },
+			{ biome = "acid",     weight = 5 },
+		},
+		magma = { 
+			{ biome = "none",     weight = 100 },
+			{ biome = "acid",     weight = 15 },
+			{ biome = "metallic", weight = 10 },
+			{ biome = "desert",   weight = 5 },
+		},
+		metallic = { 
+			{ biome = "none",     weight = 100 },
+			{ biome = "magma",    weight = 10 },
+			{ biome = "caverns",  weight = 5 },
+		},
+		swamp = { 
+			{ biome = "none",     weight = 100 },
+			{ biome = "acid",     weight = 15 },
+			{ biome = "jungle",   weight = 10 },
+		},
+	}
 end
 
+-- This method is ran by the map generator UI to establish initial map generator parameters
 function template_universal:PrepareMissionGeneratorParams( params )	
 	--local mission_params = 
 	--{
@@ -194,6 +266,7 @@ function template_universal:PrepareMissionGeneratorParams( params )
 			end
 		end		
 	end	
+	--params:SetMissionDimension( 8, 8)
 	params:SetMissionDimension( mapSizeX, mapSizeY)
 
 	local advanceResource = self.missionAdvancedResource[params.biome_name];
@@ -203,8 +276,8 @@ function template_universal:PrepareMissionGeneratorParams( params )
 	local bonusResources  = self.missionBonusResources[params.biome_name];
 
 	if params.mission_type == "exploration" then
-		params.threat_level = RandInt( 5, 10 )
-		params.bioanomalies = RandInt( 5, 10 )
+		params.threat_level  = RandInt( 1, 7 )
+		params.bioanomalies  = RandInt( 5, 10 )
 		params.underground_deposits = RandInt( 5, 10 )
 		
 		params:SetResourceAmount("carbon_vein",             RandInt( 0, 5 ))
@@ -222,8 +295,8 @@ function template_universal:PrepareMissionGeneratorParams( params )
 		end
 		params.resources_wind_tunnel = RandInt( 0, 10 )
 	else
-		params.threat_level = RandInt( 1, 7 )
-		params.bioanomalies = RandInt( 0, 5 )
+		params.threat_level  = RandInt( 5, 10 )
+		params.bioanomalies  = RandInt( 0, 5 )
 		params.underground_deposits = RandInt( 0, 7 )
 		
 		params:SetResourceAmount("carbon_vein",             RandInt( 3, 10 ))
@@ -240,14 +313,15 @@ function template_universal:PrepareMissionGeneratorParams( params )
 			params:SetResourceAmount( liquidResource,       RandInt( 3, 10 ) )
 		end
 		params.resources_wind_tunnel = RandInt( 3, 10 )
-	end	 
+	end
 	
 end
 
 function template_universal:PrepareMapGenerator(params)
     --MapGenerator:SetGeneratorSeed( 9001 )
 	self.mission_params = params
-
+	
+	-- LAUNCH FROM CONSOLE SAFEGUARD - if the map generator is not ran from the Planetary Scanner screen then initialize map generator parameters here
 	if self.mission_params.biome_name == "" then
 		self.mission_params.biome_name = "jungle"
 
@@ -280,7 +354,7 @@ function template_universal:PrepareMissionTilesPool()
 	LogService:Log("MissionArea = ".. tostring(self.mission_params.mission_size) )
 	LogService:Log("MissionTerrainType = ".. self.mission_params.terrain_type )
 	LogService:Log("MissionType = ".. self.mission_params.mission_type )	
-	LogService:Log("MissionThreatLevel = ".. tostring(self.mission_params.threat_level) )	
+	LogService:Log("MissionThreatLevel = ".. tostring(self.mission_params.threat_level) )
 	LogService:Log("MissionBioanomalies = ".. tostring(self.mission_params.bioanomalies) )	
 	LogService:Log("MissionUndergroundDeposits = ".. tostring(self.mission_params.underground_deposits ))	
 	LogService:Log("MissionResources carbon_vein = ".. tostring(self.mission_params:GetResourceAmount("carbon_vein")) )	
@@ -297,6 +371,7 @@ function template_universal:PrepareMissionTilesPool()
 		acid = {},
 		caverns = {},
 		desert = {},
+		ice = {},
 		jungle = {},
 		magma = {},
 		metallic = {},
@@ -330,10 +405,10 @@ function template_universal:PrepareMissionTilesPool()
 	--end
 	
 	--CAVERNS	
-	--if campaignData:GetStringOrDefault( "global.uranium_outpost_complete", "" ) == "true" then -- REQUIREMENT: Finished Uranium Outpost
-	--	table.insert( encounterTilePool.caverns, 1, "biomes/caverns/tiles/caverns_encounter_green_energy/caverns_encounter_green_energy.tile" )
-	--end	
-	if campaignData:GetStringOrDefault( "global.titanium_outpost_complete", "" ) == "true" then -- REQUIREMENT: Finished Titanium Outpost
+	if campaignData:GetStringOrDefault( "global.uranium_outpost_complete", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Uranium Outpost
+		table.insert( encounterTilePool.caverns, 1, "biomes/caverns/tiles/caverns_encounter_green_energy/caverns_encounter_green_energy.tile" )
+	end	
+	if campaignData:GetStringOrDefault( "global.titanium_outpost_complete", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Titanium Outpost
 		table.insert( encounterTilePool.caverns, 1, "biomes/caverns/tiles/caverns_encounter_magnet/caverns_encounter_magnet.tile" )
 	end
 	
@@ -345,7 +420,7 @@ function template_universal:PrepareMissionTilesPool()
 		
 	--DESERT	
 	table.insert( encounterTilePool.desert, 1, "biomes/desert/tiles/desert_encounter_hands/desert_encounter_hands.tile" )		
-	if campaignData:GetStringOrDefault( "global.titanium_outpost_complete", "" ) == "true" then -- REQUIREMENT: Finished Titanium Outpost
+	if campaignData:GetStringOrDefault( "global.titanium_outpost_complete", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Titanium Outpost
 		table.insert( encounterTilePool.desert, 1, "biomes/desert/tiles/desert_encounter_iceberg/desert_encounter_iceberg.tile" )		
 	end
 	
@@ -358,10 +433,10 @@ function template_universal:PrepareMissionTilesPool()
 	--end
 		
 	--MAGMA	
-	if campaignData:GetStringOrDefault( "global.palladium_outpost_complete", "" ) == "true" then -- REQUIREMENT: Finished Palladium Outpost
+	if campaignData:GetStringOrDefault( "global.palladium_outpost_complete", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Palladium Outpost
 		table.insert( encounterTilePool.magma, 1, "biomes/magma/tiles/magma_encounter_acid/magma_encounter_acid.tile" )				
 	end
-	if campaignData:GetStringOrDefault( "global.metallic_outpost_stage_3_complete", "" ) == "true" then -- REQUIREMENT: Finished Metallic Outpost
+	if campaignData:GetStringOrDefault( "global.metallic_outpost_stage_3_complete", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Metallic Outpost
 		table.insert( encounterTilePool.magma, 1, "biomes/magma/tiles/magma_encounter_morphium/magma_encounter_morphium.tile" )			
 	end
 	
@@ -381,6 +456,10 @@ function template_universal:PrepareMissionTilesPool()
 
 	--SWAMP LAKES
 	--table.insert( encounterTilePool.swamp, 1, "biomes/swamp/tiles/swamp_encounter_tentacles/swamp_encounter_tentacles.tile" ) -- SWAMP LAKES ONLY
+	
+	--ICE	
+	table.insert( encounterTilePool.ice, 1, "biomes/ice/tiles/ice_encounter_cave/ice_encounter_cave.tile" )	
+	table.insert( encounterTilePool.ice, 1, "biomes/ice/tiles/ice_encounter_skull/ice_encounter_skull.tile" )
 	
 	--PICK RANDOM ENCOUNTER TILE
 	self.random_encounter_tile_spawn_rules = {}	
@@ -1022,6 +1101,117 @@ function template_universal:PrepareMissionTilesPool()
 					max_instances = 2,
 					random_weight =	1
 				},
+			},
+			
+			["lakesTilePool"] = 
+			{
+			},
+		},
+		
+		["ice"] = 
+		{
+			["openTilePool"] = 
+			{	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_01/ice_canyons_01.tile",
+					max_instances = 6,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_02/ice_canyons_02.tile",										
+					max_instances = 8,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_03/ice_canyons_03.tile",
+					max_instances = 4,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_04/ice_canyons_04.tile",
+					max_instances = 2,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_lakes_01/ice_lakes_01.tile",	
+					max_instances = 8,
+					min_instances = 4,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_lakes_02/ice_lakes_02.tile",
+					max_instances = 8,
+					min_instances = 4,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_01/ice_plains_01.tile",					
+					random_weight =	2
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_02/ice_plains_02.tile",					
+					random_weight =	1
+				},
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_03/ice_plains_03.tile",
+					random_weight =	3
+				},		
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_04/ice_plains_04.tile",
+					random_weight =	2
+				},
+			},
+			
+			["denseTilePool"] = 
+			{	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_01/ice_canyons_01.tile",					
+					random_weight =	2
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_02/ice_canyons_02.tile",															
+					random_weight =	2
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_03/ice_canyons_03.tile",
+					max_instances = 6,
+					min_instances = 2,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_canyons_04/ice_canyons_04.tile",
+					max_instances = 4,
+					min_instances = 1,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_lakes_01/ice_lakes_01.tile",	
+					max_instances = 6,
+					min_instances = 2,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_lakes_02/ice_lakes_02.tile",
+					max_instances = 6,
+					min_instances = 2,
+					random_weight =	1
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_01/ice_plains_01.tile",					
+					random_weight =	0.5
+				},	
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_02/ice_plains_02.tile",					
+					random_weight =	1
+				},
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_03/ice_plains_03.tile",
+					random_weight =	0.5
+				},		
+				{
+					tile_name = "biomes/ice/tiles/ice_plains_04/ice_plains_04.tile",
+					random_weight =	0.5
+				},	
 			},
 			
 			["lakesTilePool"] = 
@@ -2001,14 +2191,14 @@ function template_universal:PrepareMissionTilesPool()
 	}
 	--===============GUEST TILES
 	if self.mission_params.biome_name == "jungle" then
-		--if campaignData:GetStringOrDefault( "global.caverns_end", "" ) == "true" then -- REQUIREMENT: Finished Into The Dark DLC
-			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["openTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_01/jungle_custom_caverns_01.tile", random_weight = 10 } )
-			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["openTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_02/jungle_custom_caverns_02.tile", random_weight = 10 } )
-			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["denseTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_01/jungle_custom_caverns_01.tile", random_weight = 20 } )
-			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["denseTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_02/jungle_custom_caverns_02.tile", random_weight =	20 } )
-			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["lakesTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_01/jungle_custom_caverns_01.tile", random_weight =	10 } )
-			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["lakesTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_02/jungle_custom_caverns_02.tile", random_weight =	10 } )
-		--end
+		if campaignData:GetStringOrDefault( "global.caverns_end", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Into The Dark DLC
+			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["openTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_01/jungle_custom_caverns_01.tile", random_weight = 1 } )
+			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["openTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_02/jungle_custom_caverns_02.tile", random_weight = 1 } )
+			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["denseTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_01/jungle_custom_caverns_01.tile", random_weight = 2 } )
+			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["denseTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_02/jungle_custom_caverns_02.tile", random_weight =	2 } )
+			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["lakesTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_01/jungle_custom_caverns_01.tile", random_weight =	1 } )
+			table.insert( missionGeneratorTilePool[self.mission_params.biome_name]["lakesTilePool"], 1, { tile_name = "biomes/jungle/tiles/jungle_custom_caverns_02/jungle_custom_caverns_02.tile", random_weight =	1 } )
+		end
 	end
 
     self:CreateTileSpawnRules( self.random_encounter_tile_spawn_rules )
@@ -2045,6 +2235,22 @@ function template_universal:PrepareMissionTilesPool()
 		{
 			{
 				tile_name = "materials/textures/logic/caverns_destructible_rocks_mask_edge_1_full.png",		
+			},
+			{
+				tile_name = "materials/textures/logic/caverns_destructible_rocks_mask_edge_1_very_large_hole_1.png",																
+				max_instances =	2,
+			},
+			{
+				tile_name = "materials/textures/logic/caverns_destructible_rocks_mask_edge_1_very_large_hole_2.png",																
+				max_instances =	2,
+			},
+			{
+				tile_name = "materials/textures/logic/caverns_destructible_rocks_mask_edge_1_very_large_hole_3.png",																
+				max_instances =	2,
+			},
+			{
+				tile_name = "materials/textures/logic/caverns_destructible_rocks_mask_edge_1_very_large_hole_4.png",																
+				max_instances =	2,
 			},
 			{
 				tile_name = "materials/textures/logic/caverns_destructible_rocks_mask_edge_1_large_hole_1.png",												
@@ -2087,7 +2293,13 @@ end
 
 function template_universal:PrepareMissionObjects()
 
--- CREATURES
+	-- MOD FEATURES
+	LogService:Log("Setting Random guest biomes" )
+	local biomeVisitors = self.biomeVisitors[self.mission_params.biome_name]
+	self.mission_params.biomeVisitors1 = GetRandomFormWeightedTable( biomeVisitors ).biome
+	self.mission_params.biomeVisitors2 = GetRandomFormWeightedTable( biomeVisitors ).biome
+
+    -- CREATURES
 	local biome_ambient_creatures = {
 		["acid"] = 
 		{
@@ -2161,6 +2373,29 @@ function template_universal:PrepareMissionObjects()
 				{
 					{
 						creature_species = "mothray"
+					}
+				}
+			}
+		},
+		
+		["ice"] =
+		{
+			ground =
+			{     
+				species =
+				{
+					{
+						creature_species = "iceder"
+					}
+				}
+			},
+	
+			air =
+			{
+				species =
+				{
+					{
+						creature_species = "mantnice"
 					}
 				}
 			}
@@ -2439,6 +2674,51 @@ function template_universal:PrepareMissionObjects()
 			},        
 		},
 		
+		["ice"] =
+		{        
+			neutral_units = 
+			{
+				{
+					creature_species = "brabit_ice",					
+				},
+				
+			},
+			regular_units = 
+			{
+				{
+					creature_species = "granan_ice",
+					volume_spawn_ratio = 2
+				},
+				{
+					creature_species = "magmoth_ice",
+					volume_spawn_ratio = 1
+				},
+				{
+					creature_species = "plutrodon_ice",
+					volume_spawn_ratio = 0.75
+				},
+				{
+					creature_species = "kafferroceros_ice",
+					volume_spawn_ratio = 1
+				},
+				{
+					creature_species = "bomogan_ice",
+					volume_spawn_ratio = 0.75
+				},
+				{
+					creature_species = "kermon_ice",
+					volume_spawn_ratio = 1
+				},				
+			},			
+			resource_units = 
+			{				
+				{
+					creature_species = "krocoon_ice",
+					volume_spawn_ratio = 0.25
+				}
+			}        
+		},
+		
 		["jungle"] =
 		{        
 			neutral_units = 
@@ -2498,6 +2778,7 @@ function template_universal:PrepareMissionObjects()
 				}
 			}        
 		},
+		
 		["magma"] =
 		{        
 			neutral_units = 
@@ -2728,7 +3009,7 @@ function template_universal:PrepareMissionObjects()
 	--GUEST UNITS
 	-- Add Drexolians after completing Heart of the Swamp DLC
 	if self.mission_params.biome_name == "magma" then
-		if campaignData:GetStringOrDefault( "global.swamp_end", "" ) == "true" then -- REQUIREMENT: Finished Heart of the Swamp DLC
+		if campaignData:GetStringOrDefault( "global.swamp_end", "" ) == "true" or campaignData:GetStringOrDefault( "campaign_mode_open", "" ) == "true" then -- REQUIREMENT: Finished Heart of the Swamp DLC
 			table.insert( biome_creatures[self.mission_params.biome_name].liquid_units, 1, { creature_species = "drexolian_magma", volume_spawn_ratio = 1 } )
 		end	
 	end
@@ -2747,6 +3028,7 @@ function template_universal:PrepareMissionObjects()
 	biome_creatures[self.mission_params.biome_name].regular_units[luckyCreature].volume_spawn_ratio = luckyCreatureSpawnRatio
 	
 	-- THREAT LEVEL CREATURE PARAMETERS	
+	self.mission_params.fauna_density = RandInt( self.mission_params.threat_level, 10 )
 	local threat_multipliers = 
 	{
 		[1]		= {0.25, 128},
@@ -2761,8 +3043,8 @@ function template_universal:PrepareMissionObjects()
 		[10]	= {1.00, 40}
 	}
 	
-	MapGenerator:SetCreatureVolumesDensity( threat_multipliers[self.mission_params.threat_level][1] or 5 )
-	MapGenerator:SetCreatureVolumesDistanceFromPlayerSpawn( threat_multipliers[self.mission_params.threat_level][2] or 90 )	
+	MapGenerator:SetCreatureVolumesDensity( threat_multipliers[self.mission_params.fauna_density][1] or 0.5 )
+	MapGenerator:SetCreatureVolumesDistanceFromPlayerSpawn( threat_multipliers[self.mission_params.fauna_density][2] or 90 )
 
     self:CreateAmbientCreatureSpawnRules( biome_ambient_creatures[self.mission_params.biome_name] )
     self:CreateCreatureSpawnRules( biome_creatures[self.mission_params.biome_name] )
@@ -2875,6 +3157,71 @@ function template_universal:PrepareMissionObjects()
             }
         }
     }
+	-- AMBIENT NEST
+	-- THREAT LEVEL MULTIPLIERS	
+	local nest_map_size_count = 
+	{
+		[1]		= {4},
+		[2]		= {5},
+		[3]		= {6},
+		[4]		= {7},
+		[5]		= {8},
+		[6]		= {9},
+		[7]		= {10},
+		[8]		= {11},
+		[9]		= {12},
+		[10]	= {14}
+	}
+	
+	local nest_threat_multiplier = 
+	{
+		[1]		= {0.25},
+		[2]		= {0.30},
+		[3]		= {0.35},
+		[4]		= {0.40},
+		[5]		= {0.50},
+		[6]		= {0.60},
+		[7]		= {0.70},
+		[8]		= {0.80},
+		[9]		= {0.90},
+		[10]	= {1.00}
+	}	
+	
+	local nestCount = nest_map_size_count[self.mission_params.mission_size][1] or 8
+	local nestMultiplier = nest_threat_multiplier[self.mission_params.threat_level][1] or 0.5
+	self.missionNestCount = nestCount * nestMultiplier
+	
+	local nest = 
+    {
+        spawner_type                    = "MarkerBlueprintSpawner",
+
+        spawn_pool                      = { "nest", "enemy" },
+        spawn_at_marker                 = "logic/spawn_objective",
+
+        spawn_min_distance_from_pools = 
+        {
+            mission_objective   	    = 100,
+			player_spawn_point          = 200,
+            loot_containers             = 30,
+            loot_containers_small       = 15,
+			underground_treasures       = 15,
+			nest						= 50,
+			resource_volumes            = 10
+        },
+		
+		spawn_instances_minmax = { min = self.missionNestCount, max = self.missionNestCount},
+
+        spawn_blueprints =
+        {
+            {
+                spawn_species         	= self.missionNestSpecies[self.mission_params.biome_name],   
+				database =
+                {	
+                    ambient_spawner		= "true",
+                }
+            }            
+        }
+    }
     -- BIOCACHE
 	local biocache = 
     {
@@ -2891,6 +3238,7 @@ function template_universal:PrepareMissionObjects()
             underground_treasures       = 10,
 			resource_volumes		    = 10,
 			enemy					    = 5,
+			nest					    = 10,
 			cryo_plants				    = 25,
 			magnetic_rocks			    = 25
         },
@@ -2931,6 +3279,7 @@ function template_universal:PrepareMissionObjects()
             underground_treasures       = 10,
 			resource_volumes		    = 10,
 			enemy					    = 5,
+			nest					    = 10,
 			power_well				    = 450,
 			cryo_plants				    = 25,
 			magnetic_rocks			    = 25,
@@ -3000,6 +3349,7 @@ function template_universal:PrepareMissionObjects()
             loot_containers_small       = 50,
             underground_treasures       = self.missionUndergroundTreasureDistance,
             resource_volumes		    = 10,
+            nest					    = 10,
             enemy					    = 5,
             power_well				    = 15,
             cryo_plants				    = 15,
@@ -3293,6 +3643,7 @@ function template_universal:PrepareMissionObjects()
             loot_containers_small       = 50,
             underground_treasures       = 100,
             resource_volumes		    = 10,
+            nest					    = 10,
             enemy					    = 5,
             power_well				    = 15,
             cryo_plants				    = 15,
@@ -3330,6 +3681,7 @@ function template_universal:PrepareMissionObjects()
             loot_containers             = 50,
             loot_containers_small       = 50,            
             resource_volumes		    = 10,
+            nest					    = 10,
             enemy					    = 5,
             power_well				    = 15,
             cryo_plants				    = 15,
@@ -3419,6 +3771,7 @@ function template_universal:PrepareMissionObjects()
             loot_containers             = 15.0,
             magnetic_rocks  	        = 10.0,
             cryo_plants		            = 10.0,
+            nest			            = 10.0,
             resource_volumes	        = 5,
         },
 
@@ -3478,6 +3831,7 @@ function template_universal:PrepareMissionObjects()
 			loot_containers             = 15.0,
 			cryo_plants     	        = 10.0,
 			magnetic_rocks     	        = 20.0,
+			nest		     	        = 20.0,
 			resource_volumes   	        = 10.0
 		},
 
@@ -3538,6 +3892,7 @@ function template_universal:PrepareMissionObjects()
 		{
 			player_spawn_point          = 250,
 			loot_containers             = 50,			
+			nest			            = 50,			
 			resource_volumes   	        = 10
 		},		
 		
@@ -3573,6 +3928,7 @@ function template_universal:PrepareMissionObjects()
 			underground_treasures	    = 70,			
 			underground_mushrooms	    = 70,			
 			power_well				    = 30,			
+			nest					    = 30,			
 			resource_volumes   	        = 5
 		},	
 		spawn_blueprints =
@@ -3601,6 +3957,7 @@ function template_universal:PrepareMissionObjects()
 			underground_treasures	    = 70,			
 			underground_mushrooms	    = 180,			
 			power_well				    = 30,			
+			nest					    = 30,			
 			resource_volumes   	        = 5
 		},	
 		spawn_blueprints =
@@ -3632,6 +3989,7 @@ function template_universal:PrepareMissionObjects()
 			loot_containers_small       = 20,			
 			underground_treasures       = 10,			
 			power_well					= 10,			
+			nest						= 10,			
 			resource_volumes   	        = 10
 		},		
 		
@@ -3664,6 +4022,7 @@ function template_universal:PrepareMissionObjects()
 			loot_containers_small       = 20,			
 			underground_treasures       = 10,			
 			power_well					= 10,			
+			nest						= 10,			
 			resource_volumes   	        = 10
 		},		
 
@@ -3692,6 +4051,7 @@ function template_universal:PrepareMissionObjects()
 			underground_treasures	    = 5,						
 			power_well				    = 30,			
 			tower_alien				    = 10,			
+			nest					    = 10,			
 			enemy					    = 5,			
 			resource_volumes   	        = 5
 		},
@@ -3730,6 +4090,7 @@ function template_universal:PrepareMissionObjects()
 			underground_treasures	    = 5,						
 			power_well				    = 30,			
 			tower_alien				    = 10,			
+			nest					    = 10,			
 			enemy					    = 5,			
 			resource_volumes   	        = 5
 		},
@@ -3769,6 +4130,7 @@ function template_universal:PrepareMissionObjects()
 			loot_containers_small       = 20,			
 			underground_treasures	    = 5,						
 			power_well				    = 30,						
+			nest					    = 10,
 			resource_volumes   	        = 10
 		},		
 		spawn_blueprints =
@@ -3795,7 +4157,8 @@ function template_universal:PrepareMissionObjects()
 			loot_containers_small       = 5,			
 			underground_treasures	    = 5,						
 			power_well				    = 10,			
-			tower_plant				    = 15,			
+			tower_plant				    = 15,
+			nest					    = 10,			
 			enemy					    = 5,			
 			resource_volumes   	        = 5
 		},
@@ -3836,7 +4199,8 @@ function template_universal:PrepareMissionObjects()
 			underground_treasures	    = 5,						
 			power_well				    = 10,			
 			tower_plant				    = 12,			
-			enemy					    = 5,			
+			enemy					    = 5,
+			nest					    = 10,
 			resource_volumes   	        = 5,
 			poogret_plants				= 5
 		},
@@ -3875,7 +4239,8 @@ function template_universal:PrepareMissionObjects()
 			underground_treasures	    = 2,						
 			power_well				    = 5,			
 			tower_plant				    = 5,			
-			enemy					    = 5,			
+			enemy					    = 5,
+			nest					    = 10,
 			resource_volumes   	        = 2,
 			poogret_plants				= 5
         },
@@ -3911,7 +4276,8 @@ function template_universal:PrepareMissionObjects()
 			loot_containers_small       = 5,			
 			underground_treasures	    = 2,						
 			power_well				    = 5,			
-			tower_plant				    = 5,									
+			tower_plant				    = 5,
+			nest					    = 10,
 			resource_volumes   	        = 2,
 			poogret_plants				= 5
         },
@@ -3947,7 +4313,8 @@ function template_universal:PrepareMissionObjects()
 			loot_containers_small       = 5,			
 			underground_treasures	    = 2,						
 			power_well				    = 5,			
-			tower_plant				    = 5,									
+			tower_plant				    = 5,
+			nest					    = 10,
 			resource_volumes   	        = 2,
 			poogret_plants				= 5
         },
@@ -3982,7 +4349,8 @@ function template_universal:PrepareMissionObjects()
 			loot_containers             = 5,			
 			loot_containers_small       = 5,			
 			underground_treasures	    = 2,						
-			power_well				    = 5,														
+			power_well				    = 5,
+			nest					    = 10,
 			resource_volumes   	        = 2,
 			poogret_plants				= 5
         },
@@ -4003,11 +4371,97 @@ function template_universal:PrepareMissionObjects()
             },
         }	
 	}
+	--==ICE
+	-- Carnicinth Ice around bioanomalies
+	local carnicinth_ice_bioanomaly = 
+	{
+		spawner_type                    = "GridSpawner",
+		spawn_pool                      = { "tower_plant", "enemy" },		
+		spawn_team               		= "enemy",
+		spawn_min_free_cell_margin		= 1,
+		spawn_within_destructible_volumes = false,
+		
+		spawn_min_distance_from_pools   = 
+		{
+			player_spawn_point          = 150,
+			mission_objective	        = 70,			
+			loot_containers             = 8,			
+			loot_containers_small       = 8,			
+			underground_treasures	    = 5,						
+			power_well				    = 10,			
+			tower_plant				    = 8,
+			nest					    = 10,
+			enemy					    = 5,			
+			resource_volumes   	        = 5			
+		},
+		spawn_max_distance_from_pools   = 
+		{						
+			loot_containers				= 30,						
+		},	
+		spawn_blueprints =
+		{
+			{
+				spawn_species         = "carnicinth_ice",				
+				spawn_chance			= 0.2,
+				spawn_culls_entities_around	= false,				
+			},
+			{
+				spawn_blueprint         = "logic/position_marker_temporary",
+				spawn_chance			= 0.8,
+				spawn_culls_entities_around	= false
+			},
+		}		
+	}
+	-- Carnicinth Ice around power wells
+	local carnicinth_ice_power_well = 
+	{
+		spawner_type                    = "GridSpawner",
+		spawn_pool                      = { "tower_plant", "enemy" },		
+		spawn_team               		= "enemy",
+		spawn_min_free_cell_margin		= 1,
+		spawn_within_destructible_volumes = false,
+		
+		spawn_min_distance_from_pools   = 
+		{
+			player_spawn_point          = 150,
+			mission_objective	        = 70,			
+			loot_containers             = 8,			
+			loot_containers_small       = 8,			
+			underground_treasures	    = 5,						
+			power_well				    = 10,
+			nest					    = 10,
+			tower_plant				    = 8,			
+			enemy					    = 5,			
+			resource_volumes   	        = 5			
+		},
+		spawn_max_distance_from_pools   = 
+		{						
+			power_well				= 30,						
+		},	
+		spawn_blueprints =
+		{
+			{				
+				spawn_species         = "carnicinth_ice",	
+				spawn_chance			= 0.2,
+				spawn_culls_entities_around	= false,				
+			},
+			{
+				spawn_blueprint         = "logic/position_marker_temporary",
+				spawn_chance			= 0.8,
+				spawn_culls_entities_around	= false
+			},
+		}		
+	}
 	
 	-- CREATE BASE MISSION OBJECT SPAWNERS TABLE
 	table.insert(mission_object_spawners, 1, mission_objective_marker )
 	if self.missionBioanomaliesMultiplier ~= 0 then
 		table.insert(mission_object_spawners, #mission_object_spawners + 1, bioanomaly )
+	end
+	if self.missionNestSpecies[self.mission_params.biome_name] ~= "" then
+		table.insert(mission_object_spawners, #mission_object_spawners + 1, nest )
+	end
+	if self.missionBioanomaliesMultiplier ~= 0 then
 		table.insert(mission_object_spawners, #mission_object_spawners + 1, biocache )		
 	end
 	
@@ -4033,7 +4487,10 @@ function template_universal:PrepareMissionObjects()
 		table.insert(mission_object_spawners, #mission_object_spawners + 1, carnicinth )			
 		table.insert(mission_object_spawners, #mission_object_spawners + 1, carnicinth_alpha )			
 		table.insert(mission_object_spawners, #mission_object_spawners + 1, drexolian )			
-		table.insert(mission_object_spawners, #mission_object_spawners + 1, drexolian_alpha )		
+		table.insert(mission_object_spawners, #mission_object_spawners + 1, drexolian_alpha )
+	elseif self.mission_params.biome_name == "ice" then
+		table.insert(mission_object_spawners, #mission_object_spawners + 1, carnicinth_ice_bioanomaly )
+		table.insert(mission_object_spawners, #mission_object_spawners + 1, carnicinth_ice_power_well )
 	end
 	if self.missionBioanomaliesMultiplier ~= 0 then		
 		table.insert(mission_object_spawners, #mission_object_spawners + 1, power_well )
@@ -4083,12 +4540,12 @@ function template_universal:PrepareMissionObjects()
 			
 			-- Multiply amount of finite resources
 			if extra_params.is_infinite ~= true then
-				extra_params.min_resources = extra_params.min_resources * mult
-				extra_params.max_resources = extra_params.max_resources * mult
+				extra_params.min_resources = math.floor(extra_params.min_resources * mult)
+				extra_params.max_resources = math.ceil( extra_params.max_resources * mult)
 			end
 			--Multiply number of resource volumes
-			extra_params.min_spawned_volumes = extra_params.min_spawned_volumes * mult
-			extra_params.max_spawned_volumes = extra_params.max_spawned_volumes * mult
+			extra_params.min_spawned_volumes = math.floor(extra_params.min_spawned_volumes * (1 + (mult - 3)/5))
+			extra_params.max_spawned_volumes = math.ceil( extra_params.max_spawned_volumes * (1 + (mult - 3)/5))
 		end
 		
 		return extra_params
@@ -4102,7 +4559,7 @@ function template_universal:PrepareMissionObjects()
 	{
 		["acid"] = {
 			regular_large_resources = {
-				ResourceVolume( "carbon_vein",             4, 8,  10000, 20000, nil ),
+				ResourceVolume( "carbon_vein",             4, 8,  20000, 50000, nil ),
 				ResourceVolume( advanceResourceName,       0, 2,  10000, 60000, nil),
 				ResourceVolume( "geothermal_vent",         1, 3,  nil, nil,     { is_infinite = true } ),
 				ResourceVolume( "flammable_gas_vent",      2, 4,  nil, nil,     { is_infinite = true } ),
@@ -4111,16 +4568,15 @@ function template_universal:PrepareMissionObjects()
 				ResourceVolume( "magma_deepvein",          0, 2,  nil, nil,     { is_infinite = true } ),
 			},
 			regular_small_resources = {
-				ResourceVolume( "carbon_vein",            10, 16, 6000, 10000,  nil ),
-				ResourceVolume( "iron_vein",              10, 16, 6000, 10000,  nil ),
-				ResourceVolume( "ammonium_vein",          10, 16, 6000, 10000,  nil ),
-				ResourceVolume( "ammonium_vein",          10, 16, 6000, 10000,  nil ),
+				ResourceVolume( "carbon_vein",            10, 16, 6000, 10000,  nil ,                                               self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "iron_vein",              10, 16, 6000, 10000,  nil ,                                               self.mission_params:GetResourceAmount("iron_vein")),
+				ResourceVolume( "ammonium_vein",          10, 16, 6000, 10000,  nil ,                                               self.mission_params:GetResourceAmount("ammonium_vein")),
 				ResourceVolume( advanceResourceName,       8, 10, 3000, 6000,   nil ),
 			},
 			underground_resources = {
-				ResourceVolume( "carbon_deepvein",         2, 4,  14000, 36000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("carbon_vein")),
-				ResourceVolume( "iron_deepvein",           5, 8,  12000, 32000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("iron_vein")),
-				ResourceVolume( "ammonium_deepvein",       3, 6,  15000, 50800, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("ammonium_vein")),
+				ResourceVolume( "carbon_deepvein",         2, 4,  54000, 86000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "iron_deepvein",           5, 8,  22000, 62000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("iron_vein")),
+				ResourceVolume( "ammonium_deepvein",       3, 6,  45000, 80800, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("ammonium_vein")),
 				ResourceVolume( "ammonium_deepvein",       0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("ammonium_vein")),
 				ResourceVolume( advDeepResourceName,       4, 8,  12000, 40000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount(advanceResourceName)),
 				ResourceVolume( advDeepResourceName,       0, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount(advanceResourceName)),
@@ -4137,23 +4593,23 @@ function template_universal:PrepareMissionObjects()
 		
 		["caverns"] = {
 			regular_large_resources = {
-				ResourceVolume( "carbon_vein",             8, 12, 16000, 30000, nil ),
-				ResourceVolume( "iron_vein",               7, 10, 16000, 50000, nil ),
-				ResourceVolume( "ammonium_vein",           6, 10, 10000, 20000, nil ),
-				ResourceVolume( advanceResourceName,       7, 12, 20000, 60000, nil),
-				ResourceVolume( "geothermal_vent",        10, 12,  nil, nil,    { is_infinite = true } ),
+				ResourceVolume( "carbon_vein",             6, 10, 36000, 60000, nil ,                                               self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "iron_vein",               5,  8, 16000, 50000, nil ,                                               self.mission_params:GetResourceAmount("iron_vein")),
+				ResourceVolume( "ammonium_vein",           5,  8, 30000, 60000, nil ,                                               self.mission_params:GetResourceAmount("ammonium_vein")),
+				ResourceVolume( advanceResourceName,       6, 10, 20000, 60000, nil),
+				ResourceVolume( "geothermal_vent",         8, 10,  nil, nil,    { is_infinite = true } ),
 				ResourceVolume( "petroleum_deepvein",      2, 4,   nil, nil,    { is_infinite = true }),
 				ResourceVolume( "water_deepvein",          1, 3,   nil, nil,    { is_infinite = true }),
-				ResourceVolume( "sludge_deepvein",         2, 4,   nil, nil,    { is_infinite = true }, self.mission_params:GetResourceAmount("sludge_vein")),
+				ResourceVolume( "sludge_deepvein",         2, 4,   nil, nil,    { is_infinite = true },                             self.mission_params:GetResourceAmount("sludge_vein")),
 				
 			},			
 			regular_small_resources = {
-				ResourceVolume( "carbon_vein",            10, 16, 6000, 10000,  nil ),
-				ResourceVolume( "iron_vein",              10, 16, 6000, 10000,  nil ),
-				ResourceVolume( "ammonium_vein",          10, 16, 6000, 10000,  nil ),
-				ResourceVolume( advanceResourceName,      10, 15, 3000, 6000,   nil ),
-				ResourceVolume( "uranium_ore_vein",        5, 10, 4000, 8000,   nil ),
-				ResourceVolume( "palladium_vein",          5, 10, 4000, 8000,   nil ),
+				ResourceVolume( "carbon_vein",             7, 12, 6000, 10000,  nil ),
+				ResourceVolume( "iron_vein",               7, 12, 6000, 10000,  nil ),
+				ResourceVolume( "ammonium_vein",           7, 12, 6000, 10000,  nil ),
+				ResourceVolume( advanceResourceName,       6, 10, 3000, 6000,   nil ),
+				ResourceVolume( "uranium_ore_vein",        3, 6,  4000, 8000,   nil ),
+				ResourceVolume( "palladium_vein",          3, 6,  4000, 8000,   nil ),
 			},
 			underground_resources = {},
 			liquid_resources = {},
@@ -4162,11 +4618,10 @@ function template_universal:PrepareMissionObjects()
 		
 		["desert"] = {
 			regular_large_resources = {
-				ResourceVolume( "carbon_vein",             6, 10, 10000, 30000, nil ),
-				ResourceVolume( "iron_vein",               3, 5,  10000, 20000, nil ),
-				ResourceVolume( "ammonium_vein",           6, 10, 15000, 30000, nil ),
-				ResourceVolume( advanceResourceName,       0, 2,  10000, 60000, nil),
-				ResourceVolume( "petroleum_deepvein",      1, 2,  nil, nil,     { is_infinite = true } ),
+				ResourceVolume( "carbon_vein",             5, 7, 30000, 70000,  nil ,                                               self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "iron_vein",               2, 4, 10000, 30000,  nil ,                                               self.mission_params:GetResourceAmount("iron_vein")),
+				ResourceVolume( "ammonium_vein",           5, 7, 55000, 100000, nil ,                                               self.mission_params:GetResourceAmount("ammonium_vein")),
+				ResourceVolume( advanceResourceName,       0, 2,  10000, 60000, nil,                                                self.mission_params:GetResourceAmount(advanceResourceName)),
 				ResourceVolume( "fluorine_deepvein",       1, 3,  nil, nil,     { is_infinite = true } ),
 				ResourceVolume( "mud_deepvein",            5, 10, nil, nil,     { is_infinite = true } ),
 			},
@@ -4177,41 +4632,86 @@ function template_universal:PrepareMissionObjects()
 				ResourceVolume( advanceResourceName,       8, 10, 2000, 4000,   nil ),
 			},
 			underground_resources = {
-				ResourceVolume( "carbon_deepvein",         3, 5,  14000, 36000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("carbon_vein")),
-				ResourceVolume( "carbon_deepvein",         0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("carbon_vein")),
-				ResourceVolume( "iron_deepvein",           2, 4,  12000, 32000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("iron_vein")),
-				ResourceVolume( "ammonium_deepvein",       3, 6,  15000, 50800, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("ammonium_vein")),
-				ResourceVolume( "ammonium_deepvein",       0, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("ammonium_vein")),
-				ResourceVolume( advDeepResourceName,       4, 8,  10000, 30000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount(advanceResourceName)),
-				ResourceVolume( advDeepResourceName,       0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount(advanceResourceName)),
-				ResourceVolume( "water_deepvein",          4, 7,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }),
-				ResourceVolume( "mud_deepvein",            2, 5,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }),
-				ResourceVolume( "petroleum_deepvein",      2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }),
-				ResourceVolume( "fluorine_deepvein",       0, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }),
+				ResourceVolume( "carbon_deepvein",         3, 5,  54000, 96000, { required_discovery_lvl = 1 },                      self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "carbon_deepvein",         0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true },  self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "iron_deepvein",           2, 4,  22000, 52000, { required_discovery_lvl = 1 },                      self.mission_params:GetResourceAmount("iron_vein")),
+				ResourceVolume( "ammonium_deepvein",       3, 6,  35000, 70800, { required_discovery_lvl = 1 },                      self.mission_params:GetResourceAmount("ammonium_vein")),
+				ResourceVolume( "ammonium_deepvein",       0, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true },  self.mission_params:GetResourceAmount("ammonium_vein")),
+				ResourceVolume( advDeepResourceName,       4, 8,  10000, 30000, { required_discovery_lvl = 1 },                      self.mission_params:GetResourceAmount(advanceResourceName)),
+				ResourceVolume( advDeepResourceName,       0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true },  self.mission_params:GetResourceAmount(advanceResourceName)),
+				ResourceVolume( "water_deepvein",          4, 7,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true },  self.mission_params:GetResourceAmount("water_deepvein")),
+				ResourceVolume( "mud_deepvein",            2, 5,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true },  self.mission_params:GetResourceAmount("mud_deepvein")),
+				ResourceVolume( "petroleum_deepvein",      2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true },  self.mission_params:GetResourceAmount("petroleum_deepvein")),
+				ResourceVolume( "fluorine_deepvein",       0, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true },  self.mission_params:GetResourceAmount("fluorine_deepvein")),
 			},			
 			liquid_resources = {},
 			starting_resources = {
-				ResourceVolume( "carbon_vein",            15, 20, 7000, 12000,  nil ),
-				ResourceVolume( "iron_vein",               3, 6,  5000,  8000,  nil ),
-				ResourceVolume( "ammonium_vein",          15, 20, 8000, 14000,  nil ),
-				ResourceVolume( advanceResourceName,       8, 10, 2000, 4000,   nil ),
+				ResourceVolume( "carbon_vein",             1, 2,  20000, 60000, nil ),
+				ResourceVolume( "iron_vein",               1, 2,   8000, 10000, nil ),
+				ResourceVolume( "ammonium_vein",           1, 2,  20000, 64000, nil ),
+				ResourceVolume( advanceResourceName,       1, 1,  12000, 24000, nil ),
 			}
 		},
 		
-		["jungle"] = {
+		["ice"] = {
 			regular_large_resources = {
-				ResourceVolume( "carbon_vein",             6, 10, 10000, 20000, nil ),
-				ResourceVolume( "iron_vein",               6, 10, 10000, 20000, nil ),
-				ResourceVolume( "ammonium_vein",           6, 10, 10000, 20000, nil ),
-				ResourceVolume( advanceResourceName,       1, 3,  10000, 24000, nil),
-				ResourceVolume( "geothermal_vent",        10, 12, nil, nil,     { is_infinite = true } ),
-				ResourceVolume( "flammable_gas_vent",      2, 4,  nil, nil,     { is_infinite = true } ),
+				ResourceVolume( "carbon_vein",             8, 10, 36000, 40000, nil ,                                              self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "iron_vein",               6, 9,  16000, 40000, nil ,                                              self.mission_params:GetResourceAmount("iron_vein")),
+				ResourceVolume( "ammonium_vein",           5, 8,  30000, 40000, nil ,                                              self.mission_params:GetResourceAmount("ammonium_vein")),
+				ResourceVolume( advanceResourceName,       3, 5,  18000, 36000, nil ),
+				ResourceVolume( "geothermal_vent",        10, 12,  nil, nil,   { is_infinite = true } ),
 			},
 			regular_small_resources = {
-				ResourceVolume( "carbon_vein",            10, 16, 6000, 10000,  nil ),
+				ResourceVolume( "carbon_vein",            15, 20, 7000, 12000,  nil ),
 				ResourceVolume( "iron_vein",              10, 16, 6000, 10000,  nil ),
-				ResourceVolume( "ammonium_vein",          10, 16, 6000, 10000,  nil ),
+				ResourceVolume( "ammonium_vein",          15, 20, 8000, 14000,  nil ),
+			},
+			underground_resources = {
+				ResourceVolume( "carbon_deepvein",         3, 5, 54000, 126000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "carbon_deepvein",         0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "iron_deepvein",           2, 4,  52000, 92000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("iron_vein")),
+				ResourceVolume( "ammonium_deepvein",       3, 6,  55000, 90800, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("ammonium_vein")),
+				ResourceVolume( "ammonium_deepvein",       0, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("ammonium_vein")),
+				ResourceVolume( advDeepResourceName,       4, 8,  10000, 30000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount(advanceResourceName)),
+				ResourceVolume( advDeepResourceName,       0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount(advanceResourceName)),
+				ResourceVolume( "geothermal_vent",         2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("geothermal_vent")),
+			},
+			liquid_resources = {},
+			starting_resources = {
+				ResourceVolume( "carbon_vein",             1, 1, 50000, 120000, nil ),
+				ResourceVolume( "iron_vein",               1, 2,  8000, 10000,  nil ),
+				ResourceVolume( "ammonium_vein",           1, 2, 20000, 64000,  nil ),
+				ResourceVolume( "geothermal_vent",         1, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }),
+			}	
+		},	
+		
+		["jungle"] = {
+			regular_large_resources = {
+				ResourceVolume( "carbon_vein",             8, 10, 36000, 50000, nil ,                                              self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "iron_vein",               6, 9,  16000, 30000, nil ,                                              self.mission_params:GetResourceAmount("iron_vein")),
+				ResourceVolume( "ammonium_vein",           5, 8,  30000, 40000, nil ,                                              self.mission_params:GetResourceAmount("ammonium_vein")),
+				ResourceVolume( advanceResourceName,       0, 2,  10000, 60000, nil),
+				ResourceVolume( "geothermal_vent",         1, 3,  nil, nil,     { is_infinite = true } ),
+				ResourceVolume( "flammable_gas_vent",      2, 4,  nil, nil,     { is_infinite = true } ),
+				ResourceVolume( "magma_deepvein",          0, 2,  nil, nil,     { is_infinite = true } ),
+			},
+			regular_small_resources = {
+				ResourceVolume( "carbon_vein",            10, 16, 6000, 10000,  nil ,                                               self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "iron_vein",              10, 16, 6000, 10000,  nil ,                                               self.mission_params:GetResourceAmount("iron_vein")),
+				ResourceVolume( "ammonium_vein",          10, 16, 6000, 10000,  nil ,                                               self.mission_params:GetResourceAmount("ammonium_vein")),
 				ResourceVolume( advanceResourceName,       8, 10, 3000, 6000,   nil ),
+			},
+			underground_resources = {
+				ResourceVolume( "carbon_deepvein",         2, 4,  54000, 86000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "iron_deepvein",           5, 8,  22000, 62000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("iron_vein")),
+				ResourceVolume( "ammonium_deepvein",       3, 6,  45000, 80800, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("ammonium_vein")),
+				ResourceVolume( "ammonium_deepvein",       0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("ammonium_vein")),
+				ResourceVolume( advDeepResourceName,       4, 8,  12000, 40000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount(advanceResourceName)),
+				ResourceVolume( advDeepResourceName,       0, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount(advanceResourceName)),
+				ResourceVolume( "geothermal_vent",         0, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("geothermal_vent")),
+			},
+			liquid_resources = {
+				ResourceVolume( "sludge_vein", 4, 8, nil, nil, { is_infinite = true } ),
 			},
 			underground_resources = {
 				ResourceVolume( "carbon_deepvein",         2, 4,  14000, 32000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount("carbon_vein")),
@@ -4222,10 +4722,10 @@ function template_universal:PrepareMissionObjects()
 				ResourceVolume( "ammonium_deepvein",       0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("ammonium_vein")),
 				ResourceVolume( advDeepResourceName,       4, 8,  10000, 30000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount(advanceResourceName)),
 				ResourceVolume( advDeepResourceName,       0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount(advanceResourceName)),
-				ResourceVolume( "geothermal_vent",         2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }),
-				ResourceVolume( "flammable_gas_vent",      1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }),
-				ResourceVolume( "petroleum_deepvein",      2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }),
-				ResourceVolume( "water_deepvein",          0, 3,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, RandInt( 1, 10 )),
+				ResourceVolume( "geothermal_vent",         2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("geothermal_vent")),
+				ResourceVolume( "flammable_gas_vent",      1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("flammable_gas_vent")),
+				ResourceVolume( "petroleum_deepvein",      2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("petroleum_deepvein")),
+				ResourceVolume( "water_deepvein",          0, 3,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("water_deepvein")),
 				ResourceVolume( "sludge_deepvein",         2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("sludge_vein")),
 			},
 			liquid_resources = {
@@ -4241,8 +4741,8 @@ function template_universal:PrepareMissionObjects()
 		
 		["magma"] = {
 			regular_large_resources = {
-				ResourceVolume( "iron_vein",               6, 10, 20000, 40000, nil ),
-				ResourceVolume( advanceResourceName,       0, 4,  10000, 40000, nil),
+				ResourceVolume( "iron_vein",               6, 10, 20000, 40000, nil,                                                self.mission_params:GetResourceAmount("iron_vein")),
+				ResourceVolume( advanceResourceName,       0, 4,  10000, 40000, nil,                                                self.mission_params:GetResourceAmount(advanceResourceName)),
 				ResourceVolume( "geothermal_vent",        15, 25, nil, nil,     { is_infinite = true } ),
 				ResourceVolume( "flammable_gas_vent",      3, 6,  nil, nil,     { is_infinite = true } ),
 			},
@@ -4257,9 +4757,9 @@ function template_universal:PrepareMissionObjects()
 				ResourceVolume( "iron_deepvein",           0, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("iron_vein")),
 				ResourceVolume( advDeepResourceName,       8, 15, 10000, 15000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount(advanceResourceName)),
 				ResourceVolume( advDeepResourceName,       0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount(advanceResourceName)),
-				ResourceVolume( "fluorine_deepvein",       3, 5,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true } ),
-				ResourceVolume( "flammable_gas_vent",      3, 6,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true } ),
-				ResourceVolume( "nitric_acid_deepvein",    1, 3,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true } ),
+				ResourceVolume( "fluorine_deepvein",       3, 5,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("fluorine_deepvein")),
+				ResourceVolume( "flammable_gas_vent",      3, 6,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("flammable_gas_vent")),
+				ResourceVolume( "nitric_acid_deepvein",    1, 3,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("nitric_acid_deepvein")),
 			},			
 			liquid_resources = {},
 			starting_resources = {
@@ -4272,12 +4772,13 @@ function template_universal:PrepareMissionObjects()
 		
 		["metallic"] = {
 			regular_large_resources = {
-				ResourceVolume( "carbon_vein",             6, 10, 16000, 30000, nil ),
-				ResourceVolume( "iron_vein",               6, 10, 24000, 50000, nil),
+				ResourceVolume( "carbon_vein",             3, 5,  36000, 50000, nil ,                                              self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "iron_vein",               5, 7,  16000, 40000, nil ,                                              self.mission_params:GetResourceAmount("iron_vein")),
+				ResourceVolume( "ammonium_vein",           5, 7,  30000, 40000, nil ,                                              self.mission_params:GetResourceAmount("ammonium_vein")),
 				ResourceVolume( advanceResourceName,       5, 8,  12000, 24000, nil),
 				ResourceVolume( "geothermal_vent",        10, 16, nil, nil,     { is_infinite = true } ),
-				ResourceVolume( "plasma_deepvein",         3, 6,  nil, nil,     { is_infinite = true } ),
-				ResourceVolume( "plasma_charged_deepvein", 0, 1,  nil, nil,     { is_infinite = true } ),
+				ResourceVolume( "plasma_deepvein",         3, 6,  nil, nil,     { is_infinite = true },                            self.mission_params:GetResourceAmount("plasma_deepvein")),
+				ResourceVolume( "plasma_charged_deepvein", 0, 1,  nil, nil,     { is_infinite = true },                            self.mission_params:GetResourceAmount("plasma_charged_deepvein")),
 			},
 			regular_small_resources = {
 				ResourceVolume( "carbon_vein",             8, 12, 4000, 9000,   nil ),
@@ -4292,9 +4793,9 @@ function template_universal:PrepareMissionObjects()
 				ResourceVolume( "ammonium_deepvein",       0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("ammonium_vein")),
 				ResourceVolume( advDeepResourceName,       8, 15, 10000, 15000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount(advanceResourceName)),
 				ResourceVolume( advDeepResourceName,       0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount(advanceResourceName)),
-				ResourceVolume( "fluorine_deepvein",       3, 5,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true } ),
-				ResourceVolume( "plasma_charged_deepvein", 1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true } ),
-				ResourceVolume( "water_deepvein",          5, 8,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true } ),
+				ResourceVolume( "fluorine_deepvein",       3, 5,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("fluorine_deepvein")),
+				ResourceVolume( "plasma_charged_deepvein", 1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("plasma_charged_deepvein")),
+				ResourceVolume( "water_deepvein",          5, 8,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("water_deepvein")),
 			},
 			liquid_resources = {},
 			starting_resources = {
@@ -4307,10 +4808,10 @@ function template_universal:PrepareMissionObjects()
 		
 		["swamp"] = {
 			regular_large_resources = {
-				ResourceVolume( "carbon_vein",             5, 9,  20000, 70000, nil ),
-				ResourceVolume( "iron_vein",               3, 6,  10000, 50000, nil ),
-				ResourceVolume( "ammonium_vein",           6, 12, 30000, 70000, nil ),
-				ResourceVolume( advanceResourceName,       5, 8,  10000, 24000, nil),
+				ResourceVolume( "carbon_vein",             5, 7,  36000, 70000, nil ,                                              self.mission_params:GetResourceAmount("carbon_vein")),
+				ResourceVolume( "iron_vein",               3, 5,  16000, 30000, nil ,                                              self.mission_params:GetResourceAmount("iron_vein")),
+				ResourceVolume( "ammonium_vein",           5, 8,  30000, 70000, nil ,                                              self.mission_params:GetResourceAmount("ammonium_vein")),
+				ResourceVolume( advanceResourceName,       5, 8,  10000, 24000, nil,                                               self.mission_params:GetResourceAmount(advanceResourceName)), 
 				ResourceVolume( "flammable_gas_vent",      3, 7,  nil, nil,     { is_infinite = true } ),
 			},
 			regular_small_resources = {
@@ -4327,14 +4828,14 @@ function template_universal:PrepareMissionObjects()
 				ResourceVolume( "ammonium_deepvein",       0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("ammonium_vein")),
 				ResourceVolume( advDeepResourceName,       4, 8,  12000, 40000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount(advanceResourceName)),
 				ResourceVolume( advDeepResourceName,       0, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount(advanceResourceName)),
-				ResourceVolume( "flammable_gas_vent",      1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }),
-				ResourceVolume( "petroleum_deepvein",      2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }),
-				ResourceVolume( "nitric_acid_deepvein",    1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }),
+				ResourceVolume( "flammable_gas_vent",      1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("flammable_gas_vent")),
+				ResourceVolume( "petroleum_deepvein",      2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("petroleum_deepvein")),
+				ResourceVolume( "nitric_acid_deepvein",    1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("nitric_acid_deepvein")),
 			},
 			liquid_resources = {},
 			starting_resources =  {
-				ResourceVolume( "carbon_vein",             1, 3,  20000, 40000, nil ),
-				ResourceVolume( "iron_vein",               1, 2,   8000, 16000, nil ),
+				ResourceVolume( "carbon_vein",             1, 3,  20000, 50000, nil ),
+				ResourceVolume( "iron_vein",               1, 2,  12000, 26000, nil ),
 				ResourceVolume( advanceResourceName,       1, 1,  12000, 24000, nil ),
 			}
 		},
@@ -4358,55 +4859,23 @@ function template_universal:PrepareMissionObjects()
 	--================ STARTING RESOURCE ENHANCEMENT
 
     self:CreateStartupResourcesSpawnRules( biome_resources[self.mission_params.biome_name].starting_resources )
-
-	
-	-- AMBIENT CREATURES
-	local ambient_creatures_species =
-	{
-		["caverns"] =
-		{        
-			ground =
-        	{     
-				max_count = 50,
-				spawn_rate = 6,
-				search_to_spawn_radius = "2",
-
-        	    species =
-        	    {
-        	        {
-        	            creature_species  =  "crysder"
-        	        }
-        	    }
-        	}
-		}
-	}
-
 end
 
 function template_universal:Activated()
 	MissionService:ActivateMissionFlow("", "logic/missions/campaigns/story/template_jungle_resource.logic", "default" )
 	
-	local biomeName = self.mission_params.biome_name
-	local templateMap  = nil
-	if biomeName == "metallic" or biomeName == "caverns" or biomeName == "swamp" then
-		templateMap = "outpost"
-	else
-		if self.mission_params.mission_type == "exploration" then
-			templateMap = "find_rare_resource"
-		else
-			templateMap = "resource_outpost"
-		end
-	end
-	
-	local rulesBiomePath = self:GetRulesPathForBiome(self.mission_params.biome_name)
+	local rulesPath = GetRulesForDifficulty( "lua/missions/campaigns/story/v2/templates/dom_template_universal_resource_rules_" )	
 	local params = {
-		rulesPath  = GetRulesForDifficulty( rulesBiomePath .. "dom_" .. self.mission_params.biome_name .. "_".. templateMap.. "_rules_" ),
+		rulesPath  = rulesPath,
 		rulesParam = {
-			biome       = self.mission_params.biome_name,
-			missionType = self.mission_params.mission_type,
-			terrainType = self.mission_params.terrain_type,
-			mapSize     = self.mission_params.mission_size,
-			threat      = self.mission_params.threat_level,
+			biome          = self.mission_params.biome_name,
+			missionType    = self.mission_params.mission_type,
+			terrainType    = self.mission_params.terrain_type,
+			mapSize        = self.mission_params.mission_size,
+			threat         = self.mission_params.threat_level,
+			faunaDensity   = self.mission_params.fauna_density,
+			biomeVisitors1 = self.mission_params.biomeVisitors1,
+			biomeVisitors2 = self.mission_params.biomeVisitors2,
 			--self.mission_params.bioanomalies,
 			--self.mission_params.underground_deposits,
 		}
@@ -4421,16 +4890,30 @@ function template_universal:Activated()
 end
 
 --- ToDo: move to rules_utils
-function template_universal:GetRulesPathForBiome(biomeName)
-	local biomeSubdir  = nil
-	if biomeName == "metallic"    then  biomeSubdir = "dlc_1"
-	elseif biomeName == "caverns" then  biomeSubdir = "dlc_2"
-	elseif biomeName == "swamp"   then  biomeSubdir = "dlc_3"
-	else 
-		biomeSubdir = "story/v2/" .. self.mission_params.biome_name
+function GetTemplateRulesForBiome(biomeName)
+	local templateMap  = "resource"
+	local prefix       = "template_"
+	local postfix      = "default"
+	if Contains({"metallic", "caverns","swamp"}, biomeName) then
+		templateMap = "outpost"
+		prefix      = ""
+		postfix     = nil
+	elseif Contains({"acid", "jungle","magma"}, biomeName) then
+		prefix      = ""
+		postfix     = nil
+		if self.mission_params.mission_type == "exploration" then
+			templateMap = "find_rare_resource"
+		else
+			templateMap = "resource_outpost"
+		end
 	end
 	
-	return "lua/missions/campaigns/".. biomeSubdir .. "/"
+	local rulesPath = self:GetRulesPathForBiome(self.mission_params.biome_name)
+	if postfix then
+		rulesPath = rulesPath .. "dom_" .. prefix .. self.mission_params.biome_name .. "_".. templateMap.. "_rules_" .. postfix  .. ".lua"
+	else rulesPath = GetRulesForDifficulty( rulesPath .. "dom_" .. prefix .. self.mission_params.biome_name .. "_".. templateMap.. "_rules_" )
+	end
+	return rulesPath
 end
 
 return template_universal

@@ -63,6 +63,7 @@ function Concat(t1,t2)
     for _,v in ipairs(t2) do 
         Insert(t1, v)
     end
+	return t1
 end
 
 function ConcatUnique(t1,t2)
@@ -143,56 +144,99 @@ function Replace(t, oldVal, newVal)
 end
 
 function PrintTable(t, maxDepth, indent)
+	local function CanInline(t)
+		if Size(t) > 6 then return false end
+		for k, v in pairs(t) do
+			if (type(v) == "table") then
+				if Size(v) > 0 then return false end
+			end
+		end
+		return true
+	end
+	
 	if not indent   then indent = 0    end
 	if not maxDepth then maxDepth = 20 end
 	if t == nil  then 
 		return string.rep(" ", indent) .. "nil"
 	end
-	local toprint = tostring(t) .. " = {\r\n"
+	local inline = false
+	local eop = "\r\n" -- end of property chracter
+	if CanInline(t) then
+	   eop = " "
+	   inline = true
+	end
+	local toprint = tostring(t) .. " = {" .. eop
 	indent = indent + 2
 	
 	for k, v in pairs(t) do
-		toprint = toprint .. string.rep(" ", indent)
+	  if not inline then
+		  toprint = toprint .. string.rep(" ", indent)
+		end
 		if (type(k) == "number") then
 			toprint = toprint .. "[" .. k .. "] = "
 		elseif (type(k) == "string") then
 			toprint = toprint  .. k ..  "= "   
 		end
 		if (type(v) == "number") then
-			toprint = toprint .. v .. ",\r\n"
+			toprint = toprint .. v .. "," .. eop
 		elseif (type(v) == "string") then
-			toprint = toprint .. "\"" .. v .. "\",\r\n"
+			toprint = toprint .. "\"" .. v .. "\"," .. eop
 		elseif (type(v) == "table") then
 			if maxDepth > 0 then
-				toprint = toprint .. PrintTable(v, maxDepth - 1, indent + 2) .. ",\r\n"
-			else toprint = toprint  .. "table ".. tostring(v).. ",\r\n"
+				toprint = toprint .. PrintTable(v, maxDepth - 1, indent) .. "," .. eop
+			else toprint = toprint  .. "table ".. tostring(v).. "," .. eop
 			end
 		else
-			toprint = toprint .. "\"" .. tostring(v) .. "\",\r\n"
+			toprint = toprint .. "\"" .. tostring(v) .. "\"," .. eop
 		end
 	end
-	toprint = toprint .. string.rep(" ", indent-2) .. "}"
+	
+	if not inline then
+	  toprint = toprint .. string.rep(" ", indent - 2) .. "}"
+	else toprint = toprint .. "}"
+	end
 	return toprint
 end
 
 function GetRandomFormWeightedTable( weightedTable ) 
 	local totalWeight = 0.0
-    local events = {}
     for i = 1, #weightedTable, 1 do	
         totalWeight = totalWeight + (weightedTable[i].weight or 1.0)
-        --events[i] = { min = rangeStart, max = rangeEnd, action = weightedTable[i].action }
     end
 
     local roll = math.random() * totalWeight
-    LogService:Log("GetRandomFormWeightedTable - #elm: ".. #weightedTable .. ", weight sum: ".. totalWeight.. " rolled: " .. roll )
+	if LogService.Log then
+		LogService:Log("GetRandomFormWeightedTable - #elm: ".. #weightedTable .. ", weight sum: ".. totalWeight.. " rolled: " .. roll )
+	end
 
 	local weight = 0.0
     for i = 1, #weightedTable, 1 do	
         weight = weight + (weightedTable[i].weight or 1.0)
         if roll <= weight then
-			LogService:Log("GetRandomFormWeightedTable - Choosing element ".. i .. " " .. tostring( weightedTable[i].name or weightedTable[i].action or weightedTable[i]) )
+			if LogService.Log then
+				LogService:Log("GetRandomFormWeightedTable - Choosing element ".. i .. " " .. tostring( weightedTable[i].name or weightedTable[i].action or weightedTable[i].biome or weightedTable[i]) )
+			end
             return weightedTable[i];
         end
     end
 	return {}
+end
+
+function ScaleTable(array, factor)
+	if array then
+		for i = 1, #array, 1 do
+			if array[i] then
+				array[i] = array[i] * factor;
+			end
+		end
+	end
+	return array
+end
+
+function RepeatingValueTable(value, repeats)
+	local array = {}
+	for i = repeats, 1, -1 do
+		array[i] = value;
+	end
+	return array
 end

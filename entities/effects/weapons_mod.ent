@@ -180,6 +180,22 @@ EntityBlueprint "effects/no_lifetime"		//heavy_plasma_gun
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//lightning_gun
+{
+	name "effects/weapon_items/lightning_gun"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/lightning_gun.mesh"
+		material 	"items/weapons/lightning_gun"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//flamethrower
 {
 	name "effects/weapon_items/flamethrower"
@@ -257,6 +273,22 @@ EntityBlueprint "effects/no_lifetime"		//rocket_launcher_ghost
 	{
 		mesh 	"meshes/items/weapons/rocket_launcher.mesh"
 		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//swarm_missiles
+{
+	name "effects/weapon_items/swarm_missiles"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/swarm_missiles.mesh"
+		material 	"items/weapons/swarm_missiles"
 	}
 }
 
@@ -401,6 +433,22 @@ EntityBlueprint "effects/no_lifetime"		//spitter_acid
 	{
 		mesh 		"meshes/items/weapons/spitter.mesh"
 		material 	"items/weapons/spitter_acid_basic"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//spitter_yellow
+{
+	name "effects/weapon_items/spitter_yellow"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/spitter.mesh"
+		material 	"buildings/special/spitter_yellow_tanks"
 	}
 }
 
@@ -862,4 +910,94 @@ EntityBlueprint		// tower_shockwave_acid_blast
 			z		4.0
 		}
 	}		
+}
+
+
+// effects/weapons_elemental
+
+EntityBlueprint		// cannon_acid_fire
+{
+	base_blueprints
+	{
+		effects/weapons_elemental/muzzle
+		lights/point/muzzle_green_small
+		effects/default
+	}
+
+	name effects/weapons_elemental/cannon_acid_fire
+
+	ParticleDesc
+	{
+		name    "rift/mech_elemental_muzzle_acid"
+	}
+
+	CameraFeedbackShakeDesc
+	{
+		duration 		"0.066"
+		power   		"0.2"
+		group			"weapon_muzzle"
+	}
+
+	SoundDesc
+	{
+		name "items/weapons/bullet/sniper_rifle_fire"
+	}
+}
+
+EntityBlueprint		// cannon_cryo_fire
+{
+	base_blueprints
+	{
+		effects/weapons_elemental/muzzle
+		lights/point/muzzle_blue_small
+		effects/default
+	}
+
+	name effects/weapons_elemental/cannon_cryo_fire
+
+	ParticleDesc
+	{
+		name    "rift/mech_elemental_muzzle_cryo"
+	}
+
+	CameraFeedbackShakeDesc
+	{
+		duration 		"0.066"
+		power   		"0.2"
+		group			"weapon_muzzle"
+	}
+
+	SoundDesc
+	{
+		name "items/weapons/bullet/sniper_rifle_fire"
+	}
+}
+
+EntityBlueprint		// cannon_pyro_fire
+{
+	base_blueprints
+	{
+		effects/weapons_elemental/muzzle
+		lights/point/muzzle_red_small
+		effects/default
+	}
+
+	name effects/weapons_elemental/cannon_pyro_fire
+
+	ParticleDesc
+	{
+		name    "rift/mech_elemental_muzzle_fire"
+	}
+
+	CameraFeedbackShakeDesc
+	{
+		duration 		"0.066"
+		power   		"0.2"
+		group			"weapon_muzzle"
+	}
+
+	SoundDesc
+	{
+		name "items/weapons/bullet/sniper_rifle_fire"
+	}
 }

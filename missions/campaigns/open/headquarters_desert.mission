@@ -1,0 +1,627 @@
+MissionDef
+{
+    script          	"lua/missions/campaigns/open/headquarters/headquarters_desert.lua"
+	player_spawn_logic  "logic/loadout/player_loadout_campaign_open.logic"
+	localization_id		"biomes/desert/desert.biome"
+    icon 				"gui/menu/riftbreaker_sign"    
+	intro           	"menu/movies/riftbreaker_intro"
+
+    biomes          "desert"
+    map_size		8
+	
+	failed_action   "remain"
+	success_action  "remain"
+	threat  "1"
+
+	// CREATURE VOLUME SPAWN RULES
+	creature_volumes_min_distance   "128.0"
+	creature_volumes_density        "0.7"
+	
+	// STARTING RESOURCES SPAWN DISTANCE
+	min_starting_distance "16.0"
+    max_starting_distance "96.0"   
+	
+	tile_spawn_rules
+	{		
+		biomes/desert/tiles/desert_custom_rare_resource_01/desert_custom_rare_resource_01.tile
+		{
+			min_instances 1
+			max_instances 1
+			min_distance_from_edge  1
+		}
+		biomes/desert/tiles/desert_canyons_02/desert_canyons_02.tile
+		{
+			max_instances	1			
+		}
+		biomes/desert/tiles/desert_canyons_05/desert_canyons_05.tile
+		{
+			max_instances	4			
+		}
+		biomes/desert/tiles/desert_canyons_06/desert_canyons_06.tile
+		{
+			max_instances	4			
+		}
+		biomes/desert/tiles/desert_canyons_07/desert_canyons_07.tile
+		{
+			max_instances	4			
+		}
+		biomes/desert/tiles/desert_plains_01/desert_plains_01.tile
+		{			
+			random_weight	4.0
+		}	
+		biomes/desert/tiles/desert_plains_02/desert_plains_02.tile
+		{			
+			random_weight	4.0
+		}
+		biomes/desert/tiles/desert_plains_03/desert_plains_03.tile
+		{			
+			random_weight	3.0
+		}
+		biomes/desert/tiles/desert_plains_05/desert_plains_05.tile
+		{			
+			random_weight	2
+		}
+	}
+    
+    ambient_creature_species
+    {
+        ground
+        {   
+			max_count 15
+			spawn_rate 5
+			
+            species
+            {
+                CreatureVolume
+                {
+                    creature_species    "rugwig"
+                }
+            }
+        }
+		air
+        {
+            species
+            {
+                CreatureVolume
+                {
+                    creature_species    "mothray"
+                }
+            }
+        }
+    }    
+    
+    creature_volumes_species
+    {
+		neutral_units
+        {
+            CreatureVolume
+            {
+                creature_species    "geotrupex"
+            }
+        }
+
+        regular_units
+        {
+			CreatureVolume
+            {
+                creature_species    "mushbit"
+                volume_spawn_ratio  "3"
+            }  
+
+			CreatureVolume
+            {
+                creature_species    "zorant"
+                volume_spawn_ratio  "2"
+            }
+            
+            CreatureVolume
+            {
+                creature_species    "stregaros"
+                volume_spawn_ratio  "2"
+            }
+			
+			CreatureVolume
+            {
+                creature_species    "lesigian"
+                volume_spawn_ratio  "0.75"
+            }
+			
+			CreatureVolume
+            {
+                creature_species    "kermon"
+                volume_spawn_ratio  "0.5"
+            }
+        }
+        resource_units
+        {
+            CreatureVolume
+            {
+                creature_species    "gnerot_desert"
+                volume_spawn_ratio  "0.35"
+            }			
+        }
+		
+		guardian_standard
+        {            	
+            CreatureVolume
+            {
+                creature_species    "gnerot_desert"
+				volume_spawn_ratio  "1"
+            }
+        }
+
+        guardian_advanced
+        {            	
+            CreatureVolume
+            {
+                creature_species    "gnerot_desert"
+				volume_spawn_ratio  "1"
+            }
+        }
+
+        guardian_superior
+        {            		
+            CreatureVolume
+            {
+                creature_species    "gnerot_desert"
+				volume_spawn_ratio  "1"
+            }
+        }
+
+        guardian_extreme
+        {            		
+            CreatureVolume
+            {
+                creature_species    "gnerot_desert"
+				volume_spawn_ratio  "1"
+            }
+        }
+    }
+	
+	mission_object_spawners
+	{		
+        //BIOANOMALIES - more powerful ones spawn further away
+        MarkerBlueprintSpawner
+        {
+            spawn_pool               "loot_containers"            
+            spawn_at_marker          "logic/spawn_objective"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  500				
+                loot_containers     200
+            }
+
+            spawn_blueprints
+            {
+                spawners/desert_spawner_extreme
+                {
+                    spawn_instances_minmax 1,2                    
+                }
+            }
+        }	
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "loot_containers"            
+            spawn_at_marker          "logic/spawn_objective"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  450				
+                loot_containers     200
+            }
+
+            spawn_blueprints
+            {
+
+                spawners/desert_spawner_superior
+                {
+                    spawn_instances_minmax 2,3                    
+                }
+                
+            }
+        }	
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "loot_containers"            
+            spawn_at_marker          "logic/spawn_objective"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  350				
+                loot_containers     200
+            }
+
+            spawn_blueprints
+            { 
+                spawners/desert_spawner_advanced
+                {
+                    spawn_instances_minmax 3,5                    
+                }
+            }
+        }	
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "loot_containers"            
+            spawn_at_marker          "logic/spawn_objective"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  250				
+                loot_containers     200
+            }
+
+            spawn_blueprints
+            {
+                spawners/desert_spawner_standard                
+            }
+        }	
+
+        GridSpawner
+        {
+            spawn_pool                  "loot_containers_small"
+			spawn_min_free_cell_margin	3 
+			exclude_terrain_types               "quicksand"
+
+            spawn_min_distance_from_pools
+            {
+                mission_objective   	100
+				player_spawn_point      200
+                loot_containers         50
+                loot_containers_small   100
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5					
+            }
+
+            spawn_blueprints
+            {
+				spawners/loot_container_small_desert_standard
+                {                    
+                    spawn_chance           0.25					
+                }
+                spawners/loot_container_small_desert_advanced
+                {                
+                    spawn_chance           0.1
+                }				
+                spawners/loot_container_small_desert_superior
+                {                 
+                    spawn_chance           0.1
+                }				
+                spawners/loot_container_small_desert_extreme
+                {                 
+                    spawn_chance           0.05
+                }				
+			}
+		}
+		
+		GridSpawner
+        {
+            spawn_pool                  	"power_well"
+			spawn_min_free_cell_margin		5
+			exclude_terrain_types           "quicksand"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point      350
+				mission_objective   	100
+                loot_containers         50
+                loot_containers_small   50
+                underground_treasures   10
+				resource_volumes		10
+				enemy					5
+				power_well				450				
+            }
+
+            spawn_blueprints
+            {
+				props/special/power_wells/power_well_source_health
+                {                    
+                    spawn_chance           0.1					
+                }
+				props/special/power_wells/power_well_source_forcefield
+                {                    
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_cooldowns
+                {
+                    spawn_chance           0.1
+                }                
+				props/special/power_wells/power_well_source_radar
+                {                 
+                    spawn_chance           0.1
+                }
+                props/special/power_wells/power_well_source_building
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_loot
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_reflect_damage
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_drones
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_ammo
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_firerate
+                {                 
+                    spawn_chance           0.1
+                }
+				props/special/power_wells/power_well_source_damage
+                {                 
+                    spawn_chance           0.1
+                }					
+			}
+		}
+
+        GridSpawner
+        {
+            spawn_pool                  "underground_treasures"
+            spawn_min_free_cell_margin	3
+			exclude_terrain_types       "quicksand"
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point          150
+				mission_objective   	    100
+				loot_containers             50
+				loot_containers_small       50            
+				resource_volumes		    10
+				enemy					    5
+				power_well				    15
+				cryo_plants				    15
+				magnetic_rocks			    15				
+				underground_treasures       100
+            }
+
+            spawn_blueprints
+            {
+                spawners/underground_treasure_spawner
+                {                    
+                    spawn_discoverable_level    1
+					spawn_chance           		0.25
+
+                    database
+                    {	
+                        blueprint 	    string:"items/loot/resources/shard_carbonium_item"
+                        min   	 	    int:"200"
+                        max   	 	    int:"500"
+						package_size    int:"5"
+                    }
+                }
+
+                spawners/underground_treasure_spawner
+                {                    
+                    spawn_discoverable_level    1
+					spawn_chance           		0.25
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_steel_item"
+                        min   	 		int:"200"
+                        max   	 		int:"500"
+						package_size    int:"5"
+                    }
+                }
+
+                spawners/underground_treasure_spawner
+                {                    
+                    spawn_discoverable_level    1
+					spawn_chance           		0.25
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_tanzanite_item"
+                        min   	 		int:"50"
+                        max   	 		int:"100"
+						package_size    int:"5"
+                    }
+                }  
+				spawners/underground_treasure_spawner
+                {                    
+                    spawn_discoverable_level    1
+					spawn_chance           		0.25
+
+                    database
+                    {	
+                        blueprint 	string:"items/loot/resources/shard_uranium_item"
+                        min   	 		int:"100"
+                        max   	 		int:"250"
+						package_size    int:"5"
+                    }
+                } 
+            }
+        }		
+	}	
+
+	random_resources
+    {
+        ResourceVolume
+        {
+            resource        "uranium_ore_vein"
+			
+            min_resources   "4000"
+            max_resources   "10000"
+
+            min_spawned_volumes "5"
+            max_spawned_volumes "10"
+        }
+		ResourceVolume
+        {
+            resource        "uranium_ore_deepvein"
+			required_discovery_lvl	"1"
+			
+            min_resources   "15000"
+            max_resources   "30000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "3"
+        }
+		
+		ResourceVolume
+        {
+            resource        "cobalt_vein"
+			
+            min_resources   "8000"
+            max_resources   "14000"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "5"
+        }
+		ResourceVolume
+        {
+            resource        "cobalt_deepvein"
+			required_discovery_lvl	"1"
+			
+            min_resources   "15000"
+            max_resources   "28000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "4"
+        }
+		
+		ResourceVolume
+        {
+            resource        "carbon_vein"
+
+            min_resources   "40000"
+            max_resources   "60000"
+
+            min_spawned_volumes "8"
+            max_spawned_volumes "12"
+        }
+		
+        ResourceVolume
+        {
+            resource        "carbon_deepvein"
+			required_discovery_lvl	"1"
+
+            min_resources   "150000"
+            max_resources   "350000"
+
+            min_spawned_volumes "6"
+            max_spawned_volumes "10"
+        }
+		
+		ResourceVolume
+        {
+            resource        "ammonium_vein"
+
+            min_resources   "22000"
+            max_resources   "54000"
+
+            min_spawned_volumes "7"
+            max_spawned_volumes "10"
+        }
+        ResourceVolume
+        {
+            resource        "ammonium_deepvein"
+			required_discovery_lvl	"1"
+
+            is_infinite     "1"
+            min_spawned_volumes "1"
+            max_spawned_volumes "1"
+        }
+		
+		ResourceVolume
+        {
+            resource        "iron_vein"
+
+            min_resources   "20000"
+            max_resources   "30000"
+
+            min_spawned_volumes "4"
+            max_spawned_volumes "5"
+        }
+
+        ResourceVolume
+        {
+            resource        "iron_deepvein"
+			required_discovery_lvl	"1"
+		
+            min_resources   "65000"
+            max_resources   "110000"
+		
+            min_spawned_volumes "5"
+            max_spawned_volumes "6"
+        }
+
+		ResourceVolume
+        {
+            resource        "water_deepvein"
+			required_discovery_lvl	"1"
+			
+            is_infinite     "1"
+
+            min_spawned_volumes "10"
+            max_spawned_volumes "15"
+        }
+		
+		ResourceVolume
+        {
+            resource        "petroleum_deepvein"
+			required_discovery_lvl	"1"
+
+            min_resources   "20000"
+            max_resources   "40000"
+
+            min_spawned_volumes "5"
+            max_spawned_volumes "8"
+        }
+		
+		ResourceVolume
+        {
+            resource        "petroleum_deepvein"
+			required_discovery_lvl	"1"
+
+            is_infinite        "1"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "2"
+        }
+    }
+
+    starting_resources
+    {
+        ResourceVolume
+        {
+            resource        "carbon_vein"
+
+            min_resources   "120000"
+            max_resources   "180000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "2"
+        }
+		
+        ResourceVolume
+        {
+            resource        "ammonium_vein"
+
+            min_resources   "34000"
+            max_resources   "46000"
+
+            min_spawned_volumes "2"
+            max_spawned_volumes "2"
+        }
+
+        ResourceVolume
+        {
+            resource        "iron_vein"
+
+            min_resources   "40000"
+            max_resources   "60000"
+
+            min_spawned_volumes "1"
+            max_spawned_volumes "1"
+        }
+    }
+}

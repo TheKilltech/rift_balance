@@ -1,0 +1,244 @@
+BiomeDef
+{
+	base_materials
+	{
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_1"
+			value
+			{
+				String "ground/misc/biome_material_1"
+				String "ground/snow/snow_fresh_01"
+				String "ground/snow/snowy_ground_01"
+				String "ground/snow/snow_mud_05"
+				String "ground/snow/snow_mud_04"
+				String "ground/snow/snow_mud_03"
+			}
+
+		}
+
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_0"
+			value
+			{
+				String "ground/misc/biome_material_0"
+				String "ground/snow/snow_windy_01"
+				String "ground/snow/snow_rough_01"
+				String "ground/snow/snowy_ground_02"
+				String "ground/snow/snow_gravel_01"
+				String "ground/snow/snow_dunes_01"
+			}
+
+		}
+
+		Pair_String_Vector_String
+		{
+			key "ground/misc/biome_material_2"
+			value
+			{
+				String "ground/misc/biome_material_2"
+				String "ground/snow/frozen_ground_02"
+				String "ground/snow/snow_rocks_02"
+				String "ground/snow/frozen_roots_01"
+				String "ground/snow/ice_ground_02"
+				String "ground/snow/ice_ground_01"
+				String "ground/snow/ice_ground_04"
+				String "ground/snow/ice_ground_05"
+			}
+
+		}
+
+	}
+
+	default_liquid_resource "morphium_vein"
+	icon "gui/menu/biomes_prev/ice_prev"
+	icon_with_outpost "gui/menu/biomes_prev/ice_base_prev"
+	loading "gui/menu/loading/ice"
+	loading_with_outpost "gui/menu/loading/ice_outpost"
+	resources "carbon_vein,iron_vein,ammonium_vein,geothermal_vent,flammable_gas_vent,uranium_ore_vein,titanium_vein,palladium_vein,cobalt_vein,water_vein,mud_vein,sludge_vein,morphium_vein,carbon_deepvein,iron_deepvein,ammonium_deepvein,cobalt_deepvein,palladium_deepvein,titanium_deepvein,uranium_ore_deepvein,mud_deepvein,water_deepvein,sludge_deepvein,magma_deepvein,morphium_deepvein,petroleum_deepvein,nitric_acid_deepvein,fluorine_deepvein,resin_deepvein,plasma_deepvein,plasma_charged_deepvein"
+	
+	root_template
+	{
+		children
+		{
+			EntityTemplate
+			{
+				components
+				{
+					IdComponent
+					{
+						name "skybox"
+					}
+
+					LocalAabbDesc
+					{
+						local_aabb
+						{
+							min
+							{
+								x "-5.1"
+								y "-5.1"
+								z "-5.1"
+							}
+
+							max
+							{
+								x "5.1"
+								y "5.1"
+								z "5.1"
+							}
+
+						}
+
+					}
+
+					MeshDesc
+					{
+						material "pbr/skybox"
+						mesh "meshes/skybox.mesh"
+						renderable_custom_parameters
+						{
+							Params
+						}
+
+					}
+
+					UniformComponent
+					{
+						renderable_custom_parameters
+						{
+							Params
+						}
+
+					}
+
+				}
+
+			}
+
+			EntityTemplate
+			{
+				components
+				{
+					IdComponent
+					{
+						name "main_light"
+					}
+
+					LightDesc
+					{
+						light_color
+						{
+							w "12.038"
+							x "0.907"
+							y "0.932"
+						}
+
+					}
+
+					ShadowComponent
+					{
+						light_mask_texture
+					}
+
+				}
+
+			}
+
+		}
+
+		components
+		{
+			BiomeModificatorComponent
+			{
+				solar_power "0.8"
+			}
+
+			DirectionalWindComponent
+			{
+				factor "0"
+				position_frequency_factor "0.001"
+				power_frequency "0"
+				power_max "0"
+				power_min "0"
+				rotation_frequency "0"
+				rotation_max "0"
+			}
+
+			SceneParamsDesc
+			{
+				bloom_params
+				{
+					max_exposure "1.284"
+					scale "1.258"
+					threshold "0.103"
+				}
+
+				fog_params
+				{
+					color
+					{
+						x "0.009"
+						y "0.077"
+						z "0.847"
+					}
+
+					density "0.421"
+					end "58.708"
+					start "46.177"
+				}
+
+				shadow_params
+				{
+					intensity "1"
+				}
+
+				skybox_params
+				{
+					diffuse "materials/textures/skybox/skybox_metallic_diffuse.dds"
+					diffuse_intensity "0"
+					environment "materials/textures/skybox/skybox_metallic_env.dds"
+					specular "materials/textures/skybox/skybox_metallic_specular.dds"
+					specular_intensity "0.4759036"
+					sun_roll "31.655762"
+					sun_yaw "20.468"
+				}
+
+				skybox_procedural_params
+				{
+					atmosphere_thickness "1.094"
+					clouds "0.4"
+					sun_convergence "0.503"
+					sun_size "1.001"
+				}
+
+				ssao_params
+				{
+					angle_bias "0.397"
+					factor "7.497"
+					intensity "1.501"
+					sample_length "0.054"
+				}
+
+			}
+
+			TimeOfDayComponent
+			{
+				timeofday_presets
+				{
+					TimeOfDayPresetHolder
+					{
+						resource_name "biomes/ice/scene_params/ice.td"
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+

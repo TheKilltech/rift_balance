@@ -1,7 +1,6 @@
-EntityBlueprint
+EntityBlueprint  // tower_artillery_napalm
 {
 	name "buildings/defense/tower_artillery_napalm"
-
 	base_blueprint 			"buildings/defense/tower_artillery_lvl_2"
 
 	BuildingDesc
@@ -15,24 +14,23 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/tower_artillery_lvl2_napalm"
 		require 			"headquarters"
 		building_group		"tower_artillery"
-		order				"11"
 		check_connect		"1"
 		type				"tower"
 		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		condition			"NOT_BIOME"	
-		condition_value		"caverns"	
+		condition			"NOT_BIOME"
+		condition_value		"caverns"
 
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 6
+				building_time 25
 				building_cost
 				{
 					carbonium 	"200"
-					steel 		"750"
+					alloys		"350"
 					uranium		"25"
 				}
 			}
@@ -51,50 +49,9 @@ EntityBlueprint
 			
 			GameplayResource
 			{
-				resource 	"flammable_gas"
-				value 		"15"
-				family		"warhead"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"petroleum"
-				value 		"10"
-				family		"warhead"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"magma"
-				value 		"25"
-				family		"warhead"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"resin"
+				resource 	"rhodonite"
 				value 		"2"
 				family		"warhead"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"plasma"
-				value 		"5"
-				family		"warhead"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"plasma_charged"
-				value 		"2"
-				family		"warhead"
-				attachment	"att_in_1"
 			}
 		}
 
@@ -160,26 +117,10 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
-		////////////////////////Resources/////////////////////////
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_arrow"
-				}
-			}
 		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
@@ -214,7 +155,8 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+
+EntityBlueprint  // tower_artillery_projectile_napalm
 {
 	name "buildings/defense/tower_artillery_projectile_napalm"
 	base_blueprint buildings/defense/tower_artillery_projectile_lvl2

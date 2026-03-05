@@ -1,0 +1,57 @@
+system rift/spark_ball_bottom_rotor
+{
+    keep_local                                  true
+    nonvisible_update_timeout                   1
+    fast_forward                                0 2
+    scale_velocity                              0.005
+    scale                                       0.02 0.02 0.02
+    tight_bounding_box                          true
+    category                                    RIFT
+    cache_count                                 2
+    technique shockwave_single
+    {
+        visual_particle_quota                   3
+        emitted_emitter_quota                   0
+        emitted_technique_quota                 0
+        emitted_affector_quota                  0
+        emitted_system_quota                    0
+        material                                particles_noatlas/vortex_01
+        renderer                                Billboard
+        {
+            texture_coords_rows                 8
+            texture_coords_columns              8
+            billboard_type                      perpendicular_common
+            billboard_rotation_type             vertex
+            common_direction                    0 1 0
+            common_up_vector                    0 0 1
+        }
+        emitter                                 Point flash2
+        {
+            emission_rate                       2
+            time_to_live                        1.2
+            velocity                            0
+            all_particle_dimensions             180
+        }
+        affector                                Colour 
+        {
+            time_colour                         0    1 1 1 0
+            time_colour                         0.502174  1 1 1 1
+            time_colour                         1    1 1 1 0
+        }
+        affector                                TextureAnimator Affector71
+        {
+            end_texture_coords_range            63
+            texture_start_random                false
+        }
+        affector                                TextureRotator Affector37
+        {
+            use_own_rotation                    true
+            rotation                            dyn_random
+            {
+                min                             -3
+                max                             3
+            }
+            rotation_speed                      0
+        }
+    }
+}

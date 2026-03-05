@@ -208,6 +208,34 @@ MissionDef
             }
         }
 		
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "nest,enemy"
+			spawn_team               "enemy"
+            spawn_at_marker          "logic/spawn_objective"			
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  250
+				loot_containers     30
+				nest				50
+            }
+            
+            spawn_instances_minmax    4,8
+
+            spawn_blueprints
+            {
+                spawner_canoptrix_elite 
+				{
+					spawn_type				"creature_species"
+					database
+					{	
+						ambient_spawner        string:"true"						
+					}
+				}
+			}
+        }	
+		
 		GridSpawner
         {
             spawn_pool                  "loot_containers_small"
@@ -440,8 +468,8 @@ MissionDef
         {
             resource        "carbon_vein"
 
-            min_resources   "10000"
-            max_resources   "20000"
+            min_resources   "30000"
+            max_resources   "50000"
 
             min_spawned_volumes "3"
             max_spawned_volumes "5"
@@ -452,8 +480,8 @@ MissionDef
             resource        "carbon_deepvein"
 			required_discovery_lvl	"1"
 
-            min_resources   "55000"
-            max_resources   "85000"
+            min_resources   "125000"
+            max_resources   "185000"
 
             min_spawned_volumes "3"
             max_spawned_volumes "6"
@@ -486,8 +514,8 @@ MissionDef
             resource        "iron_deepvein"
 			required_discovery_lvl	"1"
 
-            min_resources   "10000"
-            max_resources   "16000"
+            min_resources   "20000"
+            max_resources   "36000"
 
             min_spawned_volumes "10"
             max_spawned_volumes "15"
@@ -498,8 +526,8 @@ MissionDef
             resource        "iron_deepvein"
 			required_discovery_lvl	"1"
 
-            min_resources   "15000"
-            max_resources   "30000"
+            min_resources   "120000"
+            max_resources   "200000"
 
             min_spawned_volumes "3"
             max_spawned_volumes "5"
@@ -520,8 +548,8 @@ MissionDef
         {
             resource        "ammonium_vein"
 
-            min_resources   "16000"
-            max_resources   "34000"
+            min_resources   "26000"
+            max_resources   "54000"
 
             min_spawned_volumes "4"
             max_spawned_volumes "6"

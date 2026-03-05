@@ -1,11 +1,9 @@
-require("lua/utils/rules_utils.lua")
+require("lua/missions/v2/rules_gen.lua" )
 
 return function(params)
-	local helper    = require( "lua/missions/v2/waves_gen.lua" )
-	local rulesName = GetRulesForCustomDifficulty( "lua/missions/survival/v2/dom_survival_jungle_rules_" )
+	local rulesName = GetRulesForCustomDifficulty( "lua/missions/survival/v2/dom_survival_jungle_rules_")
 	rules = require( rulesName )(params)
+	rules = PrepareCustomRules( rules )
 	
-	rules = helper:PrepareCustomRules( rules, "outpost")
-	
-    return rules;
+    return rules
 end

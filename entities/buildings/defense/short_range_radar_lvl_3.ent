@@ -1,7 +1,6 @@
-EntityBlueprint
+EntityBlueprint  // short_range_radar_lvl_3
 {
 	name  					"buildings/defense/short_range_radar_lvl_3"
-
 	base_blueprint 			"buildings/defense/short_range_radar_lvl_2"
 
 	BuildingDesc
@@ -41,13 +40,56 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"140"
+				value			 	"100"
+			}
+			
+			GameplayResource
+			{
+				resource 		"carbonium"
+				value 			"0.2"
+			}
+			
+			GameplayResource
+			{
+				resource 		"mud"
+				value			"10"
+				family			"coolant"
+				attachment		"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 		"sludge"
+				value			"10"
+				family			"coolant"
+				attachment		"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 		"morphium"
+				value			"10"
+				family			"coolant"
+				attachment		"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 		"water"
+				value 			"5"
+				family			"coolant"
+				attachment		"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 		"supercoolant"
+				value 			"1"
+				family			"coolant"
+				attachment		"att_in_1"
 			}
 		}
-		priority 5		
+		
 		out
 		{
 		}
+		priority 5
 	}
 
 	LuaDesc
@@ -89,30 +131,67 @@ EntityBlueprint
 			}
 		}
 	}	
+	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
-////////////////////////MISC/////////////////////////			
+		}
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
-			group "working"
-			enabled "0"				
+			group "att_in_1"
+			enabled "0"
+			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/radar_energy"								
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/storage3"
+					bone 		"att_vismod_1"
+					orientation	90 0 0
+					scale		"0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone 		"att_in_1_pipe"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/radar_energy"
 					bone "att_radar_energy"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_defense/short_range_radar_working"	
-					delay "0.5"					
-				}					
+					blueprint "effects/buildings_defense/short_range_radar_working"
+					delay "0.5"
+				}
 			}
 		}	
 		EffectGroup
@@ -127,6 +206,6 @@ EntityBlueprint
 					bone "att_level"
 				}
 			}
-		}		
-	}	
+		}
+	}
 }

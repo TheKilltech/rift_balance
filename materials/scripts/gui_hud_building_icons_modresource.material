@@ -34,6 +34,39 @@ material "gui/hud/building_icons/solid_material_storage_basic_disabled" : gui/de
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_disabled.dds"
 }
 
+
+/////  large_solid_material_storage
+
+material "gui/hud/building_icons/large_solid_material_storage_basic" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/large_solid_material_storage_basic.dds"
+}
+
+material "gui/hud/building_icons/large_solid_material_storage_basic_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/large_solid_material_storage_lvl3_disabled.dds"
+}
+
+material "gui/hud/building_icons/large_solid_material_storage_other" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/large_solid_material_storage_other.dds"
+}
+
+material "gui/hud/building_icons/large_solid_material_storage_other_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/large_solid_material_storage_lvl2_disabled.dds"
+}
+
+material "gui/hud/building_icons/large_solid_material_storage_rare" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/large_solid_material_storage_rare.dds"
+}
+
+material "gui/hud/building_icons/large_solid_material_storage_basic_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/large_solid_material_storage_disabled.dds"
+}
+
 material "gui/hud/building_icons/solid_material_storage_underground" : gui/default
 {
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solid_material_storage_underground.dds"
@@ -43,7 +76,6 @@ material "gui/hud/building_icons/solid_material_storage_underground_disabled" : 
 {
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/mining_elevator_disabled.dds"
 }
-
 
 
 /////  liquid_pumpjack
@@ -675,6 +707,29 @@ material "gui/hud/building_icons/supercoolant_chem_plant_lvl_3" : gui/default
 material "gui/hud/building_icons/supercoolant_chem_plant_lvl_3_disabled" : gui/default
 {
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/supercoolant_refinery_disabled.dds"
+}
+
+
+/////  moisture_trap
+
+material "gui/hud/building_icons/moisture_trap" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/moisture_trap.dds"
+}
+
+material "gui/hud/building_icons/moisture_trap_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/fluorine_trap_disabled.dds"
+}
+
+material "gui/hud/building_icons/moisture_trap_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/moisture_trap_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/moisture_trap_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/fluorine_trap_disabled.dds"
 }
 
 

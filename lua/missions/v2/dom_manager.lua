@@ -286,6 +286,18 @@ function dom_mananger:OnLoad()
 	if ( self.rulesFile ~= nil ) then
 		self:VerboseLog("OnLoad - reloading rules." )
 
+		if string.find( self.rulesFile, "/campaigns/dlc_1/dom_template_" ) ~= nil then
+			self.rulesFile = string.gsub( self.rulesFile, "/campaigns/dlc_1/", "/campaigns/story/v2/metallic/" )
+		end
+
+		if string.find( self.rulesFile, "/campaigns/dlc_2/dom_template_" ) ~= nil then
+			self.rulesFile = string.gsub( self.rulesFile, "/campaigns/dlc_2/", "/campaigns/story/v2/caverns/" )
+		end
+
+		if string.find( self.rulesFile, "/campaigns/dlc_3/dom_template_" ) ~= nil then
+			self.rulesFile = string.gsub( self.rulesFile, "/campaigns/dlc_3/", "/campaigns/story/v2/swamp/" )
+		end
+
 		local rulesOldPath = self.rulesFile
 		local currentDifficultyName = DifficultyService:GetCurrentDifficultyName() 
 
@@ -782,7 +794,9 @@ function dom_mananger:AddAttackGroup( groupName )
 	else
 		self:VerboseLog( "AddAttackGroup : failed : " .. tostring( groupName ) .. " does not exist in rules.waves" )
 	end
-	self.availableEventGroups = self.availableAttackGroups -- ToDo: testing concept. not sure how to update for now
+	for group in Iter( self.availableAttackGroups ) do 
+		self.availableEventGroups[group] = true
+	end
 end
 
 function dom_mananger:RemoveAttackGroup( groupName )
@@ -805,7 +819,6 @@ function dom_mananger:RemoveAttackGroup( groupName )
 	else
 		self:VerboseLog( "RemoveAttackGroup : failed : " .. tostring( groupName ) .. " does not exist in rules.waves" )
 	end
-	self.availableEventGroups = self.availableAttackGroups -- ToDo: testing concept. not sure how to update for now
 end
 
 function dom_mananger:PauseDOM()

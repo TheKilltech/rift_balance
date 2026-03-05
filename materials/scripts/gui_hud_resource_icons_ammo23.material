@@ -1,6 +1,8 @@
 import * from "materials/scripts/gui.material"
 import * from "materials/scripts/gui_hud_resource_icons.material"
 
+// ------ global resources -------
+
 
 material gui/hud/resource_icons/ammonium : gui/unsharp
 {
@@ -35,7 +37,7 @@ material gui/hud/resource_icons/ammonium_vein_bigger_disabled : gui/unsharp
 
 
 
-
+// ------ ammo mech -------
 
 material gui/hud/resource_icons/ammo_mech_explosive_lvl2_icon : gui/unsharp
 {
@@ -156,6 +158,37 @@ material gui/hud/resource_icons/ammo_mech_high_caliber_lvl3_icon_bigger : gui/un
 }
 
 
+// ------ ammo tower -------
+
+material gui/hud/resource_icons/ammo_tower_energy_icon : gui/unsharp
+{
+	set_texture_alias diffuse materials/textures/gui/hud/resource_icons/ammo_tower_energy_icon.dds
+}
+
+material gui/hud/resource_icons/ammo_tower_energy_icon_bigger : gui/unsharp
+{
+	set_texture_alias diffuse materials/textures/gui/hud/resource_icons/ammo_tower_energy_icon_bigger.dds
+}
+
+material gui/hud/resource_icons/ammo_tower_energy_lvl2_icon : gui/unsharp
+{
+	set_texture_alias diffuse materials/textures/gui/hud/resource_icons/ammo_tower_energy_lvl2_icon.dds
+}
+
+material gui/hud/resource_icons/ammo_tower_energy_lvl2_icon_bigger : gui/unsharp
+{
+	set_texture_alias diffuse materials/textures/gui/hud/resource_icons/ammo_tower_energy_lvl2_icon_bigger.dds
+}
+
+material gui/hud/resource_icons/ammo_tower_energy_lvl3_icon : gui/unsharp
+{
+	set_texture_alias diffuse materials/textures/gui/hud/resource_icons/ammo_tower_energy_lvl3_icon.dds
+}
+
+material gui/hud/resource_icons/ammo_tower_energy_lvl3_icon_bigger : gui/unsharp
+{
+	set_texture_alias diffuse materials/textures/gui/hud/resource_icons/ammo_tower_energy_lvl3_icon_bigger.dds
+}
 
 
 

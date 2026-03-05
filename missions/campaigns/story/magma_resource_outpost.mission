@@ -269,6 +269,35 @@ MissionDef
 		
 		MarkerBlueprintSpawner
         {
+            spawn_pool               "nest,enemy"
+			spawn_team               "enemy"
+            spawn_at_marker          "logic/spawn_objective"			
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  200
+				mission_objective   100
+				loot_containers     30
+				nest				50
+            }
+            
+            spawn_instances_minmax    4,8
+
+            spawn_blueprints
+            {
+                spawner_morirot_elite 
+				{
+					spawn_type				"creature_species"
+					database
+					{	
+						ambient_spawner        string:"true"						
+					}
+				}
+			}
+        }	
+		
+		MarkerBlueprintSpawner
+        {
             spawn_pool               "cryo_plants"
 
             // find all entities on map with this blueprint as possible spawn point
@@ -277,11 +306,12 @@ MissionDef
             // min distance from objects in other pools
             spawn_min_distance_from_pools
             {
-                player_spawn_point  20.0
-				loot_containers     15.0
-                magnetic_rocks  	10.0
-                cryo_plants		    10.0
+                player_spawn_point  20
+				loot_containers     15
+                magnetic_rocks  	10
+                cryo_plants		    10
 				resource_volumes	5
+				nest				10
             }
 
             // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
@@ -345,11 +375,12 @@ MissionDef
             // min distance from objects in other pools
             spawn_min_distance_from_pools
             {
-                player_spawn_point  70.0
-				loot_containers     15.0
-                cryo_plants     	10.0
-                magnetic_rocks     	20.0
-                resource_volumes   	10.0
+                player_spawn_point  70
+				loot_containers     15
+                cryo_plants     	10
+                magnetic_rocks     	20
+                resource_volumes   	10
+				nest				10
             }
 
             // range of spawned blueprints by this pool <min,max>, max can be 0 for unbounded upper limit
@@ -647,8 +678,8 @@ MissionDef
         {
             resource        "iron_vein"
 
-            min_resources   "12000"
-            max_resources   "28000"
+            min_resources   "22000"
+            max_resources   "58000"
 
             min_spawned_volumes "10"
             max_spawned_volumes "15"
@@ -659,8 +690,8 @@ MissionDef
             resource        "iron_deepvein"
 			required_discovery_lvl	"1"
 		
-            min_resources   "35000"
-            max_resources   "80000"
+            min_resources   "85000"
+            max_resources   "140000"
 		
             min_spawned_volumes "5"
             max_spawned_volumes "8"

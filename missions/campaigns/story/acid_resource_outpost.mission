@@ -140,7 +140,7 @@ MissionDef
             CreatureVolume
             {
                 creature_species    "phirian_acid"
-                volume_spawn_ratio  "0.5"
+                volume_spawn_ratio  "0.75"
             }            
             CreatureVolume
             {
@@ -187,8 +187,7 @@ MissionDef
             spawn_blueprints
             {
                 spawners/acid_spawner_standard
-                {
-                make a roll to check if blueprint can be spawned
+                {                
                     spawn_chance           0.5
                 }
 
@@ -234,6 +233,36 @@ MissionDef
                 units/ground/creeper_root_origin
             }
         }
+		
+		MarkerBlueprintSpawner
+        {
+            spawn_pool               "nest,enemy"
+			spawn_team               "enemy"
+            spawn_at_marker          "logic/spawn_objective"			
+
+            spawn_min_distance_from_pools
+            {
+                player_spawn_point  200
+				mission_objective   100
+				loot_containers     30
+				nest				50
+				yeast_root			100
+            }
+            
+            spawn_instances_minmax    4,8
+
+            spawn_blueprints
+            {
+                spawner_granan_elite 
+				{
+					spawn_type				"creature_species"
+					database
+					{	
+						ambient_spawner        string:"true"						
+					}
+				}
+			}
+        }	
 		
 		GridSpawner
         {
@@ -437,6 +466,8 @@ MissionDef
                 underground_treasures   70
                 underground_mushrooms   70
 				resource_volumes		5
+				yeast_root				30
+				yeast_singular			10
             }
 	    
             spawn_blueprints
@@ -514,8 +545,8 @@ MissionDef
         {
             resource        "carbon_vein"
 
-            min_resources   "6000"
-            max_resources   "12000"
+            min_resources   "8000"
+            max_resources   "16000"
 
             min_spawned_volumes "15"
             max_spawned_volumes "20"
@@ -526,8 +557,8 @@ MissionDef
             resource        "carbon_vein"
 			required_discovery_lvl	"1"
 
-            min_resources   "20000"
-            max_resources   "45000"
+            min_resources   "40000"
+            max_resources   "85000"
 
             min_spawned_volumes "3"
             max_spawned_volumes "5"
@@ -537,8 +568,8 @@ MissionDef
         {
             resource        "carbon_deepvein"
 
-            min_resources   "32000"
-            max_resources   "75000"
+            min_resources   "82000"
+            max_resources   "125000"
 
             min_spawned_volumes "3"
             max_spawned_volumes "6"
@@ -559,8 +590,8 @@ MissionDef
             resource        "ammonium_deepvein"
 			required_discovery_lvl	"1"
 
-            min_resources   "28000"
-            max_resources   "60800"
+            min_resources   "88000"
+            max_resources   "120800"
 
             min_spawned_volumes "3"
             max_spawned_volumes "6"
