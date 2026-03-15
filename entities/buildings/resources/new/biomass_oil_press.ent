@@ -49,7 +49,7 @@ EntityBlueprint  // biomass_oil_press
 			GameplayResource
 			{
 				resource 			"biomass_water"
-				value			 	"1"
+				value				"2"
 			}
 		}
 		
@@ -431,11 +431,11 @@ EntityBlueprint  // biomass_oil_press_lvl_2
 				building_time 25
 				building_cost
 				{
-					carbonium 	"400"
-					steel 		"800"
+					carbonium	"400"
+					steel		"800"
 					cobalt		"300"
 				}
-			}		
+			}
 		}
 	}
 
@@ -448,11 +448,15 @@ EntityBlueprint  // biomass_oil_press_lvl_2
 				resource 			"energy"
 				value			 	"200"
 			}
-			
 			GameplayResource
 			{
 				resource 			"biomass_water"
 				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"tanzanite"
+				value 				"0.2"
 			}
 		}
 		
@@ -605,6 +609,11 @@ EntityBlueprint  // biomass_oil_press_lvl_3
 			{
 				resource 			"biomass_water"
 				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"tanzanite"
+				value 				"0.2"
 			}
 			
 			GameplayResource
