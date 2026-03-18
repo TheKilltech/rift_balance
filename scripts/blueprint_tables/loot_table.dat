@@ -5,6 +5,7 @@ Blueprints
 	LootItems "buildings/ammo/ammo_factory_energy_adv_lvl_3"
 	LootItems "buildings/ammo/ammo_factory_energy_ext"
 	LootItems "buildings/ammo/ammo_factory_energy_ext_lvl_2"
+	LootItems "buildings/ammo/ammo_factory_energy_ext_lvl_3"
 	LootItems "buildings/ammo/ammo_factory_energy_lvl_2"
 	LootItems "buildings/ammo/ammo_factory_energy_lvl_3"
 	LootItems "buildings/ammo/ammo_factory_explosive_adv"
@@ -348,7 +349,11 @@ Blueprints
 	LootItems "buildings/defense/tower_cannon_small"
 	LootItems "buildings/defense/tower_drone_attack"
 	LootItems "buildings/defense/tower_drone_attack_lvl_2"
+	LootItems "buildings/defense/tower_drone_attack_lvl_2_explosive"
+	LootItems "buildings/defense/tower_drone_attack_lvl_2_fire"
 	LootItems "buildings/defense/tower_drone_attack_lvl_3"
+	LootItems "buildings/defense/tower_drone_attack_lvl_3_cryo"
+	LootItems "buildings/defense/tower_drone_attack_lvl_3_energy"
 	LootItems "buildings/defense/tower_flamer"
 	LootItems "buildings/defense/tower_flamer_lvl_2"
 	LootItems "buildings/defense/tower_flamer_lvl_3"
@@ -692,8 +697,11 @@ Blueprints
 	LootItems "buildings/resources/ironium_synthesizer_lvl_2"
 	LootItems "buildings/resources/ironium_synthesizer_lvl_3"
 	LootItems "buildings/resources/large_solid_material_storage"
+	LootItems "buildings/resources/large_solid_material_storage_basic"
 	LootItems "buildings/resources/large_solid_material_storage_lvl_2"
 	LootItems "buildings/resources/large_solid_material_storage_lvl_3"
+	LootItems "buildings/resources/large_solid_material_storage_other"
+	LootItems "buildings/resources/large_solid_material_storage_rare"
 	LootItems "buildings/resources/liquid_compressor"
 	LootItems "buildings/resources/liquid_compressor_lvl_2"
 	LootItems "buildings/resources/liquid_compressor_lvl_3"
@@ -37503,7 +37511,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_big_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "1.0000"
 			min "3"
@@ -37521,7 +37529,7 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_cobalt_item"
+		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
 			chance "0.2000"
 			min "3"
@@ -37547,7 +37555,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_big_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "1.0000"
 			min "3"
@@ -37576,7 +37584,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "items/loot/resources/shard_uranium_item"
+		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
 			chance "0.2000"
 			min "3"
@@ -37584,14 +37592,14 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_big_01_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "1.0000"
 			min "3"
@@ -37620,7 +37628,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
 		}
 
-		LootItem "items/loot/resources/shard_palladium_item"
+		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.2000"
 			min "3"
@@ -37628,14 +37636,14 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_big_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "1.0000"
 			min "3"
@@ -37653,7 +37661,7 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_cobalt_item"
+		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
 			chance "0.2000"
 			min "3"
@@ -37679,7 +37687,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_big_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "1.0000"
 			min "3"
@@ -37708,7 +37716,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "items/loot/resources/shard_uranium_item"
+		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
 			chance "0.2000"
 			min "3"
@@ -37716,14 +37724,14 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_big_02_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "1.0000"
 			min "3"
@@ -37752,7 +37760,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
 		}
 
-		LootItem "items/loot/resources/shard_palladium_item"
+		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.2000"
 			min "3"
@@ -37760,14 +37768,14 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_big_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "1.0000"
 			min "3"
@@ -37785,7 +37793,7 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_cobalt_item"
+		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
 			chance "0.2000"
 			min "3"
@@ -37811,7 +37819,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_big_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "1.0000"
 			min "3"
@@ -37840,7 +37848,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "items/loot/resources/shard_uranium_item"
+		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
 			chance "0.2000"
 			min "3"
@@ -37848,14 +37856,14 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_big_03_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "1.0000"
 			min "3"
@@ -37884,7 +37892,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
 		}
 
-		LootItem "items/loot/resources/shard_palladium_item"
+		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.2000"
 			min "3"
@@ -37892,14 +37900,14 @@ Blueprints
 			gather_amount "6"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_medium_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.6600"
 			min "2"
@@ -37917,7 +37925,7 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_cobalt_item"
+		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
 			chance "0.1000"
 			min "2"
@@ -37943,7 +37951,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_medium_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.6600"
 			min "2"
@@ -37972,7 +37980,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "items/loot/resources/shard_uranium_item"
+		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
 			chance "0.1000"
 			min "2"
@@ -37980,14 +37988,14 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_medium_01_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.6600"
 			min "2"
@@ -38016,7 +38024,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
 		}
 
-		LootItem "items/loot/resources/shard_palladium_item"
+		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.1000"
 			min "2"
@@ -38024,14 +38032,14 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_medium_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.6600"
 			min "2"
@@ -38049,7 +38057,7 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_cobalt_item"
+		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
 			chance "0.1000"
 			min "2"
@@ -38075,7 +38083,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_medium_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.6600"
 			min "2"
@@ -38104,7 +38112,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "items/loot/resources/shard_uranium_item"
+		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
 			chance "0.1000"
 			min "2"
@@ -38112,14 +38120,14 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_medium_02_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.6600"
 			min "2"
@@ -38148,7 +38156,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
 		}
 
-		LootItem "items/loot/resources/shard_palladium_item"
+		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.1000"
 			min "2"
@@ -38156,14 +38164,14 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_medium_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.6600"
 			min "2"
@@ -38181,7 +38189,7 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_cobalt_item"
+		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
 			chance "0.1000"
 			min "2"
@@ -38207,7 +38215,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_medium_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.6600"
 			min "2"
@@ -38236,7 +38244,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "items/loot/resources/shard_uranium_item"
+		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
 			chance "0.1000"
 			min "2"
@@ -38244,14 +38252,14 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_medium_03_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.6600"
 			min "2"
@@ -38280,7 +38288,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
 		}
 
-		LootItem "items/loot/resources/shard_palladium_item"
+		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.1000"
 			min "2"
@@ -38288,14 +38296,14 @@ Blueprints
 			gather_amount "3"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_small_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -38313,7 +38321,7 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_cobalt_item"
+		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
 			chance "0.0500"
 			min "1"
@@ -38339,7 +38347,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_small_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -38368,7 +38376,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "items/loot/resources/shard_uranium_item"
+		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
 			chance "0.0500"
 			min "1"
@@ -38376,14 +38384,14 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_small_01_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -38412,7 +38420,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
 		}
 
-		LootItem "items/loot/resources/shard_palladium_item"
+		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.0500"
 			min "1"
@@ -38420,14 +38428,14 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_small_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -38445,7 +38453,7 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_cobalt_item"
+		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
 			chance "0.0500"
 			min "1"
@@ -38471,7 +38479,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_small_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -38500,7 +38508,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "items/loot/resources/shard_uranium_item"
+		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
 			chance "0.0500"
 			min "1"
@@ -38508,14 +38516,14 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_small_02_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -38544,7 +38552,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
 		}
 
-		LootItem "items/loot/resources/shard_palladium_item"
+		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.0500"
 			min "1"
@@ -38552,14 +38560,14 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_small_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -38577,7 +38585,7 @@ Blueprints
 			package_size "5"
 		}
 
-		LootItem "items/loot/resources/shard_cobalt_item"
+		LootItem "items/loot/resources/shard_cobalt_bio_item"
 		{
 			chance "0.0500"
 			min "1"
@@ -38603,7 +38611,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_small_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -38632,7 +38640,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_hazenite"
 		}
 
-		LootItem "items/loot/resources/shard_uranium_item"
+		LootItem "items/loot/resources/shard_uranium_bio_item"
 		{
 			chance "0.0500"
 			min "1"
@@ -38640,14 +38648,14 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/nuclear_energy_lvl1"
+			condition_value "gui/menu/research/name/resource_handling_uranium"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_small_03_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.3300"
 			min "1"
@@ -38676,7 +38684,7 @@ Blueprints
 			condition_value "gui/menu/research/name/resource_handling_ferdonite"
 		}
 
-		LootItem "items/loot/resources/shard_palladium_item"
+		LootItem "items/loot/resources/shard_palladium_bio_item"
 		{
 			chance "0.0500"
 			min "1"
@@ -38684,14 +38692,14 @@ Blueprints
 			gather_amount "2"
 			package_size "3"
 			condition "has_research"
-			condition_value "gui/menu/research/name/resource_handling_palladium"
+			condition_value "gui/menu/research/name/resource_handling_cobalt"
 		}
 
 	}
 
 	LootItems "props/mushrooms/frospore_very_small_01"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -38713,7 +38721,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_very_small_01_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -38735,7 +38743,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_very_small_01_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -38757,7 +38765,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_very_small_02"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -38779,7 +38787,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_very_small_02_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -38801,7 +38809,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_very_small_02_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -38823,7 +38831,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_very_small_03"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -38845,7 +38853,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_very_small_03_skin1"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -38867,7 +38875,7 @@ Blueprints
 
 	LootItems "props/mushrooms/frospore_very_small_03_skin2"
 	{
-		LootItem "items/loot/resources/biomass_plant_item"
+		LootItem "items/loot/resources/biomass_mycelium_item"
 		{
 			chance "0.1500"
 			min "1"
@@ -118213,9 +118221,9 @@ BlueprintOverrides
 		Items
 		{
 			tanzanite_medium
+			cobalt_bio_medium
+			biomass_mycelium_big
 			carbonium_big
-			cobalt_medium
-			biomass_plant_big
 		}
 
 	}
@@ -118224,10 +118232,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_bio_medium
 			hazenite_medium
+			biomass_mycelium_big
 			carbonium_big
-			uranium_medium
-			biomass_plant_big
 		}
 
 	}
@@ -118236,10 +118244,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			palladium_bio_medium
+			biomass_mycelium_big
 			carbonium_big
 			ferdonite_medium
-			palladium_medium
-			biomass_plant_big
 		}
 
 	}
@@ -118249,9 +118257,9 @@ BlueprintOverrides
 		Items
 		{
 			tanzanite_medium
+			cobalt_bio_medium
+			biomass_mycelium_big
 			carbonium_big
-			cobalt_medium
-			biomass_plant_big
 		}
 
 	}
@@ -118260,10 +118268,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_bio_medium
 			hazenite_medium
+			biomass_mycelium_big
 			carbonium_big
-			uranium_medium
-			biomass_plant_big
 		}
 
 	}
@@ -118272,10 +118280,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			palladium_bio_medium
+			biomass_mycelium_big
 			carbonium_big
 			ferdonite_medium
-			palladium_medium
-			biomass_plant_big
 		}
 
 	}
@@ -118285,9 +118293,9 @@ BlueprintOverrides
 		Items
 		{
 			tanzanite_medium
+			cobalt_bio_medium
+			biomass_mycelium_big
 			carbonium_big
-			cobalt_medium
-			biomass_plant_big
 		}
 
 	}
@@ -118296,10 +118304,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_bio_medium
 			hazenite_medium
+			biomass_mycelium_big
 			carbonium_big
-			uranium_medium
-			biomass_plant_big
 		}
 
 	}
@@ -118308,10 +118316,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			palladium_bio_medium
+			biomass_mycelium_big
 			carbonium_big
 			ferdonite_medium
-			palladium_medium
-			biomass_plant_big
 		}
 
 	}
@@ -118321,9 +118329,9 @@ BlueprintOverrides
 		Items
 		{
 			tanzanite_small
+			cobalt_bio_small
+			biomass_mycelium_medium
 			carbonium_medium
-			cobalt_small
-			biomass_plant_medium
 		}
 
 	}
@@ -118332,10 +118340,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_bio_small
 			hazenite_small
+			biomass_mycelium_medium
 			carbonium_medium
-			uranium_small
-			biomass_plant_medium
 		}
 
 	}
@@ -118344,10 +118352,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			palladium_bio_small
+			biomass_mycelium_medium
 			carbonium_medium
 			ferdonite_small
-			palladium_small
-			biomass_plant_medium
 		}
 
 	}
@@ -118357,9 +118365,9 @@ BlueprintOverrides
 		Items
 		{
 			tanzanite_small
+			cobalt_bio_small
+			biomass_mycelium_medium
 			carbonium_medium
-			cobalt_small
-			biomass_plant_medium
 		}
 
 	}
@@ -118368,10 +118376,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_bio_small
 			hazenite_small
+			biomass_mycelium_medium
 			carbonium_medium
-			uranium_small
-			biomass_plant_medium
 		}
 
 	}
@@ -118380,10 +118388,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			palladium_bio_small
+			biomass_mycelium_medium
 			carbonium_medium
 			ferdonite_small
-			palladium_small
-			biomass_plant_medium
 		}
 
 	}
@@ -118393,9 +118401,9 @@ BlueprintOverrides
 		Items
 		{
 			tanzanite_small
+			cobalt_bio_small
+			biomass_mycelium_medium
 			carbonium_medium
-			cobalt_small
-			biomass_plant_medium
 		}
 
 	}
@@ -118404,10 +118412,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_bio_small
 			hazenite_small
+			biomass_mycelium_medium
 			carbonium_medium
-			uranium_small
-			biomass_plant_medium
 		}
 
 	}
@@ -118416,10 +118424,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			palladium_bio_small
+			biomass_mycelium_medium
 			carbonium_medium
 			ferdonite_small
-			palladium_small
-			biomass_plant_medium
 		}
 
 	}
@@ -118429,9 +118437,9 @@ BlueprintOverrides
 		Items
 		{
 			tanzanite_very_small
+			cobalt_bio_very_small
+			biomass_mycelium_small
 			carbonium_small
-			cobalt_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -118440,10 +118448,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_bio_very_small
 			hazenite_very_small
+			biomass_mycelium_small
 			carbonium_small
-			uranium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -118452,10 +118460,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			palladium_bio_very_small
+			biomass_mycelium_small
 			carbonium_small
 			ferdonite_very_small
-			palladium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -118465,9 +118473,9 @@ BlueprintOverrides
 		Items
 		{
 			tanzanite_very_small
+			cobalt_bio_very_small
+			biomass_mycelium_small
 			carbonium_small
-			cobalt_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -118476,10 +118484,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_bio_very_small
 			hazenite_very_small
+			biomass_mycelium_small
 			carbonium_small
-			uranium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -118488,10 +118496,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			palladium_bio_very_small
+			biomass_mycelium_small
 			carbonium_small
 			ferdonite_very_small
-			palladium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -118501,9 +118509,9 @@ BlueprintOverrides
 		Items
 		{
 			tanzanite_very_small
+			cobalt_bio_very_small
+			biomass_mycelium_small
 			carbonium_small
-			cobalt_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -118512,10 +118520,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			uranium_bio_very_small
 			hazenite_very_small
+			biomass_mycelium_small
 			carbonium_small
-			uranium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -118524,10 +118532,10 @@ BlueprintOverrides
 	{
 		Items
 		{
+			palladium_bio_very_small
+			biomass_mycelium_small
 			carbonium_small
 			ferdonite_very_small
-			palladium_very_small
-			biomass_plant_small
 		}
 
 	}
@@ -118536,8 +118544,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_mycelium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -118546,8 +118554,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_mycelium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -118556,8 +118564,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_mycelium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -118566,8 +118574,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_mycelium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -118576,8 +118584,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_mycelium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -118586,8 +118594,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_mycelium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -118596,8 +118604,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_mycelium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -118606,8 +118614,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_mycelium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
@@ -118616,8 +118624,8 @@ BlueprintOverrides
 	{
 		Items
 		{
+			biomass_mycelium_very_small
 			carbonium_very_small
-			biomass_plant_very_small
 		}
 
 	}
