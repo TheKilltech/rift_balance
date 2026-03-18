@@ -87,6 +87,13 @@ EntityBlueprint  // liquid_pump_lvl_2
 				value			 	"1.5"
 				family				"production"
 			}
+			GameplayResource
+			{
+				resource 			"supercoolant_vein"
+				specific_group		"local"
+				value			 	"1.5"
+				family				"production"
+			}
 		}
 
 		out
@@ -130,6 +137,13 @@ EntityBlueprint  // liquid_pump_lvl_2
 			GameplayResource
 			{
 				resource 			"morphium"
+				value			 	"150"
+				family				"production"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"supercoolant"
 				value			 	"150"
 				family				"production"
 				attachment			"att_out_1"
