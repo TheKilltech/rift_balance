@@ -73,16 +73,8 @@ EntityBlueprint  // tower_acid_spitter_lvl_3
 			
 			GameplayResource
 			{
-				resource 	"water"
-				value		"100"
-				family		"carrier"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"morphium"
-				value		"100"
+				resource 	"fluorine"
+				value		"30"
 				family		"carrier"
 				attachment	"att_in_1"
 			}
@@ -223,7 +215,7 @@ EntityBlueprint  // tower_acid_spitter_lvl_3
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -253,6 +245,13 @@ EntityBlueprint  // tower_acid_spitter_lvl_3
 					bone 		"att_vismod_1"
 					scale		"2.0 1.4 2.0"
 					orientation "-45 0 0"
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/ball_gas"
+					bone 		"att_vismod_2"
+					scale		1 1 1
+					orientation 0 0 90
 				}
 			}
 		}
@@ -324,7 +323,15 @@ EntityBlueprint  // tower_cryo_spitter_lvl_3
 			GameplayResource
 			{
 				resource 	"supercoolant"
-				value 		"20"
+				value 		"15"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"deuterium"
+				value 		"3"
 				family		"carrier"
 				attachment	"att_in_1"
 			}
@@ -332,7 +339,7 @@ EntityBlueprint  // tower_cryo_spitter_lvl_3
 			GameplayResource
 			{
 				resource 	"water"
-				value		"100"
+				value		"75"
 				family		"carrier"
 				attachment	"att_in_1"
 			}
@@ -340,7 +347,7 @@ EntityBlueprint  // tower_cryo_spitter_lvl_3
 			GameplayResource
 			{
 				resource 	"morphium"
-				value		"100"
+				value		"75"
 				family		"carrier"
 				attachment	"att_in_1"
 			}
@@ -481,7 +488,7 @@ EntityBlueprint  // tower_cryo_spitter_lvl_3
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -511,6 +518,14 @@ EntityBlueprint  // tower_cryo_spitter_lvl_3
 					bone 		"att_vismod_1"
 					scale		"2.0 1.4 2.0"
 					orientation "-45 0 0"
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/mine_cryo"
+					bone 		"att_vismod_2"
+					scale		1 1.4 1
+					orientation 30 0 90
+					offset		0 0 -0.4
 				}
 			}
 		}
@@ -739,7 +754,7 @@ EntityBlueprint  // tower_fire_spitter_lvl_3
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -769,6 +784,14 @@ EntityBlueprint  // tower_fire_spitter_lvl_3
 					bone 		"att_vismod_1"
 					scale		"2.0 1.4 2.0"
 					orientation "-45 0 0"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_very_small_orange_03"
+					bone 		"att_vismod_2"
+					scale		"0.5 0.2 0.5"
+					orientation 0 0 90
+					offset		0 0 -0.6
 				}
 			}
 		}

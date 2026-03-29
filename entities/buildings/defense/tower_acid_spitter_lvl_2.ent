@@ -72,8 +72,8 @@ EntityBlueprint  // tower_acid_spitter_lvl_2
 			
 			GameplayResource
 			{
-				resource 	"mud"
-				value		"20"
+				resource 	"fluorine"
+				value		"10"
 				family		"carrier"
 				attachment	"att_in_1"
 			}
@@ -81,14 +81,6 @@ EntityBlueprint  // tower_acid_spitter_lvl_2
 			GameplayResource
 			{
 				resource 	"water"
-				value		"20"
-				family		"carrier"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"morphium"
 				value		"20"
 				family		"carrier"
 				attachment	"att_in_1"
@@ -201,14 +193,15 @@ EntityBlueprint  // tower_acid_spitter_lvl_2
 		EffectGroup
 		{
 			group "vismod"
-			enabled "0"
+			enabled "1"
 			Effects
 			{
 				Effect
 				{
-					blueprint	"effects/buildings_and_machines/minipipes"
+					blueprint	"effects/weapon_items/ball_gas"
 					bone 		"att_vismod_2"
-					scale		"0.6 0.6 0.6"
+					scale		1 1 1
+					orientation 0 0 90
 				}
 			}
 		}
@@ -281,7 +274,15 @@ EntityBlueprint  // tower_cryo_spitter_lvl_2
 			GameplayResource
 			{
 				resource 	"supercoolant"
-				value 		"5"
+				value 		"4"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"deuterium"
+				value 		"1"
 				family		"carrier"
 				attachment	"att_in_1"
 			}
@@ -409,14 +410,16 @@ EntityBlueprint  // tower_cryo_spitter_lvl_2
 		EffectGroup
 		{
 			group "vismod"
-			enabled "0"
+			enabled "1"
 			Effects
 			{
 				Effect
 				{
-					blueprint	"effects/buildings_and_machines/minipipes"
+					blueprint	"effects/weapon_items/mine_cryo"
 					bone 		"att_vismod_2"
-					scale		"0.6 0.6 0.6"
+					scale		0.8 1.4 0.8
+					orientation 30 0 90
+					offset		0 0 -0.4
 				}
 			}
 		}
@@ -505,7 +508,7 @@ EntityBlueprint  // tower_fire_spitter_lvl_2
 			GameplayResource
 			{
 				resource 	"petroleum"
-				value 		"5"
+				value 		"4"
 				family		"carrier"
 				attachment	"att_in_1"
 			}
@@ -601,7 +604,7 @@ EntityBlueprint  // tower_fire_spitter_lvl_2
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -617,14 +620,16 @@ EntityBlueprint  // tower_fire_spitter_lvl_2
 		EffectGroup
 		{
 			group "vismod"
-			enabled "0"
+			enabled "1"
 			Effects
 			{
 				Effect
 				{
-					blueprint	"effects/buildings_and_machines/minipipes"
+					blueprint	"effects/buildings_and_machines/scifi_structure_very_small_orange_03"
 					bone 		"att_vismod_2"
-					scale		"0.6 0.6 0.6"
+					scale		"0.4 0.2 0.4"
+					orientation 0 0 90
+					offset		0 0 -0.6
 				}
 			}
 		}
