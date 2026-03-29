@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // tower_acid_spitter_lvl_2
 {
 	name  "buildings/defense/tower_acid_spitter_lvl_2"
 	base_blueprint "buildings/defense/tower_acid_spitter"
@@ -161,6 +161,422 @@ EntityBlueprint
 
 		ammo_blueprint 			"items/weapons/acid_spitter_projectile_superior"
 		muzzle_flash_effect 	"effects/weapons_fluid/acid_muzzle"
+
+		burst_column_spacing 	"0"
+		burst_rate 				"0"
+		burst_column_angle 		"0"
+	}	
+	
+	WeaponItemDesc
+	{
+	}
+
+	TowerDesc
+	{
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/minipipes"
+					bone 		"att_vismod_2"
+					scale		"0.6 0.6 0.6"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_omni_light"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // tower_cryo_spitter_lvl_2
+{
+	name  "buildings/defense/tower_cryo_spitter_lvl_2"
+	base_blueprint "buildings/defense/tower_acid_spitter"
+	
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"tower_cryo_spitter_lvl_2"
+		bp   				"buildings/defense/tower_cryo_spitter_lvl_2"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_cryo_spitter"
+		description			"gui/hud/building_description/tower_cryo_spitter"
+		menu_icon			"gui/hud/building_icons/tower_cryo_spitter_lvl_2"
+		require 			"headquarters"
+		building_group		"tower_acid_spitter"
+		check_connect		"1"
+		type				"tower"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		//upgrade				"buildings/defense/tower_cryo_spitter_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 10
+				building_cost
+				{
+					carbonium 	"300"
+					steel 		"500"
+					palladium	"25"
+				}
+			}
+		}
+	}
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"25"
+			}
+			
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"5"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"water"
+				value		"30"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"morphium"
+				value		"30"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
+	}
+	
+	HealthDesc
+	{
+		max_health 					"750"
+		health 						"750"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}	
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_acid_spitter_lvl_2.mesh"
+		material "buildings/defense/tower_cryo_spitter_lvl_2"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/tower_acid_spitter_lvl_2"
+	}	
+	
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "5"
+			submesh_idx "0"
+		}
+
+		ammo_blueprint 			"items/weapons/cryo_spitter_projectile_superior"
+		muzzle_flash_effect 	"effects/weapons_fluid/cryo_spitter_muzzle"
+
+		burst_column_spacing 	"0"
+		burst_rate 				"0"
+		burst_column_angle 		"0"
+	}	
+	
+	WeaponItemDesc
+	{
+	}
+
+	TowerDesc
+	{
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/minipipes"
+					bone 		"att_vismod_2"
+					scale		"0.6 0.6 0.6"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_omni_light"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // tower_fire_spitter_lvl_2
+{
+	name  "buildings/defense/tower_fire_spitter_lvl_2"
+	base_blueprint "buildings/defense/tower_acid_spitter"
+	
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"tower_fire_spitter_lvl_2"
+		bp   				"buildings/defense/tower_fire_spitter_lvl_2"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_fire_spitter"
+		description			"gui/hud/building_description/tower_fire_spitter"
+		menu_icon			"gui/hud/building_icons/tower_fire_spitter_lvl_2"
+		require 			"headquarters"
+		building_group		"tower_acid_spitter"
+		check_connect		"1"
+		type				"tower"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		//upgrade				"buildings/defense/tower_fire_spitter_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 10
+				building_cost
+				{
+					carbonium 	"300"
+					steel 		"500"
+					palladium	"25"
+				}
+			}
+		}
+	}
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"25"
+			}
+			
+			GameplayResource
+			{
+				resource 	"flammable_gas"
+				value		"15"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"magma"
+				value 		"5"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"petroleum"
+				value 		"5"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
+	}
+	
+	HealthDesc
+	{
+		max_health 					"750"
+		health 						"750"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}	
+
+	MeshDesc
+	{
+		mesh  "meshes/buildings/defense/tower_acid_spitter_lvl_2.mesh"
+		material "buildings/defense/tower_fire_spitter_lvl_2"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/tower_acid_spitter_lvl_2"
+	}	
+	
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "5"
+			submesh_idx "0"
+		}
+
+		ammo_blueprint 			"items/weapons/fire_spitter_projectile_superior"
+		muzzle_flash_effect 	"effects/weapons_fluid/fire_spitter_muzzle"
 
 		burst_column_spacing 	"0"
 		burst_rate 				"0"
