@@ -6479,7 +6479,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-954"
+						x "-990"
 						y "36"
 					}
 
@@ -6547,7 +6547,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-954"
+						x "-990"
 						y "369"
 					}
 
@@ -16572,6 +16572,264 @@ Research
 					}
 
 					icon "gui/menu/research/icons/towers_drone_attack"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_acid_spitter_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_fire_spitter_lvl2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "ammonium"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "2500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "palladium"
+							count "750"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1017"
+						y "126"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_fire_spitter_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_acid_spewer"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_acid_spitter_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/towers_cryo_spitter_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_cryo_spitter_lvl3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "6000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "5000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "palladium"
+							count "4000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-963"
+						y "414"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_cryo_spitter_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_acid_spewer"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_acid_spitter_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_cryo_spitter_lvl2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "ammonium"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "2500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "palladium"
+							count "750"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-963"
+						y "126"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_cryo_spitter_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_acid_spewer"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_acid_spitter_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/towers_fire_spitter_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/towers_fire_spitter_lvl3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "6000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "5000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "palladium"
+							count "4000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1017"
+						y "414"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_fire_spitter_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_acid_spewer"
 				}
 
 			}
@@ -50843,6 +51101,6 @@ Research
 
 	type
 	editor "6741"
-	version "213"
+	version "214"
 }
 

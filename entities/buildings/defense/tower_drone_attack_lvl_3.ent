@@ -49,7 +49,7 @@ EntityBlueprint  // tower_drone_attack_lvl_3
 			GameplayResource
 			{
 				resource 	"ammo_tower_low_caliber_lvl3"
-				value 		"0.3"
+				value 		"0.01"
 			}
 			GameplayResource
 			{
@@ -102,7 +102,7 @@ EntityBlueprint  // tower_drone_attack_lvl_3
 			drone_full_search_interval	int:"5"
 			drone_own_search_radius		float:"10"
 			drone_search_radius			float:"60"
-			drone_blueprint				string:"units/drones/drone_attack"
+			drone_blueprint				string:"units/drones/drone_attack_acid_lvl_3"
 			drone_attachments			string:"att_landing,att_landing_1,att_landing_2"
 			drone_per_spot				int:"1"
 			drone_visible_on_spot		int:"0"
@@ -283,8 +283,8 @@ EntityBlueprint  // tower_drone_attack_lvl_3_cryo
 			
 			GameplayResource
 			{
-				resource 	"ammo_tower_low_caliber_lvl3" 
-				value 		"0.2"
+				resource 	"ammo_tower_high_caliber_lvl3" 
+				value 		"0.01"
 			}
 			GameplayResource
 			{
@@ -502,8 +502,8 @@ EntityBlueprint  // tower_drone_attack_lvl_3_energy
 			
 			GameplayResource
 			{
-				resource 	"ammo_tower_high_caliber_lvl2"
-				value 		"0.2"
+				resource 	"ammo_tower_low_caliber_lvl3"
+				value 		"0.01"
 			}
 			GameplayResource
 			{

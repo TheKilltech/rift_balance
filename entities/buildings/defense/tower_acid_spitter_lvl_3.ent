@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // tower_acid_spitter_lvl_3
 {
 	name  "buildings/defense/tower_acid_spitter_lvl_3"
 	base_blueprint "buildings/defense/tower_acid_spitter_lvl_2"
@@ -26,11 +26,11 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 12
+				building_time 30
 				building_cost
 				{
 					carbonium 	"600"
-					steel 		"1500"
+					alloys		"1500"
 					palladium	"100"
 				}
 			}
@@ -73,24 +73,8 @@ EntityBlueprint
 			
 			GameplayResource
 			{
-				resource 	"mud"
-				value		"100"
-				family		"carrier"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"water"
-				value		"100"
-				family		"carrier"
-				attachment	"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 	"morphium"
-				value		"100"
+				resource 	"fluorine"
+				value		"30"
 				family		"carrier"
 				attachment	"att_in_1"
 			}
@@ -231,7 +215,7 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -261,6 +245,553 @@ EntityBlueprint
 					bone 		"att_vismod_1"
 					scale		"2.0 1.4 2.0"
 					orientation "-45 0 0"
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/ball_gas"
+					bone 		"att_vismod_2"
+					scale		1 1 1
+					orientation 0 0 90
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // tower_cryo_spitter_lvl_3
+{
+	name  "buildings/defense/tower_cryo_spitter_lvl_3"
+	base_blueprint "buildings/defense/tower_cryo_spitter_lvl_2"
+	
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"tower_cryo_spitter_lvl_3"
+		bp   				"buildings/defense/tower_cryo_spitter_lvl_3"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_cryo_spitter"
+		description			"gui/hud/building_description/tower_cryo_spitter"
+		menu_icon			"gui/hud/building_icons/tower_cryo_spitter_lvl_3"
+		require 			"headquarters"
+		check_connect		"1"
+		building_group		"tower_acid_spitter"
+		type				"tower"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"600"
+					alloys		"1500"
+					palladium	"100"
+				}
+			}
+		}
+	}
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"60"
+			}
+			
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"15"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"deuterium"
+				value 		"3"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"water"
+				value		"75"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"morphium"
+				value		"75"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
+	}
+	
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				group	 		"local"
+				max 	 		"200"
+				attachment		"att_in_1"
+			}
+		}
+	}
+	
+	HealthDesc
+	{
+		max_health 					"1000"
+		health 						"1000"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}	
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_acid_spitter_lvl_3.mesh"
+		material "buildings/defense/tower_cryo_spitter_lvl_3"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/tower_acid_spitter_lvl_3"
+	}
+	
+	GridCullerDesc
+	{
+		Shapes
+		{
+   			PhysicsBoxShape
+   			{
+    				x	4
+    				y	4
+    				z	4
+   			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "0.6"  // r
+			y "0.25" // g
+			z "0.25" // b
+			w "1"
+		}
+		size
+		{
+			x "2"
+			y "2"
+		}
+
+		visibility			"always"
+	}
+	
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "5"
+			submesh_idx "0"
+		}
+
+		ammo_blueprint 			"items/weapons/cryo_spitter_projectile_extreme"
+		muzzle_flash_effect 	"effects/weapons_fluid/cryo_spitter_muzzle"
+
+		burst_column_spacing 	"0"
+		burst_rate 				"0"
+		burst_column_angle 		"0"
+	}	
+	
+	WeaponItemDesc
+	{
+	}
+
+	TowerDesc
+	{
+	}	
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone 		"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pylon2"
+					bone 		"att_vismod_1"
+					scale		"2.0 1.4 2.0"
+					orientation "-45 0 0"
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/mine_cryo"
+					bone 		"att_vismod_2"
+					scale		1 1.4 1
+					orientation 30 0 90
+					offset		0 0 -0.4
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "lamp"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/tower_white_searchlight"
+					bone "att_muzzle"
+					random_delay "3"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // tower_fire_spitter_lvl_3
+{
+	name  "buildings/defense/tower_fire_spitter_lvl_3"
+	base_blueprint "buildings/defense/tower_fire_spitter_lvl_2"
+	
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"tower_fire_spitter_lvl_3"
+		bp   				"buildings/defense/tower_fire_spitter_lvl_3"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/tower_fire_spitter"
+		description			"gui/hud/building_description/tower_fire_spitter"
+		menu_icon			"gui/hud/building_icons/tower_fire_spitter_lvl_3"
+		require 			"headquarters"
+		check_connect		"1"
+		building_group		"tower_acid_spitter"
+		type				"tower"
+		overrides			"tower,wall,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"600"
+					alloys		"1500"
+					palladium	"100"
+				}
+			}
+		}
+	}
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"60"
+			}
+			
+			GameplayResource
+			{
+				resource 	"flammable_gas"
+				value		"50"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"magma"
+				value 		"20"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"petroleum"
+				value 		"15"
+				family		"carrier"
+				attachment	"att_in_1"
+			}
+		}
+
+		out
+		{
+		}
+
+		priority 6
+	}
+	
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				group	 		"local"
+				max 	 		"200"
+				attachment		"att_in_1"
+			}
+		}
+	}
+	
+	HealthDesc
+	{
+		max_health 					"1000"
+		health 						"1000"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}	
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_acid_spitter_lvl_3.mesh"
+		material "buildings/defense/tower_fire_spitter_lvl_3"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/tower_acid_spitter_lvl_3"
+	}
+	
+	GridCullerDesc
+	{
+		Shapes
+		{
+   			PhysicsBoxShape
+   			{
+    				x	4
+    				y	4
+    				z	4
+   			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "0.6"  // r
+			y "0.25" // g
+			z "0.25" // b
+			w "1"
+		}
+		size
+		{
+			x "2"
+			y "2"
+		}
+
+		visibility			"always"
+	}
+	
+	BurstWeaponComponent
+	{
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle"
+			}
+		}
+
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor "5"
+			submesh_idx "0"
+		}
+
+		ammo_blueprint 			"items/weapons/fire_spitter_projectile_extreme"
+		muzzle_flash_effect 	"effects/weapons_fluid/fire_spitter_muzzle"
+
+		burst_column_spacing 	"0"
+		burst_rate 				"0"
+		burst_column_angle 		"0"
+	}	
+	
+	WeaponItemDesc
+	{
+	}
+
+	TowerDesc
+	{
+	}	
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone 		"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pylon2"
+					bone 		"att_vismod_1"
+					scale		"2.0 1.4 2.0"
+					orientation "-45 0 0"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/scifi_structure_very_small_orange_03"
+					bone 		"att_vismod_2"
+					scale		"0.5 0.2 0.5"
+					orientation 0 0 90
+					offset		0 0 -0.6
 				}
 			}
 		}

@@ -118,6 +118,7 @@ function drone_spawner_building:SpawnDrones()
 			local drone_blueprint = blueprints[ (droneIdx % #blueprints) + 1 ]
 			local drone = EntityService:SpawnEntity( drone_blueprint, attachment, EntityService:GetTeam(self.entity) )
 			EntityService:SetScale( drone, 0.75,0.75,0.75 )
+            EntityService:PropagateEntityOwner( drone, self.entity )
 
 			UnitService:SetCurrentTarget( drone, "owner", attachment )
 			if self.drones_visible then
@@ -135,6 +136,9 @@ function drone_spawner_building:SpawnDrones()
 			local database = EntityService:GetDatabase( drone )
 			database:SetInt("drone_id", droneIdx )
 			database:SetFloat("drone_search_radius", self.drone_search_radius )
+			if ( database:HasInt("owner") == false ) then
+				database:SetInt( "owner", PlayerService:GetPlayerForEntity( self.entity ) )
+			end
 			droneIdx = droneIdx + 1
 			Insert( self.drones, drone )
 

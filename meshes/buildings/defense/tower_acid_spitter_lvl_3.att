@@ -46,14 +46,6 @@ Attachments
 
 	Attachment
 	{
-		name "att_vismod_2"
-		parent "be_turret"
-		offset "-1.00 1.00 0.00"
-		orientation "-90.00 0.00 0.00"
-	}
-
-	Attachment
-	{
 		name "att_in_arrow"
 		offset "-3.30 0.40 1.00"
 	}
@@ -62,20 +54,28 @@ Attachments
 	{
 		name "att_in_1"
 		offset "-1.00 0.40 1.00"
-		orientation "180.00 -0.00 0.00"
+		orientation "-180.00 -0.00 0.00"
 	}
 
 	Attachment
 	{
 		name "att_in_pipe"
 		offset "-1.00 0.00 1.00"
-		orientation "-180.00 -0.00 0.00"
+		orientation "180.00 -0.00 0.00"
 	}
 
 	Attachment
 	{
 		name "att_vismod_1"
 		offset "0.00 -1.70 0.00"
+	}
+
+	Attachment
+	{
+		name "att_vismod_2"
+		parent "be_barrel"
+		offset "-0.40 0.40 -0.00"
+		orientation "-90.00 0.00 0.00"
 	}
 
 }

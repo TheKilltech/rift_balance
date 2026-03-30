@@ -1,0 +1,51 @@
+import * from "materials/scripts/pbr.material"
+
+material units/drones/drone_attack_cryo : pbr/units
+{
+	set_texture_alias albedo			materials/textures/units/drones/drone_attack_blue_albedo.dds
+	set_texture_alias normal			materials/textures/units/drones/drone_attack_normal.dds
+	set_texture_alias packed			materials/textures/units/drones/drone_attack_packed.dds
+	set_texture_alias emissive			materials/textures/units/drones/drone_attack_emissive.dds
+
+	glow 5
+}
+
+material units/drones/drone_attack_energy : pbr/units
+{
+	set_texture_alias albedo			materials/textures/units/drones/drone_attack_cyan_albedo.dds
+	set_texture_alias normal			materials/textures/units/drones/drone_attack_normal.dds
+	set_texture_alias packed			materials/textures/units/drones/drone_attack_packed.dds
+	set_texture_alias emissive			materials/textures/units/drones/drone_attack_emissive.dds
+
+	glow 5
+}
+
+material units/drones/drone_attack_acid : pbr/units
+{
+	set_texture_alias albedo			materials/textures/units/drones/drone_attack_green_albedo.dds
+	set_texture_alias normal			materials/textures/units/drones/drone_attack_normal.dds
+	set_texture_alias packed			materials/textures/units/drones/drone_attack_packed.dds
+	set_texture_alias emissive			materials/textures/units/drones/drone_attack_emissive.dds
+
+	glow 5
+}
+
+material units/drones/drone_attack_fire : pbr/units
+{
+	set_texture_alias albedo			materials/textures/units/drones/drone_attack_red_albedo.dds
+	set_texture_alias normal			materials/textures/units/drones/drone_attack_normal.dds
+	set_texture_alias packed			materials/textures/units/drones/drone_attack_packed.dds
+	set_texture_alias emissive			materials/textures/units/drones/drone_attack_emissive.dds
+
+	glow 5
+}
+
+material units/drones/drone_attack_explosive : pbr/units
+{
+	set_texture_alias albedo			materials/textures/units/drones/drone_attack_orange_albedo.dds
+	set_texture_alias normal			materials/textures/units/drones/drone_attack_normal.dds
+	set_texture_alias packed			materials/textures/units/drones/drone_attack_packed.dds
+	set_texture_alias emissive			materials/textures/units/drones/drone_attack_emissive.dds
+
+	glow 5
+}
