@@ -698,7 +698,7 @@ function Default_GameEvents(missionTypeOrParam, difficulty, threat, biome, part)
 			return {
 				{ action = "spawn_acid_rain",                type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 3,                    logicFile="logic/weather/acid_rain.logic",     minTime = 30, maxTime = 60,  weight = 0.5 },
 				{ action = "spawn_acid_fissures",            type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 2,                    logicFile="logic/weather/acid_fissures.logic", minTime = 30, maxTime = 60,  weight = 1 },
-				{ action = "spawn_meteor_shower",            type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 4,                    logicFile="logic/weather/meteor_shower.logic", minTime = 40, maxTime = 90,  weight = 0.5 },
+				{ action = "spawn_meteor_shower",            type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 4,                    logicFile="logic/weather/meteor_shower.logic", minTime = 25, maxTime = 30,  weight = 0.5 },
 				{ action = "spawn_tornado_acid_near_player", type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 3, maxEventLevel = 4, logicFile="logic/weather/tornado_acid_near_player.logic",                   weight = 0.5 },
 				{ action = "spawn_tornado_acid_near_base",   type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 4,                    logicFile="logic/weather/tornado_acid_near_base.logic",                     weight = 0.5 },
 			}
@@ -720,10 +720,10 @@ function Default_GameEvents(missionTypeOrParam, difficulty, threat, biome, part)
 			return {
 				{ action = "spawn_heavy_snow",               type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 1,                    logicFile="logic/weather/heavy_snow.logic",        minTime = 60, maxTime = 120, weight = 1 },
 				{ action = "spawn_blizzard",                 type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 1,                    logicFile="logic/weather/blizzard.logic",          minTime = 60, maxTime = 120, weight = 1 },
-				{ action = "spawn_meteor_shower",            type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 4,                    logicFile="logic/weather/meteor_shower.logic",     minTime = 40, maxTime = 90,  weight = 0.5 },
-				{ action = "spawn_ice_meteor_shower",        type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 3,                    logicFile="logic/weather/ice_meteor_shower.logic", minTime = 30, maxTime = 60,  weight = 1 },
-				{ action = "spawn_ice_rock_rain",            type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 4,                    logicFile="logic/weather/ice_rock_rain.logic",     minTime = 30, maxTime = 60,  weight = 1 },
-				{ action = "spawn_ice_falling_rocks",        type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 5,                    logicFile="logic/weather/ice_falling_rocks.logic", minTime = 30, maxTime = 60,  weight = 1 },
+				{ action = "spawn_meteor_shower",            type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 4,                    logicFile="logic/weather/meteor_shower.logic",     minTime = 30, maxTime = 45,  weight = 0.5 },
+				{ action = "spawn_ice_meteor_shower",        type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 3,                    logicFile="logic/weather/ice_meteor_shower.logic", minTime = 25, maxTime = 30,  weight = 1 },
+				{ action = "spawn_ice_rock_rain",            type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 4,                    logicFile="logic/weather/ice_rock_rain.logic",     minTime = 25, maxTime = 30,  weight = 1 },
+				{ action = "spawn_ice_falling_rocks",        type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 5,                    logicFile="logic/weather/ice_falling_rocks.logic", minTime = 25, maxTime = 30,  weight = 1 },
 				{ action = "spawn_tornado_ice_near_player",  type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 3, maxEventLevel = 4, logicFile="logic/weather/tornado_ice_near_player.logic",                        weight = 1 },
 				{ action = "spawn_tornado_ice_near_base",    type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 4,                    logicFile="logic/weather/tornado_ice_near_base.logic",                          weight = 1 },
 			}
@@ -736,13 +736,13 @@ function Default_GameEvents(missionTypeOrParam, difficulty, threat, biome, part)
 				{ action = "spawn_wind_strong",              type = "POSITIVE", gameStates="ATTACK|IDLE",    minEventLevel = 1,                    logicFile="logic/weather/wind_strong.logic",            minTime = 60, maxTime = 120 },
 				{ action = "spawn_tornado_near_player",      type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 1, maxEventLevel = 2, logicFile="logic/weather/tornado_near_player.logic",                                 weight = 0.35 },
 				{ action = "spawn_tornado_near_base",        type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 3,                    logicFile="logic/weather/tornado_near_base.logic",                                   weight = 0.35 },
-				{ action = "spawn_meteor_shower",            type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 2,                    logicFile="logic/weather/meteor_shower.logic",          minTime = 30, maxTime = 60,  weight = 0.3 },
+				{ action = "spawn_meteor_shower",            type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 2,                    logicFile="logic/weather/meteor_shower.logic",          minTime = 25, maxTime = 30,  weight = 0.3 },
 				{ action = "spawn_firestorm",                type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 2,                    logicFile="logic/weather/firestorm.logic",              minTime = 60, maxTime = 120, weight = 0.5 },
 				{ action = "spawn_fireflies",                type = "POSITIVE", gameStates="IDLE",           minEventLevel = 1,                    logicFile="logic/weather/fireflies.logic",              minTime = 60, maxTime = 120, weight = 1 },
 			}
 		elseif biome == "magma" then
 			return {
-				{ action = "spawn_volcanic_rock_rain",       type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 1,                    logicFile="logic/weather/volcanic_rock_rain.logic",  minTime = 30, maxTime = 60,   weight = 0.5 },
+				{ action = "spawn_volcanic_rock_rain",       type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 1,                    logicFile="logic/weather/volcanic_rock_rain.logic",  minTime = 25, maxTime = 30,   weight = 0.5 },
 				{ action = "spawn_volcanic_ash_clouds",      type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 1,                    logicFile="logic/weather/volcanic_ash_clouds.logic", minTime = 60, maxTime = 120,  weight = 1.0 },
 				{ action = "spawn_tornado_fire_near_player", type = "NEGATIVE", gameStates="ATTACK|IDLE",    minEventLevel = 3, maxEventLevel = 4, logicFile="logic/weather/tornado_fire_near_player.logic",                          weight = 0.5 },
 				{ action = "spawn_tornado_fire_near_base",   type = "NEGATIVE", gameStates="IDLE",           minEventLevel = 4,                    logicFile="logic/weather/tornado_fire_near_base.logic",                            weight = 0.5 },
@@ -761,7 +761,7 @@ function Default_GameEvents(missionTypeOrParam, difficulty, threat, biome, part)
 				{ action = "spawn_fog",                        type = "NEGATIVE", gameStates="IDLE",         minEventLevel = 1,                    logicFile="logic/weather/fog.logic",              minTime = 60,  maxTime = 120, weight = 0.5  },
 				{ action = "spawn_rain",                       type = "NEGATIVE", gameStates="ATTACK|IDLE",  minEventLevel = 1,                    logicFile="logic/weather/rain.logic",             minTime = 120, maxTime = 120, weight = 0.5 },
 				{ action = "spawn_wind_strong",                type = "POSITIVE", gameStates="ATTACK|IDLE",  minEventLevel = 1,                    logicFile="logic/weather/wind_strong.logic",      minTime = 60,  maxTime = 120 },
-				{ action = "spawn_meteor_shower",              type = "NEGATIVE", gameStates="ATTACK|IDLE",  minEventLevel = 2,                    logicFile="logic/weather/meteor_shower.logic",    minTime = 30,  maxTime = 60,  weight = 0.5 },
+				{ action = "spawn_meteor_shower",              type = "NEGATIVE", gameStates="ATTACK|IDLE",  minEventLevel = 2,                    logicFile="logic/weather/meteor_shower.logic",    minTime = 25,  maxTime = 30,  weight = 0.5 },
 				{ action = "spawn_fireflies",                  type = "POSITIVE", gameStates="IDLE",         minEventLevel = 1,                    logicFile="logic/weather/fireflies.logic",        minTime = 60,  maxTime = 120, weight = 4 },
 				{ action = "spawn_blooming_air",               type = "POSITIVE", gameStates="IDLE",         minEventLevel = 5,                    logicFile="logic/weather/blooming_air.logic",     minTime = 120, maxTime = 180, weight = 4 },
 				{ action = "spawn_monsoon",                    type = "NEGATIVE", gameStates="ATTACK|IDLE",  minEventLevel = 1,                    logicFile="logic/weather/monsoon.logic",          minTime = 60,  maxTime = 120, weight = 2 },
