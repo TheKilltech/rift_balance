@@ -60,12 +60,12 @@ return function()
 		{ action = "spawn_tornado_ice_near_base", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/tornado_ice_near_base.logic", minTime = 30, maxTime = 60, weight = 1 },
 		{ action = "spawn_tornado_ice_near_player", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4, logicFile="logic/weather/tornado_ice_near_player.logic", minTime = 30, maxTime = 60, weight = 1 },
 		{ action = "spawn_tornado_ice_near_player", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/tornado_ice_near_player.logic", minTime = 30, maxTime = 60, weight = 1 },
-		{ action = "spawn_ice_meteor_shower", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 3, logicFile="logic/weather/ice_meteor_shower.logic", minTime = 30, maxTime = 60, weight = 1 },
-		{ action = "spawn_ice_meteor_shower", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/ice_meteor_shower.logic", minTime = 30, maxTime = 60, weight = 1 },
-		{ action = "spawn_ice_rock_rain", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4, logicFile="logic/weather/ice_rock_rain.logic", minTime = 30, maxTime = 60, weight = 1 },
-		{ action = "spawn_ice_rock_rain", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/ice_rock_rain.logic", minTime = 30, maxTime = 60, weight = 1 },
-		{ action = "spawn_ice_falling_rocks", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 5, logicFile="logic/weather/ice_falling_rocks.logic", minTime = 30, maxTime = 60, weight = 1 },
-		{ action = "spawn_ice_falling_rocks", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/weather/ice_falling_rocks.logic", minTime = 30, maxTime = 60, weight = 1 },	
+		{ action = "spawn_ice_meteor_shower", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 3, logicFile="logic/weather/ice_meteor_shower.logic", minTime = 25, maxTime = 30, weight = 1 },
+		{ action = "spawn_ice_meteor_shower", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 3, logicFile="logic/weather/ice_meteor_shower.logic", minTime = 25, maxTime = 30, weight = 1 },
+		{ action = "spawn_ice_rock_rain", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 4, logicFile="logic/weather/ice_rock_rain.logic", minTime = 25, maxTime = 30, weight = 1 },
+		{ action = "spawn_ice_rock_rain", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 4, logicFile="logic/weather/ice_rock_rain.logic", minTime = 25, maxTime = 30, weight = 1 },
+		{ action = "spawn_ice_falling_rocks", type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 5, logicFile="logic/weather/ice_falling_rocks.logic", minTime = 25, maxTime = 30, weight = 1 },
+		{ action = "spawn_ice_falling_rocks", type = "NEGATIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 5, logicFile="logic/weather/ice_falling_rocks.logic", minTime = 25, maxTime = 30, weight = 1 },	
 		--{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 3 },
 		{ action = "spawn_comet_silent", type = "POSITIVE", gameStates="IDLE|NO_STREAMING", minEventLevel = 1, logicFile="logic/weather/comet_silent.logic", weight = 2 }
 	}

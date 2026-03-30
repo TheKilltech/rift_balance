@@ -152,10 +152,9 @@ function dom_mananger:init()
 		self.pauseAttacks = self.rules.pauseAttacks
 	end
 
-	local currentDifficulty = DifficultyService:GetCurrentDifficultyName()
-
-	if ( currentDifficulty == "sandbox" ) then
-		self:VerboseLog(" sandbox mode on - pausing attacks." )	
+	local waveStrength = DifficultyService:GetWaveStrength()
+	if ( waveStrength == "sandbox" ) then
+		LogService:Log(" sandbox mode on - pausing attacks." )	
 		self.pauseAttacks = true
 	end
 
@@ -311,6 +310,12 @@ function dom_mananger:OnLoad()
 	self.player_death_position 	 = self.player_death_position or {}
 
 	self.rules = ProcessRulesTable( self.rules )
+
+	local waveStrength = DifficultyService:GetWaveStrength()
+	if ( waveStrength == "sandbox" ) then
+		LogService:Log(" sandbox mode on - pausing attacks." )	
+		self.pauseAttacks = true
+	end
 
 	self:VerboseLog("OnLoad - current hq state : " .. tostring( self.upgradeHQ:GetCurrentState() ) )
 	self:VerboseLog("OnLoad - current dom state : " .. tostring( self.spawner:GetCurrentState() ) )
@@ -859,7 +864,7 @@ end
 
 function dom_mananger:OnStartUpgradingEvent( evt )
 	local buildingName = BuildingService:GetBuildingName( evt:GetEntity() );
-	local upgradeTime = BuildingService:CalculateBuildTime( evt:GetEntity() )
+	local upgradeTime = BuildingService:CalculateBuildTime( evt:GetEntity(), 0 )
 
 	for i = 1, #self.rules.buildingsUpgradeStartsLogic, 1 do 
 		if ( self.rules.buildingsUpgradeStartsLogic[i].name == buildingName ) then
