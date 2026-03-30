@@ -66,6 +66,7 @@ function base_drone:init()
 	self:RegisterHandler( self.entity, "DroneLiftingEndedEvent", "_OnDroneLiftingEndedEvent" )
 	self:RegisterHandler( self.entity, "DroneLandingStartedEvent", "_OnDroneLandingStartedEvent" )
 	self:RegisterHandler( self.entity, "DroneLandingEndedEvent", "_OnDroneLandingEndedEvent" )
+	self:RegisterHandler( self.entity, "ResourceMissingEvent", "OnResourceMissingEvent" ) 
 	
 	self:RegisterHandler( self.entity, "DestroyRequest", "_OnDroneDestroyRequest" )
 
@@ -78,6 +79,11 @@ function base_drone:init()
 
 	SetupUnitScale( self.entity, self.data );
 
+	--local playerId = PlayerService:GetPlayerForEntity( self.entity )
+	--if ( self.data:HasInt("owner") == false ) then
+	--	self.data:SetInt( "owner", playerId )
+	--end
+	
 	if self.OnInit then
 		self:OnInit()
 	end
@@ -336,6 +342,13 @@ end
 
 function base_drone:_OnDroneDestroyRequest()
 	self:UnlockAllTargets();
+end
+
+function base_drone:OnResourceMissingEvent( evt )
+	local resource = evt:GetResource()
+	if ( resource ~= "energy" and resource ~= "ai" ) then
+		EntityService:ShowTimeoutSoundEvent( INVALID_ID, 30.0, "voice_over/announcement/not_enough_ammo_tower", false )
+	end
 end
 
 function base_drone:OnRelease()

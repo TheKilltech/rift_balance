@@ -8814,11 +8814,11 @@ buildings/main/planet_scanner_lvl_4
 
 }
 
-units/drones/drone_attack
+units/drones/drone_attack_acid_lvl_3
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_tower_low_caliber_lvl3"
 		damage_type "acid"
 		stat_def_vec
 		{
@@ -8886,6 +8886,14 @@ units/drones/drone_attack
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.5"
+				min_value "0.5"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -8896,7 +8904,7 @@ units/drones/drone_attack_cryo_lvl_3
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_tower_high_caliber_lvl3"
 		damage_type "cryo"
 		stat_def_vec
 		{
@@ -8956,6 +8964,14 @@ units/drones/drone_attack_cryo_lvl_3
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.5"
+				min_value "0.5"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -8966,7 +8982,7 @@ units/drones/drone_attack_energy_lvl_3
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_tower_low_caliber_lvl3"
 		damage_type "energy"
 		stat_def_vec
 		{
@@ -9025,6 +9041,14 @@ units/drones/drone_attack_energy_lvl_3
 				stat_type "DAMAGE_SPLASH"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.2"
+				min_value "0.2"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -9035,7 +9059,7 @@ units/drones/drone_attack_explosive_lvl_2
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_tower_explosive_lvl2"
 		damage_type "area"
 		stat_def_vec
 		{
@@ -9103,6 +9127,14 @@ units/drones/drone_attack_explosive_lvl_2
 				stat_type "WEAPON_SCALE"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.4"
+				min_value "0.4"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -9113,7 +9145,7 @@ units/drones/drone_attack_fire_lvl_2
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_tower_liquid_lvl2"
 		damage_type "fire"
 		stat_def_vec
 		{
@@ -9189,6 +9221,14 @@ units/drones/drone_attack_fire_lvl_2
 				stat_type "DAMAGE_OVER_TIME"
 			}
 
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -9199,7 +9239,7 @@ units/drones/drone_attack_physical
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_tower_low_caliber"
 		damage_type "physical"
 		stat_def_vec
 		{
@@ -9243,6 +9283,14 @@ units/drones/drone_attack_physical
 				stat_type "AMMO_SPEED"
 			}
 
+			WeaponStatDef
+			{
+				max_value "0.5"
+				min_value "0.5"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -9253,7 +9301,7 @@ units/drones/drone_attack_physical_lvl_2
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_tower_low_caliber_lvl2"
 		damage_type "physical"
 		stat_def_vec
 		{
@@ -9295,6 +9343,14 @@ units/drones/drone_attack_physical_lvl_2
 				min_value "85"
 				stat_features "BASE_MINMAX"
 				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.5"
+				min_value "0.5"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
 			}
 
 		}

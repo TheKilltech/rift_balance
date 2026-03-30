@@ -66,7 +66,7 @@ EntityBlueprint  // drone_attack_physical
 		}
 		
 		muzzles_per_fire 			"1"
-		ammo_blueprint 				"items/weapons_enemy/drone_projectile_physical"
+		ammo_blueprint 				"items/weapons/drone_projectile_physical"
 		muzzle_flash_effect 		"effects/weapons_bullet/small_machinegun_muzzle"
 
 
@@ -74,6 +74,39 @@ EntityBlueprint  // drone_attack_physical
 		burst_column_spacing 		"1"
 		burst_rate 					"0.1"
 		burst_column_angle 			"0"
+	}
+	
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "fly"
+
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/drone_trail"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/weapon_items/shotgun"
+					bone 		"att_vismod_1"
+					orientation 0 0 0
+					scale		0.4 0.4 0.4
+				}
+			}
+		}
 	}
 }
 
@@ -118,7 +151,7 @@ EntityBlueprint  // drone_attack_physical_lvl_2
 		}
 		
 		muzzles_per_fire 			"1"
-		ammo_blueprint 				"items/weapons_enemy/drone_projectile_physical"
+		ammo_blueprint 				"items/weapons/drone_projectile_physical"
 		muzzle_flash_effect 		"effects/weapons_bullet/small_machinegun_muzzle"
 
 
@@ -126,6 +159,39 @@ EntityBlueprint  // drone_attack_physical_lvl_2
 		burst_column_spacing 		"1"
 		burst_rate 					"0.1"
 		burst_column_angle 			"0"
+	}
+
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "fly"
+
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/drone_trail"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/weapon_items/burst_rifle"
+					bone 		"att_vismod_1"
+					orientation 0 0 0
+					scale		0.4 0.4 0.4
+				}
+			}
+		}
 	}
 }
 
@@ -144,6 +210,12 @@ EntityBlueprint  // drone_attack_fire_lvl_2
 		}
 	}
 
+	MeshDesc
+	{
+		mesh "meshes/units/drones/drone_attack.mesh"
+		material "units/drones/drone_attack_fire"
+	}
+	
 	WeaponItemDesc
 	{
 	}
@@ -170,12 +242,45 @@ EntityBlueprint  // drone_attack_fire_lvl_2
 		}
 		
 		muzzles_per_fire 			"1"
-		ammo_blueprint 				"items/weapons_enemy/drone_projectile_fire"
+		ammo_blueprint 				"items/weapons/drone_projectile_fire"
 		muzzle_flash_effect 		"effects/weapons_fluid/tower_water_basic_muzzle"
 
 		burst_column_spacing 		"0"
 		burst_rate 					"0"
 		burst_column_angle 			"0"
+	}
+
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "fly"
+
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/drone_trail"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/weapon_items/flamethrower"
+					bone 		"att_vismod_1"
+					orientation 0 0 0
+					scale		0.4 0.4 0.4
+				}
+			}
+		}
 	}
 }
 
@@ -194,6 +299,12 @@ EntityBlueprint  // drone_attack_explosive_lvl_2
 		}
 	}
 
+	MeshDesc
+	{
+		mesh "meshes/units/drones/drone_attack.mesh"
+		material "units/drones/drone_attack_explosive"
+	}
+	
 	WeaponItemDesc
 	{
 	}
@@ -220,12 +331,104 @@ EntityBlueprint  // drone_attack_explosive_lvl_2
 		}
 		
 		muzzles_per_fire 			"1"
-		ammo_blueprint 				"items/weapons_enemy/drone_projectile_explosive"
+		ammo_blueprint 				"items/weapons/drone_projectile_explosive"
 		muzzle_flash_effect 		"effects/weapons_explosive/tower_rocket_fire_medium"
 
 		burst_column_spacing 		"0"
 		burst_rate 					"0"
 		burst_column_angle 			"0"
+	}
+
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "fly"
+
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/drone_trail"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/weapon_items/swarm_missiles"
+					bone 		"att_vismod_1"
+					orientation 0 0 0
+					scale		0.4 0.4 0.4
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // drone_attack_acid_lvl_3
+{
+	name  "units/drones/drone_attack_acid_lvl_3"
+	base_blueprint 	"units/drones/drone_attack"
+
+	LuaDesc
+	{
+		script "lua/units/air/attack_drone.lua"
+
+		database
+		{
+			search_radius float:"60.0" // if spawned by building this param will be overriden by buildings `drone_search_radius`
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/units/drones/drone_attack.mesh"
+		material "units/drones/drone_attack_acid"
+	}
+	
+	WeaponItemDesc
+	{
+	}
+
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "fly"
+
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/drone_trail"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/weapon_items/spitter_acid"
+					bone 		"att_vismod_1"
+					orientation 0 0 0
+					scale		0.4 0.4 0.4
+				}
+			}
+		}
 	}
 }
 
@@ -244,6 +447,12 @@ EntityBlueprint  // drone_attack_cryo_lvl_3
 		}
 	}
 
+	MeshDesc
+	{
+		mesh "meshes/units/drones/drone_attack.mesh"
+		material "units/drones/drone_attack_cryo"
+	}
+	
 	WeaponItemDesc
 	{
 	}
@@ -270,12 +479,45 @@ EntityBlueprint  // drone_attack_cryo_lvl_3
 		}
 		
 		muzzles_per_fire 			"1"
-		ammo_blueprint 				"items/weapons_enemy/drone_projectile_cryo"
+		ammo_blueprint 				"items/weapons/drone_projectile_cryo"
 		muzzle_flash_effect 		"effects/weapons_bullet/small_machinegun_muzzle"
 
 		burst_column_spacing 		"1"
 		burst_rate 					"0.1"
 		burst_column_angle 			"0"
+	}
+	
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "fly"
+
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/drone_trail"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/weapon_items/heavy_plasma_gun"
+					bone 		"att_vismod_1"
+					orientation 0 0 0
+					scale		0.4 0.4 0.4
+				}
+			}
+		}
 	}
 }
 
@@ -313,7 +555,7 @@ EntityBlueprint  // drone_attack_energy_lvl_3
 	MeshDesc
 	{
 		mesh "meshes/units/drones/drone_attack.mesh"
-		material "units/drones/drone_attack"
+		material "units/drones/drone_attack_energy"
 	}
 
 	SkeletonDesc
@@ -346,7 +588,7 @@ EntityBlueprint  // drone_attack_energy_lvl_3
 			submesh_idx "1"
 		}
 
-		ammo_blueprint 				"items/weapons_enemy/drone_projectile_energy"
+		ammo_blueprint 				"items/weapons/drone_projectile_energy"
 
 		muzzle_flash_effect 		"effects/weapons_energy/blaster_fire"
 
@@ -354,13 +596,46 @@ EntityBlueprint  // drone_attack_energy_lvl_3
 		burst_rate 					"0"
 		burst_column_angle 			"0"
 	}
+	
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "fly"
+
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/drone_trail"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/weapon_items/lightning_gun"
+					bone 		"att_vismod_1"
+					orientation 0 0 0
+					scale		0.4 0.4 0.4
+				}
+			}
+		}
+	}
 }
 
 
 
 EntityBlueprint  // drone_projectile_physical
 {
-	name "items/weapons_enemy/drone_projectile_physical"
+	name "items/weapons/drone_projectile_physical"
 	base_blueprint "effects/weapons_bullet/minigun_bullet"
 
 	ProjectileAmmoComponent
@@ -376,7 +651,7 @@ EntityBlueprint  // drone_projectile_physical
 
 EntityBlueprint  // drone_projectile_explosive
 {
-	name "items/weapons_enemy/drone_projectile_explosive"
+	name "items/weapons/drone_projectile_explosive"
 	base_blueprint "buildings/defense/tower_rockets_projectile"
 
 	ProjectileAmmoComponent
@@ -392,7 +667,7 @@ EntityBlueprint  // drone_projectile_explosive
 
 EntityBlueprint  // drone_projectile_fire
 {
-	name "items/weapons_enemy/drone_projectile_fire"
+	name "items/weapons/drone_projectile_fire"
 	base_blueprint "buildings/defense/tower_water_basic_projectile"
 
 	ProjectileAmmoComponent
@@ -407,7 +682,7 @@ EntityBlueprint  // drone_projectile_fire
 
 EntityBlueprint  // drone_projectile_energy
 {
-	name "items/weapons_enemy/drone_projectile_energy"
+	name "items/weapons/drone_projectile_energy"
 	base_blueprint "buildings/defense/tower_plasma_projectile"
 
 	ProjectileAmmoComponent
@@ -421,7 +696,7 @@ EntityBlueprint  // drone_projectile_energy
 
 EntityBlueprint  // drone_projectile_cryo
 {
-	name "items/weapons_enemy/drone_projectile_cryo"
+	name "items/weapons/drone_projectile_cryo"
 	base_blueprint "buildings/defense/tower_icicle_thrower_projectile"
 
 	ProjectileAmmoComponent
