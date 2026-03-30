@@ -207,9 +207,9 @@ EntityBlueprint  // solid_material_storage_basic
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.2"  // r
+			y "0.7"  // g
+			z "0.3"  // b
 			w "1"
 		}
 		size
@@ -217,8 +217,9 @@ EntityBlueprint  // solid_material_storage_basic
 			x "3"
 			y "3"
 		}
-					
+
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc
@@ -598,9 +599,9 @@ EntityBlueprint  // solid_material_storage_other
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.2"  // r
+			y "0.7"  // g
+			z "0.3"  // b
 			w "1"
 		}
 		size
@@ -608,8 +609,9 @@ EntityBlueprint  // solid_material_storage_other
 			x "3"
 			y "3"
 		}
-					
+
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc
@@ -987,9 +989,9 @@ EntityBlueprint  // solid_material_storage_rare
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.2"  // r
+			y "0.7"  // g
+			z "0.3"  // b
 			w "1"
 		}
 		size
@@ -997,8 +999,9 @@ EntityBlueprint  // solid_material_storage_rare
 			x "3"
 			y "3"
 		}
-					
+
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc
@@ -1322,12 +1325,12 @@ EntityBlueprint  // solid_material_storage_underground
 		script "lua/buildings/building.lua"
 
 		database
-0		{
+		{
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
 			harvest_duration	float:"5"
 			range				float:"250"
-			display_radius_group	 string:"storage_underground" //"liquid_pump"
+			display_radius_group	 string:"storage_underground"
 			display_radius_blueprint string:"effects/decals/range_circle_repair"
 		}
 	}
@@ -1538,9 +1541,9 @@ EntityBlueprint  // solid_material_storage_underground
 		type	"quad"
 		color
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.2"  // r
+			y "0.7"  // g
+			z "0.3"  // b
 			w "1"
 		}
 		size
@@ -1550,6 +1553,7 @@ EntityBlueprint  // solid_material_storage_underground
 		}
 
 		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc
@@ -1928,9 +1932,9 @@ EntityBlueprint  // large_solid_material_storage_basic
 		type	"quad"
 		color
 		{
-			x "0.098"
-			y "0.875"
-			z "0.263"
+			x "0.2"  // r
+			y "0.7"  // g
+			z "0.3"  // b
 			w "1"
 		}
 		size
@@ -2308,9 +2312,9 @@ EntityBlueprint  // large_solid_material_storage_other
 		type	"quad"
 		color
 		{
-			x "0.098"
-			y "0.875"
-			z "0.263"
+			x "0.2"  // r
+			y "0.7"  // g
+			z "0.3"  // b
 			w "1"
 		}
 		size
@@ -2671,9 +2675,9 @@ EntityBlueprint  // large_solid_material_storage_rare
 		type	"quad"
 		color
 		{
-			x "0.098"
-			y "0.875"
-			z "0.263"
+			x "0.2"  // r
+			y "0.7"  // g
+			z "0.3"  // b
 			w "1"
 		}
 		size
