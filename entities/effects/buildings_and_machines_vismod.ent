@@ -3972,6 +3972,22 @@ EntityBlueprint "effects/no_lifetime"		//morphium_power
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//morphium_tower1
+{
+	name "effects/buildings_and_machines/morphium_tower1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_alien_influence_lvl_1.mesh" 
+		material 	"buildings/defense/tower_alien_influence_lvl_1"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//morphium_tower2
 {
 	name "effects/buildings_and_machines/morphium_tower2"
@@ -3985,6 +4001,22 @@ EntityBlueprint "effects/no_lifetime"		//morphium_tower2
 	{
 		mesh "meshes/buildings/defense/tower_alien_influence_lvl_2.mesh" 
 		material 	"buildings/defense/tower_alien_influence_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//morphium_tower3
+{
+	name "effects/buildings_and_machines/morphium_tower3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_alien_influence_lvl_3.mesh" 
+		material 	"buildings/defense/tower_alien_influence_lvl_3"
 	}
 }
 
@@ -4004,6 +4036,22 @@ EntityBlueprint "effects/no_lifetime"		//morphium_power_ghost
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//morphium_tower1_ghost
+{
+	name "effects/buildings_and_machines/morphium_tower1_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_alien_influence_lvl_1.mesh" 
+		material 	"selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//morphium_tower2_ghost
 {
 	name "effects/buildings_and_machines/morphium_tower2_ghost"
@@ -4016,6 +4064,22 @@ EntityBlueprint "effects/no_lifetime"		//morphium_tower2_ghost
 	MeshDesc
 	{
 		mesh "meshes/buildings/defense/tower_alien_influence_lvl_2.mesh" 
+		material 	"selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//morphium_tower3_ghost
+{
+	name "effects/buildings_and_machines/morphium_tower3_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_alien_influence_lvl_3.mesh" 
 		material 	"selector/hologram_blue"
 	}
 }
@@ -4236,23 +4300,7 @@ EntityBlueprint								// spark_ball_green
 	ParticleDesc
 	{
 		name    "rift/spark_ball_green"
-	}	
-}
-
-EntityBlueprint								// spark_ball_green
-{
-	name "effects/buildings_and_machines/spark_ball_green"
-
-	base_blueprints
-	{
-		 lights/point/fire_green_small
-		 effects/no_lifetime
 	}
-
-	ParticleDesc
-	{
-		name    "rift/spark_ball_green"
-	}	
 }
 
 EntityBlueprint								// spark_ball_bottom_rotor
