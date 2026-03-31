@@ -551,14 +551,16 @@ EntityBlueprint  //resource_converter_cobalt
 
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
-		
+		script "lua/buildings/building_buffable.lua"
+				
 		database
 		{
-			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell	string:"sell_big"
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/main/morphium_powerplant_lvl_2,buildings/main/morphium_powerplant_lvl_3"
+			display_radius_group		string:"morphium_powerplant"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
-		
 	}
 
 	HealthDesc
@@ -1022,16 +1024,18 @@ EntityBlueprint  //resource_converter_palladium
 
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
-		
+		script "lua/buildings/building_buffable.lua"
+				
 		database
 		{
-			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell	string:"sell_big"
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/main/morphium_powerplant_lvl_2,buildings/main/morphium_powerplant_lvl_3"
+			display_radius_group		string:"morphium_powerplant"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
-		
 	}
-
+	
 	HealthDesc
 	{
 		max_health 					"750"
@@ -1494,16 +1498,18 @@ EntityBlueprint  //resource_converter_titanium
 
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
-		
+		script "lua/buildings/building_buffable.lua"
+				
 		database
 		{
-			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell	string:"sell_big"
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/main/morphium_powerplant_lvl_2,buildings/main/morphium_powerplant_lvl_3"
+			display_radius_group		string:"morphium_powerplant"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
-		
 	}
-
+	
 	HealthDesc
 	{
 		max_health 					"750"
@@ -1965,16 +1971,18 @@ EntityBlueprint  //resource_converter_uranium_depleted
 
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
-		
+		script "lua/buildings/building_buffable.lua"
+				
 		database
 		{
-			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell	string:"sell_big"
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/main/morphium_powerplant_lvl_2,buildings/main/morphium_powerplant_lvl_3"
+			display_radius_group		string:"morphium_powerplant"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
-		
 	}
-
+	
 	HealthDesc
 	{
 		max_health 					"750"
@@ -2436,16 +2444,18 @@ EntityBlueprint  //resource_converter_uranium
 
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
-		
+		script "lua/buildings/building_buffable.lua"
+				
 		database
 		{
-			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell	string:"sell_big"
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/main/morphium_powerplant_lvl_2,buildings/main/morphium_powerplant_lvl_3"
+			display_radius_group		string:"morphium_powerplant"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
-		
 	}
-
+	
 	HealthDesc
 	{
 		max_health 					"750"

@@ -7,11 +7,12 @@ function buff_source:__init()
 	building.__init(self,self)
 end
 
-function buff_source:OnInit()	
+function buff_source:OnInit()
 	self:RegisterHandler( self.entity, "StartUpgradingEvent", "OnUpgradingStart" )
 	
 	self.range   = self.data:GetFloatOrDefault("range", 40)
-	self.buffMod = self.data:GetFloatOrDefault("buff_modificator", 1.5)
+	self.buffMod = self.data:GetFloatOrDefault("buff_modificator", -1.0)
+	self.costMod = self.data:GetFloatOrDefault("buff_mod_upkeep", -1.0)
 	
 	self.data:SetInt("buff_source_entity", self.entity)
 	
@@ -19,6 +20,14 @@ function buff_source:OnInit()
     --self.fsm:AddState( "buff", { enter="OnEnterBuff", execute="OnExecuteBuff", exit="OnExitBuff",  interval = 30 } )
     self.fsm:AddState( "buff", { enter="OnEnterBuff", exit="OnExitBuff" } )
     self.fsm:AddState( "idle", { enter="OnEnterIdle" } )
+end
+
+function buff_source:OnLoad()
+	self.range   = self.data:GetFloatOrDefault("range", 40)
+	self.buffMod = self.data:GetFloatOrDefault("buff_modificator", -1.0)
+	self.costMod = self.data:GetFloatOrDefault("buff_mod_upkeep", -1.0)
+	
+	self.data:SetInt("buff_source_entity", self.entity)
 end
 
 

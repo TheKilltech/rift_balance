@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // morphium_powerplant
 {
 	name  "buildings/energy/morphium_powerplant"
 
@@ -23,11 +23,11 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name 			"default"
-				building_time 	120
+				building_time 	90
 				building_cost
 				{
-					carbonium 	"350"		
-					steel 		"100"
+					carbonium 	"1000"
+					steel 		"200"
 				}
 			}		
 		}
@@ -50,7 +50,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"500"
+				value 		"800"
 			}
 		}
 		priority 10
@@ -425,38 +425,38 @@ EntityBlueprint
 		{
 			"buildings/effects_big_base"
 		}
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
 		}	
-		////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/morphium_powerplant_energy"								
+					blueprint "effects/buildings_and_machines/morphium_powerplant_energy"
 					bone "att_energy"
 					delay "1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_energy/morphium_powerplant_working"		
+					blueprint "effects/buildings_energy/morphium_powerplant_working"
 					delay "0.5"
 				}	
 			}
