@@ -40,7 +40,7 @@ EntityBlueprint  // morphium_powerplant_lvl_3
 			GameplayResource
 			{
 				resource 	"cobalt"
-				value 		"0.4"
+				value 		"0.5"
 			}
 			
 			GameplayResource
@@ -85,9 +85,11 @@ EntityBlueprint  // morphium_powerplant_lvl_3
 			cone_effect_sell			string:"sell_big"
 			radius						float:"35"
 			range						float:"35"
-			buff_mod_upkeep				float:"0.7"
+			buff_mod_upkeep				float:"0.5"
 			buff_source_name			string:"morphium_powerplant"
 			buff_source_level			int:"2"
+			buff_localization			string:"buff_name/buff_morphium_power"
+			buff_icon					string:"gui/hud/building_icons/morphium_powerplant"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 			display_radius_group		string:"morphium_powerplant"
 		}

@@ -16,6 +16,8 @@ function building_buffable:OnInit()
 	
 	self.buffSource = nil
 	self.maxBuffDistance = 40
+	
+	self:UpdateBuildingInfo( nil )
 end
 
 
@@ -127,6 +129,8 @@ function building_buffable:UpdateBuffState( source )
 	BuildingService:RemoveResourceConverterEfficientyModificator( self.entity, "buff" )
 	BuildingService:RemoveConverterCostModifier( self.entity, "buff" )
 	
+	self:UpdateBuildingInfo( source )
+	
 	if ( self.buffSource == nil ) then
 		if ( self.buffRequiredName ~= "" ) then
 			BuildingService:DisableBuilding( self.entity )
@@ -150,7 +154,28 @@ function building_buffable:UpdateBuffState( source )
 		if source.modUpkeep then
 			BuildingService:AddConverterCostModifier( self.entity, source.modUpkeep , "buff" )
 		end
+		
 	end
+end
+
+function building_buffable:UpdateBuildingInfo( source )
+	local valDefault = ""
+	if source ~= nil then
+		valDefault = string.format("%.0f", ((source.modificator or source.modUpkeep)-1)*100) .. "%"
+	else
+		if self.buffRequiredLevel > 0 then valDefault = "required" else  valDefault = "optional" end
+	end
+	
+	local buffShowName = self.data:GetStringOrDefault("buff_localization", "Buff")
+	local buffShowVal  = self.data:GetStringOrDefault("buff_display_value", valDefault)
+	local buffShowIcon = self.data:GetStringOrDefault("buff_icon", "gui/hud/buttons/action_menu_upgrade_neutral")
+
+	local rowName = "row" .. tostring(1)
+	self.data:SetString("cost_group.rows." .. rowName .. ".name",  buffShowName )
+	self.data:SetString("cost_group.rows." .. rowName .. ".icon",  buffShowIcon )
+	self.data:SetString("cost_group.rows." .. rowName .. ".value", buffShowVal)
+	self.data:SetString("stat_categories", "cost_group")
+	self.data:SetString("cost_group.rows", rowName )
 end
 
 return building_buffable

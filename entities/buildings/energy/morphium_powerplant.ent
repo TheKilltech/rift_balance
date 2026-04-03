@@ -65,22 +65,29 @@ EntityBlueprint  // morphium_powerplant
 				resource "energy"
 				max 	 "500"
 			}
-			
 		}
 	}
 
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
-				
+		script "lua/buildings/buff_source.lua"
+
 		database
 		{
-			cone_effect			string:"build_cone_4x4"
-			cone_effect_sell	string:"sell_big"
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			radius						float:"35"
+			range						float:"35"
+			buff_mod_upkeep				float:"0.9"
+			buff_source_name			string:"morphium_powerplant"
+			buff_source_level			int:"2"
+			buff_localization			string:"buff_name/buff_morphium_power"
+			buff_icon					string:"gui/hud/building_icons/morphium_powerplant"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+			display_radius_group		string:"morphium_powerplant"
 		}
-
 	}
-
+	
 	HealthDesc
 	{
 		max_health 					"2000"

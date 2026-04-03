@@ -13,6 +13,9 @@ function buff_source:OnInit()
 	self.range   = self.data:GetFloatOrDefault("range", 40)
 	self.buffMod = self.data:GetFloatOrDefault("buff_modificator", -1.0)
 	self.costMod = self.data:GetFloatOrDefault("buff_mod_upkeep", -1.0)
+	self.buffShowName = self.data:GetStringOrDefault("buff_localization", "Buff")
+	self.buffShowVal  = self.data:GetStringOrDefault("buff_display_value", "")
+	self.buffShowIcon = self.data:GetStringOrDefault("buff_icon", "")
 	
 	self.data:SetInt("buff_source_entity", self.entity)
 	
@@ -20,6 +23,8 @@ function buff_source:OnInit()
     --self.fsm:AddState( "buff", { enter="OnEnterBuff", execute="OnExecuteBuff", exit="OnExitBuff",  interval = 30 } )
     self.fsm:AddState( "buff", { enter="OnEnterBuff", exit="OnExitBuff" } )
     self.fsm:AddState( "idle", { enter="OnEnterIdle" } )
+	
+    self:UpdateBuildingInfo()
 end
 
 function buff_source:OnLoad()
@@ -28,6 +33,8 @@ function buff_source:OnLoad()
 	self.costMod = self.data:GetFloatOrDefault("buff_mod_upkeep", -1.0)
 	
 	self.data:SetInt("buff_source_entity", self.entity)
+	
+    self:UpdateBuildingInfo()
 end
 
 
@@ -86,6 +93,24 @@ function buff_source:OnExitBuff()
 	self.data:SetInt("buff_source_entity", self.entity)
 	self.data:SetInt("buff_active", 0)
 	QueueEvent("LuaGlobalEvent", event_sink, "BuffEvent", self.data )
+end
+
+function buff_source:UpdateBuildingInfo()
+	local buffStat = self.data:GetFloatOrDefault("buff_modificator", -1.0)
+	if buffStat < 0 then buffStat = self.data:GetFloatOrDefault("buff_mod_upkeep", -1.0) end
+	
+	local buffShowName = self.data:GetStringOrDefault("buff_localization", "Buff")
+	local buffShowVal  = self.data:GetStringOrDefault("buff_display_value", string.format("%.0f", (buffStat-1)*100) .. "%")
+	--local buffShowVal  = self.data:GetStringOrDefault("buff_display_value", tostring(buffStat))
+	local buffShowIcon = self.data:GetStringOrDefault("buff_icon", "gui/hud/buttons/action_menu_upgrade_neutral")
+
+	local rowName = "row" .. tostring(1)
+	self.data:SetString("production_group.rows." .. rowName .. ".name",  buffShowName )
+	self.data:SetString("production_group.rows." .. rowName .. ".icon",  buffShowIcon )
+	self.data:SetString("production_group.rows." .. rowName .. ".value", buffShowVal)
+	
+    self.data:SetString("stat_categories", "production_group")
+    self.data:SetString("production_group.rows", rowName )
 end
 
 return buff_source
