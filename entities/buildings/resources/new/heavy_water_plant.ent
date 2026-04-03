@@ -13,10 +13,9 @@ EntityBlueprint  // heavy_water_plant
 		type				"pipe"
 		order				"40"
 		require 			"headquarters"
-		menu_action			"research"
-		//upgrade				"buildings/resources/heavy_water_plant_lvl_2"
+		upgrade				"buildings/resources/heavy_water_plant_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,heavy_water_plant_lvl_2"
 
 		costs
 		{
@@ -65,7 +64,7 @@ EntityBlueprint  // heavy_water_plant
 			GameplayResource
 			{
 				resource 		"deuterium"
-				value			"25"
+				value			"50"
 				attachment		"att_out_1"
 			}
 		}
@@ -483,6 +482,182 @@ EntityBlueprint  // heavy_water_plant
 					bone 	"att_vismod_6"
 					scale	1.4 1.4 1.4
 					offset	0 0 0
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+			}
+		}	
+	}
+}
+
+
+EntityBlueprint  // heavy_water_plant_lvl_2
+{
+	name			"buildings/resources/heavy_water_plant_lvl_2"
+	base_blueprint 	"buildings/resources/heavy_water_plant"
+
+	BuildingDesc
+	{
+		name 				"heavy_water_plant_lvl_2"
+		bp   				"buildings/resources/heavy_water_plant_lvl_2"
+		category 			"liquids"
+		localization_id		"gui/hud/building_name/heavy_water_plant"
+		description			"gui/hud/building_description/heavy_water_plant"
+		menu_icon			"gui/hud/building_icons/heavy_water_plant_lvl_2"
+		type				"pipe"
+		require 			"headquarters"
+		//upgrade				"buildings/resources/heavy_water_plant_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,heavy_water_plant"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 180
+				building_cost
+				{
+					carbonium 	"5000"
+					alloys		"2000"
+					palladium	"2500"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 		"energy"
+				value			"4500"
+			}
+			
+			GameplayResource
+			{
+				resource 		"palladium"
+				value			"0.5"
+			}
+			
+			GameplayResource
+			{
+				resource 		"water"
+				value			"500"
+				attachment		"att_in_1"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 		"deuterium"
+				value			"75"
+				attachment		"att_out_1"
+			}
+		}
+		priority 10
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource		"deuterium"
+				max				"1000"
+				attachment		"att_out_1"
+			}
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_1_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 	"att_out_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_03"
+					bone 	"att_vismod_1"
+					scale	0.7 0.7 0.7
+					offset	-0.7 0.1 0.5
+					orientation -90 0 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/shocktower3"
+					bone 	"att_vismod_6"
+					scale	1.4 1.4 1.4
+					offset	0 0 0
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level_b"
 				}
 			}
 		}
