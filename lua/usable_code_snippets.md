@@ -91,3 +91,8 @@ from check_if_connected_by_same_pipe.lua  (objective for caves outpost mission)
 ```lua
 haveAllEnts = BuildingService:IsSameConnection( laboratories, resourceName )
 ```
+
+#5. get time
+```lua
+getLogicTime()
+```
