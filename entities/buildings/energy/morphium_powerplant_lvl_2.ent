@@ -226,6 +226,22 @@ EntityBlueprint  // morphium_powerplant_lvl_2
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/qlab_base2"
+					bone "att_vismod_2"
+					scale 		0.6 0.8 0.6
+					orientation 0 0 0
+					offset		0 0 0
+				}
+			}
+		}
+		EffectGroup
+		{
 			group "working"
 			enabled "0"
 			
