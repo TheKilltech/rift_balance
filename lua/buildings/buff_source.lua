@@ -32,6 +32,7 @@ function buff_source:OnInit()
 end
 
 function buff_source:OnLoad()
+	building.OnLoad( self )
 	self.range   = self.data:GetFloatOrDefault("range", 40)
 	self.buffMod = self.data:GetFloatOrDefault("buff_modificator", -1.0)
 	self.costMod = self.data:GetFloatOrDefault("buff_mod_upkeep", -1.0)
@@ -65,6 +66,7 @@ end
 function buff_source:OnRelease()
 	--LogService:Log( "buff_source: OnRelease ".. self.buildingName.. " ".. tostring(self.entity) )
 	QueueEvent("LuaGlobalEvent", event_sink, "BuffEvent", {} )
+	building.OnRelease( self )
 end
 
 function buff_source:OnBuildingEnd()
