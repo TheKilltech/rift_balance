@@ -167,6 +167,43 @@ EntityBlueprint  // alloys_factory
 		name "meshes/buildings/resources/alloys_furnace"  // original: "meshes/buildings/resources/supercoolant_refinery"
 	}
 
+	children
+	{
+		EntityBlueprint  // alloys_factory/furnace"
+		{
+			name "buildings/resources/alloys_factory/furnace"
+			
+			AttachmentDesc
+			{
+				attachment "att_vismod_1"
+			}
+			
+			MeshDesc
+			{
+				mesh "meshes/buildings/resources/carbonium_synthesizer.mesh"
+				material "buildings/resources/carbonium_synthesizer"
+			}
+			
+			SkeletonDesc
+			{
+				name "meshes/buildings/resources/alloys_furnace" 
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+							x	6.0
+							y	8
+							z	7.0
+					}	
+				}
+			}
+		}
+	}
+	
 	AnimationGraphDesc
 	{
 		animation_graph_name "building_working"
@@ -215,15 +252,8 @@ EntityBlueprint  // alloys_factory
    			PhysicsBoxShape
    			{
 				x	6
-				y	10
-				z	10
-				
-				//position 
-				//{
-				//	x 0
-				//	y 0
-				//	z 2
-				//}
+				y	6
+				z	6
    			}
 		}
 	}
@@ -398,11 +428,6 @@ EntityBlueprint  // alloys_factory
 			enabled "1"
 			Effects
 			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/furnace"
-					bone 	"att_vismod_1"
-				}
 			}
 		}
 		EffectGroup
@@ -557,13 +582,6 @@ EntityBlueprint  // alloys_factory_titanium
 				x	6 // 8
 				y	10
 				z	6 // 10
-				
-				//position 
-				//{
-				//	x 0
-				//	y 0
-				//	z 2
-				//}
    			}
 		}
 	}
@@ -616,11 +634,6 @@ EntityBlueprint  // alloys_factory_titanium
 				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_2_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/furnace"
-					bone 	"att_vismod_1"
 				}
 				Effect
 				{
@@ -808,16 +821,10 @@ EntityBlueprint  // alloys_factory_palladium
 		{
    			PhysicsBoxShape
    			{
-				x	6 // 8
+				x	6
 				y	10
-				z	6 // 10
+				z	6
 				
-				//position 
-				//{
-				//	x 0
-				//	y 0
-				//	z 2
-				//}
    			}
 		}
 	}
@@ -870,11 +877,6 @@ EntityBlueprint  // alloys_factory_palladium
 				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_2_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/furnace"
-					bone 	"att_vismod_1"
 				}
 				Effect
 				{
@@ -1047,16 +1049,10 @@ EntityBlueprint  // alloys_factory_uranium
 		{
    			PhysicsBoxShape
    			{
-				x	6 // 8
+				x	6
 				y	10
-				z	6 // 10
+				z	6
 				
-				//position 
-				//{
-				//	x 0
-				//	y 0
-				//	z 2
-				//}
    			}
 		}
 	}
