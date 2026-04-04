@@ -4656,6 +4656,22 @@ EntityBlueprint								// spark_ball_bottom_rotor
 	}
 }
 
+EntityBlueprint								// nuclear_powerplant_rods_green
+{
+	base_blueprints
+	{
+		 lights/point/green_very_small
+		 effects/no_lifetime
+	}
+
+	name "effects/buildings_and_machines/nuclear_powerplant_rods_green"
+
+	ParticleDesc
+	{
+		name    "rift/nuclear_powerplant_rods"
+	}
+}
+
 // effects/world
 
 EntityBlueprint "effects/no_lifetime"		//surface_water

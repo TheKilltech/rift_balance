@@ -17,7 +17,7 @@ Attachments
 	{
 		name "att_in_1"
 		offset "-0.97 0.40 5.47"
-		orientation "-89.70 -0.00 0.00"
+		orientation "-89.70 0.00 0.00"
 	}
 
 	Attachment
@@ -88,6 +88,37 @@ Attachments
 		name "att_level"
 		parent "be_cylinder"
 		orientation "0.00 -90.00 -0.00"
+	}
+
+	Attachment
+	{
+		name "att_out_1"
+		offset "5.00 0.40 1.00"
+	}
+
+	Attachment
+	{
+		name "att_out_1_pipe"
+		offset "5.00 0.00 1.00"
+	}
+
+	Attachment
+	{
+		name "att_vismod_1"
+		offset "1.80 3.00 -1.80"
+	}
+
+	Attachment
+	{
+		name "att_out_1_arrow"
+		offset "6.80 0.40 1.00"
+	}
+
+	Attachment
+	{
+		name "att_vismod_2"
+		parent "be_turbine"
+		offset "0.00 -0.60 0.00"
 	}
 
 }
