@@ -18,10 +18,10 @@ EntityBlueprint  // tower_hcm_lvl_2
 		upgrade				"buildings/defense/tower_hcm_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		check_connect		"1"
-		condition			"NOT_BIOME"	
-		condition_value		"caverns"	
+		condition			"NOT_BIOME"
+		condition_value		"caverns"
 		radius_name				"hcm"
-		min_radius				"25"
+		min_radius				"20"
 		min_radius_effect   	"voice_over/announcement/building_too_close"
 
 		costs
@@ -181,8 +181,8 @@ EntityBlueprint  // tower_hcm_lvl_2
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "25"
-			range_max "130"
-			aiming_range "190"
+			range_max "180"
+			aiming_range "210"
 		}
 
 		aiming_cooldown "1"
@@ -208,6 +208,7 @@ EntityBlueprint  // tower_hcm_lvl_2
 			rocket_initial_height	float:"12"
 			rocket_bp				string:"buildings/defense/tower_hcm_lvl_2_rocket"
 			crosshair_bp			string:"effects/messages_and_markers/target_laser_marker"
+			standby_upkeep_factor	float:"1"
 		}
 	}
 
@@ -269,8 +270,8 @@ EntityBlueprint  // tower_hcm_acid_lvl_2
 		name 				"tower_hcm_acid_lvl_2"
 		bp   				"buildings/defense/tower_hcm_acid_lvl_2"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_hcm"
-		description			"gui/hud/building_description/tower_hcm"
+		localization_id		"gui/hud/building_name/tower_hcm_acid"
+		description			"gui/hud/building_description/tower_hcm_acid"
 		menu_icon			"gui/hud/building_icons/tower_hcm_acid_lvl_2"
 		require 			"headquarters"
 		building_group		"tower_hcm"
@@ -282,7 +283,7 @@ EntityBlueprint  // tower_hcm_acid_lvl_2
 		condition			"NOT_BIOME"
 		condition_value		"caverns"
 		radius_name			"hcm"
-		min_radius			"25"
+		min_radius			"20"
 		min_radius_effect	"voice_over/announcement/building_too_close"
 
 		costs
@@ -295,7 +296,7 @@ EntityBlueprint  // tower_hcm_acid_lvl_2
 				{
 					carbonium 	"2000"
 					alloys 		"1000"
-					palladium	"600"
+					uranium		"800"
 				}
 			}
 		}
@@ -434,8 +435,8 @@ EntityBlueprint  // tower_hcm_acid_lvl_2
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "25"
-			range_max "130"
-			aiming_range "190"
+			range_max "180"
+			aiming_range "210"
 		}
 
 		aiming_cooldown "1"
@@ -461,6 +462,7 @@ EntityBlueprint  // tower_hcm_acid_lvl_2
 			rocket_initial_height	float:"12"
 			rocket_bp				string:"buildings/defense/tower_hcm_acid_lvl_2_rocket"
 			crosshair_bp			string:"effects/messages_and_markers/target_laser_marker"
+			standby_upkeep_factor	float:"1"
 		}
 	}
 
@@ -522,8 +524,8 @@ EntityBlueprint  // tower_hcm_cryo_lvl_2
 		name 				"tower_hcm_cryo_lvl_2"
 		bp   				"buildings/defense/tower_hcm_cryo_lvl_2"
 		category 			"defense"
-		localization_id		"gui/hud/building_name/tower_hcm"
-		description			"gui/hud/building_description/tower_hcm"
+		localization_id		"gui/hud/building_name/tower_hcm_cryo"
+		description			"gui/hud/building_description/tower_hcm_cryo"
 		menu_icon			"gui/hud/building_icons/tower_hcm_cryo_lvl_2"
 		require 			"headquarters"
 		building_group		"tower_hcm"
@@ -535,7 +537,7 @@ EntityBlueprint  // tower_hcm_cryo_lvl_2
 		condition			"NOT_BIOME"
 		condition_value		"caverns"
 		radius_name			"hcm"
-		min_radius			"25"
+		min_radius			"20"
 		min_radius_effect	"voice_over/announcement/building_too_close"
 
 		costs
@@ -687,8 +689,8 @@ EntityBlueprint  // tower_hcm_cryo_lvl_2
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "25"
-			range_max "130"
-			aiming_range "190"
+			range_max "180"
+			aiming_range "210"
 		}
 
 		aiming_cooldown "1"
@@ -714,6 +716,7 @@ EntityBlueprint  // tower_hcm_cryo_lvl_2
 			rocket_initial_height	float:"12"
 			rocket_bp				string:"buildings/defense/tower_hcm_cryo_lvl_2_rocket"
 			crosshair_bp			string:"effects/messages_and_markers/target_laser_marker"
+			standby_upkeep_factor	float:"1"
 		}
 	}
 

@@ -11596,7 +11596,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl7"
+							research_name "gui/menu/research/name/ammo_explosive_lvl4"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -11632,7 +11632,7 @@ Research
 					position
 					{
 						x "-531"
-						y "522"
+						y "576"
 					}
 
 					research_awards
@@ -16830,6 +16830,292 @@ Research
 					}
 
 					icon "gui/menu/research/icons/towers_acid_spewer"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_ammunition_handling_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_hcm_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_hcm_acid_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "6500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "7500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "uranium"
+							count "2500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-486"
+						y "414"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_hcm_acid_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_hcm"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_ammunition_handling_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_hcm_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_hcm_cryo_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "6500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "7500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "titanium"
+							count "2500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-387"
+						y "414"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_hcm_cryo_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_hcm"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_ammunition_handling_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_hcm_acid_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_hcm_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_hcm_acid_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "15000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "uranium"
+							count "5000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-486"
+						y "630"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_hcm_acid_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_hcm"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_ammunition_handling_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_hcm_cryo_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/tower_hcm_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/tower_hcm_cryo_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "15000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "titanium"
+							count "5000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-387"
+						y "630"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/defense/tower_hcm_cryo_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_hcm"
 				}
 
 			}
@@ -50554,6 +50840,6 @@ Research
 
 	type
 	editor "6741"
-	version "216"
+	version "217"
 }
 

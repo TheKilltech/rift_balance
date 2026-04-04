@@ -55,6 +55,7 @@ end
 local noTargetId = "4294967295" -- max uint: 2^32 - 1 or (uint)(-1)
 
 function tower:_OnTurretEvent( evt )
+	if self.factorStandbyUpkeep == 1 then return end
 	local target  = evt:GetTargetEntity()
 	local tstatus = evt:GetTurretStatus()
 	
