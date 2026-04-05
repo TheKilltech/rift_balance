@@ -517,6 +517,21 @@ EntityBlueprint "effects/no_lifetime"		//corrosive_gun_ghost
 }
 
 
+
+EntityBlueprint "effects/no_lifetime"		// chainsaw_lvl3
+{
+	name "effects/weapon_items/chainsaw_lvl3"
+
+	base_blueprint "items/weapons/chainsaw"
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/chainsaw_lvl_3.mesh"
+		material 	"items/weapons/chainsaw_lvl_3"
+	}
+}
+
+
 EntityBlueprint "effects/no_lifetime"		//ball_green
 {
 	name "effects/weapon_items/ball_green"
