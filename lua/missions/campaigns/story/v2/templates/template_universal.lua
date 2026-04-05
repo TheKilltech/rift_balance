@@ -113,14 +113,14 @@ function template_universal:Prepare()
 	
 	self.missionNestSpecies =
 	{
-		acid = "spawner_granan_elite",
-		caverns = "",
-		desert = "spawner_mushbit_elite",
-		ice = "spawner_granan_ice_elite",
-		jungle = "spawner_canoptrix_elite",
-		magma = "spawner_morirot_elite",
+		acid     = "spawner_granan_elite",
+		caverns  = "",
+		desert   = "spawner_mushbit_elite",
+		ice      = "spawner_granan_ice_elite",
+		jungle   = "spawner_canoptrix_elite",
+		magma    = "spawner_morirot_elite",
 		metallic = "spawner_wingmite_elite",
-		swamp = "spawner_stickrid_elite"
+		swamp    = "spawner_stickrid_elite"
 	}
 	
 	self.missionBiocacheName =
@@ -364,6 +364,9 @@ function template_universal:PrepareMissionTilesPool()
 	LogService:Log("MissionResources geothermal_vent = ".. tostring(self.mission_params:GetResourceAmount("geothermal_vent") ) )
 	LogService:Log("MissionResources flammable_gas_vent = ".. tostring(self.mission_params:GetResourceAmount("flammable_gas_vent") ) )		
     --===============RANDOM ENCOUNTER TILE RULES
+	
+	local resource_multipliers = self.resource_multipliers
+	local resinMultiplier = resource_multipliers[self.mission_params:GetResourceAmount("resin")] or 1
 	
 	campaignData = CampaignService:GetCampaignData()	
 	local encounterTilePool = 
@@ -1946,14 +1949,14 @@ function template_universal:PrepareMissionTilesPool()
 			{				
 				{			
 					tile_name = "biomes/swamp/tiles/swamp_custom_resin_01/swamp_custom_resin_01.tile",
-					min_instances = 1,
-					max_instances = 2,
+					min_instances = 1 * resinMultiplier,
+					max_instances = 2 * resinMultiplier,
 					min_distance_from_edge = 1
 				},	
 				{			
 					tile_name = "biomes/swamp/tiles/swamp_custom_resin_02/swamp_custom_resin_02.tile",
-					min_instances = 1,
-					max_instances = 2,
+					min_instances = 2 * resinMultiplier,
+					max_instances = 3 * resinMultiplier,
 					min_distance_from_edge = 1
 				},	
 				{
@@ -2032,14 +2035,14 @@ function template_universal:PrepareMissionTilesPool()
 			{
 				{			
 					tile_name = "biomes/swamp/tiles/swamp_custom_resin_01/swamp_custom_resin_01.tile",
-					min_instances = 1,
-					max_instances = 2,
+					min_instances = 1 * resinMultiplier,
+					max_instances = 2 * resinMultiplier,
 					min_distance_from_edge = 1
 				},	
 				{			
 					tile_name = "biomes/swamp/tiles/swamp_custom_resin_02/swamp_custom_resin_02.tile",
-					min_instances = 1,
-					max_instances = 2,
+					min_instances = 2 * resinMultiplier,
+					max_instances = 3 * resinMultiplier,
 					min_distance_from_edge = 1
 				},	
 				{
@@ -2118,14 +2121,14 @@ function template_universal:PrepareMissionTilesPool()
 			{
 				{			
 					tile_name = "biomes/swamp/tiles/swamp_custom_resin_01/swamp_custom_resin_01.tile",
-					min_instances = 1,
-					max_instances = 2,
+					min_instances = 1 * resinMultiplier,
+					max_instances = 2 * resinMultiplier,
 					min_distance_from_edge = 1
 				},	
 				{			
 					tile_name = "biomes/swamp/tiles/swamp_custom_resin_02/swamp_custom_resin_02.tile",
-					min_instances = 1,
-					max_instances = 2,
+					min_instances = 2 * resinMultiplier,
+					max_instances = 3 * resinMultiplier,
 					min_distance_from_edge = 1
 				},	
 				{
