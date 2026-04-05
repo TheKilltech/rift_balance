@@ -92,10 +92,16 @@ EntityBlueprint  // heavy_water_reactor
 		{
 			Storage
 			{
-				resource "energy"
-				max 	 "5000"
+				resource 	"energy"
+				max 	 	"5000"
 			}
 			
+			Storage
+			{
+				resource	"fissonium"
+				max 		"1000"
+				attachment	"att_out_1"
+			}
 		}
 	}
 
@@ -468,6 +474,12 @@ EntityBlueprint  // heavy_water_reactor_lvl_2
 				max 	 "5000"
 			}
 			
+			Storage
+			{
+				resource	"fissonium"
+				max 		"1000"
+				attachment	"att_out_1"
+			}
 		}
 	}
 
