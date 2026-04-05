@@ -40,8 +40,8 @@ EntityBlueprint  // ammo_factory_explosive_ext
 		{
 			GameplayResource
 			{
-				resource 	"nitric_acid"
-				value 		"15"
+				resource 	"fissonium"
+				value 		"20"
 				attachment	"att_in_0"
 			}
 						
@@ -61,8 +61,7 @@ EntityBlueprint  // ammo_factory_explosive_ext
 			{
 				resource 	"uranium"
 				value		"1.0"
-			}		
-						
+			}
 		}
 		
 		out
@@ -173,6 +172,80 @@ EntityBlueprint  // ammo_factory_explosive_ext
 		name "meshes/buildings/ammo/ammo_factory_explosive_ext"
 	}
 
+	children
+	{
+		EntityBlueprint  // ammo_factory_explosive_ext/silo_2
+		{
+			name "buildings/resources/ammo_factory_explosive_ext/silo_2"
+			
+			AttachmentDesc
+			{
+				attachment "att_vismod_1"
+			}
+			
+			MeshDesc
+			{
+				mesh "meshes/buildings/defense/tower_hcm_lvl_2.mesh"
+				material "buildings/defense/tower_hcm_lvl_2"
+			}
+			
+			SkeletonDesc
+			{
+				name "meshes/buildings/resources/tower_hcm_lvl_2"
+			}
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsCapsuleShape
+							{
+								r "2.45"
+								half_height "2"
+
+								position
+								{
+									x "0.0"
+									y "2"
+									z "0.0"
+								}
+
+								orientation
+								{
+									w "0.7"
+									x "0.0"
+									z "0.7"
+									y "0.0"
+								}
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	6
+						y	6
+						z	6
+					}
+				}
+			}
+
+		}
+	}
+	
 	AnimationGraphDesc
 	{
 		animation_graph_name "building_working"
@@ -365,38 +438,44 @@ EntityBlueprint  // ammo_factory_explosive_ext
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_0"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_0_arrow"
 				}
 			}
 		}	
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/minipipes"
+					bone 	"att_vismod_2"
+					scale	0.8 1 0.8
 				}
 			}
 		}	
@@ -447,8 +526,8 @@ EntityBlueprint  // ammo_factory_explosive_ext_lvl_2
 		{
 			GameplayResource
 			{
-				resource 	"nitric_acid"
-				value 		"15"
+				resource 	"fissonium"
+				value 		"20"
 				attachment	"att_in_0"
 			}
 			
@@ -505,6 +584,80 @@ EntityBlueprint  // ammo_factory_explosive_ext_lvl_2
 		priority 6
 	}
 
+	children
+	{
+		EntityBlueprint  // ammo_factory_explosive_ext/silo_3
+		{
+			name "buildings/resources/ammo_factory_explosive_ext/silo_3"
+			
+			AttachmentDesc
+			{
+				attachment "att_vismod_1"
+			}
+			
+			MeshDesc
+			{
+				mesh "meshes/buildings/defense/tower_hcm_lvl_3.mesh"
+				material "buildings/defense/tower_hcm_lvl_3"
+			}
+			
+			SkeletonDesc
+			{
+				name "meshes/buildings/resources/tower_hcm_lvl_3"
+			}
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsCapsuleShape
+							{
+								r "2.45"
+								half_height "2"
+
+								position
+								{
+									x "0.0"
+									y "2"
+									z "0.0"
+								}
+
+								orientation
+								{
+									w "0.7"
+									x "0.0"
+									z "0.7"
+									y "0.0"
+								}
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	6
+						y	6
+						z	6
+					}
+				}
+			}
+
+		}
+	}
+	
 	HealthDesc
 	{
 		max_health 					"1500"
@@ -565,23 +718,23 @@ EntityBlueprint  // ammo_factory_explosive_ext_lvl_2
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_0"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_0_arrow"
 				}
 			}
@@ -589,29 +742,35 @@ EntityBlueprint  // ammo_factory_explosive_ext_lvl_2
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
 				}
 			}
 		}	
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/minipipes"
+					bone 	"att_vismod_2"
+					scale	0.8 1 0.8
 				}
 			}
 		}	
