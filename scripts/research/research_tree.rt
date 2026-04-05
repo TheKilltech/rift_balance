@@ -49557,6 +49557,239 @@ Research
 					icon "gui/menu/research/icons/towers_drone_attack"
 				}
 
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/morphium_energy_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/morphium_factory_lvl_1"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "biomass_morphed"
+							count "2000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "cobalt"
+							count "500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1395"
+						y "261"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/morphium_factory"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/morphium_factory_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/morphium_factory_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling_liquid"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/morphium_factory_lvl_1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/towers_morphium_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/morphium_factory_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "2500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "6000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "biomass_morphed"
+							count "3000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1395"
+						y "441"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/morphium_factory"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/morphium_factory_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/morphium_factory_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling_liquid"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/morphium_factory_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/morphium_factory_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "5000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "8000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "cobalt"
+							count "5000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1395"
+						y "540"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/morphium_factory"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/morphium_factory_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/morphium_factory_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling_liquid"
+				}
+
 			}
 
 		}
