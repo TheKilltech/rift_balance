@@ -62,7 +62,7 @@ EntityBlueprint  // nuclear_powerplant_lvl_3
 				value 		"25"
 				attachment	"att_in_1"
 				family		"coolant"
-			}				
+			}
 		}
 		
 		out
@@ -71,6 +71,13 @@ EntityBlueprint  // nuclear_powerplant_lvl_3
 			{
 				resource 	"energy"
 				value 		"3800"
+			}
+			
+			GameplayResource
+			{
+				resource 	"fissonium"
+				value 		"50"
+				attachment	"att_out_1"
 			}
 		}
 		priority 9
