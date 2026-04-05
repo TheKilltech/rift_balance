@@ -17306,7 +17306,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/energy/heavy_water_reactor_lvl_2"
+							blueprint "buildings/resources/heavy_water_plant_lvl_2"
 							is_visible "1"
 						}
 
@@ -37994,7 +37994,7 @@ Research
 					position
 					{
 						x "-1350"
-						y "441"
+						y "486"
 					}
 
 					research_awards
@@ -42757,7 +42757,7 @@ Research
 
 					position
 					{
-						x "-1611"
+						x "-1647"
 						y "-342"
 					}
 
@@ -42844,7 +42844,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1611"
+						x "-1647"
 						y "-144"
 					}
 
@@ -42919,7 +42919,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1611"
+						x "-1647"
 						y "405"
 					}
 
@@ -43021,7 +43021,7 @@ Research
 
 					position
 					{
-						x "-1656"
+						x "-1692"
 						y "-288"
 					}
 
@@ -43102,7 +43102,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1656"
+						x "-1692"
 						y "-72"
 					}
 
@@ -43170,8 +43170,8 @@ Research
 					research_scripts
 					position
 					{
-						x "-1656"
-						y "459"
+						x "-1692"
+						y "468"
 					}
 
 					research_awards
@@ -44714,7 +44714,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1818"
+						x "-1854"
 						y "-153"
 					}
 
@@ -44775,7 +44775,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1818"
+						x "-1854"
 						y "-108"
 					}
 
@@ -45230,7 +45230,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1764"
+						x "-1800"
 						y "-153"
 					}
 
@@ -45291,7 +45291,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1764"
+						x "-1800"
 						y "-108"
 					}
 
@@ -48038,7 +48038,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1692"
+						x "-1728"
 						y "-234"
 					}
 
@@ -48106,7 +48106,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1692"
+						x "-1728"
 						y "-18"
 					}
 
@@ -48174,7 +48174,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1692"
+						x "-1728"
 						y "540"
 					}
 
@@ -49950,7 +49950,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1818"
+						x "-1854"
 						y "-63"
 					}
 
@@ -50011,7 +50011,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1818"
+						x "-1854"
 						y "-18"
 					}
 
@@ -50166,18 +50166,6 @@ Research
 							is_visible "1"
 						}
 
-						ResearchAward
-						{
-							blueprint "buildings/resources/morphium_factory_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/morphium_factory_lvl_3"
-							is_visible "1"
-						}
-
 					}
 
 					icon "gui/menu/research/icons/resource_handling_liquid"
@@ -50235,26 +50223,14 @@ Research
 					position
 					{
 						x "-1395"
-						y "441"
+						y "486"
 					}
 
 					research_awards
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/morphium_factory"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "buildings/resources/morphium_factory_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/morphium_factory_lvl_3"
 							is_visible "1"
 						}
 
@@ -50276,6 +50252,13 @@ Research
 							research_category "gui/menu/research/category_alien"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/morphium_energy_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/morphium_factory_lvl_3"
@@ -50292,7 +50275,7 @@ Research
 						{
 							amount "0"
 							resource "analysis"
-							count "8000"
+							count "10000"
 						}
 
 						ResearchCost
@@ -50308,23 +50291,11 @@ Research
 					position
 					{
 						x "-1395"
-						y "540"
+						y "630"
 					}
 
 					research_awards
 					{
-						ResearchAward
-						{
-							blueprint "buildings/resources/morphium_factory"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/morphium_factory_lvl_2"
-							is_visible "1"
-						}
-
 						ResearchAward
 						{
 							blueprint "buildings/resources/morphium_factory_lvl_3"
@@ -50334,6 +50305,210 @@ Research
 					}
 
 					icon "gui/menu/research/icons/resource_handling_liquid"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/regenerating_extractor_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/heavy_water_reactor_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/resin_factory_lvl_1"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "ammonium"
+							count "5000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "5000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "hazenite"
+							count "2500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1602"
+						y "171"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/resin_factory"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/fusion_energy"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resin_factory_lvl_1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/regenerating_extractor_lvl_3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/resin_factory_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "ammonium"
+							count "12000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "palladium_bio"
+							count "2500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1602"
+						y "468"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/resin_factory_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/fusion_energy"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resin_factory_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl5"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/resin_factory_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "ammonium"
+							count "15000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "13000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "palladium"
+							count "5000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1602"
+						y "630"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/resin_factory_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/fusion_energy"
 				}
 
 			}
@@ -51885,6 +52060,6 @@ Research
 
 	type
 	editor "6741"
-	version "219"
+	version "220"
 }
 
