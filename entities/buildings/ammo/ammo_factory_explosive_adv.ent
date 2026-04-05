@@ -54,7 +54,7 @@ EntityBlueprint  // ammo_factory_explosive_adv
 			
 			GameplayResource
 			{
-				resource 			"ammo_tower_explosive" //"ammo_mech_explosive"
+				resource 			"ammo_tower_explosive"
 				value				"0.2"
 			}
 			
@@ -368,16 +368,16 @@ EntityBlueprint  // ammo_factory_explosive_adv
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -391,26 +391,20 @@ EntityBlueprint  // ammo_factory_explosive_adv
 					bone 	"att_vismod_1"
 					scale "0.8 0.8 0.8"
 				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/minipipes"
-					bone 	"att_vismod_2"
-					scale "1.2 1.2 1.2"
-				}
 			}
 		}
 		
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_resources/tower_ammunition_factory_working"	
-					delay "0.5"					
+					blueprint "effects/buildings_resources/tower_ammunition_factory_working"
+					delay "0.5"
 				}	
 			}
 		}	
@@ -430,7 +424,7 @@ EntityBlueprint  // ammo_factory_explosive_adv_lvl_2
 		localization_id		"gui/hud/building_name/ammo_factory_explosive_adv"
 		description			"gui/hud/building_description/ammo_factory_explosive_adv"
 		menu_icon			"gui/hud/building_icons/ammo_factory_explosive_adv_lvl_2"
-		//upgrade				"buildings/ammo/ammo_factory_explosive_adv_lvl_3"
+		upgrade				"buildings/ammo/ammo_factory_explosive_adv_lvl_3"
 		require 			"headquarters"
 		order				"33"
 		buildable			"0"
@@ -475,7 +469,7 @@ EntityBlueprint  // ammo_factory_explosive_adv_lvl_2
 			
 			GameplayResource
 			{
-				resource 			"ammo_tower_explosive" //"ammo_mech_explosive"
+				resource 			"ammo_tower_explosive"
 				value				"0.4"
 			}
 			
@@ -487,7 +481,7 @@ EntityBlueprint  // ammo_factory_explosive_adv_lvl_2
 			GameplayResource
 			{
 				resource 			"nitric_acid"
-				value 				"5"
+				value 				"10"
 				attachment			"att_in_1"
 			}	
 		}
@@ -569,16 +563,16 @@ EntityBlueprint  // ammo_factory_explosive_adv_lvl_2
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
-		////////////////////////Resources/////////////////////////			
+		}
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -591,25 +585,25 @@ EntityBlueprint  // ammo_factory_explosive_adv_lvl_2
 			}
 		}	
 		
-		////////////////////////MISC/////////////////////////		
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_resources/tower_ammunition_factory_working"	
-					delay "0.5"					
-				}	
+					blueprint "effects/buildings_resources/tower_ammunition_factory_working"
+					delay "0.5"
+				}
 			}
 		}	
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -641,6 +635,266 @@ EntityBlueprint  // ammo_factory_explosive_adv_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}	
+	}
+}
+
+EntityBlueprint  // ammo_factory_explosive_adv_lvl_3
+{
+	name  			"buildings/ammo/ammo_factory_explosive_adv_lvl_3"
+	base_blueprint	"buildings/ammo/ammo_factory_explosive_adv_lvl_2"
+	
+	BuildingDesc
+	{
+		name 				"ammo_factory_explosive_adv_lvl_3"
+		bp   				"buildings/ammo/ammo_factory_explosive_adv_lvl_3"
+		category 			"ammo"
+		localization_id		"gui/hud/building_name/ammo_factory_explosive_adv"
+		description			"gui/hud/building_description/ammo_factory_explosive_adv"
+		menu_icon			"gui/hud/building_icons/ammo_factory_explosive_adv_lvl_3"
+		require 			"headquarters"
+		order				"33"
+		buildable			"0"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 25
+				building_cost
+				{
+					carbonium 	"1000"
+					steel 		"2500"
+					ai			"1"
+				}
+			}		
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"575"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value				"4"
+			}
+			
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value				"4"
+			}
+			
+			GameplayResource
+			{
+				resource 			"ammo_tower_explosive"
+				value				"0.4"
+			}
+			
+			GameplayResource
+			{
+				resource 			"tanzanite"
+				value				"2"
+			}
+
+			GameplayResource
+			{
+				resource 			"nitric_acid"
+				value 				"10"
+				attachment			"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 			"fissonium"
+				value 				"15"
+				attachment			"att_in_2"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"ammo_tower_explosive_lvl2"
+				value				"0.6"
+			}	
+			GameplayResource
+			{
+				resource 			"ammo_mech_explosive_lvl2"
+				value				"0.6"
+				optional			"1"
+			}		
+		}
+		priority 6
+	}
+
+	HealthDesc
+	{
+		max_health 					"1300"
+		health 						"1300"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_effect_group 		"0_state"
+			}			
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/tower_ammunition_factory_working"
+					delay "0.5"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_03"
+					bone 	"att_vismod_1"
+					scale "0.8 0.8 0.8"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/minipipes_green"
+					bone	"att_vismod_2"
+					scale	1.35 1.7 1.35
+					offset	-0.4 -0.0 0.5
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/hcm1"
+					bone 	"att_vismod_3"
+					scale	1 1 1
+				}
+			}
+		}
+	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
 					bone "att_level"
 				}
 			}
