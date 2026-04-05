@@ -33,11 +33,13 @@ end
 
 function buff_source:OnLoad()
 	building.OnLoad( self )
-	self.range   = self.data:GetFloatOrDefault("range", 40)
-	self.buffMod = self.data:GetFloatOrDefault("buff_modificator", -1.0)
-	self.costMod = self.data:GetFloatOrDefault("buff_mod_upkeep", -1.0)
 	
-	self.data:SetInt("buff_source_entity", self.entity)
+	if not self.fsmInfo then
+		self.fsmInfo = self:CreateStateMachine()
+		self.fsmInfo:AddState( "update",  { execute="OnExecuteInfoUpdate", interval = 1 } )
+		self.fsmInfo:AddState( "update2", { execute="OnExecuteInfoUpdate", interval = 30 } )
+		self.fsmInfo:AddState( "idle",   { } )
+	end
 end
 
 

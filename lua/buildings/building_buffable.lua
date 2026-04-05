@@ -25,6 +25,17 @@ function building_buffable:OnInit()
 	self:UpdateBuildingInfo( self.buffSource )
 end
 
+function building_buffable:OnLoad()
+	building.OnLoad( self )
+	
+	if not self.fsmInfo then
+		self.fsmInfo = self:CreateStateMachine()
+		self.fsmInfo:AddState( "update",  { execute="OnExecuteInfoUpdate", interval = 1 } )
+		self.fsmInfo:AddState( "update2", { execute="OnExecuteInfoUpdate", interval = 30 } )
+		self.fsmInfo:AddState( "idle",   { } )
+	end
+end
+
 
 function building_buffable:OnBuildingEnd()
 	--LogService:Log( "building_buffable ".. tostring(self.entity)..": OnBuildingEnd" )
