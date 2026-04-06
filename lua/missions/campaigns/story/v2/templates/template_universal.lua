@@ -57,31 +57,32 @@ function template_universal:Prepare()
 		},
 		caverns = {
 			[1] = { "ammonium_vein" },
-			[2] = { "geothermal_vent" },
+			[2] = { "fissonium_deepvein" },
 			[3] = { "water_deepvein", "sludge_deepvein" },
-			[4] = { "petroleum_deepvein", "" },
+			[4] = { "petroleum_deepvein", "supercoolant_deepvein", "" },
 			[5] = { "palladium_vein", "uranium_ore_vein", "", "" },
 		},
 		desert = {
 			[1] = { "ammonium_vein" },
 			[2] = { "petroleum_deepvein" },
 			[3] = { "water_deepvein", "mud_deepvein" },
+			[4] = { "fissonium_deepvein", "deuterium_deepvein", "", "" },
 		},
 		jungle = {
 			[1] = { "ammonium_vein" },
 			[2] = { "geothermal_vent" },
-			[3] = { "flammable_gas_vent", "" },
+			[3] = { "flammable_gas_vent", "fissonium_deepvein", "" },
 			[4] = { "petroleum_deepvein", "" },
 		},
 		ice = { 
 			[1] = { "ammonium_vein" },
-			[2] = { "fluorine_deepvein" },
+			[2] = { "fluorine_deepvein", "deuterium_deepvein", "supercoolant_deepvein" },
 			[3] = { "geothermal_vent", "flammable_gas_vent", "", "" },
 			[4] = { "magma_deepvein", "", "" },
 		},
 		magma = {
 			[1] = { "geothermal_vent" },
-			[2] = { "flammable_gas_vent", "sludge_deepvein" },
+			[2] = { "flammable_gas_vent", "sludge_deepvein", "supercoolant_deepvein" },
 			[3] = { "ammonium_vein", "" },
 			[4] = { "nitric_acid_deepvein", "fluorine_deepvein", "" },
 		},
@@ -94,8 +95,9 @@ function template_universal:Prepare()
 		},
 		swamp = {
 			[1] = { "ammonium_vein" },
-			[2] = { "flammable_gas_vent" },
+			[2] = { "deuterium_deepvein" },
 			[3] = { "nitric_acid_deepvein", "petroleum_deepvein", "" },
+			[4] = { "flammable_gas_vent", "" },
 		},
 	}
 	
@@ -4604,6 +4606,8 @@ function template_universal:PrepareMissionObjects()
 				ResourceVolume( "petroleum_deepvein",      2, 4,   nil, nil,    { is_infinite = true }),
 				ResourceVolume( "water_deepvein",          1, 3,   nil, nil,    { is_infinite = true }),
 				ResourceVolume( "sludge_deepvein",         2, 4,   nil, nil,    { is_infinite = true },                             self.mission_params:GetResourceAmount("sludge_vein")),
+				ResourceVolume( "fissonium_deepvein",      2, 3,   nil, nil,    { is_infinite = true }, 							self.mission_params:GetResourceAmount("fissonium_deepvein")),
+				ResourceVolume( "supercoolant_deepvein",   1, 2,   nil, nil,    { is_infinite = true }, 							self.mission_params:GetResourceAmount("supercoolant_deepvein")),
 				
 			},			
 			regular_small_resources = {
@@ -4646,6 +4650,8 @@ function template_universal:PrepareMissionObjects()
 				ResourceVolume( "mud_deepvein",            2, 5,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true },  self.mission_params:GetResourceAmount("mud_deepvein")),
 				ResourceVolume( "petroleum_deepvein",      2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true },  self.mission_params:GetResourceAmount("petroleum_deepvein")),
 				ResourceVolume( "fluorine_deepvein",       0, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true },  self.mission_params:GetResourceAmount("fluorine_deepvein")),
+				ResourceVolume( "fissonium_deepvein",      1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true },  self.mission_params:GetResourceAmount("fissonium_deepvein")),
+				ResourceVolume( "deuterium_deepvein",      1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true },  self.mission_params:GetResourceAmount("deuterium_deepvein")),
 			},			
 			liquid_resources = {},
 			starting_resources = {
@@ -4678,6 +4684,8 @@ function template_universal:PrepareMissionObjects()
 				ResourceVolume( advDeepResourceName,       4, 8,  10000, 30000, { required_discovery_lvl = 1 },                     self.mission_params:GetResourceAmount(advanceResourceName)),
 				ResourceVolume( advDeepResourceName,       0, 1,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount(advanceResourceName)),
 				ResourceVolume( "geothermal_vent",         2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("geothermal_vent")),
+				ResourceVolume( "deuterium_deepvein",      1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("deuterium_deepvein")),
+				ResourceVolume( "supercoolant_deepvein",   1, 3,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("supercoolant_deepvein")),
 			},
 			liquid_resources = {},
 			starting_resources = {
@@ -4730,6 +4738,7 @@ function template_universal:PrepareMissionObjects()
 				ResourceVolume( "petroleum_deepvein",      2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("petroleum_deepvein")),
 				ResourceVolume( "water_deepvein",          0, 3,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("water_deepvein")),
 				ResourceVolume( "sludge_deepvein",         2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("sludge_vein")),
+				ResourceVolume( "fissonium_deepvein",      1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("fissonium_deepvein")),
 			},
 			liquid_resources = {
 				ResourceVolume( "sludge_vein",             4, 8,   nil, nil,    { is_infinite = true } ),
@@ -4763,6 +4772,7 @@ function template_universal:PrepareMissionObjects()
 				ResourceVolume( "fluorine_deepvein",       3, 5,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("fluorine_deepvein")),
 				ResourceVolume( "flammable_gas_vent",      3, 6,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("flammable_gas_vent")),
 				ResourceVolume( "nitric_acid_deepvein",    1, 3,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("nitric_acid_deepvein")),
+				ResourceVolume( "supercoolant_deepvein",   1, 3,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("supercoolant_deepvein")),
 			},			
 			liquid_resources = {},
 			starting_resources = {
@@ -4834,6 +4844,7 @@ function template_universal:PrepareMissionObjects()
 				ResourceVolume( "flammable_gas_vent",      1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("flammable_gas_vent")),
 				ResourceVolume( "petroleum_deepvein",      2, 4,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("petroleum_deepvein")),
 				ResourceVolume( "nitric_acid_deepvein",    1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("nitric_acid_deepvein")),
+				ResourceVolume( "deuterium_deepvein",      1, 2,   nil, nil,    { required_discovery_lvl = 1, is_infinite = true }, self.mission_params:GetResourceAmount("deuterium_deepvein")),
 			},
 			liquid_resources = {},
 			starting_resources =  {

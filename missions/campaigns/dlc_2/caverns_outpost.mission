@@ -603,6 +603,15 @@ MissionDef
 		
 		ResourceVolume
         {
+            resource        "fissonium_deepvein"
+
+            is_infinite        "1"
+            min_spawned_volumes "3"
+            max_spawned_volumes "5"
+        }
+		
+		ResourceVolume
+        {
             resource        "petroleum_deepvein"
 			required_discovery_lvl	"1"
 
