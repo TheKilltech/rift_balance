@@ -34,7 +34,7 @@ EntityBlueprint  // gas_extractor_lvl_2
 				}
 			}		
 		}
-		resource_requirement "flammable_gas_vent|fluorine_deepvein|plasma_deepvein|plasma_charged_deepvein" 
+		resource_requirement "flammable_gas_vent|fluorine_deepvein|plasma_deepvein|plasma_charged_deepvein|fissonium_deepvein|reagent_deepvein|deuterium_deepvein"
 	}
 
 	ResourceConverterDesc
@@ -76,6 +76,24 @@ EntityBlueprint  // gas_extractor_lvl_2
 				family				"deep"
 				value			 	"2"
 			}
+			GameplayResource
+			{
+				resource 			"fissonium_deepvein"
+				family				"deep"
+				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"reagent_deepvein"
+				family				"deep"
+				value				"2"
+			}
+			GameplayResource
+			{
+				resource 			"deuterium_deepvein"
+				family				"deep"
+				value			 	"2"
+			}
 		}
 
 		out
@@ -107,7 +125,28 @@ EntityBlueprint  // gas_extractor_lvl_2
 				value				"200"
 				family				"deep"
 				attachment			"att_out_1"
-			}	
+			}
+			GameplayResource
+			{
+				resource 			"fissonium"
+				value				"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"reagent"
+				value				"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"deuterium"
+				value				"75"
+				family				"deep"
+				attachment			"att_out_1"
+			}
 		}
 
 		priority 4

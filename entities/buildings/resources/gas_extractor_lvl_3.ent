@@ -28,12 +28,13 @@ EntityBlueprint  // gas_extractor_lvl_3
 				building_cost
 				{
 					carbonium 	"800"
-					steel		"400"
+					alloys		"500"
 					cobalt		"300"
 				}
-			}		
+			}
 		}
-		resource_requirement "flammable_gas_vent|fluorine_deepvein|plasma_deepvein|plasma_charged_deepvein" 
+		
+		resource_requirement "flammable_gas_vent|fluorine_deepvein|plasma_deepvein|plasma_charged_deepvein|fissonium_deepvein|reagent_deepvein|deuterium_deepvein"
 	}
 
 	ResourceConverterDesc
@@ -103,6 +104,24 @@ EntityBlueprint  // gas_extractor_lvl_3
 				family				"deep"
 				value			 	"3"
 			}
+			GameplayResource
+			{
+				resource 			"fissonium_deepvein"
+				family				"deep"
+				value			 	"3"
+			}
+			GameplayResource
+			{
+				resource 			"reagent_deepvein"
+				family				"deep"
+				value				"3"
+			}
+			GameplayResource
+			{
+				resource 			"deuterium_deepvein"
+				family				"deep"
+				value			 	"3"
+			}
 		}
 		
 		out
@@ -134,7 +153,28 @@ EntityBlueprint  // gas_extractor_lvl_3
 				value				"300"
 				family				"deep"
 				attachment			"att_out_1"
-			}	
+			}
+			GameplayResource
+			{
+				resource 			"fissonium"
+				value				"300"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"reagent"
+				value				"300"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"deuterium"
+				value				"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
 		}
 
 		priority 4		
