@@ -607,7 +607,47 @@ MissionDef
             resource        "flammable_gas_vent"
 			required_discovery_lvl	"1"	
             
-			is_infinite        "1"		
+			is_infinite        "1"
+            min_spawned_volumes "1"
+            max_spawned_volumes "2"
+        }
+		ResourceVolume
+        {
+            resource        "supercoolant_deepvein"
+            is_infinite     "1"
+            
+            min_spawned_volumes "1"
+            max_spawned_volumes "2"
+        }
+		ResourceVolume
+        {
+            resource        "resin_deepvein"
+            is_infinite     "1"
+            
+            min_spawned_volumes "1"
+            max_spawned_volumes "2"
+        }
+		ResourceVolume
+        {
+            resource        "deuterium_deepvein"
+            is_infinite     "1"
+            
+            min_spawned_volumes "1"
+            max_spawned_volumes "2"
+        }
+		ResourceVolume
+        {
+            resource        "fissonium_deepvein"
+            is_infinite     "1"
+            
+            min_spawned_volumes "1"
+            max_spawned_volumes "2"
+        }
+		ResourceVolume
+        {
+            resource        "reagent_deepvein"
+            is_infinite     "1"
+            
             min_spawned_volumes "1"
             max_spawned_volumes "2"
         }

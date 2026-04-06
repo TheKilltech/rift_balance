@@ -195,6 +195,21 @@ GameplayResourceDef  // sludge_deepvein
 	spawn_type			"single"
 }
 
+GameplayResourceDef  // reagent_deepvein
+{
+	id					"reagent_deepvein"
+	localization_id 	"resource_name/reagent_deepvein"
+	bp  				"resources/resource_reagent_deepvein"
+	type 				"vein"
+	ore					"reagent"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/reagent"
+	bigger_icon			"gui/hud/resource_icons/reagent_bigger"
+	order   			"36"
+
+	spawn_type			"single"
+}
+
 GameplayResourceDef  // magma_deepvein
 {
 	id					"magma_deepvein"
