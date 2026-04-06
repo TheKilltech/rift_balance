@@ -245,6 +245,26 @@ EntityBlueprint  // resin_factory
 					}
 				}
 			}
+			
+			MinimapItemDesc
+			{
+				type	"quad"
+				color 
+				{
+					x "0.3"  // r
+					y "0.5"  // g
+					z "0.9"  // b
+					w "1"
+				}
+				size
+				{
+					x "3"
+					y "3"
+				}
+				additional_z_order	"5"
+				visibility			"always"
+				layer_group			"common_buildings"
+			}
 		}
 	}
 	
@@ -313,7 +333,7 @@ EntityBlueprint  // resin_factory
 		size
 		{
 			x "3"
-			y "5"
+			y "3"
 		}
 		additional_z_order	"5"
 		visibility			"always"

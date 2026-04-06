@@ -254,6 +254,26 @@ EntityBlueprint  // morphium_factory
 					}
 				}
 			}
+			
+			MinimapItemDesc
+			{
+				type	"quad"
+				color 
+				{
+					x "0.3"  // r
+					y "0.5"  // g
+					z "0.9"  // b
+					w "1"
+				}
+				size
+				{
+					x "3"
+					y "6"
+				}
+				additional_z_order	"5"
+				visibility			"always"
+				layer_group			"common_buildings"
+			}
 		}
 	}
 	
@@ -320,7 +340,7 @@ EntityBlueprint  // morphium_factory
 		size
 		{
 			x "3"
-			y "9"
+			y "3"
 		}
 		additional_z_order	"5"
 		visibility			"always"
@@ -466,7 +486,7 @@ EntityBlueprint  // morphium_factory
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_3_arrow"
 				}
 			}
@@ -720,6 +740,26 @@ EntityBlueprint  // morphium_factory_lvl_2
 					}
 				}
 			}
+			
+			MinimapItemDesc
+			{
+				type	"quad"
+				color 
+				{
+					x "0.3"  // r
+					y "0.5"  // g
+					z "0.9"  // b
+					w "1"
+				}
+				size
+				{
+					x "3"
+					y "6"
+				}
+				additional_z_order	"5"
+				visibility			"always"
+				layer_group			"common_buildings"
+			}
 		}
 	}
 	
@@ -740,7 +780,7 @@ EntityBlueprint  // morphium_factory_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_3_arrow"
 				}
 			}
@@ -980,6 +1020,26 @@ EntityBlueprint  // morphium_factory_lvl_3
 					}
 				}
 			}
+			
+			MinimapItemDesc
+			{
+				type	"quad"
+				color 
+				{
+					x "0.3"  // r
+					y "0.5"  // g
+					z "0.9"  // b
+					w "1"
+				}
+				size
+				{
+					x "3"
+					y "6"
+				}
+				additional_z_order	"5"
+				visibility			"always"
+				layer_group			"common_buildings"
+			}
 		}
 	}
 	
@@ -1000,7 +1060,7 @@ EntityBlueprint  // morphium_factory_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_3_arrow"
 				}
 			}
