@@ -4854,3 +4854,24 @@ EntityBlueprint								//acid_vein
 	//	}
 	//}	
 }
+
+EntityBlueprint "effects/no_lifetime"		// acid_crater
+{
+	name effects/world/acid_crater
+
+	MeshDesc
+	{
+		mesh 		"meshes/cube.mesh"
+		material 	"decals/effects/acid_explosion"
+	}
+
+	DecalDesc
+	{
+		scale
+		{
+			x		3.0
+			y		3.0
+			z		3.0
+		}
+	}
+}

@@ -1,15 +1,11 @@
-EntityBlueprint
+EntityBlueprint  // resource_deuterium_deepvein
 {
-	name "resources/resource_resin_deepvein"
-	
+	name "resources/resource_deuterium_deepvein"
 	
 	MeshDesc
 	{
-		mesh 		"meshes/props/special/loot_containers/loot_container_caverns_root.mesh"
-		material	"props/special/loot_container_caverns_extreme"
-		
-		//mesh 		"meshes/props/special/loot_containers/loot_container_desert_root.mesh" // mesh spawnowany po jej zniszczeniu
-		//material	"props/special/loot_container_desert_superior"
+		mesh 		"meshes/resources/resource_flammable_gas_vent.mesh"
+		material 	"resources/resource_wind_spot"
 	}
 	
 	SkeletonDesc
@@ -52,7 +48,7 @@ EntityBlueprint
 	MinimapItemDesc
 	{
 		type			"image"
-		icon_material 	"gui/hud/minimap_icons/resin_deepvein"
+		icon_material 	"gui/hud/minimap_icons/deuterium_deepvein"
 		unknown_until_visible 	"1"
 
 		visibility 			"discovered|radar"
@@ -60,18 +56,19 @@ EntityBlueprint
 
 	SelectableDesc
 	{
-		content "resource_name/resin_deepvein"
+		content "resource_name/deuterium_deepvein"
 		can_activate "0"
 	}
 
 	DecalDesc
 	{	
-		blueprint "effects/decals/geothermal_vent"
+		//blueprint "effects/decals/geothermal_vent"
+		blueprint "effects/decals/bright_rocks_01"
 		scale
 		{
-			x		7.0
-			y		7.0
-			z		7.0
+			x		4.0
+			y		4.0
+			z		4.0
 		
 		}
 	}
@@ -88,15 +85,8 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/loot/loot_container_small_idle_superior"
+					blueprint "effects/buildings_and_machines/morphium_powerplant_energy"
 					bone "att_wind_big"
-					offset 0 -1 0.5
-				}
-				Effect
-				{
-					blueprint "lights/point/violet_small"
-					bone "att_wind_big"
-					offset 0 -1 0.5
 				}
 			}
 		}	

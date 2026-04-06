@@ -1,4 +1,4 @@
-GameplayResourceDef
+GameplayResourceDef  // carbon_deepvein
 {
 	id					"carbon_deepvein"
 	localization_id 	"resource_name/carbon_deepvein"
@@ -16,7 +16,7 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // iron_deepvein
 {
 	id					"iron_deepvein"
 	localization_id 	"resource_name/iron_deepvein"
@@ -35,7 +35,7 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // ammonium_deepvein
 {
 	id					"ammonium_deepvein"
 	localization_id 	"resource_name/ammonium_deepvein"
@@ -53,7 +53,7 @@ GameplayResourceDef
 
 // rare resources
 
-GameplayResourceDef
+GameplayResourceDef  // cobalt_deepvein
 {
 	id					"cobalt_deepvein"
 	localization_id 	"resource_name/cobalt_deepvein"
@@ -69,7 +69,7 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // palladium_deepvein
 {
 	id					"palladium_deepvein"
 	localization_id 	"resource_name/palladium_deepvein"
@@ -85,7 +85,7 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // titanium_deepvein
 {
 	id					"titanium_deepvein"
 	localization_id 	"resource_name/titanium_deepvein"
@@ -101,7 +101,7 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // uranium_ore_deepvein
 {
 	id					"uranium_ore_deepvein"
 	localization_id 	"resource_name/uranium_ore_deepvein"
@@ -135,7 +135,7 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // water_deepvein
 {
 	id					"water_deepvein"
 	localization_id 	"resource_name/water_deepvein"
@@ -150,7 +150,37 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // deuterium_deepvein
+{
+	id					"deuterium_deepvein"
+	localization_id 	"resource_name/deuterium_deepvein"
+	bp  				"resources/resource_deuterium_deepvein"
+	type 				"vein"
+	ore					"deuterium"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/deuterium"
+	bigger_icon			"gui/hud/resource_icons/deuterium_bigger"
+	order   			"20"
+
+	spawn_type			"single"
+}
+
+GameplayResourceDef  // supercoolant_deepvein
+{
+	id					"supercoolant_deepvein"
+	localization_id 	"resource_name/supercoolant_deepvein"
+	bp  				"resources/resource_supercoolant_deepvein"
+	type 				"vein"
+	ore					"supercoolant"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/super_coolant_pool"
+	bigger_icon			"gui/hud/resource_icons/super_coolant_pool_bigger"
+	order   			"20"
+
+	spawn_type			"single"
+}
+
+GameplayResourceDef  // sludge_deepvein
 {
 	id					"sludge_deepvein"
 	localization_id 	"resource_name/sludge_deepvein"
@@ -165,7 +195,7 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // magma_deepvein
 {
 	id					"magma_deepvein"
 	localization_id 	"resource_name/magma_deepvein"
@@ -180,7 +210,22 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // magma_metal_deepvein
+{
+	id					"magma_metal_deepvein"
+	localization_id 	"resource_name/magma_metal_deepvein"
+	bp  				"resources/resource_magma_metal_deepvein"
+	type 				"vein"
+	ore					"magma_metal"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/magma_metal"
+	bigger_icon			"gui/hud/resource_icons/magma_metal_bigger"
+	order   			"37"
+
+	spawn_type			"single"
+}
+
+GameplayResourceDef  // morphium_deepvein
 {
 	id					"morphium_deepvein"
 	localization_id 	"resource_name/morphium_deepvein"
@@ -195,7 +240,7 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // petroleum_deepvein
 {
 	id					"petroleum_deepvein"
 	localization_id 	"resource_name/petroleum_deepvein"
@@ -203,8 +248,6 @@ GameplayResourceDef
 	type 				"vein"
 	ore					"petroleum"
 	random_rotation 	"1"
-	//icon				"gui/hud/resource_icons/petroleum_pool"
-	//bigger_icon			"gui/hud/resource_icons/petroleum_pool_bigger"
 	icon				"gui/hud/resource_icons/petroleum"
 	bigger_icon			"gui/hud/resource_icons/petroleum_bigger"
 	order   			"38"
@@ -212,7 +255,7 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // nitric_acid_deepvein
 {
 	id					"nitric_acid_deepvein"
 	localization_id 	"resource_name/nitric_acid_deepvein"
@@ -229,7 +272,7 @@ GameplayResourceDef
 
 // gases & plasmas
 
-GameplayResourceDef
+GameplayResourceDef  // fluorine_deepvein
 {
 	id					"fluorine_deepvein"
 	localization_id 	"resource_name/fluorine_deepvein"
@@ -244,7 +287,7 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // resin_deepvein
 {
 	id					"resin_deepvein"
 	localization_id 	"resource_name/resin_deepvein"
@@ -259,7 +302,7 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // plasma_deepvein
 {
 	id					"plasma_deepvein"
 	localization_id 	"resource_name/plasma_deepvein"
@@ -274,7 +317,7 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
-GameplayResourceDef
+GameplayResourceDef  // plasma_charged_deepvein
 {
 	id					"plasma_charged_deepvein"
 	localization_id 	"resource_name/plasma_charged_deepvein"
@@ -289,3 +332,17 @@ GameplayResourceDef
 	spawn_type			"single"
 }
 
+GameplayResourceDef  // fissonium_deepvein
+{
+	id					"fissonium_deepvein"
+	localization_id 	"resource_name/fissonium_deepvein"
+	bp  				"resources/resource_fissonium_deepvein"
+	type 				"vein"
+	ore					"fissonium"
+	random_rotation 	"1"
+	icon				"gui/hud/resource_icons/fissonium"
+	bigger_icon			"gui/hud/resource_icons/fissonium_bigger"
+	order   			"40"
+
+	spawn_type			"single"
+}

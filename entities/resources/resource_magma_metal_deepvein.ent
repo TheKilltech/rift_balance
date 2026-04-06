@@ -1,0 +1,139 @@
+EntityBlueprint
+{
+	name "resources/resource_magma_metal_deepvein"
+	
+	MeshDesc
+	{
+		mesh 		"meshes/props/special/loot_containers/loot_container_small_pile_root.mesh" 
+		material 	"props/special/loot_containers/loot_container_small_pile"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/resources/resource_flammable_gas_vent"
+	}		
+	
+	TypeDesc
+	{
+		type "resource"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"resource"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x 2
+						y 1
+						z 2
+					}
+				}
+			}
+		}
+	}
+
+	GridMarkerComponent
+	{
+		terrain_type  	"resource"
+	}
+
+	MinimapItemDesc
+	{
+		type			"image"
+		icon_material 	"gui/hud/minimap_icons/magma_metal_deepvein"
+		unknown_until_visible 	"1"
+
+		visibility 			"discovered|radar"
+	}
+
+	SelectableDesc
+	{
+		content "resource_name/magma_metal_deepvein"
+		can_activate "0"
+	}
+	
+	DecalDesc
+	{	
+		blueprint "effects/decals/geothermal_vent"
+		scale
+		{
+			x		7.0
+			y		7.0
+			z		7.0
+		
+		}
+	}
+
+	EffectDesc
+	{	
+		EffectGroup
+		{	
+			group "steam"
+			enabled "1"	
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
+					bone "att_wind_big"
+				}		
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_wind_medium_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_wind_medium_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_wind_medium_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace_small"
+					bone "att_wind_medium_4"
+				}
+				//Effect
+				//{
+				//	blueprint "effects/world/surface_magma"
+				//	scale "1.0 1.5 1.0"
+				//}	
+			}
+		}	
+	}
+
+	children
+	{
+		EntityBlueprint
+		{
+			GridCullerDesc
+			{
+				type 8
+
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "5.0"
+					}
+				}	
+			}
+		}
+	}
+
+}
+
