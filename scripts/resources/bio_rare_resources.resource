@@ -2,8 +2,8 @@
 GameplayResourceDef {
 	id				"cobalt_bio"
 	localization_id "resource_name/cobalt_bio"
-	bp  			"items/loot/resources/shard_cobalt_item"
-	type 			"global" // "ammo_tower"
+	bp  			"items/loot/resources/shard_cobalt_bio_item"
+	type 			"global"
 	specific_type	"biomass"
 	allow_overflow 	"0"
 	icon			"gui/hud/resource_icons/cobalt_bio"
@@ -15,7 +15,7 @@ GameplayResourceDef {
 GameplayResourceDef {
 	id				"palladium_bio"
 	localization_id "resource_name/palladium_bio"
-	bp  			"items/loot/resources/shard_palladium_item"
+	bp  			"items/loot/resources/shard_palladium_bio_item"
 	type 			"global"
 	specific_type	"biomass"
 	allow_overflow 	"0"
@@ -28,7 +28,7 @@ GameplayResourceDef {
 GameplayResourceDef {
 	id				"titanium_bio"
 	localization_id "resource_name/titanium_bio"
-	bp  			"items/loot/resources/shard_titanium_item"
+	bp  			"items/loot/resources/shard_titanium_bio_item"
 	type 			"global"
 	allow_overflow 	"0"
 	icon			"gui/hud/resource_icons/titanium_bio"
@@ -41,7 +41,7 @@ GameplayResourceDef {
 GameplayResourceDef {
 	id				"uranium_bio"
 	localization_id "resource_name/uranium_bio"
-	bp  			"items/loot/resources/shard_uranium_ore_item"
+	bp  			"items/loot/resources/shard_uranium_bio_item"
 	type 			"global"
 	specific_type	"biomass"
 	allow_overflow 	"0"
