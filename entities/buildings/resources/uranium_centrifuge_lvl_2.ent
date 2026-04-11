@@ -1,8 +1,7 @@
-EntityBlueprint
+EntityBlueprint  // uranium_centrifuge_lvl_2
 {
-	name  "buildings/resources/uranium_centrifuge_lvl_2"
-
-	base_blueprint "buildings/resources/uranium_centrifuge"
+	name			"buildings/resources/uranium_centrifuge_lvl_2"
+	base_blueprint	"buildings/resources/uranium_centrifuge"
 
 	BuildingDesc
 	{
@@ -58,7 +57,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"uranium_ore"
-				value				"3"
+				value				"1.5"
 			}
 			GameplayResource
 			{
@@ -71,13 +70,13 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"uranium_depleted"
-				value				"3"
+				value				"1.5"
 				optional			"1"
 			}
 			GameplayResource
 			{
 				resource 			"uranium"
-				value				"2"
+				value				"1"
 			}
 			
 		}		

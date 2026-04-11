@@ -24,7 +24,7 @@ GameplayResourceDef
 	type 			"global"
 	icon			"gui/hud/resource_icons/uranium_ore"
 	bigger_icon		"gui/hud/resource_icons/uranium_ore_bigger"
-	hud_visible 	"build_menu"
+	hud_visible 	"never"
 	order   		"11"
 	specific_type	"metals"
 }
@@ -51,7 +51,7 @@ GameplayResourceDef
 	type 			"global"
 	icon			"gui/hud/resource_icons/uranium_depleted"
 	bigger_icon		"gui/hud/resource_icons/uranium_depleted_bigger"
-	hud_visible 	"never"
+	hud_visible 	"build_menu"
 	order   		"10"
 	specific_type	"metals"
 }
