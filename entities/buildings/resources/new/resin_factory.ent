@@ -194,18 +194,44 @@ EntityBlueprint  // resin_factory
 			
 			AttachmentDesc
 			{
-				attachment "att_vismod_1"
+				attachment "att_vismod_alt"
 			}
 			
 			MeshDesc
 			{
-				mesh "meshes/buildings/energy/carbonium_powerplant.mesh"
-				material "buildings/energy/carbonium_powerplant"
+				mesh "meshes/buildings/resources/ironium_synthesizer.mesh"
+				material "buildings/resources/ironium_synthesizer"
+				//mesh "meshes/buildings/energy/carbonium_powerplant.mesh"
+				//material "buildings/energy/carbonium_powerplant"
 			}
 
 			SkeletonDesc
 			{
-				name "meshes/buildings/energy/carbonium_powerplant"
+				//name "meshes/buildings/energy/carbonium_powerplant"
+				name "meshes/buildings/resources/ironium_synthesizer"
+			}
+			
+			AnimationGraphDesc
+			{
+				animation_graph_name "building_working"
+			}
+
+			EffectDesc
+			{
+				EffectBaseBlueprints
+				{
+					"buildings/effects_medium_base"
+				}			
+			}
+		}
+		
+		EntityBlueprint  // resin_factory/grid"
+		{
+			name "buildings/resources/resin_factory/grid"
+			
+			AttachmentDesc
+			{
+				attachment "att_grid_ext"
 			}
 			
 			PhysicsDesc
@@ -219,16 +245,11 @@ EntityBlueprint  // resin_factory
 						physics_material 	"default"
 						Shapes
 						{
-							PhysicsSphereShape
+							PhysicsBoxShape
 							{
-								r "2.45"
-			
-								position 
-								{
-									x "0.0"
-									y "1.0"
-									z "0.0"
-								}
+								x	5
+								y	4
+								z	4
 							}
 						}
 					}
@@ -239,9 +260,11 @@ EntityBlueprint  // resin_factory
 			{
 				Shapes
 				{
-					PhysicsMeshShape
+					PhysicsBoxShape
 					{
-						mesh "meshes/buildings/resources/carbonium_factory_g1.nxs"
+						x	5
+						y	5
+						z	5
 					}
 				}
 			}
@@ -264,6 +287,19 @@ EntityBlueprint  // resin_factory
 				additional_z_order	"5"
 				visibility			"always"
 				layer_group			"common_buildings"
+			}
+			
+			AnimationGraphDesc
+			{
+				animation_graph_name "building_working"
+			}
+
+			EffectDesc
+			{
+				EffectBaseBlueprints
+				{
+					"buildings/effects_medium_base"
+				}			
 			}
 		}
 	}
@@ -523,13 +559,14 @@ EntityBlueprint  // resin_factory
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/morphium_powerplant_energy"
-					bone "att_chimney"
+					bone "att_radiation"
 					delay "1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/lamp_light_violet"
+					blueprint "lights/point/violet_small"
 					bone "att_light"
+					random_delay "1"
 				}
 				Effect
 				{
@@ -742,13 +779,14 @@ EntityBlueprint  // resin_factory_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/morphium_powerplant_energy"
-					bone "att_chimney"
+					bone "att_radiation"
 					delay "1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/lamp_light_violet"
+					blueprint "lights/point/violet_small"
 					bone "att_light"
+					random_delay "1"
 				}
 				Effect
 				{
@@ -956,13 +994,14 @@ EntityBlueprint  // resin_factory_lvl_3
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/morphium_powerplant_energy"
-					bone "att_chimney"
+					bone "att_radiation"
 					delay "1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/lamp_light_violet"
+					blueprint "lights/point/violet_small"
 					bone "att_light"
+					random_delay "1"
 				}
 				Effect
 				{
