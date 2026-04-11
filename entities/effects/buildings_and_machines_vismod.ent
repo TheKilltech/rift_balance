@@ -49,6 +49,38 @@ EntityBlueprint "effects/no_lifetime"		//pylon3
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//cpower
+{
+	name "effects/buildings_and_machines/cpower"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/carbonium_powerplant.mesh"
+		material "buildings/energy/carbonium_powerplant"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//cpower_ghost
+{
+	name "effects/buildings_and_machines/cpower_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/carbonium_powerplant.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//connector
 {
 	name "effects/buildings_and_machines/connector"
@@ -615,6 +647,294 @@ EntityBlueprint "effects/no_lifetime"		//mine_tower3
 	{
 		mesh "meshes/buildings/resources/drone_mine_lvl_3.mesh"
 		material "buildings/resources/drone_mine_lvl_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hcm1
+{
+	name "effects/buildings_and_machines/hcm1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_hcm_lvl_1.mesh"
+		material "buildings/defense/tower_hcm_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hcm2
+{
+	name "effects/buildings_and_machines/hcm2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_hcm_lvl_2.mesh"
+		material "buildings/defense/tower_hcm_cryo_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hcm3
+{
+	name "effects/buildings_and_machines/hcm3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_hcm_lvl_3.mesh"
+		material "buildings/defense/tower_hcm_cryo_lvl_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hcm1_ghost
+{
+	name "effects/buildings_and_machines/hcm1_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_hcm_lvl_1.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hcm2_ghost
+{
+	name "effects/buildings_and_machines/hcm2_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_hcm_lvl_1.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hcm3_ghost
+{
+	name "effects/buildings_and_machines/hcm3_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_hcm_lvl_3.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//powrod1
+{
+	name "effects/buildings_and_machines/powrod1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_power_rod_lvl_1.mesh"
+		material "buildings/defense/tower_power_rod_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//powrod2
+{
+	name "effects/buildings_and_machines/powrod2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_power_rod_lvl_2.mesh"
+		material "buildings/defense/tower_power_rod_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//powrod3
+{
+	name "effects/buildings_and_machines/powrod3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_power_rod_lvl_3.mesh"
+		material "buildings/defense/tower_power_rod_lvl_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//powrod1_ghost
+{
+	name "effects/buildings_and_machines/powrod1_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_power_rod_lvl_1.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//powrod2_ghost
+{
+	name "effects/buildings_and_machines/powrod2_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_power_rod_lvl_2.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//powrod3_ghost
+{
+	name "effects/buildings_and_machines/powrod3_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_power_rod_lvl_3.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//teletower1
+{
+	name "effects/buildings_and_machines/teletower1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_portal_lvl_1.mesh"
+		material "buildings/defense/tower_portal_lvl_1"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//teletower2
+{
+	name "effects/buildings_and_machines/teletower2"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_portal_lvl_2.mesh"
+		material "buildings/defense/tower_portal_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//teletower3
+{
+	name "effects/buildings_and_machines/teletower3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_portal_lvl_3.mesh"
+		material "buildings/defense/tower_portal_lvl_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//teletower1_ghost
+{
+	name "effects/buildings_and_machines/teletower1_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_portal_lvl_1.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//teletower2_ghost
+{
+	name "effects/buildings_and_machines/teletower2_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_portal_lvl_2.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//teletower3_ghost
+{
+	name "effects/buildings_and_machines/teletower3_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_portal_lvl_3.mesh"
+		material "selector/hologram_blue"
 	}
 }
 
@@ -2584,6 +2904,54 @@ EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_white_03
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_orange_01
+{
+	name "effects/buildings_and_machines/scifi_structure_medium_orange_01"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/scifi_structure_medium_01.mesh"
+		material 	"buildings/decorations/scifi_structure_orange"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_orange_02
+{
+	name "effects/buildings_and_machines/scifi_structure_medium_orange_02"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/scifi_structure_medium_02.mesh"
+		material 	"buildings/decorations/scifi_structure_orange"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_orange_03
+{
+	name "effects/buildings_and_machines/scifi_structure_medium_orange_03"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/scifi_structure_medium_03.mesh"
+		material 	"buildings/decorations/scifi_structure_orange"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//scifi_structure_medium_01_ghost
 {
 	name "effects/buildings_and_machines/scifi_structure_medium_01_ghost"
@@ -3842,6 +4210,78 @@ EntityBlueprint "effects/no_lifetime"		//qlab_coils
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//mrift_rotor
+{
+	name "effects/buildings_and_machines/mrift_rotor"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/mega_rift_station_7.mesh"
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/megastructures/metal_grey"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/metal_black"
+			}
+
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+
+			SubMesh
+			{
+				id "7"
+				material "buildings/megastructures/metal_yellow"
+			}
+
+		}
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/megastructures/mega_rift_station_7"
+	}
+}
+
 
 EntityBlueprint "effects/no_lifetime"		//hlab_base
 {
@@ -3972,6 +4412,22 @@ EntityBlueprint "effects/no_lifetime"		//morphium_power
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//morphium_tower1
+{
+	name "effects/buildings_and_machines/morphium_tower1"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_alien_influence_lvl_1.mesh" 
+		material 	"buildings/defense/tower_alien_influence_lvl_1"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//morphium_tower2
 {
 	name "effects/buildings_and_machines/morphium_tower2"
@@ -3985,6 +4441,22 @@ EntityBlueprint "effects/no_lifetime"		//morphium_tower2
 	{
 		mesh "meshes/buildings/defense/tower_alien_influence_lvl_2.mesh" 
 		material 	"buildings/defense/tower_alien_influence_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//morphium_tower3
+{
+	name "effects/buildings_and_machines/morphium_tower3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_alien_influence_lvl_3.mesh" 
+		material 	"buildings/defense/tower_alien_influence_lvl_3"
 	}
 }
 
@@ -4004,6 +4476,22 @@ EntityBlueprint "effects/no_lifetime"		//morphium_power_ghost
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//morphium_tower1_ghost
+{
+	name "effects/buildings_and_machines/morphium_tower1_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_alien_influence_lvl_1.mesh" 
+		material 	"selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//morphium_tower2_ghost
 {
 	name "effects/buildings_and_machines/morphium_tower2_ghost"
@@ -4016,6 +4504,22 @@ EntityBlueprint "effects/no_lifetime"		//morphium_tower2_ghost
 	MeshDesc
 	{
 		mesh "meshes/buildings/defense/tower_alien_influence_lvl_2.mesh" 
+		material 	"selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//morphium_tower3_ghost
+{
+	name "effects/buildings_and_machines/morphium_tower3_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_alien_influence_lvl_3.mesh" 
 		material 	"selector/hologram_blue"
 	}
 }
@@ -4236,23 +4740,7 @@ EntityBlueprint								// spark_ball_green
 	ParticleDesc
 	{
 		name    "rift/spark_ball_green"
-	}	
-}
-
-EntityBlueprint								// spark_ball_green
-{
-	name "effects/buildings_and_machines/spark_ball_green"
-
-	base_blueprints
-	{
-		 lights/point/fire_green_small
-		 effects/no_lifetime
 	}
-
-	ParticleDesc
-	{
-		name    "rift/spark_ball_green"
-	}	
 }
 
 EntityBlueprint								// spark_ball_bottom_rotor
@@ -4269,6 +4757,22 @@ EntityBlueprint								// spark_ball_bottom_rotor
 	{
 		//name    "rift/tower_shockwave_acid_fire"
 		name    "rift/spark_ball_bottom_rotor"
+	}
+}
+
+EntityBlueprint								// nuclear_powerplant_rods_green
+{
+	base_blueprints
+	{
+		 lights/point/green_very_small
+		 effects/no_lifetime
+	}
+
+	name "effects/buildings_and_machines/nuclear_powerplant_rods_green"
+
+	ParticleDesc
+	{
+		name    "rift/nuclear_powerplant_rods"
 	}
 }
 
@@ -4453,4 +4957,25 @@ EntityBlueprint								//acid_vein
 	//		z		5.0	
 	//	}
 	//}	
+}
+
+EntityBlueprint "effects/no_lifetime"		// acid_crater
+{
+	name effects/world/acid_crater
+
+	MeshDesc
+	{
+		mesh 		"meshes/cube.mesh"
+		material 	"decals/effects/acid_explosion"
+	}
+
+	DecalDesc
+	{
+		scale
+		{
+			x		3.0
+			y		3.0
+			z		3.0
+		}
+	}
 }

@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // shard_uranium_depleted
 { 
 	name "items/loot/resources/shard_uranium_depleted"
 
@@ -9,7 +9,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // shard_uranium_depleted_item
 { 
 	name "items/loot/resources/shard_uranium_depleted_item"
 
@@ -68,7 +68,7 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "loot_collect"
-			enabled "0"		
+			enabled "0"
 			
 			Effects
 			{
@@ -82,7 +82,7 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "loot_max"
-			enabled "0"		
+			enabled "0"
 			
 			Effects
 			{

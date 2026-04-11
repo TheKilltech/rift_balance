@@ -1,8 +1,7 @@
-EntityBlueprint
+EntityBlueprint  // uranium_centrifuge_lvl_3
 {
-	name  "buildings/resources/uranium_centrifuge_lvl_3"
-
-	base_blueprint "buildings/resources/uranium_centrifuge_lvl_2"
+	name			"buildings/resources/uranium_centrifuge_lvl_3"
+	base_blueprint	"buildings/resources/uranium_centrifuge_lvl_2"
 
 	BuildingDesc
 	{
@@ -13,8 +12,6 @@ EntityBlueprint
 		description			"gui/hud/building_description/uranium_centrifuge"
 		menu_icon			"gui/hud/building_icons/uranium_centrifuge_lvl3"
 		require 			"headquarters"
-		order				"4"
-		//upgrade				"buildings/resources/uranium_centrifuge_lvl_4"
 		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,uranium_centrifuge_lvl_2,uranium_centrifuge"
@@ -58,7 +55,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"uranium_ore"
-				value			 	"3"
+				value			 	"2"
 			}	
 			GameplayResource
 			{
@@ -72,13 +69,13 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"uranium_depleted"
-				value			 	"3"
+				value			 	"2"
 				optional			"1"
 			}
 			GameplayResource
 			{
 				resource 			"uranium"
-				value			 	"3"
+				value			 	"2"
 			}
 			
 		}		

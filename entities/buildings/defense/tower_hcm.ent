@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // tower_hcm
 {
 	name  "buildings/defense/tower_hcm"
 
@@ -17,11 +17,11 @@ EntityBlueprint
 		upgrade				"buildings/defense/tower_hcm_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		check_connect		"1"
-		condition			"NOT_BIOME"	
-		condition_value		"caverns"	
-		radius_name				"hcm"
-		min_radius				"25"
-		min_radius_effect   	"voice_over/announcement/building_too_close"		
+		condition			"NOT_BIOME"
+		condition_value		"caverns"
+		radius_name			"hcm"
+		min_radius			"20"
+		min_radius_effect	"voice_over/announcement/building_too_close"
 
 		costs
 		{
@@ -40,7 +40,7 @@ EntityBlueprint
 		}
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
@@ -48,6 +48,18 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"50"
+			}
+			
+			GameplayResource
+			{
+				resource 	"steel"
+				value 		"1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"ammo_tower_liquid"
+				value		"2"
 			}
 			
 			GameplayResource
@@ -94,6 +106,7 @@ EntityBlueprint
 			rocket_initial_height	float:"10"
 			rocket_bp				string:"buildings/defense/tower_hcm_rocket"
 			crosshair_bp			string:"effects/messages_and_markers/target_laser_marker"
+			standby_upkeep_factor	float:"1"
 		}
 
 	}
@@ -286,8 +299,8 @@ EntityBlueprint
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "25"
-			range_max "120"
-			aiming_range "170"
+			range_max "150"
+			aiming_range "190"
 		}
 
 		aiming_cooldown "1"
@@ -491,7 +504,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_hcm_rocket
 {
 	name "buildings/defense/tower_hcm_rocket"
 
@@ -555,7 +568,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_hcm_projectile
 {
 	name "buildings/defense/tower_hcm_projectile"
 

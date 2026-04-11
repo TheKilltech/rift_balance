@@ -19,8 +19,8 @@ EntityBlueprint  // tower_heavy_artillery_lvl_2
 		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		check_connect		"1"
-		condition			"NOT_BIOME"	
-		condition_value		"caverns"			
+		condition			"NOT_BIOME"
+		condition_value		"caverns"
 		
 		costs
 		{
@@ -74,7 +74,15 @@ EntityBlueprint  // tower_heavy_artillery_lvl_2
 				value 		"20"
 				family		"charge"
 				attachment	"att_in_1"
-			}		
+			}
+			
+			GameplayResource
+			{
+				resource 	"fissonium"
+				value 		"15"
+				family		"charge"
+				attachment	"att_in_1"
+			}
 		}
 
 		out

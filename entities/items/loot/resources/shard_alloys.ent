@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // shard_alloys
 { 
 	name "items/loot/resources/shard_alloys"
 
@@ -9,7 +9,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // shard_alloys_item
 { 
 	name "items/loot/resources/shard_alloys_item"
 
@@ -22,7 +22,7 @@ EntityBlueprint
 	InventoryItemDesc
 	{
 		type 			"misc"
-		name 			"resource_name/alloys_depleted"
+		name 			"resource_name/alloys"
 		item_bp			"items/loot/resources/shard_alloys"
 		icon			"gui/hud/resource_icons/alloys"
 		bigger_icon 	"gui/hud/resource_icons/alloys_bigger"
@@ -68,7 +68,7 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "loot_collect"
-			enabled "0"		
+			enabled "0"
 			
 			Effects
 			{

@@ -78,15 +78,20 @@ EntityBlueprint  // alloys_factory
 
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
-		
+		script "lua/buildings/building_buffable.lua"
+				
 		database
 		{
-			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell	string:"sell_big"
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/main/morphium_powerplant,buildings/main/morphium_powerplant_lvl_2,buildings/main/morphium_powerplant_lvl_3"
+			buff_localization			string:"buff_name/buff_morphium_power"
+			buff_icon					string:"gui/hud/building_icons/morphium_powerplant"
+			display_radius_group		string:"morphium_powerplant"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
 	}
-
+	
 	HealthDesc
 	{
 		max_health 					"1000"
@@ -162,6 +167,43 @@ EntityBlueprint  // alloys_factory
 		name "meshes/buildings/resources/alloys_furnace"  // original: "meshes/buildings/resources/supercoolant_refinery"
 	}
 
+	children
+	{
+		EntityBlueprint  // alloys_factory/furnace"
+		{
+			name "buildings/resources/alloys_factory/furnace"
+			
+			AttachmentDesc
+			{
+				attachment "att_vismod_1"
+			}
+			
+			MeshDesc
+			{
+				mesh "meshes/buildings/resources/carbonium_synthesizer.mesh"
+				material "buildings/resources/carbonium_synthesizer"
+			}
+			
+			SkeletonDesc
+			{
+				name "meshes/buildings/resources/alloys_furnace" 
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+							x	6.0
+							y	8
+							z	7.0
+					}	
+				}
+			}
+		}
+	}
+	
 	AnimationGraphDesc
 	{
 		animation_graph_name "building_working"
@@ -210,15 +252,8 @@ EntityBlueprint  // alloys_factory
    			PhysicsBoxShape
    			{
 				x	6
-				y	10
-				z	10
-				
-				//position 
-				//{
-				//	x 0
-				//	y 0
-				//	z 2
-				//}
+				y	6
+				z	6
    			}
 		}
 	}
@@ -393,11 +428,6 @@ EntityBlueprint  // alloys_factory
 			enabled "1"
 			Effects
 			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/furnace"
-					bone 	"att_vismod_1"
-				}
 			}
 		}
 		EffectGroup
@@ -543,26 +573,6 @@ EntityBlueprint  // alloys_factory_titanium
 		}
 	}
 	
-	GridCullerDesc
-	{
-		Shapes
-		{
-   			PhysicsBoxShape
-   			{
-				x	6 // 8
-				y	10
-				z	6 // 10
-				
-				//position 
-				//{
-				//	x 0
-				//	y 0
-				//	z 2
-				//}
-   			}
-		}
-	}
-
 	EffectDesc
 	{
 		EffectBaseBlueprints
@@ -611,11 +621,6 @@ EntityBlueprint  // alloys_factory_titanium
 				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_2_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/furnace"
-					bone 	"att_vismod_1"
 				}
 				Effect
 				{
@@ -797,26 +802,6 @@ EntityBlueprint  // alloys_factory_palladium
 		}
 	}
 	
-	GridCullerDesc
-	{
-		Shapes
-		{
-   			PhysicsBoxShape
-   			{
-				x	6 // 8
-				y	10
-				z	6 // 10
-				
-				//position 
-				//{
-				//	x 0
-				//	y 0
-				//	z 2
-				//}
-   			}
-		}
-	}
-
 	EffectDesc
 	{
 		EffectBaseBlueprints
@@ -865,11 +850,6 @@ EntityBlueprint  // alloys_factory_palladium
 				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_2_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/furnace"
-					bone 	"att_vismod_1"
 				}
 				Effect
 				{
@@ -1036,26 +1016,6 @@ EntityBlueprint  // alloys_factory_uranium
 		}
 	}
 	
-	GridCullerDesc
-	{
-		Shapes
-		{
-   			PhysicsBoxShape
-   			{
-				x	6 // 8
-				y	10
-				z	6 // 10
-				
-				//position 
-				//{
-				//	x 0
-				//	y 0
-				//	z 2
-				//}
-   			}
-		}
-	}
-
 	EffectDesc
 	{
 		EffectBaseBlueprints

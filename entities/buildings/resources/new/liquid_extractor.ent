@@ -33,7 +33,7 @@ EntityBlueprint  // liquid_extractor
 			}
 		}
 
-		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein|nitric_acid_deepvein|resin_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
+		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein|nitric_acid_deepvein|resin_deepvein|supercoolant_deepvein|magma_metal_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
 	}
 
 	ResourceConverterDesc
@@ -100,6 +100,18 @@ EntityBlueprint  // liquid_extractor
 				family				"deep"
 				value			 	"1"
 			}
+			GameplayResource
+			{
+				resource 			"supercoolant_deepvein"
+				family				"deep"
+				value			 	"1"
+			}
+			GameplayResource
+			{
+				resource 			"magma_metal_deepvein"
+				family				"deep"
+				value			 	"1"
+			}
 
 		}
 
@@ -158,6 +170,20 @@ EntityBlueprint  // liquid_extractor
 			{
 				resource 			"resin"
 				value				"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"supercoolant"
+				value			 	"100"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"magma_metal"
+				value			 	"100"
 				family				"deep"
 				attachment			"att_out_1"
 			}
@@ -474,7 +500,7 @@ EntityBlueprint  // liquid_extractor
 		{
 			"buildings/effects_medium_base"
 		}
-		////////////////////////Resources/////////////////////////				
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_out_1"
@@ -485,7 +511,7 @@ EntityBlueprint  // liquid_extractor
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
@@ -515,17 +541,8 @@ EntityBlueprint  // liquid_extractor
 					blueprint "effects/buildings_resources/bio_condenser_working"
 					delay "0.5"
 				}
-				//Effect
-				//{
-				//	blueprint "effects/buildings_resources/liquid_pump_working"								
-				//}				
-				//Effect
-				//{
-				//	blueprint "effects/buildings_resources/gas_extractor_working"	
-				//	delay "0.5"					
-				//}		
 			}
-		}			
+		}
 	}
 }
 
@@ -566,7 +583,7 @@ EntityBlueprint  // liquid_extractor_lvl_2
 			}
 		}
 
-		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein|nitric_acid_deepvein|resin_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
+		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein|nitric_acid_deepvein|resin_deepvein|supercoolant_deepvein|magma_metal_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
 	}
 
 	ResourceConverterDesc
@@ -641,6 +658,18 @@ EntityBlueprint  // liquid_extractor_lvl_2
 				family				"deep"
 				value			 	"2"
 			}
+			GameplayResource
+			{
+				resource 			"supercoolant_deepvein"
+				family				"deep"
+				value			 	"2"
+			}
+			GameplayResource
+			{
+				resource 			"magma_metal_deepvein"
+				family				"deep"
+				value			 	"2"
+			}
 		}
 
 		out
@@ -698,6 +727,20 @@ EntityBlueprint  // liquid_extractor_lvl_2
 			{
 				resource 			"resin"
 				value				"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"supercoolant"
+				value			 	"200"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"magma_metal"
+				value			 	"200"
 				family				"deep"
 				attachment			"att_out_1"
 			}
@@ -864,13 +907,13 @@ EntityBlueprint  // liquid_extractor_lvl_3
 				building_cost
 				{
 					carbonium 	"200"
-					steel 		"1000"
+					alloys		"500"
 					uranium		"200"
 				}
 			}
 		}
 
-		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein|nitric_acid_deepvein|resin_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
+		resource_requirement "mud_deepvein|water_deepvein|sludge_vein|sludge_deepvein|magma_deepvein|morphium_deepvein|petroleum_deepvein|nitric_acid_deepvein|resin_deepvein|supercoolant_deepvein|magma_metal_deepvein"  // water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein
 	}
 
 	ResourceConverterDesc
@@ -937,6 +980,18 @@ EntityBlueprint  // liquid_extractor_lvl_3
 				family				"deep"
 				value			 	"3"
 			}
+			GameplayResource
+			{
+				resource 			"supercoolant_deepvein"
+				family				"deep"
+				value			 	"3"
+			}
+			GameplayResource
+			{
+				resource 			"magma_metal_deepvein"
+				family				"deep"
+				value			 	"3"
+			}
 		}
 
 		out
@@ -996,7 +1051,21 @@ EntityBlueprint  // liquid_extractor_lvl_3
 				value				"300"
 				family				"deep"
 				attachment			"att_out_1"
-			}	
+			}
+			GameplayResource
+			{
+				resource 			"supercoolant"
+				value			 	"300"
+				family				"deep"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"magma_metal"
+				value			 	"300"
+				family				"deep"
+				attachment			"att_out_1"
+			}
 		}
 
 		priority 4

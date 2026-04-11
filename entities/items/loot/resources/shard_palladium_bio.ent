@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // shard_palladium_bio
 { 
 	name "items/loot/resources/shard_palladium_bio"
 
@@ -9,23 +9,23 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // shard_palladium_bio_item
 { 
 	name "items/loot/resources/shard_palladium_bio_item"
 
 	ResourceComponent
 	{
 		type_produced 	palladium_bio
-		initial_amount	1		
+		initial_amount	1
 	}
 
 	InventoryItemDesc
 	{
 		type 			"misc"
-		name 			"resource_name/palladium"
+		name 			"resource_name/palladium_bio"
 		item_bp			"items/loot/resources/shard_palladium_bio"
 		icon			"gui/hud/resource_icons/palladium_bio"
-		bigger_icon 	"gui/hud/resource_icons/palladium_bio_bigger"		
+		bigger_icon 	"gui/hud/resource_icons/palladium_bio_bigger"
 	}
 
 	LuaDesc
@@ -65,30 +65,16 @@ EntityBlueprint
 
 	EffectDesc
 	{
-		//EffectGroup
-		//{
-		//	group "loot_spawn"
-		//	enabled "0"		
-		//	
-		//	Effects
-		//	{
-		//		Effect
-		//		{
-		//			blueprint "effects/loot/loot_spawn"							
-		//		}
-		//	}
-		//}
-
 		EffectGroup
 		{
 			group "loot_collect"
-			enabled "0"		
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/loot/loot_collect_metallic"							
+					blueprint "effects/loot/loot_collect_metallic"
 				}
 			}
 		}
@@ -102,7 +88,7 @@ EntityBlueprint
 			{
 				Effect
 				{
-					blueprint "effects/loot/loot_max"							
+					blueprint "effects/loot/loot_max"
 				}
 			}
 		}

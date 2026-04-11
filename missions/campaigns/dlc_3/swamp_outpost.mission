@@ -856,13 +856,23 @@ MissionDef
 
         ResourceVolume
         {
-            resource        "flammable_gas_vent"            
+            resource        "flammable_gas_vent"
             
             is_infinite     "1"
             
             min_spawned_volumes "3"
             max_spawned_volumes "6"
-        }			
+        }
+		
+		ResourceVolume
+        {
+            resource        "deuterium_deepvein"
+			required_discovery_lvl	"1"
+
+            is_infinite        "1"
+            min_spawned_volumes "2"
+            max_spawned_volumes "3"
+        }
 
     }
 

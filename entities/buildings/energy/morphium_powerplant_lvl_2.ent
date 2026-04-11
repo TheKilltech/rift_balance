@@ -1,8 +1,7 @@
-EntityBlueprint
+EntityBlueprint  // morphium_powerplant_lvl_2
 {
 	name  "buildings/energy/morphium_powerplant_lvl_2"
-	
-	base_blueprint buildings/energy/morphium_powerplant
+	base_blueprint "buildings/energy/morphium_powerplant"
 
 	BuildingDesc
 	{
@@ -28,9 +27,9 @@ EntityBlueprint
 				building_time 	120
 				building_cost
 				{
-					carbonium 	"350"		
-					steel 		"100"
-					cobalt 		"50"
+					carbonium 	"500"
+					steel 		"1000"
+					cobalt 		"100"
 				}
 			}		
 		}
@@ -59,7 +58,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"750"
+				value 		"1300"
 			}
 		}
 		priority 10
@@ -80,17 +79,21 @@ EntityBlueprint
 
 	LuaDesc
 	{
-		script "lua/buildings/defense/shield_generator.lua"
-		
+		script "lua/buildings/buff_source.lua"
+
 		database
 		{
-			cone_effect				string:"build_cone_4x4"
-			cone_effect_sell		string:"sell_big"
-			radius					float:"23"
-			range					float:"23"
-			shield_bp				string:"buildings/defense/wall_energy/shield"
-			display_radius_group	string:"shield_generator"
-			display_radius_blueprint string:"effects/decals/range_circle_shield"
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			radius						float:"30"
+			range						float:"30"
+			buff_mod_upkeep				float:"0.75"
+			buff_source_name			string:"morphium_powerplant"
+			buff_source_level			int:"1"
+			buff_localization			string:"buff_name/buff_morphium_power"
+			buff_icon					string:"gui/hud/building_icons/morphium_powerplant"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+			display_radius_group		string:"morphium_powerplant"
 		}
 	}
 	
@@ -199,44 +202,60 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
 		}
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
 		}	
-		////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/qlab_base2"
+					bone "att_vismod_2"
+					scale 		0.6 0.8 0.6
+					orientation 0 0 0
+					offset		0 0 0
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/morphium_powerplant_energy"								
+					blueprint "effects/buildings_and_machines/morphium_powerplant_energy"
 					bone "att_energy"
 					delay "1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_energy/morphium_powerplant_working"		
+					blueprint "effects/buildings_energy/morphium_powerplant_working"
 					delay "0.5"
 				}	
 			}
@@ -252,13 +271,8 @@ EntityBlueprint
 					blueprint "effects/buildings_and_machines/level_2"
 					bone "att_level"
 				}
-				Effect
-				{
-					blueprint "effects/buildings_energy/morphium_powerplant_working"		
-					delay "0.5"
-				}	
 			}
-		}		
+		}
 	}
 }
 

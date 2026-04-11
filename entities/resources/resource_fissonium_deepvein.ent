@@ -1,0 +1,122 @@
+EntityBlueprint  // resource_fissonium_deepvein
+{
+	name "resources/resource_fissonium_deepvein"
+	
+	MeshDesc
+	{
+		material	"props/special/loot_containers/loot_container_caverns_small_advanced"
+		mesh		"meshes/props/special/loot_containers/loot_container_caverns_small_root.mesh"
+		
+		//mesh 		"meshes/props/special/loot_containers/loot_container_caverns_root.mesh"
+		//material	"props/special/loot_container_caverns_extreme"
+		
+		//mesh 		"meshes/props/special/loot_containers/loot_container_small_bulb_root.mesh"
+		//material	"props/special/loot_containers/loot_container_small_bulb_extreme"
+		
+		//material	"props/special/loot_container_magma"
+		//mesh		"meshes/props/special/loot_containers/loot_container_magma_root.mesh"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/resources/resource_flammable_gas_vent"
+	}		
+	
+	TypeDesc
+	{
+		type "resource"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"nav_blocker"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+							r "6"
+					}
+				}
+			}
+		}
+	}
+	
+	GridMarkerComponent
+	{
+		terrain_type  	"resource"
+	}
+	
+	MinimapItemDesc
+	{
+		type			"image"
+		icon_material 	"gui/hud/minimap_icons/fissonium_deepvein"
+		unknown_until_visible 	"1"
+
+		visibility 			"discovered|radar"
+	}
+
+	SelectableDesc
+	{
+		content "resource_name/fissonium"
+		can_activate "0"
+	}
+
+	DecalDesc
+	{	
+		blueprint "effects/world/acid_crater
+		scale
+		{
+			x		7.0
+			y		7.0
+			z		7.0
+		
+		}
+	}
+	
+	EffectDesc
+	{	
+		EffectGroup
+		{		
+			group "steam"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/nuclear_powerplant_rods_green"
+					bone "att_wind_big"
+					offset 0 -1 0
+				}
+			}
+		}
+	}
+
+	children
+	{
+		EntityBlueprint
+		{
+			GridCullerDesc
+			{
+				type 8
+
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "5.0"
+					}
+				}	
+			}
+		}
+	}
+
+}
+

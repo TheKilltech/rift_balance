@@ -1,0 +1,114 @@
+EntityBlueprint  // resource_deuterium_deepvein
+{
+	name "resources/resource_deuterium_deepvein"
+	
+	MeshDesc
+	{
+		mesh 		"meshes/resources/resource_flammable_gas_vent.mesh"
+		material 	"resources/resource_wind_spot"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/resources/resource_flammable_gas_vent"
+	}		
+	
+	TypeDesc
+	{
+		type "resource"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"nav_blocker"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+							r "6"
+					}
+				}
+			}
+		}
+	}
+	
+	NodeCullerDesc
+	{
+	    cost_type "prop"
+	    nav_mesh_cull_type "1"
+		flow_field_size "1.5"
+	}		
+
+	MinimapItemDesc
+	{
+		type			"image"
+		icon_material 	"gui/hud/minimap_icons/deuterium_deepvein"
+		unknown_until_visible 	"1"
+
+		visibility 			"discovered|radar"
+	}
+
+	SelectableDesc
+	{
+		content "resource_name/deuterium_deepvein"
+		can_activate "0"
+	}
+
+	DecalDesc
+	{
+		blueprint "effects/decals/bright_rocks_01"
+		scale
+		{
+			x		4.0
+			y		4.0
+			z		4.0
+		
+		}
+	}
+	
+	EffectDesc
+	{	
+		EffectGroup
+		{		
+			group "steam"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/morphium_powerplant_energy"
+					bone "att_wind_big"
+				}
+			}
+		}	
+	}
+
+	children
+	{
+		EntityBlueprint
+		{
+			GridCullerDesc
+			{
+				type 8
+
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "5.0"
+					}
+				}	
+			}
+		}
+	}
+
+}
+

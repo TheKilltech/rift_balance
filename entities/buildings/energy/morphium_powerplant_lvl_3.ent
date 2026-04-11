@@ -1,12 +1,11 @@
-EntityBlueprint
+EntityBlueprint  // morphium_powerplant_lvl_3
 {
 	name  "buildings/energy/morphium_powerplant_lvl_3"
-	
-	base_blueprint buildings/energy/morphium_powerplant_lvl_2
+	base_blueprint "buildings/energy/morphium_powerplant_lvl_2"
 
 	BuildingDesc
 	{
-		buildable				"0"		
+		buildable				"0"
 		name 					"morphium_powerplant_lvl_3"
 		bp   					"buildings/energy/morphium_powerplant_lvl_3"
 		category 				"energy"
@@ -15,8 +14,6 @@ EntityBlueprint
 		menu_icon				"gui/hud/building_icons/morphium_powerplant_lvl3"
 		type					"pipe"
 		require 				"headquarters"
-		order					"11"		
-		//upgrade				"buildings/energy/morphium_powerplant_lvl_4"
 		going_green_state		"1"
 		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
@@ -25,12 +22,12 @@ EntityBlueprint
 			BuildingCostInfo
 			{
 				name 			"default"
-				building_time 	120
+				building_time 	150
 				building_cost
 				{
-					carbonium 	"350"
-					steel 		"100"
-					cobalt		"150"
+					carbonium 	"2000"
+					alloys		"1000"
+					cobalt		"500"
 				}
 			}		
 		}
@@ -43,7 +40,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"cobalt"
-				value 		"0.3"
+				value 		"0.5"
 			}
 			
 			GameplayResource
@@ -59,7 +56,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"1000"
+				value 		"1800"
 			}
 		}
 		priority 10
@@ -80,17 +77,21 @@ EntityBlueprint
 
 	LuaDesc
 	{
-		script "lua/buildings/defense/shield_generator.lua"
-		
+		script "lua/buildings/buff_source.lua"
+
 		database
 		{
-			cone_effect				string:"build_cone_4x4"
-			cone_effect_sell		string:"sell_big"
-			radius					float:"25"
-			range					float:"25"
-			shield_bp				string:"buildings/defense/wall_energy/shield_lvl_2"
-			display_radius_group	string:"shield_generator"
-			display_radius_blueprint string:"effects/decals/range_circle_shield"
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			radius						float:"35"
+			range						float:"35"
+			buff_mod_upkeep				float:"0.5"
+			buff_source_name			string:"morphium_powerplant"
+			buff_source_level			int:"2"
+			buff_localization			string:"buff_name/buff_morphium_power"
+			buff_icon					string:"gui/hud/building_icons/morphium_powerplant"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+			display_radius_group		string:"morphium_powerplant"
 		}
 	}
 	
@@ -199,44 +200,74 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
 		}	
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/morphium_tower1"
+					bone "att_vismod_1"
+					scale 		1 1.3 1
+					orientation 0 0 0
+					offset		0 0 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/qlab_base2"
+					bone "att_vismod_2"
+					scale 		0.6 0.8 0.6
+					orientation 0 0 0
+					offset		0 0 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/ball_shiny"
+					bone "att_vismod_3"
+					scale 		1.4 1.4 1.4
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/morphium_powerplant_energy"								
+					blueprint "effects/buildings_and_machines/morphium_powerplant_energy"
 					bone "att_energy"
 					delay "1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_energy/morphium_powerplant_working"		
+					blueprint "effects/buildings_energy/morphium_powerplant_working"
 					delay "0.5"
 				}
 			}
@@ -253,6 +284,6 @@ EntityBlueprint
 					bone "att_level"
 				}
 			}
-		}		
+		}
 	}
 }

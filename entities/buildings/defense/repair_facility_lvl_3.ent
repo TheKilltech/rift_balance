@@ -77,17 +77,17 @@ EntityBlueprint  // repair_facility_lvl_3
 			
 			GameplayResource
 			{
-				resource 	"flammable_gas"
-				value 		"5"
-				family		"fuel"
+				resource 	"reagent"
+				value 		"2"
+				family		"onigel"
 				attachment	"att_in_1"
 			}
 			
 			GameplayResource
 			{
-				resource 	"reagent"
-				value 		"2"
-				family		"fuel"
+				resource 	"fissonium"
+				value 		"1"
+				family		"onigel"
 				attachment	"att_in_1"
 			}
 			
@@ -225,7 +225,7 @@ EntityBlueprint  // repair_facility_lvl_3
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects

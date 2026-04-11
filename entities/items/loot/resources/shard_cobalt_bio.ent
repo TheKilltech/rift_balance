@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // shard_cobalt_bio
 { 
 	name "items/loot/resources/shard_cobalt_bio"
 
@@ -9,7 +9,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // shard_cobalt_bio_item
 { 
 	name "items/loot/resources/shard_cobalt_bio_item"
 
@@ -22,10 +22,10 @@ EntityBlueprint
 	InventoryItemDesc
 	{
 		type 			"misc"
-		name 			"resource_name/cobalt"
+		name 			"resource_name/cobalt_bio"
 		item_bp			"items/loot/resources/shard_cobalt_bio"
 		icon			"gui/hud/resource_icons/cobalt_bio"
-		bigger_icon 	"gui/hud/resource_icons/cobalt_bio_bigger"			
+		bigger_icon 	"gui/hud/resource_icons/cobalt_bio_bigger"
 	}
 
 	LuaDesc

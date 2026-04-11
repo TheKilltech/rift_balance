@@ -1,7 +1,6 @@
-EntityBlueprint
+EntityBlueprint  // nuclear_powerplant_lvl_3
 {
 	name  "buildings/energy/nuclear_powerplant_lvl_3"
-
 	base_blueprint "buildings/energy/nuclear_powerplant_lvl_2"
 
 	BuildingDesc
@@ -63,7 +62,7 @@ EntityBlueprint
 				value 		"25"
 				attachment	"att_in_1"
 				family		"coolant"
-			}				
+			}
 		}
 		
 		out
@@ -72,6 +71,13 @@ EntityBlueprint
 			{
 				resource 	"energy"
 				value 		"3800"
+			}
+			
+			GameplayResource
+			{
+				resource 	"fissonium"
+				value 		"50"
+				attachment	"att_out_1"
 			}
 		}
 		priority 9
@@ -88,6 +94,12 @@ EntityBlueprint
 				max 	 "7500"
 			}
 			
+			Storage
+			{
+				resource	"fissonium"
+				max 		"500"
+				attachment	"att_out_1"
+			}
 		}
 	}
 
@@ -196,7 +208,7 @@ EntityBlueprint
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
@@ -205,104 +217,139 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "0_transition"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_1"
 					delay "0"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_2"
 					delay "0.15"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_3"
 					delay "0.25"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_4"
 					delay "0.3"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_big_random"								
+					blueprint "effects/buildings_generic/explosion_big_random"
 					bone "att_smoke_5"
 					delay "0.4"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_big_random"								
+					blueprint "effects/buildings_generic/explosion_big_random"
 					bone "att_smoke_6"
 					delay "0.45"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_big_random"								
+					blueprint "effects/buildings_generic/explosion_big_random"
 					bone "att_smoke_7"
 					delay "0.5"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_building_nuclear_01"								
+					blueprint "effects/buildings_generic/explosion_building_nuclear_01"
 					delay "0.6"
-				}				
+				}
 			}
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
-		}	
-////////////////////////MISC/////////////////////////			
+		}
 		EffectGroup
 		{
-			group "working"
-			enabled "0"				
+			group "att_out_1"
+			enabled "0"
+			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/nuclear_powerplant_steam"								
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone "att_out_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/ball_green"
+					bone "att_vismod_2"
+					scale		3 2.5 3
+					orientation	0 0 0
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/nuclear_powerplant_steam"
 					bone "att_gas"
 					delay "1"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/nuclear_powerplant_rods"								
+					blueprint "effects/buildings_and_machines/nuclear_powerplant_rods"
 					bone "att_nuclear_rods"
 					delay "1"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/nuclear_powerplant_energy"								
+					blueprint "effects/buildings_and_machines/nuclear_powerplant_energy"
 					bone "att_nuclear_energy"
 					delay "1"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_energy/nuclear_powerplant_working"		
+					blueprint "effects/buildings_energy/nuclear_powerplant_working"
 					delay "0.5"
 				}				
 			}
@@ -319,7 +366,7 @@ EntityBlueprint
 					bone "att_level"
 				}
 			}
-		}		
-	}	
+		}
+	}
 }
 

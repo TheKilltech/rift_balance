@@ -1,0 +1,133 @@
+EntityBlueprint  // resource_supercoolant_deepvein
+{
+	name "resources/resource_supercoolant_deepvein"
+	
+	MeshDesc
+	{
+		mesh 		"meshes/props/special/loot_containers/loot_container_ice_big_root.mesh"
+		material	"props/special/loot_containers/loot_container_ice"
+				
+		//material	"props/special/loot_containers/loot_container_caverns_small_advanced"
+		//mesh		"meshes/props/special/loot_containers/loot_container_caverns_small_root.mesh"
+		
+		//mesh 		"meshes/props/special/loot_containers/loot_container_caverns_root.mesh" // mesh spawnowany po jej zniszczeniu
+		//material	"props/special/loot_container_caverns_extreme"
+		
+		//mesh 		"meshes/props/special/loot_containers/loot_container_small_bulb_root.mesh"
+		//material	"props/special/loot_containers/loot_container_small_bulb_extreme"
+		
+		//material	"props/special/loot_container_magma"
+		//mesh		"meshes/props/special/loot_containers/loot_container_magma_root.mesh"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/resources/resource_flammable_gas_vent"
+	}		
+	
+	TypeDesc
+	{
+		type "resource"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"nav_blocker"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+							r "6"
+					}
+				}
+			}
+		}
+	}
+	
+	GridMarkerComponent
+	{
+		terrain_type  	"resource"
+	}
+	
+	MinimapItemDesc
+	{
+		type			"image"
+		icon_material 	"gui/hud/minimap_icons/supercoolant_deepvein"
+		unknown_until_visible 	"1"
+
+		visibility 			"discovered|radar"
+	}
+
+	SelectableDesc
+	{
+		content "resource_name/supercoolant"
+		can_activate "0"
+	}
+
+	DecalDesc
+	{	
+		blueprint "effects/decals/ice_crater_01"
+		scale
+		{
+			x		2.8
+			y		2.8
+			z		2.8
+			
+		}
+	}
+	
+	EffectDesc
+	{	
+		EffectGroup
+		{		
+			group "steam"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapons_elemental/tower_water_big_vent"
+					bone "att_wind_big"
+					scale 2 1 2
+					random_delay "1"
+				}
+				Effect
+				{				
+					blueprint "lights/point/blue_small"
+					//blueprint "lights/point/cavern_blue2"
+					bone "att_wind_big"
+					offset 0 -1 0
+				}
+			}
+		}
+	}
+
+	children
+	{
+		EntityBlueprint
+		{
+			GridCullerDesc
+			{
+				type 8
+
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "5.0"
+					}
+				}	
+			}
+		}
+	}
+
+}
+

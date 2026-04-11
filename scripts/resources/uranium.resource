@@ -47,11 +47,11 @@ GameplayResourceDef
 {
 	id				"uranium_depleted"
 	localization_id "resource_name/uranium_depleted"
-	bp  			"items/loot/resources/shard_uranium_ore_item"
+	bp  			"items/loot/resources/shard_uranium_depleted_item"
 	type 			"global"
 	icon			"gui/hud/resource_icons/uranium_depleted"
 	bigger_icon		"gui/hud/resource_icons/uranium_depleted_bigger"
-	hud_visible 	"never"
+	hud_visible 	"build_menu"
 	order   		"10"
 	specific_type	"metals"
 }
