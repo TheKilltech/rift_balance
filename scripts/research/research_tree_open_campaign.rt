@@ -17298,7 +17298,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1089"
+						x "1116"
 						y "126"
 					}
 
@@ -17381,6 +17381,210 @@ Research
 					}
 
 					icon "gui/menu/research/icons/tower_ammunition_handling"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/heavy_water_reactor_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/irradiator_lvl_1"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "2500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "5000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "3500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1071"
+						y "126"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/irradiator"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/consumable_nuclear_mine"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/irradiator_lvl_1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_5"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/irradiator_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "5000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "7000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1071"
+						y "324"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/irradiator_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/consumable_nuclear_mine"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/irradiator_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl7"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/irradiator_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "7500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "15000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "12000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1071"
+						y "522"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/irradiator_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/consumable_nuclear_mine"
 				}
 
 			}
@@ -52060,6 +52264,6 @@ Research
 
 	type
 	editor "6741"
-	version "221"
+	version "222"
 }
 
