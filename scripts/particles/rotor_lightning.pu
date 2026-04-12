@@ -1,0 +1,197 @@
+system rift/rotor_lightning
+{
+    keep_local                                  true
+    nonvisible_update_timeout                   1
+    scale_velocity                              0.1
+    scale                                       0.1 0.1 0.1
+    tight_bounding_box                          true
+    fade_out                                    true
+    cache_count                                 30
+    technique flare
+    {
+        keep_local                              true
+        visual_particle_quota                   10
+        emitted_emitter_quota                   0
+        emitted_technique_quota                 0
+        emitted_affector_quota                  0
+        emitted_system_quota                    0
+        material                                particles/green_alien_explosion_01
+        renderer                                Billboard
+        {
+            billboard_rotation_type             vertex
+        }
+        emitter                                 Point flare
+        {
+            emission_rate                       5
+            angle                               0
+            time_to_live                        1.75
+            velocity                            0.0001
+            all_particle_dimensions             4
+            keep_local                          true
+        }
+        affector                                Colour Affector13
+        {
+            time_colour                         0    0 0 0 0
+            time_colour                         0.502174  1 1 1 1
+            time_colour                         1    0 0 0 0
+        }
+        affector                                Scale Affector15
+        {
+            xyz_scale                           5
+        }
+        affector                                TextureRotator 
+        {
+            rotation                            dyn_random
+            {
+                min                             -1
+                max                             1
+            }
+            rotation_speed                      0
+        }
+    }
+    technique sparks_gravity_sphere_1
+    {
+        keep_local                              true
+        visual_particle_quota                   200
+        emitted_emitter_quota                   0
+        emitted_technique_quota                 0
+        emitted_affector_quota                  0
+        emitted_system_quota                    0
+        material                                particles/spark_orange_01
+        renderer                                Billboard
+        {
+            render_queue_group                  65
+            billboard_rotation_type             vertex
+        }
+        emitter                                 Circle DebrisEmitter
+        {
+            emission_rate                       400
+            angle                               5
+            time_to_live                        dyn_random
+            {
+                min                             0.3
+                max                             0.4
+            }
+            velocity                            dyn_random
+            {
+                min                             20
+                max                             40
+            }
+            all_particle_dimensions             dyn_random
+            {
+                min                             1
+                max                             2
+            }
+            keep_local                          true
+            start_colour_range                  1 1 1 1
+            radius                              12
+        }
+        affector                                Colour 
+        {
+            time_colour                         0    0.054902 0.054902 0.054902 0.494118
+            time_colour                         0.330435  1 1 1 1
+            time_colour                         0.663043  1 1 1 1
+            time_colour                         1    0 0 0 0
+        }
+        affector                                Vortex 
+        {
+            rotation_axis                       0 1 0
+            rotation_speed                      3
+        }
+    }
+    technique sparks_gravity_sphere_2
+    {
+        keep_local                              true
+        visual_particle_quota                   200
+        emitted_emitter_quota                   0
+        emitted_technique_quota                 0
+        emitted_affector_quota                  0
+        emitted_system_quota                    0
+        material                                particles/lightning_bolt_4x4_yellow_01
+        renderer                                Billboard
+        {
+            render_queue_group                  65
+            texture_coords_rows                 4
+            texture_coords_columns              4
+            billboard_type                      oriented_self
+            billboard_origin                    bottom_center
+            billboard_rotation_type             vertex
+        }
+        emitter                                 Circle DebrisEmitter
+        {
+            emission_rate                       50
+            angle                               1
+            time_to_live                        0.3
+            velocity                            1
+            particle_width                      16
+            particle_height                     16
+            position                            0 1 0
+            keep_local                          true
+            end_texture_coords_range            15
+            start_colour_range                  1 1 1 1
+            auto_direction                      true
+            radius                              1
+        }
+        affector                                Colour 
+        {
+            time_colour                         0    1 1 1 1
+            time_colour                         1    0 0 0 0
+        }
+        affector                                TextureRotator 
+        {
+            use_own_rotation                    true
+            rotation_speed                      0
+        }
+    }
+    technique sparks_gravity_sphere_3
+    {
+        keep_local                              true
+        visual_particle_quota                   200
+        emitted_emitter_quota                   0
+        emitted_technique_quota                 0
+        emitted_affector_quota                  0
+        emitted_system_quota                    0
+        material                                particles/spark_orange_01
+        renderer                                Billboard
+        {
+            render_queue_group                  65
+            billboard_rotation_type             vertex
+        }
+        emitter                                 Circle DebrisEmitter
+        {
+            emission_rate                       400
+            angle                               5
+            time_to_live                        dyn_random
+            {
+                min                             0.3
+                max                             0.4
+            }
+            velocity                            dyn_random
+            {
+                min                             20
+                max                             40
+            }
+            all_particle_dimensions             dyn_random
+            {
+                min                             1
+                max                             2
+            }
+            keep_local                          true
+            direction                           0 -1 0
+            start_colour_range                  1 1 1 1
+            radius                              12
+        }
+        affector                                Colour 
+        {
+            time_colour                         0    0.054902 0.054902 0.054902 0.494118
+            time_colour                         0.330435  1 1 1 1
+            time_colour                         0.663043  1 1 1 1
+            time_colour                         1    0 0 0 0
+        }
+        affector                                Vortex 
+        {
+            rotation_axis                       0 1 0
+            rotation_speed                      3
+        }
+    }
+}
