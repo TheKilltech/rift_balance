@@ -420,7 +420,7 @@ EntityBlueprint  // heavy_water_plant
 	}
 
 	EffectDesc
-	{		
+	{
 
 		EffectBaseBlueprints
 		{
@@ -492,8 +492,13 @@ EntityBlueprint  // heavy_water_plant
 			
 			Effects
 			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/deep_hum_working"
+					delay "1"
+				}
 			}
-		}	
+		}
 	}
 }
 
@@ -669,7 +674,12 @@ EntityBlueprint  // heavy_water_plant_lvl_2
 			
 			Effects
 			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/deep_hum_working"
+					delay "1"
+				}
 			}
-		}	
+		}
 	}
 }

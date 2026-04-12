@@ -310,5 +310,25 @@ EntityBlueprint  // uranium_centrifuge
 		{
 			"buildings/effects_small_base"
 		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/morphium_powerplant_working"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/generic_4_working"
+					delay "1.0"
+				}
+			}
+		}
 	}
 }
