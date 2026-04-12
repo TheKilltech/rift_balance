@@ -60,14 +60,14 @@ EntityBlueprint  // ammo_factory_liquid_ext
 			GameplayResource
 			{
 				resource 			"petroleum"
-				value 				"25"
+				value 				"40"
 				attachment			"att_in_1"
 				family				"main"
 			}
 			GameplayResource
 			{
-				resource 			"nitric_acid"
-				value 				"5"
+				resource 			"reagent"
+				value 				"20"
 				attachment			"att_in_1"
 				family				"main"
 			}
@@ -139,17 +139,100 @@ EntityBlueprint  // ammo_factory_liquid_ext
 	MeshDesc
 	{
 		mesh "meshes/buildings/resources/uranium_centrifuge.mesh"
-		material "buildings/ammo/ammo_factory_liquid_ext"	
-	}
-
-	TypeDesc
-	{
-		type "building|ammo"
+		material "buildings/ammo/ammo_factory_liquid_ext"
 	}
 
 	SkeletonDesc
 	{
 		name "meshes/buildings/resources/uranium_centrifuge"
+	}
+
+	children
+	{
+		EntityBlueprint  // ammo_factory_liquid_ext/preproc"
+		{
+			name "buildings/resources/ammo_factory_liquid_ext/preproc"
+			
+			AttachmentDesc
+			{
+				attachment "att_vismod_preproc"
+			}
+			
+			MeshDesc
+			{
+				mesh "meshes/buildings/resources/ironium_synthesizer.mesh"
+				material "buildings/ammo/ammo_factory_liquid_adv"
+				//material "buildings/resources/ironium_synthesizer"
+			}
+			
+			SkeletonDesc
+			{
+				name "meshes/buildings/resources/ironium_synthesizer" 
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+							x	3.5
+							y	3.5
+							z	3.5
+					}	
+				}
+			}
+			
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsSphereShape
+							{
+								r "2.3"
+			
+								position 
+								{
+									x "0.0"
+									y "0.4"
+									z "0.0"
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			MinimapItemDesc
+			{
+				type	"quad"
+				color 
+				{
+					x "0.4"  // r
+					y "0.2"  // g
+					z "0.9"  // b
+					w "1"
+				}
+				size
+				{
+					x "2"
+					y "2"
+				}
+				visibility			"always"
+			}
+		}
+	}
+	
+	TypeDesc
+	{
+		type "building|ammo"
 	}
 
 	AnimationGraphDesc
@@ -323,7 +406,7 @@ EntityBlueprint  // ammo_factory_liquid_ext
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
@@ -332,7 +415,7 @@ EntityBlueprint  // ammo_factory_liquid_ext
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -355,15 +438,20 @@ EntityBlueprint  // ammo_factory_liquid_ext
 			{
 				Effect
 				{
-					blueprint "effects/buildings_main/ai_hub_working"	
-					delay "0.5"					
-				}	
+					blueprint "effects/buildings_energy/morphium_powerplant_working"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/nuclear_powerplant_working"
+					delay "1.0"
+				}
 			}
 		}	
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -373,8 +461,17 @@ EntityBlueprint  // ammo_factory_liquid_ext
 				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_2_pipe"
+					blueprint "effects/weapon_items/mine_simple"
+					bone 		"att_vismod_2"
+					scale		1 1 1
+					orientation -30 0 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_01"
+					bone 		"att_vismod_connect"
+					scale		0.9 0.6 0.7
+					orientation 0 0 0
 				}
 			}
 		}
@@ -444,15 +541,15 @@ EntityBlueprint  // ammo_factory_liquid_ext_lvl_2
 
 			GameplayResource
 			{
-				resource 			"nitric_acid"
-				value 				"5"
+				resource 			"reagent"
+				value 				"20"
 				attachment			"att_in_1"
 				family				"main"
 			}
 			GameplayResource
 			{
 				resource 			"petroleum"
-				value 				"25"
+				value 				"40"
 				attachment			"att_in_1"
 				family				"main"
 			}
@@ -461,7 +558,7 @@ EntityBlueprint  // ammo_factory_liquid_ext_lvl_2
 			{
 				resource 			"supercoolant"
 				value 				"10"
-				attachment			"att_in_2"
+				attachment			"att_in_3"
 				family				"secondary"
 			}
 		}
@@ -481,7 +578,7 @@ EntityBlueprint  // ammo_factory_liquid_ext_lvl_2
 				optional			"1"
 			}			
 		}
-		priority 6			
+		priority 6
 	}
 	
 	HealthDesc
@@ -515,16 +612,16 @@ EntityBlueprint  // ammo_factory_liquid_ext_lvl_2
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
 		}
-		////////////////////////Resources/////////////////////////	
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -538,8 +635,8 @@ EntityBlueprint  // ammo_factory_liquid_ext_lvl_2
 		}	
 		EffectGroup
 		{
-			group "att_in_2"
-			enabled "0"				
+			group "att_in_3"
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -547,7 +644,7 @@ EntityBlueprint  // ammo_factory_liquid_ext_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_2_arrow"
+					bone "att_in_3_arrow"
 				}
 			}
 		}	
@@ -556,21 +653,26 @@ EntityBlueprint  // ammo_factory_liquid_ext_lvl_2
 		EffectGroup
 		{
 			group "working"
-			enabled "0"	
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_main/ai_hub_working"	
-					delay "0.5"					
-				}	
+					blueprint "effects/buildings_energy/morphium_powerplant_working"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/nuclear_powerplant_working"
+					delay "1.0"
+				}
 			}
 		}	
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -581,7 +683,21 @@ EntityBlueprint  // ammo_factory_liquid_ext_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_2_pipe"
+					bone 	"att_in_3_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/spitter_cryo"
+					bone		"att_vismod_1"
+					scale		1.0 1.0 1.0
+					orientation	90 0 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_white_01"
+					bone 		"att_vismod_connect"
+					scale		0.9 0.6 0.7
+					orientation 0 0 0
 				}
 			}
 		}
@@ -595,7 +711,7 @@ EntityBlueprint  // ammo_factory_liquid_ext_lvl_2
 				Effect
 				{
 					blueprint	"effects/buildings_and_machines/level_2"
-					bone		"att_level"
+					bone		"att_level_b"
 				}
 			}
 		}	

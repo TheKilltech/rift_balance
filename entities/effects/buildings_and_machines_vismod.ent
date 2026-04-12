@@ -1616,6 +1616,56 @@ EntityBlueprint "effects/no_lifetime"		//gas_reactor_ghost
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//chemproc
+{
+	name "effects/buildings_and_machines/chemproc"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/ironium_synthesizer.mesh"
+		material "buildings/resources/ironium_synthesizer"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//chemproc_orange
+{
+	name "effects/buildings_and_machines/chemproc_orange"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/ironium_synthesizer.mesh"
+		material "buildings/ammo/ammo_factory_liquid_adv"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//chemproc_ghost
+{
+	name "effects/buildings_and_machines/chemproc_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/ironium_synthesizer.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+
+
 EntityBlueprint "effects/no_lifetime"		//orb_uranium
 {
 	name "effects/buildings_and_machines/orb_uranium"
