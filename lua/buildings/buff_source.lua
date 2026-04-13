@@ -7,8 +7,18 @@ function buff_source:__init()
 	building.__init(self,self)
 end
 
+function buff_source:Log( logLevel, message )
+	local curLevel = 0 -- enable logging here ( 0 - errors, 2 - main entry points, 3 - details, 5 - loops )
+	if logLevel <= curLevel then
+		local context = "buff_source ".. self.buildingName .. " ".. tostring(self.entity)..": "
+		LogService:Log( context .. tostring(message) )
+	end
+end
+
 function buff_source:OnInit()
+	self:Log( 2, "OnInit" )
 	self:RegisterHandler( self.entity, "StartUpgradingEvent", "OnUpgradingStart" )
+	self:RegisterHandler( self.entity, "BuildingModifiedEvent",  "OnBuildingModifiedEvent" )
 	
 	self.range   = self.data:GetFloatOrDefault("range", 40)
 	self.buffMod = self.data:GetFloatOrDefault("buff_modificator", -1.0)
@@ -21,6 +31,7 @@ function buff_source:OnInit()
 	
     self.fsm = self:CreateStateMachine()
     self.fsm:AddState( "buff", { enter="OnEnterBuff", exit="OnExitBuff" } )
+    self.fsm:AddState( "full", { enter="OnEnterFull", execute="OnExecuteFull", interval = 2 } )
     self.fsm:AddState( "idle", { enter="OnEnterIdle" } )
 	
     self.fsmInfo = self:CreateStateMachine()
@@ -33,6 +44,7 @@ end
 
 function buff_source:OnLoad()
 	building.OnLoad( self )
+	self:Log( 2, "OnLoad" )
 	
 	if not self.fsmInfo then
 		self.fsmInfo = self:CreateStateMachine()
@@ -40,39 +52,58 @@ function buff_source:OnLoad()
 		self.fsmInfo:AddState( "update2", { execute="OnExecuteInfoUpdate", interval = 30 } )
 		self.fsmInfo:AddState( "idle",   { } )
 	end
+    if ( self.fsm and self.fsm:GetState("full") == nil ) then
+        self.fsm:AddState("full", { enter="OnEnterFull", execute="OnExecuteFull", interval = 2 } )
+    end
 end
 
 
 function buff_source:OnActivate()
-	--LogService:Log( "buff_source: OnActivate ".. self.buildingName.. " ".. tostring(self.entity) )
+	self:Log( 2, "OnActivate" )
 	self.fsm:ChangeState("buff")
 	self.fsmInfo:ChangeState("update")
 end
 
 function buff_source:OnDeactivate()
-	--LogService:Log( "buff_source: OnDeactivate ".. self.buildingName.. " ".. tostring(self.entity) )
+	self:Log( 2, "OnDeactivate" )
+	
+	local statusComp = EntityService:GetComponent( self.entity, "BuildingStatusComponent")
+	if ( statusComp ~= nil ) then
+		local statusHelper = reflection_helper(statusComp)
+		if statusHelper.status.status == 182 then -- status for storage is full (i hope); statusHelper.status.missing_resources should contain a readable string, but cannot access it
+			self:Log( 3, "status full storage, ignore deactivate")
+			self.fsm:ChangeState("full")
+			self.fsmInfo:ChangeState("idle")
+			return -- keep buff alive despite full storage disable
+		end
+	end
+	
 	self.fsm:ChangeState("idle")
 	self.fsmInfo:ChangeState("update")
 end
 
+function buff_source:OnBuildingModifiedEvent() -- ToDo: remove
+	self:Log( 2, "OnBuildingModifiedEvent" )
+end
+
 function buff_source:OnDestroy()
-	--LogService:Log( "buff_source: OnDestroy ".. self.buildingName.. " ".. tostring(self.entity) )
+	self:Log( 2, "OnDestroy" )
 	self.fsm:ChangeState("idle")
 end
 
 function buff_source:OnSell()
-	--LogService:Log( "buff_source: OnSell ".. self.buildingName.. " ".. tostring(self.entity) )
+	self:Log( 2, "OnSell" )
 	self.fsm:ChangeState("idle")
 end
 
 function buff_source:OnRelease()
-	--LogService:Log( "buff_source: OnRelease ".. self.buildingName.. " ".. tostring(self.entity) )
+	self:Log( 2, "OnRelease" )
 	QueueEvent("LuaGlobalEvent", event_sink, "BuffEvent", {} )
 	building.OnRelease( self )
 end
 
 function buff_source:OnBuildingEnd()
-	--LogService:Log( "buff_source: OnBuildingEnd ".. self.buildingName.. " ".. tostring(self.entity) )
+	self:Log( 2, "OnBuildingEnd " )
 	if self.working == true then
 		self.fsm:ChangeState("buff")
 	else self.fsm:ChangeState("idle")
@@ -80,7 +111,7 @@ function buff_source:OnBuildingEnd()
 end
 
 function buff_source:OnUpgradingStart()
-	--LogService:Log( "buff_source: OnUpgradingStart ".. self.buildingName.. " ".. tostring(self.entity) )
+	self:Log( 2, "OnUpgradingStart " )
 	self.fsm:ChangeState("idle")
 end
 
@@ -90,12 +121,15 @@ function buff_source:OnExecuteInfoUpdate()
 end
 
 function buff_source:OnEnterIdle()
-	--LogService:Log( "buff_source: OnEnterIdle" )
+	self:Log( 3, "OnEnterIdle" )
+	self.data:SetInt("buff_source_entity", self.entity)
+	self.data:SetInt("buff_active", 0)
+	QueueEvent("LuaGlobalEvent", event_sink, "BuffEvent", self.data )
     self:UpdateBuildingInfo()
 end
 
 function buff_source:OnEnterBuff()
-	--LogService:Log( "buff_source: OnEnterBuff" )
+	self:Log( 3, "OnEnterBuff" )
 	self.data:SetInt("buff_source_entity", self.entity)
 	self.data:SetInt("buff_active", 1)
 	QueueEvent("LuaGlobalEvent", event_sink, "BuffEvent", self.data )
@@ -103,10 +137,25 @@ function buff_source:OnEnterBuff()
 end
 
 function buff_source:OnExitBuff()
-	--LogService:Log( "buff_source: OnExitBuff" )
-	self.data:SetInt("buff_source_entity", self.entity)
-	self.data:SetInt("buff_active", 0)
-	QueueEvent("LuaGlobalEvent", event_sink, "BuffEvent", self.data )
+	self:Log( 3, "OnExitBuff" )
+    self:UpdateBuildingInfo()
+end
+
+function buff_source:OnEnterFull()
+	self:Log( 3, "OnEnterFull" )
+    self:UpdateBuildingInfo()
+end
+
+function buff_source:OnExecuteFull()
+	local statusComp = EntityService:GetComponent( self.entity, "BuildingStatusComponent")
+	if ( statusComp ~= nil ) then
+		local statusHelper = reflection_helper(statusComp)
+		if statusHelper.status.status ~= 182 and self.working == false  then
+			self:Log( 3, "OnExecuteFull - status no longer full and not working, go idle" )
+			self.fsm:ChangeState("idle")
+			self.fsmInfo:ChangeState("update")
+		end
+	end
     self:UpdateBuildingInfo()
 end
 
