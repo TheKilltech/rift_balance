@@ -48,6 +48,12 @@ EntityBlueprint  // tower_acid_shredder
 			
 			GameplayResource
 			{
+				resource 	"ammo_tower_liquid"
+				value		"1"
+			}
+			
+			GameplayResource
+			{
 				resource 	"mud"
 				value 		"20"
 				family		"coolant"
@@ -108,9 +114,10 @@ EntityBlueprint  // tower_acid_shredder
 
 		database
 		{
-			cone_effect			string:"build_cone_1x1"
-			cone_effect_sell	string:"sell_small"
-			time_machine		int:"0"
+			standby_upkeep_factor	float:"0.1"
+			cone_effect				string:"build_cone_1x1"
+			cone_effect_sell		string:"sell_small"
+			time_machine			int:"0"
 		}
 
 	}

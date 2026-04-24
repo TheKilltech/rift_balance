@@ -394,7 +394,7 @@ EntityBlueprint  // supercoolant_chem_plant
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -448,7 +448,7 @@ EntityBlueprint  // supercoolant_chem_plant
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -464,7 +464,7 @@ EntityBlueprint  // supercoolant_chem_plant
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -493,7 +493,21 @@ EntityBlueprint  // supercoolant_chem_plant
 					bone 	"att_vismod_3"
 				}
 			}
-		}	
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/compressor_working"
+					delay "1.0"
+				}
+			}
+		}
 	}
 }
 
@@ -700,6 +714,20 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_2
 		}
 		EffectGroup
 		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/compressor_working"
+					delay "1.0"
+				}
+			}
+		}
+		EffectGroup
+		{
 			group "level"
 			enabled "1"
 			Effects
@@ -806,7 +834,7 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_3
 	}	
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -815,7 +843,7 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_3
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -830,7 +858,7 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_3
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -845,7 +873,7 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_3
 		EffectGroup
 		{
 			group "att_in_3"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -860,7 +888,7 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_3
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -903,6 +931,20 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_3
 				{
 					blueprint "effects/buildings_and_machines/pump3"
 					bone 	"att_vismod_3"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/compressor_working"
+					delay "1.0"
 				}
 			}
 		}

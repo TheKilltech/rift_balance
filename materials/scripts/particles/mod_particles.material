@@ -10,3 +10,9 @@ material particles/missing_magnetic_stabilizer : particles/default
 {
 	set_texture_alias	diffuse			materials/textures/particles/missing_magnetic_stabilizer.dds
 }
+
+material particles/lightning_bolt_4x4_yellow_01 : particles/emissive
+{
+	set_texture_alias	diffuse			materials/textures/particles/lightning_bolt_4x4_yellow_01.dds
+	set_texture_alias	emissive		materials/textures/particles/lightning_bolt_4x4_blue_01_emissive.dds
+}

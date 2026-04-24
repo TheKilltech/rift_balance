@@ -358,32 +358,32 @@ EntityBlueprint  // ionizer
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -393,7 +393,21 @@ EntityBlueprint  // ionizer
 					scale		"0.8 0.7 0.8"
 				}
 			}
-		}	
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/plasma_working"
+					delay "0.3"
+				}
+			}
+		}
 	}
 }
 
@@ -549,7 +563,7 @@ EntityBlueprint  // ionizer_lvl_2
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -558,23 +572,23 @@ EntityBlueprint  // ionizer_lvl_2
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}	
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -601,7 +615,21 @@ EntityBlueprint  // ionizer_lvl_2
 					scale		"0.8 0.7 0.8"
 				}
 			}
-		}	
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/plasma_working"
+					delay "0.3"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "level"
@@ -614,7 +642,7 @@ EntityBlueprint  // ionizer_lvl_2
 					bone "att_level"
 				}
 			}
-		}							
+		}
 	}
 }
 
@@ -776,7 +804,7 @@ EntityBlueprint  // ionizer_lvl_3
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -785,7 +813,7 @@ EntityBlueprint  // ionizer_lvl_3
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -800,7 +828,7 @@ EntityBlueprint  // ionizer_lvl_3
 		EffectGroup
 		{
 			group "att_in_3"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -815,7 +843,7 @@ EntityBlueprint  // ionizer_lvl_3
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -827,7 +855,7 @@ EntityBlueprint  // ionizer_lvl_3
 				}
 			}
 		}	
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
@@ -858,7 +886,21 @@ EntityBlueprint  // ionizer_lvl_3
 					scale		"0.8 0.7 0.8"
 				}
 			}
-		}	
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/plasma_working"
+					delay "0.3"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "level"
@@ -871,6 +913,6 @@ EntityBlueprint  // ionizer_lvl_3
 					bone "att_level"
 				}
 			}
-		}							
+		}
 	}
 }

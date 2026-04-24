@@ -172,7 +172,7 @@ EntityBlueprint  // plasma_converter_lvl_2
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -220,6 +220,11 @@ EntityBlueprint  // plasma_converter_lvl_2
 				{
 					blueprint "effects/buildings_and_machines/building_cube_trail"
 					bone "att_working"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/nuclear_powerplant_working"
+					delay "0.5"
 				}
 			}
 		}

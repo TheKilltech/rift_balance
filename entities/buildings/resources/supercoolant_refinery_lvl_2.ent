@@ -182,11 +182,11 @@ EntityBlueprint  // supercoolant_refinery_lvl_2
 				}
 			}
 		}	
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -202,7 +202,21 @@ EntityBlueprint  // supercoolant_refinery_lvl_2
 					orientation 	"135 0 0"
 				}
 			}
-		}	
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/compressor_working"
+					delay "1.0"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "level"

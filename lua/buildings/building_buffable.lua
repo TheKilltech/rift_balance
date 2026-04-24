@@ -3,11 +3,21 @@ require("lua/utils/reflection.lua")
 
 class 'building_buffable' ( building )
 
+
 function building_buffable:__init()
 	building.__init(self,self)
 end
 
+function building_buffable:Log( logLevel, message )
+	local curLevel = 0 -- enable logging here ( 0 - errors, 2 - main entry points, 3 - details, 5 - loops )
+	if logLevel <= curLevel then
+		local context = "building_buffable ".. self.buildingName .. " " .. tostring(self.entity)..": "
+		LogService:Log( context .. tostring(message) )
+	end
+end
+
 function building_buffable:OnInit()
+	self:Log( 2, "OnInit" )
 	self:RegisterHandler( self.entity, "BuffEvent",  "OnBuffEvent" ) 
 	self:RegisterHandler( event_sink, "LuaGlobalEvent", "OnLuaGlobalEvent" )
 	
@@ -27,6 +37,7 @@ end
 
 function building_buffable:OnLoad()
 	building.OnLoad( self )
+	self:Log( 2, "OnLoad" )
 	
 	if not self.fsmInfo then
 		self.fsmInfo = self:CreateStateMachine()
@@ -37,8 +48,9 @@ function building_buffable:OnLoad()
 end
 
 
+
 function building_buffable:OnBuildingEnd()
-	--LogService:Log( "building_buffable ".. tostring(self.entity)..": OnBuildingEnd" )
+	self:Log( 2, "OnBuildingEnd" )
 	self:FindBestBuffSource()
 end
 
@@ -49,7 +61,7 @@ function building_buffable:OnLuaGlobalEvent( event )
 end
 
 function building_buffable:OnBuffEvent( event ) 
-	--LogService:Log( "building_buffable ".. tostring(self.entity)..": buff event for ".. self.buildingName.. " - ".. tostring(event))
+	self:Log( 2, "OnBuffEvent - ".. tostring(event))
 	local source = {}
 	source.buffName    = event:GetDatabase():GetStringOrDefault("buff_source_name", "")
 	source.entity      = event:GetDatabase():GetIntOrDefault("buff_source_entity", 0)
@@ -78,13 +90,12 @@ function building_buffable:OnBuffEvent( event )
 end
 
 function building_buffable:OnActivate()
-	--LogService:Log( "building_buffable ".. tostring(self.entity)..": OnActivate" )
-	
+	self:Log( 2, "OnActivate" )	
 	self:FindBestBuffSource()
 end
 
 function building_buffable:OnDeactivate()
-	--LogService:Log( "building_buffable ".. tostring(self.entity)..": OnDeactivate" )   
+	self:Log( 2, "OnDeactivate" )
 	building_buffable:UpdateBuildingInfo( self.buffSource )
 end
 
@@ -99,10 +110,10 @@ function building_buffable:IsValidBuffSource( source, compareToCurrent )
 	if not compareToCurrent then compareToCurrent = false end
 	
 	local dist = Distance( source.pos, EntityService:GetPosition( self.entity ))
-	--LogService:Log( "building_buffable ".. tostring(self.entity)..": IsValidBuffSource - active ".. tostring(source.isActive)  .. ", source ".. source.bp .. " " ..tostring(source.entity) .. ", level ".. tostring(source.level)..", distance ".. tostring(dist))
+	self:Log( 5, "IsValidBuffSource - active ".. tostring(source.isActive)  .. ", source ".. source.bp .. " " ..tostring(source.entity) .. ", level ".. tostring(source.level)..", distance ".. tostring(dist))
 	
 	if dist > source.buffRange then
-		--LogService:Log( "building_buffable ".. tostring(self.entity)..": buff source is too far away")
+		self:Log( 5, "buff source is too far away")
 		return false
 	end
 		
@@ -112,19 +123,19 @@ function building_buffable:IsValidBuffSource( source, compareToCurrent )
 	end
 	
 	if compareToCurrent and self.buffSource ~= nil and self.buffSource.level >= source.level then
-		--LogService:Log( "building_buffable ".. tostring(self.entity)..": buff source is worse then current")
+		self:Log( 5, "buff source is worse then current")
 		return false
 	end
 	return true
 end
 
 function building_buffable:FindBestBuffSource( ) 
-	--LogService:Log( "building_buffable ".. tostring(self.entity)..": FindBestBuffSource" )   
+	self:Log( 2, "FindBestBuffSource" )   
 	local best = nil
 	local buffBps = Split( self.data:GetStringOrDefault("buff_buildings",  "buildings/resources/ore_mill"), "," )
 	for bp in Iter(buffBps) do
 		local entities = FindService:FindEntitiesByBlueprintInRadius( self.entity, bp, self.maxBuffDistance or 30)
-		--LogService:Log( "building_buffable ".. tostring(self.entity)..": by bp ".. tostring(#entities) .. " in range ".. tostring(self.maxBuffDistance))
+		self:Log( 5, "by bp ".. tostring(#entities) .. " in range ".. tostring(self.maxBuffDistance))
 		
 		for ent in Iter(entities ) do
 			if ( not BuildingService:IsBuildingFinished( ent ))		then goto continue end
@@ -145,19 +156,19 @@ function building_buffable:FindBestBuffSource( )
 			if source.modUpkeep < 0   then source.modUpkeep = nil   end
 			if (self:IsValidBuffSource( source )) then
 				best = source
-		        --LogService:Log( "building_buffable ".. tostring(self.entity)..": new current best ".. tostring(best))
+		        self:Log( 6, "new current best ".. tostring(best))
 			end
 			::continue::
 		end
 	end
-	--LogService:Log( "building_buffable ".. tostring(self.entity)..": best found ".. tostring(best))
+	self:Log( 2, "best found ".. tostring(best))
 	
 	self:UpdateBuffState( best ) 
 	return best
 end
 
 function building_buffable:UpdateBuffState( source ) 
-	--LogService:Log( "building_buffable ".. tostring(self.entity)..": UpdateBuffState" )
+	self:Log( 2, "UpdateBuffState" )
 	self.buffSource = source
 	--self.buffSource.updateTime = os.time()
 	
@@ -179,14 +190,14 @@ function building_buffable:UpdateBuffState( source )
 				self.missing_effect = EntityService:SpawnAndAttachEntity( self.reqIconBp, self.entity, "att_missing_buff", "")
 			end
 		end
-		--LogService:Log( "building_buffable ".. tostring(self.entity)..": no buff source")
+		self:Log( 2, "no buff source")
 	else 
 		if (self.missing_effect or INVALID_ID) ~= INVALID_ID then
 			EntityService:RemoveEntity( self.missing_effect )
 			self.missing_effect = nil
 		end
 		BuildingService:EnableBuilding( self.entity )
-		--LogService:Log( "building_buffable ".. tostring(self.entity)..": new buff source ".. source.bp .. " " ..tostring(source.entity) .. ", level ".. tostring(source.level))
+		self:Log( 2, "new buff source ".. source.bp .. " " ..tostring(source.entity) .. ", level ".. tostring(source.level))
 		if source.modificator then
 			BuildingService:SetResourceConverterEfficientyModificator( self.entity, source.modificator , "buff" )
 		end

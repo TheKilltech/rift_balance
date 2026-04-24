@@ -65,6 +65,22 @@ EntityBlueprint "effects/no_lifetime"		//cpower
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//cpower_dark
+{
+	name "effects/buildings_and_machines/cpower_dark"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/carbonium_powerplant.mesh"
+		material "buildings/energy/carbonium_powerplant_dark"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//cpower_ghost
 {
 	name "effects/buildings_and_machines/cpower_ghost"
@@ -1599,6 +1615,56 @@ EntityBlueprint "effects/no_lifetime"		//gas_reactor_ghost
 		material "selector/hologram_blue"
 	}
 }
+
+EntityBlueprint "effects/no_lifetime"		//chemproc
+{
+	name "effects/buildings_and_machines/chemproc"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/ironium_synthesizer.mesh"
+		material "buildings/resources/ironium_synthesizer"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//chemproc_orange
+{
+	name "effects/buildings_and_machines/chemproc_orange"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/ironium_synthesizer.mesh"
+		material "buildings/ammo/ammo_factory_liquid_adv"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//chemproc_ghost
+{
+	name "effects/buildings_and_machines/chemproc_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/ironium_synthesizer.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+
 
 EntityBlueprint "effects/no_lifetime"		//orb_uranium
 {
@@ -4775,6 +4841,150 @@ EntityBlueprint								// nuclear_powerplant_rods_green
 		name    "rift/nuclear_powerplant_rods"
 	}
 }
+
+EntityBlueprint								// rotor_lightning
+{
+	name  "effects/buildings_and_machines/rotor_lightning"
+
+	base_blueprints
+	{
+		 effects/no_lifetime
+		 lights/point/green_small
+	}	
+
+	ParticleDesc
+	{
+		name    "rift/rotor_lightning"
+	}
+	
+	SoundDesc
+	{
+		name "buildings_megastructures/quantum_cortex_rotor"
+	}
+}
+
+// efects (sound)
+
+EntityBlueprint								// largediesel_working
+{
+	name  "effects/buildings_and_machines/largediesel_working"
+
+	base_blueprints
+	{
+		 effects/no_lifetime
+	}
+
+	SoundDesc
+	{
+		name "buildings_resources/generic_1_working"
+	}
+}
+
+EntityBlueprint								// smalldiesel_working
+{
+	name  "effects/buildings_and_machines/smalldiesel_working"
+
+	base_blueprints
+	{
+		 effects/no_lifetime
+	}
+
+	SoundDesc
+	{
+		name "buildings_resources/generic_2_working"
+	}
+}
+
+EntityBlueprint								// jetturbine_working
+{
+	name  "effects/buildings_and_machines/jetturbine_working"
+
+	base_blueprints
+	{
+		 effects/no_lifetime
+	}
+
+	SoundDesc
+	{
+		name "buildings_resources/generic_3_working"
+	}
+}
+
+EntityBlueprint								// generic_4_working
+{
+	name  "effects/buildings_and_machines/generic_4_working"
+
+	base_blueprints
+	{
+		 effects/no_lifetime
+	}
+
+	SoundDesc
+	{
+		name "buildings_resources/generic_4_working"
+	}
+}
+
+EntityBlueprint								// electricspark_working
+{
+	name  "effects/buildings_and_machines/electricspark_working"
+
+	base_blueprints
+	{
+		 effects/no_lifetime
+	}
+
+	SoundDesc
+	{
+		name "buildings_resources/generic_5_working"
+	}
+}
+
+EntityBlueprint								// compressor_working
+{
+	name  "effects/buildings_and_machines/generic_compressor"
+
+	base_blueprints
+	{
+		 effects/no_lifetime
+	}
+	
+	SoundDesc
+	{
+		name "buildings_megastructures/arcology_working"
+	}
+}
+
+EntityBlueprint								// plasma_working
+{
+	name  "effects/buildings_and_machines/plasma_working"
+
+	base_blueprints
+	{
+		 effects/no_lifetime
+	}
+
+	SoundDesc
+	{
+		name "buildings_megastructures/quantum_cortex_plasma"
+	}
+}
+
+EntityBlueprint								// deep_hum_working
+{
+	name  "effects/buildings_and_machines/deep_hum_working"
+
+	base_blueprints
+	{
+		 effects/no_lifetime
+	}
+
+	SoundDesc
+	{
+		name "buildings_megastructures/gravitational_lens_rotor"
+	}	
+}
+
 
 // effects/world
 

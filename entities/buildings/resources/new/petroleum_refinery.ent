@@ -400,16 +400,16 @@ EntityBlueprint  // petroleum_refinery
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////	
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"	
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -451,11 +451,11 @@ EntityBlueprint  // petroleum_refinery
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -475,7 +475,21 @@ EntityBlueprint  // petroleum_refinery
 					scale		"0.5 0.8 0.5"
 				}
 			}
-		}	
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/gas_extractor_working"
+					delay "0.5"
+				}
+			}
+		}
 	}
 }
 
@@ -643,16 +657,16 @@ EntityBlueprint  // petroleum_refinery_lvl_2
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
-		////////////////////////Resources/////////////////////////	
+		}
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"	
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -709,11 +723,11 @@ EntityBlueprint  // petroleum_refinery_lvl_2
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -741,6 +755,20 @@ EntityBlueprint  // petroleum_refinery_lvl_2
 		}
 		EffectGroup
 		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/gas_extractor_working"
+					delay "0.5"
+				}
+			}
+		}
+		EffectGroup
+		{
 			group "level"
 			enabled "1"
 			Effects
@@ -751,6 +779,6 @@ EntityBlueprint  // petroleum_refinery_lvl_2
 					bone "att_level"
 				}
 			}
-		}		
+		}
 	}
 }

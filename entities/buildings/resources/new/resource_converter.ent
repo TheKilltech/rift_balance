@@ -1909,7 +1909,7 @@ EntityBlueprint  //resource_converter_uranium_depleted
 		menu_icon			"gui/hud/building_icons/resource_converter_uranium_depleted"
 		order				"60"
 		buildable 			"0"
-		building_group		"bio_uranium_refinery"
+		building_group		"uranium_centrifuge"
 		require 			"headquarters"
 		//upgrade				"buildings/resources/resource_converter_uranium_depleted_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -2438,14 +2438,6 @@ EntityBlueprint  //resource_converter_uranium
 				resource 		"morphium"
 				value 			"200"
 				attachment		"att_in_1"
-			}
-			
-			GameplayResource
-			{
-				resource 		"nitric_acid"
-				value 			"50"
-				family			"catalyst"
-				attachment		"att_in_2"
 			}
 			
 			GameplayResource

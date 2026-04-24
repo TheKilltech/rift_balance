@@ -385,11 +385,11 @@ EntityBlueprint  // carbonizer
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////		
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -431,10 +431,15 @@ EntityBlueprint  // carbonizer
 		EffectGroup
 		{
 			group "working"
-			enabled "0"	
+			enabled "0"
 
 			Effects
 			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/plant_biomass_powerplant_working"
+					delay "1"
+				}
 			}
 		}
 	}
@@ -524,12 +529,12 @@ EntityBlueprint  // carbonizer_lvl_2
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////		
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
@@ -560,7 +565,7 @@ EntityBlueprint  // carbonizer_lvl_2
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////	
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
@@ -611,10 +616,15 @@ EntityBlueprint  // carbonizer_lvl_2
 		EffectGroup
 		{
 			group "working"
-			enabled "0"	
+			enabled "0"
 
 			Effects
 			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/plant_biomass_powerplant_working"
+					delay "1"
+				}
 			}
 		}
 	}

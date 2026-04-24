@@ -428,10 +428,15 @@ EntityBlueprint  // ammonium_extractor
 		EffectGroup
 		{
 			group "working"
-			enabled "0"	
+			enabled "0"
 
 			Effects
 			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/plant_biomass_powerplant_working"
+					delay "1"
+				}
 			}
 		}
 	}
@@ -520,11 +525,11 @@ EntityBlueprint  // ammonium_extractor_lvl_2
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
+		}
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
@@ -599,14 +604,19 @@ EntityBlueprint  // ammonium_extractor_lvl_2
 					bone "att_level"
 				}
 			}
-		}		
+		}
 		EffectGroup
 		{
 			group "working"
-			enabled "0"	
+			enabled "0"
 
 			Effects
 			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/plant_biomass_powerplant_working"
+					delay "1"
+				}
 			}
 		}
 	}

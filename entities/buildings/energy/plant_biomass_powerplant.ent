@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // plant_biomass_powerplant
 {
 	name  "buildings/energy/plant_biomass_powerplant"
 
@@ -70,7 +70,7 @@ EntityBlueprint
 
 	LuaDesc
 	{
-		script "lua/buildings/resources/carbonium_factory.lua"
+		script "lua/buildings/building.lua"
 		
 		database
 		{
@@ -347,28 +347,28 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
-////////////////////////MISC/////////////////////////				
+		}
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			delay "2"
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_chimney"
 					delay "1"
-				}					
+				}
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/plant_biomass_powerplant_dynamo"								
+					blueprint "effects/buildings_and_machines/plant_biomass_powerplant_dynamo"
 					bone "att_dynamo"
 					delay "1"
 				}
@@ -376,8 +376,8 @@ EntityBlueprint
 				{
 					blueprint "effects/buildings_energy/plant_biomass_powerplant_working"
 					delay "1"
-				}					
+				}
 			}
-		}	
+		}
 	}
 }
