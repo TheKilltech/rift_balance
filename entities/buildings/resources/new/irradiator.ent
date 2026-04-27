@@ -449,7 +449,14 @@ EntityBlueprint  // irradiator
 			}
 		}
 	}
-			
+	
+	GridMarkerComponent
+	{
+		mode			"bounds"
+		terrain_type  	"uranium"
+		extend  		"2"
+	}
+	
 	LuaDesc
 	{
 		script "lua/buildings/building.lua"
