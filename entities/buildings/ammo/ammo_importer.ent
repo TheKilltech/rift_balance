@@ -49,11 +49,11 @@ EntityBlueprint  // ammo_importer
 
 	LuaDesc
 	{
-		script "lua/buildings/ammo/ammo_importer.lua"
+		script "lua/buildings/building_modular.lua"
 		
 		database
 		{
-			module_attachment	string:"ammo_tower_low_caliber"
+			module_attachment	string:""
 			module_blueprints	string:"buildings/ammo/ammo_importer_low_calib_1_module,buildings/ammo/ammo_importer_energy_cell_1_module"
 			
 			cone_effect			string:"build_cone_4x4"
@@ -62,6 +62,48 @@ EntityBlueprint  // ammo_importer
 		}
 	}
 
+	WeaponItemDesc
+	{
+		ammo_storage
+		damage_type "area"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "0.1"
+				min_value "0.1"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "FIRE_PER_SHOT"
+			}
+
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "blubb"
+			}
+		}
+
+	}
+	
 	HealthDesc
 	{
 		max_health 					"2000"
