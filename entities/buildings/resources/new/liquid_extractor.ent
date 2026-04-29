@@ -45,17 +45,12 @@ EntityBlueprint  // liquid_extractor
 				resource 			"energy"
 				value				"85"
 			}
-			//GameplayResource
-			//{
-			//	group 			"vein"
-			//	value			"100"
-			//	specific_group	"local"
-			//	family			"production"
-			//}
 			GameplayResource
 			{
+				//	group 			"vein"
 				resource 			"water_deepvein"
 				family				"deep"
+				//	specific_group	"local"
 				value			 	"1"
 			}
 			GameplayResource
@@ -208,13 +203,19 @@ EntityBlueprint  // liquid_extractor
 
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
-		
-		database
-		{
+		script "lua/buildings/building_buffable.lua"
+				
+		database {
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
-		}		
+			
+			buff_buildings				string:"buildings/resources/geoscanner_lvl_1,buildings/resources/geoscanner_lvl_2,buildings/resources/geoscanner_lvl_3"
+			buff_required_bp			string:"buildings/resources/geoscanner_missing_icon"
+			buff_localization			string:"buff_name/buff_geoscanner"
+			buff_icon					string:"gui/hud/building_icons/geoscanner_lvl_1"
+			display_radius_group		string:"geoscanner"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+		}
 	}
 
 	HealthDesc

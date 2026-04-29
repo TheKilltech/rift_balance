@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // geothermal_powerplant
 {
 	name  "buildings/energy/geothermal_powerplant"
 
@@ -27,12 +27,12 @@ EntityBlueprint
 				building_time 45
 				building_cost
 				{
-					carbonium 	"600"		
+					carbonium 	"600"
 					steel 		"400"
 				}
 			}		
 		}
-		resource_requirement "geothermal_vent" 		
+		resource_requirement "geothermal_vent"
 	}
 
 	ResourceConverterDesc
@@ -91,14 +91,31 @@ EntityBlueprint
 	{
 		script "lua/buildings/energy/geothermal_powerplant.lua"
 				
+		database {
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			
+			buff_buildings				string:"buildings/resources/geoscanner_lvl_1,buildings/resources/geoscanner_lvl_2,buildings/resources/geoscanner_lvl_3"
+			buff_required_bp			string:"buildings/resources/geoscanner_missing_icon"
+			buff_localization			string:"buff_name/buff_geoscanner"
+			buff_icon					string:"gui/hud/building_icons/geoscanner_lvl_1"
+			display_radius_group		string:"geoscanner"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/building_buffable.lua"
+				
 		database
 		{
-			cone_effect			string:"build_cone_4x4"
-			cone_effect_sell	string:"sell_big"
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
 		}
 		
 	}
-
+	
 	HealthDesc
 	{
 		max_health 					"2000"

@@ -48,11 +48,6 @@ EntityBlueprint  // gas_extractor_lvl_3
 			}
 			GameplayResource
 			{
-				resource 			"steel"
-				value			 	"0.05"
-			}
-			GameplayResource
-			{
 				resource 			"mud"
 				value			 	"25"
 				attachment			"att_in_1"
@@ -274,7 +269,22 @@ EntityBlueprint  // gas_extractor_lvl_3
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"

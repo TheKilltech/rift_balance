@@ -1,8 +1,7 @@
-EntityBlueprint
+EntityBlueprint  // geothermal_powerplant_lvl_2
 {
-	name "buildings/energy/geothermal_powerplant_lvl_2"
-
-	base_blueprint buildings/energy/geothermal_powerplant   
+	name			"buildings/energy/geothermal_powerplant_lvl_2"
+	base_blueprint	"buildings/energy/geothermal_powerplant"
 
 	BuildingDesc
 	{
@@ -12,10 +11,9 @@ EntityBlueprint
 		category 			"energy"
 		localization_id		"gui/hud/building_name/geothermal_powerplant"
 		description			"gui/hud/building_description/geothermal_powerplant"
-		menu_icon			"gui/hud/building_icons/geothermal_powerplant_lvl2"	
+		menu_icon			"gui/hud/building_icons/geothermal_powerplant_lvl2"
 		require 			"headquarters"
-		order				"6"	
-		upgrade				"buildings/energy/geothermal_powerplant_lvl_3"		
+		upgrade				"buildings/energy/geothermal_powerplant_lvl_3"
 		type				"geothermal"
 		check_connect		"1"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -30,13 +28,13 @@ EntityBlueprint
 				building_time 45
 				building_cost
 				{
-					carbonium 	"600"		
+					carbonium 	"600"
 					steel 		"400"
 					titanium	"100"
 				}
 			}		
 		}
-		resource_requirement "geothermal_vent" 		
+		resource_requirement "geothermal_vent"
 	}
 
 	ResourceConverterDesc
@@ -47,6 +45,12 @@ EntityBlueprint
 			{
 				resource 	"geothermal_vent"
 				value 		"1"
+			}
+			
+			GameplayResource
+			{
+				resource 	"steel"
+				value 		"0.1"
 			}
 		}
 		
@@ -63,7 +67,7 @@ EntityBlueprint
 				value 		"150"
 				attachment	"att_out_1"
 				optional    "1"
-			}			
+			}
 		}
 		priority 10
 	}
@@ -82,7 +86,7 @@ EntityBlueprint
 				resource	 	"mud"
 				max 	 		"600"
 				attachment		"att_out_1"
-			}			
+			}
 		}
 	}
 
@@ -103,7 +107,7 @@ EntityBlueprint
 				health "90"
 				destroy_state_change_effect_group "80_transition"
 				destroy_comp_delay "0.6"
-				destroy_comp_event "generic_destroy"				
+				destroy_comp_event "generic_destroy"
 				destroyed_state_effect_group "80_state"
 				destrucion_level_name "90"
 			}
@@ -121,7 +125,7 @@ EntityBlueprint
 				health "70"
 				destroy_state_change_effect_group "60_transition"
 				destroy_comp_delay "0.6"
-				destroy_comp_event "generic_destroy"				
+				destroy_comp_event "generic_destroy"
 				destroyed_state_effect_group "60_state"
 				destrucion_level_name "70"
 			}
@@ -139,7 +143,7 @@ EntityBlueprint
 				health "50"
 				destroy_state_change_effect_group "40_transition"
 				destroy_comp_delay "0.6"
-				destroy_comp_event "generic_destroy"				
+				destroy_comp_event "generic_destroy"
 				destroyed_state_effect_group "40_state"
 				destrucion_level_name "50"
 			}
@@ -191,30 +195,46 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
 		}
-////////////////////////MISC/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
-			group "working"
-			enabled "0"				
+			group "att_out_1"
+			enabled "0"
+			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/geothermal_powerplant_steam"								
-					bone "att_steam"
-					delay "1"
-				}			
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
 				Effect
 				{
-					blueprint "effects/buildings_energy/geothermal_powerplant_working"	
+					blueprint "effects/buildings_and_machines/geothermal_powerplant_steam"
+					bone "att_steam"
 					delay "1"
-				}					
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/geothermal_powerplant_working"
+					delay "1"
+				}
 			}
 		}	
 		EffectGroup
@@ -229,24 +249,7 @@ EntityBlueprint
 					bone "att_level"
 				}
 			}
-		}	
-		EffectGroup
-		{
-			group "att_out_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_out_arrow"
-				}
-			}
-		}			
+		}
 	}
-
-		
 }
 

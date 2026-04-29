@@ -46,11 +46,6 @@ EntityBlueprint  // gas_extractor_lvl_2
 				resource 			"energy"
 				value				"140"
 			}
-			GameplayResource
-			{
-				resource 			"steel"
-				value			 	"0.1"
-			}
 			
 			GameplayResource
 			{
@@ -166,6 +161,26 @@ EntityBlueprint  // gas_extractor_lvl_2
 		}
 	}	
 
+	LuaDesc
+	{
+		script "lua/buildings/resources/gas_extractor.lua"
+				
+		database
+		{
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			
+			buff_buildings				string:"buildings/resources/geoscanner_lvl_1,buildings/resources/geoscanner_lvl_2,buildings/resources/geoscanner_lvl_3"
+			buff_required_bp			string:"buildings/resources/geoscanner_missing_icon"
+			buff_required_name			string:"geoscanner"
+			buff_required_level			int:"1"
+			buff_localization			string:"buff_name/buff_geoscanner"
+			buff_icon					string:"gui/hud/building_icons/geoscanner_lvl_1"
+			display_radius_group		string:"geoscanner"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+		}
+	}
+	
 	HealthDesc
 	{
 		max_health 					"2000"

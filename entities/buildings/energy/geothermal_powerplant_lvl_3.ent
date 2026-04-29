@@ -1,22 +1,20 @@
-EntityBlueprint
+EntityBlueprint  // geothermal_powerplant_lvl_3
 {
-	name "buildings/energy/geothermal_powerplant_lvl_3"
-
-	base_blueprint buildings/energy/geothermal_powerplant_lvl_2
+	name			"buildings/energy/geothermal_powerplant_lvl_3"
+	base_blueprint	"buildings/energy/geothermal_powerplant_lvl_2"
 
 	BuildingDesc
 	{
-		buildable			"0"		
+		buildable			"0"
 		name 				"geothermal_powerplant_lvl_3"
 		bp   				"buildings/energy/geothermal_powerplant_lvl_3"
 		category 			"energy"
 		localization_id		"gui/hud/building_name/geothermal_powerplant"
 		description			"gui/hud/building_description/geothermal_powerplant"
-		menu_icon			"gui/hud/building_icons/geothermal_powerplant_lvl3"	
+		menu_icon			"gui/hud/building_icons/geothermal_powerplant_lvl3"
 		require 			"headquarters"
-		order				"6"		
-		//upgrade				"buildings/energy/geothermal_powerplant_lvl_4"	
-		type				"geothermal"	
+		order				"6"
+		type				"geothermal"
 		check_connect		"1"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"2"
@@ -30,13 +28,13 @@ EntityBlueprint
 				building_time 45
 				building_cost
 				{
-					carbonium 	"600"		
-					steel 		"400"
-					titanium	"100"
+					carbonium 	"600"
+					alloys		"500"
+					titanium	"200"
 				}
 			}		
 		}
-		resource_requirement "geothermal_vent" 		
+		resource_requirement "geothermal_vent"
 	}
 
 	ResourceConverterDesc
@@ -48,6 +46,12 @@ EntityBlueprint
 				resource 	"geothermal_vent"
 				value 		"1"
 			}
+			
+			GameplayResource
+			{
+				resource 	"steel"
+				value 		"0.1"
+			}
 		}
 		
 		out
@@ -55,7 +59,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"800"
+				value 		"1000"
 			}
 			GameplayResource
 			{
@@ -63,7 +67,7 @@ EntityBlueprint
 				value 		"200"
 				attachment	"att_out_1"
 				optional    "1"
-			}			
+			}
 		}
 		priority 10
 	}
@@ -86,6 +90,26 @@ EntityBlueprint
 		}
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/energy/geothermal_powerplant.lua"
+				
+		database
+		{
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			
+			buff_buildings				string:"buildings/resources/geoscanner_lvl_1,buildings/resources/geoscanner_lvl_2,buildings/resources/geoscanner_lvl_3"
+			buff_required_bp			string:"buildings/resources/geoscanner_missing_icon"
+			buff_required_name			string:"geoscanner"
+			buff_required_level			int:"1"
+			buff_localization			string:"buff_name/buff_geoscanner"
+			buff_icon					string:"gui/hud/building_icons/geoscanner_lvl_1"
+			display_radius_group		string:"geoscanner"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+		}
+	}
+	
 	HealthDesc
 	{
 		max_health 					"3400"
@@ -191,30 +215,62 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
 		}
-////////////////////////MISC/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
-			group "working"
-			enabled "0"				
+			group "att_out_1"
+			enabled "0"
+			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/geothermal_powerplant_steam"								
-					bone "att_steam"
-					delay "1"
-				}			
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
 				Effect
 				{
-					blueprint "effects/buildings_energy/geothermal_powerplant_working"	
+					blueprint "effects/weapon_items/nuclear_missiles"
+					bone	"att_vismod_1"
+					scale	1.8 1.8 1.8
+					offset	0 0 0
+					orientation	0 -90 0
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/geothermal_powerplant_steam"
+					bone "att_steam"
 					delay "1"
-				}					
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/geothermal_powerplant_working"
+					delay "1"
+				}
 			}
 		}	
 		EffectGroup
@@ -229,22 +285,7 @@ EntityBlueprint
 					bone "att_level"
 				}
 			}
-		}	
-		EffectGroup
-		{
-			group "att_out_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_out_arrow"
-				}
-			}
-		}			
-	}	
+		}
+	}
 }
 

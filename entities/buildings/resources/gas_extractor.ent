@@ -162,12 +162,18 @@ EntityBlueprint  // gas_extractor
 	LuaDesc
 	{
 		script "lua/buildings/resources/gas_extractor.lua"
-		
-		database
-		{
+				
+		database {
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
-		}		
+			
+			buff_buildings				string:"buildings/resources/geoscanner_lvl_1,buildings/resources/geoscanner_lvl_2,buildings/resources/geoscanner_lvl_3"
+			buff_required_bp			string:"buildings/resources/geoscanner_missing_icon"
+			buff_localization			string:"buff_name/buff_geoscanner"
+			buff_icon					string:"gui/hud/building_icons/geoscanner_lvl_1"
+			display_radius_group		string:"geoscanner"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+		}
 	}
 
 	HealthDesc

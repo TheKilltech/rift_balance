@@ -1,4 +1,4 @@
-local building = require("lua/buildings/building.lua")
+local building = require("lua/buildings/building_buffable.lua")
 require("lua/utils/table_utils.lua")
 
 class 'geothermal_powerplant' ( building )
