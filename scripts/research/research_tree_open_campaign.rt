@@ -1200,7 +1200,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1260"
+						x "-1377"
 						y "-18"
 					}
 
@@ -1215,86 +1215,6 @@ Research
 					}
 
 					icon "gui/menu/research/icons/carbonium_energy"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/renewable_energy_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl4"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/renewable_energy_lvl2"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0"
-							resource "carbonium"
-							count "7500"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "download"
-							count "2000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "steel"
-							count "5000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "-1143"
-						y "-72"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/energy/geothermal_powerplant_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/energy/solar_panels_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/energy/wind_turbine_lvl_2"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/renewable_energy"
 				}
 
 				ResearchNode
@@ -1416,7 +1336,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1314"
+						x "-1431"
 						y "324"
 					}
 
@@ -2096,7 +2016,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1260"
+						x "-1377"
 						y "324"
 					}
 
@@ -2319,67 +2239,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl3"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/renewable_energy_lvl1"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0"
-							resource "carbonium"
-							count "2500"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "download"
-							count "500"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "steel"
-							count "1500"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "-1143"
-						y "-162"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/energy/geothermal_powerplant"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/renewable_energy"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/buildings_handling"
 							research_category "gui/menu/research/category_base_buildings"
 						}
@@ -2391,7 +2250,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1206"
+						x "-1323"
 						y "-270"
 					}
 
@@ -3806,7 +3665,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1314"
+						x "-1431"
 						y "576"
 					}
 
@@ -4072,7 +3931,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1170"
+						x "-1287"
 						y "324"
 					}
 
@@ -4440,7 +4299,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1170"
+						x "-1287"
 						y "-18"
 					}
 
@@ -4455,93 +4314,6 @@ Research
 					}
 
 					icon "gui/menu/research/icons/biomass_energy"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/renewable_energy_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl6"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/renewable_energy_lvl3"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0"
-							resource "carbonium"
-							count "12000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "download"
-							count "3000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "steel"
-							count "7500"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "titanium"
-							count "3000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "-1143"
-						y "270"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/energy/geothermal_powerplant_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/energy/solar_panels_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/energy/wind_turbine_lvl_3"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/renewable_energy"
 				}
 
 				ResearchNode
@@ -4602,7 +4374,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1206"
+						x "-1323"
 						y "270"
 					}
 
@@ -4663,7 +4435,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1314"
+						x "-1431"
 						y "-18"
 					}
 
@@ -4738,7 +4510,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1206"
+						x "-1323"
 						y "-72"
 					}
 
@@ -6006,7 +5778,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1359"
+						x "-1476"
 						y "-18"
 					}
 
@@ -6074,7 +5846,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1359"
+						x "-1476"
 						y "324"
 					}
 
@@ -6142,7 +5914,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1359"
+						x "-1476"
 						y "576"
 					}
 
@@ -6203,7 +5975,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1260"
+						x "-1377"
 						y "-216"
 					}
 
@@ -8746,7 +8518,7 @@ Research
 
 					position
 					{
-						x "-1233"
+						x "-1350"
 						y "63"
 					}
 
@@ -8861,7 +8633,7 @@ Research
 
 					position
 					{
-						x "-1233"
+						x "-1350"
 						y "369"
 					}
 
@@ -10602,7 +10374,7 @@ Research
 
 					position
 					{
-						x "-1233"
+						x "-1350"
 						y "522"
 					}
 
@@ -14322,7 +14094,7 @@ Research
 
 					position
 					{
-						x "-1233"
+						x "-1350"
 						y "162"
 					}
 
@@ -15999,7 +15771,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1413"
+						x "-1530"
 						y "-18"
 					}
 
@@ -16074,7 +15846,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1413"
+						x "-1530"
 						y "324"
 					}
 
@@ -16149,7 +15921,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1413"
+						x "-1530"
 						y "522"
 					}
 
@@ -16476,7 +16248,7 @@ Research
 
 					position
 					{
-						x "-1233"
+						x "-1350"
 						y "576"
 					}
 
@@ -17585,6 +17357,672 @@ Research
 					}
 
 					icon "gui/menu/research/icons/consumable_nuclear_mine"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/geothermal_lvl_1"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "2500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "1500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1179"
+						y "-162"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/geothermal_powerplant"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/renewable_energy"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/solar_energy_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "1200"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "1500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1251"
+						y "-72"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/solar_panels_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/environmental_shielding_sun"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/wind_energy_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "1200"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "1500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1206"
+						y "-72"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/wind_turbine_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/skill_tornado"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/geoscanning_lvl_1"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "1000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "1500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "2500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1152"
+						y "-72"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/geoscanner_lvl_1"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_upgrade_sonic_sensors"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/geothermal_lvl_1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl5"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/geoscanning_lvl_1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/geothermal_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "7500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "2000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "5000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1179"
+						y "126"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/geothermal_powerplant_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/renewable_energy"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl6"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/solar_energy_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/solar_energy_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "2500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "3000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1251"
+						y "270"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/solar_panels_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/environmental_shielding_sun"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl6"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/wind_energy_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/wind_energy_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "2500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "3000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1206"
+						y "270"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/wind_turbine_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/skill_tornado"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/geoscanning_lvl_1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl6"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/geoscanning_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "3000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "3000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "5000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1152"
+						y "270"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/geoscanner_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_upgrade_sonic_sensors"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/geothermal_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/geoscanning_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/geothermal_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "12000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "3000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "7500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "titanium"
+							count "3000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1179"
+						y "414"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/geothermal_powerplant_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/renewable_energy"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/geoscanning_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl7"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/geoscanning_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "5000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "12000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "5000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1152"
+						y "522"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/geoscanner_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/mech_upgrade_sonic_sensors"
 				}
 
 			}
@@ -52543,6 +52981,6 @@ Research
 
 	type
 	editor "6741"
-	version "223"
+	version "224"
 }
 
