@@ -1,4 +1,5 @@
 ;ENGLISH;GERMAN;POLISH;RUSSIAN;FRENCH;SPANISH;BRASILIAN;CHINESE_SP;JAPANESE;KOREAN
+buff_name/buff_geoscanner;Geoscan Buff;;;;;;;;;
 buff_name/buff_magnetic_stabilizer;Mag. Stabilizer Buff;;;;;;;;;
 buff_name/buff_morphium_power;Morph Power Buff;;;;;;;;;
 buff_name/buff_ore_mill;Ore Mill Buff;;;;;;;;;
@@ -70,6 +71,7 @@ gui/hud/building_description/fluorine_trap;Captures atmospheric fluorine compoun
 gui/hud/building_description/fluorine_trap_lvl_2;Captures atmospheric fluorine compounds from atmosphere. Improved for fluorine rich enviorments;;;;;;;;;
 gui/hud/building_description/fusion_powerplant_lvl_3_new;Very large energy output. Produces plasma resource as a byproduct. REQUIRES magnetic stabilizer for operation;;;;;;;;;
 gui/hud/building_description/gas_ionizer;Ionizes input gas into plasma;;;;;;;;;
+gui/hud/building_description/geoscanner;Provides detailed mappings of underground deposits. This increases yield of nearby geothermal & gas and liquid extractors;;;;;;;;;
 gui/hud/building_description/heat_charger;Uses extreme ambient heat to ionize air into superchareged plasma;;;;;;;;;
 gui/hud/building_description/heavy_water_plant;Seperates heavy water and extracts deuterium from it;;;;;;;;;
 gui/hud/building_description/heavy_water_reactor;A Nuclear Powerplant variant able to use unenriched raw uranium. Requres deuterium based heavy water as moderator and coolant;;;;;;;;;
@@ -252,6 +254,7 @@ gui/hud/building_name/fluorine_trap;Fluorine Capture Plant;Atmosphärische Fluorf
 gui/hud/building_name/fluorine_trap_lvl_2;Special Fluorine Capture Plant;Atmosphärische Fluorfalle;;;;;;;;
 gui/hud/building_name/fluorine_trap_lvl_3;Special Fluorine Capture Plant;Atmosphärische Fluorfalle;;;;;;;;
 gui/hud/building_name/gas_ionizer;Gas Ionizer;;;;;;;;;
+gui/hud/building_name/geoscanner;Geoscanner;;;;;;;;;
 gui/hud/building_name/heat_charger;Ambient Heat Ion Charger;;;;;;;;;
 gui/hud/building_name/heavy_water_plant;Heavy Water Plant;;;;;;;;;
 gui/hud/building_name/heavy_water_reactor;Heavy Water Reactor;;;;;;;;;
@@ -473,6 +476,12 @@ gui/menu/research/description/fluorine_capture_lvl_2;Advanced process using natu
 gui/menu/research/description/gas_filtering_lvl2;Gas Filtering 2;;;;;;;;;
 gui/menu/research/description/gas_filtering_lvl3;Gas Filtering 3;;;;;;;;;
 gui/menu/research/description/general_storage;Storage facilities for various native solid materials;;;;;;;;;
+gui/menu/research/description/geoscanning_lvl_1;Basic methods of geoscanning provide mapping of underground deposits thus enable better exploitation of them;;;;;;;;;
+gui/menu/research/description/geoscanning_lvl_2;Improving geoscanning thechinques;;;;;;;;;
+gui/menu/research/description/geoscanning_lvl_3;Optimizing geoscanning thechinques;;;;;;;;;
+gui/menu/research/description/geothermal_lvl_1;Provides facilities that enable harnessing geothermal heat energy from active areas like geysirs;;;;;;;;;
+gui/menu/research/description/geothermal_lvl_2;Improved and more sophissticated design achieve an higher energy yield from geothermal sources;;;;;;;;;
+gui/menu/research/description/geothermal_lvl_3;Further optimization in combination with geoscanning allow to achieve even better energy yields but do not work without active scanning stations;;;;;;;;;
 gui/menu/research/description/groundwater_access;Drilling water wells allows to access the local groundwater. Even though this may have low yield it provides access to water in areas whith no surface water.;;;;;;;;;
 gui/menu/research/description/heat_charger;Utilizes extreme heat enegry to achieve and maintain highly ionized plasmas. But charge seperation remains difficult allowing for only low extraction of supercharged plasma;;;;;;;;;
 gui/menu/research/description/heat_charger_lvl_2;Improves thermal ionization and the consequent charge separation process by application of rhodonite to greatly increase yield;;;;;;;;;
@@ -574,6 +583,9 @@ gui/menu/research/description/resource_converter_uranium_depelted;Uses morphium 
 gui/menu/research/description/rtg;A radioisotope thermoelectric generator is a nuclear energy source that convert radiation heat into electricity. Uses cooling for higher energy yield;;;;;;;;;
 gui/menu/research/description/rtg_lvl2;A radioisotope thermoelectric generator is a nuclear energy source that convert radiation heat into electricity;;;;;;;;;
 gui/menu/research/description/rtg_lvl3;A radioisotope thermoelectric generator is a nuclear energy source that convert radiation heat into electricity. Uses cooling for higher energy yield;;;;;;;;;
+gui/menu/research/description/solar_energy_lvl_1;Simple and effective source of energy that requires no maintenance but works only during daylight hours. Usually more effective then wind energy during operation;;;;;;;;;
+gui/menu/research/description/solar_energy_lvl_2;Improved solar panels offer even better power yield;;;;;;;;;
+gui/menu/research/description/solar_energy_lvl_3;Simple and effective source of energy that requires no maintenance but works only during daylight hours. Usually more effective then wind energy during operation;;;;;;;;;
 gui/menu/research/description/solid_material_storage_underground;Enables construction of underground storage with enormous capacity;;;;;;;;;
 gui/menu/research/description/supercooling_lvl_2;Water mixed coolants enable higher yield production of supercoolants.;;;;;;;;;
 gui/menu/research/description/supercooling_lvl_3;Recipies for the most powerful coolants utilizing trace amounts of titanium.;;;;;;;;;
@@ -617,6 +629,9 @@ gui/menu/research/description/uranium_enrichment_lvl_3;Application of morphium t
 gui/menu/research/description/well_contruction;Construction of wells for liquid extraction;;;;;;;;;
 gui/menu/research/description/well_contruction_lvl_2;Advanced well extraction methods - particularly fracking;;;;;;;;;
 gui/menu/research/description/well_contruction_lvl_3;Optimized well extraction by fracking;;;;;;;;;
+gui/menu/research/description/wind_energy_lvl_1;Simple and effective source of energy that requires no maintenance but requires wind. ;;;;;;;;;
+gui/menu/research/description/wind_energy_lvl_2;Improved frictonless setup and larger sails allows to yield even more power from wind;;;;;;;;;
+gui/menu/research/description/wind_energy_lvl_3;Maximizing the effecitve sail surface allows to optimize wind energy yield to full potential;;;;;;;;;
 gui/menu/research/name/ai_hub;AI Hub;;;;;;;;;
 gui/menu/research/name/ai_hub_lvl2;AI Hub - Cooled;;;;;;;;;
 gui/menu/research/name/ai_hub_lvl3;AI Hub - Supercooled;;;;;;;;;
@@ -723,6 +738,12 @@ gui/menu/research/name/fluorine_capture_lvl_2;Advanced Fluorine Capture;;;;;;;;;
 gui/menu/research/name/gas_filtering_lvl2;Gas Filtering 2;;;;;;;;;
 gui/menu/research/name/gas_filtering_lvl3;Gas Filtering 3;;;;;;;;;
 gui/menu/research/name/general_storage;General Storage;;;;;;;;;
+gui/menu/research/name/geoscanning_lvl_1;Geoscanning;;;;;;;;;
+gui/menu/research/name/geoscanning_lvl_2;Advanced Geoscanning;;;;;;;;;
+gui/menu/research/name/geoscanning_lvl_3;Optimized Geoscanning;;;;;;;;;
+gui/menu/research/name/geothermal_lvl_1;Geothermal Energy;;;;;;;;;
+gui/menu/research/name/geothermal_lvl_2;Improved Geothermal;;;;;;;;;
+gui/menu/research/name/geothermal_lvl_3;Optimized Geothermal;;;;;;;;;
 gui/menu/research/name/groundwater_access;Groundwater access;;;;;;;;;
 gui/menu/research/name/heat_charger;Thermal Ionization;;;;;;;;;
 gui/menu/research/name/heat_charger_lvl_2;Improved Thermal Ionization;;;;;;;;;
@@ -827,6 +848,9 @@ gui/menu/research/name/resource_converter_uranium_depleted;Metallic Morphing - D
 gui/menu/research/name/rtg;Radioisotope Thermoelectric Generators;;;;;;;;;
 gui/menu/research/name/rtg_lvl2;Cooled Radioisotope Thermoelectric Generator;;;;;;;;;
 gui/menu/research/name/rtg_lvl3;Optimized Radioisotope Thermoelectric Generator;;;;;;;;;
+gui/menu/research/name/solar_energy_lvl_1;Solar Energy;;;;;;;;;
+gui/menu/research/name/solar_energy_lvl_2;Solar Energy 2;;;;;;;;;
+gui/menu/research/name/solar_energy_lvl_3;Solar Energy 3;;;;;;;;;
 gui/menu/research/name/solid_material_storage_underground;Underground Storage;;;;;;;;;
 gui/menu/research/name/supercooling_lvl_2;Water-Based Super Coolant;;;;;;;;;
 gui/menu/research/name/supercooling_lvl_3;Infused Super Coolant;;;;;;;;;
@@ -878,6 +902,9 @@ gui/menu/research/name/uranium_enrichment_lvl_3;Morphing Uranium Enrichment;;;;;
 gui/menu/research/name/well_contruction;Well Construction;;;;;;;;;
 gui/menu/research/name/well_contruction_lvl_2;Well Construction 2;;;;;;;;;
 gui/menu/research/name/well_contruction_lvl_3;Well Construction 3;;;;;;;;;
+gui/menu/research/name/wind_energy_lvl_1;Wind Energy;;;;;;;;;
+gui/menu/research/name/wind_energy_lvl_2;Wind Energy 2;;;;;;;;;
+gui/menu/research/name/wind_energy_lvl_3;Wind Energy 3;;;;;;;;;
 resource_name/alloys;Alloys;Legierungen;;;;;;;;
 resource_name/ammonium;Ammonium;Ammonium;;;;;;;;
 resource_name/ammonium_deepvein;Ammonium deep vein;Ammonium-Ader;;;;;;;;
