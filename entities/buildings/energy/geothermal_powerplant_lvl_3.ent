@@ -1,0 +1,250 @@
+EntityBlueprint
+{
+	name "buildings/energy/geothermal_powerplant_lvl_3"
+
+	base_blueprint buildings/energy/geothermal_powerplant_lvl_2
+
+	BuildingDesc
+	{
+		buildable			"0"		
+		name 				"geothermal_powerplant_lvl_3"
+		bp   				"buildings/energy/geothermal_powerplant_lvl_3"
+		category 			"energy"
+		localization_id		"gui/hud/building_name/geothermal_powerplant"
+		description			"gui/hud/building_description/geothermal_powerplant"
+		menu_icon			"gui/hud/building_icons/geothermal_powerplant_lvl3"	
+		require 			"headquarters"
+		order				"6"		
+		//upgrade				"buildings/energy/geothermal_powerplant_lvl_4"	
+		type				"geothermal"	
+		check_connect		"1"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		going_green_state	"2"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 45
+				building_cost
+				{
+					carbonium 	"600"		
+					steel 		"400"
+					titanium	"100"
+				}
+			}		
+		}
+		resource_requirement "geothermal_vent" 		
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"geothermal_vent"
+				value 		"1"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"800"
+			}
+			GameplayResource
+			{
+				resource 	"mud"
+				value 		"200"
+				attachment	"att_out_1"
+				optional    "1"
+			}			
+		}
+		priority 10
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "energy"
+				max 	 "800"
+			}
+			Storage
+			{
+				resource	 	"mud"
+				max 	 		"800"
+				attachment		"att_out_1"
+			}			
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"3400"
+		health 						"3400"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health "90"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "90"
+			}
+			DestructionLevel
+			{
+				health "80"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "80_destroy"
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "80"
+			}
+			DestructionLevel
+			{
+				health "70"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "70"
+			}
+			DestructionLevel
+			{
+				health "60"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "60_destroy"
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "60"
+			}
+			DestructionLevel
+			{
+				health "50"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "50"
+			}
+			DestructionLevel
+			{
+				health "40"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "40_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "40"
+			}
+			DestructionLevel
+			{
+				health "30"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "30"
+			}
+			DestructionLevel
+			{
+				health "20"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "20_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "20"
+			}
+			DestructionLevel
+			{
+				health "10"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "10"
+			}
+			DestructionLevel
+			{
+				health "0"
+				destroy_state_change_effect_group "0_transition"
+				destroy_comp_delay "0.7"
+				destroy_comp_event "default"
+				destrucion_level_name "0"
+			}			
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+////////////////////////MISC/////////////////////////			
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/geothermal_powerplant_steam"								
+					bone "att_steam"
+					delay "1"
+				}			
+				Effect
+				{
+					blueprint "effects/buildings_energy/geothermal_powerplant_working"	
+					delay "1"
+				}					
+			}
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_out_arrow"
+				}
+			}
+		}			
+	}	
+}
+
