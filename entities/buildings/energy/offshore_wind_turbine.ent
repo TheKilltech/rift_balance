@@ -4,15 +4,17 @@ EntityBlueprint  // offshore_wind_turbine
 
 	BuildingDesc
 	{
+		buildable			"0"
 		name 				"offshore_wind_turbine"
 		bp   				"buildings/energy/offshore_wind_turbine"
 		category 			"energy"
 		localization_id		"gui/hud/building_name/offsore_wind_turbine"
 		description			"gui/hud/building_description/offsore_wind_turbine"
 		menu_icon			"gui/hud/building_icons/offsore_wind_turbine"
+		upgrade				"buildings/energy/offshore_wind_turbine_lvl_2"
+		building_group		"wind_turbine"
 		require 			"headquarters"
 		order				"3"
-		upgrade				"buildings/energy/offshore_wind_turbine_lvl_2"
 		type				"wind"
 		radius_name			"water_tower"
 		min_radius			"15"
@@ -28,7 +30,7 @@ EntityBlueprint  // offshore_wind_turbine
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 25
+				building_time 35
 				building_cost
 				{
 					carbonium 	"160"
@@ -348,8 +350,8 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 		localization_id		"gui/hud/building_name/offsore_wind_turbine"
 		description			"gui/hud/building_description/offsore_wind_turbine"
 		menu_icon			"gui/hud/building_icons/offsore_wind_turbine_lvl_2"
+		building_group		"wind_turbine"
 		require 			"headquarters"
-		order				"3"
 		type				"wind"
 		radius_name			"water_tower"
 		min_radius			"15"
@@ -365,7 +367,7 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 35
+				building_time 45
 				building_cost
 				{
 					carbonium 	"340"
