@@ -360,6 +360,9 @@ EntityBlueprint  // solar_panels_new_lvl_2
 		menu_icon			"gui/hud/building_icons/solar_panels_new_lvl2"
 		require 			"headquarters"
 		building_group		"solar_panels"
+		radius_name			"solar_panels"
+		min_radius			"4"
+		min_radius_effect  	"voice_over/announcement/building_too_close"
 		//upgrade				"buildings/energy/solar_panels_lvl_3"
 		type				"solar"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -421,6 +424,10 @@ EntityBlueprint  // solar_panels_new_lvl_2
 			
 			min_scale					float:"1.5"
 			max_scale					float:"1.5"
+			
+			range						float:"4"
+			display_radius_group	 	string:"solar_panels"
+			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
 		}
 	}
 	
@@ -468,9 +475,11 @@ EntityBlueprint  // solar_panels_new_lvl_2
 	{
 		Shapes
 		{
-   			PhysicsSphereShape
+   			PhysicsBoxShape
    			{
-    			r	2.4
+    				x	2.8
+    				y	2.8
+    				z	2.8
    			}
 		}
 	}
@@ -542,6 +551,9 @@ EntityBlueprint  // solar_panels_new_lvl_3
 		menu_icon			"gui/hud/building_icons/solar_panels_new_lvl3"
 		require 			"headquarters"
 		building_group		"solar_panels"
+		radius_name			"solar_panels"
+		min_radius			"5"
+		min_radius_effect  	"voice_over/announcement/building_too_close"
 		type				"solar"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"2"
@@ -600,8 +612,12 @@ EntityBlueprint  // solar_panels_new_lvl_3
 			cone_effect					string:"build_cone_4x4"
 			cone_effect_sell			string:"sell_big"
 			
-			min_scale					float:"2.0"
-			max_scale					float:"2.0"
+			min_scale					float:"1.8"
+			max_scale					float:"1.8"
+			
+			range						float:"5"
+			display_radius_group	 	string:"solar_panels"
+			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
 		}
 	}
 	
@@ -649,13 +665,35 @@ EntityBlueprint  // solar_panels_new_lvl_3
 	{
 		Shapes
 		{
-   			PhysicsSphereShape
+   			PhysicsBoxShape
    			{
-    			r	3
+    				x	3.2
+    				y	3.2
+    				z	3.2
    			}
 		}
 	}
 	
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "0"
+			y "1"
+			z "1"
+			w "1"
+		}
+		size
+		{
+			x "3"
+			y "3"
+		}
+
+		visibility			"always"
+		layer_group			"common_buildings"
+	}
+
 	EffectDesc
 	{
 		EffectBaseBlueprints
