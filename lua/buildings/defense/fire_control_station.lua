@@ -143,13 +143,16 @@ function fire_control_station:GetControlledEntities()
 			if string.find(bpname, "short_range_radar")    then goto continue end
 			if string.find(bpname, "ai_hub")               then goto continue end
 			if string.find(bpname, "wall")                 then goto continue end
+			if string.find(bpname, "heavy_artillery")      then goto continue end
+			if string.find(bpname, "tower_hcm")            then goto continue end
+			if string.find(bpname, "tower_power_rod")      then goto continue end
 			
 			Insert(controlled, ent)
 		elseif self.restriction == "artillery" then
 			if     string.find(bpname, "heavy_artillery") then Insert(controlled, ent)
-			elseif string.find(bpname, "tower_hcm")       then Insert(controlled, ent)
-			elseif string.find(bpname, "tower_water_big") then Insert(controlled, ent)
 			elseif string.find(bpname, "tower_power_rod") then Insert(controlled, ent)
+			--elseif string.find(bpname, "tower_water_big") then Insert(controlled, ent)
+			--elseif string.find(bpname, "tower_hcm")       then Insert(controlled, ent)
 			end
 		else self.restriction = "defense" -- for compatibility with older saves where the flag was missing
 		end
