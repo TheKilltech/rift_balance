@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // solar_panels
 {
 	name  "buildings/energy/solar_panels"
 
@@ -25,7 +25,7 @@ EntityBlueprint
 				building_time 2.5
 				building_cost
 				{
-					carbonium 	"30"
+					carbonium 	"50"
 				}
 			}
 		}
@@ -43,7 +43,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"20"
+				value			 	"40"
 			}
 		}
 	}
@@ -60,7 +60,7 @@ EntityBlueprint
 			Storage
 			{
 				resource "energy"
-				max 	 "20"
+				max 	 "50"
 			}
 
 		}
@@ -327,6 +327,368 @@ EntityBlueprint
 			}
 		}
 		
+		EffectGroup
+		{
+			group "close"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/solar_panels_close"	
+					random_delay "0.3"					
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // solar_panels_new_lvl_2
+{
+	name			"buildings/energy/solar_panels_new_lvl_2"
+	base_blueprint	"buildings/energy/solar_panels"
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"solar_panels_new_lvl_2"
+		bp   				"buildings/energy/solar_panels_new_lvl_2"
+		category 			"energy"
+		localization_id		"gui/hud/building_name/solar_panels"
+		description			"gui/hud/building_description/solar_panels"
+		menu_icon			"gui/hud/building_icons/solar_panels_new_lvl2"
+		require 			"headquarters"
+		building_group		"solar_panels"
+		//upgrade				"buildings/energy/solar_panels_lvl_3"
+		type				"solar"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		going_green_state	"2"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 10
+				building_cost
+				{
+					carbonium 	"250"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"110"
+			}
+		}
+
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "energy"
+				max 	 "200"
+			}
+
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/energy/solar_panels.lua"
+		
+		database
+		{
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_medium"
+			
+			min_scale					float:"1.5"
+			max_scale					float:"1.5"
+		}
+	}
+	
+	HealthDesc
+	{
+		max_health 					"400"
+		health 						"400"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/energy/solar_panels_lvl_2.mesh"
+		material 	"buildings/energy/solar_panels_lvl_2"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/energy/solar_panels_lvl_2"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+   			PhysicsSphereShape
+   			{
+    			r	2.4
+   			}
+		}
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "open"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/solar_panels_open"
+					random_delay "0.3"
+				}
+			}
+		}
+		
+		EffectGroup
+		{
+			group "close"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/solar_panels_close"	
+					random_delay "0.3"					
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // solar_panels_new_lvl_3
+{
+	name			"buildings/energy/solar_panels_new_lvl_3"
+	base_blueprint	"buildings/energy/solar_panels_new_lvl_2"
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"solar_panels_new_lvl_3"
+		bp   				"buildings/energy/solar_panels_new_lvl_3"
+		category 			"energy"
+		localization_id		"gui/hud/building_name/solar_panels"
+		description			"gui/hud/building_description/solar_panels"
+		menu_icon			"gui/hud/building_icons/solar_panels_new_lvl3"
+		require 			"headquarters"
+		building_group		"solar_panels"
+		type				"solar"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		going_green_state	"2"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 16
+				building_cost
+				{
+					carbonium	"500"
+					alloys		"100"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"320"
+			}
+		}
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "energy"
+				max 	 "300"
+			}
+
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/energy/solar_panels.lua"
+		
+		database
+		{
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			
+			min_scale					float:"2.0"
+			max_scale					float:"2.0"
+		}
+	}
+	
+	HealthDesc
+	{
+		max_health 					"600"
+		health 						"600"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/energy/solar_panels_lvl_3.mesh"
+		material 	"buildings/energy/solar_panels_lvl_3"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/energy/solar_panels_lvl_3"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+   			PhysicsSphereShape
+   			{
+    			r	3
+   			}
+		}
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "open"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/solar_panels_open"
+					random_delay "0.3"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "close"

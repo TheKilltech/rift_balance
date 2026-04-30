@@ -70,6 +70,39 @@ material "gui/hud/building_icons/offshore_wind_turbine_lvl_2_disabled" : gui/def
 }
 
 
+/////  solar_panels
+
+material "gui/hud/building_icons/solar_panels_lvl2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/obsolete_building.dds"
+}
+
+material "gui/hud/building_icons/solar_panels_lvl3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/obsolete_building.dds"
+}
+
+material "gui/hud/building_icons/solar_panels_new_lvl2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solar_panels_lvl2.dds"
+}
+
+material "gui/hud/building_icons/solar_panels_new_lvl2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solar_panels_lvl2_disabled.dds"
+}
+
+material "gui/hud/building_icons/solar_panels_new_lvl3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solar_panels_lvl3.dds"
+}
+
+material "gui/hud/building_icons/solar_panels_new_lvl3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/solar_panels_lvl3_disabled.dds"
+}
+
+
 /////  rtg
 
 material "gui/hud/building_icons/rtg" : gui/default
@@ -101,6 +134,7 @@ material "gui/hud/building_icons/rtg_lvl_3_disabled" : gui/default
 {
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/rtg_disabled.dds"
 }
+
 
 /////  heavy_water_reactor
 
