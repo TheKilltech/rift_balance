@@ -10,6 +10,13 @@ function ghost_building:__init()
     ghost.__init(self,self)
 end
 
+function ghost_building:InitializeValues()
+	ghost.InitializeValues( self )
+	
+	local data = EntityService:GetBlueprintDatabase( self.blueprint ) or self.data;
+	SetupBuildingScale( self.entity, data, true )
+end
+
 function ghost_building:OnInit()
     local boundsSize = EntityService:GetBoundsSize( self.selector)
     self.boundsSize = VectorMulByNumber( boundsSize, 0.5 )
