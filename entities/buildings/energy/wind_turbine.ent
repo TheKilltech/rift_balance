@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // wind_turbine
 {
 	name  "buildings/energy/wind_turbine"
 
@@ -43,7 +43,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"12"
+				value			 	"24"
 			}
 		}
 	}
@@ -60,7 +60,7 @@ EntityBlueprint
 			Storage
 			{
 				resource "energy"
-				max 	 "12"
+				max 	 "50"
 			}
 
 		}
@@ -69,6 +69,14 @@ EntityBlueprint
 	LuaDesc
 	{
 		script "lua/buildings/energy/wind_turbine.lua"
+		
+		database
+		{
+			cone_effect					string:"build_cone_2x2"
+			cone_effect_sell			string:"sell_small"
+			
+			offset_y					float:"-0.6"
+		}
 	}
 
 	HealthDesc
@@ -307,6 +315,372 @@ EntityBlueprint
 					blueprint "effects/buildings_energy/wind_turbine_working"	
 					delay "0.5"					
 				}				
+			}
+		}
+	}
+}
+
+EntityBlueprint  // wind_turbine_new_lvl_2
+{
+	name			"buildings/energy/wind_turbine_new_lvl_2"
+	base_blueprint	"buildings/energy/wind_turbine"
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"wind_turbine_new_lvl_2"
+		bp   				"buildings/energy/wind_turbine_new_lvl_2"
+		category 			"energy"
+		localization_id		"gui/hud/building_name/wind_turbine"
+		description			"gui/hud/building_description/wind_turbine"
+		menu_icon			"gui/hud/building_icons/wind_turbine_new_lvl2"
+		require 			"headquarters"
+		building_group		"wind_turbine"
+		radius_name			"wind_turbine"
+		min_radius			"5"
+		min_radius_effect  	"voice_over/announcement/building_too_close"
+		//upgrade				"buildings/energy/wind_turbine_new_lvl_3"
+		type				"wind"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		going_green_state	"2"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 25
+				building_cost
+				{
+					carbonium 	"180"
+					steel		"50"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"60"
+			}
+		}
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "energy"
+				max 	 "100"
+			}
+
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/energy/wind_turbine.lua"
+		
+		database
+		{
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_medium"
+			
+			min_scale					float:"1.5"
+			max_scale					float:"1.5"
+			offset_y					float:"0"
+			
+			range						float:"5"
+			display_radius_group	 	string:"wind_turbine"
+			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
+		}
+	}
+	
+	HealthDesc
+	{
+		max_health 					"420"
+		health 						"420"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/wind_turbine_lvl_2.mesh"
+		material "buildings/energy/wind_turbine_lvl_2"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/energy/wind_turbine_lvl_2"
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "0"
+			y "1"
+			z "1"
+			w "1"
+		}
+		size
+		{
+			x "3"
+			y "3"
+		}
+
+		visibility			"always"
+		layer_group			"common_buildings"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "1"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/wind_turbine_working"
+					delay "0.5"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // wind_turbine_new_lvl_3
+{
+	name			"buildings/energy/wind_turbine_new_lvl_3"
+	base_blueprint	"buildings/energy/wind_turbine_new_lvl_2"
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"wind_turbine_new_lvl_3"
+		bp   				"buildings/energy/wind_turbine_new_lvl_3"
+		category 			"energy"
+		localization_id		"gui/hud/building_name/wind_turbine"
+		description			"gui/hud/building_description/wind_turbine"
+		menu_icon			"gui/hud/building_icons/wind_turbine_new_lvl3"
+		require 			"headquarters"
+		building_group		"wind_turbine"
+		radius_name			"wind_turbine"
+		min_radius			"10"
+		min_radius_effect  	"voice_over/announcement/building_too_close"
+		type				"wind"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		going_green_state	"2"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 35
+				building_cost
+				{
+					carbonium 	"780"
+					alloys		"200"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"210"
+			}
+		}
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "energy"
+				max 	 "250"
+			}
+
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/energy/wind_turbine.lua"
+		
+		database
+		{
+			cone_effect					string:"build_cone_4x4"
+			cone_effect_sell			string:"sell_big"
+			
+			min_scale					float:"2.0"
+			max_scale					float:"2.0"
+			
+			range						float:"10"
+			display_radius_group	 	string:"wind_turbine"
+			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
+		}
+	}
+	
+	HealthDesc
+	{
+		max_health 					"750"
+		health 						"750"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+	
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "0"
+			y "1"
+			z "1"
+			w "1"
+		}
+		size
+		{
+			x "4"
+			y "4"
+		}
+
+		visibility			"always"
+		layer_group			"common_buildings"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/wind_turbine_lvl_3.mesh"
+		material "buildings/energy/wind_turbine_lvl_3"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/energy/wind_turbine_lvl_3"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "1"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/wind_turbine_working"
+					delay "0.5"
+				}
 			}
 		}
 	}

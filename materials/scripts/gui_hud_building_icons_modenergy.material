@@ -27,7 +27,27 @@ material "gui/hud/building_icons/energy_connector_armored_disabled" : gui/defaul
 
 
 
-/////  offshore_wind_turbine
+/////  wind_turbine
+
+material "gui/hud/building_icons/wind_turbine_lvl2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/obsolete_building.dds"
+}
+
+material "gui/hud/building_icons/wind_turbine_lvl3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/obsolete_building.dds"
+}
+
+material "gui/hud/building_icons/wind_turbine_new_lvl2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/wind_turbine_lvl2.dds"
+}
+
+material "gui/hud/building_icons/wind_turbine_new_lvl3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/wind_turbine_lvl3.dds"
+}
 
 material "gui/hud/building_icons/offshore_wind_turbine" : gui/default
 {

@@ -15,7 +15,6 @@ EntityBlueprint  // offshore_wind_turbine
 		//upgrade				"buildings/energy/offshore_wind_turbine_lvl_2"
 		building_group		"wind_turbine"
 		require 			"headquarters"
-		order				"3"
 		type				"wind"
 		radius_name			"water_tower"
 		min_radius			"13"
@@ -34,7 +33,7 @@ EntityBlueprint  // offshore_wind_turbine
 				building_time 35
 				building_cost
 				{
-					carbonium 	"160"
+					carbonium 	"260"
 					steel		"200"
 				}
 			}
@@ -53,7 +52,7 @@ EntityBlueprint  // offshore_wind_turbine
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"55"
+				value			 	"80"
 			}
 		}
 	}
@@ -80,7 +79,6 @@ EntityBlueprint  // offshore_wind_turbine
 			cone_effect					string:"build_cone_3x3"
 			cone_effect_sell			string:"sell_medium"
 			
-			scale_grid					int:"0"
 			min_scale					float:"1.5"
 			max_scale					float:"1.5"
 			offset_y					float:"-3.2"
@@ -131,53 +129,24 @@ EntityBlueprint  // offshore_wind_turbine
 		name "meshes/buildings/energy/wind_turbine_lvl_1"
 	}
 
-	PhysicsDesc
- 	{
-		objects
-		{
-			PhysicsObjectDesc
-			{
-				type 				"static"
-				group_id 			"building"
-				physics_material 	"default"
-				Shapes
-				{
-					PhysicsCapsuleShape
-					{
-						r "1.05"
-						half_height "2"
-
-						position
-						{
-							x "0.0"
-							y "2"
-							z "0.0"
-						}
-
-						orientation
-						{
-							w "0.7"
-							x "0.0"
-							z "0.7"
-							y "0.0"
-						}
-					}
-				}
-			}
-		}
-	}
-
-	GridCullerDesc
+	MinimapItemDesc
 	{
-		Shapes
+		type	"quad"
+		color
 		{
-   			PhysicsBoxShape
-   			{
-    				x	4
-    				y	4
-    				z	4
-   			}
+			x "0"
+			y "1"
+			z "1"
+			w "1"
 		}
+		size
+		{
+			x "3"
+			y "3"
+		}
+
+		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	EffectDesc
@@ -238,8 +207,8 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 				building_time 45
 				building_cost
 				{
-					carbonium 	"340"
-					alloys		"250"
+					carbonium 	"440"
+					alloys		"450"
 				}
 			}
 		}
@@ -257,7 +226,7 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"110"
+				value			 	"240"
 			}
 		}
 	}
@@ -306,42 +275,26 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 		name "meshes/buildings/energy/wind_turbine_lvl_2"
 	}
 
-	PhysicsDesc
- 	{
-		objects
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
 		{
-			PhysicsObjectDesc
-			{
-				type 				"static"
-				group_id 			"building"
-				physics_material 	"default"
-				Shapes
-				{
-					PhysicsCapsuleShape
-					{
-						r "0.9"
-						half_height "2"
-
-						position
-						{
-							x "0.0"
-							y "2"
-							z "0.0"
-						}
-
-						orientation
-						{
-							w "0.7"
-							x "0.0"
-							z "0.7"
-							y "0.0"
-						}
-					}
-				}
-			}
+			x "0"
+			y "1"
+			z "1"
+			w "1"
 		}
-	}
+		size
+		{
+			x "4"
+			y "4"
+		}
 
+		visibility			"always"
+		layer_group			"common_buildings"
+	}
+	
 	HealthDesc
 	{
 		max_health 					"750"
