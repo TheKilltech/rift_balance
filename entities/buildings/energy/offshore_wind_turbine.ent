@@ -1,6 +1,7 @@
 EntityBlueprint  // offshore_wind_turbine
 {
-	name  "buildings/energy/offshore_wind_turbine"
+	name			"buildings/energy/offshore_wind_turbine"
+	base_blueprint	"buildings/energy/wind_turbine"
 
 	BuildingDesc
 	{
@@ -8,16 +9,16 @@ EntityBlueprint  // offshore_wind_turbine
 		name 				"offshore_wind_turbine"
 		bp   				"buildings/energy/offshore_wind_turbine"
 		category 			"energy"
-		localization_id		"gui/hud/building_name/offsore_wind_turbine"
-		description			"gui/hud/building_description/offsore_wind_turbine"
-		menu_icon			"gui/hud/building_icons/offsore_wind_turbine"
-		upgrade				"buildings/energy/offshore_wind_turbine_lvl_2"
+		localization_id		"gui/hud/building_name/offshore_wind_turbine"
+		description			"gui/hud/building_description/offshore_wind_turbine"
+		menu_icon			"gui/hud/building_icons/offshore_wind_turbine"
+		//upgrade				"buildings/energy/offshore_wind_turbine_lvl_2"
 		building_group		"wind_turbine"
 		require 			"headquarters"
 		order				"3"
 		type				"wind"
 		radius_name			"water_tower"
-		min_radius			"15"
+		min_radius			"13"
 		min_radius_effect  	"voice_over/announcement/building_too_close"
 		going_green_state	"2"
 		
@@ -57,11 +58,6 @@ EntityBlueprint  // offshore_wind_turbine
 		}
 	}
 
-	ResourceConverterEfficientyModifierComponent
-	{
-		type "WIND"
-	}
-
 	ResourceStorageDesc
 	{
 		Storages
@@ -85,11 +81,11 @@ EntityBlueprint  // offshore_wind_turbine
 			cone_effect_sell			string:"sell_medium"
 			
 			scale_grid					int:"0"
-			min_scale					float:"2.0"
-			max_scale					float:"2.0"
-			offset_y					float:"-4"
+			min_scale					float:"1.5"
+			max_scale					float:"1.5"
+			offset_y					float:"-3.2"
 			
-			range						float:"15"
+			range						float:"13"
 			display_radius_group	 	string:"water_tower"
 			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
 		}
@@ -130,19 +126,9 @@ EntityBlueprint  // offshore_wind_turbine
 		material "buildings/energy/wind_turbine_white_lvl_1"
 	}
 
-	TypeDesc
-	{
-		type "building|energy"
-	}
-
 	SkeletonDesc
 	{
 		name "meshes/buildings/energy/wind_turbine_lvl_1"
-	}
-
-	AnimationGraphDesc
-	{
-		animation_graph_name "building_working"
 	}
 
 	PhysicsDesc
@@ -158,7 +144,7 @@ EntityBlueprint  // offshore_wind_turbine
 				{
 					PhysicsCapsuleShape
 					{
-						r "1.45"
+						r "1.05"
 						half_height "2"
 
 						position
@@ -181,13 +167,6 @@ EntityBlueprint  // offshore_wind_turbine
 		}
 	}
 
-	NodeCullerDesc
-	{
-		nav_mesh_cull_type "1"
-		cost_type "building"
-		flow_field_size "0.7"
-	}
-
 	GridCullerDesc
 	{
 		Shapes
@@ -198,117 +177,6 @@ EntityBlueprint  // offshore_wind_turbine
     				y	4
     				z	4
    			}
-		}
-	}
-
-	MinimapItemDesc
-	{
-		type	"quad"
-		color
-		{
-			x "0"
-			y "1"
-			z "1"
-			w "1"
-		}
-		size
-		{
-			x "3"
-			y "3"
-		}
-
-		visibility			"always"
-		layer_group			"common_buildings"
-	}
-
-	FogOfWarRevealerComponentDesc
-	{
-		radius "8"
-	}
-
-	HealthBarDesc
-	{
-		type "2"
-		mode "1"
-	}
-
-	LootDesc
-	{
-		explosion_max_power 	"2000"
-		explosion_min_power 	"1000"
-	}
-
-	DestroyDesc
-	{
-
-		DestroyPatterns
-		{
-			Pair
-			{
-				key "66_destroy"
-				value
-				{
-					explosion_type 			"centered"
-					explosion_max_power 	"6000"
-					explosion_min_power 	"2000"
-					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
-					part_physics_material   "debris_heavy"
-					part_material 			"misc/building_parts_generic"
-					part_prefix 			"meshes/misc/building_medium_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
-					part_lifetime "3"
-				}
-			}
-			Pair
-			{
-				key "33_destroy"
-				value
-				{
-					explosion_type 			"centered"
-					explosion_max_power 	"6000"
-					explosion_min_power 	"2000"
-					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
-					part_physics_material   "debris_heavy"
-					part_material 			"misc/building_parts_generic"
-					part_prefix 			"meshes/misc/building_medium_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
-					part_lifetime "3"
-				}
-			}
-			Pair
-			{
-				value
-				{
-					explosion_type 			"centered"
-					explosion_max_power 	"6000"
-					explosion_min_power 	"2000"
-					explosion_effect 		"effects/buildings_generic/explosion_big_random"
-					part_physics_material   "debris_heavy"
-					part_material 			"misc/building_parts_generic"
-					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
-					part_prefix 			"meshes/misc/building_large_parts_generic"
-					part_lifetime "3"
-				}
-
-				key "default"
-			}
-			Pair
-			{
-				value
-				{
-					explosion_type 			"centered"
-					explosion_max_power 	"6000"
-					explosion_min_power 	"2000"
-					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
-					part_physics_material   "debris_heavy"
-					part_material 			"misc/building_parts_generic"
-					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
-					part_prefix 			"meshes/misc/building_large_parts_generic"
-					part_lifetime "3"
-				}
-
-				key "quicksand"
-			}
 		}
 	}
 
@@ -347,9 +215,9 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 		name 				"offshore_wind_turbine_lvl_2"
 		bp   				"buildings/energy/offshore_wind_turbine_lvl_2"
 		category 			"energy"
-		localization_id		"gui/hud/building_name/offsore_wind_turbine"
-		description			"gui/hud/building_description/offsore_wind_turbine"
-		menu_icon			"gui/hud/building_icons/offsore_wind_turbine_lvl_2"
+		localization_id		"gui/hud/building_name/offshore_wind_turbine"
+		description			"gui/hud/building_description/offshore_wind_turbine"
+		menu_icon			"gui/hud/building_icons/offshore_wind_turbine_lvl_2"
 		building_group		"wind_turbine"
 		require 			"headquarters"
 		type				"wind"
@@ -407,6 +275,26 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 		}
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/energy/wind_turbine.lua"
+		
+		database
+		{
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_medium"
+			
+			scale_grid					int:"0"
+			min_scale					float:"2.0"
+			max_scale					float:"2.0"
+			offset_y					float:"-4"
+			
+			range						float:"15"
+			display_radius_group	 	string:"water_tower"
+			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
+		}
+	}
+
 	MeshDesc
 	{
 		mesh "meshes/buildings/energy/wind_turbine_lvl_2.mesh"
@@ -416,6 +304,71 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 	SkeletonDesc
 	{
 		name "meshes/buildings/energy/wind_turbine_lvl_2"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsCapsuleShape
+					{
+						r "0.9"
+						half_height "2"
+
+						position
+						{
+							x "0.0"
+							y "2"
+							z "0.0"
+						}
+
+						orientation
+						{
+							w "0.7"
+							x "0.0"
+							z "0.7"
+							y "0.0"
+						}
+					}
+				}
+			}
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"750"
+		health 						"750"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
 	}
 
 	EffectDesc

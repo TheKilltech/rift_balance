@@ -89,10 +89,9 @@ function GetBuildingDisplayRadius( entity )
 	return nil, nil
 end
 
-function SetupBuildingScale( entity, database )
+function SetupBuildingScale( entity, database, isGhost )
 	local scaleMin  = database:GetFloatOrDefault( "min_scale", 1 )
 	local scaleMax  = database:GetFloatOrDefault( "max_scale", 1 )
-	local scaleGrid = database:GetIntOrDefault( "scale_grid", 1 )
 	local offsetX   = database:GetFloatOrDefault( "offset_x", 0 )
 	local offsetY   = database:GetFloatOrDefault( "offset_y", 0 )
 	local offsetZ   = database:GetFloatOrDefault( "offset_z", 0 )
@@ -100,10 +99,10 @@ function SetupBuildingScale( entity, database )
 	local pos = EntityService:GetPosition( entity )
 	EntityService:SetScale( entity, x, x, x )
 	EntityService:SetPhysicsScale( entity, x, x, x )
-	if scaleGrid>0 then 
-		EntityService:SetNavMeshScale( entity, x, x, x )
+	EntityService:SetNavMeshScale( entity, x, x, x )
+	if not isGhost then
+		EntityService:SetPosition( entity, pos.x + offsetX, pos.y + offsetY, pos.z + offsetZ )
 	end
-	EntityService:SetPosition( entity, pos.x + offsetX, pos.y + offsetY, pos.z + offsetZ )
 	local children = EntityService:GetChildren(entity, true)
 	for child in Iter(children) do
 		EntityService:SetPhysicsScale( child, x, x, x )
