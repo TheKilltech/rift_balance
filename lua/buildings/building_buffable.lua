@@ -21,23 +21,25 @@ function building_buffable:OnInit()
 	self:RegisterHandler( self.entity, "BuffEvent",  "OnBuffEvent" ) 
 	self:RegisterHandler( event_sink, "LuaGlobalEvent", "OnLuaGlobalEvent" )
 	
-	self.buffRequiredName  = self.data:GetStringOrDefault("buff_required_name", "")
-	self.buffRequiredLevel = self.data:GetIntOrDefault("buff_required_level", -1)
-	
-	self.buffSource = nil
-	self.maxBuffDistance = 40
-	
-    self.fsmInfo = self:CreateStateMachine()
-    self.fsmInfo:AddState( "update",  { execute="OnExecuteInfoUpdate", interval = 1 } )
-    self.fsmInfo:AddState( "update2", { execute="OnExecuteInfoUpdate", interval = 30 } )
-    self.fsmInfo:AddState( "idle",   { } )
-	
+	self:InitVariables()
 	self:UpdateBuildingInfo( self.buffSource )
 end
 
 function building_buffable:OnLoad()
 	building.OnLoad( self )
 	self:Log( 2, "OnLoad" )
+	
+	self:InitVariables()
+end
+
+function building_buffable:InitVariables()
+	local buildingComponent = EntityService:GetComponent(self.entity, "BuildingComponent")
+	local bp   = buildingComponent.bp or "missing"
+	local data = EntityService:GetBlueprintDatabase( bp ) or self.data;
+	self.buffRequiredName  = data:GetStringOrDefault("buff_required_name", "")
+	self.buffRequiredLevel = data:GetIntOrDefault("buff_required_level", -1)
+	self.buffReqIconBp     = data:GetStringOrDefault("buff_required_bp", "buildings/resources/ore_mill_missing_icon")
+	self.buffBlueprints    = Split( data:GetStringOrDefault("buff_buildings",  "none"), "," )
 	
 	if not self.fsmInfo then
 		self.fsmInfo = self:CreateStateMachine()
@@ -132,8 +134,7 @@ end
 function building_buffable:FindBestBuffSource( ) 
 	self:Log( 2, "FindBestBuffSource" )   
 	local best = nil
-	local buffBps = Split( self.data:GetStringOrDefault("buff_buildings",  "buildings/resources/ore_mill"), "," )
-	for bp in Iter(buffBps) do
+	for bp in Iter(self.buffBlueprints) do
 		local entities = FindService:FindEntitiesByBlueprintInRadius( self.entity, bp, self.maxBuffDistance or 30)
 		self:Log( 5, "by bp ".. tostring(#entities) .. " in range ".. tostring(self.maxBuffDistance))
 		
@@ -182,12 +183,11 @@ function building_buffable:UpdateBuffState( source )
 		if ( self.buffRequiredName ~= "" ) then
 			BuildingService:DisableBuilding( self.entity )
 			
-			if not self.reqIconBp then
-				local data = EntityService:GetDatabase( self.entity )
-				self.reqIconBp = data:GetStringOrDefault("buff_required_bp", "buildings/resources/ore_mill_missing_icon")
+			if not self.buffReqIconBp then
+				self.buffReqIconBp = self.data:GetStringOrDefault("buff_required_bp", "buildings/resources/ore_mill_missing_icon")
 			end
 			if (self.missing_effect or INVALID_ID) == INVALID_ID then
-				self.missing_effect = EntityService:SpawnAndAttachEntity( self.reqIconBp, self.entity, "att_missing_buff", "")
+				self.missing_effect = EntityService:SpawnAndAttachEntity( self.buffReqIconBp, self.entity, "att_missing_buff", "")
 			end
 		end
 		self:Log( 2, "no buff source")
