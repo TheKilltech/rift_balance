@@ -10,13 +10,13 @@ EntityBlueprint  // fusion_powerplant
 		localization_id		"gui/hud/building_name/fusion_powerplant"
 		description			"gui/hud/building_description/fusion_powerplant"
 		menu_icon			"gui/hud/building_icons/fusion_powerplant"
-		type				"pipe"
+		type				"fusion_power"
+		overrides			"fusion_power,pipe"
 		require 			"headquarters"
 		upgrade				"buildings/energy/fusion_powerplant_lvl_2"
-		order				"12"
+		order				"14"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"1"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,fusion_powerplant,fusion_powerplant_lvl_2,fusion_powerplant_lvl_3"
 		
 		costs
 		{

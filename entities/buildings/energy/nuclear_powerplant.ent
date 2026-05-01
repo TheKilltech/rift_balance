@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // nuclear_powerplant
 {
 	name  "buildings/energy/nuclear_powerplant"
 
@@ -10,13 +10,13 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/nuclear_powerplant"
 		description			"gui/hud/building_description/nuclear_powerplant"
 		menu_icon			"gui/hud/building_icons/nuclear_powerplant"
-		upgrade				"buildings/energy/nuclear_powerplant_lvl_2"			
-		type				"pipe"
+		upgrade				"buildings/energy/nuclear_powerplant_lvl_2"
+		type				"nuclear_power"
 		require 			"headquarters"
-		order				"10"	
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		order				"12"
+		overrides			"nuclear_power,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"1"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{

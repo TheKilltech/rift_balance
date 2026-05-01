@@ -10,11 +10,12 @@ EntityBlueprint  // plant_biomass_powerplant
 		localization_id		"gui/hud/building_name/plant_biomass_powerplant"
 		description			"gui/hud/building_description/plant_biomass_powerplant"
 		menu_icon			"gui/hud/building_icons/plant_biomass_powerplant"
-		order				"6"
-		upgrade				"buildings/energy/plant_biomass_powerplant_lvl_2"		
+		order				"20"
+		upgrade				"buildings/energy/plant_biomass_powerplant_lvl_2"
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"plant_biomass_powerplant_lvl_2,plant_biomass_powerplant_lvl_3"
+		type				"plant_power"
+		overrides			"plant_power"
 		going_green_state	"2"
 
 		costs

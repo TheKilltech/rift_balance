@@ -9,15 +9,15 @@ EntityBlueprint  // geothermal_powerplant
 		category 			"energy"
 		localization_id		"gui/hud/building_name/geothermal_powerplant"
 		description			"gui/hud/building_description/geothermal_powerplant"
-		menu_icon			"gui/hud/building_icons/geothermal_powerplant"	
+		menu_icon			"gui/hud/building_icons/geothermal_powerplant"
 		require 			"headquarters"
-		order				"8"	
-		upgrade				"buildings/energy/geothermal_powerplant_lvl_2"		
+		order				"8"
+		upgrade				"buildings/energy/geothermal_powerplant_lvl_2"
 		type				"geothermal"
+		overrides			"geothermal,pipe"
 		check_connect		"1"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"2"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
    		costs
 		{

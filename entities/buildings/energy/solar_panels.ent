@@ -15,6 +15,7 @@ EntityBlueprint  // solar_panels
 		upgrade				"buildings/energy/solar_panels_lvl_2"
 		type				"solar"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"solar,wind"
 		going_green_state	"2"
 
 		costs
@@ -365,6 +366,7 @@ EntityBlueprint  // solar_panels_new_lvl_2
 		min_radius_effect  	"voice_over/announcement/building_too_close"
 		//upgrade				"buildings/energy/solar_panels_lvl_3"
 		type				"solar"
+		overrides			"solar,wind"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"2"
 
@@ -555,6 +557,7 @@ EntityBlueprint  // solar_panels_new_lvl_3
 		min_radius			"5"
 		min_radius_effect  	"voice_over/announcement/building_too_close"
 		type				"solar"
+		overrides			"solar,wind"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"2"
 

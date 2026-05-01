@@ -1,20 +1,19 @@
-EntityBlueprint
+EntityBlueprint  // carbonium_powerplant_lvl_3
 {
-	name  "buildings/energy/carbonium_powerplant_lvl_3"
-
-	base_blueprint buildings/energy/carbonium_powerplant_lvl_2
+	name			"buildings/energy/carbonium_powerplant_lvl_3"
+	base_blueprint	"buildings/energy/carbonium_powerplant_lvl_2"
 
 	BuildingDesc
 	{
-		buildable			"0"		
+		buildable			"0"
 		name 				"carbonium_powerplant_lvl_3"
 		bp   				"buildings/energy/carbonium_powerplant_lvl_3"
 		category 			"energy"
 		localization_id		"gui/hud/building_name/carbonium_powerplant"
 		description			"gui/hud/building_description/carbonium_powerplant_renewable"
 		menu_icon			"gui/hud/building_icons/carbonium_powerplant_lvl3"
-		order				"3"
-		//upgrade				"buildings/energy/carbonium_powerplant_lvl_4"		
+		type				"carbonium_power"
+		overrides			"carbonium_power,pipe"
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"1"
@@ -27,10 +26,10 @@ EntityBlueprint
 				building_time 20
 				building_cost
 				{
-					carbonium 	"500"	
-					steel 		"1000"	
-					cobalt 		"250"		
-					titanium	"100"	
+					carbonium 	"500"
+					steel 		"1000"
+					cobalt 		"250"
+					titanium	"100"
 				}
 			}		
 		}

@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // carbonium_powerplant
 {
 	name  "buildings/energy/carbonium_powerplant"
 
@@ -10,9 +10,11 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/carbonium_powerplant"
 		description			"gui/hud/building_description/carbonium_powerplant"
 		menu_icon			"gui/hud/building_icons/carbonium_powerplant"
-		order				"5"
-		upgrade				"buildings/energy/carbonium_powerplant_lvl_2"		
+		order				"6"
+		upgrade				"buildings/energy/carbonium_powerplant_lvl_2"
 		require 			"headquarters"
+		type				"carbonium_power"
+		overrides			"carbonium_power"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"1"
 		

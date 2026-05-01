@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // energy_pylon
 {
 	name  "buildings/energy/energy_pylon"
 
@@ -10,9 +10,9 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/energy_pylon"
 		description			"gui/hud/building_description/energy_pylon"
 		menu_icon			"gui/hud/building_icons/energy_pylon"
-		order				"13"
+		order				"30"
 		building_mode		"radius"
-		type				"energy"
+		type				"energy_transfer"
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		disableable			"0"
@@ -268,9 +268,9 @@ EntityBlueprint
 		type	"quad"
 		color 
 		{
-			x "0"
-			y "1"
-			z "1"
+			x "0"    // r
+			y "0.65" // g
+			z "0.65" // b
 			w "1"
 		}
 		size

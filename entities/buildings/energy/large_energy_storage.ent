@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // large_energy_storage
 {
 	name  "buildings/energy/large_energy_storage"
 
@@ -13,8 +13,11 @@ EntityBlueprint
 		require 			"headquarters"
 		upgrade				"buildings/energy/large_energy_storage_lvl_2"
 		order				"2"
+		building_group		"energy_storage"
+		buildable			"0"
+		type				"energy_storage_large"
+		overrides			"energy_storage_large"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"energy_storage"
 
 		costs
 		{
@@ -43,6 +46,72 @@ EntityBlueprint
 		}
 	}
 
+	children
+	{
+		EntityBlueprint  // large_energy_storage_section1
+		{
+			name "buildings/energy/large_energy_storage_section1"
+			
+			AttachmentDesc
+			{
+				attachment "att_section_1"
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0"    // r
+					y "0.8"  // g
+					z "0.8"  // b
+					w "1"
+				}
+				size
+				{
+					x "2"
+					y "2"
+				}
+
+				visibility			"always"
+				layer_group			"common_buildings"
+			}
+		}
+		
+		EntityBlueprint  // large_energy_storage_section2
+		{
+			name			"buildings/energy/large_energy_storage_section2"
+			base_blueprint	"buildings/energy/large_energy_storage_section1"
+			
+			AttachmentDesc
+			{
+				attachment "att_section_2"
+			}
+		}
+		
+		EntityBlueprint  // large_energy_storage_section3
+		{
+			name			"buildings/energy/large_energy_storage_section3"
+			base_blueprint	"buildings/energy/large_energy_storage_section1"
+			
+			AttachmentDesc
+			{
+				attachment "att_section_3"
+			}
+		}
+		
+		EntityBlueprint  // large_energy_storage_section4
+		{
+			name			"buildings/energy/large_energy_storage_section4"
+			base_blueprint	"buildings/energy/large_energy_storage_section1"
+			
+			AttachmentDesc
+			{
+				attachment "att_section_4"
+			}
+		}
+	}
+	
 	LuaDesc
 	{
 		script "lua/buildings/building.lua"
@@ -166,26 +235,6 @@ EntityBlueprint
     				z	16
    			}
 		}
-	}
-
-	MinimapItemDesc
-	{
-		type	"quad"
-		color
-		{
-			x "0"
-			y "1"
-			z "1"
-			w "1"
-		}
-		size
-		{
-			x "3"
-			y "3"
-		}
-
-		visibility			"always"
-		layer_group			"common_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

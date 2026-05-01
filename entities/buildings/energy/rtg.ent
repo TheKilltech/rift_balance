@@ -12,9 +12,10 @@ EntityBlueprint  // rtg
 		menu_icon			"gui/hud/building_icons/rtg"
 		require 			"headquarters"
 		upgrade				"buildings/energy/rtg_lvl_2"
-		order				"12"
+		order				"5"
+		type				"rtg"
+		overrides			"rtg"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"rtg_lvl_2,rtg_lvl_3"
 
 		costs
 		{
@@ -324,19 +325,18 @@ EntityBlueprint  // rtg_lvl_2
 
 	BuildingDesc
 	{
-		buildable			"0"		
+		buildable			"0"
 		name 				"rtg_lvl_2"
 		bp   				"buildings/energy/rtg_lvl_2"
 		category 			"energy"
 		localization_id		"gui/hud/building_name/rtg"
 		description			"gui/hud/building_description/rtg"
 		menu_icon			"gui/hud/building_icons/rtg_lvl_2"
-		type				"pipe"
 		require 			"headquarters"
-		order				"12"
+		type				"rtg"
+		overrides			"rtg,pipe"
 		upgrade				"buildings/energy/rtg_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,rtg,rtg_lvl_3"
 		
 		costs
 		{
@@ -346,7 +346,7 @@ EntityBlueprint  // rtg_lvl_2
 				building_time 50
 				building_cost
 				{
-					carbonium 	"150"	
+					carbonium 	"150"
 					steel 		"100"
 					uranium		"600"
 				}
@@ -539,18 +539,17 @@ EntityBlueprint  // rtg_lvl_3
 
 	BuildingDesc
 	{
-		buildable			"0"		
+		buildable			"0"
 		name 				"rtg_lvl_3"
 		bp   				"buildings/energy/rtg_lvl_3"
 		category 			"energy"
 		localization_id		"gui/hud/building_name/rtg"
 		description			"gui/hud/building_description/rtg"
 		menu_icon			"gui/hud/building_icons/rtg_lvl_3"
-		type				"pipe"
 		require 			"headquarters"
-		order				"12"
+		type				"rtg"
+		overrides			"rtg,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,rtg,rtg_lvl_2"
 		
 		costs
 		{

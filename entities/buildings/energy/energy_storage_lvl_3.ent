@@ -1,8 +1,7 @@
-EntityBlueprint
+EntityBlueprint  // energy_storage_lvl_3
 {
-	name  "buildings/energy/energy_storage_lvl_3"
-
-	base_blueprint buildings/energy/energy_storage_lvl_2
+	name			"buildings/energy/energy_storage_lvl_3"
+	base_blueprint	"buildings/energy/energy_storage_lvl_2"
 
 	BuildingDesc
 	{
@@ -13,10 +12,10 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/energy_storage"
 		description			"gui/hud/building_description/energy_storage"
 		menu_icon			"gui/hud/building_icons/energy_storage_lvl3"
-		type				"energy_storage"
+		type				"energy_storage_small"
+		overrides			"energy_storage_small"
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		//upgrade				"buildings/energy/energy_storage_lvl_4"
 
 		costs
 		{

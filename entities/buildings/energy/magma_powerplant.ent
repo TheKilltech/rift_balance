@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // magma_powerplant
 {
 	name  "buildings/energy/magma_powerplant"
 
@@ -12,10 +12,11 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/magma_powerplant"
 		type				"pipe"
 		require 			"headquarters"
-		order				"11"		
+		order				"18"
+		type				"magma_power"
+		overrides			"magma_power,pipe"
 		upgrade				"buildings/energy/magma_powerplant_lvl_2"
 		going_green_state	"1"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,magma_powerplant_lvl_2,magma_powerplant_lvl_3"
 		
 		costs
 		{

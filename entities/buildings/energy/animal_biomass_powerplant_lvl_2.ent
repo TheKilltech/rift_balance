@@ -1,21 +1,22 @@
-EntityBlueprint
+EntityBlueprint  // animal_biomass_powerplant_lvl_2
 {
-	name  "buildings/energy/animal_biomass_powerplant_lvl_2"
-
-	base_blueprint buildings/energy/animal_biomass_powerplant		
+	name			"buildings/energy/animal_biomass_powerplant_lvl_2"
+	base_blueprint	"buildings/energy/animal_biomass_powerplant"
 
 	BuildingDesc
 	{
-		buildable			"0"		
 		name 				"animal_biomass_powerplant_lvl_2"
 		bp   				"buildings/energy/animal_biomass_powerplant_lvl_2"
 		category 			"energy"
 		localization_id		"gui/hud/building_name/animal_biomass_powerplant"
 		description			"gui/hud/building_description/animal_biomass_powerplant"
 		menu_icon			"gui/hud/building_icons/animal_biomass_powerplant_lvl2"
-		order				"3"
-		upgrade				"buildings/energy/animal_biomass_powerplant_lvl_3"		
+		type				"animal_power"
+		overrides			"animal_power"
+		upgrade				"buildings/energy/animal_biomass_powerplant_lvl_3"
 		require 			"headquarters"
+		buildable			"0"
+		building_group		"plant_biomass_powerplant"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"2"
 		

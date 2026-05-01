@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // energy_storage
 {
 	name  "buildings/energy/energy_storage"
 
@@ -11,7 +11,8 @@ EntityBlueprint
 		description			"gui/hud/building_description/energy_storage"
 		menu_icon			"gui/hud/building_icons/energy_storage"
 		require 			"headquarters"
-		type				"energy_storage"
+		type				"energy_storage_small"
+		overrides			"energy_storage_small"
 		upgrade				"buildings/energy/energy_storage_lvl_2"
 		order				"2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -92,18 +93,6 @@ EntityBlueprint
 		name "meshes/buildings/energy/energy_storage_lvl_1"
 	}
 
-	//AnimationDesc
-	//{
-	//	animations
-	//	{
-	//		Anim
-	//		{
-	//			animName "working"
-	//			animTime "0.0"
-	//		}
-	//	}
-	//}
-
 	AnimationGraphDesc
 	{
 		animation_graph_name "idle_working"
@@ -161,9 +150,9 @@ EntityBlueprint
 		type	"quad"
 		color
 		{
-			x "0"
-			y "1"
-			z "1"
+			x "0"    // r
+			y "0.8"  // g
+			z "0.8"  // b
 			w "1"
 		}
 		size
@@ -273,7 +262,7 @@ EntityBlueprint
 		{
 			"buildings/effects_electric_small_base"
 		}
-////////////////////////MISC/////////////////////////
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "powered"
@@ -292,15 +281,15 @@ EntityBlueprint
 		EffectGroup
 		{
 			group "working"
-			enabled "1"				
+			enabled "1"
 			
 			Effects
 			{
 				Effect
 				{
 					blueprint "effects/buildings_energy/energy_storage_working"	
-					delay "0.5"					
-				}				
+					delay "0.5"
+				}
 			}
 		}
 	}

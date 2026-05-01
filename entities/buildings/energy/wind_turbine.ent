@@ -14,6 +14,7 @@ EntityBlueprint  // wind_turbine
 		order				"3"
 		upgrade				"buildings/energy/wind_turbine_lvl_2"
 		type				"wind"
+		overrides			"solar,wind"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"2"
 
@@ -341,6 +342,7 @@ EntityBlueprint  // wind_turbine_new_lvl_2
 		min_radius_effect  	"voice_over/announcement/building_too_close"
 		//upgrade				"buildings/energy/wind_turbine_new_lvl_3"
 		type				"wind"
+		overrides			"solar,wind"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"2"
 
@@ -524,6 +526,7 @@ EntityBlueprint  // wind_turbine_new_lvl_3
 		min_radius			"10"
 		min_radius_effect  	"voice_over/announcement/building_too_close"
 		type				"wind"
+		overrides			"solar,wind"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"2"
 
@@ -704,6 +707,7 @@ EntityBlueprint  // offshore_wind_turbine
 		building_group		"wind_turbine"
 		require 			"headquarters"
 		type				"wind"
+		overrides			"solar,wind"
 		radius_name			"water_tower"
 		min_radius			"13"
 		min_radius_effect  	"voice_over/announcement/building_too_close"
@@ -878,6 +882,7 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 		building_group		"wind_turbine"
 		require 			"headquarters"
 		type				"wind"
+		overrides			"solar,wind"
 		radius_name			"water_tower"
 		min_radius			"15"
 		min_radius_effect  	"voice_over/announcement/building_too_close"

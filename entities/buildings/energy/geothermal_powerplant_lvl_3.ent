@@ -15,10 +15,10 @@ EntityBlueprint  // geothermal_powerplant_lvl_3
 		require 			"headquarters"
 		order				"6"
 		type				"geothermal"
+		overrides			"geothermal,pipe"
 		check_connect		"1"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"2"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{

@@ -1,11 +1,10 @@
-EntityBlueprint
+EntityBlueprint  // large_energy_storage_lvl_2
 {
-	name  "buildings/energy/large_energy_storage_lvl_2"
-	base_blueprint "buildings/energy/large_energy_storage"
+	name			"buildings/energy/large_energy_storage_lvl_2"
+	base_blueprint	"buildings/energy/large_energy_storage"
 
 	BuildingDesc
 	{
-		buildable			"0"
 		name 				"large_energy_storage_lvl_2"
 		bp   				"buildings/energy/large_energy_storage_lvl_2"
 		category 			"energy"
@@ -14,9 +13,11 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/large_energy_storage_lvl2"
 		require 			"headquarters"
 		upgrade				"buildings/energy/large_energy_storage_lvl_3"
-		order				"2"
+		building_group		"energy_storage"
+		buildable			"0"
+		type				"energy_storage_large"
+		overrides			"energy_storage_large"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"energy_storage"
 
 		costs
 		{
@@ -91,26 +92,26 @@ EntityBlueprint
 	}
 
 	SkeletonDesc
-		{
-			name "meshes/buildings/energy/large_energy_storage_lvl_2"
-		}
+	{
+		name "meshes/buildings/energy/large_energy_storage_lvl_2"
+	}
 
-		AnimationDesc
+	AnimationDesc
+	{
+		animations
 		{
-			animations
+			Anim
 			{
-				Anim
-				{
-					animName "working"
-					animTime "0.0"
-				}
+				animName "working"
+				animTime "0.0"
 			}
 		}
+	}
 
-		AnimationGraphDesc
-		{
+	AnimationGraphDesc
+	{
 			animation_graph_name "idle_working"
-		}
+	}
 
 	PhysicsDesc
  	{
