@@ -10,9 +10,12 @@ EntityBlueprint  // wind_turbine
 		localization_id		"gui/hud/building_name/wind_turbine"
 		description			"gui/hud/building_description/wind_turbine"
 		menu_icon			"gui/hud/building_icons/wind_turbine"
+		upgrade				"buildings/energy/wind_turbine_lvl_2"
 		require 			"headquarters"
 		order				"3"
-		upgrade				"buildings/energy/wind_turbine_lvl_2"
+		radius_name			"wind_turbine"
+		min_radius			"3"
+		min_radius_effect  	"voice_over/announcement/building_too_close"
 		type				"wind"
 		overrides			"solar,wind"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -44,7 +47,7 @@ EntityBlueprint  // wind_turbine
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"24"
+				value			 	"22"
 			}
 		}
 	}
@@ -78,10 +81,11 @@ EntityBlueprint  // wind_turbine
 			
 			offset_y					float:"-0.6"
 			
+			display_radius_group		string:"wind_turbine"
+			
 			buff_buildings				string:"buildings/energy/energy_storage,buildings/energy/energy_storage_lvl_2,buildings/energy/energy_storage_lvl_3"
 			buff_localization			string:"buff_name/buff_power_grid_balancer"
 			buff_icon					string:"gui/hud/building_icons/energy_storage"
-			display_radius_group		string:"power_grid_balancer"
 		}
 	}
 
@@ -340,12 +344,12 @@ EntityBlueprint  // wind_turbine_new_lvl_2
 		localization_id		"gui/hud/building_name/wind_turbine"
 		description			"gui/hud/building_description/wind_turbine"
 		menu_icon			"gui/hud/building_icons/wind_turbine_new_lvl2"
+		//upgrade				"buildings/energy/wind_turbine_new_lvl_3"
 		require 			"headquarters"
 		building_group		"wind_turbine"
 		radius_name			"wind_turbine"
-		min_radius			"5"
+		min_radius			"7"
 		min_radius_effect  	"voice_over/announcement/building_too_close"
-		//upgrade				"buildings/energy/wind_turbine_new_lvl_3"
 		type				"wind"
 		overrides			"solar,wind"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -359,8 +363,8 @@ EntityBlueprint  // wind_turbine_new_lvl_2
 				building_time 25
 				building_cost
 				{
-					carbonium 	"180"
-					steel		"50"
+					carbonium 	"260"
+					steel		"100"
 				}
 			}
 		}
@@ -378,7 +382,7 @@ EntityBlueprint  // wind_turbine_new_lvl_2
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"60"
+				value			 	"160"
 			}
 		}
 	}
@@ -390,7 +394,7 @@ EntityBlueprint  // wind_turbine_new_lvl_2
 			Storage
 			{
 				resource "energy"
-				max 	 "100"
+				max 	 "200"
 			}
 
 		}
@@ -407,9 +411,9 @@ EntityBlueprint  // wind_turbine_new_lvl_2
 			
 			min_scale					float:"1.5"
 			max_scale					float:"1.5"
-			offset_y					float:"0"
+			offset_y					float:"-0.8"
 			
-			range						float:"5"
+			range						float:"7"
 			display_radius_group	 	string:"wind_turbine"
 			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
 			
@@ -533,7 +537,7 @@ EntityBlueprint  // wind_turbine_new_lvl_3
 		require 			"headquarters"
 		building_group		"wind_turbine"
 		radius_name			"wind_turbine"
-		min_radius			"10"
+		min_radius			"12"
 		min_radius_effect  	"voice_over/announcement/building_too_close"
 		type				"wind"
 		overrides			"solar,wind"
@@ -548,8 +552,8 @@ EntityBlueprint  // wind_turbine_new_lvl_3
 				building_time 35
 				building_cost
 				{
-					carbonium 	"780"
-					alloys		"200"
+					carbonium 	"800"
+					alloys		"250"
 				}
 			}
 		}
@@ -567,7 +571,7 @@ EntityBlueprint  // wind_turbine_new_lvl_3
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"210"
+				value			 	"420"
 			}
 		}
 	}
@@ -579,7 +583,7 @@ EntityBlueprint  // wind_turbine_new_lvl_3
 			Storage
 			{
 				resource "energy"
-				max 	 "250"
+				max 	 "500"
 			}
 
 		}
@@ -596,8 +600,9 @@ EntityBlueprint  // wind_turbine_new_lvl_3
 			
 			min_scale					float:"2.0"
 			max_scale					float:"2.0"
+			offset_y					float:"-1.3"
 			
-			range						float:"10"
+			range						float:"12"
 			display_radius_group	 	string:"wind_turbine"
 			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
 			
@@ -723,8 +728,8 @@ EntityBlueprint  // offshore_wind_turbine
 		require 			"headquarters"
 		type				"wind"
 		overrides			"solar,wind"
-		radius_name			"water_tower"
-		min_radius			"13"
+		radius_name			"wind_turbine"
+		min_radius			"11"
 		min_radius_effect  	"voice_over/announcement/building_too_close"
 		going_green_state	"2"
 		
@@ -740,8 +745,8 @@ EntityBlueprint  // offshore_wind_turbine
 				building_time 35
 				building_cost
 				{
-					carbonium 	"260"
-					steel		"200"
+					carbonium 	"460"
+					steel		"250"
 				}
 			}
 		}
@@ -759,7 +764,7 @@ EntityBlueprint  // offshore_wind_turbine
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"80"
+				value			 	"180"
 			}
 		}
 	}
@@ -771,7 +776,7 @@ EntityBlueprint  // offshore_wind_turbine
 			Storage
 			{
 				resource "energy"
-				max 	 "100"
+				max 	 "250"
 			}
 
 		}
@@ -788,10 +793,11 @@ EntityBlueprint  // offshore_wind_turbine
 			
 			min_scale					float:"1.5"
 			max_scale					float:"1.5"
+			scale_y						float:"1.2"
 			offset_y					float:"-3.2"
 			
-			range						float:"13"
-			display_radius_group	 	string:"water_tower"
+			range						float:"11"
+			display_radius_group	 	string:"wind_turbine"
 			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
 		}
 	}
@@ -898,8 +904,8 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 		require 			"headquarters"
 		type				"wind"
 		overrides			"solar,wind"
-		radius_name			"water_tower"
-		min_radius			"15"
+		radius_name			"wind_turbine"
+		min_radius			"14"
 		min_radius_effect  	"voice_over/announcement/building_too_close"
 		going_green_state	"2"
 		
@@ -915,7 +921,7 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 				building_time 45
 				building_cost
 				{
-					carbonium 	"440"
+					carbonium 	"1200"
 					alloys		"450"
 				}
 			}
@@ -934,7 +940,7 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"240"
+				value			 	"480"
 			}
 		}
 	}
@@ -946,7 +952,7 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 			Storage
 			{
 				resource "energy"
-				max 	 "200"
+				max 	 "800"
 			}
 
 		}
@@ -964,10 +970,11 @@ EntityBlueprint  // offshore_wind_turbine_lvl_2
 			scale_grid					int:"0"
 			min_scale					float:"2.0"
 			max_scale					float:"2.0"
+			scale_y						float:"1.2"
 			offset_y					float:"-4"
 			
-			range						float:"15"
-			display_radius_group	 	string:"water_tower"
+			range						float:"14"
+			display_radius_group	 	string:"wind_turbine"
 			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
 		}
 	}
