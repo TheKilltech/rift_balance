@@ -1,8 +1,7 @@
 EntityBlueprint  // laboratory_lvl_3
 {
-	name  "buildings/main/laboratory_lvl_3"
-
-	base_blueprint "buildings/main/laboratory_lvl_2"
+	name			"buildings/main/laboratory_lvl_3"
+	base_blueprint	"buildings/main/laboratory_lvl_2"
 
 	BuildingDesc
 	{
@@ -12,17 +11,16 @@ EntityBlueprint  // laboratory_lvl_3
 		localization_id		"gui/hud/building_name/laboratory"
 		description			"gui/hud/building_description/laboratory"
 		menu_icon			"gui/hud/building_icons/laboratory_lvl3"
-		type				"pipe"
-		order				"4"
+		upgrade				"buildings/main/laboratory_lvl_4"
 		limit			    "1"
-		limit_name			"laboratory"		
+		limit_name			"laboratory"
 		require 			"headquarters"
 		menu_action			"research"
-		upgrade				"buildings/main/laboratory_lvl_4"		
 		buildable			"0"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		hide_treasures 		"1"
+		type				"research_fac"
+		overrides			"research_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
 		{

@@ -1,8 +1,7 @@
-EntityBlueprint
+EntityBlueprint  // communications_hub_lvl_2
 {
-	name  "buildings/main/communications_hub_lvl_2"
-
-	base_blueprint buildings/main/communications_hub
+	name			"buildings/main/communications_hub_lvl_2"
+	base_blueprint	"buildings/main/communications_hub"
 
 	BuildingDesc
 	{
@@ -13,14 +12,15 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/communications_hub"
 		description			"gui/hud/building_description/communications_hub"
 		menu_icon			"gui/hud/building_icons/communications_hub_lvl2"
-		order				"3"
-		limit			    "1"
-		limit_name			"communications_hub"		
-		require 			"headquarters_lvl_2"
 		upgrade				"buildings/main/communications_hub_lvl_3"
-		menu_action 		"research"	
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		limit			    "1"
+		limit_name			"communications_hub"
+		require 			"headquarters_lvl_2"
+		menu_action 		"research"
 		hide_treasures 		"1"
+		type				"download_fac"
+		overrides			"download_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -72,7 +72,7 @@ EntityBlueprint
 				value			 	"2"
 			}
 		}
-		priority 2			
+		priority 2
 	}
 
 	HealthDesc

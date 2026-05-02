@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // armory_lvl_3
 {
 	name  "buildings/main/armory_lvl_3"
 
@@ -6,22 +6,22 @@ EntityBlueprint
 
 	BuildingDesc
 	{
-		buildable 			"0"		
+		buildable 			"0"
 		name 				"armory_lvl_3"
 		bp   				"buildings/main/armory_lvl_3"
 		category 			"resources"
-		//type				"pipe"
 		localization_id		"gui/hud/building_name/armory"
 		description			"gui/hud/building_description/armory"
 		menu_icon			"gui/hud/building_icons/weapons_factory_lvl3"
-		order				"2"
-		limit			    "1"
-		limit_name			"armory"		
-		require 			"headquarters"
 		upgrade				"buildings/main/armory_lvl_4"
+		limit			    "1"
+		limit_name			"armory"
+		require 			"headquarters"
 		menu_action 		"crafting"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		hide_treasures 		"1"
+		type				"armory_fac"
+		overrides			"armory_fac"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
 		{
