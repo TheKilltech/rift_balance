@@ -1,4 +1,4 @@
-local building = require("lua/buildings/building.lua")
+local building = require("lua/buildings/building_buffable.lua")
 require("lua/utils/throttler_utils.lua")
 class 'solar_panels' ( building )
 
@@ -10,10 +10,12 @@ function solar_panels:__init()
 end
 
 function solar_panels:OnBuildingEnd()
+	building.OnBuildingEnd( self )
 	self:Recalculate()
 end
 
 function solar_panels:OnInit()
+	building.OnInit( self )
 	self.fsm = self:CreateStateMachine()
 	self.fsm:AddState( "working", { execute="OnWorking", interval=0.2} )
 	self.fsm:ChangeState( "working" )
@@ -31,6 +33,7 @@ end
 
 function solar_panels:OnDayStartedEvent(evt)
 end
+
 function solar_panels:OnRecalculateModifiersEvent(evt)
 	self.cfsm:ChangeState("biom_modifier")
 end
@@ -42,10 +45,12 @@ function solar_panels:OnNightStartedEvent(evt)
 end
 
 function solar_panels:OnActivate()
+	building.OnActivate( self )
 	self.data:SetInt("is_working", 1 )
 end
 
 function solar_panels:OnDeactivate()
+	building.OnDeactivate( self )
 	self.data:SetInt("is_working", 0 )
 end
 

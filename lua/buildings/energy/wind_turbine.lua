@@ -1,4 +1,4 @@
-local building = require("lua/buildings/building.lua")
+local building = require("lua/buildings/building_buffable.lua")
 require("lua/utils/throttler_utils.lua")
 class 'wind_turbine' ( building )
 
@@ -10,6 +10,7 @@ function wind_turbine:__init()
 end
 
 function wind_turbine:OnInit()
+	building.OnInit( self )
     self.fsm = self:CreateStateMachine()
     self.fsm:AddState( "biom_modifier", { execute="OnUpdateBiomModifier", interval=0.2 } )
 	self.lastModifier = 1.0
@@ -17,6 +18,7 @@ end
 
 
 function wind_turbine:OnBuildingEnd()
+	building.OnBuildingEnd( self )
 	self:Recalculate()
 	self:RegisterHandler( event_sink , "RecalculateModifiersEvent", "OnRecalculateModifiersEvent")
 end
@@ -27,7 +29,12 @@ end
 
 
 function wind_turbine:OnActivate()
+	building.OnActivate( self )
 	self.data:SetFloat("is_working", BuildingService:GetWindPowerModificator( self.entity ) )
+end
+
+function wind_turbine:OnDeactivate()
+	building.OnDeactivate( self )
 end
 
 function wind_turbine:OnEnterBiomModifier( state )

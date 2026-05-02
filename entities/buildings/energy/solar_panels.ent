@@ -70,6 +70,16 @@ EntityBlueprint  // solar_panels
 	LuaDesc
 	{
 		script "lua/buildings/energy/solar_panels.lua"
+		database
+		{
+			cone_effect					string:"build_cone_2x2"
+			cone_effect_sell			string:"sell_small"
+			
+			buff_buildings				string:"buildings/energy/energy_storage,buildings/energy/energy_storage_lvl_2,buildings/energy/energy_storage_lvl_3"
+			buff_localization			string:"buff_name/buff_power_grid_balancer"
+			buff_icon					string:"gui/hud/building_icons/energy_storage"
+			display_radius_group		string:"power_grid_balancer"
+		}
 	}
 
 	HealthDesc
@@ -430,6 +440,11 @@ EntityBlueprint  // solar_panels_new_lvl_2
 			range						float:"4"
 			display_radius_group	 	string:"solar_panels"
 			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
+			
+			buff_buildings				string:"buildings/energy/energy_storage,buildings/energy/energy_storage_lvl_2,buildings/energy/energy_storage_lvl_3"
+			buff_localization			string:"buff_name/buff_power_grid_balancer"
+			buff_icon					string:"gui/hud/building_icons/energy_storage"
+			//display_radius_group		string:"power_grid_balancer"
 		}
 	}
 	
@@ -621,6 +636,11 @@ EntityBlueprint  // solar_panels_new_lvl_3
 			range						float:"5"
 			display_radius_group	 	string:"solar_panels"
 			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
+			
+			buff_buildings				string:"buildings/energy/energy_storage,buildings/energy/energy_storage_lvl_2,buildings/energy/energy_storage_lvl_3"
+			buff_localization			string:"buff_name/buff_power_grid_balancer"
+			buff_icon					string:"gui/hud/building_icons/energy_storage"
+			//display_radius_group		string:"power_grid_balancer"
 		}
 	}
 	

@@ -77,6 +77,11 @@ EntityBlueprint  // wind_turbine
 			cone_effect_sell			string:"sell_small"
 			
 			offset_y					float:"-0.6"
+			
+			buff_buildings				string:"buildings/energy/energy_storage,buildings/energy/energy_storage_lvl_2,buildings/energy/energy_storage_lvl_3"
+			buff_localization			string:"buff_name/buff_power_grid_balancer"
+			buff_icon					string:"gui/hud/building_icons/energy_storage"
+			display_radius_group		string:"power_grid_balancer"
 		}
 	}
 
@@ -407,6 +412,11 @@ EntityBlueprint  // wind_turbine_new_lvl_2
 			range						float:"5"
 			display_radius_group	 	string:"wind_turbine"
 			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
+			
+			buff_buildings				string:"buildings/energy/energy_storage,buildings/energy/energy_storage_lvl_2,buildings/energy/energy_storage_lvl_3"
+			buff_localization			string:"buff_name/buff_power_grid_balancer"
+			buff_icon					string:"gui/hud/building_icons/energy_storage"
+			//display_radius_group		string:"power_grid_balancer"
 		}
 	}
 	
@@ -590,6 +600,11 @@ EntityBlueprint  // wind_turbine_new_lvl_3
 			range						float:"10"
 			display_radius_group	 	string:"wind_turbine"
 			display_radius_blueprint 	string:"effects/decals/range_circle_repair"
+			
+			buff_buildings				string:"buildings/energy/energy_storage,buildings/energy/energy_storage_lvl_2,buildings/energy/energy_storage_lvl_3"
+			buff_localization			string:"buff_name/buff_power_grid_balancer"
+			buff_icon					string:"gui/hud/building_icons/energy_storage"
+			//display_radius_group		string:"power_grid_balancer"
 		}
 	}
 	
