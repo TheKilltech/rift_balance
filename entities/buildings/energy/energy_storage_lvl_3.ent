@@ -12,9 +12,9 @@ EntityBlueprint  // energy_storage_lvl_3
 		localization_id		"gui/hud/building_name/energy_storage_new"
 		description			"gui/hud/building_description/energy_storage_new"
 		menu_icon			"gui/hud/building_icons/energy_storage_lvl3"
-		type				"energy_storage_small"
-		overrides			"energy_storage_small"
 		require 			"headquarters"
+		type				"energy_storage_small"
+		overrides			"energy_storage_small,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
