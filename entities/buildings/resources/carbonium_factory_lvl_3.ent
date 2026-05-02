@@ -13,6 +13,8 @@ EntityBlueprint  // carbonium_factory_lvl_3
 		description			"gui/hud/building_description/strip_mine_lvl_3"
 		menu_icon			"gui/hud/building_icons/carbonium_factory_lvl3"
 		//require 			"headquarters"    // removed to save screen space
+		type				"solids_mine"
+		overrides			"solids_mine"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs

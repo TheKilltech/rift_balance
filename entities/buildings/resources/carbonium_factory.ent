@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // carbonium_factory
 {
 	name  "buildings/resources/carbonium_factory"
 
@@ -11,8 +11,10 @@ EntityBlueprint
 		description			"gui/hud/building_description/strip_mine"
 		menu_icon			"gui/hud/building_icons/carbonium_factory"
 		order				"1"
-		upgrade				"buildings/resources/carbonium_factory_lvl_2"		
+		upgrade				"buildings/resources/carbonium_factory_lvl_2"
 		require 			"headquarters"
+		type				"solids_mine"
+		overrides			"solids_mine"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs

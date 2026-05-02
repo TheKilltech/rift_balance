@@ -7,17 +7,17 @@ EntityBlueprint  // reagent_condenser
 		name 				"reagent_condenser"
 		bp   				"buildings/resources/reagent_condenser"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/reagent_condenser"
 		description			"gui/hud/building_description/reagent_condenser"
 		menu_icon			"gui/hud/building_icons/reagent_condenser"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"reagent_refinery"
-		order				"30"	
+		order				"30"
 		upgrade				"buildings/resources/reagent_condenser_lvl_2"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,reagent_condenser_lvl_2,reagent_condenser_lvl_3"
+		type				"reagent_fac"
+		overrides			"reagent_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -407,23 +407,21 @@ EntityBlueprint  // reagent_condenser_lvl_2
 	name  				"buildings/resources/reagent_condenser_lvl_2"
 	base_blueprint 		"buildings/resources/reagent_condenser"
 
-
 	BuildingDesc
 	{
 		name 				"reagent_condenser_lvl_2"
 		bp   				"buildings/resources/reagent_condenser_lvl_2"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/reagent_condenser"
 		description			"gui/hud/building_description/reagent_condenser"
 		menu_icon			"gui/hud/building_icons/reagent_condenser_lvl_2"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"reagent_refinery"
-		order				"31"	
 		upgrade				"buildings/resources/reagent_condenser_lvl_3"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,reagent_condenser,reagent_condenser_lvl_3"
+		type				"reagent_fac"
+		overrides			"reagent_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -623,16 +621,15 @@ EntityBlueprint  // reagent_condenser_lvl_3
 		name 				"reagent_condenser_lvl_3"
 		bp   				"buildings/resources/reagent_condenser_lvl_3"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/reagent_condenser"
 		description			"gui/hud/building_description/reagent_condenser"
 		menu_icon			"gui/hud/building_icons/reagent_condenser_lvl_3"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"reagent_refinery"
-		order				"32"	
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,reagent_condenser,reagent_condenser_lvl_2"
+		type				"reagent_fac"
+		overrides			"reagent_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{

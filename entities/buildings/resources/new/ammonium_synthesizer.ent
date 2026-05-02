@@ -7,7 +7,6 @@ EntityBlueprint  // ammonium_synthesizer
 		name 				"ammonium_synthesizer"
 		bp   				"buildings/resources/ammonium_synthesizer"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/ammonium_synthesizer"
 		description			"gui/hud/building_description/ammonium_synthesizer"
 		menu_icon			"gui/hud/building_icons/ammonium_synthesizer"
@@ -18,8 +17,9 @@ EntityBlueprint  // ammonium_synthesizer
 		upgrade				"buildings/resources/ammonium_synthesizer_lvl_2"
 		radius_name			"atmospheric_trap"
 		min_radius			"31"
+		type				"ammonium_syn"
+		overrides			"ammonium_syn,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammonium_synthesizer_lvl_2"
 
 		costs
 		{
@@ -471,9 +471,10 @@ EntityBlueprint  // ammonium_synthesizer_lvl_2
 		min_radius			"31"
 		building_group		"ammonium_extractor"
 		buildable			"0"
+		type				"ammonium_syn"
+		overrides			"ammonium_syn,pipe"
 		//upgrade				"buildings/resources/ammonium_synthesizer_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammonium_synthesizer"
 
 		costs
 		{

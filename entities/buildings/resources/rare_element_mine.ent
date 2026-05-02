@@ -10,11 +10,13 @@ EntityBlueprint  // rare_element_mine
 		localization_id		"gui/hud/building_name/mining_drill"
 		description			"gui/hud/building_description/mining_drill"
 		menu_icon			"gui/hud/building_icons/rare_element_mine"
-		order				"1"
 		upgrade				"buildings/resources/rare_element_mine_lvl_2"
 		//require 			"headquarters"
+		order				"1"
 		buildable			"0"
 		building_group		"carbonium_factory"
+		type				"solids_mine"
+		overrides			"solids_mine,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 						
 		costs

@@ -1,7 +1,6 @@
-EntityBlueprint
+EntityBlueprint  // biomass_water_press
 {
 	name  "buildings/resources/biomass_water_press"
-
 
 	BuildingDesc
 	{
@@ -16,6 +15,8 @@ EntityBlueprint
 		require 			"headquarters"
 		building_group		"water_filtering_plant"
 		buildable			"0"
+		type				"bio_water_press"
+		overrides			"bio_water_press,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -400,7 +401,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // biomass_water_press_lvl_2
 {
 	name  			"buildings/resources/biomass_water_press_lvl_2"
 	base_blueprint	"buildings/resources/biomass_water_press"

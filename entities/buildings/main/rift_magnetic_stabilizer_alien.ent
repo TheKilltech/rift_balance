@@ -6,23 +6,22 @@ EntityBlueprint  // rift_magnetic_stabilizer_alien
 	{
 		name 				"rift_magnetic_stabilizer_alien"
 		bp   				"buildings/main/rift_magnetic_stabilizer_alien"
-		category 			"resources"
-		//type				"pipe"
+		category 			"energy"
 		localization_id		"gui/hud/building_name/magnetic_stabilizer_alien"
 		description			"gui/hud/building_description/magnetic_stabilizer_alien"
 		menu_icon			"gui/hud/building_icons/rift_magnetic_stabilizer_alien"
-		require 			"headquarters"
 		//upgrade				"buildings/main/rift_magnetic_stabilizer_alien_lvl_2"
-		order				"8"
+		require 			"headquarters"
 		buildable			"0"
 		building_group		"rift_magnetic_stabilizer"
-		min_radius_effect   "voice_over/announcement/magnetic_stabilizer_too_close"
+		min_radius_effect	"voice_over/announcement/magnetic_stabilizer_too_close"
 		radius_name			"magnetic_stabilizer"
 		min_radius			"30"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"rift_magnetic_stabilizer,rift_magnetic_stabilizer_alien"
-		is_shortcut_bindable	"0"
+		is_shortcut_bindable "0"
 		hide_treasures 		"1"
+		type				"stabilizer"
+		overrides			"stabilizer"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -229,9 +228,9 @@ EntityBlueprint  // rift_magnetic_stabilizer_alien
 		type	"quad"
 		color
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0"    // r
+			y "0.65" // g
+			z "0.65" // b
 			w "1"
 		}
 		size

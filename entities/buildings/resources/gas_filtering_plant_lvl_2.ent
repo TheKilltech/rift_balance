@@ -5,18 +5,18 @@ EntityBlueprint  // gas_filtering_plant_lvl_2
 
 	BuildingDesc
 	{
-		buildable 			"0"		
+		buildable 			"0"
 		name 				"gas_filtering_plant_lvl_2"
 		bp   				"buildings/resources/gas_filtering_plant_lvl_2"
 		category 			"liquids"
 		localization_id		"gui/hud/building_name/gas_filtering_plant"
 		description			"gui/hud/building_description/gas_filtering_plant"
 		menu_icon			"gui/hud/building_icons/gas_filtering_plant_lvl2"
-		type				"pipe"
+		upgrade				"buildings/resources/gas_filtering_plant_lvl_3"
 		require 			"headquarters"
-		upgrade				"buildings/resources/gas_filtering_plant_lvl_3"	
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,gas_filtering_plant,gas_filtering_plant_lvl_3"
+		type				"gas_fac"
+		overrides			"gas_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 				
 		costs
 		{

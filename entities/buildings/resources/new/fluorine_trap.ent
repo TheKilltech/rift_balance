@@ -7,7 +7,6 @@ EntityBlueprint  // fluorine_trap
 		name 				"fluorine_trap"
 		bp   				"buildings/resources/fluorine_trap"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/fluorine_trap"
 		description			"gui/hud/building_description/fluorine_trap"
 		menu_icon			"gui/hud/building_icons/fluorine_trap"
@@ -16,8 +15,9 @@ EntityBlueprint  // fluorine_trap
 		order				"7"
 		radius_name			"atmospheric_trap"
 		min_radius			"31"
+		type				"fluorine_fac"
+		overrides			"fluorine_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,fluorine_trap_lvl_2"
 
 		costs
 		{
@@ -57,8 +57,6 @@ EntityBlueprint  // fluorine_trap
 		priority 4
 	}
 
-	//ResourceConverterEfficientyModifierComponent { type "WIND" type "FLUORINE" }
-	
 	ResourceStorageDesc
 	{
 		Storages
@@ -453,8 +451,9 @@ EntityBlueprint  // fluorine_trap_lvl_2
 		building_group		"fluorine_trap"
 		buildable			"0"
 		min_radius			"31"
+		type				"fluorine_fac"
+		overrides			"fluorine_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,fluorine_trap"
 
 		costs
 		{

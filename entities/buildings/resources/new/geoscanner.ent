@@ -6,16 +6,16 @@ EntityBlueprint  // geoscanner_lvl_1
 	{
 		name 				"geoscanner_lvl_1"
 		bp   				"buildings/resources/geoscanner_lvl_1"
-		category 			"resources"
-		type				"pipe"
+		category 			"liquids"
 		localization_id		"gui/hud/building_name/geoscanner"
 		description			"gui/hud/building_description/geoscanner"
 		menu_icon			"gui/hud/building_icons/geoscanner_lvl_1"
 		upgrade				"buildings/resources/geoscanner_lvl_2"
 		require 			"headquarters"
-		order				"40"
+		order				"49"
+		type				"geoscan"
+		overrides			"geoscan"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"geoscanner_lvl_2,geoscanner_lvl_3"
 
 		costs
 		{
@@ -157,7 +157,7 @@ EntityBlueprint  // geoscanner_lvl_1
 	
 	TypeDesc
 	{
-		type "building|resource"
+		type "building|liquids"
 	}
 
 	AnimationGraphDesc
@@ -217,9 +217,9 @@ EntityBlueprint  // geoscanner_lvl_1
 		type	"quad"
 		color
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.3"  // r
+			y "0.5"  // g
+			z "0.9"  // b
 			w "1"
 		}
 		size
@@ -375,15 +375,14 @@ EntityBlueprint  // geoscanner_lvl_2
 		name 				"geoscanner_lvl_2"
 		bp   				"buildings/resources/geoscanner_lvl_2"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/geoscanner"
 		description			"gui/hud/building_description/geoscanner"
 		menu_icon			"gui/hud/building_icons/geoscanner_lvl_2"
 		upgrade				"buildings/resources/geoscanner_lvl_3"
 		require 			"headquarters"
-		order				"0"
+		type				"geoscan"
+		overrides			"geoscan,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"geoscanner_lvl_1,geoscanner_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{
@@ -505,14 +504,13 @@ EntityBlueprint  // geoscanner_lvl_3
 		name 				"geoscanner_lvl_3"
 		bp   				"buildings/resources/geoscanner_lvl_3"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/geoscanner"
 		description			"gui/hud/building_description/geoscanner"
 		menu_icon			"gui/hud/building_icons/geoscanner_lvl_3"
 		require 			"headquarters"
-		order				"0"
+		type				"geoscan"
+		overrides			"geoscan,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"geoscanner_lvl_1,geoscanner_lvl_2,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{

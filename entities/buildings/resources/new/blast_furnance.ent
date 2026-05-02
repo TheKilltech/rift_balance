@@ -7,15 +7,15 @@ EntityBlueprint  // blast_furnace
 		name 				"blast_furnace"
 		bp   				"buildings/resources/blast_furnace"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/blast_furnace"
 		description			"gui/hud/building_description/blast_furnace"
 		menu_icon			"gui/hud/building_icons/blast_furnace"
 		require 			"headquarters"
 		upgrade				"buildings/resources/blast_furnace_lvl_2"
 		order				"16"
+		type				"furnance"
+		overrides			"furnance,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,blast_furnace_lvl_2,blast_furnace_lvl_3"
 		
 		costs
 		{
@@ -444,13 +444,14 @@ EntityBlueprint  // blast_furnace_lvl_2
 		name 				"blast_furnace_lvl_2"
 		bp   				"buildings/resources/blast_furnace_lvl_2"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/blast_furnace"
 		description			"gui/hud/building_description/blast_furnace"
 		menu_icon			"gui/hud/building_icons/blast_furnace_lvl_2"
 		require 			"headquarters"
 		//upgrade				"buildings/resources/blast_furnace_lvl_3"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,blast_furnace,blast_furnace_lvl_3"
+		type				"furnance"
+		overrides			"furnance,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{

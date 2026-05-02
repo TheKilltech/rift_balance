@@ -13,6 +13,8 @@ EntityBlueprint  // steel_seperator
 		order				"7"
 		upgrade				"buildings/resources/steel_seperator_lvl_2"
 		require 			"headquarters"
+		type				"steel_fac"
+		overrides			"steel_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
@@ -417,6 +419,8 @@ EntityBlueprint  // steel_seperator_lvl_2
 		upgrade				"buildings/resources/steel_seperator_lvl_3"
 		require 			"headquarters"
 		buildable			"0"
+		type				"steel_fac"
+		overrides			"steel_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		
@@ -633,6 +637,8 @@ EntityBlueprint  // steel_seperator_lvl_3
 		menu_icon			"gui/hud/building_icons/steel_seperator_lvl_3"
 		require 			"headquarters"
 		buildable			"0"
+		type				"steel_fac"
+		overrides			"steel_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs

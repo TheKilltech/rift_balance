@@ -7,15 +7,15 @@ EntityBlueprint  // bio_uranium_refinery
 		name 				"bio_uranium_refinery"
 		bp   				"buildings/resources/bio_uranium_refinery"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/bio_uranium_ore_refinery"
 		description			"gui/hud/building_description/bio_uranium_ore_refinery"
 		menu_icon			"gui/hud/building_icons/bio_uranium_refinery"
 		require 			"headquarters"	
 		upgrade				"buildings/resources/bio_uranium_refinery_lvl_2"
 		order				"36"
+		type				"bio_uranium_ref"
+		overrides			"bio_uranium_ref,bio_titanium_ref,bio_palldium_ref,bio_cobalt_ref,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,bio_uranium_refinery,bio_uranium_refinery_lvl_2,bio_uranium_refinery_lvl_3"
 		
 		costs
 		{
@@ -481,13 +481,14 @@ EntityBlueprint  // bio_uranium_refinery_lvl_2
 		name 				"bio_uranium_refinery_lvl_2"
 		bp   				"buildings/resources/bio_uranium_refinery_lvl_2"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/bio_uranium_ore_refinery"
 		description			"gui/hud/building_description/bio_uranium_ore_refinery"
 		menu_icon			"gui/hud/building_icons/bio_uranium_refinery_lvl_2"
 		require 			"headquarters"
 		upgrade				"buildings/resources/bio_uranium_refinery_lvl_3"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,bio_uranium_refinery,bio_uranium_refinery_lvl_2,bio_uranium_refinery_lvl_3"
+		type				"bio_uranium_ref"
+		overrides			"bio_uranium_ref,bio_titanium_ref,bio_palldium_ref,bio_cobalt_ref,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -750,12 +751,13 @@ EntityBlueprint  // bio_uranium_refinery_lvl_3
 		name 				"bio_uranium_refinery_lvl_3"
 		bp   				"buildings/resources/bio_uranium_refinery_lvl_3"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/bio_uranium_ore_refinery"
 		description			"gui/hud/building_description/bio_uranium_ore_refinery"
 		menu_icon			"gui/hud/building_icons/bio_uranium_refinery_lvl_3"
 		require 			"headquarters"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,bio_uranium_refinery,bio_uranium_refinery_lvl_2,bio_uranium_refinery_lvl_3"
+		type				"bio_uranium_ref"
+		overrides			"bio_uranium_ref,bio_titanium_ref,bio_palldium_ref,bio_cobalt_ref,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{

@@ -7,19 +7,20 @@ EntityBlueprint  // bio_condenser
 		name 				"bio_condenser"
 		bp   				"buildings/resources/bio_condenser"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/bio_condenser"
 		description			"gui/hud/building_description/bio_condenser"
 		menu_icon			"gui/hud/building_icons/bio_condenser"
-		require 			"headquarters"
 		upgrade				"buildings/resources/bio_condenser_lvl_2"
-		order				"5"
+		require 			"headquarters"
+		building_group		"liquid_pump"
+		buildable			"0"
+		//order				"5"
 		radius_name			"pump"
 		min_radius			"20"
+		type				"sludge_mine"
+		overrides			"sludge_mine,pipe"
 
 		building_functionality	"BUILD_ON_WATER|NO_FOUNDATION"
-
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{

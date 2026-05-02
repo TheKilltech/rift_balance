@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // flora_cultivator
 {
 	name  "buildings/resources/flora_cultivator"
 
@@ -7,16 +7,16 @@ EntityBlueprint
 		name 				"flora_cultivator"
 		bp   				"buildings/resources/flora_cultivator"
 		category 			"resources"
-		type				"pipe"		
 		localization_id		"gui/hud/building_name/flora_cultivator"
 		description			"gui/hud/building_description/flora_cultivator"
 		menu_icon			"gui/hud/building_icons/flora_cultivator"
+		upgrade				"buildings/resources/flora_cultivator_lvl_2"
 		require 			"headquarters"
 		order				"10"
 		menu_action			"working_mod"
-		upgrade				"buildings/resources/flora_cultivator_lvl_2"	
+		type				"cultivator"
+		overrides			"cultivator,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{

@@ -7,15 +7,14 @@ EntityBlueprint  // alloys_factory
 		name 				"alloys_factory"
 		bp   				"buildings/resources/alloys_factory"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/alloys_factory"
 		description			"gui/hud/building_description/alloys_factory"
 		menu_icon			"gui/hud/building_icons/alloys_factory_cobalt"
 		require 			"headquarters"
-		//upgrade			"buildings/resources/alloys_factory_lvl_2"
+		type				"alloys_fac"
+		overrides			"alloys_fac,pipe"
 		order				"26"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,alloys_factory_uranium,alloys_factory_uranium,alloys_factory_palladium"
 		
 		costs
 		{
@@ -470,13 +469,13 @@ EntityBlueprint  // alloys_factory_titanium
 		name 				"alloys_factory_titanium"
 		bp   				"buildings/resources/alloys_factory_titanium"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/alloys_factory_titanium"
 		description			"gui/hud/building_description/alloys_factory_titanium"
 		menu_icon			"gui/hud/building_icons/alloys_factory_titanium"
 		require 			"headquarters"
 		building_group		"alloys_factory"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,alloys_factory,alloys_factory_uranium,alloys_factory_palladium"
+		type				"alloys_fac"
+		overrides			"alloys_fac,pipe"
 		
 		costs
 		{
@@ -692,13 +691,13 @@ EntityBlueprint  // alloys_factory_palladium
 		name 				"alloys_factory_palladium"
 		bp   				"buildings/resources/alloys_factory_palladium"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/alloys_factory_palladium"
 		description			"gui/hud/building_description/alloys_factory_palladium"
 		menu_icon			"gui/hud/building_icons/alloys_factory_palladium"
 		require 			"headquarters"
 		building_group		"alloys_factory"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,alloys_factory,alloys_factory_uranium,alloys_factory_titanium"
+		type				"alloys_fac"
+		overrides			"alloys_fac,pipe"
 		
 		costs
 		{
@@ -913,13 +912,13 @@ EntityBlueprint  // alloys_factory_uranium
 		name 				"alloys_factory_uranium"
 		bp   				"buildings/resources/alloys_factory_uranium"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/alloys_factory_uranium"
 		description			"gui/hud/building_description/alloys_factory_uranium"
 		menu_icon			"gui/hud/building_icons/alloys_factory_uranium"
 		require 			"headquarters"
 		building_group		"alloys_factory"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,alloys_factory,alloys_factory_palladium,alloys_factory_titanium"
+		type				"alloys_fac"
+		overrides			"alloys_fac,pipe"
 		
 		costs
 		{

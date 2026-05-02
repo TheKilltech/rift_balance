@@ -15,8 +15,9 @@ EntityBlueprint  // nitrification_plant
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"nitric_acid_refinery"
+		type				"nitric_acid_fac"
+		overrides			"nitric_acid_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,nitrification_plant,nitrification_plant_lvl_2,nitrification_plant_lvl_3"
 
 		costs
 		{
@@ -472,8 +473,9 @@ EntityBlueprint  // nitrification_plant_lvl_2
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"nitric_acid_refinery"
+		type				"nitric_acid_fac"
+		overrides			"nitric_acid_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,nitrification_plant,nitrification_plant_lvl_2,nitrification_plant_lvl_3"
 		
 		costs
 		{
@@ -740,8 +742,9 @@ EntityBlueprint  // nitrification_plant_lvl_3
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"nitric_acid_refinery"
+		type				"nitric_acid_fac"
+		overrides			"nitric_acid_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,nitrification_plant,nitrification_plant_lvl_2,nitrification_plant_lvl_3"
 		
 		costs
 		{

@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // flora_collector
 {
 	name  "buildings/resources/flora_collector"
 
@@ -10,12 +10,14 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/flora_collector"
 		description			"gui/hud/building_description/flora_collector"
 		menu_icon			"gui/hud/building_icons/flora_collector"
+		upgrade				"buildings/resources/flora_collector_lvl_2"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"flora_cultivator"
 		order				"10"
-		upgrade				"buildings/resources/flora_collector_lvl_2"		
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		type				"cultivator"
+		overrides			"cultivator"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{

@@ -7,7 +7,6 @@ EntityBlueprint  // supercoolant_chem_plant
 		name 				"supercoolant_chem_plant"
 		bp   				"buildings/resources/supercoolant_chem_plant"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/supercoolant_chem_plant"
 		description			"gui/hud/building_description/supercoolant_chem_plant"
 		menu_icon			"gui/hud/building_icons/supercoolant_chem_plant"
@@ -15,9 +14,9 @@ EntityBlueprint  // supercoolant_chem_plant
 		building_group		"supercoolant_refinery"
 		buildable			"0"
 		upgrade				"buildings/resources/supercoolant_chem_plant_lvl_2"
-		order				"18"
+		type				"supercoolant_fac"
+		overrides			"supercoolant_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"supercoolant_chem_plant_lvl_2,supercoolant_chem_plant_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -521,7 +520,6 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_2
 		name 				"supercoolant_chem_plant_lvl_2"
 		bp   				"buildings/resources/supercoolant_chem_plant_lvl_2"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/supercoolant_chem_plant"
 		description			"gui/hud/building_description/supercoolant_chem_plant"
 		menu_icon			"gui/hud/building_icons/supercoolant_chem_plant_lvl_2"
@@ -529,9 +527,9 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_2
 		building_group		"supercoolant_refinery"
 		buildable			"0"
 		upgrade				"buildings/resources/supercoolant_chem_plant_lvl_3"
-		order				"19"
+		type				"supercoolant_fac"
+		overrides			"supercoolant_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"supercoolant_chem_plant,supercoolant_chem_plant_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -752,16 +750,15 @@ EntityBlueprint  // supercoolant_chem_plant_lvl_3
 		name 				"supercoolant_chem_plant_lvl_3"
 		bp   				"buildings/resources/supercoolant_chem_plant_lvl_3"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/supercoolant_chem_plant"
 		description			"gui/hud/building_description/supercoolant_chem_plant"
 		menu_icon			"gui/hud/building_icons/supercoolant_chem_plant_lvl_3"
 		require 			"headquarters"
 		building_group		"supercoolant_refinery"
 		buildable			"0"
-		order				"20"
+		type				"supercoolant_fac"
+		overrides			"supercoolant_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"supercoolant_chem_plant,supercoolant_chem_plant_lvl_2,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{

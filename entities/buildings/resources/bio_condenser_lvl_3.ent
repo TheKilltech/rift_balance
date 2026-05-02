@@ -1,25 +1,23 @@
-EntityBlueprint
+EntityBlueprint  // bio_condenser_lvl_3
 {
-	name  "buildings/resources/bio_condenser_lvl_3"
-	
-	base_blueprint buildings/resources/bio_condenser_lvl_2
+	name			"buildings/resources/bio_condenser_lvl_3"
+	base_blueprint	"buildings/resources/bio_condenser_lvl_2"
 
 	BuildingDesc
 	{
-		buildable 			"0"	
 		name 				"bio_condenser_lvl_3"
 		bp   				"buildings/resources/bio_condenser_lvl_3"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/bio_condenser"
 		description			"gui/hud/building_description/bio_condenser"
 		menu_icon			"gui/hud/building_icons/bio_condenser_lvl3"
 		require 			"headquarters"
-		//upgrade				"buildings/resources/bio_condenser_lvl_4"			
-		order				"15"
+		building_group		"liquid_pump"
+		buildable			"0"
 		radius_name			"pump"
 		min_radius			"20"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		type				"sludge_mine"
+		overrides			"sludge_mine,pipe"
 
 		building_functionality	"BUILD_ON_WATER|NO_FOUNDATION"
 
@@ -33,7 +31,7 @@ EntityBlueprint
 				{
 					carbonium 	"800"
 					steel 		"800"
-					palladium	"200"		
+					palladium	"200"
 				}
 			}		
 		}

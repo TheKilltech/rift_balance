@@ -1,8 +1,7 @@
 EntityBlueprint  // rare_element_mine_lvl_3
 {
-	name  "buildings/resources/rare_element_mine_lvl_3"
-
-	base_blueprint "buildings/resources/rare_element_mine_lvl_2"
+	name			"buildings/resources/rare_element_mine_lvl_3"
+	base_blueprint	"buildings/resources/rare_element_mine_lvl_2"
 
 	BuildingDesc
 	{
@@ -12,10 +11,11 @@ EntityBlueprint  // rare_element_mine_lvl_3
 		localization_id		"gui/hud/building_name/mining_drill"
 		description			"gui/hud/building_description/mining_drill_lvl_3"
 		menu_icon			"gui/hud/building_icons/rare_element_mine_lvl3"
-		order				"3"
 		//require 			"headquarters"
 		buildable			"0"
 		building_group		"carbonium_factory"
+		type				"solids_mine"
+		overrides			"solids_mine,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 				
 		costs

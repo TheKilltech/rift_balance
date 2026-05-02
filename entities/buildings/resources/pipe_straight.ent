@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // pipe_straight
 {
 	name  "buildings/resources/pipe_straight"
 
@@ -14,9 +14,9 @@ EntityBlueprint
 		description			"gui/hud/building_description/pipe_straight"
 		menu_icon			"gui/hud/building_icons/pipe_straight"
 		require 			"headquarters"
-		order				"2"		
+		order				"2"
 		building_mode		"line"
-		menu_action			"resource_clear"	
+		menu_action			"resource_clear"
 		check_connect		"1"
 		
 		building_functionality	"BUILD_ON_WATER|PIPE_MODE|NO_FOUNDATION"

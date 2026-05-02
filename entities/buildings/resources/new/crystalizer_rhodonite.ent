@@ -10,12 +10,12 @@ EntityBlueprint  // crystalizer_rhodonite
 		localization_id		"gui/hud/building_name/crystalizer_rhodonite"
 		description			"gui/hud/building_description/crystalizer_rhodonite"
 		menu_icon			"gui/hud/building_icons/crystalizer_rhodonite"
-		type				"pipe"
 		upgrade				"buildings/resources/crystalizer_rhodonite_lvl_2"
 		require 			"headquarters"
 		order				"22"
+		type				"rhodonite_fac"
+		overrides			"rhodonite_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -224,9 +224,9 @@ EntityBlueprint  // crystalizer_rhodonite
 		type	"quad"
 		color 
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.5"  // r
+			y "0.5"  // g
+			z "1"    // b
 			w "1"
 		}
 		size
@@ -432,12 +432,12 @@ EntityBlueprint  // crystalizer_rhodonite_lvl_2
 		localization_id		"gui/hud/building_name/crystalizer_rhodonite"
 		description			"gui/hud/building_description/crystalizer_rhodonite_lvl_2"
 		menu_icon			"gui/hud/building_icons/crystalizer_rhodonite_lvl_2"
-		type				"pipe"
 		upgrade				"buildings/resources/crystalizer_rhodonite_lvl_3"
 		buildable 			"0"
 		require 			"headquarters"
+		type				"rhodonite_fac"
+		overrides			"rhodonite_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -639,11 +639,11 @@ EntityBlueprint  // crystalizer_rhodonite_lvl_3
 		localization_id		"gui/hud/building_name/crystalizer_rhodonite"
 		description			"gui/hud/building_description/crystalizer_rhodonite_lvl_3"
 		menu_icon			"gui/hud/building_icons/crystalizer_rhodonite_lvl_3"
-		type				"pipe"
 		buildable 			"0"
 		require 			"headquarters"
+		type				"rhodonite_fac"
+		overrides			"rhodonite_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{

@@ -10,12 +10,12 @@ EntityBlueprint  // ore_mill
 		localization_id		"gui/hud/building_name/ore_mill"
 		description			"gui/hud/building_description/ore_mill"
 		menu_icon			"gui/hud/building_icons/ore_mill"
-		type				"pipe"
-		require 			"headquarters"
 		upgrade				"buildings/resources/ore_mill_lvl_2"
 		order				"4"
+		require 			"headquarters"
+		type				"ore_proc"
+		overrides			"ore_proc"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ore_mill_lvl_2,ore_mill_lvl_2"
 
 		costs
 		{
@@ -390,13 +390,14 @@ EntityBlueprint  // ore_mill_lvl_2
 		name 				"ore_mill_lvl_2"
 		bp   				"buildings/resources/ore_mill_lvl_2"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/ore_mill_lvl_2"
 		description			"gui/hud/building_description/ore_mill_lvl_2"
 		menu_icon			"gui/hud/building_icons/ore_mill_lvl_2"
-		require 			"headquarters"
 		upgrade				"buildings/resources/ore_mill_lvl_3"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ore_mill,ore_mill_lvl_3"
+		require 			"headquarters"
+		type				"ore_proc"
+		overrides			"ore_proc"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -586,13 +587,14 @@ EntityBlueprint  // ore_mill_lvl_3
 		name 				"ore_mill_lvl_3"
 		bp   				"buildings/resources/ore_mill_lvl_3"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/ore_mill_lvl_3"
 		description			"gui/hud/building_description/ore_mill_lvl_3"
 		menu_icon			"gui/hud/building_icons/ore_mill_lvl_3"
-		require 			"headquarters"
 		upgrade				"buildings/resources/ore_mill_lvl_4"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ore_mill,ore_mill_lvl_2"
+		require 			"headquarters"
+		type				"ore_proc"
+		overrides			"ore_proc,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -827,12 +829,13 @@ EntityBlueprint  // ore_mill_lvl_4
 		name 				"ore_mill_lvl_4"
 		bp   				"buildings/resources/ore_mill_lvl_4"
 		category 			"resources"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/ore_mill_lvl_4"
 		description			"gui/hud/building_description/ore_mill_lvl_4"
 		menu_icon			"gui/hud/building_icons/ore_mill_lvl_4"
 		require 			"headquarters"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ore_mill,ore_mill_lvl_2"
+		type				"ore_proc"
+		overrides			"ore_proc,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{

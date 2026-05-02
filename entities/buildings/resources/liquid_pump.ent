@@ -7,7 +7,6 @@ EntityBlueprint  // liquid_pump
 		name 				"liquid_pump"
 		bp   				"buildings/resources/liquid_pump"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/liquid_pump"
 		description			"gui/hud/building_description/liquid_pump"
 		menu_icon			"gui/hud/building_icons/liquid_pump"
@@ -17,6 +16,8 @@ EntityBlueprint  // liquid_pump
 		order				"1"
 		radius_name			"pump"
 		min_radius			"20"
+		type				"liquid_mine"
+		overrides			"liquid_mine,pipe"
 
 		building_functionality	"BUILD_ON_WATER|PIPE_MODE|NO_FOUNDATION"
 

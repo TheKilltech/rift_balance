@@ -11,13 +11,12 @@ EntityBlueprint  // pipe_junction
 		description			"gui/hud/building_description/pipe_junction"
 		menu_icon			"gui/hud/building_icons/pipe_junction"
 		category 			"liquids"
-		order				"8"
-		type				"pipe"
 		require 			"headquarters"
-		menu_action			"resource_clear"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
-		//check_connect		"1"
 		building_group		"pipeline"
+		menu_action			"resource_clear"
+		type				"pipe"
+		overrides			"pipe"
+		//check_connect		"1"
 
 		building_functionality	"BUILD_ON_WATER|PIPE_MODE|NO_FOUNDATION"
 
