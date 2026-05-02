@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // ammo_storage_lowcaliber
 {
 	name  "buildings/ammo/ammo_storage_lowcaliber"
 	
@@ -13,8 +13,10 @@ EntityBlueprint
 		require 			"headquarters"
 		order				"50"
 		limit			    "6"
-		limit_name			"ammo_storage_lowcaliber"			
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		limit_name			"ammo_storage_lowcaliber"
+		type				"ammo_storage"
+		overrides			"ammo_storage"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{

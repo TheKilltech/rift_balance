@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // ammo_storage_explosive
 {
 	name  "buildings/ammo/ammo_storage_explosive"
 	
@@ -14,7 +14,9 @@ EntityBlueprint
 		order				"52"
 		limit			    "6"
 		limit_name			"ammo_storage_explosive"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		type				"ammo_storage"
+		overrides			"ammo_storage"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{

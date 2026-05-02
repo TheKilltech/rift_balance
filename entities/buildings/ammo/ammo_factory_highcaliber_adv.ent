@@ -12,9 +12,10 @@ EntityBlueprint  // ammo_factory_highcaliber_adv
 		menu_icon				"gui/hud/building_icons/ammo_factory_highcaliber_adv"
 		upgrade					"buildings/ammo/ammo_factory_highcaliber_adv_lvl_2"
 		require 				"headquarters"
-		order					"31"	
+		order					"31"
+		type					"ammo_highcaliber_adv_fac"
+		overrides				"ammo_highcaliber_adv_fac"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"ammo_factory_highcaliber_adv,ammo_factory_highcaliber_adv_lvl_2,ammo_factory_highcaliber_adv_molt,ammo_factory_highcaliber_adv_molt_lvl_2,ammo_factory_highcaliber_adv_uranium,ammo_factory_highcaliber_adv_uranium_molt"
 
 		costs
 		{
@@ -439,10 +440,10 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_lvl_2
 		menu_icon				"gui/hud/building_icons/ammo_factory_highcaliber_adv_lvl_2"
 		//upgrade					"buildings/ammo/ammo_factory_highcaliber_adv_lvl_3"
 		require 				"headquarters"
-		order					"31"	
 		buildable				"0"
+		type					"ammo_highcaliber_adv_fac"
+		overrides				"ammo_highcaliber_adv_fac,pipe"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_highcaliber_adv,ammo_factory_highcaliber_adv_uranium"
 
 		costs
 		{
@@ -681,11 +682,11 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_molt
 		menu_icon				"gui/hud/building_icons/ammo_factory_highcaliber_adv_molt"
 		upgrade					"buildings/ammo/ammo_factory_highcaliber_adv_molt_lvl_2"
 		require 				"headquarters"
-		order					"31"
 		buildable				"0"
 		building_group			"ammo_factory_highcaliber_adv"
+		type					"ammo_highcaliber_adv_fac"
+		overrides				"ammo_highcaliber_adv_fac,pipe"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_highcaliber_adv,ammo_factory_highcaliber_adv_uranium"
 
 		costs
 		{
@@ -910,11 +911,11 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_molt_lvl_2
 		menu_icon				"gui/hud/building_icons/ammo_factory_highcaliber_adv_molt_lvl_2"
 		//upgrade					"buildings/ammo/ammo_factory_highcaliber_adv_uranium_molt"
 		require 				"headquarters"
-		order					"31"
 		buildable				"0"
 		building_group			"ammo_factory_highcaliber_adv"
+		type					"ammo_highcaliber_adv_fac"
+		overrides				"ammo_highcaliber_adv_fac,pipe"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_highcaliber_adv,ammo_factory_highcaliber_adv_uranium"
 
 		costs
 		{
@@ -1177,11 +1178,11 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_uranium
 		menu_icon				"gui/hud/building_icons/ammo_factory_highcaliber_adv_uranium"
 		upgrade					"buildings/ammo/ammo_factory_highcaliber_adv_molt_uranium"
 		require 				"headquarters"
-		order					"31"
 		buildable				"0"
 		building_group			"ammo_factory_highcaliber_adv"
+		type					"ammo_highcaliber_adv_fac"
+		overrides				"ammo_highcaliber_adv_fac,pipe"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_highcaliber_adv,ammo_factory_highcaliber_adv_lvl_2"
 
 		costs
 		{
@@ -1438,11 +1439,10 @@ EntityBlueprint  // ammo_factory_highcaliber_adv_uranium_molt
 		description				"gui/hud/building_description/ammo_factory_highcaliber_adv_uranium_molt"
 		menu_icon				"gui/hud/building_icons/ammo_factory_highcaliber_adv_molt_uranium"
 		require 				"headquarters"
-		order					"31"
 		buildable				"0"
-		building_group			"ammo_factory_highcaliber_adv"
+		type					"ammo_highcaliber_adv_fac"
+		overrides				"ammo_highcaliber_adv_fac,pipe"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_highcaliber_adv,ammo_factory_highcaliber_adv_lvl_2"
 
 		costs
 		{

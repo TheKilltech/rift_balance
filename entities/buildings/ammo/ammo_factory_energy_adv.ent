@@ -13,8 +13,9 @@ EntityBlueprint  // ammo_factory_energy_adv
 		upgrade					"buildings/ammo/ammo_factory_energy_adv_lvl_2"
 		require 				"headquarters"
 		order					"34"
+		type					"ammo_energy_adv_fac"
+		overrides				"ammo_energy_adv_fac"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"ammo_factory_energy_adv,ammo_factory_energy_adv_lvl_2,ammo_factory_energy_adv_lvl_3"
 
 		costs
 		{
@@ -365,11 +366,11 @@ EntityBlueprint  // ammo_factory_energy_adv_lvl_2
 		description				"gui/hud/building_description/ammo_factory_energy_adv"
 		menu_icon				"gui/hud/building_icons/ammo_factory_energy_adv_lvl_2"
 		upgrade					"buildings/ammo/ammo_factory_energy_adv_lvl_3"
-		type					"pipe"
 		require 				"headquarters"
 		buildable				"0"
+		type					"ammo_energy_adv_fac"
+		overrides				"ammo_energy_adv_fac,pipe"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_energy_adv,ammo_factory_energy_adv_lvl_2,ammo_factory_energy_adv_lvl_3"
 
 		costs
 		{
@@ -569,11 +570,11 @@ EntityBlueprint  // ammo_factory_energy_adv_lvl_3
 		localization_id			"gui/hud/building_name/ammo_factory_energy_adv"
 		description				"gui/hud/building_description/ammo_factory_energy_adv"
 		menu_icon				"gui/hud/building_icons/ammo_factory_energy_adv_lvl_3"
-		type					"pipe"
 		require 				"headquarters"
 		buildable				"0"
+		type					"ammo_energy_adv_fac"
+		overrides				"ammo_energy_adv_fac,pipe"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_energy_adv,ammo_factory_energy_adv_lvl_2,ammo_factory_energy_adv_lvl_3"
 
 		costs
 		{

@@ -11,11 +11,11 @@ EntityBlueprint  // ammo_factory_explosive_ext
 		description			"gui/hud/building_description/ammo_factory_explosive_ext"
 		menu_icon			"gui/hud/building_icons/ammo_factory_explosive_ext"
 		upgrade				"buildings/ammo/ammo_factory_explosive_ext_lvl_2"
-		type				"pipe"
 		require 			"headquarters"
-		order				"43"	
+		order				"43"
+		type				"ammo_explosive_ext_fac"
+		overrides			"ammo_explosive_ext_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{
@@ -496,12 +496,12 @@ EntityBlueprint  // ammo_factory_explosive_ext_lvl_2
 		description			"gui/hud/building_description/ammo_factory_explosive_ext"
 		menu_icon			"gui/hud/building_icons/ammo_factory_explosive_ext_lvl_2"
 		//upgrade				"buildings/ammo/ammo_factory_explosive_adv_lvl_3"
-		type				"pipe"
 		require 			"headquarters"
 		order				"43"
 		buildable			"0"
+		type				"ammo_explosive_ext_fac"
+		overrides			"ammo_explosive_ext_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{

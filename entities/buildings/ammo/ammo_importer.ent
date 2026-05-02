@@ -10,12 +10,12 @@ EntityBlueprint  // ammo_importer
 		localization_id			"gui/hud/building_name/ammo_importer"
 		description				"gui/hud/building_description/ammo_importer"
 		menu_icon				"gui/hud/building_icons/ammo_importer"
-		type					"pipe"
-		require 				"headquarters"
 		//upgrade					"buildings/ammo/ammo_importer_lvl_2"
-		order					"51"	
-		exclude_terrain_types 	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		require 				"headquarters"
+		order					"51"
+		type					"ammo_convertor"
+		overrides				"ammo_convertor"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
 
 		costs
 		{
