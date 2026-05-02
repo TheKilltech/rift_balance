@@ -10,9 +10,11 @@ EntityBlueprint  // short_range_radar
 		localization_id		"gui/hud/building_name/short_range_radar"
 		description			"gui/hud/building_description/short_range_radar"
 		menu_icon			"gui/hud/building_icons/short_range_radar"
+		upgrade				"buildings/defense/short_range_radar_lvl_2"
 		require 			"headquarters"
 		order				"4"
-		upgrade				"buildings/defense/short_range_radar_lvl_2"
+		type				"radar"
+		overrides			"radar"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -40,7 +42,7 @@ EntityBlueprint  // short_range_radar
 				value			 	"15"
 			}
 		}
-		priority 5	
+		priority 5
 		out
 		{
 		}
@@ -73,7 +75,7 @@ EntityBlueprint  // short_range_radar
 			{
 				health 								"66"
 				destroy_comp_delay 					"0"
-				destroy_comp_event 					"66_destroy"				
+				destroy_comp_event 					"66_destroy"
 				destroyed_state_effect_group 		"66_state"
 			}
 			DestructionLevel

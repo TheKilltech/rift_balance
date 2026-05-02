@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // ai_hub
 {
 	name  "buildings/defense/ai_hub"
 
@@ -10,11 +10,12 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/ai_hub"
 		description			"gui/hud/building_description/ai_hub"
 		menu_icon			"gui/hud/building_icons/ai_hub"
+		upgrade				"buildings/defense/ai_hub_lvl_2"
 		require 			"headquarters"
 		order				"4"
-		upgrade				"buildings/defense/ai_hub_lvl_2"
+		type				"ai_fac"
+		overrides			"ai_fac"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"ai_hub_lvl_2,ai_hub_lvl_3"
 		
 		costs
 		{

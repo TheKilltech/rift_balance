@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // shield_generator/shield_lvl_3
 {
 	name  "buildings/defense/shield_generator/shield_lvl_3"
 
@@ -42,7 +42,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // shield_generator_lvl_3
 {
 	name  			"buildings/defense/shield_generator_lvl_3"
 	base_blueprint 	"buildings/defense/shield_generator_lvl_2"
@@ -57,11 +57,10 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/shield_generator_lvl3"
 		require 			"headquarters"
 		order				"46"
-		type				"pipe"		
-		//upgrade				"buildings/defense/shield_generator_lvl_4"
 		buildable			"0"
+		type				"shield"
+		overrides			"shield,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -155,24 +154,28 @@ EntityBlueprint
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
-
-		//EffectGroup
-		//{
-		//	group "working"
-		//	enabled "0"
-		//	Effects
-		//	{
-		//		Effect
-		//		{
-		//			blueprint "effects/buildings_and_machines/electric_machinery_big"
-		//		}
-		//	}
-		//}	
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////Misc/////////////////////////
 		EffectGroup
 		{
 			group "level"
@@ -185,23 +188,8 @@ EntityBlueprint
 					bone "att_level"
 				}
 			}
-		}	
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_in_arrow"
-				}
-			}
-		}		
-	}	
+		}
+	}
 
 }
 

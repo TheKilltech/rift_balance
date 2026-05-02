@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // shield_generator
 {
 	name  "buildings/defense/shield_generator"
 
@@ -10,12 +10,12 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/shield_generator"
 		description			"gui/hud/building_description/shield_generator"
 		menu_icon			"gui/hud/building_icons/shield_generator"
+		upgrade				"buildings/defense/shield_generator_lvl_2"
 		require 			"headquarters"
 		order				"46"
-		type				"pipe"		
-		upgrade				"buildings/defense/shield_generator_lvl_2"
+		type				"shield"
+		overrides			"shield,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -285,29 +285,16 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
-
-		//EffectGroup
-		//{
-		//	group "working"
-		//	enabled "0"
-		//	Effects
-		//	{
-		//		Effect
-		//		{
-		//			blueprint "effects/buildings_and_machines/electric_machinery_big"
-		//		}
-		//	}
-		//}	
+		}
 	}
-	
 }
 
-EntityBlueprint
+
+EntityBlueprint  // shield_generator/shield
 {
 	name  "buildings/defense/shield_generator/shield"
 
