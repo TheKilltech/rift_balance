@@ -1873,6 +1873,55 @@ EntityBlueprint  // large_solid_material_storage_basic
 		material "buildings/resources/large_solid_material_storage_lvl_2"
 	}
 	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/large_solid_material_storage"
+	}
+	
+	children
+	{
+		EntityBlueprint  // large_energy_storage_section1
+		{
+			name "buildings/resources/large_solids_storage_section1"
+			
+			AttachmentDesc
+			{
+				attachment "att_section_1"
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"  // r
+					y "0.7"  // g
+					z "0.3"  // b
+					w "1"
+				}
+				size
+				{
+					x "4"
+					y "4"
+				}
+
+				visibility			"always"
+				layer_group			"common_buildings"
+			}
+		}
+		
+		EntityBlueprint  // large_solids_storage_section3
+		{
+			name			"buildings/resources/large_solids_storage_section3"
+			base_blueprint	"buildings/resources/large_solids_storage_section1"
+			
+			AttachmentDesc
+			{
+				attachment "att_section_3"
+			}
+		}
+	}
+	
 	TypeDesc
 	{
 		type "building|resource"
@@ -1940,7 +1989,7 @@ EntityBlueprint  // large_solid_material_storage_basic
 		size
 		{
 			x "4"
-			y "9"
+			y "4"  // 9
 		}
 
 		visibility			"always"
@@ -2253,6 +2302,55 @@ EntityBlueprint  // large_solid_material_storage_other
 		material "buildings/resources/large_solid_material_storage_lvl_3"
 	}
 
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/large_solid_material_storage"
+	}
+	
+	children
+	{
+		EntityBlueprint  // large_energy_storage_section1
+		{
+			name "buildings/resources/large_solids_storage_section1"
+			
+			AttachmentDesc
+			{
+				attachment "att_section_1"
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"  // r
+					y "0.7"  // g
+					z "0.3"  // b
+					w "1"
+				}
+				size
+				{
+					x "4"
+					y "4"
+				}
+
+				visibility			"always"
+				layer_group			"common_buildings"
+			}
+		}
+		
+		EntityBlueprint  // large_solids_storage_section3
+		{
+			name			"buildings/resources/large_solids_storage_section3"
+			base_blueprint	"buildings/resources/large_solids_storage_section1"
+			
+			AttachmentDesc
+			{
+				attachment "att_section_3"
+			}
+		}
+	}
+	
 	TypeDesc
 	{
 		type "building|resource"
@@ -2320,7 +2418,7 @@ EntityBlueprint  // large_solid_material_storage_other
 		size
 		{
 			x "4"
-			y "9"
+			y "4"  // 9
 		}
 
 		visibility			"always"
@@ -2616,6 +2714,55 @@ EntityBlueprint  // large_solid_material_storage_rare
 		material "buildings/resources/large_solid_material_storage_lvl_1"
 	}
 
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/large_solid_material_storage"
+	}
+	
+	children
+	{
+		EntityBlueprint  // large_energy_storage_section1
+		{
+			name "buildings/resources/large_solids_storage_section1"
+			
+			AttachmentDesc
+			{
+				attachment "att_section_1"
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"  // r
+					y "0.7"  // g
+					z "0.3"  // b
+					w "1"
+				}
+				size
+				{
+					x "4"
+					y "4"
+				}
+
+				visibility			"always"
+				layer_group			"common_buildings"
+			}
+		}
+		
+		EntityBlueprint  // large_solids_storage_section3
+		{
+			name			"buildings/resources/large_solids_storage_section3"
+			base_blueprint	"buildings/resources/large_solids_storage_section1"
+			
+			AttachmentDesc
+			{
+				attachment "att_section_3"
+			}
+		}
+	}
+	
 	TypeDesc
 	{
 		type "building|resource"
@@ -2683,7 +2830,7 @@ EntityBlueprint  // large_solid_material_storage_rare
 		size
 		{
 			x "4"
-			y "9"
+			y "4"  // 9
 		}
 
 		visibility			"always"
