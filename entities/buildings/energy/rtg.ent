@@ -738,3 +738,206 @@ EntityBlueprint  // rtg_lvl_3
 	}	
 }
 
+
+
+EntityBlueprint  // rtg_ghost
+{
+	name "buildings/energy/rtg_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/trap_energy.mesh"
+		material "buildings/defense/trap_energy"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/trap_energy"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint 	"effects/weapon_items/railgun_ghost"
+					bone 		"att_vismod_1"
+					scale 		"2.4 3.3 3.3"
+					orientation "0 90 0"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // rtg_lvl_2_ghost
+{
+	name "buildings/energy/rtg_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/trap_energy.mesh"
+		material "buildings/defense/trap_energy"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/trap_energy"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint 	"effects/weapon_items/railgun_ghost"
+					bone 		"att_vismod_1"
+					scale 		"2.4 3.3 3.3"
+					orientation "0 90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // rtg_lvl_3_ghost
+{
+	name "buildings/energy/rtg_lvl_3_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/trap_energy.mesh"
+		material "buildings/defense/trap_energy"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/trap_energy"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint 	"effects/weapon_items/railgun_ghost"
+					bone 		"att_vismod_1"
+					scale 		"2.4 3.3 3.3"
+					orientation "0 90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+			}
+		}
+	}
+}

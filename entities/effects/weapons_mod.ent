@@ -164,6 +164,22 @@ EntityBlueprint "effects/no_lifetime"		//railgun
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//railgun_ghost
+{
+	name "effects/weapon_items/railgun_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/railgun.mesh"
+		material	"selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//heavy_plasma_gun
 {
 	name "effects/weapon_items/heavy_plasma_gun"
