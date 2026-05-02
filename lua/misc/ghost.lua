@@ -123,13 +123,19 @@ function  ghost:CheckEntityBuildable( entity, transform, floor, id, checkActive 
         end
 	else
 		if testReflection.flag == CBF_OVERRIDES then
-			materialToSet = "hologram/violet"
+			materialToSet = "hologram/grey"  --"hologram/violet"
 		elseif ( canBuild ) then
             materialToSet = "hologram/blue"
         else
             materialToSet = "hologram/red"
         end
     end
+	
+	--if testReflection.entities_to_sell then  -- contains some kind of array? but how to access content??
+	--	for overrideEnt in Iter(testReflection.entities_to_sell) do
+	--		EntityService:ChangeMaterial( overrideEnt, "hologram/violet")
+	--	end
+	--end
 
     EntityService:ChangeMaterial( entity, materialToSet)
     for child in Iter( self:GetChildren() ) do
