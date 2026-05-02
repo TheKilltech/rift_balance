@@ -95,16 +95,21 @@ function SetupBuildingScale( entity, database, isGhost )
 	local offsetX   = database:GetFloatOrDefault( "offset_x", 0 )
 	local offsetY   = database:GetFloatOrDefault( "offset_y", 0 )
 	local offsetZ   = database:GetFloatOrDefault( "offset_z", 0 )
-	local x = scaleMin + math.random() * ( scaleMax - scaleMin )
+	local s = scaleMin + math.random() * ( scaleMax - scaleMin )
+	local sx        = s*database:GetFloatOrDefault( "scale_x", 1 )
+	local sy        = s*database:GetFloatOrDefault( "scale_y", 1 )
+	local sz        = s*database:GetFloatOrDefault( "scale_z", 1 )
 	local pos = EntityService:GetPosition( entity )
-	EntityService:SetScale( entity, x, x, x )
-	--EntityService:SetPhysicsScale( entity, x, x, x )  -- apparently physics are already scaled via SetScale
-	EntityService:SetNavMeshScale( entity, x, x, x )
+	EntityService:SetScale( entity, sx, sy, sz )
+	--EntityService:SetPhysicsScale( entity, sx, sy, sz )  -- apparently physics are already scaled via SetScale
+	EntityService:SetNavMeshScale( entity, sx, sy, sz )
 	if not isGhost then
 		EntityService:SetPosition( entity, pos.x + offsetX, pos.y + offsetY, pos.z + offsetZ )
+	else
+		EntityService:SetPosition( entity, offsetX, offsetY, offsetZ )
 	end
 	--local children = EntityService:GetChildren(entity, true)
 	--for child in Iter(children) do
-	--	EntityService:SetPhysicsScale( child, x, x, x )
+	--	EntityService:SetPhysicsScale( child, sx, sy, sz )
 	--end
 end
