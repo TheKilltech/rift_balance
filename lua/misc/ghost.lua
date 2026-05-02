@@ -121,8 +121,10 @@ function  ghost:CheckEntityBuildable( entity, transform, floor, id, checkActive 
         else
             materialToSet = "hologram/deny"
         end
-    else
-        if ( canBuild ) then
+	else
+		if testReflection.flag == CBF_OVERRIDES then
+			materialToSet = "hologram/violet"
+		elseif ( canBuild ) then
             materialToSet = "hologram/blue"
         else
             materialToSet = "hologram/red"
