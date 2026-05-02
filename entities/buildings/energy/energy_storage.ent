@@ -7,8 +7,8 @@ EntityBlueprint  // energy_storage
 		name 				"energy_storage"
 		bp   				"buildings/energy/energy_storage"
 		category 			"energy"
-		localization_id		"gui/hud/building_name/energy_storage"
-		description			"gui/hud/building_description/energy_storage"
+		localization_id		"gui/hud/building_name/energy_storage_new"
+		description			"gui/hud/building_description/energy_storage_new"
 		menu_icon			"gui/hud/building_icons/energy_storage"
 		require 			"headquarters"
 		type				"energy_storage_small"
@@ -38,14 +38,30 @@ EntityBlueprint  // energy_storage
 			Storage
 			{
 				resource "energy"
-				max 	 "10000"
+				max 	 "20000"
 			}
 		}
 	}
 
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
+		script "lua/buildings/buff_source.lua"
+
+		database
+		{
+			cone_effect					string:"build_cone_2x2"
+			cone_effect_sell			string:"sell_small"
+			radius						float:"16"
+			range						float:"16"
+			//buff_mod_upkeep				float:"1.0"
+			buff_modificator			float:"1.05"
+			buff_source_name			string:"power_grid_balancer"
+			buff_source_level			int:"1"
+			buff_localization			string:"buff_name/buff_power_grid_balancer"
+			buff_icon					string:"gui/hud/building_icons/energy_storage"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+			display_radius_group		string:"power_grid_balancer"
+		}
 	}
 
 	HealthDesc
