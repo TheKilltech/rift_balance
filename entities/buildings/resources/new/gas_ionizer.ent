@@ -7,7 +7,6 @@ EntityBlueprint  // gas_ionizer
 		name 				"gas_ionizer"
 		bp   				"buildings/resources/gas_ionizer"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/gas_ionizer"
 		description			"gui/hud/building_description/gas_ionizer"
 		menu_icon			"gui/hud/building_icons/gas_ionizer"
@@ -16,8 +15,9 @@ EntityBlueprint  // gas_ionizer
 		buildable			"0"
 		upgrade				"buildings/resources/gas_ionizer_lvl_2"
 		order				"20"
+		type				"plasma_fac"
+		overrides			"plasma_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"gas_ionizer_lvl_2,gas_ionizer_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -519,8 +519,9 @@ EntityBlueprint  // gas_ionizer_lvl_2
 		require 			"headquarters"
 		building_group		"ionizer"
 		buildable			"0"
+		type				"plasma_fac"
+		overrides			"plasma_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"gas_ionizer,gas_ionizer_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -788,8 +789,9 @@ EntityBlueprint  // gas_ionizer_lvl_3
 		require 			"headquarters"
 		building_group		"ionizer"
 		buildable			"0"
+		type				"plasma_fac"
+		overrides			"plasma_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"gas_ionizer,gas_ionizer_lvl_2,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{

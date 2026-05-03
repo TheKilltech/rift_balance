@@ -13,8 +13,9 @@ EntityBlueprint  // ammo_factory_liquid_adv
 		//upgrade					"buildings/ammo/ammo_factory_liquid_adv_lvl_2"
 		require 				"headquarters"
 		order					"35"
+		type					"ammo_liquid_adv_fac"
+		overrides				"ammo_liquid_adv_fac,pipe"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_liquid_adv_gas,ammo_factory_liquid_adv_lvl_2"
 
 		costs
 		{
@@ -414,11 +415,11 @@ EntityBlueprint  // ammo_factory_liquid_adv_lvl_2
 		menu_icon				"gui/hud/building_icons/ammo_factory_liquid_adv_lvl_2"
 		//upgrade					"buildings/ammo/ammo_factory_liquid_adv_lvl_3"
 		require 				"headquarters"
-		order					"36"
 		buildable				"0"
 		building_group			"ammo_factory_liquid_adv"
+		type					"ammo_liquid_adv_fac"
+		overrides				"ammo_liquid_adv_fac,pipe"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_liquid_adv,ammo_factory_liquid_adv_gas"
 
 		costs
 		{
@@ -647,11 +648,11 @@ EntityBlueprint  // ammo_factory_liquid_adv_gas
 		description				"gui/hud/building_description/ammo_factory_liquid_adv_gas"
 		menu_icon				"gui/hud/building_icons/ammo_factory_liquid_adv_lvl_2"
 		require 				"headquarters"
-		order					"37"
 		buildable				"0"
 		building_group			"ammo_factory_liquid_adv"
+		type					"ammo_liquid_adv_fac"
+		overrides				"ammo_liquid_adv_fac,pipe"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_liquid_adv,ammo_factory_liquid_adv_lvl_2"
 
 		costs
 		{
@@ -726,7 +727,7 @@ EntityBlueprint  // ammo_factory_liquid_adv_gas
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -735,7 +736,7 @@ EntityBlueprint  // ammo_factory_liquid_adv_gas
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -751,7 +752,7 @@ EntityBlueprint  // ammo_factory_liquid_adv_gas
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
@@ -765,7 +766,7 @@ EntityBlueprint  // ammo_factory_liquid_adv_gas
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect

@@ -10,14 +10,16 @@ EntityBlueprint  // regenerating_extractor
 		localization_id		"gui/hud/building_name/regenerating_extractor"
 		description			"gui/hud/building_description/regenerating_extractor"
 		menu_icon			"gui/hud/building_icons/regenerating_extractor"
-		order				"3"
 		upgrade				"buildings/resources/regenerating_extractor_lvl_2"
 		//require 			"headquarters"
-		type				"pipe"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,regenerating_extractor_lvl_2,regenerating_extractor_lvl_3"
 		radius_name			"resin_extractor"
+		//order				"3"
 		min_radius			"15"
+		buildable			"0"
+		building_group		"carbonium_factory"
+		type				"solids_mine"
+		overrides			"solids_mine,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -558,12 +560,13 @@ EntityBlueprint  // regenerating_extractor_lvl_2
 		order				"3"
 		upgrade				"buildings/resources/regenerating_extractor_lvl_3"
 		//require 			"headquarters"
-		type				"pipe"
-		buildable 			"0"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,regenerating_extractor,regenerating_extractor_lvl_3"
 		radius_name			"resin_extractor"
 		min_radius			"15"
+		buildable			"0"
+		building_group		"carbonium_factory"
+		type				"solids_mine"
+		overrides			"solids_mine,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -829,12 +832,13 @@ EntityBlueprint  // regenerating_extractor_lvl_3
 		menu_icon			"gui/hud/building_icons/regenerating_extractor_lvl_3"
 		order				"3"
 		//require 			"headquarters"
-		type				"pipe"
-		buildable 			"0"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,regenerating_extractor,regenerating_extractor_lvl_2"
 		radius_name			"resin_extractor"
 		min_radius			"15"
+		buildable			"0"
+		building_group		"carbonium_factory"
+		type				"solids_mine"
+		overrides			"solids_mine,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{

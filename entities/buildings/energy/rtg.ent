@@ -12,9 +12,10 @@ EntityBlueprint  // rtg
 		menu_icon			"gui/hud/building_icons/rtg"
 		require 			"headquarters"
 		upgrade				"buildings/energy/rtg_lvl_2"
-		order				"12"
+		order				"5"
+		type				"rtg"
+		overrides			"rtg"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"rtg_lvl_2,rtg_lvl_3"
 
 		costs
 		{
@@ -62,9 +63,19 @@ EntityBlueprint  // rtg
 
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
+		script "lua/buildings/building_buffable.lua"
+				
+		database {
+			cone_effect			string:"build_cone_2x2"
+			cone_effect_sell	string:"sell_small"
+			
+			buff_buildings				string:"buildings/energy/energy_storage,buildings/energy/energy_storage_lvl_2,buildings/energy/energy_storage_lvl_3"
+			buff_localization			string:"buff_name/buff_power_grid_balancer"
+			buff_icon					string:"gui/hud/building_icons/energy_storage"
+			display_radius_group		string:"power_grid_balancer"
+		}
 	}
-
+	
 	HealthDesc
 	{
 		max_health 					"500"
@@ -324,19 +335,18 @@ EntityBlueprint  // rtg_lvl_2
 
 	BuildingDesc
 	{
-		buildable			"0"		
+		buildable			"0"
 		name 				"rtg_lvl_2"
 		bp   				"buildings/energy/rtg_lvl_2"
 		category 			"energy"
 		localization_id		"gui/hud/building_name/rtg"
 		description			"gui/hud/building_description/rtg"
 		menu_icon			"gui/hud/building_icons/rtg_lvl_2"
-		type				"pipe"
 		require 			"headquarters"
-		order				"12"
+		type				"rtg"
+		overrides			"rtg,pipe"
 		upgrade				"buildings/energy/rtg_lvl_3"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,rtg,rtg_lvl_3"
 		
 		costs
 		{
@@ -346,7 +356,7 @@ EntityBlueprint  // rtg_lvl_2
 				building_time 50
 				building_cost
 				{
-					carbonium 	"150"	
+					carbonium 	"150"
 					steel 		"100"
 					uranium		"600"
 				}
@@ -439,11 +449,11 @@ EntityBlueprint  // rtg_lvl_2
 		{
 			"buildings/effects_big_base"
 		}
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -458,7 +468,7 @@ EntityBlueprint  // rtg_lvl_2
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -469,7 +479,7 @@ EntityBlueprint  // rtg_lvl_2
 					bone "att_in_2_arrow"
 				}
 			}
-		}	
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -539,18 +549,17 @@ EntityBlueprint  // rtg_lvl_3
 
 	BuildingDesc
 	{
-		buildable			"0"		
+		buildable			"0"
 		name 				"rtg_lvl_3"
 		bp   				"buildings/energy/rtg_lvl_3"
 		category 			"energy"
 		localization_id		"gui/hud/building_name/rtg"
 		description			"gui/hud/building_description/rtg"
 		menu_icon			"gui/hud/building_icons/rtg_lvl_3"
-		type				"pipe"
 		require 			"headquarters"
-		order				"12"
+		type				"rtg"
+		overrides			"rtg,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,rtg,rtg_lvl_2"
 		
 		costs
 		{
@@ -729,3 +738,206 @@ EntityBlueprint  // rtg_lvl_3
 	}	
 }
 
+
+
+EntityBlueprint  // rtg_ghost
+{
+	name "buildings/energy/rtg_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/trap_energy.mesh"
+		material "buildings/defense/trap_energy"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/trap_energy"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint 	"effects/weapon_items/railgun_ghost"
+					bone 		"att_vismod_1"
+					scale 		"2.4 3.3 3.3"
+					orientation "0 90 0"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // rtg_lvl_2_ghost
+{
+	name "buildings/energy/rtg_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/trap_energy.mesh"
+		material "buildings/defense/trap_energy"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/trap_energy"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint 	"effects/weapon_items/railgun_ghost"
+					bone 		"att_vismod_1"
+					scale 		"2.4 3.3 3.3"
+					orientation "0 90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // rtg_lvl_3_ghost
+{
+	name "buildings/energy/rtg_lvl_3_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/trap_energy.mesh"
+		material "buildings/defense/trap_energy"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/defense/trap_energy"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint 	"effects/weapon_items/railgun_ghost"
+					bone 		"att_vismod_1"
+					scale 		"2.4 3.3 3.3"
+					orientation "0 90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+			}
+		}
+	}
+}

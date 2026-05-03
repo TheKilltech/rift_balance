@@ -7,15 +7,15 @@ EntityBlueprint  // reagent_refinery
 		name 				"reagent_refinery"
 		bp   				"buildings/resources/reagent_refinery"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/reagent_refinery"
 		description			"gui/hud/building_description/reagent_refinery"
 		menu_icon			"gui/hud/building_icons/reagent_refinery"
 		require 			"headquarters"
 		order				"15"
 		upgrade				"buildings/resources/reagent_refinery_lvl_2"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		type				"reagent_fac"
+		overrides			"reagent_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -452,15 +452,14 @@ EntityBlueprint  //reagent_refinery_lvl_2
 		name 				"reagent_refinery_lvl_2"
 		bp   				"buildings/resources/reagent_refinery_lvl_2"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/reagent_refinery"
 		description			"gui/hud/building_description/reagent_refinery"
 		menu_icon			"gui/hud/building_icons/reagent_refinery_lvl_2"
-		require 			"headquarters"
-		order				"30"
 		upgrade				"buildings/resources/reagent_refinery_lvl_3"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		require 			"headquarters"
+		type				"reagent_fac"
+		overrides			"reagent_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -471,8 +470,8 @@ EntityBlueprint  //reagent_refinery_lvl_2
 				building_cost
 				{
 					carbonium 	"1000"
-					steel 		"2500"	
-					cobalt		"1000"		
+					steel 		"2500"
+					cobalt		"1000"
 				}
 			}		
 		}
@@ -699,14 +698,13 @@ EntityBlueprint  // reagent_refinery_lvl_3
 		name 				"reagent_refinery_lvl_3"
 		bp   				"buildings/resources/reagent_refinery_lvl_3"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/reagent_refinery"
 		description			"gui/hud/building_description/reagent_refinery"
 		menu_icon			"gui/hud/building_icons/reagent_refinery_lvl_3"
 		require 			"headquarters"
-		order				"30"	
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		type				"reagent_fac"
+		overrides			"reagent_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{

@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // research_station
 {
 	name  "buildings/main/research_station"
 
@@ -12,16 +12,15 @@ EntityBlueprint
 		name 				"research_station"
 		bp   				"buildings/main/research_station"
 		category 			"main"
-		//type				"pipe"
 		localization_id		"gui/hud/building_name/research_station"
 		description			"gui/hud/building_description/research_station"
 		menu_icon			"gui/hud/building_icons/research_station"
-		require 			"headquarters"
 		//upgrade				"buildings/main/research_station_lvl_2"
+		require 			"headquarters"
 		order				"6"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		is_shortcut_bindable	"0"
 		hide_treasures 		"1"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
 		{

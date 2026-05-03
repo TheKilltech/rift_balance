@@ -1184,6 +1184,39 @@ EntityBlueprint "effects/no_lifetime"		//wturbine3
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//gas_plant
+{
+	name "effects/buildings_and_machines/gas_plant"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/gas_filtering_plant.mesh"
+		material "buildings/resources/bio_titanium_refinery"
+		//material "buildings/resources/gas_filtering_plant"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//gas_plant_ghost
+{
+	name "effects/buildings_and_machines/gas_plant_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/gas_filtering_plant.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//mine1
 {
 	name "effects/buildings_and_machines/mine1"

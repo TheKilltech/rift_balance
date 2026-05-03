@@ -13,8 +13,9 @@ EntityBlueprint  // ammo_factory_explosive_liquid
 		upgrade				"buildings/ammo/ammo_factory_explosive_liquid_lvl_2"
 		require 			"headquarters"
 		order				"2"
+		type				"ammo_basic_fac"
+		overrides			"ammo_basic_fac"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_explosive_liquid,ammo_factory_explosive_liquid_lvl_2"
 		
 		costs
 		{
@@ -436,15 +437,15 @@ EntityBlueprint  // ammo_factory_explosive_liquid_lvl_2
 		name 				"ammo_factory_explosive_liquid_lvl_2"
 		bp   				"buildings/ammo/ammo_factory_explosive_liquid_lvl_2"
 		category 			"ammo"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/ammo_factory_explosive_liquid"
 		description			"gui/hud/building_description/ammo_factory_explosive_liquid"
 		menu_icon			"gui/hud/building_icons/ammo_factory_explosive_liquid_lvl_2"
 		//upgrade				"buildings/ammo/ammo_factory_explosive_liquid_lvl_3"
 		require 			"headquarters"
 		buildable			"0"
+		type				"ammo_basic_fac"
+		overrides			"ammo_basic_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_explosive_liquid,ammo_factory_explosive_liquid_lvl_2"
 		
 		costs
 		{

@@ -1,19 +1,19 @@
-EntityBlueprint
+EntityBlueprint  // pipe_connector_x
 {
 	name  "buildings/resources/pipe_connector_x"
 
 	BuildingDesc
 	{
-		buildable 	"0"
-		name 		"pipe_connector_x"
-		bp   		"buildings/resources/pipe_connector_x"
-		ghost_bp 	"buildings/resources/pipe_connector_x_ghost"
+		buildable 			"0"
+		name 				"pipe_connector_x"
+		bp   				"buildings/resources/pipe_connector_x"
+		ghost_bp 			"buildings/resources/pipe_connector_x_ghost"
 		localization_id		"gui/hud/building_name/pipe_straight"
-		category 	"resources"
-		type		"pipe"
-		require 	"headquarters"
+		category 			"liquids"
+		type				"pipe"
+		require 			"headquarters"
 		building_mode		"line"
-		menu_action			"resource_clear"	
+		menu_action			"resource_clear"
 		check_connect		"1"
 		
 		building_functionality	"BUILD_ON_WATER|PIPE_MODE|NO_FOUNDATION"

@@ -1,0 +1,312 @@
+EntityBlueprint  // energy_storage
+{
+	name  "buildings/energy/energy_storage"
+
+	BuildingDesc
+	{
+		name 				"energy_storage"
+		bp   				"buildings/energy/energy_storage"
+		category 			"energy"
+		localization_id		"gui/hud/building_name/energy_storage_new"
+		description			"gui/hud/building_description/energy_storage_new"
+		menu_icon			"gui/hud/building_icons/energy_storage"
+		require 			"headquarters"
+		type				"energy_storage_small"
+		overrides			"energy_storage_small"
+		upgrade				"buildings/energy/energy_storage_lvl_2"
+		order				"2"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"50"
+				}
+			}
+		}
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "energy"
+				max 	 "20000"
+			}
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/buff_source.lua"
+
+		database
+		{
+			cone_effect					string:"build_cone_2x2"
+			cone_effect_sell			string:"sell_small"
+			radius						float:"16"
+			range						float:"16"
+			//buff_mod_upkeep				float:"1.0"
+			buff_modificator			float:"1.05"
+			buff_source_name			string:"power_grid_balancer"
+			buff_source_level			int:"1"
+			buff_localization			string:"buff_name/buff_power_grid_balancer"
+			buff_icon					string:"gui/hud/building_icons/energy_storage"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+			display_radius_group		string:"power_grid_balancer"
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"500"
+		health 						"500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/energy_storage_lvl_1.mesh"
+		material "buildings/energy/energy_storage_lvl_1"
+	}
+
+	TypeDesc
+	{
+		type "building|energy"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/energy/energy_storage_lvl_1"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "idle_working"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "1.45"
+
+						position
+						{
+							x "0.0"
+							y "1.0"
+							z "0.0"
+						}
+					}
+				}
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+   			PhysicsBoxShape
+   			{
+    				x	4
+    				y	4
+    				z	4
+   			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "0"    // r
+			y "0.8"  // g
+			z "0.8"  // b
+			w "1"
+		}
+		size
+		{
+			x "2"
+			y "2"
+		}
+
+		visibility			"always"
+		layer_group			"common_buildings"
+	}
+
+	FogOfWarRevealerComponentDesc
+	{
+		radius "16"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	LootDesc
+	{
+		explosion_max_power 	"2000"
+		explosion_min_power 	"1000"
+	}
+
+	DestroyDesc
+	{
+
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "66_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				key "33_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/explosion_medium_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_prefix 			"meshes/misc/building_small_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_lifetime "3"
+				}
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_energy/explosion_building_energy_medium"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime "3"
+				}
+
+				key "default"
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"6000"
+					explosion_min_power 	"2000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime "3"
+				}
+
+				key "quicksand"
+			}
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_electric_small_base"
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "powered"
+			enabled "1"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_2x2_omni_light"
+					bone "att_light"
+					//random_delay "0.1"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "1"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/energy_storage_working"	
+					delay "0.5"
+				}
+			}
+		}
+	}
+}

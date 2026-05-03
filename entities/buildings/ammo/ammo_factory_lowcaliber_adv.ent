@@ -13,8 +13,9 @@ EntityBlueprint  // ammo_factory_lowcaliber_adv
 		upgrade				"buildings/ammo/ammo_factory_lowcaliber_adv_lvl_2"
 		require 			"headquarters"
 		order				"30"
-		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
-		overrides			"ammo_factory_lowcaliber_adv,ammo_factory_lowcaliber_adv_lvl_2,ammo_factory_lowcaliber_adv_molt,ammo_factory_lowcaliber_adv_molt_lvl_2,ammo_factory_lowcaliber_adv_uranium,ammo_factory_lowcaliber_adv_uranium_molt"
+		type				"ammo_lowcaliber_adv_fac"
+		overrides			"ammo_lowcaliber_adv_fac"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{
@@ -433,16 +434,15 @@ EntityBlueprint  // ammo_factory_lowcaliber_adv_lvl_2
 		name 				"ammo_factory_lowcaliber_adv_lvl_2"
 		bp   				"buildings/ammo/ammo_factory_lowcaliber_adv_lvl_2"
 		category 			"ammo"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/ammo_factory_lowcaliber_adv"
 		description			"gui/hud/building_description/ammo_factory_lowcaliber_adv"
 		menu_icon			"gui/hud/building_icons/ammo_factory_lowcaliber_adv_lvl_2"
 		//upgrade				"buildings/ammo/ammo_factory_lowcaliber_adv_lvl_3"
 		require 			"headquarters"
-		order				"30"
 		buildable			"0"
+		type				"ammo_lowcaliber_adv_fac"
+		overrides			"ammo_lowcaliber_adv_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_lowcaliber_adv,ammo_factory_lowcaliber_adv_lvl_2,ammo_factory_lowcaliber_adv_molt,ammo_factory_lowcaliber_adv_molt_lvl_2,ammo_factory_lowcaliber_adv_uranium,ammo_factory_lowcaliber_adv_uranium_molt"
 		
 		costs
 		{
@@ -680,17 +680,16 @@ EntityBlueprint  // ammo_factory_lowcaliber_adv_molt
 		name 				"ammo_factory_lowcaliber_adv_molt"
 		bp   				"buildings/ammo/ammo_factory_lowcaliber_adv_molt"
 		category 			"ammo"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/ammo_factory_lowcaliber_adv_molt"
 		description			"gui/hud/building_description/ammo_factory_lowcaliber_adv_molt"
 		menu_icon			"gui/hud/building_icons/ammo_factory_lowcaliber_adv_molt"
 		upgrade				"buildings/ammo/ammo_factory_lowcaliber_adv_molt_lvl_2"
 		require 			"headquarters"
-		order				"30"
 		buildable			"0"
 		building_group		"ammo_factory_lowcaliber_adv"
+		type				"ammo_lowcaliber_adv_fac"
+		overrides			"ammo_lowcaliber_adv_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_lowcaliber_adv,ammo_factory_lowcaliber_adv_lvl_2,ammo_factory_lowcaliber_adv_molt,ammo_factory_lowcaliber_adv_molt_lvl_2,ammo_factory_lowcaliber_adv_uranium,ammo_factory_lowcaliber_adv_molt_uranium"
 		
 		costs
 		{
@@ -907,17 +906,16 @@ EntityBlueprint  // ammo_factory_lowcaliber_adv_molt_lvl_2
 		name 				"ammo_factory_lowcaliber_adv_molt_lvl_2"
 		bp   				"buildings/ammo/ammo_factory_lowcaliber_adv_molt_lvl_2"
 		category 			"ammo"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/ammo_factory_lowcaliber_adv_molt"
 		description			"gui/hud/building_description/ammo_factory_lowcaliber_adv_molt"
 		menu_icon			"gui/hud/building_icons/ammo_factory_lowcaliber_adv_molt_lvl_2"
 		//upgrade				"buildings/ammo/ammo_factory_lowcaliber_adv_lvl_3"
 		require 			"headquarters"
-		order				"30"
 		buildable			"0"
 		building_group		"ammo_factory_lowcaliber_adv"
+		type				"ammo_lowcaliber_adv_fac"
+		overrides			"ammo_lowcaliber_adv_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_lowcaliber_adv,ammo_factory_lowcaliber_adv_lvl_2,ammo_factory_lowcaliber_adv_molt,ammo_factory_lowcaliber_adv_molt_lvl_2,ammo_factory_lowcaliber_adv_uranium,ammo_factory_lowcaliber_adv_uranium_molt"
 		
 		costs
 		{
@@ -1178,17 +1176,16 @@ EntityBlueprint  // ammo_factory_lowcaliber_adv_uranium
 		name 				"ammo_factory_lowcaliber_adv_uranium"
 		bp   				"buildings/ammo/ammo_factory_lowcaliber_adv_uranium"
 		category 			"ammo"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/ammo_factory_lowcaliber_adv_uranium"
 		description			"gui/hud/building_description/ammo_factory_lowcaliber_adv_uranium"
 		menu_icon			"gui/hud/building_icons/ammo_factory_lowcaliber_adv_uranium"
 		upgrade				"buildings/ammo/ammo_factory_lowcaliber_adv_molt_uranium"
 		require 			"headquarters"
-		order				"30"
 		buildable			"0"
 		building_group		"ammo_factory_lowcaliber_adv"
+		type				"ammo_lowcaliber_adv_fac"
+		overrides			"ammo_lowcaliber_adv_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_lowcaliber_adv,ammo_factory_lowcaliber_adv_lvl_2,ammo_factory_lowcaliber_adv_molt,ammo_factory_lowcaliber_adv_molt_lvl_2,ammo_factory_lowcaliber_adv_uranium,ammo_factory_lowcaliber_adv_uranium_molt"
 		
 		costs
 		{
@@ -1444,16 +1441,15 @@ EntityBlueprint  // ammo_factory_lowcaliber_adv_uranium_molt
 		name 				"ammo_factory_lowcaliber_adv_uranium_molt"
 		bp   				"buildings/ammo/ammo_factory_lowcaliber_adv_uranium_molt"
 		category 			"ammo"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/ammo_factory_lowcaliber_adv_uranium_molt"
 		description			"gui/hud/building_description/ammo_factory_lowcaliber_adv_uranium_molt"
 		menu_icon			"gui/hud/building_icons/ammo_factory_lowcaliber_adv_molt_uranium"
 		require 			"headquarters"
-		order				"30"
 		buildable			"0"
 		building_group		"ammo_factory_lowcaliber_adv"
+		type				"ammo_lowcaliber_adv_fac"
+		overrides			"ammo_lowcaliber_adv_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_lowcaliber_adv,ammo_factory_lowcaliber_adv_lvl_2,ammo_factory_lowcaliber_adv_molt,ammo_factory_lowcaliber_adv_molt_lvl_2,ammo_factory_lowcaliber_adv_uranium,ammo_factory_lowcaliber_adv_molt_uranium"
 		
 		costs
 		{
@@ -1734,16 +1730,15 @@ EntityBlueprint  // ammo_factory_lowcaliber_adv_molt_uranium  (obsolete)
 		name 				"ammo_factory_lowcaliber_adv_molt_uranium"
 		bp   				"buildings/ammo/ammo_factory_lowcaliber_adv_molt_uranium"
 		category 			"ammo"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/ammo_factory_lowcaliber_adv_molt_uranium"
 		description			"gui/hud/building_description/ammo_factory_lowcaliber_adv_molt_uranium"
 		menu_icon			"gui/hud/building_icons/obsolete"
 		require 			"headquarters"
-		order				"30"
 		buildable			"0"
 		//building_group		"ammo_factory_lowcaliber_adv"
+		type				"ammo_lowcaliber_adv_fac"
+		overrides			"ammo_lowcaliber_adv_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammo_factory_lowcaliber_adv,ammo_factory_lowcaliber_adv_lvl_2,ammo_factory_lowcaliber_adv_molt,ammo_factory_lowcaliber_adv_molt_lvl_2,ammo_factory_lowcaliber_adv_uranium,ammo_factory_lowcaliber_adv_molt_uranium"
 		
 		costs
 		{

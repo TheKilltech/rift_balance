@@ -9,15 +9,14 @@ EntityBlueprint  // ai_hub_lvl_2
 		name 				"ai_hub_lvl_2"
 		bp   				"buildings/defense/ai_hub_lvl_2"
 		category 			"main"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/ai_hub"
 		description			"gui/hud/building_description/ai_hub"
 		menu_icon			"gui/hud/building_icons/ai_hub_lvl2"
+		upgrade				"buildings/defense/ai_hub_lvl_3"
 		require 			"headquarters"
-		order				"4"
-		upgrade				"buildings/defense/ai_hub_lvl_3"	
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
-		overrides			"ai_hub,ai_hub_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		type				"ai_fac"
+		overrides			"ai_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{

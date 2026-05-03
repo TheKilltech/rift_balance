@@ -15,8 +15,9 @@ EntityBlueprint  // nitrification_plant
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"nitric_acid_refinery"
+		type				"nitric_acid_fac"
+		overrides			"nitric_acid_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,nitrification_plant,nitrification_plant_lvl_2,nitrification_plant_lvl_3"
 
 		costs
 		{
@@ -472,8 +473,9 @@ EntityBlueprint  // nitrification_plant_lvl_2
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"nitric_acid_refinery"
+		type				"nitric_acid_fac"
+		overrides			"nitric_acid_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,nitrification_plant,nitrification_plant_lvl_2,nitrification_plant_lvl_3"
 		
 		costs
 		{
@@ -740,8 +742,9 @@ EntityBlueprint  // nitrification_plant_lvl_3
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"nitric_acid_refinery"
+		type				"nitric_acid_fac"
+		overrides			"nitric_acid_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,nitrification_plant,nitrification_plant_lvl_2,nitrification_plant_lvl_3"
 		
 		costs
 		{
@@ -752,8 +755,8 @@ EntityBlueprint  // nitrification_plant_lvl_3
 				building_cost
 				{
 					carbonium 	"800"
-					steel 		"400"
-					cobalt 		"300"
+					alloys		"400"
+					cobalt		"300"
 					ai			"2"
 				}
 			}		
@@ -946,6 +949,592 @@ EntityBlueprint  // nitrification_plant_lvl_3
 					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_02"
 					bone "att_vismod_3"
 					scale "1.4 1.0 1.0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/minipipes_green"
+					bone "att_vismod_4"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/ball_gas"
+					bone "att_vismod_5"
+					orientation 0 -90 0
+					scale "1.4 1.5 1.4"
+					offset 0 -0.1 0
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_pump_working"
+				}		
+			}
+		}		
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // nitrification_site_lvl_2
+{
+	name           "buildings/resources/nitrification_site_lvl_2"
+	base_blueprint "buildings/resources/nitrification_plant"
+
+	BuildingDesc
+	{
+		name 				"nitrification_site_lvl_2"
+		bp   				"buildings/resources/nitrification_site_lvl_2"
+		category 			"liquids"
+		localization_id		"gui/hud/building_name/nitrification_site"
+		description			"gui/hud/building_description/nitrification_site"
+		menu_icon			"gui/hud/building_icons/nitrification_site_lvl_2"
+		upgrade				"buildings/resources/nitrification_site_lvl_3"
+		require 			"headquarters"
+		buildable			"0"
+		building_group		"nitric_acid_refinery"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,nitrification_site_lvl_3"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 40
+				building_cost
+				{
+					carbonium 	"750"
+					steel 		"200"
+					cobalt 		"250"
+					ai			"1"
+				}
+			}
+		}
+		resource_requirement "ammonium_vein"
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{	
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"175"
+			}
+			
+			GameplayResource
+			{
+				resource 			"ammonium_vein"
+				value				0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"rhodonite"
+				value			 	"0.3"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"nitric_acid"
+				value				"20"
+				attachment			"att_out_1"
+			}
+		}
+		priority 9
+		reset_interval 0.5
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "nitric_acid"
+				max 	 "80"
+			}
+			
+		}
+	}
+	
+	GridCullerDesc
+	{
+		Shapes
+		{
+   			PhysicsBoxShape
+   			{
+    				x	6
+    				y	6
+    				z	10
+   			}
+		}
+	}
+
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r 1.6
+	
+						position 
+						{
+							x -0.6
+							y 0.0
+							z -3.2
+						}
+					}
+					
+					PhysicsBoxShape
+					{
+						x	5.2
+						y	2.0
+						z	5
+						position 
+						{
+							x -0.2
+							y 1
+							z 0.2
+						}
+					}
+				}
+			}
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"1300"
+		health 						"1300"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_effect_group 		"0_state"
+			}			
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_out_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_02"
+					bone "att_vismod_1"
+					scale "0.7 0.7 0.7"
+					orientation 0 0 -90
+					offset		0 1.7 1.7
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/ai_hub1"
+					bone		"att_vismod_2"
+					orientation	-45 0 0
+					scale		1.0 0.8 1.0
+					offset		-0.5 0 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_02"
+					bone "att_vismod_3"
+					scale "1.4 1.0 1.0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_plant"
+					bone "att_vismod_pool"
+					scale "0.7 0.6 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/minipipes_green"
+					bone "att_vismod_4"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/ball_gas"
+					bone "att_vismod_5"
+					orientation 0 -90 0
+					scale "1.1 1.4 1.1"
+					offset 0 -0.1 -0.02
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_pump_working"
+				}		
+			}
+		}		
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}			
+	}
+}
+
+EntityBlueprint  // nitrification_site_lvl_3
+{
+	name           "buildings/resources/nitrification_site_lvl_3"
+	base_blueprint "buildings/resources/nitrification_site_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"nitrification_site_lvl_3"
+		bp   				"buildings/resources/nitrification_site_lvl_3"
+		category 			"liquids"
+		localization_id		"gui/hud/building_name/nitrification_site"
+		description			"gui/hud/building_description/nitrification_site"
+		menu_icon			"gui/hud/building_icons/nitrification_site_lvl_3"
+		require 			"headquarters"
+		buildable			"0"
+		building_group		"nitric_acid_refinery"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,nitrification_site_lvl_2"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 80
+				building_cost
+				{
+					carbonium 	"750"
+					alloys		"400"
+					cobalt		"500"
+					ai			"2"
+				}
+			}
+		}
+		
+		resource_requirement "ammonium_vein"
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{	
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"350"
+			}
+			
+			GameplayResource
+			{
+				resource 			"ammonium_vein"
+				value				0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"sludge"
+				value			 	"50"
+				attachment			"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 			"rhodonite"
+				value			 	"0.3"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"nitric_acid"
+				value				"40"
+				attachment			"att_out_1"
+			}		
+		}
+		priority 9		
+		reset_interval 0.5
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "nitric_acid"
+				max 	 "160"
+			}
+			
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"1600"
+		health 						"1600"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_effect_group 		"0_state"
+			}			
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_out_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_02"
+					bone "att_vismod_1"
+					scale "0.7 0.7 0.7"
+					orientation 0 0 -90
+					offset		0 1.7 1.7
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_02"
+					bone "att_vismod_3"
+					scale "1.4 1.0 1.0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_plant"
+					bone "att_vismod_pool"
+					scale "0.7 0.6 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/silo_s"
+					bone "att_vismod_6"
+					scale "1.3 0.7 1.3"
 				}
 				Effect
 				{
@@ -1251,6 +1840,192 @@ EntityBlueprint  // nitrification_plant_lvl_3_ghost
 					blueprint "effects/buildings_and_machines/scifi_structure_very_small_02_ghost"
 					bone "att_vismod_3"
 					scale "1.4 1.0 1.0"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // nitrification_site_lvl_2_ghost
+{
+	name  "buildings/resources/nitrification_site_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/nitrification_plant.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/nitrification_plant"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "1"	
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_out_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_02_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.7 0.7"
+					orientation 0 0 -90
+					offset		0 1.7 1.7
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/ai_hub1_ghost"
+					bone		"att_vismod_2"
+					orientation	-45 0 0
+					scale		1.0 0.8 1.0
+					offset		-0.5 0 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_02_ghost"
+					bone "att_vismod_3"
+					scale "1.4 1.0 1.0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_plant_ghost"
+					bone "att_vismod_pool"
+					scale "0.7 0.6 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/minipipes_ghost"
+					bone "att_vismod_4"
+					scale "0.7 0.7 0.7"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // nitrification_site_lvl_3_ghost
+{
+	name  "buildings/resources/nitrification_site_lvl_3_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/nitrification_plant.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/nitrification_plant"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "1"	
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_out_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_02_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.7 0.7"
+					orientation 0 0 -90
+					offset		0 1.7 1.7
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_2"
+					scale "0.6 0.6 0.6"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_02_ghost"
+					bone "att_vismod_3"
+					scale "1.4 1.0 1.0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_plant_ghost"
+					bone "att_vismod_pool"
+					scale "0.7 0.6 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/minipipes_ghost"
+					bone "att_vismod_4"
+					scale "0.7 0.7 0.7"
 				}
 			}
 		}

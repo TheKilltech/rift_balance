@@ -1,19 +1,21 @@
-EntityBlueprint
+EntityBlueprint  // loot_collector
 {
 	name  "buildings/resources/loot_collector"
 
 	BuildingDesc
 	{
-		name 				"loot_collector"
-		bp   				"buildings/resources/loot_collector"
-		category 			"resources"
-		localization_id		"gui/hud/building_name/loot_collector"
-		description			"gui/hud/building_description/loot_collector"
-		menu_icon			"gui/hud/building_icons/loot_collector"
-		require 			"headquarters"
-		order				"14"
-		upgrade				"buildings/resources/loot_collector_lvl_2"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		name 					"loot_collector"
+		bp   					"buildings/resources/loot_collector"
+		category 				"resources"
+		localization_id			"gui/hud/building_name/loot_collector"
+		description				"gui/hud/building_description/loot_collector"
+		menu_icon				"gui/hud/building_icons/loot_collector"
+		upgrade					"buildings/resources/loot_collector_lvl_2"
+		require 				"headquarters"
+		order					"40"
+		type					"solids_mine"
+		overrides				"solids_mine"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
 
 		costs
 		{

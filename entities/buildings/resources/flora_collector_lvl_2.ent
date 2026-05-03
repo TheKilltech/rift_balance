@@ -1,7 +1,6 @@
-EntityBlueprint
+EntityBlueprint  // flora_collector_lvl_2
 {
 	name  					"buildings/resources/flora_collector_lvl_2"
-
 	base_blueprint 			"buildings/resources/flora_collector"
 
 	BuildingDesc
@@ -15,8 +14,8 @@ EntityBlueprint
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"flora_cultivator"
-		order				"4"
-		upgrade				"buildings/resources/flora_collector_lvl_3"	
+		type				"cultivator"
+		overrides			"cultivator"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs

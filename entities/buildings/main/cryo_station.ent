@@ -17,9 +17,11 @@ EntityBlueprint  // cryo_station
 		menu_icon			"gui/hud/building_icons/cryo_station"
 		//upgrade				"buildings/main/cryo_station_lvl_2"
 		order				"6"
-		condition			"BIOME"	
+		condition			"BIOME"
 		condition_value		"magma"
 		hide_treasures 		"1"
+		type				"cryo_sta"
+		overrides			"cryo_sta"
 
 		costs
 		{
@@ -361,11 +363,10 @@ EntityBlueprint  // cryo_station_lvl_2
 
 	BuildingDesc
 	{
-		buildable 			"0"			
+		buildable 			"0"
 		name 				"cryo_station_lvl_2"
 		bp   				"buildings/main/cryo_station_lvl_2"
 		category 			"main"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/cryo_station"
 		description			"gui/hud/building_description/cryo_station"
 		menu_icon			"gui/hud/building_icons/cryo_station_lvl_2"
@@ -374,6 +375,8 @@ EntityBlueprint  // cryo_station_lvl_2
 		condition			"BIOME"	
 		condition_value		"magma"
 		hide_treasures 		"1"
+		type				"cryo_sta"
+		overrides			"cryo_sta,pipe"
 
 		costs
 		{
@@ -564,18 +567,19 @@ EntityBlueprint  // cryo_station_lvl_3
 
 	BuildingDesc
 	{
-		buildable 			"0"			
+		buildable 			"0"
 		name 				"cryo_station_lvl_3"
 		bp   				"buildings/main/cryo_station_lvl_3"
 		category 			"main"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/cryo_station"
 		description			"gui/hud/building_description/cryo_station"
 		menu_icon			"gui/hud/building_icons/cryo_station_lvl_2"
 		building_group		"cryo_station"
-		condition			"BIOME"	
+		condition			"BIOME"
 		condition_value		"magma"
 		hide_treasures 		"1"
+		type				"cryo_sta"
+		overrides			"cryo_sta,pipe"
 
 		costs
 		{

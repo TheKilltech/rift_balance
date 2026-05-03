@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // bio_composter
 {
 	name  "buildings/resources/bio_composter"
 
@@ -7,17 +7,17 @@ EntityBlueprint
 		name 				"bio_composter"
 		bp   				"buildings/resources/bio_composter"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/bio_composter"
 		description			"gui/hud/building_description/bio_composter"
 		menu_icon			"gui/hud/building_icons/bio_composter"
-		require 			"headquarters"
 		upgrade				"buildings/resources/bio_composter_lvl_2"
+		require 			"headquarters"
 		building_group		"gas_filtering_plant"
-		buildable			"0"	
+		buildable			"0"
 		order				"15"
+		type				"gas_fac"
+		overrides			"gas_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{
@@ -28,9 +28,9 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"100"
-					steel 		"100"		
+					steel 		"100"
 				}
-			}		
+			}
 		}
 
 	}

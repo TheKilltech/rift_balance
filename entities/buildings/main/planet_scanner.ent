@@ -54,7 +54,7 @@ EntityBlueprint  // planet_scanner
 		out
 		{
 		}
-		priority 2			
+		priority 2
 	}
 
 	LuaDesc
@@ -542,109 +542,26 @@ EntityBlueprint  // planet_scanner_lvl_2
 		}
 	}
 
-	HealthDesc
+	MinimapItemDesc
 	{
-		max_health 					"2600"
-		health 						"2600"
-		regeneration 				"0"
-		regeneration_cooldown 		"0"
-		is_manual 1
-		update_health_uniform 		"1"
-	
-		DestructionLevels
+		type	"quad"
+		color 
 		{
-			DestructionLevel
-			{
-				health "90"
-				destroy_state_change_effect_group "80_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "generic_destroy"				
-				destroyed_state_effect_group "80_state"
-				destrucion_level_name "90"
-			}
-			DestructionLevel
-			{
-				health "80"
-				destroy_state_change_effect_group "80_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "80_destroy"
-				destroyed_state_effect_group "80_state"
-				destrucion_level_name "80"
-			}
-			DestructionLevel
-			{
-				health "70"
-				destroy_state_change_effect_group "60_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "generic_destroy"				
-				destroyed_state_effect_group "60_state"
-				destrucion_level_name "70"
-			}
-			DestructionLevel
-			{
-				health "60"
-				destroy_state_change_effect_group "60_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "60_destroy"
-				destroyed_state_effect_group "60_state"
-				destrucion_level_name "60"
-			}
-			DestructionLevel
-			{
-				health "50"
-				destroy_state_change_effect_group "40_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "generic_destroy"				
-				destroyed_state_effect_group "40_state"
-				destrucion_level_name "50"
-			}
-			DestructionLevel
-			{
-				health "40"
-				destroy_state_change_effect_group "40_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "40_destroy"
-				destroyed_state_effect_group "40_state"
-				destrucion_level_name "40"
-			}
-			DestructionLevel
-			{
-				health "30"
-				destroy_state_change_effect_group "40_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "generic_destroy"
-				destroyed_state_effect_group "40_state"
-				destrucion_level_name "30"
-			}
-			DestructionLevel
-			{
-				health "20"
-				destroy_state_change_effect_group "20_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "20_destroy"
-				destroyed_state_effect_group "20_state"
-				destrucion_level_name "20"
-			}
-			DestructionLevel
-			{
-				health "10"
-				destroy_state_change_effect_group "20_transition"
-				destroy_comp_delay "0.6"
-				destroy_comp_event "generic_destroy"
-				destroyed_state_effect_group "20_state"
-				destrucion_level_name "10"
-			}
-			DestructionLevel
-			{
-				health "0"
-				destroy_state_change_effect_group "0_transition"
-				destroy_comp_delay "0.7"
-				destroy_comp_event "default"
-				destrucion_level_name "0"
-			}			
+			x "0.6"  // r
+			y "0.25" // g
+			z "0.25" // b
+			w "1"
 		}
+		size
+		{
+			x "5"
+			y "5"
+		}
+					
+		visibility			"always"
+		layer_group			"common_buildings"
 	}
-
+	
 	WeaponItemDesc
 	{
 	}

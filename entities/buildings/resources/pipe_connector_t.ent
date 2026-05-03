@@ -1,17 +1,17 @@
-EntityBlueprint
+EntityBlueprint  // pipe_connector_t
 {
 	name  "buildings/resources/pipe_connector_t"
 
 	BuildingDesc
 	{
-		buildable 	"0"
-		name 		"pipe_connector_t"
-		bp   		"buildings/resources/pipe_connector_t"
-		ghost_bp 	"buildings/resources/pipe_connector_t_ghost"
+		buildable 			"0"
+		name 				"pipe_connector_t"
+		bp   				"buildings/resources/pipe_connector_t"
+		ghost_bp 			"buildings/resources/pipe_connector_t_ghost"
 		localization_id		"gui/hud/building_name/pipe_straight"
-		category 	"liquids"
-		type		"pipe"
-		require 	"headquarters"
+		category 			"liquids"
+		type				"pipe"
+		require 			"headquarters"
 		menu_action			"resource_clear"
 		check_connect		"1"
 

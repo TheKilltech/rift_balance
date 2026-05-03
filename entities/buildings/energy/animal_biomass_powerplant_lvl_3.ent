@@ -1,21 +1,21 @@
-EntityBlueprint
+EntityBlueprint  // animal_biomass_powerplant_lvl_3
 {
-	name  "buildings/energy/animal_biomass_powerplant_lvl_3"
-
-	base_blueprint buildings/energy/animal_biomass_powerplant_lvl_2		
+	name			"buildings/energy/animal_biomass_powerplant_lvl_3"
+	base_blueprint	"buildings/energy/animal_biomass_powerplant_lvl_2"
 
 	BuildingDesc
 	{
-		buildable			"0"		
 		name 				"animal_biomass_powerplant_lvl_3"
 		bp   				"buildings/energy/animal_biomass_powerplant_lvl_3"
 		category 			"energy"
 		localization_id		"gui/hud/building_name/animal_biomass_powerplant"
 		description			"gui/hud/building_description/animal_biomass_powerplant"
 		menu_icon			"gui/hud/building_icons/animal_biomass_powerplant_lvl3"
-		order				"3"
-		//upgrade				"buildings/energy/animal_biomass_powerplant_lvl_4"		
+		type				"animal_power"
+		overrides			"animal_power"
 		require 			"headquarters"
+		buildable			"0"
+		building_group		"plant_biomass_powerplant"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"2"
 		
@@ -28,7 +28,7 @@ EntityBlueprint
 				building_cost
 				{
 					carbonium 	"800"
-					steel 		"400"				
+					steel 		"400"
 				}
 			}		
 		}

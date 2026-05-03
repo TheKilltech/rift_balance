@@ -22,9 +22,10 @@ EntityBlueprint  // planet_defense
 		menu_action			"planetary_scanner"
 		condition			"NOT_BIOME"
 		condition_value		"caverns"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"planet_defense_lvl_2,planet_defense_lvl_3"
 		hide_treasures 		"1"
+		type				"planet_tower"
+		overrides			"planet_tower,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
 		{
@@ -272,9 +273,9 @@ EntityBlueprint  // planet_defense
 		type	"quad"
 		color 
 		{
-			x "0.2"
-			y "0.2"
-			z "1"
+			x "0.6"  // r
+			y "0.25" // g
+			z "0.25" // b
 			w "1"
 		}
 		size
@@ -700,9 +701,10 @@ EntityBlueprint  // planet_defense_lvl_2
 		menu_action			"planetary_scanner"
 		condition			"NOT_BIOME"
 		condition_value		"caverns"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,planet_defense,planet_defense_lvl_3"
 		hide_treasures 		"1"
+		type				"planet_tower"
+		overrides			"planet_tower,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
 		{
@@ -968,9 +970,10 @@ EntityBlueprint  // planet_defense_lvl_3
 		menu_action			"planetary_scanner"
 		condition			"NOT_BIOME"
 		condition_value		"caverns"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,planet_scanner_lvl_2,planet_scanner_lvl_3"
 		hide_treasures 		"1"
+		type				"planet_tower"
+		overrides			"planet_tower,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
 		{

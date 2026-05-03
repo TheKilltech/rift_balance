@@ -13,6 +13,8 @@ EntityBlueprint  // ammo_factory_explosive_adv
 		upgrade				"buildings/ammo/ammo_factory_explosive_adv_lvl_2"
 		require 			"headquarters"
 		order				"33"
+		type				"ammo_explosive_adv_fac"
+		overrides			"ammo_explosive_adv_fac"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
@@ -428,6 +430,8 @@ EntityBlueprint  // ammo_factory_explosive_adv_lvl_2
 		require 			"headquarters"
 		order				"33"
 		buildable			"0"
+		type				"ammo_explosive_adv_fac"
+		overrides			"ammo_explosive_adv_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
@@ -658,6 +662,8 @@ EntityBlueprint  // ammo_factory_explosive_adv_lvl_3
 		require 			"headquarters"
 		order				"33"
 		buildable			"0"
+		type				"ammo_explosive_adv_fac"
+		overrides			"ammo_explosive_adv_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs

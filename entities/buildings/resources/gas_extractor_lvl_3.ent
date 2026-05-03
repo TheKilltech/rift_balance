@@ -1,8 +1,7 @@
 EntityBlueprint  // gas_extractor_lvl_3
 {
-	name  "buildings/resources/gas_extractor_lvl_3"
-	
-	base_blueprint buildings/resources/gas_extractor_lvl_2
+	name			"buildings/resources/gas_extractor_lvl_3"
+	base_blueprint	"buildings/resources/gas_extractor_lvl_2"
 
 	BuildingDesc
 	{
@@ -15,9 +14,9 @@ EntityBlueprint  // gas_extractor_lvl_3
 		menu_icon			"gui/hud/building_icons/gas_extractor_lvl3"
 		//require 			"headquarters"  // removed to save screen space
 		check_connect		"1"
-		type				"pipe"
+		type				"gas_mine"
+		overrides			"gas_mine,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,gas_extractor,gas_extractor_lvl_2,gas_extractor_lvl_3"
 		
 		costs
 		{
@@ -45,11 +44,6 @@ EntityBlueprint  // gas_extractor_lvl_3
 			{
 				resource 			"energy"
 				value				"140"
-			}
-			GameplayResource
-			{
-				resource 			"steel"
-				value			 	"0.05"
 			}
 			GameplayResource
 			{
@@ -274,7 +268,22 @@ EntityBlueprint  // gas_extractor_lvl_3
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"

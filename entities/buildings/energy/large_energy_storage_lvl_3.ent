@@ -1,0 +1,126 @@
+EntityBlueprint  // large_energy_storage_lvl_3
+{
+	name			"buildings/energy/large_energy_storage_lvl_3"
+	base_blueprint	"buildings/energy/large_energy_storage_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"large_energy_storage_lvl_3"
+		bp   				"buildings/energy/large_energy_storage_lvl_3"
+		category 			"energy"
+		localization_id		"gui/hud/building_name/large_energy_storage"
+		description			"gui/hud/building_description/large_energy_storage"
+		menu_icon			"gui/hud/building_icons/large_energy_storage_lvl3"
+		require 			"headquarters"
+		building_group		"energy_storage"
+		buildable			"0"
+		type				"energy_storage_large"
+		overrides			"energy_storage_large"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"2400"
+					uranium		"800"
+				}
+			}
+		}
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource "energy"
+				max 	 "400000"
+			}
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"1500"
+		health 						"1500"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/large_energy_storage_lvl_3.mesh"
+		material "buildings/energy/large_energy_storage_lvl_3"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/energy/large_solid_storage_lvl_3_glass"
+			}
+		}
+
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/energy/large_energy_storage_lvl_3"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x "2.0"
+						y "4.0"
+						z "14.0"
+
+						position
+						{
+							x "0.0"
+							y "2.0"
+							z "0.0"
+						}
+					}
+				}
+			}
+		}
+	}
+}

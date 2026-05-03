@@ -12,12 +12,11 @@ EntityBlueprint  // morphium_powerplant_lvl_2
 		localization_id			"gui/hud/building_name/morphium_powerplant"
 		description				"gui/hud/building_description/morphium_powerplant"
 		menu_icon				"gui/hud/building_icons/morphium_powerplant_lvl2"
-		type					"pipe"
 		require 				"headquarters"
-		order					"11"		
+		type					"morphium_power"
+		overrides				"morphium_power,pipe"
 		upgrade					"buildings/energy/morphium_powerplant_lvl_3"
 		going_green_state		"1"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		
 		costs
 		{

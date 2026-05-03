@@ -1,25 +1,23 @@
 EntityBlueprint  // liquid_decompressor_lvl_2
 {
-	name  "buildings/resources/liquid_decompressor_lvl_2"
-	
-	base_blueprint buildings/resources/liquid_decompressor
+	name			"buildings/resources/liquid_decompressor_lvl_2"
+	base_blueprint	"buildings/resources/liquid_decompressor"
 
 	BuildingDesc
 	{
-		buildable				"0"	
+		buildable				"0"
 		name 					"liquid_decompressor_lvl_2"
 		bp   					"buildings/resources/liquid_decompressor_lvl_2"
 		category 				"resources"
 		localization_id			"gui/hud/building_name/liquid_decompressor"
 		description				"gui/hud/building_description/liquid_decompressor"
 		menu_icon				"gui/hud/building_icons/liquid_decompressor_lvl2"
-		type					"pipe"
+		upgrade					"buildings/resources/liquid_decompressor_lvl_3"
 		require 				"headquarters"
-		upgrade					"buildings/resources/liquid_decompressor_lvl_3"	
-		order					"9"	
-		exclude_terrain_types 	"magma_hot_ground,magma_very_hot_ground"		
 		menu_action				"decompressor"
-		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		type					"compressors"
+		overrides				"compressors,pipe"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
 
 		costs
 		{

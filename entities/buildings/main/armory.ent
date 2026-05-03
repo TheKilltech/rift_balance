@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // armory
 {
 	name  "buildings/main/armory"
 
@@ -7,18 +7,19 @@ EntityBlueprint
 		name 				"armory"
 		bp   				"buildings/main/armory"
 		category 			"main"
-		//type				"pipe"
 		localization_id		"gui/hud/building_name/armory"
 		description			"gui/hud/building_description/armory"
 		menu_icon			"gui/hud/building_icons/weapons_factory"
+		upgrade				"buildings/main/armory_lvl_2"
 		order				"2"
 		limit			    "1"
 		limit_name			"armory"		
 		require 			"headquarters"
-		upgrade				"buildings/main/armory_lvl_2"
 		menu_action 		"crafting"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		hide_treasures 		"1"
+		type				"armory_fac"
+		overrides			"armory_fac"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{

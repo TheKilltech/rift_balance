@@ -11,13 +11,12 @@ EntityBlueprint  // biomass_morphed_press
 		localization_id		"gui/hud/building_name/biomass_morphed_press"
 		description			"gui/hud/building_description/biomass_morphed_press"
 		menu_icon			"gui/hud/building_icons/biomass_morphed_press"
-		type				"pipe"
-		order				"18"
+		order				"45"
 		upgrade				"buildings/resources/biomass_morphed_press_lvl_2"
 		require 			"headquarters"
-		//building_group	"biomass_morphed_press"
 		buildable			"1"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,biomass_morphed_press,biomass_morphed_press_lvl_2,biomass_morphed_press_lvl_3"
+		type				"bio_morphed_press"
+		overrides			"bio_morphed_press,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -435,7 +434,8 @@ EntityBlueprint  // biomass_morphed_press_lvl_2
 		require 			"headquarters"
 		building_group		"biomass_morphed_press"
 		buildable			"0"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,biomass_morphed_press,biomass_morphed_press_lvl_2,biomass_morphed_press_lvl_3"
+		type				"bio_morphed_press"
+		overrides			"bio_morphed_press,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -681,7 +681,8 @@ EntityBlueprint  // biomass_morphed_press_lvl_3
 		require 			"headquarters"
 		building_group		"biomass_morphed_press"
 		buildable			"0"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,biomass_morphed_press,biomass_morphed_press_lvl_2,biomass_morphed_press_lvl_3"
+		type				"bio_morphed_press"
+		overrides			"bio_morphed_press,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs

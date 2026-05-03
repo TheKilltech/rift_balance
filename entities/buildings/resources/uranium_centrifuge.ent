@@ -10,11 +10,12 @@ EntityBlueprint  // uranium_centrifuge
 		localization_id		"gui/hud/building_name/uranium_centrifuge"
 		description			"gui/hud/building_description/uranium_centrifuge"
 		menu_icon			"gui/hud/building_icons/uranium_centrifuge"
+		upgrade				"buildings/resources/uranium_centrifuge_lvl_2"
 		require 			"headquarters"
 		order				"30"
-		upgrade				"buildings/resources/uranium_centrifuge_lvl_2"
+		type				"centrifuge"
+		overrides			"centrifuge,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"uranium_centrifuge_lvl_2,uranium_centrifuge_lvl_3"
 
 		costs
 		{

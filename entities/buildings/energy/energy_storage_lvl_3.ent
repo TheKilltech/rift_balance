@@ -1,0 +1,254 @@
+EntityBlueprint  // energy_storage_lvl_3
+{
+	name			"buildings/energy/energy_storage_lvl_3"
+	base_blueprint	"buildings/energy/energy_storage_lvl_2"
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"energy_storage_lvl_3"
+		bp   				"buildings/energy/energy_storage_lvl_3"
+		category 			"energy"
+		localization_id		"gui/hud/building_name/energy_storage_new"
+		description			"gui/hud/building_description/energy_storage_new"
+		menu_icon			"gui/hud/building_icons/energy_storage_lvl3"
+		require 			"headquarters"
+		type				"energy_storage_small"
+		overrides			"energy_storage_small,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"400"
+					alloys		"200"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"water"
+				value 		"1"
+				family		"coolant"
+				attachment	"att_in_1|att_in_2"
+			}
+			
+			GameplayResource
+			{
+				resource 	"supercoolant"
+				value 		"0.3"
+				family		"coolant"
+				attachment	"att_in_1|att_in_2"
+			}
+			
+			GameplayResource
+			{
+				resource 	"fluorine"
+				value		"2"
+				family		"coolant"
+				attachment	"att_in_1|att_in_2"
+			}
+		}
+		
+		out
+		{
+		}
+		priority 9
+		reset_interval 0.5
+	}
+	
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource	"energy"
+				max 		"40000"
+			}
+			Storage
+			{
+				group		"local"
+				max			"5"
+				attachment	"att_in_1|att_in_2"
+			}
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/buff_source.lua"
+
+		database
+		{
+			cone_effect					string:"build_cone_2x2"
+			cone_effect_sell			string:"sell_small"
+			radius						float:"30"
+			range						float:"30"
+			//buff_mod_upkeep				float:"1.0"
+			buff_modificator			float:"1.20"
+			buff_source_name			string:"power_grid_balancer"
+			buff_source_level			int:"3"
+			buff_localization			string:"buff_name/buff_power_grid_balancer"
+			buff_icon					string:"gui/hud/building_icons/energy_storage"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+			display_radius_group		string:"power_grid_balancer"
+		}
+	}
+	
+	PipeComponent
+	{
+		attachment		"att_in_1,att_in_2"
+	}
+	
+	HealthDesc
+	{
+		max_health 					"900"
+		health 						"900"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/energy_storage_lvl_3.mesh"
+		material "buildings/energy/energy_storage_lvl_3"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/energy/energy_storage_lvl_3"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_electric_small_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"	
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "powered"
+			enabled "1"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_2x2_omni_light"
+					bone "att_light"
+					//random_delay "0.1"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "1"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/energy_storage_working"	
+					delay "0.5"
+				}
+			}
+		}
+	}
+}

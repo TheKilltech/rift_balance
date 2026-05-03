@@ -10,13 +10,13 @@ EntityBlueprint  // biomass_plant_press
 		localization_id		"gui/hud/building_name/biomass_plant_press"
 		description			"gui/hud/building_description/biomass_plant_press"
 		menu_icon			"gui/hud/building_icons/biomass_plant_press"
-		type				"pipe"
 		upgrade				"buildings/resources/biomass_plant_press_lvl_2"
 		require 			"headquarters"
 		building_group		"bio_condenser"
 		buildable			"0"
 		order				"19"
-		overrides			"biomass_plant_press,biomass_plant_press_lvl_2,biomass_plant_press_lvl_3"
+		type				"bio_plant_press"
+		overrides			"bio_plant_press,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -434,7 +434,8 @@ EntityBlueprint  // biomass_plant_press_lvl_2
 		require 			"headquarters"
 		building_group		"bio_condenser"
 		buildable			"0"
-		overrides			"biomass_plant_press,biomass_plant_press_lvl_2,biomass_plant_press_lvl_3"
+		type				"bio_plant_press"
+		overrides			"bio_plant_press,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -655,7 +656,8 @@ EntityBlueprint  // biomass_plant_press_lvl_3
 		require 			"headquarters"
 		building_group		"bio_condenser"
 		buildable			"0"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,biomass_plant_press,biomass_plant_press_lvl_2,biomass_plant_press_lvl_3"
+		type				"bio_plant_press"
+		overrides			"bio_plant_press,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs

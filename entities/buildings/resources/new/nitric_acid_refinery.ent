@@ -11,8 +11,10 @@ EntityBlueprint  // nitric_acid_refinery
 		description			"gui/hud/building_description/nitric_acid_refinery"
 		menu_icon			"gui/hud/building_icons/nitric_acid_refinery"
 		order				"12"
-		upgrade				"buildings/resources/nitric_acid_refinery_lvl_2"		
+		upgrade				"buildings/resources/nitric_acid_refinery_lvl_2"
 		require 			"headquarters"
+		type				"nitric_acid_fac"
+		overrides			"nitric_acid_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -418,7 +420,7 @@ EntityBlueprint  // nitric_acid_refinery_lvl_2
 
 	BuildingDesc
 	{
-		buildable			"0"		
+		buildable			"0"
 		name 				"nitric_acid_refinery_lvl_2"
 		bp   				"buildings/resources/nitric_acid_refinery_lvl_2"
 		category 			"liquids"
@@ -427,6 +429,8 @@ EntityBlueprint  // nitric_acid_refinery_lvl_2
 		menu_icon			"gui/hud/building_icons/nitric_acid_refinery_lvl_2"
 		upgrade				"buildings/resources/nitric_acid_refinery_lvl_3"
 		require 			"headquarters"
+		type				"nitric_acid_fac"
+		overrides			"nitric_acid_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
@@ -650,7 +654,7 @@ EntityBlueprint  // nitric_acid_refinery_lvl_3
 
 	BuildingDesc
 	{
-		buildable			"0"		
+		buildable			"0"
 		name 				"nitric_acid_refinery_lvl_3"
 		bp   				"buildings/resources/nitric_acid_refinery_lvl_3"
 		category 			"liquids"
@@ -658,6 +662,8 @@ EntityBlueprint  // nitric_acid_refinery_lvl_3
 		description			"gui/hud/building_description/nitric_acid_refinery"
 		menu_icon			"gui/hud/building_icons/nitric_acid_refinery_lvl_3"
 		require 			"headquarters"
+		type				"nitric_acid_fac"
+		overrides			"nitric_acid_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
@@ -669,7 +675,7 @@ EntityBlueprint  // nitric_acid_refinery_lvl_3
 				building_cost
 				{
 					carbonium 	"400"
-					steel 		"600"		
+					steel 		"600"
 					cobalt 		"250"
 					ai			"1"
 				}

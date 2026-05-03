@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // magma_powerplant
 {
 	name  "buildings/energy/magma_powerplant"
 
@@ -10,12 +10,12 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/magma_powerplant"
 		description			"gui/hud/building_description/magma_powerplant"
 		menu_icon			"gui/hud/building_icons/magma_powerplant"
-		type				"pipe"
 		require 			"headquarters"
-		order				"11"		
+		order				"18"
+		type				"magma_power"
+		overrides			"magma_power,pipe"
 		upgrade				"buildings/energy/magma_powerplant_lvl_2"
 		going_green_state	"1"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,magma_powerplant_lvl_2,magma_powerplant_lvl_3"
 		
 		costs
 		{
@@ -103,14 +103,17 @@ EntityBlueprint
 	
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
+		script "lua/buildings/building_buffable.lua"
 				
-		database
-		{
+		database {
 			cone_effect			string:"build_cone_4x4"
 			cone_effect_sell	string:"sell_big"
+			
+			buff_buildings				string:"buildings/energy/energy_storage,buildings/energy/energy_storage_lvl_2,buildings/energy/energy_storage_lvl_3"
+			buff_localization			string:"buff_name/buff_power_grid_balancer"
+			buff_icon					string:"gui/hud/building_icons/energy_storage"
+			display_radius_group		string:"power_grid_balancer"
 		}
-
 	}
 
 	HealthDesc

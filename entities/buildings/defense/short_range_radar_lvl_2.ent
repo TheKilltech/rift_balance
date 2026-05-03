@@ -11,10 +11,11 @@ EntityBlueprint  // short_range_radar_lvl_2
 		localization_id		"gui/hud/building_name/short_range_radar"
 		description			"gui/hud/building_description/short_range_radar"
 		menu_icon			"gui/hud/building_icons/short_range_radar_lvl2"
-		require 			"headquarters"
-		order				"4"
 		upgrade				"buildings/defense/short_range_radar_lvl_3"
+		require 			"headquarters"
 		buildable			"0"
+		type				"radar"
+		overrides			"radar"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs

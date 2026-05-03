@@ -12,11 +12,11 @@ EntityBlueprint  // repair_facility_lvl_2
 		localization_id		"gui/hud/building_name/repair_facility"
 		description			"gui/hud/building_description/repair_facility"
 		menu_icon			"gui/hud/building_icons/repair_facility_lvl2"
-		require 			"headquarters"
-		order				"4"
 		//upgrade				"buildings/defense/repair_facility_lvl_3"
+		require 			"headquarters"
+		type				"repair"
+		overrides			"repair"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"repair_facility,repair_facility_lvl_3"
 
 		costs
 		{

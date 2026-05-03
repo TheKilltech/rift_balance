@@ -1,8 +1,7 @@
-EntityBlueprint
+EntityBlueprint  // plant_biomass_powerplant_lvl_2
 {
-	name  "buildings/energy/plant_biomass_powerplant_lvl_2"
-
-	base_blueprint buildings/energy/plant_biomass_powerplant				
+	name			"buildings/energy/plant_biomass_powerplant_lvl_2"
+	base_blueprint	"buildings/energy/plant_biomass_powerplant"
 
 	BuildingDesc
 	{
@@ -13,11 +12,11 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/plant_biomass_powerplant"
 		description			"gui/hud/building_description/plant_biomass_powerplant"
 		menu_icon			"gui/hud/building_icons/plant_biomass_powerplant_lvl2"
-		order				"3"
-		upgrade				"buildings/energy/plant_biomass_powerplant_lvl_3"		
+		upgrade				"buildings/energy/plant_biomass_powerplant_lvl_3"
 		require 			"headquarters"
+		type				"plant_power"
+		overrides			"plant_power,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"plant_biomass_powerplant,plant_biomass_powerplant_lvl_3,pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 		going_green_state	"2"
 		
 		costs

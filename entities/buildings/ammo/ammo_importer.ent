@@ -1,0 +1,666 @@
+EntityBlueprint  // ammo_importer
+{
+	name  "buildings/ammo/ammo_importer"
+
+	BuildingDesc
+	{
+		name 					"ammo_importer"
+		bp   					"buildings/ammo/ammo_importer"
+		category 				"ammo"
+		localization_id			"gui/hud/building_name/ammo_importer"
+		description				"gui/hud/building_description/ammo_importer"
+		menu_icon				"gui/hud/building_icons/ammo_importer"
+		//upgrade					"buildings/ammo/ammo_importer_lvl_2"
+		require 				"headquarters"
+		order					"51"
+		type					"ammo_convertor"
+		overrides				"ammo_convertor"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name 			"default"
+				building_time 	30
+				building_cost
+				{
+					carbonium 	"500"
+					steel 		"250"
+					ai			"2"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+		}
+		
+		out
+		{
+		}
+
+		priority 4
+		continous_local_production "1"
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/building_modular.lua"
+		
+		database
+		{
+			module_attachment	string:""
+			module_blueprints	string:"buildings/ammo/ammo_importer_low_calib_1_module,buildings/ammo/ammo_importer_energy_cell_1_module"
+			
+			cone_effect			string:"build_cone_4x4"
+			cone_effect_sell	string:"sell_big"
+			building_time		float:"30"
+		}
+	}
+
+	WeaponItemDesc
+	{
+		ammo_storage
+		damage_type "area"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "0.1"
+				min_value "0.1"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "FIRE_PER_BURST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1"
+				min_value "1"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "FIRE_PER_SHOT"
+			}
+		}
+
+	}
+	
+	HealthDesc
+	{
+		max_health 					"2000"
+		health 						"2000"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 					1
+		update_health_uniform 		"1"
+	
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health "90"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "90"
+			}
+			DestructionLevel
+			{
+				health "80"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "80_destroy"
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "80"
+			}
+			DestructionLevel
+			{
+				health "70"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "70"
+			}
+			DestructionLevel
+			{
+				health "60"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "60_destroy"
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "60"
+			}
+			DestructionLevel
+			{
+				health "50"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"				
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "50"
+			}
+			DestructionLevel
+			{
+				health "40"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "40_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "40"
+			}
+			DestructionLevel
+			{
+				health "30"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "30"
+			}
+			DestructionLevel
+			{
+				health "20"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "20_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "20"
+			}
+			DestructionLevel
+			{
+				health "10"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "10"
+			}
+			DestructionLevel
+			{
+				health "0"
+				destroy_state_change_effect_group "0_transition"
+				destroy_comp_delay "0.7"
+				destroy_comp_event "default"
+				destrucion_level_name "0"
+			}			
+		}
+	}
+
+	TypeDesc
+	{
+		type "building|ammo"
+	}
+
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/resources/liquid_decompressor.mesh"
+		material 	"buildings/resources/liquid_decompressor"
+
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "1"
+				material "resources/resource_empty_fresnel"
+			}
+
+			SubMesh
+			{
+				id "2"
+				material "buildings/resources/liquid_compressor_barrel"
+			}
+		}
+		
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/liquid_decompressor"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "building_working"
+	}
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsSphereShape
+					{
+						r "3.45"
+	
+						position 
+						{
+							x "0.0"
+							y "1.0"
+							z "0.0"
+						}
+					}
+				}
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+   			PhysicsBoxShape
+   			{
+    				x	8
+    				y	8
+    				z	8
+   			}			
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color 
+		{
+			x "0.4"  // r
+			y "0.2"  // g
+			z "0.9"  // b
+			w "1"
+		}
+		size
+		{
+			x "4"
+			y "4"
+		}
+
+		visibility			"always"
+		layer_group			"common_buildings"
+	}
+
+	FogOfWarRevealerComponentDesc
+	{
+		radius "16"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	LootDesc
+	{
+		explosion_max_power 	"2000"
+		explosion_min_power 	"1000"	
+	}
+
+	DestroyDesc
+	{
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "generic_destroy"				
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"
+				}				
+			}
+			
+			Pair
+			{
+				key "80_destroy"				
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"			
+				}				
+			}
+			
+			Pair
+			{
+				key "60_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"			
+				}				
+			}
+			Pair
+			{
+				key "40_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"			
+				}				
+			}
+			Pair
+			{
+				key "20_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"			
+				}				
+			}			
+			Pair
+			{
+				key "default"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"5000"
+					//explosion_effect 		"effects/buildings_generic/explosion_building_big_01"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_very_large_parts_generic"			
+				}				
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"5000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"	
+					part_material 			"misc/building_parts_generic"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_very_large_parts_generic"
+					part_lifetime "3"	
+				}
+
+				key "quicksand"
+			}				
+		}
+	}
+
+	EffectDesc
+	{		
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_compressor_working"
+					delay "0.5"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "teleport"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_teleport"
+					bone "att_teleport"
+				}
+			}
+		}		
+		EffectGroup
+		{
+			group "rings_energy"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_1_part_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_1_part_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_1_part_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_1_part_4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_2_part_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_2_part_2"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_2_part_3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
+					bone "be_ring_2_part_4"
+				}
+			}
+		}
+	}
+}
+
+
+// ammo_tower_low_caliber_lvl2
+// ammo_tower_explosive_lvl3
+// ammo_tower_liquid
+
+EntityBlueprint  // ammo_importer_low_calib_1_module
+{
+	name  "buildings/ammo/ammo_importer_low_calib_1_module"
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"40"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"ammo_tower_low_caliber"
+				value				"2.4"
+			}
+			GameplayResource
+			{
+				resource 			"ammo_mech_low_caliber"
+				value				"2.4"
+				optional			"1"
+			}
+		}
+
+		priority 4
+		continous_local_production "1"
+	}
+	
+	//LuaDesc
+	//{
+	//	script "lua/buildings/building_regulated.lua"
+	//	
+	//	database
+	//	{
+	//		watched_resource	string:"ammo_tower_low_caliber"
+	//		watched_level_high	float:"200.0"
+	//	}
+	//}
+}
+
+EntityBlueprint  // ammo_importer_high_calib_1_module
+{
+	name  "buildings/ammo/ammo_importer_high_calib_1_module"
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"40"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"ammo_tower_high_caliber"
+				value				"0.8"
+			}	
+			GameplayResource
+			{
+				resource 			"ammo_mech_high_caliber"
+				value				"0.8"
+				optional			"1"
+			}
+		}
+
+		priority 4
+		continous_local_production "1"
+	}
+	
+}
+
+EntityBlueprint  // ammo_importer_energy_cell_1_module
+{
+	name  "buildings/ammo/ammo_importer_energy_cell_1_module"
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				"40"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"ammo_tower_energy_cell"
+				value				"0.2"
+			}
+			GameplayResource
+			{
+				resource 			"ammo_mech_energy_cell"
+				value				"0.2"
+				optional			"1"
+			}
+		}
+
+		priority 4
+		continous_local_production "1"
+	}
+	
+}

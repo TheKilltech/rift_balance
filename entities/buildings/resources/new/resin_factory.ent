@@ -12,10 +12,11 @@ EntityBlueprint  // resin_factory
 		menu_icon			"gui/hud/building_icons/resin_factory"
 		upgrade				"buildings/resources/resin_factory_lvl_2"
 		require 			"headquarters"
-		order				"19"
+		order				"47"
 		buildable			"1"
+		type				"resin_fac"
+		overrides			"resin_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,resin_factory_lvl_2,resin_factory_lvl_3"
 
 		costs
 		{
@@ -599,7 +600,8 @@ EntityBlueprint  // resin_factory_lvl_2
 		upgrade				"buildings/resources/resin_factory_lvl_3"
 		require 			"headquarters"
 		buildable			"0"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,resin_factory,resin_factory_lvl_3"
+		type				"resin_fac"
+		overrides			"resin_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -818,7 +820,8 @@ EntityBlueprint  // resin_factory_lvl_3
 		menu_icon			"gui/hud/building_icons/resin_factory_lvl_3"
 		require 			"headquarters"
 		buildable			"0"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,resin_factory,resin_factory_lvl_2"
+		type				"resin_fac"
+		overrides			"resin_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs

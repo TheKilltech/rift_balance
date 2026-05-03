@@ -12,13 +12,13 @@ EntityBlueprint  // heavy_water_reactor
 		description			"gui/hud/building_description/heavy_water_reactor"
 		menu_icon			"gui/hud/building_icons/heavy_water_reactor"
 		upgrade				"buildings/energy/heavy_water_reactor_lvl_2"
-		type				"pipe"
+		type				"nuclear_power"
+		overrides			"pipe,nuclear_power"
 		require 			"headquarters"
 		building_group		"nuclear_powerplant"
 		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"1"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,heavy_water_reactor,heavy_water_reactor_lvl_2,nuclear_powerplant,nuclear_powerplant_lvl_2,nuclear_powerplant_lvl_3"
 		
 		costs
 		{
@@ -385,13 +385,13 @@ EntityBlueprint  // heavy_water_reactor_lvl_2
 		localization_id		"gui/hud/building_name/heavy_water_reactor"
 		description			"gui/hud/building_description/heavy_water_reactor"
 		menu_icon			"gui/hud/building_icons/heavy_water_reactor_lvl_2"
-		type				"pipe"
+		type				"nuclear_power"
+		overrides			"pipe,nuclear_power"
 		require 			"headquarters"
 		building_group		"nuclear_powerplant"
 		buildable			"0"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"1"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,heavy_water_reactor,heavy_water_reactor_lvl_2,nuclear_powerplant,nuclear_powerplant_lvl_2,nuclear_powerplant_lvl_3"
 		
 		costs
 		{

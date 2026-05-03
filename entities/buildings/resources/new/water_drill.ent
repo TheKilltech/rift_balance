@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // water_drill
 {
 	name  "buildings/resources/water_drill"
 
@@ -7,7 +7,6 @@ EntityBlueprint
 		name 				"water_drill"
 		bp   				"buildings/resources/water_drill"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/water_drill"
 		description			"gui/hud/building_description/water_drill"
 		menu_icon			"gui/hud/building_icons/water_drill"
@@ -16,12 +15,13 @@ EntityBlueprint
 		building_group		"liquid_pump"
 		//upgrade				"buildings/resources/water_drill_lvl_2"
 		min_radius_effect   "voice_over/announcement/pump_too_close"
-		order				"9"
 		radius_name			"water_drill"
 		min_radius			"175"
 		min_radius_effect	"voice_over/announcement/building_too_close"
 		condition			"NOT_BIOME"
 		condition_value		"magma"
+		type				"mud_fac"
+		overrides			"mud_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs

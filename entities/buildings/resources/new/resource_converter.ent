@@ -15,8 +15,9 @@ EntityBlueprint  //resource_converter
 		building_group		"bio_cobalt_refinery"
 		require 			"headquarters"
 		//upgrade				"buildings/resources/resource_converter_cobalt_lvl_2"
+		type				"cobalt_fac"
+		overrides			"cobalt_fac,uranium_fac,palladium_fac,titanium_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{
@@ -486,8 +487,9 @@ EntityBlueprint  //resource_converter_cobalt
 		building_group		"bio_cobalt_refinery"
 		require 			"headquarters"
 		//upgrade				"buildings/resources/resource_converter_cobalt_lvl_2"
+		type				"cobalt_fac"
+		overrides			"cobalt_fac,uranium_fac,palladium_fac,titanium_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{
@@ -962,6 +964,8 @@ EntityBlueprint  //resource_converter_palladium
 		building_group		"bio_palladium_refinery"
 		require 			"headquarters"
 		//upgrade				"buildings/resources/resource_converter_cobalt_lvl_2"
+		type				"palladium_fac"
+		overrides			"palladium_fac,cobalt_fac,uranium_fac,titanium_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 
 		costs
@@ -1437,8 +1441,9 @@ EntityBlueprint  //resource_converter_titanium
 		building_group		"bio_titanium_refinery"
 		require 			"headquarters"
 		//upgrade				"buildings/resources/resource_converter_cobalt_lvl_2"
+		type				"titanium_fac"
+		overrides			"titanium_fac,palladium_fac,cobalt_fac,uranium_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{
@@ -1912,8 +1917,9 @@ EntityBlueprint  //resource_converter_uranium_depleted
 		building_group		"uranium_centrifuge"
 		require 			"headquarters"
 		//upgrade				"buildings/resources/resource_converter_uranium_depleted_lvl_2"
+		type				"uranium_fac"
+		overrides			"uranium_fac,titanium_fac,palladium_fac,cobalt_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{
@@ -2396,8 +2402,9 @@ EntityBlueprint  //resource_converter_uranium
 		building_group		"uranium_centrifuge"
 		require 			"headquarters"
 		//upgrade				"buildings/resources/resource_converter_uranium_depleted_lvl_2"
+		type				"uranium_fac"
+		overrides			"uranium_fac,titanium_fac,palladium_fac,cobalt_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{

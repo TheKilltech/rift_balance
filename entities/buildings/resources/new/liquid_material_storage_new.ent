@@ -7,16 +7,16 @@ EntityBlueprint  // liquid_material_storage_small
 		name 				"liquid_material_storage_small"
 		bp   				"buildings/resources/liquid_material_storage_small"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/liquid_material_storage_small"
 		description			"gui/hud/building_description/liquid_material_storage_small"
 		menu_icon			"gui/hud/building_icons/liquid_material_storage"
 		require 			"headquarters"
 		order				"3"
 		buildable			"1"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		menu_action			"resource_clear"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,liquid_material_storage_medium,liquid_material_storage_large,liquid_material_storage,liquid_material_storage_lvl_2,liquid_material_storage_lvl_3"
+		type				"liquid_storage"
+		overrides			"liquid_storage,pipe,liquid_material_storage,liquid_material_storage_lvl_2,liquid_material_storage_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 				
 		costs
 		{
@@ -65,6 +65,9 @@ EntityBlueprint  // liquid_material_storage_small
 			cone_effect			string:"build_cone_2x2"
 			cone_effect_sell	string:"sell_big"
 			postfix				string:"_storage"
+			
+			scale_y				float:"1.4"
+			offset_y			float:"-1.15"
 		}
 	}
 
@@ -444,16 +447,16 @@ EntityBlueprint  // liquid_material_storage_medium
 		name 				"liquid_material_storage_medium"
 		bp   				"buildings/resources/liquid_material_storage_medium"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/liquid_material_storage"
 		description			"gui/hud/building_description/liquid_material_storage"
 		menu_icon			"gui/hud/building_icons/liquid_material_storage_lvl2"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"liquid_material_storage_small"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		menu_action			"resource_clear"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,liquid_material_storage_small,liquid_material_storage_large,liquid_material_storage,liquid_material_storage_lvl_2,liquid_material_storage_lvl_3"
+		type				"liquid_storage"
+		overrides			"liquid_storage,pipe,liquid_material_storage,liquid_material_storage_lvl_2,liquid_material_storage_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 				
 		costs
 		{
@@ -860,16 +863,16 @@ EntityBlueprint  // liquid_material_storage_large
 		name 				"liquid_material_storage_large"
 		bp   				"buildings/resources/liquid_material_storage_large"
 		category 			"liquids"
-		type				"pipe"
 		localization_id		"gui/hud/building_name/liquid_material_storage_large"
 		description			"gui/hud/building_description/liquid_material_storage_large"
 		menu_icon			"gui/hud/building_icons/liquid_material_storage_lvl3"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"liquid_material_storage_small"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		menu_action			"resource_clear"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,liquid_material_storage_small,liquid_material_storage_medium,liquid_material_storage,liquid_material_storage_lvl_2,liquid_material_storage_lvl_3"
+		type				"liquid_storage"
+		overrides			"liquid_storage,pipe,liquid_material_storage,liquid_material_storage_lvl_2,liquid_material_storage_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 				
 		costs
 		{

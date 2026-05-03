@@ -13,8 +13,9 @@ EntityBlueprint  // ammonium_extractor
 		order				"6"
 		upgrade				"buildings/resources/ammonium_extractor_lvl_2"
 		require 			"headquarters"
+		type				"ammonium_extr"
+		overrides			"ammonium_extr,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammonium_extractor_lvl_2"
 
 		costs
 		{
@@ -457,10 +458,10 @@ EntityBlueprint  // ammonium_extractor_lvl_2
 		menu_icon			"gui/hud/building_icons/ammonium_extractor_lvl_2"
 		order				"6"
 		buildable			"0"
-		//upgrade				"buildings/resources/ammonium_extractor_lvl_2"
 		require 			"headquarters"
+		type				"ammonium_extr"
+		overrides			"ammonium_extr,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless,ammonium_extractor"
 
 		costs
 		{

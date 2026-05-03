@@ -1,8 +1,7 @@
-EntityBlueprint
+EntityBlueprint  // carbonium_powerplant_lvl_2
 {
-	name  "buildings/energy/carbonium_powerplant_lvl_2"
-
-	base_blueprint buildings/energy/carbonium_powerplant	
+	name			"buildings/energy/carbonium_powerplant_lvl_2"
+	base_blueprint	"buildings/energy/carbonium_powerplant"
 
 	BuildingDesc
 	{
@@ -14,7 +13,9 @@ EntityBlueprint
 		description			"gui/hud/building_description/carbonium_powerplant"
 		menu_icon			"gui/hud/building_icons/carbonium_powerplant_lvl2"
 		order				"3"
-		upgrade				"buildings/energy/carbonium_powerplant_lvl_3"		
+		upgrade				"buildings/energy/carbonium_powerplant_lvl_3"
+		type				"carbonium_power"
+		overrides			"carbonium_power,pipe"
 		require 			"headquarters"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		going_green_state	"1"

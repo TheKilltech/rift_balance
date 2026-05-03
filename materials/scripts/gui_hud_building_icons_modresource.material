@@ -440,6 +440,39 @@ material "gui/hud/building_icons/ore_mill_lvl_4_disabled" : gui/default
 }
 
 
+/////  geoscanner
+
+material "gui/hud/building_icons/geoscanner_lvl_1" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/geoscanner_lvl_1.dds"
+}
+
+material "gui/hud/building_icons/geoscanner_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/seismic_laboratory_disabled.dds"
+}
+
+material "gui/hud/building_icons/geoscanner_lvl_2" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/geoscanner_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/geoscanner_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/seismic_laboratory_disabled.dds"
+}
+
+material "gui/hud/building_icons/geoscanner_lvl_3" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/geoscanner_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/geoscanner_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/seismic_laboratory_disabled.dds"
+}
+
+
 
 /////  nitric_acid_refinery
 
@@ -502,6 +535,27 @@ material "gui/hud/building_icons/nitrification_plant_lvl_3" : gui/default
 }
 
 material "gui/hud/building_icons/nitrification_plant_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/nitrification_plant_disabled.dds"
+}
+
+
+material "gui/hud/building_icons/nitrification_site_lvl_2" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/nitrification_site_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/nitrification_site_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/nitrification_plant_disabled.dds"
+}
+
+material "gui/hud/building_icons/nitrification_site_lvl_3" : gui/default
+{
+	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/nitrification_site_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/nitrification_site_lvl_3_disabled" : gui/default
 {
 	set_texture_alias diffuse "materials/textures/gui/hud/building_icons/nitrification_plant_disabled.dds"
 }

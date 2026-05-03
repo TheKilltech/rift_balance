@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // drone_mine
 {
 	name  "buildings/resources/drone_mine"
 
@@ -10,10 +10,14 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/drone_mine"
 		description			"gui/hud/building_description/drone_mine"
 		menu_icon			"gui/hud/building_icons/drone_mine"
+		upgrade				"buildings/resources/drone_mine_lvl_2"
 		require 			"headquarters"
-		order				"12"
-		upgrade				"buildings/resources/drone_mine_lvl_2"	
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"		
+		//order				"42"
+		buildable			"0"
+		building_group		"loot_collector"
+		type				"solids_mine"
+		overrides			"solids_mine"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
 		{

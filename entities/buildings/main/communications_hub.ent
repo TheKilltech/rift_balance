@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // communications_hub
 {
 	name  "buildings/main/communications_hub"
 
@@ -10,14 +10,15 @@ EntityBlueprint
 		localization_id		"gui/hud/building_name/communications_hub"
 		description			"gui/hud/building_description/communications_hub"
 		menu_icon			"gui/hud/building_icons/communications_hub"
+		upgrade				"buildings/main/communications_hub_lvl_2"
 		order				"3"
 		limit			    "1"
-		limit_name			"communications_hub"		
+		limit_name			"communications_hub"
 		require 			"headquarters_lvl_2"
-		upgrade				"buildings/main/communications_hub_lvl_2"
 		menu_action 		"research"
+		type				"download_fac"
+		overrides			"download_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		hide_treasures 		"1"
 
 		costs
 		{
@@ -54,7 +55,7 @@ EntityBlueprint
 				value			 	"1"
 			}
 		}
-		priority 2			
+		priority 2
 	}
 
 	LuaDesc
