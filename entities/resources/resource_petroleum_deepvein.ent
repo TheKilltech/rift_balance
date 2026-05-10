@@ -75,13 +75,13 @@ EntityBlueprint
 	EffectDesc
 	{	
 		EffectGroup
-		{						
+		{
 			group "rapture"
-			enabled "1"				
+			enabled "1"
 			delay "0"
 			
 			Effects
-			{effects/world/earthquake
+			{
 				Effect
 				{
 					blueprint "effects/enemies_canceroth/healing" // "canceroth_child_energy"
@@ -95,7 +95,7 @@ EntityBlueprint
 					random_orientation "1"
 				}
 			}
-		}	
+		}
 	}
 
 	children
