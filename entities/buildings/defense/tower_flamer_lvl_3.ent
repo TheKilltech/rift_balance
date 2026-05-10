@@ -1,39 +1,4 @@
-EntityBlueprint
-{
-	name  "buildings/defense/tower_flamer_beam_lvl3"
-
-	base_blueprints
-	{
-		lights/point/fire_orange_big
-		effects/no_lifetime
-	}
-
-	FlameBeamComponent
-	{
-        max_hits					"16"
-        box_count					"3"
-        angle_speed					"180"
-        range_speed					"1.5"
-        particle_velocity_scale 	"0.0125"
-        particle_reference_range	"16"
-
-		collision_3d 				"world|world_blocker|world_destructible|destructible|ground_unit|building|hitbox" 
-	}
-
-	ParticleDesc
-	{
-		name    "rift/tower_flamer_lvl3"
-	}
-
-	SoundDesc
-	{
-		name 		"items/weapons/fluid/flamer_loop"
-		start_name 	"items/weapons/fluid/flamer_start"
-		end_name 	"items/weapons/fluid/flamer_stop"
-	}
-}
-
-EntityBlueprint
+EntityBlueprint  // tower_flamer_lvl_3
 {
 	name  "buildings/defense/tower_flamer_lvl_3"
 
@@ -82,29 +47,6 @@ EntityBlueprint
 				value 		"50"
 			}
 			
-			//GameplayResource
-			//{
-			//	resource 	"magma"
-			//	value 		"25"
-			//	family		"fuel"
-			//	attachment	"att_in_1"
-			//}
-			//
-			//GameplayResource
-			//{
-			//	resource 	"plasma"
-			//	value 		"10"
-			//	family		"fuel"
-			//	attachment	"att_in_1"
-			//}
-			//
-			//GameplayResource
-			//{
-			//	resource 	"plasma_charged"
-			//	value 		"3"
-			//	family		"fuel"
-			//	attachment	"att_in_1"
-			//}
 		}
 
 		out
@@ -221,23 +163,7 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
-		////////////////////////Resources/////////////////////////
-		//EffectGroup
-		//{
-		//	group "att_in_1"
-		//	enabled "0"				
-		//	delay "0"
-		//	
-		//	Effects
-		//	{
-		//		Effect
-		//		{
-		//			blueprint "effects/buildings_and_machines/building_arrow"
-		//			bone "att_in_arrow"
-		//		}
-		//	}
-		//}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -274,5 +200,41 @@ EntityBlueprint
 				}
 			}
 		}
+	}
+}
+
+
+EntityBlueprint  // tower_flamer_beam_lvl3
+{
+	name  "buildings/defense/tower_flamer_beam_lvl3"
+
+	base_blueprints
+	{
+		lights/point/fire_orange_big
+		effects/no_lifetime
+	}
+
+	FlameBeamComponent
+	{
+        max_hits					"16"
+        box_count					"3"
+        angle_speed					"180"
+        range_speed					"1.5"
+        particle_velocity_scale 	"0.0125"
+        particle_reference_range	"16"
+
+		collision_3d 				"world|world_blocker|world_destructible|destructible|ground_unit|building|hitbox" 
+	}
+
+	ParticleDesc
+	{
+		name    "rift/tower_flamer_lvl3"
+	}
+
+	SoundDesc
+	{
+		name 		"items/weapons/fluid/flamer_loop"
+		start_name 	"items/weapons/fluid/flamer_start"
+		end_name 	"items/weapons/fluid/flamer_stop"
 	}
 }
