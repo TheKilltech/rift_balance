@@ -57,12 +57,14 @@ EntityBlueprint  // tower_flamer
 
 		database
 		{
+			standby_upkeep_factor	float:"0.1"
+			
 			cone_effect			string:"build_cone_1x1"
 			cone_effect_sell	string:"sell_small"
 			time_machine		int:"0"
 			
 			display_radius_group	 string:"tower_flamer"
-			display_radius_blueprint string:"effects/decals/range_circle_harvesting"			
+			display_radius_blueprint string:"effects/decals/range_circle_harvesting"
 		}
 
 	}
