@@ -3077,7 +3077,7 @@ items/weapons/blaster_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "energy"
 		rarity "EXTREME"
 		stat_def_vec
@@ -3101,9 +3101,9 @@ items/weapons/blaster_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "3.8"
+				default_value "4"
 				max_value "5"
-				min_value "4"
+				min_value "4.2"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
@@ -3255,6 +3255,14 @@ items/weapons/blaster_extreme_item
 				min_value "1.4"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.4"
+				min_value "0.39999992"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
 			}
 
 		}
@@ -3449,7 +3457,7 @@ items/weapons/blaster_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_energy_cell"
 		damage_type "energy"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -3473,9 +3481,9 @@ items/weapons/blaster_superior_item
 
 			WeaponStatDef
 			{
-				default_value "3.8"
+				default_value "3.8999999"
 				max_value "4.7"
-				min_value "4"
+				min_value "4.1"
 				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
@@ -3627,6 +3635,14 @@ items/weapons/blaster_superior_item
 				min_value "1.3"
 				stat_features "BASE_MINMAX"
 				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.19999993"
+				min_value "0.19999993"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
 			}
 
 		}
@@ -19326,7 +19342,7 @@ items/weapons/root_gun_advanced_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_liquid"
 		damage_type "physical"
 		rarity "ADVANCED"
 		stat_def_vec
@@ -19350,8 +19366,8 @@ items/weapons/root_gun_advanced_item
 
 			WeaponStatDef
 			{
-				default_value "1.4999999"
-				max_value "2.1000004"
+				default_value "1.6999999"
+				max_value "2.2000003"
 				min_value "1.9000005"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
@@ -19471,6 +19487,15 @@ items/weapons/root_gun_advanced_item
 				stat_type "BEAM_WIDTH"
 			}
 
+			WeaponStatDef
+			{
+				default_value "7"
+				max_value "5"
+				min_value "5"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
+			}
+
 		}
 
 	}
@@ -19481,7 +19506,7 @@ items/weapons/root_gun_extreme_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_liquid"
 		damage_type "physical"
 		rarity "EXTREME"
 		stat_def_vec
@@ -19505,9 +19530,9 @@ items/weapons/root_gun_extreme_item
 
 			WeaponStatDef
 			{
-				default_value "1.4999999"
-				max_value "2.3000004"
-				min_value "2.1000004"
+				default_value "1.8"
+				max_value "2.5000002"
+				min_value "2.2000003"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
@@ -19624,6 +19649,15 @@ items/weapons/root_gun_extreme_item
 				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
+			}
+
+			WeaponStatDef
+			{
+				default_value "17"
+				max_value "15"
+				min_value "15"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
 			}
 
 		}
@@ -19782,7 +19816,7 @@ items/weapons/root_gun_superior_item
 {
 	WeaponItemDesc
 	{
-		ammo_storage
+		ammo_storage "ammo_mech_liquid"
 		damage_type "physical"
 		rarity "SUPERIOR"
 		stat_def_vec
@@ -19806,9 +19840,9 @@ items/weapons/root_gun_superior_item
 
 			WeaponStatDef
 			{
-				default_value "1.4999999"
-				max_value "2.2000005"
-				min_value "2.0000005"
+				default_value "1.75"
+				max_value "2.3000004"
+				min_value "2.05"
 				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
 				stat_type "FIRE_RATE"
 			}
@@ -19925,6 +19959,15 @@ items/weapons/root_gun_superior_item
 				min_value "1"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
+			}
+
+			WeaponStatDef
+			{
+				default_value "11.5"
+				max_value "10"
+				min_value "10"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_COST"
 			}
 
 		}
