@@ -2549,7 +2549,7 @@ Research
 					research_scripts
 					position
 					{
-						x "387"
+						x "531"
 						y "-324"
 					}
 
@@ -18193,6 +18193,91 @@ Research
 					}
 
 					icon "gui/menu/research/icons/skill_tornado"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/basic_energy_production"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/energy_connector_eluminated"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "3500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "55"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "1000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1557"
+						y "-216"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/energy_connector_xlamp"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/energy/energy_connector_xlamp_blue"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/energy/energy_connector_xlamp_green"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/energy/energy_connector_xlamp_red"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/energy/energy_connector_xlamp_yellow"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/decorations"
 				}
 
 			}
@@ -53294,6 +53379,6 @@ Research
 
 	type
 	editor "6741"
-	version "227"
+	version "228"
 }
 

@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // base_lamp_blue
 {
 	name  "buildings/decorations/base_lamp_blue"
 
@@ -13,7 +13,9 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/base_lamp_blue"
 		require 			"headquarters"
 		building_group		"base_lamp"
-	
+		building_mode		"radius"
+		type				"light"
+		overrides			"energy,light"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
@@ -24,10 +26,10 @@ EntityBlueprint
 				building_time 2
 				building_cost
 				{
-					carbonium 	"100"		
-					steel 		"25"		
+					carbonium 	"100"
+					steel 		"25"
 				}
-			}		
+			}
 		}
 	}
 
@@ -42,6 +44,18 @@ EntityBlueprint
 			}
 		}
 		priority 1
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource 			"energy"
+				distribution_radius	"6"
+			}	
+		}
 	}
 
 	LuaDesc
@@ -95,7 +109,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|decorations|light"
+		type "building|decorations|light|not_move_to_target|energy_connector"
 	}
 
 	SkeletonDesc
@@ -155,6 +169,26 @@ EntityBlueprint
     				z	2
    			}			
 		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color 
+		{
+			x "0"    // r
+			y "0.65" // g
+			z "0.65" // b
+			w "1"
+		}
+		size
+		{
+			x "1"
+			y "1"
+		}
+			
+		visibility			"always"
+		layer_group			"common_buildings"
 	}
 
 	HealthBarDesc
