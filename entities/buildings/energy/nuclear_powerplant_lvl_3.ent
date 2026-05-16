@@ -39,7 +39,7 @@ EntityBlueprint  // nuclear_powerplant_lvl_3
 				building_time 150
 				building_cost
 				{
-					carbonium 	"1500"		
+					carbonium 	"1500"
 					steel 		"750"
 					uranium 	"500"
 				}
@@ -60,6 +60,13 @@ EntityBlueprint  // nuclear_powerplant_lvl_3
 			{
 				resource 	"supercoolant"
 				value 		"25"
+				attachment	"att_in_1"
+				family		"coolant"
+			}
+			GameplayResource
+			{
+				resource 	"deuterium"
+				value 		"5"
 				attachment	"att_in_1"
 				family		"coolant"
 			}

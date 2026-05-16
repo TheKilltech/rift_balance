@@ -66,21 +66,22 @@ EntityBlueprint  // tower_hcm
 			{
 				resource 	"flammable_gas"
 				value 		"25"
-				family		"fuel"
+				family		"agent"
 				attachment	"att_in_1"
 			}
 			GameplayResource
 			{
 				resource 	"petroleum"
 				value 		"25"
-				family		"fuel"
+				family		"agent"
 				attachment	"att_in_1"
 			}
+			
 			GameplayResource
 			{
-				resource 	"reagent"
-				value 		"10"
-				family		"fuel"
+				resource 	"magma"
+				value 		"30"
+				family		"agent"
 				attachment	"att_in_1"
 			}
 		}
