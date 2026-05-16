@@ -5694,7 +5694,7 @@ Research
 					position
 					{
 						x "1134"
-						y "-216"
+						y "-270"
 					}
 
 					research_awards
@@ -7341,7 +7341,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/comm_hub_lvl_3"
+							research_name "gui/menu/research/name/comm_hub_lvl_2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -7377,7 +7377,7 @@ Research
 					position
 					{
 						x "765"
-						y "-18"
+						y "-162"
 					}
 
 					research_awards
@@ -7406,13 +7406,6 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/comm_hub_lvl_4"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
 					}
 
 					research_name "gui/menu/research/name/nitrogen_chemistry_lvl_2"
@@ -7438,7 +7431,7 @@ Research
 					position
 					{
 						x "765"
-						y "180"
+						y "-18"
 					}
 
 					research_awards
@@ -7470,7 +7463,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/comm_hub_lvl_5"
+							research_name "gui/menu/research/name/comm_hub_lvl_4"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -7513,7 +7506,7 @@ Research
 					position
 					{
 						x "765"
-						y "324"
+						y "126"
 					}
 
 					research_awards
@@ -13451,7 +13444,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/nitrogen_chemistry"
+							research_name "gui/menu/research/name/nitrogen_chemistry_lvl_2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -13487,7 +13480,7 @@ Research
 					position
 					{
 						x "720"
-						y "126"
+						y "36"
 					}
 
 					research_awards
@@ -13587,7 +13580,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/nitrogen_chemistry"
+							research_name "gui/menu/research/name/nitrogen_chemistry_lvl_2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -13623,7 +13616,7 @@ Research
 					position
 					{
 						x "810"
-						y "126"
+						y "36"
 					}
 
 					research_awards
@@ -13648,14 +13641,14 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/comm_hub_lvl_5"
+							research_name "gui/menu/research/name/ammonium_extraction"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/ammonium_extraction"
+							research_name "gui/menu/research/name/nitrogen_chemistry_lvl_3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -13691,7 +13684,7 @@ Research
 					position
 					{
 						x "810"
-						y "324"
+						y "180"
 					}
 
 					research_awards
@@ -14051,6 +14044,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/nitrogen_chemistry"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_explosive_lvl2b"
@@ -14258,6 +14258,13 @@ Research
 						{
 							render_line "1"
 							research_name "gui/menu/research/name/ammo_energy_cell_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/plasma_physics"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -15700,6 +15707,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/nitrogen_chemistry"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_low_high_caliber_lvl2"
@@ -15731,7 +15745,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-225"
+						x "-198"
 						y "-18"
 					}
 
@@ -15765,6 +15779,13 @@ Research
 						{
 							render_line "1"
 							research_name "gui/menu/research/name/towers_flamer_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/nitrogen_chemistry"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -52833,6 +52854,6 @@ Research
 
 	type
 	editor "6741"
-	version "229"
+	version "230"
 }
 
