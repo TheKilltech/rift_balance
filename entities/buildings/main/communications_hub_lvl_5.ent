@@ -56,7 +56,28 @@ EntityBlueprint  // communications_hub_lvl_5
 			}
 			GameplayResource
 			{
+				resource 			"deuterium"
+				value			 	"15"
+				attachment			"att_in_1"
+				family				"cooling"
+			}
+			GameplayResource
+			{
 				resource 			"plasma_charged"
+				value			 	"25"
+				attachment			"att_in_2"
+				family				"charging"
+			}
+			GameplayResource
+			{
+				resource 			"resin"
+				value			 	"15"
+				attachment			"att_in_2"
+				family				"charging"
+			}
+			GameplayResource
+			{
+				resource 			"fissonium"
 				value			 	"25"
 				attachment			"att_in_2"
 				family				"charging"

@@ -54,8 +54,24 @@ EntityBlueprint  // energy_storage_lvl_3
 			
 			GameplayResource
 			{
-				resource 	"fluorine"
+				resource 	"deuterium"
+				value 		"0.2"
+				family		"coolant"
+				attachment	"att_in_1|att_in_2"
+			}
+			
+			GameplayResource
+			{
+				resource 	"morphium"
 				value		"2"
+				family		"coolant"
+				attachment	"att_in_1|att_in_2"
+			}
+			
+			GameplayResource
+			{
+				resource 	"fluorine"
+				value		"5"
 				family		"coolant"
 				attachment	"att_in_1|att_in_2"
 			}

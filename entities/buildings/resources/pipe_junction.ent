@@ -114,6 +114,27 @@ EntityBlueprint  // pipe_junction
 				}
 			}
 		
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.4"  // r
+					y "0.4"  // g
+					z "0.9"  // b
+					w "1"
+				}
+				size
+				{
+					x "3"
+					y "1"
+				}
+				
+				big_minimap_scale 	"1.9"
+				visibility			"always"
+				layer_group			"common_buildings"
+			}
+			
 			GridCullerDesc
 			{
 				Shapes
@@ -287,7 +308,7 @@ EntityBlueprint  // pipe_junction
 		}
 		size
 		{
-			x "3"
+			x "1"
 			y "3"
 		}
 		

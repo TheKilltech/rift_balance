@@ -3061,8 +3061,8 @@ buildings/defense/tower_flamer
 
 			WeaponStatDef
 			{
-				max_value "50"
-				min_value "50"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
@@ -3081,6 +3081,164 @@ buildings/defense/tower_flamer
 				min_value "2.5"
 				stat_features "BASE_MINMAX"
 				stat_type "BEAM_WIDTH"
+			}
+
+		}
+
+	}
+
+}
+
+buildings/defense/tower_flamer_cryo_lvl_2
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_tower_liquid_lvl2"
+		damage_type "cryo"
+		rarity "SUPERIOR"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "30"
+				min_value "30"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "20"
+				min_value "20"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "32"
+				min_value "32"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "20"
+				min_value "20"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "20"
+				min_value "20"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "BEAM_RANGE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3"
+				min_value "3"
+				stat_features "BASE_MINMAX"
+				stat_type "BEAM_WIDTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.2"
+				min_value "1.2"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2"
+				min_value "2"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+		}
+
+	}
+
+}
+
+buildings/defense/tower_flamer_cryo_lvl_3
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_tower_liquid_lvl3"
+		damage_type "cryo"
+		rarity "EXTREME"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				max_value "80"
+				min_value "80"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "55"
+				min_value "55"
+				stat_features "BASE_MINMAX|MODABLE|STATISTIC"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "32"
+				min_value "32"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "40"
+				min_value "40"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "24"
+				min_value "24"
+				stat_features "BASE_MINMAX|MODABLE"
+				stat_type "BEAM_RANGE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "4.5"
+				min_value "4.5"
+				stat_features "BASE_MINMAX"
+				stat_type "BEAM_WIDTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.5"
+				min_value "1.5"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3"
+				min_value "3"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
 			}
 
 		}
@@ -3124,16 +3282,16 @@ buildings/defense/tower_flamer_lvl_2
 
 			WeaponStatDef
 			{
-				max_value "50"
-				min_value "50"
+				max_value "20"
+				min_value "20"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "18"
-				min_value "18"
+				max_value "19"
+				min_value "19"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "BEAM_RANGE"
 			}
@@ -3203,16 +3361,16 @@ buildings/defense/tower_flamer_lvl_3
 
 			WeaponStatDef
 			{
-				max_value "100"
-				min_value "100"
+				max_value "40"
+				min_value "40"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "AMMO_COST"
 			}
 
 			WeaponStatDef
 			{
-				max_value "20"
-				min_value "20"
+				max_value "22"
+				min_value "22"
 				stat_features "BASE_MINMAX|MODABLE"
 				stat_type "BEAM_RANGE"
 			}
