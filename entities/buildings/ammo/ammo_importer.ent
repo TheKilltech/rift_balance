@@ -13,6 +13,7 @@ EntityBlueprint  // ammo_importer
 		//upgrade					"buildings/ammo/ammo_importer_lvl_2"
 		require 				"headquarters"
 		order					"51"
+		buildable				"0" // disabled the current stage of the test study
 		type					"ammo_convertor"
 		overrides				"ammo_convertor"
 		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
