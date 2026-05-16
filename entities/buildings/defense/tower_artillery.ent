@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // tower_artillery
 {
 	name "buildings/defense/tower_artillery"
 
@@ -213,8 +213,8 @@ EntityBlueprint
 		aim_volume "SphericalAimVolume"
 		{
 			range_min "8"
-			range_max "42"
-			aiming_range "52"
+			range_max "50"
+			aiming_range "60"
 		}
 
 		aiming_cooldown "1"
@@ -353,7 +353,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_artillery_projectile
 {
 	name "buildings/defense/tower_artillery_projectile"
 
@@ -456,6 +456,7 @@ EntityBlueprint
 			}
 		}
 	}	
+	
 	LifeTimeDesc
 	{
 		time "5.0"
