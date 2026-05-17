@@ -18573,6 +18573,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/floating_power_connectors"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/offshore_wind_lvl_1"
@@ -19272,6 +19279,74 @@ Research
 					}
 
 					icon "gui/menu/research/icons/resource_handling_liquid"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/basic_energy_production"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/floating_power_connectors"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "1000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "1000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1350"
+						y "-162"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/energy_connector_water"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/energy_relay_system"
 				}
 
 			}
@@ -44655,12 +44730,6 @@ Research
 
 						ResearchAward
 						{
-							blueprint "buildings/energy/energy_connector_water"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
 							blueprint "resources/ammo_tower_liquid"
 							is_visible "1"
 						}
@@ -44831,6 +44900,13 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/tower_water_basic_lvl1"
 							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/floating_power_connectors"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -54373,6 +54449,6 @@ Research
 
 	type
 	editor "6741"
-	version "232"
+	version "233"
 }
 
