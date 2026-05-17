@@ -871,7 +871,7 @@ Research
 					research_scripts
 					position
 					{
-						x "909"
+						x "981"
 						y "576"
 					}
 
@@ -952,7 +952,7 @@ Research
 					research_scripts
 					position
 					{
-						x "909"
+						x "981"
 						y "522"
 					}
 
@@ -1026,7 +1026,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1143"
+						x "1215"
 						y "324"
 					}
 
@@ -1106,7 +1106,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1539"
+						x "1611"
 						y "126"
 					}
 
@@ -1181,7 +1181,7 @@ Research
 					research_scripts
 					position
 					{
-						x "864"
+						x "936"
 						y "522"
 					}
 
@@ -1558,7 +1558,7 @@ Research
 					research_scripts
 					position
 					{
-						x "864"
+						x "936"
 						y "324"
 					}
 
@@ -2032,7 +2032,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1620"
+						x "1692"
 						y "-162"
 					}
 
@@ -2248,7 +2248,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1539"
+						x "1611"
 						y "324"
 					}
 
@@ -2651,7 +2651,7 @@ Research
 					research_scripts
 					position
 					{
-						x "531"
+						x "540"
 						y "-324"
 					}
 
@@ -2860,7 +2860,7 @@ Research
 					research_scripts
 					position
 					{
-						x "909"
+						x "981"
 						y "126"
 					}
 
@@ -2921,7 +2921,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1215"
+						x "1287"
 						y "-162"
 					}
 
@@ -3074,13 +3074,6 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/resource_handling_liquid_lvl3"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
 					}
 
 					research_name "gui/menu/research/name/gas_energy_lvl3"
@@ -3119,7 +3112,7 @@ Research
 					research_scripts
 					position
 					{
-						x "576"
+						x "639"
 						y "270"
 					}
 
@@ -3186,7 +3179,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1143"
+						x "1215"
 						y "-162"
 					}
 
@@ -3392,7 +3385,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1215"
+						x "1287"
 						y "126"
 					}
 
@@ -3600,7 +3593,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1728"
+						x "1800"
 						y "-162"
 					}
 
@@ -3741,7 +3734,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1674"
+						x "1746"
 						y "-162"
 					}
 
@@ -4018,7 +4011,7 @@ Research
 					research_scripts
 					position
 					{
-						x "576"
+						x "639"
 						y "126"
 					}
 
@@ -4124,178 +4117,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/resource_handling_liquid_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl5"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/resource_handling_liquid_lvl3"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0"
-							resource "carbonium"
-							count "15000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "download"
-							count "1500"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "steel"
-							count "7500"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "531"
-						y "180"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/resources/liquid_material_storage_large"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/liquid_pump_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/water_filtering_plant_lvl_3"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "research/warning_rounding"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/resource_handling_liquid"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/resource_handling_liquid_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl4"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-					}
-
-					research_name "gui/menu/research/name/resource_handling_liquid_lvl2"
-					research_costs
-					{
-						ResearchCost
-						{
-							amount "0"
-							resource "carbonium"
-							count "6000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "download"
-							count "1000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "steel"
-							count "2000"
-						}
-
-					}
-
-					research_scripts
-					position
-					{
-						x "531"
-						y "-18"
-					}
-
-					research_awards
-					{
-						ResearchAward
-						{
-							blueprint "buildings/resources/liquid_material_storage_medium"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/liquid_pump_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/resources/water_filtering_plant_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "research/warning_rounding"
-							is_visible "1"
-						}
-
-					}
-
-					icon "gui/menu/research/icons/resource_handling_liquid"
-				}
-
-				ResearchNode
-				{
-					research_flags
-					requirement_tooltip
-					requirements
-					{
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/fusion_energy_lvl1"
 							research_category "gui/menu/research/category_base_buildings"
 						}
@@ -4338,7 +4159,7 @@ Research
 					research_scripts
 					position
 					{
-						x "864"
+						x "936"
 						y "180"
 					}
 
@@ -4786,7 +4607,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1674"
+						x "1746"
 						y "-216"
 					}
 
@@ -4987,7 +4808,7 @@ Research
 					research_scripts
 					position
 					{
-						x "576"
+						x "639"
 						y "-162"
 					}
 
@@ -5054,18 +4875,12 @@ Research
 					research_scripts
 					position
 					{
-						x "531"
+						x "459"
 						y "-216"
 					}
 
 					research_awards
 					{
-						ResearchAward
-						{
-							blueprint "buildings/resources/liquid_material_storage_small"
-							is_visible "1"
-						}
-
 						ResearchAward
 						{
 							blueprint "buildings/resources/liquid_pump"
@@ -5306,7 +5121,7 @@ Research
 
 					position
 					{
-						x "1539"
+						x "1611"
 						y "-18"
 					}
 
@@ -5452,7 +5267,7 @@ Research
 
 					position
 					{
-						x "1539"
+						x "1611"
 						y "-162"
 					}
 
@@ -5532,7 +5347,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1782"
+						x "1854"
 						y "-162"
 					}
 
@@ -5614,7 +5429,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1143"
+						x "1215"
 						y "-18"
 					}
 
@@ -5710,7 +5525,7 @@ Research
 
 					position
 					{
-						x "1143"
+						x "1215"
 						y "-270"
 					}
 
@@ -5790,7 +5605,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1287"
+						x "1359"
 						y "-162"
 					}
 
@@ -5864,7 +5679,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1287"
+						x "1359"
 						y "126"
 					}
 
@@ -5938,7 +5753,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1287"
+						x "1359"
 						y "324"
 					}
 
@@ -6282,7 +6097,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1242"
+						x "1314"
 						y "180"
 					}
 
@@ -6356,7 +6171,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1242"
+						x "1314"
 						y "324"
 					}
 
@@ -6885,7 +6700,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1242"
+						x "1314"
 						y "-18"
 					}
 
@@ -7153,14 +6968,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/resource_handling_liquid_lvl1"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl4"
+							research_name "gui/menu/research/name/pumps_lvl_2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -7195,7 +7003,7 @@ Research
 					research_scripts
 					position
 					{
-						x "432"
+						x "387"
 						y "-18"
 					}
 
@@ -7234,7 +7042,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl5"
+							research_name "gui/menu/research/name/pumps_lvl_3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -7269,7 +7077,7 @@ Research
 					research_scripts
 					position
 					{
-						x "432"
+						x "387"
 						y "180"
 					}
 
@@ -7337,7 +7145,7 @@ Research
 					research_scripts
 					position
 					{
-						x "432"
+						x "387"
 						y "369"
 					}
 
@@ -7398,7 +7206,7 @@ Research
 					research_scripts
 					position
 					{
-						x "765"
+						x "837"
 						y "-162"
 					}
 
@@ -7459,7 +7267,7 @@ Research
 					research_scripts
 					position
 					{
-						x "765"
+						x "837"
 						y "-18"
 					}
 
@@ -7547,7 +7355,7 @@ Research
 					research_scripts
 					position
 					{
-						x "765"
+						x "837"
 						y "126"
 					}
 
@@ -8973,7 +8781,7 @@ Research
 					research_scripts
 					position
 					{
-						x "693"
+						x "756"
 						y "-18"
 					}
 
@@ -9000,6 +8808,13 @@ Research
 						{
 							render_line "1"
 							research_name "gui/menu/research/name/gas_energy_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/pumps_lvl_2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -9034,7 +8849,7 @@ Research
 					research_scripts
 					position
 					{
-						x "477"
+						x "594"
 						y "-18"
 					}
 
@@ -9067,7 +8882,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/resource_handling_liquid_lvl2"
+							research_name "gui/menu/research/name/pumps_lvl_3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -9102,8 +8917,8 @@ Research
 					research_scripts
 					position
 					{
-						x "477"
-						y "126"
+						x "594"
+						y "180"
 					}
 
 					research_awards
@@ -9141,7 +8956,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/resource_handling_liquid_lvl3"
+							research_name "gui/menu/research/name/headquarters_lvl6"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -9176,7 +8991,7 @@ Research
 					research_scripts
 					position
 					{
-						x "477"
+						x "594"
 						y "369"
 					}
 
@@ -9263,7 +9078,7 @@ Research
 					research_scripts
 					position
 					{
-						x "693"
+						x "756"
 						y "180"
 					}
 
@@ -9344,7 +9159,7 @@ Research
 					research_scripts
 					position
 					{
-						x "693"
+						x "756"
 						y "369"
 					}
 
@@ -10285,6 +10100,13 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
+							research_name "gui/menu/research/name/pumps_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
 							research_name "gui/menu/research/name/gas_energy_lvl1"
 							research_category "gui/menu/research/category_base_buildings"
 						}
@@ -10320,7 +10142,7 @@ Research
 					research_scripts
 					position
 					{
-						x "342"
+						x "504"
 						y "-18"
 					}
 
@@ -10363,6 +10185,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/pumps_lvl_3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/bio_condenser_lvl2"
@@ -10394,7 +10223,7 @@ Research
 					research_scripts
 					position
 					{
-						x "342"
+						x "504"
 						y "180"
 					}
 
@@ -10475,7 +10304,7 @@ Research
 					research_scripts
 					position
 					{
-						x "342"
+						x "504"
 						y "369"
 					}
 
@@ -11285,13 +11114,6 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
-						ResearchNodeRequirement
-						{
-							render_line "1"
-							research_name "gui/menu/research/name/resource_handling_liquid_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
 					}
 
 					research_name "gui/menu/research/name/gas_filtering_lvl2"
@@ -11323,7 +11145,7 @@ Research
 					research_scripts
 					position
 					{
-						x "621"
+						x "684"
 						y "126"
 					}
 
@@ -11368,13 +11190,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/resource_handling_liquid_lvl3"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/gas_filtering_lvl2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
@@ -11410,7 +11225,7 @@ Research
 					research_scripts
 					position
 					{
-						x "621"
+						x "684"
 						y "270"
 					}
 
@@ -11809,14 +11624,14 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl4"
+							research_name "gui/menu/research/name/gas_energy_lvl1"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/gas_energy_lvl1"
+							research_name "gui/menu/research/name/pumps_lvl_2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -11851,7 +11666,7 @@ Research
 					research_scripts
 					position
 					{
-						x "387"
+						x "549"
 						y "-18"
 					}
 
@@ -11877,13 +11692,6 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/headquarters_lvl5"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "1"
 							research_name "gui/menu/research/name/gas_extractor_lvl1"
 							research_category "gui/menu/research/category_base_buildings"
 						}
@@ -11892,6 +11700,13 @@ Research
 						{
 							render_line "0"
 							research_name "gui/menu/research/name/geoscanning_lvl_1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/pumps_lvl_3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -11926,7 +11741,7 @@ Research
 					research_scripts
 					position
 					{
-						x "387"
+						x "549"
 						y "180"
 					}
 
@@ -12007,7 +11822,7 @@ Research
 					research_scripts
 					position
 					{
-						x "387"
+						x "549"
 						y "369"
 					}
 
@@ -12277,7 +12092,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1377"
+						x "1449"
 						y "-216"
 					}
 
@@ -12351,7 +12166,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1377"
+						x "1449"
 						y "-72"
 					}
 
@@ -12425,7 +12240,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1377"
+						x "1449"
 						y "72"
 					}
 
@@ -12499,7 +12314,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1377"
+						x "1449"
 						y "270"
 					}
 
@@ -13333,7 +13148,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1620"
+						x "1692"
 						y "36"
 					}
 
@@ -13401,7 +13216,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1620"
+						x "1692"
 						y "126"
 					}
 
@@ -13475,7 +13290,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1620"
+						x "1692"
 						y "324"
 					}
 
@@ -13617,7 +13432,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1674"
+						x "1746"
 						y "126"
 					}
 
@@ -13691,7 +13506,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1674"
+						x "1746"
 						y "324"
 					}
 
@@ -13758,7 +13573,7 @@ Research
 					research_scripts
 					position
 					{
-						x "720"
+						x "792"
 						y "36"
 					}
 
@@ -13833,7 +13648,7 @@ Research
 					research_scripts
 					position
 					{
-						x "720"
+						x "792"
 						y "324"
 					}
 
@@ -13900,7 +13715,7 @@ Research
 					research_scripts
 					position
 					{
-						x "810"
+						x "882"
 						y "36"
 					}
 
@@ -13968,7 +13783,7 @@ Research
 					research_scripts
 					position
 					{
-						x "810"
+						x "882"
 						y "180"
 					}
 
@@ -14022,7 +13837,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1332"
+						x "1404"
 						y "-162"
 					}
 
@@ -14083,7 +13898,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1332"
+						x "1404"
 						y "126"
 					}
 
@@ -14697,7 +14512,7 @@ Research
 					research_scripts
 					position
 					{
-						x "954"
+						x "1026"
 						y "180"
 					}
 
@@ -14765,7 +14580,7 @@ Research
 					research_scripts
 					position
 					{
-						x "954"
+						x "1026"
 						y "324"
 					}
 
@@ -14826,7 +14641,7 @@ Research
 					research_scripts
 					position
 					{
-						x "954"
+						x "1026"
 						y "522"
 					}
 
@@ -14886,7 +14701,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1188"
+						x "1260"
 						y "-18"
 					}
 
@@ -14953,7 +14768,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1188"
+						x "1260"
 						y "180"
 					}
 
@@ -15020,7 +14835,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1188"
+						x "1260"
 						y "324"
 					}
 
@@ -15094,7 +14909,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1440"
+						x "1512"
 						y "-162"
 					}
 
@@ -15167,7 +14982,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1440"
+						x "1512"
 						y "-18"
 					}
 
@@ -15248,7 +15063,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1620"
+						x "1692"
 						y "-18"
 					}
 
@@ -15323,7 +15138,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1674"
+						x "1746"
 						y "-18"
 					}
 
@@ -15398,7 +15213,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1728"
+						x "1800"
 						y "-18"
 					}
 
@@ -15466,7 +15281,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1782"
+						x "1854"
 						y "-18"
 					}
 
@@ -15534,7 +15349,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1782"
+						x "1854"
 						y "126"
 					}
 
@@ -15608,7 +15423,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1782"
+						x "1854"
 						y "324"
 					}
 
@@ -15743,7 +15558,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1503"
+						x "1575"
 						y "36"
 					}
 
@@ -15811,7 +15626,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1503"
+						x "1575"
 						y "180"
 					}
 
@@ -15879,7 +15694,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1575"
+						x "1647"
 						y "36"
 					}
 
@@ -15947,7 +15762,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1575"
+						x "1647"
 						y "180"
 					}
 
@@ -16238,7 +16053,7 @@ Research
 					research_scripts
 					position
 					{
-						x "648"
+						x "711"
 						y "-162"
 					}
 
@@ -16313,7 +16128,7 @@ Research
 					research_scripts
 					position
 					{
-						x "648"
+						x "711"
 						y "-18"
 					}
 
@@ -17568,7 +17383,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1044"
+						x "1116"
 						y "36"
 					}
 
@@ -17648,7 +17463,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1044"
+						x "1116"
 						y "180"
 					}
 
@@ -17716,7 +17531,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1116"
+						x "1188"
 						y "126"
 					}
 
@@ -17790,7 +17605,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1008"
+						x "1080"
 						y "126"
 					}
 
@@ -17858,7 +17673,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1071"
+						x "1143"
 						y "126"
 					}
 
@@ -17926,7 +17741,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1071"
+						x "1143"
 						y "324"
 					}
 
@@ -18000,7 +17815,7 @@ Research
 					research_scripts
 					position
 					{
-						x "1071"
+						x "1143"
 						y "522"
 					}
 
@@ -18946,6 +18761,499 @@ Research
 					}
 
 					icon "gui/menu/research/icons/decorations"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_handling_liquid_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/pumps_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "1000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "423"
+						y "-72"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/liquid_pump_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/pumps"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/pumps_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl5"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/pumps_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "2000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "1500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "3500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "423"
+						y "126"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/liquid_pump_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/pumps"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/pumps_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/liquid_storage_lvl_1"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "1500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "120"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "342"
+						y "-18"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/liquid_material_storage_small"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/liquid_storage"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/liquid_storage_lvl_1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/pumps_lvl_3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/liquid_storage_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "2000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "4000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "342"
+						y "180"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/liquid_material_storage_medium"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/liquid_storage"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/liquid_storage_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl6"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/liquid_storage_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "3000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "8000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "4000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "342"
+						y "369"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/liquid_material_storage_large"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/liquid_storage"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_handling_liquid_lvl1"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/pumps_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/water_purification_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "6000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "1000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "2000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "459"
+						y "-18"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/water_filtering_plant_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/upgrade_new_upkeep_req"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/warning_rounding"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling_liquid"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/water_purification_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/pumps_lvl_3"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/water_purification_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "15000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "1500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "7500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "459"
+						y "180"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/water_filtering_plant_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/upgrade_simple_reagent_upkeep"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/warning_rounding"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/resource_handling_liquid"
 				}
 
 			}
@@ -54047,6 +54355,6 @@ Research
 
 	type
 	editor "6741"
-	version "230"
+	version "231"
 }
 
