@@ -35,7 +35,7 @@ EntityBlueprint  // bioreactor
 	}
 
 	ResourceConverterDesc
-	{	
+	{
 		in
 		{
 			GameplayResource
@@ -51,11 +51,11 @@ EntityBlueprint  // bioreactor
 			GameplayResource
 			{
 				resource 	"sludge"
-				value 		"50"
+				value 		"25"
 				attachment	"att_out_1"
 			}	
 		}
-		priority 4			
+		priority 4
 	}
 	
 	ResourceStorageDesc
@@ -464,7 +464,7 @@ EntityBlueprint  // bioreactor_lvl_2
 		require 			"headquarters"
 		building_group		"bio_condenser"
 		buildable			"0"
-		//upgrade			"buildings/resources/bio_condenser_lvl_3"
+		upgrade				"buildings/resources/bioreactor_lvl_3"
 		type				"sludge_fac"
 		overrides			"sludge_fac,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -474,14 +474,15 @@ EntityBlueprint  // bioreactor_lvl_2
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 20
+				building_time 25
 				building_cost
 				{
-					carbonium 	"150"
+					carbonium 	"350"
+					steel		"200"
+					palladium	"75"
 				}
-			}		
+			}
 		}
-
 	}
 
 	ResourceConverterDesc
@@ -490,14 +491,14 @@ EntityBlueprint  // bioreactor_lvl_2
 		{
 			GameplayResource
 			{
-				resource 	"energy"
-				value 		"50"
+				resource	"ammonium"
+				value		"0.2"
 			}
 			
 			GameplayResource
 			{
-				resource 	"mud"
-				value 		"100"
+				resource	"mud"
+				value		"75"
 				attachment	"att_in_1"
 			}
 		}
@@ -506,25 +507,12 @@ EntityBlueprint  // bioreactor_lvl_2
 		{
 			GameplayResource
 			{
-				resource 	"sludge"
-				value 		"100"
+				resource	"sludge"
+				value		"50"
 				attachment	"att_out_1"
 			}	
 		}
-		priority 4			
-	}
-	
-	ResourceStorageDesc
-	{
-		Storages
-		{
-			Storage
-			{
-				resource	 	"sludge"
-				max 	 		"200"
-				attachment		"att_out_1"
-			}
-		}
+		priority 4
 	}
 	
 	EffectDesc
@@ -591,6 +579,194 @@ EntityBlueprint  // bioreactor_lvl_2
 					bone "att_vismod_3"
 					scale 1.6 1.6 1.6
 					orientation 90 90 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_out_1_pipe"
+				}
+				
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/gas_filtering_plant_working"
+					delay "0.5"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // bioreactor_lvl_3
+{
+	name  			"buildings/resources/bioreactor_lvl_3"
+	base_blueprint	"buildings/resources/bioreactor_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"bioreactor_lvl_3"
+		bp   				"buildings/resources/bioreactor_lvl_3"
+		category 			"liquids"
+		localization_id		"gui/hud/building_name/bioreactor"
+		description			"gui/hud/building_description/bioreactor"
+		menu_icon			"gui/hud/building_icons/bioreactor_lvl_3"
+		require 			"headquarters"
+		building_group		"bio_condenser"
+		buildable			"0"
+		type				"sludge_fac"
+		overrides			"sludge_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 30
+				building_cost
+				{
+					carbonium	"300"
+					steel		"500"
+					palladium	"125"
+				}
+			}
+		}
+
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"80"
+			}
+			
+			GameplayResource
+			{
+				resource 	"ammonium"
+				value 		"0.2"
+			}
+			
+			GameplayResource
+			{
+				resource 	"mud"
+				value 		"100"
+				attachment	"att_in_1"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 	"sludge"
+				value 		"75"
+				attachment	"att_out_1"
+			}	
+		}
+		priority 4
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_1_arrow"
+				}
+			}
+		}
+		//////////////////////////////// MISC /////////////////////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/reactor_green"
+					bone "att_vismod_2"
+					scale 1.0 1.4 1.0
+					orientation 0 0 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/corrosive_gun"
+					bone "att_vismod_1"
+					scale 1.8 2.3 2.3
+					orientation 90 90 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/ball_gas"
+					bone "att_vismod_3"
+					scale 1.6 1.6 1.6
+					orientation 90 90 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pylon"
+					bone "att_vismod_4"
+					scale 0.8 0.8 0.8
+					orientation 0 0 0
 				}
 				Effect
 				{
@@ -816,6 +992,106 @@ EntityBlueprint  // bioreactor_lvl_2_ghost
 					bone "att_vismod_1"
 					scale 1.8 2.3 2.3
 					orientation 90 90 0
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // bioreactor_lvl_3_ghost
+{
+	name  "buildings/resources/bioreactor_lvl_3_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/seismic_laboratory.mesh"
+		material "selector/hologram_blue"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+		}
+	}
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/bioreactor.mesh"
+		material "selector/hologram_blue"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/bioreactor"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/reactor_ghost"
+					bone "att_vismod_2"
+					scale 1.0 1.4 1.0
+					orientation 0 0 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/corrosive_gun_ghost"
+					bone "att_vismod_1"
+					scale 1.8 2.3 2.3
+					orientation 90 90 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pylon_ghost"
+					bone "att_vismod_4"
+					scale 0.8 0.8 0.8
+					orientation 0 0 0
 				}
 			}
 		}

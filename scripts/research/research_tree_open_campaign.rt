@@ -10241,6 +10241,18 @@ Research
 							is_visible "1"
 						}
 
+						ResearchAward
+						{
+							blueprint "research/upgrade_new_upkeep_req"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/warning_rounding"
+							is_visible "1"
+						}
+
 					}
 
 					icon "gui/menu/research/icons/bio_condenser"
@@ -10313,6 +10325,12 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/resources/bio_condenser_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/bioreactor_lvl_3"
 							is_visible "1"
 						}
 
@@ -54355,6 +54373,6 @@ Research
 
 	type
 	editor "6741"
-	version "231"
+	version "232"
 }
 

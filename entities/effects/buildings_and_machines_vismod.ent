@@ -49,6 +49,54 @@ EntityBlueprint "effects/no_lifetime"		//pylon3
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		//pylon_ghost
+{
+	name "effects/buildings_and_machines/pylon_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/energy_storage_lvl_1.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//pylon2_ghost
+{
+	name "effects/buildings_and_machines/pylon2_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/energy_storage_lvl_2.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//pylon3_ghost
+{
+	name "effects/buildings_and_machines/pylon3_ghost"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/energy/energy_storage_lvl_3.mesh"
+		material "selector/hologram_blue"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		//cpower
 {
 	name "effects/buildings_and_machines/cpower"
