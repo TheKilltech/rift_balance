@@ -367,7 +367,7 @@ EntityBlueprint  // bio_condenser
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -376,7 +376,7 @@ EntityBlueprint  // bio_condenser
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -387,7 +387,7 @@ EntityBlueprint  // bio_condenser
 					bone "att_out_arrow"
 				}
 			}
-		}				
+		}
 		//////////////////////////////// MISC /////////////////////////////////////////
 		EffectGroup
 		{
@@ -413,7 +413,7 @@ EntityBlueprint  // bio_condenser
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
@@ -428,14 +428,14 @@ EntityBlueprint  // bio_condenser
 					blueprint "effects/buildings_resources/bio_condenser_rotor"	
 					bone "att_rotor_2"
 					delay "0.5"
-				}				
+				}
 				Effect
 				{
 					blueprint "effects/buildings_resources/bio_condenser_working"
 					delay "0.5"
 				}
 			}
-		}			
+		}
 	}
 }
 

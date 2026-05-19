@@ -581,6 +581,52 @@ EntityBlueprint  // energy_connector_water
 		name "meshes/buildings/energy/energy_connector"
 	}
 
+	children
+	{
+		EntityBlueprint
+		{
+			name "buildings/energy/energy_connector_water_second"
+			
+			SkeletonDesc
+			{
+				name "meshes/buildings/energy/energy_connector"
+			}
+			
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0"    // r
+					y "0.65" // g
+					z "0.65" // b
+					w "1"
+				}
+				size
+				{
+					x "1"
+					y "3"
+				}
+				
+				visibility			"always"
+				layer_group			"common_buildings"
+			}
+			
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	1.9
+						y	1.9
+						z	5.9
+					}
+				}
+			}
+		}
+	}
+
 	PhysicsDesc
  	{
 		objects
@@ -605,22 +651,37 @@ EntityBlueprint  // energy_connector_water
 	{
 		Shapes
 		{
-   			PhysicsSphereShape
-   			{
-    			r	2.8
-   			}			
+			PhysicsBoxShape
+			{
+				x	5.9
+				y	1.9
+				z	1.9
+			}
 		}
 	}
-
-	GridMarkerComponent
+	
+	MinimapItemDesc
 	{
-		mode			"bounds"
-		terrain_type  	"floor"	
-		extend  		"0.0"
-	}	
+		type	"quad"
+		color
+		{
+			x "0"    // r
+			y "0.65" // g
+			z "0.65" // b
+			w "1"
+		}
+		size
+		{
+			x "3"
+			y "1"
+		}
+		
+		visibility			"always"
+		layer_group			"common_buildings"
+	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_electric_small_base"

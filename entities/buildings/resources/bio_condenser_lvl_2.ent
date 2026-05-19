@@ -33,7 +33,7 @@ EntityBlueprint  // bio_condenser_lvl_2
 					steel 		"400"
 					palladium	"100"
 				}
-			}		
+			}
 		}
 
 		resource_requirement "mud_vein"
@@ -42,17 +42,17 @@ EntityBlueprint  // bio_condenser_lvl_2
 	ResourceConverterDesc
 	{	
 		in
-		{		
+		{
 			GameplayResource
 			{
-				resource 	"energy"
-				value 		"35"
+				resource	"ammonium"
+				value		"0.4"
 			}
 			
 			GameplayResource
 			{
-				resource 	"mud_vein"
-				value 		"1"
+				resource	"mud_vein"
+				value		"1"
 			}
 		}
 		
@@ -60,12 +60,12 @@ EntityBlueprint  // bio_condenser_lvl_2
 		{
 			GameplayResource
 			{
-				resource 	"sludge"
-				value 		"100"
+				resource	"sludge"
+				value		"100"
 				attachment	"att_out_1"
 			}	
 		}
-		priority 4			
+		priority 4
 	}
 	
 	ResourceStorageDesc
@@ -143,12 +143,50 @@ EntityBlueprint  // bio_condenser_lvl_2
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
-			"buildings/resources/bio_condenser"
+			"buildings/effects_medium_base"
 		}
-		
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		//////////////////////////////// MISC /////////////////////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/reactor_green"
+					bone "att_vismod_1"
+					scale 1.9 2.0 1.9
+					orientation 45 0 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/ball_gas"
+					bone "att_vismod_3"
+					scale 1.3 1.3 1.3
+					orientation 90 90 0
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "level"
@@ -161,6 +199,32 @@ EntityBlueprint  // bio_condenser_lvl_2
 					bone "att_level"
 				}
 			}
-		}			
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/bio_condenser_rotor"	
+					bone "att_rotor_1"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/bio_condenser_rotor"	
+					bone "att_rotor_2"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/bio_condenser_working"
+					delay "0.5"
+				}
+			}
+		}
 	}
 }

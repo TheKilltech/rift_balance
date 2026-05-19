@@ -372,7 +372,7 @@ gui/menu/info/desc/upgrade_nitric_acid_upkeep;Warning: Building upgrades require
 gui/menu/info/desc/upgrade_reagent_upkeep;Warning: Building upgrades require pipe connection to reagent.;;;;;;;;;
 gui/menu/info/desc/upgrade_simple_reagent_upkeep;Warning: Building upgrades require pipe connection to a simple reagent. If you need to plan new pipe connection then build over existing building instead of upgrading;;;;;;;;;
 gui/menu/info/desc/upgrade_water_upkeep;Warning: Building upgrades require pipe connection to water. If you need to plan new pipe connection then build over existing building instead of upgrading;;;;;;;;;
-gui/menu/info/desc/warning_rounding;Warning: Tech Tree shows rounded stats, at least upkeep (production is fine). Actual stats are only visible from build menu (sorry, vanilla issue, can’t fix);;;;;;;;;
+gui/menu/info/desc/warning_rounding;Warning: Tech Tree shows rounded stats. Actual stats are only visible from build menu (sorry, vanilla issue, can’t fix);;;;;;;;;
 gui/menu/info/name/building_limit_increase_outpost;Limit increase: Outposts;;;;;;;;;
 gui/menu/info/name/upgrade_buff_generic_req;Buff Requirement;;;;;;;;;
 gui/menu/info/name/upgrade_buff_geoscanner_req;Geoscanner Requirement;;;;;;;;;
@@ -503,6 +503,7 @@ gui/menu/research/description/depleted_uranium_low_caliber_shells_lvl_2;Improvem
 gui/menu/research/description/energy_connector_eluminated;Energy connectors with illumination functionality. Comes with basic color variants;;;;Energieverbinder mit Beleuchtung. Kommt mit verschieden Farbvariationen;;;;;
 gui/menu/research/description/fire_control_station;This technology surveys the surroundings for threats and enables intelligent defense buildings control to save resources;;;;Diese Technologie überwacht die Umgebung auf Bedrohungen und ermöglicht eine intelligente Steuerung von Verteidigungsgebäuden, um Ressourcen zu sparen.;;;这项技术监视周围环境的威胁，并实现智能防御建筑控制以节省资源;;
 gui/menu/research/description/fire_control_station_artillery;Powers up/down long range artillery towers depending on if enemies are in vicinity or not. Much wider detection range then regular fire control stations;;;;Schaltet Langstrecken-Artillerietürme ein oder aus, je nachdem, ob sich Feinde in der Nähe befinden oder nicht. Viel größerer Erfassungsbereich als bei herkömmlichen Feuerleitstellen.;;;根据附近是否有敌人来启动/关闭远程炮塔。检测范围比普通火力控制站大得多;;
+gui/menu/research/description/floating_power_connectors;Specialized energy connectors floating on the surface of liquids enabling to expand the power grid over any kind of lakes;;;;;;;;;
 gui/menu/research/description/fluorine_capture;Technology to capture atmospheric fluorine;;;;Technologie zur Abscheidung von Fluor aus der Atmosphäre.;;;捕获大气中氟的技术;;
 gui/menu/research/description/fluorine_capture_lvl_2;Adapted fluorine capture method for fluorine rich biomes;;;;Angepasste Methode zur Fluorabscheidung für fluorreiche Biome.;;;适用于富含氟的生物群系的改进氟捕获方法;;
 gui/menu/research/description/fluorine_capture_lvl_3;Advanced process using natural hazenite for higher yield capture of atmospheric fluorine gas.;;;;Fortschrittliches Verfahren unter Verwendung von natürlichem Hazenit für eine ertragreichere Abscheidung von Fluorgas aus der Atmosphäre.;;;使用天然黑森矿的高级工艺，用于更高产量地捕获大气氟气。;;
@@ -531,6 +532,9 @@ gui/menu/research/description/ionizer_lvl_3;Optimized ionization methods by inje
 gui/menu/research/description/irradiator_lvl_1;The process of irradiating materials with high energy electromagnetic radiation to produce various unstable isotopes of chemical elements and process it into a indurialized fissium flux for wider application;;;;Der Prozess der Bestrahlung von Materialien mit hochenergetischer elektromagnetischer Strahlung, um verschiedene instabile Isotope chemischer Elemente zu erzeugen und diese zu einem industrialisierten Fissium-Flux für breitere Anwendungsmöglichkeiten zu verarbeiten.;;;利用高能电磁辐射照射材料，产生多种不稳定化学元素的同位素，并将其加工成工业化的裂变通量，以供广泛应用。;;
 gui/menu/research/description/irradiator_lvl_2;The process of irradiating materials with high energy electromagnetic radiation to produce various unstable isotopes of chemical elements and process it into a indurialized fissium flux for wider application;;;;Der Prozess der Bestrahlung von Materialien mit hochenergetischer elektromagnetischer Strahlung zur Erzeugung verschiedener instabiler Isotope chemischer Elemente und deren Verarbeitung zu einem industrialisierten Fissium-Fluss für breitere Anwendungsmöglichkeiten;;;利用高能电磁辐射照射材料，产生多种不稳定化学元素的同位素，并将其加工成工业化的裂变通量，以供广泛应用。;;
 gui/menu/research/description/irradiator_lvl_3;The process of irradiating materials with high energy electromagnetic radiation to produce various unstable isotopes of chemical elements and process it into a indurialized fissium flux for wider application;;;;Der Prozess der Bestrahlung von Materialien mit hochenergetischer elektromagnetischer Strahlung zur Erzeugung verschiedener instabiler Isotope chemischer Elemente und deren Verarbeitung zu einem industrialisierten Fissium-Fluss für breitere Anwendungsmöglichkeiten;;;利用高能电磁辐射照射材料，产生多种不稳定化学元素的同位素，并将其加工成工业化的裂变通量，以供广泛应用。;;
+gui/menu/research/description/liquid_storage_lvl_1;An universal storage silo for liquids, pressurized gasses or plasmas.;;;;;;;;;
+gui/menu/research/description/liquid_storage_lvl_2;An universal storage silo for liquids, pressurized gasses or plasmas. This variant is build to withstand larger pressure with a higher capacity but occupies more space;;;;;;;;;
+gui/menu/research/description/liquid_storage_lvl_3;An universal storage silo for liquids, pressurized gasses or plasmas. This variant massive reinforced variant has huge capacity but also requires the most space;;;;;;;;;
 gui/menu/research/description/mech_upgrade_anti_corrosive_armor_lvl_2;Anti-Corrosive Armor 2;;;;Korrosionsbeständige Rüstung 2;;;抗腐蚀装甲2级;;
 gui/menu/research/description/mech_upgrade_anti_corrosive_armor_lvl_3;Anti-Corrosive Armor 3;;;;Korrosionsbeständige Rüstung 3;;;抗腐蚀装甲3级;;
 gui/menu/research/description/mech_upgrade_anti_corrosive_armor_lvl_4;Anti-Corrosive Armor 4;;;;Korrosionsbeständige Rüstung 4;;;抗腐蚀装甲4级;;
@@ -596,6 +600,9 @@ gui/menu/research/description/petroleum_processing_lvl_2;Provides methods for pe
 gui/menu/research/description/planet_defense;Upgrades the planetary scanner satellites with powerful orbital defense laser thus changes the buildings from a purely passive role to an active one.;;;;Rüstet die planetarischen Scannersatelliten mit leistungsstarken Orbitalverteidigungslasern auf und wandelt die Gebäude somit von einer rein passiven in eine aktive Rolle um.;;;用强大的轨道防御激光升级行星扫描仪卫星，从而将建筑从纯被动角色转变为主动角色。;;
 gui/menu/research/description/planet_defense_lvl_2;Upgrades firepower for orbital defense satellites;;;;Erhöht die Feuerkraft der Orbitalverteidigungssatelliten;;;升级轨道防御卫星的火力;;
 gui/menu/research/description/planet_defense_lvl_3;Optimized firepower for orbital defense satellites;;;;Optimierte Feuerkraft für Orbitalverteidigungssatelliten;;;优化的轨道防御卫星火力;;
+gui/menu/research/description/pumps_lvl_1;Provides the most basic pump solution. This simple variant it build to operate autonomously without external power.;;;;;;;;;
+gui/menu/research/description/pumps_lvl_2;Standard powered pumps offer a much better sustained flow rate but require a power connection;;;;;;;;;
+gui/menu/research/description/pumps_lvl_3;Optimization of pumps to achieve the maximum flow rate;;;;;;;;;
 gui/menu/research/description/rare_element_mining_lvl1;Mining equipment for underground ore vein extraction;;;;Bergbauausrüstung für die Gewinnung von Erzvorkommen im Untertagebau;;;用于地下矿脉开采的采矿设备;;
 gui/menu/research/description/rare_element_mining_lvl2;Advanced deep ore extraction methods utilizing reactive chemical to dissolve ores;;;;Fortschrittliche Methoden zur Tiefen-Erzgewinnung unter Verwendung reaktiver Chemikalien zum Auflösen von Erzen;;;利用反应性化学物质溶解矿石的高级深层矿石提取方法;;
 gui/menu/research/description/rare_element_mining_lvl3;Optimized deep ore extraction methods utilizing reactive chemical to dissolve ores;;;;Optimierte Methoden zur Tiefen-Erzgewinnung unter Verwendung reaktiver Chemikalien zum Auflösen von Erzen;;;利用反应性化学物质溶解矿石的优化深层矿石提取方法;;
@@ -664,6 +671,9 @@ gui/menu/research/description/towers_shockwave_cryo;Development of thermal shock
 gui/menu/research/description/towers_shockwave_cryo_lvl_2;Upgraded efficiency with larger area of effect of the thermal shock wave;;;;Verbesserte Effizienz mit größerem Wirkungsbereich der thermischen Schockwelle;;;升级效率，热冲击波的作用范围更大;;
 gui/menu/research/description/uranium_enrichment_lvl_2;Advanced techniques applying tanzanite allows for a more efficient mass separation of isotopes;;;;Fortgeschrittene Techniken unter Verwendung von Tansanit ermöglichen eine effizientere Massentrennung von Isotopen;;;应用坦桑石的高级技术允许更有效地进行同位素质量分离;;
 gui/menu/research/description/uranium_enrichment_lvl_3;Application of morphium to adjust isotope ratio of raw uranium allows to maximize centrifuge yield;;;;Die Anwendung von Morphium zur Anpassung des Isotopenverhältnisses von Rohuran ermöglicht die Maximierung der Zentrifugenausbeute;;;应用形变液调整原铀的同位素比例，最大化离心机产量;;
+gui/menu/research/description/water_purification_lvl_1;Basic Water treatment and purification via only basic filtering mechanisms. Limited yield but without any extra upkeep.;;;;;;;;;
+gui/menu/research/description/water_purification_lvl_2;Uses activated carbonium filters to maximize purification rate. Requires globally available carbonium as extra upkeep;;;;;;;;;
+gui/menu/research/description/water_purification_lvl_3;Additional purification mechanisms using reagents to chemically cleanse the water in most efficient way. Requires additional piping for purification chemicals but reduces carbonium upkeep;;;;;;;;;
 gui/menu/research/description/well_contruction;Construction of wells for liquid extraction;;;;Bau von Bohrlöchern zur Flüssigextraktion;;;用于液体提取的井的建造;;
 gui/menu/research/description/well_contruction_lvl_2;Advanced well extraction methods - particularly fracking;;;;Fortschrittliche Bohrloch-Extraktionsmethoden – insbesondere Fracking;;;先进的井提取方法 - 特别是压裂;;
 gui/menu/research/description/well_contruction_lvl_3;Optimized well extraction by fracking;;;;Optimierte Bohrloch-Extraktion durch Fracking;;;通过压裂优化的井提取;;
@@ -771,6 +781,7 @@ gui/menu/research/name/depleted_uranium_low_caliber_shells_lvl_2;Improved Deplet
 gui/menu/research/name/energy_connector_eluminated;Illumination;;;;Beleuchtung;;;;;
 gui/menu/research/name/fire_control_station;Fire Control Station;;;;Feuerleitstelle;;;火力控制站;;
 gui/menu/research/name/fire_control_station_artillery;Long Range Fire Control Station;;;;Feuerleitstelle für große Entfernungen;;;远程火力控制站;;
+gui/menu/research/name/floating_power_connectors;Floating Energy Connectors;;;;;;;;;
 gui/menu/research/name/fluorine_capture;Fluorine Capture;;;;Fluor-Abscheidung;;;氟捕获;;
 gui/menu/research/name/fluorine_capture_lvl_2;Biome Adjusted Fluorine Capture;;;;Biom-angepasste Fluor-Abscheidung;;;生物群系适应性氟捕获;;
 gui/menu/research/name/fluorine_capture_lvl_3;Advanced Fluorine Capture;;;;Fortgeschrittene Fluor-Abscheidung;;;高级氟捕获;;
@@ -799,6 +810,9 @@ gui/menu/research/name/ionizer_lvl_3;Infused Ionization;;;;Infundierte Ionisieru
 gui/menu/research/name/irradiator_lvl_1;Material Irradiation;;;;Materialbestrahlung;;;辐照器;;
 gui/menu/research/name/irradiator_lvl_2;Advanced Material Irradiation;;;;Fortgeschrittene Materialbestrahlung;;;改进辐照器;;
 gui/menu/research/name/irradiator_lvl_3;Optimized Material Irradiation;;;;Optimierte Materialbestrahlung;;;优化辐照器;;
+gui/menu/research/name/liquid_storage_lvl_1;Liquid Storage – Small;;;;;;;;;
+gui/menu/research/name/liquid_storage_lvl_2;Liquid Storage – Normal;;;;;;;;;
+gui/menu/research/name/liquid_storage_lvl_3;Liquid Storage – Large;;;;;;;;;
 gui/menu/research/name/mech_upgrade_anti_corrosive_armor_lvl_2;Anti-Corrosive Armor 2;;;;Korrosionsbeständige Panzerung 2;;;抗腐蚀装甲2级;;
 gui/menu/research/name/mech_upgrade_anti_corrosive_armor_lvl_3;Anti-Corrosive Armor 3;;;;Korrosionsbeständige Panzerung 3;;;抗腐蚀装甲3级;;
 gui/menu/research/name/mech_upgrade_anti_corrosive_armor_lvl_4;Anti-Corrosive Armor 4;;;;Korrosionsbeständige Panzerung 4;;;抗腐蚀装甲4级;;
@@ -867,6 +881,9 @@ gui/menu/research/name/planet_defense_lvl_3;Optimized Orbital Defense;;;;Optimie
 gui/menu/research/name/plasma_physics;Plasma Physics;;;;Plasmaphysik;;;等离子体物理学;;
 gui/menu/research/name/plasma_physics_lvl_2;Advanced Plasma Physics;;;;Fortgeschrittene Plasmaphysik;;;高等等离子体物理学;;
 gui/menu/research/name/plasma_physics_lvl_3;Plasma Physics Optimization;;;;Optimierung der Plasmaphysik;;;等离子体物理学优化;;
+gui/menu/research/name/pumps_lvl_1;Basic Pumps;;;;;;;;;
+gui/menu/research/name/pumps_lvl_2;Powered Pumps;;;;;;;;;
+gui/menu/research/name/pumps_lvl_3;High Yield Pumps;;;;;;;;;
 gui/menu/research/name/rare_element_mining_lvl1;Deep Ore Mining;;;;Tiefbaubergbau;;;深层矿石开采;;
 gui/menu/research/name/rare_element_mining_lvl2;Deep Ore Mining 2;;;;Tiefbaubergbau 2;;;深层矿石开采2级;;
 gui/menu/research/name/rare_element_mining_lvl3;Deep Ore Mining 3;;;;Tiefbaubergbau 3;;;深层矿石开采3级;;
@@ -939,6 +956,9 @@ gui/menu/research/name/towers_shockwave_cryo;Shockwave Towers - Cryo;;;;Schockwe
 gui/menu/research/name/towers_shockwave_cryo_lvl_2;Advanced Shockwave Towers - Cryo;;;;Fortgeschrittene Schockwellentürme – Kryo;;;高级冲击波塔 - 冷冻;;
 gui/menu/research/name/uranium_enrichment_lvl_2;Enhanced Uranium Enrichment;;;;Verbesserte Urananreicherung;;;增强型铀浓缩;;
 gui/menu/research/name/uranium_enrichment_lvl_3;Morphing Uranium Enrichment;;;;Morphing-Urananreicherung;;;转化铀浓缩;;
+gui/menu/research/name/water_purification_lvl_1;Water Purification;;;;;;;;;
+gui/menu/research/name/water_purification_lvl_2;Water Purification 2;;;;;;;;;
+gui/menu/research/name/water_purification_lvl_3;Water Purification 3;;;;;;;;;
 gui/menu/research/name/well_contruction;Well Construction;;;;Brunnenbau;;;井建造;;
 gui/menu/research/name/well_contruction_lvl_2;Well Construction 2;;;;Brunnenbau 2;;;井建造2级;;
 gui/menu/research/name/well_contruction_lvl_3;Well Construction 3;;;;Brunnenbau 3;;;井建造3级;;
