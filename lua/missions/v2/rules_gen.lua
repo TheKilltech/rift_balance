@@ -73,12 +73,16 @@ function PrepareCustomRules(rules, missionTypeOrParam)
 		missionType  = params.missionType
 	end
 	
+	local difficulty					= DifficultyService:GetDifficulty()
+	local difficultyHelper				= reflection_helper( difficulty )
 	local attackCountMultiplier			= DifficultyService:GetAttacksCountMultiplier()
 	local prepareAttackTimeMultiplier	= DifficultyService:GetPrepareAttackTimeMultiplier()
 	local idleTimeMultiplier			= DifficultyService:IdleTimeMultiplier()
 	local buildingSpeedMultiplier 		= DifficultyService:GetBuildingSpeedMultiplier()
-	local progressionMultiplier 		= math.sqrt(buildingSpeedMultiplier) -- this should be a product of building speed and building cost multipliers. the squareroot is used because the overall gameplay-progress speed depends on more then just those two apsects
+	local progressionMultiplier 		= math.sqrt(difficultyHelper.research_cost_multiplier * (buildingSpeedMultiplier + difficultyHelper.reserach_science_factor)/2 ) -- this should be a product of building speed and building cost multipliers. the squareroot is used because the overall gameplay-progress speed depends on more then just those two apsects
 
+	LogService:Log("PrepareCustomRules progression-multiplier = "..tostring(progressionMultiplier))
+	
 	rules.prepareSpawnTime            = ScaleTable(rules.prepareSpawnTime, prepareAttackTimeMultiplier)
 	rules.maxAttackCountPerDifficulty = ScaleTable(rules.maxAttackCountPerDifficulty, attackCountMultiplier)
 	if rules.attackCountPerDifficulty then
