@@ -1,94 +1,68 @@
 local building = require("lua/buildings/building.lua")
 require("lua/utils/table_utils.lua")
 
-class 'jammer' ( building )
+class 'building_jammer' ( building )
 
-function jammer:__init()
+function building_jammer:__init()
 	building.__init(self,self)
+	--for k, v in pairs( require( "lua/misc/jammer.lua" ) )
+	--	self[k] = v
+	--end
 end
 
-function jammer:Log( logLevel, message )
-	local curLevel = 1 -- enable logging here ( 0 - errors, 2 - main entry points, 3 - details, 5 - loops )
-	if logLevel <= curLevel then
-		local context = "jammer ".. self.buildingName .. " ".. tostring(self.entity)..": "
-		LogService:Log( context .. tostring(message) )
-	end
+
+function building_jammer:OnInit()
+	building.OnInit( self )
 end
 
-function jammer:OnInit()
-	self:Log( 2, "OnInit" )
-	
-	self.range    = self.data:GetFloatOrDefault("jamming_range", 100)
-	self.strength = self.data:GetFloatOrDefault("jamming_strength", 1.0)
-	
-	self.data:SetInt("jamming_entity", self.entity)
-	
-    self.fsm = self:CreateStateMachine()
-    self.fsm:AddState( "jamming", { enter="OnEnterJamming", exit="OnExitJamming" } )
-    self.fsm:AddState( "idle",    { enter="OnEnterIdle" } )
-end
-
-function jammer:OnLoad()
+function building_jammer:OnLoad()
 	building.OnLoad( self )
-	self:Log( 2, "OnLoad" )
 end
 
 
-function jammer:OnActivate()
-	self:Log( 2, "OnActivate" )
-	self.fsm:ChangeState("jamming")
+function building_jammer:OnActivate()
+	building.OnActivate( self )
+	self:SetEnableFollower( true )
 end
 
-function jammer:OnDeactivate()
-	self:Log( 2, "OnDeactivate" )
-	self.fsm:ChangeState("idle")
+function building_jammer:OnDeactivate()
+	building.OnDeactivate( self )
+	self:SetEnableFollower( false )
 end
 
-function jammer:OnDestroy()
-	self:Log( 2, "OnDestroy" )
-	self.fsm:ChangeState("idle")
+function building_jammer:OnDestroy()
+	building.OnDestroy( self )
+	self:SetEnableFollower( false )
 end
 
-function jammer:OnSell()
-	self:Log( 2, "OnSell" )
-	self.fsm:ChangeState("idle")
+function building_jammer:OnSell()
+	building.OnSell( self )
+	self:SetEnableFollower( false )
 end
 
-function jammer:OnRelease()
-	self:Log( 2, "OnRelease" )
-	QueueEvent("LuaGlobalEvent", event_sink, "JammingEndEvent", {} )
+function building_jammer:OnRelease()
 	building.OnRelease( self )
+	self:SetEnableFollower( false )
 end
 
-function jammer:OnBuildingEnd()
-	self:Log( 2, "OnBuildingEnd " )
-	if self.working == true then
-		self.fsm:ChangeState("jamming")
-	else self.fsm:ChangeState("idle")
+function building_jammer:OnBuildingEnd()
+	building.OnBuildingEnd( self )
+end
+
+function building_jammer:SetEnableFollower( enable )
+	enable = enable or false
+	
+	if enable then
+		local pos = EntityService:GetPosition( self.entity )
+		if (self.jammer or INVALID_ID) == INVALID_ID then
+			self.jammer = EntityService:SpawnAndAttachEntity( "buildings/main/jammer_source", self.entity)
+		end
+	else
+		if (self.jammer or INVALID_ID) ~= INVALID_ID then
+			EntityService:DestroyEntity( self.jammer, "default" )
+			self.jammer = nil
+		end
 	end
 end
 
-function jammer:OnEnterIdle()
-	self:Log( 3, "OnEnterIdle" )
-	self.data:SetInt("jamming_entity", self.entity)
-	self.data:SetInt("jamming_active", 0)
-	QueueEvent("LuaGlobalEvent", event_sink, "JammingEndEvent", self.data )
-end
-
-function jammer:OnEnterJamming()
-	self:Log( 3, "OnEnterJamming" )
-	self.data:SetInt("jamming_entity", self.entity)
-	self.data:SetInt("jamming_active", 1)
-	QueueEvent("LuaGlobalEvent", event_sink, "JammingEvent", self.data )
-end
-
-function jammer:OnExitJamming()
-	self:Log( 3, "OnExitJamming" )
-end
-
-function jammer:OnEnterFull()
-	self:Log( 3, "OnEnterFull" )
-end
-
-
-return jammer
+return building_jammer

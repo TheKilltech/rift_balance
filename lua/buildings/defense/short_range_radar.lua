@@ -10,7 +10,7 @@ function short_range_radar:__init()
 end
 
 function short_range_radar:Log( logLevel, message )
-	local curLevel = 10 -- enable logging here ( 0 - errors, 2 - main entry points, 3 - details, 5 - loops )
+	local curLevel = 0 -- enable logging here ( 0 - errors, 2 - main entry points, 3 - details, 5 - loops )
 	if logLevel <= curLevel then
 		local context = "short_range_radar ".. self.buildingName .. " " .. tostring(self.entity)..": "
 		LogService:Log( context .. tostring(message) )
@@ -134,7 +134,10 @@ function short_range_radar:OnJammingEndEvent( event )
 	self:Log( 2, "OnJammingEndEvent - ".. tostring(event))
 	local eventDb = event:GetDatabase()
 	local ent = eventDb:GetIntOrDefault("jamming_entity", 0)
-	if self.jammers[ent] ~= nil then
+	if ent == 0 then
+		self:ResetJammers()
+		self.radar_fsm:ChangeState("reset_range")
+	elseif self.jammers[ent] ~= nil then
 		self.jammers[ent] = nil
 		self.radar_fsm:ChangeState("reset_range")
 	end
@@ -176,9 +179,8 @@ end
 function short_range_radar:FindAndUpdateJammers( ) 
 	self:Log( 2, "FindAndUpdateJammers" )
 	
-	local jammerBps = Split( "buildings/main/jammer_test", "," )
+	local jammerBps = Split( "buildings/main/jammer_source", "," )
 	
-	local best = nil
 	for bp in Iter(jammerBps) do
 		local entities = FindService:FindEntitiesByBlueprint( bp )
 		self:Log( 5, "by bp ".. bp .." found ".. tostring(#entities) )
@@ -188,6 +190,11 @@ function short_range_radar:FindAndUpdateJammers( )
 			self:UpdateJammers( data, ent )
 		end
 	end
+end
+
+function short_range_radar:ResetJammers()
+	self.jammers = {}
+	self:FindAndUpdateJammers();
 end
 
 return short_range_radar
