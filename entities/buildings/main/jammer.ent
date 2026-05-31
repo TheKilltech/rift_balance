@@ -1,14 +1,14 @@
-EntityBlueprint  // jammer
+EntityBlueprint  // jamming_tower
 {
-	name  "buildings/main/jammer"
+	name  "buildings/main/jamming_tower"
 
 	BuildingDesc
 	{
-		name 				"jammer_test"
-		bp   				"buildings/main/jammer_test"
+		name 				"jamming_tower"
+		bp   				"buildings/main/jamming_tower"
 		category 			"main"
-		localization_id		"gui/hud/building_name/jammer"
-		description			"gui/hud/building_description/jammer"
+		localization_id		"gui/hud/building_name/jamming_tower"
+		description			"gui/hud/building_description/jamming_tower"
 		menu_icon			"gui/hud/building_icons/placeholder"
 		require 			"headquarters"
 		order				"15"
@@ -399,6 +399,11 @@ EntityBlueprint  // jammer_source
 				r "10"
 			}
 		}
+	}
+	
+	TypeDesc
+	{
+		type "jammer"
 	}
 }
 

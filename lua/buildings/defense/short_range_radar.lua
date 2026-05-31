@@ -179,16 +179,12 @@ end
 function short_range_radar:FindAndUpdateJammers( ) 
 	self:Log( 2, "FindAndUpdateJammers" )
 	
-	local jammerBps = Split( "buildings/main/jammer_source", "," )
+	local entities = FindService:FindEntitiesByType( "jammer" )
+	self:Log( 5, "by bp ".. bp .." found ".. tostring(#entities) )
 	
-	for bp in Iter(jammerBps) do
-		local entities = FindService:FindEntitiesByBlueprint( bp )
-		self:Log( 5, "by bp ".. bp .." found ".. tostring(#entities) )
-		
-		for ent in Iter(entities ) do
-			local data = EntityService:GetDatabase( ent )
-			self:UpdateJammers( data, ent )
-		end
+	for ent in Iter(entities ) do
+		local data = EntityService:GetDatabase( ent )
+		self:UpdateJammers( data, ent )
 	end
 end
 
