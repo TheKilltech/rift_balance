@@ -110,7 +110,18 @@ end
 function short_range_radar:OnResetRangeEnter()
 	self:UpdateRange()
 	self.radar_fsm:ChangeState("update_range")
-	self:Log( 2, "OnResetRangeEnter - ".. tostring(self.radar_range) .. " / ".. tostring(self.radar_range_max) .. " with ".. tostring(self.jammers_count) .. " jammers registered")
+	self:Log( 2, "OnResetRangeEnter - ".. tostring(self.radar_range) .. " / ".. tostring(self.radar_range_max) .. " with ".. tostring(self.jammersCount) .. " jammers registered")
+	
+	if self.jammersCount > 0 then
+		if (self.jamming_effect or INVALID_ID) == INVALID_ID then
+			self.jamming_effect = EntityService:SpawnAndAttachEntity( "buildings/defense/jamming_icon", self.entity, "att_jamming_info", "")
+		end
+	else 
+		if (self.jamming_effect or INVALID_ID) ~= INVALID_ID then
+			EntityService:RemoveEntity( self.jamming_effect )
+			self.jamming_effect = nil
+		end
+	end
 end
 
 function short_range_radar:OnJammingEvent( event ) 
@@ -142,7 +153,7 @@ function short_range_radar:UpdateRange()
 		self:Log( 6, "calc jammer - ".. tostring(n) .. " entity ".. tostring(jammer.entity) ..  " dist ".. tostring(jammer.dist) .. " mult ".. tostring(mult) .. " ")
 	end
 	self.radar_range = r
-	self.jammers_count = n
+	self.jammersCount = n
 end
 
 function short_range_radar:UpdateJammers( jammerDb, ent )

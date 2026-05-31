@@ -296,3 +296,20 @@ EntityBlueprint  // short_range_radar
 		}	
 	}
 }
+
+
+
+EntityBlueprint "effects/no_lifetime"  // jamming_icon
+{
+	name  "buildings/defense/jamming_icon"
+
+	IdDesc
+	{
+		name "##buff##"
+	}
+	
+	ParticleDesc
+	{
+		name    "rift/jamming_icon"
+	}
+}
