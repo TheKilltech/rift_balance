@@ -180,7 +180,7 @@ function short_range_radar:FindAndUpdateJammers( )
 	self:Log( 2, "FindAndUpdateJammers" )
 	
 	local entities = FindService:FindEntitiesByType( "jammer" )
-	self:Log( 5, "by bp ".. bp .." found ".. tostring(#entities) )
+	self:Log( 5, "jammers (by type) found ".. tostring(#entities) )
 	
 	for ent in Iter(entities ) do
 		local data = EntityService:GetDatabase( ent )

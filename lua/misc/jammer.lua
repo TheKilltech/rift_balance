@@ -23,6 +23,7 @@ function jammer:init()
 	
 	self.range    = self.data:GetFloatOrDefault("jamming_range", 100)
 	self.strength = self.data:GetFloatOrDefault("jamming_strength", 1.0)
+	self.rangeMM  = self.data:GetFloatOrDefault("jamming_range_minimap", 0)
 	--self.parent   = EntityService:GetParent(self.entity)
 	
 	self.data:SetInt("jamming_entity", self.entity)
@@ -33,6 +34,7 @@ end
 function jammer:OnDestroyRequest(evt)
 	self:Log( 2, "OnDestroyRequest" )
 	self:Deactivate()
+	magnetic_interf.OnDestroyRequest( self )
 end
 
 function jammer:OnRelease()
@@ -47,6 +49,11 @@ function jammer:Activate()
 	self.data:SetInt("jamming_entity", self.entity)
 	self.data:SetInt("jamming_active", 1)
 	QueueEvent("LuaGlobalEvent", event_sink, "JammingEvent", self.data )
+	if self.rangeMM > 0 then
+		local pos = EntityService:GetPosition( self.entity )
+		local color = { r = 0, g = 150, b = 200, a = 90/255 }
+		GuiService:AddMinimapCircleMarker( pos, "marker_jamming_".. tostring(self.entity), self.rangeMM, color.r, color.g, color.b, color.a )
+	end
 end
 
 function jammer:Deactivate()
@@ -54,6 +61,9 @@ function jammer:Deactivate()
 	self.data:SetInt("jamming_entity", self.entity)
 	self.data:SetInt("jamming_active", 0)
 	QueueEvent("LuaGlobalEvent", event_sink, "JammingEndEvent", self.data )
+	if self.rangeMM > 0 then
+		GuiService:RemoveMinimapMarker( "marker_jamming_".. tostring(self.entity) )
+	end
 end
 
 return jammer
