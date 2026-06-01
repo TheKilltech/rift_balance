@@ -10,7 +10,7 @@ end
 function jammer:Log( logLevel, message )
 	local curLevel = 0 -- enable logging here ( 0 - errors, 2 - main entry points, 3 - details, 5 - loops )
 	if logLevel <= curLevel then
-		local context = "jammer ".. tostring(self.buildingName) .. " ".. tostring(self.entity)..": "
+		local context = "jammer ".. tostring(self.entity)..": "
 		LogService:Log( context .. tostring(message) )
 	end
 end
@@ -24,9 +24,19 @@ function jammer:init()
 	self.range    = self.data:GetFloatOrDefault("jamming_range", 100)
 	self.strength = self.data:GetFloatOrDefault("jamming_strength", 1.0)
 	self.rangeMM  = self.data:GetFloatOrDefault("jamming_range_minimap", 0)
+	self.isRandom = self.data:GetIntOrDefault("jamming_random_pos", 0)
+	self.data:SetInt("jamming_entity", self.entity)
 	--self.parent   = EntityService:GetParent(self.entity)
 	
-	self.data:SetInt("jamming_entity", self.entity)
+	if self.isRandom > 0 then
+		local spot = FindService:FindEmptySpotInRadius( self.entity, 1000.0, "", "")
+		if spot.first then
+			local pos = spot.second
+			EntityService:SetPosition( self.entity, pos)
+			self:Log(3, "random placement to pos: ".. tostring(pos.x).. " " .. tostring(pos.y).. " ".. tostring(pos.z))
+		else self:Log(1, "failed to find empty spot on map for random placement")
+		end
+	end
 	
 	self:Activate()
 end
@@ -40,6 +50,9 @@ end
 function jammer:OnRelease()
 	self:Log( 2, "OnRelease" )
 	QueueEvent("LuaGlobalEvent", event_sink, "JammingEndEvent", {} )
+	if self.rangeMM > 0 then
+		GuiService:RemoveMinimapMarker( "marker_jamming_".. tostring(self.entity) )
+	end
 	magnetic_interf.OnRelease( self )
 end
 
