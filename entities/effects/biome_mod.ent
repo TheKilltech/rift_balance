@@ -1,4 +1,4 @@
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // fireflies
 {
 	name effects/biome_mod/fireflies
 	
@@ -8,7 +8,7 @@ EntityBlueprint "effects/no_lifetime"
 	}		
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // gravitational_anomaly
 {
 	name effects/biome_mod/gravitational_anomaly
 
@@ -18,7 +18,7 @@ EntityBlueprint "effects/no_lifetime"
 	}	
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // monsoon
 {
 	name effects/biome_mod/monsoon
 
@@ -28,17 +28,28 @@ EntityBlueprint "effects/no_lifetime"
 	}	
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // ice_fog
 {
 	name effects/biome_mod/ice_fog
 
+	LuaDesc
+	{
+		script "lua/misc/jammer.lua"
+
+		database
+		{
+			jamming_range				float:"2000"
+			jamming_strength			float:"0.3"
+		}
+	}
+	
 	BiomeModificatorComponent
 	{
 		solar_power "0.5"
 	}	
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // firestorm
 {
 	name effects/biome_mod/firestorm
 
@@ -48,7 +59,7 @@ EntityBlueprint "effects/no_lifetime"
 	}		
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // firestorm_mild
 {
 	name effects/biome_mod/firestorm_mild
 
@@ -58,7 +69,7 @@ EntityBlueprint "effects/no_lifetime"
 	}	
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // blooming_air
 {
 	name effects/biome_mod/blooming_air
 
@@ -74,7 +85,7 @@ EntityBlueprint "effects/no_lifetime"
 	}		
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // blood_moon
 {
 	name effects/biome_mod/blood_moon
 
@@ -84,7 +95,7 @@ EntityBlueprint "effects/no_lifetime"
 	}		
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // blue_moon
 {
 	name effects/biome_mod/blue_moon
 
@@ -94,7 +105,7 @@ EntityBlueprint "effects/no_lifetime"
 	}	
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // blue_hail
 {
 	name effects/biome_mod/blue_hail
 
@@ -104,43 +115,128 @@ EntityBlueprint "effects/no_lifetime"
 	}		
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // dust_storm
 {
 	name effects/biome_mod/dust_storm
 
+	LuaDesc
+	{
+		script "lua/misc/jammer.lua"
+
+		database
+		{
+			jamming_range				float:"2000"
+			jamming_strength			float:"0.55"
+		}
+	}
+	
 	BiomeModificatorComponent
 	{
 		solar_power "0.5000"		
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // fog
 {
 	name effects/biome_mod/fog
 
+	LuaDesc
+	{
+		script "lua/misc/jammer.lua"
+
+		database
+		{
+			jamming_range				float:"2000"
+			jamming_strength			float:"0.3"
+		}
+	}
+	
 	BiomeModificatorComponent
 	{
 		solar_power "0.5000"
 	}	
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // ion_storm
 {
 	name effects/biome_mod/ion_storm
 
 	LuaDesc
 	{
-		script "lua/weather/ion_storm.lua"
-	}
+		script "lua/misc/jammer.lua"
 
+		database
+		{
+			jamming_range				float:"2000"
+			jamming_strength			float:"1.5"
+			interference_global			int:"1"
+		}
+	}
+	
 	BiomeModificatorComponent
 	{
 		solar_power "4.0000"
-		geothermal_power "4.000"		
+		geothermal_power "4.000"
+	}
+	
+	TypeDesc
+	{
+		type "jammer"
 	}
 }
 
-EntityBlueprint
+EntityBlueprint "effects/no_lifetime"  // ion_storm_local
+{
+	name effects/biome_mod/ion_storm_local
+
+	LuaDesc
+	{
+		script "lua/misc/jammer.lua"
+
+		database
+		{
+			jamming_range				float:"800"
+			jamming_range_minimap		float:"150"
+			jamming_strength			float:"1.5"
+			jamming_random_pos			int:"1"
+		}
+	}
+
+	TriggerDesc
+	{
+		owner 		"self"
+		collision 	"ground_unit"
+
+		Filters
+		{
+			TeamTriggerFilter 
+			{
+				team		"player"
+			}
+		}
+
+		Shapes
+		{
+			PhysicsSphereShape
+			{
+				r "150"
+			}
+		}
+	}
+	
+	BiomeModificatorComponent
+	{
+		solar_power "4.0000"
+		geothermal_power "4.000"
+	}
+	
+	TypeDesc
+	{
+		type "jammer"
+	}
+}
+
+EntityBlueprint						   // anoryx_blast
 {
 	name effects/biome_mod/anoryx_blast
 
@@ -155,7 +251,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint						   // anoryx_blast_blue
 {
 	name effects/biome_mod/anoryx_blast_blue
 
@@ -170,7 +266,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint						   // anoryx_blast_red
 {
 	name effects/biome_mod/anoryx_blast_red	
 
@@ -185,7 +281,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // rain
 {
 	name effects/biome_mod/rain
 
@@ -195,7 +291,7 @@ EntityBlueprint "effects/no_lifetime"
 	}	
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // rain_toxic
 {
 	name effects/biome_mod/rain_toxic
 
@@ -205,10 +301,21 @@ EntityBlueprint "effects/no_lifetime"
 	}
 }
 
-EntityBlueprint
+EntityBlueprint						   // solar_burn
 {
 	name "effects/biome_mod/solar_burn"
 
+	LuaDesc
+	{
+		script "lua/misc/jammer.lua"
+
+		database
+		{
+			jamming_range				float:"2000"
+			jamming_strength			float:"0.4"
+		}
+	}
+	
 	WorldEffectComponent
 	{
 		damage_per_sec							"3"
@@ -223,7 +330,7 @@ EntityBlueprint
 	}			
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // solar_eclipse
 {
 	name effects/biome_mod/solar_eclipse
 
@@ -233,7 +340,7 @@ EntityBlueprint "effects/no_lifetime"
 	}		
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // super_moon
 {
 	name effects/biome_mod/super_moon
 
@@ -243,27 +350,49 @@ EntityBlueprint "effects/no_lifetime"
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // thunderstorm
 {
 	name effects/biome_mod/thunderstorm
 
+	LuaDesc
+	{
+		script "lua/misc/jammer.lua"
+
+		database
+		{
+			jamming_range				float:"2000"
+			jamming_strength			float:"0.4"
+		}
+	}
+	
 	BiomeModificatorComponent
 	{
 		solar_power "0.000"
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // volcanic_ash_clouds
 {
 	name effects/biome_mod/volcanic_ash_clouds
 
+	LuaDesc
+	{
+		script "lua/misc/jammer.lua"
+
+		database
+		{
+			jamming_range				float:"2000"
+			jamming_strength			float:"0.7"
+		}
+	}
+	
 	BiomeModificatorComponent
 	{
 		solar_power "0.0000"
 	}
 }
 
-EntityBlueprint "effects/no_lifetime"
+EntityBlueprint "effects/no_lifetime"  // macrospore_cloud
 {
 	name effects/biome_mod/macrospore_cloud
 
