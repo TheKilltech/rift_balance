@@ -1,0 +1,21 @@
+EntityBlueprint
+{
+	name "units/ground/spawner_kermon_ice"
+	base_blueprint "units/ground/spawner_granan_ice"
+
+	UnitsSpawnerDesc
+	{
+		blueprint				"units/ground/egg_kermon_ice"
+		amount_on_single_spawn	"2"
+		max_spawn				"20"
+		time_to_spawn			"10"
+		unit_state_spawn		"1"  // do not touch
+		max_spawn_distance		"30"
+		spawn_type				"egg"
+		spawn_marker_bp			"effects/messages_and_markers/wave_marker_nest"
+		spawn_marker_life_time	"30"
+		can_spawn_when_visible	"1"
+		defend_radius			"40"
+	}	
+}
+

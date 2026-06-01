@@ -1,0 +1,275 @@
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/fireflies
+	
+	BiomeModificatorComponent
+	{
+		solar_power "0.15"
+	}		
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/gravitational_anomaly
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.0"
+	}	
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/monsoon
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.0"
+	}	
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/ice_fog
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.5"
+	}	
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/firestorm
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.0"
+	}		
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/firestorm_mild
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.0"
+	}	
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/blooming_air
+
+	BiomeModificatorComponent
+	{
+		solar_power 				"0.8"
+
+		vegetation_regrow_chance	"0.1"
+		vegetation_regrow_timer
+		{
+			time_interval			"1"
+		}
+	}		
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/blood_moon
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.25"
+	}		
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/blue_moon
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.25"
+	}	
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/blue_hail
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.0000"
+	}		
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/dust_storm
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.5000"		
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/fog
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.5000"
+	}	
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/ion_storm
+
+	LuaDesc
+	{
+		script "lua/weather/ion_storm.lua"
+	}
+
+	BiomeModificatorComponent
+	{
+		solar_power "4.0000"
+		geothermal_power "4.000"		
+	}
+}
+
+EntityBlueprint
+{
+	name effects/biome_mod/anoryx_blast
+
+	LuaDesc
+	{
+		script "lua/weather/ion_storm.lua"
+	}
+
+	BiomeModificatorComponent
+	{
+		solar_power "10.0000"		
+	}
+}
+
+EntityBlueprint
+{
+	name effects/biome_mod/anoryx_blast_blue
+
+	LuaDesc
+	{
+		script "lua/weather/ion_storm.lua"
+	}
+
+	BiomeModificatorComponent
+	{
+		solar_power "10.0000"		
+	}
+}
+
+EntityBlueprint
+{
+	name effects/biome_mod/anoryx_blast_red	
+
+	LuaDesc
+	{
+		script "lua/weather/ion_storm.lua"
+	}
+
+	BiomeModificatorComponent
+	{
+		solar_power "10.0000"	
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/rain
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.000"
+	}	
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/rain_toxic
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.000"
+	}
+}
+
+EntityBlueprint
+{
+	name "effects/biome_mod/solar_burn"
+
+	WorldEffectComponent
+	{
+		damage_per_sec							"3"
+		type									"global"
+		max_health_percentage_damage_threshold	"50"
+		damage_type								"sunburn"
+	}
+
+	BiomeModificatorComponent
+	{
+		solar_power "4.0000"		
+	}			
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/solar_eclipse
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.0000"
+	}		
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/super_moon
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.5"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/thunderstorm
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.000"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/volcanic_ash_clouds
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.0000"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"
+{
+	name effects/biome_mod/macrospore_cloud
+
+	BiomeModificatorComponent
+	{
+		solar_power "0.3"
+	}	
+}
+

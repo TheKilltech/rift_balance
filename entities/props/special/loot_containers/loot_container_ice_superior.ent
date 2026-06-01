@@ -1,0 +1,146 @@
+EntityBlueprint
+{
+	name  "props/special/loot_containers/loot_container_ice_superior"
+
+	base_blueprint "props/special/loot_containers/loot_container_jungle_standard"
+
+
+	MeshDesc
+	{
+		mesh "meshes/props/special/loot_containers/loot_container_ice_big.mesh"
+		material "props/special/loot_containers/loot_container_ice_superior"
+
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "props/special/loot_containers/loot_container_ice_superior"
+			}
+			SubMesh
+			{
+				id "1"
+				material "props/special/loot_containers/loot_container_ice_core_superior"
+			}
+		}
+		
+	}		
+	
+	SkeletonDesc
+	{
+		name "meshes/props/special/loot_containers/loot_container_ice_big"
+	}	
+	
+	AnimationDesc
+	{
+		animations
+		{
+			Anim
+			{
+				animName "working"
+				animTime "0.0"
+			}
+		}
+	}		
+
+	DestroyDesc
+	{
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "default"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"3500"
+					explosion_min_power 	"3500"
+					explosion_effect 		"effects/loot/treasure_open_superior"
+
+					part_material	 		"props/special/loot_containers/loot_container_ice_superior"
+					part_prefix 			"meshes/props/special/loot_containers/loot_container_ice_big"
+					part_effect 			"effects/destructibles/acid_bulb_part_trail_violet_medium"
+					part_physics_material   "debris_heavy"
+				}
+			}
+		}
+	}
+	
+	LootDesc
+	{
+		explosion_max_power 	"14000"
+		explosion_min_power 	"8000"
+		loot_award				"bioanomaly_superior"
+	}
+	
+	VegetationComponentDesc
+	{
+		bending_wind_scale				"0"		// ogolne skalowanie sily wiatru						domyslnie: 1.0
+		bending_object_scale			"0"		// ogolne skalowanie sily odginania obiektow			domyslnie: 1.0
+		bending_spring_time				"2.0"		// czas wygaszania
+		bending_spring_damping			"30.0"		// wygluszanie oscylacji
+		bending_spring_phases			"3.0"		// ilosc oscylacji
+		bending_spring_slope_factor		"1.0"		// pseudo "sprezystosc"
+		breaking_force_threshold		"10000.0"	// sila po przekroczeniu ktorej, roslina lezy zlamana
+		bending_recovery_delay			"15.0"      // czas jaki bedzie lezec po zlamaniu, zanim moze wrocic do punktu 0
+		root_mesh 						"meshes/props/special/loot_containers/loot_container_ice_big_root.mesh" // mesh spawnowany po jej zniszczeniu
+	}		
+
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id    		"destructible"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsMeshShape
+					{
+						mesh "meshes/props/special/loot_containers/loot_container_ice_big_c1.nxs"
+					}
+
+				}
+			}
+		}
+	}
+	EffectDesc
+    {		
+		EffectGroup
+		{
+			group "container"
+			enabled "1"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/loot/treasure_superior"	
+					bone "att_energy"
+					//scale "2 2 2"	
+				}
+                Effect
+                {
+                    blueprint "lights/point/bioanomaly_shadow_caster_violet"
+					bone "att_light"	
+                }				
+			}
+		}
+		EffectGroup
+		{
+			group "idle"
+			enabled "1"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/world/bio_anomaly_idle_sound"					
+				}
+			}
+		}
+    }	
+}
