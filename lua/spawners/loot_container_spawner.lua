@@ -8,13 +8,15 @@ function loot_container_spawner:__init()
 end
 
 function loot_container_spawner:init()	
-	self.rarity = self.data:GetIntOrDefault( "rarity", 0 );
-	self.delay = self.data:GetFloatOrDefault( "delay", 0 );
+	self.rarity   = self.data:GetIntOrDefault( "rarity", 0 );
+	self.delay    = self.data:GetFloatOrDefault( "delay", 0 );
+	self.jammerBp = self.data:GetStringOrDefault( "jammer_bp", "" );
 	self.aggressiveRadius = self.data:GetFloatOrDefault( "aggressive_radius", 20 )
 	self:RegisterHandler( self.entity, "InteractWithEntityRequest",  "OnInteractWithEntityRequest" )
 	self:RegisterHandler( self.entity, "HarvestStartEvent",   "OnHarvestStartEvent" )
 	self.fsm = self:CreateStateMachine()
-    self.fsm:AddState( "wait", { from="*", enter="OnEnterWating", exit="OnExitWaiting" } )
+    self.fsm:AddState( "wait", { from="*", enter="OnEnterWait", exit="OnExitWait" } )
+	self.fsm:ChangeState("wait")
 	SetupUnitScale( self.entity, self.data )
 
 	EntityService:SetGroup( self.entity, "loot_container");
@@ -39,6 +41,37 @@ function loot_container_spawner:OnLoad()
 	end
 
 	self.spawner_version = 1
+end
+
+
+function loot_container_spawner:OnRelease()
+	self:SetEnableJammer( false )
+end
+
+function loot_container_spawner:OnEnterWait(state)
+    state:SetDurationLimit( self.delay )
+end
+
+function loot_container_spawner:OnExitWait( dt )
+	self:SetEnableJammer( true)
+end
+
+
+function loot_container_spawner:SetEnableJammer( enable )
+	if self.jammerBp == "" then return end
+	enable = enable or false
+	
+	if enable then
+		local pos = EntityService:GetPosition( self.entity )
+		if (self.jammer or INVALID_ID) == INVALID_ID then
+			self.jammer = EntityService:SpawnAndAttachEntity( self.jammerBp, self.entity)
+		end
+	else
+		if (self.jammer or INVALID_ID) ~= INVALID_ID then
+			EntityService:DestroyEntity( self.jammer, "default" )
+			self.jammer = nil
+		end
+	end
 end
 
 function loot_container_spawner:OnInteractWithEntityRequest( evt )
@@ -102,6 +135,7 @@ end
 function loot_container_spawner:OnHarvestStartEvent( evt )
 	if ( self.activated == false ) then
 		self.activated = true
+		self:SetEnableJammer( false)
 
 		local waveLogic			= self.data:GetStringOrDefault( "wave_logic_file",  "error" )
 		local bossLogic			= self.data:GetStringOrDefault( "boss_logic_file",  "error" )

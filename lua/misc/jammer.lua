@@ -8,9 +8,10 @@ function jammer:__init()
 end
 
 function jammer:Log( logLevel, message )
-	local curLevel = 0 -- enable logging here ( 0 - errors, 2 - main entry points, 3 - details, 5 - loops )
+	local curLevel = 9 -- enable logging here ( 0 - errors, 2 - main entry points, 3 - details, 5 - loops )
 	if logLevel <= curLevel then
-		local context = "jammer ".. tostring(self.entity)..": "
+		local bp = EntityService:GetBlueprintName( self.entity )
+		local context = "jammer ".. bp .." ".. tostring(self.entity)..": "
 		LogService:Log( context .. tostring(message) )
 	end
 end
@@ -27,6 +28,7 @@ function jammer:init()
 	self.isRandom = self.data:GetIntOrDefault("jamming_random_pos", 0)
 	self.data:SetInt("jamming_entity", self.entity)
 	--self.parent   = EntityService:GetParent(self.entity)
+	EntityService:SetGroup( self.entity, "jammer")
 	
 	if self.isRandom > 0 then
 		local spot = FindService:FindEmptySpotInRadius( self.entity, 1000.0, "", "")
@@ -49,7 +51,9 @@ end
 
 function jammer:OnRelease()
 	self:Log( 2, "OnRelease" )
-	QueueEvent("LuaGlobalEvent", event_sink, "JammingEndEvent", {} )
+	if self.range > 0 then
+		QueueEvent("LuaGlobalEvent", event_sink, "JammingEndEvent", {} )
+	end
 	if self.rangeMM > 0 then
 		GuiService:RemoveMinimapMarker( "marker_jamming_".. tostring(self.entity) )
 	end

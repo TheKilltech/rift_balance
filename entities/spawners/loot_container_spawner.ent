@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // loot_container_spawner
 { 
 	name "spawners/loot_container_spawner"
 
@@ -12,6 +12,11 @@ EntityBlueprint
 		}
 	}
 
+	TypeDesc
+	{
+		type "jammer"
+	}
+	
 	InteractiveComponent 
 	{
 		slot 			"HARVESTER"
@@ -52,7 +57,7 @@ EntityBlueprint
 	
 }
 
-EntityBlueprint
+EntityBlueprint  // loot_container_spawner_with_marker
 { 
 	name "spawners/loot_container_spawner_with_marker"
 	base_blueprints
@@ -90,17 +95,18 @@ EntityBlueprint
 
 }
 
-EntityBlueprint
+EntityBlueprint  // loot_container_spawner_standard
 {
 	name 			"spawners/loot_container_spawner_standard"
 	base_blueprint  "spawners/loot_container_spawner"
 
 	DatabaseComponent
 	{
-		rarity int:"0"
-		harvest_duration float:"8"		
-		min_scale	float:"0.79"
-		max_scale	float:"0.79"		
+		rarity				int:"0"
+		harvest_duration	float:"8"
+		min_scale			float:"0.79"
+		max_scale			float:"0.79"
+		jammer_bp			string:"spawners/loot_container_jammer_standard"
 	}	
 
 	MinimapItemDesc
@@ -145,17 +151,18 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // loot_container_spawner_advanced
 {
 	name 			"spawners/loot_container_spawner_advanced"
 	base_blueprint  "spawners/loot_container_spawner"
 	
 	DatabaseComponent
 	{
-		rarity int:"1"
-		harvest_duration float:"10"	
-		min_scale	float:"0.97"
-		max_scale	float:"0.97"			
+		rarity 				int:"1"
+		harvest_duration	float:"10"
+		min_scale			float:"0.97"
+		max_scale			float:"0.97"
+		jammer_bp			string:"spawners/loot_container_jammer_advanced"
 	}
 
 	MinimapItemDesc
@@ -200,17 +207,18 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // loot_container_spawner_superior
 {
 	name 			"spawners/loot_container_spawner_superior"
 	base_blueprint  "spawners/loot_container_spawner"
 	
 	DatabaseComponent
 	{
-		rarity int:"2"
-		harvest_duration float:"12"	
-		min_scale	float:"1.16"
-		max_scale	float:"1.16"	
+		rarity				int:"2"
+		harvest_duration	float:"12"
+		min_scale			float:"1.16"
+		max_scale			float:"1.16"
+		jammer_bp			string:"spawners/loot_container_jammer_superior"
 	}
 
 	MinimapItemDesc
@@ -255,17 +263,18 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // loot_container_spawner_extreme
 {
 	name 			"spawners/loot_container_spawner_extreme"
 	base_blueprint  "spawners/loot_container_spawner"
 	
 	DatabaseComponent
 	{
-		rarity int:"3"
-		harvest_duration float:"14"	
-		min_scale	float:"1.25"
-		max_scale	float:"1.25"	
+		rarit				int:"3"
+		harvest_duration	float:"14"
+		min_scale			float:"1.25"
+		max_scale			float:"1.25"
+		jammer_bp			string:"spawners/loot_container_jammer_extreme"
 	}
 
 	MinimapItemDesc
@@ -310,7 +319,8 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+
+EntityBlueprint  // jungle_spawner_standard
 {
 	name "spawners/jungle_spawner_standard"
 
@@ -332,11 +342,19 @@ EntityBlueprint
 			wave_logic_file_mul int:"2"
 			wave_spawn_distance int:"80"
 			wave_started_effect string:"effects/enemies_generic/wave_start"
+			
+			jamming_range		float:"40"
+			jamming_strength	float:"1.7"
 		}
+	}
+	
+	TypeDesc
+	{
+		type "jammer"
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // jungle_spawner_advanced
 {
 	name "spawners/jungle_spawner_advanced"
 
@@ -360,11 +378,14 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
+			
+			jamming_range		float:"50"
+			jamming_strength	float:"1.7"
 		}
 	}
 }
 
-EntityBlueprint
+EntityBlueprint // jungle_spawner_superior
 {
 	name "spawners/jungle_spawner_superior"
 
@@ -388,11 +409,36 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
+			
+			jamming_range		float:"90"
+			jamming_strength	float:"1.8"
+		}
+	}
+
+	TriggerDesc
+	{
+		owner 		"self"
+		collision 	"ground_unit"
+
+		Filters
+		{
+			TeamTriggerFilter 
+			{
+				team		"player"
+			}
+		}
+
+		Shapes
+		{
+			PhysicsSphereShape
+			{
+				r "10"
+			}
 		}
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // jungle_spawner_extreme
 {
 	name "spawners/jungle_spawner_extreme"
 
@@ -416,6 +462,31 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
+			
+			jamming_range		float:"180"
+			jamming_strength	float:"2.0"
+		}
+	}
+
+	TriggerDesc
+	{
+		owner 		"self"
+		collision 	"ground_unit"
+
+		Filters
+		{
+			TeamTriggerFilter 
+			{
+				team		"player"
+			}
+		}
+
+		Shapes
+		{
+			PhysicsSphereShape
+			{
+				r "18"
+			}
 		}
 	}
 }
@@ -2418,4 +2489,134 @@ EntityBlueprint
 		layer_group				"exploration"
 		condition				"BIOANOMALY"	
 	}	
+}
+
+
+
+EntityBlueprint  // loot_container_jammer_standard
+{
+	name  "spawners/loot_container_jammer_standard"
+
+	LuaDesc
+	{
+		script "lua/misc/jammer.lua"
+
+		database
+		{
+			jamming_range				float:"40"
+			jamming_strength			float:"1.5"
+		}
+	}
+
+	TypeDesc
+	{
+		type "jammer"
+	}
+}
+
+EntityBlueprint  // loot_container_jammer_advanced
+{
+	name  "spawners/loot_container_jammer_advanced"
+
+	LuaDesc
+	{
+		script "lua/misc/jammer.lua"
+
+		database
+		{
+			jamming_range				float:"55"
+			jamming_strength			float:"1.65"
+		}
+	}
+
+	TypeDesc
+	{
+		type "jammer"
+	}
+}
+
+EntityBlueprint  // loot_container_jammer_superior
+{
+	name  "spawners/loot_container_jammer_superior"
+
+	LuaDesc
+	{
+		script "lua/misc/jammer.lua"
+
+		database
+		{
+			jamming_range				float:"80"
+			jamming_strength			float:"1.8"
+		}
+	}
+
+	TriggerDesc
+	{
+		owner 		"self"
+		collision 	"ground_unit"
+
+		Filters
+		{
+			TeamTriggerFilter 
+			{
+				team		"player"
+			}
+		}
+
+		Shapes
+		{
+			PhysicsSphereShape
+			{
+				r "14"
+			}
+		}
+	}
+	
+	TypeDesc
+	{
+		type "jammer"
+	}
+}
+
+EntityBlueprint  // loot_container_jammer_extreme
+{
+	name  "spawners/loot_container_jammer_extreme"
+
+	LuaDesc
+	{
+		script "lua/misc/jammer.lua"
+
+		database
+		{
+			jamming_range				float:"180"
+			jamming_strength			float:"2.0"
+		}
+	}
+
+	TriggerDesc
+	{
+		owner 		"self"
+		collision 	"ground_unit"
+
+		Filters
+		{
+			TeamTriggerFilter 
+			{
+				team		"player"
+			}
+		}
+
+		Shapes
+		{
+			PhysicsSphereShape
+			{
+				r "20"
+			}
+		}
+	}
+	
+	TypeDesc
+	{
+		type "jammer"
+	}
 }
