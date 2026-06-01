@@ -1,0 +1,87 @@
+EntityBlueprint
+{
+	name  "props/special/loot_containers/loot_container_jungle_advanced"
+	
+	base_blueprint "props/special/loot_containers/loot_container_jungle_standard"	
+
+	MeshDesc
+	{
+		material "props/special/loot_container_jungle_advanced"
+		mesh "meshes/props/special/loot_containers/loot_container_jungle.mesh"
+	}	
+
+	DestroyDesc
+	{
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "default"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"3500"
+					explosion_min_power 	"3500"
+					explosion_effect 		"effects/loot/treasure_open_advanced"
+
+					part_material	 		"props/special/loot_container_jungle_advanced"
+					part_prefix 			"meshes/props/special/loot_containers/loot_container_jungle"
+					part_effect 			"effects/destructibles/acid_bulb_part_trail_blue_medium"
+					part_physics_material   "debris_heavy"
+				}
+			}
+		}
+	}
+		
+	LootDesc
+	{
+		explosion_max_power 	"14000"
+		explosion_min_power 	"8000"
+		loot_award				"bioanomaly_advanced"
+	}	
+
+	EffectDesc
+    {	
+        EffectGroup
+        {           
+            enabled "1"
+			group 	"light"
+            Effects
+            {
+                Effect
+                {
+                    blueprint "lights/point/bioanomaly_shadow_caster_blue"
+					bone "att_light"	
+                }	
+            }
+        }	
+		EffectGroup
+		{
+			group "container"
+			enabled "1"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/loot/treasure_advanced"		
+					//scale "2 2 2"	
+					bone "att_energy"	
+				}				
+			}
+		}
+		EffectGroup
+		{
+			group "idle"
+			enabled "1"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/world/bio_anomaly_idle_sound"					
+				}
+			}
+		}
+    }		
+}
