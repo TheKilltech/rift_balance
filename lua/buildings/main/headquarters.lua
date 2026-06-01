@@ -1,13 +1,14 @@
 require("lua/utils/table_utils.lua")
-local building = require("lua/buildings/building.lua");
+local radar = require("lua/buildings/defense/short_range_radar.lua")
 
-class 'headquarters' ( building )
+class 'headquarters' ( radar )
 
 function headquarters:__init()
-	building.__init(self)
+	radar.__init(self, self)
 end
 
 function headquarters:OnInit()
+	radar.OnInit(self)
 	self.portalEnergy = nil
 
 	self.selected = {}
@@ -63,6 +64,7 @@ function headquarters:OnDestroy()
 end
 
 function headquarters:OnBuildingEnd()
+	radar.OnBuildingEnd(self)
 	self.portalEnergy = EntityService:SpawnAndAttachEntity( "buildings/main/headquarters/portal", self.entity, "att_portal", "" )
 	self:RegisterHandler( self.entity, "EnteredTriggerEvent",  "OnEnteredTriggerEvent" )
 	PlayerService:SetEnergyLvl( 0, BuildingService:GetBuildingLevel( self.entity ) )
@@ -74,6 +76,7 @@ function headquarters:OnEnteredTriggerEvent(evt)
 end
 
 function headquarters:OnActivate()
+	radar.OnActivate(self)
 	self.fsm:ChangeState("working")
 end
 
@@ -130,6 +133,7 @@ function headquarters:OnWorkInProgress( state )
 end
 
 function headquarters:OnDeactivate()
+	radar.OnDeactivate(self)
 	self.selected = {}
 	local state = self.fsm:GetState("working")
 	if ( state ~= nil ) then
