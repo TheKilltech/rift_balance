@@ -1,0 +1,77 @@
+FlowGraphBindings
+{
+	Database
+	{
+		Strings
+		{
+			StringData
+			{
+				value "spawners/jungle_spawner_superior"
+				key "blueprint"
+			}
+
+		}
+
+		Floats
+		Vectors
+		Integers
+		{
+			IntData
+			{
+				value "30"
+				key "time"
+			}
+
+		}
+
+	}
+
+	Bindings
+	{
+		weather_generic_0
+		{
+			//database@Integers@IntData[0]@value "time"
+			database
+			{
+				Integers
+				{
+					IntData[0]
+					{
+						value "time"
+					}
+
+					IntData[1]
+					{
+						value "time"
+					}
+
+				}
+
+			}
+
+			//database@Integers@IntData[1]@value "time"
+		}
+
+		entity_spawn_single_1
+		{
+			//database@Strings@StringData[0]@value "blueprint"
+			database
+			{
+				Strings
+				{
+					StringData[0]
+					{
+						value "blueprint"
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	DynamicBindings
+}
+

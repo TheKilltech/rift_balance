@@ -1,0 +1,83 @@
+<node_layout id="LuaBehaviourNode">
+    <value id="script" value="lua/graph/entity/entity_spawn_world_random_mod.lua"/>
+    <value id="database.Strings.StringData[0].key" value="blueprint" />
+    <value id="database.Strings.StringData[1].key" value="team" />
+	<value id="database.Strings.StringData[2].key" value="entity_name" />
+	<value id="database.Strings.StringData[3].key" value="entity_group" />
+	<value id="database.Strings.StringData[4].key" value="spawn_target" />
+
+    <value id="database.Integers.IntData[0].key" value="count" />
+	<value id="database.Integers.IntData[1].key" value="min_life_time"/>
+	<value id="database.Integers.IntData[2].key" value="max_life_time"/>
+
+    <value id="database.Floats.FloatData[0].key" value="min_spawn_radius" />
+    <value id="database.Floats.FloatData[1].key" value="max_spawn_radius" />
+    <value id="database.Floats.FloatData[2].key" value="min_border_distance" />
+    <value id="database.Floats.FloatData[3].key" value="max_border_distance" />
+    
+	<row bgcolor="#44D0B1">
+		<text value="ENTITY SPAWN WORLD RANDOM (Mod)" width="400" align="center" font_weight="extra_bold"  />        
+	</row> 
+	<row bgcolor="#44D0B1">
+		<text value="Id:" width="30" align="left" font_weight="bold" />
+        <input id="self_id" width="370" font_weight="bold" />
+	</row> 
+	<row bgcolor="#FFFFFF" height="1"/>
+	<row bgcolor="#000000" height="3"/>
+	<row bgcolor="#FFFFFF" height="1"/>
+	<row>		
+        <text value="Blueprint:" width="70" align="left" font_weight="bold" />
+        <list type="selector" width="330" source="blueprints" id="database.Strings.StringData[0].value" value="" valid_rule="not_empty" font_weight="bold" />
+	</row>
+	<row bgcolor="#FFFFFF" height="1"/>
+	<row bgcolor="#000000" height="3"/>
+	<row bgcolor="#FFFFFF" height="1"/>
+	<row>		
+        <text value="Spawn target name:" width="140" align="left" font_weight="bold" />
+        <input type="string" width="260" id="database.Strings.StringData[4].value" value="" font_weight="bold"  />
+	</row>
+	<row>		
+        <text value="Min spawn distance:" width="140" align="left" font_weight="bold" />
+        <input type="float" width="260" id="database.Floats.FloatData[0].value" value="120" font_weight="bold"  />
+	</row>
+
+	<row>		
+        <text value="Max spawn distance:" width="140" align="left" font_weight="bold" />
+        <input type="float" width="260" id="database.Floats.FloatData[1].value" value="600" font_weight="bold"  />
+	</row>
+	<row>		
+        <text value="Min border distance:" width="140" align="left" font_weight="bold" />
+        <input type="float" width="260" id="database.Floats.FloatData[2].value" value="0" font_weight="bold"  />
+	</row>
+	<row>
+        <text value="Max border distance:" width="140" align="left" font_weight="bold" />
+        <input type="float" width="260" id="database.Floats.FloatData[3].value" value="0" font_weight="bold"  />
+	</row>
+	<row>
+		<text value="Min life time:" width="140" font_weight="bold"/>
+		<input text="min_life_time" id="database.Integers.IntData[1].value" width="260" valid_rule="not_empty" value="0" font_weight="bold"/>
+	</row>
+	<row>
+		<text value="Max life time:" width="140" font_weight="bold"/>
+		<input text="max_life_time" id="database.Integers.IntData[2].value" width="260" valid_rule="not_empty" value="0" font_weight="bold"/>
+	</row>
+	<row bgcolor="#FFFFFF" height="1"/>
+	<row bgcolor="#000000" height="3"/>
+	<row bgcolor="#FFFFFF" height="1"/>
+	<row>		
+        <text value="Entity Name:" width="90" align="left" font_weight="bold" />
+        <input width="310" id="database.Strings.StringData[2].value" value="" font_weight="bold"  />
+	</row>
+	<row>		
+        <text value="Entity Group:" width="90" align="left" font_weight="bold" />
+        <input width="310" id="database.Strings.StringData[3].value" value="" font_weight="bold"  />
+	</row>
+	<row>		
+        <text value="Count:" width="90" align="left" font_weight="bold" />
+        <input type="int" width="310" id="database.Integers.IntData[0].value" value="1" font_weight="bold"  />
+	</row>
+	<row>		
+        <text value="Team:" width="90" align="left" font_weight="bold" />
+        <list source="no_team,player,enemy" width="310" id="database.Strings.StringData[1].value" font_weight="bold"/>
+	</row>
+</node_layout>
