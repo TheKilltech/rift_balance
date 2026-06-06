@@ -1,7 +1,7 @@
-//editor "scroll(116.14,-481.87)|zoom(0.13)"
+//editor "scroll(5926.50,376.50)|zoom(0.73)"
 FlowGraphTemplate
 {
-	version "8"
+	version "11"
 	editor "6741"
 	GraphNodes
 	{
@@ -26,16 +26,9 @@ FlowGraphTemplate
 			self_id "default"
 		}
 
-		EndFlowGraphNode
-		{
-			//editor "layout(event_end.xml)|pos(7949,1261)"
-			script "lua/graph/mission_state/event_end.lua"
-			self_id "event_end_0"
-		}
-
 		OrBehaviourNode
 		{
-			//editor "layout(logic_or.xml)|pos(6434,790)"
+			//editor "layout(logic_or.xml)|pos(6491,822)"
 			self_id "logic_or_0"
 		}
 
@@ -547,7 +540,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(3402,186)"
+			//editor "layout(condition_int.xml)|pos(3402,78)"
 			key "0"
 			self_id "logic_random_output_0###0"
 			value "logic_random_output_0###0"
@@ -555,7 +548,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(3402,214)"
+			//editor "layout(condition_int.xml)|pos(3402,106)"
 			key "1"
 			self_id "logic_random_output_0###1"
 			value "logic_random_output_0###1"
@@ -563,7 +556,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(3402,242)"
+			//editor "layout(condition_int.xml)|pos(3402,134)"
 			key "2"
 			self_id "logic_random_output_0###2"
 			value "logic_random_output_0###2"
@@ -571,7 +564,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(weather_generic.xml)|pos(3728,521)"
+			//editor "layout(weather_generic.xml)|pos(3911,523)"
 			database
 			{
 				Integers
@@ -654,7 +647,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(5238,827)"
+			//editor "layout(condition_int.xml)|pos(5238,826)"
 			key "0"
 			self_id "logic_random_output_1###0"
 			value "logic_random_output_1###0"
@@ -662,7 +655,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(5238,855)"
+			//editor "layout(condition_int.xml)|pos(5238,854)"
 			key "1"
 			self_id "logic_random_output_1###1"
 			value "logic_random_output_1###1"
@@ -723,7 +716,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(957,168)"
+			//editor "layout(condition_int.xml)|pos(957,60)"
 			key "0"
 			self_id "logic_random_output_2###0"
 			value "logic_random_output_2###0"
@@ -731,7 +724,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(957,196)"
+			//editor "layout(condition_int.xml)|pos(957,88)"
 			key "1"
 			self_id "logic_random_output_2###1"
 			value "logic_random_output_2###1"
@@ -739,7 +732,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(957,224)"
+			//editor "layout(condition_int.xml)|pos(957,116)"
 			key "2"
 			self_id "logic_random_output_2###2"
 			value "logic_random_output_2###2"
@@ -817,7 +810,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(entity_spawn_single.xml)|pos(4387,1347)"
+			//editor "layout(entity_spawn_single.xml)|pos(4045,899)"
 			database
 			{
 				Floats
@@ -923,7 +916,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_wait.xml)|pos(4121,1519)"
+			//editor "layout(logic_wait.xml)|pos(3756,1073)"
 			database
 			{
 				Floats
@@ -991,28 +984,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_wait.xml)|pos(3320,1477)"
-			database
-			{
-				Floats
-				{
-					FloatData
-					{
-						key "duration"
-						value "10.00"
-					}
-
-				}
-
-			}
-
-			script "lua/graph/logic/logic_wait.lua"
-			self_id "logic_wait_6"
-		}
-
-		LuaBehaviourNode
-		{
-			//editor "layout(entity_spawn_world_random_mod.xml)|pos(3577,1375)"
+			//editor "layout(entity_spawn_world_random_mod.xml)|pos(3266,929)"
 			database
 			{
 				Floats
@@ -1114,7 +1086,273 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(entity_spawn_single.xml)|pos(6638,1078)"
+			//editor "layout(objective_generic.xml)|pos(6760,817)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_parent_local"
+						value "1"
+					}
+
+					IntData
+					{
+						key "is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "generate_type"
+						value "1"
+					}
+
+					IntData
+					{
+						key "always_visible"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "objective_blueprint"
+						value
+					}
+
+					StringData
+					{
+						key "display_name"
+						value "gui/hud/objective_name/generic/investigate_anomaly"
+					}
+
+					StringData
+					{
+						key "display_description"
+					}
+
+					StringData
+					{
+						key "unique_name_id"
+						value "anomaly_objective"
+					}
+
+					StringData
+					{
+						key "unique_parent_id_name"
+						value
+					}
+
+					StringData
+					{
+						key "wait"
+						value "false"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_spawn.lua"
+			self_id "objective_generic_3"
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(logic_if_exist_entity_new.xml)|pos(8031,1065)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "search_radius"
+						value "30"
+					}
+
+				}
+
+				Integers
+				{
+					IntData
+					{
+						key "count"
+						value "1"
+					}
+
+					IntData
+					{
+						key "inverse_relationship"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "comparison_type"
+						value "greater_or_equal"
+					}
+
+					StringData
+					{
+						key "find_type"
+						value "Type"
+					}
+
+					StringData
+					{
+						key "find_value"
+						value "player"
+					}
+
+					StringData
+					{
+						key "search_target_type"
+						value "LocalName"
+					}
+
+					StringData
+					{
+						key "search_target_value"
+						value "anomaly"
+					}
+
+					StringData
+					{
+						key "wait_until_true"
+						value "true"
+					}
+
+					StringData
+					{
+						key "find_relationship"
+						value
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_if_exist_entity_new.lua"
+			self_id "logic_if_exist_entity_new_2"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_true.xml)|pos(8031,1371)"
+			key "true"
+			self_id "logic_if_exist_entity_new_2###true"
+			value "logic_if_exist_entity_new_0###true"
+		}
+
+		OrBehaviourNode
+		{
+			//editor "layout(logic_or.xml)|pos(8529,1073)"
+			self_id "logic_or_3"
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(logic_if_alive_advanced.xml)|pos(8029,565)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "search_radius"
+						value "0"
+					}
+
+				}
+
+				Integers
+				{
+					IntData
+					{
+						key "count"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "comparison_type"
+						value "equal"
+					}
+
+					StringData
+					{
+						key "find_type"
+						value "LocalName"
+					}
+
+					StringData
+					{
+						key "find_value"
+						value "anomaly"
+					}
+
+					StringData
+					{
+						key "search_target_type"
+						value
+					}
+
+					StringData
+					{
+						key "search_target_value"
+						value
+					}
+
+					StringData
+					{
+						key "wait_until_true"
+						value "true"
+					}
+
+					StringData
+					{
+						key "find_relationship"
+						value
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_if_alive_advanced.lua"
+			self_id "logic_if_alive_advanced_2"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_true.xml)|pos(8029,871)"
+			key "true"
+			self_id "logic_if_alive_advanced_2###true"
+			value
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(entity_spawn_objective_marker.xml)|pos(7399,683)"
 			database
 			{
 				Floats
@@ -1143,8 +1381,32 @@ FlowGraphTemplate
 
 					IntData
 					{
+						key "is_objective_local"
+						value "1"
+					}
+
+					IntData
+					{
 						key "name_is_global"
 						value "0"
+					}
+
+					IntData
+					{
+						key "display_marker_arrow"
+						value "1"
+					}
+
+					IntData
+					{
+						key "display_marker_circle"
+						value "1"
+					}
+
+					IntData
+					{
+						key "display_marker_core"
+						value "1"
 					}
 
 				}
@@ -1153,20 +1415,19 @@ FlowGraphTemplate
 				{
 					StringData
 					{
-						key "blueprint"
-						value "effects/messages_and_markers/objective_marker_circle"
+						key "unique_name_id"
+						value "anomaly_objective"
 					}
 
 					StringData
 					{
 						key "team"
-						value "no_team"
 					}
 
 					StringData
 					{
 						key "entity_name"
-						value "anomaly_market"
+						value "anomaly_marker"
 					}
 
 					StringData
@@ -1196,7 +1457,7 @@ FlowGraphTemplate
 					StringData
 					{
 						key "search_target_type"
-						value "Name"
+						value
 					}
 
 					StringData
@@ -1214,13 +1475,13 @@ FlowGraphTemplate
 
 			}
 
-			script "lua/graph/entity/entity_spawn_single.lua"
-			self_id "entity_spawn_single_2"
+			script "lua/graph/entity/entity_spawn_objective_marker.lua"
+			self_id "entity_spawn_objective_marker_1"
 		}
 
 		LuaBehaviourNode
 		{
-			//editor "layout(entity_remove.xml)|pos(7480,1193)"
+			//editor "layout(entity_remove.xml)|pos(9296,1002)"
 			database
 			{
 				Floats
@@ -1248,7 +1509,7 @@ FlowGraphTemplate
 					StringData
 					{
 						key "target_name"
-						value "anomaly_market"
+						value "anomaly_marker"
 					}
 
 					StringData
@@ -1272,7 +1533,7 @@ FlowGraphTemplate
 					StringData
 					{
 						key "dissolve_state"
-						value "false"
+						value "true"
 					}
 
 				}
@@ -1280,28 +1541,51 @@ FlowGraphTemplate
 			}
 
 			script "lua/graph/entity/entity_remove.lua"
-			self_id "entity_remove_1"
+			self_id "entity_remove_2"
 		}
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_wait.xml)|pos(7226,1247)"
+			//editor "layout(objective_finish.xml)|pos(8763,1041)"
 			database
 			{
-				Floats
+				Integers
 				{
-					FloatData
+					IntData
 					{
-						key "duration"
-						value "60"
+						key "is_objective_local"
+						value "1"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "unique_name_id"
+						value "anomaly_objective"
+					}
+
+					StringData
+					{
+						key "success"
+						value "true"
 					}
 
 				}
 
 			}
 
-			script "lua/graph/logic/logic_wait.lua"
-			self_id "logic_wait_8"
+			script "lua/graph/objective/objective_finish.lua"
+			self_id "objective_finish_4"
+		}
+
+		EndFlowGraphNode
+		{
+			//editor "layout(event_end.xml)|pos(10258,1067)"
+			script "lua/graph/mission_state/event_end.lua"
+			self_id "event_end_2"
 		}
 
 	}
@@ -1309,9 +1593,9 @@ FlowGraphTemplate
 	GraphConnections
 	{
 		default "logic_check_streaming_session_0"
-		entity_remove_1 "event_end_0"
+		entity_remove_2 "event_end_2"
+		entity_spawn_objective_marker_1 "logic_if_alive_advanced_2|logic_if_exist_entity_new_2"
 		entity_spawn_single_1 "logic_and_2"
-		entity_spawn_single_2 "logic_wait_8"
 		entity_spawn_world_random_mod_1 "logic_wait_5"
 		interface_dialogue_show_4 "logic_or_1"
 		interface_dialogue_show_5 "logic_or_1"
@@ -1322,9 +1606,14 @@ FlowGraphTemplate
 		logic_check_streaming_session_0 "logic_check_streaming_session_0###false|logic_check_streaming_session_0###true"
 		logic_check_streaming_session_0###false "logic_random_output_2"
 		logic_check_streaming_session_0###true "logic_or_2"
-		logic_or_0 "entity_spawn_single_2"
+		logic_if_alive_advanced_2 "logic_if_alive_advanced_2###true"
+		logic_if_alive_advanced_2###true "logic_or_3"
+		logic_if_exist_entity_new_2 "logic_if_exist_entity_new_2###true"
+		logic_if_exist_entity_new_2###true "logic_or_3"
+		logic_or_0 "objective_generic_3"
 		logic_or_1 "logic_wait_0"
-		logic_or_2 "logic_random_output_0|logic_wait_6|weather_generic_0"
+		logic_or_2 "entity_spawn_world_random_mod_1|logic_random_output_0|weather_generic_0"
+		logic_or_3 "objective_finish_4"
 		logic_random_output_0 "logic_random_output_0###0|logic_random_output_0###1|logic_random_output_0###2"
 		logic_random_output_0###0 "interface_dialogue_show_8"
 		logic_random_output_0###1 "interface_dialogue_show_7"
@@ -1338,8 +1627,8 @@ FlowGraphTemplate
 		logic_random_output_2###2 "interface_dialogue_show_5"
 		logic_wait_0 "logic_or_2"
 		logic_wait_5 "entity_spawn_single_1"
-		logic_wait_6 "entity_spawn_world_random_mod_1"
-		logic_wait_8 "entity_remove_1"
+		objective_finish_4 "entity_remove_2"
+		objective_generic_3 "entity_spawn_objective_marker_1"
 		weather_generic_0 "logic_and_2"
 	}
 
