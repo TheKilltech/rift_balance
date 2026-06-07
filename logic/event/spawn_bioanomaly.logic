@@ -1,7 +1,7 @@
-//editor "scroll(5926.50,376.50)|zoom(0.73)"
+//editor "scroll(1085.04,-459.67)|zoom(0.20)"
 FlowGraphTemplate
 {
-	version "11"
+	version "12"
 	editor "6741"
 	GraphNodes
 	{
@@ -540,7 +540,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(3402,78)"
+			//editor "layout(condition_int.xml)|pos(3402,186)"
 			key "0"
 			self_id "logic_random_output_0###0"
 			value "logic_random_output_0###0"
@@ -548,7 +548,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(3402,106)"
+			//editor "layout(condition_int.xml)|pos(3402,214)"
 			key "1"
 			self_id "logic_random_output_0###1"
 			value "logic_random_output_0###1"
@@ -556,7 +556,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(3402,134)"
+			//editor "layout(condition_int.xml)|pos(3402,242)"
 			key "2"
 			self_id "logic_random_output_0###2"
 			value "logic_random_output_0###2"
@@ -763,7 +763,7 @@ FlowGraphTemplate
 
 		DialogGroupNode
 		{
-			//editor "layout(interface_dialogue_show_group.xml)|pos(5730,872)"
+			//editor "layout(interface_dialogue_show_group.xml)|pos(5717,970)"
 			global "0"
 			interrupt "0"
 			priority "0"
@@ -959,7 +959,7 @@ FlowGraphTemplate
 					//editor "layout(dialog_info.xml)|pos(0,0)"
 					extended_duration "0"
 					gui_id "gui/hud/dialogs/mech"
-					sound_name "voice_over/encounters/mech_ice_cave_01"
+					sound_name "voice_over/encounters/mech_anomaly_detected_01_a"
 				}
 
 				DialogInfo
@@ -976,6 +976,14 @@ FlowGraphTemplate
 					extended_duration "0"
 					gui_id "gui/hud/dialogs/mech"
 					sound_name "voice_over/story/dlc_3/mech_meadow_ending_05"
+				}
+
+				DialogInfo
+				{
+					//editor "layout(dialog_info.xml)|pos(0,0)"
+					extended_duration "0"
+					gui_id "dialog_human_general"
+					sound_name "voice_over/story/dlc_3/ashley_thicket_progress_c_03"
 				}
 
 			}
@@ -1170,7 +1178,7 @@ FlowGraphTemplate
 
 		NodeSelectorNode
 		{
-			//editor "layout(logic_if_exist_entity_new.xml)|pos(8031,1065)"
+			//editor "layout(logic_if_exist_entity_new.xml)|pos(8079,755)"
 			database
 			{
 				Floats
@@ -1253,7 +1261,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_true.xml)|pos(8031,1371)"
+			//editor "layout(condition_true.xml)|pos(8079,1061)"
 			key "true"
 			self_id "logic_if_exist_entity_new_2###true"
 			value "logic_if_exist_entity_new_0###true"
@@ -1261,13 +1269,13 @@ FlowGraphTemplate
 
 		OrBehaviourNode
 		{
-			//editor "layout(logic_or.xml)|pos(8529,1073)"
+			//editor "layout(logic_or.xml)|pos(8577,763)"
 			self_id "logic_or_3"
 		}
 
 		NodeSelectorNode
 		{
-			//editor "layout(logic_if_alive_advanced.xml)|pos(8029,565)"
+			//editor "layout(logic_if_alive_advanced.xml)|pos(8077,255)"
 			database
 			{
 				Floats
@@ -1344,7 +1352,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_true.xml)|pos(8029,871)"
+			//editor "layout(condition_true.xml)|pos(8077,561)"
 			key "true"
 			self_id "logic_if_alive_advanced_2###true"
 			value
@@ -1481,7 +1489,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(entity_remove.xml)|pos(9296,1002)"
+			//editor "layout(entity_remove.xml)|pos(11054,765)"
 			database
 			{
 				Floats
@@ -1546,7 +1554,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(objective_finish.xml)|pos(8763,1041)"
+			//editor "layout(objective_finish.xml)|pos(10223,624)"
 			database
 			{
 				Integers
@@ -1583,9 +1591,366 @@ FlowGraphTemplate
 
 		EndFlowGraphNode
 		{
-			//editor "layout(event_end.xml)|pos(10258,1067)"
+			//editor "layout(event_end.xml)|pos(11593,827)"
 			script "lua/graph/mission_state/event_end.lua"
 			self_id "event_end_2"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(objective_finish.xml)|pos(9483,1195)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "is_objective_local"
+						value "1"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "unique_name_id"
+						value "anomaly_objective"
+					}
+
+					StringData
+					{
+						key "success"
+						value "false"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/objective/objective_finish.lua"
+			self_id "objective_finish_5"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_wait.xml)|pos(8097,1221)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "duration"
+						value "600"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_wait.lua"
+			self_id "logic_wait_1"
+		}
+
+		OrBehaviourNode
+		{
+			//editor "layout(logic_or.xml)|pos(10766,829)"
+			self_id "logic_or_4"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(interface_dialogue_show.xml)|pos(9363,582)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "extended_duration"
+						value "0"
+					}
+
+					FloatData
+					{
+						key "timeout"
+						value "5.00"
+					}
+
+					FloatData
+					{
+						key "priority"
+						value "-1.00"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "gui_id"
+						value "gui/hud/dialogs/ashley"
+					}
+
+					StringData
+					{
+						key "sound_name"
+						value "voice_over/encounters/ashley_swamp_octopus_01"
+					}
+
+					StringData
+					{
+						key "localization_id"
+					}
+
+					StringData
+					{
+						key "manual_hide"
+						value "false"
+					}
+
+					StringData
+					{
+						key "interrupt"
+						value "false"
+					}
+
+					StringData
+					{
+						key "global"
+						value "false"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/interface/interface_dialogue_show.lua"
+			self_id "interface_dialogue_show_9"
+		}
+
+		NodeSelectorNode
+		{
+			//editor "layout(logic_random_output.xml)|pos(8861,524)"
+			database
+			{
+				Integers
+				{
+					IntData
+					{
+						key "outputs"
+						value "3"
+					}
+
+				}
+
+				Floats
+				{
+					//editor "expanded(1)"
+					FloatData
+					{
+						//editor "layout(condition_weight.xml)|pos(0,0)"
+						key "0"
+						value "1"
+					}
+
+					FloatData
+					{
+						//editor "layout(condition_weight.xml)|pos(0,0)"
+						key "1"
+						value "1"
+					}
+
+					FloatData
+					{
+						//editor "layout(condition_weight.xml)|pos(0,0)"
+						key "2"
+						value "1.00"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_random_output.lua"
+			self_id "logic_random_output_3"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_int.xml)|pos(8861,735)"
+			key "0"
+			self_id "logic_random_output_3###0"
+			value "logic_random_output_1###0"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_int.xml)|pos(8861,763)"
+			key "1"
+			self_id "logic_random_output_3###1"
+			value "logic_random_output_1###1"
+		}
+
+		FlowGraphNode
+		{
+			//editor "layout(condition_int.xml)|pos(8861,791)"
+			key "2"
+			self_id "logic_random_output_3###2"
+			value
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(interface_dialogue_show.xml)|pos(9365,795)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "extended_duration"
+						value "0"
+					}
+
+					FloatData
+					{
+						key "timeout"
+						value "5.00"
+					}
+
+					FloatData
+					{
+						key "priority"
+						value "-1.00"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "gui_id"
+						value "gui/hud/dialogs/ashley"
+					}
+
+					StringData
+					{
+						key "sound_name"
+						value "voice_over/story/dlc_3/ashley_outpost_stage_4_stronghold_01"
+					}
+
+					StringData
+					{
+						key "localization_id"
+					}
+
+					StringData
+					{
+						key "manual_hide"
+						value "false"
+					}
+
+					StringData
+					{
+						key "interrupt"
+						value "false"
+					}
+
+					StringData
+					{
+						key "global"
+						value "false"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/interface/interface_dialogue_show.lua"
+			self_id "interface_dialogue_show_10"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(interface_dialogue_show.xml)|pos(9357,356)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "extended_duration"
+						value "0"
+					}
+
+					FloatData
+					{
+						key "timeout"
+						value "5.00"
+					}
+
+					FloatData
+					{
+						key "priority"
+						value "-1.00"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "gui_id"
+						value "gui/hud/dialogs/ashley"
+					}
+
+					StringData
+					{
+						key "sound_name"
+						value "voice_over/encounters/mech_caverns_magnet_01"
+					}
+
+					StringData
+					{
+						key "localization_id"
+					}
+
+					StringData
+					{
+						key "manual_hide"
+						value "false"
+					}
+
+					StringData
+					{
+						key "interrupt"
+						value "false"
+					}
+
+					StringData
+					{
+						key "global"
+						value "false"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/interface/interface_dialogue_show.lua"
+			self_id "interface_dialogue_show_11"
+		}
+
+		OrBehaviourNode
+		{
+			//editor "layout(logic_or.xml)|pos(10016,656)"
+			self_id "logic_or_5"
 		}
 
 	}
@@ -1594,12 +1959,15 @@ FlowGraphTemplate
 	{
 		default "logic_check_streaming_session_0"
 		entity_remove_2 "event_end_2"
-		entity_spawn_objective_marker_1 "logic_if_alive_advanced_2|logic_if_exist_entity_new_2"
+		entity_spawn_objective_marker_1 "logic_if_alive_advanced_2|logic_if_exist_entity_new_2|logic_wait_1"
 		entity_spawn_single_1 "logic_and_2"
 		entity_spawn_world_random_mod_1 "logic_wait_5"
+		interface_dialogue_show_10 "logic_or_5"
+		interface_dialogue_show_11 "logic_or_5"
 		interface_dialogue_show_4 "logic_or_1"
 		interface_dialogue_show_5 "logic_or_1"
 		interface_dialogue_show_6 "logic_or_1"
+		interface_dialogue_show_9 "logic_or_5"
 		interface_dialogue_show_group_2 "logic_or_0"
 		interface_dialogue_show_group_5 "logic_or_0"
 		logic_and_2 "logic_random_output_1"
@@ -1613,7 +1981,9 @@ FlowGraphTemplate
 		logic_or_0 "objective_generic_3"
 		logic_or_1 "logic_wait_0"
 		logic_or_2 "entity_spawn_world_random_mod_1|logic_random_output_0|weather_generic_0"
-		logic_or_3 "objective_finish_4"
+		logic_or_3 "logic_random_output_3"
+		logic_or_4 "entity_remove_2"
+		logic_or_5 "objective_finish_4"
 		logic_random_output_0 "logic_random_output_0###0|logic_random_output_0###1|logic_random_output_0###2"
 		logic_random_output_0###0 "interface_dialogue_show_8"
 		logic_random_output_0###1 "interface_dialogue_show_7"
@@ -1625,9 +1995,15 @@ FlowGraphTemplate
 		logic_random_output_2###0 "interface_dialogue_show_6"
 		logic_random_output_2###1 "interface_dialogue_show_4"
 		logic_random_output_2###2 "interface_dialogue_show_5"
+		logic_random_output_3 "logic_random_output_3###0|logic_random_output_3###1|logic_random_output_3###2"
+		logic_random_output_3###0 "interface_dialogue_show_11"
+		logic_random_output_3###1 "interface_dialogue_show_9"
+		logic_random_output_3###2 "interface_dialogue_show_10"
 		logic_wait_0 "logic_or_2"
+		logic_wait_1 "objective_finish_5"
 		logic_wait_5 "entity_spawn_single_1"
-		objective_finish_4 "entity_remove_2"
+		objective_finish_4 "logic_or_4"
+		objective_finish_5 "logic_or_4"
 		objective_generic_3 "entity_spawn_objective_marker_1"
 		weather_generic_0 "logic_and_2"
 	}
