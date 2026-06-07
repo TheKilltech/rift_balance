@@ -1,7 +1,7 @@
-//editor "scroll(1085.04,-459.67)|zoom(0.20)"
+//editor "scroll(2092.12,18.81)|zoom(0.33)"
 FlowGraphTemplate
 {
-	version "12"
+	version "14"
 	editor "6741"
 	GraphNodes
 	{
@@ -28,7 +28,7 @@ FlowGraphTemplate
 
 		OrBehaviourNode
 		{
-			//editor "layout(logic_or.xml)|pos(6491,822)"
+			//editor "layout(logic_or.xml)|pos(6736,877)"
 			self_id "logic_or_0"
 		}
 
@@ -540,7 +540,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(3402,186)"
+			//editor "layout(condition_int.xml)|pos(3402,78)"
 			key "0"
 			self_id "logic_random_output_0###0"
 			value "logic_random_output_0###0"
@@ -548,7 +548,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(3402,214)"
+			//editor "layout(condition_int.xml)|pos(3402,106)"
 			key "1"
 			self_id "logic_random_output_0###1"
 			value "logic_random_output_0###1"
@@ -556,7 +556,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(3402,242)"
+			//editor "layout(condition_int.xml)|pos(3402,134)"
 			key "2"
 			self_id "logic_random_output_0###2"
 			value "logic_random_output_0###2"
@@ -810,7 +810,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(entity_spawn_single.xml)|pos(4045,899)"
+			//editor "layout(entity_spawn_single.xml)|pos(4130,892)"
 			database
 			{
 				Floats
@@ -840,6 +840,18 @@ FlowGraphTemplate
 					IntData
 					{
 						key "name_is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "min_life_time"
+						value "0"
+					}
+
+					IntData
+					{
+						key "max_life_time"
 						value "0"
 					}
 
@@ -880,13 +892,13 @@ FlowGraphTemplate
 					StringData
 					{
 						key "find_type"
-						value "Name"
+						value "LocalName"
 					}
 
 					StringData
 					{
 						key "find_value"
-						value "storm_center"
+						value "spawn_beacon"
 					}
 
 					StringData
@@ -916,7 +928,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(logic_wait.xml)|pos(3756,1073)"
+			//editor "layout(logic_wait.xml)|pos(3841,1066)"
 			database
 			{
 				Floats
@@ -982,107 +994,12 @@ FlowGraphTemplate
 				{
 					//editor "layout(dialog_info.xml)|pos(0,0)"
 					extended_duration "0"
-					gui_id "dialog_human_general"
+					gui_id "gui/hud/dialogs/ashley"
 					sound_name "voice_over/story/dlc_3/ashley_thicket_progress_c_03"
 				}
 
 			}
 
-		}
-
-		LuaBehaviourNode
-		{
-			//editor "layout(entity_spawn_world_random_mod.xml)|pos(3266,929)"
-			database
-			{
-				Floats
-				{
-					FloatData
-					{
-						key "min_spawn_radius"
-						value "120"
-					}
-
-					FloatData
-					{
-						key "max_spawn_radius"
-						value "600"
-					}
-
-					FloatData
-					{
-						key "min_border_distance"
-						value "0"
-					}
-
-					FloatData
-					{
-						key "max_border_distance"
-						value "0"
-					}
-
-				}
-
-				Integers
-				{
-					IntData
-					{
-						key "count"
-						value "1"
-					}
-
-					IntData
-					{
-						key "min_life_time"
-						value "20"
-					}
-
-					IntData
-					{
-						key "max_life_time"
-						value "20"
-					}
-
-				}
-
-				Strings
-				{
-					StringData
-					{
-						key "blueprint"
-						value "effects/biome_mod/ion_storm_anomaly"
-					}
-
-					StringData
-					{
-						key "team"
-						value "no_team"
-					}
-
-					StringData
-					{
-						key "entity_name"
-						value "storm_center"
-					}
-
-					StringData
-					{
-						key "entity_group"
-						value
-					}
-
-					StringData
-					{
-						key "spawn_target"
-						value
-					}
-
-				}
-
-			}
-
-			script "lua/graph/entity/entity_spawn_world_random_mod.lua"
-			self_id "entity_spawn_world_random_mod_1"
 		}
 
 		LuaBehaviourNode
@@ -1094,7 +1011,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(objective_generic.xml)|pos(6760,817)"
+			//editor "layout(objective_generic.xml)|pos(5731,1639)"
 			database
 			{
 				Integers
@@ -1360,7 +1277,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(entity_spawn_objective_marker.xml)|pos(7399,683)"
+			//editor "layout(entity_spawn_objective_marker.xml)|pos(6477,1445)"
 			database
 			{
 				Floats
@@ -1384,7 +1301,7 @@ FlowGraphTemplate
 					IntData
 					{
 						key "attach_entity"
-						value "1"
+						value "0"
 					}
 
 					IntData
@@ -1598,7 +1515,7 @@ FlowGraphTemplate
 
 		LuaBehaviourNode
 		{
-			//editor "layout(objective_finish.xml)|pos(9483,1195)"
+			//editor "layout(objective_finish.xml)|pos(9452,1195)"
 			database
 			{
 				Integers
@@ -1781,7 +1698,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(8861,735)"
+			//editor "layout(condition_int.xml)|pos(8861,627)"
 			key "0"
 			self_id "logic_random_output_3###0"
 			value "logic_random_output_1###0"
@@ -1789,7 +1706,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(8861,763)"
+			//editor "layout(condition_int.xml)|pos(8861,655)"
 			key "1"
 			self_id "logic_random_output_3###1"
 			value "logic_random_output_1###1"
@@ -1797,7 +1714,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(8861,791)"
+			//editor "layout(condition_int.xml)|pos(8861,683)"
 			key "2"
 			self_id "logic_random_output_3###2"
 			value
@@ -1953,15 +1870,300 @@ FlowGraphTemplate
 			self_id "logic_or_5"
 		}
 
+		GridSpawnerNode
+		{
+			//editor "layout(entity_grid_spawner.xml)|pos(3257,745)"
+			self_id "entity_grid_spawner_3"
+			spawn_density "1"
+			spawn_group "beacons"
+			spawn_instances_minmax "1,1"
+			spawn_min_free_cell_margin "5"
+			spawn_minmax_distance_from_edge "50"
+			spawn_pool "loot_containers"
+			spawn_pool_local
+			spawn_preference "random"
+			spawn_required "1"
+			spawn_team "no_team"
+			spawn_within_destructible_volumes "1"
+			spawn_within_playable_bounds "1"
+			terrain_types
+			spawn_blueprints
+			{
+				//editor "expanded(1)"
+				ObjectSpawn
+				{
+					//editor "layout(object_spawn.xml)|pos(0,0)"
+					spawn_blueprint "spawners/logic_beacon_temp"
+					spawn_chance "1"
+					spawn_culls_entities_around "1"
+					spawn_culls_entities_radius "6"
+					spawn_discoverable_level "0"
+					spawn_entity_group_name
+					spawn_entity_name "spawn_beacon"
+					spawn_entity_name_is_global "0"
+					spawn_group_count "0"
+					spawn_group_object_distance "0"
+					spawn_group_radius "0.0"
+					spawn_instances_minmax "1,1"
+					spawn_loot_event
+				}
+
+			}
+
+			spawn_max_distance_from_local_pools
+			{
+				//editor "expanded(1)"
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "objectives_primary"
+					value "100"
+				}
+
+			}
+
+			spawn_max_distance_from_pools
+			{
+				//editor "expanded(1)"
+			}
+
+			spawn_min_distance_from_local_pools
+			{
+				//editor "expanded(1)"
+			}
+
+			spawn_min_distance_from_pools
+			{
+				//editor "expanded(1)"
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "objectives"
+					value "30"
+				}
+
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "loot_containers"
+					value "50"
+				}
+
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "buildings"
+					value "64"
+				}
+
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "player"
+					value "128"
+				}
+
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "loot_containers_small"
+					value "15"
+				}
+
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "resource_volumes"
+					value "10"
+				}
+
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "power_well"
+					value "20"
+				}
+
+			}
+
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(entity_spawn_single.xml)|pos(3955,1454)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "search_radius"
+						value "0"
+					}
+
+				}
+
+				Integers
+				{
+					IntData
+					{
+						key "target_single"
+						value "0"
+					}
+
+					IntData
+					{
+						key "attach_entity"
+						value "0"
+					}
+
+					IntData
+					{
+						key "name_is_global"
+						value "0"
+					}
+
+					IntData
+					{
+						key "min_life_time"
+						value "0"
+					}
+
+					IntData
+					{
+						key "max_life_time"
+						value "0"
+					}
+
+				}
+
+				Strings
+				{
+					StringData
+					{
+						key "blueprint"
+						value "effects/biome_mod/ion_storm_anomaly"
+					}
+
+					StringData
+					{
+						key "team"
+						value "no_team"
+					}
+
+					StringData
+					{
+						key "entity_name"
+						value "storm"
+					}
+
+					StringData
+					{
+						key "entity_group"
+						value
+					}
+
+					StringData
+					{
+						key "target_attachment"
+						value
+					}
+
+					StringData
+					{
+						key "find_type"
+						value "LocalName"
+					}
+
+					StringData
+					{
+						key "find_value"
+						value "spawn_beacon"
+					}
+
+					StringData
+					{
+						key "search_target_type"
+						value "Name"
+					}
+
+					StringData
+					{
+						key "search_target_value"
+						value
+					}
+
+					StringData
+					{
+						key "search_target"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/entity/entity_spawn_single.lua"
+			self_id "entity_spawn_single_2"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_wait.xml)|pos(5325,1643)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "duration"
+						value "4"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_wait.lua"
+			self_id "logic_wait_3"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_and.xml)|pos(7175,998)"
+			script "lua/graph/logic/logic_and.lua"
+			self_id "logic_and_1"
+		}
+
+		LuaBehaviourNode
+		{
+			//editor "layout(logic_wait.xml)|pos(7554,982)"
+			database
+			{
+				Floats
+				{
+					FloatData
+					{
+						key "duration"
+						value "3"
+					}
+
+				}
+
+			}
+
+			script "lua/graph/logic/logic_wait.lua"
+			self_id "logic_wait_4"
+		}
+
 	}
 
 	GraphConnections
 	{
 		default "logic_check_streaming_session_0"
+		entity_grid_spawner_3 "entity_spawn_single_2|logic_wait_5"
 		entity_remove_2 "event_end_2"
-		entity_spawn_objective_marker_1 "logic_if_alive_advanced_2|logic_if_exist_entity_new_2|logic_wait_1"
+		entity_spawn_objective_marker_1 "logic_and_1"
 		entity_spawn_single_1 "logic_and_2"
-		entity_spawn_world_random_mod_1 "logic_wait_5"
 		interface_dialogue_show_10 "logic_or_5"
 		interface_dialogue_show_11 "logic_or_5"
 		interface_dialogue_show_4 "logic_or_1"
@@ -1970,7 +2172,8 @@ FlowGraphTemplate
 		interface_dialogue_show_9 "logic_or_5"
 		interface_dialogue_show_group_2 "logic_or_0"
 		interface_dialogue_show_group_5 "logic_or_0"
-		logic_and_2 "logic_random_output_1"
+		logic_and_1 "logic_wait_4"
+		logic_and_2 "logic_random_output_1|logic_wait_3"
 		logic_check_streaming_session_0 "logic_check_streaming_session_0###false|logic_check_streaming_session_0###true"
 		logic_check_streaming_session_0###false "logic_random_output_2"
 		logic_check_streaming_session_0###true "logic_or_2"
@@ -1978,9 +2181,9 @@ FlowGraphTemplate
 		logic_if_alive_advanced_2###true "logic_or_3"
 		logic_if_exist_entity_new_2 "logic_if_exist_entity_new_2###true"
 		logic_if_exist_entity_new_2###true "logic_or_3"
-		logic_or_0 "objective_generic_3"
+		logic_or_0 "logic_and_1"
 		logic_or_1 "logic_wait_0"
-		logic_or_2 "entity_spawn_world_random_mod_1|logic_random_output_0|weather_generic_0"
+		logic_or_2 "entity_grid_spawner_3|logic_random_output_0|weather_generic_0"
 		logic_or_3 "logic_random_output_3"
 		logic_or_4 "entity_remove_2"
 		logic_or_5 "objective_finish_4"
@@ -2001,6 +2204,8 @@ FlowGraphTemplate
 		logic_random_output_3###2 "interface_dialogue_show_10"
 		logic_wait_0 "logic_or_2"
 		logic_wait_1 "objective_finish_5"
+		logic_wait_3 "objective_generic_3"
+		logic_wait_4 "logic_if_alive_advanced_2|logic_if_exist_entity_new_2|logic_wait_1"
 		logic_wait_5 "entity_spawn_single_1"
 		objective_finish_4 "logic_or_4"
 		objective_finish_5 "logic_or_4"
