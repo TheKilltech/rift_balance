@@ -8,7 +8,7 @@ function jammer:__init()
 end
 
 function jammer:Log( logLevel, message )
-	local curLevel = 9 -- enable logging here ( 0 - errors, 2 - main entry points, 3 - details, 5 - loops )
+	local curLevel = 0 -- enable logging here ( 0 - errors, 2 - main entry points, 3 - details, 5 - loops )
 	if logLevel <= curLevel then
 		local bp = EntityService:GetBlueprintName( self.entity )
 		local context = "jammer ".. bp .." ".. tostring(self.entity)..": "
