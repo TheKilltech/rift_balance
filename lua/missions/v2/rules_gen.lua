@@ -119,12 +119,12 @@ function Default_BuildingsUpgradeStartsLogic(missionTypeOrParam, difficulty)
 	
 	if Contains({"hq"}, missionType) then
 		return {
-			{ name = "headquarters_lvl_2", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_1_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_1_exit.logic" },   
-			{ name = "headquarters_lvl_3", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_2_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_2_exit.logic" },   
-			{ name = "headquarters_lvl_4", level = 2, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
-			{ name = "headquarters_lvl_5", level = 2, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
-			{ name = "headquarters_lvl_6", level = 2, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
-			{ name = "headquarters_lvl_7", level = 2, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },   
+			{ name = "headquarters_lvl_2", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_1_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_1_exit.logic" },
+			{ name = "headquarters_lvl_3", level = 1, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_2_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_2_exit.logic" },
+			{ name = "headquarters_lvl_4", level = 2, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },
+			{ name = "headquarters_lvl_5", level = 2, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },
+			{ name = "headquarters_lvl_6", level = 2, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },
+			{ name = "headquarters_lvl_7", level = 2, prepareTime = 120, entryLogic = "logic/dom/hq_upgrade_level_3_entry.logic", exitLogic = "logic/dom/hq_upgrade_level_3_exit.logic" },
 		}
 	else
 		return { }
@@ -810,72 +810,88 @@ end
 function Default_ObjectivesLogic(params)
 	if params.biome == "acid" then
 		return {
-			{ name = "logic/objectives/kill_elite_dynamic",                     minDifficultyLevel = 3 },
-			{ name = "logic/objectives/destroy_nest_granan_single.logic",       minDifficultyLevel = 4 },
-			{ name = "logic/objectives/destroy_nest_granan_multiple.logic",     minDifficultyLevel = 6 },
-			{ name = "logic/objectives/destroy_creeper.logic",                  minDifficultyLevel = 3 },
+			{ name = "logic/objectives/kill_elite_dynamic",                               weight = 1,   minDifficultyLevel = 3 },
+			{ name = "logic/objectives/destroy_nest_granan_single.logic",                 weight = 1,   minDifficultyLevel = 4 },
+			{ name = "logic/objectives/destroy_nest_granan_multiple.logic",               weight = 1,   minDifficultyLevel = 6 },
+			{ name = "logic/objectives/destroy_creeper.logic",                            weight = 1,   minDifficultyLevel = 3 },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l3_acid",   weight = 0.5, minDifficultyLevel = 7, bindingParams = { blueprint = "spawners/acid_spawner_superior", time = 60 } },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l4_acid",   weight = 0.1, minDifficultyLevel = 9, bindingParams = { blueprint = "spawners/acid_spawner_extreme",  time = 60 } },
 		}
 	elseif params.biome == "caverns" then
 		return {
-			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 5 },
+			{ name = "logic/objectives/kill_elite_dynamic.logic",                         weight = 1,   minDifficultyLevel = 5 },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l3_caves",  weight = 0.5, minDifficultyLevel = 7, bindingParams = { blueprint = "spawners/caverns_spawner_superior", time = 60 } },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l4_caves",  weight = 0.1, minDifficultyLevel = 9, bindingParams = { blueprint = "spawners/caverns_spawner_extreme",  time = 60 } },
 		}
 	elseif params.biome == "desert" then
 		return {
-			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 3 },
-			{ name = "logic/objectives/destroy_nest_mushbit_single.logic",      minDifficultyLevel = 3, maxDifficultyLevel = 8 },
-			{ name = "logic/objectives/destroy_nest_mushbit_multiple.logic",    minDifficultyLevel = 6 },
+			{ name = "logic/objectives/kill_elite_dynamic.logic",                         weight = 1,   minDifficultyLevel = 3 },
+			{ name = "logic/objectives/destroy_nest_mushbit_single.logic",                weight = 1,   minDifficultyLevel = 3, maxDifficultyLevel = 8 },
+			{ name = "logic/objectives/destroy_nest_mushbit_multiple.logic",              weight = 1,   minDifficultyLevel = 6 },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l3_desert", weight = 0.5, minDifficultyLevel = 7, bindingParams = { blueprint = "spawners/desert_spawner_superior", time = 60 } },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l4_desert", weight = 0.1, minDifficultyLevel = 9, bindingParams = { blueprint = "spawners/desert_spawner_extreme",  time = 60 } },
 		}
 	elseif params.biome == "ice" then
 		return {
-			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 4 },
-			{ name = "logic/objectives/destroy_nest_granan_ice_single.logic",   minDifficultyLevel = 3, maxDifficultyLevel = 8 },
-			{ name = "logic/objectives/destroy_nest_granan_ice_multiple.logic", minDifficultyLevel = 6 },
-			{ name = "logic/objectives/destroy_nest_kermon_ice_single.logic",   minDifficultyLevel = 5, maxDifficultyLevel = 7 }, 
-			{ name = "logic/objectives/destroy_nest_kermon_ice_multiple.logic", minDifficultyLevel = 7 },
-			{ name = "logic/objectives/destroy_nest_plutrodon_ice_single.logic", minDifficultyLevel = 6, maxDifficultyLevel = 8 }, 
-			{ name = "logic/objectives/destroy_nest_plutrodon_ice_multiple.logic", minDifficultyLevel = 8 },
+			{ name = "logic/objectives/kill_elite_dynamic.logic",                         weight = 2,   minDifficultyLevel = 4 },
+			{ name = "logic/objectives/destroy_nest_granan_ice_single.logic",             weight = 1,   minDifficultyLevel = 3, maxDifficultyLevel = 8 },
+			{ name = "logic/objectives/destroy_nest_granan_ice_multiple.logic",           weight = 1,   minDifficultyLevel = 6 },
+			{ name = "logic/objectives/destroy_nest_kermon_ice_single.logic",             weight = 1,   minDifficultyLevel = 5, maxDifficultyLevel = 7 }, 
+			{ name = "logic/objectives/destroy_nest_kermon_ice_multiple.logic",           weight = 1,   minDifficultyLevel = 7 },
+			{ name = "logic/objectives/destroy_nest_plutrodon_ice_single.logic",          weight = 1,   minDifficultyLevel = 6, maxDifficultyLevel = 8 }, 
+			{ name = "logic/objectives/destroy_nest_plutrodon_ice_multiple.logic",        weight = 1,   minDifficultyLevel = 8 },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l3_ice",    weight = 1.0, minDifficultyLevel = 7, bindingParams = { blueprint = "spawners/ice_spawner_superior", time = 60 } },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l4_ice",    weight = 0.2, minDifficultyLevel = 9, bindingParams = { blueprint = "spawners/ice_spawner_extreme",  time = 60 } },
 		}
 	elseif params.biome == "jungle" then
 		return {
-			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 5 },
-			{ name = "logic/objectives/destroy_nest_canoptrix_single.logic",    minDifficultyLevel = 3, maxDifficultyLevel = 8 },
-			{ name = "logic/objectives/destroy_nest_canoptrix_multiple.logic",  minDifficultyLevel = 5 },
-			{ name = "logic/objectives/destroy_creeper.logic",                  minDifficultyLevel = 8 }, 
-			{ name = "logic/objectives/destroy_fire_gnerot.logic",              minDifficultyLevel = 7 },
+			{ name = "logic/objectives/kill_elite_dynamic.logic",                         weight = 1,   minDifficultyLevel = 5 },
+			{ name = "logic/objectives/destroy_nest_canoptrix_single.logic",              weight = 1,   minDifficultyLevel = 3, maxDifficultyLevel = 8 },
+			{ name = "logic/objectives/destroy_nest_canoptrix_multiple.logic",            weight = 1,   minDifficultyLevel = 5 },
+			{ name = "logic/objectives/destroy_creeper.logic",                            weight = 0.3, minDifficultyLevel = 8 }, 
+			{ name = "logic/objectives/destroy_fire_gnerot.logic",                        weight = 1,   minDifficultyLevel = 7 },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l3_jungle", weight = 0.5, minDifficultyLevel = 7, bindingParams = { blueprint = "spawners/jungle_spawner_superior", time = 60 } },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l4_jungle", weight = 0.1, minDifficultyLevel = 9, bindingParams = { blueprint = "spawners/jungle_spawner_extreme",  time = 60 } },
 		}
 	elseif params.biome == "magma" then
 		return {
-			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 3 },
-			{ name = "logic/objectives/destroy_nest_morirot_single.logic",      minDifficultyLevel = 3, maxDifficultyLevel = 8 }, 
-			{ name = "logic/objectives/destroy_nest_morirot_multiple.logic",    minDifficultyLevel = 6 },
-			{ name = "logic/objectives/destroy_fire_gnerot.logic",              minDifficultyLevel = 7 },
+			{ name = "logic/objectives/kill_elite_dynamic.logic",                         weight = 1,   minDifficultyLevel = 3 },
+			{ name = "logic/objectives/destroy_nest_morirot_single.logic",                weight = 1,   minDifficultyLevel = 3, maxDifficultyLevel = 8 }, 
+			{ name = "logic/objectives/destroy_nest_morirot_multiple.logic",              weight = 1,   minDifficultyLevel = 6 },
+			{ name = "logic/objectives/destroy_fire_gnerot.logic",                        weight = 1,   minDifficultyLevel = 7 },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l3_magma",  weight = 0.5, minDifficultyLevel = 7, bindingParams = { blueprint = "spawners/magma_spawner_superior", time = 60 } },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l4_magma",  weight = 0.1, minDifficultyLevel = 9, bindingParams = { blueprint = "spawners/magma_spawner_extreme",  time = 60 } },
 		}
 	elseif params.biome == "metallic" then
 		return {
-			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 3 },
-			{ name = "logic/objectives/destroy_nest_wingmite_single.logic",     minDifficultyLevel = 4 }, 
-			{ name = "logic/objectives/destroy_nest_wingmite_multiple.logic",   minDifficultyLevel = 6 },
-			{ name = "logic/objectives/destroy_nest_bradron_single.logic",      minDifficultyLevel = 4 }, 
-			{ name = "logic/objectives/destroy_nest_bradron_multiple.logic",    minDifficultyLevel = 6 },
-			{ name = "logic/objectives/destroy_nest_octabit_single.logic",      minDifficultyLevel = 5 }, 
-			{ name = "logic/objectives/destroy_nest_octabit_multiple.logic",    minDifficultyLevel = 7 },
-			{ name = "logic/objectives/destroy_nest_flurian_single.logic",      minDifficultyLevel = 6 }, 
-			{ name = "logic/objectives/destroy_nest_flurian_multiple.logic",    minDifficultyLevel = 8 },
+			{ name = "logic/objectives/kill_elite_dynamic.logic",                         weight = 1,   minDifficultyLevel = 3 },
+			{ name = "logic/objectives/destroy_nest_wingmite_single.logic",               weight = 0.7, minDifficultyLevel = 4 }, 
+			{ name = "logic/objectives/destroy_nest_wingmite_multiple.logic",             weight = 1.5, minDifficultyLevel = 6 },
+			{ name = "logic/objectives/destroy_nest_bradron_single.logic",                weight = 0.5, minDifficultyLevel = 4 }, 
+			{ name = "logic/objectives/destroy_nest_bradron_multiple.logic",              weight = 1,   minDifficultyLevel = 6 },
+			{ name = "logic/objectives/destroy_nest_octabit_single.logic",                weight = 0.5, minDifficultyLevel = 5 }, 
+			{ name = "logic/objectives/destroy_nest_octabit_multiple.logic",              weight = 1,   minDifficultyLevel = 7 },
+			{ name = "logic/objectives/destroy_nest_flurian_single.logic",                weight = 0.4, minDifficultyLevel = 6 }, 
+			{ name = "logic/objectives/destroy_nest_flurian_multiple.logic",              weight = 0.8, minDifficultyLevel = 8 },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l3_metal",  weight = 1.2, minDifficultyLevel = 7, bindingParams = { blueprint = "spawners/metallic_spawner_superior", time = 60 } },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l4_metal",  weight = 0.3, minDifficultyLevel = 9, bindingParams = { blueprint = "spawners/metallic_spawner_extreme",  time = 60 } },
 		}
 	elseif params.biome == "swamp" then
 		return {
-			{ name = "logic/objectives/kill_elite_baxmoth.logic",               minDifficultyLevel = 3 },
-			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 6 },
-			{ name = "logic/objectives/destroy_nest_stickrid_single.logic",     minDifficultyLevel = 3 }, 
-			{ name = "logic/objectives/destroy_nest_stickrid_multiple.logic",   minDifficultyLevel = 5 },
-			{ name = "logic/objectives/destroy_nest_plutrodon_single.logic",    minDifficultyLevel = 4 }, 
-			{ name = "logic/objectives/destroy_nest_plutrodon_multiple.logic",  minDifficultyLevel = 6 },
-			{ name = "logic/objectives/destroy_nest_fungor_single.logic",       minDifficultyLevel = 5 }, 
-			{ name = "logic/objectives/destroy_nest_fungor_multiple.logic",     minDifficultyLevel = 7 },
+			{ name = "logic/objectives/kill_elite_baxmoth.logic",                         weight = 1,   minDifficultyLevel = 3 },
+			{ name = "logic/objectives/kill_elite_dynamic.logic",                         weight = 2,   minDifficultyLevel = 6 },
+			{ name = "logic/objectives/destroy_nest_stickrid_single.logic",               weight = 0.6, minDifficultyLevel = 3 }, 
+			{ name = "logic/objectives/destroy_nest_stickrid_multiple.logic",             weight = 1,   minDifficultyLevel = 5 },
+			{ name = "logic/objectives/destroy_nest_plutrodon_single.logic",              weight = 0.6, minDifficultyLevel = 4 }, 
+			{ name = "logic/objectives/destroy_nest_plutrodon_multiple.logic",            weight = 1,   minDifficultyLevel = 6 },
+			{ name = "logic/objectives/destroy_nest_fungor_single.logic",                 weight = 0.6, minDifficultyLevel = 5 }, 
+			{ name = "logic/objectives/destroy_nest_fungor_multiple.logic",               weight = 1,   minDifficultyLevel = 7 },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l3_swamp",  weight = 1.0, minDifficultyLevel = 7, bindingParams = { blueprint = "spawners/swamp_spawner_superior", time = 60 } },
+			{ name = "logic/objectives/investigate_bioanomaly.logic", info = "l4_swamp",  weight = 0.2, minDifficultyLevel = 9, bindingParams = { blueprint = "spawners/swamp_spawner_extreme",  time = 60 } },
 		}
 	else
 		return {
-			{ name = "logic/objectives/kill_elite_dynamic.logic",               minDifficultyLevel = 3 },
+			{ name = "logic/objectives/kill_elite_dynamic.logic",                         weight = 1,   minDifficultyLevel = 3 },
 		}
 	end
 end
@@ -966,9 +982,9 @@ function Default_WaveChanceReroll(rules, params)
 		desert   = { waveChanceReroll = 30, waveChanceRerollSpawn = 25, waveChanceRerollSpawnGroup = 20 },
 		ice      = { waveChanceReroll = 30, waveChanceRerollSpawn = 20, waveChanceRerollSpawnGroup = 10 },
 		jungle   = { waveChanceReroll = 40, waveChanceRerollSpawn = 25, waveChanceRerollSpawnGroup = 10 },
-		magma    = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup =  0 },
-		metallic = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup =  0 },
-		swamp    = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup =  0 },
+		magma    = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup =  2 },
+		metallic = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup =  5 },
+		swamp    = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup =  2 },
 		general  = { waveChanceReroll = 30, waveChanceRerollSpawn = 20, waveChanceRerollSpawnGroup =  0 },
 	}
 
