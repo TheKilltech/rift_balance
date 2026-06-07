@@ -381,7 +381,7 @@ function event_manager:SpawnObjective()
 
 		table.insert( self.objectiveActiveList, missionName )
 
-		LogService:Log( "event_manager:SpawnObjective() - Spawning an objective : " .. objective.name )
+		LogService:Log( "event_manager:SpawnObjective() - Spawning an objective : " .. objective.fullName )
 	else
 		LogService:Log( "event_manager:SpawnObjective() - No objective to spawn from the objective list." )
 	end
@@ -410,15 +410,20 @@ function event_manager:CheckObjective( checkLastObjectiveSpawnTime, checkCurrent
 	self.objectiveAvailableList = {}
 
 	for i, data in ipairs( self.rules.objectivesLogic ) do
-		LogService:Log( "event_manager:CheckObjective() - Checking objective : " .. data.name )
-
+		if data.info ~= nil then 
+			data.fullName = data.name .. " (".. tostring(data.info) ..")"
+		else data.fullName = data.name
+		end
+		LogService:Log( "event_manager:CheckObjective() - Checking objective : " .. data.fullName )
+		
+		
 		local shouldRemove = false
 		for j = 1, #self.objectiveActiveList, 1 do 
 			
 			local activeObjective = Split( self.objectiveActiveList[j], "#" )
 
 			if ( activeObjective[1] == data.name ) then
-				LogService:Log( "event_manager:CheckObjective() - Objective already active : " .. data.name ..", skipping" )
+				LogService:Log( "event_manager:CheckObjective() - Objective already active : " .. data.fullName ..", skipping" )
 				shouldRemove = true
 				break
 			end
@@ -432,7 +437,7 @@ function event_manager:CheckObjective( checkLastObjectiveSpawnTime, checkCurrent
 		end
 
 		if ( data.name == self.objectiveLastLogicFile ) then
-			LogService:Log( "event_manager:CheckObjective() - Remove last spawned objective : " .. data.name .. ", skipping" )
+			LogService:Log( "event_manager:CheckObjective() - Remove last spawned objective : " .. data.fullName .. ", skipping" )
 			shouldRemove = true
 		end
 
@@ -441,8 +446,8 @@ function event_manager:CheckObjective( checkLastObjectiveSpawnTime, checkCurrent
 		end
 	end
 
-	for i = 1, #self.objectiveAvailableList, 1 do 
-		LogService:Log( "event_manager:CheckObjective() -  Available objective." .. self.objectiveAvailableList[i].name )
+	for i = 1, #self.objectiveAvailableList, 1 do
+		LogService:Log( "event_manager:CheckObjective() -  Available objective. " .. self.objectiveAvailableList[i].fullName )
 	end
 
 	return (#self.objectiveAvailableList == 0)
