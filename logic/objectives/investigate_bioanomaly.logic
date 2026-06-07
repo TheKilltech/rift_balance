@@ -1,7 +1,7 @@
-//editor "scroll(2092.12,18.81)|zoom(0.33)"
+//editor "scroll(1200.98,215.29)|zoom(0.47)"
 FlowGraphTemplate
 {
-	version "14"
+	version "15"
 	editor "6741"
 	GraphNodes
 	{
@@ -540,7 +540,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(3402,78)"
+			//editor "layout(condition_int.xml)|pos(3402,186)"
 			key "0"
 			self_id "logic_random_output_0###0"
 			value "logic_random_output_0###0"
@@ -548,7 +548,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(3402,106)"
+			//editor "layout(condition_int.xml)|pos(3402,214)"
 			key "1"
 			self_id "logic_random_output_0###1"
 			value "logic_random_output_0###1"
@@ -556,7 +556,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(3402,134)"
+			//editor "layout(condition_int.xml)|pos(3402,242)"
 			key "2"
 			self_id "logic_random_output_0###2"
 			value "logic_random_output_0###2"
@@ -647,7 +647,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(5238,826)"
+			//editor "layout(condition_int.xml)|pos(5238,754)"
 			key "0"
 			self_id "logic_random_output_1###0"
 			value "logic_random_output_1###0"
@@ -655,7 +655,7 @@ FlowGraphTemplate
 
 		FlowGraphNode
 		{
-			//editor "layout(condition_int.xml)|pos(5238,854)"
+			//editor "layout(condition_int.xml)|pos(5238,782)"
 			key "1"
 			self_id "logic_random_output_1###1"
 			value "logic_random_output_1###1"
@@ -1870,124 +1870,6 @@ FlowGraphTemplate
 			self_id "logic_or_5"
 		}
 
-		GridSpawnerNode
-		{
-			//editor "layout(entity_grid_spawner.xml)|pos(3257,745)"
-			self_id "entity_grid_spawner_3"
-			spawn_density "1"
-			spawn_group "beacons"
-			spawn_instances_minmax "1,1"
-			spawn_min_free_cell_margin "5"
-			spawn_minmax_distance_from_edge "50"
-			spawn_pool "loot_containers"
-			spawn_pool_local
-			spawn_preference "random"
-			spawn_required "1"
-			spawn_team "no_team"
-			spawn_within_destructible_volumes "1"
-			spawn_within_playable_bounds "1"
-			terrain_types
-			spawn_blueprints
-			{
-				//editor "expanded(1)"
-				ObjectSpawn
-				{
-					//editor "layout(object_spawn.xml)|pos(0,0)"
-					spawn_blueprint "spawners/logic_beacon_temp"
-					spawn_chance "1"
-					spawn_culls_entities_around "1"
-					spawn_culls_entities_radius "6"
-					spawn_discoverable_level "0"
-					spawn_entity_group_name
-					spawn_entity_name "spawn_beacon"
-					spawn_entity_name_is_global "0"
-					spawn_group_count "0"
-					spawn_group_object_distance "0"
-					spawn_group_radius "0.0"
-					spawn_instances_minmax "1,1"
-					spawn_loot_event
-				}
-
-			}
-
-			spawn_max_distance_from_local_pools
-			{
-				//editor "expanded(1)"
-				Pair_String_float
-				{
-					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
-					key "objectives_primary"
-					value "100"
-				}
-
-			}
-
-			spawn_max_distance_from_pools
-			{
-				//editor "expanded(1)"
-			}
-
-			spawn_min_distance_from_local_pools
-			{
-				//editor "expanded(1)"
-			}
-
-			spawn_min_distance_from_pools
-			{
-				//editor "expanded(1)"
-				Pair_String_float
-				{
-					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
-					key "objectives"
-					value "30"
-				}
-
-				Pair_String_float
-				{
-					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
-					key "loot_containers"
-					value "50"
-				}
-
-				Pair_String_float
-				{
-					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
-					key "buildings"
-					value "64"
-				}
-
-				Pair_String_float
-				{
-					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
-					key "player"
-					value "128"
-				}
-
-				Pair_String_float
-				{
-					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
-					key "loot_containers_small"
-					value "15"
-				}
-
-				Pair_String_float
-				{
-					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
-					key "resource_volumes"
-					value "10"
-				}
-
-				Pair_String_float
-				{
-					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
-					key "power_well"
-					value "20"
-				}
-
-			}
-
-		}
-
 		LuaBehaviourNode
 		{
 			//editor "layout(entity_spawn_single.xml)|pos(3955,1454)"
@@ -2155,12 +2037,125 @@ FlowGraphTemplate
 			self_id "logic_wait_4"
 		}
 
+		MarkerBlueprintSpawnerNode
+		{
+			//editor "layout(entity_marker_blueprint_spawner.xml)|pos(3253,758)"
+			ignore_excluded_cells_check "0"
+			self_id "entity_marker_blueprint_spawner_1"
+			spawn_at_marker "logic/spawn_objective"
+			spawn_at_marker_name_is_global "1"
+			spawn_at_name
+			spawn_density "1"
+			spawn_group "beacons"
+			spawn_instances_minmax "1,1"
+			spawn_minmax_distance_from_edge "50"
+			spawn_pool "objectives"
+			spawn_pool_local "loot_containers,objectives_primary"
+			spawn_preference "undiscovered"
+			spawn_required "1"
+			spawn_team "no_team"
+			spawn_within_destructible_volumes "1"
+			spawn_within_playable_bounds "1"
+			spawn_blueprints
+			{
+				//editor "expanded(1)"
+				ObjectSpawn
+				{
+					//editor "layout(object_spawn.xml)|pos(0,0)"
+					spawn_blueprint "spawners/logic_beacon_temp"
+					spawn_chance "1"
+					spawn_culls_entities_around "1"
+					spawn_culls_entities_radius "6"
+					spawn_discoverable_level "0"
+					spawn_entity_group_name
+					spawn_entity_name "spawn_beacon"
+					spawn_entity_name_is_global "0"
+					spawn_group_count "0"
+					spawn_group_object_distance "0"
+					spawn_group_radius "0.0"
+					spawn_instances_minmax "1,1"
+					spawn_loot_event
+				}
+
+			}
+
+			spawn_max_distance_from_local_pools
+			{
+				//editor "expanded(1)"
+			}
+
+			spawn_max_distance_from_pools
+			{
+				//editor "expanded(1)"
+			}
+
+			spawn_min_distance_from_local_pools
+			{
+				//editor "expanded(1)"
+			}
+
+			spawn_min_distance_from_pools
+			{
+				//editor "expanded(1)"
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "objectives"
+					value "20"
+				}
+
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "loot_containers"
+					value "20"
+				}
+
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "buildings"
+					value "64"
+				}
+
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "player"
+					value "128"
+				}
+
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "loot_containers_small"
+					value "15"
+				}
+
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "resource_volumes"
+					value "10"
+				}
+
+				Pair_String_float
+				{
+					//editor "layout(object_spawn_pool_distance.xml)|pos(0,0)"
+					key "power_well"
+					value "20"
+				}
+
+			}
+
+		}
+
 	}
 
 	GraphConnections
 	{
 		default "logic_check_streaming_session_0"
-		entity_grid_spawner_3 "entity_spawn_single_2|logic_wait_5"
+		entity_marker_blueprint_spawner_1 "entity_spawn_single_2|logic_wait_5"
 		entity_remove_2 "event_end_2"
 		entity_spawn_objective_marker_1 "logic_and_1"
 		entity_spawn_single_1 "logic_and_2"
@@ -2183,7 +2178,7 @@ FlowGraphTemplate
 		logic_if_exist_entity_new_2###true "logic_or_3"
 		logic_or_0 "logic_and_1"
 		logic_or_1 "logic_wait_0"
-		logic_or_2 "entity_grid_spawner_3|logic_random_output_0|weather_generic_0"
+		logic_or_2 "entity_marker_blueprint_spawner_1|logic_random_output_0|weather_generic_0"
 		logic_or_3 "logic_random_output_3"
 		logic_or_4 "entity_remove_2"
 		logic_or_5 "objective_finish_4"
