@@ -35,12 +35,21 @@ function short_range_radar:OnInit()
 	self:InitRadar();
 	
 	self:RegisterHandler( event_sink, "LuaGlobalEvent", "OnLuaGlobalEvent" )
+	self.version = 2
 end
 
 function short_range_radar:OnLoad()
 	self:Log( 2, "OnLoad" )
 	building.OnLoad(self)
 	
+	if self.version or 1 < 2 then
+		self:RegisterHandler( event_sink, "LuaGlobalEvent", "OnLuaGlobalEvent" )
+		self.version = 2
+		
+		if self.radar_fsm ~= nil then
+			self.radar_fsm:AddState("reset_range", { enter = "OnResetRangeEnter" })
+		end
+	end
 	self:InitRadar();
 end
 
