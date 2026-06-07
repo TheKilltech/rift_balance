@@ -342,9 +342,6 @@ EntityBlueprint  // jungle_spawner_standard
 			wave_logic_file_mul int:"2"
 			wave_spawn_distance int:"80"
 			wave_started_effect string:"effects/enemies_generic/wave_start"
-			
-			jamming_range		float:"40"
-			jamming_strength	float:"1.7"
 		}
 	}
 	
@@ -378,9 +375,6 @@ EntityBlueprint  // jungle_spawner_advanced
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"50"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -409,31 +403,6 @@ EntityBlueprint // jungle_spawner_superior
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"90"
-			jamming_strength	float:"1.8"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "10"
-			}
 		}
 	}
 }
@@ -462,31 +431,6 @@ EntityBlueprint  // jungle_spawner_extreme
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"180"
-			jamming_strength	float:"2.0"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "18"
-			}
 		}
 	}
 }
@@ -513,9 +457,6 @@ EntityBlueprint  // desert_spawner_standard
 			wave_logic_file_mul int:"2"
 			wave_spawn_distance int:"80"
 			wave_started_effect string:"effects/enemies_generic/wave_start"
-			
-			jamming_range		float:"40"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -544,9 +485,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"50"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -575,31 +513,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"90"
-			jamming_strength	float:"1.8"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "10"
-			}
 		}
 	}
 }
@@ -628,31 +541,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"180"
-			jamming_strength	float:"2.0"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "18"
-			}
 		}
 	}
 }
@@ -679,9 +567,6 @@ EntityBlueprint  // acid_spawner_standard
 			wave_logic_file_mul int:"2"
 			wave_spawn_distance int:"80"
 			wave_started_effect string:"effects/enemies_generic/wave_start"
-			
-			jamming_range		float:"40"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -710,9 +595,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"50"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -741,31 +623,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"90"
-			jamming_strength	float:"1.8"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "10"
-			}
 		}
 	}
 }
@@ -794,31 +651,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"180"
-			jamming_strength	float:"2.0"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "18"
-			}
 		}
 	}
 }
@@ -845,9 +677,6 @@ EntityBlueprint  // magma_spawner_standard
 			wave_logic_file_mul int:"2"
 			wave_spawn_distance int:"80"
 			wave_started_effect string:"effects/enemies_generic/wave_start"
-			
-			jamming_range		float:"40"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -876,9 +705,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"50"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -907,31 +733,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"90"
-			jamming_strength	float:"1.8"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "10"
-			}
 		}
 	}
 }
@@ -960,31 +761,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"180"
-			jamming_strength	float:"2.0"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "18"
-			}
 		}
 	}
 }
@@ -1011,9 +787,6 @@ EntityBlueprint  // metallic_spawner_standard
 			wave_logic_file_mul int:"2"
 			wave_spawn_distance int:"80"
 			wave_started_effect string:"effects/enemies_generic/wave_start"
-			
-			jamming_range		float:"40"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -1042,9 +815,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"50"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -1073,31 +843,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"90"
-			jamming_strength	float:"1.8"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "10"
-			}
 		}
 	}
 }
@@ -1126,31 +871,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"180"
-			jamming_strength	float:"2.0"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "18"
-			}
 		}
 	}
 }
@@ -1177,9 +897,6 @@ EntityBlueprint  // caverns_spawner_standard
 			wave_logic_file_mul int:"2"
 			wave_spawn_distance int:"80"
 			wave_started_effect string:"effects/enemies_generic/wave_start"
-			
-			jamming_range		float:"40"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -1208,9 +925,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"50"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -1244,28 +958,6 @@ EntityBlueprint
 			jamming_strength	float:"1.8"
 		}
 	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "10"
-			}
-		}
-	}
 }
 
 EntityBlueprint
@@ -1292,31 +984,6 @@ EntityBlueprint
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"180"
-			jamming_strength	float:"2.0"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "18"
-			}
 		}
 	}
 }
@@ -1399,9 +1066,6 @@ EntityBlueprint  // swamp_spawner_standard
 			wave_spawn_distance int:"80"
 			wave_started_effect string:"effects/enemies_generic/wave_start"
 			water_override		int:"1"
-			
-			jamming_range		float:"40"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -1431,9 +1095,6 @@ EntityBlueprint
 			water_override		int:"1"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"50"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -1463,31 +1124,6 @@ EntityBlueprint
 			water_override		int:"1"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"90"
-			jamming_strength	float:"1.8"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "10"
-			}
 		}
 	}
 }
@@ -1517,31 +1153,6 @@ EntityBlueprint
 			water_override		int:"1"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"180"
-			jamming_strength	float:"2.0"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "18"
-			}
 		}
 	}
 }
@@ -1597,9 +1208,6 @@ EntityBlueprint  // ice_spawner_standard
 			wave_logic_file_mul int:"2"
 			wave_spawn_distance int:"80"
 			wave_started_effect string:"effects/enemies_generic/wave_start"
-			
-			jamming_range		float:"40"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -1629,9 +1237,6 @@ EntityBlueprint
 			water_override		int:"1"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"50"
-			jamming_strength	float:"1.7"
 		}
 	}
 }
@@ -1661,31 +1266,6 @@ EntityBlueprint
 			water_override		int:"1"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"90"
-			jamming_strength	float:"1.8"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "10"
-			}
 		}
 	}
 }
@@ -1715,31 +1295,6 @@ EntityBlueprint
 			water_override		int:"1"
 			boss_logic_file		string:"logic/bioanomaly/boss_dynamic.logic"
 			boss_logic_file_mul int:"1"
-			
-			jamming_range		float:"180"
-			jamming_strength	float:"2.0"
-		}
-	}
-
-	TriggerDesc
-	{
-		owner 		"self"
-		collision 	"ground_unit"
-
-		Filters
-		{
-			TeamTriggerFilter 
-			{
-				team		"player"
-			}
-		}
-
-		Shapes
-		{
-			PhysicsSphereShape
-			{
-				r "18"
-			}
 		}
 	}
 }
