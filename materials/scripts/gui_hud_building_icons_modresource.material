@@ -279,6 +279,16 @@ material "gui/hud/building_icons/bio_palladium_refinery_lvl_3_disabled" : gui/de
 
 /////  resource converters
 
+material "gui/hud/building_icons/resource_converter_ironium" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/resource_converter_ironium.dds"
+}
+
+material "gui/hud/building_icons/resource_converter_ironium_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/resource_converter_disabled.dds"
+}
+
 material "gui/hud/building_icons/resource_converter_cobalt" : gui/default
 {
 	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/resource_converter_cobalt.dds"
