@@ -5,7 +5,7 @@ require("lua/missions/v2/rules_gen.lua" )
 return function(params)
 	-- param missionType: { "hq", "resource", "outpost", "survival", "scout", "exploration" }
 	-- param difficulty:  { "easy", "normal", "hard", "brutal", "extreme" }
-	local rules  = PrepareDefaultRules( {}, params, "exploration")
+	local rules  = PrepareDefaultRules( {}, params, "outpost")
 
 	rules.extraWaves       = Default_ExtraWaves( rules.params )
 	rules.multiplayerWaves = Default_MpWaves(    rules.params )
