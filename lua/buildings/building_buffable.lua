@@ -38,7 +38,7 @@ function building_buffable:InitVariables()
 	local data = EntityService:GetBlueprintDatabase( bp ) or self.data;
 	self.buffRequiredName  = data:GetStringOrDefault("buff_required_name", "")
 	self.buffRequiredLevel = data:GetIntOrDefault("buff_required_level", -1)
-	self.buffReqIconBp     = data:GetStringOrDefault("buff_required_bp", "buildings/resources/ore_mill_missing_icon")
+	self.buffReqIconBp     = data:GetStringOrDefault("buff_required_bp", "effects/missing_buff_icon")
 	self.buffBlueprints    = Split( data:GetStringOrDefault("buff_buildings",  "none"), "," )
 	
 	if not self.fsmInfo then

@@ -283,17 +283,6 @@ function event_manager:OnExecuteTimer( state, dt )
 	self.eventManagerTimer = self.eventManagerTimer + dt
 end
 
-function event_manager:GetAmountFromAction( actionName )
-	for data in Iter( self.currentStreamingData ) do 
-		
-		if ( data.action == actionName ) and ( data.amount ~= nil ) then
-			return data.amount
-		end
-	end
-
-	return 0
-end
-
 function event_manager:TranslateFromAction( actionName )
 	for data in Iter( self.currentStreamingData ) do 
 
@@ -305,40 +294,15 @@ function event_manager:TranslateFromAction( actionName )
 	return actionName
 end
 
+function event_manager:GetObjectiveDataFromName( name )
+	for data in Iter( self.rules.objectivesLogic ) do
 
-function event_manager:GetResourceNameFromAction( actionName )
-	for data in Iter( self.currentStreamingData ) do 
-		
-		if ( data.action == actionName ) and ( data.resourceName ~= nil ) then
-			return data.resourceName
+		if ( data.name == name ) then
+			return data
 		end
 	end
 
-	return ""
-end
-
-function event_manager:GetResearchNameFromAction( actionName )
-	for data in Iter( self.currentStreamingData ) do 
-		
-		if ( data.action == actionName ) and ( data.researchName ~= nil ) then
-			return data.researchName
-		end
-	end
-
-	return ""
-end
-
-function event_manager:GetBindingsFromObjectiveParams( name )
-	local bindingParams = {}
-
-	for data in Iter( self.rules.objectivesLogic ) do 
-		
-		if ( data.name == name ) and ( data.bindingParams ~= nil ) then
-			bindingParams = data.bindingParams
-		end
-	end
-
-	return bindingParams
+	return {}
 end
 
 function event_manager:GetBindingsFromActionParams( name )
@@ -365,26 +329,15 @@ function event_manager:GetLogicFileFromAction( actionName, currentStreamingData 
 	return ""
 end
 
-function event_manager:GetMinTimeFromAction( actionName )
-	for data in Iter( self.currentStreamingData ) do 		
+function event_manager:GetEventDataFromAction( actionName )
+	for data in Iter( self.currentStreamingData ) do
 
-		if ( data.action == actionName ) and ( data.minTime ~= nil ) then
-			return data.minTime
+		if ( data.action == actionName ) then
+			return data
 		end
 	end
 
-	return 90
-end
-
-function event_manager:GetMaxTimeFromAction( actionName )
-	for data in Iter( self.currentStreamingData ) do 		
-
-		if ( data.action == actionName ) and ( data.maxTime ~= nil ) then
-			return data.maxTime
-		end
-	end
-
-	return 90
+	return {}
 end
 
 function event_manager:HasGameState( gameStates, state )
@@ -413,23 +366,22 @@ function event_manager:AddAmmo( percentage )
 end
 
 function event_manager:SpawnObjective()
-
 	LogService:Log( "event_manager:SpawnObjective() - Trying to spawn an objective. " )
 
 	if ( #self.objectiveAvailableList > 0 ) then
-		local random = RandInt( 1, #self.objectiveAvailableList )
-		local objectiveName = self.objectiveAvailableList[random]
+		local objective = GetRandomFormWeightedTable( self.objectiveAvailableList )
+		if type(objective) == "string" then objective = self:GetObjectiveDataFromName( objective ) end
+				
+		local bindingParams = objective.bindingParams or {}
+		local missionName = MissionService:ActivateMissionFlow( "", objective.name, "default", bindingParams )
 
-		local bindingParams = self:GetBindingsFromObjectiveParams( objectiveName )
-		local missionName = MissionService:ActivateMissionFlow( "", objectiveName, "default", bindingParams )
-
-		self.objectiveLastLogicFile				= objectiveName
+		self.objectiveLastLogicFile				= objective.name
 		self.objectiveLastSpawnTime				= self.eventManagerTimer
 		self.objectiveCurrentTimeBetweenNext	= self.objectiveBaseTimeBetweenNext + RandInt( self.objectiveMinRandTimeBetweenNext, self.objectiveMaxRandTimeBetweenNext )
 
 		table.insert( self.objectiveActiveList, missionName )
 
-		LogService:Log( "event_manager:SpawnObjective() - Spawning an objective : " .. objectiveName )
+		LogService:Log( "event_manager:SpawnObjective() - Spawning an objective : " .. objective.fullName )
 	else
 		LogService:Log( "event_manager:SpawnObjective() - No objective to spawn from the objective list." )
 	end
@@ -450,29 +402,28 @@ function event_manager:CheckObjective( checkLastObjectiveSpawnTime, checkCurrent
 		end		
 	end
 
-	if ( self.rules.maxObjectivesAtOnce == #self.objectiveActiveList ) then 		
+	if ( self.rules.maxObjectivesAtOnce <= #self.objectiveActiveList ) then
 		LogService:Log( "event_manager:CheckObjective() - There can be only : " .. self.rules.maxObjectivesAtOnce .. " objectives at once. " .. "Current active objectives : " .. #self.objectiveActiveList )
 		return true
 	end
 
-	local objectives = DeepCopy( self.rules.objectivesLogic )
-
-	local tableTmp = {}
-
 	self.objectiveAvailableList = {}
 
-	for i, data in ipairs( objectives ) do 
-
-		LogService:Log( "event_manager:CheckObjective() - Checking objective : " .. data.name )
-
+	for i, data in ipairs( self.rules.objectivesLogic ) do
+		if data.info ~= nil then 
+			data.fullName = data.name .. " (".. tostring(data.info) ..")"
+		else data.fullName = data.name
+		end
+		LogService:Log( "event_manager:CheckObjective() - Checking objective : " .. data.fullName )
+		
+		
 		local shouldRemove = false
-
 		for j = 1, #self.objectiveActiveList, 1 do 
 			
 			local activeObjective = Split( self.objectiveActiveList[j], "#" )
 
 			if ( activeObjective[1] == data.name ) then
-				LogService:Log( "event_manager:CheckObjective() - Objective already active : " .. data.name )
+				LogService:Log( "event_manager:CheckObjective() - Objective already active : " .. data.fullName ..", skipping" )
 				shouldRemove = true
 				break
 			end
@@ -480,39 +431,26 @@ function event_manager:CheckObjective( checkLastObjectiveSpawnTime, checkCurrent
 
 		if ( checkCurrentEventLevel == true ) then
 			if ( data.minDifficultyLevel > self.currentEventLevel ) then
-				LogService:Log( "event_manager:CheckObjective() - Current event level " .. tostring( self.currentEventLevel ) .." is not enough. Required : " .. tostring( data.minDifficultyLevel ) )
+				LogService:Log( "event_manager:CheckObjective() - Current event level " .. tostring( self.currentEventLevel ) .." is not enough. Required : " .. tostring( data.minDifficultyLevel ) .. ", skipping" )
 				shouldRemove = true
 			end
 		end
 
 		if ( data.name == self.objectiveLastLogicFile ) then
-			LogService:Log( "event_manager:CheckObjective() - Remove last spawned objective : " .. data.name )
+			LogService:Log( "event_manager:CheckObjective() - Remove last spawned objective : " .. data.fullName .. ", skipping" )
 			shouldRemove = true
 		end
 
-		if ( shouldRemove == true ) then
-			table.insert( tableTmp, data )
+		if ( shouldRemove == false ) then
+			table.insert( self.objectiveAvailableList, data )
 		end
 	end
 
-	for data in Iter( tableTmp ) do 
-		LogService:Log( "event_manager:CheckObjective() - Removing an objective : " .. data.name )
-		Remove( objectives, data )
+	for i = 1, #self.objectiveAvailableList, 1 do
+		LogService:Log( "event_manager:CheckObjective() -  Available objective. " .. self.objectiveAvailableList[i].fullName )
 	end
 
-	for i = 1, #objectives, 1 do 
-		table.insert( self.objectiveAvailableList, objectives[i].name )
-	end
-
-	for i = 1, #self.objectiveAvailableList, 1 do 
-		LogService:Log( "event_manager:CheckObjective() -  Available objective." .. self.objectiveAvailableList[i] )
-	end
-
-	if ( #objectives == 0 ) then
-		return true
-	end
-
-	return false
+	return (#self.objectiveAvailableList == 0)
 end
 
 function event_manager:PrepareEvents( gameState )
@@ -1324,74 +1262,13 @@ function event_manager:SpawnEvent( action, participants )
 
 	LogService:Log( "event_manager:SpawnEvent : participants " .. participants )
 
-	local amount		= self:GetAmountFromAction( action )
-	self.eventLogicFile = self:GetLogicFileFromAction( action, self.currentStreamingData )
+	local event			= self:GetEventDataFromAction( action )
+	local translated	= self:GetEventDataFromAction( translatedEventName )
+	self.eventLogicFile = event.logicFile or ""
 
-	if ( translatedEventName == "spawn_acid_rain" ) or 
-		( translatedEventName == "spawn_comet_silent" ) or
-		( translatedEventName == "spawn_wind_weak" ) or
-		( translatedEventName == "spawn_wind_strong" ) or
-		( translatedEventName == "spawn_wind_none" ) or
-		( translatedEventName == "spawn_meteor_shower" ) or
-		( translatedEventName == "spawn_volcanic_rock_rain" ) or		   
-		( translatedEventName == "spawn_ion_storm" ) or
-		( translatedEventName == "spawn_thunderstorm" ) or
-		( translatedEventName == "spawn_solar_eclipse" ) or
-		( translatedEventName == "spawn_earthquake" ) or
-		( translatedEventName == "spawn_volcanic_ash_clouds" ) or
-		( translatedEventName == "spawn_solar_burn" ) or	  
-		( translatedEventName == "spawn_blue_hail" ) or	  	   
-		( translatedEventName == "spawn_super_moon" ) or
-		( translatedEventName == "spawn_fog" ) or
-		( translatedEventName == "shegret_attack" ) or
-		( translatedEventName == "shegret_attack_hard" ) or
-		( translatedEventName == "shegret_attack_very_hard" ) or
-		( translatedEventName == "kermon_attack" ) or
-		( translatedEventName == "kermon_attack_hard" ) or
-		( translatedEventName == "kermon_attack_very_hard" ) or
-		( translatedEventName == "phirian_attack" ) or
-		( translatedEventName == "phirian_attack_hard" ) or
-		( translatedEventName == "phirian_attack_very_hard" ) or
-		( translatedEventName == "spawn_acid_fissures" ) or
-		( translatedEventName == "spawn_blood_moon" ) or
-		( translatedEventName == "spawn_blue_moon" ) or
-		( translatedEventName == "spawn_dust_storm" ) or
-		--SWAMP EVENTS START
-		( translatedEventName == "spawn_tornado_near_player" ) or
-		( translatedEventName == "spawn_tornado_near_base" ) or
-		( translatedEventName == "spawn_tornado_acid_near_player" ) or
-		( translatedEventName == "spawn_tornado_acid_near_base" ) or
-		( translatedEventName == "spawn_tornado_fire_near_player" ) or
-		( translatedEventName == "spawn_tornado_fire_near_base" ) or
-		( translatedEventName == "spawn_firestorm" ) or
-		( translatedEventName == "spawn_fireflies" ) or
-		( translatedEventName == "spawn_blooming_air" ) or
-		( translatedEventName == "spawn_migrating_birds" ) or
-		( translatedEventName == "spawn_monsoon" ) or
-		( translatedEventName == "spawn_comet_boss_mudroner_acid" ) or
-		( translatedEventName == "spawn_comet_boss_mudroner_cryo" ) or
-		( translatedEventName == "spawn_comet_boss_mudroner_energy" ) or
-		( translatedEventName == "spawn_comet_boss_mudroner_fire" ) or
-		--SWAMP EVENTS END
-		--ICE EVENTS START
-		( translatedEventName == "spawn_blizzard" ) or
-		( translatedEventName == "spawn_heavy_snow" ) or
-		( translatedEventName == "spawn_heavy_hail" ) or
-		( translatedEventName == "spawn_tornado_ice_near_base" ) or
-		( translatedEventName == "spawn_tornado_ice_near_player" ) or
-		( translatedEventName == "spawn_ice_meteor_shower" ) or
-		( translatedEventName == "spawn_ice_rock_rain" ) or
-		( translatedEventName == "spawn_ice_falling_rocks" ) or		
-		--ICE EVENTS END
-		--CAVERNS EVENTS START
-		( translatedEventName == "spawn_cave_in" ) or
-		( translatedEventName == "spawn_falling_stalactites" ) or
-		( translatedEventName == "spawn_crystal_growth" ) or
-		--CAVERNS EVENTS END
-		( translatedEventName == "spawn_rain" ) then
-
-		local timeMin		= self:GetMinTimeFromAction( action )
-		local timeMax		= self:GetMaxTimeFromAction( action )
+	if ( self.eventLogicFile ~= "" ) then
+		local timeMin		= event.minTime or 90
+		local timeMax		= event.maxTime or 90
 		local randomTime    = RandInt( timeMin, timeMax )
 
 		LogService:Log( "event_manager:SpawnEvent - min time " .. tostring( timeMin ) )
@@ -1399,8 +1276,8 @@ function event_manager:SpawnEvent( action, participants )
 		LogService:Log( "event_manager:SpawnEvent - time set to " .. tostring( randomTime ) )
 		--self.data:SetInt( "time", randomTime )
 
-		local bindingParams = self:GetBindingsFromActionParams( translatedEventName )
-		bindingParams.time = randomTime
+		local bindingParams = translated.bindingParams or {}
+		bindingParams.time  = randomTime
 
 		if ( GameStreamingService:IsInStreamEvent() == true ) then
 			bindingParams.labels = participants
@@ -1410,28 +1287,20 @@ function event_manager:SpawnEvent( action, participants )
 
 		MissionService:ActivateMissionFlow( "", self.eventLogicFile, "default", bindingParams )
 
-	elseif ( translatedEventName == "add_resource" ) then
-		PlayerService:AddResourceAmount(PlayerService:GetLeadingPlayer(), self:GetResourceNameFromAction( action ), amount, false )
-	elseif ( translatedEventName == "remove_resource" ) then
-		PlayerService:AddResourceAmount(PlayerService:GetLeadingPlayer(), self:GetResourceNameFromAction( action ), -amount, false )
-	elseif ( translatedEventName == "cancel_the_attack" ) then
-		self.cancelTheAttack = true
+	elseif ( translatedEventName == "add_resource" ) then			PlayerService:AddResourceAmount(PlayerService:GetLeadingPlayer(), event.resourceName or "",   event.amount or 1000, false )
+	elseif ( translatedEventName == "remove_resource" ) then		PlayerService:AddResourceAmount(PlayerService:GetLeadingPlayer(), event.resourceName or "", -(event.amount or 1000), false )
+	elseif ( translatedEventName == "unlock_research" ) then		PlayerService:UnlockResearch( translated.researchName or "" )
+	elseif ( translatedEventName == "cancel_the_attack" ) then		self.cancelTheAttack = true
 	elseif ( translatedEventName == "stronger_attack" ) then
-		self.extraAttacks = amount
+		self.extraAttacks = event.amount or 1
 		self.participants = participants
 		self.participantsPercentageUse = 10
-	elseif ( translatedEventName == "full_ammo" ) then
-		self:AddAmmo( 100 )
-	elseif ( translatedEventName == "remove_ammo" ) then
-		self:AddAmmo( -100 )
-	elseif ( translatedEventName == "extra_ammo" ) then
-		self:AddAmmo( self.streamAmmunitionSupportGiveAmmoPercentage )
-	elseif ( translatedEventName == "meteor_strike" ) then
-		MeteorService:SpawnMeteorInFrustum( "weather/meteor_medium", 50, 140 )
-	elseif ( translatedEventName == "new_objective" ) then
-		self:SpawnObjective()
-	elseif ( translatedEventName == "change_time_of_day" ) then
-		self:ChangeTimeOfDay()
+	elseif ( translatedEventName == "full_ammo" ) then				self:AddAmmo( 100 )
+	elseif ( translatedEventName == "remove_ammo" ) then			self:AddAmmo( -100 )
+	elseif ( translatedEventName == "extra_ammo" ) then				self:AddAmmo( self.streamAmmunitionSupportGiveAmmoPercentage )
+	elseif ( translatedEventName == "meteor_strike" ) then			MeteorService:SpawnMeteorInFrustum( "weather/meteor_medium", 50, 140 )
+	elseif ( translatedEventName == "new_objective" ) then			self:SpawnObjective()
+	elseif ( translatedEventName == "change_time_of_day" ) then		self:ChangeTimeOfDay()
 	elseif ( ( translatedEventName == "spawn_resource_comet" ) or ( translatedEventName == "spawn_resource_earthquake" ) )then
 		local resource = self.availableResourcesToSpawn[RandInt( 1, #self.availableResourcesToSpawn )]
 		self:SpawnExtraResources( self.eventLogicFile, resource, 10000, 20000 )
@@ -1439,8 +1308,6 @@ function event_manager:SpawnEvent( action, participants )
 		self.spawnBoss = true
 		self.participants = self:PickRandomParticipant( participants )
 		self.participantsPercentageUse = 100
-	elseif ( translatedEventName == "unlock_research" ) then
-		PlayerService:UnlockResearch( self:GetResearchNameFromAction( translatedEventName ) )
 	end
 
 end

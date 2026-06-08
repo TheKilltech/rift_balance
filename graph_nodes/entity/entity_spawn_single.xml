@@ -1,0 +1,110 @@
+<node_layout id="LuaBehaviourNode">
+    <value id="script" value="lua/graph/entity/entity_spawn_single.lua"/>
+    <value id="database.Strings.StringData[0].key" value="blueprint" />    
+    <value id="database.Strings.StringData[1].key" value="team" />	
+	<value id="database.Strings.StringData[2].key" value="entity_name" />
+	<value id="database.Strings.StringData[3].key" value="entity_group" />	
+	<value id="database.Strings.StringData[4].key" value="target_attachment" />
+    <value id="database.Strings.StringData[5].key" value="find_type"/>
+    <value id="database.Strings.StringData[6].key" value="find_value"/>
+    <value id="database.Strings.StringData[7].key" value="search_target_type"/>
+    <value id="database.Strings.StringData[8].key" value="search_target_value"/>
+
+	<value id="database.Integers.IntData[0].key" value="target_single" />
+	<value id="database.Integers.IntData[1].key" value="attach_entity" />
+	<value id="database.Integers.IntData[2].key" value="name_is_global" />
+	<value id="database.Integers.IntData[3].key" value="min_life_time"/>
+	<value id="database.Integers.IntData[4].key" value="max_life_time"/>
+
+	<value id="database.Strings.StringData[9].key" value="search_target"/>
+	<value id="database.Floats.FloatData[0].key" value="search_radius"/>	
+    
+	<row bgcolor="#44D0B1">
+		<text value="ENTITY SPAWN" width="450" align="center" font_weight="extra_bold"  />        
+	</row> 
+	<row bgcolor="#44D0B1">
+		<text value="Id:" width="30" align="left" font_weight="bold" />
+        <input id="self_id" width="420" font_weight="bold" />
+	</row> 
+	<row bgcolor="#FFFFFF" height="1"/>
+	<row bgcolor="#000000" height="3"/>
+	<row bgcolor="#FFFFFF" height="1"/>
+	<row>		
+        <text value="Blueprint:" width="100" align="left" font_weight="bold" />
+        <list source="blueprints" text="blueprint" type="selector" width="370" id="database.Strings.StringData[0].value" value="" font_weight="bold" />
+	</row>
+	<row>		
+        <text value="Team:" width="100" align="left" font_weight="bold" />
+        <list source="no_team,player,enemy" width="370" id="database.Strings.StringData[1].value" font_weight="bold"/>
+	</row>
+	<row>
+		<text value="Min life time:" width="100" align="left" font_weight="bold"/>
+		<input type="int" text="min_life_time" id="database.Integers.IntData[3].value" width="80" valid_rule="not_empty" value="0" min="0" font_weight="bold"/>
+		
+		<text value="Max life time:" width="100" align="left" font_weight="bold"/>
+		<input type="int" text="max_life_time" id="database.Integers.IntData[4].value" width="80" valid_rule="not_empty" value="0" min="0" font_weight="bold"/>
+	</row>
+	
+	<row bgcolor="#FFFFFF" height="1"/>
+	<row bgcolor="#000000" height="3"/>
+	<row bgcolor="#FFFFFF" height="1"/>
+	
+	<row>		
+        <text value="Add this Name or Group to the spawned entity(ies) after spawn:" width="450" align="center" font_weight="bold" />        
+	</row>	
+	<row>		
+        <text value="Entity Name:" width="100" align="left" font_weight="bold" />
+        <input width="300" id="database.Strings.StringData[2].value" value="" font_weight="bold"  />
+        <list width="50" text="name_is_global" id="database.Integers.IntData[2].value" not_empty="1" tooltip="Entity name is global one ( not unique for this graph )" source="0,1" value="1" font_weight="bold" />
+	</row>
+	<row>		
+        <text value="Entity Group:" width="100" align="left" font_weight="bold" />
+        <input width="350" id="database.Strings.StringData[3].value" value="" font_weight="bold"  />
+	</row>	
+	<row bgcolor="#FFFFFF" height="1"/>
+    <row bgcolor="#000000" height="3"/>
+    <row bgcolor="#FFFFFF" height="1"/>  	
+    
+    <row>        
+        <text value="Find type:" width="100" align="left" font_weight="bold" />
+        <list source="find_types" width="350" id="database.Strings.StringData[5].value" value="" font_weight="bold" />
+    </row>
+    <row>
+        <text value="Find value:" width="100" align="left" font_weight="bold" />
+        <input width="350" id="database.Strings.StringData[6].value" value="" font_weight="bold" />
+    </row>
+
+	<row>		
+        <text value="Target Att.:" width="100" align="left" font_weight="bold" />
+        <input width="350" id="database.Strings.StringData[4].value" value="" font_weight="bold"  />
+	</row>
+
+	<row>
+        <text value="Force spawn a single entity even if multiple targets are found:" width="400" font_weight="bold" />
+        <input id="database.Integers.IntData[0].value" type="int" text="random_spawn" value="0" min="0" max="1" width="50" font_weight="bold" />
+    </row>
+    
+	<row>
+        <text value="Attach to entity:" width="400" font_weight="bold" />
+        <input id="database.Integers.IntData[1].value" type="int" text="attach" value="0" min="0" max="1" width="50" font_weight="bold" />
+    </row>
+    <row bgcolor="#FFFFFF" height="1"/>
+    <row bgcolor="#000000" height="3"/>
+    <row bgcolor="#FFFFFF" height="1"/>
+    <row>        
+        <text value="Search for entities in a radius from the target entity." width="450" align="center" font_weight="bold" />        
+    </row>
+    <row>        
+        <text value="Search target type:" width="130" align="left" font_weight="bold" />
+        <list source="find_types" width="320" id="database.Strings.StringData[7].value" value="" font_weight="bold" />
+    </row>
+    <row>
+        <text value="Search target value:" width="130" align="left" font_weight="bold" />
+        <input width="320" id="database.Strings.StringData[8].value" value="" font_weight="bold" />
+    </row>
+    <row>
+        <text value="Search Radius:" width="130" font_weight="bold"/>
+        <input width="320" text="search_radius" type="float" id="database.Floats.FloatData[0].value" value="0" min="0" font_weight="bold" />
+    </row>
+	
+</node_layout>

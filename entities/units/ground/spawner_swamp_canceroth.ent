@@ -1,0 +1,807 @@
+EntityBlueprint
+{
+	name "units/ground/spawner_swamp_canceroth"
+
+	MeshDesc
+	{
+		mesh 		"meshes/units/ground/spawner_swamp_canceroth.mesh"
+		
+
+		SubMeshes
+		{
+			
+			SubMesh
+			{
+				id "0"
+				material "units/ground/spawner_canceroth"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "units/ground/spawner_canceroth_alpha"
+			}
+		}
+	}		
+
+	SkeletonDesc
+	{
+		name "meshes/units/ground/spawner_swamp_canceroth"
+	}
+	
+	PhysicsDesc
+ 	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"ground_unit"
+				physics_material 	"default"
+
+				Shapes
+				{
+					PhysicsMeshShape
+					{
+						mesh "meshes/units/ground/spawner_swamp_canceroth_c1.nxs"
+					}
+				}
+			}
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+
+				Shapes
+				{
+					PhysicsMeshShape
+					{
+						mesh "meshes/units/ground/spawner_swamp_canceroth_c1.nxs"
+					}
+				}
+			}			
+		}
+	}	
+	
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsBoxShape
+			{
+				x	14
+				y	14
+				z	14
+			}
+		}
+	}	
+	
+	NodeCullerDesc
+	{
+		cost_type "prop"
+		nav_mesh_cull_type "1"
+	}
+
+	MinimapItemDesc
+	{
+		type			"image"
+		icon_material 	"gui/hud/minimap_icons/enemy_spawner"
+		visibility 		"radar"
+		layer_group		"enemies"
+	}
+
+	AnimationDesc
+	{
+		animations
+		{
+			Anim
+			{
+				animName "idle_1"
+				animTime "0.0"
+			}
+		}
+	}
+	
+	LuaDesc
+	{
+		script "lua/units/ground/spawner.lua"
+	}	
+	
+	TypeDesc
+	{
+		type "ground_unit|ground_unit_large|spawner"
+	}
+
+	TeamDesc
+	{
+		team "enemy"
+	}	
+	
+	SelectableDesc
+	{
+		content "monster_name/spawner_swamp_canceroth"
+		can_activate 0
+	}	
+	
+	UnitsSpawnerDesc
+	{
+		blueprint				"units/ground/canceroth"
+		amount_on_single_spawn	"1"
+		max_spawn				"3"
+		time_to_spawn			"53"
+		unit_state_spawn		"1"  // do not touch
+		max_spawn_distance		"30"
+		spawn_type				"normal"	//normal|egg
+		spawn_marker_bp			"effects/messages_and_markers/wave_marker_nest"
+		spawn_marker_life_time	"30"
+		can_spawn_when_visible	"0"
+		defend_radius			"40"
+	}
+	
+	ResistanceComponent
+	{
+		physical		"0.1"
+		fire			"1.0"
+		acid			"0.1"
+		energy			"1.0"
+		cryo			"1.0"
+		area			"2.0"
+	}
+	
+	HealthBarDesc
+	{
+		type "2"
+		mode "2" // 0 show always, 1 show in build mode, 2 show always if showing boss config enabled
+		material "gui/hud/bars/big_monster_hp_1x3"
+	}	
+
+	HealthDesc
+	{
+		max_health 					"10000"
+		health 						"10000"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual					"1"
+		update_health_uniform 		"1"
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health "87"
+				destroy_state_change_effect_group "75_transition"
+				destroy_comp_delay "0.0"
+				destroy_comp_event "generic_destroy"
+				//destroyed_state_effect_group "75_state"
+				destrucion_level_name "87"
+			}
+			DestructionLevel
+			{
+				health "75"
+				destroy_state_change_effect_group "75_transition"
+				destroy_comp_delay "0.0"
+				destroy_comp_event "75_destroy"
+				destroyed_state_effect_group "75_state"
+				destrucion_level_name "75"
+				destroyed_state_material "units/ground/spawner_canceroth_alpha"				
+				destroyed_state_mesh "meshes/units/ground/spawner_swamp_canceroth_dest_75.mesh"		
+			}
+			DestructionLevel
+			{
+				health "62"
+				destroy_state_change_effect_group "75_transition"
+				destroy_comp_delay "0.0"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "50_state"
+				destrucion_level_name "62"
+			}
+			DestructionLevel
+			{
+				health "50"
+				destroy_state_change_effect_group "50_transition"
+				destroy_comp_delay "0.0"
+				destroy_comp_event "50_destroy"				
+				destroyed_state_effect_group "75_state"
+				destrucion_level_name "50"
+				destroyed_state_material "units/ground/spawner_canceroth_alpha"				
+				destroyed_state_mesh "meshes/units/ground/spawner_swamp_canceroth_dest_50.mesh"	
+			}
+			DestructionLevel
+			{
+				health "37"
+				destroy_state_change_effect_group "50_transition"
+				destroy_comp_delay "0.0"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "50_state"
+				destrucion_level_name "37"
+			}
+			DestructionLevel
+			{
+				health "25"
+				destroy_state_change_effect_group "25_transition"
+				destroy_comp_delay "0.0"
+				destroy_comp_event "25_destroy"
+				destroyed_state_effect_group "25_state"
+				destrucion_level_name "25"
+				destroyed_state_material "units/ground/spawner_canceroth_alpha"				
+				destroyed_state_mesh "meshes/units/ground/spawner_swamp_canceroth_dest_25.mesh"
+			}
+			DestructionLevel
+			{
+				health "12"
+				destroy_state_change_effect_group "25_transition"
+				destroy_comp_delay "0.0"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "0_state"
+				destrucion_level_name "12"
+			}
+			DestructionLevel
+			{
+				health "0"
+				destroy_state_change_effect_group "0_transition"
+				destroy_comp_delay "0.0"
+				destroy_comp_event "default"
+				destroyed_state_effect_group "empty_state"
+				destrucion_level_name "0"
+				destroyed_state_material "units/ground/spawner_canceroth_alpha"
+				destroyed_state_mesh "meshes/units/ground/spawner_swamp_canceroth_dest_0.mesh"
+			}
+		}
+	}	
+	
+	DestroyDesc
+	{
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "generic_destroy"				
+				value
+				{
+					explosion_effect 		"effects/enemies_spawner/spawner_mushbit_small_explosion"
+				}				
+			}
+			
+			Pair
+			{
+				key "75_destroy"				
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"30000"
+					explosion_min_power 	"20000"
+					explosion_effect 		"effects/enemies_spawner/spawner_mushbit_small_explosion"
+					part_physics_material   "gibs_super_heavy"
+					part_material 			"units/ground/spawner_canceroth_alpha"
+					part_effect 			"effects/enemies_generic/blood_trail_dust"
+					part_prefix 			"meshes/units/ground/spawner_swamp_canceroth_dest_75"
+					part_mass				"2000"
+					//part_lifetime 			"3"			
+				}				
+			}
+			
+			Pair
+			{
+				key "50_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"35000"
+					explosion_min_power 	"25000"
+					explosion_effect 		"effects/enemies_spawner/spawner_mushbit_small_explosion"
+					part_physics_material   "gibs_super_heavy"
+					part_material 			"units/ground/spawner_canceroth_alpha"
+					part_effect 			"effects/enemies_generic/blood_trail_dust"
+					part_prefix 			"meshes/units/ground/spawner_swamp_canceroth_dest_50"
+					part_mass				"2000"
+					//part_lifetime 			"3"			
+				}				
+			}
+			Pair
+			{
+				key "25_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"45000"
+					explosion_min_power 	"30000"
+					explosion_effect 		"effects/enemies_spawner/spawner_mushbit_small_explosion"
+					part_physics_material   "gibs_super_heavy"
+					part_material 			"units/ground/spawner_canceroth_alpha"
+					part_effect 			"effects/enemies_generic/blood_trail_dust"
+					part_prefix 			"meshes/units/ground/spawner_swamp_canceroth_dest_25"
+					part_mass				"2000"
+					//part_lifetime 			"3"			
+				}				
+			}		
+			Pair
+			{
+				key "default"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"50000"
+					explosion_min_power 	"35000"
+					explosion_effect 		"effects/enemies_spawner/spawner_mushbit_big_explosion"
+					part_physics_material   "gibs_super_heavy"
+					part_material 			"units/ground/spawner_canceroth_alpha"
+					part_effect 			"effects/enemies_generic/blood_trail_dust"
+					part_prefix 			"meshes/units/ground/spawner_swamp_canceroth_dest_0"	
+					part_mass				"2000"					
+				}				
+			}
+		}
+	}	
+
+	HighlightComponent
+	{
+
+	}
+
+	LootDesc
+	{
+		explosion_type 			"centered"	
+		explosion_max_power 	"12000"
+		explosion_min_power 	"6000"	
+	}	
+
+	DecalDesc
+	{
+		blueprint "effects/decals/spawner_canceroth"
+		scale
+		{
+			x		20
+			y		20
+			z		20
+
+		}
+	}	
+	
+	EffectDesc
+	{		
+		////////////////////////Destruction level 80 transition effects/////////////////////////
+		EffectGroup
+		{
+			group "75_transition"
+			enabled "0"				
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_small_explosion"								
+					bone "att_smoke_1"
+					delay "0"
+				}
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_small_explosion"								
+					bone "att_smoke_3"
+					delay "0.1"
+				}
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_small_explosion"								
+					bone "att_smoke_5"
+					delay "0.2"
+				}
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_small_explosion"								
+					bone "att_smoke_7"
+					delay "0.3"
+				}					
+			}
+		}
+		////////////////////////Destruction level 80 state effects/////////////////////////
+		EffectGroup
+		{
+			group "75_state"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_dust_infinite"								
+					bone "att_blood_1"
+				}				
+			}
+		}
+		////////////////////////Destruction level 60 transition effects/////////////////////////
+		EffectGroup
+		{
+			group "50_transition"
+			enabled "0"				
+			
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_small_explosion"								
+					bone "att_smoke_1"
+					delay "0"
+				}
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_small_explosion"								
+					bone "att_smoke_3"
+					delay "0.1"
+				}
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_small_explosion"								
+					bone "att_smoke_5"
+					delay "0.2"
+				}
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_small_explosion"								
+					bone "att_smoke_7"
+					delay "0.3"
+				}					
+			}
+		}		
+		////////////////////////Destruction level 60 state effects/////////////////////////
+		EffectGroup
+		{
+			group "50_state"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_dust_infinite"								
+					bone "att_blood_1"
+				}				
+			}
+		}
+		////////////////////////Destruction level 40 transition effects/////////////////////////
+		EffectGroup
+		{
+			group "25_transition"
+			enabled "0"				
+			
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_small_explosion"								
+					bone "att_smoke_1"
+					delay "0"
+				}
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_small_explosion"								
+					bone "att_smoke_3"
+					delay "0.1"
+				}
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_small_explosion"								
+					bone "att_smoke_5"
+					delay "0.2"
+				}
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_small_explosion"								
+					bone "att_smoke_7"
+					delay "0.3"
+				}	
+			}
+		}
+		////////////////////////Destruction level 40 state effects/////////////////////////
+		EffectGroup
+		{
+			group "25_state"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_dust_infinite"								
+					bone "att_blood_2"
+				}				
+			}
+		}
+		////////////////////////Destruction level 0 transition effects/////////////////////////
+		EffectGroup
+		{
+			group "0_transition"
+			enabled "0"				
+			
+			
+			Effects
+			{		
+			}
+		}
+		////////////////////////Destruction level 0 state effects/////////////////////////
+		EffectGroup
+		{
+			group "0_state"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{	
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_mushbit_dust_infinite"								
+					bone "att_blood_2"
+				}				
+			}
+		}
+		EffectGroup
+		{
+			group "empty_state"
+			enabled "0"				
+			delay "0"
+			
+			Effects
+			{				
+			}
+		}		
+////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "idle"
+			enabled "1"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_spawner/spawner_idle"					
+				}
+			}
+		}	
+		EffectGroup
+		{						
+			group "damage_generic"
+			enabled "0"				
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/damage_generic_dust"	
+					bone "att_death"
+					scale "3.5 3.5. 3.5"
+				}
+			}
+		}	
+		EffectGroup
+		{						
+			group "hit_damage"
+			enabled "0"				
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/damage_generic_dust"	
+					scale "1 1 1"
+				}
+			}
+		}			
+		EffectGroup
+		{
+			group 	"time_damage_fire"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/time_damage_fire"
+					scale "3.5 3.5. 3.5"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group 	"time_damage_acid"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/time_damage_acid"
+					scale "3.5 3.5. 3.5"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group 	"time_damage_cryo"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/time_damage_cryo"
+					scale "3.5 3.5. 3.5"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group 	"time_damage_energy"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/time_damage_energy"
+					scale "3.5 3.5. 3.5"
+				}
+			}
+		}		
+		EffectGroup
+		{
+			group 	"time_damage_physical"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/time_damage_physical_dust"
+					bone "att_death"
+					scale "3.5 3.5. 3.5"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "healing"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/enemy_healing_big"
+					bone "att_death"
+					scale "4 4 4"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "aura_healing"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/aura_healing"
+					bone "att_death"
+					scale "4 4 4"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "aura_acid"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/aura_acid"
+					bone "att_death"
+					scale "4 4 4"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "aura_cryo"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/aura_cryo"
+					bone "att_death"
+					scale "4 4 4"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "aura_energy"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/aura_energy"
+					bone "att_death"
+					scale "4 4 4"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "aura_fire"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/aura_fire"
+					bone "att_death"
+					scale "4 4 4"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "aura_shockwave"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/aura_shockwave"
+					bone "att_death"
+					scale "4 4 4"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "aura_resurrect"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_generic/aura_resurrect"
+					bone "att_death"
+					scale "4 4 4"
+				}
+			}
+		}			
+		EffectGroup
+		{
+			group 	"energy"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/enemies_canceroth/canceroth_child_energy_blue"
+					offset "0 8.7 0"
+					
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group 	"light"
+			enabled "1"			
+			Effects
+			{
+				Effect
+				{
+					blueprint "lights/point/canceroth_child"
+					offset "0 7 0"
+				}
+				Effect
+				{
+					blueprint "lights/point/canceroth_blue"
+					offset "0 8.7 0"
+				}
+			}
+			
+		}
+		
+	}	
+
+}
+

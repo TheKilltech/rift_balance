@@ -1,0 +1,22 @@
+EntityBlueprint
+{
+	name "units/ground/spawner_octabit"
+	
+	base_blueprint 			units/ground/spawner_wingmite
+
+	UnitsSpawnerDesc
+	{
+		blueprint				"units/ground/egg_octabit"
+		amount_on_single_spawn	"1"
+		max_spawn				"5"
+		time_to_spawn			"30"
+		unit_state_spawn		"1"  // do not touch
+		max_spawn_distance		"20"
+		spawn_type				"egg"	//normal|egg
+		spawn_marker_bp			"effects/messages_and_markers/wave_marker_nest"
+		spawn_marker_life_time	"30"
+		can_spawn_when_visible	"1"
+		defend_radius			"40"
+	}	
+}
+
