@@ -41,6 +41,8 @@ function building_buffable:InitVariables()
 	self.buffReqIconBp     = data:GetStringOrDefault("buff_required_bp", "effects/missing_buff_icon")
 	self.buffBlueprints    = Split( data:GetStringOrDefault("buff_buildings",  "none"), "," )
 	
+	self:Log( 3, "InitVariables: req name: ".. tostring(self.buffRequiredName) .. " req level: ".. tostring(self.buffRequiredLevel) .. " req icon: ".. tostring(self.buffReqIconBp) .. " #buff-buildings: ".. tostring(self.buffBlueprints))
+	
 	if not self.fsmInfo then
 		self.fsmInfo = self:CreateStateMachine()
 		self.fsmInfo:AddState( "update",  { execute="OnExecuteInfoUpdate", interval = 1 } )
@@ -184,7 +186,7 @@ function building_buffable:UpdateBuffState( source )
 			BuildingService:DisableBuilding( self.entity )
 			
 			if not self.buffReqIconBp then
-				self.buffReqIconBp = self.data:GetStringOrDefault("buff_required_bp", "buildings/resources/ore_mill_missing_icon")
+				self.buffReqIconBp = self.data:GetStringOrDefault("buff_required_bp", "effects/missing_buff_icon")
 			end
 			if (self.missing_effect or INVALID_ID) == INVALID_ID then
 				self.missing_effect = EntityService:SpawnAndAttachEntity( self.buffReqIconBp, self.entity, "att_missing_buff", "")
