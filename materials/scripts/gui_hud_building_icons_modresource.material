@@ -279,6 +279,16 @@ material "gui/hud/building_icons/bio_palladium_refinery_lvl_3_disabled" : gui/de
 
 /////  resource converters
 
+material "gui/hud/building_icons/resource_converter_ironium" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/resource_converter_ironium.dds"
+}
+
+material "gui/hud/building_icons/resource_converter_ironium_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/resource_converter_disabled.dds"
+}
+
 material "gui/hud/building_icons/resource_converter_cobalt" : gui/default
 {
 	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/resource_converter_cobalt.dds"
@@ -340,7 +350,7 @@ material "gui/hud/building_icons/blast_furnace" : gui/default
 
 material "gui/hud/building_icons/blast_furnace_disabled" : gui/default
 {
-	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/blast_furnace.dds"
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/blast_furnace_disabled.dds"
 }
 
 material "gui/hud/building_icons/blast_furnace_lvl_2" : gui/default
@@ -350,7 +360,17 @@ material "gui/hud/building_icons/blast_furnace_lvl_2" : gui/default
 
 material "gui/hud/building_icons/blast_furnace_lvl_2_disabled" : gui/default
 {
-	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/blast_furnace_lvl_2.dds"
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/blast_furnace_disabled.dds"
+}
+
+material "gui/hud/building_icons/blast_furnace_lvl_3" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/blast_furnace_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/blast_furnace_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/blast_furnace_disabled.dds"
 }
 
 
@@ -437,6 +457,39 @@ material "gui/hud/building_icons/ore_mill_lvl_4" : gui/default
 material "gui/hud/building_icons/ore_mill_lvl_4_disabled" : gui/default
 {
 	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/ore_mill_disabled.dds"
+}
+
+
+/////  metal_extractor
+
+material "gui/hud/building_icons/metal_extractor_lvl_1" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/metal_extractor_lvl_1.dds"
+}
+
+material "gui/hud/building_icons/metal_extractor_lvl_1_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/metal_extractor_disabled.dds"
+}
+
+material "gui/hud/building_icons/metal_extractor_lvl_2" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/metal_extractor_lvl_2.dds"
+}
+
+material "gui/hud/building_icons/metal_extractor_lvl_2_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/metal_extractor_disabled.dds"
+}
+
+material "gui/hud/building_icons/metal_extractor_lvl_3" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/metal_extractor_lvl_3.dds"
+}
+
+material "gui/hud/building_icons/metal_extractor_lvl_3_disabled" : gui/default
+{
+	set_texture_alias diffuse	"materials/textures/gui/hud/building_icons/metal_extractor_disabled.dds"
 }
 
 

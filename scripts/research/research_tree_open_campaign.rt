@@ -14984,21 +14984,21 @@ Research
 						{
 							amount "0"
 							resource "alloys"
-							count "2500"
+							count "1000"
 						}
 
 						ResearchCost
 						{
 							amount "0"
 							resource "download"
-							count "2500"
+							count "2000"
 						}
 
 						ResearchCost
 						{
 							amount "0"
 							resource "steel"
-							count "12000"
+							count "9000"
 						}
 
 					}
@@ -19353,6 +19353,86 @@ Research
 					}
 
 					icon "gui/menu/research/icons/energy_relay_system"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip "gui/menu/research/tooltip_requirement_objective"
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/metallurgy"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/metallurgy_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "5000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "4000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "titanium"
+							count "2000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1512"
+						y "126"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/blast_furnace_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/upgrade_new_upkeep_req"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/warning_rounding"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/orbital_laser"
 				}
 
 			}
@@ -39427,7 +39507,7 @@ Research
 
 					position
 					{
-						x "-1395"
+						x "-1431"
 						y "-342"
 					}
 
@@ -39508,7 +39588,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1395"
+						x "-1431"
 						y "117"
 					}
 
@@ -39583,7 +39663,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1395"
+						x "-1431"
 						y "405"
 					}
 
@@ -39637,7 +39717,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1431"
+						x "-1467"
 						y "-234"
 					}
 
@@ -39705,7 +39785,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1431"
+						x "-1467"
 						y "216"
 					}
 
@@ -39785,7 +39865,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1431"
+						x "-1467"
 						y "540"
 					}
 
@@ -39886,7 +39966,7 @@ Research
 
 					position
 					{
-						x "-1458"
+						x "-1494"
 						y "-288"
 					}
 
@@ -39985,7 +40065,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1458"
+						x "-1494"
 						y "171"
 					}
 
@@ -40084,7 +40164,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1458"
+						x "-1494"
 						y "486"
 					}
 
@@ -40699,7 +40779,7 @@ Research
 
 					position
 					{
-						x "-1557"
+						x "-1593"
 						y "-342"
 					}
 
@@ -40805,7 +40885,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1557"
+						x "-1593"
 						y "117"
 					}
 
@@ -40911,7 +40991,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1557"
+						x "-1593"
 						y "405"
 					}
 
@@ -44340,7 +44420,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1359"
+						x "-1395"
 						y "-288"
 					}
 
@@ -44656,7 +44736,7 @@ Research
 
 					position
 					{
-						x "-1611"
+						x "-1647"
 						y "-342"
 					}
 
@@ -44750,7 +44830,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1611"
+						x "-1647"
 						y "117"
 					}
 
@@ -44844,7 +44924,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1611"
+						x "-1647"
 						y "405"
 					}
 
@@ -44944,7 +45024,7 @@ Research
 
 					position
 					{
-						x "-1755"
+						x "-1791"
 						y "-342"
 					}
 
@@ -45025,7 +45105,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1755"
+						x "-1791"
 						y "-144"
 					}
 
@@ -45100,7 +45180,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1755"
+						x "-1791"
 						y "405"
 					}
 
@@ -45209,7 +45289,7 @@ Research
 
 					position
 					{
-						x "-1800"
+						x "-1836"
 						y "-288"
 					}
 
@@ -45290,7 +45370,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1800"
+						x "-1836"
 						y "-72"
 					}
 
@@ -45358,7 +45438,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1800"
+						x "-1836"
 						y "468"
 					}
 
@@ -46908,7 +46988,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1962"
+						x "-1998"
 						y "-153"
 					}
 
@@ -46969,7 +47049,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1962"
+						x "-1998"
 						y "-108"
 					}
 
@@ -47448,7 +47528,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1908"
+						x "-1944"
 						y "-153"
 					}
 
@@ -47509,7 +47589,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1908"
+						x "-1944"
 						y "-108"
 					}
 
@@ -48494,7 +48574,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1314"
+						x "-1350"
 						y "171"
 					}
 
@@ -48562,7 +48642,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1341"
+						x "-1377"
 						y "261"
 					}
 
@@ -48630,7 +48710,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1287"
+						x "-1323"
 						y "261"
 					}
 
@@ -48838,7 +48918,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1359"
+						x "-1395"
 						y "-72"
 					}
 
@@ -49866,7 +49946,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1665"
+						x "-1701"
 						y "-288"
 					}
 
@@ -49934,7 +50014,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1665"
+						x "-1701"
 						y "117"
 					}
 
@@ -50001,7 +50081,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1665"
+						x "-1701"
 						y "405"
 					}
 
@@ -50376,7 +50456,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1836"
+						x "-1872"
 						y "-234"
 					}
 
@@ -50444,7 +50524,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1836"
+						x "-1872"
 						y "-18"
 					}
 
@@ -50518,7 +50598,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1836"
+						x "-1872"
 						y "540"
 					}
 
@@ -51409,7 +51489,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1359"
+						x "-1395"
 						y "171"
 					}
 
@@ -52366,7 +52446,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1962"
+						x "-1998"
 						y "-63"
 					}
 
@@ -52427,7 +52507,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1962"
+						x "-1998"
 						y "-18"
 					}
 
@@ -52570,7 +52650,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1503"
+						x "-1539"
 						y "261"
 					}
 
@@ -52638,7 +52718,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1503"
+						x "-1539"
 						y "486"
 					}
 
@@ -52718,7 +52798,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1503"
+						x "-1539"
 						y "630"
 					}
 
@@ -52792,7 +52872,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1710"
+						x "-1746"
 						y "171"
 					}
 
@@ -52860,7 +52940,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1710"
+						x "-1746"
 						y "468"
 					}
 
@@ -52946,7 +53026,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1710"
+						x "-1746"
 						y "630"
 					}
 
@@ -53032,7 +53112,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1242"
+						x "-1278"
 						y "171"
 					}
 
@@ -53093,7 +53173,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1242"
+						x "-1278"
 						y "261"
 					}
 
@@ -53414,6 +53494,203 @@ Research
 					}
 
 					icon "gui/menu/research/icons/towers_flamer"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/towers_morphium_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/resource_converter_ironium"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "2500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "5000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "10000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1233"
+						y "171"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/resource_converter_ironium"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/rare_element_mining"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resource_handling_rhodonite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/basic_resource_production_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/metal_extractor_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "1000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "1000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "2500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-99"
+						y "-288"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/metal_extractor_lvl_2"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/orbital_laser"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/crystalizer_rhodonite"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/metal_extractor_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/metal_extractor_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "3000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "2500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "7500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-99"
+						y "-72"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/metal_extractor_lvl_3"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/orbital_laser"
 				}
 
 			}
@@ -54965,6 +55242,6 @@ Research
 
 	type
 	editor "6741"
-	version "234"
+	version "235"
 }
 

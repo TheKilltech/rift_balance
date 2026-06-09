@@ -4890,6 +4890,22 @@ EntityBlueprint								// spark_ball_green
 	}
 }
 
+EntityBlueprint								// spark_ball_red
+{
+	name "effects/buildings_and_machines/spark_ball_red"
+
+	base_blueprints
+	{
+		 lights/point/fire_red_small
+		 effects/no_lifetime
+	}
+
+	ParticleDesc
+	{
+		name    "rift/spark_ball_red"
+	}
+}
+
 EntityBlueprint								// spark_ball_bottom_rotor
 {
 	name effects/buildings_and_machines/spark_ball_bottom_rotor

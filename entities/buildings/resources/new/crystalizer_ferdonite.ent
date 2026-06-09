@@ -221,20 +221,9 @@ EntityBlueprint  // crystalizer_ferdonite
 
 	MinimapItemDesc
 	{
-		type	"quad"
-		color 
-		{
-			x "0.5"  // r
-			y "0.5"  // g
-			z "1"    // b
-			w "1"
-		}
-		size
-		{
-			x "2"
-			y "2"
-		}
-
+		type				"image"
+		icon_material 		"gui/hud/minimap_icons/prod_ferdonite"
+		additional_z_order 	-0.1
 		visibility			"always"
 	}
 
@@ -697,7 +686,7 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_3
 		{
 		}
 	}	
-
+	
 	EffectDesc
 	{		
 		EffectBaseBlueprints
