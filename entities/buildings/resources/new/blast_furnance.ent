@@ -22,7 +22,7 @@ EntityBlueprint  // blast_furnace
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 5
+				building_time 25
 				building_cost
 				{
 					carbonium 	"750"
@@ -448,7 +448,7 @@ EntityBlueprint  // blast_furnace_lvl_2
 		description			"gui/hud/building_description/blast_furnace"
 		menu_icon			"gui/hud/building_icons/blast_furnace_lvl_2"
 		require 			"headquarters"
-		//upgrade				"buildings/resources/blast_furnace_lvl_3"
+		upgrade				"buildings/resources/blast_furnace_lvl_3"
 		type				"furnance"
 		overrides			"furnance,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -458,7 +458,7 @@ EntityBlueprint  // blast_furnace_lvl_2
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 6
+				building_time 30
 				building_cost
 				{
 					carbonium 	"250"
@@ -486,15 +486,15 @@ EntityBlueprint  // blast_furnace_lvl_2
 			
 			GameplayResource
 			{
-				resource 			"flammable_gas" //"plasma_charged"
-				value 				"100"
+				resource 			"flammable_gas"
+				value 				"50"
 				attachment			"att_in_1"
 				family				"fuel"
 			}
 			GameplayResource
 			{
 				resource 			"petroleum"
-				value 				"50"
+				value 				"25"
 				attachment			"att_in_1"
 				family				"fuel"
 			}
@@ -505,7 +505,7 @@ EntityBlueprint  // blast_furnace_lvl_2
 			GameplayResource
 			{
 				resource 			"magma_metal"
-				value 				"30"
+				value 				"25"
 				attachment			"att_out_1"
 			}
 		}
@@ -700,6 +700,215 @@ EntityBlueprint  // blast_furnace_lvl_2
 	}
 }
 
+EntityBlueprint  // blast_furnace_lvl_3
+{
+	name           "buildings/resources/blast_furnace_lvl_3"
+	base_blueprint "buildings/resources/blast_furnace_lvl_2"
+
+	BuildingDesc
+	{
+		buildable 			"0"	
+		name 				"blast_furnace_lvl_3"
+		bp   				"buildings/resources/blast_furnace_lvl_3"
+		category 			"liquids"
+		localization_id		"gui/hud/building_name/blast_furnace"
+		description			"gui/hud/building_description/blast_furnace"
+		menu_icon			"gui/hud/building_icons/blast_furnace_lvl_3"
+		require 			"headquarters"
+		type				"furnance"
+		overrides			"furnance,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 35
+				building_cost
+				{
+					titanium	"500"
+					alloys		"1000"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"200"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value			 	"3"
+			}
+			GameplayResource
+			{
+				resource 			"rhodonite"
+				value			 	"0.2"
+			}
+			
+			GameplayResource
+			{
+				resource 			"flammable_gas"
+				value 				"50"
+				attachment			"att_in_1"
+				family				"fuel"
+			}
+			GameplayResource
+			{
+				resource 			"petroleum"
+				value 				"25"
+				attachment			"att_in_1"
+				family				"fuel"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"magma_metal"
+				value 				"30"
+				attachment			"att_out_1"
+			}
+		}
+		priority 4
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource 			"magma_metal"
+				max 				"100"
+				attachment			"att_out_1"
+			}
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 		"att_out_1_pipe"
+					scale		1.5 1.0 1.0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/magma_pp"
+					bone 		"att_vismod_1"
+					scale		0.7 0.7 0.7
+					orientation	45 0 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/spitter_fire"
+					bone 		"att_vismod_2"
+					scale		1.8 1.8 1.8
+					orientation	180 90 0
+					offset		-0.4 -1.4 0
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/magma_powerplant_pool"
+					bone	"att_chimney"
+					scale	0.7 0.7 0.7
+					delay	"1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
+					bone "att_chimney"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/magma_powerplant_working"
+					delay "0.5"
+				}
+			}
+		}
+	}
+}
+
 
 EntityBlueprint  // blast_furnace_ghost
 {
@@ -773,6 +982,91 @@ EntityBlueprint  // blast_furnace_ghost
 EntityBlueprint  // blast_furnace_lvl_2_ghost
 {
 	name  "buildings/resources/blast_furnace_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh 	"meshes/buildings/defense/tower_mine_layer_lvl_2.mesh"
+		material "selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/blast_furnance"
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_s_ghost"
+					bone 		"att_out_1_pipe"
+					scale		1.5 1.0 1.0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/magma_pp_ghost"
+					bone 		"att_vismod_1"
+					scale		0.7 0.7 0.7
+					orientation	45 0 0
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/spitter_ghost"
+					bone 		"att_vismod_2"
+					scale		1.8 1.8 1.8
+					orientation	180 90 0
+					offset		-0.4 -1.4 0
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // blast_furnace_lvl_3_ghost
+{
+	name  "buildings/resources/blast_furnace_lvl_3_ghost"
 
 	MeshDesc
 	{
