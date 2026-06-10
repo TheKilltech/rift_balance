@@ -199,15 +199,15 @@ EntityBlueprint  // cryo_station
 		type	"quad"
 		color
 		{
-			x "0.5"
-			y "0.5"
-			z "1"
+			x "0.7"
+			y "0.7"
+			z "0.7"
 			w "1"
 		}
 		size
 		{
-			x "3"
-			y "3"
+			x "2"
+			y "2"
 		}
 
 		visibility			"always"
@@ -459,6 +459,26 @@ EntityBlueprint  // cryo_station_lvl_2
 		}
 	}
 
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "0.7"
+			y "0.7"
+			z "0.7"
+			w "1"
+		}
+		size
+		{
+			x "3"
+			y "3"
+		}
+
+		visibility			"always"
+		layer_group			"common_buildings"
+	}
+	
 	HealthDesc
 	{
 		max_health 					"1500"
