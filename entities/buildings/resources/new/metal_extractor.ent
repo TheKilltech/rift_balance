@@ -29,10 +29,10 @@ EntityBlueprint  // metal_extractor_lvl_1
 					carbonium 	"50"
 					ai			"1"
 				}
-			}		
+			}
 		}
 		
-		resource_requirement "carbon_vein|iron_vein|ammonium_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
+		resource_requirement "iron_vein" 
 	}
 
 	ResourceConverterDesc
@@ -42,7 +42,14 @@ EntityBlueprint  // metal_extractor_lvl_1
 			GameplayResource
 			{
 				resource 			"energy"
-				value				20
+				value				200
+			}
+
+			GameplayResource
+			{
+				resource 			"iron_vein"
+				value				"0.1"
+				family				"resource"
 			}
 
 			GameplayResource
@@ -524,7 +531,7 @@ EntityBlueprint  // metal_extractor_lvl_2
 			GameplayResource
 			{
 				resource 			"energy"
-				value				"30"
+				value				"275"
 			}
 
 			GameplayResource
@@ -942,7 +949,7 @@ EntityBlueprint  // metal_extractor_lvl_3
 			GameplayResource
 			{
 				resource 			"energy"
-				value				"30"
+				value				"350"
 			}
 
 			GameplayResource
