@@ -34,16 +34,27 @@ EntityBlueprint
 				building_time 5
 				building_cost
 				{
-					carbonium 	"2"
+					carbonium 	"5"
+					steel		"10"
 				}
 			}
 		}
 	}
 
+	ResistanceComponent
+	{
+		physical		"1.0"
+		fire			"1.0"
+		acid			"1.0"
+		energy			"1.0"
+		cryo			"1.0"
+		area			"0.8"
+	}
+	
 	HealthDesc
 	{
-		max_health 					"50"
-		health 						"50"
+		max_health 					"200"
+		health 						"200"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1

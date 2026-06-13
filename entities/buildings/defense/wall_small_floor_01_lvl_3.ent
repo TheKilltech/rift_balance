@@ -1,8 +1,7 @@
-EntityBlueprint
+EntityBlueprint  // wall_small_floor_01_lvl_3
 {
-	name  "buildings/defense/wall_small_floor_01_lvl_3"
-
-	base_blueprint 			buildings/defense/wall_small_floor_01_lvl_2
+	name			"buildings/defense/wall_small_floor_01_lvl_3"
+	base_blueprint 	"buildings/defense/wall_small_floor_01_lvl_2"
 
 	MeshDesc
 	{
@@ -21,8 +20,6 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/wall_small_floor_01_lvl3"
 		type				"wall"
 		require 			"headquarters"
-		order				"2"
-		//upgrade				"buildings/defense/wall_small_floor_01_lvl_4"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		overrides				"wall_small_floor,wall_small_floor_lvl_2"
 
@@ -34,16 +31,27 @@ EntityBlueprint
 				building_time 5
 				building_cost
 				{
-					carbonium 	"4"
+					carbonium 	"10"
+					alloys		"5"
 				}
 			}
 		}
 	}
 
+	ResistanceComponent
+	{
+		physical		"0.8"
+		fire			"1.0"
+		acid			"1.0"
+		energy			"0.8"
+		cryo			"1.0"
+		area			"0.6"
+	}
+	
 	HealthDesc
 	{
-		max_health 					"100"
-		health 						"100"
+		max_health 					"500"
+		health 						"500"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
