@@ -14,7 +14,7 @@ EntityBlueprint  // carbonium_factory_lvl_2
 		menu_icon			"gui/hud/building_icons/carbonium_factory_lvl2"
 		order				"1"
 		upgrade				"buildings/resources/carbonium_factory_lvl_3"
-		//require 			"headquarters"  // removed to save screen space
+		require 			"ore_mill"
 		type				"solids_mine"
 		overrides			"solids_mine"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
