@@ -1,0 +1,73 @@
+EntityBlueprint
+{
+	name  "buildings/defense/wall_small_floor_01_lvl_3"
+
+	base_blueprint 			buildings/defense/wall_small_floor_01_lvl_2
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/wall_small_floor_01.mesh"
+		material "buildings/defense/wall_small_floor_01_lvl_3"
+	}
+
+	BuildingDesc
+	{
+		buildable			"0"
+		name 				"wall_small_floor_lvl_3"
+		bp   				"buildings/defense/wall_small_floor_01_lvl_3"
+		category 			"defense"
+		localization_id		"gui/hud/building_name/wall_small_floor"
+		description			"gui/hud/building_description/wall_small_floor"
+		menu_icon			"gui/hud/building_icons/wall_small_floor_01_lvl3"
+		type				"wall"
+		require 			"headquarters"
+		order				"2"
+		//upgrade				"buildings/defense/wall_small_floor_01_lvl_4"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		overrides				"wall_small_floor,wall_small_floor_lvl_2"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 5
+				building_cost
+				{
+					carbonium 	"4"
+				}
+			}
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"100"
+		health 						"100"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+}
