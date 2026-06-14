@@ -94,44 +94,44 @@ EntityBlueprint  // rare_element_mine_lvl_2
 			GameplayResource
 			{
 				resource 			"carbon_deepvein"
-				value				2.0
+				value				2.5
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"iron_deepvein"
-				value				2.0
+				value				2.5
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium_deepvein"
-				value				2.0
+				value				2.5
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"uranium_ore_deepvein"
-				value				2.0
+				value				2.5
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"titanium_deepvein"
-				value				2.0
+				value				2.5
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium_deepvein"
-				value				2.0
+				value				2.5
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"cobalt_deepvein"
-				value				2.0
+				value				2.5
 				family				"resource"
 			}
 		}
@@ -196,11 +196,9 @@ EntityBlueprint  // rare_element_mine_lvl_2
 			cone_effect					string:"build_cone_3x3"
 			cone_effect_sell			string:"sell_big"
 			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
-			buff_required_bp			string:"buildings/resources/ore_mill_missing_icon"
-			buff_required_name			string:"ore_mill"
-			buff_required_level			int:"0"
 			buff_localization			string:"buff_name/buff_ore_mill"
 			buff_icon					string:"gui/hud/building_icons/ore_mill"
+			buff_participation			float:"0.75"
 			display_radius_group		string:"ore_mill"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
@@ -310,6 +308,7 @@ EntityBlueprint  // rare_element_mine_lvl_2
 		{
 			"buildings/effects_medium_base"
 		}
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"

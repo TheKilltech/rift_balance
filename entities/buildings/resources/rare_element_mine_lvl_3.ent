@@ -11,7 +11,7 @@ EntityBlueprint  // rare_element_mine_lvl_3
 		localization_id		"gui/hud/building_name/mining_drill"
 		description			"gui/hud/building_description/mining_drill_lvl_3"
 		menu_icon			"gui/hud/building_icons/rare_element_mine_lvl3"
-		//require 			"headquarters"
+		require 			"ore_mill"
 		buildable			"0"
 		building_group		"carbonium_factory"
 		type				"solids_mine"
@@ -179,6 +179,7 @@ EntityBlueprint  // rare_element_mine_lvl_3
 			buff_required_level			int:"0"
 			buff_localization			string:"buff_name/buff_ore_mill"
 			buff_icon					string:"gui/hud/building_icons/ore_mill"
+			buff_participation			float:"1.0"
 			display_radius_group		string:"ore_mill"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}

@@ -39,6 +39,8 @@ function building_buffable:InitVariables()
 	self.buffRequiredName  = data:GetStringOrDefault("buff_required_name", "")
 	self.buffRequiredLevel = data:GetIntOrDefault("buff_required_level", -1)
 	self.buffReqIconBp     = data:GetStringOrDefault("buff_required_bp", "effects/missing_buff_icon")
+	self.buffParticipation = data:GetFloatOrDefault("buff_participation", 1.0)
+	
 	self.buffBlueprints    = Split( data:GetStringOrDefault("buff_buildings",  "none"), "," )
 	
 	self:Log( 3, "InitVariables: req name: ".. tostring(self.buffRequiredName) .. " req level: ".. tostring(self.buffRequiredLevel) .. " req icon: ".. tostring(self.buffReqIconBp) .. " #buff-buildings: ".. tostring(self.buffBlueprints))
@@ -200,11 +202,15 @@ function building_buffable:UpdateBuffState( source )
 		end
 		BuildingService:EnableBuilding( self.entity )
 		self:Log( 2, "new buff source ".. source.bp .. " " ..tostring(source.entity) .. ", level ".. tostring(source.level))
+		
+		self.buffParticipation = (self.buffParticipation or 1)
 		if source.modificator then
-			BuildingService:SetResourceConverterEfficientyModificator( self.entity, source.modificator , "buff" )
+			local mod = 1 + self.buffParticipation * (source.modificator - 1)
+			BuildingService:SetResourceConverterEfficientyModificator( self.entity, mod , "buff" )
 		end
 		if source.modUpkeep then
-			BuildingService:AddConverterCostModifier( self.entity, source.modUpkeep , "buff" )
+			local mod = 1 + self.buffParticipation * (source.modificator - 1)
+			BuildingService:AddConverterCostModifier( self.entity, mod , "buff" )
 		end
 		
 	end
@@ -213,7 +219,9 @@ end
 function building_buffable:UpdateBuildingInfo( source )
 	local valDefault = ""
 	if source ~= nil then
-		valDefault = string.format("%+.0f", ((source.modificator or source.modUpkeep)-1)*100) .. "%"
+		local mod = (source.modificator or source.modUpkeep)
+		mod = 1 + (self.buffParticipation or 1) * (mod - 1)
+		valDefault = string.format("%+.0f", (mod-1)*100) .. "%"
 		if source.modificator then
 			valDefault = "Yield ".. valDefault
 		else valDefault = "Cost ".. valDefault
@@ -228,11 +236,26 @@ function building_buffable:UpdateBuildingInfo( source )
 	local buffShowIcon = self.data:GetStringOrDefault("buff_icon", "gui/hud/buttons/action_menu_upgrade_neutral")
 
 	local rowName = "row" .. tostring(1)
+	local rowsAll = rowName
 	self.data:SetString("local_group.rows." .. rowName .. ".name",  buffShowName )
 	self.data:SetString("local_group.rows." .. rowName .. ".icon",  buffShowIcon )
 	self.data:SetString("local_group.rows." .. rowName .. ".value", buffShowVal)
+	
+	if self.buffParticipation or 1 ~= 1 then
+		local buffShowBuffPart = "gui/hud/buff_participation"
+		buffShowVal = string.format("%.0f", self.buffParticipation*100) .. "%"
+	
+		rowName = "row" .. tostring(2)
+		self.data:SetString("local_group.rows." .. rowName .. ".name",  buffShowBuffPart )
+		self.data:SetString("local_group.rows." .. rowName .. ".icon",  buffShowIcon )
+		self.data:SetString("local_group.rows." .. rowName .. ".value", buffShowVal)
+		self.data:SetString("stat_categories", "local_group")
+		self.data:SetString("local_group.rows", rowName )
+		rowsAll = rowsAll .. "," .. rowName
+	end
+	
 	self.data:SetString("stat_categories", "local_group")
-	self.data:SetString("local_group.rows", rowName )
+	self.data:SetString("local_group.rows", rowsAll )
 end
 
 return building_buffable

@@ -22,14 +22,26 @@ EntityBlueprint  // carbonium_factory_lvl_3
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 10
+				building_time 25
 				building_cost
 				{
 					carbonium 	"300"
 					steel 		"400"
 					cobalt		"150"
 				}
-			}		
+			}
+			
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 10
+				building_cost
+				{
+					carbonium 	"200"
+					steel 		"250"
+					cobalt		"25"
+				}
+			}
 		}
 		resource_requirement "carbon_vein|iron_vein|ammonium_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
 	}
@@ -47,44 +59,44 @@ EntityBlueprint  // carbonium_factory_lvl_3
 			GameplayResource
 			{
 				resource 			"carbon_vein"
-				value				1.5
+				value				4.5
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"iron_vein"
-				value				1.5
+				value				4.5
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium_vein"
-				value				1.5
+				value				4.5
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"cobalt_vein"
-				value				1.5
+				value				4.5
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium_vein"
-				value				1.5
+				value				4.5
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"titanium_vein"
-				value				1.5
+				value				4.5
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"uranium_ore_vein"
-				value				1.5
+				value				4.5
 				family				"resource"
 			}		
 		}
@@ -94,44 +106,44 @@ EntityBlueprint  // carbonium_factory_lvl_3
 			GameplayResource
 			{
 				resource 			"carbonium"
-				value				1.5
+				value				3.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"steel"
-				value				1.5
+				value				3.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium"
-				value				1.5
+				value				3.0
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"cobalt"
-				value				1.5
+				value				3.0
 				family				"resource"
 			}		
 			GameplayResource
 			{
 				resource 			"palladium"
-				value				1.5
+				value				3.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"titanium"
-				value				1.5
+				value				3.0
 				family				"resource"
 			}	
 			GameplayResource
 			{
 				resource 			"uranium_ore"
-				value				1.5
+				value				3.0
 				family				"resource"
 			}
 		}
@@ -153,6 +165,7 @@ EntityBlueprint  // carbonium_factory_lvl_3
 			buff_required_level			int:"0"
 			buff_localization			string:"buff_name/buff_ore_mill"
 			buff_icon					string:"gui/hud/building_icons/ore_mill"
+			buff_participation			float:"1.0"
 			display_radius_group		string:"ore_mill"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
