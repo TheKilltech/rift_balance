@@ -7,13 +7,29 @@ function carbonium_factory:__init()
 end
 
 
+function carbonium_factory:Log( logLevel, message )
+	local curLevel = 0 -- enable logging here ( 0 - errors, 2 - main entry points, 3 - details, 5 - loops )
+	if logLevel <= curLevel then
+		local context = self.buildingName .. " " .. tostring(self.entity)..": "
+		LogService:Log( context .. tostring(message) )
+	end
+end
+
+
+function carbonium_factory:InitVariables()
+	self:Log( 2, "InitVariables")
+	building_buffable.InitVariables(self)
+	self.displayResource = self.data:GetStringOrDefault("miner_resource", "")
+end
+
 function carbonium_factory:OnAnimationMarker( markerName )
-	--LogService:Log( "carbonium_factory: OnAnimationMarker ".. tostring(self.minedResource))
+	building_buffable.OnAnimationMarker(self)
+	self:Log( 2, "OnAnimationMarker ".. tostring(self.minedResource))
 	if ( self.minedResource == nil ) then self:UpdateResource() end
 	if ( markerName == "grab_rocks" ) then
 		if ( self.resourceBp == nil ) then return end
 		self.rock = EntityService:SpawnAndAttachEntity(self.resourceBp, self.entity,  "att_grab_rocks", "" )
-		EntityService:SetScale( self.rock, 1.3, 1.3, 1.3 )		
+		EntityService:SetScale( self.rock, 1.3, 1.3, 1.3 )
 		EntityService:FadeEntity( self.rock, DD_FADE_IN, 1 )
 	elseif (  markerName =="drop_rocks" and self.rock ~= nil )then
 		if ( self.rock == nil ) then return end
@@ -22,18 +38,22 @@ function carbonium_factory:OnAnimationMarker( markerName )
 	elseif (markerName == "hammer" and self.rock ~= nil ) then
 		if ( self.rock == nil ) then return end
 		EntityService:DissolveEntity( self.rock, 3.5 )
-		self.rock = nil;	
+		self.rock = nil
 	end 
 end
 
-function carbonium_factory:UpdateResource() 
-	--LogService:Log( "carbonium_factory: UpdateResource")
-	local converter = EntityService:GetComponent( self.entity, "ResourceConverterComponent")
-	if ( converter ~= nil ) then
-		local converterHelper = reflection_helper(converter)
-		self.minedResource = converterHelper.last_ore_produced
-		if ( self.minedResource == "") then self.minedResource = nil end
-		--self.minedResource = converter:GetField("last_ore_produced"):GetValue()
+function carbonium_factory:UpdateResource()
+	self:Log( 2, "UpdateResource")
+	if (self.displayResource ~= "") then
+		self.minedResource = self.displayResource
+	else
+		local converter = EntityService:GetComponent( self.entity, "ResourceConverterComponent")
+		if ( converter ~= nil ) then
+			local converterHelper = reflection_helper(converter)
+			self.minedResource = converterHelper.last_ore_produced
+			if ( self.minedResource == "") then self.minedResource = nil end
+			--self.minedResource = converter:GetField("last_ore_produced"):GetValue()
+		end
 	end
 	
 	local shardBps = {}
@@ -50,10 +70,12 @@ function carbonium_factory:UpdateResource()
 		self.resourceBp = shardBps.carbonium
 	end
 
-	--LogService:Log( "carbonium_factory: UpdateResource: ".. tostring(self.minedResource) .. ", ".. tostring(self.resourceBp) .. ", ".. tostring(arg2))
+	self:Log( 3,  "UpdateResource: ".. tostring(self.minedResource) .. ", ".. tostring(self.resourceBp))
 end
 
 function carbonium_factory:OnDestroy()
+	self:Log( 2, "OnDestroy")
+	building_buffable.OnDestroy(self)
 	if ( self.rock ~= nil ) then
 		if ( EntityService:IsAlive( self.rock ) ) then
 			EntityService:DissolveEntity( self.rock, 3.5 )

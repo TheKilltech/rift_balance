@@ -241,7 +241,7 @@ function building_buffable:UpdateBuildingInfo( source )
 	self.data:SetString("local_group.rows." .. rowName .. ".icon",  buffShowIcon )
 	self.data:SetString("local_group.rows." .. rowName .. ".value", buffShowVal)
 	
-	if self.buffParticipation or 1 ~= 1 then
+	if (self.buffParticipation or 1.0) ~= 1.0 then
 		local buffShowBuffPart = "gui/hud/buff_participation"
 		buffShowVal = string.format("%.0f", self.buffParticipation*100) .. "%"
 	
