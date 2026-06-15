@@ -531,8 +531,8 @@ MissionDef
         {
             resource        "carbon_vein"
 
-            min_resources   "5000"
-            max_resources   "18000"
+            min_resources   "19000"
+            max_resources   "28000"
 
             min_spawned_volumes "8"
             max_spawned_volumes "12"
@@ -543,30 +543,18 @@ MissionDef
             resource        "carbon_deepvein"
 			required_discovery_lvl	"1"
 			
-            min_resources   "20000"
-            max_resources   "50000"
-
-            min_spawned_volumes "2"
-            max_spawned_volumes "3"
-        }
-		
-        ResourceVolume
-        {
-            resource        "carbon_deepvein"
-			required_discovery_lvl	"1"
-			
             is_infinite      "1"
 
-            min_spawned_volumes "2"
-            max_spawned_volumes "2"
+            min_spawned_volumes "4"
+            max_spawned_volumes "5"
         }
 
         ResourceVolume
         {
             resource        "iron_vein"
 
-            min_resources   "6500"
-            max_resources   "10000"
+            min_resources   "16500"
+            max_resources   "20000"
 
             min_spawned_volumes "10"
             max_spawned_volumes "18"
@@ -577,22 +565,10 @@ MissionDef
             resource        "iron_deepvein"
 			required_discovery_lvl	"1"
 			
-            min_resources   "25000"
-            max_resources   "62000"
-
-            min_spawned_volumes "5"
-            max_spawned_volumes "7"
-        }
-		
-        ResourceVolume
-        {
-            resource        "iron_deepvein"
-			required_discovery_lvl	"1"
-			
             is_infinite      "1"
 
-            min_spawned_volumes "3"
-            max_spawned_volumes "4"
+            min_spawned_volumes "8"
+            max_spawned_volumes "11"
         }
 		
         ResourceVolume
@@ -610,23 +586,11 @@ MissionDef
         {
             resource        "ammonium_deepvein"
 			required_discovery_lvl	"1"
-			
-            min_resources   "30000"
-            max_resources   "50000"
-
-            min_spawned_volumes "2"
-            max_spawned_volumes "3"
-        }
-		
-        ResourceVolume
-        {
-            resource        "ammonium_deepvein"
-			required_discovery_lvl	"1"
 
             is_infinite     "1"
 
-            min_spawned_volumes "1"
-            max_spawned_volumes "2"
+            min_spawned_volumes "3"
+            max_spawned_volumes "5"
         }
 		
         ResourceVolume
@@ -786,7 +750,7 @@ MissionDef
 		ResourceVolume
         {
             resource        "morphium_vein"
-            is_infinite      "1"               
+            is_infinite      "1"
         }		
     }
 
@@ -826,6 +790,17 @@ MissionDef
 
             min_spawned_volumes "2"
             max_spawned_volumes "2"
+        }
+		
+        ResourceVolume
+        {
+            resource        "iron_deepvein"
+			required_discovery_lvl	"1"
+			
+            is_infinite      "1"
+
+            min_spawned_volumes "1"
+            max_spawned_volumes "1"
         }
 
         ResourceVolume
