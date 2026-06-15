@@ -1,8 +1,7 @@
-EntityBlueprint
+EntityBlueprint  // wall_small_straight_01_lvl_3
 {
-	name  "buildings/defense/wall_small_straight_01_lvl_3"
-
-	base_blueprint 			buildings/defense/wall_small_straight_01_lvl_2
+	name			"buildings/defense/wall_small_straight_01_lvl_3"
+	base_blueprint	"buildings/defense/wall_small_straight_01_lvl_2"
 
 	BuildingDesc
 	{
@@ -32,7 +31,18 @@ EntityBlueprint
 					carbonium	"20"
 					steel		"80"
 				}
-			}		
+			}
+			
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 15
+				building_cost
+				{
+					carbonium 	"5"
+					steel		"15"
+				}
+			}
 		}	
 
 		connect

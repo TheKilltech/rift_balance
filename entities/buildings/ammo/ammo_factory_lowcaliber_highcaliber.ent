@@ -458,7 +458,18 @@ EntityBlueprint  // ammo_factory_lowcaliber_highcaliber_lvl_2
 					steel 		"1250"
 					ai			"1"
 				}
-			}		
+			}
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 35
+				building_cost
+				{
+					carbonium 	"200"
+					steel 		"450"
+					ai			"1"
+				}
+			}
 		}
 	}
 
@@ -480,7 +491,7 @@ EntityBlueprint  // ammo_factory_lowcaliber_highcaliber_lvl_2
 			GameplayResource
 			{
 				resource 			"nitric_acid"
-				value 				"30"
+				value 				"20"
 				attachment			"att_in_2"
 				family				"nitrogen"
 			}
