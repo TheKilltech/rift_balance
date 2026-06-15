@@ -29,7 +29,15 @@ EntityBlueprint  // crystalizer_hazenite
 					cobalt		"250"
 					ai			"3"
 				}
-			}		
+			}
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 40
+				building_cost
+				{
+				}
+			}
 		}
 		resource_requirement "iron_vein" 
 	}
@@ -314,7 +322,7 @@ EntityBlueprint  // crystalizer_hazenite
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
@@ -323,7 +331,7 @@ EntityBlueprint  // crystalizer_hazenite
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -394,7 +402,7 @@ EntityBlueprint  // crystalizer_hazenite
 					scale "0.9 0.9 0.9"
 				}
 			}
-		}		
+		}
 	}
 }
 
@@ -491,7 +499,7 @@ EntityBlueprint  // crystalizer_hazenite_lvl_2
 	}	
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
@@ -500,7 +508,7 @@ EntityBlueprint  // crystalizer_hazenite_lvl_2
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -515,7 +523,7 @@ EntityBlueprint  // crystalizer_hazenite_lvl_2
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -820,6 +828,537 @@ EntityBlueprint  // crystalizer_hazenite_lvl_3
 	}
 }
 
+EntityBlueprint  // crystalizer_hazenite_survival_lvl_1
+{
+	name			"buildings/resources/crystalizer_hazenite_survival_lvl_1"
+	base_blueprint	"buildings/resources/crystalizer_hazenite"
+
+	BuildingDesc
+	{
+		name 				"crystalizer_hazenite_survival_lvl_1"
+		bp   				"buildings/resources/crystalizer_hazenite_survival_lvl_1"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/crystalizer_hazenite"
+		description			"gui/hud/building_description/crystalizer_hazenite_lvl_2"
+		menu_icon			"gui/hud/building_icons/crystalizer_hazenite"
+		upgrade				"buildings/resources/crystalizer_hazenite_survival_lvl_2"
+		require 			"headquarters"
+		building_group		"crystalizer_hazenite"
+		buildable			"0"
+		type				"hazenite_fac"
+		overrides			"hazenite_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 30
+				building_cost
+				{
+					carbonium 	"500"
+				}
+			}
+		}
+		resource_requirement "iron_vein" 
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"150"
+			}
+			GameplayResource
+			{
+				resource 	"iron_vein"
+				value 		"0"
+			}
+			GameplayResource
+			{
+				resource 	"steel"
+				value 		"2"
+			}
+			GameplayResource
+			{
+				resource 	"ammonium"
+				value 		"1"
+			}
+		}
+		
+		out
+		{	
+			GameplayResource
+			{
+				resource 	"hazenite"
+				value 		"1"
+			}
+		}
+		priority 4
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/ionized_sphere"
+					bone "att_vismod_top"
+				}
+				Effect
+				{
+					blueprint "lights/point/yellow_small"
+					bone "att_vismod_top"
+					random_delay "2"
+				}
+			}
+		}		
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_03"
+					bone "att_vismod_1"
+					scale "0.7 0.8 0.7"
+					orientation 0 -90 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_03"
+					bone "att_vismod_3"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_white_03"
+					bone "att_vismod_4"
+					scale 0.8 0.8 0.8
+					orientation 0 -90 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_03"
+					bone "att_vismod_5"
+					scale "0.9 0.9 0.9"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // crystalizer_hazenite_survival_lvl_2
+{
+	name			"buildings/resources/crystalizer_hazenite_survival_lvl_2"
+	base_blueprint	"buildings/resources/crystalizer_hazenite_survival_lvl_1"
+
+	BuildingDesc
+	{
+		name 				"crystalizer_hazenite_survival_lvl_2"
+		bp   				"buildings/resources/crystalizer_hazenite_survival_lvl_2"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/crystalizer_hazenite"
+		description			"gui/hud/building_description/crystalizer_hazenite_lvl_2"
+		menu_icon			"gui/hud/building_icons/crystalizer_hazenite_lvl_2"
+		upgrade				"buildings/resources/crystalizer_hazenite_survival_lvl_3"
+		require 			"headquarters"
+		building_group		"crystalizer_hazenite"
+		buildable			"0"
+		type				"hazenite_fac"
+		overrides			"hazenite_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 50
+				building_cost
+				{
+					carbonium 	"1000"
+					cobalt		"250"
+				}
+			}		
+		}
+		resource_requirement "iron_vein" 
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"250"
+			}
+			GameplayResource
+			{
+				resource 	"iron_vein"
+				value 		"0"
+			}
+			GameplayResource
+			{
+				resource 	"fluorine"
+				value 		"20"
+				attachment	"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 	"steel"
+				value 		"1.5"
+			}
+			GameplayResource
+			{
+				resource 	"ammonium"
+				value 		"1"
+			}
+		}
+		
+		out
+		{	
+			GameplayResource
+			{
+				resource 	"hazenite"
+				value 		"2"
+			}
+		}
+		priority 4
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}	
+		////////////////////////Resources/////////////////////////	
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/ionized_sphere"
+					bone "att_vismod_top"
+				}
+				Effect
+				{
+					blueprint "lights/point/yellow_small"
+					bone "att_vismod_top"
+					random_delay "2"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_03"
+					bone "att_vismod_1"
+					scale "0.7 0.8 0.7"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_03"
+					bone "att_vismod_3"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_white_03"
+					bone "att_vismod_4"
+					scale "0.8 0.8 0.8"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/bins"
+					bone "att_vismod_5"
+					orientation 0 0 0
+					scale 1.5 1.0 1.5
+				}
+			}
+		}		
+	}
+}
+
+EntityBlueprint  // crystalizer_hazenite_survival_lvl_3
+{
+	name			"buildings/resources/crystalizer_hazenite_survival_lvl_3"
+	base_blueprint	"buildings/resources/crystalizer_hazenite_survival_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"crystalizer_hazenite_survival_lvl_3"
+		bp   				"buildings/resources/crystalizer_hazenite_survival_lvl_3"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/crystalizer_hazenite"
+		description			"gui/hud/building_description/crystalizer_hazenite_lvl_3"
+		menu_icon			"gui/hud/building_icons/crystalizer_hazenite_lvl_3"
+		require 			"headquarters"
+		building_group		"crystalizer_hazenite"
+		buildable			"0"
+		type				"hazenite_fac"
+		overrides			"hazenite_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 60
+				building_cost
+				{
+					carbonium 	"2000"
+					alloys		"500"
+				}
+			}		
+		}
+		resource_requirement "iron_vein" 
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 	"energy"
+				value 		"1500"
+			}
+			GameplayResource
+			{
+				resource 	"iron_vein"
+				value 		"0"
+			}
+			GameplayResource
+			{
+				resource 	"fluorine"
+				value 		"30"
+				attachment	"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 	"reagent"
+				value 		"60"
+				attachment	"att_in_2"
+			}
+			GameplayResource
+			{
+				resource 	"steel"
+				value 		"1.5"
+			}
+			GameplayResource
+			{
+				resource 	"ammonium"
+				value 		"1"
+			}
+		}
+		
+		out
+		{	
+			GameplayResource
+			{
+				resource 	"hazenite"
+				value 		"3"
+			}
+		}
+		priority 4
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		////////////////////////Resources/////////////////////////	
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"	
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/ionized_sphere"
+					bone "att_vismod_top"
+				}
+				Effect
+				{
+					blueprint "lights/point/yellow_small"
+					bone "att_vismod_top"
+					random_delay "2"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_orange_03"
+					bone "att_vismod_1"
+					scale "0.7 0.8 0.7"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/rocket_launcher"
+					bone "att_vismod_2"
+					orientation 0 0 0
+					scale 1.6 2.0 2.0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_white_03"
+					bone "att_vismod_4"
+					scale "0.8 0.8 0.8"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/bins"
+					bone "att_vismod_5"
+					orientation 0 0 0
+					scale 1.5 1.0 1.5
+				}
+			}
+		}
+	}
+}
+
 
 EntityBlueprint  // crystalizer_hazenite_ghost
 {
@@ -997,6 +1536,246 @@ EntityBlueprint  // crystalizer_hazenite_lvl_2_ghost
 EntityBlueprint  // crystalizer_hazenite_lvl_3_ghost
 {
 	name  "buildings/resources/crystalizer_hazenite_lvl_3_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/crystal_structure_small_01.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/decorations/scifi_structure_very_small_02"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.8 0.7"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/weapon_items/rocket_launcher_ghost"
+					bone "att_vismod_2"
+					orientation 0 0 0
+					scale 1.6 2.0 2.0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_4"
+					scale "0.8 0.8 0.8"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/bins_ghost"
+					bone "att_vismod_5"
+					orientation 0 0 0
+					scale 1.5 1.0 1.5
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // crystalizer_hazenite_survival_lvl_1_ghost
+{
+	name  "buildings/resources/crystalizer_hazenite_survival_lvl_1_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/crystal_structure_small_01.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/decorations/scifi_structure_very_small_02"
+	}
+
+	EffectDesc
+	{
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.8 0.7"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_3"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_4"
+					scale "0.8 0.8 0.8"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_03_ghost"
+					bone "att_vismod_5"
+					scale "0.9 0.9 0.9"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // crystalizer_hazenite_survival_lvl_2_ghost
+{
+	name  "buildings/resources/crystalizer_hazenite_survival_lvl_2_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/decorations/crystal_structure_small_01.mesh"
+		material 	"selector/hologram_blue"
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/decorations/scifi_structure_very_small_02"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_1"
+					scale "0.7 0.8 0.7"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_medium_03_ghost"
+					bone "att_vismod_3"
+					scale "0.7 0.7 0.7"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_small_03_ghost"
+					bone "att_vismod_4"
+					scale "0.8 0.8 0.8"
+					orientation "0 -90 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/bins_ghost"
+					bone "att_vismod_5"
+					orientation 0 0 0
+					scale 1.5 1.0 1.5
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // crystalizer_hazenite_survival_lvl_3_ghost
+{
+	name  "buildings/resources/crystalizer_hazenite_survival_lvl_3_ghost"
 
 	MeshDesc
 	{

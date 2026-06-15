@@ -23,13 +23,13 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/solid_materials_storage_lvl1"
+							research_name "gui/menu/research/name/solid_materials_storage_lvl2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
 
-					research_name "gui/menu/research/name/solid_materials_storage_lvl2"
+					research_name "gui/menu/research/name/solid_materials_storage_lvl3"
 					research_costs
 					{
 						ResearchCost
@@ -3442,6 +3442,12 @@ Research
 
 						ResearchAward
 						{
+							blueprint "buildings/resources/water_drill"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/resources/water_filtering_plant_lvl_2"
 							is_visible "1"
 						}
@@ -6424,7 +6430,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "1"
-							research_name "gui/menu/research/name/solid_materials_storage_lvl2"
+							research_name "gui/menu/research/name/solid_materials_storage_lvl3"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -7721,43 +7727,19 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv"
+							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_survival_lvl_1"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_lvl_2"
+							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_survival_lvl_2"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_molt"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_molt_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_molt_uranium"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_uranium"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_uranium_molt"
+							blueprint "buildings/ammo/ammo_factory_lowcaliber_adv_survival_lvl_3"
 							is_visible "1"
 						}
 
@@ -9371,7 +9353,7 @@ Research
 						{
 							amount "0"
 							resource "download"
-							count "150"
+							count "75"
 						}
 
 					}
@@ -9963,7 +9945,7 @@ Research
 
 					}
 
-					research_name "gui/menu/research/name/solid_materials_storage_lvl1"
+					research_name "gui/menu/research/name/solid_materials_storage_lvl2"
 					research_costs
 					{
 						ResearchCost
@@ -11804,13 +11786,6 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
-						ResearchNodeRequirement
-						{
-							render_line "0"
-							research_name "gui/menu/research/name/ammo_explosive_lvl3"
-							research_category "gui/menu/research/category_base_buildings"
-						}
-
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_explosive_extreme"
@@ -11875,6 +11850,13 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/armory_lvl4"
 							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_explosive_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -12567,7 +12549,7 @@ Research
 						ResearchNodeRequirement
 						{
 							render_line "0"
-							research_name "gui/menu/research/name/ammo_high_caliber_lvl3"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl2"
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
@@ -13810,6 +13792,13 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_energy_cell_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_energy_superior"
@@ -14424,13 +14413,6 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/armory_lvl3"
 							research_category "gui/menu/research/category_weapons_equipment"
-						}
-
-						ResearchNodeRequirement
-						{
-							render_line "0"
-							research_name "gui/menu/research/name/ammo_high_caliber_lvl2"
-							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -15533,6 +15515,13 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_energy_cell_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_heavy_plasma_advanced"
@@ -15585,6 +15574,13 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/mech_weapons_heavy_plasma_advanced"
 							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_energy_cell_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -17414,6 +17410,13 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_liquid_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_lava_gun_advanced"
@@ -17466,6 +17469,13 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/mech_weapons_liquid_superior"
 							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_liquid_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -17623,6 +17633,13 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_bouncing_blades_advanced"
@@ -17675,6 +17692,13 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/mech_weapons_high_caliber_superior"
 							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -17832,6 +17856,13 @@ Research
 							research_category "gui/menu/research/category_weapons_equipment"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/mech_weapons_semi_auto_advanced"
@@ -17884,6 +17915,13 @@ Research
 							render_line "1"
 							research_name "gui/menu/research/name/mech_weapons_high_caliber_superior"
 							research_category "gui/menu/research/category_weapons_equipment"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "0"
+							research_name "gui/menu/research/name/ammo_high_caliber_lvl3"
+							research_category "gui/menu/research/category_base_buildings"
 						}
 
 					}
@@ -27929,7 +27967,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -27948,7 +27986,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "100"
 						}
 
@@ -27988,7 +28026,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28014,7 +28052,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "500"
 						}
 
@@ -28048,7 +28086,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28067,7 +28105,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "400"
 						}
 
@@ -28125,7 +28163,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28151,7 +28189,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "1200"
 						}
 
@@ -28209,7 +28247,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28235,7 +28273,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "200"
 						}
 
@@ -28252,7 +28290,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/crystalizer_tanzanite"
+							blueprint "buildings/resources/crystalizer_tanzanite_survival_lvl_1"
 							is_visible "1"
 						}
 
@@ -28263,7 +28301,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28289,7 +28327,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "350"
 						}
 
@@ -28306,13 +28344,13 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/crystalizer_tanzanite_lvl_2"
+							blueprint "buildings/resources/crystalizer_tanzanite_survival_lvl_2"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "research/upgrade_generic_plasma_upkeep"
+							blueprint "research/upgrade_new_piping_req"
 							is_visible "1"
 						}
 
@@ -28323,7 +28361,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28342,7 +28380,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "500"
 						}
 
@@ -28359,7 +28397,13 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/crystalizer_tanzanite_lvl_3"
+							blueprint "buildings/resources/crystalizer_tanzanite_survival_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/upgrade_new_piping_req"
 							is_visible "1"
 						}
 
@@ -28370,7 +28414,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28403,7 +28447,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "200"
 						}
 
@@ -28420,7 +28464,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/crystalizer_ferdonite"
+							blueprint "buildings/resources/crystalizer_ferdonite_survival_lvl_1"
 							is_visible "1"
 						}
 
@@ -28431,7 +28475,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28457,7 +28501,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "350"
 						}
 
@@ -28474,13 +28518,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/crystalizer_ferdonite_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "research/upgrade_coolant_upkeep_advanced"
+							blueprint "buildings/resources/crystalizer_ferdonite_survival_lvl_2"
 							is_visible "1"
 						}
 
@@ -28491,7 +28529,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28517,7 +28555,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "500"
 						}
 
@@ -28534,7 +28572,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/crystalizer_ferdonite_lvl_3"
+							blueprint "buildings/resources/crystalizer_ferdonite_survival_lvl_3"
 							is_visible "1"
 						}
 
@@ -28545,7 +28583,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28571,7 +28609,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "200"
 						}
 
@@ -28588,7 +28626,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/crystalizer_rhodonite"
+							blueprint "buildings/resources/crystalizer_rhodonite_survival_lvl_1"
 							is_visible "1"
 						}
 
@@ -28599,7 +28637,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28625,7 +28663,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "350"
 						}
 
@@ -28642,13 +28680,13 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/crystalizer_rhodonite_lvl_2"
+							blueprint "buildings/resources/crystalizer_rhodonite_survival_lvl_2"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "research/upgrade_nitric_acid_upkeep"
+							blueprint "research/upgrade_new_piping_req"
 							is_visible "1"
 						}
 
@@ -28659,7 +28697,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28685,7 +28723,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "500"
 						}
 
@@ -28702,7 +28740,13 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/crystalizer_rhodonite_lvl_3"
+							blueprint "buildings/resources/crystalizer_rhodonite_survival_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/upgrade_new_piping_req"
 							is_visible "1"
 						}
 
@@ -28713,7 +28757,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28739,7 +28783,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "200"
 						}
 
@@ -28756,7 +28800,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/crystalizer_hazenite"
+							blueprint "buildings/resources/crystalizer_hazenite_survival_lvl_1"
 							is_visible "1"
 						}
 
@@ -28767,7 +28811,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28793,7 +28837,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "350"
 						}
 
@@ -28810,7 +28854,7 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/crystalizer_hazenite_lvl_2"
+							blueprint "buildings/resources/crystalizer_hazenite_survival_lvl_2"
 							is_visible "1"
 						}
 
@@ -28827,7 +28871,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28853,7 +28897,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "500"
 						}
 
@@ -28870,7 +28914,13 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/crystalizer_hazenite_lvl_3"
+							blueprint "buildings/resources/crystalizer_hazenite_survival_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/upgrade_new_piping_req"
 							is_visible "1"
 						}
 
@@ -28881,7 +28931,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28900,7 +28950,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "750"
 						}
 
@@ -28934,7 +28984,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -28960,7 +29010,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "1200"
 						}
 
@@ -29000,7 +29050,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29026,7 +29076,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "4000"
 						}
 
@@ -29066,7 +29116,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29092,7 +29142,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "2750"
 						}
 
@@ -29144,7 +29194,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29163,7 +29213,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "150"
 						}
 
@@ -29203,7 +29253,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29229,7 +29279,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "250"
 						}
 
@@ -29275,7 +29325,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29301,7 +29351,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "625"
 						}
 
@@ -29341,7 +29391,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29374,7 +29424,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "925"
 						}
 
@@ -29408,7 +29458,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29441,7 +29491,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "500"
 						}
 
@@ -29475,7 +29525,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29501,7 +29551,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "875"
 						}
 
@@ -29535,7 +29585,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29575,8 +29625,8 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
-							count "800"
+							resource "download"
+							count "400"
 						}
 
 					}
@@ -29609,7 +29659,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29635,8 +29685,8 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
-							count "1500"
+							resource "download"
+							count "1000"
 						}
 
 					}
@@ -29669,7 +29719,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29695,8 +29745,8 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
-							count "2000"
+							resource "download"
+							count "1500"
 						}
 
 					}
@@ -29729,7 +29779,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29755,8 +29805,8 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
-							count "1000"
+							resource "download"
+							count "500"
 						}
 
 					}
@@ -29789,7 +29839,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29815,7 +29865,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "1750"
 						}
 
@@ -29849,7 +29899,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29875,7 +29925,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "2500"
 						}
 
@@ -29909,7 +29959,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -29942,8 +29992,8 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
-							count "1000"
+							resource "download"
+							count "500"
 						}
 
 					}
@@ -29976,7 +30026,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -30002,7 +30052,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "1750"
 						}
 
@@ -30036,7 +30086,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -30062,7 +30112,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "2500"
 						}
 
@@ -30096,7 +30146,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -30129,8 +30179,8 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
-							count "1000"
+							resource "download"
+							count "500"
 						}
 
 					}
@@ -30163,7 +30213,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -30189,7 +30239,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "1750"
 						}
 
@@ -30223,7 +30273,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -30249,7 +30299,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "2500"
 						}
 
@@ -30283,7 +30333,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -30309,7 +30359,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "1250"
 						}
 
@@ -30337,7 +30387,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -30363,7 +30413,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "2500"
 						}
 
@@ -30391,7 +30441,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -30417,7 +30467,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "titanium"
+							resource "download"
 							count "2500"
 						}
 
@@ -30445,7 +30495,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -30464,7 +30514,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "750"
 						}
 
@@ -30492,7 +30542,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -30518,7 +30568,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "1250"
 						}
 
@@ -30546,7 +30596,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip
 					requirements
 					{
@@ -30565,7 +30615,7 @@ Research
 						ResearchCost
 						{
 							amount "0"
-							resource "analysis"
+							resource "download"
 							count "2500"
 						}
 
@@ -30599,6 +30649,6 @@ Research
 
 	type
 	editor "6741"
-	version "90"
+	version "93"
 }
 
