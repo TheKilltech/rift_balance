@@ -1,3 +1,5 @@
+require("lua/utils/reflection.lua")
+
 rules_gen_lock = {}
 waves_gen_lock = waves_gen_lock or require("lua/missions/v2/waves_gen.lua")
 
