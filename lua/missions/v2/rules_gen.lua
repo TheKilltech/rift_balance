@@ -42,6 +42,7 @@ function PrepareDefaultRules(rules, params, missionType, difficulty)
 	-- chances are consecutive, i.e. dice roll for event n+1 may only happen if roll for event n was also succefful
 	rules.spawnCooldownEventChance = { 35, 20, 20 }
 	
+	rules.creatureDifficultyIncrementPerDOMDifficulty = Default_CreatureDifficultyIncrementPerDOMDifficulty( missionType, difficulty )
 	
 	rules.buildingsUpgradeStartsLogic = Default_BuildingsUpgradeStartsLogic(missionType, difficulty )
 	rules.majorAttackLogic            = Default_MajorAttackLogic(           missionType, difficulty )
@@ -442,19 +443,78 @@ function Default_AttackCountPerDifficulty(missionTypeOrParam, difficulty)
 	return attackCountPerDifficulty
 end
 
+function Default_CreatureDifficultyIncrementPerDOMDifficulty( missionTypeOrParam, difficulty)
+	local creatureDifficultyIncrementPerDOMDifficulty = nil
+	if Contains({"survival"}, missionType) then
+		creatureDifficultyIncrementPerDOMDifficulty =
+		{
+			[1] =
+			{	
+				0,	 -- initial difficulty
+				0, -- difficulty level 2
+				0, -- difficulty level 3	
+				0, -- difficulty level 4
+				0, -- difficulty level 5
+				0.5, -- difficulty level 6
+				0.5, -- difficulty level 7
+				0.5, -- difficulty level 8
+				1.5, -- difficulty level 9
+			},
+			[2] =
+			{	
+				0, -- initial difficulty
+				2, -- difficulty level 2
+				0, -- difficulty level 3
+				1, -- difficulty level 4
+				0, -- difficulty level 5
+				1, -- difficulty level 6
+				0, -- difficulty level 7
+				1, -- difficulty level 8
+				0, -- difficulty level 9
+			},
+			[3] =
+			{	
+				2,	 -- initial difficulty
+				0, -- difficulty level 2
+				1, -- difficulty level 3
+				0, -- difficulty level 4
+				1, -- difficulty level 5
+				0, -- difficulty level 6
+				1, -- difficulty level 7
+				0, -- difficulty level 8
+				1, -- difficulty level 9
+			},
+			[4] =
+			{	
+				2,	 -- initial difficulty
+				1, -- difficulty level 2
+				0, -- difficulty level 3
+				1, -- difficulty level 4
+				0, -- difficulty level 5
+				1, -- difficulty level 6
+				0, -- difficulty level 7
+				1, -- difficulty level 8
+				1, -- difficulty level 9
+			},
+		}
+	end
+	
+	return creatureDifficultyIncrementPerDOMDifficulty
+end
+
 function Default_TimeToNextDifficultyLevel(missionType, difficulty, factor)
 	local times = {}
 	if (missionType == "survival") then	
-		times =  {			
-			200, -- difficulty level 1
-			600, -- difficulty level 2
-			600, -- difficulty level 3	
-			660, -- difficulty level 4
-			660, -- difficulty level 5
-			720, -- difficulty level 6
-			720, -- difficulty level 7
-			720, -- difficulty level 8
-			720, -- difficulty level 9
+		times =  {
+			600, -- difficulty level 1
+			750, -- difficulty level 2
+			900, -- difficulty level 3
+			900, -- difficulty level 4
+			1200, -- difficulty level 5
+			1200, -- difficulty level 6
+			1500, -- difficulty level 7
+			1500, -- difficulty level 8
+			1800, -- difficulty level 9
 		}
 	elseif Contains({"hq"}, missionType) then
 		times = {
@@ -571,7 +631,7 @@ end
 function Default_IdleTime(missionType, difficulty, factor)
 	local times = {}
 	if (missionType == "survival") then	
-		times = RepeatingValueTable(0, 9)
+		times = RepeatingValueTable(240, 9)
 	elseif Contains({"outpost","resource"}, missionType) then
 		times = {
 			 450,  -- difficulty level 1
