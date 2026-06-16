@@ -30,7 +30,15 @@ EntityBlueprint  // ammo_factory_energy_adv
 					ai			"2"
 				}
 			}
-		}		
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 25
+				building_cost
+				{
+				}
+			}
+		}
 	}
 	
 	ResourceConverterDesc
@@ -612,6 +620,567 @@ EntityBlueprint  // ammo_factory_energy_adv_lvl_3
 			{
 				resource 		"rhodonite"
 				value			"2"
+			}
+			
+			GameplayResource
+			{
+				resource 		"plasma"
+				value 			"20"
+				attachment		"att_in_1"
+			}
+			
+			GameplayResource
+			{
+				resource 		"water"
+				value 			"15"
+				attachment		"att_in_3"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 		"ammo_tower_energy_cell_lvl2"
+				value			"1.0"
+			}
+			GameplayResource
+			{
+				resource 		"ammo_mech_energy_cell_lvl2"
+				value			"1.0"
+			}
+		}	
+		priority 5
+	}
+
+	HealthDesc
+	{
+		max_health 					"1200"
+		health 						"1200"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 1
+		update_health_uniform 		"1"
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"				
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_3_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone		"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone		"att_in_3_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/silo_l"
+					bone		"att_vismod_3"
+					scale		0.85 1.2 0.85
+					orientation	0 0 0
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/mine_nuclear"
+					bone		"att_vismod_2"
+					scale		0.8 1 0.8
+					orientation	0 -90 0
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"
+					bone "att_vismod_2"
+					delay "1"
+				}	
+				Effect
+				{
+					blueprint "effects/buildings_energy/energy_storage_working"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/nuclear_powerplant_working"
+					delay "0.5"
+				}
+			}
+		}
+	
+		EffectGroup
+		{
+			group "level"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/level_2"
+					bone		"att_level"
+					scale		"0.5  0.5  0.5"
+				}
+			}
+		}	
+	}
+}
+
+EntityBlueprint  // ammo_factory_energy_adv_survival_lvl_1
+{
+	name			"buildings/ammo/ammo_factory_energy_adv_survival_lvl_1"
+	base_blueprint	"buildings/ammo/ammo_factory_energy_adv"
+
+	BuildingDesc
+	{
+		name 					"ammo_factory_energy_adv_survival_lvl_1"
+		bp   					"buildings/ammo/ammo_factory_energy_adv_survival_lvl_1"
+		category 				"ammo"
+		localization_id			"gui/hud/building_name/ammo_factory_energy_adv"
+		description				"gui/hud/building_description/ammo_factory_energy_adv"
+		menu_icon				"gui/hud/building_icons/ammo_factory_energy_adv"
+		upgrade					"buildings/ammo/ammo_factory_energy_adv_survival_lvl_2"
+		require 				"headquarters"
+		building_group			"ammo_factory_energy_adv"
+		buildable				"0"
+		type					"ammo_energy_adv_fac"
+		overrides				"ammo_energy_adv_fac"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 25
+				building_cost
+				{
+					carbonium 	"500"
+					steel 		"200"
+					ai			"2"
+				}
+			}
+		}		
+	}
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 		"energy"
+				value			"300"
+			}
+			
+			GameplayResource
+			{
+				resource 		"ammo_tower_energy_cell"
+				value			"0.4"
+			}
+			
+			GameplayResource
+			{
+				resource 		"rhodonite"
+				value			"0.2"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 		"ammo_tower_energy_cell_lvl2"
+				value			"0.4"
+			}
+			GameplayResource
+			{
+				resource 		"ammo_mech_energy_cell_lvl2"
+				value			"0.4"
+			}
+		}	
+		priority 5
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/silo_s"
+					bone		"att_vismod_3"
+					scale		1.2 1.5 1.2
+					offset		0 1.7 0
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"
+					bone "att_vismod_2"
+					delay "1"
+				}	
+				Effect
+				{
+					blueprint "effects/buildings_energy/energy_storage_working"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/nuclear_powerplant_working"
+					delay "0.5"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // ammo_factory_energy_adv_survival_lvl_2
+{
+	name			"buildings/ammo/ammo_factory_energy_adv_survival_lvl_2"
+	base_blueprint	"buildings/ammo/ammo_factory_energy_adv_survival_lvl_1"
+
+	BuildingDesc
+	{
+		name 					"ammo_factory_energy_adv_survival_lvl_2"
+		bp   					"buildings/ammo/ammo_factory_energy_adv_survival_lvl_2"
+		category 				"ammo"
+		localization_id			"gui/hud/building_name/ammo_factory_energy_adv"
+		description				"gui/hud/building_description/ammo_factory_energy_adv"
+		menu_icon				"gui/hud/building_icons/ammo_factory_energy_adv_lvl_2"
+		upgrade					"buildings/ammo/ammo_factory_energy_adv_survival_lvl_3"
+		require 				"headquarters"
+		building_group			"ammo_factory_energy_adv"
+		buildable				"0"
+		type					"ammo_energy_adv_fac"
+		overrides				"ammo_energy_adv_fac,pipe"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 25
+				building_cost
+				{
+					carbonium 	"400"
+					steel 		"500"
+					ai			"1"
+				}
+			}
+		}		
+	}
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 		"energy"
+				value			"450"
+			}
+			
+			GameplayResource
+			{
+				resource 		"ammo_tower_energy_cell"
+				value			"0.7"
+			}
+			
+			GameplayResource
+			{
+				resource 		"rhodonite"
+				value			"0.2"
+			}
+			
+			GameplayResource
+			{
+				resource 		"plasma"
+				value 			"10"
+				attachment		"att_in_1"
+			}	
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 		"ammo_tower_energy_cell_lvl2"
+				value			"0.7"
+			}
+			GameplayResource
+			{
+				resource 		"ammo_mech_energy_cell_lvl2"
+				value			"0.7"
+				optional		"1"
+			}
+		}
+		priority 5
+	}
+
+	HealthDesc
+	{
+		max_health 					"1200"
+		health 						"1200"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 1
+		update_health_uniform 		"1"
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"66"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"66_destroy"				
+				destroyed_state_effect_group 		"66_state"
+			}
+			DestructionLevel
+			{
+				health 								"33"
+				destroy_comp_delay 					"0"
+				destroy_comp_event 					"33_destroy"
+				destroyed_state_effect_group 		"33_state"
+			}
+		}
+	}
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_small_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/pipe"
+					bone		"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/silo_s"
+					bone		"att_vismod_3"
+					scale		1.2 1.5 1.2
+					offset		0 1.7 0
+				}
+				Effect
+				{
+					blueprint	"effects/weapon_items/mine_nuclear"
+					bone		"att_vismod_2"
+					scale		0.8 1 0.8
+					orientation	0 -90 0
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"
+					bone "att_vismod_2"
+					delay "1"
+				}	
+				Effect
+				{
+					blueprint "effects/buildings_energy/energy_storage_working"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_energy/nuclear_powerplant_working"
+					delay "0.5"
+				}
+			}
+		}
+	
+		EffectGroup
+		{
+			group "level"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint	"effects/buildings_and_machines/level_2"
+					bone		"att_level"
+					scale		"0.5  0.5  0.5"
+				}
+			}
+		}	
+	}
+}
+
+EntityBlueprint  // ammo_factory_energy_adv_survival_lvl_3
+{
+	name			"buildings/ammo/ammo_factory_energy_adv_survival_lvl_3"
+	base_blueprint	"buildings/ammo/ammo_factory_energy_adv_survival_lvl_2"
+
+	BuildingDesc
+	{
+		name 					"ammo_factory_energy_adv_survival_lvl_3"
+		bp   					"buildings/ammo/ammo_factory_energy_adv_survival_lvl_3"
+		category 				"ammo"
+		localization_id			"gui/hud/building_name/ammo_factory_energy_adv"
+		description				"gui/hud/building_description/ammo_factory_energy_adv"
+		menu_icon				"gui/hud/building_icons/ammo_factory_energy_adv_lvl_3"
+		require 				"headquarters"
+		building_group			"ammo_factory_energy_adv"
+		buildable				"0"
+		type					"ammo_energy_adv_fac"
+		overrides				"ammo_energy_adv_fac,pipe"
+		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 25
+				building_cost
+				{
+					carbonium 	"350"
+					steel 		"1000"
+					ai			"1"
+				}
+			}
+		}
+	}
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 		"energy"
+				value			"600"
+			}
+			
+			GameplayResource
+			{
+				resource 		"ammo_tower_energy_cell"
+				value			"1.0"
+			}
+			
+			GameplayResource
+			{
+				resource 		"rhodonite"
+				value			"0.2"
 			}
 			
 			GameplayResource

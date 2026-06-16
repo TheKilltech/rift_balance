@@ -1776,7 +1776,7 @@ EntityBlueprint  // ammo_factory_lowcaliber_adv_survival_lvl_1
 			GameplayResource
 			{
 				resource 			"steel"
-				value				"3"
+				value				"1.5"
 			}
 			
 			GameplayResource
@@ -1980,7 +1980,7 @@ EntityBlueprint  // ammo_factory_lowcaliber_adv_survival_lvl_2
 			GameplayResource
 			{
 				resource 			"steel"
-				value				"3"
+				value				"2"
 			}
 			
 			GameplayResource
@@ -2103,6 +2103,19 @@ EntityBlueprint  // ammo_factory_lowcaliber_adv_survival_lvl_2
 				}
 			}
 		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}
 	}
 }
 
@@ -2161,7 +2174,7 @@ EntityBlueprint  // ammo_factory_lowcaliber_adv_survival_lvl_3
 			GameplayResource
 			{
 				resource 			"magma_metal"
-				value 				"20"
+				value 				"10"
 				attachment			"att_in_2"
 				family				"metal"
 			}
@@ -2308,7 +2321,7 @@ EntityBlueprint  // ammo_factory_lowcaliber_adv_survival_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/level_2"
+					blueprint "effects/buildings_and_machines/level_3"
 					bone "att_level"
 				}
 			}
