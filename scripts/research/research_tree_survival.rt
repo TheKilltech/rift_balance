@@ -201,7 +201,7 @@ Research
 					position
 					{
 						x "18"
-						y "459"
+						y "369"
 					}
 
 					research_awards
@@ -267,7 +267,7 @@ Research
 					position
 					{
 						x "18"
-						y "135"
+						y "45"
 					}
 
 					research_awards
@@ -326,7 +326,7 @@ Research
 					position
 					{
 						x "18"
-						y "-27"
+						y "-171"
 					}
 
 					research_awards
@@ -513,7 +513,7 @@ Research
 					position
 					{
 						x "-54"
-						y "459"
+						y "369"
 					}
 
 					research_awards
@@ -567,7 +567,7 @@ Research
 					position
 					{
 						x "-54"
-						y "135"
+						y "45"
 					}
 
 					research_awards
@@ -620,7 +620,7 @@ Research
 					position
 					{
 						x "-54"
-						y "-27"
+						y "-171"
 					}
 
 					research_awards
@@ -6870,19 +6870,19 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_explosive_adv"
+							blueprint "buildings/ammo/ammo_factory_explosive_adv_survival_lvl_1"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_explosive_adv_lvl_2"
+							blueprint "buildings/ammo/ammo_factory_explosive_adv_survival_lvl_2"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_explosive_adv_lvl_3"
+							blueprint "buildings/ammo/ammo_factory_explosive_adv_survival_lvl_3"
 							is_visible "1"
 						}
 
@@ -7100,19 +7100,13 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_liquid_adv"
+							blueprint "buildings/ammo/ammo_factory_liquid_adv_survival_lvl_1"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_liquid_adv_gas"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_liquid_adv_lvl_2"
+							blueprint "buildings/ammo/ammo_factory_liquid_adv_survival_lvl_2"
 							is_visible "1"
 						}
 
@@ -7330,19 +7324,19 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_energy_adv"
+							blueprint "buildings/ammo/ammo_factory_energy_adv_survival_lvl_1"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_energy_adv_lvl_2"
+							blueprint "buildings/ammo/ammo_factory_energy_adv_survival_lvl_2"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_energy_adv_lvl_3"
+							blueprint "buildings/ammo/ammo_factory_energy_adv_survival_lvl_3"
 							is_visible "1"
 						}
 
@@ -7668,6 +7662,13 @@ Research
 							research_category "gui/menu/research/category_base_buildings"
 						}
 
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/headquarters_lvl4"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
 					}
 
 					research_name "gui/menu/research/name/ammo_low_caliber_lvl2"
@@ -7720,7 +7721,7 @@ Research
 					position
 					{
 						x "-18"
-						y "45"
+						y "-27"
 					}
 
 					research_awards
@@ -7951,37 +7952,19 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_highcaliber_adv"
+							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_survival_lvl_1"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_lvl_2"
+							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_survival_lvl_2"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_molt"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_molt_lvl_2"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_uranium"
-							is_visible "1"
-						}
-
-						ResearchAward
-						{
-							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_uranium_molt"
+							blueprint "buildings/ammo/ammo_factory_highcaliber_adv_survival_lvl_3"
 							is_visible "1"
 						}
 
@@ -30649,6 +30632,6 @@ Research
 
 	type
 	editor "6741"
-	version "93"
+	version "94"
 }
 
