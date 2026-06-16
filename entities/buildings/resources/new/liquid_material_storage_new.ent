@@ -29,7 +29,16 @@ EntityBlueprint  // liquid_material_storage_small
 					carbonium 	"100"
 					steel 		"50"
 				}
-			}		
+			}
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 8
+				building_cost
+				{
+					carbonium 	"75"
+				}
+			}
 		}
 	}
 
@@ -463,13 +472,23 @@ EntityBlueprint  // liquid_material_storage_medium
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 8
+				building_time 15
 				building_cost
 				{
 					carbonium 	"500"
 					steel 		"350"
 				}
-			}		
+			}
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 10
+				building_cost
+				{
+					carbonium 	"175"
+					steel 		"100"
+				}
+			}
 		}
 	}
 
@@ -879,14 +898,25 @@ EntityBlueprint  // liquid_material_storage_large
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 20
+				building_time 25
 				building_cost
 				{
 					steel 		"2000"
 					carbonium 	"600"
 					cobalt		"125"
 				}
-			}		
+			}
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 10
+				building_cost
+				{
+					carbonium 	"400"
+					steel 		"500"
+					cobalt		"25"
+				}
+			}
 		}
 	}
 

@@ -47,44 +47,44 @@ EntityBlueprint  // carbonium_factory
 			GameplayResource
 			{
 				resource 			"carbon_vein"
-				value				2.0
+				value				1.0
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"iron_vein"
-				value				2.0
+				value				1.0
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"ammonium_vein"
-				value				2.0
+				value				1.0
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"cobalt_vein"
-				value				2.0
+				value				1.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium_vein"
-				value				2.0
+				value				1.0
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"titanium_vein"
-				value				2.0
+				value				1.0
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"uranium_ore_vein"
-				value				2.0
+				value				1.0
 				family				"resource"
 			}			
 		}
@@ -150,6 +150,7 @@ EntityBlueprint  // carbonium_factory
 			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
 			buff_localization			string:"buff_name/buff_ore_mill"
 			buff_icon					string:"gui/hud/building_icons/ore_mill"
+			buff_participation			float:"0.5"
 			display_radius_group		string:"ore_mill"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}

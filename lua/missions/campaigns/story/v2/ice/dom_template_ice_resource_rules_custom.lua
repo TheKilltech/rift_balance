@@ -1,25 +1,9 @@
-require("lua/utils/rules_utils.lua")
+require("lua/missions/v2/rules_gen.lua" )
 
-return function()
+return function(params)
+	local rulesName = GetRulesForCustomDifficulty( "lua/missions/campaigns/story/v2/ice/dom_template_ice_resource_rules_")
+	rules = require( rulesName )(params)
+	rules = PrepareCustomRules( rules )
 	
-	local rulesName = GetRulesForCustomDifficulty( "lua/missions/campaigns/story/v2/ice/dom_template_ice_resource_rules_" )
-	rules = require( rulesName )()	
-
-	local attackCountMultiplier			= DifficultyService:GetAttacksCountMultiplier()
-	local prepareAttackTimeMultiplier	= DifficultyService:GetPrepareAttackTimeMultiplier()
-	local idleTimeMultiplier			= DifficultyService:IdleTimeMultiplier()
-
-	for i = 1, #rules.maxAttackCountPerDifficulty, 1 do
-		rules.maxAttackCountPerDifficulty[i] = rules.maxAttackCountPerDifficulty[i] * attackCountMultiplier
-	end
-
-	for i = 1, #rules.idleTime, 1 do
-		rules.idleTime[i] = rules.idleTime[i] * idleTimeMultiplier
-	end
-
-	for i = 1, #rules.prepareSpawnTime, 1 do
-		rules.prepareSpawnTime[i] = rules.prepareSpawnTime[i] * prepareAttackTimeMultiplier
-	end
-
-    return rules;
+    return rules
 end

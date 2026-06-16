@@ -426,7 +426,6 @@ EntityBlueprint  // ammo_factory_explosive_liquid
 	}
 }
 
-
 EntityBlueprint  // ammo_factory_explosive_liquid_lvl_2
 {
 	name  			"buildings/ammo/ammo_factory_explosive_liquid_lvl_2"
@@ -460,6 +459,17 @@ EntityBlueprint  // ammo_factory_explosive_liquid_lvl_2
 					ai			"1"
 				}
 			}
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 35
+				building_cost
+				{
+					carbonium 	"300"
+					steel 		"125"
+					ai			"1"
+				}
+			}
 		}
 	}
 
@@ -481,7 +491,7 @@ EntityBlueprint  // ammo_factory_explosive_liquid_lvl_2
 			GameplayResource
 			{
 				resource 			"nitric_acid"
-				value 				"80"
+				value 				"60"
 				attachment			"att_in_2"
 				family				"nitrogen"
 			}

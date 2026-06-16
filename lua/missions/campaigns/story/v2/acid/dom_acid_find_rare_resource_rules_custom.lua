@@ -1,13 +1,9 @@
-require("lua/utils/rules_utils.lua")
+require("lua/missions/v2/rules_gen.lua" )
 
-return function()
+return function(params)
+	local rulesName = GetRulesForCustomDifficulty( "lua/missions/campaigns/story/v2/acid/dom_acid_find_rare_resource_rules_")
+	rules = require( rulesName )(params)
+	rules = PrepareCustomRules( rules )
 	
-	local helper    = require( "lua/missions/v2/waves_gen.lua" )
-	local rulesName = GetRulesForCustomDifficulty( "lua/missions/campaigns/story/v2/acid/dom_acid_find_rare_resource_rules_" )
-	rules = require( rulesName )()
-	
-	rules = helper:PrepareCustomRules( rules, "scout")
-	
-    return rules;
+    return rules
 end
-

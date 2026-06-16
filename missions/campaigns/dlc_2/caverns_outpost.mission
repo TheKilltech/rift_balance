@@ -533,22 +533,11 @@ MissionDef
             resource        "carbon_vein"
 
             min_resources   "8000"
-            max_resources   "16000"
+            max_resources   "36000"
 
-            min_spawned_volumes "5"
-            max_spawned_volumes "8"
+            min_spawned_volumes "15"
+            max_spawned_volumes "22"
         }
-		
-		ResourceVolume
-        {
-            resource        "carbon_vein"
-
-            min_resources   "16000"
-            max_resources   "30000"
-
-            min_spawned_volumes "10"
-            max_spawned_volumes "15"
-        }		
 		
         ResourceVolume
         {
@@ -566,16 +555,28 @@ MissionDef
             resource        "iron_deepvein"
 			required_discovery_lvl	"1"
 			
-            min_resources   "12000"
-            max_resources   "25000"
+            min_resources   "52000"
+            max_resources   "95000"
 
-            min_spawned_volumes "20"
-            max_spawned_volumes "25"
+            min_spawned_volumes "15"
+            max_spawned_volumes "20"
+        }
+		
+		ResourceVolume
+        {
+            resource        "iron_deepvein"
+			required_discovery_lvl	"1"
+			
+            is_infinite     "1"
+
+            min_spawned_volumes "3"
+            max_spawned_volumes "5"
         }
 
         ResourceVolume
         {
             resource        "geothermal_vent"
+			
             is_infinite     "1"
             
             min_spawned_volumes "12"
@@ -587,6 +588,7 @@ MissionDef
             resource        "mud_deepvein"
 			
             is_infinite        "1"
+			
             min_spawned_volumes "5"
             max_spawned_volumes "7"
         }
@@ -606,8 +608,9 @@ MissionDef
             resource        "fissonium_deepvein"
 
             is_infinite        "1"
-            min_spawned_volumes "3"
-            max_spawned_volumes "5"
+			
+            min_spawned_volumes "5"
+            max_spawned_volumes "7"
         }
 		
 		ResourceVolume
@@ -626,6 +629,7 @@ MissionDef
 			required_discovery_lvl	"1"
 
             is_infinite        "1"
+			
             min_spawned_volumes "6"
             max_spawned_volumes "8"
         }
