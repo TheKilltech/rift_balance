@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // tower_cannon_small
 {
 	name					"buildings/defense/tower_cannon_small"
 
@@ -30,9 +30,10 @@ EntityBlueprint
 				{
 					carbonium 	"25"
 					steel 		"100"
+					ai			"1"
 				}
-			}		
-		}		
+			}
+		}
 	}
 
 	ResourceConverterDesc
@@ -328,11 +329,11 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -352,7 +353,7 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // tower_cannon_projectile_small
 {
 	name "buildings/defense/tower_cannon_projectile_small"
 
