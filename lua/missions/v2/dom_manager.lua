@@ -149,7 +149,8 @@ function dom_mananger:init()
 
 	self.dumpAllDifficultyInfo = true
 
-	self.freezedDifficultyLevel = self.maxDifficultyLevel
+	self.freezedDifficultyBaseLevel = self.maxDifficultyLevel
+	self.freezedDifficultyLevel     = self.maxDifficultyLevel
 
 	self.pauseAttacks = DifficultyService:AreWavesDisabled()
 
@@ -362,6 +363,8 @@ function dom_mananger:FillInitialParamsDomManager()
 		self.availableEventGroups[group] = true
 	end
 	if ( self.waveRepeated == nil ) then self.waveRepeated = 0 end
+	
+	self:UpdateFreezedDifficultyLevel()
 end
 
 	-- ======================================== LOGIC ============================================
@@ -858,21 +861,9 @@ function dom_mananger:SetMaxDifficultyLevel( maxDifficultyLevel )
 	self:VerboseLog( "OnLuaGlobalEvent: changing max difficulty level" )
 	self:VerboseLog( "OnLuaGlobalEvent: target max difficulty level - " .. tostring( maxDifficultyLevel ) )
 	
-	local progressLimit = 9
-	if self.campaignProgressLevel or 10 <= 1.5 then
-		progressLimit = 7
-	elseif self.campaignProgressLevel or 10 <= 3.5 then
-		progressLimit = 8
-	end	
-	maxDifficultyLevel = Clamp( maxDifficultyLevel, 1, math.min( self.maxDifficultyLevel, progressLimit) )
-
-	self:VerboseLog( "OnLuaGlobalEvent: current campaign progress level - " .. tostring( self.campaignProgressLevel ).. " -> difficulty limit - ".. tostring( progressLimit ))
-	self:VerboseLog( "OnLuaGlobalEvent: current freezed difficulty level - " .. tostring( self.freezedDifficultyLevel ) )
-	self:VerboseLog( "OnLuaGlobalEvent: current difficulty level - " .. tostring( self.currentDifficultyLevel ) )
-
-	self.freezedDifficultyLevel = maxDifficultyLevel
-
-	self:VerboseLog( "OnLuaGlobalEvent: changed freezed difficulty level - " .. tostring( self.freezedDifficultyLevel ) )
+	self.freezedDifficultyBaseLevel = maxDifficultyLevel
+	
+	self:UpdateFreezedDifficultyLevel()
 
 	if ( self.currentDifficultyLevel > self.freezedDifficultyLevel ) then
 		self:VerboseLog("OnLuaGlobalEvent: current difficulty level is higher than freezed one." )
@@ -889,6 +880,22 @@ function dom_mananger:SetMaxDifficultyLevel( maxDifficultyLevel )
 
 		self:VerboseLog("OnLuaGlobalEvent: current event level is - " .. tostring( self.currentEventLevel ) )
 	end
+end
+
+function dom_mananger:UpdateFreezedDifficultyLevel( )
+	local progressLimit = self.maxDifficultyLevel
+	if (self.campaignProgressLevel or 10) <= 1.5 then      progressLimit = self.maxDifficultyLevel - 2
+	elseif (self.campaignProgressLevel or 10) <= 3.5 then  progressLimit = self.maxDifficultyLevel - 1
+	end
+	
+	self:VerboseLog( "UpdateFreezedDifficultyLevel: current campaign progress score - " .. tostring( self.campaignProgressLevel ).. " -> difficulty limit - ".. tostring( progressLimit ))
+	self:VerboseLog( "UpdateFreezedDifficultyLevel: current freezed difficulty level - " .. tostring( self.freezedDifficultyLevel ).. " with general freeze: ".. tostring( self.freezedDifficultyBaseLevel) )
+	self:VerboseLog( "UpdateFreezedDifficultyLevel: current difficulty level - " .. tostring( self.currentDifficultyLevel ) )
+	
+	local currentFreeze = self.freezedDifficultyBaseLevel or self.freezedDifficultyLevel or self.maxDifficultyLevel
+	self.freezedDifficultyLevel = Clamp( currentFreeze, 1, progressLimit )
+	
+	self:VerboseLog( "UpdateFreezedDifficultyLevel: changed freezed difficulty level - " .. tostring( self.freezedDifficultyLevel ) )
 end
 
 function dom_mananger:ClosePrepareForTheAttack()
@@ -994,6 +1001,9 @@ end
 function dom_mananger:OnExitDifficultyIncrease( state )
 	
 	self:VerboseLog("OnExitDifficultyIncrease : Changing difficulty level." )
+	
+	self:UpdateEventGroups()
+	self:UpdateFreezedDifficultyLevel()
 
 	if ( self.currentDifficultyLevel < self.maxDifficultyLevel ) then
 
