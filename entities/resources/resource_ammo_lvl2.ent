@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // ammo_mech_energy_cell_lvl2
 {
 	name "resources/ammo_mech_energy_cell_lvl2"
 
@@ -10,13 +10,13 @@ EntityBlueprint
 
 	InventoryItemDesc
 	{
-		name 		"Energy cell advanced" //"resource_name/ammo_mech_energy_lvl2"
+		name 		"resource_name/ammo_mech_energy_cell_lvl2"
 		bigger_icon "gui/hud/resource_icons/ammo_mech_energy_lvl2_icon_bigger"	
 		add_quality "0"
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // ammo_mech_explosive_lvl2
 {
 	name "resources/ammo_mech_explosive_lvl2"
 
@@ -28,13 +28,13 @@ EntityBlueprint
 
 	InventoryItemDesc
 	{
-		name 		"Explosive advanced" //"resource_name/ammo_mech_explosive_lvl2"
+		name 		"resource_name/ammo_mech_explosive_lvl2"
 		bigger_icon	"gui/hud/resource_icons/ammo_mech_explosive_lvl2_icon_bigger"	
 		add_quality "0"
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // ammo_mech_high_caliber_lvl2
 {
 	name "resources/ammo_mech_high_caliber_lvl2"
 
@@ -46,13 +46,13 @@ EntityBlueprint
 
 	InventoryItemDesc
 	{
-		name 		"High caliber advanced" //"resource_name/ammo_mech_high_caliber_lvl2"
+		name 		"resource_name/ammo_mech_high_caliber_lvl2"
 		bigger_icon	"gui/hud/resource_icons/ammo_mech_high_caliber_lvl2_icon_bigger"
 		add_quality "0"
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // ammo_mech_liquid_lvl2
 {
 	name "resources/ammo_mech_liquid_lvl2"
 
@@ -64,13 +64,13 @@ EntityBlueprint
 
 	InventoryItemDesc
 	{
-		name 		"Liquid advanced" //"resource_name/ammo_mech_liquid_lvl2"
+		name 		"resource_name/ammo_mech_liquid_lvl2"
 		bigger_icon	"gui/hud/resource_icons/ammo_mech_liquid_lvl2_icon_bigger"
 		add_quality "0"
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // ammo_mech_low_caliber_lvl2
 {
 	name "resources/ammo_mech_low_caliber_lvl2"
 
@@ -82,7 +82,7 @@ EntityBlueprint
 
 	InventoryItemDesc
 	{
-		name 		"Low caliber advanced" //"resource_name/ammo_mech_low_caliber_lvl2"
+		name 		"resource_name/ammo_mech_low_caliber_lvl2"
 		bigger_icon	"gui/hud/resource_icons/ammo_mech_low_caliber_lvl2_icon_bigger"
 		add_quality "0"
 	}
@@ -91,7 +91,43 @@ EntityBlueprint
 
 // --------- tower ammo ---------
 
-EntityBlueprint
+EntityBlueprint  // ammo_tower_energy_cell
+{
+	name "resources/ammo_tower_energy_cell"
+
+	ResourceComponent
+	{
+		type_produced 	ammo_tower_energy_cell
+		initial_amount	1
+	}
+
+	InventoryItemDesc
+	{
+		name 		"resource_name/ammo_tower_energy_cell"
+		bigger_icon	"gui/hud/resource_icons/ammo_tower_energy_icon_bigger"
+		add_quality "0"
+	}
+}
+
+EntityBlueprint  // ammo_tower_energy_cell_lvl2
+{
+	name "resources/ammo_tower_energy_cell_lvl2"
+
+	ResourceComponent
+	{
+		type_produced 	ammo_tower_energy_cell_lvl2
+		initial_amount	1
+	}
+
+	InventoryItemDesc
+	{
+		name 		"resource_name/ammo_tower_energy_cell_lvl2"
+		bigger_icon	"gui/hud/resource_icons/ammo_tower_energy_lvl2_icon_bigger"
+		add_quality "0"
+	}
+}
+
+EntityBlueprint  // ammo_tower_liquid_lvl2
 {
 	name "resources/ammo_tower_liquid_lvl2"
 
@@ -103,13 +139,13 @@ EntityBlueprint
 
 	InventoryItemDesc
 	{
-		name 		"Liquid advanced T" //"resource_name/ammo_tower_liquid_lvl2"
+		name 		"resource_name/ammo_tower_liquid_lvl2"
 		bigger_icon	"gui/hud/resource_icons/ammo_tower_liquid_lvl2_icon_bigger"	
 		add_quality "0"
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // ammo_tower_explosive_lvl2
 {
 	name "resources/ammo_tower_explosive_lvl2"
 
@@ -121,13 +157,13 @@ EntityBlueprint
 
 	InventoryItemDesc
 	{
-		name 		"Explosive advanced T" //"resource_name/ammo_tower_explosive_lvl2"
+		name 		"resource_name/ammo_tower_explosive_lvl2"
 		bigger_icon	"gui/hud/resource_icons/ammo_tower_explosive_lvl2_icon_bigger"	
 		add_quality "0"
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // ammo_tower_low_caliber_lvl2
 {
 	name "resources/ammo_tower_low_caliber_lvl2"
 
@@ -139,13 +175,13 @@ EntityBlueprint
 
 	InventoryItemDesc
 	{
-		name 		"Low caliber advanced T" //"resource_name/ammo_tower_low_caliber_lvl2"
+		name 		"resource_name/ammo_tower_low_caliber_lvl2"
 		bigger_icon	"gui/hud/resource_icons/ammo_tower_low_caliber_lvl2_icon_bigger"	
 		add_quality "0"
 	}
 }
 
-EntityBlueprint
+EntityBlueprint  // ammo_tower_high_caliber_lvl2
 {
 	name "resources/ammo_tower_high_caliber_lvl2"
 
@@ -157,8 +193,8 @@ EntityBlueprint
 
 	InventoryItemDesc
 	{
-		name 		"High caliber advanced T" //"resource_name/ammo_tower_high_caliber_lvl2"
-		bigger_icon	"gui/hud/resource_icons/ammo_tower_high_caliber_lvl2_icon_bigger"	
+		name 		"resource_name/ammo_tower_high_caliber_lvl2"
+		bigger_icon	"gui/hud/resource_icons/ammo_tower_high_caliber_lvl2_icon_bigger"
 		add_quality "0"
 	}
 }
