@@ -143,7 +143,7 @@ function Default_MajorAttackLogic(missionTypeOrParam, difficulty)
 	
 	if Contains({"outpost"}, missionType) then
 		return {
-			{ minLevel = 5, level = 1, prepareTime = 120, entryLogic = "logic/hq_upgrade/upgrade_entry_lvl1.logic", exitLogic = "logic/hq_upgrade/upgrade_exit_lvl1.logic" },
+			{ level = 2, minLevel = 5, prepareTime = 300, entryLogic = "logic/dom/major_attack_1_entry.logic", exitLogic = "logic/dom/major_attack_1_exit.logic" },
 		}
 	else
 		return { }
