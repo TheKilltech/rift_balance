@@ -1002,7 +1002,7 @@ function dom_mananger:OnExitDifficultyIncrease( state )
 	
 	self:VerboseLog("OnExitDifficultyIncrease : Changing difficulty level." )
 	
-	self:UpdateEventGroups()
+	self:UpdateEventGroups( true )
 	self:UpdateFreezedDifficultyLevel()
 
 	if ( self.currentDifficultyLevel < self.maxDifficultyLevel ) then
