@@ -337,6 +337,12 @@ Research
 							is_visible "1"
 						}
 
+						ResearchAward
+						{
+							blueprint "resources/ammo_tower_energy_cell"
+							is_visible "1"
+						}
+
 					}
 
 					icon "gui/menu/research/icons/towers_drone_attack"
@@ -7352,6 +7358,18 @@ Research
 							is_visible "1"
 						}
 
+						ResearchAward
+						{
+							blueprint "resources/ammo_tower_energy_cell"
+							is_visible "0"
+						}
+
+						ResearchAward
+						{
+							blueprint "resources/ammo_tower_energy_cell_lvl2"
+							is_visible "1"
+						}
+
 					}
 
 					icon "gui/menu/research/icons/tower_ammunition_handling"
@@ -7455,6 +7473,18 @@ Research
 						ResearchAward
 						{
 							blueprint "research/building_limit_cap_increase_ammo_storage"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "resources/ammo_mech_energy_cell_lvl3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "resources/ammo_tower_energy_cell_lvl3"
 							is_visible "1"
 						}
 
@@ -30632,6 +30662,6 @@ Research
 
 	type
 	editor "6741"
-	version "94"
+	version "95"
 }
 

@@ -136,10 +136,47 @@ function event_manager:FillInitialParamsEventManager()
 	
 	if ( self.availableEventGroups == nil ) then
 		self.availableEventGroups = {}
-	end	
+	end
+	self:UpdateEventGroups( )
+end
+
+function event_manager:UpdateEventGroups( resourceCheck )
 	local progress = 0
 	local cobaltAccess = false
 	local campaignData = CampaignService:GetCampaignData()
+	if resourceCheck == true then 
+		if ( campaignData:GetStringOrDefault("campaign_mode", "") == "true" ) then  -- campaign_mode_open
+			if (PlayerService:GetResourceAmount(PlayerService:GetLeadingPlayer(), "uranium" ) >= 50000 ) then -- if (PlayerService:IsResearchUnlocked(PlayerService:GetLeadingPlayer(), "gui/menu/research/name/resource_handling_uranium" )) then
+				self.availableEventGroups.uranium_completed = true
+				progress = progress + 0.4 end
+			if (PlayerService:GetResourceAmount(PlayerService:GetLeadingPlayer(), "titanium" ) >= 50000 ) then
+				self.availableEventGroups.titanium_completed = true
+				progress = progress + 0.4 end
+			if (PlayerService:GetResourceAmount(PlayerService:GetLeadingPlayer(), "palladium" ) >= 50000 ) then
+				self.availableEventGroups.palladium_completed = true
+				progress = progress + 0.4 end
+			if (PlayerService:GetResourceAmount(PlayerService:GetLeadingPlayer(), "cobalt" ) >= 50000 ) then 
+				self.availableEventGroups.cobalt_completed = true
+				progress = progress + 0.4
+				cobaltAccess = true
+			end
+		else -- for survival (with custom settings game time could be expanded to reach these difficulties)
+			if (PlayerService:GetResourceAmount(PlayerService:GetLeadingPlayer(), "uranium" ) >= 1000 ) then -- if (PlayerService:IsResearchUnlocked(PlayerService:GetLeadingPlayer(), "gui/menu/research/name/resource_handling_uranium" )) then
+				self.availableEventGroups.uranium_completed = true
+				progress = progress + 1 end
+			if (PlayerService:GetResourceAmount(PlayerService:GetLeadingPlayer(), "titanium" ) >= 1000 ) then
+				self.availableEventGroups.titanium_completed = true
+				progress = progress + 1 end
+			if (PlayerService:GetResourceAmount(PlayerService:GetLeadingPlayer(), "palladium" ) >= 1000 ) then
+				self.availableEventGroups.palladium_completed = true
+				progress = progress + 1 end
+			if (PlayerService:GetResourceAmount(PlayerService:GetLeadingPlayer(), "cobalt" ) >= 1000 ) then 
+				self.availableEventGroups.cobalt_completed = true
+				cobaltAccess = true
+			end
+		end
+	end
+	
 	if ( campaignData:GetStringOrDefault("global.uranium_outpost_complete", "" ) == "true" ) then 
 		self.availableEventGroups.uranium_completed = true
 		self.availableEventGroups.desert            = true
@@ -228,7 +265,9 @@ function event_manager:FillInitialParamsEventManager()
 		self.availableEventGroups.swamp               = true
 		progress = progress + 1
 	end  
-	if cobaltAccess then progress = progress + 0.5 end
+	if self.availableEventGroups.cobalt_completed then
+		progress = progress + 0.5
+	end
 	self.campaignProgressLevel = progress
 	--if ( campaignData:GetStringOrDefault("global.metallic_start", "" ) == "true" ) then end
 	--if ( campaignData:GetStringOrDefault("global.metallic_outpost_stage_2_complete", "" ) == "true" ) then  end
