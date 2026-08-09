@@ -39066,7 +39066,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|locked|hidden_requirements_visible"
+					research_flags "hidden|hidden_requirements_visible"
 					requirement_tooltip "gui/menu/research/tooltip_requirement_objective"
 					requirements
 					{
@@ -39099,6 +39099,46 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/requirements/familiarity_level.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "cryo_plant"
+										key "species_name"
+									}
+
+									StringData
+									{
+										value
+										key "sub_species_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "1"
+										key "familiarity_level"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "441"
@@ -45805,7 +45845,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden|locked|hidden_requirements_visible"
+					research_flags "hidden|hidden_requirements_visible"
 					requirement_tooltip "gui/menu/research/tooltip_requirement_objective"
 					requirements
 					{
@@ -50353,7 +50393,7 @@ Research
 
 				ResearchNode
 				{
-					research_flags "hidden"
+					research_flags "hidden|hidden_requirements_visible"
 					requirement_tooltip
 					requirements
 					{
@@ -50400,6 +50440,46 @@ Research
 					}
 
 					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/requirements/familiarity_level.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "cryo_plant"
+										key "species_name"
+									}
+
+									StringData
+									{
+										value
+										key "sub_species_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "3"
+										key "familiarity_level"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
 					position
 					{
 						x "441"
@@ -53963,7 +54043,7 @@ Research
 			{
 				ResearchNode
 				{
-					research_flags "hidden|locked|hidden_requirements_visible"
+					research_flags
 					requirement_tooltip "gui/menu/research/tooltip_requirement_objective"
 					requirements
 					research_name "gui/menu/research/name/quantum_cortex_laboratory"
@@ -55501,6 +55581,6 @@ Research
 
 	type
 	editor "6741"
-	version "239"
+	version "240"
 }
 
