@@ -42,4 +42,15 @@ material particles/enemy_bullet_medium_01_blue : particles/emissive
 	set_texture_alias	diffuse			materials/textures/particles/enemy_bullet_medium_01_blue.dds
 	set_texture_alias	emissive		materials/textures/particles/enemy_bullet_medium_01_bright_emissive.dds
 }
+
+material particles/spark_purple_01 : particles/emissive
+{
+	set_texture_alias	diffuse			materials/textures/particles/spark_purple_01.dds
+	set_texture_alias	emissive		materials/textures/particles/spark_red_01_emissive.dds
+}
+
+material particles/alien_plasma_hit_purple_atlas : particles/emissive
+{
+	set_texture_alias	diffuse			materials/textures/particles/alien_plasma_hit_purple_atlas.dds
+	set_texture_alias	emissive		materials/textures/particles/alien_plasma_hit_atlas_emissive.dds
 }
