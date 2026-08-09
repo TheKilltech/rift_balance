@@ -3137,7 +3137,7 @@ Research
 
 					}
 
-					icon "gui/menu/research/icons/basic_resource_production"
+					icon "gui/menu/research/icons/resource"
 				}
 
 				ResearchNode
@@ -3589,7 +3589,7 @@ Research
 
 					}
 
-					icon "gui/menu/research/icons/basic_resource_production"
+					icon "gui/menu/research/icons/resource"
 				}
 
 				ResearchNode
@@ -6354,7 +6354,7 @@ Research
 						{
 							amount "0"
 							resource "download"
-							count "2000"
+							count "2500"
 						}
 
 					}
@@ -14241,7 +14241,7 @@ Research
 
 					}
 
-					icon "gui/menu/research/icons/skill_antimater_ball"
+					icon "gui/menu/research/icons/basic_resource_production"
 				}
 
 				ResearchNode
@@ -14300,9 +14300,15 @@ Research
 							is_visible "1"
 						}
 
+						ResearchAward
+						{
+							blueprint "research/upgrade_reagent_upkeep"
+							is_visible "1"
+						}
+
 					}
 
-					icon "gui/menu/research/icons/skill_antimater_ball"
+					icon "gui/menu/research/icons/basic_resource_production"
 				}
 
 				ResearchNode
@@ -15159,7 +15165,7 @@ Research
 
 						ResearchAward
 						{
-							blueprint "research/upgrade_new_upkeep_req"
+							blueprint "research/upgrade_carbonium_upkeep_req"
 							is_visible "1"
 						}
 
@@ -19654,6 +19660,79 @@ Research
 					}
 
 					icon "gui/menu/research/icons/orbital_laser"
+				}
+
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/comm_hub_lvl_5"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/carbonization_lvl_2"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/carbonization_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "25000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "12000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "1395"
+						y "324"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/resources/carbonizer_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/upgrade_rare_mineral_upkeep_req"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/warning_rounding"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/basic_resource_production"
 				}
 
 			}
@@ -54946,6 +55025,6 @@ Research
 
 	type
 	editor "6741"
-	version "238"
+	version "240"
 }
 

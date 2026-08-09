@@ -787,6 +787,41 @@ EntityBlueprint		// plasma_gun_projectile_red
 	}	
 }
 
+EntityBlueprint		// plasma_gun_projectile_purple
+{
+	name effects/weapons_energy/plasma_gun_projectile_purple
+
+	base_blueprints 
+	{
+		effects/enemies_magmoth/projectile // effects/weapons_elemental/projectile
+		lights/point/violet_small
+		effects/no_lifetime
+	}
+	
+	MinimapItemDesc
+	{
+		type	"quad"
+		color 
+		{
+			x "1"
+			y "1"
+			z "0"
+			w "1"
+		}
+		size
+		{
+			x "1"
+			y "1"
+		}
+		visibility		"discovered"
+	}
+
+	ParticleDesc
+	{
+		name    "rift/plasma_gun_projectile_purple"
+	}	
+}
+
 EntityBlueprint		// plasma_gun_projectile_yellow
 {
 	name effects/weapons_energy/plasma_gun_projectile_yellow

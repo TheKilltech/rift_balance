@@ -6,7 +6,6 @@ EntityBlueprint  // carbonizer
 	{
 		name 				"carbonizer"
 		bp   				"buildings/resources/carbonizer"
-		ghost_bp			"buildings/resources/carbonizer_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/carbonizer"
 		description			"gui/hud/building_description/carbonizer"
@@ -46,7 +45,7 @@ EntityBlueprint  // carbonizer
 			GameplayResource
 			{
 				resource 			"flammable_gas"
-				value				"100"
+				value				"75"
 				attachment			"att_in_1"
 				family				"in"
 			}		
@@ -454,13 +453,12 @@ EntityBlueprint  // carbonizer_lvl_2
 	{
 		name 				"carbonizer_lvl_2"
 		bp   				"buildings/resources/carbonizer_lvl_2"
-		ghost_bp			"buildings/resources/carbonizer_ghost"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/carbonizer"
 		description			"gui/hud/building_description/carbonizer"
 		menu_icon			"gui/hud/building_icons/carbonizer_lvl_2"
 		buildable			"0"
-		//upgrade				"buildings/resources/carbonizer_lvl_2"
+		upgrade				"buildings/resources/carbonizer_lvl_3"
 		require 			"headquarters"
 		type				"carbonium_fac"
 		overrides			"carbonium_fac,pipe"
@@ -494,10 +492,10 @@ EntityBlueprint  // carbonizer_lvl_2
 			GameplayResource
 			{
 				resource 			"flammable_gas"
-				value				"100"
+				value				"75"
 				attachment			"att_in_1"
 				family				"in"
-			}		
+			}
 			
 			GameplayResource
 			{
@@ -510,7 +508,7 @@ EntityBlueprint  // carbonizer_lvl_2
 			GameplayResource
 			{
 				resource 			"reagent"
-				value			 	"15"
+				value			 	"10"
 				attachment			"att_in_2"
 				family				"catalyst"
 			}
@@ -629,6 +627,200 @@ EntityBlueprint  // carbonizer_lvl_2
 		}
 	}
 }
+
+EntityBlueprint  // carbonizer_lvl_3
+{
+	name			"buildings/resources/carbonizer_lvl_3"
+	base_blueprint	"buildings/resources/carbonizer_lvl_2"
+
+	BuildingDesc
+	{
+		name 				"carbonizer_lvl_3"
+		bp   				"buildings/resources/carbonizer_lvl_3"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/carbonizer"
+		description			"gui/hud/building_description/carbonizer"
+		menu_icon			"gui/hud/building_icons/carbonizer_lvl_3"
+		buildable			"0"
+		require 			"headquarters"
+		type				"carbonium_fac"
+		overrides			"carbonium_fac,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 20
+				building_cost
+				{
+					carbonium 	"500"
+					alloys 		"250"
+				}
+			}
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{	
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"125"
+			}
+			
+			GameplayResource
+			{
+				resource 			"flammable_gas"
+				value				"75"
+				attachment			"att_in_1"
+				family				"in"
+			}
+			
+			GameplayResource
+			{
+				resource 			"petroleum"
+				value			 	"30"
+				attachment			"att_in_1"
+				family				"in"
+			}
+			
+			GameplayResource
+			{
+				resource 			"tanzanite"
+				value			 	"0.2"
+			}
+			
+			GameplayResource
+			{
+				resource 			"reagent"
+				value			 	"15"
+				attachment			"att_in_2"
+				family				"catalyst"
+			}
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value				"3"
+			}		
+		}
+		priority 9
+		reset_interval 0.5
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/mine3"
+					bone "att_vismod_3"
+					scale 0.7 0.7 0.7
+					offset 0.0 0 -0.25
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/wall_s1"
+					bone "att_vismod_4"
+					scale 1.8 1.0 1.0
+					offset 0 0 0 
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/powrod3"
+					bone "att_vismod_5"
+					scale 0.6 0.6 0.6
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_3"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_energy/plant_biomass_powerplant_working"
+					delay "1"
+				}
+			}
+		}
+	}
+}
+
 
 
 
@@ -812,6 +1004,122 @@ EntityBlueprint  // carbonizer_lvl_2_ghost
 					bone "att_vismod_4"
 					scale 1.8 1.0 1.0
 					offset 0 0 0 
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // carbonizer_lvl_3_ghost
+{
+	name  "buildings/resources/carbonizer_lvl_3_ghost"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/main/hyper_particle_condenser.mesh"
+
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "0"
+				material "selector/hologram_blue"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "selector/hologram_blue"
+			}
+
+			SubMesh
+			{
+				id "2"
+				material "selector/hologram_blue"
+			}
+		}
+	}
+	
+	SkeletonDesc
+	{
+		name "meshes/buildings/main/hyper_particle_condenser"
+	}
+
+	EffectDesc
+	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe_ghost"
+					bone 	"att_in_2_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/mine3_ghost"
+					bone "att_vismod_3"
+					scale 0.8 0.8 0.8
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/mine3_ghost"
+					bone "att_vismod_3"
+					scale 0.7 0.7 0.7
+					offset 0.0 0 -0.25
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/wall_s1_ghost"
+					bone "att_vismod_4"
+					scale 1.8 1.0 1.0
+					offset 0 0 0 
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/powrod3_ghost"
+					bone "att_vismod_5"
+					scale 0.6 0.6 0.6
 				}
 			}
 		}

@@ -12,6 +12,9 @@ EntityBlueprint  // tower_basic
 		menu_icon			"gui/hud/building_icons/tower_basic"
 		require 			"headquarters"
 		order				"5"
+		radius_name			"tower_basic"
+		min_radius			"5"
+		min_radius_effect	"voice_over/announcement/building_too_close"
 		type				"tower"
 		overrides			"wall,tower"
 		upgrade				"buildings/defense/tower_basic_lvl_2"
@@ -27,21 +30,21 @@ EntityBlueprint  // tower_basic
 				building_cost
 				{
 					carbonium 	"50"
-					steel 		"50"
+					steel 		"10"
 					ai			"1"
 				}
 			}		
 		}		
 	}
 
-	ResourceConverterDesc // must be here for AI
+	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
 				resource 	"energy"
-				value 		"5"
+				value 		"0"
 			}
 		}
 
@@ -58,9 +61,9 @@ EntityBlueprint  // tower_basic
 
 		database
 		{
-			cone_effect			string:"build_cone_1x1"
-			cone_effect_sell	string:"sell_small"
-			time_machine		int:"0"
+			cone_effect					string:"build_cone_1x1"
+			cone_effect_sell			string:"sell_small"
+			time_machine				int:"0"
 		}
 
 	}
@@ -360,6 +363,11 @@ EntityBlueprint  // tower_basic_projectile
 
 	base_blueprint "effects/projectiles_and_trails/tower_bullet"
 
+	ParticleDesc
+	{
+		name    "rift/tower_bullet_blue"
+	}
+	
 	ProjectileAmmoComponent
 	{
 		on_enemy_hit_effect 	"effects/weapons_energy/energy_weapon_hit"

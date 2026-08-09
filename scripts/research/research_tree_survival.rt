@@ -734,6 +734,12 @@ Research
 					{
 						ResearchAward
 						{
+							blueprint "buildings/resources/carbonizer_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/resources/steel_seperator_lvl_3"
 							is_visible "1"
 						}
@@ -8386,7 +8392,7 @@ Research
 
 					}
 
-					icon "gui/menu/research/icons/basic_resource_production"
+					icon "gui/menu/research/icons/resource"
 				}
 
 				ResearchNode
@@ -8452,7 +8458,7 @@ Research
 
 					}
 
-					icon "gui/menu/research/icons/basic_resource_production"
+					icon "gui/menu/research/icons/resource"
 				}
 
 				ResearchNode
@@ -30662,6 +30668,6 @@ Research
 
 	type
 	editor "6741"
-	version "95"
+	version "96"
 }
 
