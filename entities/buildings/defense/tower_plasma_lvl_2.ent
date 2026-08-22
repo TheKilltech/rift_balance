@@ -154,7 +154,7 @@ EntityBlueprint  // tower_plasma_lvl_2
 			submesh_idx "1"
 		}
 
-		ammo_blueprint 				"buildings/defense/plasma_gun_projectile_purple"
+		ammo_blueprint 				"effects/weapons_energy/plasma_gun_projectile_purple"
 
 		muzzle_flash_effect 		"effects/weapons_energy/plasma_gun_fire_red"
 
@@ -236,7 +236,7 @@ EntityBlueprint  // tower_plasma_projectile_yellow
 		on_world_hit_effect 	"effects/weapons_energy/energy_weapon_hit"
 		on_resisted_hit_effect 	"effects/weapons_generic/projectile_hit_resisted"
 
-		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield"
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield|building"
 	}
 
 	LifeTimeDesc
