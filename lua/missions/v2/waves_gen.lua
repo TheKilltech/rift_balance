@@ -475,14 +475,14 @@ function Default_MpWaves(biomeOrParam, missionType, difficulty,  waves)
 		if (difficulty == "brutal")      then
 			waves = GenerateWavesBlock({ difficulty = { 4, 5, 6, 7       }, bosses = { "hq_boss" },                                      repeatInterval = 2.5, spawnDelay = 1, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {       6, 7, 8    }, bosses = { "hq_boss" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
-			waves = GenerateWavesBlock({ difficulty = {             8, 9 }, bosses = { "hq_boss" },                                      repeatInterval = 2,   spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = GenerateWavesBlock({ difficulty = {             8, 9 }, bosses = { "hq_boss" },                                      repeatInterval = 1.9, spawnDelay = 0, weightDynBr = 2.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 6 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {                9 }, biomes = { biome }, levels = { 7 }, suffixes = { "ultra" },  repeatInterval = 2.1, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 	
 		elseif (difficulty == "hard")    then
 			waves = GenerateWavesBlock({ difficulty = {    5, 6, 7, 8    }, bosses = { "hq_boss" },                                      repeatInterval = 3,   spawnDelay = 1, weightDynHd = 1.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9 }, bosses = { "hq_boss" },                                      repeatInterval = 3,   spawnDelay = 0, weightDynHd = 1.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
-			waves = GenerateWavesBlock({ difficulty = {                9 }, bosses = { "hq_boss" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
+			waves = GenerateWavesBlock({ difficulty = {                9 }, bosses = { "hq_boss" },                                      repeatInterval = 2.4, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 5 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {                9 }, biomes = { biome }, levels = { 6 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			

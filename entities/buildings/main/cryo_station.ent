@@ -431,6 +431,29 @@ EntityBlueprint  // cryo_station_lvl_2
 		priority 5
 	}
 
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				group	 		"local"
+				max 	 		"500"
+				attachment		"att_in_2"
+			}
+			Storage
+			{
+				resource		"energy"
+				max				"0"
+			}
+		}
+	}
+
+	PipeComponent
+	{
+		attachment		"att_in_2"
+	}
+	
 	LuaDesc
 	{
 		script "lua/buildings/building.lua"
@@ -646,6 +669,29 @@ EntityBlueprint  // cryo_station_lvl_3
 		priority 5
 	}
 
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				group	 		"local"
+				max 	 		"500"
+				attachment		"att_in_2"
+			}
+			Storage
+			{
+				resource		"energy"
+				max				"0"
+			}
+		}
+	}
+
+	PipeComponent
+	{
+		attachment		"att_in_2"
+	}
+	
 	LuaDesc
 	{
 		script "lua/buildings/building.lua"
