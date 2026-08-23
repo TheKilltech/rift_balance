@@ -209,7 +209,7 @@ function building_buffable:UpdateBuffState( source )
 			BuildingService:SetResourceConverterEfficientyModificator( self.entity, mod , "buff" )
 		end
 		if source.modUpkeep then
-			local mod = 1 + self.buffParticipation * (source.modificator - 1)
+			local mod = 1 + self.buffParticipation * (source.modUpkeep - 1)
 			BuildingService:AddConverterCostModifier( self.entity, mod , "buff" )
 		end
 		
