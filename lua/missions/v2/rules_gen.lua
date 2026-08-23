@@ -220,7 +220,7 @@ function Default_WaveRepeatChances(missionTypeOrParam, difficulty)
 				{75, 60, 20},           -- consecutive chances of wave repeating at level 6
 				{90, 60, 40},           -- consecutive chances of wave repeating at level 7
 				{100, 70, 60, 20},      -- consecutive chances of wave repeating at level 8
-				{100, 70, 65, 35, 30},  -- consecutive chances of wave repeating at level 9
+				{100, 90, 65, 55, 50},  -- consecutive chances of wave repeating at level 9
 			}
 		elseif (difficulty == "hard")    then
 			waveRepeatChances = {
@@ -232,7 +232,7 @@ function Default_WaveRepeatChances(missionTypeOrParam, difficulty)
 				{75,  50, 20},          -- consecutive chances of wave repeating at level 6
 				{90,  60, 40},          -- consecutive chances of wave repeating at level 7
 				{100, 70, 50, 20},      -- consecutive chances of wave repeating at level 8
-				{100, 70, 55, 25, 15},  -- consecutive chances of wave repeating at level 9
+				{100, 80, 60, 50, 25},  -- consecutive chances of wave repeating at level 9
 			}
 		elseif (difficulty == "easy")    then 
 			waveRepeatChances = {
@@ -350,7 +350,7 @@ function Default_AttackCountPerDifficulty(missionTypeOrParam, difficulty)
 				{ minCount = 2, maxCount = 3 },  -- difficulty level 6
 				{ minCount = 3, maxCount = 3 },  -- difficulty level 7
 				{ minCount = 3, maxCount = 4 },  -- difficulty level 8
-				{ minCount = 3, maxCount = 4 },  -- difficulty level 9
+				{ minCount = 3, maxCount = 5 },  -- difficulty level 9
 			}
 		elseif (difficulty == "easy")    then 
 			attackCountPerDifficulty =  {
@@ -1039,14 +1039,14 @@ end
 
 function Default_WaveChanceReroll(rules, params)
 	local chances = {
-		acid     = { waveChanceReroll = 40, waveChanceRerollSpawn = 10, waveChanceRerollSpawnGroup =  5 },
+		acid     = { waveChanceReroll = 40, waveChanceRerollSpawn = 10, waveChanceRerollSpawnGroup = 10 },
 		caverns  = { waveChanceReroll = 40, waveChanceRerollSpawn = 20, waveChanceRerollSpawnGroup =  0 },
-		desert   = { waveChanceReroll = 30, waveChanceRerollSpawn = 25, waveChanceRerollSpawnGroup = 20 },
-		ice      = { waveChanceReroll = 30, waveChanceRerollSpawn = 20, waveChanceRerollSpawnGroup = 10 },
-		jungle   = { waveChanceReroll = 40, waveChanceRerollSpawn = 25, waveChanceRerollSpawnGroup = 10 },
-		magma    = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup =  2 },
-		metallic = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup =  5 },
-		swamp    = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup =  2 },
+		desert   = { waveChanceReroll = 30, waveChanceRerollSpawn = 25, waveChanceRerollSpawnGroup = 40 },
+		ice      = { waveChanceReroll = 30, waveChanceRerollSpawn = 20, waveChanceRerollSpawnGroup = 15 },
+		jungle   = { waveChanceReroll = 40, waveChanceRerollSpawn = 25, waveChanceRerollSpawnGroup = 20 },
+		magma    = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup =  5 },
+		metallic = { waveChanceReroll = 30, waveChanceRerollSpawn = 45, waveChanceRerollSpawnGroup = 20 },
+		swamp    = { waveChanceReroll = 30, waveChanceRerollSpawn = 15, waveChanceRerollSpawnGroup = 10 },
 		general  = { waveChanceReroll = 30, waveChanceRerollSpawn = 20, waveChanceRerollSpawnGroup =  0 },
 	}
 
