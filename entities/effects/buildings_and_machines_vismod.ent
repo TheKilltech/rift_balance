@@ -4812,6 +4812,31 @@ EntityBlueprint "effects/no_lifetime"		// light_blue
 	}
 }
 
+EntityBlueprint "effects/no_lifetime"		// light_violet
+{
+	name  "effects/buildings_and_machines/light_violet"
+
+	SceneEditorDesc
+	{
+		mesh 		"meshes/light_point.mesh"
+	}
+
+	LightDesc
+	{
+		type "0"
+		scattering_intensity "0.41"
+		light_color
+		{
+			x "0.2"
+			y "0.2"
+			z "0.7"
+			w "500.0"
+		}
+
+		light_range "8"
+	}
+}
+
 EntityBlueprint "effects/no_lifetime"		// air_flickering
 {
 	name  "effects/buildings_and_machines/air_flickering"
