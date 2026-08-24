@@ -5637,7 +5637,19 @@ Research
 
 						ResearchAward
 						{
+							blueprint "buildings/resources/liquid_compressor_new_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "buildings/resources/liquid_decompressor"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/liquid_decompressor_new_lvl_2"
 							is_visible "1"
 						}
 
@@ -5674,6 +5686,13 @@ Research
 						ResearchCost
 						{
 							amount "0"
+							resource "alloys"
+							count "1500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
 							resource "carbonium"
 							count "7500"
 						}
@@ -5683,13 +5702,6 @@ Research
 							amount "0"
 							resource "download"
 							count "2000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "uranium"
-							count "1500"
 						}
 
 					}
@@ -5705,13 +5717,25 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/liquid_compressor_lvl_2"
+							blueprint "buildings/resources/liquid_compressor_new_lvl_3"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "buildings/resources/liquid_decompressor_lvl_2"
+							blueprint "buildings/resources/liquid_compressor_new_lvl_4"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/liquid_decompressor_new_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/liquid_decompressor_new_lvl_4"
 							is_visible "1"
 						}
 
@@ -5748,6 +5772,13 @@ Research
 						ResearchCost
 						{
 							amount "0"
+							resource "alloys"
+							count "7500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
 							resource "carbonium"
 							count "20000"
 						}
@@ -5757,13 +5788,6 @@ Research
 							amount "0"
 							resource "download"
 							count "5000"
-						}
-
-						ResearchCost
-						{
-							amount "0"
-							resource "uranium"
-							count "7500"
 						}
 
 					}
@@ -5779,13 +5803,25 @@ Research
 					{
 						ResearchAward
 						{
-							blueprint "buildings/resources/liquid_compressor_lvl_3"
+							blueprint "buildings/resources/liquid_compressor_new_lvl_5"
 							is_visible "1"
 						}
 
 						ResearchAward
 						{
-							blueprint "buildings/resources/liquid_decompressor_lvl_3"
+							blueprint "buildings/resources/liquid_compressor_new_lvl_6"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/liquid_decompressor_new_lvl_5"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "buildings/resources/liquid_decompressor_new_lvl_6"
 							is_visible "1"
 						}
 
@@ -55802,6 +55838,6 @@ Research
 
 	type
 	editor "6741"
-	version "241"
+	version "242"
 }
 

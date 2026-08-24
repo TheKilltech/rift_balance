@@ -1,34 +1,36 @@
-EntityBlueprint  // liquid_decompressor_lvl_3
+EntityBlueprint
 {
-	name			"buildings/resources/liquid_decompressor_lvl_3"
-	base_blueprint	"buildings/resources/liquid_decompressor_lvl_2"
+	name  "buildings/resources/liquid_compressor_lvl_2"
+	
+	base_blueprint buildings/resources/liquid_compressor
 
 	BuildingDesc
 	{
-		buildable				"0"	
-		name 					"liquid_decompressor_lvl_3"
-		bp   					"buildings/resources/liquid_decompressor_lvl_3"
+		buildable				"0"			
+		name 					"liquid_compressor_lvl_2"
+		bp   					"buildings/resources/liquid_compressor_lvl_2"
 		category 				"resources"
-		localization_id			"gui/hud/building_name/liquid_decompressor"
-		description				"gui/hud/building_description/liquid_decompressor"
-		menu_icon				"gui/hud/building_icons/liquid_decompressor_lvl3"
+		localization_id			"gui/hud/building_name/liquid_compressor"
+		description				"gui/hud/building_description/liquid_compressor"
+		menu_icon				"gui/hud/building_icons/obsolete"
+		type					"pipe"
 		require 				"headquarters"
-		menu_action				"decompressor"
-		type					"compressors"
-		overrides				"compressors,pipe"
-		exclude_terrain_types	"magma_hot_ground,magma_very_hot_ground"
+		upgrade					"buildings/resources/liquid_compressor_lvl_3"	
+		order					"9"	
+		exclude_terrain_types 	"magma_hot_ground,magma_very_hot_ground"		
+		overrides				"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
 
 		costs
 		{
 			BuildingCostInfo
 			{
 				name 			"default"
-				building_time 	30
+				building_time 	60
 				building_cost
 				{
-					carbonium 	"750"		
-					steel 		"750"
-					uranium		"250"
+					carbonium 	"500"
+					steel 		"500"
+					uranium		"100"
 				}
 			}		
 		}
@@ -40,82 +42,39 @@ EntityBlueprint  // liquid_decompressor_lvl_3
 		{
 			GameplayResource
 			{
-				group 			"local_compressed"
-				value			"200"
+				group 			"local"
+				value			"150"
 				family			"production"
+				attachment		"att_in_1"
+
 			}
-			
+
 			GameplayResource
 			{
-				resource 		"energy"
-				value			"100"
+				resource		"energy"
+				value			"750"
 			}
 		}
-		
+
 		out
 		{
 			GameplayResource
 			{
-				group 			"local"
+				group 			"local_compressed"
 				family			"production"
-				attachment		"att_out_1"
-				value			"200"
+				value			"150"
 			}
 		}
-		priority 4
+
+		one_vein_mode "1"
 		continous_local_production "1"
-	}
-
-	ResourceStorageDesc
-	{
-		Storages
-		{
-			Storage
-			{
-				group	 		"local"
-				max 	 		"0"
-				attachment		"att_out_1"
-			}
-		}
-	}
-
-	EquipmentComponent
-	{
-		equipment
-		{
-			Equipment Equipment
-			{
-				slots
-				{		
-					EquipmentSlot
-					{
-						name			"MOD_1"
-						allow_types		"compressed_resource"
-						subslots_count	"1"
-					}							
-				}
-			}
-		}
-	}
-
-	LuaDesc
-	{
-		script "lua/buildings/resources/liquid_decompressor.lua"
-				
-		database
-		{
-			cone_effect			string:	"build_cone_4x4"
-			cone_effect_sell	string:	"sell_big"
-			attachment			string:	"att_out_1"
-			production			float:	"200"
-			consumption			float:	"200"
-		}
+		priority 5
 	}
 
 	HealthDesc
 	{
-		max_health 					"3000"
-		health 						"3000"
+		max_health 					"2500"
+		health 						"2500"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		is_manual 					1
@@ -222,36 +181,36 @@ EntityBlueprint  // liquid_decompressor_lvl_3
 		{
 			"buildings/effects_big_base"
 		}
-		////////////////////////Resources/////////////////////////
+////////////////////////Resources/////////////////////////			
 		EffectGroup
 		{
-			group "att_out_1"
-			enabled "0"
+			group "att_in_1"
+			enabled "0"				
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_out_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow"								
+					bone "att_in_arrow"
 				}
 			}
 		}	
-		////////////////////////MISC/////////////////////////
+////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
 			group "working"
-			enabled "0"
+			enabled "0"				
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_resources/liquid_compressor_working"
+					blueprint "effects/buildings_resources/liquid_compressor_working"		
 					delay "0.5"
-				}
+				}				
 			}
-		}
+		}	
 		EffectGroup
 		{
 			group "level"
@@ -260,11 +219,11 @@ EntityBlueprint  // liquid_decompressor_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/level_3"
+					blueprint "effects/buildings_and_machines/level_2"
 					bone "att_level"
 				}
 			}
-		}
+		}	
 		EffectGroup
 		{
 			group "teleport"
@@ -280,51 +239,16 @@ EntityBlueprint  // liquid_decompressor_lvl_3
 		}		
 		EffectGroup
 		{
-			group "rings_energy"
+			group "energy"
 			enabled "0"
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
-					bone "be_ring_1_part_1"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
-					bone "be_ring_1_part_2"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
-					bone "be_ring_1_part_3"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
-					bone "be_ring_1_part_4"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
-					bone "be_ring_2_part_1"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
-					bone "be_ring_2_part_2"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
-					bone "be_ring_2_part_3"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_resources/liquid_decompressor_ring_energy"
-					bone "be_ring_2_part_4"
+					blueprint "effects/buildings_resources/liquid_compressor_energy"
+					bone "barrel"
 				}
 			}
-		}
+		}			
 	}
 }
