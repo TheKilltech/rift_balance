@@ -62,6 +62,15 @@ function atmospheric_gas_trap:GetBiomeModificator(biome)
 		biomeMods.caverns  = 1.5
 		biomeMods.swamp    = 1.0
 		biomeMods.ice      = 0.75
+	elseif (self.resource == "carbonium") then
+		biomeMods.jungle   = 1.0
+		biomeMods.desert   = 0.75
+		biomeMods.acid     = 1.0
+		biomeMods.magma    = 2.0
+		biomeMods.metallic = 0.75
+		biomeMods.caverns  = 3.0
+		biomeMods.swamp    = 1.0
+		biomeMods.ice      = 1.0
 	elseif (self.resource == "water") then
 		biomeMods.jungle   = 1.5
 		biomeMods.desert   = 0.25
