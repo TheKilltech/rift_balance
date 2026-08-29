@@ -1,24 +1,20 @@
-EntityBlueprint  // regenerating_extractor
+EntityBlueprint  // strip_mine
 {
-	name  "buildings/resources/regenerating_extractor"
+	name  "buildings/resources/strip_mine"
 
 	BuildingDesc
 	{
-		name 				"regenerating_extractor"
-		bp   				"buildings/resources/regenerating_extractor"
+		name 				"strip_mine"
+		bp   				"buildings/resources/strip_mine"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/regenerating_extractor"
-		description			"gui/hud/building_description/regenerating_extractor"
-		menu_icon			"gui/hud/building_icons/regenerating_extractor"
-		upgrade				"buildings/resources/regenerating_extractor_lvl_2"
-		//require 			"headquarters"
-		radius_name			"resin_extractor"
-		//order				"3"
-		min_radius			"15"
-		buildable			"0"
-		building_group		"strip_mine"
+		localization_id		"gui/hud/building_name/strip_mine"
+		description			"gui/hud/building_description/strip_mine"
+		menu_icon			"gui/hud/building_icons/strip_mine_lvl_1"
+		order				"1"
+		upgrade				"buildings/resources/strip_mine_lvl_2"
+		require 			"headquarters"
 		type				"solids_mine"
-		overrides			"solids_mine,pipe"
+		overrides			"solids_mine"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
@@ -26,13 +22,11 @@ EntityBlueprint  // regenerating_extractor
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 30
+				building_time 10
 				building_cost
 				{
-					carbonium 			2000
-					biomass_mycelium	1000
-					palladium			750
-					ai					4
+					carbonium 	"50"
+					ai			"1"
 				}
 			}		
 		}
@@ -47,60 +41,52 @@ EntityBlueprint  // regenerating_extractor
 			GameplayResource
 			{
 				resource 			"energy"
-				value				75
-			}
-			
-			GameplayResource
-			{
-				resource 			"resin"
-				value				10
-				attachment			"att_in_1"
-				family				"fuel"
+				value				20
 			}
 			
 			GameplayResource
 			{
 				resource 			"carbon_vein"
-				value				0.0
+				value				1.0
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"iron_vein"
-				value				0.0
+				value				1.0
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"ammonium_vein"
-				value				0.0
+				value				1.0
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"cobalt_vein"
-				value				0.0
+				value				1.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium_vein"
-				value				0.0
+				value				1.0
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"titanium_vein"
-				value				0.0
+				value				1.0
 				family				"resource"
-			}
+			}			
 			GameplayResource
 			{
 				resource 			"uranium_ore_vein"
-				value				0.0
+				value				1.0
 				family				"resource"
-			}
+			}			
 		}
 		
 		out
@@ -127,45 +113,48 @@ EntityBlueprint  // regenerating_extractor
 			GameplayResource
 			{
 				resource 			"cobalt"
-				value				0.2
+				value				1.0
 				family				"resource"
 			}		
 			GameplayResource
 			{
 				resource 			"palladium"
-				value				0.2
+				value				1.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"titanium"
-				value				0.2
+				value				1.0
 				family				"resource"
 			}	
 			GameplayResource
 			{
 				resource 			"uranium_ore"
-				value				0.2
+				value				1.0
 				family				"resource"
 			}
 		}		
-		
 		priority 4	
 		one_vein_mode "1"
 	}
 
 	LuaDesc
 	{
-		script "lua/buildings/building.lua"
-
+		script "lua/buildings/resources/carbonium_factory.lua"
+				
 		database
 		{
-			cone_effect			string:"build_cone_3x3"
-			cone_effect_sell	string:"sell_big"
-			range				float:"15"
-			display_radius_group	 string:"resin_extract"
-			display_radius_blueprint string:"effects/decals/range_circle_repair"
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
+			buff_localization			string:"buff_name/buff_ore_mill"
+			buff_icon					string:"gui/hud/building_icons/ore_mill"
+			buff_participation			float:"0.5"
+			display_radius_group		string:"ore_mill"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
+				
 	}
 
 	HealthDesc
@@ -174,7 +163,7 @@ EntityBlueprint  // regenerating_extractor
 		health 						"1000"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
-		is_manual 1
+		 is_manual 1
 		update_health_uniform 		"1"
 		
 		DestructionLevels
@@ -231,58 +220,17 @@ EntityBlueprint  // regenerating_extractor
 		}
 	}
 
+	ResistanceComponent
+	{
+		quicksand		"0"
+	}
+
 	MeshDesc
 	{
-		mesh "meshes/buildings/megastructures/hydroponic_lab_3.mesh"
-		SubMeshes
-		{
-			
-			SubMesh
-			{
-				id "0"
-				material "buildings/megastructures/trimsheet_01_grey"
-			}
-
-			SubMesh
-			{
-				id "1"
-				material "buildings/megastructures/trimsheet_02_grey"
-			}
-
-			SubMesh
-			{
-				id "2"
-				material "buildings/megastructures/trimsheet_01_black"
-			}
-
-			SubMesh
-			{
-				id "3"
-				material "buildings/megastructures/trimsheet_02_black"
-			}
-
-			SubMesh
-			{
-				id "4"
-				material "buildings/megastructures/trimsheet_01_yellow"
-			}
-
-
-			SubMesh
-			{
-				id "5"
-				material "buildings/megastructures/megastructures_leaves"
-			}
-
-
-			SubMesh
-			{
-				id "6"
-				material "buildings/defense/ai_hub_lvl_3_screen"
-			}	
-		}
+		mesh "meshes/buildings/resources/carbonium_factory_lvl_1.mesh"
+		material "buildings/resources/carbonium_factory_lvl_1"
 	}
-	
+
 	TypeDesc
 	{
 		type "building|resource"
@@ -290,11 +238,17 @@ EntityBlueprint  // regenerating_extractor
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/megastructures/hydroponic_lab_3"
-	}			
-
-	PhysicsDesc
+		name "meshes/buildings/resources/carbonium_factory_lvl_1"
+	}
+	
+	AnimationGraphDesc
 	{
+	
+		animation_graph_name "building_working"
+	}	
+	
+	PhysicsDesc
+ 	{
 		objects
 		{
 			PhysicsObjectDesc
@@ -304,14 +258,21 @@ EntityBlueprint  // regenerating_extractor
 				physics_material 	"default"
 				Shapes
 				{
-					PhysicsMeshShape
+					PhysicsSphereShape
 					{
-						mesh "meshes/buildings/megastructures/hydroponic_lab_3_c1.nxs"
+						r "2.45"
+	
+						position 
+						{
+							x "0.0"
+							y "1.0"
+							z "0.0"
+						}
 					}		
 				}
 			}
 		}
-	}		
+	}
 
 	NodeCullerDesc
 	{
@@ -324,18 +285,10 @@ EntityBlueprint  // regenerating_extractor
 	{
 		Shapes
 		{
-   			PhysicsBoxShape
-   			{
-    				x	8
-    				y	12
-    				z	10
-   			}
-   			PhysicsBoxShape
-   			{
-    				x	10
-    				y	12
-    				z	8
-   			}		
+			PhysicsMeshShape
+			{
+				mesh "meshes/buildings/resources/carbonium_factory_g1.nxs"
+			}
 		}
 	}
 
@@ -351,8 +304,8 @@ EntityBlueprint  // regenerating_extractor
 		}
 		size
 		{
-			x "5"
-			y "5"
+			x "3"
+			y "3"
 		}
 
 		additional_z_order	"5"
@@ -488,274 +441,369 @@ EntityBlueprint  // regenerating_extractor
 		{
 			"buildings/effects_medium_base"
 		}
-		////////////////////////Resources/////////////////////////	
+////////////////////////MISC/////////////////////////			
 		EffectGroup
 		{
-			group "att_in_1"
-			enabled "0"
-			delay "0"
+			group "grab_rocks"
+			enabled "0"				
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_1_arrow"
+					blueprint "effects/buildings_and_machines/carbonium_factory_grab_rocks"								
+					bone "att_grab_rocks"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "hammer"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/carbonium_factory_hammer"								
+					bone "att_hammer"
 				}
 			}
 		}
-		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "hatch"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/carbonium_factory_hatch"								
+					bone "att_hatch"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
-			enabled "0"
+			enabled "0"				
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_megastructures/hydroponic_lab_pollen_ring_big"
-					bone "att_pollen"
+					blueprint "effects/buildings_resources/carbonium_factory_working"	
+					delay "0.5"					
+				}				
+			}
+		}	
+	}
+}
+
+EntityBlueprint  // strip_mine_lvl_2
+{
+	name  					"buildings/resources/strip_mine_lvl_2"
+	base_blueprint			"buildings/resources/strip_mine"
+
+	BuildingDesc
+	{
+		buildable 			"0"
+		name 				"strip_mine_lvl_2"
+		bp   				"buildings/resources/strip_mine_lvl_2"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/strip_mine"
+		description			"gui/hud/building_description/strip_mine_lvl_2"
+		menu_icon			"gui/hud/building_icons/strip_mine_lvl_2"
+		upgrade				"buildings/resources/strip_mine_lvl_3"
+		type				"solids_mine"
+		overrides			"solids_mine"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 20
+				building_cost
+				{
+					carbonium 	"200"
+					steel 		"100"
+				}
+			}
+			
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 10
+				building_cost
+				{
+					carbonium 	"200"
+					steel 		"50"
 				}
 			}
 		}
-		EffectGroup
+			
+		resource_requirement "carbon_vein|iron_vein|ammonium_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein"
+	}
+
+	ResourceConverterDesc
+	{
+		in
 		{
-			group "vismod"
-			enabled "1"
-			Effects
+			GameplayResource
 			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_1_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_01"
-					bone "att_vismod_1"
-					scale 0.8 0.8 0.8
-					//orientation "0 -90 0"
-				}
+				resource 			"energy"
+				value			 	30
 			}
-		}		
+			
+			GameplayResource
+			{
+				resource 			"carbon_vein"
+				value				2.7
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"iron_vein"
+				value				2.7
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"ammonium_vein"
+				value				2.7
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt_vein"
+				value				2.7
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"palladium_vein"
+				value				2.7
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"titanium_vein"
+				value				2.7
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"uranium_ore_vein"
+				value				2.7
+				family				"resource"
+			}		
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value				2.0
+				family				"resource"
+			}	
+			GameplayResource
+			{
+				resource 			"steel"
+				value				2.0
+				family				"resource"
+			}			
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value				2.0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt"
+				value				2.0
+				family				"resource"
+			}		
+			GameplayResource
+			{
+				resource 			"palladium"
+				value				2.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"titanium"
+				value				2.0
+				family				"resource"
+			}	
+			GameplayResource
+			{
+				resource 			"uranium_ore"
+				value				2.0
+				family				"resource"
+			}
+		}
+		priority 4	
+		one_vein_mode "1"
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/resources/carbonium_factory.lua"
+				
+		database
+		{
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
+			buff_localization			string:"buff_name/buff_ore_mill"
+			buff_icon					string:"gui/hud/building_icons/ore_mill"
+			buff_participation			float:"0.75"
+			display_radius_group		string:"ore_mill"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+		}
 	}
 	
-	//children	{	}
-}
-
-EntityBlueprint  // regenerating_extractor_lvl_2
-{
-	name			"buildings/resources/regenerating_extractor_lvl_2"
-	base_blueprint	"buildings/resources/regenerating_extractor"
-
-	BuildingDesc
+	HealthDesc
 	{
-		name 				"regenerating_extractor_lvl_2"
-		bp   				"buildings/resources/regenerating_extractor_lvl_2"
-		category 			"resources"
-		localization_id		"gui/hud/building_name/regenerating_extractor"
-		description			"gui/hud/building_description/regenerating_extractor"
-		menu_icon			"gui/hud/building_icons/regenerating_extractor_lvl_2"
-		order				"3"
-		upgrade				"buildings/resources/regenerating_extractor_lvl_3"
-		//require 			"headquarters"
-		radius_name			"resin_extractor"
-		min_radius			"15"
-		buildable			"0"
-		building_group		"strip_mine"
-		type				"solids_mine"
-		overrides			"solids_mine,pipe"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		max_health 					"1300"
+		health 						"1300"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
 		
-		costs
+		DestructionLevels
 		{
-			BuildingCostInfo
+			DestructionLevel
 			{
-				name "default"
-				building_time 40
-				building_cost
-				{
-					carbonium 			2000
-					steel				1500
-					biomass_mycelium	2000
-					palladium			1250
-					ai					1
-				}
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
 			}
 		}
-		
-		resource_requirement "carbon_vein|iron_vein|ammonium_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
 	}
 
-	ResourceConverterDesc
+	MeshDesc
 	{
-		in
-		{
-			GameplayResource
-			{
-				resource 			"energy"
-				value				150
-			}
-			
-			GameplayResource
-			{
-				resource 			"resin"
-				value				20
-				attachment			"att_in_1"
-				family				"fuel"
-			}
-			
-			GameplayResource
-			{
-				resource 			"sludge"
-				value				200
-				attachment			"att_in_2"
-				family				"secondary"
-			}
-			
-			GameplayResource
-			{
-				resource 			"nitric_acid"
-				value				30
-				attachment			"att_in_2"
-				family				"secondary"
-			}
-			
-			GameplayResource
-			{
-				resource 			"carbon_vein"
-				value				0.0
-				family				"resource"
-			}			
-			GameplayResource
-			{
-				resource 			"iron_vein"
-				value				0.0
-				family				"resource"
-			}			
-			GameplayResource
-			{
-				resource 			"ammonium_vein"
-				value				0.0
-				family				"resource"
-			}
-			
-			GameplayResource
-			{
-				resource 			"cobalt_vein"
-				value				0.0
-				family				"resource"
-			}
-			GameplayResource
-			{
-				resource 			"palladium_vein"
-				value				0.0
-				family				"resource"
-			}			
-			GameplayResource
-			{
-				resource 			"titanium_vein"
-				value				0.0
-				family				"resource"
-			}
-			GameplayResource
-			{
-				resource 			"uranium_ore_vein"
-				value				0.0
-				family				"resource"
-			}
-		}
-		
-		out
-		{
-			GameplayResource
-			{
-				resource 			"carbonium"
-				value				2.0
-				family				"resource"
-			}
-			GameplayResource
-			{
-				resource 			"steel"
-				value				2.0
-				family				"resource"
-			}
-			GameplayResource
-			{
-				resource 			"ammonium"
-				value				2.0
-				family				"resource"
-			}
-			
-			GameplayResource
-			{
-				resource 			"cobalt"
-				value				0.4
-				family				"resource"
-			}		
-			GameplayResource
-			{
-				resource 			"palladium"
-				value				0.4
-				family				"resource"
-			}
-			GameplayResource
-			{
-				resource 			"titanium"
-				value				0.4
-				family				"resource"
-			}	
-			GameplayResource
-			{
-				resource 			"uranium_ore"
-				value				0.4
-				family				"resource"
-			}
-		}		
-		
-		priority 4	
-		one_vein_mode "1"
+		mesh "meshes/buildings/resources/carbonium_factory.mesh"
+		material "buildings/resources/carbonium_factory"
+	}
+
+	TypeDesc
+	{
+		type "building|resource"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/carbonium_factory"
+	}
+
+	AnimationGraphDesc
+	{
+	
+		animation_graph_name "building_working"
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
-			"buildings/effects_small_base"
-		}	
-		////////////////////////Resources/////////////////////////	
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_1_arrow"
-				}
-			}
-		}	
-		EffectGroup
-		{
-			group "att_in_2"
-			enabled "0"
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_2_arrow"
-				}
-			}
-		}	
+			"buildings/effects_medium_base"
+		}
 		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "grab_rocks"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/carbonium_factory_grab_rocks"
+					bone "att_grab_rocks"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "hammer"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/carbonium_factory_hammer"
+					bone "att_hammer"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "hatch"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/carbonium_factory_hatch"
+					bone "att_hatch"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "working"
@@ -765,79 +813,31 @@ EntityBlueprint  // regenerating_extractor_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_megastructures/hydroponic_lab_pollen_ring_big"
-					bone "att_pollen"
+					blueprint "effects/buildings_resources/carbonium_factory_working"	
+					delay "0.5"
 				}
 			}
 		}
-		EffectGroup
-		{
-			group "level"
-			enabled "1"
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/level_2"
-					bone "att_level"
-				}
-			}
-		}
-		EffectGroup
-		{
-			group "vismod"
-			enabled "1"
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_1_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_2_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_orange_01"
-					bone "att_vismod_1"
-					scale 0.8 0.8 0.8
-					//orientation "0 -90 0"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_02"
-					bone "att_vismod_2"
-					scale 0.8 0.8 0.8
-				}
-			}
-		}		
 	}
 }
 
-EntityBlueprint  // regenerating_extractor_lvl_3
+EntityBlueprint  // strip_mine_lvl_3
 {
-	name			"buildings/resources/regenerating_extractor_lvl_3"
-	base_blueprint	"buildings/resources/regenerating_extractor_lvl_2"
+	name			"buildings/resources/strip_mine_lvl_3"
+	base_blueprint	"buildings/resources/strip_mine_lvl_2"
 
 	BuildingDesc
 	{
-		name 				"regenerating_extractor_lvl_3"
-		bp   				"buildings/resources/regenerating_extractor_lvl_3"
+		buildable 			"0"
+		name 				"strip_mine_lvl_3"
+		bp   				"buildings/resources/strip_mine_lvl_3"
 		category 			"resources"
-		localization_id		"gui/hud/building_name/regenerating_extractor"
-		description			"gui/hud/building_description/regenerating_extractor"
-		menu_icon			"gui/hud/building_icons/regenerating_extractor_lvl_3"
-		order				"3"
-		//require 			"headquarters"
-		radius_name			"resin_extractor"
-		min_radius			"15"
-		buildable			"0"
-		building_group		"strip_mine"
+		localization_id		"gui/hud/building_name/strip_mine"
+		description			"gui/hud/building_description/strip_mine_lvl_3"
+		menu_icon			"gui/hud/building_icons/strip_mine_lvl_3"
+		require 			"ore_mill"
 		type				"solids_mine"
-		overrides			"solids_mine,pipe"
+		overrides			"solids_mine"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		
 		costs
@@ -845,16 +845,27 @@ EntityBlueprint  // regenerating_extractor_lvl_3
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 50
+				building_time 25
 				building_cost
 				{
-					steel				3500
-					biomass_mycelium	3000
-					alloys				1500
+					carbonium 	"300"
+					steel 		"400"
+					cobalt		"150"
+				}
+			}
+			
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 10
+				building_cost
+				{
+					carbonium 	"200"
+					steel 		"250"
+					cobalt		"25"
 				}
 			}
 		}
-		
 		resource_requirement "carbon_vein|iron_vein|ammonium_vein|uranium_ore_vein|titanium_vein|palladium_vein|cobalt_vein" 
 	}
 
@@ -865,68 +876,52 @@ EntityBlueprint  // regenerating_extractor_lvl_3
 			GameplayResource
 			{
 				resource 			"energy"
-				value				250
-			}
-			
-			GameplayResource
-			{
-				resource 			"resin"
-				value				25
-				attachment			"att_in_1"
-				family				"fuel"
-			}
-			
-			GameplayResource
-			{
-				resource 			"nitric_acid"
-				value				40
-				attachment			"att_in_2"
-				family				"secondary"
+				value				45
 			}
 			
 			GameplayResource
 			{
 				resource 			"carbon_vein"
-				value				0.0
+				value				4.5
 				family				"resource"
-			}			
+			}
 			GameplayResource
 			{
 				resource 			"iron_vein"
-				value				0.0
+				value				4.5
 				family				"resource"
-			}			
+			}
 			GameplayResource
 			{
 				resource 			"ammonium_vein"
-				value				0.0
+				value				4.5
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"cobalt_vein"
-				value				0.0
+				value				4.5
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium_vein"
-				value				0.0
+				value				4.5
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"titanium_vein"
-				value				0.0
+				value				4.5
 				family				"resource"
-			}
+			}			
 			GameplayResource
 			{
 				resource 			"uranium_ore_vein"
-				value				0.0
+				value				4.5
 				family				"resource"
-			}
+			}		
 		}
 		
 		out
@@ -953,70 +948,138 @@ EntityBlueprint  // regenerating_extractor_lvl_3
 			GameplayResource
 			{
 				resource 			"cobalt"
-				value				0.6
+				value				3.0
 				family				"resource"
 			}		
 			GameplayResource
 			{
 				resource 			"palladium"
-				value				0.6
+				value				3.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"titanium"
-				value				0.6
+				value				3.0
 				family				"resource"
 			}	
 			GameplayResource
 			{
 				resource 			"uranium_ore"
-				value				0.6
+				value				3.0
 				family				"resource"
 			}
-		}		
-		
+		}
 		priority 4	
 		one_vein_mode "1"
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/resources/carbonium_factory.lua"
+				
+		database
+		{
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
+			buff_required_bp			string:"buildings/resources/ore_mill_missing_icon"
+			buff_required_name			string:"ore_mill"
+			buff_required_level			int:"0"
+			buff_localization			string:"buff_name/buff_ore_mill"
+			buff_icon					string:"gui/hud/building_icons/ore_mill"
+			buff_participation			float:"1.0"
+			display_radius_group		string:"ore_mill"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"1600"
+		health 						"1600"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		 is_manual 1
+		update_health_uniform 		"1"
+		
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health 								"80"
+				destroy_state_change_effect_group 	"80_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"80_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_50"
+				destroyed_state_effect_group 		"80_state"
+				destrucion_level_name 				"80"
+
+			}
+			DestructionLevel
+			{
+				health 								"60"
+				destroy_state_change_effect_group 	"60_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"60_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
+				destroyed_state_effect_group 		"60_state"
+				destrucion_level_name 				"60"
+			}
+			DestructionLevel
+			{
+				health 								"40"
+				destroy_state_change_effect_group 	"40_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"40_destroy"
+				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
+				destroyed_state_effect_group 		"40_state"
+				destrucion_level_name 				"40"
+			}
+			DestructionLevel
+			{
+				health 								"20"
+				destroy_state_change_effect_group 	"20_transition"
+				destroy_comp_delay 					"0.5"
+				destroy_comp_event 					"20_destroy"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+				destroyed_state_effect_group 		"20_state"
+				destrucion_level_name 				"20"
+			}
+			DestructionLevel
+			{
+				health 								"0"
+				destroy_state_change_effect_group 	"0_transition"
+				destroy_comp_delay 					"0.6"
+				destroy_comp_event 					"default"
+				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
+			}			
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/resources/carbonium_factory_lvl_3.mesh"
+		material "buildings/resources/carbonium_factory_lvl_3"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/resources/carbonium_factory_lvl_3"
+	}
+	
+	AnimationGraphDesc
+	{
+	
+		animation_graph_name "building_working"
+	}	
+
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
-			"buildings/effects_small_base"
-		}	
-		////////////////////////Resources/////////////////////////	
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "0"
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_1_arrow"
-				}
-			}
-		}	
-		EffectGroup
-		{
-			group "att_in_2"
-			enabled "0"
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_2_arrow"
-				}
-			}
-		}	
+			"buildings/effects_medium_base"
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -1027,58 +1090,55 @@ EntityBlueprint  // regenerating_extractor_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_megastructures/hydroponic_lab_pollen_ring_big"
-					bone "att_pollen"
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
+					bone "att_chimney"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/carbonium_factory_working"
+					delay "0.5"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "grab_rocks"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/carbonium_factory_grab_rocks"
+					bone "att_grab_rocks"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "hammer"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/carbonium_factory_hammer"
+					bone "att_hammer"
 				}
 			}
 		}
 		EffectGroup
 		{
-			group "level"
-			enabled "1"
+			group "hatch"
+			enabled "0"
+			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/level_3"
-					bone "att_level"
-				}
-			}
-		}
-		EffectGroup
-		{
-			group "vismod"
-			enabled "1"
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_1_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_2_pipe"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_orange_01"
-					bone "att_vismod_1"
-					scale 0.8 0.8 0.8
-					//orientation "0 -90 0"
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_orange_02"
-					bone "att_vismod_2"
-					scale 0.8 0.8 0.8
-				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/wturbine2"
-					bone "att_vismod_3"
-					scale 1.9 0.8 1.9
+					blueprint "effects/buildings_and_machines/carbonium_factory_hatch"
+					bone "att_hatch"
 				}
 			}
 		}
