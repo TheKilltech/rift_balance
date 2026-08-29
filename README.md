@@ -22,7 +22,7 @@ This is a fix for a specific failure mode of long, open-ended play: infinite res
 
 **Status**: REDI is actively developed and still evolving. Structural integration of Riftbreaker's 2.0 / World Expansion IV content — including orbital scanner missions — is done; what's left is balancing and fine-tuning, which is a permanent, ongoing task. If something still seems unclear or off, please say so on Discord.
 
-An old mod spotlight article on Steam, from back when REDI was still in the early days:
+There devs wrote a mod spotlight article on the mod on Steam:
 https://store.steampowered.com/news/app/780310/view/4441205936032317627
 
 ## Resources
