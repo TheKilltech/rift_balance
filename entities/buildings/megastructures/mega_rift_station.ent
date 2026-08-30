@@ -1,0 +1,2983 @@
+EntityBlueprint
+{
+	name "buildings/megastructures/mega_rift_station"
+
+	BuildingDesc
+	{
+		name 				"mega_rift_station"
+		bp   				"buildings/megastructures/mega_rift_station"
+		category 			"megastructures"
+		localization_id		"gui/hud/building_name/mega_rift_station"
+		description			"gui/hud/building_description/mega_rift_station"
+		menu_icon			"gui/hud/building_icons/mega_rift_station"
+		limit			    "1"
+		limit_name			"mega_rift_station"
+		order				"5"
+		condition			"NOT_BIOME"
+		condition_value		"caverns,swamp,metallic"
+		require 			"arcology_workshop"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		menu_action			"rift_enable"
+		//sellable			"0"
+		is_shortcut_bindable	"0"
+		hide_treasures 		"1"
+		disableable 		"0"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 180
+				building_cost
+				{
+					carbonium 	"100000"
+					steel 		"100000"
+					cobalt 		"10000"
+					titanium 	"10000"
+					palladium 	"10000"
+					uranium 	"10000"
+				}
+			}
+		}
+	}
+
+	InteractiveComponent
+	{
+		slot 			"ACTIVATOR"
+		radius 			"20"
+		remove_entity 	 "0"
+		remove_component "0"
+		recreate_component "1"
+		priority			"1"
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"150000"
+			}
+
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				value			 	"1000"
+				attachment			"att_in_1"
+			}
+			GameplayResource
+			{
+				resource 			"supercoolant"
+				value			 	"1000"
+				attachment			"att_in_2"
+			}
+			GameplayResource
+			{
+				resource 			"flammable_gas"
+				value			 	"1500"
+				attachment			"att_in_3"
+			}
+			GameplayResource
+			{
+				resource 			"water"
+				value			 	"1000"
+				attachment			"att_in_4"
+			}
+		}
+
+		priority 2
+	}
+
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				resource 			"energy"
+				distribution_radius	"7"
+			}
+		}
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/megastructures/mega_rift_station.lua"
+
+		database
+		{
+			cone_effect			string:"build_cone_5x5"
+			cone_effect_sell	string:"sell_big"
+		}
+	}
+
+	HealthDesc
+	{
+		max_health 					"50000"
+		health 						"50000"
+		regeneration 				"0"
+		regeneration_cooldown 		"0"
+		is_manual 1
+		update_health_uniform 		"1"
+
+
+		DestructionLevels
+		{
+			DestructionLevel
+			{
+				health "90"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "90"
+			}
+			DestructionLevel
+			{
+				health "80"
+				destroy_state_change_effect_group "80_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "80_destroy"
+				destroyed_state_effect_group "80_state"
+				destrucion_level_name "80"
+			}
+			DestructionLevel
+			{
+				health "70"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "70"
+			}
+			DestructionLevel
+			{
+				health "60"
+				destroy_state_change_effect_group "60_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "60_destroy"
+				destroyed_state_effect_group "60_state"
+				destrucion_level_name "60"
+			}
+			DestructionLevel
+			{
+				health "50"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "50"
+			}
+			DestructionLevel
+			{
+				health "40"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "40_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "40"
+			}
+			DestructionLevel
+			{
+				health "30"
+				destroy_state_change_effect_group "40_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "40_state"
+				destrucion_level_name "30"
+			}
+			DestructionLevel
+			{
+				health "20"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "20_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "20"
+			}
+			DestructionLevel
+			{
+				health "10"
+				destroy_state_change_effect_group "20_transition"
+				destroy_comp_delay "0.6"
+				destroy_comp_event "generic_destroy"
+				destroyed_state_effect_group "20_state"
+				destrucion_level_name "10"
+			}
+			DestructionLevel
+			{
+				health "0"
+				destroy_state_change_effect_group "0_transition"
+				destroy_comp_delay "0.7"
+				destroy_comp_event "default"
+				destrucion_level_name "0"
+			}
+		}
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/mega_rift_station.mesh"
+
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/megastructures/metal_black"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/metal_grey"
+			}
+
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+		}
+	}
+
+	TypeDesc
+	{
+		type "building|main"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/buildings/megastructures/mega_rift_station"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "building_working"
+	}
+
+
+	PhysicsDesc
+	{
+		objects
+		{
+			PhysicsObjectDesc
+			{
+				type 				"static"
+				group_id 			"building"
+				physics_material 	"default"
+				Shapes
+				{
+					PhysicsCapsuleShape
+					{
+						r "1"
+						half_height "1"
+
+						position
+						{
+							x "0.0"
+							y "1"
+							z "0.0"
+						}
+
+						orientation
+						{
+							w "0.7"
+							x "0.0"
+							z "0.7"
+							y "0.0"
+						}
+					}
+				}
+			}
+		}
+	}
+
+	NodeCullerDesc
+	{
+		nav_mesh_cull_type "1"
+		cost_type "building"
+		flow_field_size "0.7"
+	}
+
+	GridCullerDesc
+	{
+		Shapes
+		{
+			PhysicsBoxShape
+			{
+				x	32
+				y	10
+				z	32
+			}
+		}
+	}
+
+	MinimapItemDesc
+	{
+		type	"quad"
+		color
+		{
+			x "0.2"
+			y "0.2"
+			z "1"
+			w "1"
+		}
+		size
+		{
+			x "16"
+			y "16"
+		}
+
+		visibility			"always"
+		layer_group			"important_buildings"
+	}
+
+	FogOfWarRevealerComponentDesc
+	{
+		radius "40"
+	}
+
+	HealthBarDesc
+	{
+		type "2"
+		mode "1"
+	}
+
+	LootDesc
+	{
+		explosion_max_power 	"2000"
+		explosion_min_power 	"1000"
+	}
+
+	DestroyDesc
+	{
+		DestroyPatterns
+		{
+			Pair
+			{
+				key "generic_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"
+				}
+			}
+
+			Pair
+			{
+				key "80_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"
+				}
+			}
+
+			Pair
+			{
+				key "60_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"
+				}
+			}
+			Pair
+			{
+				key "40_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"
+				}
+			}
+			Pair
+			{
+				key "20_destroy"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"3000"
+					explosion_effect 		"effects/buildings_generic/explosion_big_random"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_medium_parts_generic"
+					part_lifetime 			"3"
+				}
+			}
+			Pair
+			{
+				key "default"
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"5000"
+					//explosion_effect 		"effects/buildings_generic/explosion_building_big_01"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_very_large_parts_generic"
+				}
+			}
+			Pair
+			{
+				value
+				{
+					explosion_type 			"centered"
+					explosion_max_power 	"8000"
+					explosion_min_power 	"5000"
+					explosion_effect 		"effects/buildings_generic/building_sand_collapse"
+					part_physics_material   "debris_heavy"
+					part_material 			"misc/building_parts_generic"
+					//part_effect 			"effects/projectiles_and_trails/fire_trail_small_random"
+					part_prefix 			"meshes/misc/building_very_large_parts_generic"
+					part_lifetime "3"
+				}
+
+				key "quicksand"
+			}
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+		EffectGroup
+		{
+			group "0_transition"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"
+					bone "att_smoke_1"
+					delay "0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"
+					bone "att_smoke_2"
+					delay "0.15"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"
+					bone "att_smoke_3"
+					delay "0.25"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"
+					bone "att_smoke_4"
+					delay "0.3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_big_random"
+					bone "att_smoke_5"
+					delay "0.4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_big_random"
+					bone "att_smoke_6"
+					delay "0.45"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_big_random"
+					bone "att_smoke_7"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_main/explosion_building_hq"
+					delay "0.6"
+				}
+			}
+		}
+		////////////////////////MISC////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			delay "1"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_megastructures/mega_rift_dynamo"
+					bone "att_rotor_bottom"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_megastructures/mega_rift_dynamo"
+					bone "att_rotor_top"
+				}
+				Effect
+				{
+					blueprint "weather/riftquake"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "portal_opened"
+			enabled "0"
+			delay "1"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_megastructures/mega_rift_activated_shockwave"
+					bone "att_portal"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_megastructures/mega_rift_portal_opened"
+					bone "att_portal"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_megastructures/mega_rift_rings"
+					bone "att_portal"
+				}
+				Effect
+				{
+					blueprint "lights/point/comet_fire_blue_big_shadow_caster"
+					bone "att_light"
+				}
+				Effect
+				{
+					blueprint "weather/riftquake_strong_no_windmod"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_3_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_4"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_4_arrow"
+				}
+			}
+		}
+	}
+	children
+	{
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_1.mesh"
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/metal_grey"
+					}
+
+
+				}
+			}
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_1_c1.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	16
+						y	10
+						z	16
+					}
+				}
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "8"
+					y "8"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t1a"
+			}
+		}
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_1a.mesh"
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/metal_grey"
+					}
+
+				}
+			}
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_1_c1.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	16
+						y	10
+						z	16
+					}
+				}
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "8"
+					y "8"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t1b"
+			}
+		}
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_1a.mesh"
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/metal_grey"
+					}
+
+				}
+			}
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_1_c1.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	16
+						y	10
+						z	16
+					}
+				}
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "8"
+					y "8"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t1c"
+			}
+		}
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_1.mesh"
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/metal_grey"
+					}
+
+				}
+			}
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_1_c1.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	16
+						y	10
+						z	16
+					}
+				}
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "8"
+					y "8"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t1d"
+			}
+		}
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_2.mesh"
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/trimsheet_01_yellow"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/metal_yellow"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/metal_grey"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "6"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "7"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "8"
+						material "buildings/megastructures/metal_white"
+					}
+				}
+			}
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/megastructures/mega_rift_station_2"
+			}
+
+			EffectDesc
+			{
+				EffectBaseBlueprints
+				{
+					"buildings/effects_big_base"
+				}
+				EffectGroup
+				{
+					group "working"
+					enabled "0"
+					delay "1"
+
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_arch_energy"
+							bone "att_slider_energy_1"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_arch_energy"
+							bone "att_slider_energy_2"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_arch_energy"
+							bone "att_slider_energy_3"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_arch_energy"
+							bone "att_slider_energy_4"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_arch_energy"
+							bone "att_slider_energy_5"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_arch_energy"
+							bone "att_slider_energy_6"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_arch_lightning"
+						}
+					}
+				}
+				EffectGroup
+				{
+					group "idle"
+					enabled "0"
+					delay "1"
+
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_cooling"
+							bone "att_slider_energy_2"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_cooling"
+							bone "att_slider_energy_5"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_cooling"
+							bone "att_top_1"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_cooling"
+							bone "att_top_2"
+						}
+					}
+				}
+				EffectGroup
+				{
+					group "0_transition"
+					enabled "0"
+
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_1"
+							delay "0"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_2"
+							delay "0.15"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_3"
+							delay "0.25"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_4"
+							delay "0.3"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_5"
+							delay "0.4"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_6"
+							delay "0.45"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_7"
+							delay "0.5"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_main/explosion_building_hq"
+							delay "0.6"
+						}
+					}
+				}
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t2"
+			}
+		}
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_3.mesh"
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/metal_grey"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/glass"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/metal_yellow"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/trimsheet_01_yellow"
+					}
+				}
+			}
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_3_c1.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_3_c2.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_3_c3.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t3"
+			}
+		}
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_4.mesh"
+
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/metal_grey"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/glass"
+					}
+
+					SubMesh
+					{
+						id "6"
+						material "buildings/megastructures/metal_yellow"
+					}
+
+					SubMesh
+					{
+						id "7"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "8"
+						material "buildings/megastructures/trimsheet_01_yellow"
+					}
+				}
+			}
+
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_4_c1.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_4_c2.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_4_c3.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	14
+						y	10
+						z	14
+					}
+				}
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "7"
+					y "7"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t4a"
+			}
+		}
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_4.mesh"
+
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/metal_grey"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/glass"
+					}
+
+					SubMesh
+					{
+						id "6"
+						material "buildings/megastructures/metal_yellow"
+					}
+
+					SubMesh
+					{
+						id "7"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "8"
+						material "buildings/megastructures/trimsheet_01_yellow"
+					}
+
+				}
+			}
+
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_4_c1.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_4_c2.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_4_c3.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	14
+						y	10
+						z	14
+					}
+				}
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "7"
+					y "7"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t4b"
+			}
+		}
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_5a.mesh"
+
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/metal_yellow"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/trimsheet_01_yellow"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "6"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "7"
+						material "buildings/megastructures/metal_grey"
+					}
+				}
+			}
+
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_5_c1.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_5_c2.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	6
+						y	10
+						z	6
+					}
+				}
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "3"
+					y "3"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t5a"
+			}
+		}
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_5.mesh"
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/metal_yellow"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/trimsheet_01_yellow"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "6"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "7"
+						material "buildings/megastructures/metal_grey"
+					}
+				}
+			}
+
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_5_c1.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_5_c2.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	6
+						y	10
+						z	6
+					}
+				}
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "3"
+					y "3"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t5b"
+			}
+		}
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_6.mesh"
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/metal_grey"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "6"
+						material "buildings/megastructures/trimsheet_01_yellow"
+					}
+
+					SubMesh
+					{
+						id "7"
+						material "buildings/megastructures/metal_yellow"
+					}
+
+					SubMesh
+					{
+						id "8"
+						material "buildings/megastructures/metal_white"
+					}
+				}
+			}
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/megastructures/mega_rift_station_6"
+			}
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_6_c1.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_6_c2.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_6_c3.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	16
+						y	10
+						z	16
+					}
+				}
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "8"
+					y "8"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+
+			EffectDesc
+			{
+				EffectBaseBlueprints
+				{
+					"buildings/effects_big_base"
+				}
+				EffectGroup
+				{
+					group "working"
+					enabled "0"
+					delay "1"
+
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_rotor_slow"
+							bone "att_rotor"
+						}
+					}
+				}
+				EffectGroup
+				{
+					group "0_transition"
+					enabled "0"
+
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_1"
+							delay "0"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_2"
+							delay "0.15"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_3"
+							delay "0.25"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_4"
+							delay "0.3"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_5"
+							delay "0.4"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_6"
+							delay "0.45"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_7"
+							delay "0.5"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_main/explosion_building_hq"
+							delay "0.6"
+						}
+					}
+				}
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t6a"
+			}
+		}
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_8.mesh"
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/metal_grey"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/trimsheet_01_yellow"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/metal_yellow"
+					}
+
+					SubMesh
+					{
+						id "6"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "7"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "8"
+						material "buildings/megastructures/metal_white"
+					}
+				}
+			}
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/megastructures/mega_rift_station_8"
+			}
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_8_c1.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_8_c2.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_8_c3.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_8_c4.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_8_c5.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_8_c6.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_8_c7.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	16
+						y	10
+						z	16
+					}
+				}
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "8"
+					y "8"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+
+			EffectDesc
+			{
+				EffectBaseBlueprints
+				{
+					"buildings/effects_big_base"
+				}
+				EffectGroup
+				{
+					group "working"
+					enabled "0"
+					delay "1"
+
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_capacitor_ring"
+							bone "att_ring_1"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_capacitor_ring"
+							bone "att_ring_2"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_capacitor_ring"
+							bone "att_ring_3"
+						}
+					}
+				}
+				EffectGroup
+				{
+					group "0_transition"
+					enabled "0"
+
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_1"
+							delay "0"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_2"
+							delay "0.15"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_3"
+							delay "0.25"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_4"
+							delay "0.3"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_5"
+							delay "0.4"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_6"
+							delay "0.45"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_7"
+							delay "0.5"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_main/explosion_building_hq"
+							delay "0.6"
+						}
+					}
+				}
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t6b"
+			}
+		}
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_7.mesh"
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/metal_grey"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "6"
+						material "buildings/megastructures/trimsheet_01_yellow"
+					}
+
+					SubMesh
+					{
+						id "7"
+						material "buildings/megastructures/metal_yellow"
+					}
+
+				}
+			}
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/megastructures/mega_rift_station_7"
+			}
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_7_c1.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	8
+						y	10
+						z	8
+					}
+				}
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "4"
+					y "4"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+
+			EffectDesc
+			{
+				EffectBaseBlueprints
+				{
+					"buildings/effects_big_base"
+				}
+				EffectGroup
+				{
+					group "working"
+					enabled "0"
+					delay "1"
+
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_rotor"
+							bone "att_rotor"
+						}
+					}
+				}
+				EffectGroup
+				{
+					group "0_transition"
+					enabled "0"
+
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_1"
+							delay "0"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_2"
+							delay "0.15"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_3"
+							delay "0.25"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_4"
+							delay "0.3"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_5"
+							delay "0.4"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_6"
+							delay "0.45"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_7"
+							delay "0.5"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_main/explosion_building_hq"
+							delay "0.6"
+						}
+					}
+				}
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t7a"
+			}
+		}
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+
+			LuaDesc
+			{
+				script "lua/buildings/building_addon.lua"
+				database
+				{
+					working_from_parent int:"1"
+				}
+			}
+
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/mega_rift_station_9.mesh"
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/metal_grey"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/metal_yellow"
+					}
+
+					SubMesh
+					{
+						id "6"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "7"
+						material "buildings/megastructures/trimsheet_01_yellow"
+					}
+
+					SubMesh
+					{
+						id "8"
+						material "buildings/megastructures/metal_white"
+					}
+				}
+			}
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/megastructures/mega_rift_station_9"
+			}
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/mega_rift_station_9_c1.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			GridCullerDesc
+			{
+				Shapes
+				{
+					PhysicsBoxShape
+					{
+						x	8
+						y	10
+						z	8
+					}
+				}
+			}
+
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "4"
+					y "4"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+
+			EffectDesc
+			{
+				EffectBaseBlueprints
+				{
+					"buildings/effects_big_base"
+				}
+				EffectGroup
+				{
+					group "working"
+					enabled "0"
+					delay "1"
+
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_side_vent"
+							bone "att_exhaust_1"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/mega_rift_side_vent"
+							bone "att_exhaust_2"
+						}
+					}
+				}
+				EffectGroup
+				{
+					group "0_transition"
+					enabled "0"
+
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_1"
+							delay "0"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_2"
+							delay "0.15"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_3"
+							delay "0.25"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_4"
+							delay "0.3"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_5"
+							delay "0.4"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_6"
+							delay "0.45"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_7"
+							delay "0.5"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_main/explosion_building_hq"
+							delay "0.6"
+						}
+					}
+				}
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t7b"
+			}
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/megastructures/mega_rift_station_ruins"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/mega_rift_station_ruins.mesh"
+
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/megastructures/metal_grey"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/metal_black"
+			}
+
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+
+			SubMesh
+			{
+				id "7"
+				material "buildings/main/buildings_ruins"
+			}
+		}
+	}
+}
