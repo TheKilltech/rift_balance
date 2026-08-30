@@ -270,22 +270,11 @@ EntityBlueprint  // planet_defense
 
 	MinimapItemDesc
 	{
-		type	"quad"
-		color 
-		{
-			x "0.6"  // r
-			y "0.25" // g
-			z "0.25" // b
-			w "1"
-		}
-		size
-		{
-			x "5"
-			y "5"
-		}
-					
+		type				"image"
+		icon_material 		"gui/hud/minimap_icons/orbital_defense"
+		additional_z_order 	0
 		visibility			"always"
-		layer_group			"common_buildings"
+		layer_group			"important_buildings"
 	}
 
 	FogOfWarRevealerComponentDesc

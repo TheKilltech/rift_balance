@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // quantum_cortex_laboratory
 {
 	name "buildings/megastructures/quantum_cortex_laboratory"
 
@@ -343,24 +343,13 @@ EntityBlueprint
 
 	MinimapItemDesc
 	{
-		type	"quad"
-		color
-		{
-			x "0.2"
-			y "0.2"
-			z "1"
-			w "1"
-		}
-		size
-		{
-			x "12"
-			y "12"
-		}
-
+		type				"image"
+		icon_material 		"gui/hud/minimap_icons/quantum_cortex_laboratory"
+		additional_z_order 	0
 		visibility			"always"
 		layer_group			"important_buildings"
 	}
-
+	
 	FogOfWarRevealerComponentDesc
 	{
 		radius "40"
@@ -665,6 +654,31 @@ EntityBlueprint
 
 	children
 	{
+		EntityBlueprint  // quantum_cortex_laboratory_minimap
+		{
+			name "buildings/megastructures/quantum_cortex_laboratory_minimap"
+			
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "12"
+					y "12"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+
+		}
 		EntityBlueprint
 		{
 			base_blueprint "buildings/megastructures/foundation_base"
@@ -1518,7 +1532,7 @@ EntityBlueprint
 }
 
 
-EntityBlueprint
+EntityBlueprint  // quantum_cortex_laboratory_ruins
 {
 	name  "buildings/megastructures/quantum_cortex_laboratory_ruins"
 

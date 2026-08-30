@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // mega_rift_station
 {
 	name "buildings/megastructures/mega_rift_station"
 
@@ -278,7 +278,6 @@ EntityBlueprint
 		animation_graph_name "building_working"
 	}
 
-
 	PhysicsDesc
 	{
 		objects
@@ -337,20 +336,9 @@ EntityBlueprint
 
 	MinimapItemDesc
 	{
-		type	"quad"
-		color
-		{
-			x "0.2"
-			y "0.2"
-			z "1"
-			w "1"
-		}
-		size
-		{
-			x "16"
-			y "16"
-		}
-
+		type				"image"
+		icon_material 		"gui/hud/minimap_icons/mega_rift_station"
+		additional_z_order 	0
 		visibility			"always"
 		layer_group			"important_buildings"
 	}
@@ -675,8 +663,33 @@ EntityBlueprint
 			}
 		}
 	}
+	
 	children
 	{
+		EntityBlueprint  // mega_rift_station_minimap
+		{
+			name "buildings/megastructures/mega_rift_station_minimap"
+			
+			MinimapItemDesc
+			{
+				type	"quad"
+				color
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "16"
+					y "16"
+				}
+
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+		}
 		EntityBlueprint
 		{
 			base_blueprint "buildings/megastructures/building_base"
@@ -2920,7 +2933,8 @@ EntityBlueprint
 	}
 }
 
-EntityBlueprint
+
+EntityBlueprint  // mega_rift_station_ruins
 {
 	name  "buildings/megastructures/mega_rift_station_ruins"
 

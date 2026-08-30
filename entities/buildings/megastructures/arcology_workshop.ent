@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // arcology_workshop
 {
 	name "buildings/megastructures/arcology_workshop"
 	
@@ -327,24 +327,13 @@ EntityBlueprint
 
 	MinimapItemDesc
 	{
-		type	"quad"
-		color 
-		{
-			x "0.2"
-			y "0.2"
-			z "1"
-			w "1"
-		}
-		size
-		{
-			x "6"
-			y "12"
-		}
-		
+		type				"image"
+		icon_material 		"gui/hud/minimap_icons/arcology_workshop"
+		additional_z_order 	0
 		visibility			"always"
 		layer_group			"important_buildings"
-	}	
-
+	}
+	
 	FogOfWarRevealerComponentDesc
 	{
 		radius "40"
@@ -484,7 +473,7 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
@@ -622,37 +611,36 @@ EntityBlueprint
 			}
 		}		
 		//EffectGroup
-		//{
-		//	group "takeoff"
-		//	enabled "0"
-		//
-		//	Effects
-		//	{
-		//		Effect
-		//		{
-		//			blueprint "effects/buildings_megastructures/arcology_workshop_engine"
-		//			bone "att_engine"
-		//		}						
-		//	}
-		//}	
-		//EffectGroup
-		//{
-		//	group "landing"
-		//	enabled "0"
-		//
-		//	Effects
-		//	{
-		//		Effect
-		//		{
-		//			blueprint "effects/buildings_megastructures/arcology_workshop_engine"
-		//			bone "att_engine"
-		//		}						
-		//	}
-		//}		
+
 		////////////////////////MISC////////////////////////	
 	}
+	
 	children
 	{
+		EntityBlueprint  // arcology_workshop_minimap
+		{
+			name "buildings/megastructures/arcology_workshop_minimap"
+			
+			MinimapItemDesc
+			{
+				type	"quad"
+				color 
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "6"
+					y "12"
+				}
+				
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
+		}
 		EntityBlueprint
 		{		
 			base_blueprint "buildings/megastructures/building_base"	

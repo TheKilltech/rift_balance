@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // nanobot_center
 {
 	name "buildings/megastructures/nanobot_center"
 	
@@ -15,7 +15,7 @@ EntityBlueprint
 		order				"4"
 		require 			"headquarters_lvl_7"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-		upgrade				"buildings/megastructures/nanobot_center_lvl_2"			
+		upgrade				"buildings/megastructures/nanobot_center_lvl_2"
 		//sellable			"0"
 		is_shortcut_bindable	"0"
 		hide_treasures 		"1"
@@ -63,7 +63,6 @@ EntityBlueprint
 			}	
 		}
 	}
-
 
 	LuaDesc
 	{
@@ -303,24 +302,13 @@ EntityBlueprint
 
 	MinimapItemDesc
 	{
-		type	"quad"
-		color 
-		{
-			x "0.2"
-			y "0.2"
-			z "1"
-			w "1"
-		}
-		size
-		{
-			x "4"
-			y "4"
-		}
-		
+		type				"image"
+		icon_material 		"gui/hud/minimap_icons/nanobot_center"
+		additional_z_order 	0
 		visibility			"always"
 		layer_group			"important_buildings"
-	}	
-
+	}
+	
 	FogOfWarRevealerComponentDesc
 	{
 		radius "40"
@@ -460,7 +448,7 @@ EntityBlueprint
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
@@ -524,8 +512,34 @@ EntityBlueprint
 		}
 		////////////////////////MISC/////////////////////////
 	}
+	
 	children
 	{
+		EntityBlueprint  // nanobot_center_minimap
+		{
+			name "buildings/megastructures/nanobot_center_minimap"
+			
+			MinimapItemDesc
+			{
+				type	"quad"
+				color 
+				{
+					x "0.2" // r
+					y "0.2" // g
+					z "1"   // b
+					w "1"
+				}
+				size
+				{
+					x "4"
+					y "4"
+				}
+				
+				visibility			"always"
+				layer_group			"important_buildings"
+			}	
+
+		}
 		EntityBlueprint
 		{		
 			base_blueprint "buildings/megastructures/building_base"		
@@ -1810,30 +1824,6 @@ EntityBlueprint
 							{
 								mesh "meshes/buildings/megastructures/nanobot_center_foundation_5_c4.nxs"
 							}
-							//PhysicsMeshShape
-							//{
-							//	mesh "meshes/buildings/megastructures/nanobot_center_foundation_5_c5.nxs"
-							//}
-							//PhysicsMeshShape
-							//{
-							//	mesh "meshes/buildings/megastructures/nanobot_center_foundation_5_c6.nxs"
-							//}
-							//PhysicsMeshShape
-							//{
-							//	mesh "meshes/buildings/megastructures/nanobot_center_foundation_5_c7.nxs"
-							//}
-							//PhysicsMeshShape
-							//{
-							//	mesh "meshes/buildings/megastructures/nanobot_center_foundation_5_c8.nxs"
-							//}
-							//PhysicsMeshShape
-							//{
-							//	mesh "meshes/buildings/megastructures/nanobot_center_foundation_5_c9.nxs"
-							//}
-							//PhysicsMeshShape
-							//{
-							//	mesh "meshes/buildings/megastructures/nanobot_center_foundation_5_c10.nxs"
-							//}							
 						}
 					}
 				}
@@ -1878,7 +1868,7 @@ EntityBlueprint
 	}	
 }
 
-EntityBlueprint
+EntityBlueprint  // nanobot_center_ruins
 {
 	name  "buildings/megastructures/nanobot_center_ruins"
 	

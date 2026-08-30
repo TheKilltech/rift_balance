@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // gravitational_hyper_lens
 {
 	name "buildings/megastructures/gravitational_hyper_lens"
 	
@@ -307,24 +307,13 @@ EntityBlueprint
 
 	MinimapItemDesc
 	{
-		type	"quad"
-		color 
-		{
-			x "0.2"
-			y "0.2"
-			z "1"
-			w "1"
-		}
-		size
-		{
-			x "8"
-			y "8"
-		}
-		
+		type				"image"
+		icon_material 		"gui/hud/minimap_icons/gravitational_hyper_lens"
+		additional_z_order 	1
 		visibility			"always"
 		layer_group			"important_buildings"
-	}	
-
+	}
+	
 	FogOfWarRevealerComponentDesc
 	{
 		radius "40"
@@ -613,6 +602,30 @@ EntityBlueprint
 	
 	children
 	{
+		EntityBlueprint  // gravitational_hyper_lens_minimap
+		{
+			name "buildings/megastructures/gravitational_hyper_lens_minimap"
+			
+			MinimapItemDesc
+			{
+				type	"quad"
+				color 
+				{
+					x "0.2"
+					y "0.2"
+					z "1"
+					w "1"
+				}
+				size
+				{
+					x "8"
+					y "8"
+				}
+				
+				visibility			"always"
+				layer_group			"important_buildings"
+			}	
+		}
 		EntityBlueprint
 		{
 			base_blueprint "buildings/megastructures/foundation_base"
