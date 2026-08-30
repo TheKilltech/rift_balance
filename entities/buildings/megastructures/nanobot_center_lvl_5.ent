@@ -1,0 +1,329 @@
+EntityBlueprint
+{
+	name "buildings/megastructures/nanobot_center_lvl_5"
+	base_blueprint "buildings/megastructures/nanobot_center_lvl_4"
+	
+	BuildingDesc
+	{
+		buildable 			"0"		
+		name 				"nanobot_center_lvl_5"
+		bp   				"buildings/megastructures/nanobot_center_lvl_5"
+		category 			"megastructures"
+		localization_id		"gui/hud/building_name/nanobot_center"
+		description			"gui/hud/building_description/nanobot_center"
+		menu_icon			"gui/hud/building_icons/nanobot_center"
+		limit			    "1"
+		limit_name			"nanobot_center"
+		order				"4"
+		require 			"nanobot_center_lvl_4"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		//upgrade				"buildings/megastructures/nanobot_center_lvl_6"		
+		//sellable			"0"
+		is_shortcut_bindable	"0"
+		hide_treasures 		"1"
+		//disableable 		"0"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 180
+				building_cost
+				{
+					carbonium 	"35000"
+					steel 		"15000"
+					titanium 	"4000"
+				}
+			}		
+		}
+	}
+		
+	LuaDesc
+	{
+		script "lua/buildings/megastructures/nanobot_center.lua"
+
+		database
+		{
+			cone_effect			string:"build_cone_5x5"
+			cone_effect_sell	string:"sell_big"
+			number_of_ai_cores  int:"60"
+		}
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"30000"
+			}
+		}
+
+		priority 2
+	}
+	
+	children
+	{	
+		EntityBlueprint
+		{		
+			base_blueprint "buildings/megastructures/building_base"		
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/nanobot_center_2.mesh"
+				material 	"buildings/megastructures/glass"
+		
+		        SubMeshes
+		        {
+		        	SubMesh
+		        	{
+		        		id "1"
+		        		material "buildings/megastructures/trimsheet_01_grey"
+		        	}
+		        	SubMesh
+		        	{
+		        		id "2"
+		        		material "buildings/megastructures/trimsheet_01_black"
+		        	}
+        
+		        	SubMesh
+		        	{
+		        		id "3"
+		        		material "buildings/megastructures/trimsheet_02_grey"
+		        	}
+        
+		        	SubMesh
+		        	{
+		        		id "4"
+		        		material "buildings/megastructures/metal_black"
+		        	}
+        
+		        	SubMesh
+		        	{
+		        		id "5"
+		        		material "buildings/megastructures/metal_white"
+		        	}
+        
+		        	SubMesh
+		        	{
+		        		id "6"
+		        		material "buildings/megastructures/metal_yellow"
+		        	}
+        
+		        	SubMesh
+		        	{
+		        		id "7"
+		        		material "buildings/megastructures/trimsheet_02_black"
+		        	}
+        
+		        		SubMesh
+		        	{
+		        		id "8"
+		        		material "buildings/megastructures/metal_grey"
+		        	}
+
+		        		SubMesh
+		        	{
+		        		id "9"
+		        		material "buildings/megastructures/trimsheet_01_yellow"
+		        	}
+        
+		        }
+			}
+			
+			SkeletonDesc
+			{
+				name "meshes/buildings/megastructures/nanobot_center_2"
+			}	
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/nanobot_center_2_c1.nxs"
+							}	
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/nanobot_center_2_c2.nxs"
+							}
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/nanobot_center_2_c3.nxs"
+							}							
+						}
+					}
+				}
+			}	
+			AttachmentDesc
+			{
+				attachment "att_extension_t1"
+			}	
+			EffectDesc
+			{		
+				EffectBaseBlueprints
+				{
+					"buildings/effects_big_base"
+				}
+				////////////////////////Destruction level 0 transition effects/////////////////////////
+				EffectGroup
+				{
+					group "working"
+					enabled "0"
+					delay "1"
+		
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/nanobot_center_cylinder_blue"
+							bone "att_cylinder_1"
+						}	
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/nanobot_center_cylinder_blue"
+							bone "att_cylinder_2"
+						}						
+					}
+				}
+				EffectGroup
+				{
+					group "0_transition"
+					enabled "0"
+		
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_1"
+							delay "0"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_2"
+							delay "0.15"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_3"
+							delay "0.25"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_4"
+							delay "0.3"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_5"
+							delay "0.4"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_6"
+							delay "0.45"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_7"
+							delay "0.5"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_main/explosion_building_hq"
+							delay "0.6"
+						}
+					}
+				}				
+			}															
+		}
+	}	
+}
+
+EntityBlueprint
+{
+	name  "buildings/megastructures/nanobot_center_lvl_5_ruins"
+	
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/nanobot_center_ruins.mesh"
+		material 	"buildings/megastructures/glass"
+		
+		SubMeshes
+		{
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+			
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+			
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/metal_black"
+			}
+			
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/metal_white"
+			}
+			
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/metal_yellow"
+			}
+			
+			SubMesh
+			{
+				id "7"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+			
+			SubMesh
+			{
+				id "8"
+				material "buildings/megastructures/metal_grey"
+			}
+			SubMesh
+			{
+				id "9"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+			SubMesh
+			{
+				id "10"
+				material "buildings/main/buildings_ruins"
+			}	
+		}		
+	}
+}
