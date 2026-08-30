@@ -86,10 +86,10 @@ function GetEffectiveDifficulty( difficulty, threat )
 	
 	local shiftDiff = 0
 	if threat > 8  then     shiftDiff =  1
-	elseif threat < 6 then  shiftDiff = -1
-	elseif threat < 4 then  shiftDiff = -2
 	elseif threat < 2 then  shiftDiff = -3
+	elseif threat < 4 then  shiftDiff = -2
+	elseif threat < 6 then  shiftDiff = -1
 	end
 	
-	return GetShiftedDifficulty( difficulty, shiftDiff)
+	return GetShiftedDifficulty( difficulty, shiftDiff), threat - shiftDiff*2
 end
