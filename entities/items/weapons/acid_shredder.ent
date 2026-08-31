@@ -58,12 +58,46 @@ EntityBlueprint  // acid_shredder
 		//burst_column_angle 			"5"
 	}
 
+	children
+	{
+		EntityBlueprint  // acid_tank_front
+		{
+			name			"items/weapons/acid_shredder/acid_tank_front"
+			base_blueprint	"effects/weapon_items/ball_gas"
+
+			AttachmentDesc
+			{
+				attachment "att_vismod_acid_front"
+			}
+			
+			SkeletonDesc
+			{
+				name "meshes/items/weapons/acid_shredder"
+			}
+		}
+		EntityBlueprint  // acid_tank_back
+		{
+			name			"items/weapons/acid_shredder/acid_tank_back"
+			base_blueprint	"effects/weapon_items/ball_gas"
+
+			AttachmentDesc
+			{
+				attachment "att_vismod_acid_back"
+			}
+			
+			SkeletonDesc
+			{
+				name "meshes/items/weapons/acid_shredder"
+			}
+		}
+	}
+
 	EffectDesc
 	{
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"
+			enabled "0"
 			Effects
 			{
 				Effect
