@@ -1,11 +1,11 @@
-EntityBlueprint  // liquid_pump_new
+EntityBlueprint  // liquid_pump
 {
-	name  "buildings/resources/liquid_pump_new"
+	name	"buildings/resources/liquid_pump"
 
 	BuildingDesc
 	{
-		name 				"liquid_pump_new"
-		bp   				"buildings/resources/liquid_pump_new"
+		name 				"liquid_pump"
+		bp   				"buildings/resources/liquid_pump"
 		category 			"liquids"
 		localization_id		"gui/hud/building_name/liquid_pump"
 		description			"gui/hud/building_description/liquid_pump"
@@ -434,10 +434,194 @@ EntityBlueprint  // liquid_pump_new
 	}
 }
 
+EntityBlueprint  // liquid_pump_new  -- needed for compatibility
+{
+	name  					"buildings/resources/liquid_pump_new"
+	base_blueprint 			"buildings/resources/liquid_pump"
+
+	BuildingDesc
+	{
+		buildable 			"0"
+		name 				"liquid_pump_new"
+		bp   				"buildings/resources/liquid_pump_new"
+		category 			"liquids"
+		localization_id		"gui/hud/building_name/liquid_pump"
+		description			"gui/hud/building_description/liquid_pump"
+		menu_icon			"gui/hud/building_icons/obsolete"
+		//upgrade				"buildings/resources/liquid_pump_new_lvl_3"
+		require 			"headquarters"
+		radius_name			"pump"
+		min_radius			"20"
+		type				"liquid_mine"
+		overrides			"liquid_mine,pipe"
+
+		building_functionality	"BUILD_ON_WATER|PIPE_MODE|NO_FOUNDATION"
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 4
+				building_cost
+				{
+					carbonium 	"50"
+					steel		"25"
+				}
+			}
+		}
+		resource_requirement "water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein|supercoolant_vein"
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"water_vein"
+				specific_group		"local"
+				value			 	"1"
+				family				"production"
+			}
+			GameplayResource
+			{
+				resource 			"mud_vein"
+				specific_group		"local"
+				value			 	"1"
+				family				"production"
+			}
+			GameplayResource
+			{
+				resource 			"sludge_vein"
+				specific_group		"local"
+				value			 	"1"
+				family				"production"
+			}
+			GameplayResource
+			{
+				resource 			"magma_vein"
+				specific_group		"local"
+				value			 	"1"
+				family				"production"
+			}
+			GameplayResource
+			{
+				resource 			"morphium_vein"
+				specific_group		"local"
+				value			 	"1"
+				family				"production"
+			}
+			GameplayResource
+			{
+				resource 			"supercoolant_vein"
+				specific_group		"local"
+				value			 	"1"
+				family				"production"
+			}
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				resource 			"water"
+				value			 	"100"
+				family				"production"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"mud"
+				value			 	"100"
+				family				"production"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"sludge"
+				value			 	"100"
+				family				"production"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"magma"
+				value			 	"100"
+				family				"production"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"morphium"
+				value			 	"100"
+				family				"production"
+				attachment			"att_out_1"
+			}
+			GameplayResource
+			{
+				resource 			"supercoolant"
+				value			 	"100"
+				family				"production"
+				attachment			"att_out_1"
+			}
+		}
+
+		priority 4
+		one_vein_mode "1"
+	}
+	
+	ResourceStorageDesc
+	{
+		Storages
+		{
+			Storage
+			{
+				group	 "local"
+				max 	 "400"
+				attachment		"att_out_1"
+			}
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/resources/liquid_pump"
+		}
+		EffectGroup
+		{
+			group "level"
+			enabled "0"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/level_2"
+					bone "att_level"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "working"
+			enabled "0"				
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_resources/liquid_pump_working"								
+				}			
+			}
+		}		
+	}
+}
+
 EntityBlueprint  // liquid_pump_new_lvl_2
 {
 	name  					"buildings/resources/liquid_pump_new_lvl_2"
-	base_blueprint 			"buildings/resources/liquid_pump_new"
+	base_blueprint 			"buildings/resources/liquid_pump"
 
 	BuildingDesc
 	{
