@@ -248,16 +248,28 @@ function DefaultWaveDiffSettings( biome, missionType)
 	return diffSettings
 end
 
+function Make_RuleParams(biome, missionType, difficulty, threat, biomeVisitors1, biomeVisitors2)
+	local params          = {}
+	params.biome          = biome
+	params.threat         = threat
+	params.difficulty     = difficulty
+	params.missionType    = missionType
+	params.biomeVisitors1 = biomeVisitors1
+	params.biomeVisitors2 = biomeVisitors2
+	return params
+end
+
 function Default_Waves(biomeOrParam, missionType, difficulty,  waves)
 	local threat = 8
 	local biomeVisitors1 = "none"
 	local biomeVisitors2 = "none"
 	local biome = biomeOrParam
+	local params = {}
 	if type (biomeOrParam) == "table" then 
-		local params   = biomeOrParam
+		params         = biomeOrParam
 		threat         = params.threat
-		difficulty     = params.difficulty
-		missionType    = params.missionType
+		difficulty     = difficulty or params.difficulty
+		missionType    = missionType or params.missionType
 		biome          = params.biome
 		biomeVisitors1 = params.biomeVisitors1
 		biomeVisitors2 = params.biomeVisitors2
@@ -267,12 +279,12 @@ function Default_Waves(biomeOrParam, missionType, difficulty,  waves)
 	
 	if not waves then waves = {["default"] = GetEmptyWaves( false )} end
 	
-	local mainWaves = Default_UnboxedWaves(biome, missionType, difficulty, nil)
+	local mainWaves = Default_UnboxedWaves( Make_RuleParams(biome, missionType, difficulty, threat))
 	if (biomeVisitors1 or "none") ~= "none" then
-		mainWaves = Default_UnboxedWaves( biomeVisitors1, "scout", difficulty, mainWaves )
+		mainWaves = Default_UnboxedWaves( Make_RuleParams(biomeVisitors1, nil, nil, threat), "scout", difficulty, mainWaves )
 	end
 	if (biomeVisitors2 or "none") ~= "none" then
-		mainWaves = Default_UnboxedWaves( biomeVisitors2, "scout", difficulty, mainWaves )
+		mainWaves = Default_UnboxedWaves( Make_RuleParams(biomeVisitors2, nil, nil, threat), "scout", difficulty, mainWaves )
 	end
 	
 	waves = {
@@ -296,14 +308,15 @@ function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
 	if type (biomeOrParam) == "table" then 
 		local params   = biomeOrParam
 		threat         = params.threat
-		difficulty     = params.difficulty
-		missionType    = params.missionType
+		difficulty     = difficulty  or params.difficulty
+		missionType    = missionType or params.missionType
 		biome          = params.biome
 	end
 	if difficulty == nil or difficulty == "custom" then difficulty = DifficultyService:GetWaveStrength() end
 	if waves == nil        then waves = GetEmptyWaves( false ) end
-	local ds = DefaultWaveDiffSettings( biome, missionType)
-	difficulty = GetEffectiveDifficulty( difficulty, threat )
+	difficulty, threat = GetEffectiveDifficulty( difficulty, threat )
+	local params = Make_RuleParams(biome, missionType, difficulty, threat)
+	local ds     = DefaultWaveDiffSettings( biome, missionType)
 	
 	LogService:Log("Default_UnboxedWaves (biome '"..tostring(biome).. "' missionType '"..tostring(missionType).. "' difficulty '"..tostring(difficulty).."' threat '"..tostring(threat).. "')")
 	
@@ -377,13 +390,13 @@ function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
 		end
 		
 	elseif Contains({"late"}, missionType) then
-		ConcatWaves(waves, ApplyDifficultyOffsetToWaves( Default_UnboxedWaves(biome, "outpost", difficulty, nil), 3))
+		ConcatWaves(waves, ApplyDifficultyOffsetToWaves( Default_UnboxedWaves(params, "outpost", difficulty, nil), 3))
 	
 	elseif Contains({"scout"}, missionType) then
-		ConcatWaves(waves, ApplyDifficultyOffsetToWaves( Default_UnboxedWaves(biome, "outpost", difficulty, nil), 4))
+		ConcatWaves(waves, ApplyDifficultyOffsetToWaves( Default_UnboxedWaves(params, "outpost", difficulty, nil), 4))
 		
 	elseif Contains({"peaceful"}, missionType) then
-		ConcatWaves(waves, ApplyDifficultyOffsetToWaves( Default_UnboxedWaves(biome, "outpost", difficulty, nil), 5))
+		ConcatWaves(waves, ApplyDifficultyOffsetToWaves( Default_UnboxedWaves(params, "outpost", difficulty, nil), 5))
 		
 	end
 	
@@ -396,14 +409,14 @@ function Default_ExtraWaves(biomeOrParam, missionType, difficulty,  waves)
 	if type (biomeOrParam) == "table" then 
 		local params   = biomeOrParam
 		threat         = params.threat
-		difficulty     = params.difficulty
-		missionType    = params.missionType
+		difficulty     = difficulty  or params.difficulty
+		missionType    = missionType or params.missionType
 		biome          = params.biome
 	end
 	if difficulty == nil or difficulty == "custom" then difficulty = DifficultyService:GetWaveStrength() end
 	if waves == nil      then waves = GetEmptyWaves( false ) end
 	local ds = DefaultWaveDiffSettings( biome, missionType)
-	--difficulty = GetEffectiveDifficulty( difficulty, threat )
+	--difficulty, threat = GetEffectiveDifficulty( difficulty, threat )
 
 	if Contains({"outpost","resource","hq"}, missionType) then
 		if (difficulty == "brutal")      then
@@ -462,14 +475,14 @@ function Default_MpWaves(biomeOrParam, missionType, difficulty,  waves)
 	if type (biomeOrParam) == "table" then 
 		local params   = biomeOrParam
 		threat         = params.threat
-		difficulty     = params.difficulty
-		missionType    = params.missionType
+		difficulty     = difficulty  or params.difficulty
+		missionType    = missionType or params.missionType
 		biome          = params.biome
 	end
 	if difficulty == nil or difficulty == "custom" then difficulty = DifficultyService:GetWaveStrength() end
 	if waves == nil      then waves = GetEmptyWaves( true ) end
 	local ds = DefaultWaveDiffSettings( biome, missionType)
-	--difficulty = GetEffectiveDifficulty( difficulty, threat )
+	difficulty, threat = GetEffectiveDifficulty( difficulty, threat )
 	
 	if Contains({"hq"}, missionType) then
 		if (difficulty == "brutal")      then
@@ -532,8 +545,8 @@ function Default_Bosses(biomeOrParam, missionType, difficulty,  waves)
 	if type (biomeOrParam) == "table" then 
 		local params   = biomeOrParam
 		threat         = params.threat
-		difficulty     = params.difficulty
-		missionType    = params.missionType
+		difficulty     = difficulty  or params.difficulty
+		missionType    = missionType or params.missionType
 		biome          = params.biome
 	end
 	if difficulty == nil or difficulty == "custom" then difficulty = DifficultyService:GetWaveStrength() end

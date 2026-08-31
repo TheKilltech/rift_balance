@@ -952,6 +952,9 @@ EntityBlueprint  // liquid_material_storage_large
 			cone_effect			string:"build_cone_4x4"
 			cone_effect_sell	string:"sell_big"
 			postfix				string:"_storage"
+			
+			min_scale			float:	"1.2"
+			max_scale			float:	"1.2"
 		}
 	}
 
@@ -1081,12 +1084,12 @@ EntityBlueprint  // liquid_material_storage_large
 	{
 		Shapes
 		{
-   			PhysicsBoxShape
-   			{
-    				x	8
-    				y	8
-    				z	8
-   			}
+			PhysicsBoxShape
+			{
+				x	6.25
+				y	6.25
+				z	6.25
+			}
 		}
 	}
 
@@ -1232,7 +1235,7 @@ EntityBlueprint  // liquid_material_storage_large
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
@@ -1241,7 +1244,7 @@ EntityBlueprint  // liquid_material_storage_large
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -1256,7 +1259,7 @@ EntityBlueprint  // liquid_material_storage_large
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -1271,7 +1274,7 @@ EntityBlueprint  // liquid_material_storage_large
 		EffectGroup
 		{
 			group "att_in_3"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -1286,7 +1289,7 @@ EntityBlueprint  // liquid_material_storage_large
 		EffectGroup
 		{
 			group "att_in_4"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -1302,34 +1305,39 @@ EntityBlueprint  // liquid_material_storage_large
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
 				{
 					blueprint	"effects/buildings_and_machines/pipe_s"
 					bone 		"att_pipe_1"
+					scale		0.8333 0.8333 0.8333
 				}
 				Effect
 				{
 					blueprint	"effects/buildings_and_machines/pipe_s"
 					bone 		"att_pipe_2"
+					scale		0.8333 0.8333 0.8333
 				}
 				Effect
 				{
 					blueprint	"effects/buildings_and_machines/pipe_s"
 					bone 		"att_pipe_3"
+					scale		0.8333 0.8333 0.8333
 				}
 				Effect
 				{
 					blueprint	"effects/buildings_and_machines/pipe_s"
 					bone 		"att_pipe_4"
+					scale		0.8333 0.8333 0.8333
 				}
 				Effect
 				{
 					blueprint 	"effects/buildings_and_machines/silo"
 					bone 		"att_vismod_1"
-					scale 		"1.5 1.5 1.5"
+					scale 		1.27 1.2 1.27
+					orientation 45 0 0
 				}
 			}
 		}	
@@ -1418,100 +1426,3 @@ EntityBlueprint  // liquid_material_storage_small_ghost
 		}
 	}
 }
-
-EntityBlueprint  // liquid_material_storage_large_ghost
-{
-	name  "buildings/resources/liquid_material_storage_large_ghost"
-
-	MeshDesc
-	{
-		mesh 		"meshes/buildings/resources/liquid_material_storage_lvl_3.mesh"
-		material 	"selector/hologram_blue"
-	}
-
-	SkeletonDesc
-	{
-		name "meshes/buildings/resources/liquid_material_storage_lvl_3"
-	}
-
-	EffectDesc
-	{
-		////////////////////////Resources/////////////////////////
-		EffectGroup
-		{
-			group "att_in_1"
-			enabled "1"
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow_twosided"
-					bone "att_in_1_arrow"
-				}
-			}
-		}		
-		EffectGroup
-		{
-			group "att_in_2"
-			enabled "1"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow_twosided"
-					bone "att_in_2_arrow"
-				}
-			}
-		}	
-		EffectGroup
-		{
-			group "att_in_3"
-			enabled "1"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow_twosided"
-					bone "att_in_3_arrow"
-				}
-			}
-		}	
-		EffectGroup
-		{
-			group "att_in_4"
-			enabled "1"				
-			delay "0"
-			
-			Effects
-			{
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/building_arrow_twosided"
-					bone "att_in_4_arrow"
-				}
-			}
-		}	
-		////////////////////////MISC/////////////////////////	
-		EffectGroup
-		{
-			group "vismod"
-			enabled "0"
-			Effects
-			{
-				Effect
-				{
-					blueprint 	"effects/buildings_and_machines/silo_ghost"
-					bone 		"att_vismod_1"
-					scale 		"1.5 1.5 1.5"
-				}
-			}
-		}
-	}
-}
-

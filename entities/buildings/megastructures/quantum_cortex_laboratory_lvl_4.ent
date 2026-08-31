@@ -1,0 +1,373 @@
+EntityBlueprint
+{
+	name "buildings/megastructures/quantum_cortex_laboratory_lvl_4"
+	base_blueprint "buildings/megastructures/quantum_cortex_laboratory_lvl_3"
+
+	BuildingDesc
+	{
+		buildable 			"0"
+		name 				"quantum_cortex_laboratory_lvl_4"
+		bp   				"buildings/megastructures/quantum_cortex_laboratory_lvl_4"
+		//ghost_bp 			"buildings/megastructures/quantum_cortex_laboratory_ghost"
+		category 			"megastructures"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/quantum_cortex_laboratory"
+		description			"gui/hud/building_description/quantum_cortex_laboratory"
+		menu_icon			"gui/hud/building_icons/quantum_cortex_laboratory"
+		limit			    "1"
+		limit_name			"quantum_cortex_laboratory"
+		order				"1"
+		require 			"quantum_cortex_laboratory_lvl_3"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		upgrade				"buildings/megastructures/quantum_cortex_laboratory_lvl_5"
+		//sellable			"0"
+		menu_action 		"research"
+		is_shortcut_bindable	"0"
+		hide_treasures 		"1"
+		//disableable 		"0"
+
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 180
+				building_cost
+				{
+					carbonium 	"25000"
+					steel 		"35000"
+					cobalt 		"4000"
+				}
+			}
+		}
+	}
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"65000"
+			}
+
+			GameplayResource
+			{
+				resource 			"plasma_charged"
+				value			 	"1000"
+				attachment			"att_in_1|att_in_2|att_in_3|att_in_4"
+			}
+		}
+
+		out
+		{
+			GameplayResource
+			{
+				resource 			"download"
+				value			 	"95"
+				family				"research"
+			}
+			
+			GameplayResource
+			{
+				resource 			"analysis"
+				value			 	"95"
+				family				"research"
+			}
+		}
+
+		priority 2
+	}
+	
+	children
+	{
+		EntityBlueprint
+		{
+			base_blueprint "buildings/megastructures/building_base"
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/quantum_cortex_laboratory_4.mesh"
+				SubMeshes
+				{
+
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/metal_grey"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/metal_black"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/metal_white"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/metal_yellow"
+					}
+
+					SubMesh
+					{
+						id "6"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "7"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "8"
+						material "buildings/megastructures/trimsheet_01_yellow"
+					}
+
+					SubMesh
+					{
+						id "9"
+						material "buildings/megastructures/glass"
+					}
+
+					SubMesh
+					{
+						id "10"
+						material "buildings/megastructures/megastructures_plasma"
+					}
+
+					SubMesh
+					{
+						id "11"
+						material "buildings/megastructures/screen"
+					}
+
+				}
+			}
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/megastructures/quantum_cortex_laboratory_4"
+			}
+
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/quantum_cortex_laboratory_4_c1.nxs"
+							}
+
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/quantum_cortex_laboratory_4_c2.nxs"
+							}
+						}
+					}
+				}
+			}
+
+			AttachmentDesc
+			{
+				attachment "att_extension_t3"
+			}
+			EffectDesc
+			{		
+				EffectBaseBlueprints
+				{
+					"buildings/effects_big_base"
+				}
+				////////////////////////Destruction level 0 transition effects/////////////////////////
+				EffectGroup
+				{
+					group "working"
+					enabled "0"
+					delay "1"
+		
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/quantum_cortex_plasma"
+							bone "att_plasma_1"
+						}	
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/quantum_cortex_plasma"
+							bone "att_plasma_2"
+						}	
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/quantum_cortex_plasma"
+							bone "att_plasma_3"
+						}	
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/quantum_cortex_plasma"
+							bone "att_plasma_4"
+						}						
+					}
+				}
+				EffectGroup
+				{
+					group "0_transition"
+					enabled "0"
+		
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_1"
+							delay "0"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_2"
+							delay "0.15"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_3"
+							delay "0.25"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_4"
+							delay "0.3"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_5"
+							delay "0.4"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_6"
+							delay "0.45"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_7"
+							delay "0.5"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_main/explosion_building_hq"
+							delay "0.6"
+						}
+					}
+				}				
+			}									
+		}
+	}
+}
+
+EntityBlueprint
+{
+	name  "buildings/megastructures/quantum_cortex_laboratory_lvl_4_ruins"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/quantum_cortex_laboratory_ruins.mesh"
+
+		SubMeshes
+		{
+
+			SubMesh
+			{
+				id "0"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/metal_black"
+			}
+
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/metal_grey"
+			}
+
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+
+			SubMesh
+			{
+				id "5"
+				material "buildings/megastructures/metal_white"
+			}
+
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+
+			SubMesh
+			{
+				id "7"
+				material "buildings/megastructures/metal_yellow"
+			}
+
+			SubMesh
+			{
+				id "8"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}
+
+			SubMesh
+			{
+				id "9"
+				material "buildings/main/buildings_ruins"
+			}
+		}
+	}
+}

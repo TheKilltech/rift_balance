@@ -1,35 +1,34 @@
-EntityBlueprint  // rare_element_mine_lvl_2
+EntityBlueprint  // rare_element_mine_lvl_3
 {
-	name			"buildings/resources/rare_element_mine_lvl_2"
-	base_blueprint	"buildings/resources/rare_element_mine"
+	name			"buildings/resources/rare_element_mine_lvl_3"
+	base_blueprint	"buildings/resources/rare_element_mine_lvl_2"
 
 	BuildingDesc
 	{
-		name 				"rare_element_mine_lvl_2"
-		bp   				"buildings/resources/rare_element_mine_lvl_2"
+		name 				"rare_element_mine_lvl_3"
+		bp   				"buildings/resources/rare_element_mine_lvl_3"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/mining_drill"
-		description			"gui/hud/building_description/mining_drill_lvl_2"
-		menu_icon			"gui/hud/building_icons/rare_element_mine_lvl2"
-		upgrade				"buildings/resources/rare_element_mine_lvl_3"
-		//require 			"headquarters"
+		description			"gui/hud/building_description/mining_drill_lvl_3"
+		menu_icon			"gui/hud/building_icons/obsolete"
+		require 			"ore_mill"
 		buildable			"0"
 		building_group		"carbonium_factory"
 		type				"solids_mine"
 		overrides			"solids_mine,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
-					
+				
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 120
+				building_time 150
 				building_cost
 				{
-					carbonium 	"500"
-					steel		"800"
-					cobalt		"250"
+					steel		"1200"
+					cobalt		"300"
+					alloys		"250"
 				}
 			}	
 			BuildingCostInfo
@@ -38,10 +37,10 @@ EntityBlueprint  // rare_element_mine_lvl_2
 				building_time 60
 				building_cost
 				{
-					carbonium 	"350"
+					carbonium 	"500"
 				}
 			}			
-		}
+		}	
 		resource_requirement "carbon_deepvein|iron_deepvein|ammonium_deepvein|cobalt_deepvein|palladium_deepvein|titanium_deepvein|uranium_ore_deepvein"
 	}
 
@@ -52,33 +51,12 @@ EntityBlueprint  // rare_element_mine_lvl_2
 			GameplayResource
 			{
 				resource 			"energy"
-				value				75
-			}			
-			GameplayResource
-			{
-				resource 			"mud"
-				value				50
-				attachment			"att_in_1"
-				family				"in"
-			}
-			GameplayResource
-			{
-				resource 			"sludge"
-				value				50
-				attachment			"att_in_1"
-				family				"in"
+				value				350
 			}
 			GameplayResource
 			{
 				resource 			"water"
-				value				50
-				attachment			"att_in_1"
-				family				"in"
-			}
-			GameplayResource
-			{
-				resource 			"morphium"
-				value			 	50
+				value				150
 				attachment			"att_in_1"
 				family				"in"
 			}
@@ -94,44 +72,44 @@ EntityBlueprint  // rare_element_mine_lvl_2
 			GameplayResource
 			{
 				resource 			"carbon_deepvein"
-				value				2.5
+				value				4.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"iron_deepvein"
-				value				2.5
+				value				4.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium_deepvein"
-				value				2.5
+				value				4.0
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"uranium_ore_deepvein"
-				value				2.5
+				value				4.0
 				family				"resource"
 			}			
 			GameplayResource
 			{
 				resource 			"titanium_deepvein"
-				value				2.5
+				value				4.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium_deepvein"
-				value				2.5
+				value				4.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"cobalt_deepvein"
-				value				2.5
+				value				4.0
 				family				"resource"
 			}
 		}
@@ -141,44 +119,44 @@ EntityBlueprint  // rare_element_mine_lvl_2
 			GameplayResource
 			{
 				resource 			"carbonium"
-				value				2.0
+				value				3.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"steel"
-				value				2.0
+				value				3.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium"
-				value				2.0
+				value				3.0
 				family				"resource"
 			}
 			
 			GameplayResource
 			{
 				resource 			"uranium_ore"
-				value				2.0
+				value				3.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"palladium"
-				value				2.0
+				value				3.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"titanium"
-				value				2.0
+				value				3.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"cobalt"
-				value				2.0
+				value				3.0
 				family				"resource"
 			}
 		}
@@ -196,9 +174,12 @@ EntityBlueprint  // rare_element_mine_lvl_2
 			cone_effect					string:"build_cone_3x3"
 			cone_effect_sell			string:"sell_big"
 			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
+			buff_required_bp			string:"buildings/resources/ore_mill_missing_icon"
+			buff_required_name			string:"ore_mill"
+			buff_required_level			int:"0"
 			buff_localization			string:"buff_name/buff_ore_mill"
 			buff_icon					string:"gui/hud/building_icons/ore_mill"
-			buff_participation			float:"0.75"
+			buff_participation			float:"1.0"
 			display_radius_group		string:"ore_mill"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
@@ -206,8 +187,8 @@ EntityBlueprint  // rare_element_mine_lvl_2
 	
 	HealthDesc
 	{
-		max_health 					"1500"
-		health 						"1500"
+		max_health 					"2250"
+		health 						"2250"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		is_manual 1
@@ -264,42 +245,42 @@ EntityBlueprint  // rare_element_mine_lvl_2
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_small"								
+					blueprint "effects/buildings_and_machines/gas_chimney_small"
 					bone "att_chimney_1"
-				}
+				}	
 				Effect
 				{
-					blueprint "effects/buildings_resources/rare_element_mine_working"	
-					delay "0.5"					
-				}				
+					blueprint "effects/buildings_resources/rare_element_mine_working"
+					delay "0.5"
+				}
 			}
-		}					
+		}
 	}
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/rare_element_mine.mesh"
-		material "buildings/resources/rare_element_mine"
+		mesh "meshes/buildings/resources/rare_element_mine_lvl_3.mesh"
+		material "buildings/resources/rare_element_mine_lvl_3"
 	}	
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/rare_element_mine"
+		name "meshes/buildings/resources/rare_element_mine_lvl_3"
 	}
 
 	EffectDesc
@@ -308,7 +289,6 @@ EntityBlueprint  // rare_element_mine_lvl_2
 		{
 			"buildings/effects_medium_base"
 		}
-		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
@@ -343,7 +323,7 @@ EntityBlueprint  // rare_element_mine_lvl_2
 					delay "0.5"
 				}
 			}
-		}		
+		}
 		EffectGroup
 		{
 			group "vismod"
@@ -355,12 +335,12 @@ EntityBlueprint  // rare_element_mine_lvl_2
 					blueprint "effects/buildings_and_machines/pipe"
 					bone "att_in_1_pipe"
 				}
-				Effect
-				{
-					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_01"
-					bone "att_vismod_1"
-					scale 0.8 1.0 0.8
-				}
+				//Effect
+				//{
+				//	blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_01"
+				//	bone "att_vismod_1"
+				//	scale 0.8 1.0 0.8
+				//}
 				//Effect
 				//{
 				//	blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_02"

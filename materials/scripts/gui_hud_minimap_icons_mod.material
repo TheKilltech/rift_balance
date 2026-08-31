@@ -1,6 +1,8 @@
 import * from "materials/scripts/gui.material"
 
 
+/////  resources solid deepvein
+
 material gui/hud/minimap_icons/ammonium : gui/default
 {
 	set_texture_alias diffuse			materials/textures/gui/hud/minimap_icons/ammonium.dds
@@ -42,6 +44,7 @@ material gui/hud/minimap_icons/uranium_ore_deepvein : gui/default
 }
 
 
+/////  resources liquid deepvein
 
 material gui/hud/minimap_icons/mud_deepvein : gui/default
 {
@@ -124,6 +127,7 @@ material gui/hud/minimap_icons/resin_deepvein : gui/default
 }
 
 
+/////  resources rare minerals
 
 material gui/hud/minimap_icons/prod_ferdonite : gui/default
 {
@@ -143,4 +147,46 @@ material gui/hud/minimap_icons/prod_rhodonite : gui/default
 material gui/hud/minimap_icons/prod_tanzenite : gui/default
 {
 	set_texture_alias diffuse			materials/textures/gui/hud/minimap_icons/prod_tanzenite.dds
+}
+
+
+
+/////  buildings megastructures
+
+material gui/hud/minimap_icons/quantum_cortex_laboratory : gui/default
+{
+	set_texture_alias diffuse			materials/textures/gui/hud/minimap_icons/quantum_cortex_laboratory.dds
+}
+
+material gui/hud/minimap_icons/arcology_workshop : gui/default
+{
+	set_texture_alias diffuse			materials/textures/gui/hud/minimap_icons/arcology_workshop.dds
+}
+
+material gui/hud/minimap_icons/gravitational_hyper_lens : gui/default
+{
+	set_texture_alias diffuse			materials/textures/gui/hud/minimap_icons/gravitational_hyper_lens.dds
+}
+
+material gui/hud/minimap_icons/hydroponic_lab : gui/default
+{
+	set_texture_alias diffuse			materials/textures/gui/hud/minimap_icons/hydroponic_lab.dds
+}
+
+material gui/hud/minimap_icons/nanobot_center : gui/default
+{
+	set_texture_alias diffuse			materials/textures/gui/hud/minimap_icons/nanobot_center.dds
+}
+
+material gui/hud/minimap_icons/mega_rift_station : gui/default
+{
+	set_texture_alias diffuse			materials/textures/gui/hud/minimap_icons/mega_rift_station.dds
+}
+
+
+/////  buildings
+
+material gui/hud/minimap_icons/orbital_defense : gui/default
+{
+	set_texture_alias diffuse			materials/textures/gui/hud/minimap_icons/orbital_defense.dds
 }

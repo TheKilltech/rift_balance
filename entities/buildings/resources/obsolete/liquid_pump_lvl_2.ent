@@ -1,17 +1,18 @@
-EntityBlueprint  // liquid_pump_lvl_3
+EntityBlueprint  // liquid_pump_lvl_2
 {
-	name  					"buildings/resources/liquid_pump_lvl_3"
-	base_blueprint 			"buildings/resources/liquid_pump_lvl_2"
+	name  					"buildings/resources/liquid_pump_lvl_2"
+	base_blueprint 			"buildings/resources/liquid_pump"
 
 	BuildingDesc
 	{
 		buildable 			"0"
-		name 				"liquid_pump_lvl_3"
-		bp   				"buildings/resources/liquid_pump_lvl_3"
+		name 				"liquid_pump_lvl_2"
+		bp   				"buildings/resources/liquid_pump_lvl_2"
 		category 			"liquids"
 		localization_id		"gui/hud/building_name/liquid_pump"
 		description			"gui/hud/building_description/liquid_pump"
-		menu_icon			"gui/hud/building_icons/liquid_pump_lvl3"
+		menu_icon			"gui/hud/building_icons/obsolete"
+		upgrade				"buildings/resources/liquid_pump_lvl_3"
 		require 			"headquarters"
 		radius_name			"pump"
 		min_radius			"20"
@@ -19,21 +20,19 @@ EntityBlueprint  // liquid_pump_lvl_3
 		overrides			"liquid_mine,pipe"
 
 		building_functionality	"BUILD_ON_WATER|PIPE_MODE|NO_FOUNDATION"
-
 		costs
 		{
 			BuildingCostInfo
 			{
 				name "default"
-				building_time 7
+				building_time 4
 				building_cost
 				{
-					carbonium 	"100"
-					cobalt		"10"
+					carbonium 	"50"
+					steel		"25"
 				}
 			}
 		}
-
 		resource_requirement "water_vein|sludge_vein|mud_vein|magma_vein|morphium_vein|supercoolant_vein"
 	}
 
@@ -44,12 +43,12 @@ EntityBlueprint  // liquid_pump_lvl_3
 			GameplayResource
 			{
 				resource 		"energy"
-				value			"10"
+				value			"4"
 			}
 			//GameplayResource
 			//{
 			//	group 			"vein"
-			//	value			"200"
+			//	value			"150"
 			//	specific_group	"local"
 			//	family			"production"
 			//}
@@ -57,42 +56,42 @@ EntityBlueprint  // liquid_pump_lvl_3
 			{
 				resource 			"water_vein"
 				specific_group		"local"
-				value			 	"2"
+				value			 	"1.5"
 				family				"production"
 			}
 			GameplayResource
 			{
 				resource 			"mud_vein"
 				specific_group		"local"
-				value			 	"2"
+				value			 	"1.5"
 				family				"production"
 			}
 			GameplayResource
 			{
 				resource 			"sludge_vein"
 				specific_group		"local"
-				value			 	"2"
+				value			 	"1.5"
 				family				"production"
 			}
 			GameplayResource
 			{
 				resource 			"magma_vein"
 				specific_group		"local"
-				value			 	"2"
+				value			 	"1.5"
 				family				"production"
 			}
 			GameplayResource
 			{
 				resource 			"morphium_vein"
 				specific_group		"local"
-				value			 	"2"
+				value			 	"1.5"
 				family				"production"
 			}
 			GameplayResource
 			{
 				resource 			"supercoolant_vein"
 				specific_group		"local"
-				value			 	"2"
+				value			 	"1.5"
 				family				"production"
 			}
 		}
@@ -103,49 +102,49 @@ EntityBlueprint  // liquid_pump_lvl_3
 			//{
 			//	group 			"local"
 			//	specific_group  "vein"
-			//	value			"200"
+			//	value			"150"
 			//	attachment		"att_out_1"
 			//	family			"production"
 			//}
 			GameplayResource
 			{
 				resource 			"water"
-				value			 	"200"
+				value			 	"150"
 				family				"production"
 				attachment			"att_out_1"
 			}
 			GameplayResource
 			{
 				resource 			"mud"
-				value			 	"200"
+				value			 	"150"
 				family				"production"
 				attachment			"att_out_1"
 			}
 			GameplayResource
 			{
 				resource 			"sludge"
-				value			 	"200"
+				value			 	"150"
 				family				"production"
 				attachment			"att_out_1"
 			}
 			GameplayResource
 			{
 				resource 			"magma"
-				value			 	"200"
+				value			 	"150"
 				family				"production"
 				attachment			"att_out_1"
 			}
 			GameplayResource
 			{
 				resource 			"morphium"
-				value			 	"200"
+				value			 	"150"
 				family				"production"
 				attachment			"att_out_1"
 			}
 			GameplayResource
 			{
 				resource 			"supercoolant"
-				value			 	"200"
+				value			 	"150"
 				family				"production"
 				attachment			"att_out_1"
 			}
@@ -160,17 +159,17 @@ EntityBlueprint  // liquid_pump_lvl_3
 		{
 			Storage
 			{
-				group	 "local"
-				max 	 "800"
-				attachment		"att_out_1"
+				group		"local"
+				max 		"600"
+				attachment	"att_out_1"
 			}
 		}
 	}	
 
 	HealthDesc
 	{
-		max_health 					"340"
-		health 						"340"
+		max_health 					"270"
+		health 						"270"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1
@@ -205,13 +204,13 @@ EntityBlueprint  // liquid_pump_lvl_3
 
 	MeshDesc
 	{
-		mesh "meshes/buildings/resources/liquid_pump_lvl_3.mesh"
-		material "buildings/resources/liquid_pump_lvl_3"
+		mesh "meshes/buildings/resources/liquid_pump_lvl_2.mesh"
+		material "buildings/resources/liquid_pump_lvl_2"
 	}
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/resources/liquid_pump_lvl_3"
+		name "meshes/buildings/resources/liquid_pump_lvl_2"
 	}
 
 	EffectDesc
@@ -228,7 +227,7 @@ EntityBlueprint  // liquid_pump_lvl_3
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/level_3"
+					blueprint "effects/buildings_and_machines/level_2"
 					bone "att_level"
 				}
 			}

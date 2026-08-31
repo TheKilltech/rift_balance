@@ -1,0 +1,326 @@
+EntityBlueprint
+{
+	name "buildings/megastructures/hydroponic_lab_lvl_2"
+	base_blueprint "buildings/megastructures/hydroponic_lab"
+	
+	BuildingDesc
+	{
+		buildable 			"0"		
+		name 				"hydroponic_lab_lvl_2"
+		bp   				"buildings/megastructures/hydroponic_lab_lvl_2"
+		category 			"megastructures"
+		type				"pipe"
+		localization_id		"gui/hud/building_name/hydroponic_lab"
+		description			"gui/hud/building_description/hydroponic_lab"
+		menu_icon			"gui/hud/building_icons/hydroponic_lab"
+		limit			    "1"
+		limit_name			"hydroponic_lab"
+		order				"3"
+		require 			"hydroponic_lab"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+		upgrade				"buildings/megastructures/hydroponic_lab_lvl_3"	
+		//sellable			"0"
+		is_shortcut_bindable	"0"
+		hide_treasures 		"1"
+		//disableable 		"0"
+		
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 180
+				building_cost
+				{
+					carbonium 	"35000"
+					steel 		"15000"
+					palladium 	"4000"
+				}
+			}		
+		}
+	}
+	
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value			 	"7500"
+			}
+			
+			GameplayResource
+			{
+				resource 			"biomass_plant"
+				value			 	"8"
+			}			
+
+			GameplayResource
+			{
+				resource 			"water"
+				value			 	"2500"
+				attachment			"att_in_1|att_in_2|att_in_3|att_in_4"
+			}
+		}
+
+		priority 2
+	}
+	
+	BiomeModificatorComponent
+	{
+		vegetation_regrow_chance	"0.4"
+		vegetation_regrow_timer
+		{
+			time_interval			"15"
+		}
+	}	
+	children
+	{
+		EntityBlueprint
+		{		
+			base_blueprint "buildings/megastructures/building_base"		
+			MeshDesc
+			{
+				mesh "meshes/buildings/megastructures/hydroponic_lab_5.mesh"
+				SubMeshes
+				{
+					
+					SubMesh
+					{
+						id "0"
+						material "buildings/megastructures/trimsheet_01_grey"
+					}
+
+					SubMesh
+					{
+						id "1"
+						material "buildings/megastructures/trimsheet_02_grey"
+					}
+
+					SubMesh
+					{
+						id "2"
+						material "buildings/megastructures/trimsheet_01_black"
+					}
+
+					SubMesh
+					{
+						id "3"
+						material "buildings/megastructures/trimsheet_02_black"
+					}
+
+					SubMesh
+					{
+						id "4"
+						material "buildings/megastructures/trimsheet_01_yellow"
+					}
+
+					SubMesh
+					{
+						id "5"
+						material "buildings/megastructures/glass_skinned"
+					}
+
+
+					SubMesh
+					{
+						id "6"
+						material "buildings/megastructures/megastructures_water"
+					}
+
+					SubMesh
+					{
+						id "7"
+						material "buildings/defense/ai_hub_lvl_3_screen"
+					}	
+					
+				}
+			}
+			
+			SkeletonDesc
+			{
+				name "meshes/buildings/megastructures/hydroponic_lab_5"
+			}			
+			
+			PhysicsDesc
+			{
+				objects
+				{
+					PhysicsObjectDesc
+					{
+						type 				"static"
+						group_id 			"building"
+						physics_material 	"default"
+						Shapes
+						{
+							PhysicsMeshShape
+							{
+								mesh "meshes/buildings/megastructures/hydroponic_lab_4_c1.nxs"
+							}		
+						}
+					}
+				}
+			}	
+
+			EffectDesc
+			{		
+				EffectBaseBlueprints
+				{
+					"buildings/effects_big_base"
+				}
+				////////////////////////Destruction level 0 transition effects/////////////////////////
+				EffectGroup
+				{
+					group "working"
+					enabled "0"
+					delay "1"
+		
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/hydroponic_lab_water"
+							bone "att_water"
+						}	
+						Effect
+						{
+							blueprint "effects/buildings_megastructures/hydroponic_lab_water"
+							bone "att_water_1"
+						}								
+					}
+				}				
+				EffectGroup
+				{
+					group "0_transition"
+					enabled "0"
+		
+					Effects
+					{
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_1"
+							delay "0"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_2"
+							delay "0.15"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_3"
+							delay "0.25"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_medium_random"
+							bone "att_smoke_4"
+							delay "0.3"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_5"
+							delay "0.4"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_6"
+							delay "0.45"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_generic/explosion_big_random"
+							bone "att_smoke_7"
+							delay "0.5"
+						}
+						Effect
+						{
+							blueprint "effects/buildings_main/explosion_building_hq"
+							delay "0.6"
+						}
+					}
+				}
+			}				
+			
+			AttachmentDesc
+			{
+				attachment "att_extension_t1"
+			}	
+		}
+	}	
+}
+
+EntityBlueprint
+{
+	name  "buildings/megastructures/hydroponic_lab_lvl_2_ruins"
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/megastructures/hydroponic_lab_ruins.mesh"
+
+		SubMeshes
+		{
+			
+			SubMesh
+			{
+				id "0"
+				material "buildings/megastructures/trimsheet_02_grey"
+			}
+
+			SubMesh
+			{
+				id "1"
+				material "buildings/megastructures/trimsheet_01_grey"
+			}
+			
+			SubMesh
+			{
+				id "2"
+				material "buildings/megastructures/trimsheet_01_black"
+			}
+			
+			SubMesh
+			{
+				id "3"
+				material "buildings/megastructures/trimsheet_01_yellow"
+			}		
+			
+			SubMesh
+			{
+				id "4"
+				material "buildings/megastructures/trimsheet_02_black"
+			}
+			
+
+			SubMesh
+			{
+				id "5"
+				material "buildings/defense/ai_hub_lvl_3_screen"
+			}	
+
+			SubMesh
+			{
+				id "6"
+				material "buildings/megastructures/metal_grey"
+			}		
+
+			SubMesh
+			{
+				id "7"
+				material "buildings/megastructures/metal_black"
+			}	
+
+			SubMesh
+			{
+				id "8"
+				material "buildings/main/buildings_ruins"
+			}	
+		}
+	}
+}	

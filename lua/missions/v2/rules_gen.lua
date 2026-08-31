@@ -18,7 +18,7 @@ function PrepareDefaultRules(rules, params, missionType, difficulty)
 	if params.difficulty == "custom" then params.difficulty     = DifficultyService:GetWaveStrength() end
 	rules.params = params or {}
 	
-	local effectiveDiff = GetEffectiveDifficulty( rules.params.difficulty, rules.params.threat )
+	local effectiveDiff, effThreat = GetEffectiveDifficulty( rules.params.difficulty, rules.params.threat )
 	local missionType   = rules.params.missionType
 	local difficulty    = rules.params.difficulty
 	
@@ -49,10 +49,10 @@ function PrepareDefaultRules(rules, params, missionType, difficulty)
 	rules.prepareAttackDefinitions    = Default_PrepareAttackDefinitions(   missionType, difficulty )
 	rules.wavesEntryDefinitions       = Default_WavesEntryDefinitions(      missionType, difficulty, biome )
 	
-	rules.prepareSpawnTime            = Default_PrepareSpawnTime(           missionType, difficulty, 1)
-	rules.cooldownAfterAttacks        = Default_CooldownAfterAttacks(       missionType, difficulty, 1)
-	rules.idleTime                    = Default_IdleTime(                   missionType, difficulty, 1)
-	rules.timeToNextDifficultyLevel   = Default_TimeToNextDifficultyLevel(  missionType, difficulty, 1)
+	rules.prepareSpawnTime            = Default_PrepareSpawnTime(           missionType, effectiveDiff, 1)
+	rules.cooldownAfterAttacks        = Default_CooldownAfterAttacks(       missionType, effectiveDiff, 1)
+	rules.idleTime                    = Default_IdleTime(                   missionType, effectiveDiff, 1)
+	rules.timeToNextDifficultyLevel   = Default_TimeToNextDifficultyLevel(  missionType, effectiveDiff, 1)
 
 	rules.attackCountPerDifficulty    = Default_AttackCountPerDifficulty(   rules.params)
 	rules.waveRepeatChances           = Default_WaveRepeatChances(          rules.params)
@@ -206,7 +206,7 @@ function Default_WaveRepeatChances(missionTypeOrParam, difficulty)
 		missionType  = params.missionType
 		biome        = params.biome
 	end
-	difficulty = GetEffectiveDifficulty( difficulty, threat - 2)
+	difficulty, threat = GetEffectiveDifficulty( difficulty, threat - 2)
 	
 	local waveRepeatChances = {}
 	if Contains({"hq","outpost","resource","survival"}, missionType) then
@@ -324,7 +324,7 @@ function Default_AttackCountPerDifficulty(missionTypeOrParam, difficulty)
 		missionType  = params.missionType
 		biome        = params.biome
 	end
-	difficulty = GetEffectiveDifficulty( difficulty, threat - 1)
+	difficulty, threat = GetEffectiveDifficulty( difficulty, threat - 1)
 	
 	local attackCountPerDifficulty = {}
 	if Contains({"hq","outpost","resource","survival"}, missionType) then

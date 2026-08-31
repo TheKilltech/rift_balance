@@ -262,24 +262,13 @@ EntityBlueprint  // planet_scanner
 
 	MinimapItemDesc
 	{
-		type	"quad"
-		color 
-		{
-			x "0.2"
-			y "0.2"
-			z "1"
-			w "1"
-		}
-		size
-		{
-			x "5"
-			y "5"
-		}
-					
+		type				"image"
+		icon_material 		"gui/hud/minimap_icons/orbital_defense"
+		additional_z_order 	0
 		visibility			"always"
-		layer_group			"common_buildings"
+		layer_group			"important_buildings"
 	}
-
+	
 	FogOfWarRevealerComponentDesc
 	{
 		radius "16"
