@@ -1,0 +1,392 @@
+EntityBlueprint  // acid_shredder
+{
+	name "items/weapons/acid_shredder"
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/minigun.mesh"
+		material 	"items/weapons/minigun"
+	}
+	
+ 	ShadowExcludeComponent
+	{
+
+	}		
+
+	SkeletonDesc
+	{
+		name "meshes/items/weapons/acid_shredder"
+	}
+
+	AnimationGraphDesc
+	{
+		animation_graph_name "weapon"
+	}
+
+	WeaponMovementDataComponent
+	{
+		attack_movement_factor	"0.35"
+	}
+	
+	WeaponPredictionComponent
+	{
+		spawn_ammo "1"
+	}
+
+	BurstWeaponComponent
+	{
+		WeaponAffector
+		{
+			emissive_time "0.35"
+			emissive_factor  "4"
+		}		
+		WeaponMuzzles
+		{
+			WeaponMuzzle
+			{
+				attachment "att_muzzle_1"
+			}
+		}
+
+		ammo_blueprint 				"mech/acid_shredder_projectile"
+
+		muzzles_per_fire 			"1"
+		muzzle_flash_effect 		"effects/weapons_bullet/minigun_muzzle"
+
+		burst_column_spacing 		"0.9"
+		burst_rate 					"0.3"
+		//burst_column_angle 			"5"
+	}
+
+	EffectDesc
+	{
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapon_items/ball_gas"
+					bone 	"att_vismod_acid"
+					scale	1 3 1
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "loot"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/loot/mech_lost_weapon_marker"
+					offset "1 0 0"
+				}
+			}
+		}		
+		
+		EffectGroup
+		{
+			group "loot_collect"
+			enabled "0"		
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapons_bullet/sniper_rifle_equipped"
+				}
+			}
+		}			
+		
+		EffectGroup
+		{
+			group "item_equipped"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapons_bullet/minigun_equipped"
+				}
+			}
+		}
+
+		EffectGroup
+		{
+			group "shooting"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapons_bullet/minigun_fire_loop"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "shooting_empty"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapons_bullet/empty_big_bullet_weapon"
+				}
+			}
+		}
+
+		EffectGroup
+		{
+			group "laser_pointer"
+			enabled "1"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/mech/laser_pointer"
+					bone "att_muzzle_1"
+				}
+			}
+		}
+
+		EffectGroup
+		{
+			group "item_deactivated"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/weapons_bullet/minigun_fire_stop"
+				}
+			}
+		}
+	}
+}
+
+EntityBlueprint  // acid_shredder_advanced
+{
+	name			"items/weapons/acid_shredder_advanced"
+	base_blueprint	"items/weapons/acid_shredder"
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/minigun.mesh"
+		material 	"items/weapons/minigun_advanced"
+	}
+	
+ 	ShadowExcludeComponent
+	{
+
+	}	
+}
+
+EntityBlueprint  // acid_shredder_advanced_item
+{
+	name "items/weapons/acid_shredder_advanced_item"
+
+	InventoryItemDesc
+	{
+		type 		"range_weapon"
+		subtype		"low_caliber"
+		name 		"gui/menu/inventory/weapon_name/acid_shredder"
+		holding_pose "range"
+		item_bp		"items/weapons/acid_shredder_advanced"
+		icon		"gui/hud/items_icons/weapons/acid_shredder_advanced"
+		bigger_icon "gui/menu/items_icons/weapons/acid_shredder_advanced"
+		predict		1
+	}
+
+	LuaDesc
+	{
+		script "lua/items/weapons/autofire_weapon.lua"
+		database
+		{
+			animation_speed				float:"2"
+			pad_equipped_feedback 		string:"vibration,5,4,100"
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	CostDesc
+}
+
+EntityBlueprint  // acid_shredder_extreme
+{
+	name			"items/weapons/acid_shredder_extreme"
+	base_blueprint	"items/weapons/acid_shredder"
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/minigun.mesh"
+		material 	"items/weapons/minigun_extreme"
+	}
+	
+ 	ShadowExcludeComponent
+	{
+
+	}	
+}
+
+EntityBlueprint  // acid_shredder_extreme_item
+{
+	name "items/weapons/acid_shredder_extreme_item"
+
+	InventoryItemDesc
+	{
+		type 		"range_weapon"
+		subtype		"low_caliber"
+		name 		"gui/menu/inventory/weapon_name/acid_shredder"
+		holding_pose "range"
+		item_bp		"items/weapons/acid_shredder_extreme"
+		icon		"gui/hud/items_icons/weapons/acid_shredder_extreme"
+		bigger_icon "gui/menu/items_icons/weapons/acid_shredder_extreme"
+		predict		1
+	}
+
+	LuaDesc
+	{
+		script "lua/items/weapons/autofire_weapon.lua"
+		database
+		{
+			animation_speed				float:"2"
+			pad_equipped_feedback 		string:"vibration,5,4,100"
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	CostDesc
+}
+
+EntityBlueprint  // acid_shredder_item
+{
+	name "items/weapons/acid_shredder_item"
+
+	InventoryItemDesc
+	{
+		type 		"range_weapon"
+		subtype		"low_caliber"
+		name 		"gui/menu/inventory/weapon_name/acid_shredder"
+		holding_pose "range"
+		item_bp		"items/weapons/acid_shredder"
+		icon		"gui/hud/items_icons/weapons/acid_shredder"
+		bigger_icon "gui/menu/items_icons/weapons/acid_shredder"
+		predict		1
+	}
+
+	LuaDesc
+	{
+		script "lua/items/weapons/autofire_weapon.lua"
+		database
+		{
+			animation_speed				float:"2"
+			pad_equipped_feedback 		string:"vibration,5,4,100"
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	CostDesc
+}
+
+EntityBlueprint  // acid_shredder_superior
+{
+	name			"items/weapons/acid_shredder_superior"
+	base_blueprint	"items/weapons/acid_shredder"
+
+	MeshDesc
+	{
+		mesh 		"meshes/items/weapons/minigun.mesh"
+		material 	"items/weapons/minigun_superior"
+	}
+	
+ 	ShadowExcludeComponent
+	{
+
+	}	
+}
+
+EntityBlueprint  // acid_shredder_superior_item
+{
+	name "items/weapons/acid_shredder_superior_item"
+
+	InventoryItemDesc
+	{
+		type 		"range_weapon"
+		subtype		"low_caliber"
+		name 		"gui/menu/inventory/weapon_name/acid_shredder"
+		holding_pose "range"
+		item_bp		"items/weapons/acid_shredder_superior"
+		icon		"gui/hud/items_icons/weapons/acid_shredder_superior"
+		bigger_icon "gui/menu/items_icons/weapons/acid_shredder_superior"
+		predict		1
+	}
+
+	LuaDesc
+	{
+		script "lua/items/weapons/autofire_weapon.lua"
+		database
+		{
+			animation_speed				float:"2"
+			pad_equipped_feedback 		string:"vibration,5,4,100"
+		}
+	}
+
+	WeaponItemDesc
+	{
+	}
+
+	CostDesc
+}
+
+
+EntityBlueprint  // acid_shredder_projectile
+{
+	name			"mech/acid_shredder_projectile"
+	base_blueprint	"buildings/defense/tower_acid_shredder_projectile"
+
+	ProjectileAmmoComponent
+	{
+		on_enemy_hit_effect 	"effects/weapons_bullet/tower_acid_shredder_hit"
+		on_world_hit_effect 	"effects/weapons_bullet/tower_acid_shredder_hit"
+		on_resisted_hit_effect 	"effects/weapons_generic/projectile_hit_resisted"
+		collision_3d 			"world|world_blocker|world_destructible|destructible|ground_unit|air_unit|shield|building"
+		
+		cluster_enemy_spread    "360"
+		cluster_world_spread	"360"
+		cluster_life_time_min   "0.1"
+		cluster_life_time_max   "0.3"
+		diameter				"1"
+		cluster_scale
+		{
+			x "0.8"
+			y "0.5"
+			z "0.5"
+		}
+	}
+
+	LifeTimeDesc
+	{
+		time 		0.2
+		type 		"camera"
+	}
+}

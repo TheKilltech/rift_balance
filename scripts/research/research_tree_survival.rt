@@ -27685,6 +27685,12 @@ Research
 
 						ResearchAward
 						{
+							blueprint "items/weapons/acid_shredder_item"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
 							blueprint "resources/ammo_tower_low_caliber"
 							is_visible "1"
 						}
@@ -27743,6 +27749,12 @@ Research
 							is_visible "1"
 						}
 
+						ResearchAward
+						{
+							blueprint "items/weapons/acid_shredder_advanced_item"
+							is_visible "1"
+						}
+
 					}
 
 					icon "gui/menu/research/icons/towers_acid_shredder"
@@ -27794,6 +27806,12 @@ Research
 						ResearchAward
 						{
 							blueprint "buildings/defense/tower_acid_shredder_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "items/weapons/acid_shredder_superior_item"
 							is_visible "1"
 						}
 
@@ -30708,6 +30726,67 @@ Research
 					icon "gui/menu/research/icons/rare_element_mining"
 				}
 
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/acid_shredder_lvl_3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/towers_acid_shredder_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl5"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/acid_shredder_lvl_4"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "analysis"
+							count "4000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-513"
+						y "441"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "items/weapons/acid_shredder_extreme_item"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/towers_acid_shredder"
+				}
+
 			}
 
 		}
@@ -30716,6 +30795,6 @@ Research
 
 	type
 	editor "6741"
-	version "101"
+	version "102"
 }
 

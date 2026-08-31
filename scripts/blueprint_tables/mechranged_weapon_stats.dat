@@ -1549,6 +1549,713 @@ items/weapons/aa_plasma_gun_superior_item
 
 }
 
+items/weapons/acid_shredder_advanced_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_low_caliber_lvl2"
+		damage_type "acid"
+		rarity "ADVANCED"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				default_value "12"
+				max_value "21"
+				min_value "13"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5"
+				min_value "5"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "30"
+				min_value "30"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "30"
+				min_value "20"
+				stat_features "MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2"
+				min_value "1.5"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5"
+				min_value "5"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "75"
+				min_value "75"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "250"
+				min_value "125"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_ANGLE_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.49999997"
+				min_value "0.20000002"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.15"
+				min_value "0.1"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.8"
+				max_value "1.6"
+				min_value "2"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "10"
+				min_value "10"
+				stat_features "BASE_MINMAX|MODABLE|HIDDEN"
+				stat_type "AMMO_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "50"
+				min_value "35"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_AUTOAIM"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100"
+				min_value "100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_HOMING"
+			}
+
+			WeaponStatDef
+			{
+				default_value "5"
+				max_value "6.3999996"
+				min_value "5.3999996"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_CLUSTER"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.5"
+				max_value "2.2"
+				min_value "1.6"
+				stat_features "BASE_DEFAULT|MODABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "800"
+				min_value "800"
+				stat_features "BASE_MINMAX"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.2"
+				min_value "1.2"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3"
+				min_value "3"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "4.5"
+				min_value "3"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_STUN"
+			}
+
+		}
+
+	}
+
+}
+
+items/weapons/acid_shredder_extreme_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_low_caliber_lvl3"
+		damage_type "acid"
+		rarity "EXTREME"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				default_value "17"
+				max_value "34"
+				min_value "18"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5"
+				min_value "5"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "30"
+				min_value "30"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "50"
+				min_value "40"
+				stat_features "MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2.5"
+				min_value "2"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5"
+				min_value "5"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "75"
+				min_value "75"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "250"
+				min_value "125"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_ANGLE_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.79999995"
+				min_value "0.4"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.25"
+				min_value "0.2"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "3.2000003"
+				max_value "2.1999998"
+				min_value "3.0000005"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "10"
+				min_value "10"
+				stat_features "BASE_MINMAX|MODABLE|HIDDEN"
+				stat_type "AMMO_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "80"
+				min_value "65"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_AUTOAIM"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100"
+				min_value "100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_HOMING"
+			}
+
+			WeaponStatDef
+			{
+				default_value "5"
+				max_value "7"
+				min_value "5.5999994"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_CLUSTER"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.5"
+				max_value "4"
+				min_value "3"
+				stat_features "BASE_DEFAULT|MODABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "800"
+				min_value "800"
+				stat_features "BASE_MINMAX"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.4"
+				min_value "1.4"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3"
+				min_value "3"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "6.5"
+				min_value "4"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_STUN"
+			}
+
+		}
+
+	}
+
+}
+
+items/weapons/acid_shredder_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_low_caliber"
+		damage_type "acid"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				default_value "10"
+				max_value "18"
+				min_value "11"
+				stat_features "BASE_DEFAULT|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5"
+				min_value "5"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "30"
+				min_value "30"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5"
+				min_value "5"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "75"
+				min_value "75"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.8"
+				max_value "1.6"
+				min_value "2"
+				stat_features "BASE_DEFAULT"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "10"
+				min_value "10"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "AMMO_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.5"
+				max_value "1.5"
+				min_value "1.5"
+				stat_features "BASE_MINMAX"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "800"
+				min_value "800"
+				stat_features "BASE_MINMAX"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2"
+				min_value "1.5"
+				stat_features "INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				default_value "5"
+				max_value "6"
+				min_value "5"
+				stat_features "BASE_DEFAULT|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_CLUSTER"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.4"
+				min_value "0.20000002"
+				stat_features "INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.15"
+				min_value "0.1"
+				stat_features "INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				max_value "4.5"
+				min_value "3"
+				stat_features "INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_STUN"
+			}
+
+			WeaponStatDef
+			{
+				max_value "50"
+				min_value "35"
+				stat_features "INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_AUTOAIM"
+			}
+
+			WeaponStatDef
+			{
+				max_value "250"
+				min_value "125"
+				stat_features "INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_ANGLE_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3"
+				min_value "3"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100"
+				min_value "100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_HOMING"
+			}
+
+			WeaponStatDef
+			{
+				max_value "20"
+				min_value "15"
+				stat_features "STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+		}
+
+	}
+
+}
+
+items/weapons/acid_shredder_superior_item
+{
+	WeaponItemDesc
+	{
+		ammo_storage "ammo_mech_low_caliber_lvl3"
+		damage_type "acid"
+		rarity "SUPERIOR"
+		stat_def_vec
+		{
+			WeaponStatDef
+			{
+				default_value "15"
+				max_value "29"
+				min_value "15.5"
+				stat_features "BASE_DEFAULT|MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_VALUE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5"
+				min_value "5"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "30"
+				min_value "30"
+				stat_features "BASE_MINMAX|STATISTIC"
+				stat_type "FIRE_RATE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "40"
+				min_value "30"
+				stat_features "MODABLE|STATISTIC|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_OVER_TIME"
+			}
+
+			WeaponStatDef
+			{
+				max_value "2.25"
+				min_value "1.75"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_SPLASH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5"
+				min_value "5"
+				stat_features "BASE_MINMAX|HIDDEN"
+				stat_type "DAMAGE_OVER_TIME_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "75"
+				min_value "75"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "250"
+				min_value "125"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_ANGLE_SPEED"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.7"
+				min_value "0.3"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_PENETRATION"
+			}
+
+			WeaponStatDef
+			{
+				max_value "0.2"
+				min_value "0.15"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "DAMAGE_LIFESTEAL"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.8"
+				max_value "1.6"
+				min_value "2"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_COST"
+			}
+
+			WeaponStatDef
+			{
+				max_value "10"
+				min_value "10"
+				stat_features "BASE_MINMAX|MODABLE|HIDDEN"
+				stat_type "AMMO_SPREAD"
+			}
+
+			WeaponStatDef
+			{
+				max_value "65"
+				min_value "50"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_AUTOAIM"
+			}
+
+			WeaponStatDef
+			{
+				max_value "100"
+				min_value "100"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_HOMING"
+			}
+
+			WeaponStatDef
+			{
+				default_value "5"
+				max_value "6.7000003"
+				min_value "5.4999995"
+				stat_features "BASE_DEFAULT|MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_CLUSTER"
+			}
+
+			WeaponStatDef
+			{
+				default_value "1.5"
+				max_value "3"
+				min_value "2.3"
+				stat_features "BASE_DEFAULT|MODABLE"
+				stat_type "DAMAGE_CRITICAL_CHANCE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "800"
+				min_value "800"
+				stat_features "BASE_MINMAX"
+				stat_type "DAMAGE_CRITICAL_FACTOR"
+			}
+
+			WeaponStatDef
+			{
+				max_value "1.3"
+				min_value "1.3"
+				stat_features "BASE_MINMAX"
+				stat_type "WEAPON_SCALE"
+			}
+
+			WeaponStatDef
+			{
+				max_value "3"
+				min_value "3"
+				stat_features "BASE_MINMAX"
+				stat_type "AMMO_STUN_LENGTH"
+			}
+
+			WeaponStatDef
+			{
+				max_value "5.5"
+				min_value "3.5"
+				stat_features "MODABLE|INITIAL_RANDOMIZABLE"
+				stat_type "AMMO_STUN"
+			}
+
+		}
+
+	}
+
+}
+
 items/weapons/acid_spitter_advanced_item
 {
 	WeaponItemDesc
