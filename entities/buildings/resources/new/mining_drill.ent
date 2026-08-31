@@ -1,11 +1,11 @@
-EntityBlueprint  // mining_drill
+EntityBlueprint  // rare_element_mine ( mining_drill )
 {
-	name  "buildings/resources/mining_drill"
+	name			"buildings/resources/rare_element_mine"
 
 	BuildingDesc
 	{
-		name 				"mining_drill"
-		bp   				"buildings/resources/mining_drill"
+		name 				"rare_element_mine"
+		bp   				"buildings/resources/rare_element_mine"
 		category 			"resources"
 		localization_id		"gui/hud/building_name/mining_drill"
 		description			"gui/hud/building_description/mining_drill"
@@ -14,7 +14,7 @@ EntityBlueprint  // mining_drill
 		//require 			"headquarters"
 		order				"1"
 		buildable			"0"
-		building_group		"strip_mine"
+		building_group		"carbonium_factory"
 		type				"solids_mine"
 		overrides			"solids_mine,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -552,10 +552,272 @@ EntityBlueprint  // mining_drill
 	}
 }
 
+EntityBlueprint  // mining_drill  -- needed for compatibility
+{
+	name			"buildings/resources/mining_drill"
+	base_blueprint	"buildings/resources/rare_element_mine"
+
+	BuildingDesc
+	{
+		name 				"mining_drill"
+		bp   				"buildings/resources/mining_drill"
+		category 			"resources"
+		localization_id		"gui/hud/building_name/mining_drill"
+		description			"gui/hud/building_description/mining_drill"
+		menu_icon			"gui/hud/building_icons/obsolete"
+		//upgrade				"buildings/resources/mining_drill_lvl_3"
+		buildable			"0"
+		//building_group		"carbonium_factory"
+		type				"solids_mine"
+		overrides			"solids_mine,pipe"
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
+					
+		costs
+		{
+			BuildingCostInfo
+			{
+				name "default"
+				building_time 120
+				building_cost
+				{
+					carbonium 	"500"
+					steel		"800"
+					cobalt		"250"
+				}
+			}	
+			BuildingCostInfo
+			{
+				name "survival"
+				building_time 60
+				building_cost
+				{
+					carbonium 	"350"
+				}
+			}			
+		}
+		resource_requirement "carbon_deepvein|iron_deepvein|ammonium_deepvein|cobalt_deepvein|palladium_deepvein|titanium_deepvein|uranium_ore_deepvein"
+	}
+
+	ResourceConverterDesc
+	{
+		in
+		{
+			GameplayResource
+			{
+				resource 			"energy"
+				value				50
+			}
+			
+			GameplayResource
+			{
+				resource 			"mud"
+				value			 	30
+				attachment			"att_in_1"
+				family				"in"
+			}
+			GameplayResource
+			{
+				resource 			"sludge"
+				value			 	30
+				attachment			"att_in_1"
+				family				"in"
+			}
+			GameplayResource
+			{
+				resource 			"water"
+				value			 	30
+				attachment			"att_in_1"
+				family				"in"
+			}
+			GameplayResource
+			{
+				resource 			"morphium"
+				value			 	30
+				attachment			"att_in_1"
+				family				"in"
+			}
+			
+			GameplayResource
+			{
+				resource 			"carbon_deepvein"
+				value				1.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"iron_deepvein"
+				value				1.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium_deepvein"
+				value				1.0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt_deepvein"
+				value				1.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"palladium_deepvein"
+				value				1.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"titanium_deepvein"
+				value				1.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"uranium_ore_deepvein"
+				value				1.0
+				family				"resource"
+			}			
+		}
+		
+		out
+		{
+			GameplayResource
+			{
+				resource 			"carbonium"
+				value				1.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"steel"
+				value				1.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"ammonium"
+				value				1.0
+				family				"resource"
+			}
+			
+			GameplayResource
+			{
+				resource 			"cobalt"
+				value				1.0
+				family				"resource"
+			}	
+			GameplayResource
+			{
+				resource 			"palladium"
+				value				1.0
+				family				"resource"
+			}
+			GameplayResource
+			{
+				resource 			"titanium"
+				value				1.0
+				family				"resource"
+			}		
+			GameplayResource
+			{
+				resource 			"uranium_ore"
+				value				1.0
+				family				"resource"
+			}
+		}
+		
+		priority 4		
+		one_vein_mode "1"
+	}
+
+	LuaDesc
+	{
+		script "lua/buildings/building_buffable.lua"
+		
+		database
+		{
+			cone_effect					string:"build_cone_3x3"
+			cone_effect_sell			string:"sell_big"
+			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
+			buff_localization			string:"buff_name/buff_ore_mill"
+			buff_icon					string:"gui/hud/building_icons/ore_mill"
+			buff_participation			float:"0.5"
+			display_radius_group		string:"ore_mill"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+		}
+	}
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_medium_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_arrow"
+				}
+			}
+		}	
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_chimney_small"
+					bone "att_chimney_1"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_resources/rare_element_mine_working"
+					delay "0.5"
+				}
+			}
+		}		
+		EffectGroup
+		{
+			group "vismod"
+			enabled "1"
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone "att_in_1_pipe"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_01"
+					bone "att_vismod_1"
+					scale 0.8 1.0 0.8
+				}
+			}
+		}
+	}
+}
+
 EntityBlueprint  // mining_drill_lvl_2
 {
 	name			"buildings/resources/mining_drill_lvl_2"
-	base_blueprint	"buildings/resources/mining_drill"
+	base_blueprint	"buildings/resources/rare_element_mine"
 
 	BuildingDesc
 	{
@@ -568,7 +830,7 @@ EntityBlueprint  // mining_drill_lvl_2
 		upgrade				"buildings/resources/mining_drill_lvl_3"
 		//require 			"headquarters"
 		buildable			"0"
-		building_group		"strip_mine"
+		building_group		"carbonium_factory"
 		type				"solids_mine"
 		overrides			"solids_mine,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
@@ -915,12 +1177,6 @@ EntityBlueprint  // mining_drill_lvl_2
 					bone "att_vismod_1"
 					scale 0.8 1.0 0.8
 				}
-				//Effect
-				//{
-				//	blueprint "effects/buildings_and_machines/scifi_structure_very_small_white_02"
-				//	bone "att_vismod_2"
-				//	scale 0.7 0.7 0.7
-				//}
 			}
 		}
 	}
@@ -941,7 +1197,7 @@ EntityBlueprint  // mining_drill_lvl_3
 		menu_icon			"gui/hud/building_icons/mining_drill_lvl_3"
 		require 			"ore_mill"
 		buildable			"0"
-		building_group		"strip_mine"
+		building_group		"carbonium_factory"
 		type				"solids_mine"
 		overrides			"solids_mine,pipe"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
