@@ -1,14 +1,13 @@
-EntityBlueprint
+EntityBlueprint  // quantum_cortex_laboratory_lvl_3
 {
-	name "buildings/megastructures/quantum_cortex_laboratory_lvl_3"
-	base_blueprint "buildings/megastructures/quantum_cortex_laboratory_lvl_2"
+	name			"buildings/megastructures/quantum_cortex_laboratory_lvl_3"
+	base_blueprint	"buildings/megastructures/quantum_cortex_laboratory_lvl_2"
 
 	BuildingDesc
 	{
 		buildable 			"0"
 		name 				"quantum_cortex_laboratory_lvl_3"
 		bp   				"buildings/megastructures/quantum_cortex_laboratory_lvl_3"
-		//ghost_bp 			"buildings/megastructures/quantum_cortex_laboratory_ghost"
 		category 			"megastructures"
 		type				"pipe"
 		localization_id		"gui/hud/building_name/quantum_cortex_laboratory"
@@ -16,7 +15,6 @@ EntityBlueprint
 		menu_icon			"gui/hud/building_icons/quantum_cortex_laboratory"
 		limit			    "1"
 		limit_name			"quantum_cortex_laboratory"
-		order				"1"
 		require 			"quantum_cortex_laboratory_lvl_2"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		upgrade				"buildings/megastructures/quantum_cortex_laboratory_lvl_4"
@@ -72,7 +70,7 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"analysis"
-				value			 	"80"
+				value			 	"15"
 				family				"research"
 			}
 		}

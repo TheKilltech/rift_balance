@@ -88,19 +88,19 @@ EntityBlueprint  // rare_element_mine ( mining_drill )
 			GameplayResource
 			{
 				resource 			"carbon_deepvein"
-				value				1.0
+				value				2.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"iron_deepvein"
-				value				1.0
+				value				2.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium_deepvein"
-				value				1.0
+				value				2.0
 				family				"resource"
 			}
 			
@@ -135,19 +135,19 @@ EntityBlueprint  // rare_element_mine ( mining_drill )
 			GameplayResource
 			{
 				resource 			"carbonium"
-				value				1.0
+				value				2.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"steel"
-				value				1.0
+				value				2.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium"
-				value				1.0
+				value				2.0
 				family				"resource"
 			}
 			
@@ -598,141 +598,6 @@ EntityBlueprint  // mining_drill  -- needed for compatibility
 		resource_requirement "carbon_deepvein|iron_deepvein|ammonium_deepvein|cobalt_deepvein|palladium_deepvein|titanium_deepvein|uranium_ore_deepvein"
 	}
 
-	ResourceConverterDesc
-	{
-		in
-		{
-			GameplayResource
-			{
-				resource 			"energy"
-				value				50
-			}
-			
-			GameplayResource
-			{
-				resource 			"mud"
-				value			 	30
-				attachment			"att_in_1"
-				family				"in"
-			}
-			GameplayResource
-			{
-				resource 			"sludge"
-				value			 	30
-				attachment			"att_in_1"
-				family				"in"
-			}
-			GameplayResource
-			{
-				resource 			"water"
-				value			 	30
-				attachment			"att_in_1"
-				family				"in"
-			}
-			GameplayResource
-			{
-				resource 			"morphium"
-				value			 	30
-				attachment			"att_in_1"
-				family				"in"
-			}
-			
-			GameplayResource
-			{
-				resource 			"carbon_deepvein"
-				value				1.0
-				family				"resource"
-			}
-			GameplayResource
-			{
-				resource 			"iron_deepvein"
-				value				1.0
-				family				"resource"
-			}
-			GameplayResource
-			{
-				resource 			"ammonium_deepvein"
-				value				1.0
-				family				"resource"
-			}
-			
-			GameplayResource
-			{
-				resource 			"cobalt_deepvein"
-				value				1.0
-				family				"resource"
-			}
-			GameplayResource
-			{
-				resource 			"palladium_deepvein"
-				value				1.0
-				family				"resource"
-			}
-			GameplayResource
-			{
-				resource 			"titanium_deepvein"
-				value				1.0
-				family				"resource"
-			}
-			GameplayResource
-			{
-				resource 			"uranium_ore_deepvein"
-				value				1.0
-				family				"resource"
-			}			
-		}
-		
-		out
-		{
-			GameplayResource
-			{
-				resource 			"carbonium"
-				value				1.0
-				family				"resource"
-			}
-			GameplayResource
-			{
-				resource 			"steel"
-				value				1.0
-				family				"resource"
-			}
-			GameplayResource
-			{
-				resource 			"ammonium"
-				value				1.0
-				family				"resource"
-			}
-			
-			GameplayResource
-			{
-				resource 			"cobalt"
-				value				1.0
-				family				"resource"
-			}	
-			GameplayResource
-			{
-				resource 			"palladium"
-				value				1.0
-				family				"resource"
-			}
-			GameplayResource
-			{
-				resource 			"titanium"
-				value				1.0
-				family				"resource"
-			}		
-			GameplayResource
-			{
-				resource 			"uranium_ore"
-				value				1.0
-				family				"resource"
-			}
-		}
-		
-		priority 4		
-		one_vein_mode "1"
-	}
-
 	LuaDesc
 	{
 		script "lua/buildings/building_buffable.lua"
@@ -910,19 +775,19 @@ EntityBlueprint  // mining_drill_lvl_2
 			GameplayResource
 			{
 				resource 			"carbon_deepvein"
-				value				2.5
+				value				3.5
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"iron_deepvein"
-				value				2.5
+				value				3.5
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium_deepvein"
-				value				2.5
+				value				3.5
 				family				"resource"
 			}
 			
@@ -957,19 +822,19 @@ EntityBlueprint  // mining_drill_lvl_2
 			GameplayResource
 			{
 				resource 			"carbonium"
-				value				2.0
+				value				3.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"steel"
-				value				2.0
+				value				3.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium"
-				value				2.0
+				value				3.0
 				family				"resource"
 			}
 			
@@ -1256,19 +1121,19 @@ EntityBlueprint  // mining_drill_lvl_3
 			GameplayResource
 			{
 				resource 			"carbon_deepvein"
-				value				4.0
+				value				5.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"iron_deepvein"
-				value				4.0
+				value				5.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium_deepvein"
-				value				4.0
+				value				5.0
 				family				"resource"
 			}
 			
@@ -1303,19 +1168,19 @@ EntityBlueprint  // mining_drill_lvl_3
 			GameplayResource
 			{
 				resource 			"carbonium"
-				value				3.0
+				value				4.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"steel"
-				value				3.0
+				value				4.0
 				family				"resource"
 			}
 			GameplayResource
 			{
 				resource 			"ammonium"
-				value				3.0
+				value				4.0
 				family				"resource"
 			}
 			

@@ -1,0 +1,151 @@
+EntityBlueprints
+{
+	items/weapons/acid_shredder_advanced_item
+	{
+		CostDesc
+		{
+			account
+			{
+				ResearchCost
+				{
+					count "1000"
+					resource "carbonium"
+				}
+
+				ResearchCost
+				{
+					count "750"
+					resource "steel"
+				}
+
+				ResearchCost
+				{
+					count "200"
+					resource "hazenite"
+				}
+
+			}
+
+		}
+
+	}
+
+	items/weapons/acid_shredder_extreme_item
+	{
+		CostDesc
+		{
+			account
+			{
+				ResearchCost
+				{
+					count "16000"
+					resource "carbonium"
+				}
+
+				ResearchCost
+				{
+					count "5000"
+					resource "alloys"
+				}
+
+				ResearchCost
+				{
+					count "1500"
+					resource "palladium"
+				}
+
+				ResearchCost
+				{
+					count "3500"
+					resource "hazenite"
+				}
+
+			}
+
+		}
+
+	}
+
+	items/weapons/acid_shredder_item
+	{
+		CostDesc
+		{
+			account
+			{
+				ResearchCost
+				{
+					count "250"
+					resource "carbonium"
+				}
+
+				ResearchCost
+				{
+					count "200"
+					resource "steel"
+				}
+
+			}
+
+		}
+
+	}
+
+	items/weapons/acid_shredder_superior_item
+	{
+		CostDesc
+		{
+			account
+			{
+				ResearchCost
+				{
+					count "5000"
+					resource "carbonium"
+				}
+
+				ResearchCost
+				{
+					count "3500"
+					resource "steel"
+				}
+
+				ResearchCost
+				{
+					count "1200"
+					resource "hazenite"
+				}
+
+				ResearchCost
+				{
+					count "200"
+					resource "palladium"
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+GameplayResources
+{
+	ammo_tower_energy_cell
+	{
+		CostDesc
+		{
+			account
+			{
+				ResearchCost
+				{
+					count "15"
+					resource "ammo_manufacturing"
+				}
+
+			}
+
+		}
+
+	}
+}
+
