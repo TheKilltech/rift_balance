@@ -28,7 +28,7 @@ EntityBlueprint  // carbonium_powerplant
 				{
 					carbonium 	"100"
 				}
-			}		
+			}
 		}
 		
 		resource_requirement "carbon_vein" 
@@ -50,11 +50,11 @@ EntityBlueprint  // carbonium_powerplant
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"200"
+				value			 	"300"
 			}
 		}
 		priority 8
-		reset_interval 0.5		
+		reset_interval 0.5
 	}
 
 	ResourceStorageDesc
@@ -64,7 +64,7 @@ EntityBlueprint  // carbonium_powerplant
 			Storage
 			{
 				resource "energy"
-				max 	 "100"
+				max 	 "500"
 			}
 			
 		}
