@@ -153,6 +153,15 @@ EntityBlueprint  // fusion_powerplant
 			{
 				name "meshes/buildings/energy/fusion_powerplant"
 			}
+			
+			MinimapItemDesc
+			{
+				type				"image"
+				icon_material 		"gui/hud/minimap_icons/fusion"
+				additional_z_order 	0
+				visibility			"always"
+				layer_group			"important_buildings"
+			}
 		}
 	}
 	
@@ -366,8 +375,8 @@ EntityBlueprint  // fusion_powerplant
 		}
 		size
 		{
-			x "4"
-			y "4"
+			x "5"
+			y "5"
 		}
 					
 		visibility			"always"
