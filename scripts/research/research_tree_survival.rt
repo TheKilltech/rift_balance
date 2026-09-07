@@ -26859,7 +26859,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1656"
+						x "-1701"
 						y "-306"
 					}
 
@@ -26919,7 +26919,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1656"
+						x "-1701"
 						y "-54"
 					}
 
@@ -26973,7 +26973,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1656"
+						x "-1701"
 						y "288"
 					}
 
@@ -27020,7 +27020,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1701"
+						x "-1746"
 						y "-225"
 					}
 
@@ -27086,7 +27086,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1701"
+						x "-1746"
 						y "0"
 					}
 
@@ -27146,7 +27146,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-1701"
+						x "-1746"
 						y "351"
 					}
 
@@ -30787,6 +30787,180 @@ Research
 					icon "gui/menu/research/icons/towers_acid_shredder"
 				}
 
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/energy_enhancer_lvl_1"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "1000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1656"
+						y "0"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/energy_enhancer"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/energy_relay_system"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/energy_enhancer_lvl_1"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl3"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/energy_enhancer_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "1500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1656"
+						y "108"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/energy_enhancer_lvl_2"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/upgrade_coolant_upkeep_advanced"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/energy_relay_system"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden|hidden_requirements_visible"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/energy_enhancer_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/resin_factory_lvl_2"
+							research_category "gui/menu/research/category_alien"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/alien_research_lvl5"
+							research_category "gui/menu/research/category_alien"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/energy_enhancer_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "2250"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1656"
+						y "441"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/energy/energy_enhancer_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/upgrade_new_piping_req"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/energy_relay_system"
+				}
+
 			}
 
 		}
@@ -30795,6 +30969,6 @@ Research
 
 	type
 	editor "6741"
-	version "102"
+	version "103"
 }
 
