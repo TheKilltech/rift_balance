@@ -55,16 +55,45 @@ function GetRulesPathForBiome(biomeName)
 	return "lua/missions/campaigns/".. biomeSubdir .. "/"
 end
 
+--- Gets a valid difficulty string
+--- new difficulty strings unknown to the mod may be introduced. this adjusts the name to something the mod can handle
+function GetValidDifficulty( difficulty )
+	if difficulty == nil or difficulty == "custom" then 
+		difficulty = DifficultyService:GetWaveStrength()
+	end
+	if difficulty     == "brutal"  then return difficulty
+	elseif difficulty == "hard"    then return difficulty
+	elseif difficulty == "normal"  then return difficulty
+	elseif difficulty == "default" then return "normal"
+	elseif difficulty == "easy"    then return difficulty
+	elseif difficulty == "coop_campaign_brutal"  then return difficulty
+	elseif difficulty == "coop_campaign_hard"    then return difficulty
+	elseif difficulty == "coop_campaign_normal"  then return difficulty
+	elseif difficulty == "coop_campaign_easy"    then return difficulty
+	elseif string.find(difficulty, "extreme")    then return "extreme"
+	elseif string.find(difficulty, "brutal")     then return "brutal"
+	elseif string.find(difficulty, "hard")       then return "hard"
+	elseif string.find(difficulty, "normal")     then return "normal"
+	elseif string.find(difficulty, "easy")       then return "easy"
+	elseif string.find(difficulty, "none")       then return "none"
+	end
+	return "normal"
+end
+
 function GetShiftedDifficulty( difficulty, shiftDiff )
-	local effDiff = difficulty
+	local effDiff = GetValidDifficulty( difficulty )
 	
 	while shiftDiff ~= 0 do
 		if shiftDiff > 0 then
 			if difficulty     == "brutal"  then difficulty = "extreme"
 			elseif difficulty == "hard"    then difficulty = "brutal"
 			elseif difficulty == "normal"  then difficulty = "hard"
-			elseif difficulty == "default" then difficulty = "hard"
+			elseif difficulty == "default" then difficulty = "normal"
 			elseif difficulty == "easy"    then difficulty = "normal"
+			elseif difficulty == "coop_campaign_brutal"  then difficulty = "extreme"
+			elseif difficulty == "coop_campaign_hard"    then difficulty = "brutal"
+			elseif difficulty == "coop_campaign_normal"  then difficulty = "hard"
+			elseif difficulty == "coop_campaign_easy"    then difficulty = "normal"
 			end
 			shiftDiff = shiftDiff - 1
 		else 
@@ -73,6 +102,10 @@ function GetShiftedDifficulty( difficulty, shiftDiff )
 			elseif difficulty == "normal"  then difficulty = "easy"
 			elseif difficulty == "default" then difficulty = "easy"
 			elseif difficulty == "easy"    then difficulty = "none"
+			elseif difficulty == "coop_campaign_brutal"  then difficulty = "hard"
+			elseif difficulty == "coop_campaign_hard"    then difficulty = "normal"
+			elseif difficulty == "coop_campaign_normal"  then difficulty = "easy"
+			elseif difficulty == "coop_campaign_easy"    then difficulty = "none"
 			end
 			shiftDiff = shiftDiff + 1
 		end

@@ -5,7 +5,7 @@ waves_gen_lock = waves_gen_lock or require("lua/missions/v2/waves_gen.lua")
 
 function PrepareDefaultRules(rules, params, missionType, difficulty)
 	-- missionType: { "hq", "outpost", "resource", "survival", "scout", "exploration","temp" }
-	-- difficulty:  { "easy", "default", "hard", "brutal" }
+	-- difficulty:  { "easy", "default", "hard", "brutal", "coop_campaign_easy", "coop_campaign_normal", "coop_campaign_hard", "coop_campaign_brutal" }
 	
 	params = params or rules.params or {}
 	if not params.rulesPosfix		 then params.rulesPosfix    = difficulty or DifficultyService:GetWaveStrength() end
@@ -210,7 +210,7 @@ function Default_WaveRepeatChances(missionTypeOrParam, difficulty)
 	
 	local waveRepeatChances = {}
 	if Contains({"hq","outpost","resource","survival"}, missionType) then
-		if Contains({"brutal", "extreme"}, difficulty) then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty) then
 			waveRepeatChances = {
 				{10},                   -- consecutive chances of wave repeating at level 1
 				{25},                   -- consecutive chances of wave repeating at level 2
@@ -222,7 +222,7 @@ function Default_WaveRepeatChances(missionTypeOrParam, difficulty)
 				{100, 70, 60, 20},      -- consecutive chances of wave repeating at level 8
 				{100, 90, 65, 55, 50},  -- consecutive chances of wave repeating at level 9
 			}
-		elseif (difficulty == "hard")    then
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty)  then
 			waveRepeatChances = {
 				{10},                   -- consecutive chances of wave repeating at level 1
 				{25},                   -- consecutive chances of wave repeating at level 2
@@ -234,7 +234,7 @@ function Default_WaveRepeatChances(missionTypeOrParam, difficulty)
 				{100, 70, 50, 20},      -- consecutive chances of wave repeating at level 8
 				{100, 80, 60, 50, 25},  -- consecutive chances of wave repeating at level 9
 			}
-		elseif (difficulty == "easy")    then 
+		elseif Contains({"easy", "coop_campaign_easy"}, difficulty) then 
 			waveRepeatChances = {
 				{},                 -- consecutive chances of wave repeating at level 1
 				{},                 -- consecutive chances of wave repeating at level 2
@@ -246,33 +246,33 @@ function Default_WaveRepeatChances(missionTypeOrParam, difficulty)
 				{80,  50, 40},      -- consecutive chances of wave repeating at level 8
 				{100, 60, 50, 25},  -- consecutive chances of wave repeating at level 9
 			}
-		elseif (difficulty == "none")    then 
+		elseif Contains({"none"}, difficulty) then 
 			waveRepeatChances = {
-				{},                 -- consecutive chances of wave repeating at level 1
-				{},                 -- consecutive chances of wave repeating at level 2
-				{},                 -- consecutive chances of wave repeating at level 3
-				{20},               -- consecutive chances of wave repeating at level 4
-				{40,  10},          -- consecutive chances of wave repeating at level 5
-				{50,  20},          -- consecutive chances of wave repeating at level 6
-				{60,  30, 15},      -- consecutive chances of wave repeating at level 7
-				{80,  40, 30},      -- consecutive chances of wave repeating at level 8
-				{100, 50, 30, 15},  -- consecutive chances of wave repeating at level 9
+				{},               -- consecutive chances of wave repeating at level 1
+				{},               -- consecutive chances of wave repeating at level 2
+				{},               -- consecutive chances of wave repeating at level 3
+				{20},             -- consecutive chances of wave repeating at level 4
+				{40},             -- consecutive chances of wave repeating at level 5
+				{50,  20},        -- consecutive chances of wave repeating at level 6
+				{60,  30},        -- consecutive chances of wave repeating at level 7
+				{80,  40, 20},    -- consecutive chances of wave repeating at level 8
+				{90,  50, 20},    -- consecutive chances of wave repeating at level 9
 			}
 		else  -- including difficulty: normal, default
 			waveRepeatChances = {
-				{},                 -- consecutive chances of wave repeating at level 1
-				{},                 -- consecutive chances of wave repeating at level 2
-				{25},               -- consecutive chances of wave repeating at level 3
-				{50},               -- consecutive chances of wave repeating at level 4
-				{60, 15},           -- consecutive chances of wave repeating at level 5
-				{70, 25},           -- consecutive chances of wave repeating at level 6
-				{80, 50, 20},       -- consecutive chances of wave repeating at level 7
-				{90, 60, 40},       -- consecutive chances of wave repeating at level 8
-				{100, 60, 50, 25},  -- consecutive chances of wave repeating at level 9
+				{},                     -- consecutive chances of wave repeating at level 1
+				{},                     -- consecutive chances of wave repeating at level 2
+				{25},                   -- consecutive chances of wave repeating at level 3
+				{50},                   -- consecutive chances of wave repeating at level 4
+				{60,  15},              -- consecutive chances of wave repeating at level 5
+				{70,  25},              -- consecutive chances of wave repeating at level 6
+				{80,  50, 20},          -- consecutive chances of wave repeating at level 7
+				{90,  70, 50, 20},      -- consecutive chances of wave repeating at level 8
+				{100, 75, 60, 35, 45},  -- consecutive chances of wave repeating at level 9
 			}
 		end
 	else -- including missionType: scout, exploration, temp
-		if (difficulty == "brutal")      then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty) then
 			waveRepeatChances = {
 				{},                    -- concecutive chances of wave repeating at level 1
 				{},                    -- concecutive chances of wave repeating at level 2
@@ -284,7 +284,7 @@ function Default_WaveRepeatChances(missionTypeOrParam, difficulty)
 				{70, 50, 15},          -- concecutive chances of wave repeating at level 8
 				{80, 30, 80, 50, 20},  -- concecutive chances of wave repeating at level 9
 			}
-		elseif (difficulty == "hard")    then
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty)  then
 			waveRepeatChances = {
 				{},                -- concecutive chances of wave repeating at level 1
 				{},                -- concecutive chances of wave repeating at level 2
@@ -328,7 +328,7 @@ function Default_AttackCountPerDifficulty(missionTypeOrParam, difficulty)
 	
 	local attackCountPerDifficulty = {}
 	if Contains({"hq","outpost","resource","survival"}, missionType) then
-		if (difficulty == "brutal" or difficulty == "extreme")  then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty) then
 			attackCountPerDifficulty =  {
 				{ minCount = 1, maxCount = 2 },  -- difficulty level 1
 				{ minCount = 1, maxCount = 2 },  -- difficulty level 2
@@ -340,7 +340,7 @@ function Default_AttackCountPerDifficulty(missionTypeOrParam, difficulty)
 				{ minCount = 3, maxCount = 4 },  -- difficulty level 8
 				{ minCount = 3, maxCount = 5 },  -- difficulty level 9
 			}
-		elseif (difficulty == "hard")    then
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty)  then
 			attackCountPerDifficulty = {
 				{ minCount = 1, maxCount = 2 },  -- difficulty level 1
 				{ minCount = 1, maxCount = 2 },  -- difficulty level 2
@@ -352,7 +352,7 @@ function Default_AttackCountPerDifficulty(missionTypeOrParam, difficulty)
 				{ minCount = 3, maxCount = 4 },  -- difficulty level 8
 				{ minCount = 3, maxCount = 5 },  -- difficulty level 9
 			}
-		elseif (difficulty == "easy")    then 
+		elseif Contains({"easy", "coop_campaign_easy"}, difficulty)  then
 			attackCountPerDifficulty =  {
 				{ minCount = 1, maxCount = 1 },  -- difficulty level 1
 				{ minCount = 1, maxCount = 1 },  -- difficulty level 2
@@ -364,7 +364,7 @@ function Default_AttackCountPerDifficulty(missionTypeOrParam, difficulty)
 				{ minCount = 2, maxCount = 3 },  -- difficulty level 8
 				{ minCount = 2, maxCount = 3 },  -- difficulty level 9
 			}
-		elseif (difficulty == "none")    then 
+		elseif Contains({"none"}, difficulty)  then
 			attackCountPerDifficulty =  {
 				{ minCount = 1, maxCount = 1 },  -- difficulty level 1
 				{ minCount = 1, maxCount = 1 },  -- difficulty level 2
@@ -390,7 +390,7 @@ function Default_AttackCountPerDifficulty(missionTypeOrParam, difficulty)
 			}
 		end
 	else -- including missionType: scout, exploration, temp
-		if (difficulty == "brutal")      then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty) then
 			attackCountPerDifficulty =  {
 				{ minCount = 0, maxCount = 0 },  -- difficulty level 1
 				{ minCount = 0, maxCount = 0 },  -- difficulty level 2
@@ -402,7 +402,7 @@ function Default_AttackCountPerDifficulty(missionTypeOrParam, difficulty)
 				{ minCount = 2, maxCount = 3 },  -- difficulty level 8
 				{ minCount = 2, maxCount = 4 },  -- difficulty level 9
 			}
-		elseif (difficulty == "hard")    then
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty)  then
 			attackCountPerDifficulty = {
 				{ minCount = 0, maxCount = 0 },  -- difficulty level 1
 				{ minCount = 0, maxCount = 0 },  -- difficulty level 2
@@ -414,7 +414,7 @@ function Default_AttackCountPerDifficulty(missionTypeOrParam, difficulty)
 				{ minCount = 2, maxCount = 2 },  -- difficulty level 8
 				{ minCount = 2, maxCount = 3 },  -- difficulty level 9
 			}
-		elseif (difficulty == "easy")    then 
+		elseif Contains({"easy", "coop_campaign_easy"}, difficulty)  then
 			attackCountPerDifficulty =  {
 				{ minCount = 0, maxCount = 0 },  -- difficulty level 1
 				{ minCount = 0, maxCount = 0 },  -- difficulty level 2
@@ -566,10 +566,16 @@ function Default_TimeToNextDifficultyLevel(missionType, difficulty, factor)
 		}
 	end
 	if factor == nil then factor = 1 end
-	if (difficulty == "brutal")      then factor = factor * 0.9
+	if (difficulty == "extreme")     then factor = factor * 0.87
+	elseif (difficulty == "brutal")  then factor = factor * 0.9
 	elseif (difficulty == "hard")    then factor = factor * 0.95
-	elseif (difficulty == "default") then factor = factor * 1.00
+	elseif (difficulty == "normal")  then factor = factor * 1.00
 	elseif (difficulty == "easy")    then factor = factor * 1.1
+	elseif (difficulty == "coop_campaign_extreme") then factor = factor * 0.85
+	elseif (difficulty == "coop_campaign_brutal")  then factor = factor * 0.87
+	elseif (difficulty == "coop_campaign_hard")    then factor = factor * 0.92
+	elseif (difficulty == "coop_campaign_normal")  then factor = factor * 0.98
+	elseif (difficulty == "coop_campaign_easy")    then factor = factor * 1.03
 	end
 	
 	times = ScaleTable(times, factor)
@@ -597,10 +603,16 @@ function Default_PrepareSpawnTime(missionType, difficulty, factor)
 	
 	if factor == nil then factor = 1 end
 	if (not missionType == "survival") then	
-		if (difficulty == "brutal")      then factor = factor * 0.75
+		if (difficulty == "extreme")     then factor = factor * 0.70
+		elseif (difficulty == "brutal")  then factor = factor * 0.75
 		elseif (difficulty == "hard")    then factor = factor * 0.85
-		elseif (difficulty == "default") then factor = factor * 1.00
+		elseif (difficulty == "normal")  then factor = factor * 1.00
 		elseif (difficulty == "easy")    then factor = factor * 1.00
+		elseif (difficulty == "coop_campaign_extreme") then factor = factor * 0.65
+		elseif (difficulty == "coop_campaign_brutal")  then factor = factor * 0.70
+		elseif (difficulty == "coop_campaign_hard")    then factor = factor * 0.80
+		elseif (difficulty == "coop_campaign_normal")  then factor = factor * 0.90
+		elseif (difficulty == "coop_campaign_easy")    then factor = factor * 1.00
 		end
 	end
 	
@@ -650,10 +662,16 @@ function Default_IdleTime(missionType, difficulty, factor)
 	end
 	
 	if factor == nil then factor = 1 end
-	if (difficulty == "brutal")      then factor = factor * 0.9
+	if (difficulty == "extreme")     then factor = factor * 0.85
+	elseif (difficulty == "brutal")  then factor = factor * 0.9
 	elseif (difficulty == "hard")    then factor = factor * 0.95
-	elseif (difficulty == "default") then factor = factor * 1.00
+	elseif (difficulty == "normal")  then factor = factor * 1.00
 	elseif (difficulty == "easy")    then factor = factor * 1.2
+	elseif (difficulty == "coop_campaign_extreme") then factor = factor * 0.80
+	elseif (difficulty == "coop_campaign_brutal")  then factor = factor * 0.85
+	elseif (difficulty == "coop_campaign_hard")    then factor = factor * 0.90
+	elseif (difficulty == "coop_campaign_normal")  then factor = factor * 0.95
+	elseif (difficulty == "coop_campaign_easy")    then factor = factor * 1.00
 	end
 	
 	times = ScaleTable(times, factor)
@@ -713,31 +731,7 @@ function Default_GameEvents(missionTypeOrParam, difficulty, threat, biome, part)
 			swamp    = { shegret = 0.5, kermon = 1.0, phirian = 1.5 },
 		}
 		
-		if Contains({"normal", "default"}, difficulty) then
-			return {
-				{ action = "shegret_attack",            type = "NEGATIVE", gameStates="ATTACK",        minEventLevel = 8, logicFile="logic/event/shegret_attack.logic",              weight = weights[biome].shegret * 1 },
-				{ action = "shegret_attack",            type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 6, logicFile="logic/event/shegret_attack.logic",              weight = weights[biome].shegret * 1 },
-				{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 7, logicFile="logic/event/shegret_attack_hard.logic",         weight = weights[biome].shegret * 0.75 },
-				{ action = "kermon_attack",             type = "NEGATIVE", gameStates="ATTACK",        minEventLevel = 9, logicFile="logic/event/kermon_attack.logic",               weight = weights[biome].kermon  * 1 },
-				{ action = "kermon_attack",             type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 7, logicFile="logic/event/kermon_attack.logic",               weight = weights[biome].kermon  * 1 },
-				{ action = "kermon_attack_hard",        type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 8, logicFile="logic/event/kermon_attack_hard.logic",          weight = weights[biome].kermon  * 0.75 },
-				{ action = "phirian_attack",            type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 5, logicFile="logic/event/phirian_attack.logic",              weight = weights[biome].phirian * 0.5 },
-				{ action = "phirian_attack_hard",       type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 5, logicFile="logic/event/phirian_attack_hard.logic",         weight = weights[biome].phirian * 0.25 },
-			}
-		elseif difficulty == "hard" then
-			return {
-				{ action = "shegret_attack",            type = "NEGATIVE", gameStates="IDLE|ATTACK",   minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",              weight = weights[biome].shegret * 1 },
-				{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 6, logicFile="logic/event/shegret_attack_hard.logic",         weight = weights[biome].shegret * 0.75 },
-				{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="ATTACK",        minEventLevel = 8, logicFile="logic/event/shegret_attack_hard.logic",         weight = weights[biome].shegret * 0.75 },
-				{ action = "shegret_attack_very_hard",  type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 7, logicFile="logic/event/shegret_attack_very_hard.logic",    weight = weights[biome].shegret * 0.5 },
-				{ action = "kermon_attack",             type = "NEGATIVE", gameStates="IDLE|ATTACK",   minEventLevel = 6, logicFile="logic/event/kermon_attack.logic",               weight = weights[biome].kermon  * 1 },
-				{ action = "kermon_attack_hard",        type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 7, logicFile="logic/event/kermon_attack_hard.logic",          weight = weights[biome].kermon  * 0.75 },
-				{ action = "kermon_attack_hard",        type = "NEGATIVE", gameStates="ATTACK",        minEventLevel = 9, logicFile="logic/event/kermon_attack_hard.logic",          weight = weights[biome].kermon  * 0.75 },
-				{ action = "kermon_attack_very_hard",   type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 8, logicFile="logic/event/kermon_attack_very_hard.logic",     weight = weights[biome].kermon  * 0.5 },
-				{ action = "phirian_attack",            type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 4, logicFile="logic/event/phirian_attack.logic",              weight = weights[biome].phirian * 0.5 },
-				{ action = "phirian_attack_hard",       type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 5, logicFile="logic/event/phirian_attack_hard.logic",         weight = weights[biome].phirian * 0.5 },
-			}
-		elseif Contains({"brutal", "extreme"}, difficulty) then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty) then
 			return {
 				{ action = "shegret_attack",            type = "NEGATIVE", gameStates="IDLE|ATTACK",   minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",              weight = weights[biome].shegret * 1 },
 				{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="IDLE|ATTACK",   minEventLevel = 6, logicFile="logic/event/shegret_attack_hard.logic",         weight = weights[biome].shegret * 0.75 },
@@ -750,12 +744,36 @@ function Default_GameEvents(missionTypeOrParam, difficulty, threat, biome, part)
 				{ action = "phirian_attack",            type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 3, logicFile="logic/event/phirian_attack.logic",              weight = weights[biome].phirian * 0.5 },
 				{ action = "phirian_attack_hard",       type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 5, logicFile="logic/event/phirian_attack_hard.logic",         weight = weights[biome].phirian * 0.5 },
 				{ action = "phirian_attack_very_hard",  type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 8, logicFile="logic/event/phirian_attack_very_hard.logic",    weight = weights[biome].phirian * 0.5 },
-		}
-		else --if difficulty == "easy" then
+			}
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty)  then
+			return {
+				{ action = "shegret_attack",            type = "NEGATIVE", gameStates="IDLE|ATTACK",   minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",              weight = weights[biome].shegret * 1 },
+				{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 6, logicFile="logic/event/shegret_attack_hard.logic",         weight = weights[biome].shegret * 0.75 },
+				{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="ATTACK",        minEventLevel = 8, logicFile="logic/event/shegret_attack_hard.logic",         weight = weights[biome].shegret * 0.75 },
+				{ action = "shegret_attack_very_hard",  type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 7, logicFile="logic/event/shegret_attack_very_hard.logic",    weight = weights[biome].shegret * 0.5 },
+				{ action = "kermon_attack",             type = "NEGATIVE", gameStates="IDLE|ATTACK",   minEventLevel = 6, logicFile="logic/event/kermon_attack.logic",               weight = weights[biome].kermon  * 1 },
+				{ action = "kermon_attack_hard",        type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 7, logicFile="logic/event/kermon_attack_hard.logic",          weight = weights[biome].kermon  * 0.75 },
+				{ action = "kermon_attack_hard",        type = "NEGATIVE", gameStates="ATTACK",        minEventLevel = 9, logicFile="logic/event/kermon_attack_hard.logic",          weight = weights[biome].kermon  * 0.75 },
+				{ action = "kermon_attack_very_hard",   type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 8, logicFile="logic/event/kermon_attack_very_hard.logic",     weight = weights[biome].kermon  * 0.5 },
+				{ action = "phirian_attack",            type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 4, logicFile="logic/event/phirian_attack.logic",              weight = weights[biome].phirian * 0.5 },
+				{ action = "phirian_attack_hard",       type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 5, logicFile="logic/event/phirian_attack_hard.logic",         weight = weights[biome].phirian * 0.5 },
+			}
+		elseif Contains({"easy", "coop_campaign_easy"}, difficulty) then
 			return {
 				{ action = "shegret_attack",            type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 5, logicFile="logic/event/shegret_attack.logic",              weight = weights[biome].shegret * 1 },
 				{ action = "kermon_attack",             type = "NEGATIVE", gameStates="IDLE|ATTACK",   minEventLevel = 8, logicFile="logic/event/kermon_attack.logic",               weight = weights[biome].kermon  * 1 },
 				{ action = "phirian_attack",            type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 9, logicFile="logic/event/phirian_attack.logic",              weight = weights[biome].phirian * 0.5 },
+			}
+		else -- difficulty normal or other
+			return {
+				{ action = "shegret_attack",            type = "NEGATIVE", gameStates="ATTACK",        minEventLevel = 8, logicFile="logic/event/shegret_attack.logic",              weight = weights[biome].shegret * 1 },
+				{ action = "shegret_attack",            type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 6, logicFile="logic/event/shegret_attack.logic",              weight = weights[biome].shegret * 1 },
+				{ action = "shegret_attack_hard",       type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 7, logicFile="logic/event/shegret_attack_hard.logic",         weight = weights[biome].shegret * 0.75 },
+				{ action = "kermon_attack",             type = "NEGATIVE", gameStates="ATTACK",        minEventLevel = 9, logicFile="logic/event/kermon_attack.logic",               weight = weights[biome].kermon  * 1 },
+				{ action = "kermon_attack",             type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 7, logicFile="logic/event/kermon_attack.logic",               weight = weights[biome].kermon  * 1 },
+				{ action = "kermon_attack_hard",        type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 8, logicFile="logic/event/kermon_attack_hard.logic",          weight = weights[biome].kermon  * 0.75 },
+				{ action = "phirian_attack",            type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 5, logicFile="logic/event/phirian_attack.logic",              weight = weights[biome].phirian * 0.5 },
+				{ action = "phirian_attack_hard",       type = "NEGATIVE", gameStates="IDLE",          minEventLevel = 5, logicFile="logic/event/phirian_attack_hard.logic",         weight = weights[biome].phirian * 0.25 },
 			}
 		end
 		
