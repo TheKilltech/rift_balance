@@ -35173,6 +35173,37 @@ Research
 
 						}
 
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "laboratory"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "1"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
 					}
 
 					position
@@ -56105,6 +56136,6 @@ Research
 
 	type
 	editor "6741"
-	version "246"
+	version "247"
 }
 

@@ -312,7 +312,6 @@ function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
 		missionType    = missionType or params.missionType
 		biome          = params.biome
 	end
-	if difficulty == nil or difficulty == "custom" then difficulty = DifficultyService:GetWaveStrength() end
 	if waves == nil        then waves = GetEmptyWaves( false ) end
 	difficulty, threat = GetEffectiveDifficulty( difficulty, threat )
 	local params = Make_RuleParams(biome, missionType, difficulty, threat)
@@ -321,7 +320,7 @@ function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
 	LogService:Log("Default_UnboxedWaves (biome '"..tostring(biome).. "' missionType '"..tostring(missionType).. "' difficulty '"..tostring(difficulty).."' threat '"..tostring(threat).. "')")
 	
 	if Contains({"outpost","resource", "hq", "survival"}, missionType) then
-		if Contains({"brutal", "extreme"}, difficulty)    then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty)    then
 			waves = GenerateWavesBlock({ difficulty = { 1, 2, 3, 4 },               biomes = { biome },  levels = { 1, 2 }, suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves, true)
 			waves = GenerateWavesBlock({ difficulty = {    2, 3, 4, 5, 6},          biomes = { biome },  levels = { 1, 2 }, suffixes = { "ultra" },      repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves, true)
 			waves = GenerateWavesBlock({ difficulty = {       3, 4, 5, 6, 7},       biomes = { biome },  levels = { 2, 3 }, suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynBr = 1.0, diffSettings = ds},    waves, true)
@@ -335,7 +334,7 @@ function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
 			waves = GenerateWavesBlock({ difficulty = {                         9}, biomes = { biome },  levels = { 5 },    suffixes = { "",  },         repeatInterval = 1.8, weightDynBr = 1.0, diffSettings = ds},    waves, true)
 			waves = GenerateWavesBlock({ difficulty = {                         9}, biomes = { biome },  levels = { 5 },    suffixes = { "alpha" },      repeatInterval = 2.0, weightDynBr = 1.0, diffSettings = ds},    waves, true)
 			
-		elseif (difficulty == "hard")    then
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty)  then
 			waves = GenerateWavesBlock({ difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { biome },  levels = { 1 },    suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves, true)
 			waves = GenerateWavesBlock({ difficulty = {    2, 3, 4, 5, 6, 7, 8},    biomes = { biome },  levels = { 1 },    suffixes = { "ultra" },      repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves, true)
 			waves = GenerateWavesBlock({ difficulty = {       3, 4, 5, 6, 7, 8, 9}, biomes = { biome },  levels = { 2 },    suffixes = { "", "alpha" },  repeatInterval = 1,   weightDynHd = 1.0, diffSettings = ds},   waves, true)
@@ -348,7 +347,7 @@ function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
 			waves = GenerateWavesBlock({ difficulty = {                      8, 9}, biomes = { biome },  levels = { 4 },    suffixes = { "ultra" },      repeatInterval = 2,   weightDynHd = 1.0, diffSettings = ds},   waves, true)
 			waves = GenerateWavesBlock({ difficulty = {                         9}, biomes = { biome },  levels = { 5 },    suffixes = { "" },           repeatInterval = 2,   weightDynHd = 1.0, diffSettings = ds},   waves, true)
 		
-		elseif Contains({"normal","default", "easy"}, difficulty) then 
+		elseif Contains({"normal","default", "easy", "coop_campaign_normal", "coop_campaign_easy"}, difficulty) then 
 			waves = GenerateWavesBlock({ difficulty = { 1, 2, 3, 4, 5, 6 },         biomes = { biome },  levels = { 1 },    suffixes = { "" },           repeatInterval = 1,   weightDyn = 1.0,   diffSettings = ds},   waves, true)
 			waves = GenerateWavesBlock({ difficulty = {    2, 3, 4, 5, 6, 7},       biomes = { biome },  levels = { 1 },    suffixes = { "", "alpha" },  repeatInterval = 1,   weightDyn = 1.0,   diffSettings = ds},   waves, true)
 			waves = GenerateWavesBlock({ difficulty = {       3, 4, 5, 6, 7, 8},    biomes = { biome },  levels = { 2 },    suffixes = { "" },           repeatInterval = 1,   weightDyn = 1.0,   diffSettings = ds},   waves, true)
@@ -360,7 +359,7 @@ function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
 		end
 		
 	elseif Contains({"exploration"}, missionType) then
-		if (difficulty == "brutal")      then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty) then
 			waves = GenerateWavesBlock({ difficulty = { 4, 5, 6, 7},       biomes = { biome },  levels = { 2 },      suffixes = { "ultra" },          repeatInterval = 1,   weightDynBr = 1.0, },  waves, true)
 			waves = GenerateWavesBlock({ difficulty = { 4, 5, 6, 7},       biomes = { biome },  levels = { 3 },      suffixes = { "" },               repeatInterval = 1,   weightDynBr = 1.0, },  waves, true)
 			waves = GenerateWavesBlock({ difficulty = {    5, 6, 7, 8},    biomes = { biome },  levels = { 3 },      suffixes = { "alpha" },          repeatInterval = 1,   weightDynBr = 1.0, },  waves, true)
@@ -371,7 +370,7 @@ function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
 			waves = GenerateWavesBlock({ difficulty = {                9}, biomes = { biome },  levels = { 5 },      suffixes = { "" },               repeatInterval = 1.2, weightDynBr = 1.0, },  waves, true)
 			waves = GenerateWavesBlock({ difficulty = {                9}, biomes = { biome },  levels = { 5 },      suffixes = { "alpha" },          repeatInterval = 1.5, weightDynBr = 1.0, },  waves, true)
 		
-		elseif (difficulty == "hard")    then
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty) then 
 			waves = GenerateWavesBlock({ difficulty = { 4, 5, 6, 7, 8, 9}, biomes = { biome },  levels = { 2 },      suffixes = { "ultra" },          repeatInterval = 1,   weightDynHd = 1.0, },  waves, true)
 			waves = GenerateWavesBlock({ difficulty = { 4, 5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3 },      suffixes = { "" },               repeatInterval = 1,   weightDynHd = 1.0, },  waves, true)
 			waves = GenerateWavesBlock({ difficulty = {    5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3 },      suffixes = { "alpha" },          repeatInterval = 1,   weightDynHd = 1.0, },  waves, true)
@@ -381,7 +380,7 @@ function Default_UnboxedWaves(biomeOrParam, missionType, difficulty,  waves)
 			waves = GenerateWavesBlock({ difficulty = {             8, 9}, biomes = { biome },  levels = { 4 },      suffixes = { "ultra" },          repeatInterval = 1.5, weightDynHd = 1.0, },  waves, true)
 			waves = GenerateWavesBlock({ difficulty = {                9}, biomes = { biome },  levels = { 5 },      suffixes = { "" },               repeatInterval = 1.5, weightDynHd = 1.0, },  waves, true)
 			
-		elseif Contains({"normal","default", "easy"}, difficulty) then 
+		elseif Contains({"normal","default", "easy", "coop_campaign_normal", "coop_campaign_easy"}, difficulty) then 
 			waves = GenerateWavesBlock({ difficulty = {       6, 7, 8, 9}, biomes = { biome },  levels = { 2 },      suffixes = { "ultra" },          repeatInterval = 1,   weightDyn = 1.0,   },  waves, true)
 			waves = GenerateWavesBlock({ difficulty = {    5, 6, 7, 8, 9}, biomes = { biome },  levels = { 3 },      suffixes = { "", },              repeatInterval = 1,   weightDyn = 2.0,   },  waves, true)
 			waves = GenerateWavesBlock({ difficulty = {       6, 7, 8, 9}, biomes = { biome },  levels = { 3 },      suffixes = { "alpha" },          repeatInterval = 1,   weightDyn = 1.0,   },  waves, true)
@@ -413,13 +412,12 @@ function Default_ExtraWaves(biomeOrParam, missionType, difficulty,  waves)
 		missionType    = missionType or params.missionType
 		biome          = params.biome
 	end
-	if difficulty == nil or difficulty == "custom" then difficulty = DifficultyService:GetWaveStrength() end
 	if waves == nil      then waves = GetEmptyWaves( false ) end
 	local ds = DefaultWaveDiffSettings( biome, missionType)
-	--difficulty, threat = GetEffectiveDifficulty( difficulty, threat )
+	difficulty, threat = GetEffectiveDifficulty( difficulty, threat-1)
 
 	if Contains({"outpost","resource","hq"}, missionType) then
-		if (difficulty == "brutal")      then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty) then
 			waves = GenerateWavesBlock({ difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = { 3 },    biomes = { biome }, levels = { 3 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
@@ -429,7 +427,7 @@ function Default_ExtraWaves(biomeOrParam, missionType, difficulty,  waves)
 			waves = GenerateWavesBlock({ difficulty = { 7 },    biomes = { biome }, levels = { 7 },  suffixes = { "", "alpha", "ultra" }, repeatInterval = 9, diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = { 8, 9 }, biomes = { biome }, levels = { 8 },  suffixes = { "", "alpha", "ultra" }, repeatInterval = 9, diffSettings = ds },   waves)
 	
-		elseif (difficulty == "hard")    then
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty)  then
 			waves = GenerateWavesBlock({ difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = { 3 },    biomes = { biome }, levels = { 3 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
@@ -440,7 +438,7 @@ function Default_ExtraWaves(biomeOrParam, missionType, difficulty,  waves)
 			waves = GenerateWavesBlock({ difficulty = { 8 },    biomes = { biome }, levels = { 7 },  suffixes = { "", "", "alpha" },      repeatInterval = 9, diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = { 9 },    biomes = { biome }, levels = { 8 },  suffixes = { "", "alpha" },          repeatInterval = 9, diffSettings = ds },   waves)
 			
-		elseif Contains({"normal","default", "easy"}, difficulty) then 
+		else
 			waves = GenerateWavesBlock({ difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = { 3 },    biomes = { biome }, levels = { 3 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
@@ -449,10 +447,14 @@ function Default_ExtraWaves(biomeOrParam, missionType, difficulty,  waves)
 			waves = GenerateWavesBlock({ difficulty = { 6 },    biomes = { biome }, levels = { 6 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = { 7 },    biomes = { biome }, levels = { 7 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = { 8, 9 }, biomes = { biome }, levels = { 8 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
+			if Contains({"normal","default", "coop_campaign_normal"}, difficulty) then 
+				waves = GenerateWavesBlock({ difficulty = { 8 },    biomes = { biome }, levels = { 7 },  suffixes = { "", "alpha" },      repeatInterval = 9, diffSettings = ds },   waves)
+				waves = GenerateWavesBlock({ difficulty = { 9 },    biomes = { biome }, levels = { 8 },  suffixes = { "", "alpha" },      repeatInterval = 9, diffSettings = ds },   waves)
+			end
 		end
 		
 	elseif Contains({"scout","exploration","temp"}, missionType) then
-		if (difficulty == "brutal")      then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty) then
 			waves = GenerateWavesBlock({ difficulty = { 1 },    biomes = { biome }, levels = { 1 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = { 2 },    biomes = { biome }, levels = { 2 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = { 3 },    biomes = { biome }, levels = { 3 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
@@ -462,8 +464,8 @@ function Default_ExtraWaves(biomeOrParam, missionType, difficulty,  waves)
 			waves = GenerateWavesBlock({ difficulty = { 7 },    biomes = { biome }, levels = { 7 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = { 8, 9 }, biomes = { biome }, levels = { 8 },  suffixes = { "" },                   repeatInterval = 9, diffSettings = ds },   waves)
 	
-		elseif (difficulty == "hard")    then
-		elseif Contains({"normal","default", "easy"}, difficulty) then
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty) then
+		elseif Contains({"normal","default", "easy", "coop_campaign_normal", "coop_campaign_easy"}, difficulty)   then
 		end
 	end
 	return waves
@@ -479,60 +481,59 @@ function Default_MpWaves(biomeOrParam, missionType, difficulty,  waves)
 		missionType    = missionType or params.missionType
 		biome          = params.biome
 	end
-	if difficulty == nil or difficulty == "custom" then difficulty = DifficultyService:GetWaveStrength() end
 	if waves == nil      then waves = GetEmptyWaves( true ) end
 	local ds = DefaultWaveDiffSettings( biome, missionType)
 	difficulty, threat = GetEffectiveDifficulty( difficulty, threat )
 	
 	if Contains({"hq"}, missionType) then
-		if (difficulty == "brutal")      then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty) then
 			waves = GenerateWavesBlock({ difficulty = { 4, 5, 6, 7       }, bosses = { "hq_boss" },                                      repeatInterval = 2.5, spawnDelay = 1, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {       6, 7, 8    }, bosses = { "hq_boss" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {             8, 9 }, bosses = { "hq_boss" },                                      repeatInterval = 1.9, spawnDelay = 0, weightDynBr = 2.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 6 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {                9 }, biomes = { biome }, levels = { 7 }, suffixes = { "ultra" },  repeatInterval = 2.1, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 	
-		elseif (difficulty == "hard")    then
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty)  then
 			waves = GenerateWavesBlock({ difficulty = {    5, 6, 7, 8    }, bosses = { "hq_boss" },                                      repeatInterval = 3,   spawnDelay = 1, weightDynHd = 1.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9 }, bosses = { "hq_boss" },                                      repeatInterval = 3,   spawnDelay = 0, weightDynHd = 1.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {                9 }, bosses = { "hq_boss" },                                      repeatInterval = 2.4, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 5 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {                9 }, biomes = { biome }, levels = { 6 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			
-		elseif Contains({"normal","default", "easy"}, difficulty) then 
+		elseif Contains({"normal","default", "easy", "coop_campaign_normal", "coop_campaign_easy"}, difficulty) then 
 			waves = GenerateWavesBlock({ difficulty = {       6, 7, 8, 9 }, bosses = { "hq_boss" },                                      repeatInterval = 4,   spawnDelay = 0, weightDyn = 2.0,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 5 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDyn = 1.0,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
 		end
 		
 	elseif Contains({"outpost","resource"}, missionType) then
-		if (difficulty == "brutal")      then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty)  then
 			waves = GenerateWavesBlock({ difficulty = { 4, 5, 6, 7       }, bosses = { "dynamic" },                                      repeatInterval = 2.5, spawnDelay = 1, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {       6, 7, 8    }, bosses = { "dynamic" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {             8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 2,   spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 6 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {                9 }, biomes = { biome }, levels = { 7 }, suffixes = { "ultra" },  repeatInterval = 2.1, spawnDelay = 0, weightDynBr = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 	
-		elseif (difficulty == "hard")    then
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty) then
 			waves = GenerateWavesBlock({ difficulty = {    5, 6, 7, 8    }, bosses = { "dynamic" },                                      repeatInterval = 3,   spawnDelay = 1, weightDynHd = 1.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 3,   spawnDelay = 0, weightDynHd = 1.5, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {                9 }, bosses = { "dynamic" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 5 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {                9 }, biomes = { biome }, levels = { 6 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			
-		elseif (difficulty == "default" or difficulty == "easy") then 
+		elseif Contains({"normal","default", "easy", "coop_campaign_normal", "coop_campaign_easy"}, difficulty) then 
 			waves = GenerateWavesBlock({ difficulty = {       6, 7, 8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 4,   spawnDelay = 0, weightDyn = 2.0,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9 }, biomes = { biome }, levels = { 5 }, suffixes = { "ultra" },  repeatInterval = 1.8, spawnDelay = 0, weightDyn = 1.0,   mpAdditionalWaves = 1, diffSettings = ds},   waves)
 		end
 		
 	elseif Contains({"scout","exploration","temp"}, missionType) then
-		if (difficulty == "brutal")      then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty)  then
 			waves = GenerateWavesBlock({ difficulty = {       6, 7, 8,   }, bosses = { "dynamic" },                                      repeatInterval = 3,   spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			waves = GenerateWavesBlock({ difficulty = {                9 }, bosses = { "dynamic" },                                      repeatInterval = 2.5, spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 	
-		elseif (difficulty == "hard")    then
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty)  then
 			waves = GenerateWavesBlock({ difficulty = {          7, 8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 3,   spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 			
-		elseif Contains({"normal","default", "easy"}, difficulty) then 
+		elseif Contains({"normal","default", "easy", "coop_campaign_normal", "coop_campaign_easy"}, difficulty) then 
 			waves = GenerateWavesBlock({ difficulty = {             8, 9 }, bosses = { "dynamic" },                                      repeatInterval = 4,   spawnDelay = 0, weightDynHd = 1.0, mpAdditionalWaves = 1, diffSettings = ds},   waves)
 		end
 	end
@@ -549,38 +550,37 @@ function Default_Bosses(biomeOrParam, missionType, difficulty,  waves)
 		missionType    = missionType or params.missionType
 		biome          = params.biome
 	end
-	if difficulty == nil or difficulty == "custom" then difficulty = DifficultyService:GetWaveStrength() end
 	if waves == nil      then waves = GetEmptyWaves( false ) end
 	local ds = DefaultWaveDiffSettings( biome, missionType)
 	--difficulty = GetEffectiveDifficulty( difficulty, threat )
 
 	if Contains({"hq"}, missionType) then
-		if (difficulty == "brutal")      then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty)  then
 			waves = GenerateWavesBlock({ difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "hq_boss" },  repeatInterval = 4,    diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = {             5, 6, 7, 8, 9 }, bosses = { "hq_boss" },  repeatInterval = 2.5,  diffSettings = ds },   waves)
-		elseif (difficulty == "hard")    then
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty)  then
 			waves = GenerateWavesBlock({ difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "hq_boss" },  repeatInterval = 3.3,  diffSettings = ds },   waves)
 	
-		elseif Contains({"normal","default", "easy"}, difficulty) then 
+		elseif Contains({"normal","default", "easy", "coop_campaign_normal", "coop_campaign_easy"}, difficulty) then 
 			waves = GenerateWavesBlock({ difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "hq_boss" },  repeatInterval = 4,    diffSettings = ds },   waves)
 		end
 		
 	elseif Contains({"outpost","resource"}, missionType) then
-		if (difficulty == "brutal")      then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty)  then
 			waves = GenerateWavesBlock({ difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 4,    diffSettings = ds },   waves)
 			waves = GenerateWavesBlock({ difficulty = {             5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 2.5,  diffSettings = ds },   waves)
-		elseif (difficulty == "hard")    then
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty)  then
 			waves = GenerateWavesBlock({ difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 4,    diffSettings = ds },   waves)
 	
-		elseif Contains({"normal","default", "easy"}, difficulty) then 
+		elseif Contains({"normal","default", "easy", "coop_campaign_normal", "coop_campaign_easy"}, difficulty) then 
 		end
 		
 	elseif Contains({"scout","exploration","temp"}, missionType) then
-		if (difficulty == "brutal")      then
+		if Contains({"brutal", "extreme", "coop_campaign_brutal"}, difficulty)  then
 			waves = GenerateWavesBlock({ difficulty = { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, bosses = { "dynamic" },  repeatInterval = 4,  diffSettings = ds },   waves)
 
-		elseif (difficulty == "hard")    then
-		elseif Contains({"normal","default", "easy"}, difficulty) then 
+		elseif Contains({"hard", "coop_campaign_hard"}, difficulty)  then
+		elseif Contains({"normal","default", "easy", "coop_campaign_normal", "coop_campaign_easy"}, difficulty) then
 		end
 	end
 	return waves
