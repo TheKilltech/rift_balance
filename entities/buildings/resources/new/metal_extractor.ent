@@ -93,11 +93,12 @@ EntityBlueprint  // metal_extractor_lvl_1
 		{
 			cone_effect					string:"build_cone_3x3"
 			cone_effect_sell			string:"sell_big"
-			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
-			buff_localization			string:"buff_name/buff_ore_mill"
-			buff_icon					string:"gui/hud/building_icons/ore_mill"
-			buff_participation			float:"0.5"
+			
 			miner_resource				string:"steel"
+			
+			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
+			buff_participation			float:"0.5"
+			
 			display_radius_group		string:"ore_mill"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
@@ -674,13 +675,9 @@ EntityBlueprint  // metal_extractor_lvl_2
 		{
 			cone_effect					string:"build_cone_3x3"
 			cone_effect_sell			string:"sell_big"
-			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
-			buff_localization			string:"buff_name/buff_ore_mill"
-			buff_icon					string:"gui/hud/building_icons/ore_mill"
+			
+			//buff stats inherited
 			buff_participation			float:"0.75"
-			miner_resource				string:"steel"
-			display_radius_group		string:"ore_mill"
-			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
 	}
 	
@@ -1043,16 +1040,12 @@ EntityBlueprint  // metal_extractor_lvl_3
 		{
 			cone_effect					string:"build_cone_3x3"
 			cone_effect_sell			string:"sell_big"
-			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
+			
+			//buff stats inherited
 			buff_required_bp			string:"buildings/resources/ore_mill_missing_icon"
 			buff_required_name			string:"ore_mill"
 			buff_required_level			int:"0"
-			buff_localization			string:"buff_name/buff_ore_mill"
-			buff_icon					string:"gui/hud/building_icons/ore_mill"
 			buff_participation			float:"1.0"
-			miner_resource				string:"steel"
-			display_radius_group		string:"ore_mill"
-			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
 	}
 	

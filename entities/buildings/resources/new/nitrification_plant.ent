@@ -1083,6 +1083,20 @@ EntityBlueprint  // nitrification_site_lvl_2
 		}
 	}
 	
+	LuaDesc
+	{
+		script "lua/buildings/building_buffable.lua"
+		
+		database
+		{
+			buff_buildings				string:"buildings/resources/ore_mill,buildings/resources/ore_mill_lvl_2,buildings/resources/ore_mill_lvl_3,buildings/resources/ore_mill_lvl_4"
+			buff_participation			float:"0.75"
+			
+			display_radius_group		string:"ore_mill"
+			display_radius_blueprint	string:"effects/decals/range_circle_repair"
+		}
+	}
+	
 	GridCullerDesc
 	{
 		Shapes
@@ -1397,6 +1411,17 @@ EntityBlueprint  // nitrification_site_lvl_3
 		}
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/building_buffable.lua"
+		
+		database
+		{
+			//buff stats inherited
+			buff_participation			float:"1.0"
+		}
+	}
+	
 	HealthDesc
 	{
 		max_health 					"1600"
