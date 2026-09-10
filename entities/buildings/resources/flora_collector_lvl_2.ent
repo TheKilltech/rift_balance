@@ -11,6 +11,7 @@ EntityBlueprint  // flora_collector_lvl_2
 		localization_id		"gui/hud/building_name/flora_collector"
 		description			"gui/hud/building_description/flora_collector"
 		menu_icon			"gui/hud/building_icons/flora_collector_lvl2"
+		upgrade				"buildings/resources/flora_collector_lvl_3"
 		require 			"headquarters"
 		buildable			"0"
 		building_group		"flora_cultivator"
@@ -27,7 +28,7 @@ EntityBlueprint  // flora_collector_lvl_2
 				building_cost
 				{
 					carbonium 	"300"
-					steel 		"300"		
+					steel 		"300"
 					cobalt		"50"
 					ai			"1"
 				}
@@ -127,12 +128,12 @@ EntityBlueprint  // flora_collector_lvl_2
 				destroy_comp_delay 					"0.6"
 				destroy_comp_event 					"default"
 				//destroyed_state_material 			"units_ground/medium_tank_regular_dest_0"
-				//destroyed_state_effect_group 		"0_state"
-			}			
+			}
 		}
 	}
+	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
