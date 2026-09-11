@@ -64,7 +64,7 @@ function dom_mananger:init()
 
 	-- ========================================= Configuration ======================================
 
-	self:VerboseLog(" ------- DOM MANAGER VER 2.0 mod 0.2 ------- " )
+	self:VerboseLog(" ------- DOM MANAGER, REDI mod, v0.5 ------- " )
 
 	event_manager.init( self )
 
@@ -175,7 +175,7 @@ function dom_mananger:init()
 
 	self.player_death_position 	 = {}
 
-	self.version = 1
+	self.version = 5
 
 	self:FillInitialParamsEventManager()
 	self:FillInitialParamsDomManager()
@@ -335,7 +335,7 @@ function dom_mananger:OnLoad()
 	if ( self.version == nil ) then
 		self:RegisterHandler( event_sink, "StartUpgradingEvent",        	   "OnStartUpgradingEvent" )
 		self:UnregisterHandler( event_sink, "BuildingStartEvent",        	   "OnBuildingStartEvent" )
-		self.version = 1
+		self.version = 5
 	end
 
 	self.playersCounter = 0
@@ -1369,7 +1369,9 @@ function dom_mananger:OnEnterPrepareSpawn( state )
 		self:VerboseLog("OnEnterPrepareSpawn - chance ".. tostring(self.rules.eventsPerPrepareStateChance or 100) .. ", roll ".. tostring(rngRoll) .. ", result: ".. tostring(self.eventsPerPrepareState > 0) );
 	end
 
-	if ( ( self:GetPauseAttacks() == false ) and ( self.cancelTheAttack == false ) ) then
+	if self:GetPauseAttacks() then   self:VerboseLog("skipping preparation. attacks paused")
+	elseif self.cancelTheAttack then self:VerboseLog("skipping preparation. attack is cancelled")
+	else
 		self.data:SetFloat( "time_max", self.waitForSpawnTimer )
 		MissionService:ActivateMissionFlow( self.objectivePrepareForTheAttacLogicFileName, self.objectivePrepareForTheAttacLogicFile, "default", self.data )
 
@@ -1385,7 +1387,8 @@ function dom_mananger:OnEnterPrepareSpawn( state )
 			self.WaveRepeatState = "dummy_state"
 		end
 
-		if ( self.prepAttacks == true ) then
+		if not self.prepAttacks then self:VerboseLog("no attack prep")
+		else
 			local borderSpawnPointGroupName = self.borderSpawnPointGroupNames[RandInt( 1,#self.borderSpawnPointGroupNames )]
 
 			self:VerboseLog("Border spawn point group :" .. borderSpawnPointGroupName )
