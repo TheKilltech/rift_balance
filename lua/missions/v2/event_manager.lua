@@ -101,6 +101,8 @@ function event_manager:InitRules()
 	if (self.rules.preparationTimeRelativeVariation == nil or type(self.rules.preparationTimeRelativeVariation) ~= "number") then  self.rules.preparationTimeRelativeVariation = 0.35 end
 	if (self.rules.preparationTimeCancelChance == nil      or type(self.rules.preparationTimeCancelChance) ~= "number")      then  self.rules.preparationTimeCancelChance = 5         end
 	if (self.rules.spawnCooldownEventChance == nil         or type(self.rules.spawnCooldownEventChance) ~= "table")          then  self.rules.spawnCooldownEventChance = {}           end
+	
+	-- self:VerboseLog( PrintTable(self.rules) )
 end
 
 function event_manager:FillInitialParamsEventManager()

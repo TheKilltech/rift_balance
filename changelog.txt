@@ -1,3 +1,19 @@
+0.5.9
+- fixed some tech in campaign (mostly open, some story) not showing unlock requirements
+- fixed issues with multiplayer waves not spawning (but preparation phase is not fully working)
+- fixed resin factory visual, incorrect pipe arrow direction for resin output
+- fixed flora collector 2 lacking an upgrade option to 3
+- fixed compatibility with Claus pipe tunnel
+- added energy enhancer (leveraged energy grid balancer)
+- updated ai hubs, should impact game performance a bit less then before
+- updated fusion powerplant minimap visuals
+- updated code for buffable buildings. now some can take different buffs from specific buildings
+  - updated wind and solar, now energy buff is capped at +50%
+  - updated magma and fusion powerplant, now energy buff is capped at +100%
+  - updated nitrification site, now affected by ore mill buff
+  - updated fusion and geothermal powerplants, now affected by energy balancer buff as well
+  - updated fusion powerplant plasma output, rebalanced to account for new buffs
+
 0.5.8
 - fixed (hopefully) waves not spawning in multiplayer
 - fixed inconsistency with comm hub and alien lab limit increases in tech tree

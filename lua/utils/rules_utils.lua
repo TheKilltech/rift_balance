@@ -59,17 +59,23 @@ end
 --- new difficulty strings unknown to the mod may be introduced. this adjusts the name to something the mod can handle
 function GetValidDifficulty( difficulty )
 	if difficulty == nil or difficulty == "custom" then 
-		difficulty = DifficultyService:GetWaveStrength()
+		difficulty = DifficultyService:GetCurrentDifficultyName()
 	end
 	if difficulty     == "brutal"  then return difficulty
 	elseif difficulty == "hard"    then return difficulty
 	elseif difficulty == "normal"  then return difficulty
 	elseif difficulty == "default" then return "normal"
 	elseif difficulty == "easy"    then return difficulty
-	elseif difficulty == "coop_campaign_brutal"  then return difficulty
-	elseif difficulty == "coop_campaign_hard"    then return difficulty
-	elseif difficulty == "coop_campaign_normal"  then return difficulty
-	elseif difficulty == "coop_campaign_easy"    then return difficulty
+	elseif difficulty == "none"    then return difficulty
+	elseif difficulty == "sandbox" then return "none"
+	elseif difficulty == "coop_brutal"  then return "brutal"
+	elseif difficulty == "coop_hard"    then return "hard"
+	elseif difficulty == "coop_normal"  then return "normal"
+	elseif difficulty == "coop_easy"    then return "easy"
+	elseif difficulty == "coop_campaign_brutal"  then return "brutal"
+	elseif difficulty == "coop_campaign_hard"    then return "hard"
+	elseif difficulty == "coop_campaign_normal"  then return "normal"
+	elseif difficulty == "coop_campaign_easy"    then return "easy"
 	elseif string.find(difficulty, "extreme")    then return "extreme"
 	elseif string.find(difficulty, "brutal")     then return "brutal"
 	elseif string.find(difficulty, "hard")       then return "hard"
@@ -81,7 +87,7 @@ function GetValidDifficulty( difficulty )
 end
 
 function GetShiftedDifficulty( difficulty, shiftDiff )
-	local effDiff = GetValidDifficulty( difficulty )
+	local difficulty = GetValidDifficulty( difficulty )
 	
 	while shiftDiff ~= 0 do
 		if shiftDiff > 0 then

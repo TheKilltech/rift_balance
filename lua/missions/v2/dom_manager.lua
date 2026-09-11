@@ -64,7 +64,7 @@ function dom_mananger:init()
 
 	-- ========================================= Configuration ======================================
 
-	self:VerboseLog(" ------- DOM MANAGER VER 2.0 mod 0.2 ------- " )
+	self:VerboseLog(" ------- DOM MANAGER, REDI mod, v0.5 ------- " )
 
 	event_manager.init( self )
 
@@ -175,7 +175,7 @@ function dom_mananger:init()
 
 	self.player_death_position 	 = {}
 
-	self.version = 1
+	self.version = 5
 
 	self:FillInitialParamsEventManager()
 	self:FillInitialParamsDomManager()
@@ -335,7 +335,7 @@ function dom_mananger:OnLoad()
 	if ( self.version == nil ) then
 		self:RegisterHandler( event_sink, "StartUpgradingEvent",        	   "OnStartUpgradingEvent" )
 		self:UnregisterHandler( event_sink, "BuildingStartEvent",        	   "OnBuildingStartEvent" )
-		self.version = 1
+		self.version = 5
 	end
 
 	self.playersCounter = 0
@@ -365,6 +365,8 @@ function dom_mananger:FillInitialParamsDomManager()
 	if ( self.waveRepeated == nil ) then self.waveRepeated = 0 end
 	
 	self:UpdateFreezedDifficultyLevel()
+	
+	--self:VerboseLog( PrintTable(self.rules) )
 end
 
 	-- ======================================== LOGIC ============================================
@@ -385,7 +387,7 @@ function dom_mananger:LogicFilesSanityCheck()
 
 			table.insert( failedLogicFileTable, log )
 			log = log .. " NOT EXIST"
-			LogService:Log( log )
+			--LogService:Log( log )
 		end
 	end
 
@@ -395,7 +397,7 @@ function dom_mananger:LogicFilesSanityCheck()
 
 			table.insert( failedLogicFileTable, log )
 			log = log .. " NOT EXIST"			
-			LogService:Log( log )
+			--LogService:Log( log )
 		end
 
 	end
@@ -414,14 +416,14 @@ function dom_mananger:LogicFilesSanityCheck()
 
 				table.insert( failedLogicFileTable, log )
 				log = log .. " NOT EXIST"			
-				LogService:Log( log )
+				--LogService:Log( log )
 			end	
 		end
 	end
 
 	for group, groupData in pairs( self.rules.waves ) do
-
-		self:VerboseLog( "rules.waves : " .. tostring( group ) )
+		local numWaves = 0
+		local numBad = 0
 
 		if ( #groupData ~= 0 ) then
 
@@ -430,25 +432,32 @@ function dom_mananger:LogicFilesSanityCheck()
 			end
 
 			for i = 1, self.maxDifficultyLevel, 1 do 
-				for data in Iter( groupData[i] ) do 
+				for data in Iter( groupData[i] ) do
+					numWaves = numWaves+1
 					if data then
 						if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.name ) ) then
 							local log = "rules.waves" .. " " .. tostring( i ) .. " : " .. data.name
 							table.insert( failedLogicFileTable, log )
 							log = log .. " NOT EXIST"
-							LogService:Log( log )
+							--LogService:Log( log )
+							numBad = numBad+1
 						end
 					end
 				end
 			end
 		end
+		
+		self:VerboseLog( "rules.waves : " .. tostring( group ) .. " with ".. tostring(numWaves-numBad)..  "/".. tostring(numWaves) .." valid defs" )
 	end
 	
 	self:LogicTableCheck( self.rules.extraWaves, "rules.extraWaves", failedLogicFileTable )
-	self:LogicTableCheck( self.rules.bosses, "rules.bosses", failedLogicFileTable )
+	self:LogicTableCheck( self.rules.bosses,     "rules.bosses",     failedLogicFileTable )
 	
 
 	if ( self.rules.multiplayerWaves ~= nil ) then
+		local numWaves = 0
+		local numBad = 0
+		
 		if ( #self.rules.multiplayerWaves ~= self.maxDifficultyLevel ) then
 			Assert( false, "rules.multiplayerWaves size must equal " .. tostring( self.maxDifficultyLevel ) )
 		end
@@ -456,15 +465,18 @@ function dom_mananger:LogicFilesSanityCheck()
 		if self.rules.multiplayerWaves then
 			for i = 1, self.maxDifficultyLevel, 1 do 
 				for wave in Iter( self.rules.multiplayerWaves[i].waves ) do 
+					numWaves = numWaves+1
 					if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", wave.name ) ) then
 						local log = "rules.multiplayerWaves " .. tostring( i ) .. " : " .. wave.name
 						table.insert( failedLogicFileTable, log )
-						log = log .. " NOT EXIST"			
-						LogService:Log( log )
+						log = log .. " NOT EXIST"
+						--LogService:Log( log )
+						numBad = numBad+1
 					end
 				end
 			end
 		end
+		self:VerboseLog( "rules.multiplayerWaves : " .. tostring(numWaves-numBad)..  "/".. tostring(numWaves) .." valid defs" )
 	end
 
 	if ( #failedLogicFileTable > 0 ) then
@@ -478,7 +490,9 @@ function dom_mananger:LogicFilesSanityCheck()
 end
 
 function dom_mananger:LogicTableCheck( logicTable, logString, failedLogicFileTable )
-
+	local numWaves = 0
+	local numBad = 0
+	
 	if ( #logicTable ~= 0 ) then		
 		if ( #logicTable ~= self.maxDifficultyLevel ) then
 			Assert( false, logString .. " size must equal " .. tostring( self.maxDifficultyLevel ) )
@@ -486,17 +500,20 @@ function dom_mananger:LogicTableCheck( logicTable, logString, failedLogicFileTab
 
 		for i = 1, self.maxDifficultyLevel, 1 do 
 			for data in Iter( logicTable[i] ) do 
+				numWaves = numWaves+1
 				if data then
 					if ( not ResourceManager:ResourceExists( "FlowGraphTemplate", data.name ) ) then
 						local log = logString .. " " .. tostring( i ) .. " : " .. data.name
 						table.insert( failedLogicFileTable, log )
 						log = log .. " NOT EXIST"			
-						LogService:Log( log )
+						--LogService:Log( log )
+						numBad = numBad+1
 					end
 				end
 			end
 		end
 	end
+	self:VerboseLog( logString .." : " .. tostring(numWaves-numBad)..  "/".. tostring(numWaves) .." valid defs" )
 end
 
 function dom_mananger:LogicEntryTableCheck( logicTable, logString, failedLogicFileTable )
@@ -1315,6 +1332,7 @@ function dom_mananger:OnExitWait( state )
 		local idleTime = self:GetIdleTime()
 
 		local pauseAttacks = self:GetPauseAttacks()
+		self:VerboseLog("OnExitWait: pause attacks = " .. tostring(pauseAttacks) .. "")
 		if ( ( pauseAttacks == true ) and ( idleTime > 0 ) ) then
 			self.spawner:ChangeState( "idle" )
 		elseif ( ( pauseAttacks == true ) and ( idleTime == 0 ) ) then
@@ -1351,7 +1369,9 @@ function dom_mananger:OnEnterPrepareSpawn( state )
 		self:VerboseLog("OnEnterPrepareSpawn - chance ".. tostring(self.rules.eventsPerPrepareStateChance or 100) .. ", roll ".. tostring(rngRoll) .. ", result: ".. tostring(self.eventsPerPrepareState > 0) );
 	end
 
-	if ( ( self:GetPauseAttacks() == false ) and ( self.cancelTheAttack == false ) ) then
+	if self:GetPauseAttacks() then   self:VerboseLog("skipping preparation. attacks paused")
+	elseif self.cancelTheAttack then self:VerboseLog("skipping preparation. attack is cancelled")
+	else
 		self.data:SetFloat( "time_max", self.waitForSpawnTimer )
 		MissionService:ActivateMissionFlow( self.objectivePrepareForTheAttacLogicFileName, self.objectivePrepareForTheAttacLogicFile, "default", self.data )
 
@@ -1367,7 +1387,8 @@ function dom_mananger:OnEnterPrepareSpawn( state )
 			self.WaveRepeatState = "dummy_state"
 		end
 
-		if ( self.prepAttacks == true ) then
+		if not self.prepAttacks then self:VerboseLog("no attack prep")
+		else
 			local borderSpawnPointGroupName = self.borderSpawnPointGroupNames[RandInt( 1,#self.borderSpawnPointGroupNames )]
 
 			self:VerboseLog("Border spawn point group :" .. borderSpawnPointGroupName )

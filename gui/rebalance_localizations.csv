@@ -4,6 +4,8 @@ buff_name/buff_magnetic_stabilizer;Mag. Stabilizer Buff;;;;Magnetfeldstabilisato
 buff_name/buff_morphium_power;Morph Power Buff;;;;Morph-Power-Buff;;;金属转化增益;;
 buff_name/buff_ore_mill;Ore Mill Buff;;;;Erzmühle-Buff;;;矿石磨机增益;;
 buff_name/buff_power_grid_balancer;Energy Balancer;;;;Energieausgleicher;;;能源增益;;
+gui/hud/buff_mod_max;Buff Max;;;;;;;;;
+gui/hud/buff_mod_upkeep_min;Buff Min (Upkeep);;;;;;;;;
 gui/hud/buff_participation;Buff Participation;;;;;;;;;
 gui/hud/building_description/alloys_factory;Produces alloys from cobalt and molten iron;;;;Stellt Legierungen aus Kobalt und geschmolzenem Eisen her;;;使用钴和熔融铁生产合金;;
 gui/hud/building_description/alloys_factory_palladium;Produces alloys from palladium and molten iron;;;;Stellt Legierungen aus Palladium und geschmolzenem Eisen her;;;使用钯和熔融铁生产合金;;
@@ -68,6 +70,7 @@ gui/hud/building_description/crystalizer_tanzanite_lvl_2;Crystallizes Tanzanite 
 gui/hud/building_description/crystalizer_tanzanite_lvl_3;Crystallizes Tanzanite from Ammonium Flammable Gas and Plasma. Requires ammonium deposit as crystal seed but does not consume the deposit.;;;;Kristallisiert Tansanit aus Ammonium, brennbarem Gas und Plasma. Benötigt Ammoniumvorkommen als Kristallkeim, verbraucht das Vorkommen jedoch nicht.;;;从铵、可燃气和等离子体中结晶出坦桑石。需要铵矿床作为晶种，但不消耗矿床。;;
 gui/hud/building_description/energy_connector_armored;An armored but more expensive variant of the energy connector;;;;Eine gepanzerte, aber teurere Variante des Energieverbinders;;;能量连接器的装甲但更昂贵的变体;;
 gui/hud/building_description/energy_connector_water;Energy connector on platform that can be placed on liquids pools;;;;Energieverbinder auf einer Plattform, die auf Flüssigkeitsbecken platziert werden kann;;;平台上的能量连接器，可放置在液体池上;;
+gui/hud/building_description/energy_enhancer;Significantly enhances energy output of nearby energy producers.;;;;;;;;;
 gui/hud/building_description/energy_storage_new;A battery that balances the energy gird improving nearby power production Best used with intermittent power sources like Solar Panels to create an energy buffer.;;;;Eine Batterie, die das Energienetz ausgleicht und die Stromerzeugung in der Umgebung verbessert. Am besten in Verbindung mit intermittierenden Energiequellen wie Solarpanels einsetzbar, um einen Energiespeicher zu schaffen.;;;能源储存设施。可以增强风能、太阳能。;;
 gui/hud/building_description/fire_control_station;Powers up/down defense buildings depending on if enemies are in vicinity or not;;;;Schaltet Verteidigungsgebäude ein oder aus, je nachdem, ob sich Feinde in der Nähe befinden oder nicht;;;根据附近是否有敌人来启动/关闭防御建筑;;
 gui/hud/building_description/fire_control_station_artillery;Powers up/down long range artillery towers depending on if enemies are in vicinity or not. Much wieder detection range then regular fire control stations;;;;Schaltet Langstrecken-Artillerietürme ein oder aus, je nachdem, ob sich Feinde in der Nähe befinden oder nicht. Viel größere Erkennungsreichweite als normale Feuerleitstellen;;;根据附近是否有敌人来启动/关闭远程炮塔。检测范围比普通火力控制站大得多;;
@@ -256,6 +259,7 @@ gui/hud/building_name/crystalizer_rhodonite;Rhodonite Crystallizer;;;;Rhodonit-K
 gui/hud/building_name/crystalizer_tanzanite;Tanzanite Crystallizer;;;;Tansanit-Kristallisator;;;坦桑石结晶器;;
 gui/hud/building_name/energy_connector_armored;Armored Energy Connector;;;;Gepanzerter Energieanschluss;;;装甲能量连接器;;
 gui/hud/building_name/energy_connector_water;Energy Connector Water;;;;Energieanschluss Wasser;;;水上能量连接器;;
+gui/hud/building_name/energy_enhancer;Energy Enhancer;;;;;;;;;
 gui/hud/building_name/energy_storage_new;Energy Grid Balancer;;;;Energie-Netzausgleicher;;;能源储存库;;
 gui/hud/building_name/fire_control_station;Fire Control Station;;;;Feuerleitstelle;;;火力控制站;;
 gui/hud/building_name/fire_control_station_artillery;Long Range Fire Control Station;;;;Feuerleitstelle mit großer Reichweite;;;远程火力控制站;;
@@ -528,6 +532,9 @@ gui/menu/research/description/depleted_uranium_high_caliber_shells_lvl_2;Improve
 gui/menu/research/description/depleted_uranium_low_caliber_shells;Depleted Uranium allows the manufacturing of more effective high density rounds for low caliber weapons;;;;Abgereichertes Uran ermöglicht die Herstellung wirksamerer Geschosse mit hoher Dichte für kleinkalibrige Waffen;;;贫铀可以制造更有效的高密度小口径武器子弹;;
 gui/menu/research/description/depleted_uranium_low_caliber_shells_lvl_2;Improvements for the production of depleted uranium munitions that allow a more efficient production line with higher output;;;;Verbesserungen bei der Herstellung von Munition aus abgereichertem Uran, die eine effizientere Produktionslinie mit höherer Ausbeute ermöglichen.;;;改进贫铀弹药的生产，实现更高效的生产线和更高的产量;;
 gui/menu/research/description/energy_connector_eluminated;Energy connectors with illumination functionality. Comes with basic color variants;;;;Energieverbinder mit Beleuchtung. Kommt mit verschieden Farbvariationen;;;;;
+gui/menu/research/description/energy_enhancer_lvl_1;Some energy production can be significantly leveraged using highly specialized plasmas. The energy enhancer is an expanded energy grid balancer applying the plasma leverage on top.;;;;;;;;;
+gui/menu/research/description/energy_enhancer_lvl_2;Energy enhancement produces a lot of heat. Dedicated cooling enables to sustain a highly leveraged power production;;;;;;;;;
+gui/menu/research/description/energy_enhancer_lvl_3;Naturally occuring resin offers a near perfect plasma replacement for maximized energy leveraging.;;;;;;;;;
 gui/menu/research/description/fire_control_station;This technology surveys the surroundings for threats and enables intelligent defense buildings control to save resources;;;;Diese Technologie überwacht die Umgebung auf Bedrohungen und ermöglicht eine intelligente Steuerung von Verteidigungsgebäuden, um Ressourcen zu sparen.;;;这项技术监视周围环境的威胁，并实现智能防御建筑控制以节省资源;;
 gui/menu/research/description/fire_control_station_artillery;Powers up/down long range artillery towers depending on if enemies are in vicinity or not. Much wider detection range then regular fire control stations;;;;Schaltet Langstrecken-Artillerietürme ein oder aus, je nachdem, ob sich Feinde in der Nähe befinden oder nicht. Viel größerer Erfassungsbereich als bei herkömmlichen Feuerleitstellen.;;;根据附近是否有敌人来启动/关闭远程炮塔。检测范围比普通火力控制站大得多;;
 gui/menu/research/description/floating_power_connectors;Specialized energy connectors floating on the surface of liquids enabling to expand the power grid over any kind of lakes;;;;;;;;;
@@ -821,6 +828,9 @@ gui/menu/research/name/depleted_uranium_high_caliber_shells_lvl_2;Improved Deple
 gui/menu/research/name/depleted_uranium_low_caliber_shells;Depleted Uranium low caliber Rounds;;;;Kleinkalibrige Geschosse aus abgereichertem Uran;;;贫铀小口径子弹;;
 gui/menu/research/name/depleted_uranium_low_caliber_shells_lvl_2;Improved Depleted Uranium low caliber Rounds;;;;Verbesserte Geschosse aus abgereichertem Uran mit kleinem Kaliber;;;改进型贫铀小口径子弹;;
 gui/menu/research/name/energy_connector_eluminated;Illumination;;;;Beleuchtung;;;;;
+gui/menu/research/name/energy_enhancer_lvl_1;Energy Enhancer;;;;;;;;;
+gui/menu/research/name/energy_enhancer_lvl_2;Advanced Energy Enhancer;;;;;;;;;
+gui/menu/research/name/energy_enhancer_lvl_3;Optimized Energy Enhancer;;;;;;;;;
 gui/menu/research/name/fire_control_station;Fire Control Station;;;;Feuerleitstelle;;;火力控制站;;
 gui/menu/research/name/fire_control_station_artillery;Long Range Fire Control Station;;;;Feuerleitstelle für große Entfernungen;;;远程火力控制站;;
 gui/menu/research/name/floating_power_connectors;Floating Energy Connectors;;;;;;;;;

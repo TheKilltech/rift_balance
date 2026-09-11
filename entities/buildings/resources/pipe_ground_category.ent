@@ -5,17 +5,26 @@ EntityBlueprint
 	BuildingDesc
 	{
 		buildable 			"0"
+		sellable			"0"
 		name 				"pipe_ground"
 		bp   				"buildings/resources/pipe_ground"
 		ghost_bp 			"buildings/resources/pipe_ground_ghost"
-		localization_id		"gui/hud/building_name/pipe_straight"
+		localization_id		"gui/hud/building_name/pipe_ground"
+		menu_icon			"gui/hud/building_icons/pipe_ground"
 		category 			"liquids"
+		order				"8"
 		type				"pipe"
 		require 			"headquarters"
-		building_mode		"line"
-		menu_action			"resource_clear"	
-		check_connect		"1"
 		
+		building_mode		"pipeground"
+		menu_action			"resource_clear"
+		
+		overrides			"pipe_ground,pipe_connector_t,pipe_connector_x,pipe_corner,pipeline,pipe_straight_windowless"
+		radius_name 		"pipeline"
+		min_radius			"1"
+		min_radius_effect	"voice_over/announcement/building_too_close"
+		building_group		"pipeline"
+
 		building_functionality	"BUILD_ON_WATER|PIPE_MODE|NO_FOUNDATION"
 
 		costs
@@ -26,27 +35,34 @@ EntityBlueprint
 				building_time 1
 				building_cost
 				{
-					carbonium 	"5"
+					carbonium 	"20"
 				}
-			}		
-		}		
-		connect
+			}
+		}
+	}
+	
+	
+	ResourceStorageDesc
+	{
+		Storages
 		{
-			T 		"buildings/resources/pipe_connector_t"	
-			X		"buildings/resources/pipe_connector_x"
-			L		"buildings/resources/pipe_corner"
-			I		"buildings/resources/pipe_straight,buildings/resources/pipe_straight_windowless"
+			Storage
+			{
+				group	 		"local"
+				max 	 		"2"
+				attachment		"att_in_1"
+			}
 		}
 	}
 
 	PipeComponent
 	{
-		
+		attachment		"att_in_1"
 	}
-	
+
 	LuaDesc
 	{
-		script "lua/buildings/resources/pipe_straight.lua"
+		script "lua/buildings/resources/pipe_ground_second.lua"
 		
 		database
 		{
@@ -73,7 +89,6 @@ EntityBlueprint
 				health 								"66"
 				destroy_comp_delay 					"0"
 				destroy_comp_event 					"66_destroy"				
-				//destroyed_state_material 			"buildings/main/headquarters_dest_25"
 				destroyed_state_effect_group 		"66_state"
 			}
 			DestructionLevel
@@ -81,7 +96,6 @@ EntityBlueprint
 				health 								"33"
 				destroy_comp_delay 					"0"
 				destroy_comp_event 					"33_destroy"
-				//destroyed_state_material 			"buildings/main/headquarters_dest_0"
 				destroyed_state_effect_group 		"33_state"
 			}
 		}
@@ -100,7 +114,7 @@ EntityBlueprint
 
 	TypeDesc
 	{
-		type "building|liquids|not_move_to_target|ignore_as_target"
+		type "building|resource|not_move_to_target|ignore_as_target"
 	}
 
 	SkeletonDesc
@@ -272,6 +286,32 @@ EntityBlueprint
 		EffectBaseBlueprints
 		{
 			"buildings/effects_smoke_small_base"
-		}	
+		}
+		
+		// EffectGroup
+		// {
+			// group "att_in_1"
+			// enabled "0"
+			// delay "0"
+
+			// Effects
+			// {
+				// Effect
+				// {
+					// blueprint "effects/buildings_and_machines/building_arrow_twosided"
+					// bone "att_in_1_arrow"
+				// }
+			// }
+		// }
 	}	
+}
+
+EntityBlueprint
+{
+	name "buildings/resources/pipe_ground_ruins"
+	
+	LifeTimeDesc
+	{
+        
+    }
 }

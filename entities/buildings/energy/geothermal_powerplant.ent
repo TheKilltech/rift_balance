@@ -95,10 +95,10 @@ EntityBlueprint  // geothermal_powerplant
 			cone_effect					string:"build_cone_4x4"
 			cone_effect_sell			string:"sell_big"
 			
-			buff_buildings				string:"buildings/resources/geoscanner_lvl_1,buildings/resources/geoscanner_lvl_2,buildings/resources/geoscanner_lvl_3"
+			buff_buildings				string:"buildings/resources/geoscanner_lvl_1,buildings/resources/geoscanner_lvl_2,buildings/resources/geoscanner_lvl_3,buildings/energy/energy_storage,buildings/energy/energy_storage_lvl_2,buildings/energy/energy_storage_lvl_3,buildings/energy/energy_enhancer,buildings/energy/energy_enhancer_lvl_2,buildings/energy/energy_enhancer_lvl_3"
 			buff_required_bp			string:"buildings/resources/geoscanner_missing_icon"
-			buff_localization			string:"buff_name/buff_geoscanner"
-			buff_icon					string:"gui/hud/building_icons/geoscanner_lvl_1"
+			buff_mod_max				float:"1.5"
+			
 			display_radius_group		string:"geoscanner"
 			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}

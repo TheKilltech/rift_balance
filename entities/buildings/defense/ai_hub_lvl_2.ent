@@ -53,39 +53,38 @@ EntityBlueprint  // ai_hub_lvl_2
 	{
 		name "meshes/buildings/defense/ai_hub_lvl_2"
 	}
-
+	
 	ResourceConverterDesc
 	{
 		in
 		{
 			GameplayResource
 			{
-				resource 			"energy"
-				value			 	"50"
+				resource			"energy"
+				value				"50"
 			}
 						
 			GameplayResource
 			{
-				resource 			"supercoolant"
-				value			 	"1"
-				attachment			"att_in_1|att_in_2|att_in_3|att_in_4"
-				family				"coolant"
-			}		
-			GameplayResource
-			{
-				resource 			"deuterium"
+				resource			"supercoolant"
 				value				"1"
-				attachment			"att_in_1|att_in_2|att_in_3|att_in_4"
 				family				"coolant"
 			}
 			GameplayResource
 			{
-				resource 			"water"
-				value			 	"5"
-				attachment			"att_in_1|att_in_2|att_in_3|att_in_4"
+				resource			"deuterium"
+				value				"1"
+				family				"coolant"
+			}
+			GameplayResource
+			{
+				resource			"water"
+				value				"5"
 				family				"coolant"
 			}
 		}
+		
+		one_vein_mode "1"
 		priority 7
 	}
 
@@ -93,12 +92,6 @@ EntityBlueprint  // ai_hub_lvl_2
 	{
 		Storages
 		{
-			Storage
-			{
-				group	 		"local"
-				max 	 		"5"
-				attachment		"att_in_1|att_in_2|att_in_3|att_in_4"
-			}
 			Storage
 			{
 				resource	"ai"
@@ -146,7 +139,7 @@ EntityBlueprint  // ai_hub_lvl_2
 		{
 			"buildings/effects_small_base"
 		}	
-		////////////////////////Resources/////////////////////////	
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
