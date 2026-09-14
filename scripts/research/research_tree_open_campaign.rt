@@ -19706,6 +19706,73 @@ Research
 					icon "gui/menu/research/icons/basic_resource_production"
 				}
 
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/ammo_energy_cell_lvl2b"
+							research_category "gui/menu/research/category_base_buildings"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/ammo_energy_cell_lvl2c"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "6000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "4500"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "rhodonite"
+							count "2500"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-1170"
+						y "180"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/ammo/ammo_factory_energy_adv_lvl_3"
+							is_visible "1"
+						}
+
+						ResearchAward
+						{
+							blueprint "research/upgrade_nitric_acid_upkeep"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/tower_ammunition_handling"
+				}
+
 			}
 
 		}
@@ -56345,6 +56412,6 @@ Research
 
 	type
 	editor "6741"
-	version "249"
+	version "250"
 }
 
