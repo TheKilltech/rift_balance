@@ -1,202 +1,26 @@
-return function()
-    local rules = {}
+require("lua/missions/v2/rules_gen.lua" )
 
-	rules.maxObjectivesAtOnce = 2
-	rules.eventsPerIdleState = 2
-	rules.eventsPerPrepareState = 1 -- [0,1]
-	rules.eventsPerPrepareStateChance = 15        -- chance to spawn events with objectives
-	rules.pauseAttacks = false
-	rules.prepareAttacks = true
-	rules.baseTimeBetweenObjectives = 2400
-	rules.idleTimeRelativeVariation = 0.6         -- X factor of idle time that may randomly vary: +/- X * idle_time
-	rules.idleTimeCancelChance = 15               -- chance in percent, reduces idle time down to 120
-	rules.preparationTimeRelativeVariation = 0.35 -- X factor of idle time that may randomly vary: +/- X * prep_time
-	rules.preparationTimeCancelChance = 15        -- chance in percent
+-- rules_gen is used to preset all requires rules fields with parametric default values based on the current biome, difficulty, mission type, threat level
+-- all fields from the original rules files can be still overwritten here if needed for a specific map.
+return function(params)
+	-- param missionType: { "hq", "resource", "outpost", "survival", "scout", "exploration" }
+	-- param difficulty:  { "easy", "normal", "hard", "brutal", "extreme" }
+	local rules  = PrepareDefaultRules( {}, params, "scout")
 
-	rules.gameEvents = 
-	{
-		{ action = "spawn_earthquake",          type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2,                    logicFile="logic/weather/earthquake.logic",          minTime = 60, maxTime = 60,   weight = 1},
-		{ action = "spawn_solar_burn",          type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 1,                    logicFile="logic/weather/solar_burn.logic",          minTime = 20, maxTime = 45,   weight = 4,    weather = "SUN" },
-		{ action = "spawn_dust_storm",          type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2,                    logicFile="logic/weather/dust_storm.logic",          minTime = 60, maxTime = 120,  weight = 2,    weather = "WIND" },
-		{ action = "spawn_blood_moon",          type = "NEGATIVE", gameStates="IDLE",                  minEventLevel = 4,                    logicFile="logic/weather/blood_moon.logic",          minTime = 60, maxTime = 120,  weight = 0.2,  weather = "SUN" },
-		{ action = "spawn_blue_moon",           type = "POSITIVE", gameStates="IDLE",                  minEventLevel = 4,                    logicFile="logic/weather/blue_moon.logic",           minTime = 60, maxTime = 120,  weight = 0.2,  weather = "SUN" },
-		{ action = "spawn_solar_eclipse",       type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 3,                    logicFile="logic/weather/solar_eclipse.logic",       minTime = 60, maxTime = 120,  weight = 0.25, weather = "SUN" },
-		{ action = "spawn_super_moon",          type = "POSITIVE", gameStates="ATTACK|IDLE",           minEventLevel = 3,                    logicFile="logic/weather/super_moon.logic",          minTime = 60, maxTime = 120,  weight = 1   },
-		{ action = "spawn_wind_weak",           type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2,                    logicFile="logic/weather/wind_weak.logic",           minTime = 60, maxTime = 120,  weight = 0.5,   weather = "WIND" },
-		{ action = "spawn_wind_none",           type = "NEGATIVE", gameStates="ATTACK|IDLE",           minEventLevel = 2,                    logicFile="logic/weather/wind_none.logic",           minTime = 60, maxTime = 120,  weight = 0.8,   weather = "WIND" },
-		{ action = "spawn_ion_storm",           type = "POSITIVE", gameStates="ATTACK|IDLE",           minEventLevel = 3,                    logicFile="logic/weather/ion_storm.logic",           minTime = 30, maxTime = 60,   weight = 0.15,  weather = "WIND" },
-		{ action = "spawn_meteor_shower",       type = "NEGATIVE", gameStates="ATTACK|IDLE|STREAMING", minEventLevel = 8,                    logicFile="logic/weather/meteor_shower.logic",       minTime = 30, maxTime = 60,   weight = 0.2  },
-		{ action = "spawn_meteor_shower",       type = "NEGATIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 8,                    logicFile="logic/weather/meteor_shower.logic",       minTime = 30, maxTime = 60,   weight = 0.05 },
-		{ action = "spawn_comet_silent",        type = "POSITIVE", gameStates="IDLE|NO_STREAMING",     minEventLevel = 2,                    logicFile="logic/weather/comet_silent.logic",                                      weight = 2 }
-	}
+	rules.extraWaves       = Default_ExtraWaves( rules.params )
+	rules.multiplayerWaves = Default_MpWaves(    rules.params )
+	rules.bosses           = Default_Bosses(     rules.params )
 	
-
-	rules.spawnCooldownEventChance = -- events spawn chance during/after attack (cooldown). values should be descending
-	{
-		20,  -- 1st event probability in percent
-		10,  -- 2nd event probability in percent
+	rules.waves = {
+		["default"]		= Default_UnboxedWaves( rules.params ),
 	}
 	
 	rules.addResourcesOnRunOut = 
 	{
-
-	}
-
-	rules.timeToNextDifficultyLevel = 
-	{			
-		600, -- difficulty level 1
-		600, -- difficulty level 2
-		600, -- difficulty level 3	
-		600, -- difficulty level 4
-		1200, -- difficulty level 5
-		1800, -- difficulty level 6
-		2400, -- difficulty level 7
-		2400, -- difficulty level 8
-		3600, -- difficulty level 9
-	}
-
-	rules.prepareSpawnTime = 
-	{			
-		60,  -- difficulty level 1
-		60,  -- difficulty level 2
-		60,  -- difficulty level 3
-		60,  -- difficulty level 4	
-		60,  -- difficulty level 5	
-		60,  -- difficulty level 6	
-		60,  -- difficulty level 7
-		60,  -- difficulty level 8	
-		60,  -- difficulty level 9	
-	}
-
-	rules.buildingsUpgradeStartsLogic = 
-	{			
-  
-	}
-
-	rules.objectivesLogic = 
-	{
-		{ name = "logic/objectives/destroy_nest_mushbit_multiple.logic", minDifficultyLevel = 6 },
-		{ name = "logic/objectives/destroy_nest_mushbit_single.logic",   minDifficultyLevel = 3 }
-	}
-
-	rules.cooldownAfterAttacks = 
-	{			
-		0,  -- difficulty level 1
-		0,  -- difficulty level 2
-		0,  -- difficulty level 3
-		0,  -- difficulty level 4	
-		0,  -- difficulty level 5	
-		120,  -- difficulty level 6	
-		120,  -- difficulty level 7
-		240,  -- difficulty level 8	
-		240,  -- difficulty level 9	
-	}
-
-	rules.idleTime = 
-	{			
-		450,  -- difficulty level 1
-		600,  -- difficulty level 2
-		660,  -- difficulty level 3
-		720,  -- difficulty level 4	
-		780,  -- difficulty level 5	
-		1200,  -- difficulty level 6	
-		1200,  -- difficulty level 7
-		1200,  -- difficulty level 8	
-		1200,  -- difficulty level 9	
-	}
-
-	rules.maxAttackCountPerDifficulty = 
-	{			
-		0,  -- difficulty level 1
-		0,  -- difficulty level 2
-		0,  -- difficulty level 3		
-		0,  -- difficulty level 4
-		0,  -- difficulty level 5
-		1,  -- difficulty level 6
-		1,  -- difficulty level 7
-		2,  -- difficulty level 8
-		3,  -- difficulty level 9
+		{ name = "carbon_deepvein",      runOutPercentageOnMap = 30, minToSpawn = 20000, maxToSpawn = 90000, chance = 15,                                   events = { "spawn_resource_earthquake" }},
+		{ name = "ammonium_vein",        runOutPercentageOnMap = 30, minToSpawn = 10000, maxToSpawn = 20000, chance = 45,                                   events = { "spawn_resource_earthquake" }},
+		{ name = "ammonium_deepvein",    runOutPercentageOnMap = 30, minToSpawn = 20000, maxToSpawn = 90000, chance = 15,                                   events = { "spawn_resource_earthquake" }},
 	}
 	
-	rules.prepareAttackDefinitions =
-	{		
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 1		
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 2			
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 3				
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 4				
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 5					
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 6			
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 7			
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 8					
-			"logic/dom/attack_level_1_prepare.logic", -- difficulty level 9		
-	}
-
-	rules.wavesEntryDefinitions =
-	{		 
-			"logic/dom/attack_level_1_entry.logic", -- difficulty level 1		 
-			"logic/dom/attack_level_1_entry.logic", -- difficulty level 2			
-			"logic/dom/attack_level_1_entry.logic", -- difficulty level 3			
-			"logic/dom/attack_level_1_entry.logic", -- difficulty level 4				
-			"logic/dom/attack_level_1_entry.logic", -- difficulty level 5			
-			"logic/dom/attack_level_1_entry.logic", -- difficulty level 6					
-			"logic/dom/attack_level_1_entry.logic", -- difficulty level 7				
-			"logic/dom/attack_level_1_entry.logic", -- difficulty level 8					
-			"logic/dom/attack_level_1_entry.logic", -- difficulty level 9
-	}
-	
-	rules.waves = 
-	{
-		["default"] =
-		{	
-			{}, -- difficulty level 1
-			{}, -- difficulty level 2
-			{}, -- difficulty level 3
-			{}, -- difficulty level 4
-			{}, -- difficulty level 5			
-			{ -- difficulty level 6
-				"logic/missions/survival/attack_level_1_id_1_desert.logic",
-				"logic/missions/survival/attack_level_1_id_2_desert.logic",
-			},
-			
-			{ -- difficulty level 7
-				"logic/missions/survival/attack_level_1_id_1_desert.logic",
-				"logic/missions/survival/attack_level_1_id_2_desert.logic",
-				"logic/missions/survival/attack_level_2_id_1_desert.logic",
-				"logic/missions/survival/attack_level_2_id_2_desert.logic",
-			},
-
-			{ -- difficulty level 8 
-				"logic/missions/survival/attack_level_2_id_1_desert.logic",
-				"logic/missions/survival/attack_level_2_id_1_desert.logic",
-				"logic/missions/survival/attack_level_2_id_2_desert.logic",
-				"logic/missions/survival/attack_level_3_id_1_desert.logic",
-				"logic/missions/survival/attack_level_3_id_1_desert.logic",
-				"logic/missions/survival/attack_level_3_id_2_desert.logic",
-			},
-
-			{ -- difficulty level 9 
-				"logic/missions/survival/attack_level_2_id_1_desert.logic",
-				"logic/missions/survival/attack_level_2_id_1_desert.logic",
-				"logic/missions/survival/attack_level_2_id_2_desert.logic",
-				"logic/missions/survival/attack_level_2_id_1_desert.logic",
-				"logic/missions/survival/attack_level_2_id_2_desert.logic",
-				"logic/missions/survival/attack_level_3_id_1_desert.logic",
-				"logic/missions/survival/attack_level_3_id_2_desert.logic",
-				"logic/missions/survival/attack_level_4_id_1_desert.logic",
-				"logic/missions/survival/attack_level_4_id_2_desert.logic",
-			},
-		},
-	}
-	
-	rules.extraWaves = 
-	{
-	
-	}
-
-	rules.bosses = 
-	{
-
-	}
-
-    return rules;
+	return rules
 end
