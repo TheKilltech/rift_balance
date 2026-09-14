@@ -110,23 +110,25 @@ EntityBlueprint  // fusion_powerplant_lvl_3
 	LuaDesc
 	{
 		script "lua/buildings/building_buffable.lua"
-				
+		
 		database
 		{
-			cone_effect					string:"build_cone_4x4"
-			cone_effect_sell			string:"sell_big"
+			offset_y					float:"0"
 			
 			buff_buildings				string:"buildings/main/rift_magnetic_stabilizer,buildings/main/rift_magnetic_stabilizer_alien,buildings/energy/energy_storage,buildings/energy/energy_storage_lvl_2,buildings/energy/energy_storage_lvl_3,buildings/energy/energy_enhancer,buildings/energy/energy_enhancer_lvl_2,buildings/energy/energy_enhancer_lvl_3"
 			buff_required_bp			string:"buildings/resources/magnetic_stabilizer_missing_icon"
 			buff_required_name			string:"magnetic_stabilizer"
 			buff_required_level			int:"0"
-			
-			display_radius_group		string:"magnetic_stabilizer"
-			display_radius_blueprint	string:"effects/decals/range_circle_repair"
 		}
 		
 	}
 	
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/energy/fusion_powerplant.mesh"
+		material 	"buildings/energy/fusion_powerplant_lvl_3"
+	}
+
 	HealthDesc
 	{
 		max_health 					"4500"
