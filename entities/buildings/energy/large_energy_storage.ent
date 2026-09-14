@@ -28,7 +28,7 @@ EntityBlueprint  // large_energy_storage
 				building_cost
 				{
 					carbonium 	"1200"
-					uranium 	"400"
+					alloys		"250"
 				}
 			}
 		}
@@ -115,12 +115,17 @@ EntityBlueprint  // large_energy_storage
 	LuaDesc
 	{
 		script "lua/buildings/building.lua"
+		
+		database
+		{
+			scale_z						float:"0.7777"		// scale down 9 to 7 squares length
+		}
 	}
 
 	HealthDesc
 	{
-		max_health 					"1000"
-		health 						"1000"
+		max_health 					"900"
+		health 						"900"
 		regeneration 				"0"
 		regeneration_cooldown 		"0"
 		 is_manual 1

@@ -26,8 +26,9 @@ EntityBlueprint  // large_energy_storage_lvl_3
 				building_time 30
 				building_cost
 				{
-					carbonium 	"2400"
-					uranium		"800"
+					carbonium 	"4000"
+					uranium		"1400"
+					alloys		"2500"
 				}
 			}
 		}
@@ -40,7 +41,7 @@ EntityBlueprint  // large_energy_storage_lvl_3
 			Storage
 			{
 				resource "energy"
-				max 	 "400000"
+				max 	 "500000"
 			}
 		}
 	}
@@ -95,6 +96,17 @@ EntityBlueprint  // large_energy_storage_lvl_3
 		name "meshes/buildings/energy/large_energy_storage_lvl_3"
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/building.lua"
+		
+		database
+		{
+			scale_x						float:"1.35"
+			scale_y						float:"1.35"
+		}
+	}
+	
 	PhysicsDesc
  	{
 		objects
