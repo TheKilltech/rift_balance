@@ -278,12 +278,43 @@ EntityBlueprint  // energy_storage
 		{
 			"buildings/effects_electric_small_base"
 		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided_disabled"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided_disabled"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "powered"
 			enabled "1"
-
+			
 			Effects
 			{
 				Effect
@@ -293,11 +324,12 @@ EntityBlueprint  // energy_storage
 					//random_delay "0.1"
 				}
 			}
-		}
+		}	
 		EffectGroup
 		{
 			group "working"
 			enabled "1"
+
 			
 			Effects
 			{

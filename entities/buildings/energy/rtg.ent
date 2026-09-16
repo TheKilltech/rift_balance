@@ -288,11 +288,42 @@ EntityBlueprint  // rtg
 		{
 			"buildings/effects_electric_small_base"
 		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided_disabled"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided_disabled"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "1"				
+			enabled "1"
 			
 			Effects
 			{
@@ -305,14 +336,14 @@ EntityBlueprint  // rtg
 				Effect
 				{
 					blueprint "effects/buildings_energy/energy_storage_working"	
-					delay "0.5"					
-				}				
+					delay "0.5"
+				}
 			}
 		}
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"	
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -443,10 +474,10 @@ EntityBlueprint  // rtg_lvl_2
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
-			"buildings/effects_big_base"
+			"buildings/effects_electric_small_base"
 		}
 		////////////////////////Resources/////////////////////////
 		EffectGroup
@@ -483,7 +514,7 @@ EntityBlueprint  // rtg_lvl_2
 		EffectGroup
 		{
 			group "working"
-			enabled "1"				
+			enabled "1"
 			
 			Effects
 			{
@@ -496,8 +527,8 @@ EntityBlueprint  // rtg_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_energy/energy_storage_working"	
-					delay "0.5"					
-				}				
+					delay "0.5"
+				}
 			}
 		}
 		EffectGroup
@@ -639,16 +670,16 @@ EntityBlueprint  // rtg_lvl_3
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
-			"buildings/effects_big_base"
+			"buildings/effects_electric_small_base"
 		}
-		////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -663,7 +694,7 @@ EntityBlueprint  // rtg_lvl_3
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -674,12 +705,12 @@ EntityBlueprint  // rtg_lvl_3
 					bone "att_in_2_arrow"
 				}
 			}
-		}	
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "1"				
+			enabled "1"
 			
 			Effects
 			{
@@ -692,8 +723,8 @@ EntityBlueprint  // rtg_lvl_3
 				Effect
 				{
 					blueprint "effects/buildings_energy/energy_storage_working"	
-					delay "0.5"					
-				}				
+					delay "0.5"
+				}
 			}
 		}
 		EffectGroup
@@ -759,6 +790,37 @@ EntityBlueprint  // rtg_ghost
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
+		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided_disabled"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided_disabled"
+					bone "att_in_2_arrow"
+				}
+			}
 		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup

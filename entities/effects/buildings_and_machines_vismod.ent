@@ -4798,8 +4798,41 @@ EntityBlueprint "effects/no_lifetime"		// building_arrow_disabled
 				animName "working"
 			}
 		}
-	}		
+	}
 }
+
+EntityBlueprint "effects/no_lifetime"		// building_arrow_twosided_disabled
+{
+	name effects/buildings_and_machines/building_arrow_twosided_disabled
+
+	IdDesc
+	{
+		name "building_input"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/misc/building_arrow_twosided.mesh"
+		material "hologram/violet"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/misc/building_arrow_twosided"
+	}
+
+	AnimationDesc
+	{
+		animations
+		{
+			Anim
+			{
+				animName "working_twosided"
+			}
+		}
+	}
+}
+
 
 EntityBlueprint "effects/no_lifetime"		// light_white
 {
