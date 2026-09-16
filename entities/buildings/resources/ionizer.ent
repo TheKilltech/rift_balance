@@ -366,6 +366,36 @@ EntityBlueprint  // ionizer
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided_disabled"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided_disabled"
+					bone "att_in_3_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
 			group "att_out_1"
 			enabled "0"
 			delay "0"
@@ -569,7 +599,37 @@ EntityBlueprint  // ionizer_lvl_2
 		{
 			"buildings/effects_medium_base"
 		}	
-		////////////////////////Resources/////////////////////////	
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided_disabled"
+					bone "att_in_1_arrow"
+				}
+			}
+		}	
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided_disabled"
+					bone "att_in_3_arrow"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "att_out_1"
@@ -841,7 +901,7 @@ EntityBlueprint  // ionizer_lvl_3
 					bone "att_in_3_arrow"
 				}
 			}
-		}	
+		}
 		EffectGroup
 		{
 			group "att_out_1"

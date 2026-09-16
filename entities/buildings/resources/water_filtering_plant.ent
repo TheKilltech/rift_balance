@@ -376,55 +376,85 @@ EntityBlueprint  // water_filtering_plant
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
-////////////////////////Resources/////////////////////////			
+		}
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_twosided_disabled"
+					bone "att_in_2_arrow"
 				}
 			}
 		}	
 		EffectGroup
 		{
-			group "att_out_1"
-			enabled "0"				
+			group "att_in_3"
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow_twosided_disabled"
+					bone "att_in_3_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/water_filtering_pool"								
+					blueprint "effects/buildings_and_machines/water_filtering_pool"
 					bone "att_water"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_resources/water_filtering_plant_working"	
-					delay "0.5"					
+					blueprint "effects/buildings_resources/water_filtering_plant_working"
+					delay "0.5"
 				}	
 			}
 		}	

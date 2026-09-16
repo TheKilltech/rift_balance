@@ -29,6 +29,7 @@ EntityBlueprint  // large_energy_storage_lvl_2
 				{
 					carbonium 	"1800"
 					uranium		"600"
+					alloys		"1250"
 				}
 			}
 		}
@@ -91,6 +92,16 @@ EntityBlueprint  // large_energy_storage_lvl_2
 
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/building.lua"
+		
+		database
+		{
+			scale_z						float:"1"
+		}
+	}
+	
 	SkeletonDesc
 	{
 		name "meshes/buildings/energy/large_energy_storage_lvl_2"

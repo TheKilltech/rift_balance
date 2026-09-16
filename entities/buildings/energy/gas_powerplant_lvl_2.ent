@@ -207,47 +207,47 @@ EntityBlueprint  // gas_powerplant_lvl_2
 		{
 			"buildings/effects_big_base"
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
-		}	
+		}
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_2_arrow"
 				}
 			}
-		}	
-////////////////////////MISC/////////////////////////			
+		}
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_chimney_big"								
+					blueprint "effects/buildings_and_machines/gas_chimney_big"
 					bone "att_gas"
 					delay "1"
 				}
@@ -258,16 +258,16 @@ EntityBlueprint  // gas_powerplant_lvl_2
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"								
+					blueprint "effects/buildings_and_machines/gas_powerplant_lightning"
 					bone "lightning"
 					delay "1"
-				}				
+				}
 			}
 		}	
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -295,7 +295,7 @@ EntityBlueprint  // gas_powerplant_lvl_2
 					bone "att_level"
 				}
 			}
-		}			
+		}
 	}	
 }
 

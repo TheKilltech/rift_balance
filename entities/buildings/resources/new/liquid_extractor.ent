@@ -503,8 +503,23 @@ EntityBlueprint  // liquid_extractor
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -515,8 +530,8 @@ EntityBlueprint  // liquid_extractor
 					bone "att_out_arrow"
 				}
 			}
-		}				
-		//////////////////////////////// MISC /////////////////////////////////////////		
+		}
+		//////////////////////////////// MISC /////////////////////////////////////////
 		EffectGroup
 		{
 			group "working"
@@ -829,7 +844,6 @@ EntityBlueprint  // liquid_extractor_lvl_2
 		{
 			"buildings/effects_medium_base"
 		}
-		
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
@@ -843,6 +857,21 @@ EntityBlueprint  // liquid_extractor_lvl_2
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
 				}
 			}
 		}
@@ -1141,12 +1170,11 @@ EntityBlueprint  // liquid_extractor_lvl_3
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
-
+		}
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
@@ -1160,6 +1188,21 @@ EntityBlueprint  // liquid_extractor_lvl_3
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
 				}
 			}
 		}

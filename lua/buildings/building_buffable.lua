@@ -69,6 +69,7 @@ function building_buffable:InitVariables()
 	
 	--if not self.buffsInfo then ... end
 	self:InitBuffsInfo()
+	self:UpdateBuildingInfo()
 end
 
 function building_buffable:InitBuffsInfo()

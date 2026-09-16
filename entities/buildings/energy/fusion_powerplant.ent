@@ -174,6 +174,8 @@ EntityBlueprint  // fusion_powerplant
 			cone_effect					string:"build_cone_4x4"
 			cone_effect_sell			string:"sell_big"
 			
+			offset_y					float:"-1.8"
+			
 			buff_buildings				string:"buildings/main/rift_magnetic_stabilizer,buildings/main/rift_magnetic_stabilizer_alien,buildings/energy/energy_storage,buildings/energy/energy_storage_lvl_2,buildings/energy/energy_storage_lvl_3,buildings/energy/energy_enhancer,buildings/energy/energy_enhancer_lvl_2,buildings/energy/energy_enhancer_lvl_3"
 			buff_mod_max				float:"2.0"
 			
@@ -182,7 +184,7 @@ EntityBlueprint  // fusion_powerplant
 		}
 		
 	}
-
+	
 	HealthDesc
 	{
 		max_health 					"2000"
@@ -523,7 +525,7 @@ EntityBlueprint  // fusion_powerplant
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
@@ -532,7 +534,7 @@ EntityBlueprint  // fusion_powerplant
 		EffectGroup
 		{
 			group "0_transition"
-			enabled "0"				
+			enabled "0"
 			
 			
 			Effects
@@ -599,6 +601,7 @@ EntityBlueprint  // fusion_powerplant
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
+					offset	0 1.8 0
 				}
 			}
 		}		
@@ -614,6 +617,7 @@ EntityBlueprint  // fusion_powerplant
 				{
 					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_2_arrow"
+					offset	0 1.8 0
 				}
 			}
 		}	
@@ -629,6 +633,7 @@ EntityBlueprint  // fusion_powerplant
 				{
 					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_3_arrow"
+					offset	0 1.8 0
 				}
 			}
 		}	
@@ -645,6 +650,7 @@ EntityBlueprint  // fusion_powerplant
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
+					offset	0 1.8 0
 				}
 			}
 		}	
@@ -658,12 +664,26 @@ EntityBlueprint  // fusion_powerplant
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe_s"
+					bone 	"att_in_1_pipe"
+					offset	0 1.8 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_2_pipe"
+					offset	0 1.8 0
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/pipe"
+					bone 	"att_in_3_pipe"
+					offset	0 1.8 0
 				}
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe_s"
-					bone 	"att_in_3_pipe"
+					bone 	"att_out_1_pipe"
+					offset	0 1.8 0
 				}
 			}
 		}

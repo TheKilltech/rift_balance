@@ -352,49 +352,65 @@ EntityBlueprint  // carbonium_powerplant
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}	
-////////////////////////MISC/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
-			group "working"
-			enabled "0"				
+			group "att_in_1"
+			enabled "1"
+			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"								
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_chimney"
 					delay "0.5"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/carbonium_powerplant_dig"								
+					blueprint "effects/buildings_and_machines/carbonium_powerplant_dig"
 					bone "att_dig"
 					delay "0.5"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/electric_machinery_big"								
+					blueprint "effects/buildings_and_machines/electric_machinery_big"
 					bone "att_electric_1"
 					delay "0.5"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/electric_machinery_big"								
+					blueprint "effects/buildings_and_machines/electric_machinery_big"
 					bone "att_electric_2"
 					delay "0.5"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_energy/carbonium_powerplant_working"	
-					delay "0.5"					
-				}				
+					blueprint "effects/buildings_energy/carbonium_powerplant_working"
+					delay "0.5"
+				}
 			}
-		}		
+		}
 	}
 }

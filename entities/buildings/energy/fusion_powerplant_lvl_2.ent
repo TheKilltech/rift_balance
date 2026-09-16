@@ -112,6 +112,23 @@ EntityBlueprint  // fusion_powerplant_lvl_2
 		}
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/building_buffable.lua"
+		
+		database
+		{
+			offset_y					float:"-1.0"
+		}
+		
+	}
+	
+	MeshDesc
+	{
+		mesh 		"meshes/buildings/energy/fusion_powerplant.mesh"
+		material 	"buildings/energy/fusion_powerplant_lvl_2"
+	}
+	
 	HealthDesc
 	{
 		max_health 					"3000"
@@ -217,7 +234,7 @@ EntityBlueprint  // fusion_powerplant_lvl_2
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
@@ -226,65 +243,65 @@ EntityBlueprint  // fusion_powerplant_lvl_2
 		EffectGroup
 		{
 			group "0_transition"
-			enabled "0"				
+			enabled "0"
 			
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_1"
 					delay "0"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_2"
 					delay "0.15"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_3"
 					delay "0.25"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_4"
 					delay "0.3"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_big_random"								
+					blueprint "effects/buildings_generic/explosion_big_random"
 					bone "att_smoke_5"
 					delay "0.4"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_big_random"								
+					blueprint "effects/buildings_generic/explosion_big_random"
 					bone "att_smoke_6"
 					delay "0.45"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_big_random"								
+					blueprint "effects/buildings_generic/explosion_big_random"
 					bone "att_smoke_7"
 					delay "0.5"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_building_nuclear_01"								
+					blueprint "effects/buildings_generic/explosion_building_nuclear_01"
 					delay "0.6"
-				}				
+				}
 			}
 		}
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -293,13 +310,14 @@ EntityBlueprint  // fusion_powerplant_lvl_2
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
+					offset	0 1 0
 				}
 			}
-		}		
+		}
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -308,13 +326,14 @@ EntityBlueprint  // fusion_powerplant_lvl_2
 				{
 					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_2_arrow"
+					offset	0 1 0
 				}
 			}
 		}		
 		EffectGroup
 		{
 			group "att_in_3"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -323,6 +342,7 @@ EntityBlueprint  // fusion_powerplant_lvl_2
 				{
 					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_3_arrow"
+					offset	0 1 0
 				}
 			}
 		}	
@@ -330,7 +350,7 @@ EntityBlueprint  // fusion_powerplant_lvl_2
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -339,6 +359,7 @@ EntityBlueprint  // fusion_powerplant_lvl_2
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
+					offset	0 1 0
 				}
 			}
 		}	
@@ -353,18 +374,20 @@ EntityBlueprint  // fusion_powerplant_lvl_2
 				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_2_pipe"
+					offset	0 1 0
 				}
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe"
 					bone 	"att_in_3_pipe"
+					offset	0 1 0
 				}
 			}
 		}
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
@@ -378,7 +401,7 @@ EntityBlueprint  // fusion_powerplant_lvl_2
 				{
 					blueprint "effects/buildings_energy/fusion_powerplant_working"
 					delay "0.5"
-				}					
+				}
 			}
 		}	
 		EffectGroup

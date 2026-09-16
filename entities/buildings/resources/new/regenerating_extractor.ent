@@ -504,6 +504,21 @@ EntityBlueprint  // regenerating_extractor
 				}
 			}
 		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -540,8 +555,6 @@ EntityBlueprint  // regenerating_extractor
 			}
 		}		
 	}
-	
-	//children	{	}
 }
 
 EntityBlueprint  // regenerating_extractor_lvl_2
@@ -981,11 +994,11 @@ EntityBlueprint  // regenerating_extractor_lvl_3
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_small_base"
-		}	
+		}
 		////////////////////////Resources/////////////////////////	
 		EffectGroup
 		{
@@ -1001,7 +1014,7 @@ EntityBlueprint  // regenerating_extractor_lvl_3
 					bone "att_in_1_arrow"
 				}
 			}
-		}	
+		}
 		EffectGroup
 		{
 			group "att_in_2"
@@ -1016,7 +1029,7 @@ EntityBlueprint  // regenerating_extractor_lvl_3
 					bone "att_in_2_arrow"
 				}
 			}
-		}	
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{

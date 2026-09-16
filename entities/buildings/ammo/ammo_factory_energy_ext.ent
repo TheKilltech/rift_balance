@@ -98,6 +98,9 @@ EntityBlueprint  // ammo_factory_energy_ext
 			watched_resource	string:"ammo_tower_energy_cell_lvl3"
 			watched_level_high	float:"200.0"
 			
+			min_scale			float:"1.5"
+			max_scale			float:"1.5"
+			
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
 		}
@@ -175,7 +178,7 @@ EntityBlueprint  // ammo_factory_energy_ext
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/main/rift_magnetic_stabilizer"
+		name "meshes/buildings/ammo/ammo_factory_energy_ext"
 	}
 
 	AnimationGraphDesc
@@ -398,7 +401,8 @@ EntityBlueprint  // ammo_factory_energy_ext
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_1_arrow"
+					bone	"att_in_1_arrow"
+					scale	0.67 0.67 0.67
 				}
 			}
 		}
@@ -566,7 +570,8 @@ EntityBlueprint  // ammo_factory_energy_ext_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_1_arrow"
+					bone	"att_in_1_arrow"
+					scale	0.67 0.67 0.67
 				}
 			}
 		}	
@@ -581,7 +586,8 @@ EntityBlueprint  // ammo_factory_energy_ext_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_2_arrow"
+					bone	"att_in_2_arrow"
+					scale	0.67 0.67 0.67
 				}
 			}
 		}	
@@ -616,7 +622,14 @@ EntityBlueprint  // ammo_factory_energy_ext_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_2_pipe"
+					bone		"att_in_2_pipe"
+					scale		0.67 0.67 0.67
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/hcm1"
+					bone 	"att_vismod_base"
+					scale	1 1 1
 				}
 			}
 		}
@@ -731,7 +744,8 @@ EntityBlueprint  // ammo_factory_energy_ext_lvl_3
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_1_arrow"
+					bone	"att_in_1_arrow"
+					scale	0.67 0.67 0.67
 				}
 			}
 		}	
@@ -746,7 +760,8 @@ EntityBlueprint  // ammo_factory_energy_ext_lvl_3
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_2_arrow"
+					bone	"att_in_2_arrow"
+					scale	0.67 0.67 0.67
 				}
 			}
 		}	
@@ -781,7 +796,15 @@ EntityBlueprint  // ammo_factory_energy_ext_lvl_3
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/pipe"
-					bone 	"att_in_2_pipe"
+					bone		"att_in_2_pipe"
+					scale		0.67 0.67 0.67
+				}
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/hcm2"
+					bone 	"att_vismod_base"
+					scale	1 1 1
+					offset	0 -0.2 0
 				}
 			}
 		}

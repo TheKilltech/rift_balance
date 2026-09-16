@@ -89,13 +89,17 @@ EntityBlueprint  // ammo_factory_energy_adv
 			watched_resource	string:"ammo_tower_energy_cell_lvl2"
 			watched_level_high	float:"200.0"
 			
+			min_scale			float:"1.5"
+			max_scale			float:"1.5"
+			scale_y				float:"0.9"
+			
 			range				float:"26.0"
 			cone_effect			string:"build_cone_3x3"
 			cone_effect_sell	string:"sell_big"
 			building_time		float:"10"
 		}
 	}
-
+	
 	HealthDesc
 	{
 		max_health 					"800"
@@ -137,7 +141,7 @@ EntityBlueprint  // ammo_factory_energy_adv
 
 	SkeletonDesc
 	{
-		name "meshes/buildings/main/cryo_station"
+		name "meshes/buildings/ammo/ammo_factory_energy_adv"
 	}
 
 	AnimationGraphDesc
@@ -489,7 +493,8 @@ EntityBlueprint  // ammo_factory_energy_adv_lvl_2
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_1_arrow"
+					bone	"att_in_1_arrow"
+					scale	0.67 0.67 0.67
 				}
 			}
 		}	
@@ -505,6 +510,7 @@ EntityBlueprint  // ammo_factory_energy_adv_lvl_2
 				{
 					blueprint	"effects/buildings_and_machines/pipe"
 					bone		"att_in_1_pipe"
+					scale		0.67 0.67 0.67
 				}
 				Effect
 				{
@@ -613,7 +619,7 @@ EntityBlueprint  // ammo_factory_energy_adv_lvl_3
 			GameplayResource
 			{
 				resource 		"ammo_tower_energy_cell"
-				value			"1.0"
+				value			"0.7"
 			}
 			
 			GameplayResource
@@ -631,7 +637,7 @@ EntityBlueprint  // ammo_factory_energy_adv_lvl_3
 			
 			GameplayResource
 			{
-				resource 		"water"
+				resource 		"nitric_acid"
 				value 			"15"
 				attachment		"att_in_3"
 			}
@@ -699,7 +705,8 @@ EntityBlueprint  // ammo_factory_energy_adv_lvl_3
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_1_arrow"
+					bone	"att_in_1_arrow"
+					scale	0.67 0.67 0.67
 				}
 			}
 		}
@@ -714,7 +721,8 @@ EntityBlueprint  // ammo_factory_energy_adv_lvl_3
 				Effect
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
-					bone "att_in_3_arrow"
+					bone	"att_in_3_arrow"
+					scale	0.67 0.67 0.67
 				}
 			}
 		}
@@ -729,11 +737,13 @@ EntityBlueprint  // ammo_factory_energy_adv_lvl_3
 				{
 					blueprint	"effects/buildings_and_machines/pipe"
 					bone		"att_in_1_pipe"
+					scale		0.67 0.67 0.67
 				}
 				Effect
 				{
 					blueprint	"effects/buildings_and_machines/pipe"
 					bone		"att_in_3_pipe"
+					scale		0.67 0.67 0.67
 				}
 				Effect
 				{

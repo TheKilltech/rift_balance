@@ -18,8 +18,8 @@ EntityBlueprint  // planet_scanner
 		limit			    "1"
 		mission_mode		"1"
 		menu_action			"planetary_scanner"
-		condition			"NOT_BIOME"
-		condition_value		"caverns"
+		//condition			"NOT_BIOME"   // must not have restrictions because those will block open campaign start in that biome
+		//condition_value		"caverns"
 		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		is_shortcut_bindable	"0"
 		hide_treasures 		"1"

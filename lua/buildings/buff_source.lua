@@ -55,6 +55,8 @@ function buff_source:OnLoad()
     if ( self.fsm and self.fsm:GetState("full") == nil ) then
         self.fsm:AddState("full", { enter="OnEnterFull", execute="OnExecuteFull", interval = 2 } )
     end
+	
+	self:UpdateBuildingInfo()
 end
 
 

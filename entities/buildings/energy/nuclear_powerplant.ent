@@ -471,74 +471,89 @@ EntityBlueprint  // nuclear_powerplant
 			{
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_1"
 					delay "0"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_2"
 					delay "0.15"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_3"
 					delay "0.25"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_medium_random"								
+					blueprint "effects/buildings_generic/explosion_medium_random"
 					bone "att_smoke_4"
 					delay "0.3"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_big_random"								
+					blueprint "effects/buildings_generic/explosion_big_random"
 					bone "att_smoke_5"
 					delay "0.4"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_big_random"								
+					blueprint "effects/buildings_generic/explosion_big_random"
 					bone "att_smoke_6"
 					delay "0.45"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_big_random"								
+					blueprint "effects/buildings_generic/explosion_big_random"
 					bone "att_smoke_7"
 					delay "0.5"
 				}	
 				Effect
 				{
-					blueprint "effects/buildings_generic/explosion_building_nuclear_01"								
+					blueprint "effects/buildings_generic/explosion_building_nuclear_01"
 					delay "0.6"
-				}				
+				}
 			}
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
-		}	
-////////////////////////MISC/////////////////////////			
+		}
+		EffectGroup
+		{
+			group "att_out_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_out_1_arrow"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{

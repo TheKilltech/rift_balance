@@ -360,7 +360,7 @@ n			{
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -371,12 +371,27 @@ n			{
 					bone "att_in_1_arrow"
 				}
 			}
-		}	
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "vismod"
-			enabled "1"			
+			enabled "1"
 			Effects
 			{
 				Effect
@@ -389,7 +404,7 @@ n			{
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
@@ -565,7 +580,22 @@ EntityBlueprint  // steel_seperator_lvl_2
 					bone "att_in_1_arrow"
 				}
 			}
-		}	
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -781,7 +811,7 @@ EntityBlueprint  // steel_seperator_lvl_3
 					bone "att_in_1_arrow"
 				}
 			}
-		}	
+		}
 		EffectGroup
 		{
 			group "att_in_2"
@@ -796,7 +826,7 @@ EntityBlueprint  // steel_seperator_lvl_3
 					bone "att_in_2_arrow"
 				}
 			}
-		}	
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{

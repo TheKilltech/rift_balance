@@ -742,6 +742,22 @@ EntityBlueprint "effects/no_lifetime"		//hcm2
 	MeshDesc
 	{
 		mesh "meshes/buildings/defense/tower_hcm_lvl_2.mesh"
+		material "buildings/defense/tower_hcm_lvl_2"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hcm2_cryo
+{
+	name "effects/buildings_and_machines/hcm2_cryo"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_hcm_lvl_2.mesh"
 		material "buildings/defense/tower_hcm_cryo_lvl_2"
 	}
 }
@@ -749,6 +765,22 @@ EntityBlueprint "effects/no_lifetime"		//hcm2
 EntityBlueprint "effects/no_lifetime"		//hcm3
 {
 	name "effects/buildings_and_machines/hcm3"
+
+	IdDesc
+	{
+		name "##vismod##"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/buildings/defense/tower_hcm_lvl_3.mesh"
+		material "buildings/defense/tower_hcm_lvl_3"
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		//hcm3_cryo
+{
+	name "effects/buildings_and_machines/hcm3_cryo"
 
 	IdDesc
 	{
@@ -4736,6 +4768,71 @@ EntityBlueprint "effects/no_lifetime"		//ionized_sphere
 }
 
 // effects
+
+EntityBlueprint "effects/no_lifetime"		// building_arrow_disabled
+{
+	name effects/buildings_and_machines/building_arrow_disabled
+
+	IdDesc
+	{
+		name "building_input"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/misc/building_arrow.mesh"
+		material "hologram/violet"  // selector/hologram_violet  // selector/hologram_grey
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/misc/building_arrow"
+	}
+
+	AnimationDesc
+	{
+		animations
+		{
+			Anim
+			{
+				animName "working"
+			}
+		}
+	}
+}
+
+EntityBlueprint "effects/no_lifetime"		// building_arrow_twosided_disabled
+{
+	name effects/buildings_and_machines/building_arrow_twosided_disabled
+
+	IdDesc
+	{
+		name "building_input"
+	}
+
+	MeshDesc
+	{
+		mesh "meshes/misc/building_arrow_twosided.mesh"
+		material "hologram/violet"
+	}
+
+	SkeletonDesc
+	{
+		name "meshes/misc/building_arrow_twosided"
+	}
+
+	AnimationDesc
+	{
+		animations
+		{
+			Anim
+			{
+				animName "working_twosided"
+			}
+		}
+	}
+}
+
 
 EntityBlueprint "effects/no_lifetime"		// light_white
 {
