@@ -372,56 +372,56 @@ EntityBlueprint  // reagent_refinery
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
-////////////////////////Resources/////////////////////////			
+		}
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
-		}	
+		}
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}
 		}
-////////////////////////MISC/////////////////////////			
+		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/steel_factory_furnace"				
+					blueprint "effects/buildings_and_machines/steel_factory_furnace"
 					bone "att_water"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_resources/water_filtering_plant_working"	
-					delay "0.5"					
-				}	
+					blueprint "effects/buildings_resources/water_filtering_plant_working"
+					delay "0.5"
+				}
 			}
 		}
 		EffectGroup
@@ -437,7 +437,7 @@ EntityBlueprint  // reagent_refinery
 					scale "0.8 0.8 0.8"
 				}
 			}
-		}			
+		}
 	}
 }
 
@@ -847,12 +847,12 @@ EntityBlueprint  // reagent_refinery_lvl_3
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
+		}
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -863,11 +863,11 @@ EntityBlueprint  // reagent_refinery_lvl_3
 					bone "att_in_arrow"
 				}
 			}
-		}	
+		}
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects

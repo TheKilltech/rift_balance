@@ -366,6 +366,23 @@ EntityBlueprint  // geoscanner_lvl_1
 		{
 			"buildings/effects_medium_base"
 		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone		"att_in_arrow"
+					scale		0.74 0.74 0.74
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{

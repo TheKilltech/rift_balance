@@ -206,23 +206,23 @@ EntityBlueprint  // water_filtering_plant_lvl_3
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
-		}	
-		////////////////////////Resources/////////////////////////			
+		}
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_arrow"
 				}
 			}
@@ -230,7 +230,7 @@ EntityBlueprint  // water_filtering_plant_lvl_3
 		EffectGroup
 		{
 			group "att_in_2"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -245,7 +245,7 @@ EntityBlueprint  // water_filtering_plant_lvl_3
 		EffectGroup
 		{
 			group "att_in_3"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -260,14 +260,14 @@ EntityBlueprint  // water_filtering_plant_lvl_3
 		EffectGroup
 		{
 			group "att_out_1"
-			enabled "0"				
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
+					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_arrow"
 				}
 			}

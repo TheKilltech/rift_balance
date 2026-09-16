@@ -576,12 +576,27 @@ EntityBlueprint  // planet_defense
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
 		}
-		
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
 		//////////////////////////////// MISC /////////////////////////////////////////
 		EffectGroup
 		{
@@ -817,12 +832,11 @@ EntityBlueprint  // planet_defense_lvl_2
 	}
 	
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
 		}
-
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{

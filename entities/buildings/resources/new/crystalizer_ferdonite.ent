@@ -339,6 +339,21 @@ EntityBlueprint  // crystalizer_ferdonite
 				}
 			}
 		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -511,7 +526,7 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_2
 					bone "att_in_1_arrow"
 				}
 			}
-		}	
+		}
 		EffectGroup
 		{
 			group "att_in_2"
@@ -526,7 +541,7 @@ EntityBlueprint  // crystalizer_ferdonite_lvl_2
 					bone "att_in_2_arrow"
 				}
 			}
-		}	
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -891,6 +906,37 @@ EntityBlueprint  // crystalizer_ferdonite_survival_lvl_1
 		{
 			"buildings/effects_small_base"
 		}
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -1048,6 +1094,21 @@ EntityBlueprint  // crystalizer_ferdonite_survival_lvl_2
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_2_arrow"
 				}
 			}
 		}
@@ -1367,6 +1428,21 @@ EntityBlueprint  // crystalizer_ferdonite_ghost
 				}
 			}
 		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////	
 		EffectGroup
 		{
@@ -1622,6 +1698,37 @@ EntityBlueprint  // crystalizer_ferdonite_survival_lvl_1_ghost
 
 	EffectDesc
 	{
+		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -1695,6 +1802,21 @@ EntityBlueprint  // crystalizer_ferdonite_survival_lvl_2_ghost
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "1"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_2_arrow"
 				}
 			}
 		}

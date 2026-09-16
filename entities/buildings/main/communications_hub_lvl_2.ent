@@ -200,7 +200,7 @@ EntityBlueprint  // communications_hub_lvl_2
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
@@ -209,7 +209,7 @@ EntityBlueprint  // communications_hub_lvl_2
 		EffectGroup
 		{
 			group "att_in_1"
-			enabled "0"	
+			enabled "0"
 			delay "0"
 			
 			Effects
@@ -220,7 +220,22 @@ EntityBlueprint  // communications_hub_lvl_2
 					bone "att_in_1_arrow"
 				}
 			}
-		}	
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -238,19 +253,19 @@ EntityBlueprint  // communications_hub_lvl_2
 		EffectGroup
 		{
 			group "working"
-			enabled "0"				
+			enabled "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/comms_hub_energy"								
+					blueprint "effects/buildings_and_machines/comms_hub_energy"
 					bone "att_antenna"
 				}
 				Effect
 				{
-					blueprint "effects/buildings_main/communications_hub_working"	
-					delay "0.5"					
+					blueprint "effects/buildings_main/communications_hub_working"
+					delay "0.5"
 				}
 			}
 		}		

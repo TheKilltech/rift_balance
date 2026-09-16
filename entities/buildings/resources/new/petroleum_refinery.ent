@@ -416,7 +416,7 @@ EntityBlueprint  // petroleum_refinery
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_arrow"
 				}
 			}
@@ -431,7 +431,7 @@ EntityBlueprint  // petroleum_refinery
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_2_arrow"
 				}
 			}
@@ -448,6 +448,21 @@ EntityBlueprint  // petroleum_refinery
 				{
 					blueprint "effects/buildings_and_machines/building_arrow"
 					bone "att_out_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_out_2"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_out_2_arrow"
 				}
 			}
 		}
@@ -672,7 +687,7 @@ EntityBlueprint  // petroleum_refinery_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_arrow"
 				}
 			}
@@ -687,7 +702,7 @@ EntityBlueprint  // petroleum_refinery_lvl_2
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_twosided"
 					bone "att_in_2_arrow"
 				}
 			}

@@ -369,38 +369,53 @@ EntityBlueprint  // bio_composter
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_medium_base"
 		}
-////////////////////////Resources/////////////////////////			
+		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
-			group "att_out_1"
-			enabled "0"				
+			group "att_in_1"
+			enabled "0"
 			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"								
-					bone "att_out_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_arrow"
 				}
 			}
-		}				
-//////////////////////////////// MISC /////////////////////////////////////////		
+		}
 		EffectGroup
 		{
-			group "working"
-			enabled "0"				
+			group "att_out_1"
+			enabled "0"
+			delay "0"
 			
 			Effects
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/gas_filtering_sludge"								
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_out_arrow"
+				}
+			}
+		}
+		//////////////////////////////// MISC /////////////////////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/gas_filtering_sludge"
 				}
 				Effect
 				{
@@ -408,6 +423,6 @@ EntityBlueprint  // bio_composter
 					delay "0.5"
 				}
 			}
-		}			
+		}
 	}
 }

@@ -465,6 +465,21 @@ EntityBlueprint  // metal_extractor_lvl_1
 		////////////////////////Resources/////////////////////////
 		EffectGroup
 		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
 			group "att_out_1"
 			enabled "0"
 			delay "0"
@@ -807,6 +822,21 @@ EntityBlueprint  // metal_extractor_lvl_2
 			"buildings/effects_medium_base"
 		}
 		////////////////////////Resources/////////////////////////
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
 		EffectGroup
 		{
 			group "att_out_1"

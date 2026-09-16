@@ -392,6 +392,21 @@ EntityBlueprint  // ammonium_synthesizer
 				}
 			}
 		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
 		////////////////////////MISC/////////////////////////
 		EffectGroup
 		{
@@ -705,7 +720,7 @@ EntityBlueprint  // ammonium_synthesizer_ghost
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
 					bone "att_in_2_arrow"
 				}
 			}
