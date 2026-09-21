@@ -60,7 +60,9 @@ EntityBlueprint  // biomass_morphed_press
 				attachment			"att_out_1"
 			}		
 		}
-		priority 9		
+		
+		continous_local_production "1"
+		priority 9
 		reset_interval 0.5
 	}
 
@@ -524,9 +526,11 @@ EntityBlueprint  // biomass_morphed_press_lvl_2
 				resource 			"morphium"
 				value				"75"
 				attachment			"att_out_1"
-			}		
+			}
 		}
-		priority 9		
+		
+		continous_local_production "1"
+		priority 9
 		reset_interval 0.5
 	}
 
@@ -776,9 +780,11 @@ EntityBlueprint  // biomass_morphed_press_lvl_3
 				resource 			"morphium"
 				value				"100"
 				attachment			"att_out_1"
-			}		
+			}
 		}
-		priority 9		
+		
+		continous_local_production "1"
+		priority 9
 		reset_interval 0.5
 	}
 

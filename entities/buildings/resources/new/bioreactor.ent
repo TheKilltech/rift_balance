@@ -53,8 +53,10 @@ EntityBlueprint  // bioreactor
 				resource 	"sludge"
 				value 		"25"
 				attachment	"att_out_1"
-			}	
+			}
 		}
+		
+		continous_local_production "1"
 		priority 4
 	}
 	
@@ -486,7 +488,7 @@ EntityBlueprint  // bioreactor_lvl_2
 	}
 
 	ResourceConverterDesc
-	{	
+	{
 		in
 		{
 			GameplayResource
@@ -510,8 +512,10 @@ EntityBlueprint  // bioreactor_lvl_2
 				resource	"sludge"
 				value		"50"
 				attachment	"att_out_1"
-			}	
+			}
 		}
+		
+		continous_local_production "1"
 		priority 4
 	}
 	
@@ -691,8 +695,10 @@ EntityBlueprint  // bioreactor_lvl_3
 				resource 	"sludge"
 				value 		"75"
 				attachment	"att_out_1"
-			}	
+			}
 		}
+		
+		continous_local_production "1"
 		priority 4
 	}
 	

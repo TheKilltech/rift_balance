@@ -127,7 +127,7 @@ EntityBlueprint  // rare_element_mine ( mining_drill )
 				resource 			"uranium_ore_deepvein"
 				value				1.0
 				family				"resource"
-			}			
+			}
 		}
 		
 		out
@@ -177,7 +177,8 @@ EntityBlueprint  // rare_element_mine ( mining_drill )
 			}
 		}
 		
-		priority 4		
+		continous_local_production "1"
+		priority 6
 		one_vein_mode "1"
 	}
 
@@ -861,7 +862,8 @@ EntityBlueprint  // mining_drill_lvl_2
 			}
 		}
 		
-		priority 4		
+		continous_local_production "1"
+		priority 6
 		one_vein_mode "1"
 	}
 
@@ -1204,7 +1206,8 @@ EntityBlueprint  // mining_drill_lvl_3
 			}
 		}
 		
-		priority 4		
+		continous_local_production "1"
+		priority 6
 		one_vein_mode "1"
 	}
 

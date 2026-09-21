@@ -56,9 +56,10 @@ EntityBlueprint  // nitric_acid_refinery
 				resource 			"nitric_acid"
 				value				"25"
 				attachment			"att_out_1"
-			}		
+			}
 		}
-		priority 9		
+		
+		priority 9
 		reset_interval 0.5
 	}
 
@@ -512,6 +513,7 @@ EntityBlueprint  // nitric_acid_refinery_lvl_2
 				attachment			"att_out_1"
 			}		
 		}
+		
 		priority 9
 		reset_interval 0.5
 	}
@@ -791,6 +793,8 @@ EntityBlueprint  // nitric_acid_refinery_lvl_3
 				attachment			"att_out_1"
 			}
 		}
+		
+		continous_local_production "1"
 		priority 9
 		reset_interval 0.5
 	}

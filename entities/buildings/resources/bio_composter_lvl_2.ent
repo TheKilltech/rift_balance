@@ -66,9 +66,11 @@ EntityBlueprint  // bio_composter_lvl_2
 				resource 	"flammable_gas"
 				value 		"50"
 				attachment	"att_out_1"
-			}	
+			}
 		}
-		priority 4			
+		
+		continous_local_production "1"
+		priority 4
 	}
 	
 	ResourceStorageDesc
