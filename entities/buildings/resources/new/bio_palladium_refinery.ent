@@ -84,9 +84,11 @@ EntityBlueprint  // bio_palladium_refinery
 				resource 	"flammable_gas"
 				value 		"25"
 				attachment	"att_out_1"
-			}	
+			}
 		}
-		priority 4
+		
+		continous_local_production "1"
+		priority 2
 	}
 
 	ResourceStorageDesc
@@ -544,7 +546,9 @@ EntityBlueprint  // bio_palladium_refinery_lvl_2
 				attachment	"att_out_1"
 			}
 		}
-		priority 4		
+		
+		continous_local_production "1"
+		priority 2
 	}
 	
 	ResourceStorageDesc
@@ -807,7 +811,9 @@ EntityBlueprint  // bio_palladium_refinery_lvl_3
 				attachment	"att_out_1"
 			}
 		}
-		priority 4
+		
+		continous_local_production "1"
+		priority 2
 	}
 	
 	ResourceStorageDesc

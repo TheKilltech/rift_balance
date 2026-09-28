@@ -89,6 +89,8 @@ EntityBlueprint  // short_range_radar_lvl_3
 		out
 		{
 		}
+		
+		one_vein_mode "1"
 		priority 5
 	}
 
@@ -103,6 +105,11 @@ EntityBlueprint  // short_range_radar_lvl_3
 		}
 	}
 
+	FogOfWarRevealerComponentDesc
+	{
+		radius "32"
+	}
+	
 	HealthDesc
 	{
 		max_health 					"1150"

@@ -58,9 +58,11 @@ EntityBlueprint  // biomass_mycelium_press
 				resource 			"fluorine"
 				value				"25"
 				attachment			"att_out_1"
-			}		
+			}
 		}
-		priority 9		
+		
+		continous_local_production "1"
+		priority 9
 		reset_interval 0.5
 	}
 
@@ -515,9 +517,11 @@ EntityBlueprint  // biomass_mycelium_press_lvl_2
 				resource 			"fluorine"
 				value				"50"
 				attachment			"att_out_1"
-			}		
+			}
 		}
-		priority 9		
+		
+		continous_local_production "1"
+		priority 9
 		reset_interval 0.5
 	}
 
@@ -744,8 +748,10 @@ EntityBlueprint  // biomass_mycelium_press_lvl_3
 				resource 			"fluorine"
 				value				"70"
 				attachment			"att_out_1"
-			}		
+			}
 		}
+		
+		continous_local_production "1"
 		priority 9
 		reset_interval 0.5
 	}

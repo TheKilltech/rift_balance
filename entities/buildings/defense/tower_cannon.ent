@@ -714,6 +714,7 @@ EntityBlueprint  // tower_cannon_cooled_lvl_1
 		{
 		}
 
+		one_vein_mode "1"
 		priority 6
 	}
 
@@ -880,6 +881,7 @@ EntityBlueprint  // tower_cannon_cooled_lvl_2
 		{
 		}
 
+		one_vein_mode "1"
 		priority 6
 	}
 
@@ -1089,6 +1091,19 @@ EntityBlueprint  // tower_cannon_acid
 		priority 6
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/defense/tower.lua"
+
+		database
+		{
+			standby_upkeep_factor	float:"0.05"
+			cone_effect				string:"build_cone_1x1"
+			cone_effect_sell		string:"sell_small"
+			time_machine			int:"0"
+		}
+	}
+	
 	HealthDesc
 	{
 		max_health 					"750"
@@ -1271,6 +1286,19 @@ EntityBlueprint  // tower_cannon_incindiary
 		priority 6
 	}
 
+	LuaDesc
+	{
+		script "lua/buildings/defense/tower.lua"
+
+		database
+		{
+			standby_upkeep_factor	float:"0.05"
+			cone_effect				string:"build_cone_1x1"
+			cone_effect_sell		string:"sell_small"
+			time_machine			int:"0"
+		}
+	}
+	
 	HealthDesc
 	{
 		max_health 					"1000"

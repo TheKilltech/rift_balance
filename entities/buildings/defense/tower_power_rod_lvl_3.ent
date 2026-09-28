@@ -17,12 +17,12 @@ EntityBlueprint
 		type				"tower"
 		overrides			"tower,wall"
 		//upgrade				"buildings/defense/tower_power_rod_lvl_4"
-		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"	
+		exclude_terrain_types "magma_hot_ground,magma_very_hot_ground"
 		condition			"NOT_BIOME"	
 		condition_value		"caverns"		
 		radius_name				"power_rod"
 		min_radius				"25"
-		min_radius_effect   	"voice_over/announcement/building_too_close"		
+		min_radius_effect   	"voice_over/announcement/building_too_close"
 
 		costs
 		{
@@ -72,6 +72,7 @@ EntityBlueprint
 		{
 		}
 
+		one_vein_mode "1"
 		priority 6
 	}
 	

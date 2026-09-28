@@ -26,7 +26,7 @@ EntityBlueprint  // water_filtering_plant
 				building_cost
 				{
 					carbonium 	"300"
-					steel 		"200"		
+					steel 		"200"
 				}
 			}		
 		}
@@ -76,7 +76,10 @@ EntityBlueprint  // water_filtering_plant
 				attachment			"att_out_1"
 			}
 		}
-		priority 4		
+		
+		one_vein_mode "1"
+		continous_local_production "1"
+		priority 4
 	}
 	
 	ResourceStorageDesc
