@@ -13203,7 +13203,7 @@ Research
 								{
 									IntData
 									{
-										value "3"
+										value "2"
 										key "increase_amount"
 									}
 
@@ -54330,7 +54330,7 @@ Research
 					research_scripts
 					position
 					{
-						x "-18"
+						x "36"
 						y "-342"
 					}
 
@@ -55842,6 +55842,509 @@ Research
 					icon "gui/menu/research/icons/gravitational_hyper_lens"
 				}
 
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/quantum_cortex_laboratory"
+							research_category "gui/menu/research/category_megastructures"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/more_outposts_lvl_1"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "50000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "25000"
+						}
+
+					}
+
+					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "outpost"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "3"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+					position
+					{
+						x "252"
+						y "-252"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "research/building_limit_increase_outpost"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/orbital_scanning"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/more_outposts_lvl_1"
+							research_category "gui/menu/research/category_megastructures"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/quantum_cortex_laboratory_lvl_2"
+							research_category "gui/menu/research/category_megastructures"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/more_outposts_lvl_2"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "50000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "25000"
+						}
+
+					}
+
+					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "outpost"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "3"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+					position
+					{
+						x "252"
+						y "-162"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "research/building_limit_increase_outpost"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/orbital_scanning"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/more_outposts_lvl_2"
+							research_category "gui/menu/research/category_megastructures"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/quantum_cortex_laboratory_lvl_3"
+							research_category "gui/menu/research/category_megastructures"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/more_outposts_lvl_3"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "50000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "25000"
+						}
+
+					}
+
+					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "outpost"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "4"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+					position
+					{
+						x "252"
+						y "-72"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "research/building_limit_increase_outpost"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/orbital_scanning"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/more_outposts_lvl_3"
+							research_category "gui/menu/research/category_megastructures"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/quantum_cortex_laboratory_lvl_4"
+							research_category "gui/menu/research/category_megastructures"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/more_outposts_lvl_4"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "50000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "25000"
+						}
+
+					}
+
+					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "outpost"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "5"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+					position
+					{
+						x "252"
+						y "18"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "research/building_limit_increase_outpost"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/orbital_scanning"
+				}
+
+				ResearchNode
+				{
+					research_flags "hidden"
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/more_outposts_lvl_4"
+							research_category "gui/menu/research/category_megastructures"
+						}
+
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/quantum_cortex_laboratory_lvl_5"
+							research_category "gui/menu/research/category_megastructures"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/more_outposts_lvl_5"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "alloys"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "50000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "25000"
+						}
+
+					}
+
+					research_scripts
+					{
+						ResearchScript
+						{
+							script_name "lua/research/limit_increase.lua"
+							script_database
+							{
+								Strings
+								{
+									StringData
+									{
+										value "outpost"
+										key "limit_name"
+									}
+
+								}
+
+								Floats
+								Vectors
+								Integers
+								{
+									IntData
+									{
+										value "5"
+										key "increase_amount"
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+					position
+					{
+						x "252"
+						y "108"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "research/building_limit_increase_outpost"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/orbital_scanning"
+				}
+
 			}
 
 		}
@@ -55850,6 +56353,6 @@ Research
 
 	type
 	editor "6741"
-	version "250"
+	version "251"
 }
 
