@@ -34,6 +34,11 @@ function logic_if_resource:OnExecuteWait( state )
         "buildings/resources/liquid_compressor",
         "buildings/resources/liquid_compressor_lvl_2",
         "buildings/resources/liquid_compressor_lvl_3",
+        "buildings/resources/liquid_compressor_new_lvl_2",
+        "buildings/resources/liquid_compressor_new_lvl_3",
+        "buildings/resources/liquid_compressor_new_lvl_4",
+        "buildings/resources/liquid_compressor_new_lvl_5",
+        "buildings/resources/liquid_compressor_new_lvl_6",
     }
     local entities = {}
     for  blueprint in Iter(blueprints) do
