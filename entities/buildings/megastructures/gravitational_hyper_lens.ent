@@ -51,9 +51,9 @@ EntityBlueprint  // gravitational_hyper_lens
 			GameplayResource
 			{
 				resource 			"supercoolant"
-				value			 	"500"
-				attachment			"att_in_1|att_in_2|att_in_3|att_in_4"
-			}			
+				value			 	"250"
+				attachment			"att_in_1|att_in_3"
+			}
 		}
 
 		priority 2
@@ -65,10 +65,10 @@ EntityBlueprint  // gravitational_hyper_lens
 		{
 			Storage
 			{
-				resource	 		"supercoolant"
-				max 	 		"500"
-				attachment		"att_in_1|att_in_2|att_in_3|att_in_4"
-			}			
+				resource			"supercoolant"
+				max					"500"
+				attachment			"att_in_1|att_in_3"
+			}
 			Storage
 			{
 				resource 			"energy"
@@ -453,7 +453,7 @@ EntityBlueprint  // gravitational_hyper_lens
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
@@ -533,10 +533,10 @@ EntityBlueprint  // gravitational_hyper_lens
 				{
 
 					blueprint "lights/point/gravitational_hyper_lens_shadow_caster_blue"
-					bone "att_light"	
-				}					
+					bone "att_light"
+				}
 			}
-		}		
+		}
 		EffectGroup
 		{
 			group "att_in_1"
@@ -562,7 +562,7 @@ EntityBlueprint  // gravitational_hyper_lens
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
 					bone "att_in_2_arrow"
 				}
 			}
@@ -592,12 +592,11 @@ EntityBlueprint  // gravitational_hyper_lens
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
 					bone "att_in_4_arrow"
 				}
 			}
 		}
-		
 	}
 	
 	children

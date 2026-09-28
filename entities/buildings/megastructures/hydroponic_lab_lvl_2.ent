@@ -53,14 +53,21 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"biomass_plant"
-				value			 	"8"
-			}			
+				value			 	"5"
+			}
 
 			GameplayResource
 			{
 				resource 			"water"
-				value			 	"2500"
-				attachment			"att_in_1|att_in_2|att_in_3|att_in_4"
+				value			 	"1500"
+				attachment			"att_in_2|att_in_4"
+			}
+
+			GameplayResource
+			{
+				resource 			"reagent"
+				value			 	"250"
+				attachment			"att_in_1|att_in_3"
 			}
 		}
 
@@ -75,11 +82,190 @@ EntityBlueprint
 			time_interval			"15"
 		}
 	}	
+	
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+		////////////////////////Destruction level 0 transition effects/////////////////////////
+		EffectGroup
+		{
+			group "0_transition"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"
+					bone "att_smoke_1"
+					delay "0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"
+					bone "att_smoke_2"
+					delay "0.15"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"
+					bone "att_smoke_3"
+					delay "0.25"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"
+					bone "att_smoke_4"
+					delay "0.3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_big_random"
+					bone "att_smoke_5"
+					delay "0.4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_big_random"
+					bone "att_smoke_6"
+					delay "0.45"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_big_random"
+					bone "att_smoke_7"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_main/explosion_building_hq"
+					delay "0.6"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////	
+		EffectGroup
+		{
+			enabled "1"
+			delay "1"
+			
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_megastructures/hydroponic_lab_light_pillar"
+					bone "att_light_pillar_1"
+				}			
+				Effect
+				{
+					blueprint "effects/buildings_megastructures/hydroponic_lab_light_pillar"
+					bone "att_light_pillar_2"
+				}	
+				Effect
+				{
+					blueprint "effects/buildings_megastructures/hydroponic_lab_light_pillar"
+					bone "att_light_pillar_3"
+				}	
+				Effect
+				{
+					blueprint "effects/buildings_megastructures/hydroponic_lab_light_pillar"
+					bone "att_light_pillar_4"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_3_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_4"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_4_arrow"
+				}
+			}
+		}
+	}	
+	
 	children
 	{
+		EntityBlueprint  // hydroponic_lab_pipeline
+		{
+			name "buildings/megastructures/hydroponic_lab_pipeline"
+			
+			PipeComponent
+			{
+				attachment		"att_in_1,att_in_3"
+			}
+
+			ResourceStorageDesc
+			{
+				Storages
+				{
+					Storage
+					{
+						resource 		"reagent"
+						max 	 		"1000"
+						attachment		"att_in_1|att_in_3"
+					}
+
+				}
+			}
+		}
 		EntityBlueprint
 		{		
-			base_blueprint "buildings/megastructures/building_base"		
+			base_blueprint "buildings/megastructures/building_base"
 			MeshDesc
 			{
 				mesh "meshes/buildings/megastructures/hydroponic_lab_5.mesh"

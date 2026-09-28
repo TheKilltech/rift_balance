@@ -1,4 +1,4 @@
-EntityBlueprint
+EntityBlueprint  // hydroponic_lab_lvl_5
 {
 	name "buildings/megastructures/hydroponic_lab_lvl_5"
 	base_blueprint "buildings/megastructures/hydroponic_lab_lvl_4"
@@ -47,20 +47,27 @@ EntityBlueprint
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"15000"
+				value				"15000"
 			}
 			
 			GameplayResource
 			{
 				resource 			"biomass_plant"
-				value			 	"15"
-			}			
+				value				"15"
+			}
 
 			GameplayResource
 			{
 				resource 			"water"
-				value			 	"2500"
-				attachment			"att_in_1|att_in_2|att_in_3|att_in_4"
+				value				"2500"
+				attachment			"att_in_2|att_in_4"
+			}
+
+			GameplayResource
+			{
+				resource 			"reagent"
+				value			 	"500"
+				attachment			"att_in_1|att_in_3"
 			}
 		}
 		
@@ -75,6 +82,7 @@ EntityBlueprint
 			time_interval			"6"
 		}
 	}	
+	
 	children
 	{
 		EntityBlueprint
@@ -420,7 +428,7 @@ EntityBlueprint
 	}	
 }
 
-EntityBlueprint
+EntityBlueprint  // hydroponic_lab_lvl_5_ruins
 {
 	name  "buildings/megastructures/hydroponic_lab_lvl_5_ruins"
 

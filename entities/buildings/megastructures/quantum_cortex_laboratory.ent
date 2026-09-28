@@ -53,8 +53,8 @@ EntityBlueprint  // quantum_cortex_laboratory
 			GameplayResource
 			{
 				resource 			"plasma_charged"
-				value			 	"1000"
-				attachment			"att_in_1|att_in_2|att_in_3|att_in_4"
+				value			 	"500"
+				attachment			"att_in_1|att_in_4"
 			}
 		}
 
@@ -84,10 +84,10 @@ EntityBlueprint  // quantum_cortex_laboratory
 		{
 			Storage
 			{
-				resource	 		"plasma_charged"
+				resource	 	"plasma_charged"
 				max 	 		"1000"
-				attachment		"att_in_1|att_in_2|att_in_3|att_in_4"
-			}			
+				attachment		"att_in_1|att_in_4"
+			}
 			Storage
 			{
 				resource 			"energy"
@@ -615,7 +615,7 @@ EntityBlueprint  // quantum_cortex_laboratory
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
 					bone "att_in_2_arrow"
 				}
 			}
@@ -630,7 +630,7 @@ EntityBlueprint  // quantum_cortex_laboratory
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
 					bone "att_in_3_arrow"
 				}
 			}
