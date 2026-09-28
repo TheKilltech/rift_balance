@@ -7,9 +7,9 @@ return function(params)
 	local rules  = helper:PrepareDefaultRules( {}, "outpost", nil, params)
 
 	rules.maxObjectivesAtOnce = 1
-	rules.eventsPerIdleState = 2
+	rules.eventsPerIdleState = 1
 	rules.eventsPerPrepareState = 0 -- [0,1]
-	rules.eventsPerPrepareStateChance = 25        -- chance to spawn events with objectives
+	rules.eventsPerPrepareStateChance = 15        -- chance to spawn events with objectives
 	rules.pauseAttacks = false
 	rules.prepareAttacks = true
 	rules.baseTimeBetweenObjectives = 1800
