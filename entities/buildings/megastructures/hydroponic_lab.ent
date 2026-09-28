@@ -52,13 +52,13 @@ EntityBlueprint  // hydroponic_lab
 			{
 				resource 			"biomass_plant"
 				value			 	"5"
-			}			
+			}
 
 			GameplayResource
 			{
 				resource 			"water"
-				value			 	"2500"
-				attachment			"att_in_1|att_in_2|att_in_3|att_in_4"
+				value			 	"1500"
+				attachment			"att_in_2|att_in_4"
 			}
 		}
 
@@ -73,9 +73,16 @@ EntityBlueprint  // hydroponic_lab
 			{
 				resource 			"energy"
 				distribution_radius	"5"
-			}	
+			}
+			
+			Storage
+			{
+				resource			"water"
+				max					"5000"
+				attachment			"att_in_2|att_in_4"
+			}
 		}
-	}	
+	}
 	
 	BiomeModificatorComponent
 	{
@@ -454,7 +461,7 @@ EntityBlueprint  // hydroponic_lab
 	}
 
 	EffectDesc
-	{		
+	{
 		EffectBaseBlueprints
 		{
 			"buildings/effects_big_base"
@@ -543,9 +550,9 @@ EntityBlueprint  // hydroponic_lab
 				{
 					blueprint "effects/buildings_megastructures/hydroponic_lab_light_pillar"
 					bone "att_light_pillar_4"
-				}					
+				}
 			}
-		}		
+		}
 		EffectGroup
 		{
 			group "att_in_1"
@@ -556,7 +563,7 @@ EntityBlueprint  // hydroponic_lab
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
 					bone "att_in_1_arrow"
 				}
 			}
@@ -586,7 +593,7 @@ EntityBlueprint  // hydroponic_lab
 			{
 				Effect
 				{
-					blueprint "effects/buildings_and_machines/building_arrow"
+					blueprint "effects/buildings_and_machines/building_arrow_disabled"
 					bone "att_in_3_arrow"
 				}
 			}
@@ -605,7 +612,7 @@ EntityBlueprint  // hydroponic_lab
 					bone "att_in_4_arrow"
 				}
 			}
-		}		
+		}
 	}	
 	
 	children

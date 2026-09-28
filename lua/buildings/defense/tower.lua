@@ -94,8 +94,10 @@ end
 
 function tower:UpdateBuildingInfo()
 	if not self.data then return end
-
-	local strIdleUpkeep = string.format("%+.0f", self.factorStandbyUpkeep*100) .. "%"
+	local fac = self.factorStandbyUpkeep or 1
+	if fac == 1 then return end -- no display if for towers without idle upkeep
+	
+	local strIdleUpkeep = string.format("%+.0f", fac*100) .. "%"
 	local rowName = "row" .. tostring(1)
 	local rowsAll = rowName
 	self.data:SetString("local_group.rows." .. rowName .. ".name",  "gui/hud/info_idle_upkeep" )

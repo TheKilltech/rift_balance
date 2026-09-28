@@ -47,14 +47,21 @@ EntityBlueprint  // quantum_cortex_laboratory_lvl_2
 			GameplayResource
 			{
 				resource 			"energy"
-				value			 	"55000"
+				value			 	"50000"
 			}
 
 			GameplayResource
 			{
 				resource 			"plasma_charged"
-				value			 	"1000"
-				attachment			"att_in_1|att_in_2|att_in_3|att_in_4"
+				value			 	"500"
+				attachment			"att_in_1|att_in_4"
+			}
+
+			GameplayResource
+			{
+				resource 			"fissonium"
+				value			 	"250"
+				attachment			"att_in_2|att_in_3"
 			}
 		}
 
@@ -78,8 +85,203 @@ EntityBlueprint  // quantum_cortex_laboratory_lvl_2
 		priority 2
 	}
 	
+
+	EffectDesc
+	{
+		EffectBaseBlueprints
+		{
+			"buildings/effects_big_base"
+		}
+		////////////////////////Destruction level 0 transition effects/////////////////////////
+		EffectGroup
+		{
+			group "0_transition"
+			enabled "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"
+					bone "att_smoke_1"
+					delay "0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"
+					bone "att_smoke_2"
+					delay "0.15"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"
+					bone "att_smoke_3"
+					delay "0.25"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_medium_random"
+					bone "att_smoke_4"
+					delay "0.3"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_big_random"
+					bone "att_smoke_5"
+					delay "0.4"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_big_random"
+					bone "att_smoke_6"
+					delay "0.45"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_generic/explosion_big_random"
+					bone "att_smoke_7"
+					delay "0.5"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_main/explosion_building_hq"
+					delay "0.6"
+				}
+			}
+		}
+		////////////////////////MISC/////////////////////////
+		EffectGroup
+		{
+			group "working"
+			enabled "0"
+			delay "1"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_megastructures/quantum_cortex_energy"
+					bone "att_energy"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_megastructures/quantum_cortex_rings"
+					bone "att_rings_big"
+					scale "1.2 1.2 1.2"
+				}
+				Effect
+				{
+					blueprint "lights/point/gravitational_hyper_lens_shadow_caster_blue"
+					bone "att_rings_big"
+					offset "0 0 0"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_megastructures/quantum_cortex_rings"
+					bone "att_rings_small"
+				}
+				Effect
+				{
+					blueprint "effects/buildings_megastructures/quantum_cortex_dynamo"
+					bone "att_dynamo"
+				}
+			}
+		}
+
+		EffectGroup
+		{
+			group "att_in_1"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_1_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_2"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_2_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_3"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_3_arrow"
+				}
+			}
+		}
+		EffectGroup
+		{
+			group "att_in_4"
+			enabled "0"
+			delay "0"
+
+			Effects
+			{
+				Effect
+				{
+					blueprint "effects/buildings_and_machines/building_arrow"
+					bone "att_in_4_arrow"
+				}
+			}
+		}
+	}
+
+
 	children
 	{
+		EntityBlueprint
+		{
+			name "buildings/megastructures/quantum_cortex_lab_pipeline"
+			
+			PipeComponent
+			{
+				attachment		"att_in_2,att_in_3"
+			}
+
+			ResourceStorageDesc
+			{
+				Storages
+				{
+					Storage
+					{
+						resource 		"fissonium"
+						max 	 		"1000"
+						attachment		"att_in_2|att_in_3"
+					}
+
+				}
+			}
+
+			SkeletonDesc
+			{
+				name "meshes/buildings/megastructures/quantum_cortex_laboratory_1"
+			}
+		}
+		
 		EntityBlueprint
 		{
 			base_blueprint "buildings/megastructures/building_base"

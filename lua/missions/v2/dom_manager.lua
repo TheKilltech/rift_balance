@@ -938,8 +938,10 @@ function dom_mananger:ClosePrepareForTheAttack()
 end
 
 function dom_mananger:OnStartUpgradingEvent( evt )
-	local buildingName = BuildingService:GetBuildingName( evt:GetEntity() );
-	local upgradeTime = BuildingService:CalculateBuildTime( evt:GetEntity(), 0 )
+	local entity = evt:GetEntity()
+	if entity == nil then return end
+	local buildingName = BuildingService:GetBuildingName( entity );
+	local upgradeTime = BuildingService:CalculateBuildTime( entity, 0 )
 
 	for i = 1, #self.rules.buildingsUpgradeStartsLogic, 1 do 
 		if ( self.rules.buildingsUpgradeStartsLogic[i].name == buildingName ) then
