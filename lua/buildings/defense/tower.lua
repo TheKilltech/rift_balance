@@ -24,8 +24,18 @@ function tower:OnInit()
 	BuildingService:AddConverterCostModifier( self.entity, self.factorStandbyUpkeep , "standby" )
 end
 
+function tower:OnLoad()
+	building.OnLoad( self )
+	self:UpdateBuildingInfo()
+end
+
 function tower:OnDestroy()
 	return true
+end
+
+function tower:OnBuildingEnd()
+	building.OnBuildingEnd( self )
+	self:UpdateBuildingInfo()
 end
 
 function tower:_OnDayCycleDayStartedEvent( )
@@ -46,10 +56,12 @@ end
 
 function tower:OnActivate()
 	self:OperateLight(EnvironmentService:GetTimeOfDay())
+	self:UpdateBuildingInfo()
 end
 
 function tower:OnDeactivate()
 	self:OperateLight(EnvironmentService:GetTimeOfDay())
+	self:UpdateBuildingInfo()
 end
 
 local noTargetId = "4294967295" -- max uint: 2^32 - 1 or (uint)(-1)
@@ -64,6 +76,7 @@ function tower:_OnTurretEvent( evt )
 	elseif tstatus == 0 then
 		BuildingService:AddConverterCostModifier( self.entity, self.factorStandbyUpkeep , "standby" )
 	end
+	self:UpdateBuildingInfo()
 end
 
 function tower:OperateLight( time )
@@ -79,6 +92,19 @@ function tower:OperateLight( time )
 	end
 end
 
+function tower:UpdateBuildingInfo()
+	if not self.data then return end
+
+	local strIdleUpkeep = string.format("%+.0f", self.factorStandbyUpkeep*100) .. "%"
+	local rowName = "row" .. tostring(1)
+	local rowsAll = rowName
+	self.data:SetString("local_group.rows." .. rowName .. ".name",  "gui/hud/info_idle_upkeep" )
+	self.data:SetString("local_group.rows." .. rowName .. ".icon",  "gui/hud/buttons/action_menu_repair_neutral" )  -- "gui/hud/building_icons/tools_structures_neutral"
+	self.data:SetString("local_group.rows." .. rowName .. ".value", strIdleUpkeep)
+	
+	self.data:SetString("stat_categories", "local_group")
+	self.data:SetString("local_group.rows", rowsAll )
+end
 
 function tower:OnResourceMissingEvent( evt )
 	local resource = evt:GetResource()
