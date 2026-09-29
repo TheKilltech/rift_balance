@@ -48,11 +48,12 @@ EntityBlueprint
 
 	MinimapItemDesc
 	{
-		type			"image"
-		icon_material 	"gui/hud/minimap_icons/fluorine_deepvein"
-		unknown_until_visible 	"1"
+		type					"image"
+		icon_material			"gui/hud/minimap_icons/fluorine_deepvein"
+		unknown_until_visible	"1"
+		condition				"VENT_RESOURCE"
 
-		visibility 			"discovered|radar"
+		visibility				"discovered|radar"
 	}
 
 	SelectableDesc
@@ -73,21 +74,6 @@ EntityBlueprint
 		}
 	}
 	
-	//BurningComponent
-	//{
-	//	spread_radius 			"3"			// radius to spread fire
-	//	spread_chance_override 	"1"			// allow to override chance to propagate fire if set to 1.0 everything flammable around will catch fire
-	//	//spread_target_mask 		"ground_unit"
-	//	spread_timer
-	//	{
-	//		limit "20" 						// how often e                    ntity will try to spread fire in microseconds ( 2s )
-	//	}
-	//
-	//	burning_effect_group    ""			// effect group to be enabled on entity
-	//	burning_time			"10000000000"	// how long it will burn in seconds
-	//	disable_light_fade_out "1"
-	//}		
-
 	EffectDesc
 	{	
 		EffectGroup

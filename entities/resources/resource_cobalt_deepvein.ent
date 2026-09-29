@@ -36,11 +36,12 @@ EntityBlueprint
 
 	MinimapItemDesc
 	{
-		type			"image"
-		icon_material 	"gui/hud/minimap_icons/cobalt_deepvein"
-		unknown_until_visible 	"1"
+		type					"image"
+		icon_material			"gui/hud/minimap_icons/cobalt_deepvein"
+		unknown_until_visible	"1"
+		condition				"SOLID_RESOURCE"
 
-		visibility 			"discovered|radar"
+		visibility				"discovered|radar"
 	}
 
 	SelectableDesc

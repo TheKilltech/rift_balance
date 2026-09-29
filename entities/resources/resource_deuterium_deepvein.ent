@@ -47,11 +47,12 @@ EntityBlueprint  // resource_deuterium_deepvein
 
 	MinimapItemDesc
 	{
-		type			"image"
-		icon_material 	"gui/hud/minimap_icons/deuterium_deepvein"
-		unknown_until_visible 	"1"
+		type					"image"
+		icon_material			"gui/hud/minimap_icons/deuterium_deepvein"
+		unknown_until_visible	"1"
+		condition				"VENT_RESOURCE"
 
-		visibility 			"discovered|radar"
+		visibility				"discovered|radar"
 	}
 
 	SelectableDesc
