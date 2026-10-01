@@ -1,0 +1,61 @@
+<node_layout id="LuaBehaviourNode">
+  <value id="script" value="lua/weather/egg_rein.lua"/>
+  <value id="database.Strings.StringData[0].key" value="blueprint"/>
+  <value id="database.Strings.StringData[1].key" value="type"/>
+  <value id="database.Strings.StringData[2].key" value="warning_bp"/>
+    
+  <value id="database.Integers.IntData[0].key" value="duration"/>
+  <value id="database.Integers.IntData[1].key" value="radius"/>
+  <value id="database.Integers.IntData[3].key" value="duration_max"/>
+    
+  <value id="database.Floats.FloatData[0].key" value="spawn_time"/>
+  <value id="database.Floats.FloatData[1].key" value="delay"/> 
+    
+  <row bgcolor="#42f4f4">
+    <text value="WEATHER METEOR SHOWER" width="330" align="center" font_weight="extra_bold"  />
+  </row>
+  <row bgcolor="#42f4f4">
+    <text value="Id:" width="30" align="left" font_weight="bold" />
+    <input id="self_id" width="300" font_weight="bold" />
+  </row>
+  <row bgcolor="#FFFFFF" height="1"/>
+  <row bgcolor="#000000" height="3"/>
+  <row bgcolor="#FFFFFF" height="1"/>
+
+  <row>
+    <text value="Egg Blueprint:" width="160" align="left" font_weight="bold" />
+    <input text="blueprint" width="170" id="database.Strings.StringData[0].value" value="units/ground/egg_stickrid" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+    <text value="Min Life Time:" width="160" align="left" font_weight="bold" />
+    <input text="duration" width="170" id="database.Integers.IntData[0].value" value="30" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+    <text value="Max Life Time:" width="160" align="left" font_weight="bold" />
+    <input text="duration_max" width="170" id="database.Integers.IntData[3].value" value="90" font_weight="bold" valid_rule="not_empty" />
+  </row>   
+  <row>
+     <text value="Spawn Radius:" width="160" align="left" font_weight="bold" />
+     <input text="radius" width="170" id="database.Integers.IntData[1].value" value="30" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+     <text value="Meteors In One Spawn:" width="160" align="left" font_weight="bold" />
+     <input text="meteors_in_one_spawn" width="170" id="database.Integers.IntData[2].value" value="2" font_weight="bold" valid_rule="not_empty" />
+  </row>
+  <row>
+    <text value="Single Spawn Delay:" width="160" font_weight="bold"/>
+    <input text="delay" id="database.Floats.FloatData[1].value" width="170" valid_rule="not_empty" value="0.0" font_weight="bold"/>
+  </row>    
+  <row>
+    <text value="Spawn Time:" width="160" font_weight="bold"/>
+    <input text="spawn_time" id="database.Floats.FloatData[0].value" width="170" valid_rule="not_empty" value="0.2" font_weight="bold"/>
+  </row>
+  <row>
+    <text value="Type:" width="160" font_weight="bold"/>
+    <list text="type" id="database.Strings.StringData[1].value" source="in_place,follow_player" value="in_place" width="170" valid_rule="not_empty" font_weight="bold"/>
+  </row>
+  <row>
+    <text value="On Ground Warning Bp:" width="160" font_weight="bold"/>
+    <input text="type" id="database.Strings.StringData[2].value" width="170" font_weight="bold"/>
+  </row>    
+</node_layout>
