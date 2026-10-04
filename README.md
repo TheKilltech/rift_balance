@@ -23,7 +23,7 @@ This is a fix for a specific failure mode of long, open-ended play: infinite res
 **Status**: REDI is actively developed and still evolving. Structural integration of Riftbreaker's 2.0 / World Expansion IV content — including orbital scanner missions — is done; what's left is balancing and fine-tuning, which is a permanent, ongoing task. If something still seems unclear or off, please say so on Discord.
 
 There devs wrote a mod spotlight article on the mod on Steam:
-https://store.steampowered.com/news/app/780310/view/4441205936032317627
+https://store.steampowered.com/news/app/780310/view/711159154263196072
 
 ## Resources
 - Mines, Regular, Rare and Special Resources:
@@ -102,7 +102,7 @@ If you like this mod, you can always contribute by reporting issues — crashes,
 Translations: REDI is available in German and Chinese (Simplified) — Chinese was contributed by a community member, thank you! I'd gladly add more languages if someone wants to help out.
 
 ## Links
-github:   https://github.com/TheKilltech/rift_balance
-mod.io:   https://mod.io/g/riftbreaker/m/rift-exploration-defense-industry
-steam:    https://steamcommunity.com/workshop/filedetails/?id=3598485480
-discord:  https://discord.com/channels/423424585954754565/1134827658530803753
+- github:   https://github.com/TheKilltech/rift_balance 
+- mod.io:   https://mod.io/g/riftbreaker/m/rift-exploration-defense-industry 
+- steam:    https://steamcommunity.com/workshop/filedetails/?id=3598485480 
+- discord:  https://discord.com/channels/423424585954754565/1134827658530803753 (at official https://www.discord.gg/exorstudios )
