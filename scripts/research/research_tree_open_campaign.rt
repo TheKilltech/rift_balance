@@ -56921,6 +56921,95 @@ Research
 					icon "gui/menu/research/icons/orbital_scanning"
 				}
 
+				ResearchNode
+				{
+					research_flags
+					requirement_tooltip
+					requirements
+					{
+						ResearchNodeRequirement
+						{
+							render_line "1"
+							research_name "gui/menu/research/name/arcology_workshop"
+							research_category "gui/menu/research/category_megastructures"
+						}
+
+					}
+
+					research_name "gui/menu/research/name/prime_rift_station"
+					research_costs
+					{
+						ResearchCost
+						{
+							amount "0"
+							resource "carbonium"
+							count "200000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "cobalt"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "download"
+							count "300000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "palladium"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "steel"
+							count "200000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "titanium"
+							count "10000"
+						}
+
+						ResearchCost
+						{
+							amount "0"
+							resource "uranium"
+							count "10000"
+						}
+
+					}
+
+					research_scripts
+					position
+					{
+						x "-72"
+						y "288"
+					}
+
+					research_awards
+					{
+						ResearchAward
+						{
+							blueprint "buildings/megastructures/mega_rift_station"
+							is_visible "1"
+						}
+
+					}
+
+					icon "gui/menu/research/icons/rift_technology"
+				}
+
 			}
 
 		}
@@ -56929,6 +57018,6 @@ Research
 
 	type
 	editor "6741"
-	version "252"
+	version "253"
 }
 
